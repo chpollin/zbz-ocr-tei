@@ -167,9 +167,9 @@ def run_phase(model, tokenizer, phase_key: str, scan_dir: Path, output_dir: Path
         }
 
         if result["status"] == "OK":
-            print(f"  ✓ Erfolgreich: {len(result['results'])} Seiten")
+            print(f"  [OK] Erfolgreich: {len(result['results'])} Seiten")
         else:
-            print(f"  ✗ {result['status']}: {result.get('error', 'Unbekannt')}")
+            print(f"  [FAIL] {result['status']}: {result.get('error', 'Unbekannt')}")
 
     return phase_results
 
@@ -225,7 +225,7 @@ def main():
             print(f"\n{phase_key}: {phase['name']}")
             for test in phase["tests"]:
                 pdf_path = scan_dir / test["pdf"]
-                exists = "✓" if pdf_path.exists() else "✗"
+                exists = "[OK]" if pdf_path.exists() else "[--]"
                 print(f"  {exists} {test['pdf']}: {test['desc']} (Seiten {test['pages']})")
         return
 
@@ -270,9 +270,9 @@ def main():
             status = test_result["status"]
             if status == "OK":
                 pages = len(test_result["results"])
-                print(f"  ✓ {pdf_name}: {pages} Seiten")
+                print(f"  [OK] {pdf_name}: {pages} Seiten")
             else:
-                print(f"  ✗ {pdf_name}: {status}")
+                print(f"  [--] {pdf_name}: {status}")
 
 
 if __name__ == "__main__":

@@ -88,87 +88,78 @@ Die folgenden PDFs stehen für den PoC zur Verfügung:
 | 1180.pdf | 0.3 MB | ? | ? | Niedrig |
 | 2530.pdf | 0.08 MB | ? | ? | Niedrig |
 
-### Empfehlung für PoC-Reihenfolge
+### Testphasen
 
-1. **Phase 1 (einfach)**: 2310.pdf, 2530.pdf, 1180.pdf – Kleine Dateien, einfache Struktur
-2. **Phase 2 (mittel)**: 130.pdf, 290.pdf, 90.pdf – Mittlere Größe, Essays
-3. **Phase 3 (komplex)**: 3040.pdf (Lexikon), 890.pdf (Vortrag mit Front)
+Siehe [Testplan-OCR.md](Testplan-OCR.md) für aktuelle Phasen:
+- Phase 1: Typ A (einspaltig) - **abgeschlossen**
+- Phase 2: Typ B (zweispaltig) - ausstehend
+- Phase 3: Typ D (Spezial) - ausstehend
+- Phase 4: Typ C (Monografien) - ausstehend
 
 ---
 
-## Layout-Typen
+## Layout-Typen (analysiert)
 
-*TODO: Visuelle Analyse der PDF-Scans erforderlich*
+Basierend auf visueller Analyse aller 15 Pilot-PDFs:
 
-Erwartete Varianten basierend auf Publikationsformen:
+| Typ | Layout | PDFs | OCR-Strategie |
+|-----|--------|------|---------------|
+| A | Einspaltig | 2310, 1180, 130, 290, 1410, 1060 | Standard DeepSeek |
+| B | Zweispaltig | 2530, 890, 3040 | Docling oder Prompt-Tuning |
+| C | Monografie | 40, 1520 | Chunking nötig |
+| D | Spezial | 90, 830, 1330, 1440 | Einzelfallprüfung |
 
-| Layout-Typ | Vorkommen | Herausforderung |
-|------------|-----------|-----------------|
-| Einspaltig (Fließtext) | Häufig | Niedrig |
-| Zweispaltig | Zeitschriften | Mittel – Lesereihenfolge |
-| Mit Fußnoten | Häufig | Mittel – Positionierung |
-| Mit Marginalien | Selten? | Hoch – Zuordnung zum Text |
-| Tabellen | Lexikonartikel | Mittel |
-| Abbildungen | Vereinzelt | Mittel – figure/graphic |
+**Details siehe [Testplan-OCR.md](Testplan-OCR.md)**
 
 ---
 
 ## Typografie
 
-*TODO: Visuelle Analyse der PDF-Scans erforderlich*
+### Französische Besonderheiten (relevant für OCR)
 
-### Erwartete Schriftarten
+| Zeichen | Beispiel | OCR-Fehlerrisiko |
+|---------|----------|------------------|
+| Guillemets | « » | Oft als " " erkannt |
+| Ligaturen | œ (cœur) | Meist korrekt |
+| Akzente | é è ê ë | Gelegentlich Fehler |
+| Apostroph | l'homme | U+2019 vs U+0027 |
 
-| Zeitraum | Erwartete Schrift | OCR-Schwierigkeit |
-|----------|-------------------|-------------------|
-| 1931–1950 | Antiqua, evtl. ältere Satztypen | Mittel |
-| 1950–1980 | Antiqua (Bleisatz) | Niedrig |
-| 1980–2010 | Digitalsatz | Niedrig |
+### Schriftqualität (beobachtet)
 
-### Französische Typografie-Besonderheiten
-
-- Guillemets: « » (nicht " ")
-- Ligaturen: œ (cœur), æ (seltener)
-- Akzente: é, è, ê, ë, à, â, ù, û, ç, î, ï, ô
-- Apostroph: l'homme, d'abord (U+2019)
+- Neuere Drucke (1950+): Gut lesbar
+- Historischer Druck 90.pdf (1944): Leicht eingeschränkt
 
 ---
 
-## Scan-Qualität
+## Scan-Qualität (beobachtet)
 
-*TODO: Visuelle Analyse der PDF-Scans erforderlich*
+Basierend auf Layout-Sample-Extraktion (`output/layout_samples/`):
 
-Zu prüfende Aspekte:
-
-- [ ] Auflösung (DPI)
-- [ ] Kontrast (ausreichend für OCR?)
-- [ ] Verzerrungen (Buchfalz, Perspektive)
-- [ ] Flecken, Durchscheinen
-- [ ] Vollständigkeit (fehlende Seiten?)
+| Aspekt | Bewertung |
+|--------|-----------|
+| Auflösung | Ausreichend für OCR |
+| Kontrast | Gut bis sehr gut |
+| Verzerrungen | Minimal |
+| Vollständigkeit | Keine fehlenden Seiten erkannt |
 
 ---
 
-## Problemfälle
+## Identifizierte Problemfälle
 
-*TODO: Identifikation aus PDF-Analyse*
-
-Potenzielle Problemkategorien:
-
-1. **Seitenübergreifende Fußnoten**: Verkettung via `@next/@prev` erforderlich
-2. **Komplexe Layouts**: Lexikonartikel mit verschachtelten Strukturen
-3. **Interviews/Gesprächsrunden**: Sprecherwechsel erkennen
-4. **Mehrsprachige Texte**: Sprachwechsel innerhalb eines Dokuments
-5. **Druckfehler**: Erkennung erfordert sprachliches Verständnis
+| Problem | Betroffene PDFs | Lösungsansatz |
+|---------|-----------------|---------------|
+| Zweispaltige Lesereihenfolge | 2530, 890, 3040 | Docling oder Prompt |
+| Seitenübergreifende Fußnoten | 3040 | `@next/@prev` Verkettung |
+| Interview-Sprecherwechsel | 1440 | Muster-Erkennung |
+| Historischer Druck | 90 | Beide OCR-Engines testen |
 
 ---
 
 ## Offene Fragen
 
-- Wie variiert die Scan-Qualität über die Jahrzehnte?
-- Gibt es systematische Layout-Unterschiede zwischen Zeitschriften und Sammelbänden?
-- Welche PDFs enthalten Tabellen oder Abbildungen?
-- Gibt es handschriftliche Annotationen in den Scans?
+- Welche PDFs enthalten Tabellen? (3040 hat Lexikon-Struktur)
+- Handschriftliche Annotationen in 40.pdf (Monografie)?
 
 ---
 
-*Erstellt: 29.01.2026*
+*Aktualisiert: 29.01.2026*

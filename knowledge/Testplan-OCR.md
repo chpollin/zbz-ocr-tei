@@ -115,28 +115,33 @@ Systematische Evaluation der OCR-Qualität für alle 15 Pilot-PDFs, um:
 
 Nach Abschluss aller Tests:
 
-| PDF | Typ | Zeichen | Struktur | Layout | Gesamt | Anmerkung |
-|-----|-----|---------|----------|--------|--------|-----------|
-| 2310 | A | ? | ? | ? | ? | |
-| 1180 | A | ? | ? | ? | ? | |
-| 130 | A | ? | ? | ? | ? | |
-| 290 | A | ? | ? | ? | ? | |
-| 1410 | A | ? | ? | ? | ? | |
-| 1060 | A | ? | ? | ? | ? | |
-| 2530 | B | ✅ | ⚠️ | ❌ | ⚠️ | Spaltenreihenfolge falsch |
-| 890 | B | ? | ? | ? | ? | |
-| 3040 | B | ? | ? | ? | ? | |
-| 40 | C | ? | ? | ? | ? | |
-| 1520 | C | ? | ? | ? | ? | |
-| 90 | D | ? | ? | ? | ? | |
-| 830 | D | ? | ? | ? | ? | |
-| 1440 | D | ? | ? | ? | ? | |
-| 1330 | D | ? | ? | ? | ? | |
+| PDF | Typ | CER | WER | Genauigkeit | Status | Anmerkung |
+|-----|-----|-----|-----|-------------|--------|-----------|
+| 2310 | A | 2.67% | 16.61% | 97.33% | OK | Rezension, sehr gut |
+| 1180 | A | 4.89% | 13.29% | 95.11% | OK | Jahresbericht, gut |
+| 130 | A | ? | ? | ? | - | |
+| 290 | A | 9.21% | 19.53% | 90.79% | OK | Comptes Rendus |
+| 1410 | A | ? | ? | ? | - | |
+| 1060 | A | ? | ? | ? | - | |
+| 2530 | B | ~0% | ~0% | ~99% | LAYOUT | Spaltenreihenfolge falsch |
+| 890 | B | ? | ? | ? | - | |
+| 3040 | B | ? | ? | ? | - | |
+| 40 | C | ? | ? | ? | - | |
+| 1520 | C | ? | ? | ? | - | |
+| 90 | D | ? | ? | ? | - | |
+| 830 | D | ? | ? | ? | - | |
+| 1440 | D | ? | ? | ? | - | |
+| 1330 | D | ? | ? | ? | - | |
 
 **Bewertungsskala:**
-- ✅ Gut (>95% korrekt)
-- ⚠️ Akzeptabel (80-95% korrekt, manuell korrigierbar)
-- ❌ Problematisch (<80% korrekt oder strukturelle Fehler)
+- OK: CER < 5% (Zeichengenauigkeit > 95%)
+- Akzeptabel: CER 5-15% (manuell korrigierbar)
+- Problematisch: CER > 15% oder strukturelle Fehler (LAYOUT)
+
+**Metriken:**
+- **CER** (Character Error Rate): Anteil falscher Zeichen
+- **WER** (Word Error Rate): Anteil falscher Wörter
+- **Genauigkeit**: 100% - CER
 
 ---
 
@@ -220,12 +225,14 @@ then the right column. Convert to markdown."
 
 ## Nächste Schritte
 
-1. [ ] Testskript `test_all_pdfs.py` erstellen
-2. [ ] Phase 1 durchführen (Baseline)
-3. [ ] Phase 2 mit verschiedenen Prompt-Varianten testen
-4. [ ] Docling als Alternative für Typ B evaluieren
-5. [ ] Evaluationsmatrix ausfüllen
-6. [ ] Empfehlung für Produktions-Pipeline ableiten
+1. [x] Testskript `test_all_pdfs.py` erstellen ✅
+2. [x] Phase 1 durchführen (Baseline) ✅
+3. [x] Evaluationsskript `evaluate_ocr.py` erstellen ✅
+4. [ ] Phase 2 mit verschiedenen Prompt-Varianten testen
+5. [ ] Docling als Alternative für Typ B evaluieren
+6. [ ] Phase 3-4 durchführen
+7. [ ] Evaluationsmatrix vervollständigen
+8. [ ] Empfehlung für Produktions-Pipeline ableiten
 
 ---
 

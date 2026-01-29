@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  TEI-Template: Rezension (Review)
+  Beispiel: 2310.xml - Buchbesprechung
+
+  Merkmale:
+  - div type="review"
+  - head mit bibl (rezensiertes Werk)
+  - Fließtext-Absätze
+-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">{{DOCUMENT_ID}}</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>tranScriptorium</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl><publisher>TRP document creator: {{CREATOR_EMAIL}}</publisher></bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+      <div type="review">
+        <pb facs="#facs_{{PAGE_NUM}}" n="{{PAGE_LABEL}}"/>
+
+        <!-- Kopf mit bibliografischen Angaben des rezensierten Werks -->
+        <head>
+          <bibl corresp="GND:{{WORK_GND_ID}}">
+            <lb facs="#facs_{{PAGE_NUM}}_l_1" n="N001"/>{{AUTHOR_NAME}}, <hi rendition="#i">{{WORK_TITLE}}</hi>,
+            <lb facs="#facs_{{PAGE_NUM}}_l_2" n="N002"/>{{PUBLICATION_DETAILS}}
+          </bibl>
+        </head>
+
+        <!-- Rezensionstext -->
+        <p facs="#facs_{{PAGE_NUM}}_r_1">
+          <lb facs="#facs_{{PAGE_NUM}}_l_3" n="N001"/>{{PARAGRAPH_TEXT}}
+        </p>
+
+        <!-- Weitere Absätze... -->
+
+      </div>
+    </body>
+  </text>
+</TEI>

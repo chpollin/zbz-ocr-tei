@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  TEI-Template für ZBZ Jeanne Hersch Projekt
+  Basierend auf: DTA-Basisformat mit projektspezifischen Anpassungen
+
+  Verwendung: Dieses Template wird von der LLM-Pipeline befüllt.
+  Dokumentation: knowledge/TEI-Mapping.md
+-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">{{DOCUMENT_ID}}</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>tranScriptorium</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl><publisher>TRP document creator: {{CREATOR_EMAIL}}</publisher></bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+
+  <text>
+    <!-- Optional: Paratexte vor dem Haupttext -->
+    <!-- <front>
+      <div type="editorial">
+        <head>Vorbemerkung</head>
+        <p>...</p>
+      </div>
+    </front> -->
+
+    <body>
+      {{BODY_CONTENT}}
+    </body>
+
+    <!-- Optional: Paratexte nach dem Haupttext -->
+    <!-- <back>
+      <div type="translation">
+        <p>Französische Übersetzung erschienen in: ...</p>
+      </div>
+    </back> -->
+  </text>
+</TEI>

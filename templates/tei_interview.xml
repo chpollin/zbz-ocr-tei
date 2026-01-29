@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  TEI-Template: Interview
+  Beispiel: 1440.xml - "Bedrohte Freiheit"
+
+  Merkmale:
+  - div type="interview"
+  - sp (speech) für jeden Redebeitrag
+  - speaker mit persName
+  - Epigraph möglich
+-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">{{DOCUMENT_ID}}</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>tranScriptorium</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl><publisher>TRP document creator: {{CREATOR_EMAIL}}</publisher></bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+      <div n="1">
+        <pb facs="#facs_1" n="{{FIRST_PAGE}}"/>
+
+        <!-- Haupttitel -->
+        <head>
+          <title type="main">{{TITLE}}</title>
+        </head>
+
+        <!-- Optional: Einleitender Text/Epigraph -->
+        <div type="text">
+          <epigraph>
+            <p>
+              <lb facs="#facs_1_l_1" n="N001"/>{{EPIGRAPH_TEXT}}
+            </p>
+          </epigraph>
+        </div>
+
+        <!-- Interview-Abschnitt -->
+        <div type="interview">
+
+          <!-- Frage -->
+          <sp>
+            <speaker><persName ref="GND:{{INTERVIEWER_GND}}">{{INTERVIEWER_NAME}}</persName></speaker>
+            <p facs="#facs_1_r_1">
+              <lb facs="#facs_1_l_2" n="N001"/>{{QUESTION_TEXT}}
+            </p>
+          </sp>
+
+          <!-- Antwort -->
+          <sp>
+            <speaker><persName ref="GND:{{INTERVIEWEE_GND}}">{{INTERVIEWEE_NAME}}</persName></speaker>
+            <p facs="#facs_1_r_2">
+              <lb facs="#facs_1_l_3" n="N001"/>{{ANSWER_TEXT}}
+            </p>
+          </sp>
+
+          <!-- Weitere Fragen und Antworten... -->
+
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
