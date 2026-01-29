@@ -1,0 +1,15 @@
+# Lokale Daten - nicht ins Repository
+data/PDFs/
+data/finalized_no_header/
+data/*.xlsx
+data/*.docx
+data/*.pdf
+
+# Temporäre Dateien
+*.tmp
+*.bak
+~$*
+
+# OS-spezifisch
+.DS_Store
+Thumbs.db
