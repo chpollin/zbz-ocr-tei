@@ -1,228 +1,109 @@
 # Materialanalyse ZBZ-OCR-TEI
 
-## 1. Zusammenfassung
-
-Das Projekt umfasst die digitale Edition von ca. 286 Texten der Philosophin Jeanne Hersch. Die Transkriptionsrichtlinien sind detailliert dokumentiert und orientieren sich am DTA-Basisformat. Die TEI-Referenzdateien zeigen konsistente Muster. Die Hauptherausforderung für einen LLM-Ansatz liegt in der semantischen Auszeichnung (Personen, Organisationen, Werke mit GND-Verknüpfung) sowie in der korrekten Strukturerkennung bei komplexen Layouts. Die Automatisierbarkeit ist grundsätzlich hoch, erfordert aber Nachbearbeitung für Normdatenverknüpfungen.
+Übersicht und Zusammenfassung der Analysedokumente für das Hersch-Editionsprojekt.
 
 ---
 
-## 2. Transkriptionsregeln
+## Zusammenfassung
 
-### 2.1 Zeichenebene
+Das Projekt umfasst die digitale Edition von ca. 289 Texten der Philosophin Jeanne Hersch (1910–2000). Die Transkriptionsrichtlinien orientieren sich am DTA-Basisformat. Der LLM-gestützte Ansatz soll die bestehende Transkribus-Pipeline ergänzen oder teilweise ersetzen.
 
-| Regel | Beschreibung |
-|-------|--------------|
-| ß-Erhaltung | ß wird als ß transkribiert (U+00DF) |
-| Gedankenstriche | Normalisierung zu Halbgeviertstrich (–) |
-| Trennstriche | Normalisierung zu Viertelgeviertstrich (‐) |
-| Anführungszeichen | Doppelt: "..." / Einfach: '...' |
-| Apostrophe | Unicode U+2019 (') |
-| Leerzeichen vor Satzzeichen | Löschen vor : ; ? ! |
-| Aufzählungstrennungen | Normalisierung zu Schrägstrich (Zürich/Bern/Basel) |
+### Eckdaten
 
-### 2.2 Wortebene
+| Aspekt | Wert |
+|--------|------|
+| Korpusumfang | 289 Texte (ca. 7.200 Seiten) |
+| Sprachen | 66% Französisch, 30% Deutsch, 4% andere |
+| Bearbeitungsstand | 6% TEI-ausgezeichnet |
+| Engpass | TEI-Auszeichnung (manuell in Oxygen) |
 
-| Regel | Beschreibung |
-|-------|--------------|
-| Silbentrennung | Entfernen am Zeilenende, `<lb break="no"/>` setzen |
-| Druckfehlerkorrektur | `<choice><sic>...</sic><corr>...</corr></choice>` |
-| Sprachwechsel | `<foreign xml:lang="[ISO 639-3]">` |
+### Hauptherausforderungen
 
-### 2.3 Strukturebene
-
-| Regel | Beschreibung |
-|-------|--------------|
-| Absätze | `<p>` ohne Einrückungsauszeichnung |
-| Überschriften | `<head>` mit verschachtelten `<title>` |
-| Kapitelstruktur | `<div n="1">`, `<div n="2">`, etc. |
-| Listen | `<list><item>` mit manueller Nummerierung |
-| Tabellen | `<table><row><cell>` |
-| Vertikaler Abstand | `<space dim="vertical"/>` |
-
-### 2.4 Seitenstruktur
-
-| Regel | Beschreibung |
-|-------|--------------|
-| Seitenumbrüche | `<pb facs="#f[Nr]" n="[Seitenzahl]"/>` |
-| Zeilenumbrüche | `<lb facs="..." n="..."/>` |
-| Fehlende Seitenzahlen | In eckigen Klammern: n="[42]" |
-| Kolumnentitel | Nicht erfassen |
-
-### 2.5 Semantische Auszeichnung
-
-| Regel | Beschreibung |
-|-------|--------------|
-| Personen | `<persName ref="GND:...">` |
-| Organisationen | `<orgName ref="GND:...">` |
-| Werke | `<bibl corresp="GND:...">` |
-| Mehrfachnennungen | Jede Nennung wird referenziert |
-
-### 2.6 Spezielle Texttypen
-
-| Texttyp | Struktur |
-|---------|----------|
-| Reviews | `<div type="review">` mit `<bibl>` im `<head>` |
-| Interviews | `<div type="interview">` mit `<sp><speaker>` |
-| Gesprächsrunden | `<div type="conversation">` |
-| Lexikonartikel | `<div type="entry">` mit `<head type="lemma">` |
-
-### 2.7 Fussnoten
-
-| Regel | Beschreibung |
-|-------|--------------|
-| Positionierung | `<note place="foot" n="..." xml:id="fn[Seite]-[Nr]">` |
-| Mehrseitige Fussnoten | Verkettung via `@next` und `@prev` |
-
-### 2.8 Renderings
-
-| Rendering | TEI-Auszeichnung |
-|-----------|------------------|
-| Fett | `<hi rendition="#b">` |
-| Kursiv | `<hi rendition="#i">` |
-| Unterstrichen | `<hi rendition="#u">` |
-| Gesperrt | `<hi rendition="#g">` |
-| Hochgestellt | `<hi rendition="#sup">` |
-| Tiefgestellt | `<hi rendition="#sub">` |
+1. **GND-Verknüpfung** – Erfordert externe Lookups, kann nicht vollautomatisiert werden
+2. **Strukturerkennung** – Komplexe Layouts (Lexikon, Interview)
+3. **Mehrseitige Fußnoten** – Verkettung über Seitengrenzen
 
 ---
 
-## 3. TEI-Elementinventar
+## Detaildokumente
 
-| Element | Attribute | Verwendung |
-|---------|-----------|------------|
-| `<TEI>` | xmlns, type="naegeli" | Wurzelelement |
-| `<teiHeader>` | - | Metadaten (wird später per Skript befüllt) |
-| `<text>` | - | Textcontainer |
-| `<front>` | - | Redaktionelle Hinweise, Entstehungskontext |
-| `<body>` | - | Haupttext |
-| `<back>` | - | Übersetzungs-/Nachdruckhinweise |
-| `<div>` | n, type | Strukturierung (n=1,2,3 oder type=review/interview/entry) |
-| `<pb>` | facs, n | Seitenumbruch |
-| `<lb>` | facs, n, break | Zeilenumbruch |
-| `<head>` | type | Überschriften |
-| `<title>` | type (main/sub) | Titel |
-| `<p>` | facs | Absatz |
-| `<hi>` | rendition | Hervorhebungen |
-| `<persName>` | ref | Personennamen mit GND |
-| `<orgName>` | ref | Organisationen mit GND |
-| `<bibl>` | corresp | Werkverweise mit GND |
-| `<note>` | place, n, xml:id, next, prev | Fussnoten |
-| `<foreign>` | xml:lang | Sprachwechsel |
-| `<space>` | dim | Vertikaler Abstand |
-| `<list>`, `<item>` | - | Listen |
-| `<table>`, `<row>`, `<cell>` | - | Tabellen |
-| `<figure>`, `<graphic>` | xml:id, url | Abbildungen |
-| `<choice>`, `<sic>`, `<corr>` | - | Druckfehlerkorrektur |
-| `<sp>`, `<speaker>` | type | Redebeiträge (Interviews) |
+| Dokument | Fokus | Inhalt |
+|----------|-------|--------|
+| [Quellenanalyse.md](Quellenanalyse.md) | Input | PDF-Scans, Korpus, Sprachen, Layouts, Scan-Qualität |
+| [TEI-Mapping.md](TEI-Mapping.md) | Transformation | Regeln Text → TEI, Normalisierung, Elementinventar |
+| [GND-Strategie.md](GND-Strategie.md) | Semantik | NER, GND-Lookup, Disambiguierung |
+| [Pipeline.md](Pipeline.md) | Technik | OCR-Optionen, LLM-Auswahl, Architektur, Kosten |
 
 ---
 
-## 4. Dokumentklassifikation
+## Kritische Punkte
 
-| Datei | Größe (MB) | Sprache | Texttyp | Komplexität |
-|-------|------------|---------|---------|-------------|
-| 40.pdf | 39.0 | FR | Monografie | Hoch (umfangreich) |
-| 1520.pdf | 42.1 | ? | Monografie | Hoch (umfangreich) |
-| 890.pdf | 9.7 | DE | Vortrag mit Front | Mittel |
-| 3040.pdf | 5.2 | FR | Lexikonartikel | Mittel-Hoch |
-| 1060.pdf | 2.6 | ? | ? | Mittel |
-| 1330.pdf | 1.5 | ? | ? | Mittel |
-| 1440.pdf | 1.3 | ? | ? | Mittel |
-| 830.pdf | 1.1 | ? | ? | Mittel |
-| 2310.pdf | 0.8 | FR | Rezension | Niedrig |
-| 90.pdf | 0.7 | ? | ? | Niedrig |
-| 290.pdf | 0.6 | ? | ? | Niedrig |
-| 130.pdf | 0.5 | FR | Essay | Mittel |
-| 1410.pdf | 0.4 | ? | ? | Niedrig |
-| 1180.pdf | 0.3 | ? | ? | Niedrig |
-| 2530.pdf | 0.08 | ? | ? | Niedrig |
+### Hohe Risiken
 
-**Sprachen im Korpus:** Französisch (dominant), Deutsch, vermutlich weitere.
+| Risiko | Beschreibung | Detaildokument |
+|--------|--------------|----------------|
+| GND-Verknüpfung | Externe Lookups, Disambiguierung | [GND-Strategie.md](GND-Strategie.md) |
+| Mehrseitige Fußnoten | @next/@prev-Verkettung | [TEI-Mapping.md](TEI-Mapping.md) |
+| Komplexe Layouts | Lexikon, Interview, Tabellen | [Quellenanalyse.md](Quellenanalyse.md) |
 
----
+### Mittlere Risiken
 
-## 5. Kritische Punkte
+| Risiko | Beschreibung | Detaildokument |
+|--------|--------------|----------------|
+| Druckfehlererkennung | Sprachverständnis erforderlich | [TEI-Mapping.md](TEI-Mapping.md) |
+| Strukturhierarchie | div n="1/2/3" korrekt verschachteln | [TEI-Mapping.md](TEI-Mapping.md) |
+| Semantische Hervorhebungen | Nur relevante auszeichnen | [TEI-Mapping.md](TEI-Mapping.md) |
 
-### 5.1 Hohe Risiken
+### Niedrige Risiken
 
-1. **GND-Verknüpfung**: Jede Person, Organisation und jedes Werk muss mit GND-ID versehen werden. Dies erfordert externe Lookups und kann nicht rein automatisiert werden.
-
-2. **Mehrseitige Fussnoten**: Die Verkettung über `@next/@prev` erfordert Kontextwissen über Seitengrenzen hinweg.
-
-3. **Strukturerkennung bei komplexen Layouts**: Besonders bei Lexikonartikeln (verschachtelte `<div>`) und Interviews (`<sp>`-Struktur).
-
-### 5.2 Mittlere Risiken
-
-4. **Druckfehlererkennung**: Erfordert sprachliches Verständnis und Kontextwissen.
-
-5. **Vertikale Abstände**: `<space dim="vertical"/>` ist schwer automatisch zu erkennen.
-
-6. **Konsistente div-Nummerierung**: Die korrekte Verschachtelungstiefe (n="1", n="2", n="3") muss strukturell korrekt sein.
-
-7. **Unterscheidung semantischer vs. typografischer Hervorhebungen**: Nur semantisch relevante Hervorhebungen sollen übernommen werden.
-
-### 5.3 Niedrige Risiken
-
-8. **Zeichennormalisierung**: Gut automatisierbar mit Regex/Postprocessing.
-
-9. **Silbentrennung**: Muster gut erkennbar.
-
-10. **Grundstruktur (pb, lb, p)**: Standardaufgabe für Vision-LLMs.
+| Risiko | Beschreibung | Detaildokument |
+|--------|--------------|----------------|
+| Zeichennormalisierung | Regelbasiert automatisierbar | [TEI-Mapping.md](TEI-Mapping.md) |
+| Grundstruktur (pb, lb, p) | Standardaufgabe | [Pipeline.md](Pipeline.md) |
 
 ---
 
-## 6. Empfehlungen
+## Empfehlungen
 
-### 6.1 Pipeline-Architektur
+### Pipeline-Ansatz
 
 ```
-PDF → Vision-LLM (OCR + Basisstruktur) → TEI-Grundgerüst
-                                              ↓
-                                    Postprocessing (Normalisierung)
-                                              ↓
-                                    NER + GND-Lookup (Personen, Orte, Werke)
-                                              ↓
-                                    Validierung gegen Schema
-                                              ↓
-                                    Manuelle Nachbearbeitung (QS)
+PDF → OCR (Markdown) → LLM (TEI) → Validierung → [GND nachgelagert]
 ```
 
-### 6.2 Priorisierung für PoC
+Details: [Pipeline.md](Pipeline.md)
 
-**Phase 1 (einfach):**
-- Kleine PDFs (2310, 2530, 1180)
-- Einfache Texttypen (Essays, Rezensionen)
-- Fokus auf: OCR-Qualität, Grundstruktur (pb, lb, p, div), Renderings
+### PoC-Priorisierung
 
-**Phase 2 (mittel):**
-- Mittlere PDFs (130, 290, 90)
-- Fussnoten, Listen
-- Sprachwechsel
+| Phase | Dokumente | Fokus |
+|-------|-----------|-------|
+| 1 | 2310, 2530, 1180 | OCR-Qualität, Grundstruktur |
+| 2 | 130, 290, 90 | Fußnoten, Sprachwechsel |
+| 3 | 3040, 890 | Lexikon, Interview, GND |
 
-**Phase 3 (komplex):**
-- Lexikonartikel (3040)
-- Interviews/Gesprächsrunden (890)
-- GND-Integration
+### Mehrwert des LLM-Ansatzes
 
-### 6.3 Qualitätsmetriken
+- Schnellere Ersttranskription als Transkribus-Workflow
+- Konsistente Normalisierung
+- Skalierbarkeit (289 Texte parallel)
+- Dokumenttyp-Erkennung (Review, Interview, etc.)
 
-1. **Zeichengenauigkeit**: Vergleich mit Referenz-XMLs (Character Error Rate)
-2. **Strukturgenauigkeit**: Korrekte Element-Hierarchie (div-Verschachtelung)
-3. **Entitätenerkennung**: Precision/Recall für persName, orgName, bibl
-4. **GND-Korrektheit**: Anteil korrekter GND-Zuordnungen
-
-### 6.4 Mehrwert des LLM-Ansatzes
-
-- **Geschwindigkeit**: Schnellere Ersttranskription als manueller Transkribus-Workflow
-- **Konsistenz**: Einheitliche Anwendung der Normalisierungsregeln
-- **Skalierbarkeit**: 286 Texte parallel verarbeitbar
-- **Strukturerkennung**: LLMs können Texttypen (Review, Interview) erkennen
-
-### 6.5 Grenzen des LLM-Ansatzes
+### Grenzen
 
 - GND-Verknüpfung erfordert externes System
-- Komplexe Fussnoten-Verkettung braucht Speziallogik
+- Komplexe Fußnoten-Verkettung braucht Speziallogik
 - Finale QS bleibt manuell notwendig
+
+---
+
+## Offene Analysen
+
+*TODO: Noch zu erledigen*
+
+- [ ] PDF-Scans visuell analysieren (Layouts, Qualität)
+- [ ] GND-IDs aus Referenz-TEI extrahieren
+- [ ] Konkrete TEI-Beispiele für Randfälle dokumentieren
+- [ ] OCR-Qualität von DeepSeek-OCR-2 / Docling testen
 
 ---
 
