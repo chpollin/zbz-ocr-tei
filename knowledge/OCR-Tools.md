@@ -1,13 +1,24 @@
 # OCR-Tools
 
-Zwei Optionen für die OCR-Stufe der Pipeline.
+Pipeline: **Docling + DeepSeek-OCR-2** für Layout-Analyse und Texterkennung.
 
 ---
 
-## DeepSeek-OCR-2 (primär)
+## Architektur
+
+```
+PDF → Docling (Layout-Analyse) → DeepSeek-OCR-2 (Text) → Strukturiertes Markdown → TEI
+```
+
+**Docling** analysiert das Layout (Spalten, Tabellen, Regionen) und nutzt **DeepSeek-OCR-2** als OCR-Backend für die Texterkennung.
+
+---
+
+## DeepSeek-OCR-2
 
 **Modell:** 3B Parameter Vision-Language-Modell
-**Status:** Getestet, funktioniert
+**Rolle:** OCR-Engine (Texterkennung)
+**Status:** Validiert, 94.4% Genauigkeit bei Typ A
 
 ### Systemanforderungen
 
@@ -17,92 +28,100 @@ Zwei Optionen für die OCR-Stufe der Pipeline.
 | CUDA | 11.8+ | 12.x |
 | Python | 3.11+ | 3.12 |
 
-### Installation (Windows)
-
-```bash
-# Projekt venv
-python -m venv .venv
-.venv\Scripts\activate
-
-# PyTorch mit CUDA
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
-
-# Abhängigkeiten
-pip install transformers accelerate pypdfium2
-```
-
-### Verwendung
-
-```python
-from transformers import AutoModel, AutoTokenizer
-import torch
-
-model = AutoModel.from_pretrained('deepseek-ai/DeepSeek-OCR-2', trust_remote_code=True)
-model = model.eval().cuda().to(torch.bfloat16)
-tokenizer = AutoTokenizer.from_pretrained('deepseek-ai/DeepSeek-OCR-2', trust_remote_code=True)
-
-# OCR
-model.infer(tokenizer,
-    prompt="<image>\n<|grounding|>Convert the document to markdown.",
-    image_file="seite.png",
-    output_path="./output",
-    crop_mode=True)
-```
-
 ### Performance
 
 | Metrik | Wert |
 |--------|------|
 | Geschwindigkeit | ~1.6 s/Seite |
-| Genauigkeit | 95-97% CER |
+| Genauigkeit | 94-97% CER |
 | VRAM | 5-8 GB |
 
 ---
 
-## Docling (Alternative)
+## Docling
 
 **Projekt:** IBM Research, Linux Foundation
-**Status:** Noch nicht getestet
+**Rolle:** Layout-Analyse, Strukturerkennung
+**Status:** Windows-Problem (Symlinks), Cloud empfohlen
 
 ### Vorteile
 
-- Modulare Pipeline (Layout → Tabellen → OCR)
-- Bessere Strukturerkennung
-- Wählbare OCR-Engine (Tesseract, EasyOCR, RapidOCR)
+- Layout-Segmentierung (Spalten, Regionen)
+- Tabellenerkennung
+- Strukturierter Markdown-Export
+- **DeepSeek-OCR als Backend möglich** via VlmPipeline
 
 ### Installation
 
 ```bash
-pip install docling
-pip install "docling[easyocr]"  # Mit OCR
+pip install docling "docling[vlm]"
 ```
 
-### Verwendung
+### Docling + DeepSeek Integration
+
+Docling kann DeepSeek-OCR-2 über die VlmPipeline nutzen:
 
 ```python
 from docling.document_converter import DocumentConverter
+from docling.pipeline.vlm_pipeline import VlmPipeline
+
+# DeepSeek-OCR via vLLM Server (OpenAI-kompatibel)
+# Umgebungsvariablen setzen:
+# OCR_MODEL="deepseek-ai/DeepSeek-OCR-2"
+# OCR_BASE_URL="http://localhost:8000/v1"
 
 converter = DocumentConverter()
 result = converter.convert("dokument.pdf")
-print(result.document.export_to_markdown())
+markdown = result.document.export_to_markdown()
 ```
 
 ---
 
 ## Vergleich
 
-| Aspekt | DeepSeek-OCR-2 | Docling |
-|--------|----------------|---------|
-| Architektur | Monolithisches VLM | Modulare Pipeline |
-| OCR-Qualität | Sehr gut | Gut (Engine-abhängig) |
-| Layout-Analyse | Gut | Sehr gut |
-| Tabellen | Gut | Exzellent |
-| Spalten-Erkennung | **Problematisch** | Besser |
-| Setup | Komplexer | Einfacher |
+| Aspekt | DeepSeek-OCR-2 | Docling | Kombiniert |
+|--------|----------------|---------|------------|
+| OCR-Qualität | Sehr gut | Engine-abhängig | Sehr gut |
+| Layout-Analyse | Gut | Exzellent | Exzellent |
+| Spalten | Problematisch | Korrekt | Korrekt |
+| Tabellen | Gut | Exzellent | Exzellent |
+| Strukturierter Output | Markdown | Markdown/JSON | Markdown |
 
-**Empfehlung:**
-- **DeepSeek** für einspaltige Fließtexte
-- **Docling** für zweispaltige Layouts und Tabellen
+**Strategie:**
+- Docling für Layout-Analyse und Spalten-Handling
+- DeepSeek-OCR-2 als OCR-Backend für Texterkennung
+- Kombiniert: Beste Qualität für alle Dokumenttypen
+
+---
+
+## Pipeline-Konfiguration
+
+### Dokumenttypen
+
+| Typ | Beschreibung | Pipeline |
+|-----|--------------|----------|
+| A | Einspaltig | DeepSeek direkt oder via Docling |
+| B | Zweispaltig | **Docling + DeepSeek** (zwingend) |
+| C | Monografie | Docling + DeepSeek + Chunking |
+| D | Spezial | Fallweise |
+
+### Output-Format
+
+Docling exportiert strukturiertes Markdown:
+
+```markdown
+# Überschrift
+
+Absatz 1 mit Text...
+
+Absatz 2 mit Text...
+
+| Spalte 1 | Spalte 2 |
+|----------|----------|
+| Daten    | Daten    |
+```
+
+Dieses Markdown wird dann regelbasiert zu TEI transformiert.
 
 ---
 
@@ -122,13 +141,24 @@ print(torch.cuda.get_device_name(0))
 - Bilder einzeln verarbeiten
 - Andere GPU-Prozesse beenden
 
+### Windows Symlink-Fehler (Docling)
+
+```
+WinError 1314: A required privilege is not held by the client
+```
+
+**Workarounds:**
+1. Windows Developer Mode aktivieren (Einstellungen → Entwickler)
+2. Cloud-VM mit Linux verwenden (empfohlen für Produktion)
+
 ---
 
 ## Quellen
 
-- [DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR-2)
+- [DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR)
 - [Docling](https://github.com/docling-project/docling)
-- [Docling GPU Guide](https://docling-project.github.io/docling/usage/gpu/)
+- [Docling + DeepSeek Discussion](https://github.com/docling-project/docling/discussions/2514)
+- [Docling VLM Pipeline](https://docling-project.github.io/docling/)
 
 ---
 

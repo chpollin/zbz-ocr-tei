@@ -14,6 +14,7 @@ Dokumentation für das ZBZ-OCR-TEI Projekt (Jeanne Hersch Edition).
 | [Quellenanalyse.md](Quellenanalyse.md) | Korpus, Sprachen, Pilot-Dateien | ...du das Material kennenlernen willst |
 | [GND-Strategie.md](GND-Strategie.md) | Entitätsverknüpfung, NER | ...du GND-Lookup verstehen willst |
 | [Workflow Diagramm Hersch.md](Workflow%20Diagramm%20Hersch.md) | ZBZ-Editionsworkflow | ...du den Kundenkontext brauchst |
+| [Projektplan.md](Projektplan.md) | Meilensteine, Aufwand, Risiken | ...du planen willst |
 
 ## Schnelleinstieg
 
@@ -33,6 +34,7 @@ knowledge/
 ├── Testplan-OCR.md     # Testplan und Ergebnisse
 ├── Quellenanalyse.md   # Materialanalyse
 ├── GND-Strategie.md    # Entitätsverknüpfung
+├── Projektplan.md      # Meilensteine & Aufwand
 └── Workflow Diagramm Hersch.md  # ZBZ-Kontext
 ```
 

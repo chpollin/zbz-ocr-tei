@@ -13,7 +13,7 @@
 |-------|-------|
 | Aktueller Stand | `knowledge/journal.md` |
 | Dokumenttypen & Testplan | `knowledge/Testplan-OCR.md` |
-| OCR-Fehler & Post-Processing | `knowledge/Pipeline-Design.md` |
+| OCR-Fehler & Post-Processing | `knowledge/Pipeline.md` |
 | TEI-Regeln | `knowledge/TEI-Mapping.md` |
 | Quellen & Korpus | `knowledge/Quellenanalyse.md` |
 

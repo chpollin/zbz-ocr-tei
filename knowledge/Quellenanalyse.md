@@ -70,31 +70,34 @@ Der Engpass liegt bei der TEI-Auszeichnung (nur 6% abgeschlossen). Hier kann LLM
 
 Die folgenden PDFs stehen für den PoC zur Verfügung:
 
-| Datei | Größe | Sprache | Texttyp | Komplexität |
-|-------|-------|---------|---------|-------------|
-| 40.pdf | 39.0 MB | FR | Monografie | Hoch |
-| 1520.pdf | 42.1 MB | ? | Monografie | Hoch |
-| 890.pdf | 9.7 MB | DE | Vortrag mit Front | Mittel |
-| 3040.pdf | 5.2 MB | FR | Lexikonartikel | Mittel-Hoch |
-| 1060.pdf | 2.6 MB | ? | ? | Mittel |
-| 1330.pdf | 1.5 MB | ? | ? | Mittel |
-| 1440.pdf | 1.3 MB | ? | ? | Mittel |
-| 830.pdf | 1.1 MB | ? | ? | Mittel |
-| 2310.pdf | 0.8 MB | FR | Rezension | Niedrig |
-| 90.pdf | 0.7 MB | ? | ? | Niedrig |
-| 290.pdf | 0.6 MB | ? | ? | Niedrig |
-| 130.pdf | 0.5 MB | FR | Essay | Mittel |
-| 1410.pdf | 0.4 MB | ? | ? | Niedrig |
-| 1180.pdf | 0.3 MB | ? | ? | Niedrig |
-| 2530.pdf | 0.08 MB | ? | ? | Niedrig |
+| Datei | Seiten | Sprache | Typ | Texttyp | Besonderheit |
+|-------|--------|---------|-----|---------|--------------|
+| 2310.pdf | 3 | FR | A | Rezension | JSTOR-Metadaten |
+| 1180.pdf | 8 | DE/FR | A | Jahresbericht | Titelblatt |
+| 130.pdf | 18 | FR | A | Zeitschrift | Deckblatt |
+| 290.pdf | 5 | FR | A | Comptes Rendus | Essay |
+| 1410.pdf | 6 | DE/FR | A | Beitrag | Zweisprachig |
+| 1060.pdf | 8 | DE | A | Broschüre | Rede |
+| 2530.pdf | 2 | FR | B | Artikel | Zweispaltig |
+| 890.pdf | 7 | DE | B | Lehrerzeitung | Kleine Schrift |
+| 3040.pdf | 9 | FR | B | Lexikon | Fußnoten |
+| 40.pdf | 156 | FR | C | Roman | Handschrift-Notizen |
+| 1520.pdf | 142 | ? | C | Monografie | Lang |
+| 90.pdf | 6 | DE | D | Hist. Druck | 1944 |
+| 830.pdf | 2 | FR | D | Bildband | Wenig Text |
+| 1440.pdf | 5 | DE | D | Interview | Dialog-Format |
+| 1330.pdf | 6 | FR | D | Sammelband | Vorwort |
 
 ### Testphasen
 
-Siehe [Testplan-OCR.md](Testplan-OCR.md) für aktuelle Phasen:
-- Phase 1: Typ A (einspaltig) - **abgeschlossen**
-- Phase 2: Typ B (zweispaltig) - ausstehend
-- Phase 3: Typ D (Spezial) - ausstehend
-- Phase 4: Typ C (Monografien) - ausstehend
+Siehe [Testplan-OCR.md](Testplan-OCR.md) für Details und Ergebnisse.
+
+| Phase | Typ | Status | Ergebnis |
+|-------|-----|--------|----------|
+| 1 | A (einspaltig) | Abgeschlossen | 94.4% Genauigkeit |
+| 2 | B (zweispaltig) | Blockiert | Spalten-Problem |
+| 3 | D (Spezial) | Ausstehend | GPU nötig |
+| 4 | C (Monografien) | Ausstehend | GPU nötig |
 
 ---
 
@@ -157,8 +160,8 @@ Basierend auf Layout-Sample-Extraktion (`output/layout_samples/`):
 
 ## Offene Fragen
 
-- Welche PDFs enthalten Tabellen? (3040 hat Lexikon-Struktur)
-- Handschriftliche Annotationen in 40.pdf (Monografie)?
+- Handschriftliche Annotationen in 40.pdf – wie behandeln?
+- 1520.pdf Sprache unbekannt – bei nächstem Test prüfen
 
 ---
 

@@ -1,0 +1,26 @@
+# ZBZ-OCR-TEI Pipeline
+# Python 3.11+
+
+# OCR (GPU erforderlich)
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.35.0
+accelerate>=0.24.0
+
+# PDF-Verarbeitung
+pypdfium2>=4.0.0
+Pillow>=10.0.0
+
+# TEI/XML
+lxml>=4.9.0
+
+# Evaluation
+jiwer>=3.0.0          # CER/WER Berechnung
+rapidfuzz>=3.0.0      # String-Matching
+
+# Optional: Docling (Alternative OCR)
+# pip install docling "docling[easyocr]"
+# Hinweis: Erfordert Windows Developer Mode (Symlinks)
+
+# Entwicklung
+pytest>=7.0.0

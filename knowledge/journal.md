@@ -11,33 +11,37 @@
 
 | Entscheidung | Begründung |
 |--------------|------------|
-| DeepSeek-OCR-2 als primäres OCR-Tool | 3B VLM, 95%+ Genauigkeit bei einspaltigen Docs |
-| Docling als Backup für zweispaltige Layouts | Bessere Layout-Segmentierung |
-| 4 Dokumenttypen (A-D) klassifiziert | Unterschiedliche OCR-Strategien nötig |
+| Docling + DeepSeek-OCR-2 kombiniert | Layout-Analyse + beste OCR-Qualität |
+| Deterministisch → LLM nur für Komplexes | Reproduzierbar, kostengünstig, debugbar |
+| 4 Dokumenttypen (A-D) klassifiziert | Unterschiedliche Pipeline-Strategien |
 | CER/WER als Qualitätsmetriken | Industriestandard, vergleichbar |
-| Text-Alignment vor Evaluation | OCR erfasst oft nur Teilseiten |
+| TEI-Transformation regelbasiert | Markdown → TEI ohne LLM für Grundstruktur |
 
 ### Ergebnisse
 
-**Phase 1 (einspaltig):** Durchschnitt 94.4% Genauigkeit - siehe [Testplan-OCR.md](Testplan-OCR.md)
+| Bereich | Ergebnis | Erkenntnis |
+|---------|----------|------------|
+| OCR Phase 1 | 94.4% Genauigkeit | DeepSeek funktioniert gut für einspaltige Texte |
+| Spalten-Problem | Lösung: Docling | Docling + DeepSeek kombiniert für Typ B |
+| GND-Extraktion | 75 Entitäten | Karl Jaspers dominiert (90 Nennungen) |
+| TEI-Templates | 5 erstellt | Dokumenttyp bestimmt Template-Wahl |
+| TEI-Transformation | Prototyp fertig | Regelbasiert Markdown → TEI |
+| Bildextraktion | 383 Seiten | Basis für QS-Viewer und digitale Edition |
 
-**Kritisches Problem:** Zweispaltige Layouts (Typ B) haben falsche Lesereihenfolge
+### Gelernt
 
-### Durchgeführte Arbeiten
-
-1. **Materialanalyse:** 15 PDFs, 19 TEI-Referenzen analysiert
-2. **Wissensstruktur:** 7 Detaildokumente erstellt (siehe [README.md](README.md))
-3. **OCR-Pipeline:** DeepSeek-OCR-2 installiert und getestet
-4. **Evaluation:** CER/WER-Skript mit HTML-Report erstellt
-5. **Post-Processing:** Normalisierung, Dehyphenation implementiert
-6. **GND-Extraktion:** 75 Entitäten aus 18 Referenz-TEIs extrahiert (41 Personen, 10 Orgs, 24 Werke)
-7. **TEI-Templates:** 5 Templates erstellt (base, essay, review, interview, lexicon)
+1. **OCR-Qualität ist dokumenttyp-abhängig** - Einspaltig funktioniert, zweispaltig nicht
+2. **Windows-Limitierung** - Docling benötigt Symlinks (Developer Mode oder Cloud)
+3. **GPU-Last** - DeepSeek friert PC ein, Tests nur isoliert möglich
+4. **Single Source of Truth** - Offene Punkte nur an einem Ort führen
 
 ### Offene Punkte
 
-- [ ] Spalten-Problem lösen (Prompt-Varianten oder Docling)
-- [ ] Phase 2-4 Tests durchführen (GPU erforderlich)
-- [ ] TEI-Transformations-Pipeline implementieren
+- [x] ~~Bilder extrahieren~~ → 383 Seiten aus 15 PDFs
+- [x] ~~TEI-Transformation Prototyp~~ → `scripts/transform_to_tei.py`
+- [x] ~~OCR-Pipeline vereinheitlicht~~ → `scripts/ocr_pipeline.py`
+- [ ] Docling auf Windows testen (Developer Mode aktivieren)
+- [ ] Phase 2-4 OCR-Tests durchführen (GPU erforderlich)
 - [ ] GND-Lookup API-Integration (lobid.org)
 
 ### Technische Hindernisse (29.01.2026)

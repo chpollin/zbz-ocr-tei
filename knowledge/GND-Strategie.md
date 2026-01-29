@@ -103,20 +103,32 @@ Erwartete häufige Entitäten (basierend auf Werk und Biografie):
 
 | Quelle | Beschreibung | Status |
 |--------|--------------|--------|
-| **TEI-Referenzdateien** | 18 XMLs mit GND-Verknüpfungen | *TODO: Extrahieren* |
+| **TEI-Referenzdateien** | 18 XMLs mit GND-Verknüpfungen | ✓ Extrahiert |
 | **Masterfile.xlsx** | Bibliografische Metadaten | Keine Entitätsliste |
 | **Alma/Swisscovery** | Nachlass-Katalog | Möglicherweise verknüpfte Normdaten |
 
-### Extraktion aus Referenz-TEI
+### Extrahierte GND-Entitäten (29.01.2026)
 
-*TODO: Script zur Extraktion aller GND-IDs aus den Referenzdateien*
+**Skript:** `scripts/extract_gnd.py`
+**Ausgabe:** `output/gnd_analysis/`
 
-Erwartete Ausgabe:
-- Liste aller `<persName ref="GND:...">` mit Textinhalt
-- Liste aller `<orgName ref="GND:...">` mit Textinhalt
-- Liste aller `<bibl corresp="GND:...">` mit Textinhalt
+| Typ | Anzahl | Häufigste |
+|-----|--------|-----------|
+| Personen | 41 | Karl Jaspers (90x), GND:118557106 |
+| Organisationen | 10 | O.L.P. (4x), UNESCO (2x) |
+| Werke | 24 | Philosophie (3x), Die geistige Situation der Zeit (3x) |
 
-Diese Liste kann als **Seed** für den GND-Lookup dienen.
+**Top-5 Personen:**
+
+| GND-ID | Name | Vorkommen |
+|--------|------|-----------|
+| 118557106 | Karl Jaspers | 90 |
+| 118815679 | Jeanne Hersch | 24 |
+| 1145431410 | (Interviewer) | 23 |
+| 118509578 | Bergson | 8 |
+| 118562002 | Kierkegaard | 7 |
+
+Diese Liste dient als **Seed** für den GND-Lookup.
 
 ---
 
@@ -179,7 +191,7 @@ Für jede Entität:
 
 ## Offene Fragen
 
-- Wie viele einzigartige GND-IDs sind bereits in den Referenz-TEIs?
+- ~~Wie viele einzigartige GND-IDs sind bereits in den Referenz-TEIs?~~ → 75 Entitäten
 - Welcher Anteil der Entitäten hat überhaupt einen GND-Eintrag?
 - Soll im PoC GND-Verknüpfung getestet werden oder erst später?
 - Wie umgehen mit Entitäten ohne GND-Eintrag? (Lokale ID? Freilassen?)
@@ -188,9 +200,9 @@ Für jede Entität:
 
 ## Nächste Schritte
 
-1. [ ] GND-IDs aus Referenz-TEI extrahieren
-2. [ ] Häufigkeitsanalyse der Entitäten
-3. [ ] GND-API-Anbindung prototypisch testen
+1. [x] GND-IDs aus Referenz-TEI extrahieren
+2. [x] Häufigkeitsanalyse der Entitäten
+3. [ ] GND-API-Anbindung prototypisch testen (lobid.org)
 4. [ ] Entscheidung: Integriert vs. nachgelagert für PoC
 
 ---

@@ -3,28 +3,34 @@
 ## Architektur
 
 ```
-PDF → OCR (Markdown) → Post-Processing → TEI-XML → Validierung → [GND]
-      └─ output/ocr_results/  └─ output/clean/    └─ output/tei/
+PDF → Docling+DeepSeek (Markdown) → Post-Processing → TEI-XML → Validierung → [GND]
+      └─ output/ocr_results/       └─ output/clean/   └─ output/tei/
 ```
 
 ## Stufe 1: OCR
 
-### DeepSeek-OCR-2 (primär)
+### Docling + DeepSeek-OCR-2 (kombiniert)
+
+```
+PDF → Docling (Layout-Analyse) → DeepSeek-OCR-2 (Text) → Strukturiertes Markdown
+```
 
 | Aspekt | Details |
 |--------|---------|
-| Modell | `deepseek-ai/DeepSeek-OCR-2` |
-| Prompt | `<image>\n<|grounding|>Convert the document to markdown.` |
-| Hardware | GPU mit 16GB VRAM (RTX 4080) |
-| Setup | Siehe `scripts/test_deepseek_ocr.py` |
+| Layout | Docling (Spalten, Tabellen, Regionen) |
+| OCR | DeepSeek-OCR-2 (3B VLM) |
+| Output | Strukturiertes Markdown |
+| Hardware | GPU mit 8+ GB VRAM |
+| Skript | `scripts/ocr_pipeline.py` |
 
-### Docling (Alternative)
+### Engine-Auswahl nach Dokumenttyp
 
-| Aspekt | Details |
-|--------|---------|
-| Repo | `DS4SD/docling` (IBM, 37k Stars) |
-| Vorteil | Modulare Pipeline, Layout-Analyse |
-| Nachteil | Noch nicht getestet |
+| Typ | Beschreibung | Engine |
+|-----|--------------|--------|
+| A | Einspaltig | DeepSeek direkt |
+| B | Zweispaltig | **Docling + DeepSeek** |
+| C | Monografie | Docling + DeepSeek + Chunking |
+| D | Spezial | Fallweise |
 
 ### OCR-Qualität (gemessen)
 
@@ -33,9 +39,9 @@ PDF → OCR (Markdown) → Post-Processing → TEI-XML → Validierung → [GND]
 | 2310 | Einspaltig | 2.67% | 97.33% |
 | 1180 | Einspaltig | 4.89% | 95.11% |
 | 290 | Einspaltig | 9.21% | 90.79% |
-| 2530 | Zweispaltig | - | LAYOUT-PROBLEM |
+| 2530 | Zweispaltig | - | Docling testen |
 
-**Bekannte Fehler:**
+**Bekannte OCR-Fehler:**
 - Anführungszeichen: `„"` statt `""`
 - Einzelne Ziffern: `822` → `82`
 - Lateinische Wendungen: `nunc` → `num`
@@ -71,26 +77,28 @@ NORMALIZE_MAP = {
 
 ## Stufe 3: TEI-Transformation
 
-**Status:** Noch nicht implementiert.
+**Skript:** `scripts/transform_to_tei.py`
+**Ansatz:** Regelbasiert (deterministisch), LLM nur für komplexe Strukturen
 
-### Aufgaben
+### Regelbasierte Transformation
 
-1. **Strukturerkennung:** Dokumenttyp (Essay, Rezension, Interview, Lexikon)
-2. **Element-Mapping:** Markdown → TEI (siehe [TEI-Mapping.md](TEI-Mapping.md))
-3. **Metadaten:** Seitenzahlen `<pb>`, Header
+| Input (Markdown) | Output (TEI) |
+|------------------|--------------|
+| Leere Zeile | `</p><p>` (Absatztrennung) |
+| `# Überschrift` | `<head>` |
+| Erster Absatz (Rezension) | `<head><bibl>` |
+| Bekannte Namen | `<persName ref="GND:...">` |
+| `*kursiv*` | `<hi rendition="#i">` |
 
-### Modellauswahl (für LLM-Ansatz)
+### LLM nur für
 
-| Modell | Input | Output | Kosten/Dok |
-|--------|-------|--------|------------|
-| Claude Haiku 4.5 | 0,80 USD/1M | 4,00 USD/1M | ~0,03 USD |
-| Gemini 3 Flash | 0,50 USD/1M | 3,00 USD/1M | ~0,02 USD |
-
-**Geschätzte Gesamtkosten (289 Dokumente):** 6-9 USD
+- Komplexe Strukturerkennung (Interview-Dialog)
+- NER (Named Entity Recognition)
+- GND-Disambiguierung
 
 ---
 
-## Validierung
+## Stufe 4: Validierung
 
 | Prüfung | Tool |
 |---------|------|
@@ -104,11 +112,12 @@ NORMALIZE_MAP = {
 ## CLI-Befehle
 
 ```bash
-# OCR (GPU erforderlich)
-python scripts/test_all_pdfs.py --phase phase1
+# OCR Pipeline (GPU erforderlich)
+python scripts/ocr_pipeline.py --input data/scans/2310.pdf
+python scripts/ocr_pipeline.py --all --engine auto
 
-# Post-Processing
-python -c "from scripts.postprocess import process_directory; ..."
+# TEI Transformation
+python scripts/transform_to_tei.py --doc 2310 --type review --add-gnd
 
 # Evaluation
 python scripts/evaluate_ocr.py --all
@@ -120,19 +129,16 @@ python scripts/evaluate_ocr.py --all
 
 | Risiko | Schwere | Mitigation |
 |--------|---------|------------|
-| Spalten-Reihenfolge (Typ B) | Hoch | Docling testen, Prompt-Tuning |
-| GND-Verknüpfung | Hoch | Nachgelagert, externe API |
-| Mehrseitige Fußnoten | Mittel | Speziallogik |
-| Historische Drucke | Mittel | Beide OCR-Engines testen |
+| Spalten-Reihenfolge (Typ B) | Hoch | Docling für Layout |
+| Windows Symlink (Docling) | Mittel | Cloud-VM oder Developer Mode |
+| GND-Verknüpfung | Hoch | Nachgelagert, lobid.org API |
+| Historische Drucke | Mittel | Beide Engines testen |
 
 ---
 
 ## Offene Punkte
 
-- [ ] Docling als Alternative evaluieren
-- [ ] Spalten-Problem lösen
-- [ ] TEI-Transformation implementieren
-- [ ] GND-Lookup integrieren
+→ Siehe [journal.md](journal.md#offene-punkte)
 
 ---
 

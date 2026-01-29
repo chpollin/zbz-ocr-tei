@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Viewer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #16213e;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid #0f3460;
+        }
+        header h1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            flex-grow: 1;
+        }
+        header a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-controls button {
+            background: #0f3460;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .nav-controls button:hover { background: #e94560; }
+        .nav-controls button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .nav-controls span {
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .panel-header {
+            background: #16213e;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            color: #aaa;
+            border-bottom: 1px solid #0f3460;
+        }
+        .panel-content {
+            flex: 1;
+            overflow: auto;
+            padding: 1rem;
+        }
+
+        .divider {
+            width: 4px;
+            background: #0f3460;
+            cursor: col-resize;
+        }
+        .divider:hover { background: #e94560; }
+
+        /* Bild-Panel */
+        .image-panel .panel-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: #111;
+        }
+        .image-panel img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Text-Panel */
+        .text-panel .panel-content {
+            background: #1e1e2e;
+        }
+        .text-panel pre {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .text-panel .no-ocr {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Zoom Controls */
+        .zoom-controls {
+            display: flex;
+            gap: 0.25rem;
+        }
+        .zoom-controls button {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #16213e;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        /* Keyboard shortcuts hint */
+        .shortcuts {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(22, 33, 62, 0.9);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .shortcuts kbd {
+            background: #0f3460;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">← Zurück</a>
+        <h1 id="doc-title">Dokument laden...</h1>
+        <div class="nav-controls">
+            <button id="prev-btn" disabled>← Zurück</button>
+            <span id="page-info">-/-</span>
+            <button id="next-btn" disabled>Weiter →</button>
+        </div>
+        <div class="zoom-controls">
+            <button id="zoom-out">−</button>
+            <button id="zoom-reset">100%</button>
+            <button id="zoom-in">+</button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="panel image-panel">
+            <div class="panel-header">Faksimile (Scan)</div>
+            <div class="panel-content">
+                <img id="page-image" src="" alt="Seitenbild">
+            </div>
+        </div>
+
+        <div class="divider" id="divider"></div>
+
+        <div class="panel text-panel">
+            <div class="panel-header">OCR-Transkription</div>
+            <div class="panel-content">
+                <pre id="ocr-text"></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="shortcuts">
+        <kbd>←</kbd> <kbd>→</kbd> Navigation &nbsp;|&nbsp;
+        <kbd>+</kbd> <kbd>−</kbd> Zoom
+    </div>
+
+    <div id="loading">Lade...</div>
+
+    <script>
+        // State
+        let currentDoc = null;
+        let currentPage = 1;
+        let totalPages = 0;
+        let zoomLevel = 100;
+        let manifest = [];
+
+        // DOM
+        const docTitle = document.getElementById('doc-title');
+        const pageInfo = document.getElementById('page-info');
+        const pageImage = document.getElementById('page-image');
+        const ocrText = document.getElementById('ocr-text');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const loading = document.getElementById('loading');
+
+        // URL-Parameter lesen
+        const params = new URLSearchParams(window.location.search);
+        const docId = params.get('doc');
+
+        // Manifest laden
+        async function loadManifest() {
+            try {
+                const response = await fetch('images/manifest.json');
+                manifest = await response.json();
+                return manifest;
+            } catch (e) {
+                console.error('Manifest nicht gefunden:', e);
+                return [];
+            }
+        }
+
+        // OCR-Text laden
+        async function loadOcrText(docId, page) {
+            const filename = `${docId}_p${page}.md`;
+            // Versuche verschiedene Pfade
+            const paths = [
+                `../output/ocr_results/${filename}`,
+                `../output/clean/${filename}`
+            ];
+
+            for (const path of paths) {
+                try {
+                    const response = await fetch(path);
+                    if (response.ok) {
+                        return await response.text();
+                    }
+                } catch (e) {
+                    // Ignorieren, nächsten Pfad versuchen
+                }
+            }
+            return null;
+        }
+
+        // Seite anzeigen
+        async function showPage(page) {
+            if (page < 1 || page > totalPages) return;
+
+            currentPage = page;
+
+            // Bild laden
+            const paddedPage = String(page).padStart(3, '0');
+            pageImage.src = `images/${currentDoc}/${currentDoc}_p${paddedPage}.png`;
+            pageImage.style.width = `${zoomLevel}%`;
+
+            // OCR-Text laden
+            const text = await loadOcrText(currentDoc, page);
+            if (text) {
+                ocrText.textContent = text;
+                ocrText.classList.remove('no-ocr');
+            } else {
+                ocrText.innerHTML = '<span class="no-ocr">Keine OCR-Transkription für diese Seite vorhanden.\n\nFühre aus:\npython scripts/test_all_pdfs.py</span>';
+            }
+
+            // UI aktualisieren
+            pageInfo.textContent = `${page} / ${totalPages}`;
+            prevBtn.disabled = page <= 1;
+            nextBtn.disabled = page >= totalPages;
+
+            // URL aktualisieren (ohne Reload)
+            const newUrl = `?doc=${currentDoc}&page=${page}`;
+            history.replaceState(null, '', newUrl);
+        }
+
+        // Initialisierung
+        async function init() {
+            if (!docId) {
+                alert('Kein Dokument angegeben. Zurück zur Übersicht.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            await loadManifest();
+
+            const docData = manifest.find(d => d.doc_id === docId);
+            if (!docData) {
+                alert(`Dokument ${docId} nicht gefunden. Bitte erst extract_pages.py ausführen.`);
+                window.location.href = 'index.html';
+                return;
+            }
+
+            currentDoc = docId;
+            totalPages = docData.page_count;
+            docTitle.textContent = `${docId}.pdf`;
+
+            // Startseite aus URL oder 1
+            const startPage = parseInt(params.get('page')) || 1;
+
+            loading.style.display = 'none';
+            showPage(startPage);
+        }
+
+        // Event Listeners
+        prevBtn.addEventListener('click', () => showPage(currentPage - 1));
+        nextBtn.addEventListener('click', () => showPage(currentPage + 1));
+
+        document.getElementById('zoom-in').addEventListener('click', () => {
+            zoomLevel = Math.min(200, zoomLevel + 25);
+            pageImage.style.width = `${zoomLevel}%`;
+            document.getElementById('zoom-reset').textContent = `${zoomLevel}%`;
+        });
+
+        document.getElementById('zoom-out').addEventListener('click', () => {
+            zoomLevel = Math.max(50, zoomLevel - 25);
+            pageImage.style.width = `${zoomLevel}%`;
+            document.getElementById('zoom-reset').textContent = `${zoomLevel}%`;
+        });
+
+        document.getElementById('zoom-reset').addEventListener('click', () => {
+            zoomLevel = 100;
+            pageImage.style.width = '100%';
+            document.getElementById('zoom-reset').textContent = '100%';
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') showPage(currentPage - 1);
+            if (e.key === 'ArrowRight') showPage(currentPage + 1);
+            if (e.key === '+' || e.key === '=') document.getElementById('zoom-in').click();
+            if (e.key === '-') document.getElementById('zoom-out').click();
+        });
+
+        // Resizable Divider
+        const divider = document.getElementById('divider');
+        let isResizing = false;
+
+        divider.addEventListener('mousedown', () => { isResizing = true; });
+        document.addEventListener('mousemove', (e) => {
+            if (!isResizing) return;
+            const container = document.querySelector('.main-container');
+            const percentage = (e.clientX / container.offsetWidth) * 100;
+            const panels = document.querySelectorAll('.panel');
+            panels[0].style.flex = `0 0 ${percentage}%`;
+            panels[1].style.flex = `0 0 ${100 - percentage}%`;
+        });
+        document.addEventListener('mouseup', () => { isResizing = false; });
+
+        // Start
+        init();
+    </script>
+</body>
+</html>

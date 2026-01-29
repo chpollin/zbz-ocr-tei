@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZBZ OCR Viewer - Jeanne Hersch Edition</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+        }
+        header h1 { font-size: 1.5rem; font-weight: 500; }
+        header p { opacity: 0.8; font-size: 0.9rem; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .doc-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s;
+        }
+        .doc-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .doc-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-card .meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .doc-card .meta span {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+        .doc-card a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .doc-card a:hover { text-decoration: underline; }
+
+        .status-ok { background: #d4edda !important; color: #155724 !important; }
+        .status-pending { background: #fff3cd !important; color: #856404 !important; }
+        .status-error { background: #f8d7da !important; color: #721c24 !important; }
+
+        .legend {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+        }
+        .legend span {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-right: 1rem;
+            font-size: 0.85rem;
+        }
+
+        #loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ZBZ OCR Viewer</h1>
+        <p>Jeanne Hersch Edition - Qualitätskontrolle</p>
+    </header>
+
+    <div class="container">
+        <div class="legend">
+            <strong>Status:</strong>
+            <span class="status-ok">OCR vorhanden</span>
+            <span class="status-pending">Ausstehend</span>
+            <span class="status-error">Problem</span>
+        </div>
+
+        <div id="loading">Lade Dokumentliste...</div>
+        <div id="doc-list" class="doc-grid"></div>
+    </div>
+
+    <script>
+        // Dokumentdaten - wird aus manifest.json geladen
+        async function loadManifest() {
+            try {
+                const response = await fetch('images/manifest.json');
+                if (!response.ok) throw new Error('Manifest nicht gefunden');
+                return await response.json();
+            } catch (e) {
+                console.error('Fehler beim Laden:', e);
+                return null;
+            }
+        }
+
+        // OCR-Status prüfen (vereinfacht)
+        function getOcrStatus(docId) {
+            // Bekannte OCR-Ergebnisse aus Phase 1
+            const completed = ['2310', '1180', '290'];
+            const problems = ['2530']; // Spalten-Problem
+
+            if (completed.includes(docId)) return 'ok';
+            if (problems.includes(docId)) return 'error';
+            return 'pending';
+        }
+
+        // Dokumenttyp-Info
+        const docTypes = {
+            '2310': { type: 'A', lang: 'FR', desc: 'Rezension' },
+            '1180': { type: 'A', lang: 'DE/FR', desc: 'Jahresbericht' },
+            '130': { type: 'A', lang: 'FR', desc: 'Zeitschrift' },
+            '290': { type: 'A', lang: 'FR', desc: 'Essay' },
+            '1410': { type: 'A', lang: 'DE/FR', desc: 'Beitrag' },
+            '1060': { type: 'A', lang: 'DE', desc: 'Broschüre' },
+            '2530': { type: 'B', lang: 'FR', desc: 'Zweispaltig' },
+            '890': { type: 'B', lang: 'DE', desc: 'Lehrerzeitung' },
+            '3040': { type: 'B', lang: 'FR', desc: 'Lexikon' },
+            '40': { type: 'C', lang: 'FR', desc: 'Roman' },
+            '1520': { type: 'C', lang: '?', desc: 'Monografie' },
+            '90': { type: 'D', lang: 'DE', desc: 'Hist. Druck' },
+            '830': { type: 'D', lang: 'FR', desc: 'Bildband' },
+            '1440': { type: 'D', lang: 'DE', desc: 'Interview' },
+            '1330': { type: 'D', lang: 'FR', desc: 'Sammelband' }
+        };
+
+        function renderDocList(manifest) {
+            const container = document.getElementById('doc-list');
+            document.getElementById('loading').style.display = 'none';
+
+            if (!manifest || manifest.length === 0) {
+                container.innerHTML = '<p>Keine Dokumente gefunden. Bitte erst <code>python scripts/extract_pages.py</code> ausführen.</p>';
+                return;
+            }
+
+            manifest.forEach(doc => {
+                if (doc.error) return;
+
+                const info = docTypes[doc.doc_id] || { type: '?', lang: '?', desc: '' };
+                const status = getOcrStatus(doc.doc_id);
+
+                const card = document.createElement('div');
+                card.className = 'doc-card';
+                card.innerHTML = `
+                    <h3>${doc.doc_id}.pdf</h3>
+                    <div class="meta">
+                        <span>Typ ${info.type}</span>
+                        <span>${info.lang}</span>
+                        <span>${doc.page_count} Seiten</span>
+                        <span class="status-${status}">${status === 'ok' ? 'OCR OK' : status === 'error' ? 'Problem' : 'Ausstehend'}</span>
+                    </div>
+                    <div>${info.desc}</div>
+                    <a href="viewer.html?doc=${doc.doc_id}">Öffnen →</a>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Initialisierung
+        loadManifest().then(renderDocList);
+    </script>
+</body>
+</html>
