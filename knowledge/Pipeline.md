@@ -93,11 +93,21 @@ PDF → Docling (do_ocr=False) → JSON mit Koordinaten
 | Erster Absatz (Rezension) | `<head><bibl>` |
 | Bekannte Namen | `<persName ref="GND:...">` |
 
-### LLM nur für
+### LLM-Unterstützung (Gemini 3 Flash)
 
-- Komplexe Strukturerkennung (Interview-Dialog)
-- NER (Named Entity Recognition)
-- GND-Disambiguierung
+**Modell:** Gemini 3 Flash (google/gemini-3.0-flash)
+**Kosten:** $0.50/1M Input-Tokens, $3.00/1M Output-Tokens
+**Geschätzte Projektkosten:** ~$20 für 289 Dokumente (7.200 Seiten)
+
+| Aufgabe | Einsatz |
+|---------|---------|
+| NER (Named Entity Recognition) | Personennamen, Orte, Werke erkennen |
+| Interview-Strukturierung | `<sp>` mit `<speaker>` für Dialoge |
+| OCR-Korrektur | Kontextbasierte Fehlerkorrektur |
+| GND-Vorschläge | Kandidaten für Entitäten generieren |
+| Qualitätssicherung | Strukturprüfung nach Transformation |
+
+**Wichtig:** LLM nur für komplexe Aufgaben, Grundstruktur bleibt regelbasiert (deterministisch).
 
 ---
 

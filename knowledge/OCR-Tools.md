@@ -149,10 +149,30 @@ UserWarning: `huggingface_hub` cache-system uses symlinks by default...
 
 ---
 
+## LLM für komplexe Aufgaben
+
+### Gemini 3 Flash
+
+**Modell:** google/gemini-3.0-flash
+**Kosten:** $0.50/1M Input, $3.00/1M Output
+**Kontextfenster:** 1M Tokens
+
+| Aufgabe | Beschreibung |
+|---------|--------------|
+| NER | Personennamen, Orte, Institutionen erkennen |
+| Interview-Struktur | Dialog-Markup (`<sp>`, `<speaker>`) |
+| OCR-Korrektur | Kontextbasierte Fehlerkorrektur |
+| GND-Vorschläge | Entitäts-Kandidaten generieren |
+
+**Strategie:** Regelbasiert für Grundstruktur, LLM nur für komplexe Aufgaben.
+
+---
+
 ## Quellen
 
 - [DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR)
 - [Docling](https://github.com/docling-project/docling)
+- [Gemini 3 Flash](https://ai.google.dev/gemini-api/docs/gemini-3)
 
 ---
 
