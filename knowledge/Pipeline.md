@@ -242,6 +242,49 @@ PDF → OCR (Seite für Seite) → TEI (Seite für Seite) → Aggregation
 
 ---
 
+## Risikoanalyse
+
+### Hohe Risiken
+
+| Risiko | Beschreibung | Mitigation |
+|--------|--------------|------------|
+| GND-Verknüpfung | Externe Lookups, Disambiguierung | Nachgelagert, nicht im LLM |
+| Mehrseitige Fußnoten | @next/@prev-Verkettung über Seitengrenzen | Speziallogik, manuelle QS |
+| Komplexe Layouts | Lexikon, Interview, Tabellen | Dokumenttyp-Erkennung vorschalten |
+
+### Mittlere Risiken
+
+| Risiko | Beschreibung | Mitigation |
+|--------|--------------|------------|
+| Druckfehlererkennung | Sprachverständnis erforderlich | LLM mit Sprachkenntnis |
+| Strukturhierarchie | div n="1/2/3" korrekt verschachteln | Validierung, Beispiele im Prompt |
+| Semantische Hervorhebungen | Nur relevante auszeichnen | Klare Regeln im Prompt |
+| OCR-Qualität historischer Drucke | 1930er–1950er Typografie | Beide OCR-Engines testen |
+
+### Niedrige Risiken
+
+| Risiko | Beschreibung | Mitigation |
+|--------|--------------|------------|
+| Zeichennormalisierung | Regelbasiert automatisierbar | Post-Processing-Script |
+| Grundstruktur (pb, lb, p) | Standardaufgabe | Gute Prompt-Beispiele |
+
+---
+
+## Mehrwert des LLM-Ansatzes
+
+- **Schnellere Ersttranskription** als manueller Transkribus-Workflow
+- **Konsistente Normalisierung** durch regelbasierte Post-Processing
+- **Skalierbarkeit** für 289 Texte (parallel verarbeitbar)
+- **Dokumenttyp-Erkennung** (Review, Interview, etc.) durch LLM
+
+### Grenzen
+
+- GND-Verknüpfung erfordert externes System (lobid.org / GND-API)
+- Komplexe Fußnoten-Verkettung braucht Speziallogik
+- Finale QS bleibt manuell notwendig
+
+---
+
 ## Herausforderungen
 
 | Bereich | Komplexität | Anmerkung |
@@ -271,6 +314,16 @@ PDF → OCR (Seite für Seite) → TEI (Seite für Seite) → Aggregation
 3. [ ] Claude Haiku 4.5 vs. Gemini 3 Flash vergleichen
 4. [ ] Prompt-Engineering für TEI-Transformation
 5. [ ] Validierungs-Pipeline aufsetzen
+
+---
+
+## PoC-Priorisierung
+
+| Phase | Dokumente | Fokus |
+|-------|-----------|-------|
+| 1 | 2310, 2530, 1180 | OCR-Qualität, Grundstruktur |
+| 2 | 130, 290, 90 | Fußnoten, Sprachwechsel |
+| 3 | 3040, 890 | Lexikon, Interview, GND |
 
 ---
 

@@ -61,9 +61,14 @@
   - [Quellenanalyse.md](Quellenanalyse.md) – Korpus, Sprachen, Pilot-Dateien
   - [TEI-Mapping.md](TEI-Mapping.md) – Transformationsregeln, Normalisierung, Elementinventar
   - [GND-Strategie.md](GND-Strategie.md) – Entitätenverknüpfung
-  - [Pipeline.md](Pipeline.md) – Technische Architektur
+  - [Pipeline.md](Pipeline.md) – Technische Architektur, Risikoanalyse
 - Inhalte aus README.md, DOCX und DTA-Basisformat in TEI-Mapping.md integriert
 - Quelldokumente (README.md, DOCX) gelöscht – alle Informationen im Wissensordner
+- Materialanalyse.md entfernt – Inhalte vollständig in Detaildokumente überführt
+
+**9. OCR-Tool-Dokumentation erstellt**
+- [DeepSeek-OCR-2-Setup.md](DeepSeek-OCR-2-Setup.md) – Lokale GPU-Installation
+- [Docling-Setup.md](Docling-Setup.md) – Lokale GPU-Installation
 
 ### Erkenntnisse
 
@@ -75,6 +80,13 @@
 | Automatisierbarkeit GND-Verknüpfung | Niedrig (externes System nötig) |
 | Texttypen-Vielfalt | Mittel (Essays, Rezensionen, Lexikon, Interviews) |
 | Sprachvielfalt | Französisch dominant, auch Deutsch |
+
+### Offene Analysen
+
+- [ ] PDF-Scans visuell analysieren (Layouts, Qualität)
+- [ ] GND-IDs aus Referenz-TEI extrahieren
+- [ ] Konkrete TEI-Beispiele für Randfälle dokumentieren
+- [ ] OCR-Qualität von DeepSeek-OCR-2 / Docling testen
 
 ### Offene Fragen
 
@@ -98,12 +110,13 @@
 
 | Dokument | Beschreibung |
 |----------|--------------|
-| [Materialanalyse ZBZ-OCR-TEI.md](Materialanalyse%20ZBZ-OCR-TEI.md) | Übersicht und Zusammenfassung |
 | [Quellenanalyse.md](Quellenanalyse.md) | Korpus, Sprachen, Pilot-Dateien |
 | [TEI-Mapping.md](TEI-Mapping.md) | Transformationsregeln, Normalisierung |
 | [GND-Strategie.md](GND-Strategie.md) | Entitätenverknüpfung |
-| [Pipeline.md](Pipeline.md) | Technische Architektur |
+| [Pipeline.md](Pipeline.md) | Technische Architektur, Risikoanalyse |
 | [Workflow Diagramm Hersch.md](Workflow%20Diagramm%20Hersch.md) | Bestehender ZBZ-Prozess |
+| [DeepSeek-OCR-2-Setup.md](DeepSeek-OCR-2-Setup.md) | Lokale Installation DeepSeek-OCR-2 |
+| [Docling-Setup.md](Docling-Setup.md) | Lokale Installation Docling |
 | [journal.md](journal.md) | Dieses Dokument |
 
 ### Datendokumente (`data/`)
