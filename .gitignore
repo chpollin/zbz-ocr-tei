@@ -5,11 +5,37 @@ data/richtlinien/*.docx
 data/richtlinien/*.pdf
 data/projektsteuerung/*.xlsx
 
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# OCR Output (generiert, nicht versionieren)
+output/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
 # Temporäre Dateien
 *.tmp
 *.bak
 ~$*
+nul
 
 # OS-spezifisch
 .DS_Store
 Thumbs.db
+
+# Hugging Face Cache (falls lokal)
+.cache/
+
+# Claude Code (lokale Konfiguration)
+.claude/
