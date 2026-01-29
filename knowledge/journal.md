@@ -49,12 +49,21 @@
 
 **7. Ordnerstruktur reorganisiert**
 - `data/` neu strukturiert mit semantischen Unterordnern:
-  - `data/richtlinien/` – Autoritative Quelldokumente (README.md, DTA-Basisformat, DOCX, PDF)
+  - `data/richtlinien/` – DTA-Basisformat als Referenzdokument
   - `data/projektsteuerung/` – Operative Daten (Masterfile.xlsx)
   - `data/referenz-tei/` – Gold-Standard TEI-Beispiele (vormals finalized_no_header/)
   - `data/scans/` – Quelldigitalisate (vormals PDFs/)
 - Trennung zwischen `knowledge/` (synthetisiertes Wissen) und `data/` (Rohdaten) dokumentiert
 - Automatisierbarkeits-Spalte aus Materialanalyse entfernt (war subjektive Einschätzung ohne Quellenangabe)
+
+**8. Wissensdokumente konsolidiert**
+- Materialanalyse.md aufgeteilt in Detaildokumente:
+  - [Quellenanalyse.md](Quellenanalyse.md) – Korpus, Sprachen, Pilot-Dateien
+  - [TEI-Mapping.md](TEI-Mapping.md) – Transformationsregeln, Normalisierung, Elementinventar
+  - [GND-Strategie.md](GND-Strategie.md) – Entitätenverknüpfung
+  - [Pipeline.md](Pipeline.md) – Technische Architektur
+- Inhalte aus README.md, DOCX und DTA-Basisformat in TEI-Mapping.md integriert
+- Quelldokumente (README.md, DOCX) gelöscht – alle Informationen im Wissensordner
 
 ### Erkenntnisse
 
@@ -85,13 +94,26 @@
 
 ## Dokumentenregister
 
-| Dokument | Pfad | Beschreibung |
-|----------|------|--------------|
-| Workflow | `knowledge/Workflow Diagramm Hersch.md` | Bestehender ZBZ-Prozess |
-| Richtlinien | `data/richtlinien/README.md` | Transkriptions- und TEI-Richtlinien |
-| DTA-Basis | `data/richtlinien/dta_basisformat_komplett.md` | Referenz DTA-Basisformat |
-| **Materialanalyse** | `knowledge/Materialanalyse ZBZ-OCR-TEI.md` | Ergebnis der Analyse |
-| **Journal** | `knowledge/journal.md` | Dieses Dokument |
+### Wissensdokumente (`knowledge/`)
+
+| Dokument | Beschreibung |
+|----------|--------------|
+| [Materialanalyse ZBZ-OCR-TEI.md](Materialanalyse%20ZBZ-OCR-TEI.md) | Übersicht und Zusammenfassung |
+| [Quellenanalyse.md](Quellenanalyse.md) | Korpus, Sprachen, Pilot-Dateien |
+| [TEI-Mapping.md](TEI-Mapping.md) | Transformationsregeln, Normalisierung |
+| [GND-Strategie.md](GND-Strategie.md) | Entitätenverknüpfung |
+| [Pipeline.md](Pipeline.md) | Technische Architektur |
+| [Workflow Diagramm Hersch.md](Workflow%20Diagramm%20Hersch.md) | Bestehender ZBZ-Prozess |
+| [journal.md](journal.md) | Dieses Dokument |
+
+### Datendokumente (`data/`)
+
+| Ordner | Inhalt |
+|--------|--------|
+| `data/richtlinien/` | DTA-Basisformat (Referenz) |
+| `data/projektsteuerung/` | Masterfile.xlsx |
+| `data/referenz-tei/` | Gold-Standard TEI-Beispiele |
+| `data/scans/` | PDF-Quelldigitalisate |
 
 ---
 
