@@ -91,6 +91,12 @@
 - 4 Testphasen definiert: Baseline → Zweispaltig → Spezial → Monografien
 - Lösungsansätze für Spalten-Problem dokumentiert
 
+**13. Testskript für alle Dokumenttypen**
+- `scripts/test_all_pdfs.py` – Automatisierte Tests gemäß Testplan
+- Unterstützt phasenweises Testen (`--phase phase1/phase2/phase3/phase4/all`)
+- Speichert Ergebnisse als JSON in `output/evaluation/`
+- `.gitignore` erweitert um Python-Artefakte, Output, Claude-Konfiguration
+
 ### Erkenntnisse
 
 | Aspekt | Bewertung |
