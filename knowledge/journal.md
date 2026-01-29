@@ -70,6 +70,27 @@
 - [DeepSeek-OCR-2-Setup.md](DeepSeek-OCR-2-Setup.md) – Lokale GPU-Installation
 - [Docling-Setup.md](Docling-Setup.md) – Lokale GPU-Installation
 
+**10. DeepSeek-OCR-2 Installation und erster Test**
+- Python venv mit PyTorch CUDA 12.4 eingerichtet
+- DeepSeek-OCR-2 Modell (3B Parameter) geladen
+- Testskript `scripts/test_deepseek_ocr.py` erstellt
+- Erster Test mit 2530.pdf (2 Seiten, französisch)
+- **Ergebnis:** Texterkennung sehr gut (>99%), aber **Spalten-Lesereihenfolge falsch** bei zweispaltigem Layout
+
+**11. Layout-Analyse aller 15 Pilot-PDFs**
+- Erste 2 Seiten von allen PDFs extrahiert (`output/layout_samples/`)
+- Visuelle Analyse durchgeführt
+- 4 Dokumenttypen identifiziert:
+  - **Typ A (einspaltig):** 2310, 1180, 130, 290, 1410, 1060 – Standard-OCR funktioniert
+  - **Typ B (zweispaltig):** 2530, 890, 3040, 1440 – Layout-Problem identifiziert
+  - **Typ C (Monografien):** 40, 1520 – Viele Seiten, Chunking nötig
+  - **Typ D (Spezial):** 90, 830, 1330 – Historischer Druck, Bildband, etc.
+
+**12. Testplan erstellt**
+- [Testplan-OCR.md](Testplan-OCR.md) – Systematische Evaluation aller Dokumenttypen
+- 4 Testphasen definiert: Baseline → Zweispaltig → Spezial → Monografien
+- Lösungsansätze für Spalten-Problem dokumentiert
+
 ### Erkenntnisse
 
 | Aspekt | Bewertung |
@@ -83,24 +104,24 @@
 
 ### Offene Analysen
 
-- [ ] PDF-Scans visuell analysieren (Layouts, Qualität)
+- [x] PDF-Scans visuell analysieren (Layouts, Qualität) ✅
 - [ ] GND-IDs aus Referenz-TEI extrahieren
 - [ ] Konkrete TEI-Beispiele für Randfälle dokumentieren
-- [ ] OCR-Qualität von DeepSeek-OCR-2 / Docling testen
+- [x] OCR-Qualität von DeepSeek-OCR-2 testen (erster Test) ✅
 
 ### Offene Fragen
 
-- [ ] Welche LLM-Kombination für OCR und Strukturierung?
+- [ ] Wie lösen wir das Spalten-Problem bei Typ B?
+- [ ] Docling als Alternative für Layout-Analyse?
 - [ ] Wie wird GND-Lookup integriert?
-- [ ] Qualitätsmetriken für Evaluation definieren
 - [ ] Aufwandsschätzung für Offerte
 
 ### Nächste Schritte
 
-1. **PDF-Sichtung**: Stichproben visuell prüfen (Bildqualität, Layout-Komplexität)
-2. **PoC-Scope definieren**: Welche Dokumente für ersten Test?
-3. **Pipeline-Prototyp**: Erste Tests mit Vision-LLM
-4. **Offerte erstellen**: Basierend auf Analyseergebnissen
+1. **Testplan Phase 1 durchführen**: Baseline-Tests für einspaltige Dokumente
+2. **Spalten-Problem lösen**: Prompt-Varianten oder Docling testen
+3. **Evaluationsmatrix ausfüllen**: Qualitätsmetriken pro Dokumenttyp
+4. **Produktions-Pipeline ableiten**: Basierend auf Testergebnissen
 
 ---
 
@@ -117,6 +138,7 @@
 | [Workflow Diagramm Hersch.md](Workflow%20Diagramm%20Hersch.md) | Bestehender ZBZ-Prozess |
 | [DeepSeek-OCR-2-Setup.md](DeepSeek-OCR-2-Setup.md) | Lokale Installation DeepSeek-OCR-2 |
 | [Docling-Setup.md](Docling-Setup.md) | Lokale Installation Docling |
+| [Testplan-OCR.md](Testplan-OCR.md) | Systematischer OCR-Testplan |
 | [journal.md](journal.md) | Dieses Dokument |
 
 ### Datendokumente (`data/`)
