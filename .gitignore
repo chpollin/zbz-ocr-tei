@@ -1,9 +1,9 @@
 # Lokale Daten - nicht ins Repository
-data/PDFs/
-data/finalized_no_header/
-data/*.xlsx
-data/*.docx
-data/*.pdf
+data/scans/
+data/referenz-tei/
+data/richtlinien/*.docx
+data/richtlinien/*.pdf
+data/projektsteuerung/*.xlsx
 
 # Temporäre Dateien
 *.tmp

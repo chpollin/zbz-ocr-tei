@@ -10,79 +10,79 @@ Das Projekt umfasst die digitale Edition von ca. 286 Texten der Philosophin Jean
 
 ### 2.1 Zeichenebene
 
-| Regel | Beschreibung | Automatisierbarkeit |
-|-------|--------------|---------------------|
-| ß-Erhaltung | ß wird als ß transkribiert (U+00DF) | Hoch |
-| Gedankenstriche | Normalisierung zu Halbgeviertstrich (–) | Hoch |
-| Trennstriche | Normalisierung zu Viertelgeviertstrich (‐) | Hoch |
-| Anführungszeichen | Doppelt: "..." / Einfach: '...' | Hoch |
-| Apostrophe | Unicode U+2019 (') | Hoch |
-| Leerzeichen vor Satzzeichen | Löschen vor : ; ? ! | Hoch |
-| Aufzählungstrennungen | Normalisierung zu Schrägstrich (Zürich/Bern/Basel) | Mittel |
+| Regel | Beschreibung |
+|-------|--------------|
+| ß-Erhaltung | ß wird als ß transkribiert (U+00DF) |
+| Gedankenstriche | Normalisierung zu Halbgeviertstrich (–) |
+| Trennstriche | Normalisierung zu Viertelgeviertstrich (‐) |
+| Anführungszeichen | Doppelt: "..." / Einfach: '...' |
+| Apostrophe | Unicode U+2019 (') |
+| Leerzeichen vor Satzzeichen | Löschen vor : ; ? ! |
+| Aufzählungstrennungen | Normalisierung zu Schrägstrich (Zürich/Bern/Basel) |
 
 ### 2.2 Wortebene
 
-| Regel | Beschreibung | Automatisierbarkeit |
-|-------|--------------|---------------------|
-| Silbentrennung | Entfernen am Zeilenende, `<lb break="no"/>` setzen | Hoch |
-| Druckfehlerkorrektur | `<choice><sic>...</sic><corr>...</corr></choice>` | Mittel (Erkennung schwierig) |
-| Sprachwechsel | `<foreign xml:lang="[ISO 639-3]">` | Mittel |
+| Regel | Beschreibung |
+|-------|--------------|
+| Silbentrennung | Entfernen am Zeilenende, `<lb break="no"/>` setzen |
+| Druckfehlerkorrektur | `<choice><sic>...</sic><corr>...</corr></choice>` |
+| Sprachwechsel | `<foreign xml:lang="[ISO 639-3]">` |
 
 ### 2.3 Strukturebene
 
-| Regel | Beschreibung | Automatisierbarkeit |
-|-------|--------------|---------------------|
-| Absätze | `<p>` ohne Einrückungsauszeichnung | Hoch |
-| Überschriften | `<head>` mit verschachtelten `<title>` | Hoch |
-| Kapitelstruktur | `<div n="1">`, `<div n="2">`, etc. | Mittel |
-| Listen | `<list><item>` mit manueller Nummerierung | Hoch |
-| Tabellen | `<table><row><cell>` | Mittel |
-| Vertikaler Abstand | `<space dim="vertical"/>` | Niedrig (Erkennung schwierig) |
+| Regel | Beschreibung |
+|-------|--------------|
+| Absätze | `<p>` ohne Einrückungsauszeichnung |
+| Überschriften | `<head>` mit verschachtelten `<title>` |
+| Kapitelstruktur | `<div n="1">`, `<div n="2">`, etc. |
+| Listen | `<list><item>` mit manueller Nummerierung |
+| Tabellen | `<table><row><cell>` |
+| Vertikaler Abstand | `<space dim="vertical"/>` |
 
 ### 2.4 Seitenstruktur
 
-| Regel | Beschreibung | Automatisierbarkeit |
-|-------|--------------|---------------------|
-| Seitenumbrüche | `<pb facs="#f[Nr]" n="[Seitenzahl]"/>` | Hoch |
-| Zeilenumbrüche | `<lb facs="..." n="..."/>` | Hoch (aus Transkribus) |
-| Fehlende Seitenzahlen | In eckigen Klammern: n="[42]" | Mittel |
-| Kolumnentitel | Nicht erfassen | Hoch |
+| Regel | Beschreibung |
+|-------|--------------|
+| Seitenumbrüche | `<pb facs="#f[Nr]" n="[Seitenzahl]"/>` |
+| Zeilenumbrüche | `<lb facs="..." n="..."/>` |
+| Fehlende Seitenzahlen | In eckigen Klammern: n="[42]" |
+| Kolumnentitel | Nicht erfassen |
 
 ### 2.5 Semantische Auszeichnung
 
-| Regel | Beschreibung | Automatisierbarkeit |
-|-------|--------------|---------------------|
-| Personen | `<persName ref="GND:...">` | Niedrig (GND-Lookup erforderlich) |
-| Organisationen | `<orgName ref="GND:...">` | Niedrig (GND-Lookup erforderlich) |
-| Werke | `<bibl corresp="GND:...">` | Niedrig (GND-Lookup erforderlich) |
-| Mehrfachnennungen | Jede Nennung wird referenziert | Mittel |
+| Regel | Beschreibung |
+|-------|--------------|
+| Personen | `<persName ref="GND:...">` |
+| Organisationen | `<orgName ref="GND:...">` |
+| Werke | `<bibl corresp="GND:...">` |
+| Mehrfachnennungen | Jede Nennung wird referenziert |
 
 ### 2.6 Spezielle Texttypen
 
-| Texttyp | Struktur | Automatisierbarkeit |
-|---------|----------|---------------------|
-| Reviews | `<div type="review">` mit `<bibl>` im `<head>` | Hoch |
-| Interviews | `<div type="interview">` mit `<sp><speaker>` | Mittel |
-| Gesprächsrunden | `<div type="conversation">` | Mittel |
-| Lexikonartikel | `<div type="entry">` mit `<head type="lemma">` | Mittel |
+| Texttyp | Struktur |
+|---------|----------|
+| Reviews | `<div type="review">` mit `<bibl>` im `<head>` |
+| Interviews | `<div type="interview">` mit `<sp><speaker>` |
+| Gesprächsrunden | `<div type="conversation">` |
+| Lexikonartikel | `<div type="entry">` mit `<head type="lemma">` |
 
 ### 2.7 Fussnoten
 
-| Regel | Beschreibung | Automatisierbarkeit |
-|-------|--------------|---------------------|
-| Positionierung | `<note place="foot" n="..." xml:id="fn[Seite]-[Nr]">` | Hoch |
-| Mehrseitige Fussnoten | Verkettung via `@next` und `@prev` | Niedrig |
+| Regel | Beschreibung |
+|-------|--------------|
+| Positionierung | `<note place="foot" n="..." xml:id="fn[Seite]-[Nr]">` |
+| Mehrseitige Fussnoten | Verkettung via `@next` und `@prev` |
 
 ### 2.8 Renderings
 
-| Rendering | TEI-Auszeichnung | Automatisierbarkeit |
-|-----------|------------------|---------------------|
-| Fett | `<hi rendition="#b">` | Hoch |
-| Kursiv | `<hi rendition="#i">` | Hoch |
-| Unterstrichen | `<hi rendition="#u">` | Hoch |
-| Gesperrt | `<hi rendition="#g">` | Mittel |
-| Hochgestellt | `<hi rendition="#sup">` | Hoch |
-| Tiefgestellt | `<hi rendition="#sub">` | Hoch |
+| Rendering | TEI-Auszeichnung |
+|-----------|------------------|
+| Fett | `<hi rendition="#b">` |
+| Kursiv | `<hi rendition="#i">` |
+| Unterstrichen | `<hi rendition="#u">` |
+| Gesperrt | `<hi rendition="#g">` |
+| Hochgestellt | `<hi rendition="#sup">` |
+| Tiefgestellt | `<hi rendition="#sub">` |
 
 ---
 

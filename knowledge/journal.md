@@ -35,7 +35,7 @@
   - 3040.xml (Lexikonartikel über Jaspers)
 
 **4. PDF-Bestand erfasst**
-- 15 PDF-Dateien im data/PDFs/-Ordner
+- 15 PDF-Dateien im data/scans/-Ordner
 - Größenspektrum: 80 KB bis 42 MB
 - Größte Dateien: 1520.pdf (42 MB), 40.pdf (39 MB) - vermutlich Monografien
 
@@ -46,6 +46,15 @@
 **6. .gitignore konfiguriert**
 - PDFs und XMLs bleiben lokal (nicht im Repository)
 - Schützt urheberrechtlich geschütztes Material
+
+**7. Ordnerstruktur reorganisiert**
+- `data/` neu strukturiert mit semantischen Unterordnern:
+  - `data/richtlinien/` – Autoritative Quelldokumente (README.md, DTA-Basisformat, DOCX, PDF)
+  - `data/projektsteuerung/` – Operative Daten (Masterfile.xlsx)
+  - `data/referenz-tei/` – Gold-Standard TEI-Beispiele (vormals finalized_no_header/)
+  - `data/scans/` – Quelldigitalisate (vormals PDFs/)
+- Trennung zwischen `knowledge/` (synthetisiertes Wissen) und `data/` (Rohdaten) dokumentiert
+- Automatisierbarkeits-Spalte aus Materialanalyse entfernt (war subjektive Einschätzung ohne Quellenangabe)
 
 ### Erkenntnisse
 
@@ -78,12 +87,11 @@
 
 | Dokument | Pfad | Beschreibung |
 |----------|------|--------------|
-| Projektkontext | `knowledge/LLM-gestützte OCR...md` | Auftragsdetails, Scope |
 | Workflow | `knowledge/Workflow Diagramm Hersch.md` | Bestehender ZBZ-Prozess |
-| Richtlinien | `data/README.md` | Transkriptions- und TEI-Richtlinien |
-| DTA-Basis | `data/dta_basisformat_komplett.md` | Referenz DTA-Basisformat |
+| Richtlinien | `data/richtlinien/README.md` | Transkriptions- und TEI-Richtlinien |
+| DTA-Basis | `data/richtlinien/dta_basisformat_komplett.md` | Referenz DTA-Basisformat |
 | **Materialanalyse** | `knowledge/Materialanalyse ZBZ-OCR-TEI.md` | Ergebnis der Analyse |
-| **Arbeitsjournal** | `knowledge/Arbeitsjournal.md` | Dieses Dokument |
+| **Journal** | `knowledge/journal.md` | Dieses Dokument |
 
 ---
 
