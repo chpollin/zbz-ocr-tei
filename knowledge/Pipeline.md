@@ -3,33 +3,54 @@
 ## Architektur
 
 ```
-PDF → Docling+DeepSeek (Markdown) → Post-Processing → TEI-XML → Validierung → [GND]
-      └─ output/ocr_results/       └─ output/clean/   └─ output/tei/
+PDF → Docling (Layout) → DeepSeek (OCR) → Markdown → Post-Processing → TEI-XML → [GND]
+      └─ output/layout/  └─ output/ocr_results/     └─ output/clean/   └─ output/tei/
 ```
 
-## Stufe 1: OCR
+## Stufe 1: Layout-Analyse (Docling)
 
-### Docling + DeepSeek-OCR-2 (kombiniert)
+**Skript:** `scripts/extract_layout.py`
+**Zweck:** Nur Layout-Erkennung, keine OCR
 
 ```
-PDF → Docling (Layout-Analyse) → DeepSeek-OCR-2 (Text) → Strukturiertes Markdown
+PDF → Docling (do_ocr=False) → JSON mit Koordinaten
 ```
 
 | Aspekt | Details |
 |--------|---------|
-| Layout | Docling (Spalten, Tabellen, Regionen) |
-| OCR | DeepSeek-OCR-2 (3B VLM) |
-| Output | Strukturiertes Markdown |
+| Tool | Docling (IBM) |
+| Modus | `do_ocr=False` |
+| Output | JSON mit BBox-Koordinaten pro Region |
+| Erkennt | Spalten, Header, Text, Listen, Tabellen |
+
+### Validiert (29.01.2026)
+
+| PDF | Seiten | Spalten | Regionen |
+|-----|--------|---------|----------|
+| 2530.pdf | 2 | Zweispaltig erkannt | 14 pro Seite |
+
+**Wichtig:** Docling OCR nicht nutzen (RapidOCR hat Encoding-Probleme bei französischem Text).
+
+---
+
+## Stufe 2: OCR (DeepSeek-OCR-2)
+
+**Skript:** `scripts/ocr_pipeline.py`
+**Zweck:** Texterkennung mit hoher Genauigkeit
+
+| Aspekt | Details |
+|--------|---------|
+| Modell | DeepSeek-OCR-2 (3B VLM) |
 | Hardware | GPU mit 8+ GB VRAM |
-| Skript | `scripts/ocr_pipeline.py` |
+| Genauigkeit | 94-97% (validiert) |
 
 ### Engine-Auswahl nach Dokumenttyp
 
-| Typ | Beschreibung | Engine |
-|-----|--------------|--------|
+| Typ | Beschreibung | Pipeline |
+|-----|--------------|----------|
 | A | Einspaltig | DeepSeek direkt |
-| B | Zweispaltig | **Docling + DeepSeek** |
-| C | Monografie | Docling + DeepSeek + Chunking |
+| B | Zweispaltig | Docling Layout → DeepSeek pro Region |
+| C | Monografie | DeepSeek + Chunking |
 | D | Spezial | Fallweise |
 
 ### OCR-Qualität (gemessen)
@@ -39,21 +60,15 @@ PDF → Docling (Layout-Analyse) → DeepSeek-OCR-2 (Text) → Strukturiertes Ma
 | 2310 | Einspaltig | 2.67% | 97.33% |
 | 1180 | Einspaltig | 4.89% | 95.11% |
 | 290 | Einspaltig | 9.21% | 90.79% |
-| 2530 | Zweispaltig | - | Docling testen |
-
-**Bekannte OCR-Fehler:**
-- Anführungszeichen: `„"` statt `""`
-- Einzelne Ziffern: `822` → `82`
-- Lateinische Wendungen: `nunc` → `num`
-- Gelegentlich Akzente: `é` → `e`
+| 2530 | Zweispaltig | - | Layout validiert |
 
 ---
 
-## Stufe 2: Post-Processing
+## Stufe 3: Post-Processing
 
 **Implementiert in:** `scripts/postprocess/`
 
-### Transformationen (Reihenfolge wichtig!)
+### Transformationen
 
 | Schritt | Funktion | Beispiel |
 |---------|----------|----------|
@@ -62,20 +77,9 @@ PDF → Docling (Layout-Analyse) → DeepSeek-OCR-2 (Text) → Strukturiertes Ma
 | 3. Silbentrennung | `dehyphenate()` | `Wis- senschaft` → `Wissenschaft` |
 | 4. Whitespace | (inline) | Mehrfache Leerzeilen → eine |
 
-### Normalisierungsregeln
-
-```python
-NORMALIZE_MAP = {
-    '„': '"', '"': '"', '»': '"', '«': '"',  # Anführungszeichen
-    ''': "'", ''': "'",                       # Apostrophe
-    '–': '-', '—': '-',                       # Gedankenstriche
-    '\u00A0': ' ',                            # Non-breaking space
-}
-```
-
 ---
 
-## Stufe 3: TEI-Transformation
+## Stufe 4: TEI-Transformation
 
 **Skript:** `scripts/transform_to_tei.py`
 **Ansatz:** Regelbasiert (deterministisch), LLM nur für komplexe Strukturen
@@ -88,7 +92,6 @@ NORMALIZE_MAP = {
 | `# Überschrift` | `<head>` |
 | Erster Absatz (Rezension) | `<head><bibl>` |
 | Bekannte Namen | `<persName ref="GND:...">` |
-| `*kursiv*` | `<hi rendition="#i">` |
 
 ### LLM nur für
 
@@ -98,7 +101,7 @@ NORMALIZE_MAP = {
 
 ---
 
-## Stufe 4: Validierung
+## Stufe 5: Validierung
 
 | Prüfung | Tool |
 |---------|------|
@@ -112,6 +115,9 @@ NORMALIZE_MAP = {
 ## CLI-Befehle
 
 ```bash
+# Layout-Extraktion (ohne GPU)
+python scripts/extract_layout.py --input data/scans/2530.pdf --visualize
+
 # OCR Pipeline (GPU erforderlich)
 python scripts/ocr_pipeline.py --input data/scans/2310.pdf
 python scripts/ocr_pipeline.py --all --engine auto
@@ -127,12 +133,12 @@ python scripts/evaluate_ocr.py --all
 
 ## Risiken
 
-| Risiko | Schwere | Mitigation |
-|--------|---------|------------|
-| Spalten-Reihenfolge (Typ B) | Hoch | Docling für Layout |
-| Windows Symlink (Docling) | Mittel | Cloud-VM oder Developer Mode |
-| GND-Verknüpfung | Hoch | Nachgelagert, lobid.org API |
-| Historische Drucke | Mittel | Beide Engines testen |
+| Risiko | Status | Mitigation |
+|--------|--------|------------|
+| Spalten-Reihenfolge (Typ B) | Gelöst | Docling Layout-Extraktion |
+| Docling OCR Encoding | Gelöst | Docling nur für Layout |
+| GND-Verknüpfung | Offen | Nachgelagert, lobid.org API |
+| Historische Drucke | Offen | Beide Engines testen |
 
 ---
 

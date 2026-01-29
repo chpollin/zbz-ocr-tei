@@ -1,23 +1,24 @@
 # OCR-Tools
 
-Pipeline: **Docling + DeepSeek-OCR-2** für Layout-Analyse und Texterkennung.
+Pipeline: **Docling (Layout) + DeepSeek-OCR-2 (Text)** - getrennte Aufgaben.
 
 ---
 
 ## Architektur
 
 ```
-PDF → Docling (Layout-Analyse) → DeepSeek-OCR-2 (Text) → Strukturiertes Markdown → TEI
+PDF → Docling (nur Layout) → DeepSeek-OCR-2 (nur Text) → Markdown → TEI
+      └─ do_ocr=False        └─ pro Region oder Seite
 ```
 
-**Docling** analysiert das Layout (Spalten, Tabellen, Regionen) und nutzt **DeepSeek-OCR-2** als OCR-Backend für die Texterkennung.
+**Wichtig:** Docling wird **nur für Layout-Analyse** verwendet, nicht für OCR.
 
 ---
 
 ## DeepSeek-OCR-2
 
 **Modell:** 3B Parameter Vision-Language-Modell
-**Rolle:** OCR-Engine (Texterkennung)
+**Rolle:** Texterkennung (OCR)
 **Status:** Validiert, 94.4% Genauigkeit bei Typ A
 
 ### Systemanforderungen
@@ -36,92 +37,89 @@ PDF → Docling (Layout-Analyse) → DeepSeek-OCR-2 (Text) → Strukturiertes Ma
 | Genauigkeit | 94-97% CER |
 | VRAM | 5-8 GB |
 
+### Skript
+
+`scripts/ocr_pipeline.py`
+
 ---
 
 ## Docling
 
 **Projekt:** IBM Research, Linux Foundation
-**Rolle:** Layout-Analyse, Strukturerkennung
-**Status:** Windows-Problem (Symlinks), Cloud empfohlen
+**Rolle:** Nur Layout-Analyse (Spalten, Regionen, Tabellen)
+**Status:** Funktioniert auf Windows (mit Symlink-Warnung)
 
-### Vorteile
+### Wichtig: Keine OCR mit Docling
 
-- Layout-Segmentierung (Spalten, Regionen)
-- Tabellenerkennung
-- Strukturierter Markdown-Export
-- **DeepSeek-OCR als Backend möglich** via VlmPipeline
+Docling's integrierte OCR (RapidOCR) hat **Encoding-Probleme** bei französischem Text:
+- `é` wird zu `Ø`
+- `ê` wird zu `Œ`
+- etc.
+
+**Lösung:** `do_ocr=False` setzen, nur Layout nutzen.
 
 ### Installation
 
 ```bash
-pip install docling "docling[vlm]"
+pip install docling
 ```
 
-### Docling + DeepSeek Integration
-
-Docling kann DeepSeek-OCR-2 über die VlmPipeline nutzen:
+### Verwendung (nur Layout)
 
 ```python
-from docling.document_converter import DocumentConverter
-from docling.pipeline.vlm_pipeline import VlmPipeline
+from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.datamodel.pipeline_options import PdfPipelineOptions
+from docling.datamodel.base_models import InputFormat
 
-# DeepSeek-OCR via vLLM Server (OpenAI-kompatibel)
-# Umgebungsvariablen setzen:
-# OCR_MODEL="deepseek-ai/DeepSeek-OCR-2"
-# OCR_BASE_URL="http://localhost:8000/v1"
+# OCR deaktivieren
+pipeline_options = PdfPipelineOptions()
+pipeline_options.do_ocr = False
 
-converter = DocumentConverter()
+converter = DocumentConverter(
+    format_options={
+        InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
+    }
+)
+
 result = converter.convert("dokument.pdf")
-markdown = result.document.export_to_markdown()
+# → Koordinaten der Textregionen, keine OCR
 ```
+
+### Skript
+
+`scripts/extract_layout.py`
 
 ---
 
 ## Vergleich
 
-| Aspekt | DeepSeek-OCR-2 | Docling | Kombiniert |
-|--------|----------------|---------|------------|
-| OCR-Qualität | Sehr gut | Engine-abhängig | Sehr gut |
-| Layout-Analyse | Gut | Exzellent | Exzellent |
-| Spalten | Problematisch | Korrekt | Korrekt |
-| Tabellen | Gut | Exzellent | Exzellent |
-| Strukturierter Output | Markdown | Markdown/JSON | Markdown |
-
-**Strategie:**
-- Docling für Layout-Analyse und Spalten-Handling
-- DeepSeek-OCR-2 als OCR-Backend für Texterkennung
-- Kombiniert: Beste Qualität für alle Dokumenttypen
+| Aspekt | DeepSeek-OCR-2 | Docling (Layout) |
+|--------|----------------|------------------|
+| Zweck | Texterkennung | Layout-Analyse |
+| OCR-Qualität | Sehr gut | Nicht nutzen |
+| Layout-Analyse | Gut | Exzellent |
+| Spalten | Problematisch | Korrekt erkannt |
+| Output | Markdown | JSON (Koordinaten) |
 
 ---
 
-## Pipeline-Konfiguration
+## Hybrid-Pipeline
 
 ### Dokumenttypen
 
 | Typ | Beschreibung | Pipeline |
 |-----|--------------|----------|
-| A | Einspaltig | DeepSeek direkt oder via Docling |
-| B | Zweispaltig | **Docling + DeepSeek** (zwingend) |
-| C | Monografie | Docling + DeepSeek + Chunking |
+| A | Einspaltig | DeepSeek direkt |
+| B | Zweispaltig | Docling Layout → DeepSeek pro Region |
+| C | Monografie | DeepSeek + Chunking |
 | D | Spezial | Fallweise |
 
-### Output-Format
+### Validiert (29.01.2026)
 
-Docling exportiert strukturiertes Markdown:
-
-```markdown
-# Überschrift
-
-Absatz 1 mit Text...
-
-Absatz 2 mit Text...
-
-| Spalte 1 | Spalte 2 |
-|----------|----------|
-| Daten    | Daten    |
-```
-
-Dieses Markdown wird dann regelbasiert zu TEI transformiert.
+| Test | Ergebnis |
+|------|----------|
+| Docling Layout (2530.pdf) | Zweispaltig erkannt, 14 Regionen/Seite |
+| DeepSeek OCR (2310.pdf) | 94.4% Genauigkeit |
 
 ---
 
@@ -135,21 +133,19 @@ print(torch.cuda.is_available())
 print(torch.cuda.get_device_name(0))
 ```
 
-### Out of Memory
+### Out of Memory (DeepSeek)
 
 - `image_size` reduzieren (768 → 512)
 - Bilder einzeln verarbeiten
 - Andere GPU-Prozesse beenden
 
-### Windows Symlink-Fehler (Docling)
+### Docling Symlink-Warnung (Windows)
 
 ```
-WinError 1314: A required privilege is not held by the client
+UserWarning: `huggingface_hub` cache-system uses symlinks by default...
 ```
 
-**Workarounds:**
-1. Windows Developer Mode aktivieren (Einstellungen → Entwickler)
-2. Cloud-VM mit Linux verwenden (empfohlen für Produktion)
+**Status:** Ignorierbar - Docling funktioniert trotzdem.
 
 ---
 
@@ -157,8 +153,6 @@ WinError 1314: A required privilege is not held by the client
 
 - [DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR)
 - [Docling](https://github.com/docling-project/docling)
-- [Docling + DeepSeek Discussion](https://github.com/docling-project/docling/discussions/2514)
-- [Docling VLM Pipeline](https://docling-project.github.io/docling/)
 
 ---
 
