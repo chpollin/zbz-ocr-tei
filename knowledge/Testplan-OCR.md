@@ -69,14 +69,27 @@ Systematische Evaluation der OCR-Qualität für alle 15 Pilot-PDFs, um:
 |---------|-----|------|-----------|
 | 2.1 | 2530 | OCR beide Seiten | Spalten korrekt? (bereits getestet: NEIN) |
 | 2.2 | 890 | OCR Seite 2 | Zweispaltig + kleine Schrift |
-| 2.3 | 3040 | OCR Seite 1 | Lexikon: Spalten + Fußnoten |
+| 2.3 | 3040 | OCR Seite 1 | Lexikon: Spalten + Fussnoten |
 
 **Metriken:**
 - [ ] Spalten-Lesereihenfolge korrekt?
-- [ ] Fußnoten erkannt und positioniert?
+- [ ] Fussnoten erkannt und positioniert?
 - [ ] Text vollständig?
 
-**Bekanntes Problem:** 2530 hat falsche Spaltenreihenfolge → Lösungsansätze testen
+**Bekanntes Problem:** 2530 hat falsche Spaltenreihenfolge
+
+**Drei Lösungsansätze testen:**
+
+| Ansatz | Methode | Aufwand |
+|--------|---------|---------|
+| A | Docling Layout + DeepSeek pro Region | Mittel |
+| B | Gemini 3 Agentic Vision (Auto-Crop) | Gering |
+| C | DeepSeek mit Prompt-Anpassung | Gering |
+
+**NEU: Gemini 3 Agentic Vision Test (2.4)**
+- PDF an Gemini 3 Flash mit Code-Execution senden
+- Erwartung: Modell erkennt Spalten, croppt automatisch, liest korrekt
+- Vergleich: Qualität vs. DeepSeek, Kosten vs. Docling-Pipeline
 
 ---
 

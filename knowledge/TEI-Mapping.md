@@ -661,6 +661,63 @@ Die Texterfassung erfolgt in Transkribus:
 
 ---
 
+## Facsimile-Koordinaten (optional)
+
+Mit Gemini 3 Agentic Vision können präzise Bounding-Box-Koordinaten für Textregionen generiert werden. Dies ermöglicht eine Verknüpfung zwischen TEI-Text und Digitalisat-Position.
+
+### Grundstruktur
+
+```xml
+<TEI>
+  <facsimile>
+    <surface xml:id="f0001" ulx="0" uly="0" lrx="3683" lry="4224">
+      <zone xml:id="p1_col1" ulx="100" uly="200" lrx="1800" lry="4000"/>
+      <zone xml:id="p1_col2" ulx="1850" uly="200" lrx="3600" lry="4000"/>
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+      <div n="1">
+        <pb facs="#f0001" n="1"/>
+        <p facs="#p1_col1">Text der linken Spalte...</p>
+        <p facs="#p1_col2">Text der rechten Spalte...</p>
+      </div>
+    </body>
+  </text>
+</TEI>
+```
+
+### Attribute
+
+| Element | Attribut | Bedeutung |
+|---------|----------|-----------|
+| `<surface>` | ulx, uly, lrx, lry | Gesamtbild-Koordinaten (upper-left, lower-right) |
+| `<zone>` | ulx, uly, lrx, lry | Textregion-Koordinaten |
+| `<zone>` | xml:id | Eindeutige ID zur Verknüpfung mit `@facs` |
+
+### Koordinatenformat
+
+Gemini 3 Agentic Vision liefert Koordinaten im `xywh`-Format (x, y, width, height). Umrechnung:
+
+```
+ulx = x
+uly = y
+lrx = x + width
+lry = y + height
+```
+
+### Nutzen
+
+| Aspekt | Vorteil |
+|--------|---------|
+| Wissenschaftlich | Präzise Bild-Text-Verknüpfung |
+| IIIF-kompatibel | Koordinaten können für IIIF-Annotationen genutzt werden |
+| Qualitätssicherung | Visuelle Überprüfung der OCR-Zuordnung |
+
+**Hinweis:** Facsimile-Koordinaten sind optional und erhöhen den Aufwand. Empfohlen für besonders wichtige Dokumente oder zweispaltige Layouts.
+
+---
+
 ## Offene Fragen
 
 ### Aus internen Richtlinien (DOCX-Kommentare)

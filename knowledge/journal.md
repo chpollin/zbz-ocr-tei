@@ -1,7 +1,49 @@
 # Arbeitsjournal ZBZ-OCR-TEI
 
 **Projekt:** LLM-gestützte OCR + TEI für Jeanne Hersch Edition (ZBZ)
-**Status:** Hybrid-Pipeline validiert (Docling Layout + DeepSeek OCR)
+**Status:** Pipeline erweitert um Gemini 3 Agentic Vision
+
+---
+
+## 2026-02-02 | Gemini 3 Agentic Vision Analyse
+
+### Neue Erkenntnis
+
+Google hat am 27.01.2026 **Agentic Vision** für Gemini 3 Flash veröffentlicht:
+- **Think-Act-Observe Loop**: Modell plant, führt Python-Code aus, validiert Ergebnis
+- **Auto-Crop/Zoom**: Erkennt Spalten automatisch, croppt und liest sequenziell
+- **Selbstvalidierung**: 5-10% Qualitätsboost durch iterative Prüfung
+- **BBox-Output**: Kann Koordinaten für TEI `<facsimile>` liefern
+
+### Auswirkung auf Pipeline
+
+| Dokumenttyp | Bisherige Pipeline | Neue Option |
+|-------------|-------------------|-------------|
+| Typ A (einspaltig) | DeepSeek-OCR-2 | Keine Änderung |
+| Typ B (zweispaltig) | Docling + DeepSeek | **Gemini 3 Agentic Vision** |
+| Typ C (Monografie) | DeepSeek + Chunking | Keine Änderung |
+| Typ D (Spezial) | DeepSeek | **Gemini 3 Agentic Vision** |
+
+**Vorteil:** Gemini löst Spaltenproblem ohne separate Layout-Extraktion.
+
+### Dokumentation aktualisiert
+
+- [x] Pipeline.md: Agentic Vision Strategie
+- [x] OCR-Tools.md: Think-Act-Observe, Vergleichstabelle
+- [x] Testplan-OCR.md: Gemini-Testfall für Phase 2
+- [x] TEI-Mapping.md: `<facsimile>` Koordinaten-Sektion
+
+### Kosten (aktualisiert)
+
+| Szenario | Kosten |
+|----------|--------|
+| Nur NER/Korrektur | ~$20 |
+| + Typ B/D via Gemini | ~$27 |
+
+### Quellen
+
+- [Agentic Vision Announcement](https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/)
+- [IIIF Annotation Example](https://gist.github.com/charlesLoder/5341c539ab8330cfebc2d807e6b9c765)
 
 ---
 
@@ -44,7 +86,8 @@
 - [x] ~~TEI-Transformation Prototyp~~ → `scripts/transform_to_tei.py`
 - [x] ~~OCR-Pipeline vereinheitlicht~~ → `scripts/ocr_pipeline.py`
 - [x] ~~Docling Layout-Extraktion~~ → `scripts/extract_layout.py`
-- [ ] Hybrid-Workflow komplettieren (Layout → Crop → DeepSeek)
+- [ ] Gemini 3 Agentic Vision für Typ B testen (2530.pdf)
+- [ ] Hybrid-Workflow komplettieren (Layout -> Crop -> DeepSeek)
 - [ ] Phase 2-4 OCR-Tests durchführen (GPU erforderlich)
 - [ ] GND-Lookup API-Integration (lobid.org)
 
@@ -60,4 +103,4 @@
 
 ---
 
-*Aktualisiert: 29.01.2026*
+*Aktualisiert: 02.02.2026*

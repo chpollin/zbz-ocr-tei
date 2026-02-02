@@ -166,6 +166,38 @@ UserWarning: `huggingface_hub` cache-system uses symlinks by default...
 
 **Strategie:** Regelbasiert für Grundstruktur, LLM nur für komplexe Aufgaben.
 
+### Agentic Vision (neu seit 27.01.2026)
+
+**Think-Act-Observe Loop** für aktive Bildverarbeitung:
+
+```
+Bild -> Think (Plan) -> Act (Python: Crop/Zoom) -> Observe (Validieren) -> Iterate
+```
+
+**Aktivierung:** `tools=[types.Tool(code_execution=types.ToolCodeExecution)]`
+
+| Fähigkeit | Technisch | Nutzen |
+|-----------|-----------|--------|
+| Auto-Crop | Generiert Python zum Croppen | Spalten einzeln verarbeiten |
+| Auto-Zoom | Skaliert Details hoch | Kleine Schrift, historische Drucke |
+| Selbstvalidierung | Prüft eigene Transkription | 5-10% Qualitätsboost |
+| BBox-Output | `xywh` Koordinaten | TEI `<facsimile>` |
+| Visual Scratchpad | Zeichnet auf Bild | Debugging, Annotation |
+
+**Vergleich DeepSeek vs. Gemini Agentic Vision:**
+
+| Aspekt | DeepSeek-OCR-2 | Gemini 3 Agentic |
+|--------|----------------|------------------|
+| Ansatz | Einmal-Inference | Iterativ + Selbstkorrektur |
+| Spalten | Problematisch | Automatisch erkannt |
+| Validierung | Keine | Eingebaut |
+| Kosten | Lokal (GPU) | API (~$0.01/Seite) |
+| Koordinaten | Nein | Ja (BBox) |
+
+**Empfehlung:**
+- Typ A: DeepSeek (lokal, kostenlos)
+- Typ B, D: Gemini Agentic Vision (lohnt sich für komplexe Layouts)
+
 ---
 
 ## Quellen
@@ -173,7 +205,8 @@ UserWarning: `huggingface_hub` cache-system uses symlinks by default...
 - [DeepSeek-OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR)
 - [Docling](https://github.com/docling-project/docling)
 - [Gemini 3 Flash](https://ai.google.dev/gemini-api/docs/gemini-3)
+- [Agentic Vision Announcement](https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/)
 
 ---
 
-*Aktualisiert: 29.01.2026*
+*Aktualisiert: 02.02.2026*

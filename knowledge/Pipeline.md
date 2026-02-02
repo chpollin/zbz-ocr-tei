@@ -109,6 +109,33 @@ PDF → Docling (do_ocr=False) → JSON mit Koordinaten
 
 **Wichtig:** LLM nur für komplexe Aufgaben, Grundstruktur bleibt regelbasiert (deterministisch).
 
+### Agentic Vision (Typ B, D)
+
+**Neu seit 27.01.2026:** Gemini 3 Flash kann Bilder aktiv manipulieren.
+
+**Think-Act-Observe Loop:**
+1. **Think**: Analysiert Bild, plant Schritte
+2. **Act**: Generiert Python-Code (Crop, Zoom, Rotate)
+3. **Observe**: Validiert eigenes Ergebnis, iteriert bei Bedarf
+
+| Fahigkeit | Nutzen fur Projekt |
+|-----------|-------------------|
+| Auto-Crop Spalten | Typ B ohne Docling-Vorverarbeitung |
+| Selbstvalidierung | 5-10% Qualitatsboost |
+| BBox-Output | `<facsimile>` Koordinaten fur TEI |
+| Iteratives Zoomen | Historische Drucke, kleine Schrift |
+
+**Empfohlene Strategie:**
+
+| Dokumenttyp | Pipeline |
+|-------------|----------|
+| Typ A (einspaltig) | DeepSeek-OCR-2 (lokal, kostenlos) |
+| Typ B (zweispaltig) | Gemini 3 Agentic Vision |
+| Typ C (Monografie) | DeepSeek + Chunking |
+| Typ D (Spezial) | Gemini 3 Agentic Vision |
+
+**Kosten:** ~$27 gesamt (statt ~$20 nur fur NER)
+
 ---
 
 ## Stufe 5: Validierung
@@ -158,4 +185,4 @@ python scripts/evaluate_ocr.py --all
 
 ---
 
-*Aktualisiert: 29.01.2026*
+*Aktualisiert: 02.02.2026*
