@@ -92,7 +92,7 @@ Offene Schnittstellenfragen: Siehe [DECISIONS](DECISIONS.md).
 | # | Meilenstein | Aufwand | Erfolgskriterium | Status |
 |---|-------------|---------|-------------------|--------|
 | M0 | Bildextraktion + QS-Viewer | Erledigt | Bilder + Viewer verfügbar | Erledigt |
-| M1 | OCR validiert | 5-7 Tage | ≥95% Genauigkeit alle Typen | Phase 1 erledigt (94.4%), Phase 2-4 ausstehend |
+| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | Phase 1-3: 94.14% (Mistral), Phase 4 Alignment-Problem |
 | M2 | TEI-Transformation | 6-9 Tage | ≥90% Struktur-Korrektheit | Prototyp, rudimentär |
 | M3 | GND-Verknüpfung | 5-6 Tage | ≥85% Precision | Seed extrahiert, Pipeline fehlt |
 | M4 | Integration | 4-6 Tage | End-to-End ohne Eingriff | Ausstehend |
@@ -105,21 +105,23 @@ Offene Schnittstellenfragen: Siehe [DECISIONS](DECISIONS.md).
 ```
 M0 (Bilder) ──► M1 (OCR) ──► M2 (TEI) ──► M3 (GND) ──► M4 (Integration) ──► M5 (Pilot)
                   │                                         ▲
-                  └── Spalten-Problem blockiert Phase 2-4   │
+                  └── Phase 1-3 validiert (94.14%)           │
                                                             │
                   Schnittstellen zu coOCR/teiCrafter ───────┘
 ```
 
 ---
 
-## Komponentenstatus (18.02.2026, abends)
+## Komponentenstatus (18.02.2026, spaet)
 
 | Komponente | Status | Details |
 |------------|--------|---------|
 | Bildextraktion | Erledigt | `scripts/extract_pages.py`, 383 Seiten |
 | QS-Viewer | Erledigt | `docs/` mit HTML-Viewer |
-| OCR Phase 1 (Typ A) | Erledigt | 94.4% Genauigkeit, siehe [TESTPLAN](TESTPLAN.md) |
-| OCR Phase 2-4 | Ausstehend | GPU + Spalten-Lösung erforderlich |
+| OCR Phase 1 (Typ A) | Erledigt | Mistral 90.60%, DeepSeek 94.4% |
+| OCR Phase 2 (Typ B) | Erledigt | Mistral 93.69% Genauigkeit |
+| OCR Phase 3 (Typ D) | Erledigt | Mistral 97.12% Genauigkeit |
+| OCR Phase 4 (Typ C) | Teilweise | OCR fertig, CER-Evaluation eingeschraenkt |
 | Post-Processing | Erledigt | 4-stufig in `scripts/postprocess/` |
 | TEI-Templates | Erledigt | 5 Templates in `templates/` |
 | TEI-Transformation | Prototyp | `scripts/transform_to_tei.py`, rudimentär |

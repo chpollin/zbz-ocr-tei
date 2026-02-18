@@ -14,6 +14,55 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-18 | M1: OCR-Validierung alle Dokumenttypen
+
+### Durchgefuehrt
+
+- `evaluate_ocr.py` erweitert: `--ocr-dir`, `--engine`, `--phase` Parameter
+- Fuzzy TEI-Lookup (findet `1520 - in Arbeit.xml`)
+- rapidfuzz fuer CER-Berechnung (loest MemoryError bei langen Texten)
+- Verbessertes Alignment (Markdown-Stripping, abgestufte Phrase-Suche)
+- Mistral OCR fuer alle 12 Testdokumente (Phase 1-4) ausgefuehrt
+- CER/WER-Evaluation gegen Referenz-TEI abgeschlossen
+
+### Ergebnisse Mistral Document AI
+
+| Phase | Typ | Docs | Avg CER | Avg WER | Genauigkeit |
+|-------|-----|------|---------|---------|-------------|
+| Phase 1 | A (einspaltig) | 3 | 9.40% | 20.22% | 90.60% |
+| Phase 2 | B (zweispaltig) | 3 | 6.31% | 17.53% | 93.69% |
+| Phase 3 | D (Spezial) | 4 | 2.88% | 12.62% | 97.12% |
+| Phase 4 | C (Monografie) | 2 | n/a | n/a | Alignment-Problem |
+
+**Phase 1-3 Durchschnitt: CER 5.87%, Genauigkeit 94.14%**
+
+Phase 4 (Monografien) nicht aussagekraeftig: Alignment bei 156/142-seitigen Buechern funktioniert
+nicht zuverlaessig (gesamter Referenz-Text vs. gesamte OCR verglichen).
+
+### Einzelergebnisse
+
+| Doc | Typ | CER | WER |
+|-----|-----|-----|-----|
+| 2310 | A | 7.00% | 22.04% |
+| 1180 | A | 3.12% | 10.45% |
+| 290 | A | 18.07% | 28.17% |
+| 2530 | B | 3.96% | 17.06% |
+| 890 | B | 5.96% | 12.80% |
+| 3040 | B | 9.02% | 22.73% |
+| 90 | D | 1.21% | 8.92% |
+| 1440 | D | 3.71% | 12.69% |
+| 830 | D | 4.00% | 17.46% |
+| 1330 | D | 2.60% | 11.42% |
+
+### Erkenntnisse
+
+- Mistral Document AI zeigt beste Ergebnisse bei Typ D (Spezialformate): 97% Genauigkeit
+- Doc 290 (Comptes Rendus FR) hat schlechteste CER in Phase 1-3 (18%) - vermutlich Scan-Qualitaet
+- Zweispaltige Docs (Typ B) werden ueberraschend gut erkannt (CER 6.3%)
+- Fuer Monografien braucht die Evaluation einen seitenweisen Vergleichsansatz
+
+---
+
 ## 2026-02-18 | Code-Refactoring: Zentrale Module
 
 ### Durchgefuehrt

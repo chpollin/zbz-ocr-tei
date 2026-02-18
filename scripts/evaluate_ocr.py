@@ -11,7 +11,7 @@ from datetime import datetime
 from difflib import SequenceMatcher
 import xml.etree.ElementTree as ET
 
-from scripts.config import REFERENZ_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR
+from scripts.config import REFERENZ_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR, TESTPLAN
 
 
 def extract_text_from_tei(tei_path: Path) -> str:
@@ -84,13 +84,9 @@ def load_ocr_result(ocr_path: Path) -> str:
     return normalize_text(text)
 
 
-def calculate_cer(reference: str, hypothesis: str) -> float:
-    """Berechnet Character Error Rate (CER) mit Levenshtein-Distanz."""
-    if len(reference) == 0:
-        return 0.0 if len(hypothesis) == 0 else 1.0
-
-    # Levenshtein-Distanz berechnen
-    m, n = len(reference), len(hypothesis)
+def _levenshtein_distance(s1: str, s2: str) -> int:
+    """Berechnet Levenshtein-Distanz (Fallback ohne rapidfuzz)."""
+    m, n = len(s1), len(s2)
     dp = [[0] * (n + 1) for _ in range(m + 1)]
 
     for i in range(m + 1):
@@ -100,14 +96,26 @@ def calculate_cer(reference: str, hypothesis: str) -> float:
 
     for i in range(1, m + 1):
         for j in range(1, n + 1):
-            if reference[i-1] == hypothesis[j-1]:
+            if s1[i-1] == s2[j-1]:
                 dp[i][j] = dp[i-1][j-1]
             else:
                 dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
 
-    distance = dp[m][n]
-    cer = distance / len(reference)
-    return cer
+    return dp[m][n]
+
+
+def calculate_cer(reference: str, hypothesis: str) -> float:
+    """Berechnet Character Error Rate (CER) mit Levenshtein-Distanz."""
+    if len(reference) == 0:
+        return 0.0 if len(hypothesis) == 0 else 1.0
+
+    try:
+        from rapidfuzz.distance import Levenshtein
+        distance = Levenshtein.distance(reference, hypothesis)
+    except ImportError:
+        distance = _levenshtein_distance(reference, hypothesis)
+
+    return distance / len(reference)
 
 
 def calculate_wer(reference: str, hypothesis: str) -> float:
@@ -118,25 +126,13 @@ def calculate_wer(reference: str, hypothesis: str) -> float:
     if len(ref_words) == 0:
         return 0.0 if len(hyp_words) == 0 else 1.0
 
-    # Levenshtein auf Wortebene
-    m, n = len(ref_words), len(hyp_words)
-    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    try:
+        from rapidfuzz.distance import Levenshtein
+        distance = Levenshtein.distance(ref_words, hyp_words)
+    except ImportError:
+        distance = _levenshtein_distance(ref_words, hyp_words)
 
-    for i in range(m + 1):
-        dp[i][0] = i
-    for j in range(n + 1):
-        dp[0][j] = j
-
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if ref_words[i-1] == hyp_words[j-1]:
-                dp[i][j] = dp[i-1][j-1]
-            else:
-                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
-
-    distance = dp[m][n]
-    wer = distance / len(ref_words)
-    return wer
+    return distance / len(ref_words)
 
 
 def find_differences(reference: str, hypothesis: str) -> list:
@@ -163,12 +159,13 @@ def find_differences(reference: str, hypothesis: str) -> list:
 
 def generate_html_report(results: dict, output_path: Path):
     """Generiert HTML-Report mit visueller Diff-Ansicht."""
+    engine_label = results.get('engine', 'OCR').capitalize()
     html = f"""<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR Evaluation Report</title>
+    <title>OCR Evaluation Report - {engine_label}</title>
     <style>
         * {{ box-sizing: border-box; }}
         body {{
@@ -319,8 +316,8 @@ def generate_html_report(results: dict, output_path: Path):
 </head>
 <body>
     <div class="container">
-        <h1>OCR Evaluation Report</h1>
-        <p>Vergleich von OCR-Output mit Referenz-TEI-Dateien</p>
+        <h1>OCR Evaluation Report - {engine_label}</h1>
+        <p>Vergleich von {engine_label}-Output mit Referenz-TEI-Dateien</p>
 
         <h2>Zusammenfassung</h2>
         <div class="summary-grid">
@@ -437,6 +434,26 @@ def generate_html_report(results: dict, output_path: Path):
     print(f"HTML-Report gespeichert: {output_path}")
 
 
+def _strip_markdown(text: str) -> str:
+    """Entfernt Markdown-Formatierung fuer Alignment-Suche."""
+    text = re.sub(r'\*+([^*]+)\*+', r'\1', text)  # *bold* / **bold**
+    text = re.sub(r'_+([^_]+)_+', r'\1', text)    # _italic_
+    text = re.sub(r'#+\s*', '', text)               # ## headers
+    return text
+
+
+def _find_phrase_in_text(phrase: str, text: str) -> int:
+    """Sucht Phrase im Text, auch mit Markdown-Unterschieden."""
+    pos = text.find(phrase)
+    if pos != -1:
+        return pos
+    # Fallback: Ohne Markdown suchen
+    clean_text = _strip_markdown(text)
+    clean_phrase = _strip_markdown(phrase)
+    pos = clean_text.find(clean_phrase)
+    return pos
+
+
 def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -> tuple:
     """
     Findet die beste Ausrichtung zwischen OCR-Text und Referenztext.
@@ -455,52 +472,78 @@ def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -
     if len(ref_words) < 5 or len(ocr_words) < 5:
         return (0, len(reference), 0, len(ocr_text), reference, ocr_text)
 
-    # Strategie: Suche markante Phrasen aus der Referenz im OCR und umgekehrt
+    # Wenn Laengen sehr aehnlich sind (Faktor < 1.05), vergleiche direkt
+    len_ratio = max(len(reference), len(ocr_text)) / max(min(len(reference), len(ocr_text)), 1)
+    if len_ratio < 1.05:
+        return (0, len(reference), 0, len(ocr_text), reference, ocr_text)
 
-    # 1. Anfang der Referenz im OCR finden
-    ref_start_phrase = ' '.join(ref_words[:8])
-    ocr_start_pos = ocr_text.find(ref_start_phrase)
+    # Strategie: Suche markante Phrasen, mit abnehmender Laenge
+
+    # 1. Anfang der Referenz im OCR finden (probiere 8, 5, 3 Woerter)
+    ocr_start_pos = -1
+    for n_words in [8, 5, 3]:
+        ref_start_phrase = ' '.join(ref_words[:n_words])
+        ocr_start_pos = _find_phrase_in_text(ref_start_phrase, ocr_text)
+        if ocr_start_pos != -1:
+            break
 
     # 2. Ende der Referenz im OCR finden
-    ref_end_phrase = ' '.join(ref_words[-8:])
-    ocr_end_pos = ocr_text.find(ref_end_phrase)
+    ocr_end_pos = -1
+    for n_words in [8, 5, 3]:
+        ref_end_phrase = ' '.join(ref_words[-n_words:])
+        ocr_end_pos = _find_phrase_in_text(ref_end_phrase, ocr_text)
+        if ocr_end_pos != -1:
+            ocr_end_pos = ocr_end_pos + len(ref_end_phrase)
+            break
 
-    if ocr_start_pos != -1 and ocr_end_pos != -1:
-        # Referenz ist im OCR enthalten - OCR zuschneiden
-        ocr_end_pos = ocr_end_pos + len(ref_end_phrase)
+    if ocr_start_pos != -1 and ocr_end_pos != -1 and ocr_end_pos > ocr_start_pos:
         matched_ocr = ocr_text[ocr_start_pos:ocr_end_pos]
         return (0, len(reference), ocr_start_pos, ocr_end_pos, reference, matched_ocr)
 
-    # 3. Alternativ: Anfang des OCR in der Referenz finden
-    ocr_start_phrase = ' '.join(ocr_words[:8])
-    ref_start_pos = reference.find(ocr_start_phrase)
+    if ocr_start_pos != -1:
+        # Anfang gefunden, Ende schaetzen
+        estimated_end = min(ocr_start_pos + len(reference) + 200, len(ocr_text))
+        matched_ocr = ocr_text[ocr_start_pos:estimated_end]
+        return (0, len(reference), ocr_start_pos, estimated_end, reference, matched_ocr)
 
-    # 4. Ende des OCR in der Referenz finden
-    ocr_end_phrase = ' '.join(ocr_words[-8:])
-    ref_end_pos = reference.find(ocr_end_phrase)
+    # 3. Alternativ: Anfang des OCR in der Referenz finden
+    ref_start_pos = -1
+    for n_words in [8, 5, 3]:
+        ocr_start_phrase = ' '.join(ocr_words[:n_words])
+        ref_start_pos = _find_phrase_in_text(ocr_start_phrase, reference)
+        if ref_start_pos != -1:
+            break
 
     if ref_start_pos != -1:
-        # OCR-Anfang gefunden - Referenz ab dort verwenden
-        if ref_end_pos != -1 and ref_end_pos > ref_start_pos:
-            ref_end_pos = ref_end_pos + len(ocr_end_phrase)
-        else:
+        ref_end_pos = -1
+        for n_words in [8, 5, 3]:
+            ocr_end_phrase = ' '.join(ocr_words[-n_words:])
+            ref_end_pos = _find_phrase_in_text(ocr_end_phrase, reference)
+            if ref_end_pos != -1:
+                ref_end_pos = ref_end_pos + len(ocr_end_phrase)
+                break
+
+        if ref_end_pos == -1 or ref_end_pos <= ref_start_pos:
             ref_end_pos = min(ref_start_pos + len(ocr_text) + 200, len(reference))
 
         matched_ref = reference[ref_start_pos:ref_end_pos]
         return (ref_start_pos, ref_end_pos, 0, len(ocr_text), matched_ref, ocr_text)
 
-    # Fallback: Kuerzeren Text als Basis nehmen
-    if len(ocr_text) < len(reference):
-        # OCR ist kuerzer - versuche Woerter einzeln zu matchen
-        for i in range(min(20, len(ocr_words))):
-            word = ocr_words[i]
-            if len(word) > 5:
-                pos = reference.find(word)
+    # Fallback: Einzelne lange Woerter suchen
+    for words, text, is_ref in [(ref_words, ocr_text, True), (ocr_words, reference, False)]:
+        for i in range(min(30, len(words))):
+            word = words[i]
+            if len(word) > 8:  # Nur markante Woerter
+                pos = text.find(word)
                 if pos != -1:
-                    # Gefunden! Von hier aus matchen
-                    end_pos = min(pos + len(ocr_text) + 200, len(reference))
-                    matched_ref = reference[pos:end_pos]
-                    return (pos, end_pos, 0, len(ocr_text), matched_ref, ocr_text)
+                    if is_ref:
+                        estimated_end = min(pos + len(reference) + 200, len(ocr_text))
+                        matched_ocr = ocr_text[pos:estimated_end]
+                        return (0, len(reference), pos, estimated_end, reference, matched_ocr)
+                    else:
+                        estimated_end = min(pos + len(ocr_text) + 200, len(reference))
+                        matched_ref = reference[pos:estimated_end]
+                        return (pos, estimated_end, 0, len(ocr_text), matched_ref, ocr_text)
 
     # Kein gutes Alignment gefunden
     return (0, len(reference), 0, len(ocr_text), reference, ocr_text)
@@ -521,11 +564,15 @@ def evaluate_document(doc_id: str, tei_dir: Path, ocr_dir: Path) -> dict:
         'alignment_info': ''
     }
 
-    # TEI-Datei finden
+    # TEI-Datei finden (mit Fuzzy-Lookup fuer Sondernamen wie "1520 - in Arbeit.xml")
     tei_path = tei_dir / f"{doc_id}.xml"
     if not tei_path.exists():
-        # Auch im Pilot-Ordner suchen
         tei_path = tei_dir / "Pilot" / f"{doc_id}.xml"
+    if not tei_path.exists():
+        # Glob-Fallback: Suche nach Dateien die mit doc_id beginnen
+        candidates = list(tei_dir.glob(f"**/{doc_id}*.xml"))
+        if candidates:
+            tei_path = candidates[0]
 
     if not tei_path.exists():
         result['status'] = 'SKIP'
@@ -571,24 +618,50 @@ def evaluate_document(doc_id: str, tei_dir: Path, ocr_dir: Path) -> dict:
     return result
 
 
+def get_phase_doc_ids(phase: str) -> list[str]:
+    """Gibt Dokument-IDs fuer eine Phase oder alle Phasen zurueck."""
+    if phase == "all":
+        doc_ids = []
+        for p in TESTPLAN.values():
+            for t in p["tests"]:
+                doc_id = t["pdf"].replace(".pdf", "")
+                if doc_id not in doc_ids:
+                    doc_ids.append(doc_id)
+        return doc_ids
+
+    if phase in TESTPLAN:
+        return [t["pdf"].replace(".pdf", "") for t in TESTPLAN[phase]["tests"]]
+
+    return []
+
+
 def main():
     import argparse
 
     parser = argparse.ArgumentParser(description="OCR-Evaluation: Vergleicht OCR mit Referenz-TEI")
     parser.add_argument("--docs", nargs='+', help="Spezifische Dokument-IDs (z.B. 2310 1180)")
     parser.add_argument("--all", action="store_true", help="Alle verfuegbaren Dokumente evaluieren")
+    parser.add_argument("--ocr-dir", type=Path, help="OCR-Ergebnis-Verzeichnis (default: output/ocr_results)")
+    parser.add_argument("--engine", default="deepseek", help="Engine-Name fuer Report (default: deepseek)")
+    parser.add_argument("--phase", help="Testplan-Phase: phase1, phase2, phase3, phase4, all")
     parser.add_argument("--output", default="evaluation_report.html", help="Name der HTML-Report-Datei")
     args = parser.parse_args()
 
     # Pfade
     tei_dir = REFERENZ_TEI_DIR
-    ocr_dir = OCR_RESULTS_DIR
+    ocr_dir = Path(args.ocr_dir) if args.ocr_dir else OCR_RESULTS_DIR
     output_dir = EVALUATION_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Dokumente bestimmen
     if args.docs:
         doc_ids = args.docs
+    elif args.phase:
+        doc_ids = get_phase_doc_ids(args.phase)
+        if not doc_ids:
+            print(f"Unbekannte Phase: {args.phase}")
+            print(f"Verfuegbar: {', '.join(TESTPLAN.keys())}, all")
+            return 1
     elif args.all:
         ocr_files = list(ocr_dir.glob("*_p*.md"))
         doc_ids = sorted(set(f.stem.rsplit('_p', 1)[0] for f in ocr_files))
@@ -596,14 +669,18 @@ def main():
         # Default: Nur 2310 als Beispiel
         doc_ids = ['2310']
 
-    print(f"OCR-Evaluation")
+    engine_label = args.engine.capitalize()
+    print(f"OCR-Evaluation ({engine_label})")
     print(f"==============")
+    print(f"OCR-Verzeichnis: {ocr_dir}")
     print(f"Dokumente: {', '.join(doc_ids)}")
     print()
 
     # Evaluieren
     results = {
         'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'engine': args.engine,
+        'ocr_dir': str(ocr_dir),
         'documents': {},
         'summary': {
             'total_documents': 0,

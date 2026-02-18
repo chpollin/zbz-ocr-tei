@@ -147,12 +147,30 @@ Annotations sind auf 8 Seiten begrenzt. Relevant fuer: Metadaten-Extraktion, TEI
 
 Interaktiver Vergleich mit DeepSeek: `docs/benchmark.html`
 
+### CER/WER-Ergebnisse alle Phasen (18.02.2026)
+
+| Phase | Typ | Avg CER | Avg Genauigkeit |
+|-------|-----|---------|-----------------|
+| Phase 1 (Typ A) | Einspaltig | 9.40% | 90.60% |
+| Phase 2 (Typ B) | Zweispaltig | 6.31% | 93.69% |
+| Phase 3 (Typ D) | Spezial | 2.88% | 97.12% |
+| **Phase 1-3 Gesamt** | **10 Docs** | **5.87%** | **94.14%** |
+
+Phase 4 (Monografien, 156/142 Seiten) konnte nicht zuverlaessig evaluiert werden - Alignment-Problem bei langen Texten.
+
+Beste Einzelergebnisse: 90 (CER 1.21%), 1330 (2.60%), 1180 (3.12%)
+Schlechtestes: 290 (18.07%) - vermutlich Scan-Qualitaet
+
+Details: [TESTPLAN](TESTPLAN.md) Evaluationsmatrix
+
 ### Noch zu tun
 
 - [x] API-Key erhalten
 - [x] Engine-Klasse `MistralOCR` in `ocr_pipeline.py` implementieren
 - [x] Azure-Endpoint testen (Benchmark gegen DeepSeek auf Phase-1-Daten)
-- [ ] Qualitaetsvergleich: CER/WER auf 2310, 1180, 290 (gegen Referenz-TEI)
+- [x] CER/WER alle Phasen gegen Referenz-TEI berechnet
+- [ ] Doc 290 analysieren (CER 18% - Scan oder OCR-Problem?)
+- [ ] Seitenweisen Vergleich fuer Monografien implementieren
 
 ---
 
@@ -228,10 +246,10 @@ Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text
 
 | Kriterium | DeepSeek | Mistral | Gemini | Docling |
 |-----------|----------|---------|--------|---------|
-| Genauigkeit | 94-97% | Benchmark laeuft | Ungetestet | Nur Layout |
+| Genauigkeit (CER) | 94-97% (Phase 1) | 94.14% (Phase 1-3) | Ungetestet | Nur Layout |
 | GPU noetig | Ja (8GB+) | Nein (API) | Nein (API) | Nein (CPU) |
 | Kosten | Kostenlos | Azure-Abo | ~$27/Projekt | Kostenlos |
-| Spalten | Nein | Ungetestet | Ja (Agentic) | Ja (Layout) |
+| Spalten (Typ B) | Nein | 93.69% Genauigkeit | Ja (Agentic) | Ja (Layout) |
 | Geschwindigkeit | ~1.6s/Seite | ~1.3s/Seite | Ungetestet | ~3s/Seite |
 | Offline | Ja | Nein | Nein | Ja |
 | Kursiv/Formatting | Nein | Ja (*italics*) | Ungetestet | - |
