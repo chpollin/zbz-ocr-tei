@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-19
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,63 @@ status: active
 Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) konsolidiert, Projektstatus in [PROJEKT](PROJEKT.md).
 
 **Abhängigkeiten:** Keine (eigenständiges Log)
+
+---
+
+## 2026-02-19 | LLM-basierte OCR-Nachkorrektur mit Haiku 4.5
+
+### Durchgefuehrt
+
+- `scripts/llm_postprocess.py` erstellt: LLM-basierte OCR-Korrektur mit Anthropic Claude Haiku 4.5
+- `scripts/config.py` erweitert: LLM_CORRECTED_DIR, ANTHROPIC_MODEL, get_test_metadata()
+- `.env.example` erstellt als Vorlage (ohne Secrets)
+- ANTHROPIC_API_KEY in `.env` konfiguriert (bereits in .gitignore + .claudeignore)
+- Pilot-Test: Phase 1-3 (10 Docs, 50 Seiten) durch LLM-Korrektur + CER-Vergleich
+
+### Architektur
+
+Ein API-Call pro Seite (Chain-of-Thought): `<analysis>` listet Fehler, `<corrected>` gibt korrigierten Text.
+Prompt enthaelt Dokumentkontext aus TESTPLAN (Typ, Sprache, Genre).
+
+### Ergebnisse: Mistral vs. LLM-korrigiert
+
+| Doc | Typ | Mistral CER | LLM CER | Delta |
+|-----|-----|-------------|---------|-------|
+| 2310 | A | 7.00% | 3.93% | **-3.07** |
+| 1180 | A | 3.12% | 3.17% | +0.05 |
+| 290 | A | 18.07% | 18.20% | +0.13 |
+| 2530 | B | 3.96% | 3.98% | +0.02 |
+| 890 | B | 5.96% | 6.05% | +0.09 |
+| 3040 | B | 9.02% | 8.97% | -0.05 |
+| 90 | D | 1.21% | 1.10% | **-0.11** |
+| 1440 | D | 3.71% | 3.71% | 0.00 |
+| 830 | D | 4.00% | 3.29% | **-0.71** |
+| 1330 | D | 2.60% | 2.78% | +0.18 |
+
+| Phase | Mistral Avg CER | LLM Avg CER | Delta |
+|-------|-----------------|-------------|-------|
+| Phase 1 (A) | 9.40% | 8.43% | -0.97 |
+| Phase 2 (B) | 6.31% | 6.34% | +0.03 |
+| Phase 3 (D) | 2.88% | 2.72% | -0.16 |
+| **Gesamt** | **5.87%** | **5.47%** | **-0.40 (7% relativ)** |
+
+### Kosten
+
+- Phase 1-3 (50 Seiten): $0.39
+- Hochrechnung 289 Docs (7.200 Seiten): ~$56
+
+### Erkenntnisse
+
+- Staerkste Verbesserung bei Dokumenten mit OCR-Artefakten (JSTOR-Header, Coverseiten)
+- Gute Verbesserung bei Spezialformaten (historisch, Bildband)
+- Kein Effekt bei Scan-Qualitaetsproblemen (Doc 290 bleibt bei ~18%)
+- Bei bereits guter OCR (~3% CER) kein signifikanter Gewinn
+- Vereinzelt minimale Verschlechterung moeglich (1330: +0.18) durch LLM-"Korrekturen"
+
+### Neue Dateien
+
+- `scripts/llm_postprocess.py` — LLM-Korrektur-Pipeline
+- `.env.example` — Vorlage fuer API-Keys
 
 ---
 

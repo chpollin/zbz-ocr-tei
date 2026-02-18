@@ -39,6 +39,12 @@ WEB_DPI = 150
 MISTRAL_MAX_PAGES_PER_REQUEST = 30
 MISTRAL_TIMEOUT_SECONDS = 120
 
+# LLM Post-Processing (Anthropic)
+LLM_CORRECTED_DIR = OUTPUT_DIR / "llm_corrected"
+ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
+ANTHROPIC_MAX_RETRIES = 3
+ANTHROPIC_TIMEOUT_SECONDS = 60
+
 # Dokument-Klassifikation (Typ B = zweispaltig)
 TWO_COLUMN_DOCS = ["2530", "890", "3040"]
 
@@ -103,3 +109,12 @@ KNOWN_ENTITIES = {
     "Sartre": "GND:118605895",
     "Hannah Arendt": "GND:118502751",
 }
+
+
+def get_test_metadata(doc_id: str) -> dict | None:
+    """Gibt TESTPLAN-Metadaten fuer eine doc_id zurueck."""
+    for phase_data in TESTPLAN.values():
+        for test in phase_data["tests"]:
+            if test["pdf"].replace(".pdf", "") == doc_id:
+                return test
+    return None

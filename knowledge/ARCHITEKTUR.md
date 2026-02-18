@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-19
 tags: [zbz-ocr-tei, architektur, pipeline, workflow]
 status: active
 ---
@@ -17,16 +17,17 @@ Technische Pipeline-Architektur: 5 Stufen von PDF zu TEI-XML.
 ## Pipeline-Übersicht
 
 ```
-PDF --> Docling (Layout) --> OCR Engine --> Markdown --> Post-Processing --> TEI-XML --> [GND]
-        output/layout/       output/ocr_results/          output/clean/      output/tei/
+PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --> TEI-XML --> [GND]
+        output/layout/       output/ocr_results/  output/llm_corrected/  output/clean/    output/tei/
 ```
 
-### 5 Stufen
+### 6 Stufen
 
 | Stufe | Aufgabe | Tool | Output |
 |-------|---------|------|--------|
 | 1 | Layout-Analyse | Docling (do_ocr=False) | JSON mit BBox-Koordinaten |
 | 2 | OCR | DeepSeek / Mistral / Gemini | Seitenweises Markdown |
+| 2.5 | LLM-Nachkorrektur | Claude Haiku 4.5 | Korrigiertes Markdown |
 | 3 | Post-Processing | `scripts/postprocess/` | Bereinigtes Markdown |
 | 4 | TEI-Transformation | `scripts/transform_to_tei.py` | TEI-XML |
 | 5 | Validierung | lxml, RelaxNG (geplant) | Validierte TEI-XML |
@@ -76,6 +77,31 @@ Vollständige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 | 2310 | A | 2.67% | 97.33% |
 | 1180 | A | 4.89% | 95.11% |
 | 290 | A | 9.21% | 90.79% |
+
+---
+
+## Stufe 2.5: LLM-Nachkorrektur (optional)
+
+**Skript:** `scripts/llm_postprocess.py`
+
+| Aspekt | Details |
+|--------|---------|
+| Modell | Claude Haiku 4.5 (Anthropic) |
+| Input | OCR-Markdown aus Stufe 2 |
+| Output | Korrigiertes Markdown |
+| Rolle | Korrektur, NICHT Transkription — das LLM sieht nie das Bild |
+| Kosten | ~$0.39 fuer 50 Seiten, ~$56 fuer 7.200 Seiten |
+
+**Wichtig:** Das LLM macht keine OCR. Es korrigiert nur den von Mistral/DeepSeek erzeugten Text. Es erhaelt Dokumentkontext (Typ, Sprache, Genre) und identifiziert Zeichenfehler, fehlende Akzente, OCR-Artefakte.
+
+**Ergebnis Pilot (Phase 1-3, 10 Docs):**
+
+| Phase | Mistral CER | LLM CER | Verbesserung |
+|-------|-------------|---------|--------------|
+| Phase 1 (A) | 9.40% | 8.43% | -0.97 |
+| Phase 2 (B) | 6.31% | 6.34% | +0.03 |
+| Phase 3 (D) | 2.88% | 2.72% | -0.16 |
+| **Gesamt** | **5.87%** | **5.47%** | **-0.40 (7% relativ)** |
 
 ---
 
@@ -144,6 +170,10 @@ python scripts/extract_layout.py --input data/scans/2530.pdf --visualize
 # OCR Pipeline (GPU erforderlich)
 python scripts/ocr_pipeline.py --input data/scans/2310.pdf
 python scripts/ocr_pipeline.py --all --engine auto
+
+# LLM-Nachkorrektur (braucht ANTHROPIC_API_KEY in .env)
+python -m scripts.llm_postprocess --phase phase1
+python -m scripts.llm_postprocess --all
 
 # Post-Processing (ohne GPU)
 python -m scripts.postprocess.pipeline
