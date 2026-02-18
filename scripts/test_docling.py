@@ -10,12 +10,10 @@ import os
 import sys
 from pathlib import Path
 
+from scripts.config import PROJECT_ROOT, SCANS_DIR, OUTPUT_DIR, OCR_RESULTS_DIR
+
 # Windows: Disable symlink requirement for HuggingFace cache
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
 
 
 def test_docling_basic():
@@ -111,8 +109,7 @@ def main():
         return 1
 
     # Paths
-    scans_dir = PROJECT_ROOT / "data" / "scans"
-    output_dir = PROJECT_ROOT / "output" / "docling_results"
+    output_dir = OUTPUT_DIR / "docling_results"
 
     # Test PDFs (two-column - Type B)
     test_pdfs = [
@@ -120,7 +117,7 @@ def main():
     ]
 
     for pdf_name in test_pdfs:
-        pdf_path = scans_dir / pdf_name
+        pdf_path = SCANS_DIR / pdf_name
 
         if not pdf_path.exists():
             print(f"\n[SKIP] PDF not found: {pdf_path}")
@@ -130,7 +127,7 @@ def main():
             markdown = test_docling_pdf(pdf_path, output_dir)
 
             # Compare with DeepSeek if available
-            deepseek_file = PROJECT_ROOT / "output" / "ocr_results" / f"{pdf_path.stem}_p1.md"
+            deepseek_file = OCR_RESULTS_DIR / f"{pdf_path.stem}_p1.md"
             compare_with_deepseek(markdown, deepseek_file)
 
         except Exception as e:

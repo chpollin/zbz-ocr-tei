@@ -17,9 +17,7 @@ from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Optional
 
-# Projekt-Root
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
+from scripts.config import LAYOUT_DIR
 
 
 @dataclass
@@ -208,7 +206,7 @@ def main():
         print(f"Datei nicht gefunden: {args.input}")
         return 1
 
-    output_dir = args.output or PROJECT_ROOT / "output" / "layout"
+    output_dir = args.output or LAYOUT_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Layout-Extraktion: {args.input.name}")

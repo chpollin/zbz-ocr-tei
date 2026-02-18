@@ -12,9 +12,7 @@ import json
 import sys
 from pathlib import Path
 
-# Projekt-Root
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
+from scripts.config import SCANS_DIR, IMAGES_DIR, WEB_DPI
 
 
 def extract_pdf_pages(pdf_path: Path, output_dir: Path, dpi: int = 150) -> dict:
@@ -103,18 +101,17 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(description="PDF zu Seitenbildern extrahieren")
-    parser.add_argument("--dpi", type=int, default=150,
+    parser.add_argument("--dpi", type=int, default=WEB_DPI,
                         help="Aufloesung (150=Web, 300=OCR)")
     parser.add_argument("--pdf", type=str, default=None,
                         help="Einzelnes PDF extrahieren")
     args = parser.parse_args()
 
-    scans_dir = PROJECT_ROOT / "data" / "scans"
-    output_dir = PROJECT_ROOT / "docs" / "images"
+    output_dir = IMAGES_DIR
 
     if args.pdf:
         # Einzelnes PDF
-        pdf_path = scans_dir / args.pdf
+        pdf_path = SCANS_DIR / args.pdf
         if not pdf_path.exists():
             print(f"PDF nicht gefunden: {pdf_path}")
             sys.exit(1)
@@ -124,7 +121,7 @@ def main():
         results = [metadata]
     else:
         # Alle PDFs
-        results = extract_all_pdfs(scans_dir, output_dir, args.dpi)
+        results = extract_all_pdfs(SCANS_DIR, output_dir, args.dpi)
 
     # Metadaten speichern
     metadata_file = output_dir / "manifest.json"

@@ -14,6 +14,36 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-18 | Code-Refactoring: Zentrale Module
+
+### Durchgefuehrt
+
+- `scripts/config.py` erstellt: Alle Pfade, Modellnamen, Konstanten, Testplan an einem Ort
+- `scripts/utils.py` erstellt: `pdf_to_images()`, `check_gpu()`, `load_env()`, `load_deepseek_model()`
+- 12 Scripts refactored: Duplizierte Funktionen durch shared imports ersetzt
+- Eliminiert: 4x `pdf_to_images()`, 4x `check_gpu()`, 4x `load_model()`, 2x `load_env()`, 2x `TESTPLAN`
+- Alle Imports verifiziert (16 Module laden korrekt)
+
+### Betroffene Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `scripts/config.py` | **NEU** - Zentrale Konfiguration |
+| `scripts/utils.py` | **NEU** - Gemeinsame Hilfsfunktionen |
+| `scripts/ocr_pipeline.py` | Nutzt config/utils, lokale Duplikate entfernt |
+| `scripts/test_mistral_ocr.py` | Nutzt config/utils statt eigener load_env/PHASE1_TESTS |
+| `scripts/test_all_pdfs.py` | Nutzt config/utils statt eigenem TESTPLAN/check_gpu/load_model |
+| `scripts/test_deepseek_ocr.py` | Nutzt config/utils statt eigener pdf_to_images/check_gpu/load_model |
+| `scripts/test_column_prompt.py` | Nutzt config/utils statt eigener check_gpu/load_model |
+| `scripts/evaluate_ocr.py` | Nutzt config statt PROJECT_ROOT-Pfade |
+| `scripts/transform_to_tei.py` | Nutzt config statt lokaler DOC_TYPES/KNOWN_ENTITIES |
+| `scripts/extract_pages.py` | Nutzt config statt PROJECT_ROOT-Pfade |
+| `scripts/extract_layout.py` | Nutzt config statt PROJECT_ROOT-Pfade |
+| `scripts/extract_gnd.py` | Nutzt config statt PROJECT_ROOT-Pfade |
+| `scripts/test_docling.py` | Nutzt config statt PROJECT_ROOT-Pfade |
+
+---
+
 ## 2026-02-18 | Mistral Document AI Integration & Benchmark
 
 ### Durchgefuehrt

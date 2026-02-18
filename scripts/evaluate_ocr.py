@@ -4,18 +4,14 @@ Berechnet Character Error Rate (CER) und Word Error Rate (WER).
 Generiert visuellen HTML-Report mit Diff-Ansicht.
 """
 
-import os
-import sys
 import re
 import json
 from pathlib import Path
 from datetime import datetime
-from difflib import SequenceMatcher, HtmlDiff
+from difflib import SequenceMatcher
 import xml.etree.ElementTree as ET
 
-# Projekt-Root hinzufuegen
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
+from scripts.config import REFERENZ_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR
 
 
 def extract_text_from_tei(tei_path: Path) -> str:
@@ -585,16 +581,15 @@ def main():
     args = parser.parse_args()
 
     # Pfade
-    tei_dir = PROJECT_ROOT / "data" / "referenz-tei"
-    ocr_dir = PROJECT_ROOT / "output" / "ocr_results"
-    output_dir = PROJECT_ROOT / "output" / "evaluation"
+    tei_dir = REFERENZ_TEI_DIR
+    ocr_dir = OCR_RESULTS_DIR
+    output_dir = EVALUATION_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Dokumente bestimmen
     if args.docs:
         doc_ids = args.docs
     elif args.all:
-        # Alle OCR-Ergebnisse finden
         ocr_files = list(ocr_dir.glob("*_p*.md"))
         doc_ids = sorted(set(f.stem.rsplit('_p', 1)[0] for f in ocr_files))
     else:

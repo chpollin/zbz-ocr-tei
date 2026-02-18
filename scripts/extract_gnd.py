@@ -12,8 +12,7 @@ from pathlib import Path
 from collections import defaultdict
 from lxml import etree
 
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
+from scripts.config import REFERENZ_TEI_DIR, OUTPUT_DIR
 
 # TEI namespace
 TEI_NS = "http://www.tei-c.org/ns/1.0"
@@ -123,8 +122,7 @@ def main():
     print("=" * 60)
 
     # Find all TEI files
-    tei_dir = PROJECT_ROOT / "data" / "referenz-tei"
-    xml_files = list(tei_dir.glob("**/*.xml"))
+    xml_files = list(REFERENZ_TEI_DIR.glob("**/*.xml"))
 
     print(f"\nFound {len(xml_files)} TEI files")
 
@@ -158,7 +156,7 @@ def main():
     print(f"  Works:         {len(aggregated['works'])}")
 
     # Save results
-    output_dir = PROJECT_ROOT / "output" / "gnd_analysis"
+    output_dir = OUTPUT_DIR / "gnd_analysis"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Save detailed results

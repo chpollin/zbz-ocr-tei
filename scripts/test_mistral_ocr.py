@@ -28,26 +28,8 @@ import time
 from pathlib import Path
 from datetime import datetime
 
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
-
-# Phase-1-Testdateien (einspaltig, Typ A)
-PHASE1_TESTS = [
-    {"pdf": "2310.pdf", "type": "A", "lang": "FR", "desc": "JSTOR Rezension"},
-    {"pdf": "1180.pdf", "type": "A", "lang": "DE/FR", "desc": "Jahresbericht"},
-    {"pdf": "290.pdf", "type": "A", "lang": "FR", "desc": "Comptes Rendus"},
-]
-
-
-def load_env():
-    """Laedt .env-Datei falls vorhanden."""
-    env_file = PROJECT_ROOT / ".env"
-    if env_file.exists():
-        for line in env_file.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                key, _, value = line.partition("=")
-                os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+from scripts.config import PROJECT_ROOT, SCANS_DIR, MISTRAL_RESULTS_DIR, OCR_RESULTS_DIR, PHASE1_TESTS
+from scripts.utils import load_env
 
 
 def check_config():
@@ -130,15 +112,12 @@ def run_phase1(scan_dir: Path, output_dir: Path) -> list:
 
 def compare_with_deepseek(output_dir: Path) -> dict:
     """Vergleicht Mistral-Ergebnisse mit bestehenden DeepSeek-Ergebnissen."""
-    deepseek_dir = PROJECT_ROOT / "output" / "ocr_results"
-    mistral_dir = output_dir
-
     comparison = {}
 
     for test in PHASE1_TESTS:
         doc_id = Path(test["pdf"]).stem
-        deepseek_files = sorted(deepseek_dir.glob(f"{doc_id}_p*.md"))
-        mistral_files = sorted(mistral_dir.glob(f"{doc_id}_p*.md"))
+        deepseek_files = sorted(OCR_RESULTS_DIR.glob(f"{doc_id}_p*.md"))
+        mistral_files = sorted(output_dir.glob(f"{doc_id}_p*.md"))
 
         if not deepseek_files:
             comparison[doc_id] = {"status": "no_deepseek", "note": "Keine DeepSeek-Ergebnisse vorhanden"}
@@ -192,8 +171,8 @@ def main():
     print()
 
     # Pfade
-    scan_dir = PROJECT_ROOT / "data" / "scans"
-    output_dir = PROJECT_ROOT / "output" / "mistral_results"
+    scan_dir = SCANS_DIR
+    output_dir = MISTRAL_RESULTS_DIR
 
     if args.input:
         # Einzelnes PDF

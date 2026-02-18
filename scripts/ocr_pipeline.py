@@ -25,48 +25,17 @@ import sys
 import tempfile
 import time
 from pathlib import Path
-from datetime import datetime
 
-# Projekt-Root
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
+from scripts.config import (
+    PROJECT_ROOT, SCANS_DIR, OCR_RESULTS_DIR,
+    DEEPSEEK_MODEL, DEEPSEEK_PROMPT, MISTRAL_MODEL,
+    MISTRAL_MAX_PAGES_PER_REQUEST, MISTRAL_TIMEOUT_SECONDS,
+    TWO_COLUMN_DOCS,
+)
+from scripts.utils import check_gpu, load_env, pdf_to_images
 
-# Windows: Symlink-Warnung unterdrücken
+# Windows: Symlink-Warnung unterdruecken
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-
-
-def check_gpu():
-    """Prüft GPU-Verfügbarkeit."""
-    try:
-        import torch
-        if torch.cuda.is_available():
-            return {
-                "available": True,
-                "name": torch.cuda.get_device_name(0),
-                "vram_gb": torch.cuda.get_device_properties(0).total_memory / 1024**3
-            }
-    except ImportError:
-        pass
-    return {"available": False}
-
-
-def pdf_to_images(pdf_path: Path, output_dir: Path, dpi: int = 300) -> list[Path]:
-    """Konvertiert PDF zu Bildern."""
-    import pypdfium2 as pdfium
-
-    output_dir.mkdir(parents=True, exist_ok=True)
-    pdf = pdfium.PdfDocument(str(pdf_path))
-    image_paths = []
-
-    for i, page in enumerate(pdf):
-        bitmap = page.render(scale=dpi / 72)
-        pil_image = bitmap.to_pil()
-        image_path = output_dir / f"{pdf_path.stem}_p{i+1:03d}.png"
-        pil_image.save(str(image_path), "PNG")
-        image_paths.append(image_path)
-
-    pdf.close()
-    return image_paths
 
 
 class DeepSeekOCR:
@@ -77,34 +46,20 @@ class DeepSeekOCR:
         self.tokenizer = None
 
     def load(self):
-        """Lädt das Modell."""
+        """Laedt das Modell."""
         if self.model is not None:
             return
 
-        from transformers import AutoModel, AutoTokenizer
-        import torch
-
-        print("Lade DeepSeek-OCR-2...")
-        model_name = "deepseek-ai/DeepSeek-OCR-2"
-
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        self.model = AutoModel.from_pretrained(
-            model_name,
-            trust_remote_code=True,
-            use_safetensors=True
-        )
-        self.model = self.model.eval().cuda().to(torch.bfloat16)
-        print("DeepSeek-OCR-2 geladen.")
+        from scripts.utils import load_deepseek_model
+        self.model, self.tokenizer = load_deepseek_model()
 
     def process_image(self, image_path: Path, output_dir: Path) -> str:
         """Verarbeitet ein Bild."""
         self.load()
 
-        prompt = "<image>\n<|grounding|>Convert the document to markdown."
-
         self.model.infer(
             self.tokenizer,
-            prompt=prompt,
+            prompt=DEEPSEEK_PROMPT,
             image_file=str(image_path),
             output_path=str(output_dir),
             base_size=1024,
@@ -147,8 +102,8 @@ class MistralOCR:
     def __init__(self):
         self.endpoint = os.environ.get("MISTRAL_DOC_AI_ENDPOINT", "")
         self.api_key = os.environ.get("MISTRAL_DOC_AI_KEY", "")
-        self.model = "mistral-document-ai-2512"
-        self.max_pages_per_request = 30
+        self.model = MISTRAL_MODEL
+        self.max_pages_per_request = MISTRAL_MAX_PAGES_PER_REQUEST
 
     def _check_config(self):
         """Prueft ob Endpoint und Key konfiguriert sind."""
@@ -208,9 +163,6 @@ class MistralOCR:
             },
         }
 
-        # Endpoint kann verschiedene Formate haben:
-        # 1. https://<name>.<region>.models.ai.azure.com  (Standard)
-        # 2. https://<name>.services.ai.azure.com/providers/mistral/azure/ocr (Foundry)
         endpoint = self.endpoint.rstrip("/")
         if endpoint.endswith("/v1/ocr") or endpoint.endswith("/ocr"):
             url = endpoint
@@ -221,7 +173,7 @@ class MistralOCR:
             url,
             json=payload,
             headers=headers,
-            timeout=120,
+            timeout=MISTRAL_TIMEOUT_SECONDS,
         )
         response.raise_for_status()
         return response.json()
@@ -230,7 +182,6 @@ class MistralOCR:
         """Verarbeitet ein PDF ueber die Mistral Document AI API."""
         self._check_config()
 
-        # PDF in Chunks aufteilen falls noetig
         chunks = self._split_pdf(pdf_path, self.max_pages_per_request)
         print(f"  {len(chunks)} Chunk(s) fuer API-Request")
 
@@ -263,7 +214,6 @@ class MistralOCR:
             page_offset += pages_in_chunk
             print(f"  {pages_in_chunk} Seiten in {elapsed:.1f}s")
 
-        # Usage-Info aus letztem Chunk
         usage = result.get("usage_info", {})
 
         return {
@@ -284,7 +234,7 @@ class DoclingOCR:
         self.converter = None
 
     def load(self):
-        """Lädt den Converter."""
+        """Laedt den Converter."""
         if self.converter is not None:
             return
 
@@ -304,11 +254,9 @@ class DoclingOCR:
         result = self.converter.convert(str(pdf_path))
         markdown = result.document.export_to_markdown()
 
-        # Speichere Gesamtdokument
         output_file = output_dir / f"{pdf_path.stem}_docling.md"
         output_file.write_text(markdown, encoding="utf-8")
 
-        # Zähle Seiten (approximativ über Seitenumbrüche)
         page_count = markdown.count("---") + 1
 
         return {
@@ -330,11 +278,8 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Auto-Auswahl basierend auf Dokumenttyp und Verfuegbarkeit
     if engine == "auto":
-        # Typ B (zweispaltig) -> Docling
-        two_column_docs = ["2530", "890", "3040"]
-        if pdf_path.stem in two_column_docs:
+        if pdf_path.stem in TWO_COLUMN_DOCS:
             engine = "docling"
         elif os.environ.get("MISTRAL_DOC_AI_KEY"):
             engine = "mistral"
@@ -368,7 +313,7 @@ def main():
         help="OCR-Engine (default: auto)"
     )
     parser.add_argument("--output", "-o", type=Path, help="Ausgabeverzeichnis")
-    parser.add_argument("--check-gpu", action="store_true", help="Nur GPU prüfen")
+    parser.add_argument("--check-gpu", action="store_true", help="Nur GPU pruefen")
 
     args = parser.parse_args()
 
@@ -378,35 +323,27 @@ def main():
         if gpu["available"]:
             print(f"GPU: {gpu['name']} ({gpu['vram_gb']:.1f} GB)")
         else:
-            print("Keine GPU verfügbar")
+            print("Keine GPU verfuegbar")
         return 0
 
+    # .env laden
+    load_env()
+
     # Pfade
-    scans_dir = PROJECT_ROOT / "data" / "scans"
-    output_dir = args.output or PROJECT_ROOT / "output" / "ocr_results"
+    output_dir = args.output or OCR_RESULTS_DIR
 
     # PDFs sammeln
     if args.input:
         pdfs = [args.input]
     elif args.all:
-        pdfs = sorted(scans_dir.glob("*.pdf"))
+        pdfs = sorted(SCANS_DIR.glob("*.pdf"))
     else:
         parser.print_help()
         return 1
 
     if not pdfs:
-        print(f"Keine PDFs gefunden in: {scans_dir}")
+        print(f"Keine PDFs gefunden in: {SCANS_DIR}")
         return 1
-
-    # Verarbeiten
-    # .env laden falls vorhanden
-    env_file = PROJECT_ROOT / ".env"
-    if env_file.exists():
-        for line in env_file.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                key, _, value = line.partition("=")
-                os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
     print("=" * 60)
     print("OCR-Pipeline: DeepSeek + Mistral Document AI + Docling")

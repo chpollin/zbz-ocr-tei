@@ -14,32 +14,9 @@ Usage:
 
 import argparse
 import re
-import json
 from pathlib import Path
-from datetime import datetime
 
-# Dokumenttypen und ihre TEI-Strukturen
-DOC_TYPES = {
-    "review": "div type=\"review\"",
-    "interview": "div type=\"interview\"",
-    "essay": "div n=\"1\"",
-    "lexicon": "div type=\"entry\"",
-}
-
-# Bekannte Entitäten aus GND-Extraktion (Seed für NER)
-KNOWN_ENTITIES = {
-    "Karl Jaspers": "GND:118557106",
-    "Jaspers": "GND:118557106",
-    "Jeanne Hersch": "GND:118815679",
-    "Hersch": "GND:118815679",
-    "Bergson": "GND:118509578",
-    "Kierkegaard": "GND:118562002",
-    "Heidegger": "GND:118547798",
-    "Kant": "GND:118559796",
-    "Platon": "GND:118594893",
-    "Sartre": "GND:118605895",
-    "Hannah Arendt": "GND:118502751",
-}
+from scripts.config import OCR_RESULTS_DIR, TEI_DIR, DOC_TYPES, KNOWN_ENTITIES
 
 
 def normalize_text(text: str) -> str:
@@ -346,9 +323,8 @@ def main():
 
     args = parser.parse_args()
 
-    base_dir = Path(__file__).parent.parent
-    ocr_dir = base_dir / "output" / "ocr_results"
-    tei_dir = base_dir / "output" / "tei"
+    ocr_dir = OCR_RESULTS_DIR
+    tei_dir = TEI_DIR
 
     results = []
 
