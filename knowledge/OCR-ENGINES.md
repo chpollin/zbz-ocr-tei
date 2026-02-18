@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-19
 tags: [zbz-ocr-tei, ocr, deepseek, mistral, gemini, docling]
 status: active
 ---
@@ -19,7 +19,7 @@ Alle OCR-Tools und ihre Rollen in der Pipeline. Docling wird nur für Layout-Ana
 | Engine | Zugang | Parameter | Einsatz | Status |
 |--------|--------|-----------|---------|--------|
 | DeepSeek-OCR-2 | Lokal (GPU) | 3B VLM | Entwicklung, Typ A | Validiert |
-| Mistral OCR 3 | Azure | - | Produktionsbetrieb ZBZ | API-Key ausstehend |
+| Mistral Document AI | Azure AI Foundry | mistral-document-ai-2512 | Produktionsbetrieb ZBZ | API-Key vorhanden |
 | Gemini 3 Flash | Google API | - | Typ B/D (Agentic Vision), NER | Nicht getestet |
 | Claude | Anthropic/Azure | - | Komplexe Strukturen, QS | Nicht getestet |
 | Docling | Lokal (CPU) | IBM Research | Nur Layout-Analyse | Validiert |
@@ -52,22 +52,107 @@ Alle OCR-Tools und ihre Rollen in der Pipeline. Docling wird nur für Layout-Ana
 
 ---
 
-## Mistral OCR 3
+## Mistral Document AI (Azure)
 
 | Aspekt | Details |
 |--------|---------|
-| Provider | Azure AI Services |
-| Modell | mistral-ocr-latest |
-| Einsatz | Primäre Produktions-Engine (ZBZ hat Azure-Zugang) |
-| Vorteil | Kein GPU nötig, serverbasiert, skalierbar |
-| Status | API verfügbar, Key wird von ZBZ bereitgestellt |
+| Provider | Azure AI Foundry (Serverless API, Pay-as-you-go) |
+| Modell | `mistral-document-ai-2512` (Preview, basiert auf mistral-ocr-2512) |
+| Alte Version | `mistral-document-ai-2505` (verfuegbar, aber ueberholt) |
+| Eingestellt | `mistral-ocr-2503` (seit 30.01.2026 nicht mehr deploybar) |
+| Endpoint | `/v1/ocr` mit Base64-kodierten Dokumenten |
+| Output | Seitenweises Markdown mit Bild-Referenzen und Dimensionen |
+| Einsatz | Primaere Produktions-Engine (ZBZ hat Azure-Zugang) |
+| Status | API-Key vorhanden, Engine implementiert |
+
+### Modellversionen
+
+| Modell | Status | Hinweis |
+|--------|--------|---------|
+| `mistral-document-ai-2512` | Verfuegbar (Preview) | Aktuell, +74% bei Scans/Tabellen/Handschrift |
+| `mistral-document-ai-2505` | Verfuegbar | Erste Document AI Version |
+| `mistral-ocr-2503` | Eingestellt (30.01.2026) | Nicht mehr deploybar |
+
+### Limits
+
+| Parameter | Wert |
+|-----------|------|
+| Max. Dateigroesse | 30 MB |
+| Max. Seiten (OCR) | 30 pro Request |
+| Max. Seiten (Annotations) | 8 pro Request |
+| Eingabe | PDF, PNG, JPEG, TIFF, GIF, WEBP, PPTX, DOCX, TXT, EPUB |
+| Ausgabe | Markdown (Tabellen optional als HTML) |
+| Sprachen | 36 (de, fr, en, es, it, nl, pt, hu, pl, cs, zh, ja, ko, ar, ...) |
+
+### Einrichtung auf Azure
+
+1. **Azure AI Foundry Ressource** erstellen im Azure Portal (portal.azure.com)
+2. **Modell deployen**: Im Foundry Portal (ai.azure.com) unter Model Catalog nach `mistral-document-ai-2512` suchen, als Serverless Endpoint deployen
+3. **Credentials abrufen**: Unter Meine Ressourcen > Modelle und Endpunkte — Endpoint URL und API Key kopieren
+
+**Konfiguration im Projekt:** Werte in `.env` eintragen (siehe `.env.example`):
+```bash
+MISTRAL_DOC_AI_ENDPOINT="https://<deployment>.<region>.models.ai.azure.com"
+MISTRAL_DOC_AI_KEY="<api-key>"
+```
+
+**Unterstuetzte Regionen:** East US, East US 2, West US, West US 3, South Central US, North Central US, Sweden Central.
+
+### API-Details
+
+**Endpoint:** `POST {endpoint}/v1/ocr` mit Bearer-Token-Authentifizierung.
+
+**Eingabe:** Dokumente als Base64 im Feld `document.document_url` (Format: `data:application/pdf;base64,...`). Direkte URLs werden auf Azure nicht unterstuetzt.
+
+**Antwortstruktur:** JSON mit `pages[]`, jede Seite hat:
+- `index` — Seitennummer (0-basiert)
+- `markdown` — extrahierter Text
+- `images[]` — Bounding Boxes (und optional Base64 mit `include_image_base64: true`)
+- `dimensions` — DPI, Hoehe, Breite
+
+**Grosse Dokumente (>30 Seiten):** Pipeline splittet automatisch mit PyMuPDF (`MistralOCR._split_pdf()`).
+
+### Annotations (strukturierte Extraktion)
+
+Zusaetzlich zum OCR kann das Modell Inhalte direkt in ein JSON-Schema extrahieren:
+- **`bbox_annotation`**: Beschriftet erkannte Bildbereiche (z.B. Diagramme)
+- **`document_annotation`**: Extrahiert Gesamtdokument in definiertes JSON-Format
+
+Annotations sind auf 8 Seiten begrenzt. Relevant fuer: Metadaten-Extraktion, TEI-Header-Generierung.
+
+### Fehlerbehandlung
+
+| Problem | Loesung |
+|---------|---------|
+| 404 nach Deployment | `/v1/ocr` an Endpoint-URL anhaengen |
+| 413 / Datei zu gross | PDF komprimieren oder splitten (max 30 MB) |
+| Timeout bei Annotations | Timeout auf min. 120s setzen |
+| Base64-Fehler | Keine Zeilenumbrueche im Base64-String |
+
+### Alternative Zugangswege
+
+| Zugang | Modell | Vorteil |
+|--------|--------|---------|
+| Azure AI Foundry | `mistral-document-ai-2512` | Data Residency, Enterprise-Governance |
+| Mistral API direkt (console.mistral.ai) | `mistral-ocr-latest` | Einfachstes Setup, kein Azure noetig |
+| Google Vertex AI | `mistral-ocr-2512` | Google Cloud Infrastruktur |
+
+### Benchmark-Ergebnisse Phase 1 (18.02.2026)
+
+| Dokument | Seiten | Zeichen | Zeit | Sek./Seite |
+|----------|--------|---------|------|------------|
+| 2310 | 3 | 8.041 | 5.6s | 1.87 |
+| 1180 | 8 | 20.121 | 6.4s | 0.80 |
+| 290 | 5 | 15.148 | 6.3s | 1.27 |
+
+Interaktiver Vergleich mit DeepSeek: `docs/benchmark.html`
 
 ### Noch zu tun
 
-- [ ] API-Key erhalten (-> [DECISIONS](DECISIONS.md) O1)
-- [ ] Azure-Endpoint testen
-- [ ] Qualitätsvergleich gegen DeepSeek auf Phase-1-Daten
-- [ ] Engine-Klasse `MistralOCR` in `ocr_pipeline.py` implementieren
+- [x] API-Key erhalten
+- [x] Engine-Klasse `MistralOCR` in `ocr_pipeline.py` implementieren
+- [x] Azure-Endpoint testen (Benchmark gegen DeepSeek auf Phase-1-Daten)
+- [ ] Qualitaetsvergleich: CER/WER auf 2310, 1180, 290 (gegen Referenz-TEI)
 
 ---
 
@@ -101,9 +186,9 @@ Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Dokumenttypen.
 
 | Typ | Engine |
 |-----|--------|
-| A (einspaltig) | DeepSeek-OCR-2 / Mistral (lokal/kostenlos bzw. Azure) |
+| A (einspaltig) | DeepSeek-OCR-2 / Mistral Document AI (lokal/kostenlos bzw. Azure) |
 | B (zweispaltig) | Gemini 3 Agentic Vision |
-| C (Monografie) | DeepSeek / Mistral + Chunking |
+| C (Monografie) | DeepSeek / Mistral Document AI + Chunking |
 | D (Spezial) | Gemini 3 Agentic Vision |
 
 ### Noch zu tun
@@ -143,12 +228,14 @@ Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text
 
 | Kriterium | DeepSeek | Mistral | Gemini | Docling |
 |-----------|----------|---------|--------|---------|
-| Genauigkeit | 94-97% | Ungetestet | Ungetestet | Nur Layout |
-| GPU nötig | Ja (8GB+) | Nein (API) | Nein (API) | Nein (CPU) |
+| Genauigkeit | 94-97% | Benchmark laeuft | Ungetestet | Nur Layout |
+| GPU noetig | Ja (8GB+) | Nein (API) | Nein (API) | Nein (CPU) |
 | Kosten | Kostenlos | Azure-Abo | ~$27/Projekt | Kostenlos |
 | Spalten | Nein | Ungetestet | Ja (Agentic) | Ja (Layout) |
-| Geschwindigkeit | ~1.6s/Seite | Ungetestet | Ungetestet | ~3s/Seite |
+| Geschwindigkeit | ~1.6s/Seite | ~1.3s/Seite | Ungetestet | ~3s/Seite |
 | Offline | Ja | Nein | Nein | Ja |
+| Kursiv/Formatting | Nein | Ja (*italics*) | Ungetestet | - |
+| Alle Seiten | Teilweise (GPU-Limit) | Ja (Cloud) | Ungetestet | - |
 
 ---
 
@@ -161,4 +248,4 @@ Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19*

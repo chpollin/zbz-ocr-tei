@@ -5,6 +5,9 @@ data/richtlinien/*.docx
 data/richtlinien/*.pdf
 data/projektsteuerung/*.xlsx
 
+# Secrets
+.env
+
 # Python
 .venv/
 __pycache__/

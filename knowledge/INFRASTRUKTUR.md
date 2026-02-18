@@ -18,7 +18,7 @@ Deployment, API-Zugang, Containerisierung und CI/CD für den ZBZ-Produktionsbetr
 
 | Aspekt | Details |
 |--------|---------|
-| API-Zugang | Azure (Mistral OCR 3 verfügbar), Claude und Gemini in Genehmigung |
+| API-Zugang | Azure (Mistral Document AI 2512, Key vorhanden), Claude und Gemini in Genehmigung |
 | Versionskontrolle | GitLab Universität Zürich |
 | Container-Runtime | Podman (kein Docker, aber OCI-kompatibel) |
 | Deployment | Fork des Entwicklungsrepos auf ZBZ-Infrastruktur |
@@ -28,15 +28,17 @@ Deployment, API-Zugang, Containerisierung und CI/CD für den ZBZ-Produktionsbetr
 
 ## Azure-Integration
 
-### Mistral OCR 3
+### Mistral Document AI
 
 | Aspekt | Details |
 |--------|---------|
-| Provider | Azure AI Services |
-| Modell | Mistral OCR 3 (mistral-ocr-latest) |
-| Einsatz | Primäre Produktions-Engine für ZBZ |
-| Status | API verfügbar, Key wird bereitgestellt |
-| Vorteil | Kein GPU nötig, ZBZ hat Azure-Zugang |
+| Provider | Azure AI Foundry (Serverless API) |
+| Modell | `mistral-document-ai-2512` |
+| Endpoint-Format | `https://<deployment>.<region>.models.ai.azure.com/v1/ocr` |
+| Regionen | East US, East US 2, West US, West US 3, South Central US, North Central US, Sweden Central |
+| Einsatz | Primaere Produktions-Engine fuer ZBZ |
+| Status | API-Key vorhanden, Engine implementiert |
+| Vorteil | Kein GPU noetig, serverbasiert, skalierbar, 30 Seiten/Request |
 
 ### Weitere APIs (geplant)
 
@@ -55,10 +57,10 @@ ocr:
   default_engine: mistral
   engines:
     mistral:
-      provider: azure
-      endpoint: https://xxx.openai.azure.com/
-      model: mistral-ocr-latest
-      api_key_env: AZURE_API_KEY
+      provider: azure-foundry
+      endpoint_env: MISTRAL_DOC_AI_ENDPOINT
+      model: mistral-document-ai-2512
+      api_key_env: MISTRAL_DOC_AI_KEY
     deepseek:
       provider: local
       model: deepseek-ai/DeepSeek-OCR-2
@@ -94,7 +96,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY scripts/ scripts/
 COPY templates/ templates/
 
-ENV AZURE_API_KEY=""
+ENV MISTRAL_DOC_AI_ENDPOINT=""
+ENV MISTRAL_DOC_AI_KEY=""
 ENV GEMINI_API_KEY=""
 
 ENTRYPOINT ["python", "-m", "scripts.ocr_pipeline"]
@@ -164,4 +167,4 @@ python scripts/ocr_pipeline.py --check-gpu
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-19*

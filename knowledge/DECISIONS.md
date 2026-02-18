@@ -38,7 +38,7 @@ Diese Fragen blockieren den Fortschritt.
 
 | # | Frage | Kontext | Blockiert | Klärung durch |
 |---|-------|---------|-----------|---------------|
-| O1 | Azure-API-Key: Wann verfügbar? | Mistral OCR 3 über Azure nicht testbar ohne Key | M1 Produktion | ZBZ (Alignment-Call) |
+| ~~O1~~ | ~~Azure-API-Key~~ | **Erledigt (18.02.2026)** -- Key vorhanden, Endpoint getestet, Benchmark durchgefuehrt | ~~M1~~ | -- |
 | O2 | Alignment-Call Termin? | Terminvorschläge gesendet (18./19./20./24.02.) | Alle offenen Fragen | ZBZ |
 | O3 | Fork-Modell und Merge-Strategie? | Upstream-Changes in Fork mergen, CI-basierte Tests | M4 Integration | ZBZ (im Meeting) |
 | O4 | Schnittstelle zbz-ocr-tei → coOCR: Welches Format? | coOCR importiert Bilder + PAGE-XML; zbz-ocr-tei exportiert Markdown + PNG | M4 Integration | Eigene Entscheidung |
@@ -83,7 +83,7 @@ Kann später geklärt werden.
 | R1 | Spalten-Problem unlösbar | Hoch | Cloud-VM für Docling, Gemini Agentic Vision, notfalls manuell | Offen (→ O10) |
 | R2 | TEI zu komplex für regelbasierte Transformation | Hoch | Hybrid: Regeln + LLM (teiCrafter für Tiefenerschließung) | Mitigiert durch Ökosystem |
 | R3 | GND-Halluzinationen bei LLM-Lookup | Mittel | Zweistufig: NER → API-Validierung gegen lobid.org | Strategie definiert |
-| R4 | Azure-API-Kompatibilität Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | Wartet auf API-Key (→ O1) |
+| R4 | Azure-API-Kompatibilitaet Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | **Geloest** -- Azure AI Foundry Endpoint funktioniert (18.02.) |
 | R5 | Fork-Divergenz zwischen DHCraft und ZBZ | Mittel | Merge-Strategie definieren, CI-basierte Tests | Wartet auf Meeting (→ O3) |
 | R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup in TEI umwandeln | Architektur-Fix nötig |
 
@@ -98,4 +98,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-18 (O1 erledigt, R4 geloest)*

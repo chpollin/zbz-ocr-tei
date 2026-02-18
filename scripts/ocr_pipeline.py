@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
-OCR-Pipeline: Docling + DeepSeek-OCR-2
+OCR-Pipeline: DeepSeek + Mistral Document AI + Docling
 
-Kombiniert Docling (Layout-Analyse) mit DeepSeek-OCR-2 (Texterkennung)
-für optimale Ergebnisse bei allen Dokumenttypen.
+Unterstuetzt mehrere OCR-Engines fuer verschiedene Dokumenttypen.
 
 Usage:
     # Einzelnes PDF
@@ -12,18 +11,19 @@ Usage:
     # Alle PDFs
     python scripts/ocr_pipeline.py --all
 
-    # Nur DeepSeek (einspaltige Dokumente)
+    # Bestimmte Engine
     python scripts/ocr_pipeline.py --input data/scans/2310.pdf --engine deepseek
-
-    # Nur Docling (zweispaltige Dokumente)
+    python scripts/ocr_pipeline.py --input data/scans/2310.pdf --engine mistral
     python scripts/ocr_pipeline.py --input data/scans/2530.pdf --engine docling
 """
 
 import argparse
+import base64
 import json
 import os
 import sys
 import tempfile
+import time
 from pathlib import Path
 from datetime import datetime
 
@@ -141,6 +141,141 @@ class DeepSeekOCR:
         }
 
 
+class MistralOCR:
+    """Mistral Document AI via Azure AI Foundry."""
+
+    def __init__(self):
+        self.endpoint = os.environ.get("MISTRAL_DOC_AI_ENDPOINT", "")
+        self.api_key = os.environ.get("MISTRAL_DOC_AI_KEY", "")
+        self.model = "mistral-document-ai-2512"
+        self.max_pages_per_request = 30
+
+    def _check_config(self):
+        """Prueft ob Endpoint und Key konfiguriert sind."""
+        if not self.endpoint:
+            raise ValueError(
+                "MISTRAL_DOC_AI_ENDPOINT nicht gesetzt. "
+                "Setze die Umgebungsvariable oder erstelle eine .env-Datei."
+            )
+        if not self.api_key:
+            raise ValueError(
+                "MISTRAL_DOC_AI_KEY nicht gesetzt. "
+                "Setze die Umgebungsvariable oder erstelle eine .env-Datei."
+            )
+
+    def _split_pdf(self, pdf_path: Path, max_pages: int = 30) -> list[bytes]:
+        """Teilt ein PDF in Chunks a max_pages Seiten."""
+        try:
+            import fitz  # PyMuPDF < 1.24
+        except ImportError:
+            import pymupdf as fitz  # PyMuPDF >= 1.24
+
+        doc = fitz.open(str(pdf_path))
+        total = len(doc)
+
+        if total <= max_pages:
+            pdf_bytes = pdf_path.read_bytes()
+            doc.close()
+            return [pdf_bytes]
+
+        chunks = []
+        for start in range(0, total, max_pages):
+            end = min(start + max_pages - 1, total - 1)
+            chunk = fitz.open()
+            chunk.insert_pdf(doc, from_page=start, to_page=end)
+            chunks.append(chunk.tobytes())
+            chunk.close()
+
+        doc.close()
+        return chunks
+
+    def _ocr_request(self, pdf_bytes: bytes) -> dict:
+        """Sendet einen OCR-Request an die Mistral API."""
+        import requests
+
+        encoded = base64.b64encode(pdf_bytes).decode("utf-8")
+
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}",
+        }
+
+        payload = {
+            "model": self.model,
+            "document": {
+                "type": "document_url",
+                "document_url": f"data:application/pdf;base64,{encoded}",
+            },
+        }
+
+        # Endpoint kann verschiedene Formate haben:
+        # 1. https://<name>.<region>.models.ai.azure.com  (Standard)
+        # 2. https://<name>.services.ai.azure.com/providers/mistral/azure/ocr (Foundry)
+        endpoint = self.endpoint.rstrip("/")
+        if endpoint.endswith("/v1/ocr") or endpoint.endswith("/ocr"):
+            url = endpoint
+        else:
+            url = f"{endpoint}/v1/ocr"
+
+        response = requests.post(
+            url,
+            json=payload,
+            headers=headers,
+            timeout=120,
+        )
+        response.raise_for_status()
+        return response.json()
+
+    def process_pdf(self, pdf_path: Path, output_dir: Path) -> dict:
+        """Verarbeitet ein PDF ueber die Mistral Document AI API."""
+        self._check_config()
+
+        # PDF in Chunks aufteilen falls noetig
+        chunks = self._split_pdf(pdf_path, self.max_pages_per_request)
+        print(f"  {len(chunks)} Chunk(s) fuer API-Request")
+
+        all_pages = []
+        page_offset = 0
+
+        for chunk_idx, chunk_bytes in enumerate(chunks):
+            if len(chunks) > 1:
+                print(f"  Chunk {chunk_idx + 1}/{len(chunks)}...")
+
+            start_time = time.time()
+            result = self._ocr_request(chunk_bytes)
+            elapsed = time.time() - start_time
+
+            for page in result.get("pages", []):
+                page_num = page_offset + page["index"] + 1
+                markdown = page.get("markdown", "")
+
+                all_pages.append({
+                    "page": page_num,
+                    "text": markdown,
+                    "dimensions": page.get("dimensions"),
+                })
+
+                # Speichere Einzelseite
+                page_file = output_dir / f"{pdf_path.stem}_p{page_num}.md"
+                page_file.write_text(markdown, encoding="utf-8")
+
+            pages_in_chunk = len(result.get("pages", []))
+            page_offset += pages_in_chunk
+            print(f"  {pages_in_chunk} Seiten in {elapsed:.1f}s")
+
+        # Usage-Info aus letztem Chunk
+        usage = result.get("usage_info", {})
+
+        return {
+            "doc_id": pdf_path.stem,
+            "pages": len(all_pages),
+            "results": all_pages,
+            "engine": "mistral",
+            "model": self.model,
+            "usage": usage,
+        }
+
+
 class DoclingOCR:
     """Docling Engine (mit optionalem DeepSeek-Backend)."""
 
@@ -186,21 +321,23 @@ class DoclingOCR:
 
 def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     """
-    Verarbeitet ein PDF mit der gewählten Engine.
+    Verarbeitet ein PDF mit der gewaehlten Engine.
 
     Args:
         pdf_path: Pfad zum PDF
         output_dir: Ausgabeverzeichnis
-        engine: "deepseek", "docling", oder "auto"
+        engine: "deepseek", "mistral", "docling", oder "auto"
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Auto-Auswahl basierend auf Dokumenttyp
+    # Auto-Auswahl basierend auf Dokumenttyp und Verfuegbarkeit
     if engine == "auto":
-        # Typ B (zweispaltig) → Docling
+        # Typ B (zweispaltig) -> Docling
         two_column_docs = ["2530", "890", "3040"]
         if pdf_path.stem in two_column_docs:
             engine = "docling"
+        elif os.environ.get("MISTRAL_DOC_AI_KEY"):
+            engine = "mistral"
         else:
             engine = "deepseek"
 
@@ -210,6 +347,9 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     if engine == "deepseek":
         ocr = DeepSeekOCR()
         return ocr.process_pdf(pdf_path, output_dir)
+    elif engine == "mistral":
+        ocr = MistralOCR()
+        return ocr.process_pdf(pdf_path, output_dir)
     elif engine == "docling":
         ocr = DoclingOCR()
         return ocr.process_pdf(pdf_path, output_dir)
@@ -218,12 +358,12 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="OCR-Pipeline: Docling + DeepSeek")
+    parser = argparse.ArgumentParser(description="OCR-Pipeline: DeepSeek + Mistral + Docling")
     parser.add_argument("--input", "-i", type=Path, help="PDF-Datei")
     parser.add_argument("--all", action="store_true", help="Alle PDFs verarbeiten")
     parser.add_argument(
         "--engine", "-e",
-        choices=["auto", "deepseek", "docling"],
+        choices=["auto", "deepseek", "mistral", "docling"],
         default="auto",
         help="OCR-Engine (default: auto)"
     )
@@ -259,8 +399,17 @@ def main():
         return 1
 
     # Verarbeiten
+    # .env laden falls vorhanden
+    env_file = PROJECT_ROOT / ".env"
+    if env_file.exists():
+        for line in env_file.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, value = line.partition("=")
+                os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
     print("=" * 60)
-    print("OCR-Pipeline: Docling + DeepSeek-OCR-2")
+    print("OCR-Pipeline: DeepSeek + Mistral Document AI + Docling")
     print("=" * 60)
 
     gpu = check_gpu()

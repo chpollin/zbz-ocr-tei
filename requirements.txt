@@ -10,6 +10,10 @@ accelerate>=0.24.0
 # PDF-Verarbeitung
 pypdfium2>=4.0.0
 Pillow>=10.0.0
+PyMuPDF>=1.23.0           # PDF-Splitting fuer Mistral (max 30 Seiten/Request)
+
+# API-Zugang (Mistral Document AI auf Azure)
+requests>=2.31.0
 
 # TEI/XML
 lxml>=4.9.0

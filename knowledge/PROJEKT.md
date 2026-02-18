@@ -112,7 +112,7 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (TEI) ──► M3 (GND) ──► M
 
 ---
 
-## Komponentenstatus (18.02.2026)
+## Komponentenstatus (18.02.2026, abends)
 
 | Komponente | Status | Details |
 |------------|--------|---------|
@@ -126,8 +126,9 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (TEI) ──► M3 (GND) ──► M
 | GND-Seed | Erledigt | 75 Entitäten, `scripts/extract_gnd.py` |
 | GND-Pipeline | Ausstehend | API-Anbindung + NER fehlen |
 | Evaluation | Erledigt | `scripts/evaluate_ocr.py`, CER/WER + HTML-Report |
-| Azure-Integration | Ausstehend | API-Key kommt von ZBZ |
-| Containerisierung | Ausstehend | Dockerfile für Podman |
+| Azure-Integration | Erledigt | Mistral Document AI 2512, `.env` konfiguriert |
+| Benchmark-UI | Erledigt | `docs/benchmark.html`, Mistral vs DeepSeek |
+| Containerisierung | Ausstehend | Dockerfile fuer Podman |
 | CI/CD | Ausstehend | GitLab Uni Zürich |
 
 ---

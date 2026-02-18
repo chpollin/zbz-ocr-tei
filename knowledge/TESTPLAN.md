@@ -83,13 +83,23 @@ Pilotdateien und Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Pilo
 
 ## Ergebnisse
 
-### Evaluationsmatrix
+### Evaluationsmatrix (DeepSeek-OCR-2, lokal)
 
 | PDF | Typ | CER | WER | Genauigkeit | Status | Anmerkung |
 |-----|-----|-----|-----|-------------|--------|-----------|
 | 2310 | A | 2.67% | 16.61% | 97.33% | OK | Rezension, sehr gut |
 | 1180 | A | 4.89% | 13.29% | 95.11% | OK | Jahresbericht, gut |
 | 290 | A | 9.21% | 19.53% | 90.79% | OK | Comptes Rendus |
+
+### Mistral Document AI 2512 -- Benchmark (18.02.2026)
+
+| PDF | Typ | Seiten | Zeichen | Zeit | Anmerkung |
+|-----|-----|--------|---------|------|-----------|
+| 2310 | A | 3/3 | 8.041 | 5.6s | Kursiv erkannt, Akzente korrekt |
+| 1180 | A | 8/8 | 20.121 | 6.4s | Alle Seiten verarbeitet |
+| 290 | A | 5/5 | 15.148 | 6.3s | Fussnoten korrekt |
+
+CER/WER-Vergleich gegen Referenz-TEI steht noch aus. Interaktiver Vergleich: `docs/benchmark.html`
 | 130 | A | ? | ? | ? | - | Ausstehend |
 | 1410 | A | ? | ? | ? | - | Ausstehend |
 | 1060 | A | ? | ? | ? | - | Ausstehend |
@@ -132,15 +142,18 @@ python scripts/test_column_prompt.py
 
 ---
 
-## Nächste Schritte
+## Naechste Schritte
 
 1. [x] Testskript `test_all_pdfs.py` erstellen
-2. [x] Phase 1 durchführen (Baseline)
+2. [x] Phase 1 durchfuehren (DeepSeek Baseline)
 3. [x] Evaluationsskript `evaluate_ocr.py` erstellen
-4. [ ] Phase 2 mit verschiedenen Lösungsansätzen testen
-5. [ ] Phase 3-4 durchführen
-6. [ ] Evaluationsmatrix vervollständigen
-7. [ ] Empfehlung für Produktions-Pipeline ableiten
+4. [x] Mistral Document AI auf Phase 1 testen (`test_mistral_ocr.py`)
+5. [x] Benchmark-UI erstellen (`docs/benchmark.html`)
+6. [ ] CER/WER fuer Mistral gegen Referenz-TEI berechnen
+7. [ ] Phase 2 mit verschiedenen Loesungsansaetzen testen
+8. [ ] Phase 3-4 durchfuehren
+9. [ ] Evaluationsmatrix vervollstaendigen
+10. [ ] Empfehlung fuer Produktions-Pipeline ableiten
 
 ---
 
@@ -152,4 +165,4 @@ python scripts/test_column_prompt.py
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18 (Mistral-Benchmark hinzugefuegt)*

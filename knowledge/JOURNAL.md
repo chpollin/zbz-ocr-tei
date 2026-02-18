@@ -14,6 +14,43 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-18 | Mistral Document AI Integration & Benchmark
+
+### Durchgefuehrt
+
+- Mistral Document AI 2512 als OCR-Engine in Pipeline integriert (MistralOCR-Klasse)
+- Azure AI Foundry Endpoint konfiguriert (.env, .claudeignore, .gitignore)
+- Phase-1-Benchmark: alle 3 Typ-A-Dokumente erfolgreich verarbeitet
+- Benchmark-Ergebnis: Mistral erkennt 142% mehr Zeichen als DeepSeek (alle Seiten vs 2 Seiten)
+- Interaktives Benchmark Web-UI erstellt (docs/benchmark.html)
+- Knowledge-Vault aktualisiert (OCR-ENGINES.md, INFRASTRUKTUR.md)
+
+### Benchmark-Ergebnisse Phase 1
+
+| Dokument | Seiten | Mistral Zeichen | DeepSeek Zeichen | Mistral Zeit |
+|----------|--------|-----------------|------------------|--------------|
+| 2310.pdf | 3 | 8.041 | 6.597 | 5.6s (1.9s/S) |
+| 1180.pdf | 8 | 20.121 | 6.070 | 6.4s (0.8s/S) |
+| 290.pdf | 5 | 15.148 | 5.213 | 6.3s (1.3s/S) |
+
+Hinweis: DeepSeek hatte in frueheren Tests nur 2 Seiten pro Dokument verarbeitet (lokale GPU), Mistral verarbeitet alle Seiten serverseitig.
+
+### Neue Dateien
+
+- `scripts/test_mistral_ocr.py` - Benchmark-Skript
+- `docs/benchmark.html` - Interaktives Benchmark-UI
+- `.env` / `.env.example` / `.claudeignore` - Konfiguration & Sicherheit
+- `output/mistral_results/` - OCR-Ergebnisse + Manifest
+
+### Technische Erkenntnisse
+
+- Azure AI Foundry Endpoint hat eigenes URL-Format (nicht Standard Mistral-API)
+- PyMuPDF >= 1.24 hat `fitz` zu `pymupdf` umbenannt
+- Mistral erkennt Kursivschrift (*italics*), Fussnoten und Akzente zuverlaessig
+- Kein GPU noetig (Cloud-API), ~1.3s/Seite Durchschnitt
+
+---
+
 ## 2026-02-18 | Knowledge-Vault Refactoring
 
 ### Durchgeführt

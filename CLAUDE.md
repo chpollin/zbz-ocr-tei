@@ -25,11 +25,16 @@
 | ZBZ-Redaktionsworkflow | `knowledge/ZBZ-WORKFLOW.md` |
 | Arbeitsjournal | `knowledge/JOURNAL.md` |
 
+## Sicherheit
+
+- **NIEMALS `.env` lesen**: Die `.env`-Datei enthaelt API-Keys und darf unter keinen Umstaenden gelesen, angezeigt oder in den Output aufgenommen werden
+- **Keine Secrets in Code oder Docs**: API-Keys, Tokens und Passwoerter gehoeren ausschliesslich in Umgebungsvariablen
+
 ## Code-Konventionen
 
 - **Windows-Encoding**: Keine Unicode-Sonderzeichen in Print-Statements
 - **Pfade**: Absolute Pfade oder pathlib verwenden
-- **Ausgabe**: JSON für Daten, HTML für Reports
+- **Ausgabe**: JSON fuer Daten, HTML fuer Reports
 
 ## Befehle
 
