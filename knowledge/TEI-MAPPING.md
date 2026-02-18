@@ -1,11 +1,23 @@
+---
+type: knowledge
+created: 2026-01-29
+updated: 2026-02-18
+tags: [zbz-ocr-tei, tei, dta, mapping, transformation]
+status: active
+---
+
 # TEI-Mapping
 
 Transformationsregeln von Quelltext zu TEI-XML nach DTA-Basisformat mit projektspezifischen Anpassungen.
+
+**Abhängigkeiten:** [QUELLENANALYSE](QUELLENANALYSE.md)
 
 **Quellen:**
 - `data/richtlinien/README.md` – Projektrichtlinien ZBZ
 - `data/richtlinien/dta_basisformat_komplett.md` – DTA-Referenz
 - `data/richtlinien/Auszeichnungsrichtlinien Hersch INTERN.docx` – Interne Richtlinien
+
+**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md) O6-O9, O13-O14.
 
 ---
 
@@ -752,4 +764,13 @@ Diese Fragen wurden im internen Dokument markiert und erfordern Klärung mit Exp
 
 ---
 
-*Erstellt: 29.01.2026*
+## Referenzen
+
+- [QUELLENANALYSE](QUELLENANALYSE.md) für Korpus und Dokumenttypen
+- [GND-STRATEGIE](GND-STRATEGIE.md) für Entitätsverknüpfung
+- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Integration
+- [DECISIONS](DECISIONS.md) für offene TEI-Fragen
+
+---
+
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*

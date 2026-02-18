@@ -1,0 +1,101 @@
+---
+type: knowledge
+created: 2026-02-18
+updated: 2026-02-18
+tags: [zbz-ocr-tei, decisions, offen, entschieden]
+status: active
+---
+
+# Entscheidungen
+
+Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
+
+**Abhängigkeiten:** Querschnittlich — sammelt aus allen Dokumenten.
+
+---
+
+## Entschieden
+
+| # | Entscheidung | Begründung | Datum | Dokument |
+|---|-------------|------------|-------|----------|
+| E1 | Hybrid-Pipeline: Docling (Layout) + LLM-OCR (Text) | Layout-Analyse ohne OCR, OCR separat | 2026-01-29 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E2 | Docling nur für Layout, nicht für OCR | RapidOCR hat Encoding-Probleme (e → O) bei frz. Text | 2026-01-29 | [OCR-ENGINES](OCR-ENGINES.md) |
+| E3 | Deterministisch first, LLM nur für Komplexes | Reproduzierbar, kostengünstig, debugbar | 2026-01-29 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E4 | 4 Dokumenttypen (A-D) klassifiziert | Unterschiedliche Pipeline-Strategien nötig | 2026-01-29 | [QUELLENANALYSE](QUELLENANALYSE.md) |
+| E5 | Nachgelagerte GND-Verknüpfung | TEI-Struktur zuerst validieren, NER separat | 2026-01-29 | [GND-STRATEGIE](GND-STRATEGIE.md) |
+| E6 | Mistral OCR 3 als Produktions-Engine | ZBZ hat Azure-Zugang, kein GPU nötig | 2026-02-14 | [OCR-ENGINES](OCR-ENGINES.md) |
+| E7 | Offerte bleibt unverändert | Azure-Integration kein Mehraufwand | 2026-02-14 | [PROJEKT](PROJEKT.md) |
+| E8 | Konfigurierbare API-Endpoints | Wechsel zwischen lokaler und Azure-OCR | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
+| E9 | Containerisierung mit Podman | ZBZ nutzt kein Docker, Podman ist OCI-kompatibel | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
+| E10 | Fork auf GitLab Uni Zürich | ZBZ betreibt eigene Instanz | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
+| E11 | Dreistufiges Ökosystem: zbz-ocr-tei → coOCR → teiCrafter | Batch-OCR → Korrektur → Tiefenerschließung | 2026-02-18 | [PROJEKT](PROJEKT.md) |
+
+---
+
+## Offen: Priorität Hoch
+
+Diese Fragen blockieren den Fortschritt.
+
+| # | Frage | Kontext | Blockiert | Klärung durch |
+|---|-------|---------|-----------|---------------|
+| O1 | Azure-API-Key: Wann verfügbar? | Mistral OCR 3 über Azure nicht testbar ohne Key | M1 Produktion | ZBZ (Alignment-Call) |
+| O2 | Alignment-Call Termin? | Terminvorschläge gesendet (18./19./20./24.02.) | Alle offenen Fragen | ZBZ |
+| O3 | Fork-Modell und Merge-Strategie? | Upstream-Changes in Fork mergen, CI-basierte Tests | M4 Integration | ZBZ (im Meeting) |
+| O4 | Schnittstelle zbz-ocr-tei → coOCR: Welches Format? | coOCR importiert Bilder + PAGE-XML; zbz-ocr-tei exportiert Markdown + PNG | M4 Integration | Eigene Entscheidung |
+| O5 | Schnittstelle coOCR → teiCrafter: `<ab>` vs. `<p>`? | coOCR exportiert `<ab>`, teiCrafter erwartet `<p>` / `<div>` | M4 Integration | Eigene Entscheidung |
+
+---
+
+## Offen: Priorität Mittel
+
+Wichtig für Qualität, aber nicht blockierend.
+
+| # | Frage | Kontext | Blockiert | Klärung durch |
+|---|-------|---------|-----------|---------------|
+| O6 | Normalisierung vs. Vorlagentreue bei Anführungszeichen? | TEI-Mapping unklar: Gerade `"` oder typografisch `""`? Expertenmeinung Bähler ausstehend | TEI-Transformation | ZBZ / Bähler |
+| O7 | Typografie der Überschriften normalisieren? | Selbe Frage wie O6 | TEI-Transformation | ZBZ / Bähler |
+| O8 | Metadaten aus ALMA/MMSID automatisch beziehbar? | teiHeader braucht MMSID, PubForm, Projektinterne ID | M2 TEI-Transformation | ZBZ |
+| O9 | div-type-Werte für Front/Back-Matter? | editorial, context, preface, translation, reprint? | M2 TEI-Transformation | Edition |
+| O10 | Spalten-Problem Typ B: Welcher Lösungsansatz? | A: Docling+Crop, B: Gemini Agentic Vision, C: Prompt-Tuning | M1 Phase 2 | Eigener Test |
+| O11 | Entitäten ohne GND-Eintrag: Lokale ID oder freilassen? | Lokale Figuren ohne GND-Eintrag | M3 GND | ZBZ / Edition |
+| O12 | GND-Verknüpfung im PoC oder erst später? | Scope-Entscheidung für Pilot | M3 GND | Eigene Entscheidung |
+
+---
+
+## Offen: Priorität Niedrig
+
+Kann später geklärt werden.
+
+| # | Frage | Kontext | Dokument |
+|---|-------|---------|----------|
+| O13 | Schlagworte: Wer erstellt diese? Kommen sie in den Header? | DOCX-Richtlinie: Abschnitt leer | [TEI-MAPPING](TEI-MAPPING.md) |
+| O14 | GND-Werksätze in Back-Matter? | Bibliografische Verweise im Anhang | [TEI-MAPPING](TEI-MAPPING.md) |
+| O15 | Systematischer Einsatz von Textual Tags in Transkribus? | div, organization, person, sic, speech, unclear, work | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) |
+| O16 | Option Editionsansicht: Wird sie gebaut? | Noch nicht entschieden (Mail 14.02.) | [PROJEKT](PROJEKT.md) |
+| O17 | GitHub Pages für QS-Viewer aktivieren? | HTML bereit, aber Pages nicht aktiviert | [PROJEKT](PROJEKT.md) |
+
+---
+
+## Risiken
+
+| # | Risiko | Impact | Mitigation | Status |
+|---|--------|--------|------------|--------|
+| R1 | Spalten-Problem unlösbar | Hoch | Cloud-VM für Docling, Gemini Agentic Vision, notfalls manuell | Offen (→ O10) |
+| R2 | TEI zu komplex für regelbasierte Transformation | Hoch | Hybrid: Regeln + LLM (teiCrafter für Tiefenerschließung) | Mitigiert durch Ökosystem |
+| R3 | GND-Halluzinationen bei LLM-Lookup | Mittel | Zweistufig: NER → API-Validierung gegen lobid.org | Strategie definiert |
+| R4 | Azure-API-Kompatibilität Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | Wartet auf API-Key (→ O1) |
+| R5 | Fork-Divergenz zwischen DHCraft und ZBZ | Mittel | Merge-Strategie definieren, CI-basierte Tests | Wartet auf Meeting (→ O3) |
+| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup in TEI umwandeln | Architektur-Fix nötig |
+
+---
+
+## Referenzen
+
+- [PROJEKT](PROJEKT.md) für Meilensteine und Status
+- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Entscheidungen
+- [TEI-MAPPING](TEI-MAPPING.md) für offene TEI-Fragen (O6-O9, O13-O14)
+- [JOURNAL](JOURNAL.md) für chronologische Entscheidungshistorie
+
+---
+
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-18*

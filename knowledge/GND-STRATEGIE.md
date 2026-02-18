@@ -1,6 +1,18 @@
+---
+type: knowledge
+created: 2026-01-29
+updated: 2026-02-18
+tags: [zbz-ocr-tei, gnd, ner, entity-linking]
+status: active
+---
+
 # GND-Strategie
 
 Strategie für Named Entity Recognition und GND-Verknüpfung im Hersch-Editionsprojekt.
+
+**Abhängigkeiten:** [TEI-MAPPING](TEI-MAPPING.md)
+
+**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md) O11-O12.
 
 ---
 
@@ -207,4 +219,13 @@ Für jede Entität:
 
 ---
 
-*Erstellt: 29.01.2026*
+## Referenzen
+
+- [TEI-MAPPING](TEI-MAPPING.md) für TEI-Elementspezifikation
+- [QUELLENANALYSE](QUELLENANALYSE.md) für Korpus und Sprachen
+- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Position
+- [DECISIONS](DECISIONS.md) O11-O12 für offene GND-Fragen
+
+---
+
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
