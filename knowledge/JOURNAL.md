@@ -14,6 +14,31 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-19 | Prompt-Optimierung: A/B/C-Test fuer LLM-Korrektur
+
+### Durchgefuehrt
+
+- Drei Prompt-Varianten implementiert: A (Analysis+Corrected), B (Schlank), C (Few-Shot)
+- `--variant` Flag in `llm_postprocess.py` ergaenzt
+- Alle drei Varianten auf Phase 1-3 (10 Docs, 53 Seiten) getestet
+- CER-Vergleich gegen Referenz-TEI
+
+### Ergebnisse
+
+| Variante | Avg CER | Kosten | Beschreibung |
+|----------|---------|--------|--------------|
+| Mistral (kein LLM) | 5.87% | $0.00 | Baseline |
+| A (Analysis+Corrected) | 5.47% | $0.39 | Chain-of-Thought |
+| B (Schlank, nur Text) | 5.59% | $0.33 | Minimal-Prompt |
+| **C (Few-Shot)** | **5.55%** | **$0.33** | Fehlerbeispiele |
+
+### Entscheidung
+
+**Variante C als Default** — bester CER/Kosten-Tradeoff. Gesamtverbesserung: 5.87% -> 5.55% (5.5% relativ).
+Unterschiede zwischen A/B/C sind gering (~0.1 Punkte). Few-Shot-Beispiele helfen leicht.
+
+---
+
 ## 2026-02-19 | LLM-basierte OCR-Nachkorrektur mit Haiku 4.5
 
 ### Durchgefuehrt

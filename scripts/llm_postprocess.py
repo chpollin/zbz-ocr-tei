@@ -5,11 +5,12 @@ Liest OCR-Markdown-Dateien, korrigiert OCR-Fehler mittels LLM,
 speichert korrigierte Dateien.
 
 Usage:
-    python scripts/llm_postprocess.py --check
-    python scripts/llm_postprocess.py --doc 2310 --dry-run
-    python scripts/llm_postprocess.py --doc 2310
-    python scripts/llm_postprocess.py --phase phase1
-    python scripts/llm_postprocess.py --all
+    python -m scripts.llm_postprocess --check
+    python -m scripts.llm_postprocess --doc 2310 --dry-run
+    python -m scripts.llm_postprocess --doc 2310
+    python -m scripts.llm_postprocess --phase phase1
+    python -m scripts.llm_postprocess --all
+    python -m scripts.llm_postprocess --phase phase1 --variant B --force
 """
 
 import argparse
@@ -42,42 +43,35 @@ TYPE_DESC = {
     "D": "Spezialformat (historisch, Interview, Bildband)",
 }
 
-# --- Sprachspezifische Regeln ---
+# --- Prompt-Varianten ---
 
-LANG_RULES = {
-    "FR": (
-        "Franzoesischer Text. Achte besonders auf:\n"
-        "- Akzente: e avec accent (e, e, e, e), a, u, c cedille, i, o\n"
-        "- Guillemets: << und >> (nicht Anfuehrungszeichen)\n"
-        "- Apostrophe in Kontraktionen: l'homme, d'une, qu'il, n'est\n"
-        "- Ligaturen: oe (Schwester), ae\n"
-        "- Leerzeichen vor : ; ? ! (franzoesische Typografie)"
-    ),
-    "DE": (
-        "Deutscher Text. Achte besonders auf:\n"
-        "- Umlaute: ae, oe, ue (nicht a, o, u)\n"
-        "- Eszett: ss vs. ss\n"
-        "- Komposita: zusammengesetzte Woerter nicht trennen\n"
-        "- Anfuehrungszeichen: deutsche Anfuehrungszeichen"
-    ),
-    "DE/FR": (
-        "Deutsch-franzoesischer Mischtext. Achte auf:\n"
-        "- Deutsche Umlaute UND franzoesische Akzente\n"
-        "- Sprachenwechsel innerhalb des Textes\n"
-        "- Korrekte Apostrophe und Anfuehrungszeichen beider Sprachen"
-    ),
-    "EN": (
-        "Englischer Text. Achte auf:\n"
-        "- Korrekte Apostrophe (it's, don't)\n"
-        "- Keine falschen Akzente einfuegen"
-    ),
-}
+VARIANTS = ["A", "B", "C"]
 
 
-def build_system_prompt(lang: str) -> str:
-    """Baut den System-Prompt mit sprachspezifischen Regeln."""
-    lang_rules = LANG_RULES.get(lang, LANG_RULES.get("FR"))
+def build_system_prompt(lang: str, variant: str = "A") -> str:
+    """Baut den System-Prompt je nach Variante."""
+    if variant == "A":
+        return _prompt_variant_a(lang)
+    elif variant == "B":
+        return _prompt_variant_b(lang)
+    elif variant == "C":
+        return _prompt_variant_c(lang)
+    raise ValueError(f"Unbekannte Variante: {variant}")
 
+
+def _lang_hint(lang: str) -> str:
+    """Kurzer Sprach-Hinweis fuer alle Varianten."""
+    hints = {
+        "FR": "Sprache: Franzoesisch. Achte auf Akzente, Guillemets, Apostrophe (l', d', qu').",
+        "DE": "Sprache: Deutsch. Achte auf Umlaute, Eszett, Komposita.",
+        "DE/FR": "Sprache: Deutsch/Franzoesisch gemischt. Achte auf Umlaute UND Akzente.",
+        "EN": "Sprache: Englisch.",
+    }
+    return hints.get(lang, hints["FR"])
+
+
+def _prompt_variant_a(lang: str) -> str:
+    """Variante A: Original-Prompt mit Analysis + Corrected (Baseline)."""
     return (
         "Du bist ein Experte fuer OCR-Nachkorrektur akademischer Texte des 20. Jahrhunderts "
         "von Jeanne Hersch (Philosophin, 1910-2000). Du erhaeltst OCR-Output aus gescannten "
@@ -91,11 +85,51 @@ def build_system_prompt(lang: str) -> str:
         "- Entferne offensichtliche OCR-Artefakte (JSTOR-Header, wiederholte Seitenzahlen, "
         "Copyright-Zeilen) NUR wenn sie klar maschinenerzeugt sind\n"
         "- Wenn du unsicher bist, lasse den Text unveraendert\n\n"
-        f"Sprachregeln:\n{lang_rules}\n\n"
+        f"{_lang_hint(lang)}\n\n"
         "Antwortformat:\n"
         "1. Zuerst in einem <analysis>-Block: Liste der gefundenen OCR-Fehler "
         "(max. 20, Format: 'original -> korrektur (Grund)')\n"
         "2. Dann in einem <corrected>-Block: Der vollstaendig korrigierte Text"
+    )
+
+
+def _prompt_variant_b(lang: str) -> str:
+    """Variante B: Schlank — nur korrigierter Text, kein Analysis-Block."""
+    return (
+        "Korrigiere OCR-Fehler im folgenden Text. "
+        "Der Text stammt aus gescannten akademischen Texten von Jeanne Hersch (20. Jh.).\n\n"
+        "Regeln:\n"
+        "- NUR Zeichenfehler korrigieren (falsche Buchstaben, fehlende Akzente, "
+        "zusammengeklebte Woerter, OCR-Artefakte)\n"
+        "- NICHTS umformulieren, NICHTS hinzufuegen\n"
+        "- Markdown beibehalten\n"
+        "- Im Zweifel: NICHT aendern\n"
+        "- Maschinenerzeugte Artefakte (JSTOR-Header, Copyright-Zeilen) entfernen\n\n"
+        f"{_lang_hint(lang)}\n\n"
+        "Gib NUR den korrigierten Text aus, ohne Erklaerungen oder Kommentare."
+    )
+
+
+def _prompt_variant_c(lang: str) -> str:
+    """Variante C: Few-Shot mit echten Fehlerbeispielen aus Mistral-OCR."""
+    return (
+        "Korrigiere OCR-Fehler im folgenden Text. "
+        "Der Text stammt aus gescannten akademischen Texten von Jeanne Hersch (20. Jh.).\n\n"
+        "Regeln:\n"
+        "- NUR Zeichenfehler korrigieren, NICHTS umformulieren\n"
+        "- Markdown beibehalten\n"
+        "- Im Zweifel: NICHT aendern\n"
+        "- Maschinenerzeugte Artefakte (JSTOR-Header, Copyright-Zeilen) entfernen\n\n"
+        f"{_lang_hint(lang)}\n\n"
+        "Typische OCR-Fehler dieser Engine (Mistral Document AI):\n"
+        "- 'inconnaisable' -> 'inconnaissable' (fehlender Buchstabe)\n"
+        "- 'etrente' -> 'etreinte' (falsche Zeichenfolge)\n"
+        "- 'Scussion' -> 'Scission' (Buchstabenvertauschung)\n"
+        "- 'seule tu le courant' -> 'sens-tu le courant' (Wortgrenze falsch)\n"
+        "- 'rereferme' -> 'se referme' (zusammengeklebte Woerter)\n"
+        "- 'lisse, comme' -> 'hisse, comme' (aehnliche Buchstaben verwechselt)\n"
+        "- 'This content downloaded from...' -> entfernen (JSTOR-Artefakt)\n\n"
+        "Gib NUR den korrigierten Text aus, ohne Erklaerungen oder Kommentare."
     )
 
 
@@ -178,18 +212,26 @@ def call_anthropic(
     raise RuntimeError(f"API-Aufruf fehlgeschlagen nach {ANTHROPIC_MAX_RETRIES} Versuchen: {last_error}")
 
 
-def parse_response(text: str) -> dict:
+def parse_response(text: str, variant: str = "A") -> dict:
     """Extrahiert analysis und corrected aus der LLM-Antwort."""
     analysis = ""
-    corrected = text  # Fallback: gesamter Text
+    corrected = text.strip()  # Fallback: gesamter Text
 
-    analysis_match = re.search(r"<analysis>(.*?)</analysis>", text, re.DOTALL)
-    if analysis_match:
-        analysis = analysis_match.group(1).strip()
+    if variant == "A":
+        # Variante A: <analysis> und <corrected> Bloecke
+        analysis_match = re.search(r"<analysis>(.*?)</analysis>", text, re.DOTALL)
+        if analysis_match:
+            analysis = analysis_match.group(1).strip()
 
-    corrected_match = re.search(r"<corrected>(.*?)</corrected>", text, re.DOTALL)
-    if corrected_match:
-        corrected = corrected_match.group(1).strip()
+        corrected_match = re.search(r"<corrected>(.*?)</corrected>", text, re.DOTALL)
+        if corrected_match:
+            corrected = corrected_match.group(1).strip()
+    else:
+        # Variante B/C: Gesamttext ist der korrigierte Text
+        # Entferne eventuelle Wrapper falls das Modell trotzdem Tags nutzt
+        corrected_match = re.search(r"<corrected>(.*?)</corrected>", text, re.DOTALL)
+        if corrected_match:
+            corrected = corrected_match.group(1).strip()
 
     return {"analysis": analysis, "corrected": corrected}
 
@@ -214,6 +256,7 @@ def process_document(
     api_key: str,
     dry_run: bool = False,
     force: bool = False,
+    variant: str = "A",
 ) -> dict:
     """
     Verarbeitet ein Dokument: LLM-Korrektur aller Seiten.
@@ -228,7 +271,7 @@ def process_document(
 
     metadata = get_test_metadata(doc_id)
     lang = metadata.get("lang", "FR") if metadata else "FR"
-    system_prompt = build_system_prompt(lang)
+    system_prompt = build_system_prompt(lang, variant=variant)
     total_pages = len(page_files)
 
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -272,6 +315,10 @@ def process_document(
             start = time.time()
 
             result = call_anthropic(system_prompt, user_msg, api_key)
+            # Re-parse mit korrekter Variante
+            reparsed = parse_response(result["raw_response"], variant=variant)
+            result["analysis"] = reparsed["analysis"]
+            result["corrected"] = reparsed["corrected"]
 
             elapsed = time.time() - start
             stats["processed"] += 1
@@ -285,6 +332,7 @@ def process_document(
             analysis_data = {
                 "doc_id": doc_id,
                 "page": page_num,
+                "variant": variant,
                 "analysis": result["analysis"],
                 "input_tokens": result["input_tokens"],
                 "output_tokens": result["output_tokens"],
@@ -360,6 +408,8 @@ def main():
         default=LLM_CORRECTED_DIR,
         help="Ausgabeverzeichnis (default: output/llm_corrected)",
     )
+    parser.add_argument("--variant", choices=VARIANTS, default="C",
+                        help="Prompt-Variante: A=analysis+corrected, B=schlank, C=few-shot (default: C)")
     parser.add_argument("--dry-run", action="store_true", help="Nur Prompts anzeigen")
     parser.add_argument("--force", action="store_true", help="Existierende ueberschreiben")
     parser.add_argument("--check", action="store_true", help="Nur API-Key pruefen")
@@ -378,6 +428,10 @@ def main():
     # --check: Nur Key pruefen
     if args.check:
         sys.exit(0 if check_api_key(api_key) else 1)
+
+    # Output-Verzeichnis pro Variante (wenn nicht explizit gesetzt)
+    if args.output == LLM_CORRECTED_DIR and args.variant != "A":
+        args.output = LLM_CORRECTED_DIR.parent / f"llm_corrected_{args.variant.lower()}"
 
     # Doc-IDs bestimmen
     doc_ids = []
@@ -399,9 +453,11 @@ def main():
         sys.exit(1)
 
     # Header
+    variant_names = {"A": "Analysis+Corrected", "B": "Schlank (nur Text)", "C": "Few-Shot"}
     mode = "DRY RUN" if args.dry_run else "LLM-Korrektur"
     print(f"\n{'='*60}")
     print(f"  {mode} mit {ANTHROPIC_MODEL}")
+    print(f"  Variante: {args.variant} ({variant_names.get(args.variant, '?')})")
     print(f"  Quelle: {args.ocr_dir}")
     print(f"  Ausgabe: {args.output}")
     print(f"  Dokumente: {len(doc_ids)} ({', '.join(doc_ids)})")
@@ -420,6 +476,7 @@ def main():
             api_key=api_key,
             dry_run=args.dry_run,
             force=args.force,
+            variant=args.variant,
         )
         all_stats.append(stats)
 
@@ -450,6 +507,7 @@ def main():
         manifest = {
             "timestamp": datetime.now().isoformat(),
             "model": ANTHROPIC_MODEL,
+            "variant": args.variant,
             "source_dir": str(args.ocr_dir),
             "documents": all_stats,
             "totals": {
