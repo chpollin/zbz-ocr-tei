@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-02-19
+updated: 2026-02-20
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,36 @@ status: active
 Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) konsolidiert, Projektstatus in [PROJEKT](PROJEKT.md).
 
 **Abhängigkeiten:** Keine (eigenständiges Log)
+
+---
+
+## 2026-02-20 | coOCR-Interface-Analyse: PAGE-XML + PNG
+
+### Durchgefuehrt
+
+- coOCR/HTR-Repo ([DHCraft/co-ocr-htr](https://github.com/DHCraft/co-ocr-htr)) vollstaendig analysiert
+- Import-Format identifiziert: PAGE-XML (Schema 2019-07-15) + PNG + METS-XML
+- Exportstruktur definiert: `output/export/{doc_id}/` mit mets.xml, images/, page/
+- Batch-Orchestrierungs-Architektur entworfen (noch nicht implementiert)
+
+### Erkenntnisse
+
+- coOCR ist eine reine Browser-App (kein Backend-API) — Import ueber File-Upload
+- PAGE-XML Namespace: `http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15`
+- Text wird in `<TextEquiv><Unicode>` as-is gespeichert — Markdown-Formatierung muss erhalten bleiben
+- Confidence-Mapping: Mistral-roh=0.85, LLM-korrigiert=0.95
+- coOCR exportiert `<ab>` (nicht `<p>`) — relevant fuer teiCrafter-Schnittstelle (O5)
+
+### Geloest
+
+- **O4**: Schnittstelle zbz-ocr-tei -> coOCR = PAGE-XML + PNG + METS (E13)
+- **R6**: Markdown-Formatierung erhalten, Post-Processing darf Markup nicht entfernen (E14)
+
+### Naechste Schritte
+
+- `scripts/export_page_xml.py` implementieren (Markdown -> PAGE-XML Konverter)
+- `scripts/run_pipeline.py` implementieren (Batch-Orchestrierung mit Resume/Retry)
+- Post-Processing anpassen: Markdown-Markup erhalten
 
 ---
 
@@ -330,4 +360,4 @@ Intensive Arbeitssession: Korpusanalyse, Hybrid-Pipeline validiert, OCR Phase 1 
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-20*

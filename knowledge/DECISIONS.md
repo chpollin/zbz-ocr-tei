@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-18
+updated: 2026-02-20
 tags: [zbz-ocr-tei, decisions, offen, entschieden]
 status: active
 ---
@@ -30,6 +30,8 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E10 | Fork auf GitLab Uni Zürich | ZBZ betreibt eigene Instanz | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
 | E11 | Dreistufiges Ökosystem: zbz-ocr-tei → coOCR → teiCrafter | Batch-OCR → Korrektur → Tiefenerschließung | 2026-02-18 | [PROJEKT](PROJEKT.md) |
 | E12 | zbz-ocr-tei nur OCR, keine TEI-Transformation | TEI + GND in coOCR/teiCrafter, nicht hier | 2026-02-19 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E13 | Export als PAGE-XML + METS fuer coOCR | coOCR erwartet PAGE-XML (2019-07-15) + PNG, nicht Markdown | 2026-02-20 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E14 | Markdown-Formatierung erhalten (R6 geloest) | coOCR speichert Text as-is in `<Unicode>`, Formatierung darf nicht entfernt werden | 2026-02-20 | [ARCHITEKTUR](ARCHITEKTUR.md) |
 
 ---
 
@@ -42,7 +44,7 @@ Diese Fragen blockieren den Fortschritt.
 | ~~O1~~ | ~~Azure-API-Key~~ | **Erledigt (18.02.2026)** -- Key vorhanden, Endpoint getestet, Benchmark durchgefuehrt | ~~M1~~ | -- |
 | O2 | Alignment-Call Termin? | Terminvorschläge gesendet (18./19./20./24.02.) | Alle offenen Fragen | ZBZ |
 | O3 | Fork-Modell und Merge-Strategie? | Upstream-Changes in Fork mergen, CI-basierte Tests | M4 Integration | ZBZ (im Meeting) |
-| O4 | Schnittstelle zbz-ocr-tei → coOCR: Welches Format? | coOCR importiert Bilder + PAGE-XML; zbz-ocr-tei exportiert Markdown + PNG | M4 Integration | Eigene Entscheidung |
+| ~~O4~~ | ~~Schnittstelle zbz-ocr-tei -> coOCR: Welches Format?~~ | **Geloest (20.02.2026)** -- PAGE-XML (2019-07-15) + PNG + METS. Siehe E13 | ~~M4~~ | -- |
 | O5 | Schnittstelle coOCR → teiCrafter: `<ab>` vs. `<p>`? | coOCR exportiert `<ab>`, teiCrafter erwartet `<p>` / `<div>` | M4 Integration | Eigene Entscheidung |
 
 ---
@@ -86,7 +88,7 @@ Kann später geklärt werden.
 | ~~R3~~ | ~~GND-Halluzinationen~~ | -- | Verschoben nach teiCrafter (E12) | -- |
 | R4 | Azure-API-Kompatibilitaet Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | **Geloest** -- Azure AI Foundry Endpoint funktioniert (18.02.) |
 | R5 | Fork-Divergenz zwischen DHCraft und ZBZ | Mittel | Merge-Strategie definieren, CI-basierte Tests | Wartet auf Meeting (→ O3) |
-| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten fuer coOCR | Architektur-Fix noetig |
+| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten fuer coOCR | **Geloest** -- Formatierung erhalten, coOCR speichert as-is (E14, 20.02.) |
 
 ---
 
@@ -99,4 +101,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-19 (E12: TEI-Scope verschoben, O6-O9/O11-O14/R2-R3 nach coOCR/teiCrafter)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-20 (E13-E14: coOCR-Schnittstelle, O4/R6 geloest)*

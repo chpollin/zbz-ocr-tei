@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-19
+updated: 2026-02-20
 tags: [zbz-ocr-tei, architektur, pipeline, workflow]
 status: active
 ---
@@ -17,17 +17,17 @@ Technische Pipeline-Architektur: PDF zu korrigiertem Markdown. TEI-Transformatio
 ## Pipeline-Übersicht
 
 ```
-PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --> Markdown + Bilder
-        output/layout/       output/ocr_results/  output/llm_corrected/  output/clean/
-                                                                              |
-                                                                              v
-                                                                     coOCR/HTR (Korrektur)
-                                                                              |
-                                                                              v
-                                                                     teiCrafter (TEI + GND)
+PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --> Export (PAGE-XML + PNG)
+        output/layout/       output/ocr_results/  output/llm_corrected/  output/clean/   output/export/
+                                                                                              |
+                                                                                              v
+                                                                                     coOCR/HTR (Korrektur)
+                                                                                              |
+                                                                                              v
+                                                                                     teiCrafter (TEI + GND)
 ```
 
-### 4 Stufen (in diesem Repo)
+### 5 Stufen (in diesem Repo)
 
 | Stufe | Aufgabe | Tool | Output |
 |-------|---------|------|--------|
@@ -35,6 +35,7 @@ PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --
 | 2 | OCR | DeepSeek / Mistral / Gemini | Seitenweises Markdown |
 | 2.5 | LLM-Nachkorrektur | Claude Haiku 4.5 | Korrigiertes Markdown |
 | 3 | Post-Processing | `scripts/postprocess/` | Bereinigtes Markdown |
+| 4 | Export fuer coOCR | `scripts/export_page_xml.py` (geplant) | PAGE-XML + PNG + METS |
 
 **TEI-Transformation und GND-Verknuepfung sind nicht Scope dieses Repos.** Sie finden in coOCR/HTR und teiCrafter statt.
 
@@ -122,7 +123,54 @@ Vollständige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 | 3. Silbentrennung | `dehyphenate()` | `Wis- senschaft` -> `Wissenschaft` |
 | 4. Whitespace | (inline) | Mehrfache Leerzeilen -> eine |
 
-**Bekanntes Problem:** Markdown-Formatierung (`**bold**`, `*italic*`) wird entfernt. Fuer coOCR/teiCrafter muss geklaert werden, ob Formatierung erhalten bleiben soll (-> [DECISIONS](DECISIONS.md) R6).
+**Geloest (R6):** Markdown-Formatierung (`**bold**`, `*italic*`) muss ERHALTEN bleiben. coOCR speichert Text as-is in `<TextEquiv><Unicode>` — Formatierungsinformation geht sonst verloren. Post-Processing darf Markdown-Markup nicht entfernen.
+
+---
+
+## Stufe 4: Export fuer coOCR/HTR (geplant)
+
+**Skript:** `scripts/export_page_xml.py` (noch nicht implementiert)
+
+coOCR/HTR ([DHCraft/co-ocr-htr](https://github.com/DHCraft/co-ocr-htr)) ist eine browserbasierte Korrektur-Plattform. Sie erwartet:
+
+| Aspekt | Details |
+|--------|---------|
+| Bildformat | PNG / JPEG / TIFF (eine Datei pro Seite) |
+| Textformat | PAGE-XML (Schema 2019-07-15) |
+| Manifest | METS-XML fuer Multi-Page-Dokumente |
+| Namespace | `http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15` |
+
+### Exportstruktur pro Dokument
+
+```
+output/export/{doc_id}/
+  mets.xml                    # METS-Manifest (verknuepft Bilder + PAGE-XML)
+  images/{doc_id}_p001.png    # Seitenbilder (zero-padded)
+  page/{doc_id}_p001.xml      # PAGE-XML pro Seite
+```
+
+### PAGE-XML Struktur
+
+```xml
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15">
+  <Page imageFilename="../images/{doc_id}_p001.png" imageWidth="..." imageHeight="...">
+    <TextRegion id="r1">
+      <TextLine id="r1_l1">
+        <TextEquiv conf="0.95">
+          <Unicode>Korrigierter OCR-Text dieser Zeile</Unicode>
+        </TextEquiv>
+      </TextLine>
+    </TextRegion>
+  </Page>
+</PcGts>
+```
+
+### Confidence-Mapping
+
+| Quelle | Confidence |
+|--------|-----------|
+| Mistral OCR (roh) | 0.85 |
+| LLM-korrigiert (Haiku 4.5) | 0.95 |
 
 ---
 
@@ -158,4 +206,4 @@ python scripts/evaluate_ocr.py --all
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-20*

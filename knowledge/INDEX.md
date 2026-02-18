@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-20
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -35,7 +35,7 @@ Dokumentation für die LLM-gestützte OCR- und TEI-Pipeline der Jeanne Hersch Ed
 ```
 PROJEKT (Vision, Ökosystem)
     │
-    ├──▶ ARCHITEKTUR (5-Stufen-Pipeline)
+    ├──▶ ARCHITEKTUR (5-Stufen-Pipeline inkl. Export)
     │        ├──▶ OCR-ENGINES (DeepSeek, Mistral, Gemini)
     │        ├──▶ INFRASTRUKTUR (Azure, Podman, CI/CD)
     │        └──▶ TESTPLAN (Phasen, Metriken)
@@ -58,20 +58,22 @@ JOURNAL   ◄── chronologisch, verweist auf alle Docs
 | Begriff | Definition | Dokument |
 |---------|------------|----------|
 | Ökosystem | Dreistufige Toolchain: zbz-ocr-tei → coOCR/HTR → teiCrafter | [PROJEKT](PROJEKT.md) |
-| 4-Stufen-Pipeline | Layout → OCR → LLM-Korrektur → Post-Processing | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| 5-Stufen-Pipeline | Layout → OCR → LLM-Korrektur → Post-Processing → Export | [ARCHITEKTUR](ARCHITEKTUR.md) |
 | Dokumenttypen A-D | Einspaltig, Zweispaltig, Monografie, Spezial | [QUELLENANALYSE](QUELLENANALYSE.md) |
 | DTA-Basisformat | TEI-Grundschema mit ZBZ-Anpassungen | [TEI-MAPPING](TEI-MAPPING.md) |
 | Agentic Vision | Gemini 3 Think-Act-Observe Loop für Spalten | [OCR-ENGINES](OCR-ENGINES.md) |
 | Nachgelagerte GND | TEI-Struktur zuerst, NER + Linking separat | [GND-STRATEGIE](GND-STRATEGIE.md) |
 | CER / WER | Character Error Rate / Word Error Rate | [TESTPLAN](TESTPLAN.md) |
 | Hybrid-Pipeline | Docling (Layout) + LLM-OCR (Text) kombiniert | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| PAGE-XML | Exportformat fuer coOCR (Schema 2019-07-15) | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| METS-XML | Multi-Page-Manifest fuer coOCR-Import | [ARCHITEKTUR](ARCHITEKTUR.md) |
 
 ---
 
 ## Schnelleinstieg
 
 1. **Ökosystem verstehen:** [PROJEKT](PROJEKT.md) — wie hängen die drei Tools zusammen?
-2. **Pipeline verstehen:** [ARCHITEKTUR](ARCHITEKTUR.md) — die 4 Verarbeitungsstufen (OCR-fokussiert)
+2. **Pipeline verstehen:** [ARCHITEKTUR](ARCHITEKTUR.md) — die 5 Verarbeitungsstufen (OCR + Export)
 3. **Material kennen:** [QUELLENANALYSE](QUELLENANALYSE.md) — 289 Texte, 4 Dokumenttypen
 4. **Status prüfen:** [DECISIONS](DECISIONS.md) — was ist entschieden, was blockiert?
 5. **Letzte Session:** [JOURNAL](JOURNAL.md) — chronologisches Arbeitslog
@@ -107,4 +109,4 @@ knowledge/
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-20*
