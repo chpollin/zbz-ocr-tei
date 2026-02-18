@@ -306,4 +306,4 @@ Intensive Arbeitssession: Korpusanalyse, Hybrid-Pipeline validiert, OCR Phase 1 
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19*

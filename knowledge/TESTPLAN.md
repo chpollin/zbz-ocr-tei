@@ -109,6 +109,19 @@ Pilotdateien und Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Pilo
 | Phase 3 (Typ D) | 2.88% | 12.62% | 97.12% |
 | Phase 4 (Typ C) | n/a | n/a | n/a |
 
+### Evaluationsmatrix: LLM-Nachkorrektur Haiku 4.5 (19.02.2026)
+
+Variante C (Few-Shot), Phase 1-3:
+
+| Phase | Mistral CER | LLM CER | Delta |
+|-------|-------------|---------|-------|
+| Phase 1 (A) | 9.40% | 8.43% | -0.97 |
+| Phase 2 (B) | 6.31% | 6.34% | +0.03 |
+| Phase 3 (D) | 2.88% | 2.72% | -0.16 |
+| **Gesamt** | **5.87%** | **5.55%** | **-0.32 (5.5% relativ)** |
+
+Drei Varianten getestet: A (5.47%), B (5.59%), C (5.55%). Variante C als Default (bester CER/Kosten-Tradeoff).
+
 ### Evaluationsmatrix: DeepSeek-OCR-2 (lokal, nur Phase 1)
 
 | PDF | Typ | CER | WER | Genauigkeit | Status | Anmerkung |
@@ -179,4 +192,4 @@ python scripts/test_all_pdfs.py --phase phase1
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18 (Mistral-Benchmark hinzugefuegt)*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19 (LLM-Korrektur Haiku 4.5 hinzugefuegt)*

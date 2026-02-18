@@ -92,7 +92,7 @@ Offene Schnittstellenfragen: Siehe [DECISIONS](DECISIONS.md).
 | # | Meilenstein | Aufwand | Erfolgskriterium | Status |
 |---|-------------|---------|-------------------|--------|
 | M0 | Bildextraktion + QS-Viewer | Erledigt | Bilder + Viewer verfügbar | Erledigt |
-| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | Phase 1-3: 94.14% (Mistral), Phase 4 Alignment-Problem |
+| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | Phase 1-3: 94.14% (Mistral) + LLM 94.45%, Phase 4 Alignment-Problem |
 | M2 | TEI-Transformation | 6-9 Tage | ≥90% Struktur-Korrektheit | Prototyp, rudimentär |
 | M3 | GND-Verknüpfung | 5-6 Tage | ≥85% Precision | Seed extrahiert, Pipeline fehlt |
 | M4 | Integration | 4-6 Tage | End-to-End ohne Eingriff | Ausstehend |
@@ -127,6 +127,7 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (TEI) ──► M3 (GND) ──► M
 | TEI-Transformation | Prototyp | `scripts/transform_to_tei.py`, rudimentär |
 | GND-Seed | Erledigt | 75 Entitäten, `scripts/extract_gnd.py` |
 | GND-Pipeline | Ausstehend | API-Anbindung + NER fehlen |
+| LLM-Nachkorrektur | Erledigt | `scripts/llm_postprocess.py`, Haiku 4.5, Variante C |
 | Evaluation | Erledigt | `scripts/evaluate_ocr.py`, CER/WER + HTML-Report |
 | Azure-Integration | Erledigt | Mistral Document AI 2512, `.env` konfiguriert |
 | Benchmark-UI | Erledigt | `docs/benchmark.html`, Mistral vs DeepSeek |
@@ -150,7 +151,8 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (TEI) ──► M3 (GND) ──► M
 
 | Posten | Betrag |
 |--------|--------|
-| LLM-API (289 Docs) | 6-15 USD |
+| Mistral OCR (Azure, 289 Docs) | 6-15 USD |
+| LLM-Korrektur (Haiku 4.5, 289 Docs) | ~48 USD |
 | GPU-Cloud (optional) | ~10-20 USD |
 
 ---
@@ -164,4 +166,4 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (TEI) ──► M3 (GND) ──► M
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-19*
