@@ -1,43 +1,40 @@
-# ZBZ-OCR-TEI Pipeline
+# ZBZ-OCR-TEI
 
-LLM-gestützte OCR- und TEI-Transformationspipeline für die Jeanne-Hersch-Edition der Zentralbibliothek Zürich.
+LLM-gestuetzte OCR-Pipeline fuer die Jeanne-Hersch-Edition der Zentralbibliothek Zuerich.
 
-## Projektziel
+## Was macht dieses Repo?
 
-Automatisierte Verarbeitung von 289 Texten (7.200 Seiten) aus dem Nachlass von Jeanne Hersch:
+Automatisierte OCR-Verarbeitung von 289 Texten (7.200 Seiten) aus dem Nachlass von Jeanne Hersch:
 
 ```
-PDF-Scans → OCR → Post-Processing → TEI-XML → GND-Verknüpfung
+PDF-Scans --> Layout-Analyse --> OCR --> LLM-Korrektur --> Post-Processing --> Markdown + Bilder
+                                                                                    |
+                                                                                    v
+                                                                          coOCR/HTR (Korrektur)
+                                                                                    |
+                                                                                    v
+                                                                          teiCrafter (TEI + GND)
 ```
+
+**Scope:** PDF zu korrigiertem Markdown. TEI-Transformation und GND-Verknuepfung finden downstream in [coOCR/HTR](https://github.com/DHCraft/co-ocr-htr) und [teiCrafter](https://github.com/DHCraft/teiCrafter) statt.
 
 ## Ordnerstruktur
 
 ```
 zbz-ocr-tei/
-├── knowledge/          # Projektdokumentation
-│   ├── journal.md      # Arbeitsjournal (aktueller Stand)
-│   ├── Projektplan.md  # Meilensteine & Aufwand
-│   ├── Pipeline.md     # Technische Architektur
-│   └── ...             # Weitere Docs (siehe knowledge/README.md)
-│
-├── scripts/            # Python-Skripte
-│   ├── test_all_pdfs.py      # OCR-Tests
-│   ├── evaluate_ocr.py       # CER/WER-Evaluation
-│   ├── extract_gnd.py        # GND-Extraktion
-│   └── postprocess/          # Text-Normalisierung
-│
-├── templates/          # TEI-Templates
-│   └── tei_*.xml       # Für Essay, Review, Interview, Lexikon
-│
-├── data/               # Quelldaten (nicht versioniert)
-│   ├── scans/          # PDF-Digitalisate
-│   ├── referenz-tei/   # Annotierte Referenz-XMLs
-│   └── richtlinien/    # ZBZ-Projektrichtlinien
-│
-└── output/             # Generierte Daten (nicht versioniert)
-    ├── ocr_results/    # OCR-Markdown
-    ├── clean/          # Post-processed Text
-    └── evaluation/     # CER/WER-Reports
+  knowledge/          # 12 Projektdokumente (Single Source of Truth)
+  scripts/            # Python-Skripte (OCR, Evaluation, Post-Processing)
+    config.py         # Zentrale Konfiguration
+    ocr_pipeline.py   # OCR mit Mistral/DeepSeek
+    llm_postprocess.py  # LLM-Nachkorrektur (Haiku 4.5)
+    evaluate_ocr.py   # CER/WER-Evaluation
+    postprocess/      # Deterministisches Post-Processing
+  data/               # Quelldaten (nicht versioniert)
+    scans/            # PDF-Digitalisate
+    referenz-tei/     # Referenz-TEI fuer Evaluation
+  output/             # Generierte Daten (nicht versioniert)
+  docs/               # Benchmark-UI, QS-Viewer
+  .env.example        # Vorlage fuer API-Keys
 ```
 
 ## Schnellstart
@@ -48,46 +45,49 @@ python -m venv .venv
 .venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 
-# OCR-Tests (GPU erforderlich)
-python scripts/test_all_pdfs.py --phase phase1
+# API-Keys konfigurieren
+cp .env.example .env
+# Werte in .env eintragen (Mistral, Anthropic)
+
+# OCR mit Mistral (ohne GPU, braucht .env)
+python -m scripts.ocr_pipeline -i data/scans/2310.pdf -e mistral
+
+# LLM-Nachkorrektur (braucht ANTHROPIC_API_KEY)
+python -m scripts.llm_postprocess --phase phase1
 
 # Evaluation (ohne GPU)
-python scripts/evaluate_ocr.py --all
+python -m scripts.evaluate_ocr --all
 ```
 
-## Aktueller Stand
+## OCR-Qualitaet
 
-| Komponente | Status |
-|------------|--------|
-| OCR Phase 1 (einspaltig) | 94.4% Genauigkeit |
-| OCR Phase 2-4 | Blockiert (Spalten-Problem) |
-| Post-Processing | Implementiert |
-| TEI-Templates | 5 Templates erstellt |
-| GND-Seed-Liste | 75 Entitäten extrahiert |
+| Engine | Phase 1-3 (10 Docs) | Genauigkeit |
+|--------|---------------------|-------------|
+| Mistral Document AI | CER 5.87% | 94.14% |
+| + LLM-Korrektur (Haiku 4.5) | CER 5.55% | 94.45% |
 
-**Nächster Schritt:** Spalten-Problem lösen (Cloud-VM für Docling)
+## OCR-Engines
+
+| Engine | Zugang | Einsatz |
+|--------|--------|---------|
+| Mistral Document AI 2512 | Azure AI Foundry | Produktions-Engine |
+| DeepSeek-OCR-2 | Lokal (GPU) | Entwicklung |
+| Claude Haiku 4.5 | Anthropic API | LLM-Nachkorrektur |
 
 ## Dokumentation
 
 | Thema | Datei |
 |-------|-------|
 | Aktueller Stand | [knowledge/journal.md](knowledge/journal.md) |
-| Projektplan | [knowledge/Projektplan.md](knowledge/Projektplan.md) |
-| OCR-Testplan | [knowledge/Testplan-OCR.md](knowledge/Testplan-OCR.md) |
-| TEI-Mapping | [knowledge/TEI-Mapping.md](knowledge/TEI-Mapping.md) |
-| Alle Docs | [knowledge/README.md](knowledge/README.md) |
-
-## Technologie
-
-- **OCR:** DeepSeek-OCR-2 (3B VLM), Docling (Alternative)
-- **TEI:** DTA-Basisformat mit ZBZ-Anpassungen
-- **GND:** lobid.org API für Normdaten-Lookup
-- **Evaluation:** CER/WER mit jiwer
+| Architektur | [knowledge/ARCHITEKTUR.md](knowledge/ARCHITEKTUR.md) |
+| OCR-Engines | [knowledge/OCR-ENGINES.md](knowledge/OCR-ENGINES.md) |
+| Testplan & Ergebnisse | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
+| Alle Docs (Index) | [knowledge/INDEX.md](knowledge/INDEX.md) |
 
 ## Team
 
-Projekt der Zentralbibliothek Zürich (ZBZ) in Zusammenarbeit mit DHCraft.
+Projekt der Zentralbibliothek Zuerich (ZBZ) in Zusammenarbeit mit DHCraft.
 
 ---
 
-*Stand: 29.01.2026*
+*Stand: 19.02.2026*

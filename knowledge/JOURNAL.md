@@ -14,6 +14,30 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-19 | Scope-Klaerung: Nur OCR, keine TEI-Transformation
+
+### Entscheidung (E12)
+
+zbz-ocr-tei ist rein fuer OCR zustaendig (PDF -> korrigiertes Markdown). TEI-Transformation und GND-Verknuepfung finden in coOCR/HTR und teiCrafter statt.
+
+### Aufgeraeumt
+
+- `scripts/transform_to_tei.py` entfernt (393 Zeilen)
+- `templates/` entfernt (5 TEI-Templates + README)
+- `DOC_TYPES` und `TEI_DIR` aus config.py entfernt
+- ARCHITEKTUR.md: Pipeline auf 4 Stufen reduziert (ohne TEI/GND)
+- PROJEKT.md: Meilensteine angepasst (M2=Produktion, M3=coOCR-Integration)
+- DECISIONS.md: E12 hinzugefuegt, TEI-Fragen (O6-O9, O11-O14, R2-R3) nach coOCR/teiCrafter verschoben
+- README.md komplett neu geschrieben
+
+### Behalten
+
+- `evaluate_ocr.py` + Referenz-TEI-Lesefunktion (Ground Truth fuer CER)
+- `extract_gnd.py` + KNOWN_ENTITIES (GND-Seed fuer Downstream)
+- `knowledge/TEI-MAPPING.md` und `GND-STRATEGIE.md` (Referenzwissen)
+
+---
+
 ## 2026-02-19 | Prompt-Optimierung: A/B/C-Test fuer LLM-Korrektur
 
 ### Durchgefuehrt

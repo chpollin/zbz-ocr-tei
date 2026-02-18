@@ -58,7 +58,7 @@ JOURNAL   ◄── chronologisch, verweist auf alle Docs
 | Begriff | Definition | Dokument |
 |---------|------------|----------|
 | Ökosystem | Dreistufige Toolchain: zbz-ocr-tei → coOCR/HTR → teiCrafter | [PROJEKT](PROJEKT.md) |
-| 5-Stufen-Pipeline | Layout → OCR → Post-Processing → TEI → GND | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| 4-Stufen-Pipeline | Layout → OCR → LLM-Korrektur → Post-Processing | [ARCHITEKTUR](ARCHITEKTUR.md) |
 | Dokumenttypen A-D | Einspaltig, Zweispaltig, Monografie, Spezial | [QUELLENANALYSE](QUELLENANALYSE.md) |
 | DTA-Basisformat | TEI-Grundschema mit ZBZ-Anpassungen | [TEI-MAPPING](TEI-MAPPING.md) |
 | Agentic Vision | Gemini 3 Think-Act-Observe Loop für Spalten | [OCR-ENGINES](OCR-ENGINES.md) |
@@ -71,7 +71,7 @@ JOURNAL   ◄── chronologisch, verweist auf alle Docs
 ## Schnelleinstieg
 
 1. **Ökosystem verstehen:** [PROJEKT](PROJEKT.md) — wie hängen die drei Tools zusammen?
-2. **Pipeline verstehen:** [ARCHITEKTUR](ARCHITEKTUR.md) — die 5 Verarbeitungsstufen
+2. **Pipeline verstehen:** [ARCHITEKTUR](ARCHITEKTUR.md) — die 4 Verarbeitungsstufen (OCR-fokussiert)
 3. **Material kennen:** [QUELLENANALYSE](QUELLENANALYSE.md) — 289 Texte, 4 Dokumenttypen
 4. **Status prüfen:** [DECISIONS](DECISIONS.md) — was ist entschieden, was blockiert?
 5. **Letzte Session:** [JOURNAL](JOURNAL.md) — chronologisches Arbeitslog

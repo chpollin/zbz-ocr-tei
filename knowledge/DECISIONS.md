@@ -29,6 +29,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E9 | Containerisierung mit Podman | ZBZ nutzt kein Docker, Podman ist OCI-kompatibel | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
 | E10 | Fork auf GitLab Uni Zürich | ZBZ betreibt eigene Instanz | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
 | E11 | Dreistufiges Ökosystem: zbz-ocr-tei → coOCR → teiCrafter | Batch-OCR → Korrektur → Tiefenerschließung | 2026-02-18 | [PROJEKT](PROJEKT.md) |
+| E12 | zbz-ocr-tei nur OCR, keine TEI-Transformation | TEI + GND in coOCR/teiCrafter, nicht hier | 2026-02-19 | [ARCHITEKTUR](ARCHITEKTUR.md) |
 
 ---
 
@@ -52,13 +53,13 @@ Wichtig für Qualität, aber nicht blockierend.
 
 | # | Frage | Kontext | Blockiert | Klärung durch |
 |---|-------|---------|-----------|---------------|
-| O6 | Normalisierung vs. Vorlagentreue bei Anführungszeichen? | TEI-Mapping unklar: Gerade `"` oder typografisch `""`? Expertenmeinung Bähler ausstehend | TEI-Transformation | ZBZ / Bähler |
-| O7 | Typografie der Überschriften normalisieren? | Selbe Frage wie O6 | TEI-Transformation | ZBZ / Bähler |
-| O8 | Metadaten aus ALMA/MMSID automatisch beziehbar? | teiHeader braucht MMSID, PubForm, Projektinterne ID | M2 TEI-Transformation | ZBZ |
-| O9 | div-type-Werte für Front/Back-Matter? | editorial, context, preface, translation, reprint? | M2 TEI-Transformation | Edition |
-| O10 | Spalten-Problem Typ B: Welcher Lösungsansatz? | A: Docling+Crop, B: Gemini Agentic Vision, C: Prompt-Tuning | M1 Phase 2 | Eigener Test |
-| O11 | Entitäten ohne GND-Eintrag: Lokale ID oder freilassen? | Lokale Figuren ohne GND-Eintrag | M3 GND | ZBZ / Edition |
-| O12 | GND-Verknüpfung im PoC oder erst später? | Scope-Entscheidung für Pilot | M3 GND | Eigene Entscheidung |
+| ~~O6~~ | ~~Normalisierung vs. Vorlagentreue~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
+| ~~O7~~ | ~~Typografie der Ueberschriften~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
+| ~~O8~~ | ~~Metadaten aus ALMA/MMSID~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
+| ~~O9~~ | ~~div-type-Werte Front/Back-Matter~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
+| O10 | Spalten-Problem Typ B: Welcher Loesungsansatz? | A: Docling+Crop, B: Gemini Agentic Vision, C: Prompt-Tuning | M1 Phase 2 | Eigener Test |
+| ~~O11~~ | ~~Entitaeten ohne GND-Eintrag~~ | Verschoben nach teiCrafter (E12) | ~~GND~~ | -- |
+| ~~O12~~ | ~~GND-Verknuepfung im PoC~~ | Verschoben nach teiCrafter (E12) | ~~GND~~ | -- |
 
 ---
 
@@ -68,8 +69,8 @@ Kann später geklärt werden.
 
 | # | Frage | Kontext | Dokument |
 |---|-------|---------|----------|
-| O13 | Schlagworte: Wer erstellt diese? Kommen sie in den Header? | DOCX-Richtlinie: Abschnitt leer | [TEI-MAPPING](TEI-MAPPING.md) |
-| O14 | GND-Werksätze in Back-Matter? | Bibliografische Verweise im Anhang | [TEI-MAPPING](TEI-MAPPING.md) |
+| ~~O13~~ | ~~Schlagworte~~ | Verschoben nach teiCrafter (E12) | -- |
+| ~~O14~~ | ~~GND-Werksaetze in Back-Matter~~ | Verschoben nach teiCrafter (E12) | -- |
 | O15 | Systematischer Einsatz von Textual Tags in Transkribus? | div, organization, person, sic, speech, unclear, work | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) |
 | O16 | Option Editionsansicht: Wird sie gebaut? | Noch nicht entschieden (Mail 14.02.) | [PROJEKT](PROJEKT.md) |
 | O17 | GitHub Pages für QS-Viewer aktivieren? | HTML bereit, aber Pages nicht aktiviert | [PROJEKT](PROJEKT.md) |
@@ -81,11 +82,11 @@ Kann später geklärt werden.
 | # | Risiko | Impact | Mitigation | Status |
 |---|--------|--------|------------|--------|
 | R1 | Spalten-Problem unlösbar | Hoch | Cloud-VM für Docling, Gemini Agentic Vision, notfalls manuell | Offen (→ O10) |
-| R2 | TEI zu komplex für regelbasierte Transformation | Hoch | Hybrid: Regeln + LLM (teiCrafter für Tiefenerschließung) | Mitigiert durch Ökosystem |
-| R3 | GND-Halluzinationen bei LLM-Lookup | Mittel | Zweistufig: NER → API-Validierung gegen lobid.org | Strategie definiert |
+| ~~R2~~ | ~~TEI zu komplex~~ | -- | Verschoben nach teiCrafter (E12) | -- |
+| ~~R3~~ | ~~GND-Halluzinationen~~ | -- | Verschoben nach teiCrafter (E12) | -- |
 | R4 | Azure-API-Kompatibilitaet Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | **Geloest** -- Azure AI Foundry Endpoint funktioniert (18.02.) |
 | R5 | Fork-Divergenz zwischen DHCraft und ZBZ | Mittel | Merge-Strategie definieren, CI-basierte Tests | Wartet auf Meeting (→ O3) |
-| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup in TEI umwandeln | Architektur-Fix nötig |
+| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten fuer coOCR | Architektur-Fix noetig |
 
 ---
 
@@ -98,4 +99,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-18 (O1 erledigt, R4 geloest)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-19 (E12: TEI-Scope verschoben, O6-O9/O11-O14/R2-R3 nach coOCR/teiCrafter)*

@@ -8,7 +8,7 @@ status: active
 
 # Architektur
 
-Technische Pipeline-Architektur: 5 Stufen von PDF zu TEI-XML.
+Technische Pipeline-Architektur: PDF zu korrigiertem Markdown. TEI-Transformation findet downstream in coOCR/teiCrafter statt.
 
 **Abhängigkeiten:** [PROJEKT](PROJEKT.md)
 
@@ -17,11 +17,17 @@ Technische Pipeline-Architektur: 5 Stufen von PDF zu TEI-XML.
 ## Pipeline-Übersicht
 
 ```
-PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --> TEI-XML --> [GND]
-        output/layout/       output/ocr_results/  output/llm_corrected/  output/clean/    output/tei/
+PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --> Markdown + Bilder
+        output/layout/       output/ocr_results/  output/llm_corrected/  output/clean/
+                                                                              |
+                                                                              v
+                                                                     coOCR/HTR (Korrektur)
+                                                                              |
+                                                                              v
+                                                                     teiCrafter (TEI + GND)
 ```
 
-### 6 Stufen
+### 4 Stufen (in diesem Repo)
 
 | Stufe | Aufgabe | Tool | Output |
 |-------|---------|------|--------|
@@ -29,8 +35,8 @@ PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --
 | 2 | OCR | DeepSeek / Mistral / Gemini | Seitenweises Markdown |
 | 2.5 | LLM-Nachkorrektur | Claude Haiku 4.5 | Korrigiertes Markdown |
 | 3 | Post-Processing | `scripts/postprocess/` | Bereinigtes Markdown |
-| 4 | TEI-Transformation | `scripts/transform_to_tei.py` | TEI-XML |
-| 5 | Validierung | lxml, RelaxNG (geplant) | Validierte TEI-XML |
+
+**TEI-Transformation und GND-Verknuepfung sind nicht Scope dieses Repos.** Sie finden in coOCR/HTR und teiCrafter statt.
 
 ---
 
@@ -90,18 +96,18 @@ Vollständige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 | Input | OCR-Markdown aus Stufe 2 |
 | Output | Korrigiertes Markdown |
 | Rolle | Korrektur, NICHT Transkription — das LLM sieht nie das Bild |
-| Kosten | ~$0.39 fuer 50 Seiten, ~$56 fuer 7.200 Seiten |
+| Kosten | ~$0.33 fuer 50 Seiten, ~$48 fuer 7.200 Seiten |
 
 **Wichtig:** Das LLM macht keine OCR. Es korrigiert nur den von Mistral/DeepSeek erzeugten Text. Es erhaelt Dokumentkontext (Typ, Sprache, Genre) und identifiziert Zeichenfehler, fehlende Akzente, OCR-Artefakte.
 
-**Ergebnis Pilot (Phase 1-3, 10 Docs):**
+**Ergebnis Pilot (Phase 1-3, 10 Docs, Variante C):**
 
 | Phase | Mistral CER | LLM CER | Verbesserung |
 |-------|-------------|---------|--------------|
 | Phase 1 (A) | 9.40% | 8.43% | -0.97 |
 | Phase 2 (B) | 6.31% | 6.34% | +0.03 |
 | Phase 3 (D) | 2.88% | 2.72% | -0.16 |
-| **Gesamt** | **5.87%** | **5.47%** | **-0.40 (7% relativ)** |
+| **Gesamt** | **5.87%** | **5.55%** | **-0.32 (5.5% relativ)** |
 
 ---
 
@@ -116,48 +122,7 @@ Vollständige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 | 3. Silbentrennung | `dehyphenate()` | `Wis- senschaft` -> `Wissenschaft` |
 | 4. Whitespace | (inline) | Mehrfache Leerzeilen -> eine |
 
-**Bekanntes Problem:** Markdown-Formatierung (`**bold**`, `*italic*`) wird entfernt, bevor sie in TEI-`<hi>`-Tags umgewandelt werden kann. Architektur-Fix nötig (-> [DECISIONS](DECISIONS.md) R6).
-
----
-
-## Stufe 4: TEI-Transformation
-
-**Skript:** `scripts/transform_to_tei.py`
-**Ansatz:** Regelbasiert (deterministisch), LLM nur für komplexe Strukturen
-
-### Regelbasierte Transformation
-
-| Input (Markdown) | Output (TEI) |
-|------------------|--------------|
-| Leere Zeile | `</p><p>` (Absatztrennung) |
-| `# Überschrift` | `<head>` |
-| Erster Absatz (Rezension) | `<head><bibl>` |
-| Bekannte Namen | `<persName ref="GND:...">` |
-
-### LLM-Unterstützung (geplant)
-
-| Aufgabe | Engine |
-|---------|--------|
-| NER (Named Entity Recognition) | Gemini 3 Flash |
-| Interview-Strukturierung (`<sp>`, `<speaker>`) | Gemini 3 Flash |
-| OCR-Korrektur | Gemini 3 Flash |
-| GND-Vorschläge | Gemini 3 Flash |
-| Qualitätssicherung | Claude |
-
-**Kosten:** ~$20-27 für 289 Dokumente (7.200 Seiten). Details: [OCR-ENGINES](OCR-ENGINES.md) §Gemini.
-
-TEI-Regeln: Siehe [TEI-MAPPING](TEI-MAPPING.md).
-
----
-
-## Stufe 5: Validierung
-
-| Prüfung | Tool | Status |
-|---------|------|--------|
-| XML-Wohlgeformtheit | lxml | Zu implementieren |
-| TEI P5 Schema | RelaxNG | Zu implementieren |
-| Seitenzählung | Custom | Zu implementieren |
-| GND-Format | Regex `ref="GND:\d+"` | Zu implementieren |
+**Bekanntes Problem:** Markdown-Formatierung (`**bold**`, `*italic*`) wird entfernt. Fuer coOCR/teiCrafter muss geklaert werden, ob Formatierung erhalten bleiben soll (-> [DECISIONS](DECISIONS.md) R6).
 
 ---
 
@@ -178,9 +143,6 @@ python -m scripts.llm_postprocess --all
 # Post-Processing (ohne GPU)
 python -m scripts.postprocess.pipeline
 
-# TEI Transformation
-python scripts/transform_to_tei.py --doc 2310 --type review --add-gnd
-
 # Evaluation
 python scripts/evaluate_ocr.py --all
 ```
@@ -189,12 +151,11 @@ python scripts/evaluate_ocr.py --all
 
 ## Referenzen
 
-- [PROJEKT](PROJEKT.md) für Ökosystem und Meilensteine
-- [OCR-ENGINES](OCR-ENGINES.md) für Engine-Details
-- [TEI-MAPPING](TEI-MAPPING.md) für Transformationsregeln
-- [TESTPLAN](TESTPLAN.md) für Testergebnisse
-- [INFRASTRUKTUR](INFRASTRUKTUR.md) für Deployment
+- [PROJEKT](PROJEKT.md) fuer Oekosystem und Meilensteine
+- [OCR-ENGINES](OCR-ENGINES.md) fuer Engine-Details
+- [TESTPLAN](TESTPLAN.md) fuer Testergebnisse
+- [INFRASTRUKTUR](INFRASTRUKTUR.md) fuer Deployment
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19*

@@ -18,7 +18,6 @@ OUTPUT_DIR = PROJECT_ROOT / "output"
 OCR_RESULTS_DIR = OUTPUT_DIR / "ocr_results"
 MISTRAL_RESULTS_DIR = OUTPUT_DIR / "mistral_results"
 EVALUATION_DIR = OUTPUT_DIR / "evaluation"
-TEI_DIR = OUTPUT_DIR / "tei"
 LAYOUT_DIR = OUTPUT_DIR / "layout"
 
 DOCS_DIR = PROJECT_ROOT / "docs"
@@ -87,15 +86,7 @@ TESTPLAN = {
 # Phase-1-Tests (Kurzform fuer Mistral-Benchmark)
 PHASE1_TESTS = TESTPLAN["phase1"]["tests"]
 
-# TEI Dokumenttypen
-DOC_TYPES = {
-    "review": 'div type="review"',
-    "interview": 'div type="interview"',
-    "essay": 'div n="1"',
-    "lexicon": 'div type="entry"',
-}
-
-# Bekannte GND-Entitaeten (Seed fuer NER)
+# Bekannte GND-Entitaeten (Seed fuer NER, genutzt von Downstream-Tools)
 KNOWN_ENTITIES = {
     "Karl Jaspers": "GND:118557106",
     "Jaspers": "GND:118557106",
