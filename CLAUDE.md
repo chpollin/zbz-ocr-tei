@@ -42,6 +42,13 @@
 # OCR-Tests (GPU erforderlich)
 python scripts/test_all_pdfs.py --phase phase1
 
+# Layout-Analyse (GPU erforderlich fuer Docling)
+python -m scripts.run_layout_analysis              # alle Dokumente
+python -m scripts.run_layout_analysis --doc 2310   # einzelnes Dokument
+
+# Layout Overlay-PNGs erzeugen (ohne GPU)
+python -m scripts.run_layout_analysis --overlay
+
 # Evaluation (ohne GPU)
 python scripts/evaluate_ocr.py --all
 

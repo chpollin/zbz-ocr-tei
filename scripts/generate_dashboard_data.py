@@ -20,6 +20,7 @@ from scripts.config import (
     MISTRAL_RESULTS_DIR,
     EVALUATION_DIR,
     OUTPUT_DIR,
+    LAYOUT_DIR,
 )
 
 
@@ -100,6 +101,14 @@ def build_documents(images_manifest, eval_data, llm_manifest):
         for doc_stat in llm_manifest["documents"]:
             llm_docs[doc_stat["doc_id"]] = doc_stat
 
+    # Layout-Summaries laden
+    layout_summaries = {}
+    for doc_id in ALL_DOCS:
+        summary_path = LAYOUT_DIR / doc_id / "summary.json"
+        ls = load_json(summary_path)
+        if ls:
+            layout_summaries[doc_id] = ls
+
     for doc_id, meta in ALL_DOCS.items():
         doc = {
             "doc_id": doc_id,
@@ -115,6 +124,7 @@ def build_documents(images_manifest, eval_data, llm_manifest):
             "mistral_stats": MISTRAL_BENCHMARK.get(doc_id),
             "deepseek_stats": DEEPSEEK_METRICS.get(doc_id),
             "llm_stats": None,
+            "layout": None,
         }
 
         # Seiten aus Bild-Manifest
@@ -143,6 +153,16 @@ def build_documents(images_manifest, eval_data, llm_manifest):
                 "output_tokens": ls.get("output_tokens", 0),
             }
 
+        # Layout-Summary
+        if doc_id in layout_summaries:
+            ls = layout_summaries[doc_id]
+            doc["layout"] = {
+                "regions_total": ls.get("total_regions", 0),
+                "pages_analyzed": ls.get("pages_analyzed", 0),
+                "types": ls.get("type_counts", {}),
+                "time_seconds": ls.get("total_time_seconds"),
+            }
+
         documents[doc_id] = doc
 
     return documents
@@ -155,6 +175,7 @@ def compute_pipeline_status(doc_id: str) -> dict:
         "ocr_mistral": any(MISTRAL_RESULTS_DIR.glob(f"{doc_id}_p*.md")),
         "ocr_deepseek": any((OUTPUT_DIR / "ocr_results").glob(f"{doc_id}_p*.md")),
         "llm_corrected": any((OUTPUT_DIR / "llm_corrected_c").glob(f"{doc_id}_p*.md")),
+        "layout": (LAYOUT_DIR / doc_id / "summary.json").is_file(),
         "evaluation": doc_id in (load_eval_doc_ids() or []),
         "export": (OUTPUT_DIR / "export" / doc_id).is_dir(),
     }
@@ -181,6 +202,7 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
     """Berechnet Aggregate aus den Dokumentdaten."""
     docs_with_ocr = sum(1 for d in documents.values() if d["pipeline_status"]["ocr_mistral"])
     docs_with_llm = sum(1 for d in documents.values() if d["pipeline_status"]["llm_corrected"])
+    docs_with_layout = sum(1 for d in documents.values() if d["pipeline_status"]["layout"])
     docs_with_eval = sum(1 for d in documents.values() if d["pipeline_status"]["evaluation"])
 
     # CER-Durchschnitte (nur evaluierte Docs)
@@ -205,6 +227,7 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
         "pilot_pages": total_pages,
         "docs_with_ocr": docs_with_ocr,
         "docs_with_llm": docs_with_llm,
+        "docs_with_layout": docs_with_layout,
         "docs_with_eval": docs_with_eval,
         "avg_cer_mistral": round(avg_cer_mistral, 6) if avg_cer_mistral else None,
         "avg_cer_llm": round(avg_cer_llm, 6) if avg_cer_llm else None,

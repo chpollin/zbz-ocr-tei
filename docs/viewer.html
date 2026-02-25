@@ -131,6 +131,54 @@
 
         .info-toggle:hover { background: var(--bg-muted); color: var(--text); }
 
+        /* Image wrapper: relative positioning for SVG overlay */
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* SVG overlay: covers the image exactly */
+        .layout-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .layout-overlay.active { pointer-events: auto; }
+
+        .layout-overlay rect {
+            cursor: pointer;
+            transition: fill-opacity 0.15s;
+        }
+
+        .layout-overlay rect:hover { fill-opacity: 0.25 !important; }
+
+        .layout-overlay text {
+            font-family: var(--font-sans);
+            pointer-events: none;
+        }
+
+        /* Layout toggle button */
+        .layout-toggle {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .layout-toggle:hover { background: var(--bg-muted); color: var(--text); }
+
+        .layout-toggle.active {
+            background: rgba(22, 163, 74, 0.1);
+            color: var(--status-ok);
+        }
+
         /* Viewer fills remaining space */
         .viewer-area {
             flex: 1;
@@ -166,6 +214,9 @@
             <button id="zoom-in">+</button>
         </div>
 
+        <!-- Layout toggle -->
+        <button class="layout-toggle" id="layout-toggle" title="Layout-Regionen ein/ausblenden (L)">&#9638; Layout</button>
+
         <!-- Info toggle -->
         <button class="info-toggle" id="info-toggle" title="Dokument-Info ein/ausblenden">&#9432; Info</button>
     </div>
@@ -183,7 +234,12 @@
             <div class="viewer-panel" id="image-panel">
                 <div class="viewer-panel-header">Faksimile</div>
                 <div class="viewer-panel-content viewer-image-content">
-                    <img id="page-image" src="" alt="Scan">
+                    <div class="image-wrapper" id="image-wrapper">
+                        <img id="page-image" src="" alt="Scan">
+                        <svg id="layout-overlay" class="layout-overlay"
+                             xmlns="http://www.w3.org/2000/svg"
+                             preserveAspectRatio="none"></svg>
+                    </div>
                 </div>
             </div>
 
@@ -205,6 +261,7 @@
         <kbd>&larr;</kbd><kbd>&rarr;</kbd> Seite &nbsp;|&nbsp;
         <kbd>+</kbd><kbd>&minus;</kbd> Zoom &nbsp;|&nbsp;
         <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Quelle &nbsp;|&nbsp;
+        <kbd>L</kbd> Layout &nbsp;|&nbsp;
         <kbd>i</kbd> Info
     </div>
 
@@ -222,6 +279,7 @@
             docData: null,
             hasDeepseek: false,
             hasLlm: false,
+            layoutVisible: false,
         };
 
         var sourceLabels = {
@@ -272,6 +330,14 @@
 
                 renderDocInfo();
                 updateSourceToggle();
+
+                // Layout automatisch aktivieren wenn Daten vorhanden
+                if (state.docData.pipeline_status && state.docData.pipeline_status.layout) {
+                    state.layoutVisible = true;
+                    layoutToggle.classList.add('active');
+                    layoutOverlay.classList.add('active');
+                }
+
                 showPage(state.page);
 
             } catch (e) {
@@ -407,6 +473,74 @@
             ZBZ.$('#doc-info-inner').innerHTML = html;
         }
 
+        // ---- Layout Overlay ----
+        var layoutOverlay = ZBZ.$('#layout-overlay');
+        var layoutToggle = ZBZ.$('#layout-toggle');
+        var imageWrapper = ZBZ.$('#image-wrapper');
+
+        function toggleLayout() {
+            state.layoutVisible = !state.layoutVisible;
+            layoutToggle.classList.toggle('active', state.layoutVisible);
+
+            if (state.layoutVisible) {
+                renderLayout();
+                layoutOverlay.classList.add('active');
+            } else {
+                layoutOverlay.innerHTML = '';
+                layoutOverlay.classList.remove('active');
+            }
+        }
+
+        async function renderLayout() {
+            if (!state.layoutVisible) return;
+
+            var data = await ZBZ.fetchLayoutData(state.docId, state.page);
+
+            layoutOverlay.innerHTML = '';
+
+            if (!data || !data.regions || data.regions.length === 0) {
+                return;
+            }
+
+            layoutOverlay.setAttribute('viewBox', '0 0 100 100');
+
+            var colors = ZBZ.LAYOUT_COLORS;
+            var defaultColor = { stroke: '#6b7280', fill: 'rgba(107,114,128,0.08)', label: '?' };
+
+            data.regions.forEach(function (region) {
+                if (!region.bbox) return;
+
+                var b = region.bbox;
+                var color = colors[region.zbz_tag] || defaultColor;
+
+                var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', b.x_pct);
+                rect.setAttribute('y', b.y_pct);
+                rect.setAttribute('width', b.w_pct);
+                rect.setAttribute('height', b.h_pct);
+                rect.setAttribute('fill', color.fill);
+                rect.setAttribute('stroke', color.stroke);
+                rect.setAttribute('stroke-width', '0.15');
+                rect.setAttribute('rx', '0.1');
+
+                var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+                title.textContent = color.label + ': ' + (region.text || '').substring(0, 80);
+                rect.appendChild(title);
+
+                layoutOverlay.appendChild(rect);
+
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', String(b.x_pct + 0.3));
+                text.setAttribute('y', String(b.y_pct + 1.2));
+                text.setAttribute('fill', color.stroke);
+                text.setAttribute('font-size', '1');
+                text.textContent = color.label;
+                layoutOverlay.appendChild(text);
+            });
+        }
+
+        layoutToggle.addEventListener('click', function () { toggleLayout(); });
+
         // ---- Info Toggle ----
         ZBZ.$('#info-toggle').addEventListener('click', function () {
             ZBZ.$('#doc-info-bar').classList.toggle('collapsed');
@@ -440,8 +574,10 @@
 
             pageImage.src = ZBZ.imagePath(state.docId, page);
             pageImage.style.width = state.zoom + '%';
+            imageWrapper.style.width = state.zoom + '%';
 
             await loadText();
+            renderLayout();
 
             pageInfo.textContent = page + ' / ' + state.totalPages;
             prevBtn.disabled = page <= 1;
@@ -467,18 +603,21 @@
         ZBZ.$('#zoom-in').addEventListener('click', function () {
             state.zoom = Math.min(300, state.zoom + 25);
             pageImage.style.width = state.zoom + '%';
+            imageWrapper.style.width = state.zoom + '%';
             ZBZ.$('#zoom-reset').textContent = state.zoom + '%';
         });
 
         ZBZ.$('#zoom-out').addEventListener('click', function () {
             state.zoom = Math.max(25, state.zoom - 25);
             pageImage.style.width = state.zoom + '%';
+            imageWrapper.style.width = state.zoom + '%';
             ZBZ.$('#zoom-reset').textContent = state.zoom + '%';
         });
 
         ZBZ.$('#zoom-reset').addEventListener('click', function () {
             state.zoom = 100;
             pageImage.style.width = '100%';
+            imageWrapper.style.width = '100%';
             ZBZ.$('#zoom-reset').textContent = '100%';
         });
 
@@ -503,6 +642,9 @@
                         state.source = 'deepseek';
                         updateSourceToggle(); loadText();
                     }
+                    break;
+                case 'l': case 'L':
+                    toggleLayout();
                     break;
                 case 'i': case 'I':
                     ZBZ.$('#doc-info-bar').classList.toggle('collapsed');

@@ -49,6 +49,35 @@
             return null;
         },
 
+        // ---- Layout Data Fetching ----
+        async fetchLayoutData(docId, page) {
+            const key = `layout/${docId}/${page}`;
+            if (_textCache[key] !== undefined) return _textCache[key];
+
+            const padded = String(page).padStart(3, '0');
+            const path = `../output/layout/${docId}/${docId}_p${padded}_layout.json`;
+
+            try {
+                const r = await fetch(path);
+                if (r.ok) {
+                    const data = await r.json();
+                    _textCache[key] = data;
+                    return data;
+                }
+            } catch (e) { /* ignore */ }
+
+            _textCache[key] = null;
+            return null;
+        },
+
+        // ---- Layout Region Colors ----
+        LAYOUT_COLORS: {
+            zb_heading:   { stroke: '#dc2626', fill: 'rgba(220,38,38,0.12)',  label: 'Heading' },
+            zb_paragraph: { stroke: '#6b7280', fill: 'rgba(107,114,128,0.08)', label: 'Absatz' },
+            footnote:     { stroke: '#2563eb', fill: 'rgba(37,99,235,0.12)',  label: 'Fussnote' },
+            caption:      { stroke: '#d97706', fill: 'rgba(217,119,6,0.12)',  label: 'Caption' },
+        },
+
         // ---- Formatting ----
         fmtNum(n) {
             if (n == null) return '-';
@@ -119,6 +148,7 @@
             { key: 'images', label: 'IMG', title: 'Bilder extrahiert' },
             { key: 'ocr', label: 'OCR', title: 'OCR Engines', composite: ['ocr_mistral', 'ocr_deepseek'] },
             { key: 'llm_corrected', label: 'LLM', title: 'LLM-Korrektur' },
+            { key: 'layout', label: 'LAY', title: 'Layout-Analyse (Docling)' },
             { key: 'evaluation', label: 'EVAL', title: 'CER/WER Evaluation' },
             { key: 'export', label: 'EXP', title: 'PAGE-XML Export' },
         ],

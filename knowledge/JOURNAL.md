@@ -14,6 +14,48 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | Layout-Overlay im Viewer + Annotierte PNG-Generierung
+
+### Durchgefuehrt
+
+1. **Layout-Analyse Batch-Script erstellt** (`scripts/run_layout_analysis.py`):
+   - Docling Layout-Analyse auf alle Seitenbilder (JSON mit Prozent-Koordinaten)
+   - Resume-Faehig (ueberspring existierende, --force zum Ueberschreiben)
+   - `--overlay` Flag: Erzeugt annotierte PNG-Bilder mit eingebrannten BBox-Overlays
+
+2. **Dashboard-Integration**:
+   - `generate_dashboard_data.py`: Layout-Pipeline-Status + Summary pro Dokument
+   - `shared.js`: fetchLayoutData(), LAYOUT_COLORS, LAY Pipeline-Step
+
+3. **Viewer BBox-Overlay** (`docs/viewer.html`):
+   - SVG-Overlay mit viewBox="0 0 100 100" (zoom-unabhaengig)
+   - Toggle mit Taste L oder Button, Auto-Aktivierung bei vorhandenen Layout-Daten
+   - Farbcodierung: Rot=Heading, Grau=Absatz, Blau=Fussnote, Orange=Caption
+
+4. **Annotierte Overlay-PNGs**:
+   - `draw_overlay_from_json()`: Liest Layout-JSONs, zeichnet BBoxes auf Originalbilder
+   - Farbige Rechtecke mit Label-Text und Text-Vorschau
+   - Doc 2310 (3 Seiten) erfolgreich getestet, alle 15 Docs laufen
+
+5. **Layout-Analyse auf alle 15 Pilot-Dokumente** (383 Seiten) gestartet
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `scripts/run_layout_analysis.py` | **NEU** -- Batch Docling + Overlay-PNG |
+| `scripts/generate_dashboard_data.py` | ERWEITERN -- Layout-Status + Summary |
+| `docs/shared.js` | ERWEITERN -- fetchLayoutData(), LAYOUT_COLORS, LAY-Step |
+| `docs/viewer.html` | ERWEITERN -- SVG-Overlay, Toggle, Auto-Aktivierung |
+| `output/layout/{doc_id}/*_layout.json` | **GENERIERT** -- Layout pro Seite |
+| `output/layout/{doc_id}/*_overlay.png` | **GENERIERT** -- Annotierte Bilder |
+
+### Naechster Schritt
+
+Overlay-PNGs aller 383 Seiten pruefen, Koordinaten-Alignment verifizieren, dann PAGE-XML Export.
+
+---
+
 ## 2026-02-25 | Phase 0 Evaluation + Scope-Update aller Knowledge-Docs
 
 ### Durchgefuehrt

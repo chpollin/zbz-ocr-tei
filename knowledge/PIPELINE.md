@@ -35,7 +35,7 @@ PDF ──→ Seitenbilder ──→ OCR ──→ Layout ──→ PAGE-XML ─
 | 1 | PDF → Seitenbilder | `scripts/extract_pages.py` | PNG (`docs/images/`) | Produktiv |
 | 2 | OCR | `scripts/ocr_pipeline.py` | Seitenweises Markdown (`output/mistral_results/`) | Produktiv |
 | 2a | LLM-Nachkorrektur (optional) | `scripts/llm_postprocess.py` | Korrigiertes Markdown (`output/llm_corrected_c/`) | Produktiv, E17: optional |
-| 3 | Layout-Analyse | `scripts/layout/layout_analyzer.py` | Regionen + BBox (JSON) | **Phase 1** |
+| 3 | Layout-Analyse | `scripts/run_layout_analysis.py` | Regionen + BBox (JSON, `output/layout/`) + Overlay-PNGs | Produktiv (7/15 Docs) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
 | 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entitaeten-JSON (`output/entities/`) | **Phase 2** |
 | 6 | PAGE-XML + Entitaeten → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei_xml/`) | **Phase 3** |
@@ -284,6 +284,12 @@ python -m scripts.llm_postprocess --all
 # Evaluation (Stufe 3)
 python scripts/evaluate_ocr.py --all
 python scripts/evaluate_ocr.py --phase phase1 --engine mistral
+
+# Layout-Analyse (Stufe 3, braucht GPU fuer Docling)
+python -m scripts.run_layout_analysis                      # alle Dokumente
+python -m scripts.run_layout_analysis --doc 2310           # einzelnes Dokument
+python -m scripts.run_layout_analysis --overlay            # Overlay-PNGs erzeugen (ohne GPU)
+python -m scripts.run_layout_analysis --overlay --doc 2310 # Overlay fuer ein Dokument
 
 # Dashboard-Daten (Stufe 4)
 python -m scripts.generate_dashboard_data
