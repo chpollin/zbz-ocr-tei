@@ -222,7 +222,7 @@ Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text
 
 | Kriterium | DeepSeek | Mistral | Gemini | Docling |
 |-----------|----------|---------|--------|---------|
-| Genauigkeit (CER) | 94-97% (Phase 1) | 94.14% (Phase 1-3) | Ungetestet | Nur Layout |
+| Genauigkeit (CER) | 94-97% (Phase 1) | 93.58% (15 Docs) | Ungetestet | Nur Layout |
 | GPU noetig | Ja (8GB+) | Nein (API) | Nein (API) | Nein (CPU) |
 | Kosten | Kostenlos | Azure-Abo | ~$27/Projekt | Kostenlos |
 | Spalten (Typ B) | Nein | 93.69% Genauigkeit | Ja (Agentic) | Ja (Layout) |
@@ -230,6 +230,18 @@ Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text
 | Offline | Ja | Nein | Nein | Ja |
 | Kursiv/Formatting | Nein | Ja (*italics*) | Ungetestet | - |
 | Alle Seiten | Teilweise (GPU-Limit) | Ja (Cloud) | Ungetestet | - |
+
+---
+
+## Erkenntnisse aus Pilotevaluation (15 Docs)
+
+| Erkenntnis | Detail | Entscheidung |
+|------------|--------|--------------|
+| Monografien haben besten CER | Phase 4 (Typ C): 2.65% — sauberes Layout, konsistente Typografie | — |
+| LLM-Korrektur nur bei hohem CER sinnvoll | Verbessert CER >10%, verschlechtert CER <5% (korrigiert korrekte Eigennamen/Akzente weg) | E17 |
+| Seitenweiser Vergleich fuer lange Docs | Globales Alignment scheitert ab ~50 Seiten; `<pb facs>` als Ankerpunkte | E16 |
+| TEI-Seitennummern ≠ PDF-Seitennummern | Deckblaetter, Leerseiten verschieben Offset variabel; Content-Matching loest das | E18 |
+| API-Kosten vernachlaessigbar | 330 Seiten OCR + LLM = ~$1.55; Hochrechnung 7200 Seiten: ~$35 | — |
 
 ---
 

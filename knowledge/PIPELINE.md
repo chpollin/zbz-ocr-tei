@@ -84,14 +84,17 @@ Vollstaendige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 
 **Wichtig:** Das LLM macht keine OCR. Es korrigiert nur den von Mistral/DeepSeek erzeugten Text. Es erhaelt Dokumentkontext (Typ, Sprache, Genre) und identifiziert Zeichenfehler, fehlende Akzente, OCR-Artefakte.
 
-**Ergebnis Pilot (Phase 1-3, 10 Docs, Variante C):**
+**Ergebnis Pilot (alle 15 Docs, Variante C Few-Shot):**
 
-| Phase | Mistral CER | LLM CER | Verbesserung |
-|-------|-------------|---------|--------------|
+| Phase | Mistral CER | LLM CER | Delta |
+|-------|-------------|---------|-------|
 | Phase 1 (A) | 9.40% | 8.43% | -0.97 |
 | Phase 2 (B) | 6.31% | 6.34% | +0.03 |
 | Phase 3 (D) | 2.88% | 2.72% | -0.16 |
-| **Gesamt** | **5.87%** | **5.55%** | **-0.32 (5.5% relativ)** |
+| Phase 4 (C) | 2.65% | 2.70% | +0.05 |
+| **Gesamt (15 Docs)** | **6.42%** | **6.52%** | **+0.10** |
+
+**Erkenntnis:** LLM-Korrektur verbessert Docs mit CER >10%, verschlechtert leicht bei gutem OCR (<5%). Empfehlung: Optional einsetzen, nicht als Default.
 
 ---
 
@@ -117,10 +120,26 @@ Vollstaendige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 |--------|---------|
 | Input | OCR-Markdown + Referenz-TEI (`data/referenz-tei/*.xml`) |
 | Metriken | CER (Character Error Rate), WER (Word Error Rate) |
-| Alignment | Intelligente Phrasen-Suche fuer Teil-Texte |
+| Alignment | Global (kurze Docs) oder seitenweise (Monografien) |
 | Output | JSON (`output/evaluation/evaluation_results.json`) + HTML-Report |
 
 Vergleicht OCR-Output zeichenweise mit manuell erstelltem Referenz-TEI. Nutzt `rapidfuzz` fuer Levenshtein-Distanz.
+
+### Zwei Vergleichsmodi
+
+| Modus | Bedingung | Verfahren |
+|-------|-----------|-----------|
+| Global | ≤10 TEI-Seiten | Gesamttext-Alignment (Phrasen-Suche) |
+| Seitenweise | >10 TEI-Seiten | Pro-Seite-Vergleich via `<pb facs>` Tags |
+
+**Auto-Erkennung:** Das Skript waehlt den Modus automatisch anhand der TEI-Seitenanzahl. CLI-Flags `--pagewise` / `--no-pagewise` ueberschreiben.
+
+**Seitenweiser Vergleich (fuer Monografien):**
+1. TEI wird anhand `<pb facs="#facs_N">` Tags in Einzelseiten zerlegt
+2. Content-basiertes Matching ordnet jede TEI-Seite der passenden OCR-Datei zu (Wort-Ueberlappung mit Sliding Window)
+3. CER/WER wird pro Seite berechnet, dann zeichengewichtet gemittelt
+
+**Warum kein fixer Offset:** Bibliotheks-PDFs enthalten Deckblaetter, Leerseiten und Illustrationen, die nicht in der TEI vorkommen. Der Versatz zwischen TEI-Seitennummern und OCR-Dateinummern ist nicht konstant (z.B. Doc 1520: Offset +8, driftet auf +9). Content-Matching loest das automatisch.
 
 ---
 
