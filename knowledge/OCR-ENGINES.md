@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-19
+updated: 2026-02-25
 tags: [zbz-ocr-tei, ocr, deepseek, mistral, gemini, docling]
 status: active
 ---
@@ -145,7 +145,7 @@ Annotations sind auf 8 Seiten begrenzt. Relevant fuer: Metadaten-Extraktion, TEI
 | 1180 | 8 | 20.121 | 6.4s | 0.80 |
 | 290 | 5 | 15.148 | 6.3s | 1.27 |
 
-Interaktiver Vergleich mit DeepSeek: `docs/benchmark.html`
+Interaktiver Engine-Vergleich im Dashboard: `docs/index.html` (Katalog mit CER-Spalten, Engine-Filter, Pipeline-Badges).
 
 ### CER/WER-Ergebnisse alle Phasen (18.02.2026)
 
@@ -266,4 +266,4 @@ Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

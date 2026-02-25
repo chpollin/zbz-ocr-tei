@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-18
+updated: 2026-02-25
 tags: [zbz-ocr-tei, projekt, oekosystem, vision]
 status: active
 ---
@@ -94,7 +94,7 @@ Offene Schnittstellenfragen: Siehe [DECISIONS](DECISIONS.md).
 | # | Meilenstein | Aufwand | Erfolgskriterium | Status |
 |---|-------------|---------|-------------------|--------|
 | M0 | Bildextraktion + QS-Viewer | Erledigt | Bilder + Viewer verfuegbar | Erledigt |
-| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | Phase 1-3: 94.14% (Mistral) + LLM 94.45% |
+| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | Phase 1-3: 94.14% (Mistral) + LLM 94.45%. Dashboard-UI verfuegbar |
 | M2 | Produktions-OCR alle 289 Docs | 3-5 Tage | Alle PDFs verarbeitet, QS geprueft | Ausstehend |
 | M3 | Integration mit coOCR/HTR | 4-6 Tage | Export-Format definiert, Schnittstelle funktional | Ausstehend |
 | M4 | Pilotbetrieb | 6-10 Tage | Kundenabnahme | Ausstehend |
@@ -111,7 +111,7 @@ M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 
 
 ---
 
-## Komponentenstatus (18.02.2026, spaet)
+## Komponentenstatus (25.02.2026)
 
 | Komponente | Status | Details |
 |------------|--------|---------|
@@ -127,6 +127,8 @@ M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 
 | Evaluation | Erledigt | `scripts/evaluate_ocr.py`, CER/WER + HTML-Report |
 | Azure-Integration | Erledigt | Mistral Document AI 2512, `.env` konfiguriert |
 | Benchmark-UI | Erledigt | `docs/benchmark.html`, Mistral vs DeepSeek |
+| Dashboard-Redesign | Erledigt | `docs/` mit shared.css/js, index.html, viewer.html |
+| Dashboard-Daten | Erledigt | `scripts/generate_dashboard_data.py` → dashboard.json |
 | Containerisierung | Ausstehend | Dockerfile fuer Podman |
 | CI/CD | Ausstehend | GitLab Uni Zürich |
 
@@ -162,4 +164,4 @@ M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-19*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25*

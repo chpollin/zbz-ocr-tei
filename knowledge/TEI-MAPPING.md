@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-25
 tags: [zbz-ocr-tei, tei, dta, mapping, transformation]
 status: active
 ---
@@ -10,6 +10,8 @@ status: active
 
 Transformationsregeln von Quelltext zu TEI-XML nach DTA-Basisformat mit projektspezifischen Anpassungen.
 
+> **Scope:** Dieses Dokument ist eine Referenz fuer coOCR/HTR und teiCrafter. zbz-ocr-tei fuehrt KEINE TEI-Transformation durch — nur OCR bis korrigiertes Markdown (Entscheidung E12). Die hier beschriebenen Regeln gelten fuer die Downstream-Tools.
+
 **Abhängigkeiten:** [QUELLENANALYSE](QUELLENANALYSE.md)
 
 **Quellen:**
@@ -17,7 +19,7 @@ Transformationsregeln von Quelltext zu TEI-XML nach DTA-Basisformat mit projekts
 - `data/richtlinien/dta_basisformat_komplett.md` – DTA-Referenz
 - `data/richtlinien/Auszeichnungsrichtlinien Hersch INTERN.docx` – Interne Richtlinien
 
-**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md) O6-O9, O13-O14.
+**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md). TEI-bezogene Fragen (O6-O9, O13-O14) sind nach coOCR/teiCrafter verschoben (E12).
 
 ---
 
@@ -773,4 +775,4 @@ Diese Fragen wurden im internen Dokument markiert und erfordern Klärung mit Exp
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

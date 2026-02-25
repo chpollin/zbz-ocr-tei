@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-02-20
+updated: 2026-02-25
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,68 @@ status: active
 Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) konsolidiert, Projektstatus in [PROJEKT](PROJEKT.md).
 
 **Abhängigkeiten:** Keine (eigenständiges Log)
+
+---
+
+## 2026-02-25 | Dashboard-Redesign + Engine-Sichtbarkeit + Knowledge-Update
+
+### Durchgefuehrt
+
+**Dashboard-Redesign (Session 1):**
+- Vollstaendige Projektanalyse und Dateninventur (15 Pilot-PDFs, 383 Seiten, 12 mit OCR, 10 mit LLM)
+- `scripts/generate_dashboard_data.py` erstellt: Generiert `docs/data/dashboard.json` aus allen Pipeline-Quellen
+- `docs/shared.css` erstellt: Unified Design System (CSS Custom Properties, warm-beige Light Theme)
+- `docs/shared.js` erstellt: Shared Utilities (Data Loading, Text-Fetching, Formatting, DOM Helpers)
+- `docs/index.html` komplett neu geschrieben: Dashboard + Dokumentkatalog + Qualitaetsvergleich
+- `docs/viewer.html` komplett redesigned: Light Theme, Source-Toggle (Mistral/LLM/DeepSeek)
+- benchmark.html-Inhalte in index.html integriert (Phasen-Summary + Dokument-Vergleichskarten)
+- Pipeline-Steps beschriftet (IMG, OCR, LLM, EVAL, EXP statt anonyme Punkte)
+- Viewer als vollwertige Dokumentseite mit Info-Bar (Metriken, CER-Bars, Keyboard-Shortcuts)
+
+**Engine-Sichtbarkeit (Session 2):**
+- `shared.js`: `engineBadges()` Funktion + OCR-Pipeline-Step als Composite (Mistral/DeepSeek Sub-Dots)
+- `shared.css`: Engine-Dot Styles (.teal/.violet), Engine-Badges Container
+- `index.html`: Engine-Filter Dropdown, DeepSeek-CER-Spalte, Engine-Badges-Spalte, per-Engine Metriken
+- `viewer.html`: Engine-Badges in Doc-Info-Bar
+
+**Knowledge-Update (Session 2):**
+- Alle 12 Knowledge-Docs + PROJEKTWISSEN.md auf Stand 25.02.2026 gebracht
+- TEI-MAPPING.md + GND-STRATEGIE.md: E12-Scope-Hinweis ergaenzt
+- INFRASTRUKTUR.md: Stale Dockerfile-Referenz (`templates/`) entfernt, Dashboard-Deployment ergaenzt
+- DECISIONS.md: E15 (Dashboard-Redesign) hinzugefuegt
+- ARCHITEKTUR.md: Dashboard-QA-UI Sektion + CLI-Befehl ergaenzt
+- INDEX.md: Dashboard-Navigation + Kernbegriff ergaenzt
+- TESTPLAN.md: Dashboard-Link ergaenzt
+- OCR-ENGINES.md: benchmark.html-Referenz durch Dashboard ersetzt
+- ZBZ-WORKFLOW.md: QA-Dashboard Sektion ergaenzt
+- PROJEKTWISSEN.md: Dashboard-Dateien, E15, Scripts-Tabelle aktualisiert
+
+### Architektur
+
+- Multi-Page mit Shared CSS/JS (statt drei unabhaengige Designs)
+- Statische JSON-Datenbasis (`dashboard.json`) statt hardcodierter Daten in HTML
+- Source-Toggle im Viewer: Tastatur 1/2/3 fuer Mistral/LLM/DeepSeek
+- Filterbarer Dokumentkatalog mit Pipeline-Status-Anzeige (beschriftete Steps)
+- CER-Vergleichsbalken (Mistral vs LLM-C, optional DeepSeek)
+- Engine-Badges (M/DS/LLM) fuer sofortige Engine-Erkennung pro Dokument
+
+### Entscheidung
+
+- **E15**: Dashboard-Redesign — Multi-Page UI, Shared CSS/JS, Light Theme, statische JSONs, Engine-Sichtbarkeit
+
+### Neue/Geaenderte Dateien
+
+| Datei | Aktion |
+|-------|--------|
+| `scripts/generate_dashboard_data.py` | NEU |
+| `docs/data/dashboard.json` | GENERIERT |
+| `docs/shared.css` | NEU + Engine-Styles |
+| `docs/shared.js` | NEU + engineBadges() + Composite Pipeline |
+| `docs/index.html` | REWRITE + Engine-Spalten/Filter |
+| `docs/viewer.html` | REWRITE + Engine-Badges in Info-Bar |
+| `docs/benchmark.html` | ARCHIV (nicht mehr verlinkt) |
+| `knowledge/*.md` (alle 12) | UPDATE (Timestamps, Inhalte, E12-Scope) |
+| `PROJEKTWISSEN.md` | UPDATE (Dashboard, E15, Scripts) |
 
 ---
 
@@ -360,4 +422,4 @@ Intensive Arbeitssession: Korpusanalyse, Hybrid-Pipeline validiert, OCR Phase 1 
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-20*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

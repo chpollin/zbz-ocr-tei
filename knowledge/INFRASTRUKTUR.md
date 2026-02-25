@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-18
+updated: 2026-02-25
 tags: [zbz-ocr-tei, infrastruktur, azure, podman, cicd]
 status: active
 ---
@@ -94,7 +94,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY scripts/ scripts/
-COPY templates/ templates/
 
 ENV MISTRAL_DOC_AI_ENDPOINT=""
 ENV MISTRAL_DOC_AI_KEY=""
@@ -159,6 +158,20 @@ python scripts/ocr_pipeline.py --check-gpu
 
 ---
 
+## Dashboard-Deployment
+
+Das QA-Dashboard (`docs/`) ist eine rein statische Webanwendung und benoetigt keinen Backend-Server.
+
+| Methode | Beschreibung |
+|---------|-------------|
+| Live Server (VS Code) | Lokale Vorschau waehrend Entwicklung |
+| GitHub Pages | `docs/` als Source, automatisch deployed |
+| Beliebiger HTTP-Server | `python -m http.server` im `docs/`-Ordner |
+
+**Daten aktualisieren:** `python -m scripts.generate_dashboard_data` generiert `docs/data/dashboard.json` aus Pipeline-Outputs.
+
+---
+
 ## Referenzen
 
 - [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Architektur
@@ -167,4 +180,4 @@ python scripts/ocr_pipeline.py --check-gpu
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-19*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25*

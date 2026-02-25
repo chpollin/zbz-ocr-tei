@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-20
+updated: 2026-02-25
 tags: [zbz-ocr-tei, architektur, pipeline, workflow]
 status: active
 ---
@@ -193,7 +193,26 @@ python -m scripts.postprocess.pipeline
 
 # Evaluation
 python scripts/evaluate_ocr.py --all
+
+# Dashboard-Daten generieren (ohne GPU)
+python -m scripts.generate_dashboard_data
 ```
+
+---
+
+## Dashboard & QA-UI
+
+**Verzeichnis:** `docs/`
+
+| Datei | Zweck |
+|-------|-------|
+| `docs/index.html` | Dashboard: Metriken, Dokumentkatalog, Qualitaetsvergleich |
+| `docs/viewer.html` | Dokumentansicht: Faksimile + OCR-Text, Source-Toggle |
+| `docs/shared.css` | Unified Design System (CSS Custom Properties) |
+| `docs/shared.js` | Shared Utilities (Data Loading, Formatting, DOM Helpers) |
+| `docs/data/dashboard.json` | Generierte Datenbasis (aus `scripts/generate_dashboard_data.py`) |
+
+Das Dashboard zeigt Pipeline-Status, CER-Vergleich (Mistral/LLM/DeepSeek), Engine-Verfuegbarkeit und filterbaren Dokumentkatalog. Daten werden statisch aus Pipeline-Outputs generiert.
 
 ---
 
@@ -206,4 +225,4 @@ python scripts/evaluate_ocr.py --all
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-20*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

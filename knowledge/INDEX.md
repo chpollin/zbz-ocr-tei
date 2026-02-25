@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-02-20
+updated: 2026-02-25
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -66,6 +66,7 @@ JOURNAL   ◄── chronologisch, verweist auf alle Docs
 | CER / WER | Character Error Rate / Word Error Rate | [TESTPLAN](TESTPLAN.md) |
 | Hybrid-Pipeline | Docling (Layout) + LLM-OCR (Text) kombiniert | [ARCHITEKTUR](ARCHITEKTUR.md) |
 | PAGE-XML | Exportformat fuer coOCR (Schema 2019-07-15) | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| Dashboard | QA-UI mit Metriken, Engine-Vergleich und Dokumentkatalog | [ARCHITEKTUR](ARCHITEKTUR.md) |
 | METS-XML | Multi-Page-Manifest fuer coOCR-Import | [ARCHITEKTUR](ARCHITEKTUR.md) |
 
 ---
@@ -75,8 +76,9 @@ JOURNAL   ◄── chronologisch, verweist auf alle Docs
 1. **Ökosystem verstehen:** [PROJEKT](PROJEKT.md) — wie hängen die drei Tools zusammen?
 2. **Pipeline verstehen:** [ARCHITEKTUR](ARCHITEKTUR.md) — die 5 Verarbeitungsstufen (OCR + Export)
 3. **Material kennen:** [QUELLENANALYSE](QUELLENANALYSE.md) — 289 Texte, 4 Dokumenttypen
-4. **Status prüfen:** [DECISIONS](DECISIONS.md) — was ist entschieden, was blockiert?
-5. **Letzte Session:** [JOURNAL](JOURNAL.md) — chronologisches Arbeitslog
+4. **Dashboard ansehen:** `docs/index.html` -- Metriken, Engine-Vergleich, Pipeline-Status
+5. **Status prüfen:** [DECISIONS](DECISIONS.md) — was ist entschieden, was blockiert?
+6. **Letzte Session:** [JOURNAL](JOURNAL.md) — chronologisches Arbeitslog
 
 ---
 
@@ -109,4 +111,4 @@ knowledge/
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-20*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

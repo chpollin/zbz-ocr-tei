@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-20
+updated: 2026-02-25
 tags: [zbz-ocr-tei, decisions, offen, entschieden]
 status: active
 ---
@@ -32,6 +32,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E12 | zbz-ocr-tei nur OCR, keine TEI-Transformation | TEI + GND in coOCR/teiCrafter, nicht hier | 2026-02-19 | [ARCHITEKTUR](ARCHITEKTUR.md) |
 | E13 | Export als PAGE-XML + METS fuer coOCR | coOCR erwartet PAGE-XML (2019-07-15) + PNG, nicht Markdown | 2026-02-20 | [ARCHITEKTUR](ARCHITEKTUR.md) |
 | E14 | Markdown-Formatierung erhalten (R6 geloest) | coOCR speichert Text as-is in `<Unicode>`, Formatierung darf nicht entfernt werden | 2026-02-20 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E15 | Dashboard-Redesign: Multi-Page UI mit Shared CSS/JS | Unified Design System, statische JSON-Datenbasis, Engine-Sichtbarkeit, Light Theme | 2026-02-25 | [ARCHITEKTUR](ARCHITEKTUR.md) |
 
 ---
 
@@ -101,4 +102,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-20 (E13-E14: coOCR-Schnittstelle, O4/R6 geloest)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E15: Dashboard-Redesign)*

@@ -1,6 +1,6 @@
 # Projektwissen: ZBZ-OCR-TEI
 
-Kompaktes Wissensdokument, synthetisiert aus allen 12 Knowledge-Docs. Stand: 20.02.2026.
+Kompaktes Wissensdokument, synthetisiert aus allen 12 Knowledge-Docs. Stand: 25.02.2026.
 
 ---
 
@@ -181,7 +181,7 @@ output/export/{doc_id}/
 
 ---
 
-## 10. Entscheidungen (E1-E14)
+## 10. Entscheidungen (E1-E15)
 
 | # | Entscheidung | Datum |
 |---|-------------|-------|
@@ -199,6 +199,7 @@ output/export/{doc_id}/
 | E12 | zbz-ocr-tei nur OCR, keine TEI | 19.02. |
 | E13 | Export als PAGE-XML + METS fuer coOCR | 20.02. |
 | E14 | Markdown-Formatierung erhalten (R6) | 20.02. |
+| E15 | Dashboard-Redesign: Multi-Page UI mit Shared CSS/JS | 25.02. |
 
 ---
 
@@ -252,19 +253,29 @@ Automatisiert (DHCraft): zbz-ocr-tei ersetzt Transkribus-OCR, coOCR ersetzt Oxyg
 
 ---
 
-## 15. Scripts (implementiert)
+## 15. Scripts & UI (implementiert)
 
 | Script | Zweck |
 |--------|-------|
 | `scripts/ocr_pipeline.py` | OCR mit Mistral/DeepSeek |
 | `scripts/llm_postprocess.py` | LLM-Nachkorrektur (Haiku 4.5) |
 | `scripts/evaluate_ocr.py` | CER/WER-Evaluation |
+| `scripts/generate_dashboard_data.py` | Dashboard-JSON aus Pipeline-Outputs |
 | `scripts/extract_layout.py` | Docling Layout-Analyse |
 | `scripts/extract_pages.py` | PDF zu PNG |
 | `scripts/extract_gnd.py` | GND-Seed aus Referenz-TEI |
 | `scripts/config.py` | Zentrale Konfiguration |
 | `scripts/utils.py` | Shared Utilities |
 | `scripts/postprocess/` | Deterministisches Post-Processing |
+
+| UI-Datei | Zweck |
+|----------|-------|
+| `docs/index.html` | Dashboard: Metriken, Katalog, Engine-Filter |
+| `docs/viewer.html` | Dokumentansicht: Faksimile + OCR-Text |
+| `docs/shared.css` | Unified Design System |
+| `docs/shared.js` | Shared Utilities (Data Loading, DOM Helpers) |
+| `docs/data/dashboard.json` | Generierte Datenbasis |
+| `docs/benchmark.html` | Archiviert (ersetzt durch index.html) |
 
 ---
 
@@ -279,4 +290,4 @@ Automatisiert (DHCraft): zbz-ocr-tei ersetzt Transkribus-OCR, coOCR ersetzt Oxyg
 
 ---
 
-*Synthetisiert aus 12 Knowledge-Docs am 20.02.2026. Fuer Details: siehe [knowledge/INDEX.md](knowledge/INDEX.md)*
+*Synthetisiert aus 12 Knowledge-Docs am 25.02.2026. Fuer Details: siehe [knowledge/INDEX.md](knowledge/INDEX.md)*

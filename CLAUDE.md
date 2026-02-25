@@ -47,6 +47,9 @@ python scripts/evaluate_ocr.py --all
 
 # Post-Processing (ohne GPU)
 python -m scripts.postprocess.pipeline
+
+# Dashboard-Daten generieren (ohne GPU)
+python -m scripts.generate_dashboard_data
 ```
 
 ## Entscheidungshilfen

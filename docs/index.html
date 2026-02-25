@@ -3,189 +3,424 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZBZ OCR Viewer - Jeanne Hersch Edition</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f5f5f5;
-            color: #333;
-        }
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem 2rem;
-        }
-        header h1 { font-size: 1.5rem; font-weight: 500; }
-        header p { opacity: 0.8; font-size: 0.9rem; }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .doc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-
-        .doc-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: box-shadow 0.2s;
-        }
-        .doc-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .doc-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        .doc-card .meta {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        .doc-card .meta span {
-            display: inline-block;
-            background: #e0e0e0;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-right: 4px;
-        }
-        .doc-card a {
-            display: inline-block;
-            margin-top: 0.5rem;
-            color: #3498db;
-            text-decoration: none;
-        }
-        .doc-card a:hover { text-decoration: underline; }
-
-        .status-ok { background: #d4edda !important; color: #155724 !important; }
-        .status-pending { background: #fff3cd !important; color: #856404 !important; }
-        .status-error { background: #f8d7da !important; color: #721c24 !important; }
-
-        .legend {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-        }
-        .legend span {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 4px;
-            margin-right: 1rem;
-            font-size: 0.85rem;
-        }
-
-        #loading {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
-    </style>
+    <title>ZBZ OCR Pipeline - Jeanne Hersch Edition</title>
+    <link rel="stylesheet" href="shared.css">
 </head>
 <body>
     <header>
-        <h1>ZBZ OCR Viewer</h1>
-        <p>Jeanne Hersch Edition - Qualitätskontrolle</p>
-        <a href="benchmark.html" style="color:#e94560;text-decoration:none;font-size:0.9rem;margin-top:0.5rem;display:inline-block;">OCR Benchmark: Mistral vs DeepSeek &rarr;</a>
+        <div class="header-inner">
+            <div>
+                <h1>ZBZ OCR Pipeline <span class="subtitle">Jeanne Hersch Edition</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="viewer.html?doc=2310">Viewer</a>
+            </div>
+        </div>
     </header>
 
     <div class="container">
-        <div class="legend">
-            <strong>Status:</strong>
-            <span class="status-ok">OCR vorhanden</span>
-            <span class="status-pending">Ausstehend</span>
-            <span class="status-error">Problem</span>
-        </div>
+        <div id="loading">Lade Dashboard-Daten...</div>
+        <div id="app" style="display:none">
 
-        <div id="loading">Lade Dokumentliste...</div>
-        <div id="doc-list" class="doc-grid"></div>
+            <!-- A) Dashboard-Metriken -->
+            <div class="metric-grid" id="metrics"></div>
+
+            <!-- B) Dokumentkatalog -->
+            <div class="section-title">Dokumentkatalog</div>
+            <div class="filter-bar" id="filters">
+                <input type="text" class="filter-input" id="filter-search" placeholder="Dokument suchen...">
+                <select class="filter-select" id="filter-type">
+                    <option value="">Alle Typen</option>
+                    <option value="A">Typ A - Einspaltig</option>
+                    <option value="B">Typ B - Zweispaltig</option>
+                    <option value="C">Typ C - Monografie</option>
+                    <option value="D">Typ D - Spezial</option>
+                </select>
+                <select class="filter-select" id="filter-status">
+                    <option value="">Alle Status</option>
+                    <option value="complete">Pipeline komplett</option>
+                    <option value="partial">In Bearbeitung</option>
+                    <option value="missing">Ohne OCR</option>
+                </select>
+                <select class="filter-select" id="filter-engine">
+                    <option value="">Alle Engines</option>
+                    <option value="mistral">Mistral</option>
+                    <option value="deepseek">DeepSeek</option>
+                    <option value="llm">LLM-korrigiert</option>
+                </select>
+            </div>
+            <div id="doc-catalog"></div>
+
+            <!-- C) Qualitaetsvergleich -->
+            <div class="section-title" style="margin-top:2.5rem">Qualitaetsvergleich</div>
+            <div class="section-subtitle">CER-Vergleich: Mistral OCR vs. LLM-korrigiert (Claude Haiku 4.5, Variante C)</div>
+
+            <div id="phase-summary"></div>
+
+            <div class="info-banner" id="benchmark-info" style="display:none"></div>
+            <div id="quality-cards"></div>
+        </div>
     </div>
 
+    <!-- Overlay -->
+    <div class="overlay" id="overlay">
+        <img id="overlay-img" src="" alt="Zoom">
+    </div>
+
+    <script src="shared.js"></script>
     <script>
-        // Dokumentdaten - wird aus manifest.json geladen
-        async function loadManifest() {
+    (function () {
+        'use strict';
+
+        var data = null;
+
+        async function init() {
             try {
-                const response = await fetch('images/manifest.json');
-                if (!response.ok) throw new Error('Manifest nicht gefunden');
-                return await response.json();
+                data = await ZBZ.loadData();
             } catch (e) {
-                console.error('Fehler beim Laden:', e);
-                return null;
-            }
-        }
-
-        // OCR-Status prüfen (vereinfacht)
-        function getOcrStatus(docId) {
-            // Bekannte OCR-Ergebnisse aus Phase 1
-            const completed = ['2310', '1180', '290'];
-            const problems = ['2530']; // Spalten-Problem
-
-            if (completed.includes(docId)) return 'ok';
-            if (problems.includes(docId)) return 'error';
-            return 'pending';
-        }
-
-        // Dokumenttyp-Info
-        const docTypes = {
-            '2310': { type: 'A', lang: 'FR', desc: 'Rezension' },
-            '1180': { type: 'A', lang: 'DE/FR', desc: 'Jahresbericht' },
-            '130': { type: 'A', lang: 'FR', desc: 'Zeitschrift' },
-            '290': { type: 'A', lang: 'FR', desc: 'Essay' },
-            '1410': { type: 'A', lang: 'DE/FR', desc: 'Beitrag' },
-            '1060': { type: 'A', lang: 'DE', desc: 'Broschüre' },
-            '2530': { type: 'B', lang: 'FR', desc: 'Zweispaltig' },
-            '890': { type: 'B', lang: 'DE', desc: 'Lehrerzeitung' },
-            '3040': { type: 'B', lang: 'FR', desc: 'Lexikon' },
-            '40': { type: 'C', lang: 'FR', desc: 'Roman' },
-            '1520': { type: 'C', lang: '?', desc: 'Monografie' },
-            '90': { type: 'D', lang: 'DE', desc: 'Hist. Druck' },
-            '830': { type: 'D', lang: 'FR', desc: 'Bildband' },
-            '1440': { type: 'D', lang: 'DE', desc: 'Interview' },
-            '1330': { type: 'D', lang: 'FR', desc: 'Sammelband' }
-        };
-
-        function renderDocList(manifest) {
-            const container = document.getElementById('doc-list');
-            document.getElementById('loading').style.display = 'none';
-
-            if (!manifest || manifest.length === 0) {
-                container.innerHTML = '<p>Keine Dokumente gefunden. Bitte erst <code>python scripts/extract_pages.py</code> ausführen.</p>';
+                ZBZ.$('#loading').textContent = 'Fehler: dashboard.json nicht gefunden. Bitte python -m scripts.generate_dashboard_data ausfuehren.';
                 return;
             }
 
-            manifest.forEach(doc => {
-                if (doc.error) return;
+            ZBZ.$('#loading').style.display = 'none';
+            ZBZ.$('#app').style.display = 'block';
 
-                const info = docTypes[doc.doc_id] || { type: '?', lang: '?', desc: '' };
-                const status = getOcrStatus(doc.doc_id);
+            renderMetrics();
+            renderCatalog();
+            renderPhaseSummary();
+            renderQualityCards();
 
-                const card = document.createElement('div');
-                card.className = 'doc-card';
-                card.innerHTML = `
-                    <h3>${doc.doc_id}.pdf</h3>
-                    <div class="meta">
-                        <span>Typ ${info.type}</span>
-                        <span>${info.lang}</span>
-                        <span>${doc.page_count} Seiten</span>
-                        <span class="status-${status}">${status === 'ok' ? 'OCR OK' : status === 'error' ? 'Problem' : 'Ausstehend'}</span>
-                    </div>
-                    <div>${info.desc}</div>
-                    <a href="viewer.html?doc=${doc.doc_id}">Öffnen →</a>
-                `;
-                container.appendChild(card);
+            ZBZ.initCollapsibles();
+            ZBZ.initOverlay();
+            initFilters();
+        }
+
+        // ---- A) Metriken ----
+        function renderMetrics() {
+            var s = data.pipeline_summary;
+            var p = data.project;
+            var docs = data.documents;
+            var ids = Object.keys(docs);
+            var cM = ids.filter(function (id) { return docs[id].pipeline_status.ocr_mistral; }).length;
+            var cD = ids.filter(function (id) { return docs[id].pipeline_status.ocr_deepseek; }).length;
+            var cL = ids.filter(function (id) { return docs[id].pipeline_status.llm_corrected; }).length;
+
+            ZBZ.$('#metrics').innerHTML =
+                metricCard('Pilot-Dokumente', s.pilot_docs + ' <span class="dim">/ ' + p.corpus_total + '</span>', s.pilot_pages + ' Seiten extrahiert') +
+                metricCard('OCR verarbeitet', '<span class="teal">' + cM + '</span> <span class="dim">/ ' + s.pilot_docs + '</span>',
+                    '<span style="color:var(--accent-a)">' + cM + ' Mistral</span>, ' +
+                    '<span style="color:var(--accent-b)">' + cD + ' DeepSeek</span>, ' +
+                    '<span style="color:var(--accent-c)">' + cL + ' LLM</span>') +
+                metricCard('Genauigkeit (CER)', '<span class="blue">' + ZBZ.fmtPct(s.avg_cer_llm) + '</span>', 'Nach LLM-Korrektur (Mistral: ' + ZBZ.fmtPct(s.avg_cer_mistral) + ')') +
+                metricCard('LLM-Kosten', ZBZ.fmtCost(s.total_llm_cost_usd), ZBZ.fmtNum(s.total_llm_tokens_in + s.total_llm_tokens_out) + ' Tokens');
+        }
+
+        function metricCard(label, value, detail) {
+            return '<div class="metric-card">' +
+                '<div class="label">' + label + '</div>' +
+                '<div class="value">' + value + '</div>' +
+                '<div class="detail">' + detail + '</div>' +
+                '</div>';
+        }
+
+        // ---- B) Dokumentkatalog ----
+        function renderCatalog() {
+            var docs = data.documents;
+            var ids = Object.keys(docs).sort(function (a, b) {
+                // Sortiere nach CER (niedrigste zuerst), null am Ende
+                var ca = docs[a].evaluation ? docs[a].evaluation.cer_llm : 999;
+                var cb = docs[b].evaluation ? docs[b].evaluation.cer_llm : 999;
+                return ca - cb;
+            });
+
+            var html = '<div class="doc-table-wrap"><table class="doc-table"><thead><tr>' +
+                '<th>ID</th>' +
+                '<th>Beschreibung</th>' +
+                '<th>Typ</th>' +
+                '<th>Sprache</th>' +
+                '<th>Seiten</th>' +
+                '<th>Pipeline</th>' +
+                '<th>Engines</th>' +
+                '<th>CER (Mistral)</th>' +
+                '<th>CER (DS)</th>' +
+                '<th>CER (LLM)</th>' +
+                '<th></th>' +
+                '</tr></thead><tbody id="catalog-body">';
+
+            ids.forEach(function (id) {
+                var d = docs[id];
+                html += catalogRow(d);
+            });
+
+            html += '</tbody></table></div>';
+            ZBZ.$('#doc-catalog').innerHTML = html;
+        }
+
+        function catalogRow(d) {
+            var cerMistral = d.mistral_cer != null ? ZBZ.cerBadge(d.mistral_cer) : '<span class="tag">-</span>';
+            var cerDs = d.deepseek_stats ? ZBZ.cerBadge(d.deepseek_stats.cer) : '<span class="tag">-</span>';
+            var cerLlm = d.evaluation ? ZBZ.cerBadge(d.evaluation.cer_llm) : '<span class="tag">-</span>';
+
+            var engines = [];
+            if (d.pipeline_status.ocr_mistral) engines.push('mistral');
+            if (d.pipeline_status.ocr_deepseek) engines.push('deepseek');
+            if (d.pipeline_status.llm_corrected) engines.push('llm');
+
+            return '<tr data-id="' + d.doc_id + '" data-type="' + d.type + '" data-status="' + docStatusKey(d) + '" data-engines="' + engines.join(',') + '">' +
+                '<td><strong>' + d.doc_id + '</strong></td>' +
+                '<td>' + d.desc + '</td>' +
+                '<td><span class="tag">' + d.type + '</span></td>' +
+                '<td>' + d.lang + '</td>' +
+                '<td>' + d.page_count + '</td>' +
+                '<td>' + ZBZ.renderPipelineStatus(d.pipeline_status) + '</td>' +
+                '<td><div class="engine-badges">' + ZBZ.engineBadges(d.pipeline_status) + '</div></td>' +
+                '<td>' + cerMistral + '</td>' +
+                '<td>' + cerDs + '</td>' +
+                '<td>' + cerLlm + '</td>' +
+                '<td><a href="viewer.html?doc=' + d.doc_id + '">Viewer</a></td>' +
+                '</tr>';
+        }
+
+        function docStatusKey(d) {
+            if (!d.pipeline_status.ocr_mistral) return 'missing';
+            if (d.pipeline_status.evaluation) return 'complete';
+            return 'partial';
+        }
+
+        function initFilters() {
+            var search = ZBZ.$('#filter-search');
+            var type = ZBZ.$('#filter-type');
+            var status = ZBZ.$('#filter-status');
+            var engine = ZBZ.$('#filter-engine');
+
+            function apply() {
+                var q = search.value.toLowerCase();
+                var t = type.value;
+                var s = status.value;
+                var eng = engine.value;
+                var rows = ZBZ.$$('#catalog-body tr');
+
+                rows.forEach(function (row) {
+                    var rowType = row.getAttribute('data-type');
+                    var rowStatus = row.getAttribute('data-status');
+                    var rowEngines = row.getAttribute('data-engines') || '';
+                    var text = row.textContent.toLowerCase();
+
+                    var show = true;
+                    if (q && text.indexOf(q) === -1) show = false;
+                    if (t && rowType !== t) show = false;
+                    if (s && rowStatus !== s) show = false;
+                    if (eng && rowEngines.indexOf(eng) === -1) show = false;
+
+                    row.style.display = show ? '' : 'none';
+                });
+            }
+
+            search.addEventListener('input', apply);
+            type.addEventListener('change', apply);
+            status.addEventListener('change', apply);
+            engine.addEventListener('change', apply);
+        }
+
+        // ---- C) Qualitaetsvergleich ----
+        function renderPhaseSummary() {
+            var phases = data.phases;
+            var html = '<div class="metric-grid" style="grid-template-columns:repeat(' + phases.length + ',1fr)">';
+
+            phases.forEach(function (p) {
+                var cerM = p.avg_cer_mistral != null ? ZBZ.fmtPct(p.avg_cer_mistral) : '-';
+                var cerL = p.avg_cer_llm != null ? ZBZ.fmtPct(p.avg_cer_llm) : '-';
+                var statusTag = p.status === 'completed' ? '<span class="badge-ok">Abgeschlossen</span>' : '<span class="badge-pending">Teilweise</span>';
+
+                html += '<div class="metric-card">' +
+                    '<div class="label">' + p.name + ' (Typ ' + p.doc_type + ')</div>' +
+                    '<div class="value" style="font-size:1rem">' +
+                        '<span class="teal">' + cerM + '</span>' +
+                        ' <span class="dim" style="font-size:0.8rem">&#8594;</span> ' +
+                        '<span class="blue">' + cerL + '</span>' +
+                    '</div>' +
+                    '<div class="detail">' +
+                        p.doc_ids.length + ' Dokumente ' + statusTag +
+                    '</div>' +
+                    '</div>';
+            });
+
+            html += '</div>';
+            ZBZ.$('#phase-summary').innerHTML = html;
+        }
+
+        function renderQualityCards() {
+            var docs = data.documents;
+            var benchmarkDocs = data.benchmark ? data.benchmark.documents : [];
+
+            // Sortiere: Docs mit Evaluation zuerst
+            var ids = Object.keys(docs).filter(function (id) { return docs[id].evaluation != null; });
+            ids.sort(function (a, b) { return docs[a].evaluation.cer_llm - docs[b].evaluation.cer_llm; });
+
+            if (benchmarkDocs.length > 0) {
+                ZBZ.$('#benchmark-info').style.display = 'block';
+                ZBZ.$('#benchmark-info').innerHTML =
+                    '<strong>Benchmark-Hinweis:</strong> Dokumente ' + benchmarkDocs.join(', ') +
+                    ' haben zusaetzlich DeepSeek-OCR Vergleichsdaten (lokal, GPU, je 2 Seiten). ' +
+                    'Diese werden in der Vorschau als dritte Spalte angezeigt.';
+            }
+
+            var container = ZBZ.$('#quality-cards');
+            container.innerHTML = '';
+
+            ids.forEach(function (id, idx) {
+                var d = docs[id];
+                var hasDeepseek = d.deepseek_stats != null;
+                container.innerHTML += qualityCard(d, hasDeepseek, idx === 0);
             });
         }
 
-        // Initialisierung
-        loadManifest().then(renderDocList);
+        function qualityCard(d, hasDeepseek, startOpen) {
+            var ev = d.evaluation;
+            var cerM = d.mistral_cer;
+            var cerL = ev.cer_llm;
+            var werL = ev.wer_llm;
+
+            // Tags
+            var tags = '<span class="tag">' + d.type + '</span>' +
+                '<span class="tag">' + d.lang + '</span>' +
+                '<span class="tag">' + d.page_count + ' S.</span>' +
+                ZBZ.cerBadge(cerL);
+
+            if (hasDeepseek) tags += ' <span class="tag violet">DeepSeek</span>';
+
+            // CER comparison bar
+            var maxCer = Math.max(cerM || 0, cerL || 0, 0.01);
+            var barScale = 100 / (maxCer * 1.2);
+            var barMW = Math.max(((cerM || 0) * barScale), 5);
+            var barLW = Math.max(((cerL || 0) * barScale), 5);
+
+            var barHtml = '<div class="bar-wrap">' +
+                '<div class="bar-label">CER Vergleich</div>' +
+                '<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.25rem">' +
+                    '<span style="width:80px;font-size:0.75rem;color:var(--text-muted)">Mistral</span>' +
+                    '<div style="flex:1;height:18px;background:var(--bg-muted);border-radius:4px;overflow:hidden">' +
+                        '<div style="width:' + barMW + '%;height:100%;background:var(--accent-a);border-radius:4px;min-width:30px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.65rem;font-weight:600">' + ZBZ.fmtPct(cerM) + '</div>' +
+                    '</div>' +
+                '</div>' +
+                '<div style="display:flex;align-items:center;gap:0.75rem">' +
+                    '<span style="width:80px;font-size:0.75rem;color:var(--text-muted)">LLM-C</span>' +
+                    '<div style="flex:1;height:18px;background:var(--bg-muted);border-radius:4px;overflow:hidden">' +
+                        '<div style="width:' + barLW + '%;height:100%;background:var(--accent-c);border-radius:4px;min-width:30px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.65rem;font-weight:600">' + ZBZ.fmtPct(cerL) + '</div>' +
+                    '</div>' +
+                '</div>';
+
+            if (hasDeepseek) {
+                var cerD = d.deepseek_stats.cer;
+                var barDW = Math.max(((cerD || 0) * barScale), 5);
+                barHtml += '<div style="display:flex;align-items:center;gap:0.75rem;margin-top:0.25rem">' +
+                    '<span style="width:80px;font-size:0.75rem;color:var(--text-muted)">DeepSeek</span>' +
+                    '<div style="flex:1;height:18px;background:var(--bg-muted);border-radius:4px;overflow:hidden">' +
+                        '<div style="width:' + barDW + '%;height:100%;background:var(--accent-b);border-radius:4px;min-width:30px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.65rem;font-weight:600">' + ZBZ.fmtPct(cerD) + '</div>' +
+                    '</div>' +
+                '</div>';
+            }
+
+            barHtml += '</div>';
+
+            // Page navigation
+            var pageCount = d.page_count;
+            var deepseekPages = hasDeepseek ? d.deepseek_stats.available_pages : [];
+            var pageBtns = '';
+            for (var p = 1; p <= pageCount; p++) {
+                var both = deepseekPages.indexOf(p) !== -1;
+                var isFirst = (p === 1);
+                pageBtns += '<button class="pg' + (both ? ' both' : '') + (isFirst ? ' active' : '') + '" onclick="ZBZ._showQualityPage(\'' + d.doc_id + '\',' + p + ',this,' + hasDeepseek + ')">' + p + '</button>';
+            }
+
+            var hintHtml = hasDeepseek ? '<span class="hint"><span style="display:inline-block;width:8px;height:3px;background:var(--accent-b);vertical-align:middle;border-radius:1px;margin-right:3px"></span> DeepSeek verfuegbar</span>' : '';
+
+            // Preview columns
+            var colCount = hasDeepseek ? 3 : 2;
+            var previewClass = hasDeepseek ? 'preview' : 'preview two-col';
+            var previewHtml = '<div class="' + previewClass + '" id="pv-' + d.doc_id + '">' +
+                '<div class="preview-col">' +
+                    '<div class="preview-col-header">Faksimile</div>' +
+                    '<div class="preview-col-body"><img src="" alt="Scan" id="img-' + d.doc_id + '" onclick="ZBZ.zoom(this.src)"></div>' +
+                '</div>' +
+                '<div class="preview-col">' +
+                    '<div class="preview-col-header teal">Mistral OCR</div>' +
+                    '<div class="preview-col-body"><pre id="mt-' + d.doc_id + '"></pre></div>' +
+                '</div>';
+
+            if (hasDeepseek) {
+                previewHtml += '<div class="preview-col">' +
+                    '<div class="preview-col-header violet">DeepSeek OCR</div>' +
+                    '<div class="preview-col-body"><pre id="dt-' + d.doc_id + '"></pre></div>' +
+                '</div>';
+            }
+
+            previewHtml += '</div>';
+
+            return '<div class="card' + (startOpen ? ' open' : '') + '">' +
+                '<div class="card-header">' +
+                    '<span class="title">' + d.doc_id + '.pdf &mdash; ' + d.desc + '</span>' +
+                    '<div class="tags">' + tags + '<span class="chevron">&#9662;</span></div>' +
+                '</div>' +
+                '<div class="card-body">' +
+                    barHtml +
+                    '<div class="page-nav" data-doc="' + d.doc_id + '">' +
+                        '<span class="label">Seite</span>' + pageBtns + hintHtml +
+                    '</div>' +
+                    previewHtml +
+                '</div>' +
+                '</div>';
+        }
+
+        // ---- Page loading for quality cards ----
+        ZBZ._showQualityPage = async function (docId, page, btn, hasDeepseek) {
+            if (btn) {
+                btn.closest('.page-nav').querySelectorAll('.pg').forEach(function (b) {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+            }
+
+            // Image
+            var imgEl = document.getElementById('img-' + docId);
+            if (imgEl) imgEl.src = ZBZ.imagePath(docId, page);
+
+            // Mistral text
+            var mt = await ZBZ.fetchPageText('mistral', docId, page);
+            var mtEl = document.getElementById('mt-' + docId);
+            if (mtEl) {
+                if (mt) mtEl.textContent = mt;
+                else mtEl.innerHTML = '<div class="empty-state">Keine Daten</div>';
+            }
+
+            // DeepSeek text
+            if (hasDeepseek) {
+                var dt = await ZBZ.fetchPageText('deepseek', docId, page);
+                var dtEl = document.getElementById('dt-' + docId);
+                if (dtEl) {
+                    if (dt) dtEl.textContent = dt;
+                    else dtEl.innerHTML = '<div class="empty-state">Seite nicht verarbeitet</div>';
+                }
+            }
+        };
+
+        // ---- Autoload first page for open cards ----
+        function autoloadFirstPages() {
+            var openCards = ZBZ.$$('.card.open .page-nav');
+            openCards.forEach(function (nav) {
+                var docId = nav.getAttribute('data-doc');
+                var firstBtn = nav.querySelector('.pg.active');
+                var page = firstBtn ? parseInt(firstBtn.textContent) : 1;
+                var hasDs = nav.closest('.card').querySelector('.preview-col-header.violet') != null;
+                ZBZ._showQualityPage(docId, page, null, hasDs);
+            });
+        }
+
+        init().then(function () {
+            autoloadFirstPages();
+        });
+    })();
     </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-25
 tags: [zbz-ocr-tei, zbz, workflow, transkribus, oxygen]
 status: active
 ---
@@ -136,6 +136,19 @@ Digitalisat (PDF-Scans)          Digitalisat (PDF-Scans)
 
 ---
 
+## QA-Dashboard
+
+Ergaenzend zum Produktionsworkflow steht ein automatisch generiertes Dashboard zur Verfuegung (`docs/index.html`):
+
+- Pipeline-Status aller 15 Pilotdokumente
+- CER-Vergleich zwischen Engines (Mistral, DeepSeek, LLM-korrigiert)
+- Dokumentkatalog mit Engine-Filter
+- Viewer mit Faksimile-OCR-Vergleich (`docs/viewer.html`)
+
+Das Dashboard ersetzt `docs/benchmark.html` und dient als zentrales QA-Tool.
+
+---
+
 ## Referenzen
 
 - [PROJEKT](PROJEKT.md) für Ökosystem-Übersicht (zbz-ocr-tei → coOCR → teiCrafter)
@@ -145,4 +158,4 @@ Digitalisat (PDF-Scans)          Digitalisat (PDF-Scans)
 ---
 
 *Quelle: WorkflowDiagramm_Hersch.pdf — vollständig überführt, PDF gelöscht*
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

@@ -3,358 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR Viewer</title>
+    <title>Dokument - ZBZ OCR Pipeline</title>
+    <link rel="stylesheet" href="shared.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #1a1a2e;
-            color: #eee;
-            height: 100vh;
+        html, body { height: 100%; overflow: hidden; }
+
+        /* Page layout: info bar on top, viewer below */
+        .page-layout {
             display: flex;
             flex-direction: column;
+            height: calc(100vh - 52px);
         }
 
-        header {
-            background: #16213e;
+        /* Document info bar (collapsible) */
+        .doc-info-bar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            max-height: 200px;
+        }
+
+        .doc-info-bar.collapsed { max-height: 0; border-bottom: none; }
+
+        .doc-info-inner {
             padding: 0.75rem 1.5rem;
             display: flex;
+            gap: 1.5rem;
             align-items: center;
-            gap: 1rem;
-            border-bottom: 1px solid #0f3460;
-        }
-        header h1 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            flex-grow: 1;
-        }
-        header a {
-            color: #e94560;
-            text-decoration: none;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .nav-controls button {
-            background: #0f3460;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-        .nav-controls button:hover { background: #e94560; }
-        .nav-controls button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .nav-controls span {
-            min-width: 80px;
-            text-align: center;
-        }
-
-        .main-container {
-            flex: 1;
-            display: flex;
-            overflow: hidden;
-        }
-
-        .panel {
-            flex: 1;
+        /* Info sections */
+        .doc-info-section {
             display: flex;
             flex-direction: column;
+            gap: 2px;
+        }
+
+        .doc-info-section .info-label {
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+        }
+
+        .doc-info-section .info-value {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .info-value .improvement {
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+
+        .info-value .improvement.positive { color: var(--status-ok); }
+        .info-value .improvement.negative { color: var(--status-error); }
+
+        /* CER mini-bars in info bar */
+        .cer-mini-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 120px;
+        }
+
+        .cer-mini-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cer-mini-bar .bar-label {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            width: 40px;
+            text-align: right;
+        }
+
+        .cer-mini-bar .bar-track {
+            flex: 1;
+            height: 8px;
+            background: var(--bg-muted);
+            border-radius: 4px;
             overflow: hidden;
         }
-        .panel-header {
-            background: #16213e;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-            color: #aaa;
-            border-bottom: 1px solid #0f3460;
-        }
-        .panel-content {
-            flex: 1;
-            overflow: auto;
-            padding: 1rem;
-        }
 
-        .divider {
-            width: 4px;
-            background: #0f3460;
-            cursor: col-resize;
-        }
-        .divider:hover { background: #e94560; }
-
-        /* Bild-Panel */
-        .image-panel .panel-content {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            background: #111;
-        }
-        .image-panel img {
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        /* Text-Panel */
-        .text-panel .panel-content {
-            background: #1e1e2e;
-        }
-        .text-panel pre {
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        .text-panel .no-ocr {
-            color: #666;
-            font-style: italic;
-        }
-
-        /* Zoom Controls */
-        .zoom-controls {
-            display: flex;
-            gap: 0.25rem;
-        }
-        .zoom-controls button {
-            padding: 0.25rem 0.5rem;
-            font-size: 0.8rem;
-        }
-
-        #loading {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #16213e;
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        /* Keyboard shortcuts hint */
-        .shortcuts {
-            position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            background: rgba(22, 33, 62, 0.9);
-            padding: 0.75rem 1rem;
+        .cer-mini-bar .bar-fill {
+            height: 100%;
             border-radius: 4px;
-            font-size: 0.8rem;
-            color: #888;
+            transition: width 0.4s ease;
         }
-        .shortcuts kbd {
-            background: #0f3460;
+
+        .cer-mini-bar .bar-fill.teal { background: var(--accent-a); }
+        .cer-mini-bar .bar-fill.blue { background: var(--accent-c); }
+        .cer-mini-bar .bar-fill.violet { background: var(--accent-b); }
+
+        .cer-mini-bar .bar-val {
+            font-size: 0.65rem;
+            font-weight: 600;
+            width: 36px;
+        }
+
+        /* Divider between info sections */
+        .info-divider {
+            width: 1px;
+            height: 36px;
+            background: var(--border-light);
+        }
+
+        /* Toggle button for info bar */
+        .info-toggle {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.75rem;
             padding: 2px 6px;
             border-radius: 3px;
-            margin: 0 2px;
+        }
+
+        .info-toggle:hover { background: var(--bg-muted); color: var(--text); }
+
+        /* Viewer fills remaining space */
+        .viewer-area {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html">← Zurück</a>
-        <h1 id="doc-title">Dokument laden...</h1>
-        <div class="nav-controls">
-            <button id="prev-btn" disabled>← Zurück</button>
-            <span id="page-info">-/-</span>
-            <button id="next-btn" disabled>Weiter →</button>
+    <!-- Header -->
+    <div class="viewer-header">
+        <a href="index.html">&larr; Dashboard</a>
+        <span class="doc-name" id="doc-title">Laden...</span>
+
+        <!-- Source Toggle -->
+        <div class="source-toggle" id="source-toggle">
+            <button class="source-btn active" data-source="mistral">Mistral OCR</button>
+            <button class="source-btn blue" data-source="llm_corrected">LLM-korrigiert</button>
+            <button class="source-btn violet" data-source="deepseek" id="btn-deepseek" style="display:none">DeepSeek</button>
         </div>
+
+        <!-- Page Navigation -->
+        <div class="viewer-nav">
+            <button id="prev-btn" disabled>&larr;</button>
+            <span class="page-info" id="page-info">-/-</span>
+            <button id="next-btn" disabled>&rarr;</button>
+        </div>
+
+        <!-- Zoom -->
         <div class="zoom-controls">
-            <button id="zoom-out">−</button>
+            <button id="zoom-out">&minus;</button>
             <button id="zoom-reset">100%</button>
             <button id="zoom-in">+</button>
         </div>
-    </header>
 
-    <div class="main-container">
-        <div class="panel image-panel">
-            <div class="panel-header">Faksimile (Scan)</div>
-            <div class="panel-content">
-                <img id="page-image" src="" alt="Seitenbild">
+        <!-- Info toggle -->
+        <button class="info-toggle" id="info-toggle" title="Dokument-Info ein/ausblenden">&#9432; Info</button>
+    </div>
+
+    <div class="page-layout">
+        <!-- Document Info Bar -->
+        <div class="doc-info-bar" id="doc-info-bar">
+            <div class="doc-info-inner" id="doc-info-inner">
+                <!-- Rendered by JS -->
             </div>
         </div>
 
-        <div class="divider" id="divider"></div>
+        <!-- Viewer Area -->
+        <div class="viewer-area">
+            <div class="viewer-panel" id="image-panel">
+                <div class="viewer-panel-header">Faksimile</div>
+                <div class="viewer-panel-content viewer-image-content">
+                    <img id="page-image" src="" alt="Scan">
+                </div>
+            </div>
 
-        <div class="panel text-panel">
-            <div class="panel-header">OCR-Transkription</div>
-            <div class="panel-content">
-                <pre id="ocr-text"></pre>
+            <div class="viewer-divider" id="divider"></div>
+
+            <div class="viewer-panel" id="text-panel">
+                <div class="viewer-panel-header">
+                    <span id="text-panel-label">OCR-Text</span>
+                </div>
+                <div class="viewer-panel-content viewer-text">
+                    <pre id="ocr-text"></pre>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Shortcuts -->
     <div class="shortcuts">
-        <kbd>←</kbd> <kbd>→</kbd> Navigation &nbsp;|&nbsp;
-        <kbd>+</kbd> <kbd>−</kbd> Zoom
+        <kbd>&larr;</kbd><kbd>&rarr;</kbd> Seite &nbsp;|&nbsp;
+        <kbd>+</kbd><kbd>&minus;</kbd> Zoom &nbsp;|&nbsp;
+        <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Quelle &nbsp;|&nbsp;
+        <kbd>i</kbd> Info
     </div>
 
-    <div id="loading">Lade...</div>
-
+    <script src="shared.js"></script>
     <script>
-        // State
-        let currentDoc = null;
-        let currentPage = 1;
-        let totalPages = 0;
-        let zoomLevel = 100;
-        let manifest = [];
+    (function () {
+        'use strict';
 
-        // DOM
-        const docTitle = document.getElementById('doc-title');
-        const pageInfo = document.getElementById('page-info');
-        const pageImage = document.getElementById('page-image');
-        const ocrText = document.getElementById('ocr-text');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const loading = document.getElementById('loading');
+        var state = {
+            docId: null,
+            page: 1,
+            totalPages: 0,
+            source: 'mistral',
+            zoom: 100,
+            docData: null,
+            hasDeepseek: false,
+            hasLlm: false,
+        };
 
-        // URL-Parameter lesen
-        const params = new URLSearchParams(window.location.search);
-        const docId = params.get('doc');
+        var sourceLabels = {
+            mistral: 'Mistral OCR',
+            llm_corrected: 'LLM-korrigiert (Claude Haiku 4.5)',
+            deepseek: 'DeepSeek OCR',
+        };
 
-        // Manifest laden
-        async function loadManifest() {
+        // DOM refs
+        var docTitle = ZBZ.$('#doc-title');
+        var pageInfo = ZBZ.$('#page-info');
+        var pageImage = ZBZ.$('#page-image');
+        var ocrText = ZBZ.$('#ocr-text');
+        var prevBtn = ZBZ.$('#prev-btn');
+        var nextBtn = ZBZ.$('#next-btn');
+        var textLabel = ZBZ.$('#text-panel-label');
+
+        async function init() {
+            state.docId = ZBZ.getParam('doc');
+            state.source = ZBZ.getParam('source') || 'mistral';
+            state.page = parseInt(ZBZ.getParam('page')) || 1;
+
+            if (!state.docId) {
+                window.location.href = 'index.html';
+                return;
+            }
+
             try {
-                const response = await fetch('images/manifest.json');
-                manifest = await response.json();
-                return manifest;
-            } catch (e) {
-                console.error('Manifest nicht gefunden:', e);
-                return [];
-            }
-        }
+                var data = await ZBZ.loadData();
+                state.docData = data.documents[state.docId];
 
-        // OCR-Text laden
-        async function loadOcrText(docId, page) {
-            const filename = `${docId}_p${page}.md`;
-            // Versuche verschiedene Pfade
-            const paths = [
-                `../output/ocr_results/${filename}`,
-                `../output/clean/${filename}`
-            ];
-
-            for (const path of paths) {
-                try {
-                    const response = await fetch(path);
-                    if (response.ok) {
-                        return await response.text();
-                    }
-                } catch (e) {
-                    // Ignorieren, nächsten Pfad versuchen
+                if (!state.docData) {
+                    alert('Dokument ' + state.docId + ' nicht gefunden.');
+                    window.location.href = 'index.html';
+                    return;
                 }
+
+                state.totalPages = state.docData.page_count;
+                state.hasDeepseek = state.docData.deepseek_stats != null;
+                state.hasLlm = state.docData.pipeline_status.llm_corrected;
+
+                docTitle.textContent = state.docId + '.pdf \u2014 ' + state.docData.desc;
+
+                // Show/hide source buttons
+                if (state.hasDeepseek) {
+                    ZBZ.$('#btn-deepseek').style.display = '';
+                }
+
+                renderDocInfo();
+                updateSourceToggle();
+                showPage(state.page);
+
+            } catch (e) {
+                docTitle.textContent = 'Fehler beim Laden';
             }
-            return null;
         }
 
-        // Seite anzeigen
+        // ---- Document Info Bar ----
+        function renderDocInfo() {
+            var d = state.docData;
+            var html = '';
+
+            // Type & Language
+            html += '<div class="doc-info-section">' +
+                '<span class="info-label">Typ / Sprache</span>' +
+                '<span class="info-value"><span class="tag">' + d.type + '</span> ' + d.lang + '</span>' +
+                '</div>';
+
+            html += '<div class="info-divider"></div>';
+
+            // Pages
+            html += '<div class="doc-info-section">' +
+                '<span class="info-label">Seiten</span>' +
+                '<span class="info-value">' + d.page_count + '</span>' +
+                '</div>';
+
+            // Phase
+            if (d.phase) {
+                html += '<div class="doc-info-section">' +
+                    '<span class="info-label">Testphase</span>' +
+                    '<span class="info-value">' + d.phase + '</span>' +
+                    '</div>';
+            }
+
+            html += '<div class="info-divider"></div>';
+
+            // Pipeline Status
+            html += '<div class="doc-info-section">' +
+                '<span class="info-label">Pipeline</span>' +
+                '<span class="info-value">' + ZBZ.renderPipelineStatus(d.pipeline_status) + '</span>' +
+                '</div>';
+
+            html += '<div class="info-divider"></div>';
+
+            // Engines
+            html += '<div class="doc-info-section">' +
+                '<span class="info-label">Engines</span>' +
+                '<span class="info-value"><span class="engine-badges">' + ZBZ.engineBadges(d.pipeline_status) + '</span></span>' +
+                '</div>';
+
+            html += '<div class="info-divider"></div>';
+
+            // CER Bars
+            var cerM = d.mistral_cer;
+            var cerL = d.evaluation ? d.evaluation.cer_llm : null;
+            var cerD = d.deepseek_stats ? d.deepseek_stats.cer : null;
+
+            if (cerM != null || cerL != null || cerD != null) {
+                var maxCer = Math.max(cerM || 0, cerL || 0, cerD || 0, 0.01);
+                var scale = 100 / (maxCer * 1.3);
+
+                html += '<div class="doc-info-section">' +
+                    '<span class="info-label">CER Vergleich</span>' +
+                    '<div class="cer-mini-bars">';
+
+                if (cerM != null) {
+                    html += '<div class="cer-mini-bar">' +
+                        '<span class="bar-label">Mistral</span>' +
+                        '<div class="bar-track"><div class="bar-fill teal" style="width:' + Math.max(cerM * scale, 3) + '%"></div></div>' +
+                        '<span class="bar-val" style="color:var(--accent-a)">' + ZBZ.fmtPct(cerM, 1) + '</span>' +
+                        '</div>';
+                }
+
+                if (cerL != null) {
+                    var delta = cerM != null ? cerL - cerM : null;
+                    var deltaHtml = '';
+                    if (delta != null) {
+                        var cls = delta < 0 ? 'positive' : (delta > 0 ? 'negative' : '');
+                        var sign = delta < 0 ? '' : '+';
+                        deltaHtml = '<span class="improvement ' + cls + '">' + sign + (delta * 100).toFixed(1) + '</span>';
+                    }
+                    html += '<div class="cer-mini-bar">' +
+                        '<span class="bar-label">LLM</span>' +
+                        '<div class="bar-track"><div class="bar-fill blue" style="width:' + Math.max(cerL * scale, 3) + '%"></div></div>' +
+                        '<span class="bar-val" style="color:var(--accent-c)">' + ZBZ.fmtPct(cerL, 1) + deltaHtml + '</span>' +
+                        '</div>';
+                }
+
+                if (cerD != null) {
+                    html += '<div class="cer-mini-bar">' +
+                        '<span class="bar-label">DeepS.</span>' +
+                        '<div class="bar-track"><div class="bar-fill violet" style="width:' + Math.max(cerD * scale, 3) + '%"></div></div>' +
+                        '<span class="bar-val" style="color:var(--accent-b)">' + ZBZ.fmtPct(cerD, 1) + '</span>' +
+                        '</div>';
+                }
+
+                html += '</div></div>';
+
+                html += '<div class="info-divider"></div>';
+            }
+
+            // WER
+            if (d.evaluation) {
+                html += '<div class="doc-info-section">' +
+                    '<span class="info-label">WER (LLM)</span>' +
+                    '<span class="info-value">' + ZBZ.fmtPct(d.evaluation.wer_llm) + '</span>' +
+                    '</div>';
+
+                html += '<div class="doc-info-section">' +
+                    '<span class="info-label">Ref. Zeichen</span>' +
+                    '<span class="info-value">' + ZBZ.fmtNum(d.evaluation.ref_chars) + '</span>' +
+                    '</div>';
+            }
+
+            // LLM Stats
+            if (d.llm_stats) {
+                html += '<div class="info-divider"></div>';
+                html += '<div class="doc-info-section">' +
+                    '<span class="info-label">LLM Tokens</span>' +
+                    '<span class="info-value">' + ZBZ.fmtNum(d.llm_stats.input_tokens + d.llm_stats.output_tokens) + '</span>' +
+                    '</div>';
+            }
+
+            // DeepSeek info
+            if (d.deepseek_stats) {
+                html += '<div class="info-divider"></div>';
+                html += '<div class="doc-info-section">' +
+                    '<span class="info-label">DeepSeek</span>' +
+                    '<span class="info-value">' + d.deepseek_stats.pages + ' S. / ' + ZBZ.fmtNum(d.deepseek_stats.chars) + ' Zeichen</span>' +
+                    '</div>';
+            }
+
+            ZBZ.$('#doc-info-inner').innerHTML = html;
+        }
+
+        // ---- Info Toggle ----
+        ZBZ.$('#info-toggle').addEventListener('click', function () {
+            ZBZ.$('#doc-info-bar').classList.toggle('collapsed');
+        });
+
+        // ---- Source Toggle ----
+        function updateSourceToggle() {
+            var btns = ZBZ.$$('#source-toggle .source-btn');
+            btns.forEach(function (btn) {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-source') === state.source) {
+                    btn.classList.add('active');
+                }
+            });
+            textLabel.textContent = sourceLabels[state.source] || 'OCR-Text';
+        }
+
+        ZBZ.$$('#source-toggle .source-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                state.source = btn.getAttribute('data-source');
+                updateSourceToggle();
+                loadText();
+                ZBZ.setParams({ source: state.source });
+            });
+        });
+
+        // ---- Page Navigation ----
         async function showPage(page) {
-            if (page < 1 || page > totalPages) return;
+            if (page < 1 || page > state.totalPages) return;
+            state.page = page;
 
-            currentPage = page;
+            pageImage.src = ZBZ.imagePath(state.docId, page);
+            pageImage.style.width = state.zoom + '%';
 
-            // Bild laden
-            const paddedPage = String(page).padStart(3, '0');
-            pageImage.src = `images/${currentDoc}/${currentDoc}_p${paddedPage}.png`;
-            pageImage.style.width = `${zoomLevel}%`;
+            await loadText();
 
-            // OCR-Text laden
-            const text = await loadOcrText(currentDoc, page);
+            pageInfo.textContent = page + ' / ' + state.totalPages;
+            prevBtn.disabled = page <= 1;
+            nextBtn.disabled = page >= state.totalPages;
+
+            ZBZ.setParams({ doc: state.docId, page: page, source: state.source });
+        }
+
+        async function loadText() {
+            ocrText.textContent = 'Lade...';
+            var text = await ZBZ.fetchPageText(state.source, state.docId, state.page);
             if (text) {
                 ocrText.textContent = text;
-                ocrText.classList.remove('no-ocr');
             } else {
-                ocrText.innerHTML = '<span class="no-ocr">Keine OCR-Transkription für diese Seite vorhanden.\n\nFühre aus:\npython scripts/test_all_pdfs.py</span>';
+                ocrText.innerHTML = '<span style="color:var(--text-muted);font-style:italic">Keine Daten fuer diese Quelle/Seite vorhanden.</span>';
             }
-
-            // UI aktualisieren
-            pageInfo.textContent = `${page} / ${totalPages}`;
-            prevBtn.disabled = page <= 1;
-            nextBtn.disabled = page >= totalPages;
-
-            // URL aktualisieren (ohne Reload)
-            const newUrl = `?doc=${currentDoc}&page=${page}`;
-            history.replaceState(null, '', newUrl);
         }
 
-        // Initialisierung
-        async function init() {
-            if (!docId) {
-                alert('Kein Dokument angegeben. Zurück zur Übersicht.');
-                window.location.href = 'index.html';
-                return;
-            }
+        prevBtn.addEventListener('click', function () { showPage(state.page - 1); });
+        nextBtn.addEventListener('click', function () { showPage(state.page + 1); });
 
-            await loadManifest();
-
-            const docData = manifest.find(d => d.doc_id === docId);
-            if (!docData) {
-                alert(`Dokument ${docId} nicht gefunden. Bitte erst extract_pages.py ausführen.`);
-                window.location.href = 'index.html';
-                return;
-            }
-
-            currentDoc = docId;
-            totalPages = docData.page_count;
-            docTitle.textContent = `${docId}.pdf`;
-
-            // Startseite aus URL oder 1
-            const startPage = parseInt(params.get('page')) || 1;
-
-            loading.style.display = 'none';
-            showPage(startPage);
-        }
-
-        // Event Listeners
-        prevBtn.addEventListener('click', () => showPage(currentPage - 1));
-        nextBtn.addEventListener('click', () => showPage(currentPage + 1));
-
-        document.getElementById('zoom-in').addEventListener('click', () => {
-            zoomLevel = Math.min(200, zoomLevel + 25);
-            pageImage.style.width = `${zoomLevel}%`;
-            document.getElementById('zoom-reset').textContent = `${zoomLevel}%`;
+        // ---- Zoom ----
+        ZBZ.$('#zoom-in').addEventListener('click', function () {
+            state.zoom = Math.min(300, state.zoom + 25);
+            pageImage.style.width = state.zoom + '%';
+            ZBZ.$('#zoom-reset').textContent = state.zoom + '%';
         });
 
-        document.getElementById('zoom-out').addEventListener('click', () => {
-            zoomLevel = Math.max(50, zoomLevel - 25);
-            pageImage.style.width = `${zoomLevel}%`;
-            document.getElementById('zoom-reset').textContent = `${zoomLevel}%`;
+        ZBZ.$('#zoom-out').addEventListener('click', function () {
+            state.zoom = Math.max(25, state.zoom - 25);
+            pageImage.style.width = state.zoom + '%';
+            ZBZ.$('#zoom-reset').textContent = state.zoom + '%';
         });
 
-        document.getElementById('zoom-reset').addEventListener('click', () => {
-            zoomLevel = 100;
+        ZBZ.$('#zoom-reset').addEventListener('click', function () {
+            state.zoom = 100;
             pageImage.style.width = '100%';
-            document.getElementById('zoom-reset').textContent = '100%';
+            ZBZ.$('#zoom-reset').textContent = '100%';
         });
 
-        // Keyboard Navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') showPage(currentPage - 1);
-            if (e.key === 'ArrowRight') showPage(currentPage + 1);
-            if (e.key === '+' || e.key === '=') document.getElementById('zoom-in').click();
-            if (e.key === '-') document.getElementById('zoom-out').click();
+        // ---- Keyboard ----
+        document.addEventListener('keydown', function (e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            switch (e.key) {
+                case 'ArrowLeft': showPage(state.page - 1); break;
+                case 'ArrowRight': showPage(state.page + 1); break;
+                case '+': case '=': ZBZ.$('#zoom-in').click(); break;
+                case '-': ZBZ.$('#zoom-out').click(); break;
+                case '1':
+                    state.source = 'mistral';
+                    updateSourceToggle(); loadText();
+                    break;
+                case '2':
+                    state.source = 'llm_corrected';
+                    updateSourceToggle(); loadText();
+                    break;
+                case '3':
+                    if (state.hasDeepseek) {
+                        state.source = 'deepseek';
+                        updateSourceToggle(); loadText();
+                    }
+                    break;
+                case 'i': case 'I':
+                    ZBZ.$('#doc-info-bar').classList.toggle('collapsed');
+                    break;
+            }
         });
 
-        // Resizable Divider
-        const divider = document.getElementById('divider');
-        let isResizing = false;
+        // ---- Resizable Divider ----
+        var divider = ZBZ.$('#divider');
+        var isResizing = false;
 
-        divider.addEventListener('mousedown', () => { isResizing = true; });
-        document.addEventListener('mousemove', (e) => {
+        divider.addEventListener('mousedown', function () { isResizing = true; });
+        document.addEventListener('mousemove', function (e) {
             if (!isResizing) return;
-            const container = document.querySelector('.main-container');
-            const percentage = (e.clientX / container.offsetWidth) * 100;
-            const panels = document.querySelectorAll('.panel');
-            panels[0].style.flex = `0 0 ${percentage}%`;
-            panels[1].style.flex = `0 0 ${100 - percentage}%`;
+            var layout = ZBZ.$('.viewer-area');
+            var pct = (e.clientX / layout.offsetWidth) * 100;
+            pct = Math.max(20, Math.min(80, pct));
+            ZBZ.$('#image-panel').style.flex = '0 0 ' + pct + '%';
+            ZBZ.$('#text-panel').style.flex = '0 0 ' + (100 - pct) + '%';
         });
-        document.addEventListener('mouseup', () => { isResizing = false; });
+        document.addEventListener('mouseup', function () { isResizing = false; });
 
-        // Start
         init();
+    })();
     </script>
 </body>
 </html>

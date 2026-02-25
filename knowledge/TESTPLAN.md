@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-25
 tags: [zbz-ocr-tei, testplan, evaluation, metriken]
 status: active
 ---
@@ -102,6 +102,8 @@ Pilotdateien und Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Pilo
 
 **Durchschnitt Phase 1-3 (10 Docs): CER 5.87%, Genauigkeit 94.14%**
 
+**Dashboard:** Ergebnisse visuell aufbereitet in `docs/index.html` (Metrikkarten, CER-Vergleichsbalken, Dokumentkatalog mit Engine-Filter).
+
 | Phase | Avg CER | Avg WER | Avg Genauigkeit |
 |-------|---------|---------|-----------------|
 | Phase 1 (Typ A) | 9.40% | 20.22% | 90.60% |
@@ -192,4 +194,4 @@ python scripts/test_all_pdfs.py --phase phase1
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-19 (LLM-Korrektur Haiku 4.5 hinzugefuegt)*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

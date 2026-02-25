@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-25
 tags: [zbz-ocr-tei, gnd, ner, entity-linking]
 status: active
 ---
@@ -10,9 +10,11 @@ status: active
 
 Strategie für Named Entity Recognition und GND-Verknüpfung im Hersch-Editionsprojekt.
 
+> **Scope:** NER-Seed und Strategiedokumentation fuer Downstream. Die eigentliche GND-Verknuepfung erfolgt in teiCrafter, nicht in zbz-ocr-tei (Entscheidung E12). Der hier dokumentierte GND-Seed (75 Entitaeten) dient als Grundlage.
+
 **Abhängigkeiten:** [TEI-MAPPING](TEI-MAPPING.md)
 
-**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md) O11-O12.
+**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md). GND-Fragen (O11-O12) sind nach teiCrafter verschoben (E12).
 
 ---
 
@@ -228,4 +230,4 @@ Für jede Entität:
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*

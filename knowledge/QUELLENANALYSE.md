@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-18
+updated: 2026-02-25
 tags: [zbz-ocr-tei, korpus, dokumenttypen, pilot]
 status: active
 ---
@@ -159,4 +159,4 @@ Single Source für alle Pilot-PDF-Metadaten. Andere Dokumente verweisen hierher.
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-18*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
