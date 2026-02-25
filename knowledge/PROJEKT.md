@@ -61,7 +61,7 @@ Seit dem Alignment-Meeting (25.02.2026) deckt zbz-ocr-tei die **gesamte Pipeline
 | M1 | OCR validiert | >=95% Genauigkeit alle Typen | Erledigt: 93.58% (Mistral), Dashboard-UI |
 | M2 | Layout + PAGE-XML | Regionen + BBox + PAGE-XML fuer 15 Pilots | **Phase 1** |
 | M3 | NER + GND | Entity Recall >70%, GND-Linking >60% | **Phase 2** |
-| M4 | TEI-XML | DTA-konformes TEI fuer 15 Pilots, Schema-valide | **Phase 3** |
+| M4 | TEI-XML | DTA-konformes TEI fuer 15 Pilots, Schema-valide | Teilweise (383 Dateien generiert, E22: ohne PAGE-XML/NER) |
 | M5 | Produktionslauf | 289 Docs verarbeitet, Stichproben-QA bestanden | Phase 5 |
 
 ### Abhaengigkeiten
@@ -91,7 +91,11 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Dashboard-Redesign | Erledigt | `docs/` mit shared.css/js, index.html, viewer.html |
 | Dashboard-Daten | Erledigt | `scripts/generate_dashboard_data.py` → dashboard.json |
 | Layout-Analyse | Teilweise | `scripts/run_layout_analysis.py`, 8/15 Docs mit JSON + Overlay-PNGs. QA: BBox korrekt, 3 Probleme (O21) |
+| TEI-Generator | Erledigt | `scripts/tei/tei_generator.py`, 383 TEI-XML Dateien, DTA-Basisformat |
+| Viewer TEI-Panel | Erledigt | 3-Panel Viewer (Faksimile + OCR + TEI), Toggle T |
 | Layout-Post-Processing | Ausstehend | Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik (O21) |
+| PAGE-XML-Generator | Ausstehend | Layout + OCR → PAGE-XML (Phase 1 in PLAN.md) |
+| NER + GND | Ausstehend | Entity Recognition + GND-Linking (Phase 2 in PLAN.md) |
 | Containerisierung | Ausstehend | Dockerfile fuer Podman |
 | CI/CD | Ausstehend | GitLab Uni Zürich |
 

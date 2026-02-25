@@ -21,6 +21,7 @@ from scripts.config import (
     EVALUATION_DIR,
     OUTPUT_DIR,
     LAYOUT_DIR,
+    TEI_DIR,
 )
 
 
@@ -177,6 +178,7 @@ def compute_pipeline_status(doc_id: str) -> dict:
         "llm_corrected": any((OUTPUT_DIR / "llm_corrected_c").glob(f"{doc_id}_p*.md")),
         "layout": (LAYOUT_DIR / doc_id / "summary.json").is_file(),
         "evaluation": doc_id in (load_eval_doc_ids() or []),
+        "tei": any(TEI_DIR.glob(f"{doc_id}_p*.xml")),
         "export": (OUTPUT_DIR / "export" / doc_id).is_dir(),
     }
 
@@ -203,6 +205,7 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
     docs_with_ocr = sum(1 for d in documents.values() if d["pipeline_status"]["ocr_mistral"])
     docs_with_llm = sum(1 for d in documents.values() if d["pipeline_status"]["llm_corrected"])
     docs_with_layout = sum(1 for d in documents.values() if d["pipeline_status"]["layout"])
+    docs_with_tei = sum(1 for d in documents.values() if d["pipeline_status"]["tei"])
     docs_with_eval = sum(1 for d in documents.values() if d["pipeline_status"]["evaluation"])
 
     # CER-Durchschnitte (nur evaluierte Docs)
@@ -228,6 +231,7 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
         "docs_with_ocr": docs_with_ocr,
         "docs_with_llm": docs_with_llm,
         "docs_with_layout": docs_with_layout,
+        "docs_with_tei": docs_with_tei,
         "docs_with_eval": docs_with_eval,
         "avg_cer_mistral": round(avg_cer_mistral, 6) if avg_cer_mistral else None,
         "avg_cer_llm": round(avg_cer_llm, 6) if avg_cer_llm else None,

@@ -18,11 +18,13 @@ PDF-Scans --> Bilder --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 ```
 zbz-ocr-tei/
   knowledge/          # 12 Projektdokumente (Single Source of Truth)
-  scripts/            # Python-Skripte (OCR, Evaluation, Post-Processing)
+  scripts/            # Python-Skripte (OCR, Layout, TEI, Evaluation)
     config.py         # Zentrale Konfiguration
     ocr_pipeline.py   # OCR mit Mistral/DeepSeek
     llm_postprocess.py  # LLM-Nachkorrektur (Haiku 4.5)
+    run_layout_analysis.py  # Layout-Analyse (Docling)
     evaluate_ocr.py   # CER/WER-Evaluation
+    tei/              # TEI-XML Generator
     postprocess/      # Deterministisches Post-Processing
   data/               # Quelldaten (nicht versioniert)
     scans/            # PDF-Digitalisate

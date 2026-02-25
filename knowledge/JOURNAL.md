@@ -14,6 +14,62 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | TEI-Generator + Viewer TEI-Panel
+
+### Durchgefuehrt
+
+1. **TEI-Generator implementiert** (`scripts/tei/tei_generator.py`):
+   - Layout-JSON + OCR-Markdown → seitenweises TEI-XML (DTA-Basisformat, `type="naegeli"`)
+   - Nutzt llm_corrected_c bevorzugt, Fallback auf mistral_results
+   - Markdown→TEI Inline: `**bold**` → `<hi rendition="#b">`, `*italic*` → `<hi rendition="#i">`
+   - GND-Entity-Annotation aus KNOWN_ENTITIES (Seed-Dictionary)
+   - Placeholder-Technik verhindert verschachtelte `<persName>`-Tags
+   - Layout-Regionen: zb_heading→`<head>`, footnote→`<note place="foot">`, caption→`<figure>`
+   - Facsimile-Section mit BBox→Zone-Koordinaten bei vorhandenem Layout
+   - CLI: `--doc`, `--page` fuer einzelne Seiten/Dokumente
+
+2. **383 TEI-XML Dateien generiert** fuer alle 15 Pilot-Dokumente:
+   - 8 Docs mit Layout-Daten (Facsimile + strukturierte Regionen)
+   - 7 Docs nur OCR (alle Absaetze als `<p>`)
+
+3. **Viewer TEI-Panel** (`docs/viewer.html`):
+   - Drittes Panel neben Faksimile + OCR-Text
+   - Toggle mit Button oder Taste `T`
+   - Standardmaessig ausgeblendet, zeigt TEI-XML als formatierten Text
+   - Zweiter Divider (draggbar) zwischen OCR und TEI
+   - 3-Panel Layout (33%/33%/33%) bei aktivem TEI
+
+4. **Shared-Code Erweiterungen**:
+   - `shared.js`: `fetchPageTei(docId, page)` (testet 2 Pfade: tei/ und tei_xml/)
+   - `shared.js`: TEI-Step in PIPELINE_STEPS
+   - `shared.css`: `.viewer-tei pre` Styling
+   - `generate_dashboard_data.py`: `pipeline_status.tei` + `docs_with_tei` in Summary
+
+5. **Config erweitert**: `TEI_DIR` und `LLM_CORRECTED_C_DIR` in `scripts/config.py`
+
+### Bug-Fix
+
+**Verschachtelte persName-Tags:** "Karl Jaspers" wurde korrekt getaggt, dann matchte "Jaspers" innerhalb des bereits getaggten Texts erneut → doppelt verschachtelte Tags. **Loesung:** Placeholder-Technik (Phase 1: laengste Namen zuerst durch `\x00ENTITY{N}\x00` ersetzen, Phase 2: Placeholder → XML-Tags).
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `scripts/tei/__init__.py` | **NEU** -- Modul-Init |
+| `scripts/tei/tei_generator.py` | **NEU** -- TEI-Generator (~280 Zeilen) |
+| `scripts/config.py` | ERWEITERN -- TEI_DIR, LLM_CORRECTED_C_DIR |
+| `scripts/generate_dashboard_data.py` | ERWEITERN -- TEI-Status in Pipeline |
+| `docs/viewer.html` | ERWEITERN -- TEI-Panel, Toggle, zweiter Divider |
+| `docs/shared.js` | ERWEITERN -- fetchPageTei(), TEI Pipeline-Step |
+| `docs/shared.css` | ERWEITERN -- TEI-Panel Styling |
+| `output/tei/*.xml` | **GENERIERT** -- 383 TEI-XML Dateien |
+
+### Naechster Schritt
+
+PAGE-XML-Generator implementieren (Phase 1), Layout-Post-Processing (O21), dann NER+GND (Phase 2).
+
+---
+
 ## 2026-02-25 | Layout-Overlay im Viewer + Annotierte PNG-Generierung
 
 ### Durchgefuehrt

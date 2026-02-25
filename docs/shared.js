@@ -70,6 +70,32 @@
             return null;
         },
 
+        // ---- TEI Fetching ----
+        async fetchPageTei(docId, page) {
+            const key = `tei/${docId}/${page}`;
+            if (_textCache[key] !== undefined) return _textCache[key];
+
+            // Try without padding first (existing convention: 2310_p2.xml)
+            const paths = [
+                `../output/tei/${docId}_p${page}.xml`,
+                `../output/tei_xml/${docId}_p${page}.xml`,
+            ];
+
+            for (const path of paths) {
+                try {
+                    const r = await fetch(path);
+                    if (r.ok) {
+                        const text = await r.text();
+                        _textCache[key] = text;
+                        return text;
+                    }
+                } catch (e) { /* ignore */ }
+            }
+
+            _textCache[key] = null;
+            return null;
+        },
+
         // ---- Layout Region Colors ----
         LAYOUT_COLORS: {
             zb_heading:   { stroke: '#dc2626', fill: 'rgba(220,38,38,0.12)',  label: 'Heading' },
@@ -149,6 +175,7 @@
             { key: 'ocr', label: 'OCR', title: 'OCR Engines', composite: ['ocr_mistral', 'ocr_deepseek'] },
             { key: 'llm_corrected', label: 'LLM', title: 'LLM-Korrektur' },
             { key: 'layout', label: 'LAY', title: 'Layout-Analyse (Docling)' },
+            { key: 'tei', label: 'TEI', title: 'TEI-XML generiert' },
             { key: 'evaluation', label: 'EVAL', title: 'CER/WER Evaluation' },
             { key: 'export', label: 'EXP', title: 'PAGE-XML Export' },
         ],

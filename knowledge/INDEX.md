@@ -69,6 +69,7 @@ JOURNAL   ◄── chronologisch, verweist auf alle Docs
 | PAGE-XML | Zwischenformat Layout+OCR (Schema 2019-07-15) | [PIPELINE](PIPELINE.md) |
 | Dashboard | QA-UI mit Metriken, Engine-Vergleich und Dokumentkatalog | [PIPELINE](PIPELINE.md) |
 | METS-XML | Multi-Page-Manifest fuer PAGE-XML-Pakete | [PIPELINE](PIPELINE.md) |
+| TEI-Generator | Layout-JSON + OCR → seitenweises TEI-XML (DTA-Basisformat) | [PIPELINE](PIPELINE.md) |
 
 ---
 

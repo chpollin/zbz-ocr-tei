@@ -9,6 +9,8 @@ Python-Skripte für die OCR-Pipeline.
 | `ocr_pipeline.py` | OCR mit Mistral/DeepSeek/Docling | Ja (DeepSeek) |
 | `test_all_pdfs.py` | Haupt-OCR-Tests nach Phasen | Ja |
 | `llm_postprocess.py` | LLM-Nachkorrektur (Claude Haiku 4.5) | Nein |
+| `run_layout_analysis.py` | Layout-Analyse (Docling) + Overlay-PNGs | Ja (Docling) |
+| `tei/tei_generator.py` | TEI-XML aus Layout-JSON + OCR-Markdown | Nein |
 | `evaluate_ocr.py` | CER/WER-Evaluation mit HTML-Report | Nein |
 | `generate_dashboard_data.py` | Dashboard-Daten generieren | Nein |
 | `extract_pages.py` | PDF zu Seitenbildern (PNG) | Nein |

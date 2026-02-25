@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-25T20:36:34",
+  "generated": "2026-02-25T21:29:34",
   "generator": "scripts/generate_dashboard_data.py",
   "project": {
     "title": "Jeanne Hersch Edition",
@@ -17,6 +17,7 @@
     "docs_with_ocr": 15,
     "docs_with_llm": 15,
     "docs_with_layout": 7,
+    "docs_with_tei": 15,
     "docs_with_eval": 15,
     "avg_cer_mistral": 0.064173,
     "avg_cer_llm": 0.065192,
@@ -113,6 +114,7 @@
         "llm_corrected": true,
         "layout": true,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -215,6 +217,7 @@
         "llm_corrected": true,
         "layout": true,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -298,6 +301,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -451,6 +455,7 @@
         "llm_corrected": true,
         "layout": true,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -527,6 +532,7 @@
         "llm_corrected": true,
         "layout": true,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -614,6 +620,7 @@
         "llm_corrected": true,
         "layout": true,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -665,6 +672,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -738,6 +746,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -823,6 +832,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -1790,6 +1800,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -2673,6 +2684,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -2744,6 +2756,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -2787,6 +2800,7 @@
         "llm_corrected": true,
         "layout": false,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -2848,6 +2862,7 @@
         "llm_corrected": true,
         "layout": true,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {
@@ -2923,6 +2938,7 @@
         "llm_corrected": true,
         "layout": true,
         "evaluation": true,
+        "tei": true,
         "export": false
       },
       "evaluation": {

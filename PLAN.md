@@ -275,7 +275,10 @@ scripts/ner/
 
 ## Phase 3: TEI-XML-Generator
 
-> **Geschaetzter Aufwand:** 4-5 Tage
+> **Status:** TEILWEISE IMPLEMENTIERT (25.02.2026, E22)
+> **Implementiert:** `scripts/tei/tei_generator.py` -- generiert TEI direkt aus Layout-JSON + OCR-Markdown (ohne PAGE-XML/NER als Zwischenschritt). 383 TEI-XML Dateien fuer alle 15 Pilot-Docs erzeugt. Entity-Annotation aus Seed-Dict (KNOWN_ENTITIES).
+> **Noch offen:** PAGE-XML als Input (statt Layout-JSON), NER-Entitaeten aus Phase 2, Schema-Validierung, tei_header.py, tei_validator.py
+> **Geschaetzter Restaufwand:** 2-3 Tage (nach Phase 1+2)
 > **Vorbedingung:** Phase 1 + Phase 2 abgeschlossen
 
 ### Neue Dateien

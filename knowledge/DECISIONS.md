@@ -39,6 +39,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E19 | Layout-Analyse: Docling + Gemini Hybrid | Docling (mAP 0.699, gratis, 17 Klassen) als Primaer; Gemini 2.5 Flash als optionaler Validator; Kraken als Fallback. Claude Vision disqualifiziert (keine BBox), Mistral unzureichend (keine Text-BBox) | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
 | E20 | Docling 2.75 als Layout-Engine bestaetigt (Phase 0) | Typenstichprobe bestanden: alle 4 Dokumenttypen korrekt erkannt, Spalten-Trennung Type B funktioniert (L: x120-529, R: x560-969), 0.4-3.3s/Seite | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
 | E21 | Scope-Erweiterung: Volle Pipeline in zbz-ocr-tei | Nach Meeting 25.02.: zbz-ocr-tei deckt OCR + Layout + PAGE-XML + NER/GND + TEI-XML ab. E12 (nur OCR) ist damit ueberholt. ZBZ behaelt Transkribus parallel | 2026-02-25 | [PLAN.md](../PLAN.md) |
+| E22 | TEI-Generator: Direkt von Layout+OCR zu TEI (ohne PAGE-XML) | PAGE-XML (Phase 1) und NER (Phase 2) noch nicht implementiert. TEI-Generator geht direkt von Layout-JSON + OCR-Markdown zu DTA-konformem TEI-XML. Wird spaeter erweitert wenn PAGE-XML/NER existieren. Entity-Annotation aus Seed-Dict (KNOWN_ENTITIES) | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -112,4 +113,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E16-E21, O18-O21)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E16-E22, O18-O21)*

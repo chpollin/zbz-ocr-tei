@@ -38,8 +38,10 @@ PDF ──→ Seitenbilder ──→ OCR ──→ Layout ──→ PAGE-XML ─
 | 3 | Layout-Analyse | `scripts/run_layout_analysis.py` | Regionen + BBox (JSON, `output/layout/`) + Overlay-PNGs | Produktiv (7/15 Docs) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
 | 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entitaeten-JSON (`output/entities/`) | **Phase 2** |
-| 6 | PAGE-XML + Entitaeten → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei_xml/`) | **Phase 3** |
+| 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Produktiv (15/15 Docs, 383 Dateien) |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Produktiv (Erweiterung in Phase 4) |
+
+**Hinweis Stufe 6:** Der TEI-Generator geht aktuell direkt von Layout-JSON + OCR-Markdown zu TEI-XML, ohne PAGE-XML als Zwischenformat. PAGE-XML (Stufe 4) und NER (Stufe 5) sind noch nicht implementiert — wenn sie implementiert werden, wird der TEI-Generator entsprechend erweitert.
 
 **Hilfsskripte:** `extract_pages.py` (Seitenbilder), `extract_gnd.py` (GND-IDs), `postprocess/` (Normalisierung).
 
@@ -298,7 +300,12 @@ python -m scripts.run_layout_analysis --doc 2310           # einzelnes Dokument
 python -m scripts.run_layout_analysis --overlay            # Overlay-PNGs erzeugen (ohne GPU)
 python -m scripts.run_layout_analysis --overlay --doc 2310 # Overlay fuer ein Dokument
 
-# Dashboard-Daten (Stufe 4)
+# TEI-XML generieren (Stufe 6)
+python -m scripts.tei.tei_generator                      # alle Dokumente
+python -m scripts.tei.tei_generator --doc 2310           # einzelnes Dokument
+python -m scripts.tei.tei_generator --doc 2310 --page 2  # einzelne Seite
+
+# Dashboard-Daten (Stufe 7)
 python -m scripts.generate_dashboard_data
 
 # Post-Processing (manuell, bei Bedarf)
@@ -314,7 +321,7 @@ python -m scripts.postprocess.pipeline
 | Datei | Zweck |
 |-------|-------|
 | `docs/index.html` | Dashboard: Metriken, Dokumentkatalog, Qualitaetsvergleich |
-| `docs/viewer.html` | Dokumentansicht: Faksimile + OCR-Text, Source-Toggle |
+| `docs/viewer.html` | Dokumentansicht: Faksimile + OCR-Text + TEI-XML, Source-Toggle, Layout-Overlay |
 | `docs/shared.css` | Unified Design System (CSS Custom Properties) |
 | `docs/shared.js` | Shared Utilities (Data Loading, Formatting, DOM Helpers) |
 | `docs/data/dashboard.json` | Generierte Datenbasis (aus `scripts/generate_dashboard_data.py`) |

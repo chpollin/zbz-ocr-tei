@@ -49,6 +49,10 @@ python -m scripts.run_layout_analysis --doc 2310   # einzelnes Dokument
 # Layout Overlay-PNGs erzeugen (ohne GPU)
 python -m scripts.run_layout_analysis --overlay
 
+# TEI-XML generieren (ohne GPU)
+python -m scripts.tei.tei_generator              # alle Dokumente
+python -m scripts.tei.tei_generator --doc 2310   # einzelnes Dokument
+
 # Evaluation (ohne GPU)
 python scripts/evaluate_ocr.py --all
 

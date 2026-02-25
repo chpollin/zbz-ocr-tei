@@ -217,6 +217,9 @@
         <!-- Layout toggle -->
         <button class="layout-toggle" id="layout-toggle" title="Layout-Regionen ein/ausblenden (L)">&#9638; Layout</button>
 
+        <!-- TEI toggle -->
+        <button class="layout-toggle" id="tei-toggle" title="TEI-Panel ein/ausblenden (T)">&lt;/&gt; TEI</button>
+
         <!-- Info toggle -->
         <button class="info-toggle" id="info-toggle" title="Dokument-Info ein/ausblenden">&#9432; Info</button>
     </div>
@@ -253,6 +256,17 @@
                     <pre id="ocr-text"></pre>
                 </div>
             </div>
+
+            <div class="viewer-divider" id="divider2" style="display:none"></div>
+
+            <div class="viewer-panel" id="tei-panel" style="display:none">
+                <div class="viewer-panel-header">
+                    <span>TEI-XML</span>
+                </div>
+                <div class="viewer-panel-content viewer-tei">
+                    <pre id="tei-text"></pre>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -262,6 +276,7 @@
         <kbd>+</kbd><kbd>&minus;</kbd> Zoom &nbsp;|&nbsp;
         <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Quelle &nbsp;|&nbsp;
         <kbd>L</kbd> Layout &nbsp;|&nbsp;
+        <kbd>T</kbd> TEI &nbsp;|&nbsp;
         <kbd>i</kbd> Info
     </div>
 
@@ -280,6 +295,7 @@
             hasDeepseek: false,
             hasLlm: false,
             layoutVisible: false,
+            teiVisible: false,
         };
 
         var sourceLabels = {
@@ -541,6 +557,46 @@
 
         layoutToggle.addEventListener('click', function () { toggleLayout(); });
 
+        // ---- TEI Toggle ----
+        var teiPanel = ZBZ.$('#tei-panel');
+        var teiToggle = ZBZ.$('#tei-toggle');
+        var teiText = ZBZ.$('#tei-text');
+        var divider2 = ZBZ.$('#divider2');
+
+        function toggleTei() {
+            state.teiVisible = !state.teiVisible;
+            teiToggle.classList.toggle('active', state.teiVisible);
+
+            if (state.teiVisible) {
+                teiPanel.style.display = '';
+                divider2.style.display = '';
+                // Distribute panels evenly: 33% each
+                ZBZ.$('#image-panel').style.flex = '1 1 0';
+                ZBZ.$('#text-panel').style.flex = '1 1 0';
+                teiPanel.style.flex = '1 1 0';
+                loadTei();
+            } else {
+                teiPanel.style.display = 'none';
+                divider2.style.display = 'none';
+                // Restore 2-panel layout
+                ZBZ.$('#image-panel').style.flex = '1';
+                ZBZ.$('#text-panel').style.flex = '1';
+            }
+        }
+
+        async function loadTei() {
+            if (!state.teiVisible) return;
+            teiText.textContent = 'Lade...';
+            var xml = await ZBZ.fetchPageTei(state.docId, state.page);
+            if (xml) {
+                teiText.textContent = xml;
+            } else {
+                teiText.innerHTML = '<span style="color:var(--text-muted);font-style:italic">Keine TEI-Daten fuer diese Seite vorhanden.</span>';
+            }
+        }
+
+        teiToggle.addEventListener('click', function () { toggleTei(); });
+
         // ---- Info Toggle ----
         ZBZ.$('#info-toggle').addEventListener('click', function () {
             ZBZ.$('#doc-info-bar').classList.toggle('collapsed');
@@ -578,6 +634,7 @@
 
             await loadText();
             renderLayout();
+            loadTei();
 
             pageInfo.textContent = page + ' / ' + state.totalPages;
             prevBtn.disabled = page <= 1;
@@ -646,26 +703,52 @@
                 case 'l': case 'L':
                     toggleLayout();
                     break;
+                case 't': case 'T':
+                    toggleTei();
+                    break;
                 case 'i': case 'I':
                     ZBZ.$('#doc-info-bar').classList.toggle('collapsed');
                     break;
             }
         });
 
-        // ---- Resizable Divider ----
+        // ---- Resizable Dividers ----
         var divider = ZBZ.$('#divider');
-        var isResizing = false;
+        var activeDivider = null;
 
-        divider.addEventListener('mousedown', function () { isResizing = true; });
+        divider.addEventListener('mousedown', function () { activeDivider = 1; });
+        divider2.addEventListener('mousedown', function () { activeDivider = 2; });
+
         document.addEventListener('mousemove', function (e) {
-            if (!isResizing) return;
+            if (!activeDivider) return;
             var layout = ZBZ.$('.viewer-area');
-            var pct = (e.clientX / layout.offsetWidth) * 100;
-            pct = Math.max(20, Math.min(80, pct));
-            ZBZ.$('#image-panel').style.flex = '0 0 ' + pct + '%';
-            ZBZ.$('#text-panel').style.flex = '0 0 ' + (100 - pct) + '%';
+            var totalW = layout.offsetWidth;
+            var pct = (e.clientX / totalW) * 100;
+
+            if (activeDivider === 1) {
+                // Divider between image and text
+                var minLeft = state.teiVisible ? 15 : 20;
+                var maxLeft = state.teiVisible ? 60 : 80;
+                pct = Math.max(minLeft, Math.min(maxLeft, pct));
+                ZBZ.$('#image-panel').style.flex = '0 0 ' + pct + '%';
+                if (state.teiVisible) {
+                    // Let text + tei share the rest equally
+                    var rest = 100 - pct;
+                    ZBZ.$('#text-panel').style.flex = '0 0 ' + (rest / 2) + '%';
+                    teiPanel.style.flex = '0 0 ' + (rest / 2) + '%';
+                } else {
+                    ZBZ.$('#text-panel').style.flex = '0 0 ' + (100 - pct) + '%';
+                }
+            } else if (activeDivider === 2 && state.teiVisible) {
+                // Divider between text and tei
+                var imageRect = ZBZ.$('#image-panel').getBoundingClientRect();
+                var imageEnd = ((imageRect.right + 4) / totalW) * 100; // +4 for divider width
+                pct = Math.max(imageEnd + 10, Math.min(90, pct));
+                ZBZ.$('#text-panel').style.flex = '0 0 ' + (pct - imageEnd) + '%';
+                teiPanel.style.flex = '0 0 ' + (100 - pct) + '%';
+            }
         });
-        document.addEventListener('mouseup', function () { isResizing = false; });
+        document.addEventListener('mouseup', function () { activeDivider = null; });
 
         init();
     })();

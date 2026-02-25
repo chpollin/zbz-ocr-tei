@@ -845,6 +845,16 @@ header .subtitle {
 
 .zoom-controls button:hover { background: var(--bg-muted); }
 
+/* ---- TEI XML Panel ---- */
+.viewer-tei pre {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--text);
+}
+
 /* ---- Keyboard Shortcuts Hint ---- */
 .shortcuts {
     position: fixed;

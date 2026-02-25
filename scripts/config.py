@@ -19,6 +19,8 @@ OCR_RESULTS_DIR = OUTPUT_DIR / "ocr_results"
 MISTRAL_RESULTS_DIR = OUTPUT_DIR / "mistral_results"
 EVALUATION_DIR = OUTPUT_DIR / "evaluation"
 LAYOUT_DIR = OUTPUT_DIR / "layout"
+TEI_DIR = OUTPUT_DIR / "tei"
+LLM_CORRECTED_C_DIR = OUTPUT_DIR / "llm_corrected_c"
 
 DOCS_DIR = PROJECT_ROOT / "docs"
 IMAGES_DIR = DOCS_DIR / "images"
