@@ -66,6 +66,9 @@ Wichtig für Qualität, aber nicht blockierend.
 | O10 | Spalten-Problem Typ B: Welcher Loesungsansatz? | A: Docling+Crop, B: Gemini Agentic Vision, C: Prompt-Tuning | M1 Phase 2 | Eigener Test |
 | ~~O11~~ | ~~Entitaeten ohne GND-Eintrag~~ | Verschoben nach teiCrafter (E12) | ~~GND~~ | -- |
 | ~~O12~~ | ~~GND-Verknuepfung im PoC~~ | Verschoben nach teiCrafter (E12) | ~~GND~~ | -- |
+| O18 | Multimodale LLM-Korrektur testen (Scan-Bild + OCR-Text) | Forschung zeigt <1% CER (arXiv:2504.00414); aktuell nur Text | Qualitaet | Eigener Test |
+| O19 | Mistral `extract_header/footer` testen | Koennte JSTOR-Artefakte ohne LLM filtern | Qualitaet | Eigener Test |
+| O20 | DeepSeek Free OCR (ohne `<\|grounding\|>`) fuer Typ A/C testen | Potenziell schneller ohne Qualitaetsverlust bei einspaltigem Layout | Performance | Eigener Test |
 
 ---
 
@@ -105,4 +108,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E16-E18: Evaluation + LLM-Erkenntnisse)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E16-E18: Evaluation + LLM-Erkenntnisse, O18-O20: Recherche-Ergebnisse)*

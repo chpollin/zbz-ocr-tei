@@ -103,7 +103,7 @@ Single Source für alle Pilot-PDF-Metadaten. Andere Dokumente verweisen hierher.
 | 890.pdf | 7 | DE | B | Lehrerzeitung | Kleine Schrift |
 | 3040.pdf | 9 | FR | B | Lexikon | Fußnoten |
 | 40.pdf | 156 | FR | C | Roman | Handschrift-Notizen |
-| 1520.pdf | 142 | ? | C | Monografie | Lang |
+| 1520.pdf | 142 | FR | C | Monografie | Lang |
 | 90.pdf | 6 | DE | D | Hist. Druck | 1944 |
 | 830.pdf | 2 | FR | D | Bildband | Wenig Text |
 | 1440.pdf | 5 | DE | D | Interview | Dialog-Format |
@@ -120,7 +120,7 @@ Single Source für alle Pilot-PDF-Metadaten. Andere Dokumente verweisen hierher.
 | Interview-Sprecherwechsel | 1440 | Muster-Erkennung |
 | Historischer Druck | 90 | Beide OCR-Engines testen |
 | Handschriftliche Annotationen | 40 | Noch offen |
-| Sprache unbekannt | 1520 | Bei nächstem Test prüfen |
+| ~~Sprache unbekannt~~ | ~~1520~~ | Geloest: Franzoesisch (25.02.2026) |
 
 ---
 

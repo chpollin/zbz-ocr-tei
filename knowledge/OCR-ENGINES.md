@@ -36,11 +36,20 @@ Alle OCR-Tools und ihre Rollen in der Pipeline. Docling wird nur für Layout-Ana
 | Geschwindigkeit | ~1.6 Sekunden/Seite (RTX 3070) |
 | Einsatz | Entwicklung, Typ A (einspaltig), Typ C (Monografien) |
 
-### Prompt
+### Prompt-Modi (Recherche 25.02.2026)
 
-```
-<image>\n<|grounding|>Convert the document to markdown.
-```
+`<|grounding|>` aktiviert Layout-Erkennung mit Bounding Boxes. Sechs Modi verfuegbar:
+
+| Modus | Prompt | Einsatz |
+|-------|--------|---------|
+| **Document (Default)** | `<image>\n<|grounding|>Convert the document to markdown.` | Typ A, B, C — unser Standard |
+| Free OCR | `<image>\nOCR this image.` (ohne grounding) | Schneller, kein Layout noetig |
+| Figure Parsing | Spezialprompt fuer Charts/Diagramme | Typ D (Bildband?) |
+| Localization | `<image>\nLocate <\|ref\|>{TEXT}<\|/ref\|>` | Nicht relevant |
+
+**Offen:** Free OCR (ohne `<|grounding|>`) fuer Typ A/C testen — potenziell schneller ohne Qualitaetsverlust.
+
+Quellen: [DeepSeek-OCR Prompts](https://deepwiki.com/deepseek-ai/DeepSeek-OCR/3.4-working-with-prompts), [HuggingFace Model Card](https://huggingface.co/deepseek-ai/DeepSeek-OCR-2)
 
 ### Bekannte Probleme
 
@@ -143,10 +152,23 @@ Alle Evaluationsdaten (CER, WER, Einzeldokument-Ergebnisse) sind in [TESTPLAN](T
 
 Interaktiver Engine-Vergleich im Dashboard: `docs/index.html`
 
+### Konfigurationsoptionen (Recherche 25.02.2026)
+
+Mistral OCR akzeptiert **keinen Custom-Prompt**. Steuerbare Parameter:
+
+| Parameter | Default | Potenzial |
+|-----------|---------|-----------|
+| `table_format` | null | Irrelevant (keine Tabellen im Korpus) |
+| `extract_header` | false | Koennte JSTOR-Header filtern — **testen** |
+| `extract_footer` | false | Koennte Copyright-Zeilen filtern — **testen** |
+
+Quellen: [Mistral OCR API Docs](https://docs.mistral.ai/capabilities/document_ai/basic_ocr), [OCR 3 Model Card](https://docs.mistral.ai/models/ocr-3-25-12)
+
 ### Offen
 
-- [ ] Doc 290 analysieren (CER 18% — Scan- oder OCR-Problem?) — niedrige Prio, blockiert nichts
+- [ ] Doc 290 analysieren (CER 18% — Scan- oder OCR-Problem?) — niedrige Prio
 - [ ] Doc 1060 analysieren (CER 22.6% — Alignment-Problem bei kurzem PDF?) — niedrige Prio
+- [ ] `extract_header/footer` testen — reduziert JSTOR-Artefakte ohne LLM?
 
 ---
 

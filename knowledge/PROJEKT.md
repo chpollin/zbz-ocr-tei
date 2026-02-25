@@ -94,7 +94,7 @@ Offene Schnittstellenfragen: Siehe [DECISIONS](DECISIONS.md).
 | # | Meilenstein | Aufwand | Erfolgskriterium | Status |
 |---|-------------|---------|-------------------|--------|
 | M0 | Bildextraktion + QS-Viewer | Erledigt | Bilder + Viewer verfuegbar | Erledigt |
-| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | Phase 1-3: 94.14% (Mistral) + LLM 94.45%. Dashboard-UI verfuegbar |
+| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | 15 Docs evaluiert: 93.58% (Mistral), 93.48% (LLM). Dashboard-UI verfuegbar |
 | M2 | Produktions-OCR alle 289 Docs | 3-5 Tage | Alle PDFs verarbeitet, QS geprueft | Ausstehend |
 | M3 | Integration mit coOCR/HTR | 4-6 Tage | Export-Format definiert, Schnittstelle funktional | Ausstehend |
 | M4 | Pilotbetrieb | 6-10 Tage | Kundenabnahme | Ausstehend |
@@ -104,7 +104,7 @@ Offene Schnittstellenfragen: Siehe [DECISIONS](DECISIONS.md).
 ```
 M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 (coOCR-Integration) ──► M4 (Pilot)
                   │                                              ▲
-                  └── Phase 1-3: 94.14% + LLM 94.45%             │
+                  └── 15 Docs: 93.58% (Mistral), 93.48% (LLM)             │
                                                                  │
                   coOCR/HTR + teiCrafter ────────────────────────┘
 ```
@@ -120,7 +120,7 @@ M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 
 | OCR Phase 1 (Typ A) | Erledigt | Mistral 90.60%, DeepSeek 94.4% |
 | OCR Phase 2 (Typ B) | Erledigt | Mistral 93.69% Genauigkeit |
 | OCR Phase 3 (Typ D) | Erledigt | Mistral 97.12% Genauigkeit |
-| OCR Phase 4 (Typ C) | Teilweise | OCR fertig, CER-Evaluation eingeschraenkt |
+| OCR Phase 4 (Typ C) | Erledigt | CER 2.65% (seitenweiser Vergleich, beste Phase) |
 | Post-Processing | Erledigt | 4-stufig in `scripts/postprocess/` |
 | GND-Seed | Erledigt | 75 Entitaeten, `scripts/extract_gnd.py` |
 | LLM-Nachkorrektur | Erledigt | `scripts/llm_postprocess.py`, Haiku 4.5, Variante C |
@@ -150,7 +150,7 @@ M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 
 | Posten | Betrag |
 |--------|--------|
 | Mistral OCR (Azure, 289 Docs) | 6-15 USD |
-| LLM-Korrektur (Haiku 4.5, 289 Docs) | ~48 USD |
+| LLM-Korrektur (Haiku 4.5, 289 Docs) | ~35 USD |
 | GPU-Cloud (optional) | ~10-20 USD |
 
 ---

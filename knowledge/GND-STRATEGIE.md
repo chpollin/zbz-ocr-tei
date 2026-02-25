@@ -216,8 +216,8 @@ Für jede Entität:
 
 1. [x] GND-IDs aus Referenz-TEI extrahieren
 2. [x] Häufigkeitsanalyse der Entitäten
-3. [ ] GND-API-Anbindung prototypisch testen (lobid.org)
-4. [ ] Entscheidung: Integriert vs. nachgelagert für PoC
+3. [ ] GND-API-Anbindung prototypisch testen (lobid.org) — in teiCrafter (E12)
+4. [x] Entscheidung: Nachgelagert (E5, E12) — NER + GND in teiCrafter
 
 ---
 

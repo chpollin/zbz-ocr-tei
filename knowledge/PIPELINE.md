@@ -64,6 +64,15 @@ Engine-Details: Siehe [OCR-ENGINES](OCR-ENGINES.md).
 
 Fuer zweispaltige Dokumente nutzt `ocr_pipeline.py` intern Docling (IBM) mit `do_ocr=False` zur Spaltenerkennung. Doclings eigene OCR wird nicht verwendet (RapidOCR hat Encoding-Probleme). Details: [OCR-ENGINES](OCR-ENGINES.md) §Docling.
 
+### Prompts
+
+**Mistral Document AI:** Kein Prompt — die API bekommt nur das PDF als Base64, kein Instruktionstext. Output ist seitenweises Markdown.
+
+**DeepSeek-OCR-2:** Fester Prompt in `config.py:31`:
+```
+<image>\n<|grounding|>Convert the document to markdown.
+```
+
 ### OCR-Qualitaet
 
 Vollstaendige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
@@ -84,6 +93,77 @@ Vollstaendige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 
 **Wichtig:** Das LLM macht keine OCR. Es korrigiert nur den von Mistral/DeepSeek erzeugten Text. Es erhaelt Dokumentkontext (Typ, Sprache, Genre) und identifiziert Zeichenfehler, fehlende Akzente, OCR-Artefakte.
 
+### Prompts (3 Varianten)
+
+Alle Prompts in `llm_postprocess.py`. Variante C ist Default (E17).
+
+**Variante A (Analysis)** — System-Prompt mit `<analysis>` + `<corrected>` Bloecken:
+```
+Du bist ein Experte fuer OCR-Nachkorrektur akademischer Texte des 20. Jahrhunderts
+von Jeanne Hersch (Philosophin, 1910-2000). Du erhaeltst OCR-Output aus gescannten
+Dokumenten und korrigierst Zeichenfehler.
+
+Regeln:
+- Korrigiere NUR OCR-Fehler (falsche Buchstaben, fehlende Akzente, zusammengeklebte Woerter)
+- Formuliere NICHTS um, erfinde NICHTS
+- Markdown beibehalten
+- Maschinenerzeugte Artefakte (JSTOR-Header, Copyright-Zeilen) entfernen
+- Im Zweifel: unveraendert lassen
+
+{Sprach-Hint}
+
+Antwortformat: 1. <analysis>-Block mit Fehlerliste, 2. <corrected>-Block mit Text
+```
+
+**Variante B (Lean)** — Nur korrigierter Text, kein Analysis-Block:
+```
+Korrigiere OCR-Fehler im folgenden Text. [Gleiche Regeln wie A, ohne Antwortformat]
+Gib NUR den korrigierten Text aus, ohne Erklaerungen.
+```
+
+**Variante C (Few-Shot, Default)** — Wie B, plus typische Mistral-OCR-Fehler als Beispiele:
+```
+...
+Typische OCR-Fehler dieser Engine (Mistral Document AI):
+- 'inconnaisable' -> 'inconnaissable' (fehlender Buchstabe)
+- 'etrente' -> 'etreinte' (falsche Zeichenfolge)
+- 'seule tu le courant' -> 'sens-tu le courant' (Wortgrenze falsch)
+- 'rereferme' -> 'se referme' (zusammengeklebte Woerter)
+- 'lisse, comme' -> 'hisse, comme' (aehnliche Buchstaben)
+- 'This content downloaded from...' -> entfernen (JSTOR-Artefakt)
+Gib NUR den korrigierten Text aus, ohne Erklaerungen.
+```
+
+**Sprach-Hints** (dynamisch eingefuegt, `_lang_hint()` in `llm_postprocess.py:62`):
+
+| Sprache | Hint |
+|---------|------|
+| FR | Achte auf Akzente, Guillemets, Apostrophe (l', d', qu') |
+| DE | Achte auf Umlaute, Eszett, Komposita |
+| DE/FR | Achte auf Umlaute UND Akzente |
+
+**User-Message-Template** (pro Seite, `build_user_message()` in `llm_postprocess.py:136`):
+```
+Dokument: {doc_id}
+Typ: {doc_type} ({Einspaltig|Zweispaltig|Monografie|Spezialformat})
+Sprache: {language}
+Genre: {genre}
+OCR-Engine: Mistral Document AI
+Seite: {page_num} von {total_pages}
+
+<ocr_text>
+{ocr_text}
+</ocr_text>
+```
+
+### Varianten-Vergleich (Phase 1-3, 10 Docs)
+
+| Variante | Avg CER | Bemerkung |
+|----------|---------|-----------|
+| A (Analysis) | 5.47% | Bester CER, aber teurer (laengerer Output) |
+| B (Lean) | 5.59% | Guenstigster |
+| C (Few-Shot) | 5.55% | Bester CER/Kosten-Tradeoff → Default |
+
 **Ergebnis Pilot (alle 15 Docs, Variante C Few-Shot):**
 
 | Phase | Mistral CER | LLM CER | Delta |
@@ -95,6 +175,16 @@ Vollstaendige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
 | **Gesamt (15 Docs)** | **6.42%** | **6.52%** | **+0.10** |
 
 **Erkenntnis:** LLM-Korrektur verbessert Docs mit CER >10%, verschlechtert leicht bei gutem OCR (<5%). Empfehlung: Optional einsetzen, nicht als Default.
+
+### Optimierungspotenzial (Recherche 25.02.2026)
+
+| Idee | Erwarteter Effekt | Aufwand | Quelle |
+|------|-------------------|---------|--------|
+| **Multimodale Korrektur** (Scan-Bild + OCR-Text) | <1% CER laut Forschung | Mittel (Sonnet/Opus noetig, hoehere Kosten) | [arXiv:2504.00414](https://arxiv.org/abs/2504.00414) |
+| Groesseres Modell (Sonnet statt Haiku) | Besser bei FR (Trainingsdaten) | Gering (nur Config-Aenderung) | [ACL 2025](https://arxiv.org/abs/2502.01205) |
+| Segmentlaenge 200-300 Woerter | Optimal laut Studie; wir senden ganze Seiten — bereits gut | Keiner | [ACL 2025](https://arxiv.org/abs/2502.01205) |
+
+**Risiko:** 66% unseres Korpus ist Franzoesisch. Studie zeigt, dass LLM-Korrektur bei nicht-englischen Texten oft negativ wirkt — bestaetigt unsere Beobachtung (Phase 2/4: leichte Verschlechterung).
 
 ---
 

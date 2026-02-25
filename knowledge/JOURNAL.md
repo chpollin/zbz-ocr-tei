@@ -14,6 +14,43 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | Knowledge-Update: Prompts dokumentiert + Recherche-Ergebnisse
+
+### Durchgefuehrt
+
+1. **Prompt-Dokumentation in PIPELINE.md**: Alle Prompts der Pipeline vollstaendig dokumentiert
+   - Stufe 1: Mistral (kein Prompt), DeepSeek (fester Prompt mit `<|grounding|>`)
+   - Stufe 2: Drei LLM-Varianten (A: Analyse, B: Lean, C: Few-Shot) mit vollstaendigem Prompt-Text
+2. **Veraltete Knowledge-Docs bereinigt**: PROJEKT.md (Phase 4, M1, Kosten), QUELLENANALYSE.md (1520 Sprache), GND-STRATEGIE.md (Naechste Schritte)
+3. **Web-Recherche Prompt-Optimierung** (3 schlanke Suchen):
+   - Mistral OCR: Kein Custom-Prompt moeglich, aber `extract_header/footer` Parameter
+   - DeepSeek-OCR-2: 6 Prompt-Modi, Free OCR ohne Layout potenziell schneller
+   - LLM-Korrektur: Multimodale Korrektur (Bild+Text) erreicht <1% CER (arXiv:2504.00414); Ueberkorrektur bei CER <5% bestaetigt (ACL 2025)
+4. **Erkenntnisse aus Pilotevaluation** in OCR-ENGINES.md dokumentiert (5 Findings)
+5. **Drei neue offene Punkte** in DECISIONS.md: O18 (multimodal), O19 (extract_header), O20 (Free OCR)
+
+### Erkenntnisse
+
+| Erkenntnis | Quelle | Relevanz |
+|------------|--------|----------|
+| Multimodale LLM-Korrektur (Scan+Text) erreicht <1% CER | arXiv:2504.00414 | Hoch — groesstes Optimierungspotenzial |
+| Ueberkorrektur bei niedrigem CER ist systematisch, nicht projektspezifisch | ACL 2025 | Bestaetigt E17 |
+| Optimale Segmentlaenge 200-300 Woerter | ACL 2025 | Wir senden ganze Seiten — bereits gut |
+| Mistral `extract_header/footer` koennte JSTOR-Header filtern | Mistral API Docs | Mittel — einfach zu testen |
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| knowledge/PIPELINE.md | Prompt-Dokumentation (Stufe 1+2), Optimierungspotenzial |
+| knowledge/OCR-ENGINES.md | Prompt-Modi, Mistral-Konfiguration, Pilotevaluation |
+| knowledge/DECISIONS.md | E16-E18 + O18-O20 |
+| knowledge/PROJEKT.md | Phase 4, M1, Kosten aktualisiert |
+| knowledge/QUELLENANALYSE.md | Doc 1520 Sprache FR |
+| knowledge/GND-STRATEGIE.md | Naechste Schritte bereinigt |
+
+---
+
 ## 2026-02-25 | Pipeline komplett: Alle 15 Pilot-Dokumente verarbeitet
 
 ### Durchgefuehrt
