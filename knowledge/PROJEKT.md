@@ -157,7 +157,7 @@ M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 
 
 ## Referenzen
 
-- [ARCHITEKTUR](ARCHITEKTUR.md) für technische Pipeline-Details
+- [PIPELINE](PIPELINE.md) für technische Pipeline-Details
 - [QUELLENANALYSE](QUELLENANALYSE.md) für Korpus und Dokumenttypen
 - [DECISIONS](DECISIONS.md) für offene Fragen und Entscheidungen
 - [INFRASTRUKTUR](INFRASTRUKTUR.md) für Deployment-Details

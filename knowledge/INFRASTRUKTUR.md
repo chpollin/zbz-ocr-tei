@@ -10,7 +10,7 @@ status: active
 
 Deployment, API-Zugang, Containerisierung und CI/CD für den ZBZ-Produktionsbetrieb.
 
-**Abhängigkeiten:** [ARCHITEKTUR](ARCHITEKTUR.md)
+**Abhängigkeiten:** [PIPELINE](PIPELINE.md)
 
 ---
 
@@ -174,7 +174,7 @@ Das QA-Dashboard (`docs/`) ist eine rein statische Webanwendung und benoetigt ke
 
 ## Referenzen
 
-- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Architektur
+- [PIPELINE](PIPELINE.md) für Pipeline-Architektur
 - [OCR-ENGINES](OCR-ENGINES.md) für Engine-Details
 - [DECISIONS](DECISIONS.md) O1 (Azure-Key), O3 (Fork-Modell)
 

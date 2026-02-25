@@ -14,7 +14,7 @@
 |-------|-------|
 | Navigation (Start hier) | `knowledge/INDEX.md` |
 | Ökosystem & Meilensteine | `knowledge/PROJEKT.md` |
-| Pipeline-Architektur | `knowledge/ARCHITEKTUR.md` |
+| Pipeline | `knowledge/PIPELINE.md` |
 | Korpus & Dokumenttypen | `knowledge/QUELLENANALYSE.md` |
 | OCR-Engines | `knowledge/OCR-ENGINES.md` |
 | TEI-Regeln | `knowledge/TEI-MAPPING.md` |

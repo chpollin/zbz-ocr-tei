@@ -79,7 +79,7 @@ python -m scripts.evaluate_ocr --all
 | Thema | Datei |
 |-------|-------|
 | Aktueller Stand | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
-| Architektur | [knowledge/ARCHITEKTUR.md](knowledge/ARCHITEKTUR.md) |
+| Pipeline | [knowledge/PIPELINE.md](knowledge/PIPELINE.md) |
 | OCR-Engines | [knowledge/OCR-ENGINES.md](knowledge/OCR-ENGINES.md) |
 | Testplan & Ergebnisse | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
 | Alle Docs (Index) | [knowledge/INDEX.md](knowledge/INDEX.md) |

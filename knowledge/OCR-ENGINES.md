@@ -10,7 +10,7 @@ status: active
 
 Alle OCR-Tools und ihre Rollen in der Pipeline. Docling wird nur für Layout-Analyse eingesetzt.
 
-**Abhängigkeiten:** [ARCHITEKTUR](ARCHITEKTUR.md)
+**Abhängigkeiten:** [PIPELINE](PIPELINE.md)
 
 ---
 
@@ -239,7 +239,7 @@ Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text
 
 ## Referenzen
 
-- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Integration
+- [PIPELINE](PIPELINE.md) für Pipeline-Integration
 - [TESTPLAN](TESTPLAN.md) für Qualitätsmessungen
 - [INFRASTRUKTUR](INFRASTRUKTUR.md) für Azure-Konfiguration
 - [DECISIONS](DECISIONS.md) O1 (Azure-Key), O10 (Spalten-Lösung)

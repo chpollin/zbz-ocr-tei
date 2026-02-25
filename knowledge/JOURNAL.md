@@ -14,6 +14,47 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | ARCHITEKTUR.md → PIPELINE.md umbenannt + inhaltlich korrigiert
+
+### Durchgefuehrt
+
+- `knowledge/ARCHITEKTUR.md` → `knowledge/PIPELINE.md` umbenannt (git mv)
+- Alle 35 Referenzen in 14 Dateien aktualisiert (CLAUDE.md, README.md, 9 Knowledge-Docs)
+- Header, Tags und Beschreibung angepasst
+- **6 inhaltliche Korrekturen:**
+  1. Pipeline-Diagramm: Zeigt jetzt den tatsaechlichen Datenfluss (OCR → LLM → Eval → Dashboard)
+  2. Docling als integralen Teil von `ocr_pipeline.py` dokumentiert (nicht eigene Stufe)
+  3. Engine-Auswahl: Auto-Modus aus dem Code beschrieben
+  4. Evaluation und Dashboard als eigene Stufen ergaenzt (fehlten komplett)
+  5. Post-Processing-Widerspruch behoben (R6: `clean_markdown()` nicht im Produktionspfad)
+  6. CLI-Befehle vollstaendig mit allen Parametern
+
+### Begruendung
+
+"Architektur" suggeriert High-Level-Systemdesign. Der Inhalt beschreibt den konkreten
+Datenfluss durch die Scripts — das ist eine Pipeline-Dokumentation. Ausserdem stimmte
+der dokumentierte Ablauf nicht mit dem Code ueberein (veraltetes Diagramm, fehlende Stufen).
+
+### Neue/geaenderte Dateien
+
+| Datei | Aktion |
+|-------|--------|
+| `knowledge/ARCHITEKTUR.md` | UMBENANNT → `knowledge/PIPELINE.md` |
+| `knowledge/PIPELINE.md` | UPDATE (Header, Diagramm, 6 Korrekturen) |
+| `CLAUDE.md` | UPDATE (Referenz) |
+| `README.md` | UPDATE (Referenz) |
+| `knowledge/INDEX.md` | UPDATE (6 Referenzen + Verzeichnisstruktur) |
+| `knowledge/DECISIONS.md` | UPDATE (7 Referenzen) |
+| `knowledge/OCR-ENGINES.md` | UPDATE (2 Referenzen) |
+| `knowledge/INFRASTRUKTUR.md` | UPDATE (2 Referenzen) |
+| `knowledge/PROJEKT.md` | UPDATE (1 Referenz) |
+| `knowledge/QUELLENANALYSE.md` | UPDATE (1 Referenz) |
+| `knowledge/TEI-MAPPING.md` | UPDATE (1 Referenz) |
+| `knowledge/GND-STRATEGIE.md` | UPDATE (1 Referenz) |
+| `knowledge/ZBZ-WORKFLOW.md` | UPDATE (1 Referenz) |
+
+---
+
 ## 2026-02-25 | Projekt-Aufraeumung: Redundante Dateien entfernt
 
 ### Durchgefuehrt

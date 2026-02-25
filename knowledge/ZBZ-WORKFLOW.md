@@ -152,7 +152,7 @@ Das Dashboard ersetzt `docs/benchmark.html` und dient als zentrales QA-Tool.
 ## Referenzen
 
 - [PROJEKT](PROJEKT.md) für Ökosystem-Übersicht (zbz-ocr-tei → coOCR → teiCrafter)
-- [ARCHITEKTUR](ARCHITEKTUR.md) für technische Pipeline-Details
+- [PIPELINE](PIPELINE.md) für technische Pipeline-Details
 - [DECISIONS](DECISIONS.md) O8 (Alma-Metadaten), O15 (Transkribus-Tags)
 
 ---

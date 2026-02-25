@@ -18,9 +18,9 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 
 | # | Entscheidung | Begründung | Datum | Dokument |
 |---|-------------|------------|-------|----------|
-| E1 | Hybrid-Pipeline: Docling (Layout) + LLM-OCR (Text) | Layout-Analyse ohne OCR, OCR separat | 2026-01-29 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E1 | Hybrid-Pipeline: Docling (Layout) + LLM-OCR (Text) | Layout-Analyse ohne OCR, OCR separat | 2026-01-29 | [PIPELINE](PIPELINE.md) |
 | E2 | Docling nur für Layout, nicht für OCR | RapidOCR hat Encoding-Probleme (e → O) bei frz. Text | 2026-01-29 | [OCR-ENGINES](OCR-ENGINES.md) |
-| E3 | Deterministisch first, LLM nur für Komplexes | Reproduzierbar, kostengünstig, debugbar | 2026-01-29 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E3 | Deterministisch first, LLM nur für Komplexes | Reproduzierbar, kostengünstig, debugbar | 2026-01-29 | [PIPELINE](PIPELINE.md) |
 | E4 | 4 Dokumenttypen (A-D) klassifiziert | Unterschiedliche Pipeline-Strategien nötig | 2026-01-29 | [QUELLENANALYSE](QUELLENANALYSE.md) |
 | E5 | Nachgelagerte GND-Verknüpfung | TEI-Struktur zuerst validieren, NER separat | 2026-01-29 | [GND-STRATEGIE](GND-STRATEGIE.md) |
 | E6 | Mistral OCR 3 als Produktions-Engine | ZBZ hat Azure-Zugang, kein GPU nötig | 2026-02-14 | [OCR-ENGINES](OCR-ENGINES.md) |
@@ -29,10 +29,10 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E9 | Containerisierung mit Podman | ZBZ nutzt kein Docker, Podman ist OCI-kompatibel | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
 | E10 | Fork auf GitLab Uni Zürich | ZBZ betreibt eigene Instanz | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
 | E11 | Dreistufiges Ökosystem: zbz-ocr-tei → coOCR → teiCrafter | Batch-OCR → Korrektur → Tiefenerschließung | 2026-02-18 | [PROJEKT](PROJEKT.md) |
-| E12 | zbz-ocr-tei nur OCR, keine TEI-Transformation | TEI + GND in coOCR/teiCrafter, nicht hier | 2026-02-19 | [ARCHITEKTUR](ARCHITEKTUR.md) |
-| E13 | Export als PAGE-XML + METS fuer coOCR | coOCR erwartet PAGE-XML (2019-07-15) + PNG, nicht Markdown | 2026-02-20 | [ARCHITEKTUR](ARCHITEKTUR.md) |
-| E14 | Markdown-Formatierung erhalten (R6 geloest) | coOCR speichert Text as-is in `<Unicode>`, Formatierung darf nicht entfernt werden | 2026-02-20 | [ARCHITEKTUR](ARCHITEKTUR.md) |
-| E15 | Dashboard-Redesign: Multi-Page UI mit Shared CSS/JS | Unified Design System, statische JSON-Datenbasis, Engine-Sichtbarkeit, Light Theme | 2026-02-25 | [ARCHITEKTUR](ARCHITEKTUR.md) |
+| E12 | zbz-ocr-tei nur OCR, keine TEI-Transformation | TEI + GND in coOCR/teiCrafter, nicht hier | 2026-02-19 | [PIPELINE](PIPELINE.md) |
+| E13 | Export als PAGE-XML + METS fuer coOCR | coOCR erwartet PAGE-XML (2019-07-15) + PNG, nicht Markdown | 2026-02-20 | [PIPELINE](PIPELINE.md) |
+| E14 | Markdown-Formatierung erhalten (R6 geloest) | coOCR speichert Text as-is in `<Unicode>`, Formatierung darf nicht entfernt werden | 2026-02-20 | [PIPELINE](PIPELINE.md) |
+| E15 | Dashboard-Redesign: Multi-Page UI mit Shared CSS/JS | Unified Design System, statische JSON-Datenbasis, Engine-Sichtbarkeit, Light Theme | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -96,7 +96,7 @@ Kann später geklärt werden.
 ## Referenzen
 
 - [PROJEKT](PROJEKT.md) für Meilensteine und Status
-- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Entscheidungen
+- [PIPELINE](PIPELINE.md) für Pipeline-Entscheidungen
 - [TEI-MAPPING](TEI-MAPPING.md) für offene TEI-Fragen (O6-O9, O13-O14)
 - [JOURNAL](JOURNAL.md) für chronologische Entscheidungshistorie
 

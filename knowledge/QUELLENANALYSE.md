@@ -155,7 +155,7 @@ Single Source für alle Pilot-PDF-Metadaten. Andere Dokumente verweisen hierher.
 
 - [TESTPLAN](TESTPLAN.md) für OCR-Testergebnisse pro Pilotdatei
 - [OCR-ENGINES](OCR-ENGINES.md) für Engine-Auswahl pro Dokumenttyp
-- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Strategien
+- [PIPELINE](PIPELINE.md) für Pipeline-Strategien
 
 ---
 

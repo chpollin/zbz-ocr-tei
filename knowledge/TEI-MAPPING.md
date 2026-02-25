@@ -770,7 +770,7 @@ Diese Fragen wurden im internen Dokument markiert und erfordern Klärung mit Exp
 
 - [QUELLENANALYSE](QUELLENANALYSE.md) für Korpus und Dokumenttypen
 - [GND-STRATEGIE](GND-STRATEGIE.md) für Entitätsverknüpfung
-- [ARCHITEKTUR](ARCHITEKTUR.md) für Pipeline-Integration
+- [PIPELINE](PIPELINE.md) für Pipeline-Integration
 - [DECISIONS](DECISIONS.md) für offene TEI-Fragen
 
 ---
