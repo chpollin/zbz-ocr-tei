@@ -10,7 +10,7 @@ status: active
 
 Transformationsregeln von Quelltext zu TEI-XML nach DTA-Basisformat mit projektspezifischen Anpassungen.
 
-> **Scope:** Seit der Scope-Erweiterung (25.02.2026) fuehrt zbz-ocr-tei die TEI-Transformation selbst durch (Phase 3 in [PLAN.md](../PLAN.md)). Dieses Dokument ist die Implementierungsreferenz fuer `scripts/tei/tei_generator.py`. Die Regeln gelten auch fuer coOCR/HTR und teiCrafter als Downstream-Tools.
+> **Scope:** Seit der Scope-Erweiterung (25.02.2026) fuehrt zbz-ocr-tei die TEI-Transformation selbst durch (Phase 3 in [PLAN.md](../PLAN.md)). Dieses Dokument ist die Implementierungsreferenz fuer `scripts/tei/tei_generator.py`. Die Regeln gelten fuer die gesamte Pipeline.
 
 **Abhängigkeiten:** [QUELLENANALYSE](QUELLENANALYSE.md)
 

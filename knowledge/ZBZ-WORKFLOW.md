@@ -95,34 +95,30 @@ BESTEHEND (manuell)              AUTOMATISIERT (DHCraft-Pipeline)
 
 Digitalisat (PDF-Scans)          Digitalisat (PDF-Scans)
         │                                │
-  Transkribus [???]              ┌───────┴───────┐
-        │                        │ zbz-ocr-tei   │  ← Batch-OCR
-        │                        │ (Stufe 1)     │     ersetzt Transkribus
-  Manueller Export               └───────┬───────┘
-        │                                │ Markdown + Bilder
-  GitLab (XML ablegen)           ┌───────┴───────┐
-        │                        │ coOCR/HTR     │  ← Experte korrigiert
-  Oxygen (TEI-Auszeichnung)      │ (Stufe 2)     │     ersetzt Oxygen-Korrektur
-        │                        └───────┬───────┘
-        │                                │ Basis-TEI
-  Oxygen (GND-Verknüpfung)      ┌───────┴───────┐
-        │                        │ teiCrafter    │  ← Tiefenerschließung
-  GitLab (aktualisiertes XML)    │ (Stufe 3)     │     ersetzt manuelle GND
-        │                        └───────┬───────┘
-  Externe Korrekturschleife              │ Produktions-TEI
+  Transkribus [???]              ┌───────┴───────────────┐
+        │                        │ zbz-ocr-tei           │
+        │                        │ OCR → Layout → PAGE   │
+  Manueller Export               │ → NER/GND → TEI-XML   │
+        │                        └───────┬───────────────┘
+  GitLab (XML ablegen)                   │ TEI-XML (DTA)
         │                                │
-  [Publikation]                  GitLab → Oxygen → [Publikation]
+  Oxygen (TEI-Auszeichnung)              │
+        │                                │
+  Oxygen (GND-Verknüpfung)              │
+        │                                │
+  Externe Korrekturschleife      Finale QS in Oxygen
+        │                                │
+  [Publikation]                  GitLab → [Publikation]
 ```
 
 ### Konkrete Ersetzungen
 
 | Bestehender Schritt | Ersetzt durch | Tool |
 |--------------------|--------------|----|
-| Transkribus OCR | Batch-OCR (Mistral/DeepSeek/Gemini) | zbz-ocr-tei |
-| Manueller Transkribus-Export | Automatischer Markdown-Export | zbz-ocr-tei |
-| Oxygen TEI-Grundauszeichnung | LLM-gestützte TEI-Annotation | teiCrafter |
-| Manuelle GND-Verknüpfung in Oxygen | NER + lobid.org API | teiCrafter |
-| PDF-basierte externe Korrektur | Browser-basierte Korrektur am Bild | coOCR/HTR |
+| Transkribus OCR | Batch-OCR (Mistral/DeepSeek) | zbz-ocr-tei |
+| Manueller Transkribus-Export | Automatischer PAGE-XML-Export | zbz-ocr-tei |
+| Oxygen TEI-Grundauszeichnung | Automatische TEI-Transformation | zbz-ocr-tei |
+| Manuelle GND-Verknuepfung in Oxygen | NER + lobid.org API | zbz-ocr-tei |
 
 ### Was bleibt manuell
 
@@ -151,7 +147,7 @@ Das Dashboard ersetzt `docs/benchmark.html` und dient als zentrales QA-Tool.
 
 ## Referenzen
 
-- [PROJEKT](PROJEKT.md) für Ökosystem-Übersicht (zbz-ocr-tei → coOCR → teiCrafter)
+- [PROJEKT](PROJEKT.md) fuer Projekt-Scope und Meilensteine
 - [PIPELINE](PIPELINE.md) für technische Pipeline-Details
 - [DECISIONS](DECISIONS.md) O8 (Alma-Metadaten), O15 (Transkribus-Tags)
 

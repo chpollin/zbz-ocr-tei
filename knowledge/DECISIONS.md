@@ -52,7 +52,7 @@ Diese Fragen blockieren den Fortschritt.
 | O2 | Alignment-Call Termin? | Terminvorschläge gesendet (18./19./20./24.02.) | Alle offenen Fragen | ZBZ |
 | O3 | Fork-Modell und Merge-Strategie? | Upstream-Changes in Fork mergen, CI-basierte Tests | M4 Integration | ZBZ (im Meeting) |
 | ~~O4~~ | ~~Schnittstelle zbz-ocr-tei -> coOCR: Welches Format?~~ | **Geloest (20.02.2026)** -- PAGE-XML (2019-07-15) + PNG + METS. Siehe E13 | ~~M4~~ | -- |
-| O5 | Schnittstelle coOCR → teiCrafter: `<ab>` vs. `<p>`? | coOCR exportiert `<ab>`, teiCrafter erwartet `<p>` / `<div>` | M4 Integration | Eigene Entscheidung |
+| ~~O5~~ | ~~Schnittstelle coOCR → teiCrafter~~ | Entfaellt -- coOCR/teiCrafter nicht mehr im Scope (E21) | -- | -- |
 
 ---
 
@@ -62,13 +62,13 @@ Wichtig für Qualität, aber nicht blockierend.
 
 | # | Frage | Kontext | Blockiert | Klärung durch |
 |---|-------|---------|-----------|---------------|
-| ~~O6~~ | ~~Normalisierung vs. Vorlagentreue~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
-| ~~O7~~ | ~~Typografie der Ueberschriften~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
-| ~~O8~~ | ~~Metadaten aus ALMA/MMSID~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
-| ~~O9~~ | ~~div-type-Werte Front/Back-Matter~~ | Verschoben nach coOCR/teiCrafter (E12) | ~~TEI~~ | -- |
+| O6 | Normalisierung vs. Vorlagentreue | Zurueck im Scope (E21). Klaerung mit Expertin Baehler ausstehend | Phase 3 TEI | ZBZ |
+| O7 | Typografie der Ueberschriften | Zurueck im Scope (E21). Dieselbe Frage wie O6 | Phase 3 TEI | ZBZ |
+| O8 | Metadaten aus ALMA/MMSID | Zurueck im Scope (E21). MMSIDs fuer teiHeader benoetigt | Phase 3 TEI | ZBZ |
+| O9 | div-type-Werte Front/Back-Matter | Zurueck im Scope (E21). editorial, context, translation etc. | Phase 3 TEI | Eigene Entscheidung |
 | O10 | Spalten-Problem Typ B: Welcher Loesungsansatz? | A: Docling+Crop, B: Gemini Agentic Vision, C: Prompt-Tuning | M1 Phase 2 | Eigener Test |
-| ~~O11~~ | ~~Entitaeten ohne GND-Eintrag~~ | Verschoben nach teiCrafter (E12) | ~~GND~~ | -- |
-| ~~O12~~ | ~~GND-Verknuepfung im PoC~~ | Verschoben nach teiCrafter (E12) | ~~GND~~ | -- |
+| O11 | Entitaeten ohne GND-Eintrag | Zurueck im Scope (E21). Lokale ID oder Freilassen? | Phase 2 NER | Eigene Entscheidung |
+| O12 | GND-Verknuepfung im PoC | Zurueck im Scope (E21). Ja -- Seed + lobid.org in Phase 2 | Phase 2 NER | Eigene Entscheidung |
 | O18 | Multimodale LLM-Korrektur testen (Scan-Bild + OCR-Text) | Forschung zeigt <1% CER (arXiv:2504.00414); aktuell nur Text | Qualitaet | Eigener Test |
 | O19 | Mistral `extract_header/footer` testen | Koennte JSTOR-Artefakte ohne LLM filtern | Qualitaet | Eigener Test |
 | O20 | DeepSeek Free OCR (ohne `<\|grounding\|>`) fuer Typ A/C testen | Potenziell schneller ohne Qualitaetsverlust bei einspaltigem Layout | Performance | Eigener Test |
@@ -81,8 +81,8 @@ Kann später geklärt werden.
 
 | # | Frage | Kontext | Dokument |
 |---|-------|---------|----------|
-| ~~O13~~ | ~~Schlagworte~~ | Verschoben nach teiCrafter (E12) | -- |
-| ~~O14~~ | ~~GND-Werksaetze in Back-Matter~~ | Verschoben nach teiCrafter (E12) | -- |
+| O13 | Schlagworte: Wer erstellt diese? | Zurueck im Scope (E21). Kommen sie in teiHeader? | [TEI-MAPPING](TEI-MAPPING.md) |
+| O14 | GND-Werksaetze in Back-Matter? | Zurueck im Scope (E21) | [TEI-MAPPING](TEI-MAPPING.md) |
 | O15 | Systematischer Einsatz von Textual Tags in Transkribus? | div, organization, person, sic, speech, unclear, work | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) |
 | O16 | Option Editionsansicht: Wird sie gebaut? | Noch nicht entschieden (Mail 14.02.) | [PROJEKT](PROJEKT.md) |
 | O17 | GitHub Pages für QS-Viewer aktivieren? | HTML bereit, aber Pages nicht aktiviert | [PROJEKT](PROJEKT.md) |
@@ -93,12 +93,12 @@ Kann später geklärt werden.
 
 | # | Risiko | Impact | Mitigation | Status |
 |---|--------|--------|------------|--------|
-| R1 | Spalten-Problem unlösbar | Hoch | Cloud-VM für Docling, Gemini Agentic Vision, notfalls manuell | Offen (→ O10) |
-| ~~R2~~ | ~~TEI zu komplex~~ | -- | Verschoben nach teiCrafter (E12) | -- |
-| ~~R3~~ | ~~GND-Halluzinationen~~ | -- | Verschoben nach teiCrafter (E12) | -- |
+| R1 | Spalten-Problem unlösbar | Hoch | Docling trennt Spalten korrekt (E20). Gemini als Fallback | **Geloest** (E20) |
+| R2 | TEI zu komplex | Mittel | Zurueck im Scope (E21). Referenz-TEI als Ground Truth, schrittweise Umsetzung | Offen |
+| R3 | GND-Halluzinationen | Mittel | Zurueck im Scope (E21). Seed-Dictionary + Confidence-Schwelle | Offen |
 | R4 | Azure-API-Kompatibilitaet Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | **Geloest** -- Azure AI Foundry Endpoint funktioniert (18.02.) |
 | R5 | Fork-Divergenz zwischen DHCraft und ZBZ | Mittel | Merge-Strategie definieren, CI-basierte Tests | Wartet auf Meeting (→ O3) |
-| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten fuer coOCR | **Geloest** -- Formatierung erhalten, coOCR speichert as-is (E14, 20.02.) |
+| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten | **Geloest** -- Formatierung erhalten, PAGE-XML/TEI-Transformation konvertiert zu Markup (E14) |
 
 ---
 

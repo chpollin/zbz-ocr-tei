@@ -10,11 +10,11 @@ status: active
 
 Strategie für Named Entity Recognition und GND-Verknüpfung im Hersch-Editionsprojekt.
 
-> **Scope:** NER-Seed und Strategiedokumentation fuer Downstream. Die eigentliche GND-Verknuepfung erfolgt in teiCrafter, nicht in zbz-ocr-tei (Entscheidung E12). Der hier dokumentierte GND-Seed (75 Entitaeten) dient als Grundlage.
+> **Scope:** Seit der Scope-Erweiterung (E21) fuehrt zbz-ocr-tei NER + GND-Verknuepfung selbst durch (Phase 2 in [PLAN.md](../PLAN.md)). Implementierung: `scripts/ner/ner_pipeline.py` + `gnd_linker.py`. GND-Seed (75 Entitaeten) als Grundlage.
 
 **Abhängigkeiten:** [TEI-MAPPING](TEI-MAPPING.md)
 
-**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md). GND-Fragen (O11-O12) sind nach teiCrafter verschoben (E12).
+**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md).
 
 ---
 
@@ -216,8 +216,8 @@ Für jede Entität:
 
 1. [x] GND-IDs aus Referenz-TEI extrahieren
 2. [x] Häufigkeitsanalyse der Entitäten
-3. [ ] GND-API-Anbindung prototypisch testen (lobid.org) — in teiCrafter (E12)
-4. [x] Entscheidung: Nachgelagert (E5, E12) — NER + GND in teiCrafter
+3. [ ] GND-API-Anbindung prototypisch testen (lobid.org) -- Phase 2
+4. [x] Entscheidung: NER + GND jetzt in zbz-ocr-tei (E21 ueberholt E5/E12)
 
 ---
 

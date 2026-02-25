@@ -1,22 +1,17 @@
 # ZBZ-OCR-TEI
 
-LLM-gestuetzte OCR-Pipeline fuer die Jeanne-Hersch-Edition der Zentralbibliothek Zuerich.
+LLM-gestuetzte OCR- und TEI-Pipeline fuer die Jeanne-Hersch-Edition der Zentralbibliothek Zuerich.
 
 ## Was macht dieses Repo?
 
-Automatisierte OCR-Verarbeitung von 289 Texten (7.200 Seiten) aus dem Nachlass von Jeanne Hersch:
+Vollautomatische End-to-End-Pipeline fuer 289 Texte (7.200 Seiten) aus dem Nachlass von Jeanne Hersch:
 
 ```
-PDF-Scans --> Layout-Analyse --> OCR --> LLM-Korrektur --> Post-Processing --> Markdown + Bilder
-                                                                                    |
-                                                                                    v
-                                                                          coOCR/HTR (Korrektur)
-                                                                                    |
-                                                                                    v
-                                                                          teiCrafter (TEI + GND)
+PDF-Scans --> Bilder --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
+              (PNG)    (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
 ```
 
-**Scope:** PDF zu korrigiertem Markdown. TEI-Transformation und GND-Verknuepfung finden downstream in [coOCR/HTR](https://github.com/DHCraft/co-ocr-htr) und [teiCrafter](https://github.com/DHCraft/teiCrafter) statt.
+**Scope:** Volle Pipeline PDF zu TEI-XML (OCR + Layout + PAGE-XML + NER/GND + TEI-Transformation).
 
 ## Ordnerstruktur
 

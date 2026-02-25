@@ -198,7 +198,7 @@ Seite: {page_num} von {total_pages}
 | `dehyphenate()` | Silbentrennung aufloesen | `Wis- senschaft` -> `Wissenschaft` |
 | `clean_markdown()` | Markdown-Syntax entfernen | `## Titel` -> `Titel` |
 
-**Wichtig (R6):** Markdown-Formatierung (`**bold**`, `*italic*`) muss fuer den Export ERHALTEN bleiben. coOCR speichert Text as-is in `<TextEquiv><Unicode>`. Deshalb wird `clean_markdown()` im Produktionspfad **nicht** aufgerufen — nur `normalize_text()` und `dehyphenate()` sind sicher.
+**Wichtig (R6):** Markdown-Formatierung (`**bold**`, `*italic*`) muss fuer den Export ERHALTEN bleiben. PAGE-XML speichert Text as-is in `<TextEquiv><Unicode>`, TEI-Transformation konvertiert zu `<hi rendition>`. Deshalb wird `clean_markdown()` im Produktionspfad **nicht** aufgerufen — nur `normalize_text()` und `dehyphenate()` sind sicher.
 
 ---
 
@@ -241,50 +241,28 @@ Aggregiert alle Pipeline-Outputs (Seitenbilder, Evaluationsergebnisse, LLM-Manif
 
 ---
 
-## Stufe 5: Export fuer coOCR/HTR (geplant)
+## PAGE-XML-Export (Phase 1)
 
-**Skript:** `scripts/export_page_xml.py` (noch nicht implementiert)
+**Skripte:** `scripts/layout/page_xml_generator.py`, `scripts/layout/mets_generator.py`
 
-coOCR/HTR ([DHCraft/co-ocr-htr](https://github.com/DHCraft/co-ocr-htr)) ist eine browserbasierte Korrektur-Plattform. Sie erwartet:
+PAGE-XML ist das Zwischenformat fuer die Layout-Regionen + OCR-Text. Es dient als Input fuer die TEI-Transformation (Phase 3) und als optionaler Export fuer Transkribus-kompatible Tools.
 
 | Aspekt | Details |
 |--------|---------|
-| Bildformat | PNG / JPEG / TIFF (eine Datei pro Seite) |
-| Textformat | PAGE-XML (Schema 2019-07-15) |
-| Manifest | METS-XML fuer Multi-Page-Dokumente |
+| Schema | PAGE-XML 2019-07-15 |
 | Namespace | `http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15` |
+| Layout-Engine | Docling 2.75 (E19/E20) |
 
 ### Exportstruktur pro Dokument
 
 ```
-output/export/{doc_id}/
-  mets.xml                    # METS-Manifest (verknuepft Bilder + PAGE-XML)
-  images/{doc_id}_p001.png    # Seitenbilder (zero-padded)
+output/page_xml/{doc_id}/
+  mets.xml                    # METS-Manifest
+  images/{doc_id}_p001.png    # Seitenbilder
   page/{doc_id}_p001.xml      # PAGE-XML pro Seite
 ```
 
-### PAGE-XML Struktur
-
-```xml
-<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15">
-  <Page imageFilename="../images/{doc_id}_p001.png" imageWidth="..." imageHeight="...">
-    <TextRegion id="r1">
-      <TextLine id="r1_l1">
-        <TextEquiv conf="0.95">
-          <Unicode>Korrigierter OCR-Text dieser Zeile</Unicode>
-        </TextEquiv>
-      </TextLine>
-    </TextRegion>
-  </Page>
-</PcGts>
-```
-
-### Confidence-Mapping
-
-| Quelle | Confidence |
-|--------|-----------|
-| Mistral OCR (roh) | 0.85 |
-| LLM-korrigiert (Haiku 4.5) | 0.95 |
+Details: Siehe [PLAN.md](../PLAN.md) Phase 1.
 
 ---
 

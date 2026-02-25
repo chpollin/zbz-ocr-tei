@@ -29,57 +29,25 @@ LLM-gestützte OCR- und TEI-Transformationspipeline für 289 Jeanne-Hersch-Texte
 
 ## Oekosystem
 
-Seit dem Alignment-Meeting (25.02.2026) deckt zbz-ocr-tei die **gesamte Pipeline** ab: OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt parallel ihren Transkribus-Workflow. coOCR und teiCrafter bleiben als optionale Downstream-Tools bestehen.
+Seit dem Alignment-Meeting (25.02.2026) deckt zbz-ocr-tei die **gesamte Pipeline** ab: OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt parallel ihren Transkribus-Workflow.
 
 ```
 ┌───────────────────────────────────────────────────────┐
 │  zbz-ocr-tei (dieses Repo)                           │
 │  PDF → Bilder → OCR → Layout → PAGE-XML → NER → TEI │
 │  (Python, Batch, vollautomatisch)                     │
-└──────────────────────┬────────────────────────────────┘
-                       │ PAGE-XML + PNG (optional)
-                       ▼
-              ┌─────────────────┐     ┌─────────────────┐
-              │   coOCR/HTR     │ ──► │   teiCrafter    │
-              │  Korrektur      │     │  Tiefenerschl.  │
-              │  (Browser-App)  │     │  (Browser-App)  │
-              └─────────────────┘     └─────────────────┘
+└───────────────────────────────────────────────────────┘
 ```
-
-### zbz-ocr-tei (dieses Repo)
-
-**Zweck:** Vollautomatische End-to-End-Pipeline -- 289 PDFs zu TEI-XML.
 
 | Aspekt | Details |
 |--------|---------|
 | Input | PDF-Scans (7.200 Seiten) |
 | Output | TEI-XML (DTA-Basisformat), PAGE-XML + PNG + METS |
 | OCR-Engines | Mistral OCR 3 (Azure), DeepSeek-OCR-2 (lokal) |
-| Layout-Engine | Docling 2.75 (RT-DETR V2 Heron, E19) |
+| Layout-Engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) |
 | NER | Claude Haiku 4.5 + lobid.org GND-API |
 | Modus | Batch, ohne manuellen Eingriff |
-| Repo | `DHCraft/zbz-ocr-tei` |
 | Implementierungsplan | [PLAN.md](../PLAN.md) |
-
-### coOCR/HTR (optional, Downstream)
-
-**Zweck:** Manuelle Korrektur einzelner Dokumente am Bild.
-
-| Aspekt | Details |
-|--------|---------|
-| Input | PAGE-XML + PNG (aus zbz-ocr-tei) |
-| Output | Korrigierte PAGE-XML / Basis-TEI |
-| Repo | `DHCraft/co-ocr-htr` |
-
-### teiCrafter (optional, Downstream)
-
-**Zweck:** Veredelung -- Entitaeten reviewen, Struktur verfeinern.
-
-| Aspekt | Details |
-|--------|---------|
-| Input | Basis-TEI (aus coOCR) oder TEI-XML (aus zbz-ocr-tei) |
-| Output | Produktions-TEI (DTA-konform, GND-Refs) |
-| Repo | `DHCraft/teiCrafter` |
 
 ---
 
