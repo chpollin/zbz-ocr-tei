@@ -37,7 +37,17 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
    - Farbige Rechtecke mit Label-Text und Text-Vorschau
    - Doc 2310 (3 Seiten) erfolgreich getestet, alle 15 Docs laufen
 
-5. **Layout-Analyse auf alle 15 Pilot-Dokumente** (383 Seiten) gestartet
+5. **Layout-Analyse auf 8/15 Pilot-Dokumente** abgeschlossen (1060, 1180, 130, 1330, 1410, 1440, 1520 teilweise, 2310)
+   - 186 Overlay-PNGs erzeugt, 7 Docs ohne Layout (brauchen GPU: 2530, 290, 3040, 40, 830, 890, 90)
+
+6. **Visuelle QA im Viewer + Overlay-PNGs** — Detailanalyse aller 8 Seiten von Doc 1180 + Doc 1410:
+   - BBox-Positionierung korrekt, kein systematischer Versatz
+   - Heading-Erkennung zuverlaessig (Titel, Untertitel, "1ère thèse:", "2ème thèse:")
+   - Zweispaltiges Layout (1410 p3) korrekt in separate Boxen getrennt
+   - **Problem 1: Ueberlappende Regionen** — Einzeiler-Fragmente (h_pct <3%) ueberlappen mit groesseren Bloecken (1180 p2)
+   - **Problem 2: Seitenzahlen nicht gefiltert** — Docling erkennt "217", "218", "219", "220" als `text` statt `page_footer`
+   - **Problem 3: Doc 1520 LAY-Status grau** im Dashboard obwohl 132/142 Seiten analysiert (Analyse abgebrochen)
+   - **Naechster Schritt:** Layout-Region-Post-Processing implementieren (Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik)
 
 ### Neue/geaenderte Dateien
 
@@ -52,7 +62,7 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ### Naechster Schritt
 
-Overlay-PNGs aller 383 Seiten pruefen, Koordinaten-Alignment verifizieren, dann PAGE-XML Export.
+Layout-Region-Post-Processing implementieren, dann restliche 7 Docs analysieren (braucht GPU), dann PAGE-XML Export.
 
 ---
 

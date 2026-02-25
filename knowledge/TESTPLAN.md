@@ -142,6 +142,28 @@ Hinweis: LLM-Korrektur verbessert Docs mit hohem CER, verschlechtert leicht bei 
 
 Hinweis: DeepSeek-Ergebnisse basieren auf 2 Testseiten pro Doc, Mistral auf allen Seiten.
 
+### Layout-Analyse: Docling 2.75 (25.02.2026)
+
+8/15 Docs analysiert (7 Docs brauchen GPU: 2530, 290, 3040, 40, 830, 890, 90).
+
+| Doc | Typ | Seiten | Regionen | Heading-Erkennung | Absatz-Segmentierung | Probleme |
+|-----|-----|--------|----------|-------------------|----------------------|----------|
+| 1180 | A | 8 | 55 | Sehr gut (Titel, Thesen) | Gut, aber Ueberlappungen auf p2 | Einzeiler-Fragmente, Seitenzahlen als text |
+| 2310 | A | 3 | 27 | Gut | Gut | Keine |
+| 130 | A | 18 | 67 | Gut | Gut | Keine |
+| 1410 | A | 6 | 65 | Sehr gut (Zweispaltig) | Gut, Spalten korrekt getrennt | Keine |
+| 1060 | A | 8 | 36 | OK | OK | Wenige Regionen |
+| 1330 | D | 6 | 56 | Gut | Gut | Keine |
+| 1440 | D | 5 | 59 | Gut | Gut | Keine |
+| 1520 | C | 132/142 | ~900 | OK | OK | Analyse abgebrochen (10 Seiten fehlen) |
+
+**Bekannte Probleme:**
+1. **Ueberlappende Regionen:** Einzeiler (h_pct <3%) ueberlappen mit groesseren Bloecken (z.B. 1180 p2)
+2. **Seitenzahlen:** Docling erkennt Seitenzahlen (217-220) als `text` statt `page_footer` — Heuristik noetig
+3. **Fehlende Fussnoten:** Kein `footnote`-Label in den Stichproben gesehen (evtl. bei Docs mit Fussnoten anders)
+
+**Post-Processing (O21):** 3 Heuristiken geplant: Overlap-Filter, Einzeiler-Merge, Seitenzahl-Erkennung.
+
 ### Bewertungsskala
 
 - **OK:** CER < 5% (Zeichengenauigkeit > 95%)
@@ -193,6 +215,10 @@ python scripts/test_all_pdfs.py --phase phase1
 12. [ ] Gemini 3 Flash auf Typ B (2530) testen
 13. [ ] Doc 1060 untersuchen: CER 22.6% trotz Typ A — Alignment-Problem
 14. [ ] Empfehlung fuer Produktions-Pipeline ableiten
+15. [x] Layout-Analyse: 8/15 Docs mit Docling analysiert + Overlay-PNGs erzeugt
+16. [ ] Layout-Post-Processing implementieren (O21: Overlap, Einzeiler, Seitenzahlen)
+17. [ ] Layout-Analyse fuer restliche 7 Docs (braucht GPU)
+18. [ ] Fussnoten-Erkennung pruefen (Doc 3040 = Lexikon mit Fussnoten)
 
 ---
 
@@ -204,4 +230,4 @@ python scripts/test_all_pdfs.py --phase phase1
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25 (alle 15 Pilot-Dokumente evaluiert)*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25 (Layout-Analyse 8/15 Docs + QA-Ergebnisse)*

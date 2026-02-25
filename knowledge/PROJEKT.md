@@ -90,7 +90,8 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Benchmark-UI | Erledigt | `docs/benchmark.html`, Mistral vs DeepSeek |
 | Dashboard-Redesign | Erledigt | `docs/` mit shared.css/js, index.html, viewer.html |
 | Dashboard-Daten | Erledigt | `scripts/generate_dashboard_data.py` → dashboard.json |
-| Layout-Analyse | Teilweise | `scripts/run_layout_analysis.py`, 8/15 Docs mit JSON + Overlay-PNGs |
+| Layout-Analyse | Teilweise | `scripts/run_layout_analysis.py`, 8/15 Docs mit JSON + Overlay-PNGs. QA: BBox korrekt, 3 Probleme (O21) |
+| Layout-Post-Processing | Ausstehend | Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik (O21) |
 | Containerisierung | Ausstehend | Dockerfile fuer Podman |
 | CI/CD | Ausstehend | GitLab Uni Zürich |
 

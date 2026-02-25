@@ -45,6 +45,13 @@ PDF ──→ Seitenbilder ──→ OCR ──→ Layout ──→ PAGE-XML ─
 
 **Layout-Engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 Blocktypen, CPU). Phase 0 Evaluation bestanden: alle 4 Dokumenttypen korrekt erkannt, Spalten-Trennung Type B funktioniert. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
 
+**Layout-QA (25.02.2026):** Visuelle Pruefung von 8 Docs (186 Overlay-PNGs) ergab:
+- BBox-Positionierung korrekt, kein systematischer Versatz
+- Headings zuverlaessig erkannt (Titel, Untertitel, Thesen-Nummern)
+- Zweispaltiges Layout korrekt getrennt (Doc 1410)
+- **3 Probleme identifiziert (O21):** (1) Ueberlappende Regionen bei dichtem Text, (2) Einzeiler-Fragmente als eigene Region, (3) Seitenzahlen als `text` statt `page_footer` erkannt
+- Post-Processing noetig: Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik
+
 ---
 
 ## Stufe 1: OCR

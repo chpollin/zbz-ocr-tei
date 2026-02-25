@@ -72,6 +72,7 @@ Wichtig für Qualität, aber nicht blockierend.
 | O18 | Multimodale LLM-Korrektur testen (Scan-Bild + OCR-Text) | Forschung zeigt <1% CER (arXiv:2504.00414); aktuell nur Text | Qualitaet | Eigener Test |
 | O19 | Mistral `extract_header/footer` testen | Koennte JSTOR-Artefakte ohne LLM filtern | Qualitaet | Eigener Test |
 | O20 | DeepSeek Free OCR (ohne `<\|grounding\|>`) fuer Typ A/C testen | Potenziell schneller ohne Qualitaetsverlust bei einspaltigem Layout | Performance | Eigener Test |
+| O21 | Layout-Region-Post-Processing: Overlap, Einzeiler, Seitenzahlen | Docling erzeugt ueberlappende Regionen, Einzeiler-Fragmente und erkennt Seitenzahlen nicht als page_footer. 3 Heuristiken noetig | Layout-Qualitaet | Eigene Impl. |
 
 ---
 
@@ -111,4 +112,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E16-E18: Evaluation + LLM-Erkenntnisse, O18-O20: Recherche-Ergebnisse)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E16-E21, O18-O21)*
