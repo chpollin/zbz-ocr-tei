@@ -14,6 +14,80 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | Phase 0 Evaluation + Scope-Update aller Knowledge-Docs
+
+### Durchgefuehrt
+
+1. **Docling 2.75 installiert** (Upgrade von 2.70 -- RT-DETR V2 Heron braucht transformers >=4.48)
+2. **Schritt 1 Installationstest bestanden:** Doc 1180 p001, 2.9s, 5 Regionen mit BBox, kein Symlink-Fehler
+3. **Schritt 2 Typenstichprobe bestanden:** 5 Bilder (A/B/C/D), `scripts/experiments/layout_eval.py` geschrieben
+4. **Schritt 3 E19 bestaetigt → E20:** Docling als Primary Layout-Engine
+5. **Scope-Erweiterung E21 dokumentiert:** PIPELINE.md, PROJEKT.md, TEI-MAPPING.md an neue 7-Stufen-Pipeline angepasst
+6. **Alle Knowledge-Docs aktualisiert:** STATUS.md, DECISIONS.md (E20+E21), JOURNAL.md
+
+### Phase 0 Evaluation Ergebnisse
+
+| Doc | Typ | Regionen | Zeit | Ergebnis |
+|-----|-----|----------|------|----------|
+| 1180 | A | 9 | 3.3s | 2 headings + 7 text korrekt |
+| 2530 | B | 12 | 2.5s | Spalten korrekt getrennt |
+| 40 | C | 3-6 | 0.4s | Textseiten korrekt |
+| 90 | D | 6 | 0.5s | Titelseite korrekt |
+| 1330 | D | 14 | 0.7s | headings + text + list_items korrekt |
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| scripts/experiments/layout_eval.py | **Neu** -- Docling-Evaluation mit JSON + Overlay |
+| output/layout_eval/*.json + *.png | **Neu** -- Evaluationsergebnisse |
+| knowledge/PIPELINE.md | 7-Stufen-Pipeline, E19 Layout-Engine |
+| knowledge/PROJEKT.md | Oekosystem-Diagramm + Meilensteine aktualisiert |
+| knowledge/TEI-MAPPING.md | Scope-Header aktualisiert |
+| knowledge/DECISIONS.md | E20 + E21 hinzugefuegt |
+| STATUS.md | Phase 0 Ergebnisse, naechste Schritte |
+
+### Naechster Schritt
+
+Phase 1 implementieren: `scripts/layout/` Modul + `scripts/export_page_xml.py`.
+
+---
+
+## 2026-02-25 | Phase 0: Layout-Analyse Recherche + Implementierungsplan
+
+### Durchgefuehrt
+
+1. **Scope-Erweiterung nach Meeting:** zbz-ocr-tei deckt jetzt die gesamte Pipeline ab (PDF → TEI-XML). ZBZ behaelt Transkribus, DHCraft baut parallele KI-Pipeline. NER/GND jetzt im PoC-Scope.
+2. **Layout-Analyse Recherche (E19):** 7 Ansaetze evaluiert (Gemini, Claude, Mistral, Docling, Surya, Kraken, Azure DI)
+   - **Docling** (Score 4.35/5): Beste Open-Source BBox-Koordinaten, 17 Klassen, gratis, CPU
+   - **Kraken** (Score 4.15/5): Nativer PAGE-XML-Export, historische FR-Dokumente
+   - **Gemini** (Score 3.45/5): Guenstig, flexibel, als Validator geeignet
+   - **Claude Vision**: Disqualifiziert (keine BBox-Koordinaten)
+   - **Mistral**: Unzureichend (keine Text-Region-BBox)
+3. **Empfehlung E19:** Docling + Gemini Hybrid (Docling primaer, Gemini optional, Kraken Fallback)
+4. **Implementierungsplan geschrieben:** `PLAN.md` im Repo-Root mit 6 Phasen, Datenfluss, Risikomatrix
+5. **Knowledge-Updates:** DECISIONS.md (E19), INDEX.md (E19-LAYOUT-ANALYSE.md verlinkt)
+
+### Ueberraschungsfund
+
+- **ocr-fileformat (UB Mannheim):** Konvertiert zwischen 30+ OCR-Formaten (hOCR, PAGE-XML, ALTO, TEI). Reduziert das Risiko der Format-Entscheidung erheblich.
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| knowledge/E19-LAYOUT-ANALYSE.md | **Neu** -- Layout-Analyse Recherche + Bewertungsmatrix |
+| PLAN.md | **Neu** -- Implementierungsplan fuer volle KI-Pipeline |
+| knowledge/DECISIONS.md | E19 hinzugefuegt |
+| knowledge/INDEX.md | E19-LAYOUT-ANALYSE.md verlinkt |
+| knowledge/JOURNAL.md | Diesen Eintrag |
+
+### Naechster Schritt
+
+Phase 0 Evaluation: Docling Layout-Analyse auf alle 383 Seitenbilder laufen lassen, Blocktypen → ZBZ-Tags mappen, visuell pruefen.
+
+---
+
 ## 2026-02-25 | Knowledge-Update: Prompts dokumentiert + Recherche-Ergebnisse
 
 ### Durchgefuehrt

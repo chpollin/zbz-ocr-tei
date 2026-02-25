@@ -27,86 +27,79 @@ LLM-gestützte OCR- und TEI-Transformationspipeline für 289 Jeanne-Hersch-Texte
 
 ---
 
-## Ökosystem — Drei Tools, eine Pipeline
+## Oekosystem
 
-Das Projekt besteht aus drei eigenständigen Tools, die zusammen eine End-to-End-Pipeline bilden:
+Seit dem Alignment-Meeting (25.02.2026) deckt zbz-ocr-tei die **gesamte Pipeline** ab: OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt parallel ihren Transkribus-Workflow. coOCR und teiCrafter bleiben als optionale Downstream-Tools bestehen.
 
 ```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  zbz-ocr-tei    │     │   coOCR/HTR     │     │   teiCrafter    │
-│  Batch-OCR      │ ──► │  Korrektur      │ ──► │  Tiefenerschl.  │
-│  (Python)       │     │  (Browser-App)  │     │  (Browser-App)  │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
+┌───────────────────────────────────────────────────────┐
+│  zbz-ocr-tei (dieses Repo)                           │
+│  PDF → Bilder → OCR → Layout → PAGE-XML → NER → TEI │
+│  (Python, Batch, vollautomatisch)                     │
+└──────────────────────┬────────────────────────────────┘
+                       │ PAGE-XML + PNG (optional)
+                       ▼
+              ┌─────────────────┐     ┌─────────────────┐
+              │   coOCR/HTR     │ ──► │   teiCrafter    │
+              │  Korrektur      │     │  Tiefenerschl.  │
+              │  (Browser-App)  │     │  (Browser-App)  │
+              └─────────────────┘     └─────────────────┘
 ```
 
-### Stufe 1: zbz-ocr-tei (dieses Repo)
+### zbz-ocr-tei (dieses Repo)
 
-**Zweck:** Massenverarbeitung — 289 PDFs automatisiert transkribieren.
+**Zweck:** Vollautomatische End-to-End-Pipeline -- 289 PDFs zu TEI-XML.
 
 | Aspekt | Details |
 |--------|---------|
 | Input | PDF-Scans (7.200 Seiten) |
-| Output | Seitenweise Markdown + PNG-Bilder |
-| Engines | Mistral OCR 3 (Azure), DeepSeek-OCR-2 (lokal), Gemini 3 Flash (API) |
+| Output | TEI-XML (DTA-Basisformat), PAGE-XML + PNG + METS |
+| OCR-Engines | Mistral OCR 3 (Azure), DeepSeek-OCR-2 (lokal) |
+| Layout-Engine | Docling 2.75 (RT-DETR V2 Heron, E19) |
+| NER | Claude Haiku 4.5 + lobid.org GND-API |
 | Modus | Batch, ohne manuellen Eingriff |
 | Repo | `DHCraft/zbz-ocr-tei` |
+| Implementierungsplan | [PLAN.md](../PLAN.md) |
 
-### Stufe 2: coOCR/HTR (Korrektur)
+### coOCR/HTR (optional, Downstream)
 
-**Zweck:** Qualitätssicherung — Experte korrigiert OCR-Fehler am Bild.
+**Zweck:** Manuelle Korrektur einzelner Dokumente am Bild.
 
 | Aspekt | Details |
 |--------|---------|
-| Input | Bilder + OCR-Text (aus Stufe 1) |
-| Workflow | Bild links, Text rechts, LLM-Validierung, Experte korrigiert |
-| Output | Basis-TEI (`<ab>`, `<lb/>`, `<unclear>`, `<gap>`) |
-| Modus | Einzeldokument, Expert-in-the-Loop |
+| Input | PAGE-XML + PNG (aus zbz-ocr-tei) |
+| Output | Korrigierte PAGE-XML / Basis-TEI |
 | Repo | `DHCraft/co-ocr-htr` |
 
-### Stufe 3: teiCrafter (Tiefenerschließung)
+### teiCrafter (optional, Downstream)
 
-**Zweck:** Veredelung — Entitäten, Struktur, GND-Verknüpfung.
+**Zweck:** Veredelung -- Entitaeten reviewen, Struktur verfeinern.
 
 | Aspekt | Details |
 |--------|---------|
-| Input | Basis-TEI (aus Stufe 2) oder Plaintext |
-| Workflow | LLM annotiert → Experte reviewt (Accept/Edit/Reject) → Validierung |
-| Output | Produktions-TEI (DTA-konform, `<persName>`, `<orgName>`, `<bibl>`, GND-Refs) |
-| Modus | Einzeldokument, 3-Schichten-Prompt, 5-Level-Validierung |
+| Input | Basis-TEI (aus coOCR) oder TEI-XML (aus zbz-ocr-tei) |
+| Output | Produktions-TEI (DTA-konform, GND-Refs) |
 | Repo | `DHCraft/teiCrafter` |
-
-### Schnittstellen
-
-| Von → Nach | Format | Status |
-|------------|--------|--------|
-| zbz-ocr-tei → coOCR | Bilder (PNG) + Markdown oder PAGE-XML | Zu definieren |
-| coOCR → teiCrafter | Basis-TEI (`.tei.xml`) | Grundsätzlich möglich, Mapping `<ab>` → `<p>` klären |
-| teiCrafter → Produktion | Produktions-TEI → oXygen, ediarum, GAMS | Funktional |
-
-Offene Schnittstellenfragen: Siehe [DECISIONS](DECISIONS.md).
 
 ---
 
 ## Meilensteine
 
-**Scope dieses Repos:** PDF -> korrigiertes Markdown. TEI-Transformation und GND-Verknuepfung finden in coOCR/HTR und teiCrafter statt.
+**Scope:** Volle Pipeline PDF → TEI-XML (seit 25.02.2026). Implementierungsplan: [PLAN.md](../PLAN.md).
 
-| # | Meilenstein | Aufwand | Erfolgskriterium | Status |
-|---|-------------|---------|-------------------|--------|
-| M0 | Bildextraktion + QS-Viewer | Erledigt | Bilder + Viewer verfuegbar | Erledigt |
-| M1 | OCR validiert | 5-7 Tage | >=95% Genauigkeit alle Typen | 15 Docs evaluiert: 93.58% (Mistral), 93.48% (LLM). Dashboard-UI verfuegbar |
-| M2 | Produktions-OCR alle 289 Docs | 3-5 Tage | Alle PDFs verarbeitet, QS geprueft | Ausstehend |
-| M3 | Integration mit coOCR/HTR | 4-6 Tage | Export-Format definiert, Schnittstelle funktional | Ausstehend |
-| M4 | Pilotbetrieb | 6-10 Tage | Kundenabnahme | Ausstehend |
+| # | Meilenstein | Erfolgskriterium | Status |
+|---|-------------|-------------------|--------|
+| M0 | Bildextraktion + QS-Viewer | Bilder + Viewer verfuegbar | Erledigt |
+| M1 | OCR validiert | >=95% Genauigkeit alle Typen | Erledigt: 93.58% (Mistral), Dashboard-UI |
+| M2 | Layout + PAGE-XML | Regionen + BBox + PAGE-XML fuer 15 Pilots | **Phase 1** |
+| M3 | NER + GND | Entity Recall >70%, GND-Linking >60% | **Phase 2** |
+| M4 | TEI-XML | DTA-konformes TEI fuer 15 Pilots, Schema-valide | **Phase 3** |
+| M5 | Produktionslauf | 289 Docs verarbeitet, Stichproben-QA bestanden | Phase 5 |
 
 ### Abhaengigkeiten
 
 ```
-M0 (Bilder) ──► M1 (OCR validiert) ──► M2 (Produktion) ──► M3 (coOCR-Integration) ──► M4 (Pilot)
-                  │                                              ▲
-                  └── 15 Docs: 93.58% (Mistral), 93.48% (LLM)             │
-                                                                 │
-                  coOCR/HTR + teiCrafter ────────────────────────┘
+M0 (Bilder) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+GND) ──► M4 (TEI) ──► M5 (Produktion)
 ```
 
 ---

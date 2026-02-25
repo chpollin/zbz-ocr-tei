@@ -27,6 +27,7 @@ Dokumentation für die LLM-gestützte OCR- und TEI-Pipeline der Jeanne Hersch Ed
 | [DECISIONS](DECISIONS.md) | Was ist entschieden? Was ist offen? | Alle | Alle |
 | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) | Wie arbeitet die ZBZ redaktionell? | Alle | — |
 | [JOURNAL](JOURNAL.md) | Was wurde wann gemacht? | Alle | — |
+| [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) | Welcher Ansatz fuer Layout-Analyse? | Entwicklung | PIPELINE |
 
 ---
 
@@ -97,7 +98,8 @@ knowledge/
 ├── INFRASTRUKTUR.md      # Azure, Podman, GitLab, CI/CD
 ├── DECISIONS.md          # Entschiedenes + Offenes (priorisiert)
 ├── ZBZ-WORKFLOW.md       # ZBZ-Redaktionsworkflow + Integrationspunkte
-└── JOURNAL.md            # Chronologisches Arbeitsjournal
+├── JOURNAL.md            # Chronologisches Arbeitsjournal
+└── E19-LAYOUT-ANALYSE.md # Layout-Analyse Recherche + Entscheidung
 ```
 
 ---

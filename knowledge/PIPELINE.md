@@ -8,7 +8,7 @@ status: active
 
 # Pipeline
 
-Datenfluss von PDF zu korrigiertem Markdown: Stufen, Scripts, Formate. TEI-Transformation findet downstream in coOCR/teiCrafter statt.
+Datenfluss von PDF zu TEI-XML: Stufen, Scripts, Formate. Seit Scope-Erweiterung (25.02.2026) deckt zbz-ocr-tei die gesamte Pipeline ab (OCR + Layout + PAGE-XML + NER/GND + TEI-XML). Implementierungsplan: [PLAN.md](../PLAN.md).
 
 **Abhängigkeiten:** [PROJEKT](PROJEKT.md)
 
@@ -17,33 +17,33 @@ Datenfluss von PDF zu korrigiertem Markdown: Stufen, Scripts, Formate. TEI-Trans
 ## Pipeline-Übersicht
 
 ```
-PDF ──→ OCR Engine ──→ LLM-Korrektur ──→ Evaluation ──→ Dashboard
-         ocr_pipeline    llm_postprocess    evaluate_ocr    generate_dashboard_data
-         output/          output/             output/          docs/data/
-         mistral_results/ llm_corrected_c/    evaluation/      dashboard.json
-                                                    │
-                              ┌──────────────────────┘
+PDF ──→ Seitenbilder ──→ OCR ──→ Layout ──→ PAGE-XML ──→ NER/GND ──→ TEI-XML
+         extract_pages    ocr_pipeline  layout/    page_xml_gen    ner/       tei/
+         docs/images/     output/       output/    output/         output/    output/
+                          mistral_res/  layout/    page_xml/       entities/  tei_xml/
+                                                       │
+                              ┌─────────────────────────┘
                               ▼
-                    Export fuer coOCR (geplant)
-                              │
-                              ▼
-                    coOCR/HTR (Korrektur) ──→ teiCrafter (TEI + GND)
+                    Evaluation + Dashboard
+                    evaluate_ocr + generate_dashboard_data
 ```
 
-### Stufen (in diesem Repo)
+### Stufen (7-Stufen-Pipeline)
 
-| Stufe | Aufgabe | Script | Output |
-|-------|---------|--------|--------|
-| 1 | OCR | `scripts/ocr_pipeline.py` | Seitenweises Markdown (`output/mistral_results/`) |
-| 1a | Layout (nur Typ B) | Docling in `ocr_pipeline.py` | BBox-Koordinaten (intern) |
-| 2 | LLM-Nachkorrektur | `scripts/llm_postprocess.py` | Korrigiertes Markdown (`output/llm_corrected_c/`) |
-| 3 | Evaluation | `scripts/evaluate_ocr.py` | CER/WER-Report (`output/evaluation/`) |
-| 4 | Dashboard | `scripts/generate_dashboard_data.py` | `docs/data/dashboard.json` |
-| 5 | Export fuer coOCR | `scripts/export_page_xml.py` (geplant) | PAGE-XML + PNG + METS |
+| Stufe | Aufgabe | Script | Output | Status |
+|-------|---------|--------|--------|--------|
+| 1 | PDF → Seitenbilder | `scripts/extract_pages.py` | PNG (`docs/images/`) | Produktiv |
+| 2 | OCR | `scripts/ocr_pipeline.py` | Seitenweises Markdown (`output/mistral_results/`) | Produktiv |
+| 2a | LLM-Nachkorrektur (optional) | `scripts/llm_postprocess.py` | Korrigiertes Markdown (`output/llm_corrected_c/`) | Produktiv, E17: optional |
+| 3 | Layout-Analyse | `scripts/layout/layout_analyzer.py` | Regionen + BBox (JSON) | **Phase 1** |
+| 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
+| 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entitaeten-JSON (`output/entities/`) | **Phase 2** |
+| 6 | PAGE-XML + Entitaeten → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei_xml/`) | **Phase 3** |
+| 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Produktiv (Erweiterung in Phase 4) |
 
 **Hilfsskripte:** `extract_pages.py` (Seitenbilder), `extract_gnd.py` (GND-IDs), `postprocess/` (Normalisierung).
 
-**TEI-Transformation und GND-Verknuepfung sind nicht Scope dieses Repos.** Sie finden in coOCR/HTR und teiCrafter statt.
+**Layout-Engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 Blocktypen, CPU). Phase 0 Evaluation bestanden: alle 4 Dokumenttypen korrekt erkannt, Spalten-Trennung Type B funktioniert. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
 
 ---
 

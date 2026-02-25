@@ -10,16 +10,16 @@ status: active
 
 Transformationsregeln von Quelltext zu TEI-XML nach DTA-Basisformat mit projektspezifischen Anpassungen.
 
-> **Scope:** Dieses Dokument ist eine Referenz fuer coOCR/HTR und teiCrafter. zbz-ocr-tei fuehrt KEINE TEI-Transformation durch — nur OCR bis korrigiertes Markdown (Entscheidung E12). Die hier beschriebenen Regeln gelten fuer die Downstream-Tools.
+> **Scope:** Seit der Scope-Erweiterung (25.02.2026) fuehrt zbz-ocr-tei die TEI-Transformation selbst durch (Phase 3 in [PLAN.md](../PLAN.md)). Dieses Dokument ist die Implementierungsreferenz fuer `scripts/tei/tei_generator.py`. Die Regeln gelten auch fuer coOCR/HTR und teiCrafter als Downstream-Tools.
 
 **Abhängigkeiten:** [QUELLENANALYSE](QUELLENANALYSE.md)
 
 **Quellen:**
-- `data/richtlinien/README.md` – Projektrichtlinien ZBZ
-- `data/richtlinien/dta_basisformat_komplett.md` – DTA-Referenz
-- `data/richtlinien/Auszeichnungsrichtlinien Hersch INTERN.docx` – Interne Richtlinien
+- `data/richtlinien/README.md` -- Projektrichtlinien ZBZ
+- `data/richtlinien/dta_basisformat_komplett.md` -- DTA-Referenz
+- `data/richtlinien/Auszeichnungsrichtlinien Hersch INTERN.docx` -- Interne Richtlinien
 
-**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md). TEI-bezogene Fragen (O6-O9, O13-O14) sind nach coOCR/teiCrafter verschoben (E12).
+**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md).
 
 ---
 

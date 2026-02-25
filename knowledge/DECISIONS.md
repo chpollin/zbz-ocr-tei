@@ -36,6 +36,9 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E16 | Seitenweiser Vergleich fuer Monografien (>10 TEI-Seiten) | Globales Alignment scheitert bei 140+ Seiten; Content-Matching loest variable PDF/TEI-Offsets | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E17 | LLM-Korrektur optional, nicht als Default | Verschlechtert Docs mit CER <5% (Phase 2: +0.03, Phase 4: +0.05); Nutzen nur bei CER >10% | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E18 | Content-basiertes Page-Matching statt fixem Offset | TEI facs-Nummern ≠ PDF-Seitennummern (Deckblaetter, Leerseiten); fixer Offset driftet | 2026-02-25 | [PIPELINE](PIPELINE.md) |
+| E19 | Layout-Analyse: Docling + Gemini Hybrid | Docling (mAP 0.699, gratis, 17 Klassen) als Primaer; Gemini 2.5 Flash als optionaler Validator; Kraken als Fallback. Claude Vision disqualifiziert (keine BBox), Mistral unzureichend (keine Text-BBox) | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
+| E20 | Docling 2.75 als Layout-Engine bestaetigt (Phase 0) | Typenstichprobe bestanden: alle 4 Dokumenttypen korrekt erkannt, Spalten-Trennung Type B funktioniert (L: x120-529, R: x560-969), 0.4-3.3s/Seite | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
+| E21 | Scope-Erweiterung: Volle Pipeline in zbz-ocr-tei | Nach Meeting 25.02.: zbz-ocr-tei deckt OCR + Layout + PAGE-XML + NER/GND + TEI-XML ab. E12 (nur OCR) ist damit ueberholt. ZBZ behaelt Transkribus parallel | 2026-02-25 | [PLAN.md](../PLAN.md) |
 
 ---
 
