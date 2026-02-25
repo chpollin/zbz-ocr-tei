@@ -57,19 +57,11 @@ def pdf_to_images(pdf_path: Path, output_dir: Path, dpi: int = DEFAULT_DPI) -> l
     """
     import pypdfium2 as pdfium
 
-    output_dir.mkdir(parents=True, exist_ok=True)
     pdf = pdfium.PdfDocument(str(pdf_path))
-    image_paths = []
-
-    for i, page in enumerate(pdf):
-        bitmap = page.render(scale=dpi / 72)
-        pil_image = bitmap.to_pil()
-        image_path = output_dir / f"{pdf_path.stem}_p{i+1:03d}.png"
-        pil_image.save(str(image_path), "PNG")
-        image_paths.append(image_path)
-
+    total = len(pdf)
     pdf.close()
-    return image_paths
+
+    return pdf_to_images_pages(pdf_path, list(range(total)), output_dir, dpi)
 
 
 def pdf_to_images_pages(
@@ -100,7 +92,7 @@ def pdf_to_images_pages(
 
         bitmap = pdf[page_num].render(scale=dpi / 72)
         pil_image = bitmap.to_pil()
-        image_path = output_dir / f"{pdf_path.stem}_p{page_num+1}.png"
+        image_path = output_dir / f"{pdf_path.stem}_p{page_num+1:03d}.png"
         pil_image.save(str(image_path), "PNG")
         image_paths.append(image_path)
 

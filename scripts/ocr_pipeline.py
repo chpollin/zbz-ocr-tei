@@ -126,23 +126,25 @@ class MistralOCR:
             import pymupdf as fitz  # PyMuPDF >= 1.24
 
         doc = fitz.open(str(pdf_path))
-        total = len(doc)
+        try:
+            total = len(doc)
 
-        if total <= max_pages:
-            pdf_bytes = pdf_path.read_bytes()
+            if total <= max_pages:
+                return [pdf_path.read_bytes()]
+
+            chunks = []
+            for start in range(0, total, max_pages):
+                end = min(start + max_pages - 1, total - 1)
+                chunk = fitz.open()
+                try:
+                    chunk.insert_pdf(doc, from_page=start, to_page=end)
+                    chunks.append(chunk.tobytes())
+                finally:
+                    chunk.close()
+
+            return chunks
+        finally:
             doc.close()
-            return [pdf_bytes]
-
-        chunks = []
-        for start in range(0, total, max_pages):
-            end = min(start + max_pages - 1, total - 1)
-            chunk = fitz.open()
-            chunk.insert_pdf(doc, from_page=start, to_page=end)
-            chunks.append(chunk.tobytes())
-            chunk.close()
-
-        doc.close()
-        return chunks
 
     def _ocr_request(self, pdf_bytes: bytes) -> dict:
         """Sendet einen OCR-Request an die Mistral API."""

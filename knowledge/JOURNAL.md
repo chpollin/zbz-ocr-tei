@@ -14,6 +14,30 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | Code-Qualitaet: Resource Leak + Duplikation behoben
+
+### Durchgefuehrt
+
+- **`scripts/ocr_pipeline.py`**: Resource Leak in `MistralOCR._split_pdf()` gefixt — `fitz.open()`-Dokumente werden jetzt mit try-finally geschuetzt, sodass sie bei Exceptions nicht offen bleiben
+- **`scripts/utils.py`**: `pdf_to_images()` Duplikation aufgeloest — delegiert jetzt an `pdf_to_images_pages()` statt identische Logik zu duplizieren. Dabei Dateinamen-Padding vereinheitlicht (beide nutzen jetzt `:03d`)
+- Modul-Docstrings geprueft: Alle 14 Python-Module haben bereits Docstrings, kein Handlungsbedarf
+
+### Begruendung
+
+Systematisches Code-Audit identifizierte 3 potenzielle Verbesserungen, davon 2 umgesetzt:
+1. Resource Leak: Bei Exception zwischen `fitz.open()` und `.close()` blieben Dokumente offen — behoben mit try-finally
+2. Code-Duplikation: `pdf_to_images()` und `pdf_to_images_pages()` hatten nahezu identische Implementierungen — konsolidiert
+3. Fehlende Docstrings: Bereits vorhanden, kein Handlungsbedarf
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `scripts/ocr_pipeline.py` | FIX: try-finally in `_split_pdf()` |
+| `scripts/utils.py` | REFACTOR: `pdf_to_images()` delegiert an `pdf_to_images_pages()` |
+
+---
+
 ## 2026-02-25 | ARCHITEKTUR.md → PIPELINE.md umbenannt + inhaltlich korrigiert
 
 ### Durchgefuehrt
