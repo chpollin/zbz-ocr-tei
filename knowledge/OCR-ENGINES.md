@@ -146,7 +146,7 @@ Interaktiver Engine-Vergleich im Dashboard: `docs/index.html`
 ### Offen
 
 - [ ] Doc 290 analysieren (CER 18% — Scan- oder OCR-Problem?) — niedrige Prio, blockiert nichts
-- [ ] Seitenweisen Vergleich fuer Monografien implementieren — blockiert Phase-4-Evaluation
+- [ ] Doc 1060 analysieren (CER 22.6% — Alignment-Problem bei kurzem PDF?) — niedrige Prio
 
 ---
 

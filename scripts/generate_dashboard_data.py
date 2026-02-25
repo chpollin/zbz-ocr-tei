@@ -50,11 +50,13 @@ DEEPSEEK_METRICS = {
     "290":  {"cer": 0.0921, "wer": 0.1953, "pages": 2, "chars": 5213, "available_pages": [1, 2]},
 }
 
-# Mistral CER aus TESTPLAN (evaluation_results.json hat nur LLM-C CER)
+# Mistral CER aus Evaluation (seitenweise fuer >10 TEI-Seiten, global sonst)
 MISTRAL_CER = {
     "2310": 0.0700, "1180": 0.0312, "290": 0.1807,
     "2530": 0.0396, "890": 0.0596, "3040": 0.0902,
     "90": 0.0121, "1440": 0.0371, "830": 0.0400, "1330": 0.0260,
+    "1060": 0.2260, "130": 0.0413, "1410": 0.0558,
+    "40": 0.0257, "1520": 0.0273,
 }
 
 # Mistral Benchmark-Daten (aus benchmark.html DATA)

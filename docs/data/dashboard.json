@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-25T12:49:01",
+  "generated": "2026-02-25T15:13:19",
   "generator": "scripts/generate_dashboard_data.py",
   "project": {
     "title": "Jeanne Hersch Edition",
@@ -14,14 +14,14 @@
     "llm_variant": "C (Few-Shot)",
     "pilot_docs": 15,
     "pilot_pages": 383,
-    "docs_with_ocr": 12,
-    "docs_with_llm": 10,
-    "docs_with_eval": 10,
-    "avg_cer_mistral": 0.05865,
-    "avg_cer_llm": 0.055546,
-    "total_llm_cost_usd": 0.3331,
-    "total_llm_tokens_in": 90515,
-    "total_llm_tokens_out": 65176
+    "docs_with_ocr": 15,
+    "docs_with_llm": 15,
+    "docs_with_eval": 15,
+    "avg_cer_mistral": 0.064173,
+    "avg_cer_llm": 0.065192,
+    "total_llm_cost_usd": 0.4928,
+    "total_llm_tokens_in": 157851,
+    "total_llm_tokens_out": 91639
   },
   "phases": [
     {
@@ -73,8 +73,8 @@
         "1520"
       ],
       "status": "completed",
-      "avg_cer_mistral": null,
-      "avg_cer_llm": null
+      "avg_cer_mistral": 0.0265,
+      "avg_cer_llm": 0.027
     }
   ],
   "documents": {
@@ -137,11 +137,7 @@
           3
         ]
       },
-      "llm_stats": {
-        "pages_processed": 3,
-        "input_tokens": 3858,
-        "output_tokens": 2144
-      }
+      "llm_stats": null
     },
     "1180": {
       "doc_id": "1180",
@@ -232,11 +228,7 @@
           3
         ]
       },
-      "llm_stats": {
-        "pages_processed": 8,
-        "input_tokens": 9704,
-        "output_tokens": 5943
-      }
+      "llm_stats": null
     },
     "290": {
       "doc_id": "290",
@@ -309,11 +301,7 @@
           2
         ]
       },
-      "llm_stats": {
-        "pages_processed": 5,
-        "input_tokens": 7054,
-        "output_tokens": 4508
-      }
+      "llm_stats": null
     },
     "130": {
       "doc_id": "130",
@@ -434,14 +422,20 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
+        "ocr_mistral": true,
         "ocr_deepseek": false,
-        "llm_corrected": false,
-        "evaluation": false,
+        "llm_corrected": true,
+        "evaluation": true,
         "export": false
       },
-      "evaluation": null,
-      "mistral_cer": null,
+      "evaluation": {
+        "cer_llm": 0.041457,
+        "wer_llm": 0.161846,
+        "ref_chars": 24411,
+        "ocr_chars": 24865,
+        "status": "OK"
+      },
+      "mistral_cer": 0.0413,
       "mistral_stats": null,
       "deepseek_stats": null,
       "llm_stats": null
@@ -493,14 +487,20 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
+        "ocr_mistral": true,
         "ocr_deepseek": false,
-        "llm_corrected": false,
-        "evaluation": false,
+        "llm_corrected": true,
+        "evaluation": true,
         "export": false
       },
-      "evaluation": null,
-      "mistral_cer": null,
+      "evaluation": {
+        "cer_llm": 0.057789,
+        "wer_llm": 0.14036,
+        "ref_chars": 12390,
+        "ocr_chars": 12903,
+        "status": "OK"
+      },
+      "mistral_cer": 0.0558,
       "mistral_stats": null,
       "deepseek_stats": null,
       "llm_stats": null
@@ -564,14 +564,20 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
+        "ocr_mistral": true,
         "ocr_deepseek": false,
-        "llm_corrected": false,
-        "evaluation": false,
+        "llm_corrected": true,
+        "evaluation": true,
         "export": false
       },
-      "evaluation": null,
-      "mistral_cer": null,
+      "evaluation": {
+        "cer_llm": 0.269177,
+        "wer_llm": 0.34258,
+        "ref_chars": 9960,
+        "ocr_chars": 10094,
+        "status": "OK"
+      },
+      "mistral_cer": 0.226,
       "mistral_stats": null,
       "deepseek_stats": null,
       "llm_stats": null
@@ -615,11 +621,7 @@
       "mistral_cer": 0.0396,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": {
-        "pages_processed": 2,
-        "input_tokens": 2571,
-        "output_tokens": 1622
-      }
+      "llm_stats": null
     },
     "890": {
       "doc_id": "890",
@@ -690,11 +692,7 @@
       "mistral_cer": 0.0596,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": {
-        "pages_processed": 7,
-        "input_tokens": 14405,
-        "output_tokens": 11137
-      }
+      "llm_stats": null
     },
     "3040": {
       "doc_id": "3040",
@@ -777,11 +775,7 @@
       "mistral_cer": 0.0902,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": {
-        "pages_processed": 9,
-        "input_tokens": 24068,
-        "output_tokens": 19793
-      }
+      "llm_stats": null
     },
     "40": {
       "doc_id": "40",
@@ -1732,12 +1726,18 @@
         "images": true,
         "ocr_mistral": true,
         "ocr_deepseek": false,
-        "llm_corrected": false,
-        "evaluation": false,
+        "llm_corrected": true,
+        "evaluation": true,
         "export": false
       },
-      "evaluation": null,
-      "mistral_cer": null,
+      "evaluation": {
+        "cer_llm": 0.026522,
+        "wer_llm": 0.112938,
+        "ref_chars": 198739,
+        "ocr_chars": 200719,
+        "status": "OK"
+      },
+      "mistral_cer": 0.0257,
       "mistral_stats": null,
       "deepseek_stats": null,
       "llm_stats": null
@@ -2607,15 +2607,25 @@
         "images": true,
         "ocr_mistral": true,
         "ocr_deepseek": false,
-        "llm_corrected": false,
-        "evaluation": false,
+        "llm_corrected": true,
+        "evaluation": true,
         "export": false
       },
-      "evaluation": null,
-      "mistral_cer": null,
+      "evaluation": {
+        "cer_llm": 0.027478,
+        "wer_llm": 0.15368,
+        "ref_chars": 281823,
+        "ocr_chars": 282122,
+        "status": "OK"
+      },
+      "mistral_cer": 0.0273,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": null
+      "llm_stats": {
+        "pages_processed": 142,
+        "input_tokens": 157851,
+        "output_tokens": 91639
+      }
     },
     "90": {
       "doc_id": "90",
@@ -2680,11 +2690,7 @@
       "mistral_cer": 0.0121,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": {
-        "pages_processed": 6,
-        "input_tokens": 7075,
-        "output_tokens": 4312
-      }
+      "llm_stats": null
     },
     "830": {
       "doc_id": "830",
@@ -2725,11 +2731,7 @@
       "mistral_cer": 0.04,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": {
-        "pages_processed": 2,
-        "input_tokens": 3897,
-        "output_tokens": 2948
-      }
+      "llm_stats": null
     },
     "1440": {
       "doc_id": "1440",
@@ -2788,11 +2790,7 @@
       "mistral_cer": 0.0371,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": {
-        "pages_processed": 5,
-        "input_tokens": 7412,
-        "output_tokens": 5118
-      }
+      "llm_stats": null
     },
     "1330": {
       "doc_id": "1330",
@@ -2857,11 +2855,7 @@
       "mistral_cer": 0.026,
       "mistral_stats": null,
       "deepseek_stats": null,
-      "llm_stats": {
-        "pages_processed": 6,
-        "input_tokens": 10471,
-        "output_tokens": 7651
-      }
+      "llm_stats": null
     }
   },
   "benchmark": {

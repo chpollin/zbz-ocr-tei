@@ -77,7 +77,7 @@ Pilotdateien und Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Pilo
 | 4.1 | 40 | 5-6 | Roman-Fließtext |
 | 4.2 | 1520 | 3-4 | Monografie-Inhalt |
 
-**Status:** Mistral OCR abgeschlossen, CER-Evaluation eingeschraenkt (Alignment-Problem bei langen Texten)
+**Status:** Abgeschlossen (Mistral OCR + seitenweiser Vergleich)
 
 ---
 
@@ -97,10 +97,15 @@ Pilotdateien und Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Pilo
 | 1440 | D | 3.71% | 12.69% | 96.29% | OK | Interview/Dialog |
 | 830 | D | 4.00% | 17.46% | 96.00% | OK | Bildband |
 | 1330 | D | 2.60% | 11.42% | 97.40% | OK | Sammelband |
-| 40 | C | - | - | - | n/a | Alignment bei 156 Seiten unzuverlaessig |
-| 1520 | C | - | - | - | n/a | Alignment bei 142 Seiten unzuverlaessig |
+| 40 | C | 2.57% | 10.76% | 97.43% | OK | Seitenweiser Vergleich (147 TEI-Seiten) |
+| 1520 | C | 2.73% | 15.20% | 97.27% | OK | Seitenweiser Vergleich (116 TEI-Seiten, Offset +8) |
+| 1060 | A | 22.60% | 27.88% | 77.40% | Problematisch | Alignment-Problem bei 6-seitigem PDF |
+| 130 | A | 4.13% | 16.11% | 95.87% | OK | Seitenweise (16 TEI-Seiten), Deckblatt korrekt ignoriert |
+| 1410 | A | 5.58% | 13.83% | 94.42% | Akzeptabel | Zweisprachig DE/FR |
 
 **Durchschnitt Phase 1-3 (10 Docs): CER 5.87%, Genauigkeit 94.14%**
+**Durchschnitt Phase 4 (2 Docs): CER 2.65%, Genauigkeit 97.35%**
+**Durchschnitt alle 15 Docs: CER 6.42%, Genauigkeit 93.58%**
 
 **Dashboard:** Ergebnisse visuell aufbereitet in `docs/index.html` (Metrikkarten, CER-Vergleichsbalken, Dokumentkatalog mit Engine-Filter).
 
@@ -109,20 +114,23 @@ Pilotdateien und Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Pilo
 | Phase 1 (Typ A) | 9.40% | 20.22% | 90.60% |
 | Phase 2 (Typ B) | 6.31% | 17.53% | 93.69% |
 | Phase 3 (Typ D) | 2.88% | 12.62% | 97.12% |
-| Phase 4 (Typ C) | n/a | n/a | n/a |
+| Phase 4 (Typ C) | 2.65% | 12.98% | 97.35% |
 
 ### Evaluationsmatrix: LLM-Nachkorrektur Haiku 4.5 (19.02.2026)
 
-Variante C (Few-Shot), Phase 1-3:
+Variante C (Few-Shot), alle 15 Docs:
 
 | Phase | Mistral CER | LLM CER | Delta |
 |-------|-------------|---------|-------|
 | Phase 1 (A) | 9.40% | 8.43% | -0.97 |
 | Phase 2 (B) | 6.31% | 6.34% | +0.03 |
 | Phase 3 (D) | 2.88% | 2.72% | -0.16 |
-| **Gesamt** | **5.87%** | **5.55%** | **-0.32 (5.5% relativ)** |
+| Phase 4 (C) | 2.65% | 2.70% | +0.05 |
+| **Gesamt (15 Docs)** | **6.42%** | **6.52%** | **+0.10** |
 
-Drei Varianten getestet: A (5.47%), B (5.59%), C (5.55%). Variante C als Default (bester CER/Kosten-Tradeoff).
+Drei Varianten getestet (Phase 1-3): A (5.47%), B (5.59%), C (5.55%). Variante C als Default (bester CER/Kosten-Tradeoff).
+
+Hinweis: LLM-Korrektur verbessert Docs mit hohem CER, verschlechtert leicht bei gutem OCR (Phase 2, 4).
 
 ### Evaluationsmatrix: DeepSeek-OCR-2 (lokal, nur Phase 1)
 
@@ -180,9 +188,11 @@ python scripts/test_all_pdfs.py --phase phase1
 7. [x] Phase 2-4 mit Mistral durchfuehren
 8. [x] Evaluationsmatrix vervollstaendigen (Phase 1-3)
 9. [ ] Doc 290 untersuchen: Warum CER 18%? Scan-Qualitaet pruefen
-10. [ ] Phase 4 Evaluation: Seitenweisen Vergleich implementieren
-11. [ ] Gemini 3 Flash auf Typ B (2530) testen
-12. [ ] Empfehlung fuer Produktions-Pipeline ableiten
+10. [x] Phase 4 Evaluation: Seitenweisen Vergleich implementieren
+11. [x] OCR + LLM + Eval fuer alle 15 Pilot-Dokumente abgeschlossen
+12. [ ] Gemini 3 Flash auf Typ B (2530) testen
+13. [ ] Doc 1060 untersuchen: CER 22.6% trotz Typ A — Alignment-Problem
+14. [ ] Empfehlung fuer Produktions-Pipeline ableiten
 
 ---
 
@@ -194,4 +204,4 @@ python scripts/test_all_pdfs.py --phase phase1
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25 (alle 15 Pilot-Dokumente evaluiert)*

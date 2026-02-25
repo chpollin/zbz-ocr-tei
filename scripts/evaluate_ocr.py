@@ -63,6 +63,77 @@ def extract_text_from_tei(tei_path: Path) -> str:
     return normalize_text(get_text(body))
 
 
+def extract_pages_from_tei(tei_path: Path) -> dict[int, str]:
+    """Extrahiert Text pro Seite aus TEI-XML anhand <pb facs='#facs_N'> Tags.
+
+    Gibt ein Dict {page_num: normalized_text} zurueck.
+    page_num entspricht der physischen PDF-Seite (= OCR-Datei {doc}_p{page_num}.md).
+    """
+    with open(tei_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    try:
+        root = ET.fromstring(content)
+    except ET.ParseError:
+        return {}
+
+    # Namespace entfernen
+    for elem in root.iter():
+        if '}' in elem.tag:
+            elem.tag = elem.tag.split('}')[1]
+
+    body = root.find('.//body')
+    if body is None:
+        return {}
+
+    # Alle pb-Elemente mit facs-Attribut finden und Seitennummer extrahieren
+    pages = {}
+    current_page = None
+    current_parts = []
+
+    def _flush():
+        nonlocal current_page, current_parts
+        if current_page is not None and current_parts:
+            text = normalize_text(''.join(current_parts))
+            if text:
+                pages[current_page] = text
+        current_parts = []
+
+    def _extract_page_num(elem):
+        """Extrahiert Seitennummer aus facs='#facs_N' oder facs='#facs_N_r'."""
+        facs = elem.get('facs', '')
+        m = re.match(r'#facs_(\d+)', facs)
+        return int(m.group(1)) if m else None
+
+    def collect_text(elem):
+        nonlocal current_page, current_parts
+        if elem.tag == 'pb':
+            page_num = _extract_page_num(elem)
+            if page_num is not None:
+                _flush()
+                current_page = page_num
+        elif elem.tag == 'lb':
+            if elem.get('break') != 'no':
+                current_parts.append(' ')
+        else:
+            if elem.text:
+                current_parts.append(elem.text)
+            for child in elem:
+                collect_text(child)
+            # Nicht-pb/lb Elemente: tail gehoert zur aktuellen Seite
+        if elem.tail and elem.tag not in ('body',):
+            current_parts.append(elem.tail)
+
+    # Body-Kinder traversieren
+    if body.text:
+        current_parts.append(body.text)
+    for child in body:
+        collect_text(child)
+    _flush()
+
+    return pages
+
+
 def normalize_text(text: str) -> str:
     """Normalisiert Text fuer Vergleich."""
     # Mehrfache Leerzeichen/Zeilenumbrueche reduzieren
@@ -618,6 +689,202 @@ def evaluate_document(doc_id: str, tei_dir: Path, ocr_dir: Path) -> dict:
     return result
 
 
+def _find_tei_path(doc_id: str, tei_dir: Path) -> Path | None:
+    """Findet TEI-Datei fuer ein Dokument (mit Fuzzy-Lookup)."""
+    tei_path = tei_dir / f"{doc_id}.xml"
+    if tei_path.exists():
+        return tei_path
+    tei_path = tei_dir / "Pilot" / f"{doc_id}.xml"
+    if tei_path.exists():
+        return tei_path
+    candidates = list(tei_dir.glob(f"**/{doc_id}*.xml"))
+    if candidates:
+        return candidates[0]
+    return None
+
+
+def _match_tei_to_ocr(tei_pages: dict[int, str], ocr_by_page: dict[int, Path]) -> dict[int, int]:
+    """Matcht TEI-Seiten auf OCR-Seiten per Content-Matching.
+
+    Erkennt zunaechst einen initialen Offset anhand der ersten TEI-Seite,
+    dann validiert und passt den Offset seitenweise an (fuer Dokumente
+    mit Leerseiten/Illustrationen die den Offset verschieben).
+
+    Gibt ein Dict {tei_page_num: ocr_page_num} zurueck.
+    """
+    # Preload OCR texts
+    ocr_texts = {}
+    for num, path in ocr_by_page.items():
+        ocr_texts[num] = load_ocr_result(path)
+
+    def _score(ref_text, ocr_text):
+        """Zaehlt uebereinstimmende Woerter (>5 Zeichen) als Matching-Score."""
+        words = [w for w in ref_text.split() if len(w) > 5][:8]
+        if not words:
+            return 0
+        return sum(1 for w in words if w.lower() in ocr_text.lower())
+
+    def _find_best_ocr(ref_text, search_range):
+        """Findet die beste OCR-Seite fuer einen TEI-Text im gegebenen Bereich."""
+        best_num = None
+        best_score = 0
+        for ocr_num in search_range:
+            if ocr_num not in ocr_texts:
+                continue
+            score = _score(ref_text, ocr_texts[ocr_num])
+            if score > best_score:
+                best_score = score
+                best_num = ocr_num
+        return best_num, best_score
+
+    mapping = {}
+    current_offset = 0
+    offset_found = False
+
+    for tei_num in sorted(tei_pages.keys()):
+        ref_text = tei_pages[tei_num]
+        if len(ref_text) < 50:
+            continue
+
+        if not offset_found:
+            # Initialen Offset ueber breiten Bereich suchen
+            best_num, best_score = _find_best_ocr(ref_text, range(1, max(ocr_by_page.keys()) + 1))
+            if best_num is not None and best_score >= 2:
+                current_offset = best_num - tei_num
+                offset_found = True
+                mapping[tei_num] = best_num
+                continue
+
+        # Erwartete OCR-Seite plus Suchfenster fuer Drift
+        expected = tei_num + current_offset
+        search = range(max(1, expected - 2), expected + 4)
+        best_num, best_score = _find_best_ocr(ref_text, search)
+
+        if best_num is not None and best_score >= 2:
+            mapping[tei_num] = best_num
+            current_offset = best_num - tei_num
+        elif expected in ocr_texts:
+            # Fallback: Erwartete Seite nehmen, auch ohne starken Score
+            mapping[tei_num] = expected
+
+    return mapping
+
+
+def evaluate_document_pagewise(doc_id: str, tei_dir: Path, ocr_dir: Path) -> dict:
+    """Seitenweiser CER/WER-Vergleich fuer lange Dokumente (Monografien).
+
+    Matcht jede TEI-Seite (<pb facs='#facs_N'>) per Content-Matching auf die
+    passende OCR-Seite und berechnet CER/WER pro Seite. Behandelt automatisch
+    Seitenversatz und Drift durch Leerseiten/Illustrationen im PDF.
+    """
+    result = {
+        'doc_id': doc_id,
+        'status': 'OK',
+        'cer': 0.0,
+        'wer': 0.0,
+        'ref_chars': 0,
+        'ocr_chars': 0,
+        'differences': [],
+        'reference_text': '',
+        'ocr_text': '',
+        'alignment_info': '',
+        'pagewise': True,
+        'page_results': []
+    }
+
+    # TEI-Datei finden
+    tei_path = _find_tei_path(doc_id, tei_dir)
+    if tei_path is None:
+        result['status'] = 'SKIP'
+        result['error'] = f"TEI nicht gefunden: {doc_id}.xml"
+        return result
+
+    # OCR-Dateien finden
+    ocr_files = sorted(ocr_dir.glob(f"{doc_id}_p*.md"))
+    if not ocr_files:
+        result['status'] = 'SKIP'
+        result['error'] = f"OCR nicht gefunden: {doc_id}_p*.md"
+        return result
+
+    # TEI seitenweise extrahieren
+    tei_pages = extract_pages_from_tei(tei_path)
+    if not tei_pages:
+        result['status'] = 'SKIP'
+        result['error'] = f"Keine <pb>-Tags in TEI gefunden: {tei_path.name}"
+        return result
+
+    # OCR-Dateien nach Seitennummer indexieren
+    ocr_by_page = {}
+    for ocr_file in ocr_files:
+        m = re.match(rf'{re.escape(doc_id)}_p(\d+)\.md$', ocr_file.name)
+        if m:
+            ocr_by_page[int(m.group(1))] = ocr_file
+
+    # Content-basiertes Seiten-Matching
+    page_mapping = _match_tei_to_ocr(tei_pages, ocr_by_page)
+
+    # Seitenweise vergleichen
+    total_cer_weighted = 0.0
+    total_wer_weighted = 0.0
+    total_ref_chars = 0
+    total_ocr_chars = 0
+    matched_pages = 0
+    all_diffs = []
+
+    for tei_num in sorted(page_mapping.keys()):
+        ref_text = tei_pages[tei_num]
+        if not ref_text.strip():
+            continue
+
+        ocr_num = page_mapping[tei_num]
+        ocr_text = load_ocr_result(ocr_by_page[ocr_num])
+        if not ocr_text.strip():
+            continue
+
+        cer = calculate_cer(ref_text, ocr_text)
+        wer = calculate_wer(ref_text, ocr_text)
+        weight = len(ref_text)
+
+        total_cer_weighted += cer * weight
+        total_wer_weighted += wer * weight
+        total_ref_chars += len(ref_text)
+        total_ocr_chars += len(ocr_text)
+        matched_pages += 1
+
+        result['page_results'].append({
+            'page': tei_num,
+            'ocr_page': ocr_num,
+            'cer': cer,
+            'wer': wer,
+            'ref_chars': len(ref_text),
+            'ocr_chars': len(ocr_text)
+        })
+
+        if cer > 0.05 and len(all_diffs) < 30:
+            diffs = find_differences(ref_text, ocr_text)
+            for d in diffs[:5]:
+                d['page'] = tei_num
+            all_diffs.extend(diffs[:5])
+
+    if total_ref_chars == 0:
+        result['status'] = 'SKIP'
+        result['error'] = "Keine uebereinstimmenden Seiten gefunden"
+        return result
+
+    result['cer'] = total_cer_weighted / total_ref_chars
+    result['wer'] = total_wer_weighted / total_ref_chars
+    result['ref_chars'] = total_ref_chars
+    result['ocr_chars'] = total_ocr_chars
+    result['differences'] = all_diffs[:20]
+    result['alignment_info'] = (
+        f"Seitenweise: {matched_pages}/{len(tei_pages)} TEI-Seiten matched, "
+        f"{len(tei_pages) - matched_pages} ohne Match, "
+        f"{len(ocr_by_page)} OCR-Seiten"
+    )
+
+    return result
+
+
 def get_phase_doc_ids(phase: str) -> list[str]:
     """Gibt Dokument-IDs fuer eine Phase oder alle Phasen zurueck."""
     if phase == "all":
@@ -645,6 +912,10 @@ def main():
     parser.add_argument("--engine", default="deepseek", help="Engine-Name fuer Report (default: deepseek)")
     parser.add_argument("--phase", help="Testplan-Phase: phase1, phase2, phase3, phase4, all")
     parser.add_argument("--output", default="evaluation_report.html", help="Name der HTML-Report-Datei")
+    parser.add_argument("--pagewise", action="store_true",
+                        help="Seitenweiser Vergleich erzwingen (Standard: auto wenn TEI <pb>-Tags hat)")
+    parser.add_argument("--no-pagewise", action="store_true",
+                        help="Seitenweisen Vergleich deaktivieren (globales Alignment erzwingen)")
     args = parser.parse_args()
 
     # Pfade
@@ -696,7 +967,23 @@ def main():
 
     for doc_id in doc_ids:
         print(f"Evaluiere: {doc_id}")
-        doc_result = evaluate_document(doc_id, tei_dir, ocr_dir)
+
+        # Auto-Erkennung: seitenweiser Vergleich bei genug Seiten
+        # Schwelle: >10 TEI-Seiten (kurze Dokumente profitieren vom globalen Alignment)
+        use_pagewise = not args.no_pagewise
+        if use_pagewise and not args.pagewise:
+            tei_path = _find_tei_path(doc_id, tei_dir)
+            if tei_path is not None:
+                test_pages = extract_pages_from_tei(tei_path)
+                use_pagewise = len(test_pages) > 10
+            else:
+                use_pagewise = False
+
+        if use_pagewise:
+            doc_result = evaluate_document_pagewise(doc_id, tei_dir, ocr_dir)
+        else:
+            doc_result = evaluate_document(doc_id, tei_dir, ocr_dir)
+
         results['documents'][doc_id] = doc_result
         results['summary']['total_documents'] += 1
 

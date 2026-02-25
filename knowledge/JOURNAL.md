@@ -14,6 +14,41 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | Pipeline komplett: Alle 15 Pilot-Dokumente verarbeitet
+
+### Durchgefuehrt
+
+1. **OCR fuer 3 fehlende Typ-A-Dokumente** (1060, 130, 1410): Mistral OCR, 32 Seiten in 24s
+2. **LLM-Korrektur fuer 5 Dokumente** (1060, 130, 1410, 40, 1520): Haiku 4.5 Variante C, 330 Seiten, Kosten $1.45
+3. **Seitenweiser Vergleich implementiert** (`evaluate_ocr.py`): Content-basiertes Page-Matching loest Phase-4-Blocker
+   - `extract_pages_from_tei()`: Splittet TEI anhand `<pb facs='#facs_N'>` Tags
+   - `_match_tei_to_ocr()`: Automatischer Seitenversatz-Erkennung (z.B. 1520.pdf hat +8 Offset)
+   - `evaluate_document_pagewise()`: Pro-Seite CER/WER, gewichteter Durchschnitt
+   - Auto-Erkennung: Seitenweise bei >10 TEI-Seiten, sonst globales Alignment
+4. **Evaluation aller 15 Dokumente**: Mistral-raw + LLM-korrigiert
+5. **Dashboard regeneriert**: 15/15 OCR, 15/15 LLM, 15/15 Eval
+
+### Ergebnisse der neuen Dokumente
+
+| Doc | Typ | Mistral CER | LLM CER | Anmerkung |
+|-----|-----|------------|---------|-----------|
+| 1060 | A | 22.60% | 26.92% | Alignment-Problem (nur 6 TEI-Seiten) |
+| 130 | A | 4.13% | 4.15% | Seitenweise, Deckblatt korrekt ignoriert |
+| 1410 | A | 5.58% | 5.78% | Zweisprachig DE/FR, akzeptabel |
+| 40 | C | 2.57% | 2.65% | Exzellent, 147 Seiten gematcht |
+| 1520 | C | 2.73% | 2.75% | Exzellent, 116 Seiten, Offset +8 erkannt |
+
+**Phase 4 (Monografien) CER 2.65%** — beste aller Phasen. Seitenweiser Vergleich loest das Alignment-Problem bei langen Dokumenten vollstaendig.
+
+### TESTPLAN-Items aktualisiert
+
+- [x] Item 10: Seitenweisen Vergleich implementiert
+- [x] Item 11: OCR+LLM+Eval fuer alle 15 Docs abgeschlossen
+- [ ] Doc 1060 und 290 haben hohe CER — Scan-Qualitaet pruefen
+- [ ] Doc 1520 Sprache als FR identifiziert (war "?" in config.py)
+
+---
+
 ## 2026-02-25 | Code-Qualitaet: Resource Leak + Duplikation behoben
 
 ### Durchgefuehrt
