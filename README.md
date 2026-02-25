@@ -82,6 +82,7 @@ python -m scripts.evaluate_ocr --all
 | Pipeline | [knowledge/PIPELINE.md](knowledge/PIPELINE.md) |
 | OCR-Engines | [knowledge/OCR-ENGINES.md](knowledge/OCR-ENGINES.md) |
 | Testplan & Ergebnisse | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
+| Dashboard & QA-Viewer | [docs/index.html](docs/index.html) |
 | Alle Docs (Index) | [knowledge/INDEX.md](knowledge/INDEX.md) |
 
 ## Team

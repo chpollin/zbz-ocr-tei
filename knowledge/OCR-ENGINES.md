@@ -143,14 +143,10 @@ Alle Evaluationsdaten (CER, WER, Einzeldokument-Ergebnisse) sind in [TESTPLAN](T
 
 Interaktiver Engine-Vergleich im Dashboard: `docs/index.html`
 
-### Noch zu tun
+### Offen
 
-- [x] API-Key erhalten
-- [x] Engine-Klasse `MistralOCR` in `ocr_pipeline.py` implementieren
-- [x] Azure-Endpoint testen (Benchmark gegen DeepSeek auf Phase-1-Daten)
-- [x] CER/WER alle Phasen gegen Referenz-TEI berechnet
-- [ ] Doc 290 analysieren (CER 18% - Scan oder OCR-Problem?)
-- [ ] Seitenweisen Vergleich fuer Monografien implementieren
+- [ ] Doc 290 analysieren (CER 18% — Scan- oder OCR-Problem?) — niedrige Prio, blockiert nichts
+- [ ] Seitenweisen Vergleich fuer Monografien implementieren — blockiert Phase-4-Evaluation
 
 ---
 
