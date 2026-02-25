@@ -137,31 +137,11 @@ Annotations sind auf 8 Seiten begrenzt. Relevant fuer: Metadaten-Extraktion, TEI
 | Mistral API direkt (console.mistral.ai) | `mistral-ocr-latest` | Einfachstes Setup, kein Azure noetig |
 | Google Vertex AI | `mistral-ocr-2512` | Google Cloud Infrastruktur |
 
-### Benchmark-Ergebnisse Phase 1 (18.02.2026)
+### Benchmark- und CER/WER-Ergebnisse
 
-| Dokument | Seiten | Zeichen | Zeit | Sek./Seite |
-|----------|--------|---------|------|------------|
-| 2310 | 3 | 8.041 | 5.6s | 1.87 |
-| 1180 | 8 | 20.121 | 6.4s | 0.80 |
-| 290 | 5 | 15.148 | 6.3s | 1.27 |
+Alle Evaluationsdaten (CER, WER, Einzeldokument-Ergebnisse) sind in [TESTPLAN](TESTPLAN.md) §Ergebnisse konsolidiert.
 
-Interaktiver Engine-Vergleich im Dashboard: `docs/index.html` (Katalog mit CER-Spalten, Engine-Filter, Pipeline-Badges).
-
-### CER/WER-Ergebnisse alle Phasen (18.02.2026)
-
-| Phase | Typ | Avg CER | Avg Genauigkeit |
-|-------|-----|---------|-----------------|
-| Phase 1 (Typ A) | Einspaltig | 9.40% | 90.60% |
-| Phase 2 (Typ B) | Zweispaltig | 6.31% | 93.69% |
-| Phase 3 (Typ D) | Spezial | 2.88% | 97.12% |
-| **Phase 1-3 Gesamt** | **10 Docs** | **5.87%** | **94.14%** |
-
-Phase 4 (Monografien, 156/142 Seiten) konnte nicht zuverlaessig evaluiert werden - Alignment-Problem bei langen Texten.
-
-Beste Einzelergebnisse: 90 (CER 1.21%), 1330 (2.60%), 1180 (3.12%)
-Schlechtestes: 290 (18.07%) - vermutlich Scan-Qualitaet
-
-Details: [TESTPLAN](TESTPLAN.md) Evaluationsmatrix
+Interaktiver Engine-Vergleich im Dashboard: `docs/index.html`
 
 ### Noch zu tun
 

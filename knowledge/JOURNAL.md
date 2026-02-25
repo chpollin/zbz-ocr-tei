@@ -14,6 +14,51 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-25 | Projekt-Aufraeumung: Redundante Dateien entfernt
+
+### Durchgefuehrt
+
+**Geloeschte Dateien (7):**
+- `nul` — Leere Datei, Windows-Artefakt (0 Bytes, nicht getrackt)
+- `scripts/test_deepseek_ocr.py` — Redundant mit `ocr_pipeline.py --engine deepseek`
+- `scripts/test_docling.py` — Redundant mit `ocr_pipeline.py --engine docling`
+- `scripts/test_mistral_ocr.py` — Redundant mit `ocr_pipeline.py --engine mistral`
+- `scripts/test_column_prompt.py` — Einmaliges Spalten-Experiment, erledigt
+- `scripts/extract_layout.py` — Layout-Extraktion in `ocr_pipeline.py` integriert
+- `PROJEKTWISSEN.md` — 95% Duplikat der 12 Knowledge-Docs, verletzt Single-Source-of-Truth
+
+**Bereinigte Redundanzen:**
+- `knowledge/OCR-ENGINES.md`: Evaluationstabellen (CER/WER) entfernt, Verweis auf TESTPLAN.md
+- `knowledge/ARCHITEKTUR.md`: `extract_layout.py`-Referenz durch `ocr_pipeline.py` ersetzt
+- `README.md`: Link `knowledge/journal.md` → `knowledge/JOURNAL.md` korrigiert, Datum aktualisiert
+- `scripts/README.md`: Script-Tabelle aktualisiert (geloeschte raus, fehlende rein)
+- `scripts/__pycache__/` + `scripts/postprocess/__pycache__/` lokal entfernt
+
+### Begruendung
+
+Systematische Analyse aller Projektdateien ergab:
+- 5 Test-Scripts waren vollstaendig redundant mit `ocr_pipeline.py` (keine Imports, nicht in CLAUDE.md)
+- PROJEKTWISSEN.md duplizierte Inhalte aus PROJEKT, ARCHITEKTUR, QUELLENANALYSE, TESTPLAN, DECISIONS, INFRASTRUKTUR
+- OCR-ENGINES.md enthielt identische Evaluationstabellen wie TESTPLAN.md
+
+### Neue/geaenderte Dateien
+
+| Datei | Aktion |
+|-------|--------|
+| `nul` | GELOESCHT |
+| `PROJEKTWISSEN.md` | GELOESCHT |
+| `scripts/test_deepseek_ocr.py` | GELOESCHT |
+| `scripts/test_docling.py` | GELOESCHT |
+| `scripts/test_mistral_ocr.py` | GELOESCHT |
+| `scripts/test_column_prompt.py` | GELOESCHT |
+| `scripts/extract_layout.py` | GELOESCHT |
+| `knowledge/OCR-ENGINES.md` | UPDATE (Evaluationstabellen entfernt) |
+| `knowledge/ARCHITEKTUR.md` | UPDATE (extract_layout-Referenz) |
+| `README.md` | UPDATE (Link-Fix, Datum) |
+| `scripts/README.md` | UPDATE (Script-Tabelle) |
+
+---
+
 ## 2026-02-25 | Dashboard-Redesign + Engine-Sichtbarkeit + Knowledge-Update
 
 ### Durchgefuehrt

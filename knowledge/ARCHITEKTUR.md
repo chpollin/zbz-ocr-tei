@@ -43,7 +43,7 @@ PDF --> Docling (Layout) --> OCR Engine --> LLM-Korrektur --> Post-Processing --
 
 ## Stufe 1: Layout-Analyse (Docling)
 
-**Skript:** `scripts/extract_layout.py`
+**Integriert in:** `scripts/ocr_pipeline.py` (Layout-Erkennung als Teil der Pipeline)
 
 | Aspekt | Details |
 |--------|---------|
@@ -177,9 +177,6 @@ output/export/{doc_id}/
 ## CLI-Befehle
 
 ```bash
-# Layout-Extraktion (ohne GPU)
-python scripts/extract_layout.py --input data/scans/2530.pdf --visualize
-
 # OCR Pipeline (GPU erforderlich)
 python scripts/ocr_pipeline.py --input data/scans/2310.pdf
 python scripts/ocr_pipeline.py --all --engine auto

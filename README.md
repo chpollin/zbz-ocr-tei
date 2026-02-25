@@ -78,7 +78,7 @@ python -m scripts.evaluate_ocr --all
 
 | Thema | Datei |
 |-------|-------|
-| Aktueller Stand | [knowledge/journal.md](knowledge/journal.md) |
+| Aktueller Stand | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
 | Architektur | [knowledge/ARCHITEKTUR.md](knowledge/ARCHITEKTUR.md) |
 | OCR-Engines | [knowledge/OCR-ENGINES.md](knowledge/OCR-ENGINES.md) |
 | Testplan & Ergebnisse | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
@@ -90,4 +90,4 @@ Projekt der Zentralbibliothek Zuerich (ZBZ) in Zusammenarbeit mit DHCraft.
 
 ---
 
-*Stand: 19.02.2026*
+*Stand: 25.02.2026*

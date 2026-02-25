@@ -6,11 +6,12 @@ Python-Skripte für die OCR-Pipeline.
 
 | Skript | Zweck | GPU |
 |--------|-------|-----|
+| `ocr_pipeline.py` | OCR mit Mistral/DeepSeek/Docling | Ja (DeepSeek) |
 | `test_all_pdfs.py` | Haupt-OCR-Tests nach Phasen | Ja |
-| `test_deepseek_ocr.py` | DeepSeek-OCR Einzeltest | Ja |
-| `test_docling.py` | Docling-OCR Test (Spalten) | Nein |
-| `test_column_prompt.py` | Prompt-Varianten für Spalten | Ja |
+| `llm_postprocess.py` | LLM-Nachkorrektur (Claude Haiku 4.5) | Nein |
 | `evaluate_ocr.py` | CER/WER-Evaluation mit HTML-Report | Nein |
+| `generate_dashboard_data.py` | Dashboard-Daten generieren | Nein |
+| `extract_pages.py` | PDF zu Seitenbildern (PNG) | Nein |
 | `extract_gnd.py` | GND-IDs aus Referenz-TEI extrahieren | Nein |
 
 ## Verwendung
@@ -45,4 +46,4 @@ clean = process_text(raw_ocr_output)
 
 ---
 
-*Aktualisiert: 29.01.2026*
+*Aktualisiert: 25.02.2026*
