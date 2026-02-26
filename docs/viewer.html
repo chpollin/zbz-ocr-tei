@@ -261,10 +261,66 @@
 
             <div class="viewer-panel" id="tei-panel" style="display:none">
                 <div class="viewer-panel-header">
-                    <span>TEI-XML</span>
+                    <span>TEI</span>
+                    <div class="tei-tabs">
+                        <button class="tei-tab active" data-mode="rendered">Gerendert</button>
+                        <button class="tei-tab" data-mode="xml">XML</button>
+                        <button class="tei-tab" data-mode="diff">Vergleich</button>
+                    </div>
+                    <button class="tei-entity-toggle" id="entity-toggle" title="Entitaeten-Sidebar (E)">Entitaeten</button>
                 </div>
                 <div class="viewer-panel-content viewer-tei">
-                    <pre id="tei-text"></pre>
+                    <div class="tei-content-wrapper">
+                        <!-- Rendered View (default) -->
+                        <div id="tei-rendered" class="tei-view tei-rendered"></div>
+
+                        <!-- XML Syntax-Highlighted View -->
+                        <div id="tei-xml-view" class="tei-view tei-xml-view hidden">
+                            <pre id="tei-xml-code"></pre>
+                        </div>
+
+                        <!-- Diff View (side-by-side) -->
+                        <div id="tei-diff-view" class="tei-view hidden" style="padding:0">
+                            <div class="tei-diff-panel">
+                                <div class="tei-diff-column">
+                                    <div class="tei-diff-header generated">Generiert</div>
+                                    <div class="tei-diff-content" id="diff-generated"></div>
+                                </div>
+                                <div class="tei-diff-column">
+                                    <div class="tei-diff-header reference">Referenz (ZBZ)</div>
+                                    <div class="tei-diff-content" id="diff-reference"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Entity Sidebar -->
+                        <div id="tei-entity-sidebar" class="tei-entity-sidebar">
+                            <div class="entity-sidebar-header">
+                                <span>Entitaeten</span>
+                                <button class="entity-sidebar-close" id="entity-close">&times;</button>
+                            </div>
+                            <div class="entity-sidebar-content">
+                                <div class="entity-group" id="entity-group-persons">
+                                    <div class="entity-group-header">
+                                        <span class="entity-type-dot person"></span> Personen
+                                    </div>
+                                    <div class="entity-group-items"></div>
+                                </div>
+                                <div class="entity-group" id="entity-group-orgs">
+                                    <div class="entity-group-header">
+                                        <span class="entity-type-dot org"></span> Organisationen
+                                    </div>
+                                    <div class="entity-group-items"></div>
+                                </div>
+                                <div class="entity-group" id="entity-group-works">
+                                    <div class="entity-group-header">
+                                        <span class="entity-type-dot work"></span> Werke
+                                    </div>
+                                    <div class="entity-group-items"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,10 +333,13 @@
         <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Quelle &nbsp;|&nbsp;
         <kbd>L</kbd> Layout &nbsp;|&nbsp;
         <kbd>T</kbd> TEI &nbsp;|&nbsp;
+        <kbd>R</kbd><kbd>X</kbd><kbd>V</kbd> TEI-Modus &nbsp;|&nbsp;
+        <kbd>E</kbd> Entitaeten &nbsp;|&nbsp;
         <kbd>i</kbd> Info
     </div>
 
     <script src="shared.js"></script>
+    <script src="tei-viewer.js"></script>
     <script>
     (function () {
         'use strict';
@@ -557,12 +616,12 @@
 
         layoutToggle.addEventListener('click', function () { toggleLayout(); });
 
-        // ---- TEI Toggle ----
+        // ---- TEI Panel ----
         var teiPanel = ZBZ.$('#tei-panel');
         var teiToggle = ZBZ.$('#tei-toggle');
-        var teiText = ZBZ.$('#tei-text');
         var divider2 = ZBZ.$('#divider2');
 
+        // ---- TEI: Panel Toggle ----
         function toggleTei() {
             state.teiVisible = !state.teiVisible;
             teiToggle.classList.toggle('active', state.teiVisible);
@@ -570,28 +629,15 @@
             if (state.teiVisible) {
                 teiPanel.style.display = '';
                 divider2.style.display = '';
-                // Distribute panels evenly: 33% each
                 ZBZ.$('#image-panel').style.flex = '1 1 0';
                 ZBZ.$('#text-panel').style.flex = '1 1 0';
                 teiPanel.style.flex = '1 1 0';
-                loadTei();
+                TeiViewer.loadTei(state.docId, state.page);
             } else {
                 teiPanel.style.display = 'none';
                 divider2.style.display = 'none';
-                // Restore 2-panel layout
                 ZBZ.$('#image-panel').style.flex = '1';
                 ZBZ.$('#text-panel').style.flex = '1';
-            }
-        }
-
-        async function loadTei() {
-            if (!state.teiVisible) return;
-            teiText.textContent = 'Lade...';
-            var xml = await ZBZ.fetchPageTei(state.docId, state.page);
-            if (xml) {
-                teiText.textContent = xml;
-            } else {
-                teiText.innerHTML = '<span style="color:var(--text-muted);font-style:italic">Keine TEI-Daten fuer diese Seite vorhanden.</span>';
             }
         }
 
@@ -634,7 +680,7 @@
 
             await loadText();
             renderLayout();
-            loadTei();
+            if (state.teiVisible) TeiViewer.loadTei(state.docId, state.page);
 
             pageInfo.textContent = page + ' / ' + state.totalPages;
             prevBtn.disabled = page <= 1;
@@ -705,6 +751,18 @@
                     break;
                 case 't': case 'T':
                     toggleTei();
+                    break;
+                case 'r': case 'R':
+                    if (state.teiVisible) TeiViewer.switchMode('rendered');
+                    break;
+                case 'x': case 'X':
+                    if (state.teiVisible) TeiViewer.switchMode('xml');
+                    break;
+                case 'v': case 'V':
+                    if (state.teiVisible) TeiViewer.switchMode('diff');
+                    break;
+                case 'e': case 'E':
+                    if (state.teiVisible) TeiViewer.toggleEntitySidebar();
                     break;
                 case 'i': case 'I':
                     ZBZ.$('#doc-info-bar').classList.toggle('collapsed');

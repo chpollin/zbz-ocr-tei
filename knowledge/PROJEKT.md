@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-25
+updated: 2026-02-26
 tags: [zbz-ocr-tei, projekt, oekosystem, vision]
 status: active
 ---
@@ -72,7 +72,7 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-## Komponentenstatus (25.02.2026)
+## Komponentenstatus (26.02.2026)
 
 | Komponente | Status | Details |
 |------------|--------|---------|
@@ -92,7 +92,8 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Dashboard-Daten | Erledigt | `scripts/generate_dashboard_data.py` → dashboard.json |
 | Layout-Analyse | Teilweise | `scripts/run_layout_analysis.py`, 8/15 Docs mit JSON + Overlay-PNGs. QA: BBox korrekt, 3 Probleme (O21) |
 | TEI-Generator | Erledigt | `scripts/tei/tei_generator.py`, 383 TEI-XML Dateien, DTA-Basisformat |
-| Viewer TEI-Panel | Erledigt | 3-Panel Viewer (Faksimile + OCR + TEI), Toggle T |
+| Viewer TEI-Panel | Erledigt | 3-Panel Viewer (Faksimile + OCR + TEI), Toggle T, Gerenderte Ansicht, Syntax-Highlighting, Diff, Entity-Sidebar |
+| Viewer TEI-Refactoring | Erledigt | TEI-JS in `docs/tei-viewer.js` extrahiert (~300 Zeilen), viewer.html 1200→816 Zeilen |
 | Layout-Post-Processing | Ausstehend | Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik (O21) |
 | PAGE-XML-Generator | Ausstehend | Layout + OCR → PAGE-XML (Phase 1 in PLAN.md) |
 | NER + GND | Ausstehend | Entity Recognition + GND-Linking (Phase 2 in PLAN.md) |
@@ -131,4 +132,4 @@ M0 (Bilder) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-26*

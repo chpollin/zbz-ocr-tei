@@ -96,6 +96,86 @@
             return null;
         },
 
+        // ---- Reference TEI Fetching (per-page extraction from whole-document XML) ----
+        async fetchRefTeiPage(docId, page) {
+            const key = `ref-tei/${docId}/${page}`;
+            if (_textCache[key] !== undefined) return _textCache[key];
+
+            // Cache the whole document under a separate key
+            const docKey = `ref-tei-doc/${docId}`;
+            let docXml = _textCache[docKey];
+
+            if (docXml === undefined) {
+                const paths = [
+                    `../data/referenz-tei/Pilot/${docId}.xml`,
+                    `../data/referenz-tei/${docId}.xml`,
+                ];
+                docXml = null;
+                for (const path of paths) {
+                    try {
+                        const r = await fetch(path);
+                        if (r.ok) {
+                            docXml = await r.text();
+                            break;
+                        }
+                    } catch (e) { /* ignore */ }
+                }
+                _textCache[docKey] = docXml;
+            }
+
+            if (!docXml) {
+                _textCache[key] = null;
+                return null;
+            }
+
+            // Parse and extract page content between <pb n="page"> and next <pb>
+            try {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(docXml, 'text/xml');
+                const pbs = doc.querySelectorAll('pb');
+                let targetPb = null;
+                let targetIdx = -1;
+
+                for (let i = 0; i < pbs.length; i++) {
+                    if (pbs[i].getAttribute('n') == page) {
+                        targetPb = pbs[i];
+                        targetIdx = i;
+                        break;
+                    }
+                }
+
+                if (!targetPb) {
+                    _textCache[key] = null;
+                    return null;
+                }
+
+                // Collect nodes between this pb and the next
+                const nextPb = targetIdx + 1 < pbs.length ? pbs[targetIdx + 1] : null;
+                const serializer = new XMLSerializer();
+                let result = serializer.serializeToString(targetPb) + '\n';
+                let node = targetPb.nextSibling;
+
+                while (node && node !== nextPb) {
+                    if (node.nodeType === 1 || (node.nodeType === 3 && node.textContent.trim())) {
+                        result += serializer.serializeToString(node) + '\n';
+                    }
+                    node = node.nextSibling;
+                }
+
+                // Wrap in minimal TEI structure
+                const pageXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+                    '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n<text><body><div n="1">\n' +
+                    result +
+                    '</div></body></text>\n</TEI>';
+
+                _textCache[key] = pageXml;
+                return pageXml;
+            } catch (e) {
+                _textCache[key] = null;
+                return null;
+            }
+        },
+
         // ---- Layout Region Colors ----
         LAYOUT_COLORS: {
             zb_heading:   { stroke: '#dc2626', fill: 'rgba(220,38,38,0.12)',  label: 'Heading' },

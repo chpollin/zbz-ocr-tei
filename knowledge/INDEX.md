@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-02-25
+updated: 2026-02-26
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -114,4 +114,4 @@ knowledge/
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-26*

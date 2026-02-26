@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-25
+updated: 2026-02-26
 tags: [zbz-ocr-tei, pipeline, datenfluss, ocr]
 status: active
 ---
@@ -324,9 +324,10 @@ python -m scripts.postprocess.pipeline
 | `docs/viewer.html` | Dokumentansicht: Faksimile + OCR-Text + TEI-XML, Source-Toggle, Layout-Overlay |
 | `docs/shared.css` | Unified Design System (CSS Custom Properties) |
 | `docs/shared.js` | Shared Utilities (Data Loading, Formatting, DOM Helpers) |
+| `docs/tei-viewer.js` | TEI-Rendering: Gerenderte Ansicht, Syntax-Highlighting, Diff, Entities |
 | `docs/data/dashboard.json` | Generierte Datenbasis (aus `scripts/generate_dashboard_data.py`) |
 
-Das Dashboard zeigt Pipeline-Status, CER-Vergleich (Mistral/LLM/DeepSeek), Engine-Verfuegbarkeit und filterbaren Dokumentkatalog. Daten werden statisch aus Pipeline-Outputs generiert.
+Das Dashboard zeigt Pipeline-Status, CER-Vergleich (Mistral/LLM/DeepSeek), Engine-Verfuegbarkeit und filterbaren Dokumentkatalog. Daten werden statisch aus Pipeline-Outputs generiert. TEI-Rendering (Gerenderte Ansicht, XML-Highlighting, Referenz-Diff, Entity-Sidebar) ist in `tei-viewer.js` ausgelagert.
 
 ---
 
@@ -339,4 +340,4 @@ Das Dashboard zeigt Pipeline-Status, CER-Vergleich (Mistral/LLM/DeepSeek), Engin
 
 ---
 
-*Erstellt: 2026-01-29 | Umbenannt von ARCHITEKTUR.md: 2026-02-25*
+*Erstellt: 2026-01-29 | Umbenannt von ARCHITEKTUR.md: 2026-02-25 | Aktualisiert: 2026-02-26*

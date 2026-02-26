@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-02-25
+updated: 2026-02-26
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,99 @@ status: active
 Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) konsolidiert, Projektstatus in [PROJEKT](PROJEKT.md).
 
 **Abhängigkeiten:** Keine (eigenständiges Log)
+
+---
+
+## 2026-02-26 | TEI-Viewer Refactoring: tei-viewer.js extrahiert
+
+### Durchgefuehrt
+
+1. **TEI-JavaScript aus `viewer.html` in `docs/tei-viewer.js` extrahiert** (~300 Zeilen):
+   - Neuer Namespace `window.TeiViewer` (analog zu `window.ZBZ` in shared.js)
+   - Public API: `loadTei(docId, page)`, `switchMode(mode)`, `toggleEntitySidebar()`
+   - Internes `teiState`-Objekt fuer Lazy-Rendering-Kontext (docId/page)
+   - Auto-Init: `init()` bindet Tab-Listener und Entity-Sidebar-Listener beim Laden
+   - ES5-Konventionen beibehalten (var, IIFE, keine Arrow-Functions)
+
+2. **viewer.html von ~1200 auf ~816 Zeilen reduziert**:
+   - `<script src="tei-viewer.js"></script>` nach shared.js eingebunden
+   - `teiState`-Objekt entfernt (jetzt in tei-viewer.js)
+   - ~376 Zeilen TEI-Funktionen entfernt (switchTeiMode, loadTei, parseTeiXml, renderTeiView, renderTeiNode, createEntitySpan, renderTeiXml, highlightXml, renderTeiDiff, extractEntities, toggleEntitySidebar, renderEntitySidebar, scrollToEntity, Entity-Listener)
+   - Aufrufe angepasst: `loadTei()` → `TeiViewer.loadTei(state.docId, state.page)`, Keyboard-Shortcuts → `TeiViewer.switchMode()` / `TeiViewer.toggleEntitySidebar()`
+   - Sichtbarkeits-Guard nach aussen verlagert: `if (state.teiVisible) TeiViewer.loadTei(...)`
+
+3. **Knowledge-Updates**: PIPELINE.md, PROJEKT.md, DECISIONS.md, INDEX.md, JOURNAL.md aktualisiert
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `docs/tei-viewer.js` | **NEU** -- TEI-Rendering-Logik (~300 Zeilen), `window.TeiViewer` |
+| `docs/viewer.html` | REFACTOR -- ~376 Zeilen TEI-Code entfernt, Script-Tag eingefuegt |
+| `knowledge/JOURNAL.md` | UPDATE -- Refactoring-Eintrag |
+| `knowledge/PIPELINE.md` | UPDATE -- tei-viewer.js in Dashboard-Tabelle |
+| `knowledge/PROJEKT.md` | UPDATE -- Komponentenstatus |
+| `knowledge/INDEX.md` | UPDATE -- Timestamp |
+
+### Naechster Schritt
+
+Layout-Post-Processing (O21), dann restliche 7 Docs mit GPU analysieren, dann PAGE-XML-Generator (Phase 1).
+
+---
+
+## 2026-02-26 | TEI-Viewer Upgrade: Rendered View, Syntax-Highlighting, Diff, Entity-Navigation
+
+### Durchgefuehrt
+
+1. **TEI-Panel komplett ueberarbeitet** (`docs/viewer.html`):
+   - 3-Tab-System: **Gerendert** | **XML** | **Vergleich** (statt rohes XML in `<pre>`)
+   - Lazy Rendering: Jeder Tab wird erst beim ersten Umschalten gerendert
+   - Neue Keyboard-Shortcuts: `R`/`X`/`V` (TEI-Modus), `E` (Entity-Sidebar)
+
+2. **Gerenderte Ansicht** (Default-Tab):
+   - Rekursiver TEI-zu-HTML-Renderer (`renderTeiNode()`) mit 17 Element-Typen
+   - `DOMParser` mit Namespace-Stripping (`parseTeiXml()`)
+   - Headings (`<head>` → `.tei-head`), Absaetze, Fussnoten (eingerueckt, linker Border)
+   - Bold/Italic/Underline/Superscript/Subscript aus `<hi rendition="...">`
+   - Seitenumbrueche (`<pb>` → gestrichelte Linie)
+   - Figure/Caption-Bloecke, Speaker/Speech fuer Interviews
+   - Unbekannte Elemente werden transparent durchgereicht (nur Children rendern)
+
+3. **Entity-Highlighting + Navigation**:
+   - `<persName>` blau, `<orgName>` violett, `<bibl>` teal hinterlegt
+   - Hover-Tooltip zeigt GND-ID, Click oeffnet lobid.org/gnd/{ID}
+   - Entity-Sidebar (260px, Slide-Animation) mit Personen/Organisationen/Werke
+   - Jeder Eintrag: Name, Vorkommen-Zaehler, GND-Link
+   - Click auf Sidebar-Eintrag → Scroll + Flash-Animation im Rendered View
+
+4. **XML Syntax-Highlighting**:
+   - Regex-basierter Highlighter (`highlightXml()`)
+   - Tags gruen, Attribut-Namen blau, Attribut-Werte rot, Kommentare grau
+   - XML-Declaration grau, robuste Regex fuer verschachtelte Attribute
+
+5. **Referenz-TEI Vergleich** (Tab "Vergleich"):
+   - Side-by-Side Layout: Generiert (links) | Referenz ZBZ (rechts)
+   - `fetchRefTeiPage()` in `shared.js`: Laedt Gesamt-Dokument, extrahiert Seite per `<pb>`-Splitting
+   - Beide Seiten mit Syntax-Highlighting
+   - Graceful Degradation bei fehlender Referenz
+
+6. **CSS Design-System erweitert** (`docs/shared.css`, ~150 neue Zeilen):
+   - TEI-Tabs, Rendered-View-Elemente, Entity-Highlighting mit Farbcodierung
+   - Entity-Flash-Animation (`@keyframes entityFlash`)
+   - Diff-Panel, Entity-Sidebar mit Slide-Transition
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `docs/viewer.html` | REWRITE TEI-Panel -- 757→1200 Zeilen, Tabs, Rendering, Entities |
+| `docs/shared.css` | ERWEITERN -- ~150 Zeilen TEI-Styles |
+| `docs/shared.js` | ERWEITERN -- `fetchRefTeiPage()` mit Page-Extraktion + Caching |
+| `output/tei/2310_p1.xml` | **MOCK** -- Testdaten mit Entities, Fussnote, Bold/Italic |
+
+### Naechster Schritt
+
+Layout-Post-Processing (O21), dann restliche 7 Docs mit GPU analysieren, dann PAGE-XML-Generator (Phase 1).
 
 ---
 
@@ -638,4 +731,4 @@ Prompt enthaelt Dokumentkontext aus TESTPLAN (Typ, Sprache, Genre).
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-26 (TEI-Viewer Refactoring)*
