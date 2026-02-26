@@ -14,6 +14,57 @@ Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) kon
 
 ---
 
+## 2026-02-26 | Redundanz-Bereinigung: STATUS.md, CLAUDE.md, PLAN.md, README.md
+
+### Durchgefuehrt
+
+1. **Redundanz-Analyse** aller Root-Docs (CLAUDE.md, STATUS.md, PLAN.md) gegen knowledge/:
+   - Vergleichsmatrix mit 18 Inhaltskategorien erstellt
+   - 4 Dateien mit Redundanzen identifiziert, Massnahmen definiert
+
+2. **STATUS.md geloescht** (100% redundant):
+   - Alle Inhalte existierten aktueller in PROJEKT.md, TESTPLAN.md, DECISIONS.md
+   - War chronisch veraltet (Stand 25.02., fehlte TEI-Viewer, Layout-QA)
+
+3. **CLAUDE.md verschlankt** (72 → 32 Zeilen):
+   - Knowledge-Index (12 Zeilen) → Einzeiler-Verweis auf INDEX.md
+   - CLI-Befehle (7 Befehle) → Verweis auf PIPELINE.md + 4 haeufigste
+   - Entscheidungshilfen (4 Bullets) → gestrichen (INDEX.md hat sie)
+   - Frontend-Konvention (ES5, Namespaces) ergaenzt
+
+4. **PLAN.md bereinigt** (505 → ~300 Zeilen):
+   - "Ausgangslage/Was existiert" → gestrichen (PIPELINE.md)
+   - Phase 0 → auf "Erledigt" aktualisiert (war "ausstehend")
+   - Phase 3 TEI-Mapping → Verweis auf TEI-MAPPING.md statt Duplikat
+   - Risikomatrix R7-R13 → nach DECISIONS.md verschoben
+   - Phasenuebersicht mit aktuellem Status ergaenzt
+
+5. **DECISIONS.md erweitert**: R7-R13 aus PLAN.md konsolidiert (R8 als geloest markiert)
+
+6. **README.md komplett ueberarbeitet** (92 → 120 Zeilen):
+   - Pilotstand-Sektion mit allen 6 Pipeline-Stufen und konkreten Zahlen
+   - OCR-Qualitaet nach Dokumenttyp (alle 15 Docs, CER 6.42%)
+   - Ordnerstruktur aktualisiert (Dashboard-Dateien, tei-viewer.js, generate_dashboard_data.py)
+   - Schnellstart erweitert (Layout, TEI, Dashboard-Befehle)
+   - Dashboard+Viewer Features beschrieben (3-Panel, TEI-Viewer, Entities, Keyboard-Shortcuts)
+   - Dokumentation-Tabelle vollstaendig (9 Eintraege statt 6)
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `STATUS.md` | **GELOESCHT** -- 100% redundant mit knowledge/ |
+| `CLAUDE.md` | VERSCHLANKT -- 72→32 Zeilen, Verweise statt Duplikate |
+| `PLAN.md` | BEREINIGT -- 505→300 Zeilen, Status aktualisiert, Redundanzen entfernt |
+| `README.md` | REWRITE -- Pilotstand, OCR-Qualitaet, Dashboard-Features, Docs-Tabelle |
+| `knowledge/DECISIONS.md` | ERWEITERN -- R7-R13 konsolidiert |
+
+### Naechster Schritt
+
+Layout-Post-Processing (O21), dann restliche 7 Docs mit GPU analysieren, dann PAGE-XML-Generator (Phase 1).
+
+---
+
 ## 2026-02-26 | TEI-Viewer Refactoring: tei-viewer.js extrahiert
 
 ### Durchgefuehrt

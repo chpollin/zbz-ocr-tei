@@ -2,28 +2,15 @@
 
 ## Arbeitsweise
 
-1. **Journal führen**: Jede Session in `knowledge/JOURNAL.md` dokumentieren
+1. **Journal fuehren**: Jede Session in `knowledge/JOURNAL.md` dokumentieren
 2. **Wissen im knowledge/-Ordner**: Nicht in CLAUDE.md duplizieren
-3. **Output nicht versionieren**: Generierte Dateien gehören in `output/`
-4. **Tests vor Änderungen**: Evaluation laufen lassen, Metriken vergleichen
-5. **Single Source of Truth**: Jeden Fakt nur an einer Stelle führen, Querverweise setzen
+3. **Output nicht versionieren**: Generierte Dateien gehoeren in `output/`
+4. **Tests vor Aenderungen**: Evaluation laufen lassen, Metriken vergleichen
+5. **Single Source of Truth**: Jeden Fakt nur an einer Stelle fuehren, Querverweise setzen
 
-## Projektwissen lesen
+## Projektwissen
 
-| Thema | Datei |
-|-------|-------|
-| Navigation (Start hier) | `knowledge/INDEX.md` |
-| Ökosystem & Meilensteine | `knowledge/PROJEKT.md` |
-| Pipeline | `knowledge/PIPELINE.md` |
-| Korpus & Dokumenttypen | `knowledge/QUELLENANALYSE.md` |
-| OCR-Engines | `knowledge/OCR-ENGINES.md` |
-| TEI-Regeln | `knowledge/TEI-MAPPING.md` |
-| GND & NER | `knowledge/GND-STRATEGIE.md` |
-| Testphasen & Ergebnisse | `knowledge/TESTPLAN.md` |
-| Azure, Podman, CI/CD | `knowledge/INFRASTRUKTUR.md` |
-| Entscheidungen & Offenes | `knowledge/DECISIONS.md` |
-| ZBZ-Redaktionsworkflow | `knowledge/ZBZ-WORKFLOW.md` |
-| Arbeitsjournal | `knowledge/JOURNAL.md` |
+Einstieg: `knowledge/INDEX.md` — Navigation, Dokumentmatrix, Abhaengigkeiten, Kernbegriffe.
 
 ## Sicherheit
 
@@ -35,37 +22,18 @@
 - **Windows-Encoding**: Keine Unicode-Sonderzeichen in Print-Statements
 - **Pfade**: Absolute Pfade oder pathlib verwenden
 - **Ausgabe**: JSON fuer Daten, HTML fuer Reports
+- **Frontend**: ES5 JavaScript (var, IIFE, keine Arrow-Functions), `ZBZ.*` / `TeiViewer.*` Namespaces
 
 ## Befehle
 
+Vollstaendige CLI-Referenz: `knowledge/PIPELINE.md` §CLI-Befehle.
+
 ```bash
-# OCR-Tests (GPU erforderlich)
-python scripts/test_all_pdfs.py --phase phase1
+# Haeufigste Befehle (ohne GPU)
+python -m scripts.tei.tei_generator              # TEI-XML generieren
+python scripts/evaluate_ocr.py --all             # Evaluation
+python -m scripts.generate_dashboard_data        # Dashboard-Daten
 
-# Layout-Analyse (GPU erforderlich fuer Docling)
-python -m scripts.run_layout_analysis              # alle Dokumente
-python -m scripts.run_layout_analysis --doc 2310   # einzelnes Dokument
-
-# Layout Overlay-PNGs erzeugen (ohne GPU)
-python -m scripts.run_layout_analysis --overlay
-
-# TEI-XML generieren (ohne GPU)
-python -m scripts.tei.tei_generator              # alle Dokumente
-python -m scripts.tei.tei_generator --doc 2310   # einzelnes Dokument
-
-# Evaluation (ohne GPU)
-python scripts/evaluate_ocr.py --all
-
-# Post-Processing (ohne GPU)
-python -m scripts.postprocess.pipeline
-
-# Dashboard-Daten generieren (ohne GPU)
-python -m scripts.generate_dashboard_data
+# GPU erforderlich
+python -m scripts.run_layout_analysis            # Layout-Analyse (Docling)
 ```
-
-## Entscheidungshilfen
-
-- **Neuer Fakt?** → In genau ein knowledge/-Dokument eintragen, andere verweisen
-- **Neue Entscheidung?** → In DECISIONS.md dokumentieren
-- **Neuer Test?** → TESTPLAN.md aktualisieren
-- **Session beenden?** → JOURNAL.md aktualisieren

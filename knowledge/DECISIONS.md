@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-25
+updated: 2026-02-26
 tags: [zbz-ocr-tei, decisions, offen, entschieden]
 status: active
 ---
@@ -95,12 +95,19 @@ Kann später geklärt werden.
 
 | # | Risiko | Impact | Mitigation | Status |
 |---|--------|--------|------------|--------|
-| R1 | Spalten-Problem unlösbar | Hoch | Docling trennt Spalten korrekt (E20). Gemini als Fallback | **Geloest** (E20) |
-| R2 | TEI zu komplex | Mittel | Zurueck im Scope (E21). Referenz-TEI als Ground Truth, schrittweise Umsetzung | Offen |
-| R3 | GND-Halluzinationen | Mittel | Zurueck im Scope (E21). Seed-Dictionary + Confidence-Schwelle | Offen |
-| R4 | Azure-API-Kompatibilitaet Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | **Geloest** -- Azure AI Foundry Endpoint funktioniert (18.02.) |
+| R1 | Spalten-Problem unloesbar | Hoch | Docling trennt Spalten korrekt (E20). Gemini als Fallback | **Geloest** (E20) |
+| R2 | TEI zu komplex | Mittel | Referenz-TEI als Ground Truth, schrittweise Umsetzung | Offen |
+| R3 | GND-Halluzinationen | Mittel | Seed-Dictionary + Confidence-Schwelle | Offen |
+| R4 | Azure-API-Kompatibilitaet Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | **Geloest** (18.02.) |
 | R5 | Fork-Divergenz zwischen DHCraft und ZBZ | Mittel | Merge-Strategie definieren, CI-basierte Tests | Wartet auf Meeting (→ O3) |
-| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten | **Geloest** -- Formatierung erhalten, PAGE-XML/TEI-Transformation konvertiert zu Markup (E14) |
+| R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten | **Geloest** (E14) |
+| R7 | Transkribus-Inkompatibilitaet PAGE-XML | Hoch | ZBZ-Exportdatei anfordern, @type/@custom verifizieren | Offen |
+| R8 | Docling BBox-Qualitaet unzureichend | Mittel | Phase 0 bestanden (E20). Gemini als Fallback, Kraken als Alternative | **Geloest** (E20) |
+| R9 | Fussnoten-Inline-Platzierung fehlerhaft | Mittel | Default: end-of-div, inline als Opt-in | Offen |
+| R10 | NER-Qualitaet auf Franzoesisch (66% Korpus) | Mittel | Seed-Dictionary als erste Schicht VOR LLM-NER | Offen |
+| R11 | lobid.org API-Aenderungen | Niedrig | Cache + Fallback auf lokale GND-Daten | Offen |
+| R12 | TEI-Schema-Inkompatibilitaet | Hoch | Referenz-TEI als Ground Truth, Schema-Validierung | Offen |
+| R13 | Gemini API-Key fehlt | Niedrig | Gemini ist optional, Docling reicht fuer Hauptfall | Akzeptiert |
 
 ---
 
@@ -113,4 +120,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25 (E16-E22, O18-O21)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-26 (R7-R13 aus PLAN.md konsolidiert)*
