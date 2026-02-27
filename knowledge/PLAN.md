@@ -330,7 +330,7 @@ docling>=2.75.0               # Layout analysis (already installed)
 
 ## Risks
 
-See [DECISIONS.md](DECISIONS.md) §Risks (R1-R13).
+See [DECISIONS.md](DECISIONS.md) §Risks.
 
 ---
 

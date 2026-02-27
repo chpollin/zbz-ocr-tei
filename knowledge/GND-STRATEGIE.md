@@ -226,7 +226,7 @@ Für jede Entität:
 - [TEI-MAPPING](TEI-MAPPING.md) for TEI element specification
 - [QUELLENANALYSE](QUELLENANALYSE.md) for corpus and languages
 - [PIPELINE](PIPELINE.md) for pipeline position
-- [DECISIONS](DECISIONS.md) O11-O12 for open GND questions
+- [DECISIONS](DECISIONS.md) O11 for open GND questions
 
 ---
 

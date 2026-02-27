@@ -124,7 +124,7 @@ ENTRYPOINT ["python", "-m", "scripts.ocr_pipeline"]
 | Merge Direction | GitHub -> GitLab (upstream updates) |
 | Fork Customizations | API keys, endpoints, ZBZ-specific config |
 
-Details on merge strategy: To be defined in alignment call (-> [DECISIONS](DECISIONS.md) O3).
+Details on merge strategy: To be defined.
 
 **Status:** .gitlab-ci.yml not yet implemented.
 
@@ -176,7 +176,7 @@ The QA dashboard (`docs/`) is a purely static web application and does not requi
 
 - [PIPELINE](PIPELINE.md) for pipeline architecture
 - [OCR-ENGINES](OCR-ENGINES.md) for engine details
-- [DECISIONS](DECISIONS.md) O1 (Azure key), O3 (fork model)
+- [DECISIONS](DECISIONS.md) for open questions
 
 ---
 

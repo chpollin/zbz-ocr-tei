@@ -272,7 +272,7 @@ Docling's built-in OCR (RapidOCR) has encoding issues with French text. Example:
 - [PIPELINE](PIPELINE.md) for pipeline integration
 - [TESTPLAN](TESTPLAN.md) for quality measurements
 - [INFRASTRUKTUR](INFRASTRUKTUR.md) for Azure configuration
-- [DECISIONS](DECISIONS.md) O1 (Azure key), O10 (column solution)
+- [DECISIONS](DECISIONS.md) for open questions
 
 ---
 

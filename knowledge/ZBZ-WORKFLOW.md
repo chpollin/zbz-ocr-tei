@@ -149,7 +149,7 @@ The dashboard replaces `docs/benchmark.html` and serves as the central QA tool.
 
 - [PROJEKT](PROJEKT.md) for project scope and milestones
 - [PIPELINE](PIPELINE.md) for technical pipeline details
-- [DECISIONS](DECISIONS.md) O8 (Alma metadata), O15 (Transkribus tags)
+- [DECISIONS](DECISIONS.md) O8 (Alma metadata)
 
 ---
 

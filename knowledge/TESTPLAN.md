@@ -51,9 +51,7 @@ Pilot files and document types: See [QUELLENANALYSE](QUELLENANALYSE.md) §Pilot 
 
 **Known issue:** 2530 has incorrect column order with DeepSeek.
 
-**Three solution approaches:** See [DECISIONS](DECISIONS.md) O10.
-
-**Status:** Mistral OCR completed, Gemini pending
+**Status:** Mistral OCR completed. Column separation resolved by Docling (E20).
 
 ### Phase 3: Special Formats (Type D)
 
@@ -226,7 +224,7 @@ python scripts/test_all_pdfs.py --phase phase1
 
 - [QUELLENANALYSE](QUELLENANALYSE.md) for pilot files and document types
 - [OCR-ENGINES](OCR-ENGINES.md) for engine-specific information
-- [DECISIONS](DECISIONS.md) O10 for column solution approaches
+- [DECISIONS](DECISIONS.md) for open questions
 
 ---
 

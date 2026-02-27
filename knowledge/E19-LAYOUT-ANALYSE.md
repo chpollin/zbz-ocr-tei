@@ -63,7 +63,7 @@ The layout analysis must:
 - BBox for images/figures: Yes (pixel coordinates)
 - BBox for text regions: **No** -- no coordinates for headings, paragraphs, footnotes
 - `document_annotation`: Structured JSON extraction possible, but **max 8 pages/request**
-- `extract_header`/`extract_footer`: Yes (not yet tested, O19)
+- `extract_header`/`extract_footer`: Yes (not yet tested)
 - Structural recognition via Markdown: Implicit (# Heading, Paragraphs, Lists)
 
 **Costs:**

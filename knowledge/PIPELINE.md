@@ -207,7 +207,7 @@ Seite: {page_num} von {total_pages}
 | `dehyphenate()` | Resolve hyphenation | `Wis- senschaft` -> `Wissenschaft` |
 | `clean_markdown()` | Remove Markdown syntax | `## Titel` -> `Titel` |
 
-**Important (R6):** Markdown formatting (`**bold**`, `*italic*`) must be PRESERVED for export. PAGE-XML stores text as-is in `<TextEquiv><Unicode>`, TEI transformation converts to `<hi rendition>`. Therefore `clean_markdown()` is **not** called in the production path — only `normalize_text()` and `dehyphenate()` are safe.
+**Important:** Markdown formatting (`**bold**`, `*italic*`) must be PRESERVED for export. PAGE-XML stores text as-is in `<TextEquiv><Unicode>`, TEI transformation converts to `<hi rendition>`. Therefore `clean_markdown()` is **not** called in the production path — only `normalize_text()` and `dehyphenate()` are safe.
 
 ---
 
