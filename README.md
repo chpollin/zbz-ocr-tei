@@ -1,138 +1,138 @@
 # ZBZ-OCR-TEI
 
-LLM-gestuetzte OCR- und TEI-Pipeline fuer die Jeanne-Hersch-Edition der Zentralbibliothek Zuerich.
+LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbibliothek Zurich.
 
-## Was macht dieses Repo?
+## What does this repo do?
 
-Vollautomatische End-to-End-Pipeline fuer 289 Texte (7.200 Seiten) aus dem Nachlass von Jeanne Hersch:
+Fully automated end-to-end pipeline for 289 texts (7,200 pages) from the estate of Jeanne Hersch:
 
 ```
-PDF-Scans --> Bilder --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
-              (PNG)    (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
+PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
+              (PNG)     (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
 ```
 
-## Pilotstand (26.02.2026)
+## Pilot Status (26.02.2026)
 
-15 Pilot-Dokumente (383 Seiten) verarbeitet:
+15 pilot documents (383 pages) processed:
 
-| Komponente | Status | Ergebnis |
-|------------|--------|----------|
-| Bildextraktion | 15/15 Docs | 383 Seitenbilder (PNG) |
-| OCR (Mistral) | 15/15 Docs | CER 6.42%, Genauigkeit 93.58% |
-| LLM-Nachkorrektur | 15/15 Docs | Optional (E17), Haiku 4.5 Variante C |
-| Layout-Analyse | 8/15 Docs | Docling 2.75, BBox + Regionen (7 Docs brauchen GPU) |
-| TEI-XML | 15/15 Docs | 383 TEI-XML Dateien (DTA-Basisformat, E22) |
-| Evaluation | 15/15 Docs | CER/WER pro Seite + Dashboard |
+| Component | Status | Result |
+|-----------|--------|--------|
+| Image extraction | 15/15 Docs | 383 page images (PNG) |
+| OCR (Mistral) | 15/15 Docs | CER 6.42%, accuracy 93.58% |
+| LLM post-correction | 15/15 Docs | Optional (E17), Haiku 4.5 Variant C |
+| Layout analysis | 8/15 Docs | Docling 2.75, BBox + regions (7 docs need GPU) |
+| TEI-XML | 15/15 Docs | 383 TEI-XML files (DTA-Basisformat, E22) |
+| Evaluation | 15/15 Docs | CER/WER per page + dashboard |
 
-### OCR-Qualitaet nach Dokumenttyp
+### OCR Quality by Document Type
 
-| Typ | Beschreibung | Mistral CER | Genauigkeit |
-|-----|-------------|-------------|-------------|
-| A | Einspaltig | 9.40% | 90.60% |
-| B | Zweispaltig | 6.31% | 93.69% |
-| C | Monografie | 2.65% | 97.35% |
-| D | Spezialformat | 2.88% | 97.12% |
+| Type | Description | Mistral CER | Accuracy |
+|------|-------------|-------------|----------|
+| A | Single-column | 9.40% | 90.60% |
+| B | Two-column | 6.31% | 93.69% |
+| C | Monograph | 2.65% | 97.35% |
+| D | Special format | 2.88% | 97.12% |
 
-### Naechste Schritte
+### Next Steps
 
-Layout-Post-Processing (O21) → PAGE-XML-Generator (Phase 1) → NER+GND (Phase 2) → TEI erweitern (Phase 3) → Produktionslauf (289 Docs). Details: [PLAN.md](PLAN.md).
+Layout post-processing (O21) → PAGE-XML generator (Phase 1) → NER+GND (Phase 2) → TEI extension (Phase 3) → Production run (289 docs). Details: [PLAN.md](PLAN.md).
 
-## Ordnerstruktur
+## Directory Structure
 
 ```
 zbz-ocr-tei/
-  knowledge/              # 12 Projektdokumente (Single Source of Truth)
-  scripts/                # Python-Pipeline
-    config.py             # Zentrale Konfiguration
+  knowledge/              # 12 project documents (Single Source of Truth)
+  scripts/                # Python pipeline
+    config.py             # Central configuration
     ocr_pipeline.py       # OCR (Mistral/DeepSeek)
-    llm_postprocess.py    # LLM-Nachkorrektur (Haiku 4.5)
-    run_layout_analysis.py  # Layout-Analyse (Docling)
-    evaluate_ocr.py       # CER/WER-Evaluation
-    generate_dashboard_data.py  # Dashboard-Daten
-    tei/                  # TEI-XML Generator
-    postprocess/          # Deterministisches Post-Processing
-  docs/                   # Dashboard + QA-Viewer
-    index.html            # Dashboard: Metriken, Dokumentkatalog, CER-Vergleich
-    viewer.html           # 3-Panel Viewer: Faksimile + OCR + TEI
-    tei-viewer.js         # TEI-Rendering: Gerenderte Ansicht, Diff, Entities
-    shared.css / shared.js  # Design System + Shared Utilities
-    data/dashboard.json   # Generierte Datenbasis
-  data/                   # Quelldaten (nicht versioniert)
-    scans/                # 286 PDF-Digitalisate
-    referenz-tei/         # 25 Referenz-TEI (ZBZ-annotiert)
-    page-xml-transkribus/ # 24 Transkribus-Exporte (PAGE-XML)
-  output/                 # Generierte Daten (nicht versioniert)
-  PLAN.md                 # Implementierungsplan (Phasen 0-5)
-  .env.example            # Vorlage fuer API-Keys
+    llm_postprocess.py    # LLM post-correction (Haiku 4.5)
+    run_layout_analysis.py  # Layout analysis (Docling)
+    evaluate_ocr.py       # CER/WER evaluation
+    generate_dashboard_data.py  # Dashboard data
+    tei/                  # TEI-XML generator
+    postprocess/          # Deterministic post-processing
+  docs/                   # Dashboard + QA viewer
+    index.html            # Dashboard: metrics, document catalog, CER comparison
+    viewer.html           # 3-panel viewer: facsimile + OCR + TEI
+    tei-viewer.js         # TEI rendering: rendered view, diff, entities
+    shared.css / shared.js  # Design system + shared utilities
+    data/dashboard.json   # Generated data
+  data/                   # Source data (not versioned)
+    scans/                # 286 PDF digitizations
+    referenz-tei/         # 25 reference TEI (ZBZ-annotated)
+    page-xml-transkribus/ # 24 Transkribus exports (PAGE-XML)
+  output/                 # Generated data (not versioned)
+  PLAN.md                 # Implementation plan (phases 0-5)
+  .env.example            # Template for API keys
 ```
 
-## Schnellstart
+## Quick Start
 
 ```bash
-# Umgebung einrichten
+# Set up environment
 python -m venv .venv
 .venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 
-# API-Keys konfigurieren
+# Configure API keys
 cp .env.example .env
-# Werte in .env eintragen (Mistral, Anthropic)
+# Enter values in .env (Mistral, Anthropic)
 
-# OCR mit Mistral (ohne GPU)
+# OCR with Mistral (no GPU)
 python -m scripts.ocr_pipeline -i data/scans/2310.pdf -e mistral
 
-# Layout-Analyse (GPU fuer Docling)
+# Layout analysis (GPU for Docling)
 python -m scripts.run_layout_analysis --doc 2310
 
-# TEI-XML generieren (ohne GPU)
+# Generate TEI-XML (no GPU)
 python -m scripts.tei.tei_generator --doc 2310
 
-# Evaluation (ohne GPU)
+# Evaluation (no GPU)
 python scripts/evaluate_ocr.py --all
 
-# Dashboard-Daten generieren
+# Generate dashboard data
 python -m scripts.generate_dashboard_data
 ```
 
-Vollstaendige CLI-Referenz: [knowledge/PIPELINE.md](knowledge/PIPELINE.md) §CLI-Befehle.
+Complete CLI reference: [knowledge/PIPELINE.md](knowledge/PIPELINE.md) §CLI Commands.
 
-## OCR-Engines
+## OCR Engines
 
-| Engine | Zugang | Einsatz |
-|--------|--------|---------|
-| Mistral Document AI 2512 | Azure AI Foundry | Produktions-OCR |
-| DeepSeek-OCR-2 | Lokal (GPU) | Entwicklung |
-| Claude Haiku 4.5 | Anthropic API | LLM-Nachkorrektur (optional) |
-| Docling 2.75 | Lokal (CPU/GPU) | Layout-Analyse (BBox + Regionen) |
+| Engine | Access | Usage |
+|--------|--------|-------|
+| Mistral Document AI 2512 | Azure AI Foundry | Production OCR |
+| DeepSeek-OCR-2 | Local (GPU) | Development |
+| Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
+| Docling 2.75 | Local (CPU/GPU) | Layout analysis (BBox + regions) |
 
 ## Dashboard + Viewer
 
-Das QA-Dashboard (`docs/index.html`) zeigt Pipeline-Status, CER-Vergleich und filterbaren Dokumentkatalog. Der Viewer (`docs/viewer.html`) bietet:
+The QA dashboard (`docs/index.html`) shows pipeline status, CER comparison, and a filterable document catalog. The viewer (`docs/viewer.html`) offers:
 
-- **3-Panel Layout:** Faksimile + OCR-Text + TEI-XML nebeneinander
-- **TEI-Viewer:** Gerenderte Ansicht, XML mit Syntax-Highlighting, Referenz-Diff
-- **Entity-Sidebar:** Personen/Organisationen/Werke mit GND-Links
-- **Layout-Overlay:** SVG-BBox-Visualisierung ueber dem Faksimile
-- **Keyboard-Shortcuts:** 1/2/3 (OCR-Source), T (TEI), L (Layout), R/X/V (TEI-Modus), E (Entities)
+- **3-panel layout:** Facsimile + OCR text + TEI-XML side by side
+- **TEI viewer:** Rendered view, XML with syntax highlighting, reference diff
+- **Entity sidebar:** Persons/organizations/works with GND links
+- **Layout overlay:** SVG BBox visualization over the facsimile
+- **Keyboard shortcuts:** 1/2/3 (OCR source), T (TEI), L (Layout), R/X/V (TEI mode), E (Entities)
 
-## Dokumentation
+## Documentation
 
-| Thema | Datei |
-|-------|-------|
-| **Navigation (Start hier)** | [knowledge/INDEX.md](knowledge/INDEX.md) |
-| Projekt + Meilensteine | [knowledge/PROJEKT.md](knowledge/PROJEKT.md) |
-| Pipeline (7 Stufen) | [knowledge/PIPELINE.md](knowledge/PIPELINE.md) |
-| Implementierungsplan | [PLAN.md](PLAN.md) |
-| Entscheidungen + Offenes | [knowledge/DECISIONS.md](knowledge/DECISIONS.md) |
-| Testplan + Ergebnisse | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
-| TEI-Regeln | [knowledge/TEI-MAPPING.md](knowledge/TEI-MAPPING.md) |
-| OCR-Engines | [knowledge/OCR-ENGINES.md](knowledge/OCR-ENGINES.md) |
-| Arbeitsjournal | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
+| Topic | File |
+|-------|------|
+| **Navigation (start here)** | [knowledge/INDEX.md](knowledge/INDEX.md) |
+| Project + milestones | [knowledge/PROJEKT.md](knowledge/PROJEKT.md) |
+| Pipeline (7 stages) | [knowledge/PIPELINE.md](knowledge/PIPELINE.md) |
+| Implementation plan | [PLAN.md](PLAN.md) |
+| Decisions + open items | [knowledge/DECISIONS.md](knowledge/DECISIONS.md) |
+| Test plan + results | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
+| TEI rules | [knowledge/TEI-MAPPING.md](knowledge/TEI-MAPPING.md) |
+| OCR engines | [knowledge/OCR-ENGINES.md](knowledge/OCR-ENGINES.md) |
+| Work journal | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
 
 ## Team
 
-Projekt der Zentralbibliothek Zuerich (ZBZ) in Zusammenarbeit mit DHCraft.
+A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Stand: 27.02.2026*
+*Last updated: 2026-02-27*

@@ -6,743 +6,743 @@ tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
 
-# Arbeitsjournal
+# Work Journal
 
-Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) konsolidiert, Projektstatus in [PROJEKT](PROJEKT.md).
+Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
-**Abhängigkeiten:** Keine (eigenständiges Log)
+**Dependencies:** None (standalone log)
 
 ---
 
-## 2026-02-27 | Datenlieferung HerschStandFeb: Analyse + Knowledge-Korrekturen
+## 2026-02-27 | Data Delivery HerschStandFeb: Analysis + Knowledge Corrections
 
-### Durchgefuehrt
+### Completed
 
-1. **ZBZ-Datenlieferung analysiert** (2.6 GB Ordner `HerschStandFeb/`):
-   - 3 Unterordner: "mit fertigen XML-Files" (94 MB), "ohne XML" (1.2 GB), Duplikat (1.3 GB)
-   - 24 PDFs mit TEI-Annotation, 262 PDFs ohne Annotation = **286 PDFs gesamt**
-   - 25 fertige TEI-XMLs (ZBZ-Referenz mit GND-Verknuepfungen)
-   - 24 PAGE-XML-Exporte aus Transkribus (Schema **2013-07-15**, Seiten **leer** — kein Text)
-   - Duplikat-Ordner `HerschStandFeb/HerschStandFeb/` verifiziert (664 Dateien, identische Pfade+Groessen)
+1. **ZBZ data delivery analyzed** (2.6 GB folder `HerschStandFeb/`):
+   - 3 subfolders: "mit fertigen XML-Files" (94 MB), "ohne XML" (1.2 GB), duplicate (1.3 GB)
+   - 24 PDFs with TEI annotation, 262 PDFs without annotation = **286 PDFs total**
+   - 25 finished TEI-XMLs (ZBZ reference with GND linkages)
+   - 24 PAGE-XML exports from Transkribus (schema **2013-07-15**, pages **empty** — no text)
+   - Duplicate folder `HerschStandFeb/HerschStandFeb/` verified (664 files, identical paths+sizes)
 
-2. **PAGE-XML-Schema korrigiert** (2019-07-15 → 2013-07-15):
-   - PLAN.md: Template, Config-Konstante, XSD-URL (6 Vorkommen)
-   - PIPELINE.md: Schema-Tabelle + Namespace
+2. **PAGE-XML schema corrected** (2019-07-15 → 2013-07-15):
+   - PLAN.md: Template, config constant, XSD URL (6 occurrences)
+   - PIPELINE.md: Schema table + namespace
    - DECISIONS.md: E13, O4
 
-3. **Neue Entscheidung E23** in DECISIONS.md: Datenlieferung dokumentiert
+3. **New decision E23** in DECISIONS.md: Data delivery documented
 
-4. **R7 (Transkribus-Inkompatibilitaet)** teilweise geklaert: Schema 2013, ID-Schema `{NNNN}_p{NNN}`, JPG-Format. PAGE-XML ist leer (keine TextRegions → @type/@custom nicht verifizierbar)
+4. **R7 (Transkribus incompatibility)** partially clarified: Schema 2013, ID scheme `{NNNN}_p{NNN}`, JPG format. PAGE-XML is empty (no TextRegions → @type/@custom not verifiable)
 
-5. **Bearbeitungsstand aktualisiert**:
-   - QUELLENANALYSE.md: Neue Sektion "Datenlieferung Feb 2026" mit konkreten Zahlen
-   - GND-STRATEGIE.md: 18 → 25 TEI-Referenzdateien verfuegbar
-   - Masterfile-Zahlen (289 Texte) beibehalten — 3 Differenz zu 286 gelieferten PDFs ungeklaert
+5. **Processing status updated**:
+   - QUELLENANALYSE.md: New section "Data Delivery Feb 2026" with concrete numbers
+   - GND-STRATEGIE.md: 18 → 25 TEI reference files available
+   - Masterfile numbers (289 texts) retained — 3 difference from 286 delivered PDFs unexplained
 
-### Erkenntnisse
+### Findings
 
-| Erkenntnis | Relevanz |
-|------------|----------|
-| Transkribus nutzt PAGE-XML Schema 2013, nicht 2019 | Hoch — alle Implementierungsplaene korrigiert |
-| PAGE-XML-Export enthalt keinen Text (leere Seiten) | Hoch — kein Referenz-PAGE-XML verfuegbar |
-| 25 fertige TEI-XMLs (statt 18/21) | Mittel — 7 neue Docs fuer GND-Extraktion |
-| 286 PDFs geliefert (3 weniger als Masterfile) | Niedrig — Differenz klaeren |
-| Transkribus Collection-ID: 1886177 | Niedrig — fuer spaetere API-Zugriffe |
+| Finding | Relevance |
+|---------|-----------|
+| Transkribus uses PAGE-XML schema 2013, not 2019 | High — all implementation plans corrected |
+| PAGE-XML export contains no text (empty pages) | High — no reference PAGE-XML available |
+| 25 finished TEI-XMLs (instead of 18/21) | Medium — 7 new docs for GND extraction |
+| 286 PDFs delivered (3 fewer than masterfile) | Low — clarify difference |
+| Transkribus Collection-ID: 1886177 | Low — for later API access |
 
-### Neue/geaenderte Dateien
+### New/Changed Files
 
-| Datei | Aenderung |
-|-------|-----------|
-| `knowledge/DECISIONS.md` | E23 hinzugefuegt, E13 korrigiert, R7 aktualisiert |
-| `PLAN.md` | PAGE-XML Schema 2019→2013 (6 Vorkommen) |
-| `knowledge/PIPELINE.md` | Schema-Version korrigiert |
-| `knowledge/QUELLENANALYSE.md` | Bearbeitungsstand: Datenlieferung Feb 2026 |
-| `knowledge/GND-STRATEGIE.md` | 18→25 TEI-Referenzdateien |
-| `knowledge/JOURNAL.md` | Diesen Eintrag |
+| File | Change |
+|------|--------|
+| `knowledge/DECISIONS.md` | E23 added, E13 corrected, R7 updated |
+| `PLAN.md` | PAGE-XML schema 2019→2013 (6 occurrences) |
+| `knowledge/PIPELINE.md` | Schema version corrected |
+| `knowledge/QUELLENANALYSE.md` | Processing status: Data Delivery Feb 2026 |
+| `knowledge/GND-STRATEGIE.md` | 18→25 TEI reference files |
+| `knowledge/JOURNAL.md` | This entry |
 
-### Datei-Integration (gleiche Session, Fortsetzung)
+### File Integration (same session, continuation)
 
-1. **Duplikat geloescht** (`HerschStandFeb/HerschStandFeb/`, 1.3 GB, 664 Dateien)
-2. **286 PDFs** → `data/scans/` (24 aus "mit XML" + 262 aus "ohne XML")
+1. **Duplicate deleted** (`HerschStandFeb/HerschStandFeb/`, 1.3 GB, 664 files)
+2. **286 PDFs** → `data/scans/` (24 from "mit XML" + 262 from "ohne XML")
 3. **25 TEI-XMLs** → `data/referenz-tei/`
-4. **24 PAGE-XML-Ordner** → `data/page-xml-transkribus/`
-5. **Export-Screenshot** → `data/richtlinien/Page-xml-Export Einstellungen.jpg`
-6. **`.gitignore`** aktualisiert: +`data/page-xml-transkribus/`, +`HerschStandFeb/`
-7. **`data/README.md`** komplett ueberarbeitet (Struktur, Datenlieferungs-Tabelle, Zahlen)
-8. **`HerschStandFeb/`** geloescht (0 Dateien uebrig nach Verschiebung)
+4. **24 PAGE-XML folders** → `data/page-xml-transkribus/`
+5. **Export screenshot** → `data/richtlinien/Page-xml-Export Einstellungen.jpg`
+6. **`.gitignore`** updated: +`data/page-xml-transkribus/`, +`HerschStandFeb/`
+7. **`data/README.md`** completely revised (structure, data delivery table, numbers)
+8. **`HerschStandFeb/`** deleted (0 files remaining after move)
 
-Verifikation bestanden: 286 PDFs, 25 XMLs, 24 PAGE-XML-Ordner.
-
----
-
-## 2026-02-26 | Redundanz-Bereinigung: STATUS.md, CLAUDE.md, PLAN.md, README.md
-
-### Durchgefuehrt
-
-1. **Redundanz-Analyse** aller Root-Docs (CLAUDE.md, STATUS.md, PLAN.md) gegen knowledge/:
-   - Vergleichsmatrix mit 18 Inhaltskategorien erstellt
-   - 4 Dateien mit Redundanzen identifiziert, Massnahmen definiert
-
-2. **STATUS.md geloescht** (100% redundant):
-   - Alle Inhalte existierten aktueller in PROJEKT.md, TESTPLAN.md, DECISIONS.md
-   - War chronisch veraltet (Stand 25.02., fehlte TEI-Viewer, Layout-QA)
-
-3. **CLAUDE.md verschlankt** (72 → 32 Zeilen):
-   - Knowledge-Index (12 Zeilen) → Einzeiler-Verweis auf INDEX.md
-   - CLI-Befehle (7 Befehle) → Verweis auf PIPELINE.md + 4 haeufigste
-   - Entscheidungshilfen (4 Bullets) → gestrichen (INDEX.md hat sie)
-   - Frontend-Konvention (ES5, Namespaces) ergaenzt
-
-4. **PLAN.md bereinigt** (505 → ~300 Zeilen):
-   - "Ausgangslage/Was existiert" → gestrichen (PIPELINE.md)
-   - Phase 0 → auf "Erledigt" aktualisiert (war "ausstehend")
-   - Phase 3 TEI-Mapping → Verweis auf TEI-MAPPING.md statt Duplikat
-   - Risikomatrix R7-R13 → nach DECISIONS.md verschoben
-   - Phasenuebersicht mit aktuellem Status ergaenzt
-
-5. **DECISIONS.md erweitert**: R7-R13 aus PLAN.md konsolidiert (R8 als geloest markiert)
-
-6. **README.md komplett ueberarbeitet** (92 → 120 Zeilen):
-   - Pilotstand-Sektion mit allen 6 Pipeline-Stufen und konkreten Zahlen
-   - OCR-Qualitaet nach Dokumenttyp (alle 15 Docs, CER 6.42%)
-   - Ordnerstruktur aktualisiert (Dashboard-Dateien, tei-viewer.js, generate_dashboard_data.py)
-   - Schnellstart erweitert (Layout, TEI, Dashboard-Befehle)
-   - Dashboard+Viewer Features beschrieben (3-Panel, TEI-Viewer, Entities, Keyboard-Shortcuts)
-   - Dokumentation-Tabelle vollstaendig (9 Eintraege statt 6)
-
-### Neue/geaenderte Dateien
-
-| Datei | Aenderung |
-|-------|-----------|
-| `STATUS.md` | **GELOESCHT** -- 100% redundant mit knowledge/ |
-| `CLAUDE.md` | VERSCHLANKT -- 72→32 Zeilen, Verweise statt Duplikate |
-| `PLAN.md` | BEREINIGT -- 505→300 Zeilen, Status aktualisiert, Redundanzen entfernt |
-| `README.md` | REWRITE -- Pilotstand, OCR-Qualitaet, Dashboard-Features, Docs-Tabelle |
-| `knowledge/DECISIONS.md` | ERWEITERN -- R7-R13 konsolidiert |
-
-### Naechster Schritt
-
-Layout-Post-Processing (O21), dann restliche 7 Docs mit GPU analysieren, dann PAGE-XML-Generator (Phase 1).
+Verification passed: 286 PDFs, 25 XMLs, 24 PAGE-XML folders.
 
 ---
 
-## 2026-02-26 | TEI-Viewer Refactoring: tei-viewer.js extrahiert
+## 2026-02-26 | Redundancy Cleanup: STATUS.md, CLAUDE.md, PLAN.md, README.md
 
-### Durchgefuehrt
+### Completed
 
-1. **TEI-JavaScript aus `viewer.html` in `docs/tei-viewer.js` extrahiert** (~300 Zeilen):
-   - Neuer Namespace `window.TeiViewer` (analog zu `window.ZBZ` in shared.js)
+1. **Redundancy analysis** of all root docs (CLAUDE.md, STATUS.md, PLAN.md) against knowledge/:
+   - Comparison matrix with 18 content categories created
+   - 4 files with redundancies identified, actions defined
+
+2. **STATUS.md deleted** (100% redundant):
+   - All contents existed more current in PROJEKT.md, TESTPLAN.md, DECISIONS.md
+   - Was chronically outdated (as of 25.02., missing TEI-Viewer, Layout-QA)
+
+3. **CLAUDE.md slimmed down** (72 → 32 lines):
+   - Knowledge index (12 lines) → one-liner reference to INDEX.md
+   - CLI commands (7 commands) → reference to PIPELINE.md + 4 most common
+   - Decision guidelines (4 bullets) → removed (INDEX.md has them)
+   - Frontend convention (ES5, namespaces) added
+
+4. **PLAN.md cleaned up** (505 → ~300 lines):
+   - "Starting position/What exists" → removed (PIPELINE.md)
+   - Phase 0 → updated to "Completed" (was "pending")
+   - Phase 3 TEI mapping → reference to TEI-MAPPING.md instead of duplicate
+   - Risk matrix R7-R13 → moved to DECISIONS.md
+   - Phase overview with current status added
+
+5. **DECISIONS.md extended**: R7-R13 consolidated from PLAN.md (R8 marked as resolved)
+
+6. **README.md completely revised** (92 → 120 lines):
+   - Pilot status section with all 6 pipeline stages and concrete numbers
+   - OCR quality by document type (all 15 docs, CER 6.42%)
+   - Folder structure updated (dashboard files, tei-viewer.js, generate_dashboard_data.py)
+   - Quick start expanded (layout, TEI, dashboard commands)
+   - Dashboard+Viewer features described (3-panel, TEI-Viewer, entities, keyboard shortcuts)
+   - Documentation table complete (9 entries instead of 6)
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| `STATUS.md` | **DELETED** -- 100% redundant with knowledge/ |
+| `CLAUDE.md` | SLIMMED DOWN -- 72→32 lines, references instead of duplicates |
+| `PLAN.md` | CLEANED UP -- 505→300 lines, status updated, redundancies removed |
+| `README.md` | REWRITE -- pilot status, OCR quality, dashboard features, docs table |
+| `knowledge/DECISIONS.md` | EXTENDED -- R7-R13 consolidated |
+
+### Next Step
+
+Layout post-processing (O21), then analyze remaining 7 docs with GPU, then PAGE-XML generator (Phase 1).
+
+---
+
+## 2026-02-26 | TEI-Viewer Refactoring: tei-viewer.js extracted
+
+### Completed
+
+1. **TEI JavaScript extracted from `viewer.html` into `docs/tei-viewer.js`** (~300 lines):
+   - New namespace `window.TeiViewer` (analogous to `window.ZBZ` in shared.js)
    - Public API: `loadTei(docId, page)`, `switchMode(mode)`, `toggleEntitySidebar()`
-   - Internes `teiState`-Objekt fuer Lazy-Rendering-Kontext (docId/page)
-   - Auto-Init: `init()` bindet Tab-Listener und Entity-Sidebar-Listener beim Laden
-   - ES5-Konventionen beibehalten (var, IIFE, keine Arrow-Functions)
+   - Internal `teiState` object for lazy rendering context (docId/page)
+   - Auto-init: `init()` binds tab listeners and entity sidebar listeners on load
+   - ES5 conventions maintained (var, IIFE, no arrow functions)
 
-2. **viewer.html von ~1200 auf ~816 Zeilen reduziert**:
-   - `<script src="tei-viewer.js"></script>` nach shared.js eingebunden
-   - `teiState`-Objekt entfernt (jetzt in tei-viewer.js)
-   - ~376 Zeilen TEI-Funktionen entfernt (switchTeiMode, loadTei, parseTeiXml, renderTeiView, renderTeiNode, createEntitySpan, renderTeiXml, highlightXml, renderTeiDiff, extractEntities, toggleEntitySidebar, renderEntitySidebar, scrollToEntity, Entity-Listener)
-   - Aufrufe angepasst: `loadTei()` → `TeiViewer.loadTei(state.docId, state.page)`, Keyboard-Shortcuts → `TeiViewer.switchMode()` / `TeiViewer.toggleEntitySidebar()`
-   - Sichtbarkeits-Guard nach aussen verlagert: `if (state.teiVisible) TeiViewer.loadTei(...)`
+2. **viewer.html reduced from ~1200 to ~816 lines**:
+   - `<script src="tei-viewer.js"></script>` included after shared.js
+   - `teiState` object removed (now in tei-viewer.js)
+   - ~376 lines of TEI functions removed (switchTeiMode, loadTei, parseTeiXml, renderTeiView, renderTeiNode, createEntitySpan, renderTeiXml, highlightXml, renderTeiDiff, extractEntities, toggleEntitySidebar, renderEntitySidebar, scrollToEntity, entity listeners)
+   - Calls adapted: `loadTei()` → `TeiViewer.loadTei(state.docId, state.page)`, keyboard shortcuts → `TeiViewer.switchMode()` / `TeiViewer.toggleEntitySidebar()`
+   - Visibility guard moved outward: `if (state.teiVisible) TeiViewer.loadTei(...)`
 
-3. **Knowledge-Updates**: PIPELINE.md, PROJEKT.md, DECISIONS.md, INDEX.md, JOURNAL.md aktualisiert
+3. **Knowledge updates**: PIPELINE.md, PROJEKT.md, DECISIONS.md, INDEX.md, JOURNAL.md updated
 
-### Neue/geaenderte Dateien
+### New/Changed Files
 
-| Datei | Aenderung |
-|-------|-----------|
-| `docs/tei-viewer.js` | **NEU** -- TEI-Rendering-Logik (~300 Zeilen), `window.TeiViewer` |
-| `docs/viewer.html` | REFACTOR -- ~376 Zeilen TEI-Code entfernt, Script-Tag eingefuegt |
-| `knowledge/JOURNAL.md` | UPDATE -- Refactoring-Eintrag |
-| `knowledge/PIPELINE.md` | UPDATE -- tei-viewer.js in Dashboard-Tabelle |
-| `knowledge/PROJEKT.md` | UPDATE -- Komponentenstatus |
+| File | Change |
+|------|--------|
+| `docs/tei-viewer.js` | **NEW** -- TEI rendering logic (~300 lines), `window.TeiViewer` |
+| `docs/viewer.html` | REFACTOR -- ~376 lines TEI code removed, script tag added |
+| `knowledge/JOURNAL.md` | UPDATE -- Refactoring entry |
+| `knowledge/PIPELINE.md` | UPDATE -- tei-viewer.js in dashboard table |
+| `knowledge/PROJEKT.md` | UPDATE -- Component status |
 | `knowledge/INDEX.md` | UPDATE -- Timestamp |
 
-### Naechster Schritt
+### Next Step
 
-Layout-Post-Processing (O21), dann restliche 7 Docs mit GPU analysieren, dann PAGE-XML-Generator (Phase 1).
-
----
-
-## 2026-02-26 | TEI-Viewer Upgrade: Rendered View, Syntax-Highlighting, Diff, Entity-Navigation
-
-### Durchgefuehrt
-
-1. **TEI-Panel komplett ueberarbeitet** (`docs/viewer.html`):
-   - 3-Tab-System: **Gerendert** | **XML** | **Vergleich** (statt rohes XML in `<pre>`)
-   - Lazy Rendering: Jeder Tab wird erst beim ersten Umschalten gerendert
-   - Neue Keyboard-Shortcuts: `R`/`X`/`V` (TEI-Modus), `E` (Entity-Sidebar)
-
-2. **Gerenderte Ansicht** (Default-Tab):
-   - Rekursiver TEI-zu-HTML-Renderer (`renderTeiNode()`) mit 17 Element-Typen
-   - `DOMParser` mit Namespace-Stripping (`parseTeiXml()`)
-   - Headings (`<head>` → `.tei-head`), Absaetze, Fussnoten (eingerueckt, linker Border)
-   - Bold/Italic/Underline/Superscript/Subscript aus `<hi rendition="...">`
-   - Seitenumbrueche (`<pb>` → gestrichelte Linie)
-   - Figure/Caption-Bloecke, Speaker/Speech fuer Interviews
-   - Unbekannte Elemente werden transparent durchgereicht (nur Children rendern)
-
-3. **Entity-Highlighting + Navigation**:
-   - `<persName>` blau, `<orgName>` violett, `<bibl>` teal hinterlegt
-   - Hover-Tooltip zeigt GND-ID, Click oeffnet lobid.org/gnd/{ID}
-   - Entity-Sidebar (260px, Slide-Animation) mit Personen/Organisationen/Werke
-   - Jeder Eintrag: Name, Vorkommen-Zaehler, GND-Link
-   - Click auf Sidebar-Eintrag → Scroll + Flash-Animation im Rendered View
-
-4. **XML Syntax-Highlighting**:
-   - Regex-basierter Highlighter (`highlightXml()`)
-   - Tags gruen, Attribut-Namen blau, Attribut-Werte rot, Kommentare grau
-   - XML-Declaration grau, robuste Regex fuer verschachtelte Attribute
-
-5. **Referenz-TEI Vergleich** (Tab "Vergleich"):
-   - Side-by-Side Layout: Generiert (links) | Referenz ZBZ (rechts)
-   - `fetchRefTeiPage()` in `shared.js`: Laedt Gesamt-Dokument, extrahiert Seite per `<pb>`-Splitting
-   - Beide Seiten mit Syntax-Highlighting
-   - Graceful Degradation bei fehlender Referenz
-
-6. **CSS Design-System erweitert** (`docs/shared.css`, ~150 neue Zeilen):
-   - TEI-Tabs, Rendered-View-Elemente, Entity-Highlighting mit Farbcodierung
-   - Entity-Flash-Animation (`@keyframes entityFlash`)
-   - Diff-Panel, Entity-Sidebar mit Slide-Transition
-
-### Neue/geaenderte Dateien
-
-| Datei | Aenderung |
-|-------|-----------|
-| `docs/viewer.html` | REWRITE TEI-Panel -- 757→1200 Zeilen, Tabs, Rendering, Entities |
-| `docs/shared.css` | ERWEITERN -- ~150 Zeilen TEI-Styles |
-| `docs/shared.js` | ERWEITERN -- `fetchRefTeiPage()` mit Page-Extraktion + Caching |
-| `output/tei/2310_p1.xml` | **MOCK** -- Testdaten mit Entities, Fussnote, Bold/Italic |
-
-### Naechster Schritt
-
-Layout-Post-Processing (O21), dann restliche 7 Docs mit GPU analysieren, dann PAGE-XML-Generator (Phase 1).
+Layout post-processing (O21), then analyze remaining 7 docs with GPU, then PAGE-XML generator (Phase 1).
 
 ---
 
-## 2026-02-25 | TEI-Generator + Viewer TEI-Panel
+## 2026-02-26 | TEI-Viewer Upgrade: Rendered View, Syntax Highlighting, Diff, Entity Navigation
 
-### Durchgefuehrt
+### Completed
 
-1. **TEI-Generator implementiert** (`scripts/tei/tei_generator.py`):
-   - Layout-JSON + OCR-Markdown → seitenweises TEI-XML (DTA-Basisformat, `type="naegeli"`)
-   - Nutzt llm_corrected_c bevorzugt, Fallback auf mistral_results
-   - Markdown→TEI Inline: `**bold**` → `<hi rendition="#b">`, `*italic*` → `<hi rendition="#i">`
-   - GND-Entity-Annotation aus KNOWN_ENTITIES (Seed-Dictionary)
-   - Placeholder-Technik verhindert verschachtelte `<persName>`-Tags
-   - Layout-Regionen: zb_heading→`<head>`, footnote→`<note place="foot">`, caption→`<figure>`
-   - Facsimile-Section mit BBox→Zone-Koordinaten bei vorhandenem Layout
-   - CLI: `--doc`, `--page` fuer einzelne Seiten/Dokumente
+1. **TEI panel completely overhauled** (`docs/viewer.html`):
+   - 3-tab system: **Rendered** | **XML** | **Comparison** (instead of raw XML in `<pre>`)
+   - Lazy rendering: Each tab is only rendered on first switch
+   - New keyboard shortcuts: `R`/`X`/`V` (TEI mode), `E` (entity sidebar)
 
-2. **383 TEI-XML Dateien generiert** fuer alle 15 Pilot-Dokumente:
-   - 8 Docs mit Layout-Daten (Facsimile + strukturierte Regionen)
-   - 7 Docs nur OCR (alle Absaetze als `<p>`)
+2. **Rendered view** (default tab):
+   - Recursive TEI-to-HTML renderer (`renderTeiNode()`) with 17 element types
+   - `DOMParser` with namespace stripping (`parseTeiXml()`)
+   - Headings (`<head>` → `.tei-head`), paragraphs, footnotes (indented, left border)
+   - Bold/italic/underline/superscript/subscript from `<hi rendition="...">`
+   - Page breaks (`<pb>` → dashed line)
+   - Figure/caption blocks, speaker/speech for interviews
+   - Unknown elements passed through transparently (only children rendered)
 
-3. **Viewer TEI-Panel** (`docs/viewer.html`):
-   - Drittes Panel neben Faksimile + OCR-Text
-   - Toggle mit Button oder Taste `T`
-   - Standardmaessig ausgeblendet, zeigt TEI-XML als formatierten Text
-   - Zweiter Divider (draggbar) zwischen OCR und TEI
-   - 3-Panel Layout (33%/33%/33%) bei aktivem TEI
+3. **Entity highlighting + navigation**:
+   - `<persName>` blue, `<orgName>` violet, `<bibl>` teal highlighted
+   - Hover tooltip shows GND-ID, click opens lobid.org/gnd/{ID}
+   - Entity sidebar (260px, slide animation) with persons/organizations/works
+   - Each entry: name, occurrence counter, GND link
+   - Click on sidebar entry → scroll + flash animation in rendered view
 
-4. **Shared-Code Erweiterungen**:
-   - `shared.js`: `fetchPageTei(docId, page)` (testet 2 Pfade: tei/ und tei_xml/)
-   - `shared.js`: TEI-Step in PIPELINE_STEPS
-   - `shared.css`: `.viewer-tei pre` Styling
-   - `generate_dashboard_data.py`: `pipeline_status.tei` + `docs_with_tei` in Summary
+4. **XML syntax highlighting**:
+   - Regex-based highlighter (`highlightXml()`)
+   - Tags green, attribute names blue, attribute values red, comments gray
+   - XML declaration gray, robust regex for nested attributes
 
-5. **Config erweitert**: `TEI_DIR` und `LLM_CORRECTED_C_DIR` in `scripts/config.py`
+5. **Reference TEI comparison** (tab "Comparison"):
+   - Side-by-side layout: Generated (left) | Reference ZBZ (right)
+   - `fetchRefTeiPage()` in `shared.js`: Loads full document, extracts page via `<pb>` splitting
+   - Both sides with syntax highlighting
+   - Graceful degradation when reference is missing
 
-### Bug-Fix
+6. **CSS design system extended** (`docs/shared.css`, ~150 new lines):
+   - TEI tabs, rendered view elements, entity highlighting with color coding
+   - Entity flash animation (`@keyframes entityFlash`)
+   - Diff panel, entity sidebar with slide transition
 
-**Verschachtelte persName-Tags:** "Karl Jaspers" wurde korrekt getaggt, dann matchte "Jaspers" innerhalb des bereits getaggten Texts erneut → doppelt verschachtelte Tags. **Loesung:** Placeholder-Technik (Phase 1: laengste Namen zuerst durch `\x00ENTITY{N}\x00` ersetzen, Phase 2: Placeholder → XML-Tags).
+### New/Changed Files
 
-### Neue/geaenderte Dateien
+| File | Change |
+|------|--------|
+| `docs/viewer.html` | REWRITE TEI panel -- 757→1200 lines, tabs, rendering, entities |
+| `docs/shared.css` | EXTENDED -- ~150 lines TEI styles |
+| `docs/shared.js` | EXTENDED -- `fetchRefTeiPage()` with page extraction + caching |
+| `output/tei/2310_p1.xml` | **MOCK** -- Test data with entities, footnote, bold/italic |
 
-| Datei | Aenderung |
-|-------|-----------|
-| `scripts/tei/__init__.py` | **NEU** -- Modul-Init |
-| `scripts/tei/tei_generator.py` | **NEU** -- TEI-Generator (~280 Zeilen) |
-| `scripts/config.py` | ERWEITERN -- TEI_DIR, LLM_CORRECTED_C_DIR |
-| `scripts/generate_dashboard_data.py` | ERWEITERN -- TEI-Status in Pipeline |
-| `docs/viewer.html` | ERWEITERN -- TEI-Panel, Toggle, zweiter Divider |
-| `docs/shared.js` | ERWEITERN -- fetchPageTei(), TEI Pipeline-Step |
-| `docs/shared.css` | ERWEITERN -- TEI-Panel Styling |
-| `output/tei/*.xml` | **GENERIERT** -- 383 TEI-XML Dateien |
+### Next Step
 
-### Naechster Schritt
-
-PAGE-XML-Generator implementieren (Phase 1), Layout-Post-Processing (O21), dann NER+GND (Phase 2).
-
----
-
-## 2026-02-25 | Layout-Overlay im Viewer + Annotierte PNG-Generierung
-
-### Durchgefuehrt
-
-1. **Layout-Analyse Batch-Script erstellt** (`scripts/run_layout_analysis.py`):
-   - Docling Layout-Analyse auf alle Seitenbilder (JSON mit Prozent-Koordinaten)
-   - Resume-Faehig (ueberspring existierende, --force zum Ueberschreiben)
-   - `--overlay` Flag: Erzeugt annotierte PNG-Bilder mit eingebrannten BBox-Overlays
-
-2. **Dashboard-Integration**:
-   - `generate_dashboard_data.py`: Layout-Pipeline-Status + Summary pro Dokument
-   - `shared.js`: fetchLayoutData(), LAYOUT_COLORS, LAY Pipeline-Step
-
-3. **Viewer BBox-Overlay** (`docs/viewer.html`):
-   - SVG-Overlay mit viewBox="0 0 100 100" (zoom-unabhaengig)
-   - Toggle mit Taste L oder Button, Auto-Aktivierung bei vorhandenen Layout-Daten
-   - Farbcodierung: Rot=Heading, Grau=Absatz, Blau=Fussnote, Orange=Caption
-
-4. **Annotierte Overlay-PNGs**:
-   - `draw_overlay_from_json()`: Liest Layout-JSONs, zeichnet BBoxes auf Originalbilder
-   - Farbige Rechtecke mit Label-Text und Text-Vorschau
-   - Doc 2310 (3 Seiten) erfolgreich getestet, alle 15 Docs laufen
-
-5. **Layout-Analyse auf 8/15 Pilot-Dokumente** abgeschlossen (1060, 1180, 130, 1330, 1410, 1440, 1520 teilweise, 2310)
-   - 186 Overlay-PNGs erzeugt, 7 Docs ohne Layout (brauchen GPU: 2530, 290, 3040, 40, 830, 890, 90)
-
-6. **Visuelle QA im Viewer + Overlay-PNGs** — Detailanalyse aller 8 Seiten von Doc 1180 + Doc 1410:
-   - BBox-Positionierung korrekt, kein systematischer Versatz
-   - Heading-Erkennung zuverlaessig (Titel, Untertitel, "1ère thèse:", "2ème thèse:")
-   - Zweispaltiges Layout (1410 p3) korrekt in separate Boxen getrennt
-   - **Problem 1: Ueberlappende Regionen** — Einzeiler-Fragmente (h_pct <3%) ueberlappen mit groesseren Bloecken (1180 p2)
-   - **Problem 2: Seitenzahlen nicht gefiltert** — Docling erkennt "217", "218", "219", "220" als `text` statt `page_footer`
-   - **Problem 3: Doc 1520 LAY-Status grau** im Dashboard obwohl 132/142 Seiten analysiert (Analyse abgebrochen)
-   - **Naechster Schritt:** Layout-Region-Post-Processing implementieren (Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik)
-
-### Neue/geaenderte Dateien
-
-| Datei | Aenderung |
-|-------|-----------|
-| `scripts/run_layout_analysis.py` | **NEU** -- Batch Docling + Overlay-PNG |
-| `scripts/generate_dashboard_data.py` | ERWEITERN -- Layout-Status + Summary |
-| `docs/shared.js` | ERWEITERN -- fetchLayoutData(), LAYOUT_COLORS, LAY-Step |
-| `docs/viewer.html` | ERWEITERN -- SVG-Overlay, Toggle, Auto-Aktivierung |
-| `output/layout/{doc_id}/*_layout.json` | **GENERIERT** -- Layout pro Seite |
-| `output/layout/{doc_id}/*_overlay.png` | **GENERIERT** -- Annotierte Bilder |
-
-### Naechster Schritt
-
-Layout-Region-Post-Processing implementieren, dann restliche 7 Docs analysieren (braucht GPU), dann PAGE-XML Export.
+Layout post-processing (O21), then analyze remaining 7 docs with GPU, then PAGE-XML generator (Phase 1).
 
 ---
 
-## 2026-02-25 | Phase 0 Evaluation + Scope-Update aller Knowledge-Docs
+## 2026-02-25 | TEI Generator + Viewer TEI Panel
 
-### Durchgefuehrt
+### Completed
 
-1. **Docling 2.75 installiert** (Upgrade von 2.70 -- RT-DETR V2 Heron braucht transformers >=4.48)
-2. **Schritt 1 Installationstest bestanden:** Doc 1180 p001, 2.9s, 5 Regionen mit BBox, kein Symlink-Fehler
-3. **Schritt 2 Typenstichprobe bestanden:** 5 Bilder (A/B/C/D), `scripts/experiments/layout_eval.py` geschrieben
-4. **Schritt 3 E19 bestaetigt → E20:** Docling als Primary Layout-Engine
-5. **Scope-Erweiterung E21 dokumentiert:** PIPELINE.md, PROJEKT.md, TEI-MAPPING.md an neue 7-Stufen-Pipeline angepasst
-6. **Alle Knowledge-Docs aktualisiert:** STATUS.md, DECISIONS.md (E20+E21), JOURNAL.md
+1. **TEI generator implemented** (`scripts/tei/tei_generator.py`):
+   - Layout JSON + OCR Markdown → page-wise TEI-XML (DTA-Basisformat, `type="naegeli"`)
+   - Uses llm_corrected_c preferentially, fallback to mistral_results
+   - Markdown→TEI inline: `**bold**` → `<hi rendition="#b">`, `*italic*` → `<hi rendition="#i">`
+   - GND entity annotation from KNOWN_ENTITIES (seed dictionary)
+   - Placeholder technique prevents nested `<persName>` tags
+   - Layout regions: zb_heading→`<head>`, footnote→`<note place="foot">`, caption→`<figure>`
+   - Facsimile section with BBox→zone coordinates when layout is available
+   - CLI: `--doc`, `--page` for individual pages/documents
 
-### Phase 0 Evaluation Ergebnisse
+2. **383 TEI-XML files generated** for all 15 pilot documents:
+   - 8 docs with layout data (facsimile + structured regions)
+   - 7 docs OCR only (all paragraphs as `<p>`)
 
-| Doc | Typ | Regionen | Zeit | Ergebnis |
-|-----|-----|----------|------|----------|
-| 1180 | A | 9 | 3.3s | 2 headings + 7 text korrekt |
-| 2530 | B | 12 | 2.5s | Spalten korrekt getrennt |
-| 40 | C | 3-6 | 0.4s | Textseiten korrekt |
-| 90 | D | 6 | 0.5s | Titelseite korrekt |
-| 1330 | D | 14 | 0.7s | headings + text + list_items korrekt |
+3. **Viewer TEI panel** (`docs/viewer.html`):
+   - Third panel alongside facsimile + OCR text
+   - Toggle with button or key `T`
+   - Hidden by default, shows TEI-XML as formatted text
+   - Second divider (draggable) between OCR and TEI
+   - 3-panel layout (33%/33%/33%) when TEI is active
 
-### Neue/geaenderte Dateien
+4. **Shared code extensions**:
+   - `shared.js`: `fetchPageTei(docId, page)` (tests 2 paths: tei/ and tei_xml/)
+   - `shared.js`: TEI step in PIPELINE_STEPS
+   - `shared.css`: `.viewer-tei pre` styling
+   - `generate_dashboard_data.py`: `pipeline_status.tei` + `docs_with_tei` in summary
 
-| Datei | Aenderung |
-|-------|-----------|
-| scripts/experiments/layout_eval.py | **Neu** -- Docling-Evaluation mit JSON + Overlay |
-| output/layout_eval/*.json + *.png | **Neu** -- Evaluationsergebnisse |
-| knowledge/PIPELINE.md | 7-Stufen-Pipeline, E19 Layout-Engine |
-| knowledge/PROJEKT.md | Oekosystem-Diagramm + Meilensteine aktualisiert |
-| knowledge/TEI-MAPPING.md | Scope-Header aktualisiert |
-| knowledge/DECISIONS.md | E20 + E21 hinzugefuegt |
-| STATUS.md | Phase 0 Ergebnisse, naechste Schritte |
+5. **Config extended**: `TEI_DIR` and `LLM_CORRECTED_C_DIR` in `scripts/config.py`
 
-### Naechster Schritt
+### Bug Fix
 
-Phase 1 implementieren: `scripts/layout/` Modul + `scripts/export_page_xml.py`.
+**Nested persName tags:** "Karl Jaspers" was correctly tagged, then "Jaspers" matched again within the already tagged text → doubly nested tags. **Solution:** Placeholder technique (Phase 1: replace longest names first with `\x00ENTITY{N}\x00`, Phase 2: placeholder → XML tags).
 
----
+### New/Changed Files
 
-## 2026-02-25 | Phase 0: Layout-Analyse Recherche + Implementierungsplan
+| File | Change |
+|------|--------|
+| `scripts/tei/__init__.py` | **NEW** -- Module init |
+| `scripts/tei/tei_generator.py` | **NEW** -- TEI generator (~280 lines) |
+| `scripts/config.py` | EXTENDED -- TEI_DIR, LLM_CORRECTED_C_DIR |
+| `scripts/generate_dashboard_data.py` | EXTENDED -- TEI status in pipeline |
+| `docs/viewer.html` | EXTENDED -- TEI panel, toggle, second divider |
+| `docs/shared.js` | EXTENDED -- fetchPageTei(), TEI pipeline step |
+| `docs/shared.css` | EXTENDED -- TEI panel styling |
+| `output/tei/*.xml` | **GENERATED** -- 383 TEI-XML files |
 
-### Durchgefuehrt
+### Next Step
 
-1. **Scope-Erweiterung nach Meeting:** zbz-ocr-tei deckt jetzt die gesamte Pipeline ab (PDF → TEI-XML). ZBZ behaelt Transkribus, DHCraft baut parallele KI-Pipeline. NER/GND jetzt im PoC-Scope.
-2. **Layout-Analyse Recherche (E19):** 7 Ansaetze evaluiert (Gemini, Claude, Mistral, Docling, Surya, Kraken, Azure DI)
-   - **Docling** (Score 4.35/5): Beste Open-Source BBox-Koordinaten, 17 Klassen, gratis, CPU
-   - **Kraken** (Score 4.15/5): Nativer PAGE-XML-Export, historische FR-Dokumente
-   - **Gemini** (Score 3.45/5): Guenstig, flexibel, als Validator geeignet
-   - **Claude Vision**: Disqualifiziert (keine BBox-Koordinaten)
-   - **Mistral**: Unzureichend (keine Text-Region-BBox)
-3. **Empfehlung E19:** Docling + Gemini Hybrid (Docling primaer, Gemini optional, Kraken Fallback)
-4. **Implementierungsplan geschrieben:** `PLAN.md` im Repo-Root mit 6 Phasen, Datenfluss, Risikomatrix
-5. **Knowledge-Updates:** DECISIONS.md (E19), INDEX.md (E19-LAYOUT-ANALYSE.md verlinkt)
-
-### Ueberraschungsfund
-
-- **ocr-fileformat (UB Mannheim):** Konvertiert zwischen 30+ OCR-Formaten (hOCR, PAGE-XML, ALTO, TEI). Reduziert das Risiko der Format-Entscheidung erheblich.
-
-### Neue/geaenderte Dateien
-
-| Datei | Aenderung |
-|-------|-----------|
-| knowledge/E19-LAYOUT-ANALYSE.md | **Neu** -- Layout-Analyse Recherche + Bewertungsmatrix |
-| PLAN.md | **Neu** -- Implementierungsplan fuer volle KI-Pipeline |
-| knowledge/DECISIONS.md | E19 hinzugefuegt |
-| knowledge/INDEX.md | E19-LAYOUT-ANALYSE.md verlinkt |
-| knowledge/JOURNAL.md | Diesen Eintrag |
-
-### Naechster Schritt
-
-Phase 0 Evaluation: Docling Layout-Analyse auf alle 383 Seitenbilder laufen lassen, Blocktypen → ZBZ-Tags mappen, visuell pruefen.
+Implement PAGE-XML generator (Phase 1), layout post-processing (O21), then NER+GND (Phase 2).
 
 ---
 
-## 2026-02-25 | Knowledge-Update: Prompts dokumentiert + Recherche-Ergebnisse
+## 2026-02-25 | Layout Overlay in Viewer + Annotated PNG Generation
 
-### Durchgefuehrt
+### Completed
 
-1. **Prompt-Dokumentation in PIPELINE.md**: Alle Prompts der Pipeline vollstaendig dokumentiert
-   - Stufe 1: Mistral (kein Prompt), DeepSeek (fester Prompt mit `<|grounding|>`)
-   - Stufe 2: Drei LLM-Varianten (A: Analyse, B: Lean, C: Few-Shot) mit vollstaendigem Prompt-Text
-2. **Veraltete Knowledge-Docs bereinigt**: PROJEKT.md (Phase 4, M1, Kosten), QUELLENANALYSE.md (1520 Sprache), GND-STRATEGIE.md (Naechste Schritte)
-3. **Web-Recherche Prompt-Optimierung** (3 schlanke Suchen):
-   - Mistral OCR: Kein Custom-Prompt moeglich, aber `extract_header/footer` Parameter
-   - DeepSeek-OCR-2: 6 Prompt-Modi, Free OCR ohne Layout potenziell schneller
-   - LLM-Korrektur: Multimodale Korrektur (Bild+Text) erreicht <1% CER (arXiv:2504.00414); Ueberkorrektur bei CER <5% bestaetigt (ACL 2025)
-4. **Erkenntnisse aus Pilotevaluation** in OCR-ENGINES.md dokumentiert (5 Findings)
-5. **Drei neue offene Punkte** in DECISIONS.md: O18 (multimodal), O19 (extract_header), O20 (Free OCR)
+1. **Layout analysis batch script created** (`scripts/run_layout_analysis.py`):
+   - Docling layout analysis on all page images (JSON with percent coordinates)
+   - Resume-capable (skips existing, --force to overwrite)
+   - `--overlay` flag: Generates annotated PNG images with burned-in BBox overlays
 
-### Erkenntnisse
+2. **Dashboard integration**:
+   - `generate_dashboard_data.py`: Layout pipeline status + summary per document
+   - `shared.js`: fetchLayoutData(), LAYOUT_COLORS, LAY pipeline step
 
-| Erkenntnis | Quelle | Relevanz |
-|------------|--------|----------|
-| Multimodale LLM-Korrektur (Scan+Text) erreicht <1% CER | arXiv:2504.00414 | Hoch — groesstes Optimierungspotenzial |
-| Ueberkorrektur bei niedrigem CER ist systematisch, nicht projektspezifisch | ACL 2025 | Bestaetigt E17 |
-| Optimale Segmentlaenge 200-300 Woerter | ACL 2025 | Wir senden ganze Seiten — bereits gut |
-| Mistral `extract_header/footer` koennte JSTOR-Header filtern | Mistral API Docs | Mittel — einfach zu testen |
+3. **Viewer BBox overlay** (`docs/viewer.html`):
+   - SVG overlay with viewBox="0 0 100 100" (zoom-independent)
+   - Toggle with key L or button, auto-activation when layout data is present
+   - Color coding: Red=heading, gray=paragraph, blue=footnote, orange=caption
 
-### Neue/geaenderte Dateien
+4. **Annotated overlay PNGs**:
+   - `draw_overlay_from_json()`: Reads layout JSONs, draws BBoxes on original images
+   - Colored rectangles with label text and text preview
+   - Doc 2310 (3 pages) successfully tested, all 15 docs run
 
-| Datei | Aenderung |
-|-------|-----------|
-| knowledge/PIPELINE.md | Prompt-Dokumentation (Stufe 1+2), Optimierungspotenzial |
-| knowledge/OCR-ENGINES.md | Prompt-Modi, Mistral-Konfiguration, Pilotevaluation |
+5. **Layout analysis on 8/15 pilot documents** completed (1060, 1180, 130, 1330, 1410, 1440, 1520 partially, 2310)
+   - 186 overlay PNGs generated, 7 docs without layout (need GPU: 2530, 290, 3040, 40, 830, 890, 90)
+
+6. **Visual QA in viewer + overlay PNGs** — Detailed analysis of all 8 pages of Doc 1180 + Doc 1410:
+   - BBox positioning correct, no systematic offset
+   - Heading detection reliable (title, subtitle, "1ère thèse:", "2ème thèse:")
+   - Two-column layout (1410 p3) correctly separated into distinct boxes
+   - **Problem 1: Overlapping regions** — Single-line fragments (h_pct <3%) overlap with larger blocks (1180 p2)
+   - **Problem 2: Page numbers not filtered** — Docling recognizes "217", "218", "219", "220" as `text` instead of `page_footer`
+   - **Problem 3: Doc 1520 LAY status gray** in dashboard although 132/142 pages analyzed (analysis aborted)
+   - **Next step:** Implement layout region post-processing (overlap filter, single-line merge, page number heuristic)
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| `scripts/run_layout_analysis.py` | **NEW** -- Batch Docling + overlay PNG |
+| `scripts/generate_dashboard_data.py` | EXTENDED -- Layout status + summary |
+| `docs/shared.js` | EXTENDED -- fetchLayoutData(), LAYOUT_COLORS, LAY step |
+| `docs/viewer.html` | EXTENDED -- SVG overlay, toggle, auto-activation |
+| `output/layout/{doc_id}/*_layout.json` | **GENERATED** -- Layout per page |
+| `output/layout/{doc_id}/*_overlay.png` | **GENERATED** -- Annotated images |
+
+### Next Step
+
+Implement layout region post-processing, then analyze remaining 7 docs (needs GPU), then PAGE-XML export.
+
+---
+
+## 2026-02-25 | Phase 0 Evaluation + Scope Update of All Knowledge Docs
+
+### Completed
+
+1. **Docling 2.75 installed** (upgrade from 2.70 -- RT-DETR V2 Heron requires transformers >=4.48)
+2. **Step 1 installation test passed:** Doc 1180 p001, 2.9s, 5 regions with BBox, no symlink error
+3. **Step 2 type sample test passed:** 5 images (A/B/C/D), `scripts/experiments/layout_eval.py` written
+4. **Step 3 E19 confirmed → E20:** Docling as primary layout engine
+5. **Scope extension E21 documented:** PIPELINE.md, PROJEKT.md, TEI-MAPPING.md adapted to new 7-stage pipeline
+6. **All knowledge docs updated:** STATUS.md, DECISIONS.md (E20+E21), JOURNAL.md
+
+### Phase 0 Evaluation Results
+
+| Doc | Type | Regions | Time | Result |
+|-----|------|---------|------|--------|
+| 1180 | A | 9 | 3.3s | 2 headings + 7 text correct |
+| 2530 | B | 12 | 2.5s | Columns correctly separated |
+| 40 | C | 3-6 | 0.4s | Text pages correct |
+| 90 | D | 6 | 0.5s | Title page correct |
+| 1330 | D | 14 | 0.7s | headings + text + list_items correct |
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| scripts/experiments/layout_eval.py | **New** -- Docling evaluation with JSON + overlay |
+| output/layout_eval/*.json + *.png | **New** -- Evaluation results |
+| knowledge/PIPELINE.md | 7-stage pipeline, E19 layout engine |
+| knowledge/PROJEKT.md | Ecosystem diagram + milestones updated |
+| knowledge/TEI-MAPPING.md | Scope header updated |
+| knowledge/DECISIONS.md | E20 + E21 added |
+| STATUS.md | Phase 0 results, next steps |
+
+### Next Step
+
+Implement Phase 1: `scripts/layout/` module + `scripts/export_page_xml.py`.
+
+---
+
+## 2026-02-25 | Phase 0: Layout Analysis Research + Implementation Plan
+
+### Completed
+
+1. **Scope extension after meeting:** zbz-ocr-tei now covers the entire pipeline (PDF → TEI-XML). ZBZ keeps Transkribus, DHCraft builds parallel AI pipeline. NER/GND now in PoC scope.
+2. **Layout analysis research (E19):** 7 approaches evaluated (Gemini, Claude, Mistral, Docling, Surya, Kraken, Azure DI)
+   - **Docling** (Score 4.35/5): Best open-source BBox coordinates, 17 classes, free, CPU
+   - **Kraken** (Score 4.15/5): Native PAGE-XML export, historical FR documents
+   - **Gemini** (Score 3.45/5): Affordable, flexible, suitable as validator
+   - **Claude Vision**: Disqualified (no BBox coordinates)
+   - **Mistral**: Insufficient (no text region BBox)
+3. **Recommendation E19:** Docling + Gemini hybrid (Docling primary, Gemini optional, Kraken fallback)
+4. **Implementation plan written:** `PLAN.md` in repo root with 6 phases, data flow, risk matrix
+5. **Knowledge updates:** DECISIONS.md (E19), INDEX.md (E19-LAYOUT-ANALYSE.md linked)
+
+### Surprise Find
+
+- **ocr-fileformat (UB Mannheim):** Converts between 30+ OCR formats (hOCR, PAGE-XML, ALTO, TEI). Significantly reduces the risk of the format decision.
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| knowledge/E19-LAYOUT-ANALYSE.md | **New** -- Layout analysis research + evaluation matrix |
+| PLAN.md | **New** -- Implementation plan for full AI pipeline |
+| knowledge/DECISIONS.md | E19 added |
+| knowledge/INDEX.md | E19-LAYOUT-ANALYSE.md linked |
+| knowledge/JOURNAL.md | This entry |
+
+### Next Step
+
+Phase 0 evaluation: Run Docling layout analysis on all 383 page images, map block types → ZBZ tags, visually verify.
+
+---
+
+## 2026-02-25 | Knowledge Update: Prompts Documented + Research Results
+
+### Completed
+
+1. **Prompt documentation in PIPELINE.md**: All pipeline prompts fully documented
+   - Stage 1: Mistral (no prompt), DeepSeek (fixed prompt with `<|grounding|>`)
+   - Stage 2: Three LLM variants (A: Analysis, B: Lean, C: Few-Shot) with full prompt text
+2. **Outdated knowledge docs cleaned up**: PROJEKT.md (Phase 4, M1, costs), QUELLENANALYSE.md (1520 language), GND-STRATEGIE.md (next steps)
+3. **Web research prompt optimization** (3 lean searches):
+   - Mistral OCR: No custom prompt possible, but `extract_header/footer` parameter
+   - DeepSeek-OCR-2: 6 prompt modes, Free OCR without layout potentially faster
+   - LLM correction: Multimodal correction (image+text) achieves <1% CER (arXiv:2504.00414); overcorrection at CER <5% confirmed (ACL 2025)
+4. **Findings from pilot evaluation** documented in OCR-ENGINES.md (5 findings)
+5. **Three new open issues** in DECISIONS.md: O18 (multimodal), O19 (extract_header), O20 (Free OCR)
+
+### Findings
+
+| Finding | Source | Relevance |
+|---------|--------|-----------|
+| Multimodal LLM correction (scan+text) achieves <1% CER | arXiv:2504.00414 | High — greatest optimization potential |
+| Overcorrection at low CER is systematic, not project-specific | ACL 2025 | Confirms E17 |
+| Optimal segment length 200-300 words | ACL 2025 | We send full pages — already good |
+| Mistral `extract_header/footer` could filter JSTOR headers | Mistral API Docs | Medium — easy to test |
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| knowledge/PIPELINE.md | Prompt documentation (Stage 1+2), optimization potential |
+| knowledge/OCR-ENGINES.md | Prompt modes, Mistral configuration, pilot evaluation |
 | knowledge/DECISIONS.md | E16-E18 + O18-O20 |
-| knowledge/PROJEKT.md | Phase 4, M1, Kosten aktualisiert |
-| knowledge/QUELLENANALYSE.md | Doc 1520 Sprache FR |
-| knowledge/GND-STRATEGIE.md | Naechste Schritte bereinigt |
+| knowledge/PROJEKT.md | Phase 4, M1, costs updated |
+| knowledge/QUELLENANALYSE.md | Doc 1520 language FR |
+| knowledge/GND-STRATEGIE.md | Next steps cleaned up |
 
 ---
 
-## 2026-02-25 | Pipeline komplett: Alle 15 Pilot-Dokumente verarbeitet
+## 2026-02-25 | Pipeline Complete: All 15 Pilot Documents Processed
 
-### Durchgefuehrt
+### Completed
 
-1. **OCR fuer 3 fehlende Typ-A-Dokumente** (1060, 130, 1410): Mistral OCR, 32 Seiten in 24s
-2. **LLM-Korrektur fuer 5 Dokumente** (1060, 130, 1410, 40, 1520): Haiku 4.5 Variante C, 330 Seiten, Kosten $1.45
-3. **Seitenweiser Vergleich implementiert** (`evaluate_ocr.py`): Content-basiertes Page-Matching loest Phase-4-Blocker
-   - `extract_pages_from_tei()`: Splittet TEI anhand `<pb facs='#facs_N'>` Tags
-   - `_match_tei_to_ocr()`: Automatischer Seitenversatz-Erkennung (z.B. 1520.pdf hat +8 Offset)
-   - `evaluate_document_pagewise()`: Pro-Seite CER/WER, gewichteter Durchschnitt
-   - Auto-Erkennung: Seitenweise bei >10 TEI-Seiten, sonst globales Alignment
-4. **Evaluation aller 15 Dokumente**: Mistral-raw + LLM-korrigiert
-5. **Dashboard regeneriert**: 15/15 OCR, 15/15 LLM, 15/15 Eval
+1. **OCR for 3 missing Type-A documents** (1060, 130, 1410): Mistral OCR, 32 pages in 24s
+2. **LLM correction for 5 documents** (1060, 130, 1410, 40, 1520): Haiku 4.5 Variant C, 330 pages, cost $1.45
+3. **Page-wise comparison implemented** (`evaluate_ocr.py`): Content-based page matching resolves Phase 4 blocker
+   - `extract_pages_from_tei()`: Splits TEI based on `<pb facs='#facs_N'>` tags
+   - `_match_tei_to_ocr()`: Automatic page offset detection (e.g. 1520.pdf has +8 offset)
+   - `evaluate_document_pagewise()`: Per-page CER/WER, weighted average
+   - Auto-detection: Page-wise for >10 TEI pages, otherwise global alignment
+4. **Evaluation of all 15 documents**: Mistral raw + LLM corrected
+5. **Dashboard regenerated**: 15/15 OCR, 15/15 LLM, 15/15 Eval
 
-### Ergebnisse der neuen Dokumente
+### Results for New Documents
 
-| Doc | Typ | Mistral CER | LLM CER | Anmerkung |
-|-----|-----|------------|---------|-----------|
-| 1060 | A | 22.60% | 26.92% | Alignment-Problem (nur 6 TEI-Seiten) |
-| 130 | A | 4.13% | 4.15% | Seitenweise, Deckblatt korrekt ignoriert |
-| 1410 | A | 5.58% | 5.78% | Zweisprachig DE/FR, akzeptabel |
-| 40 | C | 2.57% | 2.65% | Exzellent, 147 Seiten gematcht |
-| 1520 | C | 2.73% | 2.75% | Exzellent, 116 Seiten, Offset +8 erkannt |
+| Doc | Type | Mistral CER | LLM CER | Note |
+|-----|------|------------|---------|------|
+| 1060 | A | 22.60% | 26.92% | Alignment problem (only 6 TEI pages) |
+| 130 | A | 4.13% | 4.15% | Page-wise, cover page correctly ignored |
+| 1410 | A | 5.58% | 5.78% | Bilingual DE/FR, acceptable |
+| 40 | C | 2.57% | 2.65% | Excellent, 147 pages matched |
+| 1520 | C | 2.73% | 2.75% | Excellent, 116 pages, offset +8 detected |
 
-**Phase 4 (Monografien) CER 2.65%** — beste aller Phasen. Seitenweiser Vergleich loest das Alignment-Problem bei langen Dokumenten vollstaendig.
+**Phase 4 (monographs) CER 2.65%** — best of all phases. Page-wise comparison fully resolves the alignment problem for long documents.
 
-### TESTPLAN-Items aktualisiert
+### TESTPLAN Items Updated
 
-- [x] Item 10: Seitenweisen Vergleich implementiert
-- [x] Item 11: OCR+LLM+Eval fuer alle 15 Docs abgeschlossen
-- [ ] Doc 1060 und 290 haben hohe CER — Scan-Qualitaet pruefen
-- [ ] Doc 1520 Sprache als FR identifiziert (war "?" in config.py)
+- [x] Item 10: Page-wise comparison implemented
+- [x] Item 11: OCR+LLM+Eval for all 15 docs completed
+- [ ] Doc 1060 and 290 have high CER — check scan quality
+- [ ] Doc 1520 language identified as FR (was "?" in config.py)
 
 ---
 
-## 2026-02-25 | Code-Qualitaet: Resource Leak + Duplikation behoben
+## 2026-02-25 | Code Quality: Resource Leak + Duplication Fixed
 
-### Durchgefuehrt
+### Completed
 
-- **`scripts/ocr_pipeline.py`**: Resource Leak in `MistralOCR._split_pdf()` gefixt — `fitz.open()`-Dokumente werden jetzt mit try-finally geschuetzt, sodass sie bei Exceptions nicht offen bleiben
-- **`scripts/utils.py`**: `pdf_to_images()` Duplikation aufgeloest — delegiert jetzt an `pdf_to_images_pages()` statt identische Logik zu duplizieren. Dabei Dateinamen-Padding vereinheitlicht (beide nutzen jetzt `:03d`)
-- Modul-Docstrings geprueft: Alle 14 Python-Module haben bereits Docstrings, kein Handlungsbedarf
+- **`scripts/ocr_pipeline.py`**: Resource leak in `MistralOCR._split_pdf()` fixed — `fitz.open()` documents are now protected with try-finally, so they don't remain open on exceptions
+- **`scripts/utils.py`**: `pdf_to_images()` duplication resolved — now delegates to `pdf_to_images_pages()` instead of duplicating identical logic. Filename padding unified in the process (both now use `:03d`)
+- Module docstrings checked: All 14 Python modules already have docstrings, no action needed
 
-### Begruendung
+### Rationale
 
-Systematisches Code-Audit identifizierte 3 potenzielle Verbesserungen, davon 2 umgesetzt:
-1. Resource Leak: Bei Exception zwischen `fitz.open()` und `.close()` blieben Dokumente offen — behoben mit try-finally
-2. Code-Duplikation: `pdf_to_images()` und `pdf_to_images_pages()` hatten nahezu identische Implementierungen — konsolidiert
-3. Fehlende Docstrings: Bereits vorhanden, kein Handlungsbedarf
+Systematic code audit identified 3 potential improvements, 2 implemented:
+1. Resource leak: On exception between `fitz.open()` and `.close()`, documents remained open — fixed with try-finally
+2. Code duplication: `pdf_to_images()` and `pdf_to_images_pages()` had nearly identical implementations — consolidated
+3. Missing docstrings: Already present, no action needed
 
-### Neue/geaenderte Dateien
+### New/Changed Files
 
-| Datei | Aenderung |
-|-------|-----------|
+| File | Change |
+|------|--------|
 | `scripts/ocr_pipeline.py` | FIX: try-finally in `_split_pdf()` |
-| `scripts/utils.py` | REFACTOR: `pdf_to_images()` delegiert an `pdf_to_images_pages()` |
+| `scripts/utils.py` | REFACTOR: `pdf_to_images()` delegates to `pdf_to_images_pages()` |
 
 ---
 
-## 2026-02-25 | ARCHITEKTUR.md → PIPELINE.md umbenannt + inhaltlich korrigiert
+## 2026-02-25 | ARCHITEKTUR.md → PIPELINE.md Renamed + Content Corrected
 
-### Durchgefuehrt
+### Completed
 
-- `knowledge/ARCHITEKTUR.md` → `knowledge/PIPELINE.md` umbenannt (git mv)
-- Alle 35 Referenzen in 14 Dateien aktualisiert (CLAUDE.md, README.md, 9 Knowledge-Docs)
-- Header, Tags und Beschreibung angepasst
-- **6 inhaltliche Korrekturen:**
-  1. Pipeline-Diagramm: Zeigt jetzt den tatsaechlichen Datenfluss (OCR → LLM → Eval → Dashboard)
-  2. Docling als integralen Teil von `ocr_pipeline.py` dokumentiert (nicht eigene Stufe)
-  3. Engine-Auswahl: Auto-Modus aus dem Code beschrieben
-  4. Evaluation und Dashboard als eigene Stufen ergaenzt (fehlten komplett)
-  5. Post-Processing-Widerspruch behoben (R6: `clean_markdown()` nicht im Produktionspfad)
-  6. CLI-Befehle vollstaendig mit allen Parametern
+- `knowledge/ARCHITEKTUR.md` → `knowledge/PIPELINE.md` renamed (git mv)
+- All 35 references in 14 files updated (CLAUDE.md, README.md, 9 knowledge docs)
+- Header, tags, and description adjusted
+- **6 content corrections:**
+  1. Pipeline diagram: Now shows the actual data flow (OCR → LLM → Eval → Dashboard)
+  2. Docling documented as integral part of `ocr_pipeline.py` (not separate stage)
+  3. Engine selection: Auto mode described from the code
+  4. Evaluation and dashboard added as separate stages (were completely missing)
+  5. Post-processing contradiction resolved (R6: `clean_markdown()` not in production path)
+  6. CLI commands complete with all parameters
 
-### Begruendung
+### Rationale
 
-"Architektur" suggeriert High-Level-Systemdesign. Der Inhalt beschreibt den konkreten
-Datenfluss durch die Scripts — das ist eine Pipeline-Dokumentation. Ausserdem stimmte
-der dokumentierte Ablauf nicht mit dem Code ueberein (veraltetes Diagramm, fehlende Stufen).
+"Architektur" (Architecture) suggests high-level system design. The content describes the concrete
+data flow through the scripts — that is pipeline documentation. Furthermore, the
+documented workflow did not match the code (outdated diagram, missing stages).
 
-### Neue/geaenderte Dateien
+### New/Changed Files
 
-| Datei | Aktion |
-|-------|--------|
-| `knowledge/ARCHITEKTUR.md` | UMBENANNT → `knowledge/PIPELINE.md` |
-| `knowledge/PIPELINE.md` | UPDATE (Header, Diagramm, 6 Korrekturen) |
-| `CLAUDE.md` | UPDATE (Referenz) |
-| `README.md` | UPDATE (Referenz) |
-| `knowledge/INDEX.md` | UPDATE (6 Referenzen + Verzeichnisstruktur) |
-| `knowledge/DECISIONS.md` | UPDATE (7 Referenzen) |
-| `knowledge/OCR-ENGINES.md` | UPDATE (2 Referenzen) |
-| `knowledge/INFRASTRUKTUR.md` | UPDATE (2 Referenzen) |
-| `knowledge/PROJEKT.md` | UPDATE (1 Referenz) |
-| `knowledge/QUELLENANALYSE.md` | UPDATE (1 Referenz) |
-| `knowledge/TEI-MAPPING.md` | UPDATE (1 Referenz) |
-| `knowledge/GND-STRATEGIE.md` | UPDATE (1 Referenz) |
-| `knowledge/ZBZ-WORKFLOW.md` | UPDATE (1 Referenz) |
-
----
-
-## 2026-02-25 | Projekt-Aufraeumung: Redundante Dateien entfernt
-
-### Durchgefuehrt
-
-**Geloeschte Dateien (7):**
-- `nul` — Leere Datei, Windows-Artefakt (0 Bytes, nicht getrackt)
-- `scripts/test_deepseek_ocr.py` — Redundant mit `ocr_pipeline.py --engine deepseek`
-- `scripts/test_docling.py` — Redundant mit `ocr_pipeline.py --engine docling`
-- `scripts/test_mistral_ocr.py` — Redundant mit `ocr_pipeline.py --engine mistral`
-- `scripts/test_column_prompt.py` — Einmaliges Spalten-Experiment, erledigt
-- `scripts/extract_layout.py` — Layout-Extraktion in `ocr_pipeline.py` integriert
-- `PROJEKTWISSEN.md` — 95% Duplikat der 12 Knowledge-Docs, verletzt Single-Source-of-Truth
-
-**Bereinigte Redundanzen:**
-- `knowledge/OCR-ENGINES.md`: Evaluationstabellen (CER/WER) entfernt, Verweis auf TESTPLAN.md
-- `knowledge/ARCHITEKTUR.md`: `extract_layout.py`-Referenz durch `ocr_pipeline.py` ersetzt
-- `README.md`: Link `knowledge/journal.md` → `knowledge/JOURNAL.md` korrigiert, Datum aktualisiert
-- `scripts/README.md`: Script-Tabelle aktualisiert (geloeschte raus, fehlende rein)
-- `scripts/__pycache__/` + `scripts/postprocess/__pycache__/` lokal entfernt
-
-### Begruendung
-
-Systematische Analyse aller Projektdateien ergab:
-- 5 Test-Scripts waren vollstaendig redundant mit `ocr_pipeline.py` (keine Imports, nicht in CLAUDE.md)
-- PROJEKTWISSEN.md duplizierte Inhalte aus PROJEKT, ARCHITEKTUR, QUELLENANALYSE, TESTPLAN, DECISIONS, INFRASTRUKTUR
-- OCR-ENGINES.md enthielt identische Evaluationstabellen wie TESTPLAN.md
-
-### Neue/geaenderte Dateien
-
-| Datei | Aktion |
-|-------|--------|
-| `nul` | GELOESCHT |
-| `PROJEKTWISSEN.md` | GELOESCHT |
-| `scripts/test_deepseek_ocr.py` | GELOESCHT |
-| `scripts/test_docling.py` | GELOESCHT |
-| `scripts/test_mistral_ocr.py` | GELOESCHT |
-| `scripts/test_column_prompt.py` | GELOESCHT |
-| `scripts/extract_layout.py` | GELOESCHT |
-| `knowledge/OCR-ENGINES.md` | UPDATE (Evaluationstabellen entfernt) |
-| `knowledge/ARCHITEKTUR.md` | UPDATE (extract_layout-Referenz) |
-| `README.md` | UPDATE (Link-Fix, Datum) |
-| `scripts/README.md` | UPDATE (Script-Tabelle) |
+| File | Action |
+|------|--------|
+| `knowledge/ARCHITEKTUR.md` | RENAMED → `knowledge/PIPELINE.md` |
+| `knowledge/PIPELINE.md` | UPDATE (header, diagram, 6 corrections) |
+| `CLAUDE.md` | UPDATE (reference) |
+| `README.md` | UPDATE (reference) |
+| `knowledge/INDEX.md` | UPDATE (6 references + directory structure) |
+| `knowledge/DECISIONS.md` | UPDATE (7 references) |
+| `knowledge/OCR-ENGINES.md` | UPDATE (2 references) |
+| `knowledge/INFRASTRUKTUR.md` | UPDATE (2 references) |
+| `knowledge/PROJEKT.md` | UPDATE (1 reference) |
+| `knowledge/QUELLENANALYSE.md` | UPDATE (1 reference) |
+| `knowledge/TEI-MAPPING.md` | UPDATE (1 reference) |
+| `knowledge/GND-STRATEGIE.md` | UPDATE (1 reference) |
+| `knowledge/ZBZ-WORKFLOW.md` | UPDATE (1 reference) |
 
 ---
 
-## 2026-02-25 | Dashboard-Redesign + Engine-Sichtbarkeit + Knowledge-Update
+## 2026-02-25 | Project Cleanup: Redundant Files Removed
 
-### Durchgefuehrt
+### Completed
 
-**Dashboard-Redesign (Session 1):**
-- Vollstaendige Projektanalyse und Dateninventur (15 Pilot-PDFs, 383 Seiten, 12 mit OCR, 10 mit LLM)
-- `scripts/generate_dashboard_data.py` erstellt: Generiert `docs/data/dashboard.json` aus allen Pipeline-Quellen
-- `docs/shared.css` erstellt: Unified Design System (CSS Custom Properties, warm-beige Light Theme)
-- `docs/shared.js` erstellt: Shared Utilities (Data Loading, Text-Fetching, Formatting, DOM Helpers)
-- `docs/index.html` komplett neu geschrieben: Dashboard + Dokumentkatalog + Qualitaetsvergleich
-- `docs/viewer.html` komplett redesigned: Light Theme, Source-Toggle (Mistral/LLM/DeepSeek)
-- benchmark.html-Inhalte in index.html integriert (Phasen-Summary + Dokument-Vergleichskarten)
-- Pipeline-Steps beschriftet (IMG, OCR, LLM, EVAL, EXP statt anonyme Punkte)
-- Viewer als vollwertige Dokumentseite mit Info-Bar (Metriken, CER-Bars, Keyboard-Shortcuts)
+**Deleted files (7):**
+- `nul` — Empty file, Windows artifact (0 bytes, not tracked)
+- `scripts/test_deepseek_ocr.py` — Redundant with `ocr_pipeline.py --engine deepseek`
+- `scripts/test_docling.py` — Redundant with `ocr_pipeline.py --engine docling`
+- `scripts/test_mistral_ocr.py` — Redundant with `ocr_pipeline.py --engine mistral`
+- `scripts/test_column_prompt.py` — One-time column experiment, done
+- `scripts/extract_layout.py` — Layout extraction integrated in `ocr_pipeline.py`
+- `PROJEKTWISSEN.md` — 95% duplicate of the 12 knowledge docs, violates single-source-of-truth
 
-**Engine-Sichtbarkeit (Session 2):**
-- `shared.js`: `engineBadges()` Funktion + OCR-Pipeline-Step als Composite (Mistral/DeepSeek Sub-Dots)
-- `shared.css`: Engine-Dot Styles (.teal/.violet), Engine-Badges Container
-- `index.html`: Engine-Filter Dropdown, DeepSeek-CER-Spalte, Engine-Badges-Spalte, per-Engine Metriken
-- `viewer.html`: Engine-Badges in Doc-Info-Bar
+**Cleaned up redundancies:**
+- `knowledge/OCR-ENGINES.md`: Evaluation tables (CER/WER) removed, reference to TESTPLAN.md
+- `knowledge/ARCHITEKTUR.md`: `extract_layout.py` reference replaced by `ocr_pipeline.py`
+- `README.md`: Link `knowledge/journal.md` → `knowledge/JOURNAL.md` corrected, date updated
+- `scripts/README.md`: Script table updated (deleted ones removed, missing ones added)
+- `scripts/__pycache__/` + `scripts/postprocess/__pycache__/` removed locally
 
-**Knowledge-Update (Session 2):**
-- Alle 12 Knowledge-Docs + PROJEKTWISSEN.md auf Stand 25.02.2026 gebracht
-- TEI-MAPPING.md + GND-STRATEGIE.md: E12-Scope-Hinweis ergaenzt
-- INFRASTRUKTUR.md: Stale Dockerfile-Referenz (`templates/`) entfernt, Dashboard-Deployment ergaenzt
-- DECISIONS.md: E15 (Dashboard-Redesign) hinzugefuegt
-- ARCHITEKTUR.md: Dashboard-QA-UI Sektion + CLI-Befehl ergaenzt
-- INDEX.md: Dashboard-Navigation + Kernbegriff ergaenzt
-- TESTPLAN.md: Dashboard-Link ergaenzt
-- OCR-ENGINES.md: benchmark.html-Referenz durch Dashboard ersetzt
-- ZBZ-WORKFLOW.md: QA-Dashboard Sektion ergaenzt
-- PROJEKTWISSEN.md: Dashboard-Dateien, E15, Scripts-Tabelle aktualisiert
+### Rationale
 
-### Architektur
+Systematic analysis of all project files revealed:
+- 5 test scripts were completely redundant with `ocr_pipeline.py` (no imports, not in CLAUDE.md)
+- PROJEKTWISSEN.md duplicated content from PROJEKT, ARCHITEKTUR, QUELLENANALYSE, TESTPLAN, DECISIONS, INFRASTRUKTUR
+- OCR-ENGINES.md contained identical evaluation tables as TESTPLAN.md
 
-- Multi-Page mit Shared CSS/JS (statt drei unabhaengige Designs)
-- Statische JSON-Datenbasis (`dashboard.json`) statt hardcodierter Daten in HTML
-- Source-Toggle im Viewer: Tastatur 1/2/3 fuer Mistral/LLM/DeepSeek
-- Filterbarer Dokumentkatalog mit Pipeline-Status-Anzeige (beschriftete Steps)
-- CER-Vergleichsbalken (Mistral vs LLM-C, optional DeepSeek)
-- Engine-Badges (M/DS/LLM) fuer sofortige Engine-Erkennung pro Dokument
+### New/Changed Files
 
-### Entscheidung
-
-- **E15**: Dashboard-Redesign — Multi-Page UI, Shared CSS/JS, Light Theme, statische JSONs, Engine-Sichtbarkeit
-
-### Neue/Geaenderte Dateien
-
-| Datei | Aktion |
-|-------|--------|
-| `scripts/generate_dashboard_data.py` | NEU |
-| `docs/data/dashboard.json` | GENERIERT |
-| `docs/shared.css` | NEU + Engine-Styles |
-| `docs/shared.js` | NEU + engineBadges() + Composite Pipeline |
-| `docs/index.html` | REWRITE + Engine-Spalten/Filter |
-| `docs/viewer.html` | REWRITE + Engine-Badges in Info-Bar |
-| `docs/benchmark.html` | ARCHIV (nicht mehr verlinkt) |
-| `knowledge/*.md` (alle 12) | UPDATE (Timestamps, Inhalte, E12-Scope) |
-| `PROJEKTWISSEN.md` | UPDATE (Dashboard, E15, Scripts) |
+| File | Action |
+|------|--------|
+| `nul` | DELETED |
+| `PROJEKTWISSEN.md` | DELETED |
+| `scripts/test_deepseek_ocr.py` | DELETED |
+| `scripts/test_docling.py` | DELETED |
+| `scripts/test_mistral_ocr.py` | DELETED |
+| `scripts/test_column_prompt.py` | DELETED |
+| `scripts/extract_layout.py` | DELETED |
+| `knowledge/OCR-ENGINES.md` | UPDATE (evaluation tables removed) |
+| `knowledge/ARCHITEKTUR.md` | UPDATE (extract_layout reference) |
+| `README.md` | UPDATE (link fix, date) |
+| `scripts/README.md` | UPDATE (script table) |
 
 ---
 
-## 2026-02-20 | coOCR-Interface-Analyse: PAGE-XML + PNG
+## 2026-02-25 | Dashboard Redesign + Engine Visibility + Knowledge Update
 
-### Durchgefuehrt
+### Completed
 
-- coOCR/HTR-Repo ([DHCraft/co-ocr-htr](https://github.com/DHCraft/co-ocr-htr)) vollstaendig analysiert
-- Import-Format identifiziert: PAGE-XML (Schema 2019-07-15) + PNG + METS-XML
-- Exportstruktur definiert: `output/export/{doc_id}/` mit mets.xml, images/, page/
-- Batch-Orchestrierungs-Architektur entworfen (noch nicht implementiert)
+**Dashboard redesign (Session 1):**
+- Complete project analysis and data inventory (15 pilot PDFs, 383 pages, 12 with OCR, 10 with LLM)
+- `scripts/generate_dashboard_data.py` created: Generates `docs/data/dashboard.json` from all pipeline sources
+- `docs/shared.css` created: Unified design system (CSS custom properties, warm-beige light theme)
+- `docs/shared.js` created: Shared utilities (data loading, text fetching, formatting, DOM helpers)
+- `docs/index.html` completely rewritten: Dashboard + document catalog + quality comparison
+- `docs/viewer.html` completely redesigned: Light theme, source toggle (Mistral/LLM/DeepSeek)
+- benchmark.html contents integrated into index.html (phase summary + document comparison cards)
+- Pipeline steps labeled (IMG, OCR, LLM, EVAL, EXP instead of anonymous dots)
+- Viewer as full-featured document page with info bar (metrics, CER bars, keyboard shortcuts)
 
-### Erkenntnisse
+**Engine visibility (Session 2):**
+- `shared.js`: `engineBadges()` function + OCR pipeline step as composite (Mistral/DeepSeek sub-dots)
+- `shared.css`: Engine dot styles (.teal/.violet), engine badges container
+- `index.html`: Engine filter dropdown, DeepSeek CER column, engine badges column, per-engine metrics
+- `viewer.html`: Engine badges in doc info bar
 
-- coOCR ist eine reine Browser-App (kein Backend-API) — Import ueber File-Upload
-- PAGE-XML Namespace: `http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15`
-- Text wird in `<TextEquiv><Unicode>` as-is gespeichert — Markdown-Formatierung muss erhalten bleiben
-- Confidence-Mapping: Mistral-roh=0.85, LLM-korrigiert=0.95
-- coOCR exportiert `<ab>` (nicht `<p>`) — relevant fuer teiCrafter-Schnittstelle (O5)
+**Knowledge update (Session 2):**
+- All 12 knowledge docs + PROJEKTWISSEN.md brought up to date as of 25.02.2026
+- TEI-MAPPING.md + GND-STRATEGIE.md: E12 scope note added
+- INFRASTRUKTUR.md: Stale Dockerfile reference (`templates/`) removed, dashboard deployment added
+- DECISIONS.md: E15 (dashboard redesign) added
+- ARCHITEKTUR.md: Dashboard QA UI section + CLI command added
+- INDEX.md: Dashboard navigation + core term added
+- TESTPLAN.md: Dashboard link added
+- OCR-ENGINES.md: benchmark.html reference replaced by dashboard
+- ZBZ-WORKFLOW.md: QA dashboard section added
+- PROJEKTWISSEN.md: Dashboard files, E15, scripts table updated
 
-### Geloest
+### Architecture
 
-- **O4**: Schnittstelle zbz-ocr-tei -> coOCR = PAGE-XML + PNG + METS (E13)
-- **R6**: Markdown-Formatierung erhalten, Post-Processing darf Markup nicht entfernen (E14)
+- Multi-page with shared CSS/JS (instead of three independent designs)
+- Static JSON data basis (`dashboard.json`) instead of hardcoded data in HTML
+- Source toggle in viewer: Keyboard 1/2/3 for Mistral/LLM/DeepSeek
+- Filterable document catalog with pipeline status display (labeled steps)
+- CER comparison bars (Mistral vs LLM-C, optionally DeepSeek)
+- Engine badges (M/DS/LLM) for instant engine recognition per document
 
-### Naechste Schritte
+### Decision
 
-- `scripts/export_page_xml.py` implementieren (Markdown -> PAGE-XML Konverter)
-- `scripts/run_pipeline.py` implementieren (Batch-Orchestrierung mit Resume/Retry)
-- Post-Processing anpassen: Markdown-Markup erhalten
+- **E15**: Dashboard redesign — Multi-page UI, shared CSS/JS, light theme, static JSONs, engine visibility
 
----
+### New/Changed Files
 
-## 2026-02-19 | Scope-Klaerung: Nur OCR, keine TEI-Transformation
-
-### Entscheidung (E12)
-
-zbz-ocr-tei ist rein fuer OCR zustaendig (PDF -> korrigiertes Markdown). TEI-Transformation und GND-Verknuepfung finden in coOCR/HTR und teiCrafter statt.
-
-### Aufgeraeumt
-
-- `scripts/transform_to_tei.py` entfernt (393 Zeilen)
-- `templates/` entfernt (5 TEI-Templates + README)
-- `DOC_TYPES` und `TEI_DIR` aus config.py entfernt
-- ARCHITEKTUR.md: Pipeline auf 4 Stufen reduziert (ohne TEI/GND)
-- PROJEKT.md: Meilensteine angepasst (M2=Produktion, M3=coOCR-Integration)
-- DECISIONS.md: E12 hinzugefuegt, TEI-Fragen (O6-O9, O11-O14, R2-R3) nach coOCR/teiCrafter verschoben
-- README.md komplett neu geschrieben
-
-### Behalten
-
-- `evaluate_ocr.py` + Referenz-TEI-Lesefunktion (Ground Truth fuer CER)
-- `extract_gnd.py` + KNOWN_ENTITIES (GND-Seed fuer Downstream)
-- `knowledge/TEI-MAPPING.md` und `GND-STRATEGIE.md` (Referenzwissen)
-
----
-
-## 2026-02-19 | Prompt-Optimierung: A/B/C-Test fuer LLM-Korrektur
-
-### Durchgefuehrt
-
-- Drei Prompt-Varianten implementiert: A (Analysis+Corrected), B (Schlank), C (Few-Shot)
-- `--variant` Flag in `llm_postprocess.py` ergaenzt
-- Alle drei Varianten auf Phase 1-3 (10 Docs, 53 Seiten) getestet
-- CER-Vergleich gegen Referenz-TEI
-
-### Ergebnisse
-
-| Variante | Avg CER | Kosten | Beschreibung |
-|----------|---------|--------|--------------|
-| Mistral (kein LLM) | 5.87% | $0.00 | Baseline |
-| A (Analysis+Corrected) | 5.47% | $0.39 | Chain-of-Thought |
-| B (Schlank, nur Text) | 5.59% | $0.33 | Minimal-Prompt |
-| **C (Few-Shot)** | **5.55%** | **$0.33** | Fehlerbeispiele |
-
-### Entscheidung
-
-**Variante C als Default** — bester CER/Kosten-Tradeoff. Gesamtverbesserung: 5.87% -> 5.55% (5.5% relativ).
-Unterschiede zwischen A/B/C sind gering (~0.1 Punkte). Few-Shot-Beispiele helfen leicht.
+| File | Action |
+|------|--------|
+| `scripts/generate_dashboard_data.py` | NEW |
+| `docs/data/dashboard.json` | GENERATED |
+| `docs/shared.css` | NEW + engine styles |
+| `docs/shared.js` | NEW + engineBadges() + composite pipeline |
+| `docs/index.html` | REWRITE + engine columns/filter |
+| `docs/viewer.html` | REWRITE + engine badges in info bar |
+| `docs/benchmark.html` | ARCHIVE (no longer linked) |
+| `knowledge/*.md` (all 12) | UPDATE (timestamps, content, E12 scope) |
+| `PROJEKTWISSEN.md` | UPDATE (dashboard, E15, scripts) |
 
 ---
 
-## 2026-02-19 | LLM-basierte OCR-Nachkorrektur mit Haiku 4.5
+## 2026-02-20 | coOCR Interface Analysis: PAGE-XML + PNG
 
-### Durchgefuehrt
+### Completed
 
-- `scripts/llm_postprocess.py` erstellt: LLM-basierte OCR-Korrektur mit Anthropic Claude Haiku 4.5
-- `scripts/config.py` erweitert: LLM_CORRECTED_DIR, ANTHROPIC_MODEL, get_test_metadata()
-- `.env.example` erstellt als Vorlage (ohne Secrets)
-- ANTHROPIC_API_KEY in `.env` konfiguriert (bereits in .gitignore + .claudeignore)
-- Pilot-Test: Phase 1-3 (10 Docs, 50 Seiten) durch LLM-Korrektur + CER-Vergleich
+- coOCR/HTR repo ([DHCraft/co-ocr-htr](https://github.com/DHCraft/co-ocr-htr)) fully analyzed
+- Import format identified: PAGE-XML (schema 2019-07-15) + PNG + METS-XML
+- Export structure defined: `output/export/{doc_id}/` with mets.xml, images/, page/
+- Batch orchestration architecture designed (not yet implemented)
 
-### Architektur
+### Findings
 
-Ein API-Call pro Seite (Chain-of-Thought): `<analysis>` listet Fehler, `<corrected>` gibt korrigierten Text.
-Prompt enthaelt Dokumentkontext aus TESTPLAN (Typ, Sprache, Genre).
+- coOCR is a pure browser app (no backend API) — import via file upload
+- PAGE-XML namespace: `http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15`
+- Text is stored in `<TextEquiv><Unicode>` as-is — Markdown formatting must be preserved
+- Confidence mapping: Mistral raw=0.85, LLM corrected=0.95
+- coOCR exports `<ab>` (not `<p>`) — relevant for teiCrafter interface (O5)
 
-### Ergebnisse: Mistral vs. LLM-korrigiert
+### Resolved
 
-| Doc | Typ | Mistral CER | LLM CER | Delta |
-|-----|-----|-------------|---------|-------|
+- **O4**: Interface zbz-ocr-tei -> coOCR = PAGE-XML + PNG + METS (E13)
+- **R6**: Markdown formatting preserved, post-processing must not remove markup (E14)
+
+### Next Steps
+
+- Implement `scripts/export_page_xml.py` (Markdown -> PAGE-XML converter)
+- Implement `scripts/run_pipeline.py` (batch orchestration with resume/retry)
+- Adapt post-processing: Preserve Markdown markup
+
+---
+
+## 2026-02-19 | Scope Clarification: OCR Only, No TEI Transformation
+
+### Decision (E12)
+
+zbz-ocr-tei is solely responsible for OCR (PDF -> corrected Markdown). TEI transformation and GND linkage take place in coOCR/HTR and teiCrafter.
+
+### Cleaned Up
+
+- `scripts/transform_to_tei.py` removed (393 lines)
+- `templates/` removed (5 TEI templates + README)
+- `DOC_TYPES` and `TEI_DIR` removed from config.py
+- ARCHITEKTUR.md: Pipeline reduced to 4 stages (without TEI/GND)
+- PROJEKT.md: Milestones adjusted (M2=production, M3=coOCR integration)
+- DECISIONS.md: E12 added, TEI questions (O6-O9, O11-O14, R2-R3) moved to coOCR/teiCrafter
+- README.md completely rewritten
+
+### Retained
+
+- `evaluate_ocr.py` + reference TEI reading function (ground truth for CER)
+- `extract_gnd.py` + KNOWN_ENTITIES (GND seed for downstream)
+- `knowledge/TEI-MAPPING.md` and `GND-STRATEGIE.md` (reference knowledge)
+
+---
+
+## 2026-02-19 | Prompt Optimization: A/B/C Test for LLM Correction
+
+### Completed
+
+- Three prompt variants implemented: A (Analysis+Corrected), B (Lean), C (Few-Shot)
+- `--variant` flag added in `llm_postprocess.py`
+- All three variants tested on Phase 1-3 (10 docs, 53 pages)
+- CER comparison against reference TEI
+
+### Results
+
+| Variant | Avg CER | Cost | Description |
+|---------|---------|------|-------------|
+| Mistral (no LLM) | 5.87% | $0.00 | Baseline |
+| A (Analysis+Corrected) | 5.47% | $0.39 | Chain-of-thought |
+| B (Lean, text only) | 5.59% | $0.33 | Minimal prompt |
+| **C (Few-Shot)** | **5.55%** | **$0.33** | Error examples |
+
+### Decision
+
+**Variant C as default** — best CER/cost tradeoff. Overall improvement: 5.87% -> 5.55% (5.5% relative).
+Differences between A/B/C are small (~0.1 points). Few-shot examples help slightly.
+
+---
+
+## 2026-02-19 | LLM-Based OCR Post-Correction with Haiku 4.5
+
+### Completed
+
+- `scripts/llm_postprocess.py` created: LLM-based OCR correction with Anthropic Claude Haiku 4.5
+- `scripts/config.py` extended: LLM_CORRECTED_DIR, ANTHROPIC_MODEL, get_test_metadata()
+- `.env.example` created as template (without secrets)
+- ANTHROPIC_API_KEY configured in `.env` (already in .gitignore + .claudeignore)
+- Pilot test: Phase 1-3 (10 docs, 50 pages) through LLM correction + CER comparison
+
+### Architecture
+
+One API call per page (chain-of-thought): `<analysis>` lists errors, `<corrected>` gives corrected text.
+Prompt contains document context from TESTPLAN (type, language, genre).
+
+### Results: Mistral vs. LLM-Corrected
+
+| Doc | Type | Mistral CER | LLM CER | Delta |
+|-----|------|-------------|---------|-------|
 | 2310 | A | 7.00% | 3.93% | **-3.07** |
 | 1180 | A | 3.12% | 3.17% | +0.05 |
 | 290 | A | 18.07% | 18.20% | +0.13 |
@@ -759,88 +759,88 @@ Prompt enthaelt Dokumentkontext aus TESTPLAN (Typ, Sprache, Genre).
 | Phase 1 (A) | 9.40% | 8.43% | -0.97 |
 | Phase 2 (B) | 6.31% | 6.34% | +0.03 |
 | Phase 3 (D) | 2.88% | 2.72% | -0.16 |
-| **Gesamt** | **5.87%** | **5.47%** | **-0.40 (7% relativ)** |
+| **Total** | **5.87%** | **5.47%** | **-0.40 (7% relative)** |
 
-### Kosten
+### Costs
 
-- Phase 1-3 (50 Seiten): $0.39
-- Hochrechnung 289 Docs (7.200 Seiten): ~$56
+- Phase 1-3 (50 pages): $0.39
+- Projection 289 docs (7,200 pages): ~$56
 
-### Erkenntnisse
+### Findings
 
-- Staerkste Verbesserung bei Dokumenten mit OCR-Artefakten (JSTOR-Header, Coverseiten)
-- Gute Verbesserung bei Spezialformaten (historisch, Bildband)
-- Kein Effekt bei Scan-Qualitaetsproblemen (Doc 290 bleibt bei ~18%)
-- Bei bereits guter OCR (~3% CER) kein signifikanter Gewinn
-- Vereinzelt minimale Verschlechterung moeglich (1330: +0.18) durch LLM-"Korrekturen"
+- Strongest improvement for documents with OCR artifacts (JSTOR headers, cover pages)
+- Good improvement for special formats (historical, art book)
+- No effect for scan quality issues (Doc 290 remains at ~18%)
+- No significant gain for already good OCR (~3% CER)
+- Occasional minimal degradation possible (1330: +0.18) due to LLM "corrections"
 
-### Neue Dateien
+### New Files
 
-- `scripts/llm_postprocess.py` — LLM-Korrektur-Pipeline
-- `.env.example` — Vorlage fuer API-Keys
-
----
-
-## 2026-02-18 | M1: OCR-Validierung + Mistral-Integration + Refactoring
-
-**Mistral Document AI integriert und gegen alle 12 Testdokumente (Phase 1-4) evaluiert.**
-
-- `MistralOCR`-Klasse in `ocr_pipeline.py` implementiert (Azure AI Foundry Endpoint, Base64-Upload, automatisches PDF-Splitting bei >30 Seiten)
-- `evaluate_ocr.py` erweitert: `--ocr-dir`, `--engine`, `--phase` Parameter, Fuzzy TEI-Lookup, rapidfuzz fuer CER (loest MemoryError)
-- **Ergebnis Phase 1-3: CER 5.87%, Genauigkeit 94.14%** — Einzelwerte in [TESTPLAN](TESTPLAN.md) §Ergebnisse
-- Phase 4 (Monografien): Alignment bei 142-156-seitigen Buechern nicht zuverlaessig, seitenweiser Vergleich noetig
-- Doc 290 (Comptes Rendus FR): CER 18% — vermutlich Scan-Qualitaet, nicht OCR-Problem
-- Mistral ~1.3s/Seite (Cloud-API, kein GPU noetig), erkennt Kursivschrift und Akzente
-
-**Code-Refactoring: Zentrale Module eingefuehrt.**
-
-- `scripts/config.py` erstellt: Alle Pfade, Modellnamen, Konstanten, Testplan
-- `scripts/utils.py` erstellt: `pdf_to_images()`, `check_gpu()`, `load_env()`, `load_deepseek_model()`
-- 12 Scripts refactored: Eliminiert 4x `pdf_to_images`, 4x `check_gpu`, 4x `load_model`, 2x `load_env`, 2x `TESTPLAN`
-
-**Technisch:** Azure AI Foundry hat eigenes URL-Format; PyMuPDF >= 1.24 hat `fitz` zu `pymupdf` umbenannt.
+- `scripts/llm_postprocess.py` — LLM correction pipeline
+- `.env.example` — Template for API keys
 
 ---
 
-## 2026-02-18 | Knowledge-Vault Refactoring
+## 2026-02-18 | M1: OCR Validation + Mistral Integration + Refactoring
 
-- Knowledge-Ordner nach coOCR/teiCrafter-Muster aufgebaut: INDEX.md, PROJEKT.md, DECISIONS.md, INFRASTRUKTUR.md als neue Kerndokumente
-- Single Source of Truth eingefuehrt, Duplikation eliminiert
-- Oekosystem-Kontext dokumentiert (zbz-ocr-tei -> coOCR -> teiCrafter)
-- Erkannt: Post-Processing entfernt Markdown-Formatierung vor TEI — Informationsverlust (-> R6); TEI-Transformation nur Prototyp; Schnittstellen zwischen Tools undefiniert
+**Mistral Document AI integrated and evaluated against all 12 test documents (Phase 1-4).**
+
+- `MistralOCR` class implemented in `ocr_pipeline.py` (Azure AI Foundry endpoint, Base64 upload, automatic PDF splitting at >30 pages)
+- `evaluate_ocr.py` extended: `--ocr-dir`, `--engine`, `--phase` parameters, fuzzy TEI lookup, rapidfuzz for CER (resolves MemoryError)
+- **Result Phase 1-3: CER 5.87%, accuracy 94.14%** — Individual values in [TESTPLAN](TESTPLAN.md) §Results
+- Phase 4 (monographs): Alignment for 142-156 page books not reliable, page-wise comparison needed
+- Doc 290 (Comptes Rendus FR): CER 18% — presumably scan quality, not OCR problem
+- Mistral ~1.3s/page (cloud API, no GPU needed), recognizes italics and accents
+
+**Code refactoring: Central modules introduced.**
+
+- `scripts/config.py` created: All paths, model names, constants, test plan
+- `scripts/utils.py` created: `pdf_to_images()`, `check_gpu()`, `load_env()`, `load_deepseek_model()`
+- 12 scripts refactored: Eliminated 4x `pdf_to_images`, 4x `check_gpu`, 4x `load_model`, 2x `load_env`, 2x `TESTPLAN`
+
+**Technical:** Azure AI Foundry has its own URL format; PyMuPDF >= 1.24 renamed `fitz` to `pymupdf`.
 
 ---
 
-## 2026-02-14 | Auftrag beidseitig bestaetigt, Projektstart
+## 2026-02-18 | Knowledge Vault Refactoring
 
-- Auftrag bestaetigt: ZBZ erteilt (Mail Elias, nach 07.02.), DHCraft angenommen (Mail Christopher, 14.02.)
-- Rahmenbedingungen: Mistral OCR 3 ueber Azure, Claude Max Subscription, Gemini API, Fork auf GitLab Uni Zuerich, Podman
-- Team ZBZ: Anouschka (Editions- und Informatik-Background, seit Januar)
-- coOCR/HTR als Community-Projekt positioniert (Klugseder-Fork als Referenz)
-- Alignment-Call: Terminvorschlaege gesendet (Agenda: Fork-Modell, Merge-Strategie, GitLab, Podman, Vor-Ort Zuerich)
+- Knowledge folder built following coOCR/teiCrafter pattern: INDEX.md, PROJEKT.md, DECISIONS.md, INFRASTRUKTUR.md as new core documents
+- Single source of truth introduced, duplication eliminated
+- Ecosystem context documented (zbz-ocr-tei -> coOCR -> teiCrafter)
+- Discovered: Post-processing removes Markdown formatting before TEI — information loss (-> R6); TEI transformation only prototype; interfaces between tools undefined
 
 ---
 
-## 2026-02-02 | Gemini 3 Agentic Vision Analyse
+## 2026-02-14 | Contract Mutually Confirmed, Project Start
 
-- Google Agentic Vision fuer Gemini 3 Flash (27.01.2026): Think-Act-Observe Loop fuer Auto-Crop von Spalten — potenzielle Loesung fuer Typ-B-Problem (O10)
+- Contract confirmed: ZBZ issued (email Elias, after 07.02.), DHCraft accepted (email Christopher, 14.02.)
+- Framework conditions: Mistral OCR 3 via Azure, Claude Max Subscription, Gemini API, fork on GitLab Uni Zuerich, Podman
+- Team ZBZ: Anouschka (editions and informatics background, since January)
+- coOCR/HTR positioned as community project (Klugseder fork as reference)
+- Alignment call: Date proposals sent (agenda: fork model, merge strategy, GitLab, Podman, on-site Zuerich)
+
+---
+
+## 2026-02-02 | Gemini 3 Agentic Vision Analysis
+
+- Google Agentic Vision for Gemini 3 Flash (27.01.2026): Think-Act-Observe loop for auto-crop of columns — potential solution for Type-B problem (O10)
 - Details: [OCR-ENGINES](OCR-ENGINES.md) §Gemini
-- Quellen: [Announcement](https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/), [IIIF Example](https://gist.github.com/charlesLoder/5341c539ab8330cfebc2d807e6b9c765)
+- Sources: [Announcement](https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/), [IIIF Example](https://gist.github.com/charlesLoder/5341c539ab8330cfebc2d807e6b9c765)
 
 ---
 
-## 2026-01-29 | Materialanalyse & Pipeline-Entwicklung
+## 2026-01-29 | Material Analysis & Pipeline Development
 
-**Erste Arbeitssession: Korpusanalyse, Hybrid-Pipeline validiert, OCR Phase 1 durchgefuehrt.**
+**First work session: Corpus analysis, hybrid pipeline validated, OCR Phase 1 completed.**
 
-- 289 Texte (7.200 Seiten) analysiert, 4 Dokumenttypen klassifiziert (A-D) — Details in [QUELLENANALYSE](QUELLENANALYSE.md)
-- Hybrid-Pipeline validiert: Docling (Layout, CPU) + DeepSeek (OCR, GPU) funktioniert
-- Docling OCR nicht nutzbar (RapidOCR Encoding-Fehler: `e` -> `O` bei frz. Text) — nur fuer Layout eingesetzt (E2)
-- OCR Phase 1: 94.4% Genauigkeit auf Typ-A-Dokumenten — Details in [TESTPLAN](TESTPLAN.md)
-- GND-Seed: 75 Entitaeten extrahiert — Details in [GND-STRATEGIE](GND-STRATEGIE.md)
-- TEI-Prototyp: 5 Templates erstellt (spaeter entfernt mit E12)
-- 383 Seitenbilder aus 15 Pilot-PDFs extrahiert
+- 289 texts (7,200 pages) analyzed, 4 document types classified (A-D) — details in [QUELLENANALYSE](QUELLENANALYSE.md)
+- Hybrid pipeline validated: Docling (layout, CPU) + DeepSeek (OCR, GPU) works
+- Docling OCR not usable (RapidOCR encoding error: `e` -> `O` for French text) — used only for layout (E2)
+- OCR Phase 1: 94.4% accuracy on Type-A documents — details in [TESTPLAN](TESTPLAN.md)
+- GND seed: 75 entities extracted — details in [GND-STRATEGIE](GND-STRATEGIE.md)
+- TEI prototype: 5 templates created (later removed with E12)
+- 383 page images extracted from 15 pilot PDFs
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-26 (TEI-Viewer Refactoring)*
+*Created: 2026-01-29 | Updated: 2026-02-27 (Data Delivery HerschStandFeb)*

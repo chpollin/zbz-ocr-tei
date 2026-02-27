@@ -1,117 +1,117 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-02-26
+updated: 2026-02-27
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
 
 # Knowledge Base — ZBZ-OCR-TEI
 
-Dokumentation für die LLM-gestützte OCR- und TEI-Pipeline der Jeanne Hersch Edition (Zentralbibliothek Zürich).
+Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edition (Zentralbibliothek Zuerich).
 
 ---
 
-## Dokumentmatrix
+## Document Matrix
 
-| Dokument | Beantwortet | Zielgruppe | Abhängigkeiten |
-|----------|-------------|------------|----------------|
-| [PROJEKT](PROJEKT.md) | Was ist das Projekt? Pipeline-Scope und Meilensteine | Alle | — |
-| [PIPELINE](PIPELINE.md) | Wie ist die Pipeline technisch aufgebaut? | Entwicklung | PROJEKT |
-| [QUELLENANALYSE](QUELLENANALYSE.md) | Was ist das Material? Welche Dokumenttypen gibt es? | Alle | — |
-| [OCR-ENGINES](OCR-ENGINES.md) | Welche OCR-Tools werden eingesetzt und wie? | Entwicklung | PIPELINE |
-| [TEI-MAPPING](TEI-MAPPING.md) | Welche TEI-Regeln gelten? | Entwicklung, Edition | QUELLENANALYSE |
-| [GND-STRATEGIE](GND-STRATEGIE.md) | Wie funktioniert die Entitätsverknüpfung? | Entwicklung, Edition | TEI-MAPPING |
-| [TESTPLAN](TESTPLAN.md) | Wie wird Qualität gemessen? Was sind die Ergebnisse? | Entwicklung, QS | QUELLENANALYSE, OCR-ENGINES |
-| [INFRASTRUKTUR](INFRASTRUKTUR.md) | Wie wird deployed? Azure, Podman, CI/CD? | Entwicklung, Ops | PIPELINE |
-| [DECISIONS](DECISIONS.md) | Was ist entschieden? Was ist offen? | Alle | Alle |
-| [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) | Wie arbeitet die ZBZ redaktionell? | Alle | — |
-| [JOURNAL](JOURNAL.md) | Was wurde wann gemacht? | Alle | — |
-| [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) | Welcher Ansatz fuer Layout-Analyse? | Entwicklung | PIPELINE |
+| Document | Answers | Audience | Dependencies |
+|----------|---------|----------|--------------|
+| [PROJEKT](PROJEKT.md) | What is the project? Pipeline scope and milestones | All | — |
+| [PIPELINE](PIPELINE.md) | How is the pipeline technically structured? | Development | PROJEKT |
+| [QUELLENANALYSE](QUELLENANALYSE.md) | What is the material? Which document types exist? | All | — |
+| [OCR-ENGINES](OCR-ENGINES.md) | Which OCR tools are used and how? | Development | PIPELINE |
+| [TEI-MAPPING](TEI-MAPPING.md) | Which TEI rules apply? | Development, Edition | QUELLENANALYSE |
+| [GND-STRATEGIE](GND-STRATEGIE.md) | How does entity linking work? | Development, Edition | TEI-MAPPING |
+| [TESTPLAN](TESTPLAN.md) | How is quality measured? What are the results? | Development, QA | QUELLENANALYSE, OCR-ENGINES |
+| [INFRASTRUKTUR](INFRASTRUKTUR.md) | How is deployment done? Azure, Podman, CI/CD? | Development, Ops | PIPELINE |
+| [DECISIONS](DECISIONS.md) | What is decided? What is open? | All | All |
+| [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) | How does ZBZ work editorially? | All | — |
+| [JOURNAL](JOURNAL.md) | What was done when? | All | — |
+| [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) | Which approach for layout analysis? | Development | PIPELINE |
 
 ---
 
-## Abhängigkeiten
+## Dependencies
 
 ```
-PROJEKT (Vision, Ökosystem)
-    │
-    ├──▶ PIPELINE (7-Stufen-Pipeline: PDF → TEI-XML)
-    │        ├──▶ OCR-ENGINES (DeepSeek, Mistral, Gemini)
-    │        ├──▶ INFRASTRUKTUR (Azure, Podman, CI/CD)
-    │        └──▶ TESTPLAN (Phasen, Metriken)
-    │
-    ├──▶ QUELLENANALYSE (Korpus, Dokumenttypen, Pilotdateien)
-    │        ├──▶ TEI-MAPPING (DTA-Basisformat, Regeln)
-    │        │        └──▶ GND-STRATEGIE (NER, Entity Linking)
-    │        └──▶ TESTPLAN (Single Source für Ergebnisse)
-    │
-    └──▶ ZBZ-WORKFLOW (Redaktioneller Kontext)
+PROJEKT (Vision, Ecosystem)
+    |
+    +-->  PIPELINE (7-Stage Pipeline: PDF -> TEI-XML)
+    |        +-->  OCR-ENGINES (DeepSeek, Mistral, Gemini)
+    |        +-->  INFRASTRUKTUR (Azure, Podman, CI/CD)
+    |        +-->  TESTPLAN (Phases, Metrics)
+    |
+    +-->  QUELLENANALYSE (Corpus, Document Types, Pilot Files)
+    |        +-->  TEI-MAPPING (DTA-Basisformat, Rules)
+    |        |        +-->  GND-STRATEGIE (NER, Entity Linking)
+    |        +-->  TESTPLAN (Single Source for Results)
+    |
+    +-->  ZBZ-WORKFLOW (Editorial Context)
 
-DECISIONS ◄── querschnittlich, sammelt aus allen Docs
-JOURNAL   ◄── chronologisch, verweist auf alle Docs
+DECISIONS <-- cross-cutting, collects from all docs
+JOURNAL   <-- chronological, references all docs
 ```
 
 ---
 
-## Kernbegriffe
+## Key Concepts
 
-| Begriff | Definition | Dokument |
-|---------|------------|----------|
-| Pipeline | Volle End-to-End-Pipeline: PDF → TEI-XML (7 Stufen) | [PROJEKT](PROJEKT.md) |
-| 7-Stufen-Pipeline | Bilder → OCR → Layout → PAGE-XML → NER/GND → TEI-XML → Evaluation | [PIPELINE](PIPELINE.md) |
-| Dokumenttypen A-D | Einspaltig, Zweispaltig, Monografie, Spezial | [QUELLENANALYSE](QUELLENANALYSE.md) |
-| DTA-Basisformat | TEI-Grundschema mit ZBZ-Anpassungen | [TEI-MAPPING](TEI-MAPPING.md) |
-| Agentic Vision | Gemini 3 Think-Act-Observe Loop für Spalten | [OCR-ENGINES](OCR-ENGINES.md) |
-| NER + GND | Named Entity Recognition + GND-Verknuepfung (Phase 2) | [GND-STRATEGIE](GND-STRATEGIE.md) |
+| Term | Definition | Document |
+|------|-----------|----------|
+| Pipeline | Full end-to-end pipeline: PDF -> TEI-XML (7 stages) | [PROJEKT](PROJEKT.md) |
+| 7-Stage Pipeline | Images -> OCR -> Layout -> PAGE-XML -> NER/GND -> TEI-XML -> Evaluation | [PIPELINE](PIPELINE.md) |
+| Document Types A-D | Single-column, Two-column, Monograph, Special | [QUELLENANALYSE](QUELLENANALYSE.md) |
+| DTA-Basisformat | TEI base schema with ZBZ customizations | [TEI-MAPPING](TEI-MAPPING.md) |
+| Agentic Vision | Gemini 3 Think-Act-Observe Loop for columns | [OCR-ENGINES](OCR-ENGINES.md) |
+| NER + GND | Named Entity Recognition + GND linking (Phase 2) | [GND-STRATEGIE](GND-STRATEGIE.md) |
 | CER / WER | Character Error Rate / Word Error Rate | [TESTPLAN](TESTPLAN.md) |
-| Hybrid-Pipeline | Docling (Layout) + LLM-OCR (Text) kombiniert | [PIPELINE](PIPELINE.md) |
-| PAGE-XML | Zwischenformat Layout+OCR (Schema 2019-07-15) | [PIPELINE](PIPELINE.md) |
-| Dashboard | QA-UI mit Metriken, Engine-Vergleich und Dokumentkatalog | [PIPELINE](PIPELINE.md) |
-| METS-XML | Multi-Page-Manifest fuer PAGE-XML-Pakete | [PIPELINE](PIPELINE.md) |
-| TEI-Generator | Layout-JSON + OCR → seitenweises TEI-XML (DTA-Basisformat) | [PIPELINE](PIPELINE.md) |
+| Hybrid Pipeline | Docling (Layout) + LLM-OCR (Text) combined | [PIPELINE](PIPELINE.md) |
+| PAGE-XML | Intermediate format for Layout+OCR (Schema 2013-07-15) | [PIPELINE](PIPELINE.md) |
+| Dashboard | QA UI with metrics, engine comparison, and document catalog | [PIPELINE](PIPELINE.md) |
+| METS-XML | Multi-page manifest for PAGE-XML packages | [PIPELINE](PIPELINE.md) |
+| TEI Generator | Layout-JSON + OCR -> page-level TEI-XML (DTA-Basisformat) | [PIPELINE](PIPELINE.md) |
 
 ---
 
-## Schnelleinstieg
+## Quick Start
 
-1. **Projekt verstehen:** [PROJEKT](PROJEKT.md) -- Scope, Meilensteine, Team
-2. **Pipeline verstehen:** [PIPELINE](PIPELINE.md) -- die 7-Stufen-Pipeline (PDF → TEI-XML)
-3. **Material kennen:** [QUELLENANALYSE](QUELLENANALYSE.md) — 289 Texte, 4 Dokumenttypen
-4. **Dashboard ansehen:** `docs/index.html` -- Metriken, Engine-Vergleich, Pipeline-Status
-5. **Status prüfen:** [DECISIONS](DECISIONS.md) — was ist entschieden, was blockiert?
-6. **Letzte Session:** [JOURNAL](JOURNAL.md) — chronologisches Arbeitslog
+1. **Understand the project:** [PROJEKT](PROJEKT.md) -- Scope, milestones, team
+2. **Understand the pipeline:** [PIPELINE](PIPELINE.md) -- the 7-stage pipeline (PDF -> TEI-XML)
+3. **Know the material:** [QUELLENANALYSE](QUELLENANALYSE.md) -- 289 texts, 4 document types
+4. **View the dashboard:** `docs/index.html` -- Metrics, engine comparison, pipeline status
+5. **Check status:** [DECISIONS](DECISIONS.md) -- what is decided, what is blocking?
+6. **Last session:** [JOURNAL](JOURNAL.md) -- chronological work log
 
 ---
 
-## Verzeichnisstruktur
+## Directory Structure
 
 ```
 knowledge/
-├── INDEX.md              # Dieser Index (MOC)
-├── PROJEKT.md            # Vision, Ökosystem, Meilensteine
-├── PIPELINE.md           # Technische Pipeline-Dokumentation
-├── QUELLENANALYSE.md     # Korpus, Dokumenttypen, Pilotdateien
-├── OCR-ENGINES.md        # OCR-Tools: DeepSeek, Mistral, Gemini, Docling
-├── TEI-MAPPING.md        # TEI-Transformationsregeln
-├── GND-STRATEGIE.md      # NER + Entity Linking
-├── TESTPLAN.md           # Testphasen, Metriken, Ergebnisse
-├── INFRASTRUKTUR.md      # Azure, Podman, GitLab, CI/CD
-├── DECISIONS.md          # Entschiedenes + Offenes (priorisiert)
-├── ZBZ-WORKFLOW.md       # ZBZ-Redaktionsworkflow + Integrationspunkte
-├── JOURNAL.md            # Chronologisches Arbeitsjournal
-└── E19-LAYOUT-ANALYSE.md # Layout-Analyse Recherche + Entscheidung
++-- INDEX.md              # This index (MOC)
++-- PROJEKT.md            # Vision, ecosystem, milestones
++-- PIPELINE.md           # Technical pipeline documentation
++-- QUELLENANALYSE.md     # Corpus, document types, pilot files
++-- OCR-ENGINES.md        # OCR tools: DeepSeek, Mistral, Gemini, Docling
++-- TEI-MAPPING.md        # TEI transformation rules
++-- GND-STRATEGIE.md      # NER + Entity Linking
++-- TESTPLAN.md           # Test phases, metrics, results
++-- INFRASTRUKTUR.md      # Azure, Podman, GitLab, CI/CD
++-- DECISIONS.md          # Decided + Open items (prioritized)
++-- ZBZ-WORKFLOW.md       # ZBZ editorial workflow + integration points
++-- JOURNAL.md            # Chronological work journal
++-- E19-LAYOUT-ANALYSE.md # Layout analysis research + decision
 ```
 
 ---
 
-## Wartung
+## Maintenance
 
-- **Neuer Fakt?** In genau ein Dokument eintragen, andere verweisen
-- **Neue Entscheidung?** In [DECISIONS](DECISIONS.md) dokumentieren
-- **Session beenden?** [JOURNAL](JOURNAL.md) aktualisieren
-- **Duplikation entdeckt?** Sofort eliminieren, Querverweis setzen
+- **New fact?** Add to exactly one document, cross-reference from others
+- **New decision?** Document in [DECISIONS](DECISIONS.md)
+- **End session?** Update [JOURNAL](JOURNAL.md)
+- **Duplication found?** Eliminate immediately, add cross-reference
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-26*
+*Created: 2026-01-29 | Updated: 2026-02-27*

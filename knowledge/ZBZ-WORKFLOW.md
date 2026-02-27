@@ -1,157 +1,157 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-25
+updated: 2026-02-27
 tags: [zbz-ocr-tei, zbz, workflow, transkribus, oxygen]
 status: active
 ---
 
-# ZBZ-Workflow
+# ZBZ Workflow
 
-Dokumentation des bestehenden Editionsworkflows der ZB Zürich und die Integrationspunkte mit der automatisierten Pipeline.
+Documentation of the existing editorial workflow at Zentralbibliothek Zuerich and the integration points with the automated pipeline.
 
-**Abhängigkeiten:** Keine (Kontext-Dokument)
-
----
-
-## Bestehender Workflow (manuell)
-
-Der Workflow besteht aus drei parallelen Strängen:
-
-1. **Transkriptionsstrang**: Digitalisat → Transkribus → GitLab → Oxygen → GitLab
-2. **Metadatenstrang**: Digitalisat → Alma → Masterfile → Swisscovery → TEI-Header
-3. **Korrekturschleife**: Oxygen → PDF → Externe Lesende → Oxygen
-
-Das **Masterfile (Excel)** dient als zentrale Koordinationsinstanz.
+**Dependencies:** None (context document)
 
 ---
 
-## Transkriptionsstrang
+## Existing Workflow (Manual)
 
-1. **Digitalisat** → Scans der Digitalisate
-2. **Transkribus** [???] → Prozess ist nicht standardisiert
-3. **Export** aus Transkribus als XML (manuell, mit TEI XML Export)
-4. **GitLab** → Ablegen der Dateien (manuell)
-5. **Oxygen** → Weitere XML-Auszeichnungen (manuell)
-6. **GitLab** → Aktualisierte XML-Datei ablegen (manuell)
+The workflow consists of three parallel tracks:
 
----
+1. **Transcription track**: Digitized material -> Transkribus -> GitLab -> Oxygen -> GitLab
+2. **Metadata track**: Digitized material -> Alma -> Masterfile -> Swisscovery -> TEI header
+3. **Correction loop**: Oxygen -> PDF -> External reviewers -> Oxygen
 
-## Metadatenstrang
-
-1. **Digitalisat** → Katalogisat in **Alma** anlegen
-2. Metadaten aufbereiten und eintragen (manuell)
-3. ID von Alma ins **Masterfile** übertragen (manuell)
-4. Titel in **Swisscovery** zur Spezialsammlung hinzufügen (manuell)
-5. Metadaten für TEI-Header aus Alma → **Workflow fehlt noch**
+The **Masterfile (Excel)** serves as the central coordination hub.
 
 ---
 
-## Korrekturschleife
+## Transcription Track
 
-1. **Oxygen XML** → Export als PDF, visuell wie Scan (Oxygen Transformation)
-2. **Externe Lesende** korrigieren das PDF
-3. Manuelles Updaten des XMLs in Oxygen
-
----
-
-## Normdatenverknüpfung
-
-Personen, Institutionen und Werke werden in Oxygen manuell mit **GND-IDs** verlinkt.
+1. **Digitized material** -> Scans of the source documents
+2. **Transkribus** [???] -> Process is not standardized
+3. **Export** from Transkribus as XML (manual, using TEI XML Export)
+4. **GitLab** -> Deposit files (manual)
+5. **Oxygen** -> Further XML markup (manual)
+6. **GitLab** -> Deposit updated XML file (manual)
 
 ---
 
-## Systeme
+## Metadata Track
 
-| System | Funktion | Format |
+1. **Digitized material** -> Create catalog record in **Alma**
+2. Prepare and enter metadata (manual)
+3. Transfer Alma ID to the **Masterfile** (manual)
+4. Add title to the special collection in **Swisscovery** (manual)
+5. Metadata for TEI header from Alma -> **Workflow does not exist yet**
+
+---
+
+## Correction Loop
+
+1. **Oxygen XML** -> Export as PDF, visually matching the scan (Oxygen Transformation)
+2. **External reviewers** correct the PDF
+3. Manual update of the XML in Oxygen
+
+---
+
+## Authority Data Linking
+
+Persons, institutions, and works are manually linked with **GND IDs** in Oxygen.
+
+---
+
+## Systems
+
+| System | Function | Format |
 |--------|----------|--------|
-| Transkribus | OCR/HTR und Transkription | [???] - nicht standardisiert |
-| Masterfile | Workflow-Steuerung, Statusverfolgung | Excel |
-| GitLab | Versionierung der TEI-Dateien | XML |
-| Oxygen | TEI-Auszeichnung und Transformation | XML |
-| Alma | Katalogisierung und Metadaten | Katalogdaten |
-| Swisscovery | Öffentlicher Nachweis | Katalogdaten |
-| GND | Normdatenverknüpfung | IDs |
+| Transkribus | OCR/HTR and transcription | [???] - not standardized |
+| Masterfile | Workflow management, status tracking | Excel |
+| GitLab | Version control for TEI files | XML |
+| Oxygen | TEI markup and transformation | XML |
+| Alma | Cataloging and metadata | Catalog data |
+| Swisscovery | Public discovery | Catalog data |
+| GND | Authority data linking | IDs |
 
 ---
 
-## Beobachtungen
+## Observations
 
-- **Fast alle Schritte sind manuell**
-- Der **Transkribus-Prozess ist nicht standardisiert** (Fragezeichen im Diagramm)
-- Der **TEI-Header-Workflow aus Alma existiert noch nicht**
-- Externe Korrekturen erfolgen über **PDF**, nicht direkt am XML
-- Unklar, ob XML auf GitLab **überschrieben** wird oder versioniert
+- **Almost all steps are manual**
+- The **Transkribus process is not standardized** (question marks in the diagram)
+- The **TEI header workflow from Alma does not exist yet**
+- External corrections are done via **PDF**, not directly on the XML
+- Unclear whether XML on GitLab is **overwritten** or versioned
 
 ---
 
-## Integration: Automatisierte Pipeline
+## Integration: Automated Pipeline
 
-Die drei DHCraft-Tools ersetzen/ergänzen folgende Schritte im bestehenden Workflow:
+Since E21, zbz-ocr-tei handles the full pipeline (OCR -> Layout -> PAGE-XML -> NER/GND -> TEI-XML), replacing or augmenting the following steps in the existing workflow:
 
 ```
-BESTEHEND (manuell)              AUTOMATISIERT (DHCraft-Pipeline)
+EXISTING (manual)                AUTOMATED (zbz-ocr-tei)
 ────────────────────────────────────────────────────────────────
 
-Digitalisat (PDF-Scans)          Digitalisat (PDF-Scans)
-        │                                │
-  Transkribus [???]              ┌───────┴───────────────┐
-        │                        │ zbz-ocr-tei           │
-        │                        │ OCR → Layout → PAGE   │
-  Manueller Export               │ → NER/GND → TEI-XML   │
-        │                        └───────┬───────────────┘
-  GitLab (XML ablegen)                   │ TEI-XML (DTA)
-        │                                │
-  Oxygen (TEI-Auszeichnung)              │
-        │                                │
-  Oxygen (GND-Verknüpfung)              │
-        │                                │
-  Externe Korrekturschleife      Finale QS in Oxygen
-        │                                │
-  [Publikation]                  GitLab → [Publikation]
+Digitized material (PDF scans)   Digitized material (PDF scans)
+        |                                |
+  Transkribus [???]              ┌───────┴───────────────────┐
+        |                        │ zbz-ocr-tei               │
+  Manual Export                  │ (full pipeline)            │
+        |                        │                            │
+  GitLab (deposit XML)           │ OCR (Mistral/DeepSeek)    │
+        |                        │   -> Layout (Docling)      │
+  Oxygen (TEI markup)            │   -> PAGE-XML              │
+        |                        │   -> NER/GND               │
+  Oxygen (GND linking)           │   -> TEI-XML (DTA)         │
+        |                        └───────┬───────────────────┘
+  External correction loop               |
+        |                        Final QA in Oxygen
+  [Publication]                          |
+                                 GitLab -> [Publication]
 ```
 
-### Konkrete Ersetzungen
+### Concrete Replacements
 
-| Bestehender Schritt | Ersetzt durch | Tool |
-|--------------------|--------------|----|
-| Transkribus OCR | Batch-OCR (Mistral/DeepSeek) | zbz-ocr-tei |
-| Manueller Transkribus-Export | Automatischer PAGE-XML-Export | zbz-ocr-tei |
-| Oxygen TEI-Grundauszeichnung | Automatische TEI-Transformation | zbz-ocr-tei |
-| Manuelle GND-Verknuepfung in Oxygen | NER + lobid.org API | zbz-ocr-tei |
+| Existing Step | Replaced By | Tool |
+|---------------|-------------|------|
+| Transkribus OCR | Batch OCR (Mistral/DeepSeek) | zbz-ocr-tei |
+| Manual Transkribus export | Automatic PAGE-XML generation | zbz-ocr-tei |
+| Oxygen basic TEI markup | Automatic TEI transformation | zbz-ocr-tei |
+| Manual GND linking in Oxygen | NER + lobid.org API | zbz-ocr-tei |
 
-### Was bleibt manuell
+### What Remains Manual
 
-| Schritt | Grund |
-|---------|-------|
-| Alma-Katalogisierung | Bibliotheksspezifisch, kein Automatisierungspotenzial |
-| Masterfile-Pflege | Koordinationsaufgabe |
-| Swisscovery-Zuweisung | Manueller Schritt |
-| TEI-Header aus Alma | Workflow fehlt noch (-> [DECISIONS](DECISIONS.md) O8) |
-| Finale QS in Oxygen | Letzte manuelle Prüfung vor Publikation |
-
----
-
-## QA-Dashboard
-
-Ergaenzend zum Produktionsworkflow steht ein automatisch generiertes Dashboard zur Verfuegung (`docs/index.html`):
-
-- Pipeline-Status aller 15 Pilotdokumente
-- CER-Vergleich zwischen Engines (Mistral, DeepSeek, LLM-korrigiert)
-- Dokumentkatalog mit Engine-Filter
-- Viewer mit Faksimile-OCR-Vergleich (`docs/viewer.html`)
-
-Das Dashboard ersetzt `docs/benchmark.html` und dient als zentrales QA-Tool.
+| Step | Reason |
+|------|--------|
+| Alma cataloging | Library-specific, no automation potential |
+| Masterfile maintenance | Coordination task |
+| Swisscovery assignment | Manual step |
+| TEI header from Alma | Workflow does not exist yet (-> [DECISIONS](DECISIONS.md) O8) |
+| Final QA in Oxygen | Last manual review before publication |
 
 ---
 
-## Referenzen
+## QA Dashboard
 
-- [PROJEKT](PROJEKT.md) fuer Projekt-Scope und Meilensteine
-- [PIPELINE](PIPELINE.md) für technische Pipeline-Details
-- [DECISIONS](DECISIONS.md) O8 (Alma-Metadaten), O15 (Transkribus-Tags)
+In addition to the production workflow, an automatically generated dashboard is available (`docs/index.html`):
+
+- Pipeline status for all 15 pilot documents
+- CER comparison between engines (Mistral, DeepSeek, LLM-corrected)
+- Document catalog with engine filter
+- Viewer with facsimile-OCR comparison (`docs/viewer.html`)
+
+The dashboard replaces `docs/benchmark.html` and serves as the central QA tool.
 
 ---
 
-*Quelle: WorkflowDiagramm_Hersch.pdf — vollständig überführt, PDF gelöscht*
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+## References
+
+- [PROJEKT](PROJEKT.md) for project scope and milestones
+- [PIPELINE](PIPELINE.md) for technical pipeline details
+- [DECISIONS](DECISIONS.md) O8 (Alma metadata), O15 (Transkribus tags)
+
+---
+
+*Source: WorkflowDiagramm_Hersch.pdf -- fully transferred, PDF deleted*
+*Created: 2026-01-29 | Updated: 2026-02-27*

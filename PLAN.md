@@ -1,23 +1,23 @@
-# Implementierungsplan: Volle KI-Pipeline (PDF → TEI-XML)
+# Implementation Plan: Full AI Pipeline (PDF → TEI-XML)
 
-> **Version:** 1.1 | **Datum:** 26.02.2026 | **Autor:** Claude Opus 4.6
-> **Kontext:** zbz-ocr-tei deckt die gesamte Pipeline ab. ZBZ behaelt Transkribus, DHCraft baut parallele KI-Pipeline.
+> **Version:** 1.1 | **Date:** 26.02.2026 | **Author:** Claude Opus 4.6
+> **Context:** zbz-ocr-tei covers the entire pipeline. ZBZ retains Transkribus, DHCraft builds a parallel AI pipeline.
 
-Aktueller Komponentenstatus: [PROJEKT.md](knowledge/PROJEKT.md) §Komponentenstatus.
-Pipeline-Stufen und CLI: [PIPELINE.md](knowledge/PIPELINE.md).
+Current component status: [PROJEKT.md](knowledge/PROJEKT.md) §Component Status.
+Pipeline stages and CLI: [PIPELINE.md](knowledge/PIPELINE.md).
 
 ---
 
-## Phasenuebersicht
+## Phase Overview
 
-| Phase | Beschreibung | Status |
+| Phase | Description | Status |
 |-------|-------------|--------|
-| 0 | Layout-Evaluation (E19/E20) | **Erledigt** — Docling bestaetigt, 8/15 Docs analysiert |
-| 1 | Layout-Post-Processing + PAGE-XML-Generator | **Naechster Schritt** |
-| 2 | NER + GND-Verknuepfung | Ausstehend |
-| 3 | TEI-XML-Generator erweitern | Teilweise (383 Dateien generiert, E22) |
-| 4 | Erweiterte Evaluation + Dashboard | Ausstehend |
-| 5 | Produktionslauf (289 Docs) | Ausstehend |
+| 0 | Layout evaluation (E19/E20) | **Done** — Docling confirmed, 8/15 docs analyzed |
+| 1 | Layout post-processing + PAGE-XML generator | **Next step** |
+| 2 | NER + GND linking | Pending |
+| 3 | TEI-XML generator extension | Partial (383 files generated, E22) |
+| 4 | Extended evaluation + dashboard | Pending |
+| 5 | Production run (289 docs) | Pending |
 
 ```
 Phase 0 (Layout-Eval) ✓
@@ -26,29 +26,29 @@ Phase 0 (Layout-Eval) ✓
 Phase 1 (Layout + PAGE-XML) -----> Phase 2 (NER + GND)
                                         |
                                         v
-                                   Phase 3 (TEI-XML erweitern)
+                                   Phase 3 (TEI-XML extend)
                                         |
                                         v
                                    Phase 4 (Evaluation + Dashboard)
                                         |
                                         v
-                                   Phase 5 (Produktion: 289 Docs)
+                                   Phase 5 (Production: 289 Docs)
 ```
 
-Phase 1 und Phase 2 koennten parallel entwickelt werden (NER braucht nur OCR-Text, nicht PAGE-XML). Phase 3 benoetigt beides.
+Phase 1 and Phase 2 can be developed in parallel (NER only needs OCR text, not PAGE-XML). Phase 3 requires both.
 
 ---
 
-## Ziel-Datenfluss
+## Target Data Flow
 
 ```
 PDF-Scan
   |
-  +---> extract_pages.py -----> PNG-Bilder (300 DPI)
+  +---> extract_pages.py -----> PNG images (300 DPI)
   |                                |
   +---> ocr_pipeline.py -----> Markdown (pro Seite)
   |                                |
-  +---> layout_analyzer.py --> Regionen + BBox (JSON)
+  +---> layout_analyzer.py --> Regions + BBox (JSON)
            |                       |
            +--- region_classifier.py --> ZBZ-Tags
                     |
@@ -56,7 +56,7 @@ PDF-Scan
           page_xml_generator.py --> PAGE-XML (pro Seite) + METS
                     |
                     v
-          ner_pipeline.py -------> Entitaeten (JSON)
+          ner_pipeline.py -------> Entities (JSON)
           gnd_linker.py ---------> GND-IDs (JSON)
                     |
                     v
@@ -69,24 +69,24 @@ PDF-Scan
 
 ---
 
-## Phase 1: Layout-Post-Processing + PAGE-XML-Generator
+## Phase 1: Layout Post-Processing + PAGE-XML Generator
 
-> **Aufwand:** 3-4 Tage
-> **Vorbedingung:** Phase 0 erledigt (E19/E20 finalisiert)
-> **Blocker:** O21 (Layout-Post-Processing: Overlap, Einzeiler, Seitenzahlen)
+> **Effort:** 3-4 days
+> **Prerequisite:** Phase 0 done (E19/E20 finalized)
+> **Blocker:** O21 (Layout post-processing: overlap, single-liners, page numbers)
 
-### Neue Dateien
+### New Files
 
 ```
 scripts/layout/
   __init__.py
-  layout_analyzer.py       # Seitenbilder → LayoutRegion-Liste
-  region_classifier.py     # Docling-Blocktypen → ZBZ-Tags
-  page_xml_generator.py    # LayoutRegion + OCR-Text → PAGE-XML
+  layout_analyzer.py       # Page images → LayoutRegion list
+  region_classifier.py     # Docling block types → ZBZ tags
+  page_xml_generator.py    # LayoutRegion + OCR text → PAGE-XML
   mets_generator.py        # METS-Manifest (Images + PAGE-XML)
 ```
 
-### ZBZ-Structural-Tags (Mapping Docling → ZBZ)
+### ZBZ Structural Tags (Mapping Docling → ZBZ)
 
 | Docling BlockType | ZBZ Structural Tag | PAGE-XML TextRegion/@type | @custom |
 |-------------------|--------------------|--------------------------|---------|
@@ -94,12 +94,12 @@ scripts/layout/
 | Section-header | zb_heading | heading | `structure {type:zb_heading;}` |
 | Text / Paragraph | zb_paragraph | paragraph | `structure {type:zb_paragraph;}` |
 | Footnote | footnote | footnote | `structure {type:footnote;}` |
-| Page-header | (filtern) | - | - |
-| Page-footer | (filtern) | - | - |
+| Page-header | (filter out) | - | - |
+| Page-footer | (filter out) | - | - |
 | Caption | caption | caption | `structure {type:caption;}` |
-| (Abstand inferieren) | zb_space | other | `structure {type:zb_space;}` |
+| (infer spacing) | zb_space | other | `structure {type:zb_space;}` |
 
-### ID-Schema (Transkribus-kompatibel)
+### ID Schema (Transkribus-compatible)
 
 ```
 Page:    {doc_id}_p{NN:03d}.xml
@@ -107,13 +107,13 @@ Region:  id="facs_{NN}_r_{N}"    → TEI: <p facs="#facs_{NN}_r_{N}">
 Line:    id="facs_{NN}_r_{N}_tl_{M}" → TEI: <lb facs="#facs_{NN}_r_{N}_tl_{M}">
 ```
 
-### Output-Struktur
+### Output Structure
 
 ```
 output/page_xml/{doc_id}/
   mets.xml                    # METS-Manifest
-  images/{doc_id}_p001.png    # Seitenbilder (Symlink oder Kopie)
-  page/{doc_id}_p001.xml      # PAGE-XML pro Seite
+  images/{doc_id}_p001.png    # Page images (symlink or copy)
+  page/{doc_id}_p001.xml      # PAGE-XML per page
 ```
 
 ### PAGE-XML Template
@@ -136,7 +136,7 @@ output/page_xml/{doc_id}/
       <TextLine id="facs_1_r_1_tl_1">
         <Coords points="..."/>
         <TextEquiv>
-          <Unicode>OCR-Text dieser Zeile</Unicode>
+          <Unicode>OCR text of this line</Unicode>
         </TextEquiv>
       </TextLine>
     </TextRegion>
@@ -144,7 +144,7 @@ output/page_xml/{doc_id}/
 </PcGts>
 ```
 
-### Neue Config-Konstanten
+### New Config Constants
 
 ```python
 # Layout + PAGE-XML
@@ -166,176 +166,176 @@ CONFIDENCE_MISTRAL_RAW = 0.85
 CONFIDENCE_LLM_CORRECTED = 0.95
 ```
 
-### Validierung
+### Validation
 
-1. PAGE-XML gegen XSD-Schema validieren (Schema herunterladen von primaresearch.org)
-2. Visuelle Stichprobe: 3 Dokumente (1x Typ A, 1x Typ B, 1x Typ C)
-3. Transkribus-Import-Test (falls Zugang vorhanden)
+1. Validate PAGE-XML against XSD schema (download schema from primaresearch.org)
+2. Visual spot-check: 3 documents (1x Type A, 1x Type B, 1x Type C)
+3. Transkribus import test (if access available)
 
 ---
 
-## Phase 2: NER + GND-Verknuepfung
+## Phase 2: NER + GND Linking
 
-> **Aufwand:** 2-3 Tage
-> **Vorbedingung:** Phase 1 abgeschlossen (PAGE-XML existiert)
+> **Effort:** 2-3 days
+> **Prerequisite:** Phase 1 completed (PAGE-XML exists)
 
-### Neue Dateien
+### New Files
 
 ```
 scripts/ner/
   __init__.py
-  ner_pipeline.py    # LLM-basierte NER (Claude Haiku 4.5)
-  gnd_linker.py      # Zweistufig: Seed-Lookup → lobid.org API
-  entity_store.py    # Per-Dokument JSON-Registry
+  ner_pipeline.py    # LLM-based NER (Claude Haiku 4.5)
+  gnd_linker.py      # Two-stage: seed lookup → lobid.org API
+  entity_store.py    # Per-document JSON registry
 ```
 
-### Ansatz
+### Approach
 
-1. **NER via Claude Haiku 4.5:** JSON-Output mit `{text, type, start_char, end_char}`
-   - Typen: person, organization, work
-   - Seiten- oder absatzweise Verarbeitung
-   - Prompt mit Kontext (Jeanne Hersch, Philosophie, 20. Jh.)
+1. **NER via Claude Haiku 4.5:** JSON output with `{text, type, start_char, end_char}`
+   - Types: person, organization, work
+   - Page-level or paragraph-level processing
+   - Prompt with context (Jeanne Hersch, philosophy, 20th century)
 
-2. **GND-Linking Phase 1 (Seed):** Exakter + Fuzzy-Match gegen 75 bekannte Entitaeten
-   - `config.py:KNOWN_ENTITIES` (11 Eintraege) + `output/gnd_analysis/gnd_entities.json` (75 Eintraege)
-   - rapidfuzz fuer Fuzzy-Matching (bereits in requirements.txt)
+2. **GND Linking Phase 1 (Seed):** Exact + fuzzy match against 75 known entities
+   - `config.py:KNOWN_ENTITIES` (11 entries) + `output/gnd_analysis/gnd_entities.json` (75 entries)
+   - rapidfuzz for fuzzy matching (already in requirements.txt)
 
-3. **GND-Linking Phase 2 (lobid.org):** REST-API fuer unbekannte Entitaeten
+3. **GND Linking Phase 2 (lobid.org):** REST API for unknown entities
    - `https://lobid.org/gnd/search?q={name}&filter=type:Person`
-   - Cache + Rate-Limiting (max 10 req/s)
-   - Ergebnis: GND-ID + Confidence
+   - Cache + rate limiting (max 10 req/s)
+   - Result: GND-ID + confidence
 
 4. **Output:** `output/entity_registry/{doc_id}_entities.json`
 
-### Bewertungskriterien
+### Evaluation Criteria
 
-| Metrik | Ziel |
-|--------|------|
-| Entity Recall | >70% (gegen Referenz-TEI) |
+| Metric | Target |
+|--------|--------|
+| Entity Recall | >70% (against reference TEI) |
 | Entity Precision | >80% |
-| GND-Linking-Rate | >60% der erkannten Entitaeten |
-| GND-Korrektheit | >90% der verlinkten |
+| GND linking rate | >60% of recognized entities |
+| GND correctness | >90% of linked entities |
 
 ---
 
-## Phase 3: TEI-XML-Generator erweitern
+## Phase 3: TEI-XML Generator Extension
 
-> **Status:** TEILWEISE IMPLEMENTIERT (E22)
-> **Implementiert:** `scripts/tei/tei_generator.py` — 383 TEI-XML Dateien aus Layout-JSON + OCR-Markdown. Entity-Annotation aus Seed-Dict.
-> **Offen:** PAGE-XML als Input, NER-Entitaeten aus Phase 2, Schema-Validierung, tei_header.py, tei_validator.py
-> **Restaufwand:** 2-3 Tage (nach Phase 1+2)
+> **Status:** PARTIALLY IMPLEMENTED (E22)
+> **Implemented:** `scripts/tei/tei_generator.py` — 383 TEI-XML files from layout JSON + OCR Markdown. Entity annotation from seed dict.
+> **Open:** PAGE-XML as input, NER entities from Phase 2, schema validation, tei_header.py, tei_validator.py
+> **Remaining effort:** 2-3 days (after Phase 1+2)
 
-### Noch zu erstellen
+### Still to Create
 
 ```
 scripts/tei/
-  tei_header.py       # teiHeader-Skelett (Titel, Publisher, Sprache)
-  tei_validator.py    # Schema-Validierung + ZBZ-Inhaltsregeln
+  tei_header.py       # teiHeader skeleton (title, publisher, language)
+  tei_validator.py    # Schema validation + ZBZ content rules
 ```
 
-Transformationsregeln: [TEI-MAPPING.md](knowledge/TEI-MAPPING.md).
+Transformation rules: [TEI-MAPPING.md](knowledge/TEI-MAPPING.md).
 
-### Spezielle Dokumenttypen
+### Special Document Types
 
-| Typ | Docs | TEI-Besonderheit |
-|-----|------|------------------|
-| Rezension | 2310 | `<div type="review">` + `<bibl>` im `<head>` |
-| Interview | 1440 | `<sp>/<speaker>` bei Sprecherwechsel |
-| Lexikon | 3040 | `<div type="entry">` + `<head type="lemma">` |
-| Monografie | 40, 1520 | Kapitel → `<div n="1">`, Abschnitte → `<div n="2">` |
+| Type | Docs | TEI Specifics |
+|------|------|---------------|
+| Review | 2310 | `<div type="review">` + `<bibl>` in `<head>` |
+| Interview | 1440 | `<sp>/<speaker>` for speaker changes |
+| Lexicon | 3040 | `<div type="entry">` + `<head type="lemma">` |
+| Monograph | 40, 1520 | Chapters → `<div n="1">`, sections → `<div n="2">` |
 
-### Validierung
+### Validation
 
-1. TEI gegen DTA-Basisformat-Schema validieren
-2. Vergleich mit Referenz-TEI (15 Pilot-Docs): Strukturelle Uebereinstimmung
-3. Stichprobe in oXygen XML Editor: Keine fatalen Schema-Fehler
+1. Validate TEI against DTA-Basisformat schema
+2. Compare with reference TEI (15 pilot docs): structural agreement
+3. Spot-check in oXygen XML Editor: no fatal schema errors
 
 ---
 
-## Phase 4: Erweiterte Evaluation + Dashboard
+## Phase 4: Extended Evaluation + Dashboard
 
-> **Aufwand:** 2 Tage
-> **Vorbedingung:** Phase 3 abgeschlossen
+> **Effort:** 2 days
+> **Prerequisite:** Phase 3 completed
 
-| Datei | Aenderung |
-|-------|-----------|
-| `scripts/evaluate_ocr.py` | Neuer Modus `--mode tei`: Text-CER + Strukturgenauigkeit + Entity-Scores |
-| `scripts/generate_dashboard_data.py` | Pipeline-Status um 3 neue Stufen (page_xml, entities, tei_xml) |
-| `docs/index.html` | Neue "TEI Pipeline"-Sektion mit 7-Stufen-Anzeige |
+| File | Change |
+|------|--------|
+| `scripts/evaluate_ocr.py` | New mode `--mode tei`: text CER + structural accuracy + entity scores |
+| `scripts/generate_dashboard_data.py` | Pipeline status extended with 3 new stages (page_xml, entities, tei_xml) |
+| `docs/index.html` | New "TEI Pipeline" section with 7-stage display |
 
-### Neue Metriken
+### New Metrics
 
-| Metrik | Ziel |
-|--------|------|
-| Text-CER | <7% (aktuell 6.42%) |
-| Struktur-Genauigkeit (ZBZ-Tags) | >80% |
+| Metric | Target |
+|--------|--------|
+| Text CER | <7% (currently 6.42%) |
+| Structural accuracy (ZBZ tags) | >80% |
 | Entity Precision / Recall | >80% / >70% |
-| GND-Korrektheit | >90% |
-| TEI-Validitaet | 100% |
+| GND correctness | >90% |
+| TEI validity | 100% |
 
 ---
 
-## Phase 5: Produktionslauf (alle 289 Dokumente)
+## Phase 5: Production Run (all 289 documents)
 
-> **Aufwand:** 2-3 Tage (inkl. Monitoring + Nacharbeit)
-> **Vorbedingung:** Phase 4 abgeschlossen, Metriken erreicht
+> **Effort:** 2-3 days (incl. monitoring + rework)
+> **Prerequisite:** Phase 4 completed, metrics achieved
 
-### Laufzeit-Schaetzung
+### Runtime Estimate
 
-| Stufe | Pro Seite | 7.200 Seiten | Kosten |
-|-------|-----------|-------------|--------|
+| Stage | Per Page | 7,200 Pages | Cost |
+|-------|----------|-------------|------|
 | OCR (Mistral) | ~1s | ~2h | $14.40 |
 | Layout (Docling, CPU) | ~1s | ~2h | $0 |
 | NER (Haiku 4.5) | ~0.5s | ~1h | ~$5 |
-| GND (lobid.org) | ~0.1s | Cache-effizient | $0 |
-| TEI-Transformation | ~0.1s | ~12min | $0 |
-| **Gesamt** | | **~6h** | **~$20** |
+| GND (lobid.org) | ~0.1s | Cache-efficient | $0 |
+| TEI transformation | ~0.1s | ~12min | $0 |
+| **Total** | | **~6h** | **~$20** |
 
-### Ablauf
+### Procedure
 
-1. Alle 289 PDFs durch Stufen 1-6 verarbeiten (Batch-Mode)
-2. Evaluation auf Gesamtkorpus laufen lassen
-3. Dashboard aktualisieren
-4. Stichproben-QA: 10 zufaellige Dokumente manuell pruefen
-5. Ergebnisse in TESTPLAN.md und JOURNAL.md dokumentieren
+1. Process all 289 PDFs through stages 1-6 (batch mode)
+2. Run evaluation on full corpus
+3. Update dashboard
+4. Spot-check QA: manually review 10 random documents
+5. Document results in TESTPLAN.md and JOURNAL.md
 
 ---
 
-## Abhaengigkeiten
+## Dependencies
 
-### Python-Pakete
+### Python Packages
 
 ```
-docling>=2.75.0               # Layout-Analyse (bereits installiert)
-# anthropic, rapidfuzz, lxml, requests -- bereits vorhanden
+docling>=2.75.0               # Layout analysis (already installed)
+# anthropic, rapidfuzz, lxml, requests -- already available
 ```
 
-### API-Keys (in .env)
+### API Keys (in .env)
 
-| Key | Fuer | Status |
-|-----|------|--------|
-| `MISTRAL_DOC_AI_KEY` | OCR | Vorhanden |
-| `ANTHROPIC_API_KEY` | LLM-Korrektur + NER | Vorhanden |
-| `GOOGLE_API_KEY` | Gemini (optional) | Fehlt (nicht blockierend) |
-
----
-
-## Risiken
-
-Siehe [DECISIONS.md](knowledge/DECISIONS.md) §Risiken (R1-R13).
+| Key | Purpose | Status |
+|-----|---------|--------|
+| `MISTRAL_DOC_AI_KEY` | OCR | Available |
+| `ANTHROPIC_API_KEY` | LLM correction + NER | Available |
+| `GOOGLE_API_KEY` | Gemini (optional) | Missing (not blocking) |
 
 ---
 
-## Verifikation pro Phase
+## Risks
 
-Nach jeder Phase:
-1. **Automatische Tests:** Schema-Validierung, CER-Vergleich, Unit-Tests
-2. **Manuelle Stichprobe:** 2-3 Pilotdokumente (1x Typ A, 1x Typ B, 1x Typ C/D)
-3. **Dokumentation:** Ergebnis in TESTPLAN.md und JOURNAL.md
-4. **Entscheidungen:** Neue E-Nummern in DECISIONS.md
-
-**Finaler Akzeptanztest:** Generiertes TEI fuer Doc 2310 in oXygen oeffnen → keine Schema-Fehler, Entitaeten korrekt verlinkt.
+See [DECISIONS.md](knowledge/DECISIONS.md) §Risks (R1-R13).
 
 ---
 
-*Erstellt: 25.02.2026 | Aktualisiert: 27.02.2026 (PAGE-XML Schema 2019→2013 korrigiert nach E23)*
+## Verification per Phase
+
+After each phase:
+1. **Automated tests:** Schema validation, CER comparison, unit tests
+2. **Manual spot-check:** 2-3 pilot documents (1x Type A, 1x Type B, 1x Type C/D)
+3. **Documentation:** Results in TESTPLAN.md and JOURNAL.md
+4. **Decisions:** New E-numbers in DECISIONS.md
+
+**Final acceptance test:** Open generated TEI for Doc 2310 in oXygen → no schema errors, entities correctly linked.
+
+---
+
+*Created: 25.02.2026 | Updated: 27.02.2026 (PAGE-XML Schema 2019→2013 corrected after E23)*

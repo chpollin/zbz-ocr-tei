@@ -1,39 +1,39 @@
-# Claude Code Regeln
+# Claude Code Rules
 
-## Arbeitsweise
+## Workflow
 
-1. **Journal fuehren**: Jede Session in `knowledge/JOURNAL.md` dokumentieren
-2. **Wissen im knowledge/-Ordner**: Nicht in CLAUDE.md duplizieren
-3. **Output nicht versionieren**: Generierte Dateien gehoeren in `output/`
-4. **Tests vor Aenderungen**: Evaluation laufen lassen, Metriken vergleichen
-5. **Single Source of Truth**: Jeden Fakt nur an einer Stelle fuehren, Querverweise setzen
+1. **Keep a journal**: Document every session in `knowledge/JOURNAL.md`
+2. **Knowledge in the knowledge/ folder**: Do not duplicate in CLAUDE.md
+3. **Do not version output**: Generated files belong in `output/`
+4. **Test before changes**: Run evaluation, compare metrics
+5. **Single Source of Truth**: Keep each fact in one place only, use cross-references
 
-## Projektwissen
+## Project Knowledge
 
-Einstieg: `knowledge/INDEX.md` — Navigation, Dokumentmatrix, Abhaengigkeiten, Kernbegriffe.
+Entry point: `knowledge/INDEX.md` — Navigation, document matrix, dependencies, key concepts.
 
-## Sicherheit
+## Security
 
-- **NIEMALS `.env` lesen**: Die `.env`-Datei enthaelt API-Keys und darf unter keinen Umstaenden gelesen, angezeigt oder in den Output aufgenommen werden
-- **Keine Secrets in Code oder Docs**: API-Keys, Tokens und Passwoerter gehoeren ausschliesslich in Umgebungsvariablen
+- **NEVER read `.env`**: The `.env` file contains API keys and must under no circumstances be read, displayed, or included in output
+- **No secrets in code or docs**: API keys, tokens, and passwords belong exclusively in environment variables
 
-## Code-Konventionen
+## Code Conventions
 
-- **Windows-Encoding**: Keine Unicode-Sonderzeichen in Print-Statements
-- **Pfade**: Absolute Pfade oder pathlib verwenden
-- **Ausgabe**: JSON fuer Daten, HTML fuer Reports
-- **Frontend**: ES5 JavaScript (var, IIFE, keine Arrow-Functions), `ZBZ.*` / `TeiViewer.*` Namespaces
+- **Windows encoding**: No Unicode special characters in print statements
+- **Paths**: Use absolute paths or pathlib
+- **Output**: JSON for data, HTML for reports
+- **Frontend**: ES5 JavaScript (var, IIFE, no arrow functions), `ZBZ.*` / `TeiViewer.*` namespaces
 
-## Befehle
+## Commands
 
-Vollstaendige CLI-Referenz: `knowledge/PIPELINE.md` §CLI-Befehle.
+Complete CLI reference: `knowledge/PIPELINE.md` §CLI Commands.
 
 ```bash
-# Haeufigste Befehle (ohne GPU)
-python -m scripts.tei.tei_generator              # TEI-XML generieren
+# Most common commands (no GPU)
+python -m scripts.tei.tei_generator              # Generate TEI-XML
 python scripts/evaluate_ocr.py --all             # Evaluation
-python -m scripts.generate_dashboard_data        # Dashboard-Daten
+python -m scripts.generate_dashboard_data        # Dashboard data
 
-# GPU erforderlich
-python -m scripts.run_layout_analysis            # Layout-Analyse (Docling)
+# GPU required
+python -m scripts.run_layout_analysis            # Layout analysis (Docling)
 ```

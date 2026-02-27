@@ -1,135 +1,135 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-26
-tags: [zbz-ocr-tei, projekt, oekosystem, vision]
+updated: 2026-02-27
+tags: [zbz-ocr-tei, project, ecosystem, vision]
 status: active
 ---
 
-# Projekt: ZBZ-OCR-TEI Pipeline
+# Project: ZBZ-OCR-TEI Pipeline
 
-LLM-gestützte OCR- und TEI-Transformationspipeline für 289 Jeanne-Hersch-Texte (7.200 Seiten) der Zentralbibliothek Zürich.
+LLM-powered OCR and TEI transformation pipeline for 289 Jeanne Hersch texts (7,200 pages) from the Zentralbibliothek Zuerich.
 
-**Abhängigkeiten:** Keine (Wurzeldokument)
+**Dependencies:** None (root document)
 
 ---
 
-## Auftrag
+## Commission
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| Auftraggeber | Zentralbibliothek Zürich (ZBZ) |
-| Auftragnehmer | DHCraft |
-| Gegenstand | Automatisierte OCR + TEI-Auszeichnung für Jeanne Hersch Nachlass |
-| Status | Beidseitig bestätigt (14.02.2026) |
-| Offerte | Unverändert (Azure/Mistral kein Mehraufwand) |
-| Ansprechpartner ZBZ | Elias Kreyenbühl, Anouschka (Editions- und Informatik-Background) |
+| Client | Zentralbibliothek Zuerich (ZBZ) |
+| Contractor | DHCraft |
+| Subject | Automated OCR + TEI annotation for Jeanne Hersch estate |
+| Status | Mutually confirmed (14.02.2026) |
+| Quote | Unchanged (Azure/Mistral no additional cost) |
+| ZBZ contacts | Elias Kreyenbuehl, Anouschka (editions and IT background) |
 
 ---
 
-## Oekosystem
+## Ecosystem
 
-Seit dem Alignment-Meeting (25.02.2026) deckt zbz-ocr-tei die **gesamte Pipeline** ab: OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt parallel ihren Transkribus-Workflow.
+Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeline**: OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ maintains their Transkribus workflow in parallel.
 
 ```
 ┌───────────────────────────────────────────────────────┐
-│  zbz-ocr-tei (dieses Repo)                           │
-│  PDF → Bilder → OCR → Layout → PAGE-XML → NER → TEI │
-│  (Python, Batch, vollautomatisch)                     │
+│  zbz-ocr-tei (this repo)                              │
+│  PDF → Images → OCR → Layout → PAGE-XML → NER → TEI  │
+│  (Python, batch, fully automated)                     │
 └───────────────────────────────────────────────────────┘
 ```
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| Input | PDF-Scans (7.200 Seiten) |
+| Input | PDF scans (7,200 pages) |
 | Output | TEI-XML (DTA-Basisformat), PAGE-XML + PNG + METS |
-| OCR-Engines | Mistral OCR 3 (Azure), DeepSeek-OCR-2 (lokal) |
-| Layout-Engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) |
-| NER | Claude Haiku 4.5 + lobid.org GND-API |
-| Modus | Batch, ohne manuellen Eingriff |
-| Implementierungsplan | [PLAN.md](../PLAN.md) |
+| OCR engines | Mistral OCR 3 (Azure), DeepSeek-OCR-2 (local) |
+| Layout engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) |
+| NER | Claude Haiku 4.5 + lobid.org GND API |
+| Mode | Batch, no manual intervention |
+| Implementation plan | [PLAN.md](../PLAN.md) |
 
 ---
 
-## Meilensteine
+## Milestones
 
-**Scope:** Volle Pipeline PDF → TEI-XML (seit 25.02.2026). Implementierungsplan: [PLAN.md](../PLAN.md).
+**Scope:** Full pipeline PDF → TEI-XML (since 25.02.2026). Implementation plan: [PLAN.md](../PLAN.md).
 
-| # | Meilenstein | Erfolgskriterium | Status |
-|---|-------------|-------------------|--------|
-| M0 | Bildextraktion + QS-Viewer | Bilder + Viewer verfuegbar | Erledigt |
-| M1 | OCR validiert | >=95% Genauigkeit alle Typen | Erledigt: 93.58% (Mistral), Dashboard-UI |
-| M2 | Layout + PAGE-XML | Regionen + BBox + PAGE-XML fuer 15 Pilots | **Phase 1** |
-| M3 | NER + GND | Entity Recall >70%, GND-Linking >60% | **Phase 2** |
-| M4 | TEI-XML | DTA-konformes TEI fuer 15 Pilots, Schema-valide | Teilweise (383 Dateien generiert, E22: ohne PAGE-XML/NER) |
-| M5 | Produktionslauf | 289 Docs verarbeitet, Stichproben-QA bestanden | Phase 5 |
+| # | Milestone | Success criterion | Status |
+|---|-----------|-------------------|--------|
+| M0 | Image extraction + QA viewer | Images + viewer available | Done |
+| M1 | OCR validated | >=95% accuracy all types | Done: 93.58% (Mistral), dashboard UI |
+| M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for 15 pilots | **Phase 1** |
+| M3 | NER + GND | Entity recall >70%, GND linking >60% | **Phase 2** |
+| M4 | TEI-XML | DTA-compliant TEI for 15 pilots, schema-valid | Partial (383 files generated, E22: without PAGE-XML/NER) |
+| M5 | Production run | 289 docs processed, spot-check QA passed | Phase 5 |
 
-### Abhaengigkeiten
+### Dependencies
 
 ```
-M0 (Bilder) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+GND) ──► M4 (TEI) ──► M5 (Produktion)
+M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+GND) ──► M4 (TEI) ──► M5 (Production)
 ```
 
 ---
 
-## Komponentenstatus (26.02.2026)
+## Component Status (26.02.2026)
 
-| Komponente | Status | Details |
-|------------|--------|---------|
-| Bildextraktion | Erledigt | `scripts/extract_pages.py`, 383 Seiten |
-| QS-Viewer | Erledigt | `docs/` mit HTML-Viewer |
-| OCR Phase 1 (Typ A) | Erledigt | Mistral 90.60%, DeepSeek 94.4% |
-| OCR Phase 2 (Typ B) | Erledigt | Mistral 93.69% Genauigkeit |
-| OCR Phase 3 (Typ D) | Erledigt | Mistral 97.12% Genauigkeit |
-| OCR Phase 4 (Typ C) | Erledigt | CER 2.65% (seitenweiser Vergleich, beste Phase) |
-| Post-Processing | Erledigt | 4-stufig in `scripts/postprocess/` |
-| GND-Seed | Erledigt | 75 Entitaeten, `scripts/extract_gnd.py` |
-| LLM-Nachkorrektur | Erledigt | `scripts/llm_postprocess.py`, Haiku 4.5, Variante C |
-| Evaluation | Erledigt | `scripts/evaluate_ocr.py`, CER/WER + HTML-Report |
-| Azure-Integration | Erledigt | Mistral Document AI 2512, `.env` konfiguriert |
-| Benchmark-UI | Erledigt | `docs/benchmark.html`, Mistral vs DeepSeek |
-| Dashboard-Redesign | Erledigt | `docs/` mit shared.css/js, index.html, viewer.html |
-| Dashboard-Daten | Erledigt | `scripts/generate_dashboard_data.py` → dashboard.json |
-| Layout-Analyse | Teilweise | `scripts/run_layout_analysis.py`, 8/15 Docs mit JSON + Overlay-PNGs. QA: BBox korrekt, 3 Probleme (O21) |
-| TEI-Generator | Erledigt | `scripts/tei/tei_generator.py`, 383 TEI-XML Dateien, DTA-Basisformat |
-| Viewer TEI-Panel | Erledigt | 3-Panel Viewer (Faksimile + OCR + TEI), Toggle T, Gerenderte Ansicht, Syntax-Highlighting, Diff, Entity-Sidebar |
-| Viewer TEI-Refactoring | Erledigt | TEI-JS in `docs/tei-viewer.js` extrahiert (~300 Zeilen), viewer.html 1200→816 Zeilen |
-| Layout-Post-Processing | Ausstehend | Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik (O21) |
-| PAGE-XML-Generator | Ausstehend | Layout + OCR → PAGE-XML (Phase 1 in PLAN.md) |
-| NER + GND | Ausstehend | Entity Recognition + GND-Linking (Phase 2 in PLAN.md) |
-| Containerisierung | Ausstehend | Dockerfile fuer Podman |
-| CI/CD | Ausstehend | GitLab Uni Zürich |
+| Component | Status | Details |
+|-----------|--------|---------|
+| Image extraction | Done | `scripts/extract_pages.py`, 383 pages |
+| QA viewer | Done | `docs/` with HTML viewer |
+| OCR phase 1 (type A) | Done | Mistral 90.60%, DeepSeek 94.4% |
+| OCR phase 2 (type B) | Done | Mistral 93.69% accuracy |
+| OCR phase 3 (type D) | Done | Mistral 97.12% accuracy |
+| OCR phase 4 (type C) | Done | CER 2.65% (page-level comparison, best phase) |
+| Post-processing | Done | 4-stage in `scripts/postprocess/` |
+| GND seed | Done | 75 entities, `scripts/extract_gnd.py` |
+| LLM post-correction | Done | `scripts/llm_postprocess.py`, Haiku 4.5, variant C |
+| Evaluation | Done | `scripts/evaluate_ocr.py`, CER/WER + HTML report |
+| Azure integration | Done | Mistral Document AI 2512, `.env` configured |
+| Benchmark UI | Done | `docs/benchmark.html`, Mistral vs DeepSeek |
+| Dashboard redesign | Done | `docs/` with shared.css/js, index.html, viewer.html |
+| Dashboard data | Done | `scripts/generate_dashboard_data.py` → dashboard.json |
+| Layout analysis | Partial | `scripts/run_layout_analysis.py`, 8/15 docs with JSON + overlay PNGs. QA: BBox correct, 3 issues (O21) |
+| TEI generator | Done | `scripts/tei/tei_generator.py`, 383 TEI-XML files, DTA-Basisformat |
+| Viewer TEI panel | Done | 3-panel viewer (facsimile + OCR + TEI), toggle T, rendered view, syntax highlighting, diff, entity sidebar |
+| Viewer TEI refactoring | Done | TEI JS extracted to `docs/tei-viewer.js` (~300 lines), viewer.html 1200→816 lines |
+| Layout post-processing | Pending | Overlap filter, single-line merge, page-number heuristic (O21) |
+| PAGE-XML generator | Pending | Layout + OCR → PAGE-XML (phase 1 in PLAN.md) |
+| NER + GND | Pending | Entity recognition + GND linking (phase 2 in PLAN.md) |
+| Containerization | Pending | Dockerfile for Podman |
+| CI/CD | Pending | GitLab Uni Zuerich |
 
 ---
 
 ## Team
 
-| Person | Rolle | Organisation |
-|--------|-------|-------------|
-| Christopher | Projektleitung, Entwicklung | DHCraft |
-| Elias Kreyenbühl | Auftraggeber, Koordination | ZBZ |
-| Anouschka | Edition, Informatik | ZBZ |
-| Bibliotheksinformatik | CI/CD, Podman, Infrastruktur | ZBZ |
+| Person | Role | Organization |
+|--------|------|-------------|
+| Christopher | Project lead, development | DHCraft |
+| Elias Kreyenbuehl | Client, coordination | ZBZ |
+| Anouschka | Edition, IT | ZBZ |
+| Library IT | CI/CD, Podman, infrastructure | ZBZ |
 
 ---
 
-## Kosten
+## Costs
 
-| Posten | Betrag |
-|--------|--------|
-| Mistral OCR (Azure, 289 Docs) | 6-15 USD |
-| LLM-Korrektur (Haiku 4.5, 289 Docs) | ~35 USD |
-| GPU-Cloud (optional) | ~10-20 USD |
-
----
-
-## Referenzen
-
-- [PIPELINE](PIPELINE.md) für technische Pipeline-Details
-- [QUELLENANALYSE](QUELLENANALYSE.md) für Korpus und Dokumenttypen
-- [DECISIONS](DECISIONS.md) für offene Fragen und Entscheidungen
-- [INFRASTRUKTUR](INFRASTRUKTUR.md) für Deployment-Details
+| Item | Amount |
+|------|--------|
+| Mistral OCR (Azure, 289 docs) | 6-15 USD |
+| LLM correction (Haiku 4.5, 289 docs) | ~35 USD |
+| GPU cloud (optional) | ~10-20 USD |
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-26*
+## References
+
+- [PIPELINE](PIPELINE.md) for technical pipeline details
+- [QUELLENANALYSE](QUELLENANALYSE.md) for corpus and document types
+- [DECISIONS](DECISIONS.md) for open questions and decisions
+- [INFRASTRUKTUR](INFRASTRUKTUR.md) for deployment details
+
+---
+
+*Created: 2026-02-18 | Updated: 2026-02-27*

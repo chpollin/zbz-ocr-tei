@@ -1,58 +1,58 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-25
+updated: 2026-02-27
 tags: [zbz-ocr-tei, infrastruktur, azure, podman, cicd]
 status: active
 ---
 
-# Infrastruktur
+# Infrastructure
 
-Deployment, API-Zugang, Containerisierung und CI/CD für den ZBZ-Produktionsbetrieb.
+Deployment, API access, containerization, and CI/CD for ZBZ production operations.
 
-**Abhängigkeiten:** [PIPELINE](PIPELINE.md)
+**Dependencies:** [PIPELINE](PIPELINE.md)
 
 ---
 
-## Übersicht
+## Overview
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| API-Zugang | Azure (Mistral Document AI 2512, Key vorhanden), Claude und Gemini in Genehmigung |
-| Versionskontrolle | GitLab Universität Zürich |
-| Container-Runtime | Podman (kein Docker, aber OCI-kompatibel) |
-| Deployment | Fork des Entwicklungsrepos auf ZBZ-Infrastruktur |
-| Registry | GitLab Container Registry (Uni Zürich) |
+| API Access | Azure (Mistral Document AI 2512, key available), Claude and Gemini pending approval |
+| Version Control | GitLab University of Zurich |
+| Container Runtime | Podman (no Docker, but OCI-compatible) |
+| Deployment | Fork of development repo on ZBZ infrastructure |
+| Registry | GitLab Container Registry (University of Zurich) |
 
 ---
 
-## Azure-Integration
+## Azure Integration
 
 ### Mistral Document AI
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
 | Provider | Azure AI Foundry (Serverless API) |
-| Modell | `mistral-document-ai-2512` |
-| Endpoint-Format | `https://<deployment>.<region>.models.ai.azure.com/v1/ocr` |
-| Regionen | East US, East US 2, West US, West US 3, South Central US, North Central US, Sweden Central |
-| Einsatz | Primaere Produktions-Engine fuer ZBZ |
-| Status | API-Key vorhanden, Engine implementiert |
-| Vorteil | Kein GPU noetig, serverbasiert, skalierbar, 30 Seiten/Request |
+| Model | `mistral-document-ai-2512` |
+| Endpoint Format | `https://<deployment>.<region>.models.ai.azure.com/v1/ocr` |
+| Regions | East US, East US 2, West US, West US 3, South Central US, North Central US, Sweden Central |
+| Usage | Primary production engine for ZBZ |
+| Status | API key available, engine implemented |
+| Advantage | No GPU required, server-based, scalable, 30 pages/request |
 
-### Weitere APIs (geplant)
+### Additional APIs (planned)
 
-| API | Zugang | Einsatz | Status |
-|-----|--------|---------|--------|
-| Gemini 3 Flash | Google API | Typ B/D (Agentic Vision), NER | In Genehmigung |
-| Claude | Anthropic / Azure | Komplexe Strukturerkennung, QS | In Genehmigung |
+| API | Access | Usage | Status |
+|-----|--------|-------|--------|
+| Gemini 3 Flash | Google API | Type B/D (Agentic Vision), NER | Pending approval |
+| Claude | Anthropic / Azure | Complex structure recognition, QA | Pending approval |
 
-### Konfiguration (zu implementieren)
+### Configuration (to be implemented)
 
-Die Pipeline muss konfigurierbare API-Endpoints unterstützen:
+The pipeline must support configurable API endpoints:
 
 ```yaml
-# Beispiel config.yaml (noch nicht implementiert)
+# Example config.yaml (not yet implemented)
 ocr:
   default_engine: mistral
   engines:
@@ -70,23 +70,23 @@ ocr:
       api_key_env: GEMINI_API_KEY
 ```
 
-**Status:** Noch nicht implementiert. Aktuell sind Engines hardcoded in `scripts/ocr_pipeline.py`.
+**Note:** Currently engines are configured directly in `scripts/config.py` and `scripts/ocr_pipeline.py`. A YAML-based configuration is planned but not yet implemented.
 
 ---
 
-## Containerisierung (Podman)
+## Containerization (Podman)
 
-### Anforderungen
+### Requirements
 
-- OCI-kompatibles Image (Podman = daemonless Docker-Alternative)
-- Multi-Stage Build: Base (Python + Dependencies) + Optional GPU
-- Konfiguration über Umgebungsvariablen (API-Keys, Endpoints)
-- Keine Secrets im Image
+- OCI-compatible image (Podman = daemonless Docker alternative)
+- Multi-stage build: Base (Python + dependencies) + optional GPU
+- Configuration via environment variables (API keys, endpoints)
+- No secrets in the image
 
-### Containerfile (zu erstellen)
+### Containerfile (to be created)
 
 ```dockerfile
-# Noch nicht implementiert — Entwurf
+# Not yet implemented — draft
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -102,44 +102,44 @@ ENV GEMINI_API_KEY=""
 ENTRYPOINT ["python", "-m", "scripts.ocr_pipeline"]
 ```
 
-**Status:** Noch nicht implementiert.
+**Status:** Not yet implemented.
 
 ---
 
 ## CI/CD (GitLab)
 
-### Anforderungen
+### Requirements
 
-- GitLab CI auf Uni Zürich Instanz
-- Container-Build + Push in GitLab Registry
-- Automatische Tests bei Push
-- Merge-Strategie: Upstream-Changes aus Entwicklungsrepo in Fork
+- GitLab CI on University of Zurich instance
+- Container build + push to GitLab Registry
+- Automatic tests on push
+- Merge strategy: upstream changes from development repo into fork
 
-### Fork-Modell
+### Fork Model
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| Entwicklungsrepo | GitHub: DHCraft/zbz-ocr-tei |
-| Produktionsrepo | GitLab Uni Zürich (Fork) |
-| Merge-Richtung | GitHub -> GitLab (Upstream-Updates) |
-| Anpassungen im Fork | API-Keys, Endpoints, ZBZ-spezifische Config |
+| Development Repo | GitHub: DHCraft/zbz-ocr-tei |
+| Production Repo | GitLab University of Zurich (fork) |
+| Merge Direction | GitHub -> GitLab (upstream updates) |
+| Fork Customizations | API keys, endpoints, ZBZ-specific config |
 
-Details zur Merge-Strategie: Wird im Alignment-Call definiert (-> [DECISIONS](DECISIONS.md) O3).
+Details on merge strategy: To be defined in alignment call (-> [DECISIONS](DECISIONS.md) O3).
 
-**Status:** .gitlab-ci.yml noch nicht implementiert.
+**Status:** .gitlab-ci.yml not yet implemented.
 
 ---
 
-## Lokale Entwicklung
+## Local Development
 
-### Voraussetzungen
+### Prerequisites
 
-| Tool | Version | Zweck |
-|------|---------|-------|
-| Python | 3.11+ | Pipeline-Skripte |
-| CUDA | 12.4+ | DeepSeek-OCR-2 (optional, nur lokal) |
-| GPU | 8+ GB VRAM | DeepSeek-OCR-2 (optional, nur lokal) |
-| Git | 2.x | Versionskontrolle |
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Python | 3.11+ | Pipeline scripts |
+| CUDA | 12.4+ | DeepSeek-OCR-2 (optional, local only) |
+| GPU | 8+ GB VRAM | DeepSeek-OCR-2 (optional, local only) |
+| Git | 2.x | Version control |
 
 ### Setup
 
@@ -158,26 +158,26 @@ python scripts/ocr_pipeline.py --check-gpu
 
 ---
 
-## Dashboard-Deployment
+## Dashboard Deployment
 
-Das QA-Dashboard (`docs/`) ist eine rein statische Webanwendung und benoetigt keinen Backend-Server.
+The QA dashboard (`docs/`) is a purely static web application and does not require a backend server.
 
-| Methode | Beschreibung |
-|---------|-------------|
-| Live Server (VS Code) | Lokale Vorschau waehrend Entwicklung |
-| GitHub Pages | `docs/` als Source, automatisch deployed |
-| Beliebiger HTTP-Server | `python -m http.server` im `docs/`-Ordner |
+| Method | Description |
+|--------|-------------|
+| Live Server (VS Code) | Local preview during development |
+| GitHub Pages | `docs/` as source, automatically deployed |
+| Any HTTP Server | `python -m http.server` in the `docs/` directory |
 
-**Daten aktualisieren:** `python -m scripts.generate_dashboard_data` generiert `docs/data/dashboard.json` aus Pipeline-Outputs.
-
----
-
-## Referenzen
-
-- [PIPELINE](PIPELINE.md) für Pipeline-Architektur
-- [OCR-ENGINES](OCR-ENGINES.md) für Engine-Details
-- [DECISIONS](DECISIONS.md) O1 (Azure-Key), O3 (Fork-Modell)
+**Update data:** `python -m scripts.generate_dashboard_data` generates `docs/data/dashboard.json` from pipeline outputs.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-25*
+## References
+
+- [PIPELINE](PIPELINE.md) for pipeline architecture
+- [OCR-ENGINES](OCR-ENGINES.md) for engine details
+- [DECISIONS](DECISIONS.md) O1 (Azure key), O3 (fork model)
+
+---
+
+*Created: 2026-02-18 | Updated: 2026-02-27*

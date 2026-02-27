@@ -1,46 +1,48 @@
 # Scripts
 
-Python-Skripte für die OCR-Pipeline.
+Python scripts for the OCR pipeline.
 
-## Übersicht
+## Overview
 
-| Skript | Zweck | GPU |
-|--------|-------|-----|
-| `ocr_pipeline.py` | OCR mit Mistral/DeepSeek/Docling | Ja (DeepSeek) |
-| `test_all_pdfs.py` | Haupt-OCR-Tests nach Phasen | Ja |
-| `llm_postprocess.py` | LLM-Nachkorrektur (Claude Haiku 4.5) | Nein |
-| `run_layout_analysis.py` | Layout-Analyse (Docling) + Overlay-PNGs | Ja (Docling) |
-| `tei/tei_generator.py` | TEI-XML aus Layout-JSON + OCR-Markdown | Nein |
-| `evaluate_ocr.py` | CER/WER-Evaluation mit HTML-Report | Nein |
-| `generate_dashboard_data.py` | Dashboard-Daten generieren | Nein |
-| `extract_pages.py` | PDF zu Seitenbildern (PNG) | Nein |
-| `extract_gnd.py` | GND-IDs aus Referenz-TEI extrahieren | Nein |
+| Script | Purpose | GPU |
+|--------|---------|-----|
+| `config.py` | Central configuration (paths, model settings) | No |
+| `utils.py` | Shared utility functions | No |
+| `ocr_pipeline.py` | OCR with Mistral/DeepSeek/Docling | Yes (DeepSeek) |
+| `test_all_pdfs.py` | Main OCR tests by phase | Yes |
+| `llm_postprocess.py` | LLM post-correction (Claude Haiku 4.5) | No |
+| `run_layout_analysis.py` | Layout analysis (Docling) + overlay PNGs | Yes (Docling) |
+| `tei/tei_generator.py` | TEI-XML from layout JSON + OCR Markdown | No |
+| `evaluate_ocr.py` | CER/WER evaluation with HTML report | No |
+| `generate_dashboard_data.py` | Generate dashboard data | No |
+| `extract_pages.py` | PDF to page images (PNG) | No |
+| `extract_gnd.py` | Extract GND IDs from reference TEI | No |
 
-## Verwendung
+## Usage
 
 ```bash
-# OCR-Tests durchführen (GPU erforderlich)
+# Run OCR tests (GPU required)
 python scripts/test_all_pdfs.py --phase phase1
 
-# Evaluation (ohne GPU)
+# Evaluation (no GPU)
 python scripts/evaluate_ocr.py --all
 
-# GND-Extraktion
+# GND extraction
 python scripts/extract_gnd.py
 ```
 
-## Postprocess-Modul
+## Postprocess Module
 
 ```
 postprocess/
 ├── __init__.py
-├── clean_markdown.py   # Markdown-Syntax entfernen
-├── dehyphenate.py      # Silbentrennung auflösen
-├── normalize.py        # Zeichen normalisieren
-└── pipeline.py         # Kombinierte Pipeline
+├── clean_markdown.py   # Remove Markdown syntax
+├── dehyphenate.py      # Resolve hyphenation
+├── normalize.py        # Normalize characters
+└── pipeline.py         # Combined pipeline
 ```
 
-Verwendung:
+Usage:
 ```python
 from scripts.postprocess import process_text
 clean = process_text(raw_ocr_output)
@@ -48,4 +50,4 @@ clean = process_text(raw_ocr_output)
 
 ---
 
-*Aktualisiert: 25.02.2026*
+*Updated: 2026-02-27*

@@ -1,44 +1,44 @@
-# Quelldaten
+# Source Data
 
-Dieses Verzeichnis enthält die Eingabedaten für das Projekt.
-**Nicht versioniert** (in .gitignore) – vom ZBZ bereitgestellt.
+This directory contains the input data for the project.
+**Not versioned** (in .gitignore) -- provided by ZBZ.
 
-## Struktur
+## Structure
 
 ```
 data/
-├── scans/                    # 286 PDF-Scans (Datenlieferung Feb 2026)
-│   └── *.pdf                 # Benannt nach Projekt-ID (z.B. 2310.pdf)
+├── scans/                    # 286 PDF scans (data delivery Feb 2026)
+│   └── *.pdf                 # Named by project ID (e.g. 2310.pdf)
 │
-├── referenz-tei/             # 25 Referenz-TEI-Dateien (ZBZ-annotiert, DTA-Basisformat)
-│   └── *.xml                 # Benannt nach Projekt-ID (z.B. 2310.xml)
+├── referenz-tei/             # 25 reference TEI files (ZBZ-annotated, DTA base format)
+│   └── *.xml                 # Named by project ID (e.g. 2310.xml)
 │
-├── page-xml-transkribus/     # 24 Transkribus-Exporte (PAGE-XML Schema 2013-07-15)
-│   └── {doc_id}/             # Pro Dokument ein Ordner
+├── page-xml-transkribus/     # 24 Transkribus exports (PAGE-XML schema 2013-07-15)
+│   └── {doc_id}/             # One folder per document
 │       ├── mets.xml          # METS-Manifest
-│       ├── metadata.xml      # Transkribus-Metadaten
-│       └── page/             # PAGE-XML pro Seite (leer, kein Text)
+│       ├── metadata.xml      # Transkribus metadata
+│       └── page/             # PAGE-XML per page (empty, no text)
 │           └── *.xml
 │
-├── richtlinien/              # ZBZ-Projektrichtlinien
-│   ├── dta_basisformat_komplett.md           # DTA-Referenz
-│   └── Page-xml-Export Einstellungen.jpg     # Transkribus-Export-Einstellungen
+├── richtlinien/              # ZBZ project guidelines
+│   ├── dta_basisformat_komplett.md           # DTA reference
+│   └── Page-xml-Export Einstellungen.jpg     # Transkribus export settings
 │
-└── projektsteuerung/         # ZBZ-Projektdaten
-    └── *.xlsx                # Arbeitslisten
+└── projektsteuerung/         # ZBZ project data
+    └── *.xlsx                # Work lists
 ```
 
-## Datenlieferung
+## Data Delivery
 
-**HerschStandFeb (Feb 2026):** 286 PDFs, 25 TEI-XMLs, 24 PAGE-XML-Exporte.
-Dokumentiert in [QUELLENANALYSE](../knowledge/QUELLENANALYSE.md) §Datenlieferung und [DECISIONS](../knowledge/DECISIONS.md) E23.
+**HerschStandFeb (Feb 2026):** 286 PDFs, 25 TEI-XMLs, 24 PAGE-XML exports.
+Documented in [QUELLENANALYSE](../knowledge/QUELLENANALYSE.md) §Data Delivery and [DECISIONS](../knowledge/DECISIONS.md) E23.
 
-| Kategorie | Anzahl | Quelle |
-|-----------|--------|--------|
-| PDFs mit TEI + PAGE-XML | 24 | ZBZ Transkribus (Collection 1886177) |
-| PDFs ohne Annotation | 262 | ZBZ Digitalisierung |
-| TEI-XMLs | 25 | Fertige Annotationen (1 XML ohne zugehoeriges PDF) |
+| Category | Count | Source |
+|----------|-------|--------|
+| PDFs with TEI + PAGE-XML | 24 | ZBZ Transkribus (Collection 1886177) |
+| PDFs without annotation | 262 | ZBZ Digitization |
+| TEI-XMLs | 25 | Finished annotations (1 XML without corresponding PDF) |
 
-## Hinweis
+## Note
 
-Das `data/`-Verzeichnis ist von Git ausgeschlossen, um sensible Daten und große Dateien nicht zu versionieren.
+The `data/` directory is excluded from Git to avoid versioning sensitive data and large files.

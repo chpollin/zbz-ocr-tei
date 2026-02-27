@@ -1,71 +1,71 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-25
+updated: 2026-02-27
 tags: [zbz-ocr-tei, tei, dta, mapping, transformation]
 status: active
 ---
 
-# TEI-Mapping
+# TEI Mapping
 
-Transformationsregeln von Quelltext zu TEI-XML nach DTA-Basisformat mit projektspezifischen Anpassungen.
+Transformation rules from source text to TEI-XML following the DTA-Basisformat with project-specific adaptations.
 
-> **Scope:** Seit der Scope-Erweiterung (25.02.2026) fuehrt zbz-ocr-tei die TEI-Transformation selbst durch (Phase 3 in [PLAN.md](../PLAN.md)). Dieses Dokument ist die Implementierungsreferenz fuer `scripts/tei/tei_generator.py`. Die Regeln gelten fuer die gesamte Pipeline.
+> **Scope:** Since the scope expansion (25.02.2026), zbz-ocr-tei performs the TEI transformation itself (Phase 3 in [PLAN.md](../PLAN.md)). This document is the implementation reference for `scripts/tei/tei_generator.py`. The rules apply to the entire pipeline.
 
-**Abhängigkeiten:** [QUELLENANALYSE](QUELLENANALYSE.md)
+**Dependencies:** [QUELLENANALYSE](QUELLENANALYSE.md)
 
-**Quellen:**
-- `data/richtlinien/README.md` -- Projektrichtlinien ZBZ
-- `data/richtlinien/dta_basisformat_komplett.md` -- DTA-Referenz
-- `data/richtlinien/Auszeichnungsrichtlinien Hersch INTERN.docx` -- Interne Richtlinien
+**Sources:**
+- `data/richtlinien/README.md` -- Project guidelines ZBZ
+- `data/richtlinien/dta_basisformat_komplett.md` -- DTA reference
+- `data/richtlinien/Auszeichnungsrichtlinien Hersch INTERN.docx` -- Internal guidelines
 
-**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md).
-
----
-
-## Grundprinzipien
-
-1. **Zeichengetreuer Lesetext** mit Registererschließung
-2. **DTA-Basisformat** als Grundlage mit projektspezifischen Anpassungen
-3. **Normalisierung** bestimmter Zeichen (keine diplomatische Transkription)
-4. **Jede Entität wird verlinkt**, auch bei Wiederholung
-5. **Vorlagengetreue Transkription** – Originaltext wird bewahrt
+**Open Questions:** See [DECISIONS](DECISIONS.md).
 
 ---
 
-## Dokumentstruktur
+## Core Principles
 
-### Grundgerüst
+1. **Character-faithful reading text** with index annotation
+2. **DTA-Basisformat** as foundation with project-specific adaptations
+3. **Normalization** of certain characters (no diplomatic transcription)
+4. **Every entity is linked**, even on repeated mention
+5. **Source-faithful transcription** -- original text is preserved
+
+---
+
+## Document Structure
+
+### Basic Skeleton
 
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <TEI xmlns='http://www.tei-c.org/ns/1.0' type="naegeli">
   <teiHeader>
-    <!-- wird per Skript aus ALMA befüllt -->
-    <!-- enthält: Projektinterne ID, MMSID, PubForm (book, bookSection, journalArticle) -->
+    <!-- populated by script from ALMA -->
+    <!-- contains: internal project ID, MMSID, PubForm (book, bookSection, journalArticle) -->
   </teiHeader>
   <text>
-    <front><!-- optional: Vorreden, Entstehungskontext --></front>
+    <front><!-- optional: prefaces, context of origin --></front>
     <body>
-      <pb facs="#f0001" n="1"/>  <!-- erste Seitenzahl VOR div n="1" -->
-      <div n="1"><!-- Hauptstruktur --></div>
+      <pb facs="#f0001" n="1"/>  <!-- first page number BEFORE div n="1" -->
+      <div n="1"><!-- main structure --></div>
     </body>
-    <back><!-- optional: Übersetzungs-/Nachdruckhinweise --></back>
+    <back><!-- optional: translation/reprint notes --></back>
   </text>
 </TEI>
 ```
 
-### Hierarchische Gliederung
+### Hierarchical Structure
 
-| Ebene | Element | Verwendung |
-|-------|---------|------------|
-| 1 | `<div n="1">` | Hauptkapitel |
-| 2 | `<div n="2">` | Unterkapitel |
-| 3 | `<div n="3">` | Abschnitt |
+| Level | Element | Usage |
+|-------|---------|-------|
+| 1 | `<div n="1">` | Main chapter |
+| 2 | `<div n="2">` | Sub-chapter |
+| 3 | `<div n="3">` | Section |
 
-**Wichtig:** `<pb>`-Elemente stehen **innerhalb** der `<div>`-Elemente.
+**Important:** `<pb>` elements are placed **inside** the `<div>` elements.
 
-### Vollständiges Strukturbeispiel
+### Complete Structure Example
 
 ```xml
 <text>
@@ -97,93 +97,93 @@ Transformationsregeln von Quelltext zu TEI-XML nach DTA-Basisformat mit projekts
 
 ---
 
-## Zeichennormalisierung
+## Character Normalization
 
-> **⚠️ Offene Frage:** Sollen Zeichen normalisiert oder vorlagengetreu übernommen werden? Besonders bei französischen Gepflogenheiten. Expertenmeinung (Bähler) ausstehend.
+> **Warning -- Open Question:** Should characters be normalized or preserved as in the source? Especially regarding French typographic conventions. Expert opinion (Baehler) pending.
 
-### Grundsatz
+### General Principle
 
-Laut interner Richtlinien (DOCX) gilt **Vorlagentreue** – die Zeichen werden so wiedergegeben, wie sie im Original stehen:
+According to internal guidelines (DOCX), **source fidelity** applies -- characters are rendered as they appear in the original:
 
-| Element | Behandlung |
-|---------|------------|
-| ß (scharf S) | Als solches transkribieren (U+00DF) |
-| Horizontale Striche | Wie in der Vorlage (Gedankenstriche, Spiegelstriche, von-bis, Trennstriche) |
-| Klammern | Wie in der Vorlage |
-| Anführungszeichen | Wie in der Vorlage |
-| Typografie Überschriften | Wie in der Vorlage |
+| Element | Treatment |
+|---------|-----------|
+| ss (sharp S) | Transcribe as-is (U+00DF) |
+| Horizontal dashes | As in source (em dashes, bullet dashes, range dashes, hyphens) |
+| Brackets | As in source |
+| Quotation marks | As in source |
+| Heading typography | As in source |
 
-### Normalisierung für LLM-Pipeline
+### Normalization for LLM Pipeline
 
-Das README.md definiert zusätzlich Normalisierungsregeln, die für die **automatisierte Verarbeitung** relevant sein können:
+The README.md additionally defines normalization rules that may be relevant for **automated processing**:
 
-| Quellzeichen | Zielzeichen | Unicode | Regel |
-|--------------|-------------|---------|-------|
-| Bindestrich-Minus (-) | Halbgeviertstrich (–) | U+2013 | Gedankenstriche, Spiegelstriche, von-bis-Striche |
-| Bindestrich-Minus (-) | Viertelgeviertstrich (‐) | U+2010 | Trenn- und Bindestriche |
-| Gerade Anführungszeichen (") | Typografische ("") | U+201C/U+201D | Doppelt: "Doppelte Anführungszeichen" |
-| Gerade Apostrophe (') | Typografische ('') | U+2018/U+2019 | Einfach: 'Einfache Anführungszeichen' |
-| Apostroph (') | Rechtes Anführungszeichen (') | U+2019 | l'homme → l'homme |
+| Source Character | Target Character | Unicode | Rule |
+|------------------|------------------|---------|------|
+| Hyphen-minus (-) | En dash (--) | U+2013 | Em dashes, bullet dashes, range dashes |
+| Hyphen-minus (-) | Quarter-em dash (‐) | U+2010 | Hyphens and compound words |
+| Straight double quotes (") | Typographic ("") | U+201C/U+201D | Double: "Double quotation marks" |
+| Straight single quotes (') | Typographic ('') | U+2018/U+2019 | Single: 'Single quotation marks' |
+| Apostrophe (') | Right single quotation mark (') | U+2019 | l'homme → l'homme |
 
-**Klärungsbedarf:** Diese Regeln müssen mit dem Team abgestimmt werden, da sie im Widerspruch zur Vorlagentreue stehen können.
+**Clarification needed:** These rules must be coordinated with the team, as they may conflict with source fidelity.
 
-### Leerzeichen
+### Whitespace
 
-| Kontext | Regel |
-|---------|-------|
-| Vor `:` `;` `?` `!` | Löschen |
-| Aufzählungen mit Trennstrichen | Normalisieren zu `/` (Zürich/Bern/Basel) |
+| Context | Rule |
+|---------|------|
+| Before `:` `;` `?` `!` | Delete |
+| Enumerations with dashes | Normalize to `/` (Zuerich/Bern/Basel) |
 
-### Sonderzeichen
+### Special Characters
 
-| Zeichen | Behandlung |
-|---------|------------|
-| ß | Erhalten (U+00DF) |
-| Ligaturen (œ, æ) | Erhalten |
-| Akzente (é, è, ê, ë, à, â, ù, û, ç, î, ï, ô) | Erhalten |
-| Klammern | So wie in der Vorlage |
+| Character | Treatment |
+|-----------|-----------|
+| ss | Preserve (U+00DF) |
+| Ligatures (oe, ae) | Preserve |
+| Accents (e, e, e, e, a, a, u, u, c, i, i, o) | Preserve |
+| Brackets | As in source |
 
 ---
 
-## Seitenstruktur
+## Page Structure
 
-### Seitenumbruch
+### Page Break
 
 ```xml
 <pb facs="#f0001" n="1"/>
 <pb facs="#f0002" n="2"/>
-<pb facs="#f0003" n="[3]"/>  <!-- Seitenzahl nicht gedruckt -->
+<pb facs="#f0003" n="[3]"/>  <!-- page number not printed -->
 ```
 
-| Attribut | Bedeutung | Format |
-|----------|-----------|--------|
-| `facs` | Verweis auf Digitalisat | `#f` + Digitalisierungsnummer |
-| `n` | Gedruckte Seitenzahl | Zahl oder `[Zahl]` wenn fehlend |
+| Attribute | Meaning | Format |
+|-----------|---------|--------|
+| `facs` | Reference to digitized image | `#f` + digitization number |
+| `n` | Printed page number | Number or `[Number]` if missing |
 
-**Regeln:**
-- Seitenzahlen werden **immer zu Beginn der Seite** wiedergegeben
-- Die **erste Seitenzahl steht vor `<div n="1">`**
-- Auf Seitenzahlen folgt **kein Zeilen-/Seitenumbruch**
-- Besonderheiten (Verzierungen, Einklammerungen) werden nicht wiedergegeben
+**Rules:**
+- Page numbers are **always rendered at the beginning of the page**
+- The **first page number precedes `<div n="1">`**
+- Page numbers are **not followed by a line/page break**
+- Special features (ornaments, brackets around numbers) are not rendered
 
-### Zeilenumbruch
+### Line Break
 
 ```xml
 <lb facs="#facs_2_l_24" n="N001"/>
-<lb facs="#facs_2_l_25" n="N002" break="no"/>  <!-- Silbentrennung -->
+<lb facs="#facs_2_l_25" n="N002" break="no"/>  <!-- hyphenation -->
 ```
 
-| Attribut | Bedeutung |
-|----------|-----------|
-| `facs` | Verweis auf Zeile in Transkribus |
-| `n` | Zeilennummer (N001, N002, ...) |
-| `break="no"` | Wort wurde getrennt |
+| Attribute | Meaning |
+|-----------|---------|
+| `facs` | Reference to line in Transkribus |
+| `n` | Line number (N001, N002, ...) |
+| `break="no"` | Word was hyphenated |
 
-**Hinweis:** Zeilenfall wird auf Datenebene bewahrt (`<lb>`), erscheint aber nicht im Frontend.
+**Note:** Line breaks are preserved at the data level (`<lb>`), but are not displayed in the frontend.
 
-### Silbentrennung
+### Hyphenation
 
-**Quelltext:**
+**Source text:**
 ```
 philo-
 sophie
@@ -194,17 +194,17 @@ sophie
 philo<lb break="no"/>sophie
 ```
 
-**Regeln:**
-- Silbentrennungen am Zeilenende werden **entfernt**
-- Das Trennzeichen (¬) wird **gelöscht**
-- `<lb break="no"/>` wird **ohne vorangehendes Leerzeichen** gesetzt
-- Bei Silbentrennung über **Seitenumbruch**: Kein `<lb break="no"/>`, Nichtzeichen (¬) durch Trennstrich (‐) ersetzen
+**Rules:**
+- End-of-line hyphenation is **removed**
+- The hyphenation character (NOT SIGN) is **deleted**
+- `<lb break="no"/>` is placed **without a preceding space**
+- For hyphenation across a **page break**: No `<lb break="no"/>`, replace NOT SIGN with hyphen (‐)
 
 ---
 
-## Textstruktur
+## Text Structure
 
-### Absätze
+### Paragraphs
 
 ```xml
 <p facs="#facs_2_r_2">
@@ -212,20 +212,20 @@ philo<lb break="no"/>sophie
 </p>
 ```
 
-**Regeln:**
-- Absatzstruktur wird aus der Vorlage übernommen
-- Einrückungen der ersten Zeile werden **nicht** ausgezeichnet
-- Zeichen für größere Absätze (Asterisk, Striche) werden **nicht** wiedergegeben
+**Rules:**
+- Paragraph structure is taken from the source
+- First-line indentation is **not** encoded
+- Markers for larger paragraph breaks (asterisks, rules) are **not** rendered
 
-### Vertikaler Abstand
+### Vertical Spacing
 
 ```xml
 <space dim="vertical"/>
 ```
 
-Für größere Abstände zwischen Absätzen.
+For larger gaps between paragraphs.
 
-### Überschriften
+### Headings
 
 ```xml
 <head>
@@ -234,53 +234,53 @@ Für größere Abstände zwischen Absätzen.
 </head>
 ```
 
-**Regeln:**
-- Überschriften werden mit `<head>` getaggt
-- Typografische Besonderheiten von Überschriften werden **nicht** abgebildet
+**Rules:**
+- Headings are tagged with `<head>`
+- Typographic peculiarities of headings are **not** represented
 
-### Listen
+### Lists
 
 ```xml
 <list>
-  <head>[ggf. Titel der Liste]</head>
-  <item>1. [Inhalt des ersten Listenpunkts]</item>
-  <item>2. [Inhalt des zweiten Listenpunkts]</item>
-  <item>[n]. [Inhalt des n-ten Listenpunkts]</item>
+  <head>[optional: list title]</head>
+  <item>1. [content of first list item]</item>
+  <item>2. [content of second list item]</item>
+  <item>[n]. [content of nth list item]</item>
 </list>
 ```
 
-**Wichtig:** Nummerierungen werden **auf Textebene** realisiert, nicht als Attribut.
+**Important:** Numbering is realized **at the text level**, not as an attribute.
 
-### Tabellen
+### Tables
 
 ```xml
 <table>
-  <head>[ggf. Titel der Tabelle]</head>
+  <head>[optional: table title]</head>
   <row>
-    <cell>[Text einer Tabellen-Zelle]</cell>
-    <cell>[Text einer Tabellen-Zelle]</cell>
+    <cell>[table cell text]</cell>
+    <cell>[table cell text]</cell>
   </row>
 </table>
 ```
 
 ---
 
-## Hervorhebungen
+## Highlighting
 
-| Rendering | TEI | Beispiel |
-|-----------|-----|----------|
-| Fett | `<hi rendition="#b">` | `<hi rendition="#b">wichtig</hi>` |
-| Kursiv | `<hi rendition="#i">` | `<hi rendition="#i">Philosophie</hi>` |
-| Unterstrichen | `<hi rendition="#u">` | `<hi rendition="#u">beachte</hi>` |
-| Gesperrt | `<hi rendition="#g">` | `<hi rendition="#g">Hervorhebung</hi>` |
-| Hochgestellt | `<hi rendition="#sup">` | `<hi rendition="#sup">1</hi>` |
-| Tiefgestellt | `<hi rendition="#sub">` | `<hi rendition="#sub">2</hi>` |
+| Rendering | TEI | Example |
+|-----------|-----|---------|
+| Bold | `<hi rendition="#b">` | `<hi rendition="#b">wichtig</hi>` |
+| Italic | `<hi rendition="#i">` | `<hi rendition="#i">Philosophie</hi>` |
+| Underlined | `<hi rendition="#u">` | `<hi rendition="#u">beachte</hi>` |
+| Letter-spaced | `<hi rendition="#g">` | `<hi rendition="#g">Hervorhebung</hi>` |
+| Superscript | `<hi rendition="#sup">` | `<hi rendition="#sup">1</hi>` |
+| Subscript | `<hi rendition="#sub">` | `<hi rendition="#sub">2</hi>` |
 
-**Wichtig:** Nur **semantisch relevante** Hervorhebungen werden ausgezeichnet, nicht rein typografische (z.B. Kapitälchen in Überschriften).
+**Important:** Only **semantically relevant** highlighting is encoded, not purely typographic features (e.g. small caps in headings).
 
 ---
 
-## Sprachwechsel
+## Language Switches
 
 ```xml
 <foreign xml:lang="deu">deutscher Text</foreign>
@@ -288,21 +288,21 @@ Für größere Abstände zwischen Absätzen.
 <foreign xml:lang="lat">Lorem ipsum</foreign>
 ```
 
-Sprachcodes nach **ISO 639-3**:
+Language codes follow **ISO 639-3**:
 
-| Code | Sprache |
-|------|---------|
-| `fra` | Französisch |
-| `deu` | Deutsch |
-| `eng` | Englisch |
-| `ita` | Italienisch |
-| `lat` | Latein |
+| Code | Language |
+|------|----------|
+| `fra` | French |
+| `deu` | German |
+| `eng` | English |
+| `ita` | Italian |
+| `lat` | Latin |
 
 ---
 
-## Fußnoten
+## Footnotes
 
-### Einfache Fußnote
+### Simple Footnote
 
 ```xml
 <p>
@@ -314,44 +314,44 @@ Sprachcodes nach **ISO 639-3**:
 </p>
 ```
 
-| Attribut | Bedeutung | Format |
-|----------|-----------|--------|
-| `place="foot"` | Fußnote am Seitenfuß | Konstant |
-| `n` | Original-Fußnotennummer wie im Druck | Zahl/Zeichen |
-| `xml:id` | Eindeutige ID | `fn[Seitenzahl]-[Nummer]` |
+| Attribute | Meaning | Format |
+|-----------|---------|--------|
+| `place="foot"` | Footnote at page bottom | Constant |
+| `n` | Original footnote number as printed | Number/character |
+| `xml:id` | Unique ID | `fn[page number]-[number]` |
 
-**Regeln:**
-- `<note>` steht **direkt an der Textstelle** mit dem Fußnotenzeichen
-- Das Fußnotenzeichen selbst wird **nicht** als Zeichen wiedergegeben
-- Die physische Position am Seitenfuß wird über `@place="foot"` kodiert
+**Rules:**
+- `<note>` is placed **directly at the text location** of the footnote marker
+- The footnote marker itself is **not** rendered as a character
+- The physical position at the page bottom is encoded via `@place="foot"`
 
-### Mehrseitige Fußnote
+### Multi-Page Footnote
 
 ```xml
-<!-- Seite 125 -->
+<!-- page 125 -->
 <note place="foot" n="1" xml:id="fn125-1" next="#fn126-1a">
-  Beginn der Fußnote...
+  Beginning of footnote...
 </note>
 <lb/>
 
 <pb facs="#f0126" n="126"/>
 
-<!-- Text Folgeseite bis Schluss -->
+<!-- following page text to end -->
 
 <note place="foot" xml:id="fn126-1a" prev="#fn125-1">
-  ...Fortsetzung der Fußnote.
+  ...continuation of footnote.
 </note>
 <lb/>
 ```
 
-**Regeln:**
-- `<note>` wird **vor dem Seitenumbruch geschlossen**
-- Fortsetzung wird erfasst, wo sie im Text erscheint (meist am Seitenende)
-- Verbindung über `@xml:id`, `@next` und `@prev`
+**Rules:**
+- `<note>` is **closed before the page break**
+- The continuation is captured where it appears in the text (usually at the page bottom)
+- Linked via `@xml:id`, `@next`, and `@prev`
 
 ---
 
-## Druckfehlerkorrektur
+## Print Error Correction
 
 ```xml
 <choice>
@@ -360,49 +360,49 @@ Sprachcodes nach **ISO 639-3**:
 </choice>
 ```
 
-**Interne Richtlinie (DOCX):** Offensichtliche Druckfehler werden **stillschweigend korrigiert**.
+**Internal guideline (DOCX):** Obvious print errors are **silently corrected**.
 
-> **Hinweis:** Das bedeutet, dass `<choice>/<sic>/<corr>` möglicherweise nur bei nicht-offensichtlichen Fehlern verwendet wird. Klärung erforderlich.
+> **Note:** This means that `<choice>/<sic>/<corr>` may only be used for non-obvious errors. Clarification required.
 
 ---
 
-## Registereinträge (Entitäten)
+## Index Entries (Entities)
 
-### Grundregel
+### General Rule
 
-**Jede Nennung wird referenziert**, auch bei Wiederholungen. Alle `ref`-Attribute beziehen sich auf die GND.
+**Every mention is referenced**, even on repetition. All `ref` attributes refer to the GND.
 
-**Ausnahmen:**
-- Entitäten in Bildunterschriften werden **nicht** ausgezeichnet
-- Möglichst kein „verschachteltes" Tagging (z.B. Person innerhalb eines Werktitels)
+**Exceptions:**
+- Entities in image captions are **not** annotated
+- Avoid "nested" tagging where possible (e.g. person inside a work title)
 
-### Personen
+### Persons
 
 ```xml
 <persName ref="GND:118815679">Hersch</persName>
 ```
 
-**Hinweis (DOCX):** Familienname und Vornamen werden **nicht** unterschieden – nur `<persName>` ohne Untergliederung.
+**Note (DOCX):** Family name and given names are **not** distinguished -- only `<persName>` without subdivision.
 
-### Organisationen
+### Organizations
 
 ```xml
 <orgName ref="GND:1010450-1">Universität Genf</orgName>
 ```
 
-### Werke
+### Works
 
 ```xml
 <bibl corresp="GND:1088036961">L'être et la forme</bibl>
 ```
 
-**Hinweis (DOCX):** `<bibl/>` für bibliografische Nachweise.
+**Note (DOCX):** `<bibl/>` for bibliographic references.
 
 ---
 
-## Spezielle Dokumenttypen
+## Special Document Types
 
-### Rezension
+### Review
 
 ```xml
 <div type="review">
@@ -415,11 +415,11 @@ Sprachcodes nach **ISO 639-3**:
       relié, 17 × 25, 822 p.
     </bibl>
   </head>
-  <p>Rezensionstext...</p>
+  <p>Review text...</p>
 </div>
 ```
 
-### Redaktionelle Einleitungen/Nachbemerkungen
+### Editorial Introductions / Afterwords
 
 ```xml
 <ab type="redactional" hand="xy">
@@ -427,11 +427,11 @@ Sprachcodes nach **ISO 639-3**:
 </ab>
 ```
 
-**Hinweis (DOCX):** Redaktionelle Texte, die nicht von Jeanne Hersch stammen, werden mit `<ab type="redactional" hand="xy">` ausgezeichnet.
+**Note (DOCX):** Editorial texts not authored by Jeanne Hersch are tagged with `<ab type="redactional" hand="xy">`.
 
-### Infoboxen und Marginalien
+### Info Boxes and Marginalia
 
-Infoboxen, Faktenkästen oder sonstige Marginalien, die **nicht von Jeanne Hersch** verfasst wurden (z.B. „An unsere Leser"), werden nur wiedergegeben, wenn sie einen **inhaltlichen Bezug zum Haupttext** aufweisen. Die Infobox kann am Ende des Texts hinzugefügt und als Fremdtext ausgewiesen werden.
+Info boxes, fact boxes, or other marginalia **not authored by Jeanne Hersch** (e.g. "An unsere Leser") are only included if they have a **substantive connection to the main text**. The info box may be appended at the end of the text and marked as third-party text.
 
 ### Interview
 
@@ -455,9 +455,9 @@ Infoboxen, Faktenkästen oder sonstige Marginalien, die **nicht von Jeanne Hersc
 </div>
 ```
 
-**Hinweis:** `<sp>` kann durch `@type` spezifiziert werden (z.B. `@type="question"` oder `@type="answer"`).
+**Note:** `<sp>` can be further specified via `@type` (e.g. `@type="question"` or `@type="answer"`).
 
-### Gesprächsrunde
+### Panel Discussion
 
 ```xml
 <div type="conversation">
@@ -475,7 +475,7 @@ Infoboxen, Faktenkästen oder sonstige Marginalien, die **nicht von Jeanne Hersc
 </div>
 ```
 
-### Lexikonartikel
+### Encyclopedia Entry
 
 ```xml
 <div type="entry">
@@ -503,16 +503,16 @@ Infoboxen, Faktenkästen oder sonstige Marginalien, die **nicht von Jeanne Hersc
 </div>
 ```
 
-**Wichtig:**
-- Bibliografie steht in `<div type="bibliography">` mit `<listBibl>`
-- Einträge werden mit `<bibl>` ausgezeichnet, aber **ohne GND-Verknüpfung**
-- Weitere Entitäten (Personen, Organisationen) in Bibliografien werden **nicht** ausgezeichnet
+**Important:**
+- Bibliography is placed in `<div type="bibliography">` with `<listBibl>`
+- Entries are tagged with `<bibl>`, but **without GND linking**
+- Additional entities (persons, organizations) in bibliographies are **not** annotated
 
 ---
 
-## Paratexte
+## Paratexts
 
-### Front-Matter
+### Front Matter
 
 ```xml
 <text>
@@ -525,15 +525,15 @@ Infoboxen, Faktenkästen oder sonstige Marginalien, die **nicht von Jeanne Hersc
 
   <body>
     <div n="1">
-      <!-- hier beginnt der eigentliche Text -->
+      <!-- main text begins here -->
     </div>
   </body>
 </text>
 ```
 
-**Verwendung:** Vorworte, Redaktionelle Hinweise, einleitende Kommentare, Entstehungskontext.
+**Usage:** Forewords, editorial notes, introductory comments, context of origin.
 
-### Back-Matter
+### Back Matter
 
 ```xml
 <body>
@@ -551,110 +551,110 @@ Infoboxen, Faktenkästen oder sonstige Marginalien, die **nicht von Jeanne Hersc
 </back>
 ```
 
-**Mögliche Formulierungen:**
-- "Französische Übersetzung erschienen in: [...]"
-- "Nachdruck erschienen in: [...]"
-- "Auch erschienen in: [...]"
+**Possible phrasings:**
+- "French translation published in: [...]"
+- "Reprint published in: [...]"
+- "Also published in: [...]"
 
 ---
 
-## Abbildungen
+## Figures
 
 ```xml
 <figure>
   <graphic xml:id="fig1" url="..\..\images\fig1.tif"/>
-  <head>[ggf. Titel der Abbildung]</head>
-  <p>[ggf. Erläuterung zur Abbildung im Text]</p>
+  <head>[optional: figure title]</head>
+  <p>[optional: explanation of figure in text]</p>
 </figure>
 ```
 
-**Regeln:**
-- IDs fortlaufend: fig1, fig2, fig3...
-- `<figure>` wird **als eigenständiger Block** ausgezeichnet, nicht innerhalb von `<p>`
-- Bilder nur aufnehmen, wenn für das Verständnis des Textes **erforderlich**
-- Speicherort: `images/` Ordner
+**Rules:**
+- IDs are sequential: fig1, fig2, fig3...
+- `<figure>` is tagged **as a standalone block**, not inside `<p>`
+- Images are only included if **essential** for understanding the text
+- Storage location: `images/` directory
 
 ---
 
-## Auslassungen
+## Omissions
 
-Folgende Elemente werden **nicht** transkribiert:
+The following elements are **not** transcribed:
 
-| Auslassung | Anmerkung |
-|------------|-----------|
-| Titelseiten | Außer bei Monografien |
-| Lebenslauf von Jeanne Hersch | Auch wenn vor dem Text beigefügt |
-| Kolumnentitel | - |
-| Klappentexte | - |
-| Urhebervermerke | "von Jeanne Hersch" nur in Metadaten |
-| Initialen | Nicht ausgezeichnet |
-| Mehrspaltigkeit | Nicht als solche wiedergegeben |
-| Fremdtexte in Marginalien | Nur wenn inhaltlich relevant |
+| Omission | Note |
+|----------|------|
+| Title pages | Except for monographs |
+| Curriculum vitae of Jeanne Hersch | Even if appended before the text |
+| Running headers | - |
+| Blurb texts | - |
+| Authorship notices | "von Jeanne Hersch" only in metadata |
+| Initials | Not annotated |
+| Multi-column layout | Not reproduced as such |
+| Third-party marginal texts | Only if substantively relevant |
 
-**Bei Mehrspaltigkeit:** Beim Spaltenumbruch wird kein Absatz gemacht, das durch Transkribus generierte `<p>` wird gelöscht.
-
----
-
-## TEI-Elementinventar
-
-| Element | Attribute | Verwendung |
-|---------|-----------|------------|
-| `<TEI>` | xmlns, type="naegeli" | Wurzelelement |
-| `<teiHeader>` | - | Metadaten (aus ALMA per Skript) |
-| `<text>` | - | Textcontainer |
-| `<front>` | - | Paratexte vorne |
-| `<body>` | - | Haupttext |
-| `<back>` | - | Paratexte hinten |
-| `<div>` | n, type | Gliederung |
-| `<pb>` | facs, n | Seitenumbruch |
-| `<lb>` | facs, n, break | Zeilenumbruch |
-| `<head>` | type | Überschrift |
-| `<title>` | type (main/sub) | Titel |
-| `<p>` | facs | Absatz |
-| `<hi>` | rendition | Hervorhebung |
-| `<persName>` | ref | Person mit GND |
-| `<orgName>` | ref | Organisation mit GND |
-| `<bibl>` | corresp | Werk mit GND |
-| `<note>` | place, n, xml:id, next, prev | Fußnote |
-| `<foreign>` | xml:lang | Sprachwechsel |
-| `<space>` | dim | Abstand |
-| `<list>` | - | Liste |
-| `<item>` | - | Listeneintrag |
-| `<table>` | - | Tabelle |
-| `<row>` | - | Tabellenzeile |
-| `<cell>` | - | Tabellenzelle |
-| `<figure>` | xml:id | Abbildung |
-| `<graphic>` | xml:id, url | Bildreferenz |
-| `<choice>` | - | Korrektur-Container |
-| `<sic>` | - | Fehler im Original |
-| `<corr>` | - | Korrigierte Form |
-| `<sp>` | type | Redebeitrag |
-| `<speaker>` | - | Sprechername |
-| `<listBibl>` | - | Bibliografische Liste |
-| `<ab>` | type, hand | Anonymer Block (redaktionelle Texte) |
+**For multi-column layouts:** No paragraph break is inserted at column breaks; the `<p>` generated by Transkribus is deleted.
 
 ---
 
-## Transkribus-Vorbereitung
+## TEI Element Inventory
 
-Die Texterfassung erfolgt in Transkribus:
+| Element | Attributes | Usage |
+|---------|------------|-------|
+| `<TEI>` | xmlns, type="naegeli" | Root element |
+| `<teiHeader>` | - | Metadata (from ALMA via script) |
+| `<text>` | - | Text container |
+| `<front>` | - | Front paratexts |
+| `<body>` | - | Main text |
+| `<back>` | - | Back paratexts |
+| `<div>` | n, type | Structural division |
+| `<pb>` | facs, n | Page break |
+| `<lb>` | facs, n, break | Line break |
+| `<head>` | type | Heading |
+| `<title>` | type (main/sub) | Title |
+| `<p>` | facs | Paragraph |
+| `<hi>` | rendition | Highlighting |
+| `<persName>` | ref | Person with GND |
+| `<orgName>` | ref | Organization with GND |
+| `<bibl>` | corresp | Work with GND |
+| `<note>` | place, n, xml:id, next, prev | Footnote |
+| `<foreign>` | xml:lang | Language switch |
+| `<space>` | dim | Spacing |
+| `<list>` | - | List |
+| `<item>` | - | List item |
+| `<table>` | - | Table |
+| `<row>` | - | Table row |
+| `<cell>` | - | Table cell |
+| `<figure>` | xml:id | Figure |
+| `<graphic>` | xml:id, url | Image reference |
+| `<choice>` | - | Correction container |
+| `<sic>` | - | Error in original |
+| `<corr>` | - | Corrected form |
+| `<sp>` | type | Speech act |
+| `<speaker>` | - | Speaker name |
+| `<listBibl>` | - | Bibliographic list |
+| `<ab>` | type, hand | Anonymous block (editorial texts) |
+
+---
+
+## Transkribus Preparation
+
+Text capture is performed in Transkribus:
 
 ### OCR
-- Modell: **Print M1**
-- Anschließend vollständige manuelle Korrektur
+- Model: **Print M1**
+- Followed by complete manual correction
 
-### Fußnoten in Transkribus (DOCX)
-- Um die Fußnote wird **eine eigene Textregion** gesetzt
-- Die Fußnote wird **ans Ende aller Textregionen** verschoben
+### Footnotes in Transkribus (DOCX)
+- A **separate text region** is drawn around the footnote
+- The footnote is **moved to the end of all text regions**
 
-### Absätze in Transkribus (DOCX)
-- Größere Absätze werden mit **(vertical)** vermerkt
+### Paragraphs in Transkribus (DOCX)
+- Larger paragraph breaks are marked with **(vertical)**
 
 ### Structural Tags in Transkribus
 - `footnote`
 - `heading`
 - `page-number`
-- `caption` (für Bildunterschriften)
+- `caption` (for image captions)
 
 ### Renderings in Transkribus
 - `bold`
@@ -664,7 +664,7 @@ Die Texterfassung erfolgt in Transkribus:
 - `subscript`
 - `superscript`
 
-### Textual Tags (in Diskussion)
+### Textual Tags (under discussion)
 - `div`
 - `organization`
 - `person`
@@ -675,11 +675,11 @@ Die Texterfassung erfolgt in Transkribus:
 
 ---
 
-## Facsimile-Koordinaten (optional)
+## Facsimile Coordinates (optional)
 
-Mit Gemini 3 Agentic Vision können präzise Bounding-Box-Koordinaten für Textregionen generiert werden. Dies ermöglicht eine Verknüpfung zwischen TEI-Text und Digitalisat-Position.
+With Gemini 3 Agentic Vision, precise bounding-box coordinates for text regions can be generated. This enables linking between TEI text and digitized image positions.
 
-### Grundstruktur
+### Basic Structure
 
 ```xml
 <TEI>
@@ -701,17 +701,17 @@ Mit Gemini 3 Agentic Vision können präzise Bounding-Box-Koordinaten für Textr
 </TEI>
 ```
 
-### Attribute
+### Attributes
 
-| Element | Attribut | Bedeutung |
-|---------|----------|-----------|
-| `<surface>` | ulx, uly, lrx, lry | Gesamtbild-Koordinaten (upper-left, lower-right) |
-| `<zone>` | ulx, uly, lrx, lry | Textregion-Koordinaten |
-| `<zone>` | xml:id | Eindeutige ID zur Verknüpfung mit `@facs` |
+| Element | Attribute | Meaning |
+|---------|-----------|---------|
+| `<surface>` | ulx, uly, lrx, lry | Full image coordinates (upper-left, lower-right) |
+| `<zone>` | ulx, uly, lrx, lry | Text region coordinates |
+| `<zone>` | xml:id | Unique ID for linking with `@facs` |
 
-### Koordinatenformat
+### Coordinate Format
 
-Gemini 3 Agentic Vision liefert Koordinaten im `xywh`-Format (x, y, width, height). Umrechnung:
+Gemini 3 Agentic Vision returns coordinates in `xywh` format (x, y, width, height). Conversion:
 
 ```
 ulx = x
@@ -720,59 +720,59 @@ lrx = x + width
 lry = y + height
 ```
 
-### Nutzen
+### Benefits
 
-| Aspekt | Vorteil |
+| Aspect | Benefit |
 |--------|---------|
-| Wissenschaftlich | Präzise Bild-Text-Verknüpfung |
-| IIIF-kompatibel | Koordinaten können für IIIF-Annotationen genutzt werden |
-| Qualitätssicherung | Visuelle Überprüfung der OCR-Zuordnung |
+| Scholarly | Precise image-text linking |
+| IIIF-compatible | Coordinates can be used for IIIF annotations |
+| Quality assurance | Visual verification of OCR alignment |
 
-**Hinweis:** Facsimile-Koordinaten sind optional und erhöhen den Aufwand. Empfohlen für besonders wichtige Dokumente oder zweispaltige Layouts.
-
----
-
-## Offene Fragen
-
-### Aus internen Richtlinien (DOCX-Kommentare)
-
-Diese Fragen wurden im internen Dokument markiert und erfordern Klärung mit Expertin Bähler:
-
-1. **Normalisierung vs. Vorlagentreue:** Sollen Textmerkmale vereinheitlicht werden oder aus der Vorlage übernommen? Insbesondere französische Gepflogenheiten betreffend.
-
-2. **Typografie der Überschriften:** Dieselbe Frage wie bei Normalisierungen.
-
-3. **Metadaten-Integration:** Ist es möglich, die Metadaten aus Alma und die ID aus der Tabelle zu beziehen? (MMSIDs in Exceltabelle)
-
-### Weitere offene Punkte
-
-- [ ] Schlagworte: Wer erstellt diese? Kommen sie in den Header? *(DOCX: Abschnitt leer)*
-- [ ] div-type-Werte für Front-Matter: editorial, context, preface, introduction, sourceNote?
-- [ ] div-type-Werte für Back-Matter: translation, reprint, publication, bibliography, commentary?
-- [ ] GND-Werksätze in Back-Matter?
-- [ ] Systematischer Einsatz von Textual Tags in Transkribus?
+**Note:** Facsimile coordinates are optional and increase effort. Recommended for particularly important documents or two-column layouts.
 
 ---
 
-## Dokumentmetadaten
+## Open Questions
 
-| Quelle | Letzte Änderung | Autor |
-|--------|-----------------|-------|
-| README.md | – | ZBZ |
-| dta_basisformat_komplett.md | – | DTA |
+### From Internal Guidelines (DOCX Comments)
+
+These questions were flagged in the internal document and require clarification with expert Baehler:
+
+1. **Normalization vs. source fidelity:** Should textual features be standardized or preserved from the source? Especially regarding French typographic conventions.
+
+2. **Heading typography:** Same question as for normalizations.
+
+3. **Metadata integration:** Is it possible to pull metadata from Alma and the ID from the spreadsheet? (MMSIDs in Excel spreadsheet)
+
+### Further Open Items
+
+- [ ] Keywords: Who creates them? Do they go in the header? *(DOCX: section empty)*
+- [ ] div-type values for front matter: editorial, context, preface, introduction, sourceNote?
+- [ ] div-type values for back matter: translation, reprint, publication, bibliography, commentary?
+- [ ] GND work records in back matter?
+- [ ] Systematic use of textual tags in Transkribus?
+
+---
+
+## Document Metadata
+
+| Source | Last Modified | Author |
+|--------|---------------|--------|
+| README.md | -- | ZBZ |
+| dta_basisformat_komplett.md | -- | DTA |
 | Auszeichnungsrichtlinien Hersch INTERN.docx | 2025-06-25 | Marc Zobrist (Revision 74) |
 
-**Beteiligte (DOCX):** Sharon Rom, Elias Kreyenbühl, Marc Zobrist
+**Contributors (DOCX):** Sharon Rom, Elias Kreyenbuehl, Marc Zobrist
 
 ---
 
-## Referenzen
+## References
 
-- [QUELLENANALYSE](QUELLENANALYSE.md) für Korpus und Dokumenttypen
-- [GND-STRATEGIE](GND-STRATEGIE.md) für Entitätsverknüpfung
-- [PIPELINE](PIPELINE.md) für Pipeline-Integration
-- [DECISIONS](DECISIONS.md) für offene TEI-Fragen
+- [QUELLENANALYSE](QUELLENANALYSE.md) for corpus and document types
+- [GND-STRATEGIE](GND-STRATEGIE.md) for entity linking
+- [PIPELINE](PIPELINE.md) for pipeline integration
+- [DECISIONS](DECISIONS.md) for open TEI questions
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+*Created: 2026-01-29 | Updated: 2026-02-27*

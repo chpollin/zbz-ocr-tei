@@ -1,279 +1,279 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-25
+updated: 2026-02-27
 tags: [zbz-ocr-tei, ocr, deepseek, mistral, gemini, docling]
 status: active
 ---
 
-# OCR-Engines
+# OCR Engines
 
-Alle OCR-Tools und ihre Rollen in der Pipeline. Docling wird nur für Layout-Analyse eingesetzt.
+All OCR tools and their roles in the pipeline. Docling is used exclusively for layout analysis.
 
-**Abhängigkeiten:** [PIPELINE](PIPELINE.md)
+**Dependencies:** [PIPELINE](PIPELINE.md)
 
 ---
 
-## Übersicht
+## Overview
 
-| Engine | Zugang | Parameter | Einsatz | Status |
-|--------|--------|-----------|---------|--------|
-| DeepSeek-OCR-2 | Lokal (GPU) | 3B VLM | Entwicklung, Typ A | Validiert |
-| Mistral Document AI | Azure AI Foundry | mistral-document-ai-2512 | Produktionsbetrieb ZBZ | API-Key vorhanden |
-| Gemini 3 Flash | Google API | - | Typ B/D (Agentic Vision), NER | Nicht getestet |
-| Claude | Anthropic/Azure | - | Komplexe Strukturen, QS | Nicht getestet |
-| Docling | Lokal (CPU) | IBM Research | Nur Layout-Analyse | Validiert |
+| Engine | Access | Parameters | Use Case | Status |
+|--------|--------|------------|----------|--------|
+| DeepSeek-OCR-2 | Local (GPU) | 3B VLM | Development, Type A | Validated |
+| Mistral Document AI | Azure AI Foundry | mistral-document-ai-2512 | Production (ZBZ) | API key available |
+| Gemini 3 Flash | Google API | - | Type B/D (Agentic Vision), NER | Not tested for OCR; evaluated as optional layout validator (E19) |
+| Claude | Anthropic/Azure | - | Complex structures, QA | Not tested |
+| Docling | Local (CPU) | IBM Research | Layout analysis only | Validated |
 
 ---
 
 ## DeepSeek-OCR-2
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| Modell | deepseek-ai/DeepSeek-OCR-2 (3B VLM) |
-| Hardware | GPU mit 8+ GB VRAM, CUDA 12.4+ |
-| Genauigkeit | 94-97% (validiert auf Typ A) |
-| Geschwindigkeit | ~1.6 Sekunden/Seite (RTX 3070) |
-| Einsatz | Entwicklung, Typ A (einspaltig), Typ C (Monografien) |
+| Model | deepseek-ai/DeepSeek-OCR-2 (3B VLM) |
+| Hardware | GPU with 8+ GB VRAM, CUDA 12.4+ |
+| Accuracy | 94-97% (validated on Type A) |
+| Speed | ~1.6 seconds/page (RTX 3070) |
+| Use Case | Development, Type A (single-column), Type C (monographs) |
 
-### Prompt-Modi (Recherche 25.02.2026)
+### Prompt Modes (Research 25.02.2026)
 
-`<|grounding|>` aktiviert Layout-Erkennung mit Bounding Boxes. Sechs Modi verfuegbar:
+`<|grounding|>` activates layout recognition with bounding boxes. Six modes available:
 
-| Modus | Prompt | Einsatz |
-|-------|--------|---------|
-| **Document (Default)** | `<image>\n<|grounding|>Convert the document to markdown.` | Typ A, B, C — unser Standard |
-| Free OCR | `<image>\nOCR this image.` (ohne grounding) | Schneller, kein Layout noetig |
-| Figure Parsing | Spezialprompt fuer Charts/Diagramme | Typ D (Bildband?) |
-| Localization | `<image>\nLocate <\|ref\|>{TEXT}<\|/ref\|>` | Nicht relevant |
+| Mode | Prompt | Use Case |
+|------|--------|----------|
+| **Document (Default)** | `<image>\n<|grounding|>Convert the document to markdown.` | Type A, B, C — our standard |
+| Free OCR | `<image>\nOCR this image.` (without grounding) | Faster, no layout needed |
+| Figure Parsing | Special prompt for charts/diagrams | Type D (illustrated books?) |
+| Localization | `<image>\nLocate <\|ref\|>{TEXT}<\|/ref\|>` | Not relevant |
 
-**Offen:** Free OCR (ohne `<|grounding|>`) fuer Typ A/C testen — potenziell schneller ohne Qualitaetsverlust.
+**Open:** Test Free OCR (without `<|grounding|>`) for Type A/C — potentially faster without quality loss.
 
-Quellen: [DeepSeek-OCR Prompts](https://deepwiki.com/deepseek-ai/DeepSeek-OCR/3.4-working-with-prompts), [HuggingFace Model Card](https://huggingface.co/deepseek-ai/DeepSeek-OCR-2)
+Sources: [DeepSeek-OCR Prompts](https://deepwiki.com/deepseek-ai/DeepSeek-OCR/3.4-working-with-prompts), [HuggingFace Model Card](https://huggingface.co/deepseek-ai/DeepSeek-OCR-2)
 
-### Bekannte Probleme
+### Known Issues
 
-| Problem | Workaround |
-|---------|------------|
-| Hohe GPU-Last (PC friert ein) | Tests einzeln oder auf Cloud-VM |
-| Spaltenreihenfolge bei Typ B falsch | Layout-Vorverarbeitung oder Gemini nutzen |
-| safetensors erforderlich | `use_safetensors=True` beim Laden |
+| Issue | Workaround |
+|-------|------------|
+| High GPU load (PC freezes) | Run tests individually or on cloud VM |
+| Column order incorrect for Type B | Layout preprocessing or use Gemini |
+| safetensors required | `use_safetensors=True` when loading |
 
 ---
 
 ## Mistral Document AI (Azure)
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
 | Provider | Azure AI Foundry (Serverless API, Pay-as-you-go) |
-| Modell | `mistral-document-ai-2512` (Preview, basiert auf mistral-ocr-2512) |
-| Alte Version | `mistral-document-ai-2505` (verfuegbar, aber ueberholt) |
-| Eingestellt | `mistral-ocr-2503` (seit 30.01.2026 nicht mehr deploybar) |
-| Endpoint | `/v1/ocr` mit Base64-kodierten Dokumenten |
-| Output | Seitenweises Markdown mit Bild-Referenzen und Dimensionen |
-| Einsatz | Primaere Produktions-Engine (ZBZ hat Azure-Zugang) |
-| Status | API-Key vorhanden, Engine implementiert |
+| Model | `mistral-document-ai-2512` (Preview, based on mistral-ocr-2512) |
+| Previous Version | `mistral-document-ai-2505` (available but superseded) |
+| Discontinued | `mistral-ocr-2503` (no longer deployable since 30.01.2026) |
+| Endpoint | `/v1/ocr` with Base64-encoded documents |
+| Output | Per-page Markdown with image references and dimensions |
+| Use Case | Primary production engine (ZBZ has Azure access) |
+| Status | API key available, engine implemented |
 
-### Modellversionen
+### Model Versions
 
-| Modell | Status | Hinweis |
-|--------|--------|---------|
-| `mistral-document-ai-2512` | Verfuegbar (Preview) | Aktuell, +74% bei Scans/Tabellen/Handschrift |
-| `mistral-document-ai-2505` | Verfuegbar | Erste Document AI Version |
-| `mistral-ocr-2503` | Eingestellt (30.01.2026) | Nicht mehr deploybar |
+| Model | Status | Note |
+|-------|--------|------|
+| `mistral-document-ai-2512` | Available (Preview) | Current, +74% on scans/tables/handwriting |
+| `mistral-document-ai-2505` | Available | First Document AI version |
+| `mistral-ocr-2503` | Discontinued (30.01.2026) | No longer deployable |
 
 ### Limits
 
-| Parameter | Wert |
-|-----------|------|
-| Max. Dateigroesse | 30 MB |
-| Max. Seiten (OCR) | 30 pro Request |
-| Max. Seiten (Annotations) | 8 pro Request |
-| Eingabe | PDF, PNG, JPEG, TIFF, GIF, WEBP, PPTX, DOCX, TXT, EPUB |
-| Ausgabe | Markdown (Tabellen optional als HTML) |
-| Sprachen | 36 (de, fr, en, es, it, nl, pt, hu, pl, cs, zh, ja, ko, ar, ...) |
+| Parameter | Value |
+|-----------|-------|
+| Max. file size | 30 MB |
+| Max. pages (OCR) | 30 per request |
+| Max. pages (Annotations) | 8 per request |
+| Input | PDF, PNG, JPEG, TIFF, GIF, WEBP, PPTX, DOCX, TXT, EPUB |
+| Output | Markdown (tables optionally as HTML) |
+| Languages | 36 (de, fr, en, es, it, nl, pt, hu, pl, cs, zh, ja, ko, ar, ...) |
 
-### Einrichtung auf Azure
+### Setup on Azure
 
-1. **Azure AI Foundry Ressource** erstellen im Azure Portal (portal.azure.com)
-2. **Modell deployen**: Im Foundry Portal (ai.azure.com) unter Model Catalog nach `mistral-document-ai-2512` suchen, als Serverless Endpoint deployen
-3. **Credentials abrufen**: Unter Meine Ressourcen > Modelle und Endpunkte — Endpoint URL und API Key kopieren
+1. **Create Azure AI Foundry resource** in Azure Portal (portal.azure.com)
+2. **Deploy model**: In Foundry Portal (ai.azure.com) under Model Catalog, search for `mistral-document-ai-2512`, deploy as Serverless Endpoint
+3. **Retrieve credentials**: Under My Resources > Models and Endpoints — copy Endpoint URL and API Key
 
-**Konfiguration im Projekt:** Werte in `.env` eintragen (siehe `.env.example`):
+**Project configuration:** Enter values in `.env` (see `.env.example`):
 ```bash
 MISTRAL_DOC_AI_ENDPOINT="https://<deployment>.<region>.models.ai.azure.com"
 MISTRAL_DOC_AI_KEY="<api-key>"
 ```
 
-**Unterstuetzte Regionen:** East US, East US 2, West US, West US 3, South Central US, North Central US, Sweden Central.
+**Supported regions:** East US, East US 2, West US, West US 3, South Central US, North Central US, Sweden Central.
 
-### API-Details
+### API Details
 
-**Endpoint:** `POST {endpoint}/v1/ocr` mit Bearer-Token-Authentifizierung.
+**Endpoint:** `POST {endpoint}/v1/ocr` with Bearer token authentication.
 
-**Eingabe:** Dokumente als Base64 im Feld `document.document_url` (Format: `data:application/pdf;base64,...`). Direkte URLs werden auf Azure nicht unterstuetzt.
+**Input:** Documents as Base64 in the `document.document_url` field (format: `data:application/pdf;base64,...`). Direct URLs are not supported on Azure.
 
-**Antwortstruktur:** JSON mit `pages[]`, jede Seite hat:
-- `index` — Seitennummer (0-basiert)
-- `markdown` — extrahierter Text
-- `images[]` — Bounding Boxes (und optional Base64 mit `include_image_base64: true`)
-- `dimensions` — DPI, Hoehe, Breite
+**Response structure:** JSON with `pages[]`, each page contains:
+- `index` — page number (0-based)
+- `markdown` — extracted text
+- `images[]` — bounding boxes (and optionally Base64 with `include_image_base64: true`)
+- `dimensions` — DPI, height, width
 
-**Grosse Dokumente (>30 Seiten):** Pipeline splittet automatisch mit PyMuPDF (`MistralOCR._split_pdf()`).
+**Large documents (>30 pages):** Pipeline splits automatically with PyMuPDF (`MistralOCR._split_pdf()`).
 
-### Annotations (strukturierte Extraktion)
+### Annotations (Structured Extraction)
 
-Zusaetzlich zum OCR kann das Modell Inhalte direkt in ein JSON-Schema extrahieren:
-- **`bbox_annotation`**: Beschriftet erkannte Bildbereiche (z.B. Diagramme)
-- **`document_annotation`**: Extrahiert Gesamtdokument in definiertes JSON-Format
+In addition to OCR, the model can extract content directly into a JSON schema:
+- **`bbox_annotation`**: Labels detected image regions (e.g., diagrams)
+- **`document_annotation`**: Extracts entire document into a defined JSON format
 
-Annotations sind auf 8 Seiten begrenzt. Relevant fuer: Metadaten-Extraktion, TEI-Header-Generierung.
+Annotations are limited to 8 pages. Relevant for: metadata extraction, TEI header generation.
 
-### Fehlerbehandlung
+### Error Handling
 
-| Problem | Loesung |
-|---------|---------|
-| 404 nach Deployment | `/v1/ocr` an Endpoint-URL anhaengen |
-| 413 / Datei zu gross | PDF komprimieren oder splitten (max 30 MB) |
-| Timeout bei Annotations | Timeout auf min. 120s setzen |
-| Base64-Fehler | Keine Zeilenumbrueche im Base64-String |
+| Issue | Solution |
+|-------|----------|
+| 404 after deployment | Append `/v1/ocr` to endpoint URL |
+| 413 / file too large | Compress or split PDF (max 30 MB) |
+| Timeout on annotations | Set timeout to min. 120s |
+| Base64 error | No line breaks in Base64 string |
 
-### Alternative Zugangswege
+### Alternative Access Methods
 
-| Zugang | Modell | Vorteil |
-|--------|--------|---------|
-| Azure AI Foundry | `mistral-document-ai-2512` | Data Residency, Enterprise-Governance |
-| Mistral API direkt (console.mistral.ai) | `mistral-ocr-latest` | Einfachstes Setup, kein Azure noetig |
-| Google Vertex AI | `mistral-ocr-2512` | Google Cloud Infrastruktur |
+| Access | Model | Advantage |
+|--------|-------|-----------|
+| Azure AI Foundry | `mistral-document-ai-2512` | Data residency, enterprise governance |
+| Mistral API direct (console.mistral.ai) | `mistral-ocr-latest` | Simplest setup, no Azure needed |
+| Google Vertex AI | `mistral-ocr-2512` | Google Cloud infrastructure |
 
-### Benchmark- und CER/WER-Ergebnisse
+### Benchmark and CER/WER Results
 
-Alle Evaluationsdaten (CER, WER, Einzeldokument-Ergebnisse) sind in [TESTPLAN](TESTPLAN.md) §Ergebnisse konsolidiert.
+All evaluation data (CER, WER, per-document results) are consolidated in [TESTPLAN](TESTPLAN.md) section Results.
 
-Interaktiver Engine-Vergleich im Dashboard: `docs/index.html`
+Interactive engine comparison in the dashboard: `docs/index.html`
 
-### Konfigurationsoptionen (Recherche 25.02.2026)
+### Configuration Options (Research 25.02.2026)
 
-Mistral OCR akzeptiert **keinen Custom-Prompt**. Steuerbare Parameter:
+Mistral OCR does **not accept a custom prompt**. Controllable parameters:
 
-| Parameter | Default | Potenzial |
+| Parameter | Default | Potential |
 |-----------|---------|-----------|
-| `table_format` | null | Irrelevant (keine Tabellen im Korpus) |
-| `extract_header` | false | Koennte JSTOR-Header filtern — **testen** |
-| `extract_footer` | false | Koennte Copyright-Zeilen filtern — **testen** |
+| `table_format` | null | Irrelevant (no tables in corpus) |
+| `extract_header` | false | Could filter JSTOR headers — **test** |
+| `extract_footer` | false | Could filter copyright lines — **test** |
 
-Quellen: [Mistral OCR API Docs](https://docs.mistral.ai/capabilities/document_ai/basic_ocr), [OCR 3 Model Card](https://docs.mistral.ai/models/ocr-3-25-12)
+Sources: [Mistral OCR API Docs](https://docs.mistral.ai/capabilities/document_ai/basic_ocr), [OCR 3 Model Card](https://docs.mistral.ai/models/ocr-3-25-12)
 
-### Offen
+### Open
 
-- [ ] Doc 290 analysieren (CER 18% — Scan- oder OCR-Problem?) — niedrige Prio
-- [ ] Doc 1060 analysieren (CER 22.6% — Alignment-Problem bei kurzem PDF?) — niedrige Prio
-- [ ] `extract_header/footer` testen — reduziert JSTOR-Artefakte ohne LLM?
+- [ ] Analyze Doc 290 (CER 18% — scan or OCR issue?) — low priority
+- [ ] Analyze Doc 1060 (CER 22.6% — alignment issue with short PDF?) — low priority
+- [ ] Test `extract_header/footer` — reduces JSTOR artifacts without LLM?
 
 ---
 
 ## Gemini 3 Flash
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| Modell | google/gemini-3.0-flash |
-| Kosten | $0.50/1M Input, $3.00/1M Output |
-| Einsatz | Typ B/D (Agentic Vision), NER, OCR-Korrektur, QS |
-| Geschätzte Kosten | ~$27 für 289 Dokumente |
+| Model | google/gemini-3.0-flash |
+| Cost | $0.50/1M Input, $3.00/1M Output |
+| Use Case | Type B/D (Agentic Vision), NER, OCR correction, QA |
+| Estimated Cost | ~$27 for 289 documents |
 
-### Agentic Vision (seit 27.01.2026)
+### Agentic Vision (since 27.01.2026)
 
-Think-Act-Observe Loop für aktive Bildmanipulation:
+Think-Act-Observe loop for active image manipulation:
 
-1. **Think**: Analysiert Bild, plant Schritte
-2. **Act**: Generiert Python-Code (Crop, Zoom, Rotate)
-3. **Observe**: Validiert eigenes Ergebnis, iteriert bei Bedarf
+1. **Think**: Analyzes image, plans steps
+2. **Act**: Generates Python code (crop, zoom, rotate)
+3. **Observe**: Validates own result, iterates if needed
 
-| Fähigkeit | Nutzen |
-|-----------|--------|
-| Auto-Crop Spalten | Typ B ohne Docling-Vorverarbeitung |
-| Selbstvalidierung | 5-10% Qualitätsboost |
-| BBox-Output | `<facsimile>` Koordinaten für TEI |
-| Iteratives Zoomen | Historische Drucke, kleine Schrift |
+| Capability | Benefit |
+|------------|---------|
+| Auto-crop columns | Type B without Docling preprocessing |
+| Self-validation | 5-10% quality boost |
+| BBox output | `<facsimile>` coordinates for TEI |
+| Iterative zooming | Historical prints, small font |
 
-### Empfohlene Strategie nach Dokumenttyp
+### Recommended Strategy by Document Type
 
-Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Dokumenttypen.
+Document types: See [QUELLENANALYSE](QUELLENANALYSE.md) section Document Types.
 
-| Typ | Engine |
-|-----|--------|
-| A (einspaltig) | DeepSeek-OCR-2 / Mistral Document AI (lokal/kostenlos bzw. Azure) |
-| B (zweispaltig) | Gemini 3 Agentic Vision |
-| C (Monografie) | DeepSeek / Mistral Document AI + Chunking |
-| D (Spezial) | Gemini 3 Agentic Vision |
+| Type | Engine |
+|------|--------|
+| A (single-column) | DeepSeek-OCR-2 / Mistral Document AI (local/free or Azure) |
+| B (two-column) | Gemini 3 Agentic Vision |
+| C (monograph) | DeepSeek / Mistral Document AI + chunking |
+| D (special) | Gemini 3 Agentic Vision |
 
-### Noch zu tun
+### Still To Do
 
-- [ ] API-Key für Gemini erhalten
-- [ ] Agentic Vision auf 2530.pdf (Typ B) testen
-- [ ] Qualität vs. DeepSeek vergleichen
-- [ ] Engine-Klasse `GeminiOCR` in `ocr_pipeline.py` implementieren
+- [ ] Obtain API key for Gemini
+- [ ] Test Agentic Vision on 2530.pdf (Type B)
+- [ ] Compare quality vs. DeepSeek
+- [ ] Implement engine class `GeminiOCR` in `ocr_pipeline.py`
 
 ---
 
-## Docling (nur Layout)
+## Docling (Layout Only)
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| Herkunft | IBM Research |
-| Modus | `do_ocr=False` — nur Layout-Analyse |
-| Erkennt | Spalten, Header, Text, Listen, Tabellen |
-| Output | JSON mit BBox-Koordinaten |
-| Status | Validiert (Windows, mit Symlink-Warnung) |
+| Origin | IBM Research |
+| Mode | `do_ocr=False` — layout analysis only |
+| Detects | Columns, headers, text, lists, tables |
+| Output | JSON with bounding box coordinates |
+| Status | Validated (Windows, with symlink warning) |
 
-### Wichtig: Docling OCR nicht nutzen
+### Important: Do Not Use Docling OCR
 
-Doclings eingebaute OCR (RapidOCR) hat Encoding-Probleme bei französischem Text. Beispiel: `e` wird zu `O`. Docling wird ausschließlich für Layout-Analyse verwendet.
+Docling's built-in OCR (RapidOCR) has encoding issues with French text. Example: `e` becomes `O`. Docling is used exclusively for layout analysis.
 
 ### Troubleshooting
 
-| Problem | Lösung |
-|---------|--------|
-| Symlink-Warnung auf Windows | `HF_HUB_DISABLE_SYMLINKS_WARNING=1` — ignorierbar |
-| Encoding-Fehler bei OCR | `do_ocr=False` verwenden, OCR durch DeepSeek/Mistral |
-| CUDA-Konflikt mit DeepSeek | Docling auf CPU laufen lassen (Standard) |
+| Issue | Solution |
+|-------|----------|
+| Symlink warning on Windows | `HF_HUB_DISABLE_SYMLINKS_WARNING=1` — can be ignored |
+| Encoding errors with OCR | Use `do_ocr=False`, OCR via DeepSeek/Mistral |
+| CUDA conflict with DeepSeek | Run Docling on CPU (default) |
 
 ---
 
-## Vergleichstabelle
+## Comparison Table
 
-| Kriterium | DeepSeek | Mistral | Gemini | Docling |
+| Criterion | DeepSeek | Mistral | Gemini | Docling |
 |-----------|----------|---------|--------|---------|
-| Genauigkeit (CER) | 94-97% (Phase 1) | 93.58% (15 Docs) | Ungetestet | Nur Layout |
-| GPU noetig | Ja (8GB+) | Nein (API) | Nein (API) | Nein (CPU) |
-| Kosten | Kostenlos | Azure-Abo | ~$27/Projekt | Kostenlos |
-| Spalten (Typ B) | Nein | 93.69% Genauigkeit | Ja (Agentic) | Ja (Layout) |
-| Geschwindigkeit | ~1.6s/Seite | ~1.3s/Seite | Ungetestet | ~3s/Seite |
-| Offline | Ja | Nein | Nein | Ja |
-| Kursiv/Formatting | Nein | Ja (*italics*) | Ungetestet | - |
-| Alle Seiten | Teilweise (GPU-Limit) | Ja (Cloud) | Ungetestet | - |
+| Accuracy (CER) | 94-97% (Phase 1) | 93.58% (15 Docs) | Untested | Layout only |
+| GPU required | Yes (8GB+) | No (API) | No (API) | No (CPU) |
+| Cost | Free | Azure subscription | ~$27/project | Free |
+| Columns (Type B) | No | 93.69% accuracy | Yes (Agentic) | Yes (layout) |
+| Speed | ~1.6s/page | ~1.3s/page | Untested | ~3s/page |
+| Offline | Yes | No | No | Yes |
+| Italic/formatting | No | Yes (*italics*) | Untested | - |
+| All pages | Partial (GPU limit) | Yes (Cloud) | Untested | - |
 
 ---
 
-## Erkenntnisse aus Pilotevaluation (15 Docs)
+## Findings from Pilot Evaluation (15 Docs)
 
-| Erkenntnis | Detail | Entscheidung |
-|------------|--------|--------------|
-| Monografien haben besten CER | Phase 4 (Typ C): 2.65% — sauberes Layout, konsistente Typografie | — |
-| LLM-Korrektur nur bei hohem CER sinnvoll | Verbessert CER >10%, verschlechtert CER <5% (korrigiert korrekte Eigennamen/Akzente weg) | E17 |
-| Seitenweiser Vergleich fuer lange Docs | Globales Alignment scheitert ab ~50 Seiten; `<pb facs>` als Ankerpunkte | E16 |
-| TEI-Seitennummern ≠ PDF-Seitennummern | Deckblaetter, Leerseiten verschieben Offset variabel; Content-Matching loest das | E18 |
-| API-Kosten vernachlaessigbar | 330 Seiten OCR + LLM = ~$1.55; Hochrechnung 7200 Seiten: ~$35 | — |
-
----
-
-## Referenzen
-
-- [PIPELINE](PIPELINE.md) für Pipeline-Integration
-- [TESTPLAN](TESTPLAN.md) für Qualitätsmessungen
-- [INFRASTRUKTUR](INFRASTRUKTUR.md) für Azure-Konfiguration
-- [DECISIONS](DECISIONS.md) O1 (Azure-Key), O10 (Spalten-Lösung)
+| Finding | Detail | Decision |
+|---------|--------|----------|
+| Monographs have best CER | Phase 4 (Type C): 2.65% — clean layout, consistent typography | — |
+| LLM correction only useful at high CER | Improves CER >10%, worsens CER <5% (corrects away correct proper names/accents) | E17 |
+| Per-page comparison for long docs | Global alignment fails above ~50 pages; `<pb facs>` as anchor points | E16 |
+| TEI page numbers ≠ PDF page numbers | Cover pages, blank pages shift offset variably; content matching solves this | E18 |
+| API costs negligible | 330 pages OCR + LLM = ~$1.55; projection 7200 pages: ~$35 | — |
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+## References
+
+- [PIPELINE](PIPELINE.md) for pipeline integration
+- [TESTPLAN](TESTPLAN.md) for quality measurements
+- [INFRASTRUKTUR](INFRASTRUKTUR.md) for Azure configuration
+- [DECISIONS](DECISIONS.md) O1 (Azure key), O10 (column solution)
+
+---
+
+*Created: 2026-01-29 | Updated: 2026-02-27*

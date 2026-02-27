@@ -1,23 +1,23 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-26
-tags: [zbz-ocr-tei, pipeline, datenfluss, ocr]
+updated: 2026-02-27
+tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
 
 # Pipeline
 
-Datenfluss von PDF zu TEI-XML: Stufen, Scripts, Formate. Seit Scope-Erweiterung (25.02.2026) deckt zbz-ocr-tei die gesamte Pipeline ab (OCR + Layout + PAGE-XML + NER/GND + TEI-XML). Implementierungsplan: [PLAN.md](../PLAN.md).
+Data flow from PDF to TEI-XML: stages, scripts, formats. Since the scope expansion (25.02.2026), zbz-ocr-tei covers the entire pipeline (OCR + Layout + PAGE-XML + NER/GND + TEI-XML). Implementation plan: [PLAN.md](../PLAN.md).
 
-**Abhängigkeiten:** [PROJEKT](PROJEKT.md)
+**Dependencies:** [PROJEKT](PROJEKT.md)
 
 ---
 
-## Pipeline-Übersicht
+## Pipeline Overview
 
 ```
-PDF ──→ Seitenbilder ──→ OCR ──→ Layout ──→ PAGE-XML ──→ NER/GND ──→ TEI-XML
+PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ──→ NER/GND ──→ TEI-XML
          extract_pages    ocr_pipeline  layout/    page_xml_gen    ner/       tei/
          docs/images/     output/       output/    output/         output/    output/
                           mistral_res/  layout/    page_xml/       entities/  tei_xml/
@@ -28,85 +28,85 @@ PDF ──→ Seitenbilder ──→ OCR ──→ Layout ──→ PAGE-XML ─
                     evaluate_ocr + generate_dashboard_data
 ```
 
-### Stufen (7-Stufen-Pipeline)
+### Stages (7-Stage Pipeline)
 
-| Stufe | Aufgabe | Script | Output | Status |
-|-------|---------|--------|--------|--------|
-| 1 | PDF → Seitenbilder | `scripts/extract_pages.py` | PNG (`docs/images/`) | Produktiv |
-| 2 | OCR | `scripts/ocr_pipeline.py` | Seitenweises Markdown (`output/mistral_results/`) | Produktiv |
-| 2a | LLM-Nachkorrektur (optional) | `scripts/llm_postprocess.py` | Korrigiertes Markdown (`output/llm_corrected_c/`) | Produktiv, E17: optional |
-| 3 | Layout-Analyse | `scripts/run_layout_analysis.py` | Regionen + BBox (JSON, `output/layout/`) + Overlay-PNGs | Produktiv (7/15 Docs) |
+| Stage | Task | Script | Output | Status |
+|-------|------|--------|--------|--------|
+| 1 | PDF → Page images | `scripts/extract_pages.py` | PNG (`docs/images/`) | Production |
+| 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (`output/mistral_results/`) | Production |
+| 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
+| 3 | Layout analysis | `scripts/run_layout_analysis.py` | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (7/15 docs) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
-| 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entitaeten-JSON (`output/entities/`) | **Phase 2** |
-| 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Produktiv (15/15 Docs, 383 Dateien) |
-| 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Produktiv (Erweiterung in Phase 4) |
+| 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 2** |
+| 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (15/15 docs, 383 files) |
+| 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
-**Hinweis Stufe 6:** Der TEI-Generator geht aktuell direkt von Layout-JSON + OCR-Markdown zu TEI-XML, ohne PAGE-XML als Zwischenformat. PAGE-XML (Stufe 4) und NER (Stufe 5) sind noch nicht implementiert — wenn sie implementiert werden, wird der TEI-Generator entsprechend erweitert.
+**Note on Stage 6:** The TEI generator currently goes directly from layout JSON + OCR Markdown to TEI-XML, without PAGE-XML as an intermediate format. PAGE-XML (Stage 4) and NER (Stage 5) are not yet implemented — once they are, the TEI generator will be extended accordingly.
 
-**Hilfsskripte:** `extract_pages.py` (Seitenbilder), `extract_gnd.py` (GND-IDs), `postprocess/` (Normalisierung).
+**Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
 
-**Layout-Engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 Blocktypen, CPU). Phase 0 Evaluation bestanden: alle 4 Dokumenttypen korrekt erkannt, Spalten-Trennung Type B funktioniert. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
+**Layout engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 block types, CPU). Phase 0 evaluation passed: all 4 document types correctly recognized, column separation Type B works. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
 
-**Layout-QA (25.02.2026):** Visuelle Pruefung von 8 Docs (186 Overlay-PNGs) ergab:
-- BBox-Positionierung korrekt, kein systematischer Versatz
-- Headings zuverlaessig erkannt (Titel, Untertitel, Thesen-Nummern)
-- Zweispaltiges Layout korrekt getrennt (Doc 1410)
-- **3 Probleme identifiziert (O21):** (1) Ueberlappende Regionen bei dichtem Text, (2) Einzeiler-Fragmente als eigene Region, (3) Seitenzahlen als `text` statt `page_footer` erkannt
-- Post-Processing noetig: Overlap-Filter, Einzeiler-Merge, Seitenzahl-Heuristik
+**Layout QA (25.02.2026):** Visual inspection of 8 docs (186 overlay PNGs) showed:
+- BBox positioning correct, no systematic offset
+- Headings reliably detected (titles, subtitles, thesis numbers)
+- Two-column layout correctly separated (Doc 1410)
+- **3 issues identified (O21):** (1) Overlapping regions in dense text, (2) single-line fragments as separate regions, (3) page numbers detected as `text` instead of `page_footer`
+- Post-processing needed: overlap filter, single-line merge, page number heuristic
 
 ---
 
-## Stufe 1: OCR
+## Stage 1: OCR
 
-**Skript:** `scripts/ocr_pipeline.py`
+**Script:** `scripts/ocr_pipeline.py`
 
-### Engine-Auswahl (Auto-Modus in `ocr_pipeline.py`)
+### Engine Selection (Auto mode in `ocr_pipeline.py`)
 
-1. Dokument in `TWO_COLUMN_DOCS`? → Docling (Layout) + DeepSeek
-2. `MISTRAL_DOC_AI_KEY` gesetzt? → Mistral Document AI (API)
-3. Sonst → DeepSeek (lokal, GPU)
+1. Document in `TWO_COLUMN_DOCS`? → Docling (Layout) + DeepSeek
+2. `MISTRAL_DOC_AI_KEY` set? → Mistral Document AI (API)
+3. Otherwise → DeepSeek (local, GPU)
 
-Dokumenttypen: Siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Dokumenttypen.
-Engine-Details: Siehe [OCR-ENGINES](OCR-ENGINES.md).
+Document types: See [QUELLENANALYSE](QUELLENANALYSE.md) §Document Types.
+Engine details: See [OCR-ENGINES](OCR-ENGINES.md).
 
-### Layout-Analyse (nur Typ B)
+### Layout Analysis (Type B only)
 
-Fuer zweispaltige Dokumente nutzt `ocr_pipeline.py` intern Docling (IBM) mit `do_ocr=False` zur Spaltenerkennung. Doclings eigene OCR wird nicht verwendet (RapidOCR hat Encoding-Probleme). Details: [OCR-ENGINES](OCR-ENGINES.md) §Docling.
+For two-column documents, `ocr_pipeline.py` internally uses Docling (IBM) with `do_ocr=False` for column detection. Docling's own OCR is not used (RapidOCR has encoding issues). Details: [OCR-ENGINES](OCR-ENGINES.md) §Docling.
 
 ### Prompts
 
-**Mistral Document AI:** Kein Prompt — die API bekommt nur das PDF als Base64, kein Instruktionstext. Output ist seitenweises Markdown.
+**Mistral Document AI:** No prompt — the API receives only the PDF as Base64, no instruction text. Output is page-level Markdown.
 
-**DeepSeek-OCR-2:** Fester Prompt in `config.py:31`:
+**DeepSeek-OCR-2:** Fixed prompt in `config.py:31`:
 ```
 <image>\n<|grounding|>Convert the document to markdown.
 ```
 
-### OCR-Qualitaet
+### OCR Quality
 
-Vollstaendige Ergebnisse: Siehe [TESTPLAN](TESTPLAN.md) §Ergebnisse.
+Full results: See [TESTPLAN](TESTPLAN.md) §Results.
 
 ---
 
-## Stufe 2: LLM-Nachkorrektur
+## Stage 2: LLM Post-Correction
 
-**Skript:** `scripts/llm_postprocess.py`
+**Script:** `scripts/llm_postprocess.py`
 
-| Aspekt | Details |
+| Aspect | Details |
 |--------|---------|
-| Modell | Claude Haiku 4.5 (Anthropic) |
-| Input | OCR-Markdown aus Stufe 2 |
-| Output | Korrigiertes Markdown |
-| Rolle | Korrektur, NICHT Transkription — das LLM sieht nie das Bild |
-| Kosten | ~$0.33 fuer 50 Seiten, ~$48 fuer 7.200 Seiten |
+| Model | Claude Haiku 4.5 (Anthropic) |
+| Input | OCR Markdown from Stage 2 |
+| Output | Corrected Markdown |
+| Role | Correction, NOT transcription — the LLM never sees the image |
+| Cost | ~$0.33 for 50 pages, ~$48 for 7,200 pages |
 
-**Wichtig:** Das LLM macht keine OCR. Es korrigiert nur den von Mistral/DeepSeek erzeugten Text. Es erhaelt Dokumentkontext (Typ, Sprache, Genre) und identifiziert Zeichenfehler, fehlende Akzente, OCR-Artefakte.
+**Important:** The LLM does not perform OCR. It only corrects the text produced by Mistral/DeepSeek. It receives document context (type, language, genre) and identifies character errors, missing accents, OCR artifacts.
 
-### Prompts (3 Varianten)
+### Prompts (3 Variants)
 
-Alle Prompts in `llm_postprocess.py`. Variante C ist Default (E17).
+All prompts in `llm_postprocess.py`. Variant C is the default (E17).
 
-**Variante A (Analysis)** — System-Prompt mit `<analysis>` + `<corrected>` Bloecken:
+**Variant A (Analysis)** — System prompt with `<analysis>` + `<corrected>` blocks:
 ```
 Du bist ein Experte fuer OCR-Nachkorrektur akademischer Texte des 20. Jahrhunderts
 von Jeanne Hersch (Philosophin, 1910-2000). Du erhaeltst OCR-Output aus gescannten
@@ -124,13 +124,13 @@ Regeln:
 Antwortformat: 1. <analysis>-Block mit Fehlerliste, 2. <corrected>-Block mit Text
 ```
 
-**Variante B (Lean)** — Nur korrigierter Text, kein Analysis-Block:
+**Variant B (Lean)** — Corrected text only, no analysis block:
 ```
 Korrigiere OCR-Fehler im folgenden Text. [Gleiche Regeln wie A, ohne Antwortformat]
 Gib NUR den korrigierten Text aus, ohne Erklaerungen.
 ```
 
-**Variante C (Few-Shot, Default)** — Wie B, plus typische Mistral-OCR-Fehler als Beispiele:
+**Variant C (Few-Shot, Default)** — Like B, plus typical Mistral OCR errors as examples:
 ```
 ...
 Typische OCR-Fehler dieser Engine (Mistral Document AI):
@@ -143,15 +143,15 @@ Typische OCR-Fehler dieser Engine (Mistral Document AI):
 Gib NUR den korrigierten Text aus, ohne Erklaerungen.
 ```
 
-**Sprach-Hints** (dynamisch eingefuegt, `_lang_hint()` in `llm_postprocess.py:62`):
+**Language hints** (dynamically inserted, `_lang_hint()` in `llm_postprocess.py:62`):
 
-| Sprache | Hint |
-|---------|------|
+| Language | Hint |
+|----------|------|
 | FR | Achte auf Akzente, Guillemets, Apostrophe (l', d', qu') |
 | DE | Achte auf Umlaute, Eszett, Komposita |
 | DE/FR | Achte auf Umlaute UND Akzente |
 
-**User-Message-Template** (pro Seite, `build_user_message()` in `llm_postprocess.py:136`):
+**User message template** (per page, `build_user_message()` in `llm_postprocess.py:136`):
 ```
 Dokument: {doc_id}
 Typ: {doc_type} ({Einspaltig|Zweispaltig|Monografie|Spezialformat})
@@ -165,15 +165,15 @@ Seite: {page_num} von {total_pages}
 </ocr_text>
 ```
 
-### Varianten-Vergleich (Phase 1-3, 10 Docs)
+### Variant Comparison (Phase 1-3, 10 Docs)
 
-| Variante | Avg CER | Bemerkung |
-|----------|---------|-----------|
-| A (Analysis) | 5.47% | Bester CER, aber teurer (laengerer Output) |
-| B (Lean) | 5.59% | Guenstigster |
-| C (Few-Shot) | 5.55% | Bester CER/Kosten-Tradeoff → Default |
+| Variant | Avg CER | Notes |
+|---------|---------|-------|
+| A (Analysis) | 5.47% | Best CER, but more expensive (longer output) |
+| B (Lean) | 5.59% | Cheapest |
+| C (Few-Shot) | 5.55% | Best CER/cost tradeoff → Default |
 
-**Ergebnis Pilot (alle 15 Docs, Variante C Few-Shot):**
+**Pilot results (all 15 docs, Variant C Few-Shot):**
 
 | Phase | Mistral CER | LLM CER | Delta |
 |-------|-------------|---------|-------|
@@ -181,163 +181,163 @@ Seite: {page_num} von {total_pages}
 | Phase 2 (B) | 6.31% | 6.34% | +0.03 |
 | Phase 3 (D) | 2.88% | 2.72% | -0.16 |
 | Phase 4 (C) | 2.65% | 2.70% | +0.05 |
-| **Gesamt (15 Docs)** | **6.42%** | **6.52%** | **+0.10** |
+| **Total (15 Docs)** | **6.42%** | **6.52%** | **+0.10** |
 
-**Erkenntnis:** LLM-Korrektur verbessert Docs mit CER >10%, verschlechtert leicht bei gutem OCR (<5%). Empfehlung: Optional einsetzen, nicht als Default.
+**Findings:** LLM correction improves docs with CER >10%, slightly degrades quality for good OCR (<5%). Recommendation: use optionally, not as default.
 
-### Optimierungspotenzial (Recherche 25.02.2026)
+### Optimization Potential (Research 25.02.2026)
 
-| Idee | Erwarteter Effekt | Aufwand | Quelle |
-|------|-------------------|---------|--------|
-| **Multimodale Korrektur** (Scan-Bild + OCR-Text) | <1% CER laut Forschung | Mittel (Sonnet/Opus noetig, hoehere Kosten) | [arXiv:2504.00414](https://arxiv.org/abs/2504.00414) |
-| Groesseres Modell (Sonnet statt Haiku) | Besser bei FR (Trainingsdaten) | Gering (nur Config-Aenderung) | [ACL 2025](https://arxiv.org/abs/2502.01205) |
-| Segmentlaenge 200-300 Woerter | Optimal laut Studie; wir senden ganze Seiten — bereits gut | Keiner | [ACL 2025](https://arxiv.org/abs/2502.01205) |
+| Idea | Expected Effect | Effort | Source |
+|------|-----------------|--------|--------|
+| **Multimodal correction** (scan image + OCR text) | <1% CER per research | Medium (Sonnet/Opus needed, higher cost) | [arXiv:2504.00414](https://arxiv.org/abs/2504.00414) |
+| Larger model (Sonnet instead of Haiku) | Better for FR (training data) | Low (config change only) | [ACL 2025](https://arxiv.org/abs/2502.01205) |
+| Segment length 200-300 words | Optimal per study; we send full pages — already good | None | [ACL 2025](https://arxiv.org/abs/2502.01205) |
 
-**Risiko:** 66% unseres Korpus ist Franzoesisch. Studie zeigt, dass LLM-Korrektur bei nicht-englischen Texten oft negativ wirkt — bestaetigt unsere Beobachtung (Phase 2/4: leichte Verschlechterung).
-
----
-
-## Post-Processing (Hilfsmodul)
-
-**Implementiert in:** `scripts/postprocess/` — wird nicht automatisch in der Pipeline ausgefuehrt, sondern bei Bedarf manuell.
-
-| Funktion | Zweck | Beispiel |
-|----------|-------|----------|
-| `normalize_text()` | Typografische Varianten vereinheitlichen | `\u201e` -> `"` |
-| `dehyphenate()` | Silbentrennung aufloesen | `Wis- senschaft` -> `Wissenschaft` |
-| `clean_markdown()` | Markdown-Syntax entfernen | `## Titel` -> `Titel` |
-
-**Wichtig (R6):** Markdown-Formatierung (`**bold**`, `*italic*`) muss fuer den Export ERHALTEN bleiben. PAGE-XML speichert Text as-is in `<TextEquiv><Unicode>`, TEI-Transformation konvertiert zu `<hi rendition>`. Deshalb wird `clean_markdown()` im Produktionspfad **nicht** aufgerufen — nur `normalize_text()` und `dehyphenate()` sind sicher.
+**Risk:** 66% of our corpus is French. Studies show that LLM correction for non-English texts often has a negative effect — confirming our observation (Phase 2/4: slight degradation).
 
 ---
 
-## Stufe 3: Evaluation
+## Post-Processing (Helper Module)
 
-**Skript:** `scripts/evaluate_ocr.py`
+**Implemented in:** `scripts/postprocess/` — not run automatically in the pipeline, but manually as needed.
 
-| Aspekt | Details |
+| Function | Purpose | Example |
+|----------|---------|---------|
+| `normalize_text()` | Unify typographic variants | `\u201e` -> `"` |
+| `dehyphenate()` | Resolve hyphenation | `Wis- senschaft` -> `Wissenschaft` |
+| `clean_markdown()` | Remove Markdown syntax | `## Titel` -> `Titel` |
+
+**Important (R6):** Markdown formatting (`**bold**`, `*italic*`) must be PRESERVED for export. PAGE-XML stores text as-is in `<TextEquiv><Unicode>`, TEI transformation converts to `<hi rendition>`. Therefore `clean_markdown()` is **not** called in the production path — only `normalize_text()` and `dehyphenate()` are safe.
+
+---
+
+## Stage 3: Evaluation
+
+**Script:** `scripts/evaluate_ocr.py`
+
+| Aspect | Details |
 |--------|---------|
-| Input | OCR-Markdown + Referenz-TEI (`data/referenz-tei/*.xml`) |
-| Metriken | CER (Character Error Rate), WER (Word Error Rate) |
-| Alignment | Global (kurze Docs) oder seitenweise (Monografien) |
-| Output | JSON (`output/evaluation/evaluation_results.json`) + HTML-Report |
+| Input | OCR Markdown + reference TEI (`data/referenz-tei/*.xml`) |
+| Metrics | CER (Character Error Rate), WER (Word Error Rate) |
+| Alignment | Global (short docs) or page-wise (monographs) |
+| Output | JSON (`output/evaluation/evaluation_results.json`) + HTML report |
 
-Vergleicht OCR-Output zeichenweise mit manuell erstelltem Referenz-TEI. Nutzt `rapidfuzz` fuer Levenshtein-Distanz.
+Compares OCR output character-by-character with manually created reference TEI. Uses `rapidfuzz` for Levenshtein distance.
 
-### Zwei Vergleichsmodi
+### Two Comparison Modes
 
-| Modus | Bedingung | Verfahren |
-|-------|-----------|-----------|
-| Global | ≤10 TEI-Seiten | Gesamttext-Alignment (Phrasen-Suche) |
-| Seitenweise | >10 TEI-Seiten | Pro-Seite-Vergleich via `<pb facs>` Tags |
+| Mode | Condition | Method |
+|------|-----------|--------|
+| Global | ≤10 TEI pages | Full-text alignment (phrase search) |
+| Page-wise | >10 TEI pages | Per-page comparison via `<pb facs>` tags |
 
-**Auto-Erkennung:** Das Skript waehlt den Modus automatisch anhand der TEI-Seitenanzahl. CLI-Flags `--pagewise` / `--no-pagewise` ueberschreiben.
+**Auto-detection:** The script automatically selects the mode based on TEI page count. CLI flags `--pagewise` / `--no-pagewise` override.
 
-**Seitenweiser Vergleich (fuer Monografien):**
-1. TEI wird anhand `<pb facs="#facs_N">` Tags in Einzelseiten zerlegt
-2. Content-basiertes Matching ordnet jede TEI-Seite der passenden OCR-Datei zu (Wort-Ueberlappung mit Sliding Window)
-3. CER/WER wird pro Seite berechnet, dann zeichengewichtet gemittelt
+**Page-wise comparison (for monographs):**
+1. TEI is split into individual pages using `<pb facs="#facs_N">` tags
+2. Content-based matching assigns each TEI page to the corresponding OCR file (word overlap with sliding window)
+3. CER/WER is computed per page, then character-weighted averaged
 
-**Warum kein fixer Offset:** Bibliotheks-PDFs enthalten Deckblaetter, Leerseiten und Illustrationen, die nicht in der TEI vorkommen. Der Versatz zwischen TEI-Seitennummern und OCR-Dateinummern ist nicht konstant (z.B. Doc 1520: Offset +8, driftet auf +9). Content-Matching loest das automatisch.
-
----
-
-## Stufe 4: Dashboard
-
-**Skript:** `scripts/generate_dashboard_data.py`
-
-Aggregiert alle Pipeline-Outputs (Seitenbilder, Evaluationsergebnisse, LLM-Manifest) zu `docs/data/dashboard.json`. Prueft pro Dokument die Existenz jeder Pipeline-Stufe und berechnet Durchschnittswerte pro Phase.
+**Why no fixed offset:** Library PDFs contain cover pages, blank pages, and illustrations that do not appear in the TEI. The offset between TEI page numbers and OCR file numbers is not constant (e.g., Doc 1520: offset +8, drifts to +9). Content matching solves this automatically.
 
 ---
 
-## PAGE-XML-Export (Phase 1)
+## Stage 4: Dashboard
 
-**Skripte:** `scripts/layout/page_xml_generator.py`, `scripts/layout/mets_generator.py`
+**Script:** `scripts/generate_dashboard_data.py`
 
-PAGE-XML ist das Zwischenformat fuer die Layout-Regionen + OCR-Text. Es dient als Input fuer die TEI-Transformation (Phase 3) und als optionaler Export fuer Transkribus-kompatible Tools.
+Aggregates all pipeline outputs (page images, evaluation results, LLM manifest) into `docs/data/dashboard.json`. Checks per document the existence of each pipeline stage and computes averages per phase.
 
-| Aspekt | Details |
+---
+
+## PAGE-XML Export (Phase 1)
+
+**Scripts:** `scripts/layout/page_xml_generator.py`, `scripts/layout/mets_generator.py`
+
+PAGE-XML is the intermediate format for layout regions + OCR text. It serves as input for the TEI transformation (Phase 3) and as an optional export for Transkribus-compatible tools.
+
+| Aspect | Details |
 |--------|---------|
-| Schema | PAGE-XML 2013-07-15 (Transkribus-Standard, bestaetigt durch ZBZ-Export E23) |
+| Schema | PAGE-XML 2013-07-15 (Transkribus standard, confirmed by ZBZ export E23) |
 | Namespace | `http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15` |
-| Layout-Engine | Docling 2.75 (E19/E20) |
+| Layout engine | Docling 2.75 (E19/E20) |
 
-### Exportstruktur pro Dokument
+### Export Structure per Document
 
 ```
 output/page_xml/{doc_id}/
   mets.xml                    # METS-Manifest
-  images/{doc_id}_p001.png    # Seitenbilder
-  page/{doc_id}_p001.xml      # PAGE-XML pro Seite
+  images/{doc_id}_p001.png    # Page images
+  page/{doc_id}_p001.xml      # PAGE-XML per page
 ```
 
-Details: Siehe [PLAN.md](../PLAN.md) Phase 1.
+Details: See [PLAN.md](../PLAN.md) Phase 1.
 
 ---
 
-## CLI-Befehle
+## CLI Commands
 
 ```bash
-# Seitenbilder extrahieren (fuer Viewer)
-python scripts/extract_pages.py                              # alle PDFs, 150 DPI
-python scripts/extract_pages.py --pdf 2310.pdf --dpi 300     # einzelnes PDF
+# Extract page images (for viewer)
+python scripts/extract_pages.py                              # all PDFs, 150 DPI
+python scripts/extract_pages.py --pdf 2310.pdf --dpi 300     # single PDF
 
-# OCR (Stufe 1)
+# OCR (stage 1)
 python scripts/ocr_pipeline.py -i data/scans/2310.pdf -e mistral
 python scripts/ocr_pipeline.py --all --engine auto
 
-# LLM-Nachkorrektur (Stufe 2, braucht ANTHROPIC_API_KEY)
+# LLM post-correction (stage 2, requires ANTHROPIC_API_KEY)
 python -m scripts.llm_postprocess --phase phase1 --variant C
 python -m scripts.llm_postprocess --all
 
-# Evaluation (Stufe 3)
+# Evaluation (stage 3)
 python scripts/evaluate_ocr.py --all
 python scripts/evaluate_ocr.py --phase phase1 --engine mistral
 
-# Layout-Analyse (Stufe 3, braucht GPU fuer Docling)
-python -m scripts.run_layout_analysis                      # alle Dokumente
-python -m scripts.run_layout_analysis --doc 2310           # einzelnes Dokument
-python -m scripts.run_layout_analysis --overlay            # Overlay-PNGs erzeugen (ohne GPU)
-python -m scripts.run_layout_analysis --overlay --doc 2310 # Overlay fuer ein Dokument
+# Layout analysis (stage 3, requires GPU for Docling)
+python -m scripts.run_layout_analysis                      # all documents
+python -m scripts.run_layout_analysis --doc 2310           # single document
+python -m scripts.run_layout_analysis --overlay            # Generate overlay PNGs (no GPU)
+python -m scripts.run_layout_analysis --overlay --doc 2310 # Overlay for single document
 
-# TEI-XML generieren (Stufe 6)
-python -m scripts.tei.tei_generator                      # alle Dokumente
-python -m scripts.tei.tei_generator --doc 2310           # einzelnes Dokument
-python -m scripts.tei.tei_generator --doc 2310 --page 2  # einzelne Seite
+# Generate TEI-XML (stage 6)
+python -m scripts.tei.tei_generator                      # all documents
+python -m scripts.tei.tei_generator --doc 2310           # single document
+python -m scripts.tei.tei_generator --doc 2310 --page 2  # single page
 
-# Dashboard-Daten (Stufe 7)
+# Dashboard data (stage 7)
 python -m scripts.generate_dashboard_data
 
-# Post-Processing (manuell, bei Bedarf)
+# Post-processing (manual, as needed)
 python -m scripts.postprocess.pipeline
 ```
 
 ---
 
-## Dashboard & QA-UI
+## Dashboard & QA UI
 
-**Verzeichnis:** `docs/`
+**Directory:** `docs/`
 
-| Datei | Zweck |
-|-------|-------|
-| `docs/index.html` | Dashboard: Metriken, Dokumentkatalog, Qualitaetsvergleich |
-| `docs/viewer.html` | Dokumentansicht: Faksimile + OCR-Text + TEI-XML, Source-Toggle, Layout-Overlay |
-| `docs/shared.css` | Unified Design System (CSS Custom Properties) |
-| `docs/shared.js` | Shared Utilities (Data Loading, Formatting, DOM Helpers) |
-| `docs/tei-viewer.js` | TEI-Rendering: Gerenderte Ansicht, Syntax-Highlighting, Diff, Entities |
-| `docs/data/dashboard.json` | Generierte Datenbasis (aus `scripts/generate_dashboard_data.py`) |
+| File | Purpose |
+|------|---------|
+| `docs/index.html` | Dashboard: metrics, document catalog, quality comparison |
+| `docs/viewer.html` | Document view: facsimile + OCR text + TEI-XML, source toggle, layout overlay |
+| `docs/shared.css` | Unified design system (CSS Custom Properties) |
+| `docs/shared.js` | Shared utilities (data loading, formatting, DOM helpers) |
+| `docs/tei-viewer.js` | TEI rendering: rendered view, syntax highlighting, diff, entities |
+| `docs/data/dashboard.json` | Generated data (from `scripts/generate_dashboard_data.py`) |
 
-Das Dashboard zeigt Pipeline-Status, CER-Vergleich (Mistral/LLM/DeepSeek), Engine-Verfuegbarkeit und filterbaren Dokumentkatalog. Daten werden statisch aus Pipeline-Outputs generiert. TEI-Rendering (Gerenderte Ansicht, XML-Highlighting, Referenz-Diff, Entity-Sidebar) ist in `tei-viewer.js` ausgelagert.
-
----
-
-## Referenzen
-
-- [PROJEKT](PROJEKT.md) fuer Oekosystem und Meilensteine
-- [OCR-ENGINES](OCR-ENGINES.md) fuer Engine-Details
-- [TESTPLAN](TESTPLAN.md) fuer Testergebnisse
-- [INFRASTRUKTUR](INFRASTRUKTUR.md) fuer Deployment
+The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engine availability, and a filterable document catalog. Data is statically generated from pipeline outputs. TEI rendering (rendered view, XML highlighting, reference diff, entity sidebar) is in `tei-viewer.js`.
 
 ---
 
-*Erstellt: 2026-01-29 | Umbenannt von ARCHITEKTUR.md: 2026-02-25 | Aktualisiert: 2026-02-27 (PAGE-XML Schema 2019→2013 nach E23)*
+## References
+
+- [PROJEKT](PROJEKT.md) for ecosystem and milestones
+- [OCR-ENGINES](OCR-ENGINES.md) for engine details
+- [TESTPLAN](TESTPLAN.md) for test results
+- [INFRASTRUKTUR](INFRASTRUKTUR.md) for deployment
+
+---
+
+*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-02-27 (PAGE-XML Schema 2019→2013 after E23)*

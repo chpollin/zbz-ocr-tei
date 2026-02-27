@@ -1,154 +1,154 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-25
+updated: 2026-02-27
 tags: [zbz-ocr-tei, gnd, ner, entity-linking]
 status: active
 ---
 
-# GND-Strategie
+# GND Strategy
 
-Strategie für Named Entity Recognition und GND-Verknüpfung im Hersch-Editionsprojekt.
+Strategy for Named Entity Recognition and GND linking in the Hersch edition project.
 
-> **Scope:** Seit der Scope-Erweiterung (E21) fuehrt zbz-ocr-tei NER + GND-Verknuepfung selbst durch (Phase 2 in [PLAN.md](../PLAN.md)). Implementierung: `scripts/ner/ner_pipeline.py` + `gnd_linker.py`. GND-Seed (75 Entitaeten) als Grundlage.
+> **Scope:** Since the scope extension (E21), zbz-ocr-tei performs NER + GND linking itself (Phase 2 in [PLAN.md](../PLAN.md)). Implementation: `scripts/ner/ner_pipeline.py` + `gnd_linker.py`. GND seed (75 entities) as foundation.
 
-**Abhängigkeiten:** [TEI-MAPPING](TEI-MAPPING.md)
+**Dependencies:** [TEI-MAPPING](TEI-MAPPING.md)
 
-**Offene Fragen:** Siehe [DECISIONS](DECISIONS.md).
+**Open questions:** See [DECISIONS](DECISIONS.md).
 
 ---
 
-## Übersicht
+## Overview
 
-Die Registererschließung ist ein zentrales Editionsziel. Alle Personen, Organisationen und Werke sollen mit GND-IDs (Gemeinsame Normdatei) verknüpft werden.
+Index compilation is a central editorial goal. All persons, organizations, and works shall be linked with GND-IDs (Gemeinsame Normdatei).
 
-### Entitätstypen
+### Entity Types
 
-| Typ | TEI-Element | Attribut | Beispiel |
-|-----|-------------|----------|----------|
+| Type | TEI Element | Attribute | Example |
+|------|-------------|-----------|---------|
 | Person | `<persName>` | `ref="GND:..."` | `<persName ref="GND:118557106">Karl Jaspers</persName>` |
-| Organisation | `<orgName>` | `ref="GND:..."` | `<orgName ref="GND:...">UNESCO</orgName>` |
-| Werk | `<bibl>` | `corresp="GND:..."` | `<bibl corresp="GND:4343581-6">Philosophie</bibl>` |
+| Organization | `<orgName>` | `ref="GND:..."` | `<orgName ref="GND:...">UNESCO</orgName>` |
+| Work | `<bibl>` | `corresp="GND:..."` | `<bibl corresp="GND:4343581-6">Philosophie</bibl>` |
 
-### Grundregel
+### Basic Rule
 
-**Jede Nennung wird verlinkt**, auch bei Wiederholung im selben Dokument.
+**Every mention is linked**, even when repeated within the same document.
 
-**Ausnahme:** Keine Auszeichnung in Bildunterschriften.
+**Exception:** No markup in image captions.
 
 ---
 
-## Pipeline-Position
+## Pipeline Position
 
-Die GND-Verknüpfung ist der komplexeste Schritt und erfordert externe Ressourcen:
+GND linking is the most complex step and requires external resources:
 
 ```
-OCR → TEI-Grundstruktur → NER → GND-Lookup → Validierung → Manuelle QS
-                          ↑
-                    Dieser Schritt
+OCR → TEI base structure → NER → GND lookup → Validation → Manual QA
+                           ↑
+                     This step
 ```
 
-### Optionen für die Implementierung
+### Implementation Options
 
-| Ansatz | Beschreibung | Vor-/Nachteile |
-|--------|--------------|----------------|
-| **Integriert** | LLM führt NER + GND-Lookup in einem Schritt durch | Einfacher Prompt, aber GND-Halluzinationen möglich |
-| **Zweistufig** | 1. LLM markiert Entitäten, 2. Separater GND-Lookup | Kontrollierter, aber aufwendiger |
-| **Nachgelagert** | TEI ohne GND erzeugen, GND-Verknüpfung separat | Entkoppelt, manuelle QS einfacher |
+| Approach | Description | Pros/Cons |
+|----------|-------------|-----------|
+| **Integrated** | LLM performs NER + GND lookup in a single step | Simpler prompt, but GND hallucinations possible |
+| **Two-stage** | 1. LLM marks entities, 2. Separate GND lookup | More controlled, but more effort |
+| **Post-hoc** | Generate TEI without GND, link GND separately | Decoupled, manual QA easier |
 
-**Empfehlung für PoC:** Nachgelagerter Ansatz – TEI-Struktur zuerst validieren, GND-Verknüpfung als separaten Schritt.
+**Recommendation for PoC:** Post-hoc approach — validate TEI structure first, GND linking as a separate step.
 
 ---
 
 ## NER (Named Entity Recognition)
 
-### Zu erkennende Entitäten
+### Entities to Recognize
 
-| Entität | Erkennungsmerkmale | Schwierigkeit |
-|---------|-------------------|---------------|
-| **Personen** | Großschreibung, Vor-/Nachname, Titel (Dr., Prof.) | Mittel |
-| **Organisationen** | Großschreibung, Akronyme (UNESCO, UNO) | Mittel |
-| **Werke** | Kursivierung, Anführungszeichen, "sein Buch X" | Hoch |
+| Entity | Recognition Features | Difficulty |
+|--------|---------------------|------------|
+| **Persons** | Capitalization, first/last name, titles (Dr., Prof.) | Medium |
+| **Organizations** | Capitalization, acronyms (UNESCO, UNO) | Medium |
+| **Works** | Italicization, quotation marks, "his book X" | High |
 
-### Herausforderungen
+### Challenges
 
-1. **Mehrsprachigkeit**: 66% Französisch, 30% Deutsch – unterschiedliche Namenskonventionen
-2. **Historische Varianten**: Namensschreibweisen können variieren
-3. **Kontextabhängigkeit**: "Jaspers" kann Person oder Werk (Possessiv: "Jaspers' Philosophie") sein
-4. **Pronomina**: "Er sagte..." – keine Verknüpfung bei Pronomen
+1. **Multilingualism**: 66% French, 30% German — different naming conventions
+2. **Historical variants**: Name spellings may vary
+3. **Context dependency**: "Jaspers" can be a person or a work (possessive: "Jaspers' Philosophie")
+4. **Pronouns**: "He said..." — no linking for pronouns
 
 ---
 
-## GND-Lookup
+## GND Lookup
 
-### GND-API
+### GND API
 
-Die GND bietet eine REST-API für Abfragen:
+The GND provides a REST API for queries:
 
 ```
 https://lobid.org/gnd/search?q=Karl+Jaspers&format=json
 ```
 
-### Disambiguierung
+### Disambiguation
 
-| Problem | Beispiel | Lösungsansatz |
-|---------|----------|---------------|
-| **Namensgleichheit** | Mehrere "Martin Heidegger" in GND | Lebensdaten, Beruf als Filter |
-| **Namensvarianten** | "J. Hersch" vs. "Jeanne Hersch" | Alias-Suche in GND |
-| **Unbekannte Personen** | Lokale Figuren ohne GND-Eintrag | Markieren für manuelle Bearbeitung |
+| Problem | Example | Solution Approach |
+|---------|---------|-------------------|
+| **Name collision** | Multiple "Martin Heidegger" in GND | Life dates, profession as filter |
+| **Name variants** | "J. Hersch" vs. "Jeanne Hersch" | Alias search in GND |
+| **Unknown persons** | Local figures without GND entry | Flag for manual processing |
 
-### Entitäten im Kontext Jeanne Hersch
+### Entities in the Jeanne Hersch Context
 
-Erwartete häufige Entitäten (basierend auf Werk und Biografie):
+Expected frequent entities (based on her work and biography):
 
-| Person | GND-ID | Relevanz |
-|--------|--------|----------|
-| Karl Jaspers | 118557106 | Lehrer, häufige Referenz |
-| Martin Heidegger | 118547798 | Philosophischer Kontext |
-| Hannah Arendt | 118502751 | Zeitgenossin |
-| Jean-Paul Sartre | 118605895 | Existenzialismus |
-| UNESCO | (Körperschaft) | Arbeitgeber 1966–1968 |
+| Person | GND-ID | Relevance |
+|--------|--------|-----------|
+| Karl Jaspers | 118557106 | Teacher, frequent reference |
+| Martin Heidegger | 118547798 | Philosophical context |
+| Hannah Arendt | 118502751 | Contemporary |
+| Jean-Paul Sartre | 118605895 | Existentialism |
+| UNESCO | (Corporate body) | Employer 1966–1968 |
 
 ---
 
-## Entitätsquellen
+## Entity Sources
 
-### Vorhandene Quellen
+### Available Sources
 
-| Quelle | Beschreibung | Status |
-|--------|--------------|--------|
-| **TEI-Referenzdateien** | 25 XMLs mit GND-Verknüpfungen (E23: Datenlieferung Feb 2026) | 18 extrahiert, 7 neue verfuegbar |
-| **Masterfile.xlsx** | Bibliografische Metadaten | Keine Entitätsliste |
-| **Alma/Swisscovery** | Nachlass-Katalog | Möglicherweise verknüpfte Normdaten |
+| Source | Description | Status |
+|--------|-------------|--------|
+| **TEI reference files** | 25 XMLs with GND links (E23: data delivery Feb 2026) | 25 TEI-XMLs available (E23); 18 extracted so far, 7 remaining to extract |
+| **Masterfile.xlsx** | Bibliographic metadata | No entity list |
+| **Alma/Swisscovery** | Nachlass catalog | Possibly linked authority data |
 
-### Extrahierte GND-Entitäten (29.01.2026)
+### Extracted GND Entities (29.01.2026)
 
-**Skript:** `scripts/extract_gnd.py`
-**Ausgabe:** `output/gnd_analysis/`
+**Script:** `scripts/extract_gnd.py`
+**Output:** `output/gnd_analysis/`
 
-| Typ | Anzahl | Häufigste |
-|-----|--------|-----------|
-| Personen | 41 | Karl Jaspers (90x), GND:118557106 |
-| Organisationen | 10 | O.L.P. (4x), UNESCO (2x) |
-| Werke | 24 | Philosophie (3x), Die geistige Situation der Zeit (3x) |
+| Type | Count | Most Frequent |
+|------|-------|---------------|
+| Persons | 41 | Karl Jaspers (90x), GND:118557106 |
+| Organizations | 10 | O.L.P. (4x), UNESCO (2x) |
+| Works | 24 | Philosophie (3x), Die geistige Situation der Zeit (3x) |
 
-**Top-5 Personen:**
+**Top 5 Persons:**
 
-| GND-ID | Name | Vorkommen |
-|--------|------|-----------|
+| GND-ID | Name | Occurrences |
+|--------|------|-------------|
 | 118557106 | Karl Jaspers | 90 |
 | 118815679 | Jeanne Hersch | 24 |
 | 1145431410 | (Interviewer) | 23 |
 | 118509578 | Bergson | 8 |
 | 118562002 | Kierkegaard | 7 |
 
-Diese Liste dient als **Seed** für den GND-Lookup.
+This list serves as the **seed** for the GND lookup.
 
 ---
 
-## Implementierungsoptionen
+## Implementation Options
 
-### Option A: Prompt-basiert (LLM)
+### Option A: Prompt-based (LLM)
 
 ```
 Identifiziere alle Personen, Organisationen und Werke im Text.
@@ -158,76 +158,76 @@ Für jede Entität:
 3. Wenn unsicher, markiere mit ref="GND:???"
 ```
 
-**Risiko:** LLM könnte GND-IDs halluzinieren.
+**Risk:** LLM could hallucinate GND-IDs.
 
-### Option B: Zweistufig
+### Option B: Two-stage
 
-**Stufe 1 (LLM):**
+**Stage 1 (LLM):**
 ```xml
 <persName>Karl Jaspers</persName>  <!-- ohne ref -->
 ```
 
-**Stufe 2 (Script):**
-- Extrahiere alle markierten Entitäten
-- Lookup gegen GND-API
-- Füge `ref`-Attribute hinzu
-- Markiere Unsicherheiten für manuelle Review
+**Stage 2 (Script):**
+- Extract all marked entities
+- Lookup against GND API
+- Add `ref` attributes
+- Flag uncertainties for manual review
 
-### Option C: Nachgelagert (empfohlen für PoC)
+### Option C: Post-hoc (recommended for PoC)
 
-1. TEI-Erzeugung **ohne** GND-Verknüpfung
-2. Separate NER auf dem TEI-Output
-3. GND-Lookup mit Validierung
-4. Manuelle Review für Unsicherheiten
-
----
-
-## Qualitätssicherung
-
-### Metriken
-
-| Metrik | Beschreibung |
-|--------|--------------|
-| **Precision** | Anteil korrekter GND-Verknüpfungen an allen Verknüpfungen |
-| **Recall** | Anteil gefundener Entitäten an allen tatsächlichen Entitäten |
-| **Disambiguierungsrate** | Anteil eindeutig zugeordneter GND-IDs |
-
-### Fehlerklassen
-
-| Fehlertyp | Beispiel | Schwere |
-|-----------|----------|---------|
-| **Falsche GND-ID** | Falscher "Martin Müller" verknüpft | Hoch |
-| **Fehlende Entität** | Person nicht erkannt | Mittel |
-| **Halluzinierte GND-ID** | GND-ID existiert nicht | Hoch |
-| **Fehlende Verknüpfung** | Person erkannt, aber ohne GND | Niedrig |
+1. TEI generation **without** GND linking
+2. Separate NER on the TEI output
+3. GND lookup with validation
+4. Manual review for uncertainties
 
 ---
 
-## Offene Fragen
+## Quality Assurance
 
-- ~~Wie viele einzigartige GND-IDs sind bereits in den Referenz-TEIs?~~ → 75 Entitäten
-- Welcher Anteil der Entitäten hat überhaupt einen GND-Eintrag?
-- Soll im PoC GND-Verknüpfung getestet werden oder erst später?
-- Wie umgehen mit Entitäten ohne GND-Eintrag? (Lokale ID? Freilassen?)
+### Metrics
 
----
+| Metric | Description |
+|--------|-------------|
+| **Precision** | Share of correct GND links among all links |
+| **Recall** | Share of found entities among all actual entities |
+| **Disambiguation rate** | Share of unambiguously assigned GND-IDs |
 
-## Nächste Schritte
+### Error Classes
 
-1. [x] GND-IDs aus Referenz-TEI extrahieren
-2. [x] Häufigkeitsanalyse der Entitäten
-3. [ ] GND-API-Anbindung prototypisch testen (lobid.org) -- Phase 2
-4. [x] Entscheidung: NER + GND jetzt in zbz-ocr-tei (E21 ueberholt E5/E12)
-
----
-
-## Referenzen
-
-- [TEI-MAPPING](TEI-MAPPING.md) für TEI-Elementspezifikation
-- [QUELLENANALYSE](QUELLENANALYSE.md) für Korpus und Sprachen
-- [PIPELINE](PIPELINE.md) für Pipeline-Position
-- [DECISIONS](DECISIONS.md) O11-O12 für offene GND-Fragen
+| Error Type | Example | Severity |
+|------------|---------|----------|
+| **Wrong GND-ID** | Wrong "Martin Mueller" linked | High |
+| **Missing entity** | Person not recognized | Medium |
+| **Hallucinated GND-ID** | GND-ID does not exist | High |
+| **Missing link** | Person recognized but without GND | Low |
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-27 (25 statt 18 TEI-Referenzdateien nach E23)*
+## Open Questions
+
+- ~~How many unique GND-IDs are already in the reference TEIs?~~ → 75 entities
+- What share of entities actually have a GND entry?
+- Should GND linking be tested in the PoC or only later?
+- How to handle entities without a GND entry? (Local ID? Leave blank?)
+
+---
+
+## Next Steps
+
+1. [x] Extract GND-IDs from reference TEIs
+2. [x] Frequency analysis of entities
+3. [ ] Prototype GND API integration (lobid.org) — Phase 2
+4. [x] Decision: NER + GND now in zbz-ocr-tei (E21 supersedes E5/E12)
+
+---
+
+## References
+
+- [TEI-MAPPING](TEI-MAPPING.md) for TEI element specification
+- [QUELLENANALYSE](QUELLENANALYSE.md) for corpus and languages
+- [PIPELINE](PIPELINE.md) for pipeline position
+- [DECISIONS](DECISIONS.md) O11-O12 for open GND questions
+
+---
+
+*Created: 2026-01-29 | Updated: 2026-02-27 (25 instead of 18 TEI reference files after E23)*
