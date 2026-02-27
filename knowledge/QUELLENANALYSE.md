@@ -61,7 +61,9 @@ Die Dominanz kurzer Artikel (Median 6 Seiten) ermöglicht schnelle Iterationen i
 
 ---
 
-## Bearbeitungsstand (aus Masterfile)
+## Bearbeitungsstand
+
+### Masterfile (Erhebung Jan 2026)
 
 | Phase | Anzahl | Anteil |
 |-------|--------|--------|
@@ -70,7 +72,16 @@ Die Dominanz kurzer Artikel (Median 6 Seiten) ermöglicht schnelle Iterationen i
 | TEI-ausgezeichnet | 21 | 6% |
 | Publiziert | 0 | 0% |
 
-Der Engpass liegt bei der TEI-Auszeichnung (nur 6%). Hier bietet die LLM-Pipeline den größten Mehrwert.
+### Datenlieferung Feb 2026 (E23)
+
+| Kategorie | Anzahl | Bemerkung |
+|-----------|--------|-----------|
+| PDFs mit fertiger TEI-Annotation | 24 | + PAGE-XML-Export (Transkribus, Schema 2013, leer) |
+| Fertige TEI-XMLs | 25 | 890 + 1520 haben XML, aber PDF in anderem Ordner |
+| PDFs ohne Annotation | 262 | Noch nicht bearbeitet |
+| **Gesamt geliefert** | **286 PDFs** | Masterfile zaehlt 289 — 3 Differenz ungeklaert |
+
+Der Engpass liegt bei der TEI-Auszeichnung. Hier bietet die LLM-Pipeline den groessten Mehrwert.
 
 ---
 
@@ -159,4 +170,4 @@ Single Source für alle Pilot-PDF-Metadaten. Andere Dokumente verweisen hierher.
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-27 (Datenlieferung E23: 286 PDFs, 25 TEI-XMLs)*

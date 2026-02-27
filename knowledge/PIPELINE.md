@@ -258,8 +258,8 @@ PAGE-XML ist das Zwischenformat fuer die Layout-Regionen + OCR-Text. Es dient al
 
 | Aspekt | Details |
 |--------|---------|
-| Schema | PAGE-XML 2019-07-15 |
-| Namespace | `http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15` |
+| Schema | PAGE-XML 2013-07-15 (Transkribus-Standard, bestaetigt durch ZBZ-Export E23) |
+| Namespace | `http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15` |
 | Layout-Engine | Docling 2.75 (E19/E20) |
 
 ### Exportstruktur pro Dokument
@@ -340,4 +340,4 @@ Das Dashboard zeigt Pipeline-Status, CER-Vergleich (Mistral/LLM/DeepSeek), Engin
 
 ---
 
-*Erstellt: 2026-01-29 | Umbenannt von ARCHITEKTUR.md: 2026-02-25 | Aktualisiert: 2026-02-26*
+*Erstellt: 2026-01-29 | Umbenannt von ARCHITEKTUR.md: 2026-02-25 | Aktualisiert: 2026-02-27 (PAGE-XML Schema 2019→2013 nach E23)*

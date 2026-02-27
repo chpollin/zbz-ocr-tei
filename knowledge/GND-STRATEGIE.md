@@ -117,7 +117,7 @@ Erwartete häufige Entitäten (basierend auf Werk und Biografie):
 
 | Quelle | Beschreibung | Status |
 |--------|--------------|--------|
-| **TEI-Referenzdateien** | 18 XMLs mit GND-Verknüpfungen | ✓ Extrahiert |
+| **TEI-Referenzdateien** | 25 XMLs mit GND-Verknüpfungen (E23: Datenlieferung Feb 2026) | 18 extrahiert, 7 neue verfuegbar |
 | **Masterfile.xlsx** | Bibliografische Metadaten | Keine Entitätsliste |
 | **Alma/Swisscovery** | Nachlass-Katalog | Möglicherweise verknüpfte Normdaten |
 
@@ -230,4 +230,4 @@ Für jede Entität:
 
 ---
 
-*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-25*
+*Erstellt: 2026-01-29 | Aktualisiert: 2026-02-27 (25 statt 18 TEI-Referenzdateien nach E23)*

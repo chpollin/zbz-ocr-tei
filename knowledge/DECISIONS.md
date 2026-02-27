@@ -30,7 +30,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E10 | Fork auf GitLab Uni Zürich | ZBZ betreibt eigene Instanz | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
 | E11 | Dreistufiges Ökosystem: zbz-ocr-tei → coOCR → teiCrafter | Batch-OCR → Korrektur → Tiefenerschließung | 2026-02-18 | [PROJEKT](PROJEKT.md) |
 | E12 | zbz-ocr-tei nur OCR, keine TEI-Transformation | TEI + GND in coOCR/teiCrafter, nicht hier | 2026-02-19 | [PIPELINE](PIPELINE.md) |
-| E13 | Export als PAGE-XML + METS fuer coOCR | coOCR erwartet PAGE-XML (2019-07-15) + PNG, nicht Markdown | 2026-02-20 | [PIPELINE](PIPELINE.md) |
+| E13 | Export als PAGE-XML + METS fuer coOCR | coOCR erwartet PAGE-XML (2013-07-15, Transkribus-Standard) + PNG, nicht Markdown | 2026-02-20 | [PIPELINE](PIPELINE.md) |
 | E14 | Markdown-Formatierung erhalten (R6 geloest) | coOCR speichert Text as-is in `<Unicode>`, Formatierung darf nicht entfernt werden | 2026-02-20 | [PIPELINE](PIPELINE.md) |
 | E15 | Dashboard-Redesign: Multi-Page UI mit Shared CSS/JS | Unified Design System, statische JSON-Datenbasis, Engine-Sichtbarkeit, Light Theme | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E16 | Seitenweiser Vergleich fuer Monografien (>10 TEI-Seiten) | Globales Alignment scheitert bei 140+ Seiten; Content-Matching loest variable PDF/TEI-Offsets | 2026-02-25 | [PIPELINE](PIPELINE.md) |
@@ -40,6 +40,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen im Projekt.
 | E20 | Docling 2.75 als Layout-Engine bestaetigt (Phase 0) | Typenstichprobe bestanden: alle 4 Dokumenttypen korrekt erkannt, Spalten-Trennung Type B funktioniert (L: x120-529, R: x560-969), 0.4-3.3s/Seite | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
 | E21 | Scope-Erweiterung: Volle Pipeline in zbz-ocr-tei | Nach Meeting 25.02.: zbz-ocr-tei deckt OCR + Layout + PAGE-XML + NER/GND + TEI-XML ab. E12 (nur OCR) ist damit ueberholt. ZBZ behaelt Transkribus parallel | 2026-02-25 | [PLAN.md](../PLAN.md) |
 | E22 | TEI-Generator: Direkt von Layout+OCR zu TEI (ohne PAGE-XML) | PAGE-XML (Phase 1) und NER (Phase 2) noch nicht implementiert. TEI-Generator geht direkt von Layout-JSON + OCR-Markdown zu DTA-konformem TEI-XML. Wird spaeter erweitert wenn PAGE-XML/NER existieren. Entity-Annotation aus Seed-Dict (KNOWN_ENTITIES) | 2026-02-25 | [PIPELINE](PIPELINE.md) |
+| E23 | Datenlieferung Feb 2026: 286 PDFs + 25 TEI-XMLs + 24 PAGE-XML-Exporte | ZBZ lieferte Gesamtkorpus als HerschStandFeb. 24 Docs mit fertiger TEI-Annotation + PAGE-XML (Transkribus), 262 Docs nur PDF. PAGE-XML nutzt Schema 2013-07-15 (nicht 2019). PAGE-XML-Seiten sind leer (kein Text, nur Seitengeruest — keine TextRegions). Transkribus Collection-ID: 1886177 | 2026-02-27 | [QUELLENANALYSE](QUELLENANALYSE.md) |
 
 ---
 
@@ -52,7 +53,7 @@ Diese Fragen blockieren den Fortschritt.
 | ~~O1~~ | ~~Azure-API-Key~~ | **Erledigt (18.02.2026)** -- Key vorhanden, Endpoint getestet, Benchmark durchgefuehrt | ~~M1~~ | -- |
 | O2 | Alignment-Call Termin? | Terminvorschläge gesendet (18./19./20./24.02.) | Alle offenen Fragen | ZBZ |
 | O3 | Fork-Modell und Merge-Strategie? | Upstream-Changes in Fork mergen, CI-basierte Tests | M4 Integration | ZBZ (im Meeting) |
-| ~~O4~~ | ~~Schnittstelle zbz-ocr-tei -> coOCR: Welches Format?~~ | **Geloest (20.02.2026)** -- PAGE-XML (2019-07-15) + PNG + METS. Siehe E13 | ~~M4~~ | -- |
+| ~~O4~~ | ~~Schnittstelle zbz-ocr-tei -> coOCR: Welches Format?~~ | **Geloest (20.02.2026)** -- PAGE-XML (2013-07-15) + PNG + METS. Siehe E13 | ~~M4~~ | -- |
 | ~~O5~~ | ~~Schnittstelle coOCR → teiCrafter~~ | Entfaellt -- coOCR/teiCrafter nicht mehr im Scope (E21) | -- | -- |
 
 ---
@@ -101,7 +102,7 @@ Kann später geklärt werden.
 | R4 | Azure-API-Kompatibilitaet Mistral OCR 3 | Mittel | Endpoint testen, Fallback auf direkte API | **Geloest** (18.02.) |
 | R5 | Fork-Divergenz zwischen DHCraft und ZBZ | Mittel | Merge-Strategie definieren, CI-basierte Tests | Wartet auf Meeting (→ O3) |
 | R6 | Post-Processing entfernt Formatierungsinformation | Mittel | Markdown-Markup vor Cleanup erhalten | **Geloest** (E14) |
-| R7 | Transkribus-Inkompatibilitaet PAGE-XML | Hoch | ZBZ-Exportdatei anfordern, @type/@custom verifizieren | Offen |
+| R7 | Transkribus-Inkompatibilitaet PAGE-XML | Hoch | ZBZ-Export erhalten (E23): Schema 2013-07-15, ID-Schema `{NNNN}_p{NNN}`, Bildformat JPG. PAGE-XML ist leer (kein Text). @type/@custom nicht verifizierbar (keine TextRegions im Export) | **Teilweise geklaert** (E23) |
 | R8 | Docling BBox-Qualitaet unzureichend | Mittel | Phase 0 bestanden (E20). Gemini als Fallback, Kraken als Alternative | **Geloest** (E20) |
 | R9 | Fussnoten-Inline-Platzierung fehlerhaft | Mittel | Default: end-of-div, inline als Opt-in | Offen |
 | R10 | NER-Qualitaet auf Franzoesisch (66% Korpus) | Mittel | Seed-Dictionary als erste Schicht VOR LLM-NER | Offen |
@@ -120,4 +121,4 @@ Kann später geklärt werden.
 
 ---
 
-*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-26 (R7-R13 aus PLAN.md konsolidiert)*
+*Erstellt: 2026-02-18 | Aktualisiert: 2026-02-27 (E23 Datenlieferung, R7 teilweise geklaert, E13 Schema korrigiert)*

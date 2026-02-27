@@ -58,8 +58,9 @@ zbz-ocr-tei/
     shared.css / shared.js  # Design System + Shared Utilities
     data/dashboard.json   # Generierte Datenbasis
   data/                   # Quelldaten (nicht versioniert)
-    scans/                # PDF-Digitalisate
-    referenz-tei/         # Referenz-TEI fuer Evaluation
+    scans/                # 286 PDF-Digitalisate
+    referenz-tei/         # 25 Referenz-TEI (ZBZ-annotiert)
+    page-xml-transkribus/ # 24 Transkribus-Exporte (PAGE-XML)
   output/                 # Generierte Daten (nicht versioniert)
   PLAN.md                 # Implementierungsplan (Phasen 0-5)
   .env.example            # Vorlage fuer API-Keys
@@ -134,4 +135,4 @@ Projekt der Zentralbibliothek Zuerich (ZBZ) in Zusammenarbeit mit DHCraft.
 
 ---
 
-*Stand: 26.02.2026*
+*Stand: 27.02.2026*

@@ -120,10 +120,10 @@ output/page_xml/{doc_id}/
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15"
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15
-                           http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd">
+       xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15
+                           http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
   <Metadata>
     <Creator>zbz-ocr-tei pipeline</Creator>
     <Created>2026-02-25T00:00:00</Created>
@@ -149,7 +149,7 @@ output/page_xml/{doc_id}/
 ```python
 # Layout + PAGE-XML
 PAGE_XML_DIR = OUTPUT_DIR / "page_xml"
-PAGE_XML_NAMESPACE = "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15"
+PAGE_XML_NAMESPACE = "http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"
 
 ZBZ_STRUCTURAL_TAGS = {
     "zb_heading": {"page_type": "heading"},
@@ -338,4 +338,4 @@ Nach jeder Phase:
 
 ---
 
-*Erstellt: 25.02.2026 | Aktualisiert: 26.02.2026 (Redundanzen bereinigt, Status-Marker aktualisiert)*
+*Erstellt: 25.02.2026 | Aktualisiert: 27.02.2026 (PAGE-XML Schema 2019→2013 korrigiert nach E23)*

@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-02-26
+updated: 2026-02-27
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,67 @@ status: active
 Chronologisches Arbeitslog. Entscheidungen sind in [DECISIONS](DECISIONS.md) konsolidiert, Projektstatus in [PROJEKT](PROJEKT.md).
 
 **Abhängigkeiten:** Keine (eigenständiges Log)
+
+---
+
+## 2026-02-27 | Datenlieferung HerschStandFeb: Analyse + Knowledge-Korrekturen
+
+### Durchgefuehrt
+
+1. **ZBZ-Datenlieferung analysiert** (2.6 GB Ordner `HerschStandFeb/`):
+   - 3 Unterordner: "mit fertigen XML-Files" (94 MB), "ohne XML" (1.2 GB), Duplikat (1.3 GB)
+   - 24 PDFs mit TEI-Annotation, 262 PDFs ohne Annotation = **286 PDFs gesamt**
+   - 25 fertige TEI-XMLs (ZBZ-Referenz mit GND-Verknuepfungen)
+   - 24 PAGE-XML-Exporte aus Transkribus (Schema **2013-07-15**, Seiten **leer** — kein Text)
+   - Duplikat-Ordner `HerschStandFeb/HerschStandFeb/` verifiziert (664 Dateien, identische Pfade+Groessen)
+
+2. **PAGE-XML-Schema korrigiert** (2019-07-15 → 2013-07-15):
+   - PLAN.md: Template, Config-Konstante, XSD-URL (6 Vorkommen)
+   - PIPELINE.md: Schema-Tabelle + Namespace
+   - DECISIONS.md: E13, O4
+
+3. **Neue Entscheidung E23** in DECISIONS.md: Datenlieferung dokumentiert
+
+4. **R7 (Transkribus-Inkompatibilitaet)** teilweise geklaert: Schema 2013, ID-Schema `{NNNN}_p{NNN}`, JPG-Format. PAGE-XML ist leer (keine TextRegions → @type/@custom nicht verifizierbar)
+
+5. **Bearbeitungsstand aktualisiert**:
+   - QUELLENANALYSE.md: Neue Sektion "Datenlieferung Feb 2026" mit konkreten Zahlen
+   - GND-STRATEGIE.md: 18 → 25 TEI-Referenzdateien verfuegbar
+   - Masterfile-Zahlen (289 Texte) beibehalten — 3 Differenz zu 286 gelieferten PDFs ungeklaert
+
+### Erkenntnisse
+
+| Erkenntnis | Relevanz |
+|------------|----------|
+| Transkribus nutzt PAGE-XML Schema 2013, nicht 2019 | Hoch — alle Implementierungsplaene korrigiert |
+| PAGE-XML-Export enthalt keinen Text (leere Seiten) | Hoch — kein Referenz-PAGE-XML verfuegbar |
+| 25 fertige TEI-XMLs (statt 18/21) | Mittel — 7 neue Docs fuer GND-Extraktion |
+| 286 PDFs geliefert (3 weniger als Masterfile) | Niedrig — Differenz klaeren |
+| Transkribus Collection-ID: 1886177 | Niedrig — fuer spaetere API-Zugriffe |
+
+### Neue/geaenderte Dateien
+
+| Datei | Aenderung |
+|-------|-----------|
+| `knowledge/DECISIONS.md` | E23 hinzugefuegt, E13 korrigiert, R7 aktualisiert |
+| `PLAN.md` | PAGE-XML Schema 2019→2013 (6 Vorkommen) |
+| `knowledge/PIPELINE.md` | Schema-Version korrigiert |
+| `knowledge/QUELLENANALYSE.md` | Bearbeitungsstand: Datenlieferung Feb 2026 |
+| `knowledge/GND-STRATEGIE.md` | 18→25 TEI-Referenzdateien |
+| `knowledge/JOURNAL.md` | Diesen Eintrag |
+
+### Datei-Integration (gleiche Session, Fortsetzung)
+
+1. **Duplikat geloescht** (`HerschStandFeb/HerschStandFeb/`, 1.3 GB, 664 Dateien)
+2. **286 PDFs** → `data/scans/` (24 aus "mit XML" + 262 aus "ohne XML")
+3. **25 TEI-XMLs** → `data/referenz-tei/`
+4. **24 PAGE-XML-Ordner** → `data/page-xml-transkribus/`
+5. **Export-Screenshot** → `data/richtlinien/Page-xml-Export Einstellungen.jpg`
+6. **`.gitignore`** aktualisiert: +`data/page-xml-transkribus/`, +`HerschStandFeb/`
+7. **`data/README.md`** komplett ueberarbeitet (Struktur, Datenlieferungs-Tabelle, Zahlen)
+8. **`HerschStandFeb/`** geloescht (0 Dateien uebrig nach Verschiebung)
+
+Verifikation bestanden: 286 PDFs, 25 XMLs, 24 PAGE-XML-Ordner.
 
 ---
 

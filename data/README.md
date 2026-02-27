@@ -1,33 +1,43 @@
 # Quelldaten
 
 Dieses Verzeichnis enthält die Eingabedaten für das Projekt.
-**Nicht versioniert** (in .gitignore) – manuell vom ZBZ bereitgestellt.
+**Nicht versioniert** (in .gitignore) – vom ZBZ bereitgestellt.
 
 ## Struktur
 
 ```
 data/
-├── scans/              # PDF-Scans der Dokumente
-│   └── *.pdf           # Benannt nach Projekt-ID (z.B. 2310.pdf)
+├── scans/                    # 286 PDF-Scans (Datenlieferung Feb 2026)
+│   └── *.pdf                 # Benannt nach Projekt-ID (z.B. 2310.pdf)
 │
-├── referenz-tei/       # Referenz-TEI-Dateien (ZBZ-annotiert)
-│   ├── Pilot/          # 18 annotierte Pilot-Dokumente
-│   └── *.xml
+├── referenz-tei/             # 25 Referenz-TEI-Dateien (ZBZ-annotiert, DTA-Basisformat)
+│   └── *.xml                 # Benannt nach Projekt-ID (z.B. 2310.xml)
 │
-├── richtlinien/        # ZBZ-Projektrichtlinien
-│   ├── README.md       # Projektübersicht
-│   └── dta_basisformat_komplett.md  # DTA-Referenz
+├── page-xml-transkribus/     # 24 Transkribus-Exporte (PAGE-XML Schema 2013-07-15)
+│   └── {doc_id}/             # Pro Dokument ein Ordner
+│       ├── mets.xml          # METS-Manifest
+│       ├── metadata.xml      # Transkribus-Metadaten
+│       └── page/             # PAGE-XML pro Seite (leer, kein Text)
+│           └── *.xml
 │
-└── projektsteuerung/   # ZBZ-Projektdaten
-    └── *.xlsx          # Arbeitslisten
+├── richtlinien/              # ZBZ-Projektrichtlinien
+│   ├── dta_basisformat_komplett.md           # DTA-Referenz
+│   └── Page-xml-Export Einstellungen.jpg     # Transkribus-Export-Einstellungen
+│
+└── projektsteuerung/         # ZBZ-Projektdaten
+    └── *.xlsx                # Arbeitslisten
 ```
 
-## Dateien beschaffen
+## Datenlieferung
 
-Die Dateien werden vom ZBZ bereitgestellt:
-1. PDFs aus dem Digitalisierungsprojekt
-2. Referenz-TEI aus Transkribus-Export
-3. Richtlinien aus der internen Dokumentation
+**HerschStandFeb (Feb 2026):** 286 PDFs, 25 TEI-XMLs, 24 PAGE-XML-Exporte.
+Dokumentiert in [QUELLENANALYSE](../knowledge/QUELLENANALYSE.md) §Datenlieferung und [DECISIONS](../knowledge/DECISIONS.md) E23.
+
+| Kategorie | Anzahl | Quelle |
+|-----------|--------|--------|
+| PDFs mit TEI + PAGE-XML | 24 | ZBZ Transkribus (Collection 1886177) |
+| PDFs ohne Annotation | 262 | ZBZ Digitalisierung |
+| TEI-XMLs | 25 | Fertige Annotationen (1 XML ohne zugehoeriges PDF) |
 
 ## Hinweis
 
