@@ -8,7 +8,7 @@ status: active
 
 # Pipeline
 
-Data flow from PDF to TEI-XML: stages, scripts, formats. Since the scope expansion (25.02.2026), zbz-ocr-tei covers the entire pipeline (OCR + Layout + PAGE-XML + NER/GND + TEI-XML). Implementation plan: [PLAN.md](../PLAN.md).
+Data flow from PDF to TEI-XML: stages, scripts, formats. Since the scope expansion (25.02.2026), zbz-ocr-tei covers the entire pipeline (OCR + Layout + PAGE-XML + NER/GND + TEI-XML). Implementation plan: [PLAN.md](PLAN.md).
 
 **Dependencies:** [PROJEKT](PROJEKT.md)
 
@@ -271,7 +271,7 @@ output/page_xml/{doc_id}/
   page/{doc_id}_p001.xml      # PAGE-XML per page
 ```
 
-Details: See [PLAN.md](../PLAN.md) Phase 1.
+Details: See [PLAN.md](PLAN.md) Phase 1.
 
 ---
 

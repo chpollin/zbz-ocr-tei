@@ -11,7 +11,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
               (PNG)     (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
 ```
 
-## Pilot Status (26.02.2026)
+## Pilot Status (27.02.2026)
 
 15 pilot documents (383 pages) processed:
 
@@ -35,13 +35,13 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 
 ### Next Steps
 
-Layout post-processing (O21) → PAGE-XML generator (Phase 1) → NER+GND (Phase 2) → TEI extension (Phase 3) → Production run (289 docs). Details: [PLAN.md](PLAN.md).
+Layout post-processing (O21) → PAGE-XML generator (Phase 1) → NER+GND (Phase 2) → TEI extension (Phase 3) → Production run (289 docs). Details: [PLAN.md](knowledge/PLAN.md).
 
 ## Directory Structure
 
 ```
 zbz-ocr-tei/
-  knowledge/              # 12 project documents (Single Source of Truth)
+  knowledge/              # 14 project documents (Single Source of Truth)
   scripts/                # Python pipeline
     config.py             # Central configuration
     ocr_pipeline.py       # OCR (Mistral/DeepSeek)
@@ -62,7 +62,6 @@ zbz-ocr-tei/
     referenz-tei/         # 25 reference TEI (ZBZ-annotated)
     page-xml-transkribus/ # 24 Transkribus exports (PAGE-XML)
   output/                 # Generated data (not versioned)
-  PLAN.md                 # Implementation plan (phases 0-5)
   .env.example            # Template for API keys
 ```
 
@@ -122,7 +121,7 @@ The QA dashboard (`docs/index.html`) shows pipeline status, CER comparison, and 
 | **Navigation (start here)** | [knowledge/INDEX.md](knowledge/INDEX.md) |
 | Project + milestones | [knowledge/PROJEKT.md](knowledge/PROJEKT.md) |
 | Pipeline (7 stages) | [knowledge/PIPELINE.md](knowledge/PIPELINE.md) |
-| Implementation plan | [PLAN.md](PLAN.md) |
+| Implementation plan | [knowledge/PLAN.md](knowledge/PLAN.md) |
 | Decisions + open items | [knowledge/DECISIONS.md](knowledge/DECISIONS.md) |
 | Test plan + results | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
 | TEI rules | [knowledge/TEI-MAPPING.md](knowledge/TEI-MAPPING.md) |

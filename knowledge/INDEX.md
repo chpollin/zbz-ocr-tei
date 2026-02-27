@@ -27,6 +27,7 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [DECISIONS](DECISIONS.md) | What is decided? What is open? | All | All |
 | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) | How does ZBZ work editorially? | All | — |
 | [JOURNAL](JOURNAL.md) | What was done when? | All | — |
+| [PLAN](PLAN.md) | What are the implementation phases? | Development | PROJEKT, PIPELINE |
 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) | Which approach for layout analysis? | Development | PIPELINE |
 
 ---
@@ -48,6 +49,7 @@ PROJEKT (Vision, Ecosystem)
     |
     +-->  ZBZ-WORKFLOW (Editorial Context)
 
+PLAN      <-- implementation phases, depends on PROJEKT + PIPELINE
 DECISIONS <-- cross-cutting, collects from all docs
 JOURNAL   <-- chronological, references all docs
 ```
@@ -100,6 +102,7 @@ knowledge/
 +-- DECISIONS.md          # Decided + Open items (prioritized)
 +-- ZBZ-WORKFLOW.md       # ZBZ editorial workflow + integration points
 +-- JOURNAL.md            # Chronological work journal
++-- PLAN.md               # Implementation plan (phases 0-5)
 +-- E19-LAYOUT-ANALYSE.md # Layout analysis research + decision
 ```
 

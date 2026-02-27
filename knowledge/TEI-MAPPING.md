@@ -10,7 +10,7 @@ status: active
 
 Transformation rules from source text to TEI-XML following the DTA-Basisformat with project-specific adaptations.
 
-> **Scope:** Since the scope expansion (25.02.2026), zbz-ocr-tei performs the TEI transformation itself (Phase 3 in [PLAN.md](../PLAN.md)). This document is the implementation reference for `scripts/tei/tei_generator.py`. The rules apply to the entire pipeline.
+> **Scope:** Since the scope expansion (25.02.2026), zbz-ocr-tei performs the TEI transformation itself (Phase 3 in [PLAN.md](PLAN.md)). This document is the implementation reference for `scripts/tei/tei_generator.py`. The rules apply to the entire pipeline.
 
 **Dependencies:** [QUELLENANALYSE](QUELLENANALYSE.md)
 

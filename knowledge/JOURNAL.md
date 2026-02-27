@@ -14,6 +14,48 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-02-27 | Knowledge Vault Cleanup: PLAN.md Integration, English, Outdated Fixes
+
+### Completed
+
+1. **PLAN.md moved into knowledge/ vault** (`git mv PLAN.md knowledge/PLAN.md`):
+   - YAML frontmatter added (type, created, updated, tags, status)
+   - All 7 files with `../PLAN.md` references updated to `PLAN.md`
+   - README.md references updated to `knowledge/PLAN.md`
+   - Internal references in PLAN.md updated (`knowledge/X.md` → `X.md`)
+   - INDEX.md: PLAN.md added to document matrix, dependency tree, directory structure
+
+2. **German remnants translated to English**:
+   - QUELLENANALYSE.md pilot table: Genre column translated (Rezension→Review, etc.)
+   - PLAN.md data flow diagram: "pro Seite"→"per page", "Struktur"→"Structure"
+   - Literal prompts in code blocks kept in German (actual code)
+
+3. **Outdated information fixed**:
+   - README.md: Pilot status date 26.02→27.02
+   - PROJEKT.md: Component status date 26.02→27.02
+   - PROJEKT.md: M1 success criterion corrected (>=95%→>=93%, matches actual result)
+   - PLAN.md: Version 1.1→1.2, date 26.02→27.02
+   - README.md: "12 project documents"→"14 project documents"
+
+4. **O22 added to DECISIONS.md**: 289 vs. 286 PDF discrepancy formally tracked
+   - QUELLENANALYSE.md cross-referenced with O22
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| `PLAN.md` | **MOVED** → `knowledge/PLAN.md`, frontmatter added, v1.2 |
+| `knowledge/INDEX.md` | PLAN.md in matrix + deps + directory |
+| `knowledge/PROJEKT.md` | Date fix, M1 criterion, PLAN.md links |
+| `knowledge/PIPELINE.md` | PLAN.md links (2x) |
+| `knowledge/TEI-MAPPING.md` | PLAN.md link |
+| `knowledge/GND-STRATEGIE.md` | PLAN.md link |
+| `knowledge/DECISIONS.md` | PLAN.md link, O22 added |
+| `knowledge/QUELLENANALYSE.md` | Genre EN, O22 cross-ref |
+| `README.md` | PLAN.md path, date fix, doc count |
+
+---
+
 ## 2026-02-27 | Data Delivery HerschStandFeb: Analysis + Knowledge Corrections
 
 ### Completed

@@ -38,7 +38,7 @@ Consolidated register of all decisions and open questions in the project.
 | E18 | Content-based page matching instead of fixed offset | TEI facs numbers ≠ PDF page numbers (cover pages, blank pages); fixed offset drifts | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E19 | Layout analysis: Docling + Gemini hybrid | Docling (mAP 0.699, free, 17 classes) as primary; Gemini 2.5 Flash as optional validator; Kraken as fallback. Claude Vision disqualified (no BBox), Mistral insufficient (no text BBox) | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
 | E20 | Docling 2.75 confirmed as layout engine (Phase 0) | Type sample passed: all 4 document types correctly detected, column separation Type B works (L: x120-529, R: x560-969), 0.4-3.3s/page | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
-| E21 | Scope expansion: full pipeline in zbz-ocr-tei | After meeting 25.02.: zbz-ocr-tei covers OCR + layout + PAGE-XML + NER/GND + TEI-XML. E12 (OCR only) is thereby superseded. ZBZ keeps Transkribus in parallel | 2026-02-25 | [PLAN.md](../PLAN.md) |
+| E21 | Scope expansion: full pipeline in zbz-ocr-tei | After meeting 25.02.: zbz-ocr-tei covers OCR + layout + PAGE-XML + NER/GND + TEI-XML. E12 (OCR only) is thereby superseded. ZBZ keeps Transkribus in parallel | 2026-02-25 | [PLAN.md](PLAN.md) |
 | E22 | TEI generator: directly from layout+OCR to TEI (without PAGE-XML) | PAGE-XML (Phase 1) and NER (Phase 2) not yet implemented. TEI generator goes directly from layout JSON + OCR Markdown to DTA-Basisformat-conformant TEI-XML. Will be extended later when PAGE-XML/NER exist. Entity annotation from seed dict (KNOWN_ENTITIES) | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E23 | Data delivery Feb 2026: 286 PDFs + 25 TEI-XMLs + 24 PAGE-XML exports | ZBZ delivered full corpus as HerschStandFeb. 24 docs with completed TEI annotation + PAGE-XML (Transkribus), 262 docs PDF only. PAGE-XML uses schema 2013-07-15 (not 2019). PAGE-XML pages are empty (no text, only page skeleton — no TextRegions). Transkribus Collection-ID: 1886177 | 2026-02-27 | [QUELLENANALYSE](QUELLENANALYSE.md) |
 
@@ -89,6 +89,7 @@ Can be clarified later.
 | O15 | Systematic use of Textual Tags in Transkribus? | div, organization, person, sic, speech, unclear, work | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) |
 | O16 | Option edition view: will it be built? | Not yet decided (mail 14.02.) | [PROJEKT](PROJEKT.md) |
 | O17 | Activate GitHub Pages for QA viewer? | HTML ready, but Pages not activated | [PROJEKT](PROJEKT.md) |
+| O22 | 289 vs. 286 PDF discrepancy | Masterfile counts 289 texts, but E23 delivery contains only 286 PDFs. 3 missing unidentified | [QUELLENANALYSE](QUELLENANALYSE.md) |
 
 ---
 
@@ -121,4 +122,4 @@ Can be clarified later.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-02-27 (E23 data delivery, R7 partially clarified, E13 schema corrected)*
+*Created: 2026-02-18 | Updated: 2026-02-27 (E23 data delivery, R7 partially clarified, E13 schema corrected, O22 added)*

@@ -1,10 +1,18 @@
+---
+type: knowledge
+created: 2026-02-25
+updated: 2026-02-27
+tags: [zbz-ocr-tei, plan, implementation, phases]
+status: active
+---
+
 # Implementation Plan: Full AI Pipeline (PDF → TEI-XML)
 
-> **Version:** 1.1 | **Date:** 26.02.2026 | **Author:** Claude Opus 4.6
+> **Version:** 1.2 | **Date:** 27.02.2026 | **Author:** Claude Opus 4.6
 > **Context:** zbz-ocr-tei covers the entire pipeline. ZBZ retains Transkribus, DHCraft builds a parallel AI pipeline.
 
-Current component status: [PROJEKT.md](knowledge/PROJEKT.md) §Component Status.
-Pipeline stages and CLI: [PIPELINE.md](knowledge/PIPELINE.md).
+Current component status: [PROJEKT.md](PROJEKT.md) §Component Status.
+Pipeline stages and CLI: [PIPELINE.md](PIPELINE.md).
 
 ---
 
@@ -46,14 +54,14 @@ PDF-Scan
   |
   +---> extract_pages.py -----> PNG images (300 DPI)
   |                                |
-  +---> ocr_pipeline.py -----> Markdown (pro Seite)
+  +---> ocr_pipeline.py -----> Markdown (per page)
   |                                |
   +---> layout_analyzer.py --> Regions + BBox (JSON)
            |                       |
-           +--- region_classifier.py --> ZBZ-Tags
+           +--- region_classifier.py --> ZBZ tags
                     |
                     v
-          page_xml_generator.py --> PAGE-XML (pro Seite) + METS
+          page_xml_generator.py --> PAGE-XML (per page) + METS
                     |
                     v
           ner_pipeline.py -------> Entities (JSON)
@@ -63,7 +71,7 @@ PDF-Scan
           tei_generator.py ------> TEI-XML (DTA-Basisformat)
                     |
                     v
-          evaluate_ocr.py -------> CER + Struktur + Entity Scores
+          evaluate_ocr.py -------> CER + Structure + Entity Scores
           generate_dashboard_data.py --> Dashboard
 ```
 
@@ -233,7 +241,7 @@ scripts/tei/
   tei_validator.py    # Schema validation + ZBZ content rules
 ```
 
-Transformation rules: [TEI-MAPPING.md](knowledge/TEI-MAPPING.md).
+Transformation rules: [TEI-MAPPING.md](TEI-MAPPING.md).
 
 ### Special Document Types
 
@@ -322,7 +330,7 @@ docling>=2.75.0               # Layout analysis (already installed)
 
 ## Risks
 
-See [DECISIONS.md](knowledge/DECISIONS.md) §Risks (R1-R13).
+See [DECISIONS.md](DECISIONS.md) §Risks (R1-R13).
 
 ---
 
@@ -338,4 +346,4 @@ After each phase:
 
 ---
 
-*Created: 25.02.2026 | Updated: 27.02.2026 (PAGE-XML Schema 2019→2013 corrected after E23)*
+*Created: 25.02.2026 | Updated: 27.02.2026 (moved to knowledge/, internal refs updated, v1.2)*

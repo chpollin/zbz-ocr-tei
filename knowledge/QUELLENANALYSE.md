@@ -79,7 +79,7 @@ The dominance of short articles (median 6 pages) enables fast iterations in the 
 | PDFs with completed TEI annotation | 24 | + PAGE-XML export (Transkribus, schema 2013, empty) |
 | Completed TEI-XMLs | 25 | 890 + 1520 have XML, but PDF in different folder |
 | PDFs without annotation | 262 | Not yet processed |
-| **Total delivered** | **286 PDFs** | Masterfile counts 289 — 3 discrepancy unresolved |
+| **Total delivered** | **286 PDFs** | Masterfile counts 289 — 3 discrepancy unresolved (→ [DECISIONS](DECISIONS.md) O22) |
 
 The bottleneck is TEI annotation. This is where the LLM pipeline provides the greatest added value.
 
@@ -104,21 +104,21 @@ Single source of truth for all pilot PDF metadata. Other documents reference thi
 
 | File | Pages | Language | Type | Text Genre | Special Feature |
 |------|-------|----------|------|------------|-----------------|
-| 2310.pdf | 3 | FR | A | Rezension (review) | JSTOR metadata |
-| 1180.pdf | 8 | DE/FR | A | Jahresbericht (annual report) | Title page |
-| 130.pdf | 18 | FR | A | Zeitschrift (journal) | Cover page |
+| 2310.pdf | 3 | FR | A | Review | JSTOR metadata |
+| 1180.pdf | 8 | DE/FR | A | Annual report | Title page |
+| 130.pdf | 18 | FR | A | Journal article | Cover page |
 | 290.pdf | 5 | FR | A | Comptes Rendus | Essay |
-| 1410.pdf | 6 | DE/FR | A | Beitrag (contribution) | Bilingual |
-| 1060.pdf | 8 | DE | A | Broschuere (brochure) | Speech |
-| 2530.pdf | 2 | FR | B | Artikel (article) | Two-column |
-| 890.pdf | 7 | DE | B | Lehrerzeitung (teachers' journal) | Small font |
-| 3040.pdf | 9 | FR | B | Lexikon (encyclopedia) | Footnotes |
-| 40.pdf | 156 | FR | C | Roman (novel) | Handwritten notes |
-| 1520.pdf | 142 | FR | C | Monografie (monograph) | Long |
-| 90.pdf | 6 | DE | D | Hist. Druck (historical print) | 1944 |
-| 830.pdf | 2 | FR | D | Bildband (illustrated book) | Little text |
+| 1410.pdf | 6 | DE/FR | A | Contribution | Bilingual |
+| 1060.pdf | 8 | DE | A | Brochure | Speech |
+| 2530.pdf | 2 | FR | B | Article | Two-column |
+| 890.pdf | 7 | DE | B | Teachers' journal | Small font |
+| 3040.pdf | 9 | FR | B | Encyclopedia | Footnotes |
+| 40.pdf | 156 | FR | C | Novel | Handwritten notes |
+| 1520.pdf | 142 | FR | C | Monograph | Long |
+| 90.pdf | 6 | DE | D | Historical print | 1944 |
+| 830.pdf | 2 | FR | D | Illustrated book | Little text |
 | 1440.pdf | 5 | DE | D | Interview | Dialogue format |
-| 1330.pdf | 6 | FR | D | Sammelband (edited volume) | Foreword |
+| 1330.pdf | 6 | FR | D | Edited volume | Foreword |
 
 ---
 

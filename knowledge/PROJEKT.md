@@ -47,18 +47,18 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | Layout engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) |
 | NER | Claude Haiku 4.5 + lobid.org GND API |
 | Mode | Batch, no manual intervention |
-| Implementation plan | [PLAN.md](../PLAN.md) |
+| Implementation plan | [PLAN.md](PLAN.md) |
 
 ---
 
 ## Milestones
 
-**Scope:** Full pipeline PDF → TEI-XML (since 25.02.2026). Implementation plan: [PLAN.md](../PLAN.md).
+**Scope:** Full pipeline PDF → TEI-XML (since 25.02.2026). Implementation plan: [PLAN.md](PLAN.md).
 
 | # | Milestone | Success criterion | Status |
 |---|-----------|-------------------|--------|
 | M0 | Image extraction + QA viewer | Images + viewer available | Done |
-| M1 | OCR validated | >=95% accuracy all types | Done: 93.58% (Mistral), dashboard UI |
+| M1 | OCR validated | >=93% accuracy all types | Done: 93.58% (Mistral), dashboard UI |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for 15 pilots | **Phase 1** |
 | M3 | NER + GND | Entity recall >70%, GND linking >60% | **Phase 2** |
 | M4 | TEI-XML | DTA-compliant TEI for 15 pilots, schema-valid | Partial (383 files generated, E22: without PAGE-XML/NER) |
@@ -72,7 +72,7 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-## Component Status (26.02.2026)
+## Component Status (27.02.2026)
 
 | Component | Status | Details |
 |-----------|--------|---------|
@@ -95,8 +95,8 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Viewer TEI panel | Done | 3-panel viewer (facsimile + OCR + TEI), toggle T, rendered view, syntax highlighting, diff, entity sidebar |
 | Viewer TEI refactoring | Done | TEI JS extracted to `docs/tei-viewer.js` (~300 lines), viewer.html 1200→816 lines |
 | Layout post-processing | Pending | Overlap filter, single-line merge, page-number heuristic (O21) |
-| PAGE-XML generator | Pending | Layout + OCR → PAGE-XML (phase 1 in PLAN.md) |
-| NER + GND | Pending | Entity recognition + GND linking (phase 2 in PLAN.md) |
+| PAGE-XML generator | Pending | Layout + OCR → PAGE-XML (phase 1 in [PLAN](PLAN.md)) |
+| NER + GND | Pending | Entity recognition + GND linking (phase 2 in [PLAN](PLAN.md)) |
 | Containerization | Pending | Dockerfile for Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
 

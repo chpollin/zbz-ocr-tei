@@ -10,7 +10,7 @@ status: active
 
 Strategy for Named Entity Recognition and GND linking in the Hersch edition project.
 
-> **Scope:** Since the scope extension (E21), zbz-ocr-tei performs NER + GND linking itself (Phase 2 in [PLAN.md](../PLAN.md)). Implementation: `scripts/ner/ner_pipeline.py` + `gnd_linker.py`. GND seed (75 entities) as foundation.
+> **Scope:** Since the scope extension (E21), zbz-ocr-tei performs NER + GND linking itself (Phase 2 in [PLAN.md](PLAN.md)). Implementation: `scripts/ner/ner_pipeline.py` + `gnd_linker.py`. GND seed (75 entities) as foundation.
 
 **Dependencies:** [TEI-MAPPING](TEI-MAPPING.md)
 
