@@ -11,18 +11,19 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
               (PNG)     (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
 ```
 
-## Pilot Status (27.02.2026)
+## Status (03.03.2026)
 
-15 pilot documents (383 pages) processed:
+286 PDFs received (E23), 15 pilot documents (383 pages) fully processed:
 
 | Component | Status | Result |
 |-----------|--------|--------|
-| Image extraction | 15/15 Docs | 383 page images (PNG) |
-| OCR (Mistral) | 15/15 Docs | CER 6.42%, accuracy 93.58% |
-| LLM post-correction | 15/15 Docs | Optional (E17), Haiku 4.5 Variant C |
-| Layout analysis | 8/15 Docs | Docling 2.75, BBox + regions (7 docs need GPU) |
-| TEI-XML | 15/15 Docs | 383 TEI-XML files (DTA-Basisformat, E22) |
-| Evaluation | 15/15 Docs | CER/WER per page + dashboard |
+| Image extraction | 286/286 Docs | 4,152 page images (PNG) |
+| OCR (Mistral) | 15/286 Docs | CER 6.42%, accuracy 93.58% |
+| LLM post-correction | 15/286 Docs | Optional (E17), Haiku 4.5 Variant C |
+| Layout analysis | 11/286 Docs | Docling 2.75 via docling-serve API (E24) |
+| Gemini Layout QA | 1/286 Docs | Gemini 3.1 Flash Lite, score 80/100 (E25) |
+| TEI-XML | 15/286 Docs | 383 TEI-XML files (DTA-Basisformat, E22) |
+| Evaluation | 15/286 Docs | CER/WER per page + dashboard |
 
 ### OCR Quality by Document Type
 
@@ -35,7 +36,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 
 ### Next Steps
 
-Layout post-processing (O21) → PAGE-XML generator (Phase 1) → NER+GND (Phase 2) → TEI extension (Phase 3) → Production run (289 docs). Details: [PLAN.md](knowledge/PLAN.md).
+Cloud GPU layout analysis (275 remaining docs) -> Gemini QA on all docs -> Layout post-processing (O21) -> PAGE-XML -> NER+GND -> TEI extension -> Production run (286 docs). Details: [PLAN.md](knowledge/PLAN.md).
 
 ## Directory Structure
 
@@ -46,7 +47,9 @@ zbz-ocr-tei/
     config.py             # Central configuration
     ocr_pipeline.py       # OCR (Mistral/DeepSeek)
     llm_postprocess.py    # LLM post-correction (Haiku 4.5)
-    run_layout_analysis.py  # Layout analysis (Docling)
+    run_layout_analysis.py  # Layout analysis (Docling, local GPU)
+    run_layout_cloud.py     # Layout analysis (docling-serve API, E24)
+    layout_qa_gemini.py     # Layout QA correction (Gemini 3.1 Flash Lite, E25)
     evaluate_ocr.py       # CER/WER evaluation
     generate_dashboard_data.py  # Dashboard data
     tei/                  # TEI-XML generator
@@ -102,7 +105,8 @@ Complete CLI reference: [knowledge/PIPELINE.md](knowledge/PIPELINE.md) §CLI Com
 | Mistral Document AI 2512 | Azure AI Foundry | Production OCR |
 | DeepSeek-OCR-2 | Local (GPU) | Development |
 | Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
-| Docling 2.75 | Local (CPU/GPU) | Layout analysis (BBox + regions) |
+| Docling 2.75 | Local / docling-serve API (E24) | Layout analysis (BBox + regions) |
+| Gemini 3.1 Flash Lite | Google AI API (E25) | Layout QA correction |
 
 ## Dashboard + Viewer
 
@@ -111,8 +115,8 @@ The QA dashboard (`docs/index.html`) shows pipeline status, CER comparison, and 
 - **3-panel layout:** Facsimile + OCR text + TEI-XML side by side
 - **TEI viewer:** Rendered view, XML with syntax highlighting, reference diff
 - **Entity sidebar:** Persons/organizations/works with GND links
-- **Layout overlay:** SVG BBox visualization over the facsimile
-- **Keyboard shortcuts:** 1/2/3 (OCR source), T (TEI), L (Layout), R/X/V (TEI mode), E (Entities)
+- **Layout overlay:** SVG BBox visualization over the facsimile (Docling/Gemini toggle)
+- **Gemini QA highlights:** Changed regions shown with yellow dashed borders + change reasons
 
 ## Documentation
 
@@ -134,4 +138,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-02-27*
+*Last updated: 2026-03-03*

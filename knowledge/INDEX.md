@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-02-27
+updated: 2026-03-03
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -72,6 +72,8 @@ JOURNAL   <-- chronological, references all docs
 | Dashboard | QA UI with metrics, engine comparison, and document catalog | [PIPELINE](PIPELINE.md) |
 | METS-XML | Multi-page manifest for PAGE-XML packages | [PIPELINE](PIPELINE.md) |
 | TEI Generator | Layout-JSON + OCR -> page-level TEI-XML (DTA-Basisformat) | [PIPELINE](PIPELINE.md) |
+| docling-serve (E24) | Layout analysis via REST API (Docker), no local GPU needed | [PIPELINE](PIPELINE.md) |
+| Gemini Layout QA (E25) | Vision-based correction of Docling layout results, both versions preserved | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -117,4 +119,4 @@ knowledge/
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-02-27*
+*Created: 2026-01-29 | Updated: 2026-03-03*

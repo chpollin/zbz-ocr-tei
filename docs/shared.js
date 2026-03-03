@@ -50,12 +50,15 @@
         },
 
         // ---- Layout Data Fetching ----
-        async fetchLayoutData(docId, page) {
-            const key = `layout/${docId}/${page}`;
+        // source: 'docling' (default) or 'gemini'
+        async fetchLayoutData(docId, page, source) {
+            source = source || 'docling';
+            const key = `layout/${source}/${docId}/${page}`;
             if (_textCache[key] !== undefined) return _textCache[key];
 
             const padded = String(page).padStart(3, '0');
-            const path = `../output/layout/${docId}/${docId}_p${padded}_layout.json`;
+            const suffix = source === 'gemini' ? '_layout_gemini.json' : '_layout.json';
+            const path = `../output/layout/${docId}/${docId}_p${padded}${suffix}`;
 
             try {
                 const r = await fetch(path);
@@ -306,9 +309,6 @@
             if (!overlay) return;
             overlay.addEventListener('click', function () {
                 overlay.classList.remove('active');
-            });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') overlay.classList.remove('active');
             });
         },
 

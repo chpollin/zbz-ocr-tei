@@ -56,6 +56,8 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 - **3 issues identified (O21):** (1) Overlapping regions in dense text, (2) single-line fragments as separate regions, (3) page numbers detected as `text` instead of `page_footer`
 - Post-processing needed: overlap filter, single-line merge, page number heuristic
 
+**Automated Layout QA (E25):** `layout_qa_gemini.py` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$4 for 7,200 pages. SDK: `google-genai`.
+
 ---
 
 ## Stage 1: OCR
@@ -308,6 +310,11 @@ python -m scripts.run_layout_cloud --doc 2310              # single document
 python -m scripts.run_layout_cloud --url http://host:5001  # custom server URL
 python -m scripts.run_layout_cloud --force                 # overwrite existing
 
+# Layout QA via Gemini 3.1 Flash Lite (stage 3, requires GEMINI_API_KEY)
+python -m scripts.layout_qa_gemini                         # all docs with layout
+python -m scripts.layout_qa_gemini --doc 2310              # single document
+python -m scripts.layout_qa_gemini --force                 # overwrite existing
+
 # Generate TEI-XML (stage 6)
 python -m scripts.tei.tei_generator                      # all documents
 python -m scripts.tei.tei_generator --doc 2310           # single document
@@ -348,4 +355,4 @@ The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engi
 
 ---
 
-*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-03 (docling-serve API E24)*
+*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-03 (Gemini Layout QA E25)*

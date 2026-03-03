@@ -215,10 +215,14 @@
         </div>
 
         <!-- Layout toggle -->
-        <button class="layout-toggle" id="layout-toggle" title="Layout-Regionen ein/ausblenden (L)">&#9638; Layout</button>
+        <button class="layout-toggle" id="layout-toggle" title="Layout-Regionen ein/ausblenden">&#9638; Layout</button>
+        <select id="layout-source" title="Layout-Quelle" style="font-size:0.75rem;padding:2px 4px;border-radius:3px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);cursor:pointer;">
+            <option value="docling">Docling</option>
+            <option value="gemini">Gemini</option>
+        </select>
 
         <!-- TEI toggle -->
-        <button class="layout-toggle" id="tei-toggle" title="TEI-Panel ein/ausblenden (T)">&lt;/&gt; TEI</button>
+        <button class="layout-toggle" id="tei-toggle" title="TEI-Panel ein/ausblenden">&lt;/&gt; TEI</button>
 
         <!-- Info toggle -->
         <button class="info-toggle" id="info-toggle" title="Dokument-Info ein/ausblenden">&#9432; Info</button>
@@ -267,7 +271,7 @@
                         <button class="tei-tab" data-mode="xml">XML</button>
                         <button class="tei-tab" data-mode="diff">Vergleich</button>
                     </div>
-                    <button class="tei-entity-toggle" id="entity-toggle" title="Entitaeten-Sidebar (E)">Entitaeten</button>
+                    <button class="tei-entity-toggle" id="entity-toggle" title="Entitaeten-Sidebar">Entitaeten</button>
                 </div>
                 <div class="viewer-panel-content viewer-tei">
                     <div class="tei-content-wrapper">
@@ -326,17 +330,6 @@
         </div>
     </div>
 
-    <!-- Shortcuts -->
-    <div class="shortcuts">
-        <kbd>&larr;</kbd><kbd>&rarr;</kbd> Seite &nbsp;|&nbsp;
-        <kbd>+</kbd><kbd>&minus;</kbd> Zoom &nbsp;|&nbsp;
-        <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Quelle &nbsp;|&nbsp;
-        <kbd>L</kbd> Layout &nbsp;|&nbsp;
-        <kbd>T</kbd> TEI &nbsp;|&nbsp;
-        <kbd>R</kbd><kbd>X</kbd><kbd>V</kbd> TEI-Modus &nbsp;|&nbsp;
-        <kbd>E</kbd> Entitaeten &nbsp;|&nbsp;
-        <kbd>i</kbd> Info
-    </div>
 
     <script src="shared.js"></script>
     <script src="tei-viewer.js"></script>
@@ -354,6 +347,7 @@
             hasDeepseek: false,
             hasLlm: false,
             layoutVisible: false,
+            layoutSource: 'docling',
             teiVisible: false,
         };
 
@@ -569,7 +563,7 @@
         async function renderLayout() {
             if (!state.layoutVisible) return;
 
-            var data = await ZBZ.fetchLayoutData(state.docId, state.page);
+            var data = await ZBZ.fetchLayoutData(state.docId, state.page, state.layoutSource);
 
             layoutOverlay.innerHTML = '';
 
@@ -582,39 +576,66 @@
             var colors = ZBZ.LAYOUT_COLORS;
             var defaultColor = { stroke: '#6b7280', fill: 'rgba(107,114,128,0.08)', label: '?' };
 
+            var isGemini = state.layoutSource === 'gemini';
+
             data.regions.forEach(function (region) {
                 if (!region.bbox) return;
 
                 var b = region.bbox;
                 var color = colors[region.zbz_tag] || defaultColor;
+                var changed = isGemini && region.changed;
 
                 var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
                 rect.setAttribute('x', b.x_pct);
                 rect.setAttribute('y', b.y_pct);
                 rect.setAttribute('width', b.w_pct);
                 rect.setAttribute('height', b.h_pct);
-                rect.setAttribute('fill', color.fill);
-                rect.setAttribute('stroke', color.stroke);
-                rect.setAttribute('stroke-width', '0.15');
                 rect.setAttribute('rx', '0.1');
 
+                if (changed) {
+                    rect.setAttribute('fill', 'rgba(234,179,8,0.15)');
+                    rect.setAttribute('stroke', '#eab308');
+                    rect.setAttribute('stroke-width', '0.3');
+                    rect.setAttribute('stroke-dasharray', '0.8 0.4');
+                } else {
+                    rect.setAttribute('fill', color.fill);
+                    rect.setAttribute('stroke', color.stroke);
+                    rect.setAttribute('stroke-width', '0.15');
+                }
+
+                var tooltipText = color.label + ': ' + (region.text || '').substring(0, 80);
+                if (changed && region.change_reason) {
+                    tooltipText += '\n--- Gemini: ' + region.change_reason;
+                }
                 var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-                title.textContent = color.label + ': ' + (region.text || '').substring(0, 80);
+                title.textContent = tooltipText;
                 rect.appendChild(title);
 
                 layoutOverlay.appendChild(rect);
 
+                var labelText = color.label;
+                if (changed) labelText = '* ' + labelText;
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttribute('x', String(b.x_pct + 0.3));
                 text.setAttribute('y', String(b.y_pct + 1.2));
-                text.setAttribute('fill', color.stroke);
+                text.setAttribute('fill', changed ? '#eab308' : color.stroke);
                 text.setAttribute('font-size', '1');
-                text.textContent = color.label;
+                text.textContent = labelText;
                 layoutOverlay.appendChild(text);
             });
         }
 
         layoutToggle.addEventListener('click', function () { toggleLayout(); });
+
+        // ---- Layout Source Toggle ----
+        var layoutSourceSelect = ZBZ.$('#layout-source');
+        layoutSourceSelect.addEventListener('change', function () {
+            state.layoutSource = layoutSourceSelect.value;
+            if (state.layoutVisible) {
+                renderLayout();
+            }
+        });
 
         // ---- TEI Panel ----
         var teiPanel = ZBZ.$('#tei-panel');
@@ -724,51 +745,6 @@
             ZBZ.$('#zoom-reset').textContent = '100%';
         });
 
-        // ---- Keyboard ----
-        document.addEventListener('keydown', function (e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-            switch (e.key) {
-                case 'ArrowLeft': showPage(state.page - 1); break;
-                case 'ArrowRight': showPage(state.page + 1); break;
-                case '+': case '=': ZBZ.$('#zoom-in').click(); break;
-                case '-': ZBZ.$('#zoom-out').click(); break;
-                case '1':
-                    state.source = 'mistral';
-                    updateSourceToggle(); loadText();
-                    break;
-                case '2':
-                    state.source = 'llm_corrected';
-                    updateSourceToggle(); loadText();
-                    break;
-                case '3':
-                    if (state.hasDeepseek) {
-                        state.source = 'deepseek';
-                        updateSourceToggle(); loadText();
-                    }
-                    break;
-                case 'l': case 'L':
-                    toggleLayout();
-                    break;
-                case 't': case 'T':
-                    toggleTei();
-                    break;
-                case 'r': case 'R':
-                    if (state.teiVisible) TeiViewer.switchMode('rendered');
-                    break;
-                case 'x': case 'X':
-                    if (state.teiVisible) TeiViewer.switchMode('xml');
-                    break;
-                case 'v': case 'V':
-                    if (state.teiVisible) TeiViewer.switchMode('diff');
-                    break;
-                case 'e': case 'E':
-                    if (state.teiVisible) TeiViewer.toggleEntitySidebar();
-                    break;
-                case 'i': case 'I':
-                    ZBZ.$('#doc-info-bar').classList.toggle('collapsed');
-                    break;
-            }
-        });
 
         // ---- Resizable Dividers ----
         var divider = ZBZ.$('#divider');

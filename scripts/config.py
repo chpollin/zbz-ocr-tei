@@ -50,6 +50,10 @@ ANTHROPIC_TIMEOUT_SECONDS = 60
 # Docling-Serve API
 DOCLING_SERVE_URL = os.environ.get("DOCLING_SERVE_URL", "http://localhost:5001")
 
+# Gemini API (Layout QA)
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
+
 # Dokument-Klassifikation (Typ B = zweispaltig)
 TWO_COLUMN_DOCS = ["2530", "890", "3040"]
 

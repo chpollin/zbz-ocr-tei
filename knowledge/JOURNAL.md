@@ -14,6 +14,60 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-03 | Gemini Layout QA (E25) + Keyboard Shortcuts Removed
+
+### Completed
+
+1. **Gemini Layout QA implemented** (`scripts/layout_qa_gemini.py`, NEW):
+   - Sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview (Vision + Structured Output)
+   - Gemini corrects labels, removes false positives, flags missing regions
+   - Returns corrected JSON with quality score (0-100), num_corrections, issues list
+   - Output: `{doc_id}_p{NNN}_layout_gemini.json` alongside Docling original (epistemic infrastructure)
+   - Summary per document: `summary_gemini.json` with avg_score, common_issues
+   - Resume-capable (skips existing), `--doc`, `--force` flags
+   - Auto-generates overlay PNGs if not present (via `draw_overlay_from_json()`)
+   - Cost: ~$4 for 7,200 pages ($0.25/1M input tokens)
+
+2. **Config + dependencies extended**:
+   - `scripts/config.py`: `GEMINI_API_KEY`, `GEMINI_MODEL` ("gemini-3.1-flash-lite-preview")
+   - `.env`: Created with `GEMINI_API_KEY` placeholder (gitignored)
+   - `.env.example`: Gemini section added
+   - `requirements.txt`: `google-genai>=1.0.0`
+   - SDK: `google-genai` (new SDK, not `google-generativeai`)
+
+3. **Viewer: Docling/Gemini toggle**:
+   - `shared.js`: `fetchLayoutData(docId, page, source)` with 'docling'/'gemini' parameter
+   - `viewer.html`: Layout-source dropdown next to Layout button
+   - Switching re-renders layout overlay with selected source
+
+4. **Keyboard shortcuts removed** from viewer:
+   - `viewer.html`: Removed keydown listener (44 lines), shortcuts legend div, keyboard hints from buttons
+   - `shared.js`: Removed Escape keydown handler
+   - `shared.css`: Removed `.shortcuts` and `.shortcuts kbd` styles
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| `scripts/layout_qa_gemini.py` | **NEW** -- Gemini QA script (~200 lines) |
+| `scripts/config.py` | EXTENDED -- `GEMINI_API_KEY`, `GEMINI_MODEL` |
+| `.env` | **NEW** -- Gemini API key (gitignored) |
+| `.env.example` | EXTENDED -- Gemini section |
+| `requirements.txt` | EXTENDED -- `google-genai>=1.0.0` |
+| `docs/shared.js` | EXTENDED -- `fetchLayoutData()` with source param |
+| `docs/viewer.html` | EXTENDED -- Layout-source dropdown; REMOVED -- keyboard shortcuts |
+| `docs/shared.js` | REMOVED -- Escape handler |
+| `docs/shared.css` | REMOVED -- `.shortcuts` styles |
+| `knowledge/DECISIONS.md` | EXTENDED -- E25, E19 Gemini version updated |
+| `knowledge/PIPELINE.md` | EXTENDED -- Gemini QA section, CLI command |
+| `knowledge/JOURNAL.md` | This entry |
+
+### Next Step
+
+Set GEMINI_API_KEY in `.env`, test with `python -m scripts.layout_qa_gemini --doc 2310`, verify in viewer.
+
+---
+
 ## 2026-03-03 | docling-serve API Integration (E24) + PNG Extraction for 286 PDFs
 
 ### Completed
@@ -947,4 +1001,4 @@ Prompt contains document context from TESTPLAN (type, language, genre).
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-03 (docling-serve API E24)*
+*Created: 2026-01-29 | Updated: 2026-03-03 (Gemini Layout QA E25)*

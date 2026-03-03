@@ -1271,27 +1271,6 @@ header .subtitle {
     font-style: italic;
 }
 
-/* ---- Keyboard Shortcuts Hint ---- */
-.shortcuts {
-    position: fixed;
-    bottom: var(--space-md);
-    right: var(--space-md);
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    padding: 0.5rem 0.75rem;
-    border-radius: var(--radius);
-    font-size: var(--fs-xs);
-    color: var(--text-muted);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
-
-.shortcuts kbd {
-    background: var(--bg-muted);
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
-}
 
 /* ---- Loading ---- */
 #loading {
