@@ -45,9 +45,9 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 
 **Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
 
-**Layout engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 block types, CPU). Phase 0 evaluation passed: all 4 document types correctly recognized, column separation Type B works. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
+**Layout engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). Phase 0 evaluation passed: all 4 document types correctly recognized, column separation Type B works. Local GPU (RTX 4060): ~5s/page. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
 
-**Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var.
+**Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var. **Note:** Local GPU via `run_layout_analysis.py` is now preferred (~5s/page on RTX 4060).
 
 **Layout QA (25.02.2026):** Visual inspection of 8 docs (186 overlay PNGs) showed:
 - BBox positioning correct, no systematic offset
@@ -298,13 +298,13 @@ python -m scripts.llm_postprocess --all
 python scripts/evaluate_ocr.py --all
 python scripts/evaluate_ocr.py --phase phase1 --engine mistral
 
-# Layout analysis (stage 3, requires GPU for Docling)
+# Layout analysis (stage 3, local GPU preferred, ~5s/page on RTX 4060)
 python -m scripts.run_layout_analysis                      # all documents
 python -m scripts.run_layout_analysis --doc 2310           # single document
 python -m scripts.run_layout_analysis --overlay            # Generate overlay PNGs (no GPU)
 python -m scripts.run_layout_analysis --overlay --doc 2310 # Overlay for single document
 
-# Layout analysis via docling-serve API (stage 3, no GPU needed)
+# Layout analysis via docling-serve API (stage 3, fallback if no local GPU)
 python -m scripts.run_layout_cloud                         # all documents
 python -m scripts.run_layout_cloud --doc 2310              # single document
 python -m scripts.run_layout_cloud --url http://host:5001  # custom server URL
@@ -355,4 +355,4 @@ The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engi
 
 ---
 
-*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-03 (Gemini Layout QA E25)*
+*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-03 (Gemini Layout QA E25, local GPU ~5s/page)*

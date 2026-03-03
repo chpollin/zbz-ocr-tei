@@ -36,7 +36,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 
 ### Next Steps
 
-Cloud GPU layout analysis (275 remaining docs) -> Gemini QA on all docs -> Layout post-processing (O21) -> PAGE-XML -> NER+GND -> TEI extension -> Production run (286 docs). Details: [PLAN.md](knowledge/PLAN.md).
+Local GPU layout analysis (275 remaining docs, RTX 4060, ~5s/page) -> Gemini QA on all docs -> Layout post-processing (O21) -> PAGE-XML -> NER+GND -> TEI extension -> Production run (286 docs). Details: [PLAN.md](knowledge/PLAN.md).
 
 ## Directory Structure
 

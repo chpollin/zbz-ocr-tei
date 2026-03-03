@@ -14,6 +14,27 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-03 | Gemini Layout QA (E25) + Local GPU Layout + Keyboard Shortcuts Removed
+
+### Late Update: PyTorch CUDA + Local GPU Layout
+
+5. **PyTorch CUDA installed** (was CPU-only):
+   - Problem: `torch 2.7.1+cpu` installed, RTX 4060 Laptop GPU (8GB) unused
+   - Fix: `pip install --force-reinstall torch torchvision --index-url https://download.pytorch.org/whl/cu124`
+   - Fixed dependency conflicts: Pillow <12, numpy <2.3, fsspec <2025
+   - Result: `torch 2.6.0+cu124`, CUDA available, RTX 4060 detected
+   - Docling local GPU: ~5s/page (vs 27s CPU via docling-serve, ~5x speedup)
+   - First page ~66s (model loading), then ~5s/page steady state
+
+6. **Duplicate layout processes cleaned up**:
+   - Found 2x `run_layout_cloud` processes from earlier sessions
+   - Stopped both, docling-serve CPU container also stopped
+   - Layout analysis will continue on local GPU via `run_layout_analysis.py`
+
+7. **PLAN.md v2.0**: Comprehensive checklist with all done/pending tasks, data flow, scripts inventory
+
+---
+
 ## 2026-03-03 | Gemini Layout QA (E25) + Keyboard Shortcuts Removed
 
 ### Completed

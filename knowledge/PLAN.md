@@ -28,7 +28,7 @@ Pipeline stages and CLI: [PIPELINE.md](PIPELINE.md).
 | 1a | docling-serve integration (E24) | **Done** |
 | 1b | Layout analysis (286 docs) | **In progress** (11/286) |
 | 1c | Gemini Layout QA (E25) | **Done** (script ready, tested on 2310) |
-| 1d | Cloud GPU for layout analysis | **Next step** |
+| 1d | Local GPU layout (PyTorch CUDA) | **Done** (RTX 4060, ~5s/page) |
 | 2 | Layout post-processing (O21) | Pending |
 | 3 | PAGE-XML generator | Pending |
 | 4 | NER + GND linking | Pending |
@@ -121,13 +121,13 @@ Phase 3 and Phase 4 can be developed in parallel (NER only needs OCR text, not P
 - [x] Changed regions: yellow dashed border, `*` prefix, change_reason in tooltip
 - [x] Keyboard shortcuts removed (cleaner UI)
 
-#### 1e: Cloud GPU for layout analysis --- NEXT STEP
+#### 1e: Local GPU layout analysis --- DONE
 
-- [ ] Choose cloud GPU platform (Colab / Modal / RunPod / GCP)
-- [ ] Upload/mount PDF scans + PNGs
-- [ ] Run `run_layout_cloud.py` or `run_layout_analysis.py` with GPU
-- [ ] Expected: ~2-3s/page with GPU = ~2-3h for 4,100 pages
-- [ ] Download results to `output/layout/`
+- [x] PyTorch CUDA installed: `torch 2.6.0+cu124` (was CPU-only)
+- [x] RTX 4060 Laptop GPU (8GB VRAM) detected and working
+- [x] Docling local GPU: ~5s/page (vs 27s CPU via docling-serve)
+- [x] Fixed dependency conflicts: Pillow <12, numpy <2.3, fsspec <2025
+- [ ] Run `run_layout_analysis.py` for all 286 docs (~5.5h estimated)
 
 ### Phase 2: Layout Post-Processing (O21) --- PENDING
 
@@ -275,8 +275,8 @@ PDF-Scans (286 PDFs, E23)
 |-------|----------|-------|------|
 | Image extraction | <1s | ~1h | $0 |
 | OCR (Mistral) | ~1s | ~1.5h | ~$14 |
-| Layout (Docling, GPU) | ~2-3s | ~3h | Cloud GPU cost |
-| Layout (Docling, CPU) | ~27s | ~31h | $0 |
+| Layout (Docling, local RTX 4060) | ~5s | ~5.5h | $0 |
+| Layout (Docling, CPU/docling-serve) | ~27s | ~31h | $0 |
 | Gemini QA | ~4s | ~5h | ~$4 |
 | NER (Haiku 4.5) | ~0.5s | ~1h | ~$5 |
 | TEI transformation | ~0.1s | ~7min | $0 |
