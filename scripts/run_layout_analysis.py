@@ -25,43 +25,11 @@ from pathlib import Path
 warnings.filterwarnings("ignore")
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 
-from scripts.config import IMAGES_DIR, LAYOUT_DIR
-
-# Docling BlockType -> ZBZ Structural Tag
-DOCLING_TO_ZBZ = {
-    "title":          "zb_heading",
-    "section_header": "zb_heading",
-    "text":           "zb_paragraph",
-    "paragraph":      "zb_paragraph",
-    "list_item":      "zb_paragraph",
-    "footnote":       "footnote",
-    "caption":        "caption",
-    "page_header":    "_filter",
-    "page_footer":    "_filter",
-    "picture":        "_skip",
-    "figure":         "_skip",
-    "table":          "zb_paragraph",
-    "formula":        "zb_paragraph",
-}
-
-# Farben pro Label (RGB) fuer Overlay-Bilder
-LABEL_COLORS = {
-    "section_header": (255, 0, 0),       # Rot
-    "title":          (255, 0, 0),       # Rot
-    "text":           (0, 128, 0),       # Gruen
-    "paragraph":      (0, 128, 0),       # Gruen
-    "list_item":      (0, 128, 0),       # Gruen
-    "footnote":       (0, 0, 255),       # Blau
-    "caption":        (255, 165, 0),     # Orange
-    "picture":        (128, 0, 128),     # Lila
-    "figure":         (128, 0, 128),     # Lila
-    "table":          (0, 128, 128),     # Teal
-    "page_header":    (128, 128, 128),   # Grau
-    "page_footer":    (128, 128, 128),   # Grau
-    "formula":        (255, 0, 255),     # Magenta
-}
+from scripts.config import DOCLING_TO_ZBZ, IMAGES_DIR, LAYOUT_DIR
+from scripts.layout import draw_overlay_from_json, to_pixel_pct
+from scripts.utils import discover_doc_ids, extract_page_num
 
 # Lazy Docling converter
 _converter = None
@@ -124,38 +92,14 @@ def analyze_page(img_path: Path) -> dict:
     }
 
 
-def to_pixel_pct(bbox, doc_w, doc_h, img_w, img_h):
-    """Docling-Koordinaten (Punkte, Ursprung unten-links) -> Prozent (Ursprung oben-links)."""
-    scale_x = img_w / doc_w if doc_w > 0 else 1
-    scale_y = img_h / doc_h if doc_h > 0 else 1
-
-    x1 = bbox["l"] * scale_x
-    x2 = bbox["r"] * scale_x
-    # Y-Flip: Docling Ursprung unten-links, Bild Ursprung oben-links
-    y1 = (doc_h - bbox["t"]) * scale_y
-    y2 = (doc_h - bbox["b"]) * scale_y
-    if y1 > y2:
-        y1, y2 = y2, y1
-
-    w = x2 - x1
-    h = y2 - y1
-
-    return {
-        "x_pct": round(x1 / img_w * 100, 3),
-        "y_pct": round(y1 / img_h * 100, 3),
-        "w_pct": round(w / img_w * 100, 3),
-        "h_pct": round(h / img_h * 100, 3),
-    }
-
-
 def process_page(img_path: Path, output_path: Path, force: bool = False):
     """Einzelne Seite analysieren und JSON schreiben."""
     if output_path.exists() and not force:
         # Existierende Daten laden fuer Summary-Aggregation
         try:
             return json.loads(output_path.read_text(encoding="utf-8"))
-        except Exception:
-            pass  # Neu analysieren bei defektem JSON
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            print(f"  WARN: defektes Cache {output_path.name}: {e}")
 
     # Bilddimensionen
     with Image.open(img_path) as img:
@@ -190,7 +134,7 @@ def process_page(img_path: Path, output_path: Path, force: bool = False):
         regions.append(region)
 
     # Seitennummer aus Dateiname extrahieren
-    page_num = int(img_path.stem.split("_p")[1])
+    page_num = extract_page_num(img_path.name)
 
     result = {
         "doc_id": img_path.parent.name,
@@ -269,56 +213,6 @@ def process_document(doc_id: str, force: bool = False):
     return summary
 
 
-def draw_overlay_from_json(img_path: Path, layout_json: dict, output_path: Path):
-    """Zeichnet BBox-Overlay auf Bild und speichert als PNG.
-
-    Liest Regionen aus dem Layout-JSON (Prozent-Koordinaten)
-    und zeichnet sie als farbige Rechtecke auf das Originalbild.
-    """
-    img = Image.open(img_path).convert("RGB")
-    draw = ImageDraw.Draw(img, "RGBA")
-    img_w, img_h = img.size
-
-    # Font laden (Fallback auf Default)
-    try:
-        font = ImageFont.truetype("arial.ttf", 14)
-    except (OSError, IOError):
-        font = ImageFont.load_default()
-
-    for region in layout_json.get("regions", []):
-        bbox = region.get("bbox")
-        if not bbox:
-            continue
-
-        label = region.get("label", "text")
-        zbz_tag = region.get("zbz_tag", "zb_paragraph")
-        text_preview = region.get("text", "")[:60]
-        color = LABEL_COLORS.get(label, (100, 100, 100))
-
-        # Prozent -> Pixel
-        x1 = bbox["x_pct"] / 100.0 * img_w
-        y1 = bbox["y_pct"] / 100.0 * img_h
-        w = bbox["w_pct"] / 100.0 * img_w
-        h = bbox["h_pct"] / 100.0 * img_h
-        x2 = x1 + w
-        y2 = y1 + h
-
-        # Gefuelltes Rechteck mit Transparenz
-        fill_color = color + (40,)
-        draw.rectangle([x1, y1, x2, y2], outline=color, fill=fill_color, width=2)
-
-        # Label-Text oben links im Rechteck
-        label_text = f"{label} -> {zbz_tag}"
-        draw.text((x1 + 3, y1 + 3), label_text, fill=color, font=font)
-
-        # Text-Vorschau darunter (falls Platz)
-        if text_preview and h > 30:
-            draw.text((x1 + 3, y1 + 18), text_preview, fill=color, font=font)
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    img.save(output_path)
-
-
 def generate_overlays(doc_id: str, force: bool = False):
     """Erzeugt annotierte Overlay-PNGs fuer alle Seiten eines Dokuments.
 
@@ -380,10 +274,7 @@ def main():
     if args.doc:
         doc_ids = [args.doc]
     else:
-        doc_ids = sorted([
-            d.name for d in IMAGES_DIR.iterdir()
-            if d.is_dir() and not d.name.startswith(".")
-        ])
+        doc_ids = discover_doc_ids(IMAGES_DIR)
 
     if args.overlay:
         # Nur Overlay-PNGs erzeugen (aus existierenden Layout-JSONs)

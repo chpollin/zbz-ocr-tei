@@ -22,8 +22,9 @@ from pathlib import Path
 
 import requests
 
-from scripts.config import IMAGES_DIR, LAYOUT_DIR, DOCLING_SERVE_URL
-from scripts.run_layout_analysis import DOCLING_TO_ZBZ, to_pixel_pct
+from scripts.config import DOCLING_TO_ZBZ, IMAGES_DIR, LAYOUT_DIR, DOCLING_SERVE_URL
+from scripts.layout import to_pixel_pct
+from scripts.utils import discover_doc_ids, extract_page_num
 
 
 def check_server(url):
@@ -102,8 +103,8 @@ def process_page(img_path, out_path, url, force=False):
     if out_path.exists() and not force:
         try:
             return json.loads(out_path.read_text(encoding="utf-8"))
-        except Exception:
-            pass
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            print(f"  WARN: defektes Cache {out_path.name}: {e}")
 
     t0 = time.time()
     response = send_image(img_path, url)
@@ -118,7 +119,7 @@ def process_page(img_path, out_path, url, force=False):
     regions = extract_regions(doc_json, page_size)
 
     # Seitennummer aus Dateiname
-    page_num = int(img_path.stem.split("_p")[1])
+    page_num = extract_page_num(img_path.name)
 
     result = {
         "doc_id": img_path.parent.name,
@@ -160,8 +161,8 @@ def process_document(doc_id, url, force=False):
             print(f"  SKIP: {out_path.name}")
             try:
                 results.append(json.loads(out_path.read_text(encoding="utf-8")))
-            except Exception:
-                pass
+            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+                print(f"  WARN: defektes Cache {out_path.name}: {e}")
             continue
 
         try:
@@ -226,10 +227,7 @@ def main():
     if args.doc:
         doc_ids = [args.doc]
     else:
-        doc_ids = sorted([
-            d.name for d in IMAGES_DIR.iterdir()
-            if d.is_dir() and not d.name.startswith(".")
-        ])
+        doc_ids = discover_doc_ids(IMAGES_DIR)
 
     print(f"Layout-Analyse fuer {len(doc_ids)} Dokumente...")
 

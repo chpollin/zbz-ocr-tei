@@ -23,6 +23,7 @@ from scripts.config import (
     LAYOUT_DIR,
     TEI_DIR,
 )
+from scripts.utils import load_json
 
 
 # --- Alle 15 Pilot-Dokumente mit Metadaten ---
@@ -67,18 +68,6 @@ MISTRAL_BENCHMARK = {
     "1180": {"pages": 8, "chars": 20121, "time": 6.37, "spp": 0.80},
     "290":  {"pages": 5, "chars": 15148, "time": 6.34, "spp": 1.27},
 }
-
-
-def load_json(path: Path):
-    """Laedt JSON oder gibt None zurueck."""
-    if not path.exists():
-        print(f"  [SKIP] {path.name} nicht gefunden")
-        return None
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, UnicodeDecodeError) as e:
-        print(f"  [WARN] {path.name}: {e}")
-        return None
 
 
 def build_documents(images_manifest, eval_data, llm_manifest):

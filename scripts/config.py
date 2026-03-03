@@ -54,6 +54,40 @@ DOCLING_SERVE_URL = os.environ.get("DOCLING_SERVE_URL", "http://localhost:5001")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
 
+# Docling BlockType -> ZBZ Structural Tag
+DOCLING_TO_ZBZ = {
+    "title":          "zb_heading",
+    "section_header": "zb_heading",
+    "text":           "zb_paragraph",
+    "paragraph":      "zb_paragraph",
+    "list_item":      "zb_paragraph",
+    "footnote":       "footnote",
+    "caption":        "caption",
+    "page_header":    "_filter",
+    "page_footer":    "_filter",
+    "picture":        "_skip",
+    "figure":         "_skip",
+    "table":          "zb_paragraph",
+    "formula":        "zb_paragraph",
+}
+
+# Farben pro Label (RGB) fuer Overlay-Bilder
+LABEL_COLORS = {
+    "section_header": (255, 0, 0),       # Rot
+    "title":          (255, 0, 0),       # Rot
+    "text":           (0, 128, 0),       # Gruen
+    "paragraph":      (0, 128, 0),       # Gruen
+    "list_item":      (0, 128, 0),       # Gruen
+    "footnote":       (0, 0, 255),       # Blau
+    "caption":        (255, 165, 0),     # Orange
+    "picture":        (128, 0, 128),     # Lila
+    "figure":         (128, 0, 128),     # Lila
+    "table":          (0, 128, 128),     # Teal
+    "page_header":    (128, 128, 128),   # Grau
+    "page_footer":    (128, 128, 128),   # Grau
+    "formula":        (255, 0, 255),     # Magenta
+}
+
 # Dokument-Klassifikation (Typ B = zweispaltig)
 TWO_COLUMN_DOCS = ["2530", "890", "3040"]
 

@@ -4,7 +4,9 @@ Gemeinsame Hilfsfunktionen fuer das zbz-ocr-tei Projekt.
 Konsolidiert: pdf_to_images, check_gpu, load_env, load_deepseek_model.
 """
 
+import json
 import os
+import re
 from pathlib import Path
 
 from scripts.config import PROJECT_ROOT, DEFAULT_DPI
@@ -98,6 +100,77 @@ def pdf_to_images_pages(
 
     pdf.close()
     return image_paths
+
+
+def extract_page_num(filename: str) -> int:
+    """Extrahiert Seitennummer aus Dateinamen wie '2310_p001.png' oder '2310_p1.md'.
+
+    Returns:
+        int: Seitennummer
+
+    Raises:
+        ValueError: Wenn kein Seitenmuster gefunden wird
+    """
+    m = re.search(r'_p(\d+)', str(filename))
+    if not m:
+        raise ValueError(f"Keine Seitennummer in: {filename}")
+    return int(m.group(1))
+
+
+def load_json(path: Path) -> dict | None:
+    """Laedt JSON-Datei. Gibt None zurueck bei fehlenden/defekten Dateien."""
+    path = Path(path)
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        print(f"  WARN: {path.name}: {e}")
+        return None
+
+
+def write_json(path: Path, data) -> None:
+    """Schreibt JSON mit indent=2, ensure_ascii=False, utf-8."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+
+def get_phase_doc_ids(phase: str) -> list[str]:
+    """Gibt Dokument-IDs fuer eine TESTPLAN-Phase zurueck.
+
+    Args:
+        phase: 'phase1', 'phase2', ..., 'all'
+    """
+    from scripts.config import TESTPLAN
+
+    if phase == "all":
+        doc_ids = []
+        for p in TESTPLAN.values():
+            for t in p["tests"]:
+                doc_id = t["pdf"].replace(".pdf", "")
+                if doc_id not in doc_ids:
+                    doc_ids.append(doc_id)
+        return doc_ids
+
+    if phase in TESTPLAN:
+        return [t["pdf"].replace(".pdf", "") for t in TESTPLAN[phase]["tests"]]
+
+    return []
+
+
+def discover_doc_ids(base_dir: Path) -> list[str]:
+    """Findet alle Doc-IDs (nicht-versteckte Unterverzeichnisse) in einem Verzeichnis."""
+    base = Path(base_dir)
+    if not base.exists():
+        return []
+    return sorted(
+        d.name for d in base.iterdir()
+        if d.is_dir() and not d.name.startswith(".")
+    )
 
 
 def load_deepseek_model():

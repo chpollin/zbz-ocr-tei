@@ -31,7 +31,7 @@ from scripts.config import (
     ANTHROPIC_TIMEOUT_SECONDS,
     get_test_metadata,
 )
-from scripts.utils import load_env
+from scripts.utils import get_phase_doc_ids, load_env
 
 
 # --- Dokumenttyp-Beschreibungen ---
@@ -354,21 +354,6 @@ def process_document(
             print(f"FEHLER: {e}")
 
     return stats
-
-
-def get_phase_doc_ids(phase: str) -> list[str]:
-    """Gibt Doc-IDs fuer eine Testphase zurueck."""
-    if phase == "all":
-        doc_ids = []
-        for p in TESTPLAN.values():
-            for t in p["tests"]:
-                doc_id = t["pdf"].replace(".pdf", "")
-                if doc_id not in doc_ids:
-                    doc_ids.append(doc_id)
-        return doc_ids
-    if phase in TESTPLAN:
-        return [t["pdf"].replace(".pdf", "") for t in TESTPLAN[phase]["tests"]]
-    return []
 
 
 def check_api_key(api_key: str) -> bool:

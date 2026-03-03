@@ -25,7 +25,8 @@ from dotenv import load_dotenv
 from PIL import Image
 
 from scripts.config import GEMINI_API_KEY, GEMINI_MODEL, IMAGES_DIR, LAYOUT_DIR
-from scripts.run_layout_analysis import LABEL_COLORS, draw_overlay_from_json
+from scripts.layout import draw_overlay_from_json
+from scripts.utils import discover_doc_ids
 
 # .env laden
 load_dotenv()
@@ -149,8 +150,8 @@ def qa_page(client, doc_id, page_str, force=False):
         print(f"  SKIP: {gemini_path.name}")
         try:
             return json.loads(gemini_path.read_text(encoding="utf-8"))
-        except Exception:
-            pass
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            print(f"  WARN: defektes Cache {gemini_path.name}: {e}")
 
     # Layout-JSON laden
     json_path = LAYOUT_DIR / doc_id / f"{doc_id}_p{page_str}_layout.json"
@@ -294,10 +295,7 @@ def main():
         doc_ids = [args.doc]
     else:
         # Alle Docs mit Layout-Daten
-        doc_ids = sorted([
-            d.name for d in LAYOUT_DIR.iterdir()
-            if d.is_dir() and not d.name.startswith(".")
-        ])
+        doc_ids = discover_doc_ids(LAYOUT_DIR)
 
     print(f"Gemini Layout QA fuer {len(doc_ids)} Dokumente...")
     print(f"Model: {GEMINI_MODEL}")

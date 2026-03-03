@@ -12,6 +12,7 @@ from difflib import SequenceMatcher
 import xml.etree.ElementTree as ET
 
 from scripts.config import REFERENZ_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR, TESTPLAN
+from scripts.utils import get_phase_doc_ids
 
 
 def extract_text_from_tei(tei_path: Path) -> str:
@@ -883,23 +884,6 @@ def evaluate_document_pagewise(doc_id: str, tei_dir: Path, ocr_dir: Path) -> dic
     )
 
     return result
-
-
-def get_phase_doc_ids(phase: str) -> list[str]:
-    """Gibt Dokument-IDs fuer eine Phase oder alle Phasen zurueck."""
-    if phase == "all":
-        doc_ids = []
-        for p in TESTPLAN.values():
-            for t in p["tests"]:
-                doc_id = t["pdf"].replace(".pdf", "")
-                if doc_id not in doc_ids:
-                    doc_ids.append(doc_id)
-        return doc_ids
-
-    if phase in TESTPLAN:
-        return [t["pdf"].replace(".pdf", "") for t in TESTPLAN[phase]["tests"]]
-
-    return []
 
 
 def main():
