@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-27
+updated: 2026-03-03
 tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
@@ -35,7 +35,7 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 1 | PDF → Page images | `scripts/extract_pages.py` | PNG (`docs/images/`) | Production |
 | 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (`output/mistral_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
-| 3 | Layout analysis | `scripts/run_layout_analysis.py` | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (7/15 docs) |
+| 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (7/15 docs local, API tested) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
 | 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 2** |
 | 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (15/15 docs, 383 files) |
@@ -46,6 +46,8 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 **Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
 
 **Layout engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 block types, CPU). Phase 0 evaluation passed: all 4 document types correctly recognized, column separation Type B works. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
+
+**Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var.
 
 **Layout QA (25.02.2026):** Visual inspection of 8 docs (186 overlay PNGs) showed:
 - BBox positioning correct, no systematic offset
@@ -300,6 +302,12 @@ python -m scripts.run_layout_analysis --doc 2310           # single document
 python -m scripts.run_layout_analysis --overlay            # Generate overlay PNGs (no GPU)
 python -m scripts.run_layout_analysis --overlay --doc 2310 # Overlay for single document
 
+# Layout analysis via docling-serve API (stage 3, no GPU needed)
+python -m scripts.run_layout_cloud                         # all documents
+python -m scripts.run_layout_cloud --doc 2310              # single document
+python -m scripts.run_layout_cloud --url http://host:5001  # custom server URL
+python -m scripts.run_layout_cloud --force                 # overwrite existing
+
 # Generate TEI-XML (stage 6)
 python -m scripts.tei.tei_generator                      # all documents
 python -m scripts.tei.tei_generator --doc 2310           # single document
@@ -340,4 +348,4 @@ The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engi
 
 ---
 
-*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-02-27 (PAGE-XML Schema 2019→2013 after E23)*
+*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-03 (docling-serve API E24)*

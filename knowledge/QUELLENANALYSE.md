@@ -81,6 +81,8 @@ The dominance of short articles (median 6 pages) enables fast iterations in the 
 | PDFs without annotation | 262 | Not yet processed |
 | **Total delivered** | **286 PDFs** | Masterfile counts 289 — 3 discrepancy unresolved (→ [DECISIONS](DECISIONS.md) O22) |
 
+**PAGE-XML detail:** 24 Transkribus exports contain **302 pages total** (all empty — no TextRegions). Largest: Doc 40 (156 pages), Doc 760 (20), Doc 130 (18), Doc 3040 (10). Most documents have 3-8 pages.
+
 The bottleneck is TEI annotation. This is where the LLM pipeline provides the greatest added value.
 
 ---

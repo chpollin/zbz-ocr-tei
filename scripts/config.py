@@ -4,6 +4,7 @@ Zentrale Konfiguration fuer das zbz-ocr-tei Projekt.
 Alle Pfade, Modellnamen und Konstanten an einem Ort.
 """
 
+import os
 from pathlib import Path
 
 # Projekt-Root (2 Ebenen ueber scripts/)
@@ -45,6 +46,9 @@ LLM_CORRECTED_DIR = OUTPUT_DIR / "llm_corrected"
 ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
 ANTHROPIC_MAX_RETRIES = 3
 ANTHROPIC_TIMEOUT_SECONDS = 60
+
+# Docling-Serve API
+DOCLING_SERVE_URL = os.environ.get("DOCLING_SERVE_URL", "http://localhost:5001")
 
 # Dokument-Klassifikation (Typ B = zweispaltig)
 TWO_COLUMN_DOCS = ["2530", "890", "3040"]

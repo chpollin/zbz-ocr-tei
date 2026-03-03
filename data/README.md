@@ -24,7 +24,7 @@ data/
 │   ├── dta_basisformat_komplett.md           # DTA reference
 │   └── Page-xml-Export Einstellungen.jpg     # Transkribus export settings
 │
-└── projektsteuerung/         # ZBZ project data
+└── projektsteuerung/         # ZBZ project data (not yet delivered/copied)
     └── *.xlsx                # Work lists
 ```
 

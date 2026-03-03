@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-02-27
+updated: 2026-03-03
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,68 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-03 | docling-serve API Integration (E24) + PNG Extraction for 286 PDFs
+
+### Completed
+
+1. **docling-serve API integration** (`scripts/run_layout_cloud.py`, NEW):
+   - API client for IBM's official Docling server (`quay.io/docling-project/docling-serve-cpu`)
+   - Sends page PNGs (base64) to `POST /v1/convert/source`, parses DoclingDocument JSON
+   - Imports `DOCLING_TO_ZBZ` mapping and `to_pixel_pct()` from `run_layout_analysis.py` (code reuse)
+   - Output format identical to local `run_layout_analysis.py` (regions + BBox as percent)
+   - Resume-capable (skips existing), `--doc`, `--url`, `--force` flags
+   - Tested on Doc 2310: 3 pages, 24 regions, ~27s/page on CPU
+
+2. **Config + .env extended**:
+   - `scripts/config.py`: `DOCLING_SERVE_URL` from env var (default `http://localhost:5001`)
+   - `.env.example`: docling-serve section with Docker command
+
+3. **PNG extraction started** for all 286 PDFs (`scripts/extract_pages.py`):
+   - PNGs needed for viewer, OCR, and as input for docling-serve
+   - Output: `docs/images/{doc_id}/{doc_id}_p{NNN}.png` at 150 DPI
+
+4. **Knowledge docs updated**: PIPELINE.md (CLI + docling-serve info), DECISIONS.md (E24), JOURNAL.md
+5. **QUELLENANALYSE.md**: PAGE-XML page count detail added (302 pages, 24 docs)
+6. **data/README.md**: projektsteuerung status clarified
+
+### API Format (docling-serve)
+
+```
+POST /v1/convert/source
+{
+  "sources": [{"kind": "file", "base64_string": "<base64>", "filename": "page.png"}],
+  "options": {"to_formats": ["json"], "from_formats": ["image"]}
+}
+
+Response: document.json_content -> texts[], pictures[], pages{}
+Each text item: label, text, prov[].bbox (l/t/r/b, bottom-left origin)
+```
+
+### Performance
+
+| Mode | Speed | Cost | Use case |
+|------|-------|------|----------|
+| Local CPU (Docker) | ~27s/page | Free | Development, small batches |
+| Cloud Run L4 GPU | ~28ms/page | ~$0.10 for 7,200 pages | Production batch |
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| `scripts/run_layout_cloud.py` | **NEW** -- docling-serve API client (~150 lines) |
+| `scripts/config.py` | EXTENDED -- `import os`, `DOCLING_SERVE_URL` |
+| `.env.example` | EXTENDED -- docling-serve section |
+| `knowledge/PIPELINE.md` | EXTENDED -- Stage 3 API option, CLI commands, E24 note |
+| `knowledge/DECISIONS.md` | EXTENDED -- E24 added |
+| `knowledge/QUELLENANALYSE.md` | EXTENDED -- PAGE-XML page count detail |
+| `data/README.md` | UPDATE -- projektsteuerung status |
+
+### Next Step
+
+Verify Doc 2310 layout results in viewer (overlay QA), then run layout analysis for all 286 docs via docling-serve API.
 
 ---
 
@@ -885,4 +947,4 @@ Prompt contains document context from TESTPLAN (type, language, genre).
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-02-27 (Data Delivery HerschStandFeb)*
+*Created: 2026-01-29 | Updated: 2026-03-03 (docling-serve API E24)*
