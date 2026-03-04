@@ -26,9 +26,8 @@ from scripts.config import (
 from scripts.utils import load_json
 
 
-# --- Alle 15 Pilot-Dokumente mit Metadaten ---
-# Vereinigt config.py TESTPLAN + die 3 Docs ohne Phase (130, 1060, 1410)
-ALL_DOCS = {
+# --- Pilot-Dokumente mit manuell gepflegten Metadaten ---
+PILOT_DOCS = {
     "2310": {"type": "A", "lang": "FR", "desc": "Rezension", "phase": "phase1"},
     "1180": {"type": "A", "lang": "DE/FR", "desc": "Jahresbericht", "phase": "phase1"},
     "290":  {"type": "A", "lang": "FR", "desc": "Essay", "phase": "phase1"},
@@ -45,6 +44,32 @@ ALL_DOCS = {
     "1440": {"type": "D", "lang": "DE", "desc": "Interview", "phase": "phase3"},
     "1330": {"type": "D", "lang": "FR", "desc": "Sammelband", "phase": "phase3"},
 }
+
+
+def build_all_docs(images_manifest):
+    """Baut ALL_DOCS aus dem Image-Manifest (alle 286 Docs) + Pilot-Metadaten."""
+    all_docs = {}
+
+    # Alle Docs aus Manifest uebernehmen
+    if images_manifest:
+        for entry in images_manifest:
+            doc_id = entry["doc_id"]
+            if doc_id in PILOT_DOCS:
+                all_docs[doc_id] = PILOT_DOCS[doc_id].copy()
+            else:
+                all_docs[doc_id] = {
+                    "type": "-",
+                    "lang": "-",
+                    "desc": "",
+                    "phase": None,
+                }
+
+    # Pilot-Docs sicherheitshalber auch ohne Manifest eintragen
+    for doc_id, meta in PILOT_DOCS.items():
+        if doc_id not in all_docs:
+            all_docs[doc_id] = meta.copy()
+
+    return all_docs
 
 # DeepSeek CER/WER aus TESTPLAN (kein JSON vorhanden)
 DEEPSEEK_METRICS = {
@@ -72,6 +97,7 @@ MISTRAL_BENCHMARK = {
 
 def build_documents(images_manifest, eval_data, llm_manifest):
     """Baut pro-Dokument-Daten aus allen Quellen zusammen."""
+    all_docs = build_all_docs(images_manifest)
     documents = {}
 
     # Index der Bild-Manifeste
@@ -93,13 +119,13 @@ def build_documents(images_manifest, eval_data, llm_manifest):
 
     # Layout-Summaries laden
     layout_summaries = {}
-    for doc_id in ALL_DOCS:
+    for doc_id in all_docs:
         summary_path = LAYOUT_DIR / doc_id / "summary.json"
         ls = load_json(summary_path)
         if ls:
             layout_summaries[doc_id] = ls
 
-    for doc_id, meta in ALL_DOCS.items():
+    for doc_id, meta in all_docs.items():
         doc = {
             "doc_id": doc_id,
             "type": meta["type"],
@@ -211,12 +237,15 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
     if llm_manifest and "totals" in llm_manifest:
         llm_totals = llm_manifest["totals"]
 
+    pilot_count = sum(1 for d in documents.values() if d["doc_id"] in PILOT_DOCS)
+
     return {
         "ocr_engine": "Mistral Document AI 2512",
         "llm_model": "Claude Haiku 4.5",
         "llm_variant": "C (Few-Shot)",
-        "pilot_docs": len(documents),
-        "pilot_pages": total_pages,
+        "total_docs": len(documents),
+        "pilot_docs": pilot_count,
+        "total_pages": total_pages,
         "docs_with_ocr": docs_with_ocr,
         "docs_with_llm": docs_with_llm,
         "docs_with_layout": docs_with_layout,

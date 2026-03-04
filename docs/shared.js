@@ -1,18 +1,18 @@
 /**
- * ZBZ OCR Pipeline – Shared Utilities
+ * ZBZ OCR Pipeline -- Shared Utilities
  * Namespace: window.ZBZ
  */
 (function () {
     'use strict';
 
-    let _data = null;
-    const _textCache = {};
+    var _data = null;
+    var _textCache = {};
 
-    const ZBZ = {
+    var ZBZ = {
         // ---- Data Loading ----
         async loadData() {
             if (_data) return _data;
-            const r = await fetch('data/dashboard.json');
+            var r = await fetch('data/dashboard.json');
             if (!r.ok) throw new Error('dashboard.json nicht gefunden');
             _data = await r.json();
             return _data;
@@ -24,22 +24,22 @@
 
         // ---- Text Fetching (OCR pages) ----
         async fetchPageText(source, docId, page) {
-            const key = `${source}/${docId}/${page}`;
+            var key = source + '/' + docId + '/' + page;
             if (_textCache[key] !== undefined) return _textCache[key];
 
-            const paths = {
-                mistral: `../output/mistral_results/${docId}_p${page}.md`,
-                deepseek: `../output/ocr_results/${docId}_p${page}.md`,
-                llm_corrected: `../output/llm_corrected_c/${docId}_p${page}.md`,
+            var paths = {
+                mistral: '../output/mistral_results/' + docId + '_p' + page + '.md',
+                deepseek: '../output/ocr_results/' + docId + '_p' + page + '.md',
+                llm_corrected: '../output/llm_corrected_c/' + docId + '_p' + page + '.md',
             };
 
-            const path = paths[source];
+            var path = paths[source];
             if (!path) return null;
 
             try {
-                const r = await fetch(path);
+                var r = await fetch(path);
                 if (r.ok) {
-                    const text = await r.text();
+                    var text = await r.text();
                     _textCache[key] = text;
                     return text;
                 }
@@ -53,17 +53,17 @@
         // source: 'docling' (default) or 'gemini'
         async fetchLayoutData(docId, page, source) {
             source = source || 'docling';
-            const key = `layout/${source}/${docId}/${page}`;
+            var key = 'layout/' + source + '/' + docId + '/' + page;
             if (_textCache[key] !== undefined) return _textCache[key];
 
-            const padded = String(page).padStart(3, '0');
-            const suffix = source === 'gemini' ? '_layout_gemini.json' : '_layout.json';
-            const path = `../output/layout/${docId}/${docId}_p${padded}${suffix}`;
+            var padded = String(page).padStart(3, '0');
+            var suffix = source === 'gemini' ? '_layout_gemini.json' : '_layout.json';
+            var path = '../output/layout/' + docId + '/' + docId + '_p' + padded + suffix;
 
             try {
-                const r = await fetch(path);
+                var r = await fetch(path);
                 if (r.ok) {
-                    const data = await r.json();
+                    var data = await r.json();
                     _textCache[key] = data;
                     return data;
                 }
@@ -75,20 +75,19 @@
 
         // ---- TEI Fetching ----
         async fetchPageTei(docId, page) {
-            const key = `tei/${docId}/${page}`;
+            var key = 'tei/' + docId + '/' + page;
             if (_textCache[key] !== undefined) return _textCache[key];
 
-            // Try without padding first (existing convention: 2310_p2.xml)
-            const paths = [
-                `../output/tei/${docId}_p${page}.xml`,
-                `../output/tei_xml/${docId}_p${page}.xml`,
+            var paths = [
+                '../output/tei/' + docId + '_p' + page + '.xml',
+                '../output/tei_xml/' + docId + '_p' + page + '.xml',
             ];
 
-            for (const path of paths) {
+            for (var i = 0; i < paths.length; i++) {
                 try {
-                    const r = await fetch(path);
+                    var r = await fetch(paths[i]);
                     if (r.ok) {
-                        const text = await r.text();
+                        var text = await r.text();
                         _textCache[key] = text;
                         return text;
                     }
@@ -101,22 +100,22 @@
 
         // ---- Reference TEI Fetching (per-page extraction from whole-document XML) ----
         async fetchRefTeiPage(docId, page) {
-            const key = `ref-tei/${docId}/${page}`;
+            var key = 'ref-tei/' + docId + '/' + page;
             if (_textCache[key] !== undefined) return _textCache[key];
 
             // Cache the whole document under a separate key
-            const docKey = `ref-tei-doc/${docId}`;
-            let docXml = _textCache[docKey];
+            var docKey = 'ref-tei-doc/' + docId;
+            var docXml = _textCache[docKey];
 
             if (docXml === undefined) {
-                const paths = [
-                    `../data/referenz-tei/Pilot/${docId}.xml`,
-                    `../data/referenz-tei/${docId}.xml`,
+                var refPaths = [
+                    '../data/referenz-tei/Pilot/' + docId + '.xml',
+                    '../data/referenz-tei/' + docId + '.xml',
                 ];
                 docXml = null;
-                for (const path of paths) {
+                for (var j = 0; j < refPaths.length; j++) {
                     try {
-                        const r = await fetch(path);
+                        var r = await fetch(refPaths[j]);
                         if (r.ok) {
                             docXml = await r.text();
                             break;
@@ -133,13 +132,13 @@
 
             // Parse and extract page content between <pb n="page"> and next <pb>
             try {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(docXml, 'text/xml');
-                const pbs = doc.querySelectorAll('pb');
-                let targetPb = null;
-                let targetIdx = -1;
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(docXml, 'text/xml');
+                var pbs = doc.querySelectorAll('pb');
+                var targetPb = null;
+                var targetIdx = -1;
 
-                for (let i = 0; i < pbs.length; i++) {
+                for (var i = 0; i < pbs.length; i++) {
                     if (pbs[i].getAttribute('n') == page) {
                         targetPb = pbs[i];
                         targetIdx = i;
@@ -153,10 +152,10 @@
                 }
 
                 // Collect nodes between this pb and the next
-                const nextPb = targetIdx + 1 < pbs.length ? pbs[targetIdx + 1] : null;
-                const serializer = new XMLSerializer();
-                let result = serializer.serializeToString(targetPb) + '\n';
-                let node = targetPb.nextSibling;
+                var nextPb = targetIdx + 1 < pbs.length ? pbs[targetIdx + 1] : null;
+                var serializer = new XMLSerializer();
+                var result = serializer.serializeToString(targetPb) + '\n';
+                var node = targetPb.nextSibling;
 
                 while (node && node !== nextPb) {
                     if (node.nodeType === 1 || (node.nodeType === 3 && node.textContent.trim())) {
@@ -166,7 +165,7 @@
                 }
 
                 // Wrap in minimal TEI structure
-                const pageXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+                var pageXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
                     '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n<text><body><div n="1">\n' +
                     result +
                     '</div></body></text>\n</TEI>';
@@ -188,37 +187,37 @@
         },
 
         // ---- Formatting ----
-        fmtNum(n) {
+        fmtNum: function (n) {
             if (n == null) return '-';
             return n.toLocaleString('de-DE');
         },
 
-        fmtPct(n, decimals) {
+        fmtPct: function (n, decimals) {
             if (n == null) return '-';
             decimals = decimals != null ? decimals : 2;
             return (n * 100).toFixed(decimals) + '%';
         },
 
-        fmtAccuracy(cer) {
+        fmtAccuracy: function (cer) {
             if (cer == null) return '-';
             return ((1 - cer) * 100).toFixed(2) + '%';
         },
 
-        fmtCost(n) {
+        fmtCost: function (n) {
             if (n == null) return '-';
             return '$' + n.toFixed(2);
         },
 
-        padPage(page) {
+        padPage: function (page) {
             return String(page).padStart(3, '0');
         },
 
-        imagePath(docId, page) {
+        imagePath: function (docId, page) {
             return 'images/' + docId + '/' + docId + '_p' + ZBZ.padPage(page) + '.png';
         },
 
         // ---- CER Status ----
-        cerBadge(cer) {
+        cerBadge: function (cer) {
             if (cer == null) return '<span class="tag">n/a</span>';
             var pct = cer * 100;
             if (pct <= 3) return '<span class="badge-ok">' + pct.toFixed(1) + '%</span>';
@@ -227,30 +226,8 @@
         },
 
         // ---- DOM Helpers ----
-        $(sel) { return document.querySelector(sel); },
-        $$(sel) { return document.querySelectorAll(sel); },
-
-        el(tag, attrs, children) {
-            const e = document.createElement(tag);
-            if (attrs) {
-                Object.keys(attrs).forEach(function (k) {
-                    if (k === 'text') e.textContent = attrs[k];
-                    else if (k === 'html') e.innerHTML = attrs[k];
-                    else if (k === 'on') {
-                        Object.keys(attrs[k]).forEach(function (ev) {
-                            e.addEventListener(ev, attrs[k][ev]);
-                        });
-                    } else e.setAttribute(k, attrs[k]);
-                });
-            }
-            if (children) {
-                children.forEach(function (c) {
-                    if (typeof c === 'string') e.appendChild(document.createTextNode(c));
-                    else if (c) e.appendChild(c);
-                });
-            }
-            return e;
-        },
+        $: function (sel) { return document.querySelector(sel); },
+        $$: function (sel) { return document.querySelectorAll(sel); },
 
         // ---- Pipeline Status Rendering ----
         PIPELINE_STEPS: [
@@ -263,7 +240,7 @@
             { key: 'export', label: 'EXP', title: 'PAGE-XML Export' },
         ],
 
-        renderPipelineStatus(status, compact) {
+        renderPipelineStatus: function (status, compact) {
             var steps = ZBZ.PIPELINE_STEPS;
             var cls = compact ? 'pipeline-steps compact' : 'pipeline-steps';
             var html = '<div class="' + cls + '">';
@@ -287,7 +264,7 @@
         },
 
         // ---- Engine Badges ----
-        engineBadges(pipelineStatus) {
+        engineBadges: function (pipelineStatus) {
             var html = '';
             if (pipelineStatus.ocr_mistral) html += '<span class="tag teal">M</span>';
             if (pipelineStatus.ocr_deepseek) html += '<span class="tag violet">DS</span>';
@@ -295,36 +272,12 @@
             return html || '<span class="tag">-</span>';
         },
 
-        // ---- Collapsible Cards ----
-        initCollapsibles() {
-            document.addEventListener('click', function (e) {
-                var header = e.target.closest('.card-header');
-                if (header) header.closest('.card').classList.toggle('open');
-            });
-        },
-
-        // ---- Overlay / Zoom ----
-        initOverlay() {
-            var overlay = document.getElementById('overlay');
-            if (!overlay) return;
-            overlay.addEventListener('click', function () {
-                overlay.classList.remove('active');
-            });
-        },
-
-        zoom(src) {
-            var img = document.getElementById('overlay-img');
-            if (!img) return;
-            img.src = src;
-            document.getElementById('overlay').classList.add('active');
-        },
-
         // ---- URL State ----
-        getParam(key) {
+        getParam: function (key) {
             return new URLSearchParams(window.location.search).get(key);
         },
 
-        setParams(obj) {
+        setParams: function (obj) {
             var params = new URLSearchParams(window.location.search);
             Object.keys(obj).forEach(function (k) {
                 if (obj[k] == null) params.delete(k);
