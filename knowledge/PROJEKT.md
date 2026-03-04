@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-02-27
+updated: 2026-03-04
 tags: [zbz-ocr-tei, project, ecosystem, vision]
 status: active
 ---
@@ -44,7 +44,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | Input | PDF scans (7,200 pages) |
 | Output | TEI-XML (DTA-Basisformat), PAGE-XML + PNG + METS |
 | OCR engines | Mistral OCR 3 (Azure), DeepSeek-OCR-2 (local) |
-| Layout engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) |
+| Layout engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) + Gemini 2.5 Flash detect (E26) |
 | NER | Claude Haiku 4.5 + lobid.org GND API |
 | Mode | Batch, no manual intervention |
 | Implementation plan | [PLAN.md](PLAN.md) |
@@ -72,12 +72,12 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-## Component Status (27.02.2026)
+## Component Status (04.03.2026)
 
 | Component | Status | Details |
 |-----------|--------|---------|
-| Image extraction | Done | `scripts/extract_pages.py`, 383 pages |
-| QA viewer | Done | `docs/` with HTML viewer |
+| Image extraction | Done | `scripts/extract_pages.py`, 4,152 pages (286 PDFs) |
+| QA viewer | Done | `docs/` with HTML viewer, Docling/Gemini layout toggle |
 | OCR phase 1 (type A) | Done | Mistral 90.60%, DeepSeek 94.4% |
 | OCR phase 2 (type B) | Done | Mistral 93.69% accuracy |
 | OCR phase 3 (type D) | Done | Mistral 97.12% accuracy |
@@ -89,13 +89,15 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Azure integration | Done | Mistral Document AI 2512, `.env` configured |
 | Benchmark UI | Done | `docs/benchmark.html`, Mistral vs DeepSeek |
 | Dashboard redesign | Done | `docs/` with shared.css/js, index.html, viewer.html |
-| Dashboard data | Done | `scripts/generate_dashboard_data.py` → dashboard.json |
-| Layout analysis | Partial | `scripts/run_layout_analysis.py`, 8/15 docs with JSON + overlay PNGs. QA: BBox correct, 3 issues (O21) |
+| Dashboard data | Done | `scripts/generate_dashboard_data.py` -> dashboard.json |
+| Layout analysis (Docling) | Done | 286/286 docs, 4,152 layout JSONs. Quality: 62% good, 20% warning, 13% bad, 3% empty |
+| Layout QA (Gemini) | Done | `layout_qa_gemini.py --mode qa`: label corrections (Flash Lite, E25) |
+| Layout Detect (Gemini) | Done | `layout_qa_gemini.py --mode detect`: full re-detection for bad pages (2.5 Flash, E26). Tested on Doc 510, 900 |
 | TEI generator | Done | `scripts/tei/tei_generator.py`, 383 TEI-XML files, DTA-Basisformat |
 | Viewer TEI panel | Done | 3-panel viewer (facsimile + OCR + TEI), toggle T, rendered view, syntax highlighting, diff, entity sidebar |
-| Viewer TEI refactoring | Done | TEI JS extracted to `docs/tei-viewer.js` (~300 lines), viewer.html 1200→816 lines |
+| Viewer TEI refactoring | Done | TEI JS extracted to `docs/tei-viewer.js` (~300 lines), viewer.html 1200->816 lines |
 | Layout post-processing | Pending | Overlap filter, single-line merge, page-number heuristic (O21) |
-| PAGE-XML generator | Pending | Layout + OCR → PAGE-XML (phase 1 in [PLAN](PLAN.md)) |
+| PAGE-XML generator | Pending | Layout + OCR -> PAGE-XML (phase 1 in [PLAN](PLAN.md)) |
 | NER + GND | Pending | Entity recognition + GND linking (phase 2 in [PLAN](PLAN.md)) |
 | Containerization | Pending | Dockerfile for Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
@@ -119,6 +121,7 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 |------|--------|
 | Mistral OCR (Azure, 289 docs) | 6-15 USD |
 | LLM correction (Haiku 4.5, 289 docs) | ~35 USD |
+| Gemini Layout QA + Detect | ~12 USD |
 | GPU cloud (optional) | ~10-20 USD |
 
 ---
@@ -132,4 +135,4 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-02-27*
+*Created: 2026-02-18 | Updated: 2026-03-04*

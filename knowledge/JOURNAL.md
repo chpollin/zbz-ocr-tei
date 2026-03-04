@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-03
+updated: 2026-03-04
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,93 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-04 | Gemini Layout Detect Mode (E26) + Layout Quality Analysis
+
+### Context
+
+Docling layout analysis complete (286/286 docs, 4,152 pages). Quality analysis revealed:
+- 62% good, 20% warning, 13% bad, 3% empty
+- Landscape/double pages: 36% bad (vs 14% portrait)
+- Main issues: missing regions, fragmented BBoxes, empty pages
+- Existing Gemini QA (E25) can only fix labels — cannot add regions or change BBoxes
+
+### Completed
+
+1. **Gemini Layout Detect Mode** (E26, `scripts/layout_qa_gemini.py` EXTENDED):
+   - New `--mode detect`: Gemini 2.5 Flash as full layout detector (Vision + Structured Output)
+   - Sends raw scan (no overlay) to Gemini, returns regions with `box_2d` coordinates
+   - Coordinate conversion: Gemini `[ymin, xmin, ymax, xmax]` (0-1000) -> project `{x_pct, y_pct, w_pct, h_pct}` (0-100)
+   - `text` field = `""` (OCR comes from Mistral, not layout)
+   - `source` = `"gemini-detect"` (vs `"gemini"` for QA mode)
+   - Output: same `_layout_gemini.json` format, compatible with viewer
+   - Three modes: `qa` (label fix), `detect` (full detection), `auto` (detect for bad, qa for good)
+   - Quality scoring: `compute_page_quality()` classifies pages as good/warning/bad/empty based on coverage
+
+2. **Config extended**: `GEMINI_DETECT_MODEL` — initially `"gemini-2.5-flash"`, switched to `"gemini-3.1-flash-lite-preview"` (equivalent quality, ~10x cheaper)
+
+3. **Test results**:
+   - **Doc 510 p7** (missing paragraph): Gemini detect found 4 regions (vs Docling 2), including the missing middle paragraph
+   - **Doc 900 p1** (landscape encyclopedia, 4+ columns): Gemini detect found 47 regions (vs Docling 26 fragmented). Significantly improved but rightmost column (~80-95% x) still missing. Photo not detected as `picture`
+   - Both verified in viewer — BBoxes render correctly with labels
+
+4. **Layout quality analysis** (ad-hoc): Analyzed all 4,144 layout JSONs:
+   - Coverage-based scoring: good (>30%), warning (15-30%), bad (<15%), empty (0 regions)
+   - 2,570 good (62%), 844 warning (20%), 533 bad (13%), 197 empty (5%)
+   - Worst performers: landscape pages, encyclopedias, dense multi-column formats
+
+### Known Limitations (Detect Mode)
+
+- Rightmost column sometimes missed on wide landscape pages (Doc 900)
+- `picture`/`figure` detection unreliable — photos not always labeled
+- Prompt tuning needed for edge cases (can iterate)
+- Cost: Gemini 2.5 Flash more expensive than Flash Lite (~10x per page)
+
+### New/Changed Files
+
+| File | Change |
+|------|--------|
+| `scripts/layout_qa_gemini.py` | EXTENDED -- `DETECT_PROMPT`, `DETECT_SCHEMA`, `detect_page()`, `compute_page_quality()`, `gemini_box_to_pct()`, `--mode` CLI flag |
+| `scripts/config.py` | EXTENDED -- `GEMINI_DETECT_MODEL` |
+| `knowledge/JOURNAL.md` | This entry |
+| `knowledge/DECISIONS.md` | EXTENDED -- E26 |
+| `knowledge/PLAN.md` | EXTENDED -- Phase 1f, layout 286/286 done |
+| `knowledge/PROJEKT.md` | EXTENDED -- Component status |
+
+### Model Switch: 2.5 Flash -> Flash Lite
+
+- Tested Doc 510 with Flash Lite: equivalent quality (same 4 regions on p7), ~2.4s/page
+- Cost: Flash Lite ~$1-2 for ~1,570 detect pages (vs ~$8-15 for 2.5 Flash)
+- `auto` mode launched on all 286 docs with Flash Lite
+
+### Documentation Refactoring (Session 2)
+
+All knowledge files updated to reflect current state (04.03.2026):
+- **README.md**: Status 04.03, Layout 286/286, Gemini QA+Detect, Next Steps aktualisiert
+- **OCR-ENGINES.md**: Gemini-Sektion neu (Flash Lite, 3 Modi, Model History), Docling auf Production (286/286), Vergleichstabelle aktualisiert
+- **E19-LAYOUT-ANALYSE.md**: Status "Decided", Resolution-Sektion mit E25/E26
+- **PIPELINE.md**: Stage 3a (Gemini QA/Detect), E26-Paragraph, CLI-Befehle fuer detect/auto
+- **INDEX.md**: E26 in Key Concepts
+- **DECISIONS.md**: E26 mit Flash Lite Switch
+- **PLAN.md**: Phase 1f, Data Flow aktualisiert
+- **PROJEKT.md**: Component Status aktualisiert
+
+### Gemini Auto Mode (laeuft im Hintergrund)
+
+- `--mode auto` auf alle 286 Docs gestartet (Flash Lite)
+- ~440/4,152 Seiten verarbeitet bei Session-Ende
+- Auto-Routing funktioniert: bad/empty -> detect, good/warning -> qa
+- 3 Fehler bisher (NoneType, Unicode escape) — uebersprungen
+- Resume-faehig: kann jederzeit neu gestartet werden
+
+### Next Steps
+
+- Gemini auto mode fertig laufen lassen (~2.5h verbleibend)
+- Evaluate detect quality across full corpus
+- Tune detect prompt (rightmost column, picture detection)
+- Refactor `layout_qa_gemini.py` (deduplicate qa_page/detect_page, suppress thought_signature warnings)
 
 ---
 

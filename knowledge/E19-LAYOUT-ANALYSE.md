@@ -1,7 +1,7 @@
 # E19: Layout Analysis -- Research and Decision
 
-> **Status:** Research completed, recommendation formulated, evaluation pending
-> **Date:** 25.02.2026
+> **Status:** Decided (E19/E20), extended with E25 (Gemini QA) and E26 (Gemini Detect)
+> **Date:** 25.02.2026 | **Resolution:** 04.03.2026
 > **Context:** Scope expansion after meeting 25.02.2026 -- zbz-ocr-tei now covers the entire pipeline (PDF -> TEI-XML). For PAGE-XML generation (Stage 3) we need layout analysis with structural recognition and bounding-box coordinates.
 
 ## Requirements
@@ -206,14 +206,19 @@ Kraken is the only tool with native PAGE-XML export and was developed for histor
 
 The tool `ocr-fileformat` (https://github.com/UB-Mannheim/ocr-fileformat) can convert between 30+ OCR formats, including hOCR ↔ PAGE-XML ↔ ALTO ↔ TEI. If we have one format, we can convert it to any other. This significantly reduces the risk of the format decision.
 
-## Next Steps
+## Resolution (04.03.2026)
 
-**Evaluation on all 15 pilot PDFs:**
-1. Run Docling layout analysis on all 383 page images
-2. Map Docling block types → ZBZ tags (table above)
-3. Visually inspect results: Do the regions match the page image?
-4. For problem cases (Type B): Test Gemini as an alternative
-5. Finalize decision E19
+All next steps completed:
+1. Docling layout analysis run on all 286 docs (4,152 pages) — E20
+2. Docling block types mapped to ZBZ tags — see [PLAN.md](PLAN.md) §ZBZ Structural Tags
+3. Visual inspection done (186 overlay PNGs) — 3 issues identified (O21)
+4. Gemini tested as QA validator (E25) and full detector (E26) for ~38% bad pages
+5. Decision finalized: Docling + Gemini hybrid confirmed
+
+**Extensions since E19/E20:**
+- **E25:** Gemini 3.1 Flash Lite as automated QA — corrects labels, flags issues
+- **E26:** Gemini 3.1 Flash Lite as full layout detector — replaces Docling on bad/empty pages
+- Auto mode routes pages by quality score (detect for bad, qa for good)
 
 ## Sources
 

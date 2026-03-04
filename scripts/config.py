@@ -50,9 +50,10 @@ ANTHROPIC_TIMEOUT_SECONDS = 60
 # Docling-Serve API
 DOCLING_SERVE_URL = os.environ.get("DOCLING_SERVE_URL", "http://localhost:5001")
 
-# Gemini API (Layout QA)
+# Gemini API (Layout QA + Detect)
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
+GEMINI_DETECT_MODEL = "gemini-3.1-flash-lite-preview"
 
 # Docling BlockType -> ZBZ Structural Tag
 DOCLING_TO_ZBZ = {

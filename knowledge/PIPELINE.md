@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-03-03
+updated: 2026-03-04
 tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
@@ -35,7 +35,8 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 1 | PDF → Page images | `scripts/extract_pages.py` | PNG (`docs/images/`) | Production |
 | 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (`output/mistral_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
-| 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (7/15 docs local, API tested) |
+| 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (286/286 docs, 4,152 pages) |
+| 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
 | 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 2** |
 | 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (15/15 docs, 383 files) |
@@ -45,7 +46,7 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 
 **Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
 
-**Layout engine (E19):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). Phase 0 evaluation passed: all 4 document types correctly recognized, column separation Type B works. Local GPU (RTX 4060): ~5s/page. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
+**Layout engine (E19/E20):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). All 286 docs analyzed (4,152 pages). Local GPU (RTX 4060): ~5s/page. Quality: 62% good, 20% warning, 13% bad, 3% empty. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
 
 **Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var. **Note:** Local GPU via `run_layout_analysis.py` is now preferred (~5s/page on RTX 4060).
 
@@ -56,7 +57,9 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 - **3 issues identified (O21):** (1) Overlapping regions in dense text, (2) single-line fragments as separate regions, (3) page numbers detected as `text` instead of `page_footer`
 - Post-processing needed: overlap filter, single-line merge, page number heuristic
 
-**Automated Layout QA (E25):** `layout_qa_gemini.py` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$4 for 7,200 pages. SDK: `google-genai`.
+**Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`.
+
+**Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails (~38%). Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA. Cost: ~$1-2 for ~1,570 detect pages.
 
 ---
 
@@ -310,9 +313,11 @@ python -m scripts.run_layout_cloud --doc 2310              # single document
 python -m scripts.run_layout_cloud --url http://host:5001  # custom server URL
 python -m scripts.run_layout_cloud --force                 # overwrite existing
 
-# Layout QA via Gemini 3.1 Flash Lite (stage 3, requires GEMINI_API_KEY)
-python -m scripts.layout_qa_gemini                         # all docs with layout
+# Layout QA/Detect via Gemini (stage 3a, requires GEMINI_API_KEY)
+python -m scripts.layout_qa_gemini                         # all docs, QA mode (default)
 python -m scripts.layout_qa_gemini --doc 2310              # single document
+python -m scripts.layout_qa_gemini --mode detect --doc 510 # full re-detection
+python -m scripts.layout_qa_gemini --mode auto             # auto-route by quality
 python -m scripts.layout_qa_gemini --force                 # overwrite existing
 
 # Generate TEI-XML (stage 6)
@@ -355,4 +360,4 @@ The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engi
 
 ---
 
-*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-03 (Gemini Layout QA E25, local GPU ~5s/page)*
+*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-04 (E26: Gemini detect mode, 286/286 layout done)*

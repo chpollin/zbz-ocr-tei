@@ -11,17 +11,17 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
               (PNG)     (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
 ```
 
-## Status (03.03.2026)
+## Status (04.03.2026)
 
-286 PDFs received (E23), 15 pilot documents (383 pages) fully processed:
+286 PDFs received (E23), 15 pilot documents (383 pages) fully processed. Layout analysis complete for all 286 docs.
 
 | Component | Status | Result |
 |-----------|--------|--------|
 | Image extraction | 286/286 Docs | 4,152 page images (PNG) |
 | OCR (Mistral) | 15/286 Docs | CER 6.42%, accuracy 93.58% |
 | LLM post-correction | 15/286 Docs | Optional (E17), Haiku 4.5 Variant C |
-| Layout analysis | 11/286 Docs | Docling 2.75 via docling-serve API (E24) |
-| Gemini Layout QA | 1/286 Docs | Gemini 3.1 Flash Lite, score 80/100 (E25) |
+| Layout analysis (Docling) | 286/286 Docs | 4,152 layout JSONs, RTX 4060 ~5s/page |
+| Gemini Layout QA/Detect | 286/286 Docs | Auto mode: QA for good, detect for bad pages (E25/E26) |
 | TEI-XML | 15/286 Docs | 383 TEI-XML files (DTA-Basisformat, E22) |
 | Evaluation | 15/286 Docs | CER/WER per page + dashboard |
 
@@ -36,7 +36,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 
 ### Next Steps
 
-Local GPU layout analysis (275 remaining docs, RTX 4060, ~5s/page) -> Gemini QA on all docs -> Layout post-processing (O21) -> PAGE-XML -> NER+GND -> TEI extension -> Production run (286 docs). Details: [PLAN.md](knowledge/PLAN.md).
+Layout post-processing (O21) -> PAGE-XML -> NER+GND -> TEI extension -> Production run (286 docs). Details: [PLAN.md](knowledge/PLAN.md).
 
 ## Directory Structure
 
@@ -49,7 +49,7 @@ zbz-ocr-tei/
     llm_postprocess.py    # LLM post-correction (Haiku 4.5)
     run_layout_analysis.py  # Layout analysis (Docling, local GPU)
     run_layout_cloud.py     # Layout analysis (docling-serve API, E24)
-    layout_qa_gemini.py     # Layout QA correction (Gemini 3.1 Flash Lite, E25)
+    layout_qa_gemini.py     # Layout QA + Detect (Gemini 3.1 Flash Lite, E25/E26)
     evaluate_ocr.py       # CER/WER evaluation
     generate_dashboard_data.py  # Dashboard data
     tei/                  # TEI-XML generator
@@ -106,7 +106,7 @@ Complete CLI reference: [knowledge/PIPELINE.md](knowledge/PIPELINE.md) §CLI Com
 | DeepSeek-OCR-2 | Local (GPU) | Development |
 | Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
 | Docling 2.75 | Local / docling-serve API (E24) | Layout analysis (BBox + regions) |
-| Gemini 3.1 Flash Lite | Google AI API (E25) | Layout QA correction |
+| Gemini 3.1 Flash Lite | Google AI API (E25/E26) | Layout QA + Detect (3 modes) |
 
 ## Dashboard + Viewer
 
@@ -138,4 +138,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-03-03*
+*Last updated: 2026-03-04*

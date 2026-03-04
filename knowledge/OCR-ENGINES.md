@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-27
+updated: 2026-03-04
 tags: [zbz-ocr-tei, ocr, deepseek, mistral, gemini, docling]
 status: active
 ---
@@ -20,9 +20,9 @@ All OCR tools and their roles in the pipeline. Docling is used exclusively for l
 |--------|--------|------------|----------|--------|
 | DeepSeek-OCR-2 | Local (GPU) | 3B VLM | Development, Type A | Validated |
 | Mistral Document AI | Azure AI Foundry | mistral-document-ai-2512 | Production (ZBZ) | API key available |
-| Gemini 3 Flash | Google API | - | Type B/D (Agentic Vision), NER | Not tested for OCR; evaluated as optional layout validator (E19) |
+| Gemini 3.1 Flash Lite | Google API | gemini-3.1-flash-lite-preview | Layout QA (E25) + Layout Detect (E26) | Production (286/286 docs) |
 | Claude | Anthropic/Azure | - | Complex structures, QA | Not tested |
-| Docling | Local (CPU) | IBM Research | Layout analysis only | Validated |
+| Docling | Local (GPU/CPU) | IBM Research, RT-DETR V2 | Layout analysis only | Production (286/286 docs, 4,152 pages) |
 
 ---
 
@@ -172,47 +172,40 @@ Sources: [Mistral OCR API Docs](https://docs.mistral.ai/capabilities/document_ai
 
 ---
 
-## Gemini 3 Flash
+## Gemini 3.1 Flash Lite (Layout QA + Detect)
 
 | Aspect | Details |
 |--------|---------|
-| Model | google/gemini-3.0-flash |
-| Cost | $0.50/1M Input, $3.00/1M Output |
-| Use Case | Type B/D (Agentic Vision), NER, OCR correction, QA |
-| Estimated Cost | ~$27 for 289 documents |
+| QA Model | gemini-3.1-flash-lite-preview (E25) |
+| Detect Model | gemini-3.1-flash-lite-preview (E26) |
+| SDK | `google-genai` (new SDK) |
+| Cost | $0.25/1M Input, $1.50/1M Output |
+| Use Case | Layout QA (label correction) + Layout Detect (full re-detection for bad pages) |
+| Estimated Cost | ~$3-4 for 4,152 pages (QA + Detect combined) |
+| Status | Production (auto mode running on 286 docs) |
 
-### Agentic Vision (since 27.01.2026)
+### Three Modes (`layout_qa_gemini.py`)
 
-Think-Act-Observe loop for active image manipulation:
+| Mode | Input | Model | Use Case |
+|------|-------|-------|----------|
+| `--mode qa` | Overlay PNG + Layout JSON | Flash Lite | Label corrections on Docling results |
+| `--mode detect` | Raw scan PNG | Flash Lite | Full re-detection for bad/empty pages |
+| `--mode auto` | Depends on quality | Flash Lite | Routes by Docling quality score |
 
-1. **Think**: Analyzes image, plans steps
-2. **Act**: Generates Python code (crop, zoom, rotate)
-3. **Observe**: Validates own result, iterates if needed
+**Auto routing:** `compute_page_quality()` classifies pages as good/warning/bad/empty based on bbox coverage. Bad/empty -> detect, good/warning -> qa.
 
-| Capability | Benefit |
-|------------|---------|
-| Auto-crop columns | Type B without Docling preprocessing |
-| Self-validation | 5-10% quality boost |
-| BBox output | `<facsimile>` coordinates for TEI |
-| Iterative zooming | Historical prints, small font |
+### Model History
 
-### Recommended Strategy by Document Type
+| Model | Used for | Period | Note |
+|-------|----------|--------|------|
+| gemini-3.1-flash-lite-preview | QA + Detect | 04.03.2026+ | Current, ~10x cheaper than 2.5 Flash |
+| gemini-2.5-flash | Detect (initial tests) | 04.03.2026 | Equivalent quality, switched to Flash Lite |
+| gemini-3.1-flash-lite-preview | QA | 03.03.2026 | First QA runs (E25) |
 
-Document types: See [QUELLENANALYSE](QUELLENANALYSE.md) section Document Types.
+### Quality Results
 
-| Type | Engine |
-|------|--------|
-| A (single-column) | DeepSeek-OCR-2 / Mistral Document AI (local/free or Azure) |
-| B (two-column) | Gemini 3 Agentic Vision |
-| C (monograph) | DeepSeek / Mistral Document AI + chunking |
-| D (special) | Gemini 3 Agentic Vision |
-
-### Still To Do
-
-- [ ] Obtain API key for Gemini
-- [ ] Test Agentic Vision on 2530.pdf (Type B)
-- [ ] Compare quality vs. DeepSeek
-- [ ] Implement engine class `GeminiOCR` in `ocr_pipeline.py`
+- **QA mode:** Score 0-100, average ~70. Catches page numbers, running headers, JSTOR metadata
+- **Detect mode:** Doc 510 p7: found 4 regions (vs Docling 2, missing paragraph recovered). Doc 900 p1: found 47 regions (vs Docling 26), rightmost column still missed on wide landscapes
 
 ---
 
@@ -221,10 +214,13 @@ Document types: See [QUELLENANALYSE](QUELLENANALYSE.md) section Document Types.
 | Aspect | Details |
 |--------|---------|
 | Origin | IBM Research |
+| Version | Docling 2.75, RT-DETR V2 Heron (42.9M params) |
 | Mode | `do_ocr=False` — layout analysis only |
-| Detects | Columns, headers, text, lists, tables |
+| Detects | 17 block types: Title, Section-header, Text, Footnote, Caption, Page-header/footer, etc. |
 | Output | JSON with bounding box coordinates |
-| Status | Validated (Windows, with symlink warning) |
+| Speed | ~5s/page (RTX 4060 GPU), ~27s/page (CPU/docling-serve) |
+| Status | Production (286/286 docs, 4,152 pages) |
+| Quality | 62% good, 20% warning, 13% bad, 3% empty (bbox coverage analysis) |
 
 ### Important: Do Not Use Docling OCR
 
@@ -242,16 +238,15 @@ Docling's built-in OCR (RapidOCR) has encoding issues with French text. Example:
 
 ## Comparison Table
 
-| Criterion | DeepSeek | Mistral | Gemini | Docling |
-|-----------|----------|---------|--------|---------|
-| Accuracy (CER) | 94-97% (Phase 1) | 93.58% (15 Docs) | Untested | Layout only |
-| GPU required | Yes (8GB+) | No (API) | No (API) | No (CPU) |
-| Cost | Free | Azure subscription | ~$27/project | Free |
-| Columns (Type B) | No | 93.69% accuracy | Yes (Agentic) | Yes (layout) |
-| Speed | ~1.6s/page | ~1.3s/page | Untested | ~3s/page |
+| Criterion | DeepSeek | Mistral | Gemini Flash Lite | Docling |
+|-----------|----------|---------|-------------------|---------|
+| Role | OCR | OCR (production) | Layout QA/Detect | Layout analysis |
+| Accuracy (CER) | 94-97% (Phase 1) | 93.58% (15 Docs) | N/A (layout only) | N/A (layout only) |
+| GPU required | Yes (8GB+) | No (API) | No (API) | Optional (GPU ~5x faster) |
+| Cost | Free | Azure subscription | ~$3-4/project | Free |
+| Speed | ~1.6s/page | ~1.3s/page | ~2.4-5s/page | ~5s/page (GPU) |
 | Offline | Yes | No | No | Yes |
-| Italic/formatting | No | Yes (*italics*) | Untested | - |
-| All pages | Partial (GPU limit) | Yes (Cloud) | Untested | - |
+| Status | Development | Production | Production (286 docs) | Production (286 docs) |
 
 ---
 
@@ -276,4 +271,4 @@ Docling's built-in OCR (RapidOCR) has encoding issues with French text. Example:
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-02-27*
+*Created: 2026-01-29 | Updated: 2026-03-04 (Gemini E25/E26, Docling 286/286)*

@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-03
+updated: 2026-03-04
 tags: [zbz-ocr-tei, decisions, open, decided]
 status: active
 ---
@@ -40,6 +40,7 @@ Consolidated register of all decisions and open questions in the project.
 | E23 | Data delivery Feb 2026: 286 PDFs + 25 TEI-XMLs + 24 PAGE-XML exports | PAGE-XML schema 2013-07-15. PAGE-XML pages empty (no text). Transkribus Collection-ID: 1886177 | 2026-02-27 | [QUELLENANALYSE](QUELLENANALYSE.md) |
 | E24 | docling-serve API for layout analysis (no local GPU needed) | Docker container (`docling-serve-cpu`), same Docling RT-DETR V2 model, identical output format to `run_layout_analysis.py`. CPU ~27s/page, GPU Cloud Run ~28ms/page. Tested on Doc 2310 (3 pages, 24 regions). Optional Cloud Run deployment for production speed | 2026-03-03 | [PIPELINE](PIPELINE.md) |
 | E25 | Gemini 3.1 Flash Lite as Layout QA validator | Overlay-PNG + Layout-JSON to Gemini Vision, corrected JSON back. Both versions preserved (epistemic infrastructure). Structured Output via `response_schema`. SDK: `google-genai`. Cost: ~$4 for 7,200 pages | 2026-03-03 | [PIPELINE](PIPELINE.md) |
+| E26 | Gemini Layout Detect mode (initially 2.5 Flash, switched to 3.1 Flash Lite) | Docling fails on ~38% of pages (landscape, multi-column, dense). Detect mode sends raw scan to Gemini Vision, returns regions with `box_2d` coordinates. Three modes: `qa` (label fix), `detect` (full detection), `auto` (detect for bad, qa for good). Quality scoring routes pages automatically. Flash Lite equivalent quality at ~10x lower cost. Auto mode running on all 286 docs | 2026-03-04 | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -79,4 +80,4 @@ Consolidated register of all decisions and open questions in the project.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-03*
+*Created: 2026-02-18 | Updated: 2026-03-04*

@@ -8,7 +8,7 @@ status: active
 
 # Implementation Plan: Full AI Pipeline (PDF -> TEI-XML)
 
-> **Version:** 2.0 | **Date:** 03.03.2026 | **Author:** Claude Opus 4.6
+> **Version:** 2.1 | **Date:** 04.03.2026 | **Author:** Claude Opus 4.6
 > **Context:** zbz-ocr-tei covers the entire pipeline. ZBZ retains Transkribus, DHCraft builds a parallel AI pipeline.
 
 Current component status: [PROJEKT.md](PROJEKT.md) §Component Status.
@@ -26,9 +26,10 @@ Pipeline stages and CLI: [PIPELINE.md](PIPELINE.md).
 | 0d | TEI-XML pilot (15 docs) | **Done** |
 | 0e | Data delivery E23 | **Done** |
 | 1a | docling-serve integration (E24) | **Done** |
-| 1b | Layout analysis (286 docs) | **In progress** (11/286) |
+| 1b | Layout analysis (286 docs) | **Done** (286/286, 4,152 pages) |
 | 1c | Gemini Layout QA (E25) | **Done** (script ready, tested on 2310) |
 | 1d | Local GPU layout (PyTorch CUDA) | **Done** (RTX 4060, ~5s/page) |
+| 1f | Gemini Layout Detect (E26) | **Done** (script ready, tested on 510, 900) |
 | 2 | Layout post-processing (O21) | Pending |
 | 3 | PAGE-XML generator | Pending |
 | 4 | NER + GND linking | Pending |
@@ -95,11 +96,11 @@ Phase 3 and Phase 4 can be developed in parallel (NER only needs OCR text, not P
 - [x] Config: `DOCLING_SERVE_URL` in `scripts/config.py`
 - [x] `.env.example` updated with `DOCLING_SERVE_URL`
 
-#### 1b: Layout analysis progress --- IN PROGRESS
+#### 1b: Layout analysis progress --- DONE
 
-- [x] 11/286 docs analyzed (98 layout JSONs)
-- [ ] Remaining 275 docs (CPU too slow: ~27s/page = ~31h for 4,100 pages)
-- [ ] **Cloud GPU needed** — options: Colab, Modal, RunPod, GCP
+- [x] 286/286 docs analyzed (4,152 layout JSONs)
+- [x] Local GPU (RTX 4060): ~5s/page, completed all docs
+- [x] Quality analysis: 62% good, 20% warning, 13% bad, 3% empty
 
 #### 1c: Gemini Layout QA (E25) --- DONE (script ready)
 
@@ -127,7 +128,20 @@ Phase 3 and Phase 4 can be developed in parallel (NER only needs OCR text, not P
 - [x] RTX 4060 Laptop GPU (8GB VRAM) detected and working
 - [x] Docling local GPU: ~5s/page (vs 27s CPU via docling-serve)
 - [x] Fixed dependency conflicts: Pillow <12, numpy <2.3, fsspec <2025
-- [ ] Run `run_layout_analysis.py` for all 286 docs (~5.5h estimated)
+- [x] All 286 docs processed (~5.5h total)
+
+#### 1f: Gemini Layout Detect mode (E26) --- DONE (script ready)
+
+- [x] `detect_page()` in `layout_qa_gemini.py`: Gemini 2.5 Flash as full layout detector
+- [x] Raw scan (no overlay) to Gemini Vision + Structured Output (`DETECT_SCHEMA`)
+- [x] Coordinate conversion: `box_2d` [ymin,xmin,ymax,xmax] (0-1000) -> `{x_pct,y_pct,w_pct,h_pct}` (0-100)
+- [x] `compute_page_quality()`: Routes pages by Docling quality (good/warning/bad/empty)
+- [x] Three modes: `--mode qa` (default), `--mode detect`, `--mode auto`
+- [x] `GEMINI_DETECT_MODEL` in config.py (separate from QA model)
+- [x] Tested Doc 510: 4 regions (vs Docling 2), missing paragraph found
+- [x] Tested Doc 900: 47 regions (vs Docling 26), landscape/4-col mostly correct
+- [ ] Prompt tuning: rightmost column missed on wide landscapes, picture detection weak
+- [ ] Run `auto` mode on all 286 docs
 
 ### Phase 2: Layout Post-Processing (O21) --- PENDING
 
@@ -205,12 +219,14 @@ PDF-Scans (286 PDFs, E23)
   +---> ocr_pipeline.py ----------> Markdown (per page)       [DONE: 15/286 pilot]
   |         (Mistral Doc AI)           |
   |                                    |
-  +---> run_layout_analysis.py --> Layout JSON (per page)     [IN PROGRESS: 11/286]
+  +---> run_layout_analysis.py --> Layout JSON (per page)     [DONE: 286/286]
   |     run_layout_cloud.py            |
   |         (Docling RT-DETR V2)       |
   |                                    |
-  +---> layout_qa_gemini.py -----> Corrected Layout JSON      [READY: tested on 2310]
-            (Gemini 3.1 Flash Lite)    |
+  +---> layout_qa_gemini.py -----> Corrected Layout JSON      [DONE: QA + Detect modes]
+  |     --mode qa  (Flash Lite)        |  (label corrections)
+  |     --mode detect (2.5 Flash)      |  (full re-detection for bad pages)
+  |     --mode auto                    |  (routes by quality score)
                                        |
             [PENDING BELOW]            |
                                        v
@@ -242,7 +258,7 @@ PDF-Scans (286 PDFs, E23)
 | `scripts/llm_postprocess.py` | LLM post-correction (Haiku) | Production (optional) |
 | `scripts/run_layout_analysis.py` | Layout via local Docling | Production |
 | `scripts/run_layout_cloud.py` | Layout via docling-serve API | Production |
-| `scripts/layout_qa_gemini.py` | Gemini QA correction | Production |
+| `scripts/layout_qa_gemini.py` | Gemini QA + Detect (3 modes) | Production |
 | `scripts/tei/tei_generator.py` | Layout+OCR -> TEI-XML | Production (basic) |
 | `scripts/evaluate_ocr.py` | CER/WER evaluation | Production |
 | `scripts/generate_dashboard_data.py` | Dashboard data | Production |
@@ -277,7 +293,8 @@ PDF-Scans (286 PDFs, E23)
 | OCR (Mistral) | ~1s | ~1.5h | ~$14 |
 | Layout (Docling, local RTX 4060) | ~5s | ~5.5h | $0 |
 | Layout (Docling, CPU/docling-serve) | ~27s | ~31h | $0 |
-| Gemini QA | ~4s | ~5h | ~$4 |
+| Gemini QA (Flash Lite) | ~4s | ~5h | ~$4 |
+| Gemini Detect (2.5 Flash, bad pages only) | ~6s | ~2h (est. 1,200 pages) | ~$8 |
 | NER (Haiku 4.5) | ~0.5s | ~1h | ~$5 |
 | TEI transformation | ~0.1s | ~7min | $0 |
 | **Total (GPU path)** | | **~11h** | **~$25 + GPU** |
@@ -319,4 +336,4 @@ After each phase:
 
 ---
 
-*Created: 25.02.2026 | Updated: 03.03.2026 (v2.0: comprehensive checklist, current state documented)*
+*Created: 25.02.2026 | Updated: 04.03.2026 (v2.1: layout 286/286 done, Gemini detect mode E26)*
