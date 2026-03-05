@@ -628,6 +628,19 @@ header .subtitle {
 
 .source-btn.active.violet { background: var(--accent-b); }
 .source-btn.active.blue { background: var(--accent-c); }
+.source-btn.active.amber { background: #f59e0b; color: #000; }
+
+.tag.amber { background: #fef3c7; color: #92400e; }
+
+.layout-source-select {
+    font-size: 0.75rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    cursor: pointer;
+}
 
 /* ---- Filter Bar ---- */
 .filter-bar {

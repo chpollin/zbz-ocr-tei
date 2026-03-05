@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-05
+updated: 2026-03-06
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,60 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-05 | Code Quality Refactoring (Session 6)
+
+38. generate_dashboard_data.py: N+1-Bug behoben -- gemini_manifest wurde in der per-Doc-Schleife bei jedem Durchlauf neu geladen (286x statt 1x). Fix: Manifest vor der Schleife laden, Lookup-Dict bauen fuer O(1)-Zugriff.
+
+39. gemini_ocr_correct.py: None-Check fuer Gemini-API-Antwort in correct_page() hinzugefuegt (crashed vorher bei leerer Antwort, z.B. Doc 40). Metadaten-Cache: doc_metadata.json wird jetzt einmal geladen statt bei jedem get_doc_metadata()-Aufruf.
+
+40. evaluate_ocr.py: Neues --json-output CLI-Argument fuer konfigurierbaren JSON-Dateinamen (Default: evaluation_results.json). Ermoeglicht parallele Evaluationen ohne Ueberschreiben (z.B. Mistral vs. Gemini).
+
+41. config.py: GEMINI_DETECT_MODEL referenziert jetzt GEMINI_MODEL statt doppeltem String-Literal. LLM_CORRECTED_DIR behalten (wird von llm_postprocess.py verwendet, entgegen vorheriger Analyse).
+
+42. shared.js: 4 duplizierte Fetch-Funktionen (fetchPageText, fetchLayoutData, fetchPageTei) zu generischer _fetchWithFallbacks() refaktoriert (~90 Zeilen auf ~25 Zeilen Kernlogik). fetchRefTeiPage bleibt separat (XML-Parsing zu speziell).
+
+43. PUB_FORM_LABELS konsolidiert: Single Source in ZBZ.PUB_FORM_LABELS (shared.js). viewer.js + dashboard.js referenzieren jetzt ZBZ.PUB_FORM_LABELS. dashboard.js FORM_LABELS erweitert via Object.assign().
+
+44. Inline-Styles entfernt: Gemini-Button (viewer.html) nutzt CSS-Klasse .amber statt style="background:#f59e0b". Layout-Source Select nutzt .layout-source-select statt 7 Inline-CSS-Properties. Neue CSS-Klassen in shared.css.
+
+45. "Unused CSS" Analyse korrigiert: .card, .bar-wrap, .preview, .pg etc. sind in benchmark.html aktiv genutzt. Vorherige Analyse hatte benchmark.html nicht geprueft. Kein CSS entfernt.
+
+### Dateien geaendert
+
+| Datei | Aenderung |
+|-------|-----------|
+| `scripts/generate_dashboard_data.py` | FIX -- Manifest einmal laden |
+| `scripts/gemini_ocr_correct.py` | FIX -- None-Check + Metadaten-Cache |
+| `scripts/evaluate_ocr.py` | EXTENDED -- --json-output Argument |
+| `scripts/config.py` | FIX -- GEMINI_DETECT_MODEL = GEMINI_MODEL |
+| `docs/shared.js` | REFACTORED -- _fetchWithFallbacks, PUB_FORM_LABELS |
+| `docs/shared.css` | EXTENDED -- .amber, .layout-source-select |
+| `docs/viewer.html` | FIX -- Inline-Styles durch CSS-Klassen ersetzt |
+| `docs/viewer.js` | FIX -- PUB_FORM_LABELS aus ZBZ |
+| `docs/dashboard.js` | FIX -- PUB_FORM_LABELS + FORM_LABELS aus ZBZ |
+
+---
+
+## 2026-03-05 | Gemini OCR-Korrektur (Stage 2b)
+
+### Session 5: Gemini OCR Correction Implementation
+
+31. Stage 2b: gemini_ocr_correct.py erstellt -- Zwei-Schritt-Verfahren mit Gemini 3.1 Flash Lite Preview. Schritt 1: Analyse (Structured JSON Output mit corrections, confidence, justification). Schritt 2: Korrektur (nur high/medium-Korrekturen anwenden). Zwei Varianten: A (text-only + Metadaten-Kontext aus doc_metadata.json), B (multimodal + Scan-Bild).
+
+32. Config erweitert: GEMINI_CORRECTED_A_DIR + GEMINI_CORRECTED_B_DIR in config.py. Output-Struktur: gemini_corrected_a/ und gemini_corrected_b/ mit korrigierten .md-Dateien + .analysis.json + manifest.json.
+
+33. Image-Pfad-Bug behoben: OCR-Dateien verwenden ungepolsterte Seitennummern (2310_p1.md), Bilder verwenden Zero-Padding (2310_p001.png). Fix: page_str.zfill(3) in analyze_page() und correct_page().
+
+34. Sample-Test auf 5 Pilot-Docs (2310/1180/890/90/40): Variante A avg CER 3.30% (Mistral 3.97%, -0.67pp). Variante B avg CER 3.45% (4 Docs, -0.52pp). Groesster Gewinn: Doc 2310 7.00% -> 3.88% (JSTOR-Cover, franzoesische Akzente). Doc 40 (147 Seiten) bestaetigt Skalierbarkeit.
+
+35. Frontend-Integration: Gemini-Toggle-Button in viewer.html (amber #f59e0b), shared.js Fetch-Pfad + Pipeline-Step "GEM", viewer.js Source-Label + Button-Visibility + CER-Balken mit Delta-Anzeige.
+
+36. Dashboard-Integration: generate_dashboard_data.py laedt evaluation_gemini_a.json + Gemini-Manifest. Neue Felder: pipeline_status.gemini_corrected, gemini_cer, gemini_stats, pipeline_summary.docs_with_gemini/avg_cer_gemini. Engine-Badge "GEM" im Katalog.
+
+37. Erkenntnis: Variante A (text-only) leicht besser als B (multimodal) im Durchschnitt und guenstiger. Multimodal hilft vor allem bei visuell eindeutigen Fehlern (z.B. Doc 90: 1.21% -> 1.12%). Fuer die meisten Docs reicht Metadaten-Kontext.
 
 ---
 

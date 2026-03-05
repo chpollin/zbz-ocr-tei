@@ -20,6 +20,7 @@
         <div class="source-toggle" id="source-toggle">
             <button class="source-btn active" data-source="mistral">Mistral OCR</button>
             <button class="source-btn blue" data-source="llm_corrected">LLM-korrigiert</button>
+            <button class="source-btn amber" data-source="gemini_corrected" id="btn-gemini" style="display:none">Gemini-korrigiert</button>
             <button class="source-btn violet" data-source="deepseek" id="btn-deepseek" style="display:none">DeepSeek</button>
         </div>
 
@@ -39,7 +40,7 @@
 
         <!-- Layout toggle -->
         <button class="layout-toggle" id="layout-toggle" title="Layout-Regionen ein/ausblenden">&#9638; Layout</button>
-        <select id="layout-source" title="Layout-Quelle" style="font-size:0.75rem;padding:2px 4px;border-radius:3px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);cursor:pointer;">
+        <select id="layout-source" title="Layout-Quelle" class="layout-source-select">
             <option value="gemini">Gemini</option>
             <option value="docling">Docling</option>
         </select>

@@ -36,6 +36,7 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 1a | Document classification (Gemini) | `scripts/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (286 docs) |
 | 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (Mistral: `output/mistral_results/`, DeepSeek: `output/ocr_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
+| 2b | Gemini OCR correction (optional) | `scripts/gemini_ocr_correct.py` | Corrected Markdown (`output/gemini_corrected_a/` or `_b/`) | Sample (5 docs), E29 |
 | 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (286/286 docs, 4,152 pages) |
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
@@ -118,6 +119,51 @@ Full results: See [TESTPLAN](TESTPLAN.md) §Results.
 Three variants tested (A/B/C, see `llm_postprocess.py`). Variant C (Few-Shot) is default (E17): best CER/cost tradeoff. Includes typical Mistral OCR errors as examples (missing letters, wrong sequences, merged words, JSTOR artifacts). Language hints (FR: accents/guillemets, DE: umlauts/compounds) inserted dynamically.
 
 Results: See [TESTPLAN](TESTPLAN.md) §LLM Post-Correction. LLM correction improves docs with CER >10%, slightly degrades good OCR (<5%). Optional, not default.
+
+---
+
+## Stage 2b: Gemini OCR Correction
+
+**Script:** `scripts/gemini_ocr_correct.py`
+
+| Aspect | Details |
+|--------|---------|
+| Model | Gemini 3.1 Flash Lite Preview (`gemini-3.1-flash-lite-preview`) |
+| Input | OCR Markdown from Stage 2 + metadata from `doc_metadata.json` |
+| Output | Corrected Markdown + Analysis JSON |
+| Approach | Two-step: Analyse (structured JSON) then Korrektur (plain text) |
+| Variants | A = text-only + metadata context, B = multimodal (+ scan image) |
+| Cost | ~$1-3 for all 4,152 pages (Variant A), ~$2-5 (Variant B) |
+
+**Two-step process (E29):**
+
+1. **Analyse:** Gemini receives OCR text + document metadata (language, pub_form, layout_type, title, author, date, description). Variant B additionally receives the scan image. Returns structured JSON with corrections (original, corrected, category, confidence, justification), overall quality score (0-100), and summary. Categories: `missing_accent`, `wrong_character`, `merged_words`, `split_word`, `missing_character`, `extra_character`, `ocr_artifact`, `punctuation`, `formatting`, `other`.
+
+2. **Korrektur:** Gemini receives original OCR text + analysis from step 1. Applies only high/medium confidence corrections. Output: corrected full text as Markdown. Optimization: if step 1 finds zero actionable corrections, step 2 is skipped and original text is copied.
+
+**Output structure:**
+```
+output/
+  gemini_corrected_a/           # Variant A: text-only
+    {doc_id}_p{page}.md         # Corrected text
+    {doc_id}_p{page}.analysis.json  # Analysis
+    manifest.json
+  gemini_corrected_b/           # Variant B: multimodal
+    (same structure)
+```
+
+**Sample results (5 docs, E29):**
+
+| Doc | Mistral CER | Gemini A CER | Gemini B CER |
+|-----|-------------|--------------|--------------|
+| 2310 | 7.00% | 3.88% | 3.88% |
+| 1180 | 3.12% | 3.08% | 3.09% |
+| 890 | 5.96% | 5.77% | 5.72% |
+| 90 | 1.21% | 1.20% | 1.12% |
+| 40 | 2.57% | 2.58% | n/a |
+| **Avg** | **3.97%** | **3.30%** | **3.45%** (4 docs) |
+
+Variant A avg CER 3.30% vs Mistral 3.97% (-0.67pp). Biggest improvement on Doc 2310 (JSTOR cover, French accents): 7.00% to 3.88%. Both variants improve CER; Variant A slightly better on average and cheaper.
 
 ---
 
@@ -219,9 +265,21 @@ python scripts/ocr_pipeline.py --all --engine auto
 python -m scripts.llm_postprocess --phase phase1 --variant C
 python -m scripts.llm_postprocess --all
 
+# Gemini OCR correction (stage 2b, requires GEMINI_API_KEY)
+python -m scripts.gemini_ocr_correct --sample                # 5 pilot docs, Variant A
+python -m scripts.gemini_ocr_correct --sample --variant B     # 5 pilot docs, multimodal
+python -m scripts.gemini_ocr_correct --doc 2310               # single document
+python -m scripts.gemini_ocr_correct --doc 2310 --variant B   # single doc, multimodal
+python -m scripts.gemini_ocr_correct --all                    # all docs with OCR
+python -m scripts.gemini_ocr_correct --step analyze           # analysis only
+python -m scripts.gemini_ocr_correct --step correct           # correction only
+python -m scripts.gemini_ocr_correct --force                  # overwrite existing
+python -m scripts.gemini_ocr_correct --dry-run                # show prompts, no API calls
+
 # Evaluation (stage 3)
 python scripts/evaluate_ocr.py --all
 python scripts/evaluate_ocr.py --phase phase1 --engine mistral
+python -m scripts.evaluate_ocr --all --ocr-dir output/gemini_corrected_a  # evaluate Gemini A
 
 # Layout analysis (stage 3, local GPU preferred, ~5s/page on RTX 4060)
 python -m scripts.run_layout_analysis                      # all documents
@@ -269,7 +327,7 @@ python -m scripts.postprocess.pipeline
 | `docs/tei-viewer.js` | TEI rendering: rendered view, syntax highlighting, diff, entities |
 | `docs/data/dashboard.json` | Generated data (from `scripts/generate_dashboard_data.py`) |
 
-The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engine availability, and a filterable document catalog. Data is statically generated from pipeline outputs. TEI rendering (rendered view, XML highlighting, reference diff, entity sidebar) is in `tei-viewer.js`.
+The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek/Gemini), engine availability, and a filterable document catalog. Data is statically generated from pipeline outputs. TEI rendering (rendered view, XML highlighting, reference diff, entity sidebar) is in `tei-viewer.js`.
 
 ### GitHub Pages / Online-Demo (E28)
 

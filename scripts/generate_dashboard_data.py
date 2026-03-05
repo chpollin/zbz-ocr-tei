@@ -23,6 +23,7 @@ from scripts.config import (
     LAYOUT_DIR,
     TEI_DIR,
     DOC_METADATA_PATH,
+    GEMINI_CORRECTED_A_DIR,
 )
 from scripts.utils import load_json
 
@@ -117,7 +118,7 @@ MISTRAL_BENCHMARK = {
 }
 
 
-def build_documents(images_manifest, eval_data, llm_manifest):
+def build_documents(images_manifest, eval_data, llm_manifest, gemini_eval_data=None):
     """Baut pro-Dokument-Daten aus allen Quellen zusammen."""
     all_docs = build_all_docs(images_manifest)
     documents = {}
@@ -133,6 +134,11 @@ def build_documents(images_manifest, eval_data, llm_manifest):
     if eval_data and "documents" in eval_data:
         eval_docs = eval_data["documents"]
 
+    # Gemini-Evaluation-Daten
+    gemini_eval_docs = {}
+    if gemini_eval_data and "documents" in gemini_eval_data:
+        gemini_eval_docs = gemini_eval_data["documents"]
+
     # LLM-Manifest Docs
     llm_docs = {}
     if llm_manifest and "documents" in llm_manifest:
@@ -146,6 +152,15 @@ def build_documents(images_manifest, eval_data, llm_manifest):
         ls = load_json(summary_path)
         if ls:
             layout_summaries[doc_id] = ls
+
+    # Gemini-Manifest einmal laden + Lookup-Dict bauen
+    gemini_manifest = load_json(GEMINI_CORRECTED_A_DIR / "manifest.json")
+    gemini_doc_lookup = {}
+    if gemini_manifest:
+        for gs in gemini_manifest.get("documents", []):
+            gid = gs.get("doc_id")
+            if gid:
+                gemini_doc_lookup[gid] = gs
 
     for doc_id, meta in all_docs.items():
         doc = {
@@ -163,9 +178,11 @@ def build_documents(images_manifest, eval_data, llm_manifest):
             "pipeline_status": compute_pipeline_status(doc_id),
             "evaluation": None,
             "mistral_cer": MISTRAL_CER.get(doc_id),
+            "gemini_cer": None,
             "mistral_stats": MISTRAL_BENCHMARK.get(doc_id),
             "deepseek_stats": DEEPSEEK_METRICS.get(doc_id),
             "llm_stats": None,
+            "gemini_stats": None,
             "layout": None,
         }
 
@@ -195,6 +212,20 @@ def build_documents(images_manifest, eval_data, llm_manifest):
                 "output_tokens": ls.get("output_tokens", 0),
             }
 
+        # Gemini-Korrektur CER
+        if doc_id in gemini_eval_docs:
+            gev = gemini_eval_docs[doc_id]
+            doc["gemini_cer"] = round(gev.get("cer", 0), 6)
+
+        # Gemini-Korrektur Stats aus Manifest
+        if doc_id in gemini_doc_lookup:
+            gs = gemini_doc_lookup[doc_id]
+            doc["gemini_stats"] = {
+                "analyzed": gs.get("analyzed", 0),
+                "corrected": gs.get("corrected", 0),
+                "total_corrections": gs.get("total_corrections", 0),
+            }
+
         # Layout-Summary
         if doc_id in layout_summaries:
             ls = layout_summaries[doc_id]
@@ -221,6 +252,7 @@ def compute_pipeline_status(doc_id: str) -> dict:
         "ocr_mistral": has_mistral or has_ocr_results,
         "ocr_deepseek": has_deepseek,
         "llm_corrected": any((OUTPUT_DIR / "llm_corrected_c").glob(f"{doc_id}_p*.md")),
+        "gemini_corrected": any(GEMINI_CORRECTED_A_DIR.glob(f"{doc_id}_p*.md")),
         "layout": (LAYOUT_DIR / doc_id / "summary.json").is_file(),
         "evaluation": doc_id in (load_eval_doc_ids() or []),
         "tei": any(TEI_DIR.glob(f"{doc_id}_p*.xml")),
@@ -250,6 +282,7 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
     docs_with_ocr = sum(1 for d in documents.values() if d["pipeline_status"]["ocr_mistral"])
     docs_with_llm = sum(1 for d in documents.values() if d["pipeline_status"]["llm_corrected"])
     docs_with_layout = sum(1 for d in documents.values() if d["pipeline_status"]["layout"])
+    docs_with_gemini = sum(1 for d in documents.values() if d["pipeline_status"].get("gemini_corrected"))
     docs_with_tei = sum(1 for d in documents.values() if d["pipeline_status"]["tei"])
     docs_with_eval = sum(1 for d in documents.values() if d["pipeline_status"]["evaluation"])
 
@@ -259,6 +292,9 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
 
     avg_cer_llm = sum(cer_llm_values) / len(cer_llm_values) if cer_llm_values else None
     avg_cer_mistral = sum(cer_mistral_values) / len(cer_mistral_values) if cer_mistral_values else None
+
+    cer_gemini_values = [d["gemini_cer"] for d in documents.values() if d.get("gemini_cer") is not None]
+    avg_cer_gemini = sum(cer_gemini_values) / len(cer_gemini_values) if cer_gemini_values else None
 
     total_pages = sum(d["page_count"] for d in documents.values())
 
@@ -278,11 +314,13 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
         "pilot_docs": pilot_count,
         "docs_with_ocr": docs_with_ocr,
         "docs_with_llm": docs_with_llm,
+        "docs_with_gemini": docs_with_gemini,
         "docs_with_layout": docs_with_layout,
         "docs_with_tei": docs_with_tei,
         "docs_with_eval": docs_with_eval,
         "avg_cer_mistral": round(avg_cer_mistral, 6) if avg_cer_mistral else None,
         "avg_cer_llm": round(avg_cer_llm, 6) if avg_cer_llm else None,
+        "avg_cer_gemini": round(avg_cer_gemini, 6) if avg_cer_gemini else None,
     }
 
 
@@ -308,10 +346,11 @@ def main():
     images_manifest = load_json(DOCS_DIR / "images" / "manifest.json")
     eval_data = load_json(EVALUATION_DIR / "evaluation_results.json")
     llm_manifest = load_json(OUTPUT_DIR / "llm_corrected_c" / "manifest.json")
+    gemini_eval_data = load_json(EVALUATION_DIR / "evaluation_gemini_a.json")
 
     # Dokumente zusammenfuehren
     print("\nDokumente zusammenfuehren...")
-    documents = build_documents(images_manifest, eval_data, llm_manifest)
+    documents = build_documents(images_manifest, eval_data, llm_manifest, gemini_eval_data)
 
     # Dashboard-JSON bauen
     data = {

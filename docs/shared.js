@@ -8,6 +8,32 @@
     var _data = null;
     var _textCache = {};
 
+    /**
+     * Generic fetch with fallback candidates and caching.
+     * @param {string} cacheKey  - unique key for _textCache
+     * @param {string[]} candidates - URLs to try in order
+     * @param {string} parseAs   - 'text' or 'json'
+     * @returns {Promise<*>}
+     */
+    function _fetchWithFallbacks(cacheKey, candidates, parseAs) {
+        if (_textCache[cacheKey] !== undefined) return Promise.resolve(_textCache[cacheKey]);
+
+        return (async function () {
+            for (var i = 0; i < candidates.length; i++) {
+                try {
+                    var r = await fetch(candidates[i]);
+                    if (r.ok) {
+                        var result = parseAs === 'json' ? await r.json() : await r.text();
+                        _textCache[cacheKey] = result;
+                        return result;
+                    }
+                } catch (e) { /* ignore */ }
+            }
+            _textCache[cacheKey] = null;
+            return null;
+        })();
+    }
+
     var ZBZ = {
         // ---- Data Loading ----
         async loadData() {
@@ -23,91 +49,43 @@
         },
 
         // ---- Text Fetching (OCR pages) ----
-        async fetchPageText(source, docId, page) {
-            var key = source + '/' + docId + '/' + page;
-            if (_textCache[key] !== undefined) return _textCache[key];
-
+        fetchPageText: function (source, docId, page) {
             var paths = {
                 mistral: '../output/mistral_results/' + docId + '_p' + page + '.md',
                 deepseek: '../output/ocr_results/' + docId + '_p' + page + '.md',
                 llm_corrected: '../output/llm_corrected_c/' + docId + '_p' + page + '.md',
+                gemini_corrected: '../output/gemini_corrected_a/' + docId + '_p' + page + '.md',
             };
-
             var path = paths[source];
-            if (!path) return null;
+            if (!path) return Promise.resolve(null);
 
             var candidates = [path];
             if (source === 'mistral') {
                 candidates.push('data/examples/' + docId + '/' + docId + '_p' + page + '.md');
             }
-
-            for (var i = 0; i < candidates.length; i++) {
-                try {
-                    var r = await fetch(candidates[i]);
-                    if (r.ok) {
-                        var text = await r.text();
-                        _textCache[key] = text;
-                        return text;
-                    }
-                } catch (e) { /* ignore */ }
-            }
-
-            _textCache[key] = null;
-            return null;
+            return _fetchWithFallbacks(source + '/' + docId + '/' + page, candidates, 'text');
         },
 
         // ---- Layout Data Fetching ----
-        // source: 'docling' (default) or 'gemini'
-        async fetchLayoutData(docId, page, source) {
+        fetchLayoutData: function (docId, page, source) {
             source = source || 'gemini';
-            var key = 'layout/' + source + '/' + docId + '/' + page;
-            if (_textCache[key] !== undefined) return _textCache[key];
-
             var padded = String(page).padStart(3, '0');
             var suffix = source === 'gemini' ? '_layout_gemini.json' : '_layout.json';
-            var path = '../output/layout/' + docId + '/' + docId + '_p' + padded + suffix;
-            var fallback = 'data/examples/' + docId + '/' + docId + '_p' + padded + suffix;
-
-            var candidates = [path, fallback];
-            for (var i = 0; i < candidates.length; i++) {
-                try {
-                    var r = await fetch(candidates[i]);
-                    if (r.ok) {
-                        var data = await r.json();
-                        _textCache[key] = data;
-                        return data;
-                    }
-                } catch (e) { /* ignore */ }
-            }
-
-            _textCache[key] = null;
-            return null;
+            var candidates = [
+                '../output/layout/' + docId + '/' + docId + '_p' + padded + suffix,
+                'data/examples/' + docId + '/' + docId + '_p' + padded + suffix,
+            ];
+            return _fetchWithFallbacks('layout/' + source + '/' + docId + '/' + page, candidates, 'json');
         },
 
         // ---- TEI Fetching ----
-        async fetchPageTei(docId, page) {
-            var key = 'tei/' + docId + '/' + page;
-            if (_textCache[key] !== undefined) return _textCache[key];
-
-            var paths = [
+        fetchPageTei: function (docId, page) {
+            var candidates = [
                 '../output/tei/' + docId + '_p' + page + '.xml',
                 '../output/tei_xml/' + docId + '_p' + page + '.xml',
                 'data/examples/' + docId + '/' + docId + '_p' + page + '.xml',
             ];
-
-            for (var i = 0; i < paths.length; i++) {
-                try {
-                    var r = await fetch(paths[i]);
-                    if (r.ok) {
-                        var text = await r.text();
-                        _textCache[key] = text;
-                        return text;
-                    }
-                } catch (e) { /* ignore */ }
-            }
-
-            _textCache[key] = null;
-            return null;
+            return _fetchWithFallbacks('tei/' + docId + '/' + page, candidates, 'text');
         },
 
         // ---- Reference TEI Fetching (per-page extraction from whole-document XML) ----
@@ -228,6 +206,18 @@
             return 'images/' + docId + '/' + docId + '_p' + ZBZ.padPage(page) + '.png';
         },
 
+        // ---- Publication Form Labels (shared) ----
+        PUB_FORM_LABELS: {
+            journalArticle: 'Artikel',
+            book: 'Buch',
+            bookSection: 'Buchkapitel',
+            encyclopedia: 'Lexikon',
+            brochure: 'Broschure',
+            interview: 'Interview',
+            anthology: 'Sammelband',
+            other: 'Andere',
+        },
+
         // ---- CER Status ----
         cerBadge: function (cer) {
             if (cer == null) return '<span class="tag">n/a</span>';
@@ -253,6 +243,7 @@
             { key: 'images', label: 'IMG', title: 'Bilder extrahiert' },
             { key: 'ocr', label: 'OCR', title: 'OCR Engines', composite: ['ocr_mistral', 'ocr_deepseek'] },
             { key: 'llm_corrected', label: 'LLM', title: 'LLM-Korrektur' },
+            { key: 'gemini_corrected', label: 'GEM', title: 'Gemini OCR-Korrektur' },
             { key: 'layout', label: 'LAY', title: 'Layout-Analyse (Docling)' },
             { key: 'tei', label: 'TEI', title: 'TEI-XML generiert' },
             { key: 'evaluation', label: 'EVAL', title: 'CER/WER Evaluation' },
@@ -288,6 +279,7 @@
             if (pipelineStatus.ocr_mistral) html += '<span class="tag teal">M</span>';
             if (pipelineStatus.ocr_deepseek) html += '<span class="tag violet">DS</span>';
             if (pipelineStatus.llm_corrected) html += '<span class="tag blue">LLM</span>';
+            if (pipelineStatus.gemini_corrected) html += '<span class="tag amber">GEM</span>';
             return html || '<span class="tag">-</span>';
         },
 

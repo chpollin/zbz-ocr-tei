@@ -23,6 +23,7 @@
     var sourceLabels = {
         mistral: 'Mistral OCR',
         llm_corrected: 'LLM-korrigiert (Claude Haiku 4.5)',
+        gemini_corrected: 'Gemini-korrigiert (Flash Lite)',
         deepseek: 'DeepSeek OCR',
     };
 
@@ -62,6 +63,10 @@
             docTitle.textContent = state.docId + '.pdf \u2014 ' + state.docData.desc;
 
             // Show/hide source buttons
+            state.hasGemini = state.docData.pipeline_status.gemini_corrected;
+            if (state.hasGemini) {
+                ZBZ.$('#btn-gemini').style.display = '';
+            }
             if (state.hasDeepseek) {
                 ZBZ.$('#btn-deepseek').style.display = '';
             }
@@ -83,16 +88,7 @@
         }
     }
 
-    var PUB_FORM_LABELS = {
-        journalArticle: 'Artikel',
-        book: 'Buch',
-        bookSection: 'Buchkapitel',
-        encyclopedia: 'Lexikon',
-        brochure: 'Broschure',
-        interview: 'Interview',
-        anthology: 'Sammelband',
-        other: 'Andere',
-    };
+    var PUB_FORM_LABELS = ZBZ.PUB_FORM_LABELS;
 
     // ---- Document Info Bar ----
     function renderDocInfo() {
@@ -166,10 +162,11 @@
         // CER Bars
         var cerM = d.mistral_cer;
         var cerL = d.evaluation ? d.evaluation.cer_llm : null;
+        var cerG = d.gemini_cer || null;
         var cerD = d.deepseek_stats ? d.deepseek_stats.cer : null;
 
-        if (cerM != null || cerL != null || cerD != null) {
-            var maxCer = Math.max(cerM || 0, cerL || 0, cerD || 0, 0.01);
+        if (cerM != null || cerL != null || cerG != null || cerD != null) {
+            var maxCer = Math.max(cerM || 0, cerL || 0, cerG || 0, cerD || 0, 0.01);
             var scale = 100 / (maxCer * 1.3);
 
             html += '<div class="doc-info-section">' +
@@ -196,6 +193,21 @@
                     '<span class="bar-label">LLM</span>' +
                     '<div class="bar-track"><div class="bar-fill blue" style="width:' + Math.max(cerL * scale, 3) + '%"></div></div>' +
                     '<span class="bar-val" style="color:var(--accent-c)">' + ZBZ.fmtPct(cerL, 1) + deltaHtml + '</span>' +
+                    '</div>';
+            }
+
+            if (cerG != null) {
+                var deltaG = cerM != null ? cerG - cerM : null;
+                var deltaGHtml = '';
+                if (deltaG != null) {
+                    var clsG = deltaG < 0 ? 'positive' : (deltaG > 0 ? 'negative' : '');
+                    var signG = deltaG < 0 ? '' : '+';
+                    deltaGHtml = '<span class="improvement ' + clsG + '">' + signG + (deltaG * 100).toFixed(1) + '</span>';
+                }
+                html += '<div class="cer-mini-bar">' +
+                    '<span class="bar-label">Gemini</span>' +
+                    '<div class="bar-track"><div class="bar-fill" style="width:' + Math.max(cerG * scale, 3) + '%;background:#f59e0b"></div></div>' +
+                    '<span class="bar-val" style="color:#f59e0b">' + ZBZ.fmtPct(cerG, 1) + deltaGHtml + '</span>' +
                     '</div>';
             }
 

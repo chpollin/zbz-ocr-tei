@@ -58,11 +58,7 @@
         if (!c) { ZBZ.$('#phase-summary').innerHTML = ''; return; }
 
         var TYPE_LABELS = { A: 'Einspaltig', B: 'Zweispaltig', C: 'Monografie', D: 'Spezial', '-': 'Offen' };
-        var FORM_LABELS = {
-            journalArticle: 'Artikel', book: 'Buch', bookSection: 'Buchkapitel',
-            encyclopedia: 'Lexikon', brochure: 'Broschure', interview: 'Interview',
-            anthology: 'Sammelband', other: 'Andere', '-': 'Offen',
-        };
+        var FORM_LABELS = Object.assign({}, ZBZ.PUB_FORM_LABELS, { '-': 'Offen' });
 
         function distCard(title, dist, labels) {
             var html = '<div class="metric-card"><div class="label">' + title + '</div>';
@@ -121,16 +117,7 @@
         ZBZ.$('#doc-catalog').innerHTML = html;
     }
 
-    var PUB_FORM_LABELS = {
-        journalArticle: 'Artikel',
-        book: 'Buch',
-        bookSection: 'Buchkapitel',
-        encyclopedia: 'Lexikon',
-        brochure: 'Broschure',
-        interview: 'Interview',
-        anthology: 'Sammelband',
-        other: 'Andere',
-    };
+    var PUB_FORM_LABELS = ZBZ.PUB_FORM_LABELS;
 
     var DEMO_DOCS = { '2310': true, '1000': true, '1330': true, '1540': true };
 

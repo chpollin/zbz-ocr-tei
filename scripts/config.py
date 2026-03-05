@@ -23,6 +23,8 @@ LAYOUT_DIR = OUTPUT_DIR / "layout"
 CLASSIFICATION_DIR = OUTPUT_DIR / "classification"
 TEI_DIR = OUTPUT_DIR / "tei"
 LLM_CORRECTED_C_DIR = OUTPUT_DIR / "llm_corrected_c"
+GEMINI_CORRECTED_A_DIR = OUTPUT_DIR / "gemini_corrected_a"
+GEMINI_CORRECTED_B_DIR = OUTPUT_DIR / "gemini_corrected_b"
 DOC_METADATA_PATH = DATA_DIR / "doc_metadata.json"
 
 DOCS_DIR = PROJECT_ROOT / "docs"
@@ -55,7 +57,7 @@ DOCLING_SERVE_URL = os.environ.get("DOCLING_SERVE_URL", "http://localhost:5001")
 # Gemini API (Layout QA + Detect)
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
-GEMINI_DETECT_MODEL = "gemini-3.1-flash-lite-preview"
+GEMINI_DETECT_MODEL = GEMINI_MODEL  # gleich; bei Bedarf separat ueberschreiben
 
 # Docling BlockType -> ZBZ Structural Tag
 DOCLING_TO_ZBZ = {
