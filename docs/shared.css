@@ -95,6 +95,40 @@ header {
     padding: var(--space-lg) var(--space-xl);
 }
 
+.disclaimer-bar {
+    background: var(--warm-light);
+    border-bottom: 1px solid #fbbf24;
+    padding: var(--space-sm) var(--space-xl);
+    font-size: var(--fs-xs);
+    color: var(--warm);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.demo-badge {
+    display: inline-block;
+    background: var(--accent-a);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-left: 4px;
+    letter-spacing: 0.03em;
+}
+
+.demo-badge-inline {
+    display: inline-block;
+    background: var(--warm);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
 .header-inner {
     max-width: 1400px;
     margin: 0 auto;

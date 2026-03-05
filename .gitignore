@@ -22,9 +22,16 @@ build/
 
 # OCR Output (generiert, nicht versionieren)
 output/
+# Beispieldaten fuer Online-Demo (4 Docs: 2310, 1000, 1330, 1540)
+!output/examples/
 
 # Docs - Bilder lokal (zu gross fuer Git)
 docs/images/
+# Beispielbilder fuer Online-Demo
+!docs/images/2310/
+!docs/images/1000/
+!docs/images/1330/
+!docs/images/1540/
 
 # IDE / Editor
 .vscode/

@@ -129,6 +129,8 @@
         other: 'Andere',
     };
 
+    var DEMO_DOCS = { '2310': true, '1000': true, '1330': true, '1540': true };
+
     function catalogRow(d) {
         var cerMistral = d.mistral_cer != null ? ZBZ.cerBadge(d.mistral_cer) : '<span class="tag">-</span>';
 
@@ -147,8 +149,10 @@
 
         var formLabel = PUB_FORM_LABELS[d.pub_form] || d.pub_form || '-';
 
+        var demoBadge = DEMO_DOCS[d.doc_id] ? ' <span class="demo-badge">DEMO</span>' : '';
+
         return '<tr data-id="' + d.doc_id + '" data-type="' + d.type + '" data-lang="' + d.lang + '" data-status="' + docStatusKey(d) + '" data-engines="' + engines.join(',') + '">' +
-            '<td><strong>' + d.doc_id + '</strong></td>' +
+            '<td><strong>' + d.doc_id + '</strong>' + demoBadge + '</td>' +
             '<td>' + titleDesc + '</td>' +
             '<td><span class="tag">' + d.type + '</span></td>' +
             '<td>' + d.lang + '</td>' +

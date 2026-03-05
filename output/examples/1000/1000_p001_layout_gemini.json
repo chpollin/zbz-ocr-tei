@@ -1,0 +1,142 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Zeitschrift: ducateur et bulletin corporatif : organe hebdomadaire de la Socit Pdagogique de la Suisse Romande",
+      "bbox": {
+        "x_pct": 11.613,
+        "y_pct": 7.16,
+        "w_pct": 78.253,
+        "h_pct": 10.389
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy regarding bibliographic entry."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Heft",
+      "bbox": {
+        "x_pct": 11.774,
+        "y_pct": 20.665,
+        "w_pct": 4.409,
+        "h_pct": 1.462
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_header / _filter as it functions as a structural label, not a section heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Nutzungsbedingungen",
+      "bbox": {
+        "x_pct": 11.747,
+        "y_pct": 67.35,
+        "w_pct": 18.602,
+        "h_pct": 1.595
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die ETH-Bibliothek ist die Anbieterin der digitalisierten Zeitschriften. Sie besitzt keine Urheberrechte an den Zeitschriften und ist nicht verantwortlich fr deren Inhalte. Die Rechte liegen in der Regel bei den Herausgebern beziehungsweise den externen Rechteinhabern. Siehe Rechtliche Hinweise.",
+      "bbox": {
+        "x_pct": 11.64,
+        "y_pct": 69.003,
+        "w_pct": 74.785,
+        "h_pct": 4.311
+      },
+      "changed": true,
+      "change_reason": "Corrected full text representation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Conditions d'utilisation",
+      "bbox": {
+        "x_pct": 11.801,
+        "y_pct": 74.112,
+        "w_pct": 18.952,
+        "h_pct": 1.292
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'ETH Library est le fournisseur des revues numrises. Elle ne dtient aucun droit d'auteur sur les revues et n'est pas responsable de leur contenu. En rgle gnrale, les droits sont dtenus par les diteurs ou les dtenteurs de droits externes. Voir Informations lgales.",
+      "bbox": {
+        "x_pct": 11.183,
+        "y_pct": 75.594,
+        "w_pct": 74.57,
+        "h_pct": 4.444
+      },
+      "changed": true,
+      "change_reason": "Corrected full text representation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Terms of use",
+      "bbox": {
+        "x_pct": 11.801,
+        "y_pct": 80.836,
+        "w_pct": 10.753,
+        "h_pct": 1.273
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The ETH Library is the provider of the digitised journals. It does not own any copyrights to the journals and is not responsible for their content. The rights usually lie with the publishers or the external rights holders. See Legal notice.",
+      "bbox": {
+        "x_pct": 11.64,
+        "y_pct": 82.336,
+        "w_pct": 76.21,
+        "h_pct": 4.33
+      },
+      "changed": true,
+      "change_reason": "Corrected full text representation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Download PDF: 05.06.2025",
+      "bbox": {
+        "x_pct": 11.855,
+        "y_pct": 88.224,
+        "w_pct": 27.124,
+        "h_pct": 1.595
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer / _filter as this is system information, not document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "ETH-Bibliothek Zrich, E-Periodica, https://www.e-periodica.ch",
+      "bbox": {
+        "x_pct": 11.613,
+        "y_pct": 91.51,
+        "w_pct": 60.672,
+        "h_pct": 1.918
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer / _filter as this is site branding metadata."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was incomplete for several paragraph blocks.",
+    "Structural elements like 'Heft' and metadata lines were incorrectly classified as headings or content."
+  ],
+  "doc_id": "1000",
+  "page": 1,
+  "elapsed_seconds": 5.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}
