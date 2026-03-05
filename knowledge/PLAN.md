@@ -108,20 +108,20 @@ PDF-Scans (286 PDFs)
   |
   +---> extract_pages.py ---------> 4,152 PNGs (300 DPI)           [DONE]
   |
-  +---> ocr_pipeline.py ----------> Markdown (per page)             [DONE: 15 pilot]
+  +---> ocr_pipeline.py ----------> Markdown (per page)             [DONE: 286/286]
   |         (Mistral / DeepSeek)
   |
   +---> run_layout_analysis.py --> Layout JSON (per page)           [DONE: 286/286]
   |         (Docling RT-DETR V2)
   |
-  +---> layout_qa_gemini.py -----> Corrected Layout JSON            [IN PROGRESS]
+  +---> layout_qa_gemini.py -----> Corrected Layout JSON            [IN PROGRESS: 847/4,152]
   |     --mode auto (Flash Lite)   (qa for good, detect for bad)
   |
-  +---> page_xml_generator.py --> PAGE-XML + METS                   [NEXT]
+  +---> page_xml_generator.py --> PAGE-XML + METS                   [DONE: 286 docs, 4,091 pages]
   |
   +---> ner_pipeline.py -------> Entities + GND-IDs (JSON)          [PENDING]
   |
-  +---> tei_generator.py ------> TEI-XML (DTA-Basisformat)         [PARTIAL: 15 pilot]
+  +---> tei_generator.py ------> TEI-XML (DTA-Basisformat)         [DONE: 285 docs, 4,117 files]
   |
   +---> evaluate_ocr.py -------> CER + Structure + Entity Scores   [DONE for pilot]
 ```

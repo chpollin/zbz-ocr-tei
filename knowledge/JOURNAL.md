@@ -14,6 +14,67 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-05 | Frontend Refactoring (Session 10)
+
+61. P0 Bug Fix: ZBZ.ZBZ.highlightXml -> ZBZ.highlightXml in tei-viewer.js + page-viewer.js (Doppel-Namespace verursachte Runtime-Error bei XML-Ansicht).
+
+62. shared.js Cleanup: 3 Dead-Code-Funktionen entfernt (getData, fmtAccuracy, fmtCost). ES6-Shorthand-Methoden zu ES5 konvertiert (loadData, fetchRefTeiPage). Shared parseXml() Utility hinzugefuegt (ersetzt duplizierte parseTeiXml/parsePageXml).
+
+63. Namespace-Konsolidierung: window.TeiViewer -> ZBZ.TeiViewer, window.PageViewer -> ZBZ.PageViewer. Alle Aufrufe in viewer.js angepasst. CSS-Klasse tei-empty -> empty-state (generisch, wird von TEI und PAGE verwendet).
+
+64. shared.css Refactoring: --accent-d (amber/Gemini) + --fs-2xs + --fs-code CSS-Variablen hinzugefuegt. 8x hardcoded font-size durch Variablen ersetzt. .tei-tab/.page-tab und .info-toggle/.layout-toggle dedupliziert. 3 Dead-CSS-Klassen entfernt (.viewer-layout, .preview.two-col, .tei-figure-head). Duplicate .tei-empty entfernt (nutzt jetzt .empty-state). Amber-Farben #f59e0b auf var(--accent-d) umgestellt. Utility-Klassen hinzugefuegt (.hidden, .no-padding, .section-gap, .dist-row, .grid-3col, .text-muted-sm, .text-muted-italic).
+
+65. viewer.js Refactoring: toggleTei/togglePage zu gemeinsamer togglePanel(name) zusammengefasst. 3x Zoom-Handler zu applyZoom() konsolidiert. DOM-Refs im mousemove-Handler gecacht (viewerArea, imagePanelEl, textPanelEl). alert() durch Inline-Fehlermeldung ersetzt. Unicode em-dash durch ASCII-Strich ersetzt.
+
+66. dashboard.js: Filter-Rows nach Tabellen-Render gecacht statt bei jedem Event neu abzufragen. 3 Inline-Styles durch CSS-Klassen ersetzt.
+
+67. benchmark.html: 230 Zeilen Inline-Script nach benchmark.js extrahiert. fmt() durch ZBZ.fmtNum() ersetzt. ZBZ.Benchmark Namespace.
+
+68. HTML Inline-Styles: Alle style="display:none" und style="padding:0" und style="margin-top:2.5rem" durch CSS-Klassen (hidden, no-padding, section-gap) ersetzt. JS-Show/Hide-Logik auf classList umgestellt.
+
+### Dateien geaendert
+
+| Datei | Aenderung |
+|-------|-----------|
+| `docs/shared.js` | Dead Code, ES6->ES5, +parseXml() |
+| `docs/shared.css` | CSS-Variablen, Dedup, Dead CSS, Utility-Klassen |
+| `docs/tei-viewer.js` | P0 Bug, parseXml Dedup, Namespace, empty-state, em-dash |
+| `docs/page-viewer.js` | P0 Bug, parseXml Dedup, Namespace, empty-state |
+| `docs/viewer.js` | togglePanel, applyZoom, DOM-Cache, alert, em-dash, classList |
+| `docs/dashboard.js` | Filter-Cache, Inline-Styles, classList |
+| `docs/benchmark.js` | NEU -- extrahiert aus benchmark.html |
+| `docs/benchmark.html` | Inline-Script entfernt, hidden-Klasse |
+| `docs/index.html` | Inline-Styles -> CSS-Klassen |
+| `docs/viewer.html` | Inline-Styles -> CSS-Klassen |
+
+---
+
+## 2026-03-05 | Documentation Refactoring (Session 9)
+
+55. Repo-Audit: Tatsaechlichen Zustand gegen Dokumentation abgeglichen. Output-Verzeichnisse gezaehlt (4.117 TEI-XML, 4.377 PAGE-XML, 286 Layout-Dirs), Scripts inventarisiert (25 Python-Dateien in 4 Sub-Modulen), Frontend-Dateien geprueft (9 Dateien in docs/).
+
+56. PROJEKT.md: 6 Korrekturen -- PAGE-XML Generator Pending->Done, TEI 383->4.117 Files, M2/M4 Milestones aktualisiert, 289->286 PDFs (mit O22-Verweis), Component Status ergaenzt (Classification, Gemini OCR, PAGE-XML Viewer, Layout Post-Processing resolved). Datum 2026-03-04->2026-03-05.
+
+57. PLAN.md: Data-Flow-Diagramm aktualisiert -- OCR, PAGE-XML, TEI von "PARTIAL/NEXT" auf "DONE" mit aktuellen Zahlen.
+
+58. INDEX.md: Korpusgroesse 289->286 korrigiert.
+
+59. README.md: Status-Tabelle aktualisiert (TEI 285/286 Docs, PAGE-XML 286/286, Gemini OCR-Korrektur ergaenzt). Next Steps korrigiert (NER als naechster Schritt). Directory-Listing erweitert (+classify_docs.py, +gemini_ocr_correct.py, +layout/, +page-viewer.js, +benchmark.html, +dashboard.js, +doc_metadata.json). Knowledge-Count 14->13. Engines-Tabelle: Gemini-Nutzung erweitert. Viewer: PAGE-XML-Viewer ergaenzt.
+
+60. requirements.txt: Fehlende anthropic-Dependency ergaenzt (wird von llm_postprocess.py benoetigt).
+
+### Dateien geaendert
+
+| Datei | Aenderung |
+|-------|-----------|
+| `knowledge/PROJEKT.md` | FIX -- 6 faktische Korrekturen (Status, Zahlen, Datum) |
+| `knowledge/PLAN.md` | FIX -- Data-Flow-Diagramm Status aktualisiert |
+| `knowledge/INDEX.md` | FIX -- 289->286 Korpusgroesse |
+| `README.md` | UPDATED -- Status, Directory, Next Steps, Engines |
+| `requirements.txt` | FIX -- +anthropic Dependency |
+
+---
+
 ## 2026-03-05 | PAGE-XML/METS Viewer + Refactoring (Session 8)
 
 51. PAGE-XML/METS Viewer im Frontend: Neues PageViewer-Modul (docs/page-viewer.js) mit 3 Tabs: Regionen (Region-Karten mit Typ, ID, Koordinaten, Text-Preview), XML (syntax-highlighted PAGE-XML Source), METS (Dokument-Manifest). PAGE und TEI teilen den 3. Panel-Slot (mutual exclusion).

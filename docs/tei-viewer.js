@@ -49,15 +49,15 @@
         teiState.diffDone = false;
         teiState.currentXml = null;
 
-        ZBZ.$('#tei-rendered').innerHTML = '<div class="tei-empty">Lade...</div>';
+        ZBZ.$('#tei-rendered').innerHTML = '<div class="empty-state">Lade...</div>';
 
         var xml = await ZBZ.fetchPageTei(docId, page);
         teiState.currentXml = xml;
 
         if (!xml) {
-            ZBZ.$('#tei-rendered').innerHTML = '<div class="tei-empty">Keine TEI-Daten fuer diese Seite.</div>';
+            ZBZ.$('#tei-rendered').innerHTML = '<div class="empty-state">Keine TEI-Daten fuer diese Seite.</div>';
             ZBZ.$('#tei-xml-code').textContent = '';
-            ZBZ.$('#diff-generated').innerHTML = '<div class="tei-empty">Keine TEI-Daten.</div>';
+            ZBZ.$('#diff-generated').innerHTML = '<div class="empty-state">Keine TEI-Daten.</div>';
             return;
         }
 
@@ -71,15 +71,8 @@
         }
     }
 
-    // ---- XML Namespace Stripping ----
-    // DOMParser with text/xml + xmlns makes querySelector fail.
-    // Strip namespace so querySelector('body') etc. work normally.
     function parseTeiXml(xml) {
-        var stripped = xml.replace(/\s+xmlns\s*=\s*["'][^"']*["']/g, '');
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(stripped, 'text/xml');
-        if (doc.querySelector('parsererror')) return null;
-        return doc;
+        return ZBZ.parseXml(xml);
     }
 
     // ---- Rendered View ----
@@ -90,7 +83,7 @@
 
         var doc = parseTeiXml(xml);
         if (!doc) {
-            container.innerHTML = '<div class="tei-empty">XML-Parse-Fehler</div>';
+            container.innerHTML = '<div class="empty-state">XML-Parse-Fehler</div>';
             return;
         }
 
@@ -98,7 +91,7 @@
 
         var body = doc.querySelector('body');
         if (!body) {
-            container.innerHTML = '<div class="tei-empty">Kein &lt;body&gt; im TEI</div>';
+            container.innerHTML = '<div class="empty-state">Kein &lt;body&gt; im TEI</div>';
             return;
         }
 
@@ -133,7 +126,7 @@
         if (tag === 'pb') {
             elem = document.createElement('div');
             elem.className = 'tei-pb';
-            elem.textContent = '\u2014 Seite ' + (node.getAttribute('n') || '?') + ' \u2014';
+            elem.textContent = '- Seite ' + (node.getAttribute('n') || '?') + ' -';
             container.appendChild(elem);
             return;
         }
@@ -236,7 +229,7 @@
     // ---- XML Syntax Highlighting ----
     function renderTeiXml(xml) {
         teiState.xmlDone = true;
-        ZBZ.$('#tei-xml-code').innerHTML = ZBZ.ZBZ.highlightXml(xml);
+        ZBZ.$('#tei-xml-code').innerHTML = ZBZ.highlightXml(xml);
     }
 
     // ---- Diff View ----
@@ -246,13 +239,13 @@
         var refContainer = ZBZ.$('#diff-reference');
 
         genContainer.innerHTML = '<pre>' + ZBZ.highlightXml(xml) + '</pre>';
-        refContainer.innerHTML = '<div class="tei-empty">Lade Referenz...</div>';
+        refContainer.innerHTML = '<div class="empty-state">Lade Referenz...</div>';
 
         ZBZ.fetchRefTeiPage(docId, page).then(function (refXml) {
             if (refXml) {
                 refContainer.innerHTML = '<pre>' + ZBZ.highlightXml(refXml) + '</pre>';
             } else {
-                refContainer.innerHTML = '<div class="tei-empty">Keine Referenz-TEI fuer dieses Dokument.</div>';
+                refContainer.innerHTML = '<div class="empty-state">Keine Referenz-TEI fuer dieses Dokument.</div>';
             }
         });
     }
@@ -365,7 +358,7 @@
     init();
 
     // ---- Public API ----
-    window.TeiViewer = {
+    ZBZ.TeiViewer = {
         loadTei: loadTei,
         switchMode: switchTeiMode,
         toggleEntitySidebar: toggleEntitySidebar

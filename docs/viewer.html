@@ -19,9 +19,9 @@
         <!-- Source Toggle -->
         <div class="source-toggle" id="source-toggle">
             <button class="source-btn active" data-source="mistral">Mistral OCR</button>
-            <button class="source-btn blue" data-source="llm_corrected" id="btn-llm" style="display:none">LLM-korrigiert</button>
-            <button class="source-btn amber" data-source="gemini_corrected" id="btn-gemini" style="display:none">Gemini-korrigiert</button>
-            <button class="source-btn violet" data-source="deepseek" id="btn-deepseek" style="display:none">DeepSeek</button>
+            <button class="source-btn blue hidden" data-source="llm_corrected" id="btn-llm">LLM-korrigiert</button>
+            <button class="source-btn amber hidden" data-source="gemini_corrected" id="btn-gemini">Gemini-korrigiert</button>
+            <button class="source-btn violet hidden" data-source="deepseek" id="btn-deepseek">DeepSeek</button>
         </div>
 
         <!-- Page Navigation -->
@@ -88,9 +88,9 @@
                 </div>
             </div>
 
-            <div class="viewer-divider" id="divider2" style="display:none"></div>
+            <div class="viewer-divider hidden" id="divider2"></div>
 
-            <div class="viewer-panel" id="tei-panel" style="display:none">
+            <div class="viewer-panel hidden" id="tei-panel">
                 <div class="viewer-panel-header">
                     <span>TEI</span>
                     <div class="tei-tabs">
@@ -111,7 +111,7 @@
                         </div>
 
                         <!-- Diff View (side-by-side) -->
-                        <div id="tei-diff-view" class="tei-view hidden" style="padding:0">
+                        <div id="tei-diff-view" class="tei-view hidden no-padding">
                             <div class="tei-diff-panel">
                                 <div class="tei-diff-column">
                                     <div class="tei-diff-header generated">Generiert</div>
@@ -155,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="viewer-panel" id="page-panel" style="display:none">
+            <div class="viewer-panel hidden" id="page-panel">
                 <div class="viewer-panel-header">
                     <span>PAGE</span>
                     <div class="tei-tabs">

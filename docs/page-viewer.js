@@ -44,14 +44,14 @@
         pageState.metsDone = false;
         pageState.currentXml = null;
 
-        ZBZ.$('#page-regions').innerHTML = '<div class="tei-empty">Lade...</div>';
+        ZBZ.$('#page-regions').innerHTML = '<div class="empty-state">Lade...</div>';
 
         var xml = await ZBZ.fetchPageXml(docId, page);
         pageState.currentXml = xml;
 
         if (!xml) {
             ZBZ.$('#page-regions').innerHTML =
-                '<div class="tei-empty">Keine PAGE-XML-Daten fuer diese Seite.</div>';
+                '<div class="empty-state">Keine PAGE-XML-Daten fuer diese Seite.</div>';
             ZBZ.$('#page-xml-code').textContent = '';
             return;
         }
@@ -65,15 +65,8 @@
         }
     }
 
-    // ---- Parse PAGE-XML ----
     function parsePageXml(xml) {
-        var stripped = xml.replace(/\s+xmlns\s*=\s*["'][^"']*["']/g, '');
-        stripped = stripped.replace(/\s+xmlns:xsi\s*=\s*["'][^"']*["']/g, '');
-        stripped = stripped.replace(/\s+xsi:schemaLocation\s*=\s*["'][^"']*["']/g, '');
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(stripped, 'text/xml');
-        if (doc.querySelector('parsererror')) return null;
-        return doc;
+        return ZBZ.parseXml(xml);
     }
 
     function extractStructureType(customAttr) {
@@ -114,13 +107,13 @@
 
         var doc = parsePageXml(xml);
         if (!doc) {
-            container.innerHTML = '<div class="tei-empty">XML-Parse-Fehler</div>';
+            container.innerHTML = '<div class="empty-state">XML-Parse-Fehler</div>';
             return;
         }
 
         var pageEl = doc.querySelector('Page');
         if (!pageEl) {
-            container.innerHTML = '<div class="tei-empty">Kein &lt;Page&gt; Element</div>';
+            container.innerHTML = '<div class="empty-state">Kein &lt;Page&gt; Element</div>';
             return;
         }
 
@@ -141,7 +134,7 @@
 
         var regions = doc.querySelectorAll('TextRegion');
         if (regions.length === 0) {
-            container.innerHTML += '<div class="tei-empty">Keine TextRegions</div>';
+            container.innerHTML += '<div class="empty-state">Keine TextRegions</div>';
             return;
         }
 
@@ -193,7 +186,7 @@
     // ---- XML View ----
     function renderPageXml(xml) {
         pageState.xmlDone = true;
-        ZBZ.$('#page-xml-code').innerHTML = ZBZ.ZBZ.highlightXml(xml);
+        ZBZ.$('#page-xml-code').innerHTML = ZBZ.highlightXml(xml);
     }
 
     // ---- METS View ----
@@ -223,7 +216,7 @@
     init();
 
     // ---- Public API ----
-    window.PageViewer = {
+    ZBZ.PageViewer = {
         loadPage: loadPage,
         switchMode: switchPageMode
     };

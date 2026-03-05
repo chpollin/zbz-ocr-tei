@@ -52,8 +52,7 @@
             state.docData = data.documents[state.docId];
 
             if (!state.docData) {
-                alert('Dokument ' + state.docId + ' nicht gefunden.');
-                window.location.href = 'index.html';
+                docTitle.textContent = 'Dokument ' + state.docId + ' nicht gefunden.';
                 return;
             }
 
@@ -61,18 +60,18 @@
             state.hasDeepseek = state.docData.deepseek_stats != null;
             state.hasLlm = state.docData.pipeline_status.llm_corrected;
 
-            docTitle.textContent = state.docId + '.pdf \u2014 ' + state.docData.desc;
+            docTitle.textContent = state.docId + '.pdf - ' + state.docData.desc;
 
             // Show/hide source buttons
             state.hasGemini = state.docData.pipeline_status.gemini_corrected;
             if (state.hasLlm) {
-                ZBZ.$('#btn-llm').style.display = '';
+                ZBZ.$('#btn-llm').classList.remove('hidden');
             }
             if (state.hasGemini) {
-                ZBZ.$('#btn-gemini').style.display = '';
+                ZBZ.$('#btn-gemini').classList.remove('hidden');
             }
             if (state.hasDeepseek) {
-                ZBZ.$('#btn-deepseek').style.display = '';
+                ZBZ.$('#btn-deepseek').classList.remove('hidden');
             }
 
             renderDocInfo();
@@ -366,58 +365,46 @@
     var pagePanel = ZBZ.$('#page-panel');
     var pageToggle = ZBZ.$('#page-toggle');
 
-    function toggleTei() {
-        state.teiVisible = !state.teiVisible;
-        teiToggle.classList.toggle('active', state.teiVisible);
+    function togglePanel(name) {
+        var isTei = name === 'tei';
+        var panel = isTei ? teiPanel : pagePanel;
+        var toggle = isTei ? teiToggle : pageToggle;
+        var otherKey = isTei ? 'pageVisible' : 'teiVisible';
+        var otherPanel = isTei ? pagePanel : teiPanel;
+        var otherToggle = isTei ? pageToggle : teiToggle;
+        var stateKey = isTei ? 'teiVisible' : 'pageVisible';
+        var imagePanel = ZBZ.$('#image-panel');
+        var textPanel = ZBZ.$('#text-panel');
 
-        if (state.teiVisible) {
-            // Mutual exclusion: hide PAGE if visible
-            if (state.pageVisible) {
-                state.pageVisible = false;
-                pageToggle.classList.remove('active');
-                pagePanel.style.display = 'none';
+        state[stateKey] = !state[stateKey];
+        toggle.classList.toggle('active', state[stateKey]);
+
+        if (state[stateKey]) {
+            if (state[otherKey]) {
+                state[otherKey] = false;
+                otherToggle.classList.remove('active');
+                otherPanel.classList.add('hidden');
             }
-            teiPanel.style.display = '';
-            divider2.style.display = '';
-            ZBZ.$('#image-panel').style.flex = '1 1 0';
-            ZBZ.$('#text-panel').style.flex = '1 1 0';
-            teiPanel.style.flex = '1 1 0';
-            TeiViewer.loadTei(state.docId, state.page);
+            panel.classList.remove('hidden');
+            divider2.classList.remove('hidden');
+            imagePanel.style.flex = '1 1 0';
+            textPanel.style.flex = '1 1 0';
+            panel.style.flex = '1 1 0';
+            if (isTei) {
+                ZBZ.TeiViewer.loadTei(state.docId, state.page);
+            } else {
+                ZBZ.PageViewer.loadPage(state.docId, state.page);
+            }
         } else {
-            teiPanel.style.display = 'none';
-            divider2.style.display = 'none';
-            ZBZ.$('#image-panel').style.flex = '1';
-            ZBZ.$('#text-panel').style.flex = '1';
+            panel.classList.add('hidden');
+            divider2.classList.add('hidden');
+            imagePanel.style.flex = '1';
+            textPanel.style.flex = '1';
         }
     }
 
-    function togglePage() {
-        state.pageVisible = !state.pageVisible;
-        pageToggle.classList.toggle('active', state.pageVisible);
-
-        if (state.pageVisible) {
-            // Mutual exclusion: hide TEI if visible
-            if (state.teiVisible) {
-                state.teiVisible = false;
-                teiToggle.classList.remove('active');
-                teiPanel.style.display = 'none';
-            }
-            pagePanel.style.display = '';
-            divider2.style.display = '';
-            ZBZ.$('#image-panel').style.flex = '1 1 0';
-            ZBZ.$('#text-panel').style.flex = '1 1 0';
-            pagePanel.style.flex = '1 1 0';
-            PageViewer.loadPage(state.docId, state.page);
-        } else {
-            pagePanel.style.display = 'none';
-            divider2.style.display = 'none';
-            ZBZ.$('#image-panel').style.flex = '1';
-            ZBZ.$('#text-panel').style.flex = '1';
-        }
-    }
-
-    teiToggle.addEventListener('click', function () { toggleTei(); });
-    pageToggle.addEventListener('click', function () { togglePage(); });
+    teiToggle.addEventListener('click', function () { togglePanel('tei'); });
+    pageToggle.addEventListener('click', function () { togglePanel('page'); });
 
     // ---- Info Toggle ----
     ZBZ.$('#info-toggle').addEventListener('click', function () {
@@ -456,8 +443,8 @@
 
         await loadText();
         renderLayout();
-        if (state.teiVisible) TeiViewer.loadTei(state.docId, state.page);
-        if (state.pageVisible) PageViewer.loadPage(state.docId, state.page);
+        if (state.teiVisible) ZBZ.TeiViewer.loadTei(state.docId, state.page);
+        if (state.pageVisible) ZBZ.PageViewer.loadPage(state.docId, state.page);
 
         pageInfo.textContent = page + ' / ' + state.totalPages;
         prevBtn.disabled = page <= 1;
@@ -480,38 +467,30 @@
     nextBtn.addEventListener('click', function () { showPage(state.page + 1); });
 
     // ---- Zoom ----
-    ZBZ.$('#zoom-in').addEventListener('click', function () {
-        state.zoom = Math.min(300, state.zoom + 25);
+    function applyZoom(newZoom) {
+        state.zoom = newZoom;
         pageImage.style.width = state.zoom + '%';
         imageWrapper.style.width = state.zoom + '%';
         ZBZ.$('#zoom-reset').textContent = state.zoom + '%';
-    });
+    }
 
-    ZBZ.$('#zoom-out').addEventListener('click', function () {
-        state.zoom = Math.max(25, state.zoom - 25);
-        pageImage.style.width = state.zoom + '%';
-        imageWrapper.style.width = state.zoom + '%';
-        ZBZ.$('#zoom-reset').textContent = state.zoom + '%';
-    });
-
-    ZBZ.$('#zoom-reset').addEventListener('click', function () {
-        state.zoom = 100;
-        pageImage.style.width = '100%';
-        imageWrapper.style.width = '100%';
-        ZBZ.$('#zoom-reset').textContent = '100%';
-    });
+    ZBZ.$('#zoom-in').addEventListener('click', function () { applyZoom(Math.min(300, state.zoom + 25)); });
+    ZBZ.$('#zoom-out').addEventListener('click', function () { applyZoom(Math.max(25, state.zoom - 25)); });
+    ZBZ.$('#zoom-reset').addEventListener('click', function () { applyZoom(100); });
 
     // ---- Resizable Dividers ----
     var divider = ZBZ.$('#divider');
     var activeDivider = null;
+    var viewerArea = ZBZ.$('.viewer-area');
+    var imagePanelEl = ZBZ.$('#image-panel');
+    var textPanelEl = ZBZ.$('#text-panel');
 
     divider.addEventListener('mousedown', function () { activeDivider = 1; });
     divider2.addEventListener('mousedown', function () { activeDivider = 2; });
 
     document.addEventListener('mousemove', function (e) {
         if (!activeDivider) return;
-        var layout = ZBZ.$('.viewer-area');
-        var totalW = layout.offsetWidth;
+        var totalW = viewerArea.offsetWidth;
         var pct = (e.clientX / totalW) * 100;
 
         var thirdPanelActive = state.teiVisible || state.pageVisible;
@@ -521,19 +500,19 @@
             var minLeft = thirdPanelActive ? 15 : 20;
             var maxLeft = thirdPanelActive ? 60 : 80;
             pct = Math.max(minLeft, Math.min(maxLeft, pct));
-            ZBZ.$('#image-panel').style.flex = '0 0 ' + pct + '%';
+            imagePanelEl.style.flex = '0 0 ' + pct + '%';
             if (thirdPanelActive) {
                 var rest = 100 - pct;
-                ZBZ.$('#text-panel').style.flex = '0 0 ' + (rest / 2) + '%';
+                textPanelEl.style.flex = '0 0 ' + (rest / 2) + '%';
                 thirdPanel.style.flex = '0 0 ' + (rest / 2) + '%';
             } else {
-                ZBZ.$('#text-panel').style.flex = '0 0 ' + (100 - pct) + '%';
+                textPanelEl.style.flex = '0 0 ' + (100 - pct) + '%';
             }
         } else if (activeDivider === 2 && thirdPanelActive) {
-            var imageRect = ZBZ.$('#image-panel').getBoundingClientRect();
+            var imageRect = imagePanelEl.getBoundingClientRect();
             var imageEnd = ((imageRect.right + 4) / totalW) * 100;
             pct = Math.max(imageEnd + 10, Math.min(90, pct));
-            ZBZ.$('#text-panel').style.flex = '0 0 ' + (pct - imageEnd) + '%';
+            textPanelEl.style.flex = '0 0 ' + (pct - imageEnd) + '%';
             thirdPanel.style.flex = '0 0 ' + (100 - pct) + '%';
         }
     });

@@ -1,14 +1,14 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-04
+updated: 2026-03-05
 tags: [zbz-ocr-tei, project, ecosystem, vision]
 status: active
 ---
 
 # Project: ZBZ-OCR-TEI Pipeline
 
-LLM-powered OCR and TEI transformation pipeline for 289 Jeanne Hersch texts (7,200 pages) from the Zentralbibliothek Zuerich.
+LLM-powered OCR and TEI transformation pipeline for 286 Jeanne Hersch texts (4,152 pages) from the Zentralbibliothek Zuerich. (Masterfile lists 289 texts; 3 missing — see [DECISIONS](DECISIONS.md) O22.)
 
 **Dependencies:** None (root document)
 
@@ -59,10 +59,10 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 |---|-----------|-------------------|--------|
 | M0 | Image extraction + QA viewer | Images + viewer available | Done |
 | M1 | OCR validated | >=93% accuracy all types | Done: 93.58% (Mistral), dashboard UI |
-| M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for 15 pilots | **Phase 1** |
-| M3 | NER + GND | Entity recall >70%, GND linking >60% | **Phase 2** |
-| M4 | TEI-XML | DTA-compliant TEI for 15 pilots, schema-valid | Partial (383 files generated, E22: without PAGE-XML/NER) |
-| M5 | Production run | 289 docs processed, spot-check QA passed | Phase 5 |
+| M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done: 286 docs, 4,091 PAGE-XML + 286 METS |
+| M3 | NER + GND | Entity recall >70%, GND linking >60% | **Pending** (Phase 3) |
+| M4 | TEI-XML | DTA-compliant TEI, schema-valid | Done (without NER): 285 docs, 4,117 TEI-XML files |
+| M5 | Production run | 286 docs processed, spot-check QA passed | Pending (Phase 6) |
 
 ### Dependencies
 
@@ -72,7 +72,7 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-## Component Status (04.03.2026)
+## Component Status (05.03.2026)
 
 | Component | Status | Details |
 |-----------|--------|---------|
@@ -93,11 +93,14 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Layout analysis (Docling) | Done | 286/286 docs, 4,152 layout JSONs. Quality: 75% good, 10% warning, 12% bad, 3% empty |
 | Layout QA (Gemini) | Done | `layout_qa_gemini.py --mode qa`: label corrections (Flash Lite, E25) |
 | Layout Detect (Gemini) | Done | `layout_qa_gemini.py --mode detect`: full re-detection for bad pages (Flash Lite, E26). Tested on Doc 510, 900 |
-| TEI generator | Done | `scripts/tei/tei_generator.py`, 383 TEI-XML files, DTA-Basisformat |
+| TEI generator | Done | `scripts/tei/tei_generator.py`, 4,117 TEI-XML files (285 docs), DTA-Basisformat with layout + doc_metadata |
+| PAGE-XML generator | Done | `scripts/layout/page_xml_generator.py` + `mets_generator.py`, 286 docs, 4,091 PAGE-XML + 286 METS |
+| Document classification | Done | `scripts/classify_docs.py`, Gemini 3.1 Flash Lite, 286/286 docs (E27) |
+| Gemini OCR correction | Sample | `scripts/gemini_ocr_correct.py`, 5 pilot docs, CER 3.97% -> 3.30% (E29) |
 | Viewer TEI panel | Done | 3-panel viewer (facsimile + OCR + TEI), toggle T, rendered view, syntax highlighting, diff, entity sidebar |
 | Viewer TEI refactoring | Done | TEI JS extracted to `docs/tei-viewer.js` (~300 lines), viewer.html 1200->816 lines |
-| Layout post-processing | Pending | Overlap filter, single-line merge, page-number heuristic (O21) |
-| PAGE-XML generator | Pending | Layout + OCR -> PAGE-XML (phase 1 in [PLAN](PLAN.md)) |
+| Viewer PAGE-XML panel | Done | `docs/page-viewer.js`, regions/XML/METS tabs, mutual exclusion with TEI |
+| Layout post-processing | Resolved | Handled by E25/E26 (Gemini QA/Detect) — see [DECISIONS](DECISIONS.md) O21 |
 | NER + GND | Pending | Entity recognition + GND linking (phase 2 in [PLAN](PLAN.md)) |
 | Containerization | Pending | Dockerfile for Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
@@ -119,8 +122,8 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 | Item | Amount |
 |------|--------|
-| Mistral OCR (Azure, 289 docs) | 6-15 USD |
-| LLM correction (Haiku 4.5, 289 docs) | ~35 USD |
+| Mistral OCR (Azure, 286 docs) | 6-15 USD |
+| LLM correction (Haiku 4.5, 286 docs) | ~35 USD |
 | Gemini Layout QA + Detect | ~12 USD |
 | GPU cloud (optional) | ~10-20 USD |
 

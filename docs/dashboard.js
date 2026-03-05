@@ -16,8 +16,8 @@
             return;
         }
 
-        ZBZ.$('#loading').style.display = 'none';
-        ZBZ.$('#app').style.display = 'block';
+        ZBZ.$('#loading').classList.add('hidden');
+        ZBZ.$('#app').classList.remove('hidden');
 
         renderMetrics();
         renderPhaseSummary();
@@ -66,7 +66,7 @@
             entries.forEach(function (key) {
                 var label = labels ? (labels[key] || key) : key;
                 var count = dist[key];
-                html += '<div style="display:flex;justify-content:space-between;padding:2px 0;font-size:0.85rem">' +
+                html += '<div class="dist-row">' +
                     '<span>' + label + '</span>' +
                     '<span style="font-weight:600">' + count + '</span></div>';
             });
@@ -74,7 +74,7 @@
             return html;
         }
 
-        var html = '<div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">';
+        var html = '<div class="metric-grid grid-3col">';
         html += distCard('Layout-Typen', c.types, TYPE_LABELS);
         html += distCard('Sprachen', c.languages, null);
         html += distCard('Publikationsformen', c.forms, FORM_LABELS);
@@ -132,7 +132,7 @@
         var titleDesc = '';
         if (d.title) {
             titleDesc = '<strong>' + ZBZ.esc(d.title) + '</strong>';
-            if (d.desc) titleDesc += '<br><span style="color:var(--text-muted);font-size:0.75rem">' + ZBZ.esc(d.desc) + '</span>';
+            if (d.desc) titleDesc += '<br><span class="text-muted-sm">' + ZBZ.esc(d.desc) + '</span>';
         } else {
             titleDesc = d.desc || '';
         }
@@ -167,6 +167,7 @@
         var lang = ZBZ.$('#filter-lang');
         var status = ZBZ.$('#filter-status');
         var engine = ZBZ.$('#filter-engine');
+        var rows = ZBZ.$$('#catalog-body tr');
 
         function apply() {
             var q = search.value.toLowerCase();
@@ -174,7 +175,6 @@
             var l = lang.value;
             var s = status.value;
             var eng = engine.value;
-            var rows = ZBZ.$$('#catalog-body tr');
 
             rows.forEach(function (row) {
                 var rowType = row.getAttribute('data-type');

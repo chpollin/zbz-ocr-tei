@@ -26,7 +26,10 @@ rapidfuzz>=3.0.0      # String-Matching
 # pip install docling "docling[easyocr]"
 # Hinweis: Erfordert Windows Developer Mode (Symlinks)
 
-# Gemini API (Layout QA)
+# LLM Post-Correction (optional, Stage 2a)
+anthropic>=0.39.0
+
+# Gemini API (Layout QA, Classification, OCR Correction)
 google-genai>=1.0.0
 
 # Entwicklung

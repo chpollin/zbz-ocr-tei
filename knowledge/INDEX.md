@@ -83,7 +83,7 @@ JOURNAL   <-- chronological, references all docs
 
 1. **Understand the project:** [PROJEKT](PROJEKT.md) -- Scope, milestones, team
 2. **Understand the pipeline:** [PIPELINE](PIPELINE.md) -- the 7-stage pipeline (PDF -> TEI-XML)
-3. **Know the material:** [QUELLENANALYSE](QUELLENANALYSE.md) -- 289 texts, 4 document types
+3. **Know the material:** [QUELLENANALYSE](QUELLENANALYSE.md) -- 286 documents, 4 document types
 4. **View the dashboard:** `docs/index.html` -- Metrics, engine comparison, pipeline status
 5. **Check status:** [DECISIONS](DECISIONS.md) -- what is decided, what is blocking?
 6. **Last session:** [JOURNAL](JOURNAL.md) -- chronological work log

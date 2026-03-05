@@ -36,15 +36,11 @@
 
     var ZBZ = {
         // ---- Data Loading ----
-        async loadData() {
+        loadData: async function() {
             if (_data) return _data;
             var r = await fetch('data/dashboard.json');
             if (!r.ok) throw new Error('dashboard.json nicht gefunden');
             _data = await r.json();
-            return _data;
-        },
-
-        getData() {
             return _data;
         },
 
@@ -106,7 +102,7 @@
         },
 
         // ---- Reference TEI Fetching (per-page extraction from whole-document XML) ----
-        async fetchRefTeiPage(docId, page) {
+        fetchRefTeiPage: async function(docId, page) {
             var key = 'ref-tei/' + docId + '/' + page;
             if (_textCache[key] !== undefined) return _textCache[key];
 
@@ -185,6 +181,16 @@
             }
         },
 
+        // ---- XML Parsing ----
+        parseXml: function (xml) {
+            var cleaned = xml
+                .replace(/\s+xmlns(:\w+)?\s*=\s*["'][^"']*["']/g, '')
+                .replace(/\s+xsi:\w+\s*=\s*["'][^"']*["']/g, '');
+            var doc = new DOMParser().parseFromString(cleaned, 'text/xml');
+            if (doc.querySelector('parsererror')) return null;
+            return doc;
+        },
+
         // ---- XML Syntax Highlighting ----
         highlightXml: function (xml) {
             var s = xml
@@ -234,16 +240,6 @@
             if (n == null) return '-';
             decimals = decimals != null ? decimals : 2;
             return (n * 100).toFixed(decimals) + '%';
-        },
-
-        fmtAccuracy: function (cer) {
-            if (cer == null) return '-';
-            return ((1 - cer) * 100).toFixed(2) + '%';
-        },
-
-        fmtCost: function (n) {
-            if (n == null) return '-';
-            return '$' + n.toFixed(2);
         },
 
         padPage: function (page) {
