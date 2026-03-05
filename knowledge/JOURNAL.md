@@ -14,7 +14,17 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
-## 2026-03-05 | Stage 1a Klassifikation + Dashboard-Ueberarbeitung
+## 2026-03-05 | Stage 1a Klassifikation + Dashboard + Online-Demo
+
+### Session 4: Online-Demo (GitHub Pages)
+
+27. 4 DEMO-Dokumente ausgewaehlt (2310/A/FR, 1000/B/FR, 1330/D/DE-FR, 1540/C/DE) -- alle 4 Typen, 3 Sprachen, unterschiedliche Seitenzahlen. Bilder unter docs/images/, OCR+Layout+TEI unter docs/data/examples/.
+
+28. Disclaimer-Banner auf Dashboard und Viewer: "Prototyping Interface", "KI-generiert", "4 Beispieldokumente online, vollstaendige Daten lokal".
+
+29. DEMO-Badges im Katalog (teal "DEMO"-Tag neben Doc-ID). DEMO-Docs zuoberst sortiert.
+
+30. GitHub Pages Fix: Viewer holte OCR/Layout von ../output/ -- auf GH Pages nicht erreichbar. Loesung: Beispieldaten unter docs/data/examples/, shared.js Fallback-Pfade (primaer ../output/, Fallback data/examples/). Lokal und online funktional.
 
 ### Session 3: Gemini Dokumentklassifikation + Dashboard-Overhaul
 

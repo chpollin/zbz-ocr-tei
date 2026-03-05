@@ -59,7 +59,7 @@
         // ---- Layout Data Fetching ----
         // source: 'docling' (default) or 'gemini'
         async fetchLayoutData(docId, page, source) {
-            source = source || 'docling';
+            source = source || 'gemini';
             var key = 'layout/' + source + '/' + docId + '/' + page;
             if (_textCache[key] !== undefined) return _textCache[key];
 

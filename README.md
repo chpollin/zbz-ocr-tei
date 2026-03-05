@@ -4,21 +4,22 @@ LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbib
 
 ## What does this repo do?
 
-Fully automated end-to-end pipeline for 289 texts (7,200 pages) from the estate of Jeanne Hersch:
+Fully automated end-to-end pipeline for 286 documents (4,152 pages) from the estate of Jeanne Hersch:
 
 ```
 PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
               (PNG)     (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
 ```
 
-## Status (04.03.2026)
+## Status (05.03.2026)
 
-286 PDFs received (E23), 15 pilot documents (383 pages) fully processed. Layout analysis complete for all 286 docs.
+286 PDFs received (E23), 15 pilot documents (383 pages) fully processed. OCR + Layout + Classification complete for all 286 docs.
 
 | Component | Status | Result |
 |-----------|--------|--------|
 | Image extraction | 286/286 Docs | 4,152 page images (PNG) |
-| OCR (Mistral) | 15/286 Docs | CER 6.42%, accuracy 93.58% |
+| Document classification | 286/286 Docs | Gemini 3.1 Flash Lite (Stage 1a, E27) |
+| OCR (Mistral) | 285/286 Docs | CER 6.42% (15 Pilot-Docs evaluiert) |
 | LLM post-correction | 15/286 Docs | Optional (E17), Haiku 4.5 Variant C |
 | Layout analysis (Docling) | 286/286 Docs | 4,152 layout JSONs, RTX 4060 ~5s/page |
 | Gemini Layout QA/Detect | 286/286 Docs | Auto mode: QA for good, detect for bad pages (E25/E26) |
@@ -34,9 +35,20 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 | C | Monograph | 2.65% | 97.35% |
 | D | Special format | 2.88% | 97.12% |
 
+### Online Demo
+
+4 representative documents are available on [GitHub Pages](https://dhcraft.github.io/zbz-ocr-tei/) with full viewer functionality (facsimile, OCR text, layout overlay). All results are AI-generated. Full data (286 docs) is only available locally.
+
+| Doc | Type | Language | Pages |
+|-----|------|----------|-------|
+| 2310 | A (single-column) | FR | 3 |
+| 1000 | B (two-column) | FR | 4 |
+| 1330 | D (special) | DE/FR | 6 |
+| 1540 | C (monograph) | DE | 8 |
+
 ### Next Steps
 
-Layout post-processing (O21) -> PAGE-XML -> NER+GND -> TEI extension -> Production run (286 docs). Details: [PLAN.md](knowledge/PLAN.md).
+PAGE-XML -> NER+GND -> TEI extension -> Production run (286 docs). Details: [PLAN.md](knowledge/PLAN.md).
 
 ## Directory Structure
 
@@ -54,12 +66,14 @@ zbz-ocr-tei/
     generate_dashboard_data.py  # Dashboard data
     tei/                  # TEI-XML generator
     postprocess/          # Deterministic post-processing
-  docs/                   # Dashboard + QA viewer
+  docs/                   # Dashboard + QA viewer (GitHub Pages)
     index.html            # Dashboard: metrics, document catalog, CER comparison
     viewer.html           # 3-panel viewer: facsimile + OCR + TEI
     tei-viewer.js         # TEI rendering: rendered view, diff, entities
     shared.css / shared.js  # Design system + shared utilities
     data/dashboard.json   # Generated data
+    data/examples/        # 4 DEMO docs (OCR + Layout for online demo)
+    images/               # Page scans (4 DEMO docs committed, rest local)
   data/                   # Source data (not versioned)
     scans/                # 286 PDF digitizations
     referenz-tei/         # 25 reference TEI (ZBZ-annotated)
@@ -129,7 +143,7 @@ The QA dashboard (`docs/index.html`) shows pipeline status, CER comparison, and 
 | Decisions + open items | [knowledge/DECISIONS.md](knowledge/DECISIONS.md) |
 | Test plan + results | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
 | TEI rules | [knowledge/TEI-MAPPING.md](knowledge/TEI-MAPPING.md) |
-| OCR engines | [knowledge/OCR-ENGINES.md](knowledge/OCR-ENGINES.md) |
+| OCR + Layout engines | [knowledge/ENGINES.md](knowledge/ENGINES.md) |
 | Work journal | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
 
 ## Team
@@ -138,4 +152,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-03-04*
+*Last updated: 2026-03-05*

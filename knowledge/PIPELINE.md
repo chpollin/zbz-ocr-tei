@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-03-04
+updated: 2026-03-05
 tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
@@ -270,6 +270,25 @@ python -m scripts.postprocess.pipeline
 | `docs/data/dashboard.json` | Generated data (from `scripts/generate_dashboard_data.py`) |
 
 The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engine availability, and a filterable document catalog. Data is statically generated from pipeline outputs. TEI rendering (rendered view, XML highlighting, reference diff, entity sidebar) is in `tei-viewer.js`.
+
+### GitHub Pages / Online-Demo (E28)
+
+Full pipeline output (`output/`) is gitignored and only available locally. For the online demo (GitHub Pages), 4 representative documents are committed:
+
+| Doc | Type | Language | Pages | Variety |
+|-----|------|----------|-------|---------|
+| 2310 | A (single-column) | FR | 3 | Journal article, JSTOR cover |
+| 1000 | B (two-column) | FR | 4 | Two-column journal article |
+| 1330 | D (special) | DE/FR | 6 | Bilingual book |
+| 1540 | C (monograph) | DE | 8 | German monograph |
+
+**Data locations:**
+- Scan images: `docs/images/{doc_id}/` (gitignore exception)
+- OCR + Layout + TEI: `docs/data/examples/{doc_id}/` (flat files)
+
+**Fallback mechanism:** `shared.js` fetch functions try the primary path (`../output/...`) first, then `data/examples/{doc_id}/...` as fallback. This ensures both local (full data) and online (DEMO data) work without configuration.
+
+**UI indicators:** Disclaimer banner on dashboard + viewer ("Prototyping Interface", "KI-generiert"). DEMO badge (teal tag) on the 4 example docs in the catalog. DEMO docs sorted first.
 
 ---
 

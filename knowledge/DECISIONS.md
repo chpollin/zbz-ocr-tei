@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-04
+updated: 2026-03-05
 tags: [zbz-ocr-tei, decisions, open, decided]
 status: active
 ---
@@ -42,6 +42,7 @@ Consolidated register of all decisions and open questions in the project.
 | E25 | Gemini 3.1 Flash Lite as Layout QA validator | Overlay-PNG + Layout-JSON to Gemini Vision, corrected JSON back. Both versions preserved (epistemic infrastructure). Structured Output via `response_schema`. SDK: `google-genai`. Cost: ~$4 for 7,200 pages | 2026-03-03 | [PIPELINE](PIPELINE.md) |
 | E26 | Gemini Layout Detect mode (3.1 Flash Lite) | Docling fails on ~15% of pages (bad+empty) (landscape, multi-column, dense). Detect mode sends raw scan to Gemini Vision, returns regions with `box_2d` coordinates. Three modes: `qa` (label fix), `detect` (full detection), `auto` (detect for bad, qa for good). Quality scoring routes pages automatically. Flash Lite equivalent quality at ~10x lower cost. Auto mode running on all 286 docs | 2026-03-04 | [PIPELINE](PIPELINE.md) |
 | E27 | Gemini-basierte Dokumentklassifikation (Stage 1a) | 271/286 Docs ohne Metadaten. Heuristiken versagen (7/15 Pilot-Docs falsch). Gemini 3.1 Flash Lite analysiert erste 5 Seiten visuell, extrahiert language/pub_form/layout_type/title/author/date/description. Structured Output. 286/286 erfolgreich, 80% Typ-Match mit Pilot-Ground-Truth. doc_metadata.json als zentrale Quelle fuer Dashboard + teiHeader | 2026-03-05 | [PIPELINE](PIPELINE.md) |
+| E28 | Online-Demo: 4 DEMO-Docs auf GitHub Pages | Vollstaendige Daten nur lokal (output/ gitignored). 4 Beispieldokumente (2310/A, 1000/B, 1330/D, 1540/C) unter docs/ committet: Bilder (docs/images/), OCR+Layout (docs/data/examples/). shared.js mit Fallback-Pfaden (primaer ../output/, Fallback data/examples/). Disclaimer-Banner + DEMO-Badges im Katalog | 2026-03-05 | [PIPELINE](PIPELINE.md) |
 
 ---
 

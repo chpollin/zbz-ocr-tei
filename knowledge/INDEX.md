@@ -75,6 +75,7 @@ JOURNAL   <-- chronological, references all docs
 | Gemini Layout Detect (E26) | Full re-detection for bad pages via Gemini Vision, 3 modes (qa/detect/auto) | [PIPELINE](PIPELINE.md) |
 | Gemini Classify (Stage 1a) | Visual classification of all 286 docs (type, language, pub_form, title, author) | [PIPELINE](PIPELINE.md) |
 | doc_metadata.json | Central metadata file from Gemini classification, TEI-mappable | [PIPELINE](PIPELINE.md) |
+| Online-Demo (E28) | 4 DEMO docs on GitHub Pages with fallback paths in shared.js | [PIPELINE](PIPELINE.md) |
 
 ---
 
