@@ -22,7 +22,7 @@ Phase 0 (Pilot: Layout-Eval + OCR + TEI) --- DONE
 Phase 1 (Scale: Layout 286 docs + Gemini QA) --- DONE (auto-mode running)
     |
     v
-Phase 2 (PAGE-XML generator) --- NEXT
+Phase 2 (PAGE-XML generator) --- DONE (286 docs, 4,091 pages)
     |
     v
 Phase 3 (NER + GND)  <-- can run parallel with Phase 2
@@ -51,13 +51,14 @@ Open from Phase 1:
 
 ---
 
-## Next: Phase 2 -- PAGE-XML Generator
+## Completed: Phase 2 -- PAGE-XML Generator
 
-- [ ] scripts/layout/page_xml_generator.py -- LayoutRegion + OCR text -> PAGE-XML
-- [ ] scripts/layout/mets_generator.py -- METS manifest (images + PAGE-XML)
-- [ ] Schema: PAGE-XML 2013-07-15 (Transkribus standard)
-- [ ] ID scheme: facs_{NN}_r_{N} / facs_{NN}_r_{N}_tl_{M}
-- [ ] Validate against XSD schema
+- [x] scripts/layout/page_xml_generator.py -- LayoutRegion + OCR text -> PAGE-XML
+- [x] scripts/layout/mets_generator.py -- METS manifest (PAGE-XML refs)
+- [x] Schema: PAGE-XML 2013-07-15 (Transkribus standard)
+- [x] ID scheme: r_{N} / r_{N}_tl_1 (region-level, 1 TextLine per region)
+- [x] Production: 286 docs, 4,091 PAGE-XML + 286 METS
+- [ ] Validate against XSD schema (optional)
 - [ ] Transkribus import test (if access available)
 
 ## Phase 3 -- NER + GND Linking
@@ -73,13 +74,17 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 
 ## Phase 4 -- TEI-XML Extension
 
-Prerequisite: Phase 2 + Phase 3.
-Current: 383 TEI-XML files (E22, layout+OCR -> TEI directly).
+Prerequisite: Phase 3 (NER).
+Current: 4,117 TEI-XML files (285 docs, layout+Gemini-OCR -> TEI, with doc_metadata.json).
 
-- [ ] scripts/tei/tei_header.py -- teiHeader skeleton (title, publisher, language)
+- [x] teiHeader with real title, author, date from doc_metadata.json
+- [x] OCR source priority: Gemini B > Gemini A > LLM C > Mistral
+- [x] Language mapping: ISO 639-3 + legacy 2-letter fallback
+- [x] Production: 285 docs, 4,117 TEI-XML files
 - [ ] scripts/tei/tei_validator.py -- Schema validation + ZBZ content rules
 - [ ] Integrate NER entities from Phase 3
 - [ ] PAGE-XML as alternative input
+- [ ] Line breaks (`<lb>`) from OCR line structure
 - [ ] Special document types: reviews, interviews, lexicon, monographs
 
 ## Phase 5 -- Extended Evaluation

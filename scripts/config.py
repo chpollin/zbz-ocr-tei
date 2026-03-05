@@ -25,6 +25,7 @@ TEI_DIR = OUTPUT_DIR / "tei"
 LLM_CORRECTED_C_DIR = OUTPUT_DIR / "llm_corrected_c"
 GEMINI_CORRECTED_A_DIR = OUTPUT_DIR / "gemini_corrected_a"
 GEMINI_CORRECTED_B_DIR = OUTPUT_DIR / "gemini_corrected_b"
+PAGE_XML_DIR = OUTPUT_DIR / "page_xml"
 DOC_METADATA_PATH = DATA_DIR / "doc_metadata.json"
 
 DOCS_DIR = PROJECT_ROOT / "docs"
@@ -74,6 +75,16 @@ DOCLING_TO_ZBZ = {
     "figure":         "_skip",
     "table":          "zb_paragraph",
     "formula":        "zb_paragraph",
+}
+
+# ZBZ Structural Tag -> PAGE-XML Region Type
+ZBZ_TO_PAGE_TYPE = {
+    "zb_heading":    "heading",
+    "zb_paragraph":  "paragraph",
+    "footnote":      "footnote",
+    "caption":       "caption",
+    "_filter":       None,
+    "_skip":         None,
 }
 
 # Farben pro Label (RGB) fuer Overlay-Bilder

@@ -39,12 +39,12 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 2b | Gemini OCR correction (optional) | `scripts/gemini_ocr_correct.py` | Corrected Markdown (`output/gemini_corrected_a/` or `_b/`) | Sample (5 docs), E29 |
 | 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (286/286 docs, 4,152 pages) |
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26) |
-| 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` | PAGE-XML + METS (`output/page_xml/`) | **Phase 1** |
-| 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 2** |
-| 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (15/15 docs, 383 files) |
+| 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production (286 docs, 4,091 pages) |
+| 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 3** |
+| 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (285 docs, 4,117 files) |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
-**Note on Stage 6:** The TEI generator currently goes directly from layout JSON + OCR Markdown to TEI-XML, without PAGE-XML as an intermediate format. PAGE-XML (Stage 4) and NER (Stage 5) are not yet implemented — once they are, the TEI generator will be extended accordingly.
+**Note on Stage 6:** The TEI generator goes directly from layout JSON + OCR Markdown to TEI-XML. PAGE-XML (Stage 4) is now generated in parallel but not yet used as TEI input. NER (Stage 5) is not yet implemented. OCR source priority: Gemini-corrected B > Gemini-corrected A > LLM-corrected C > Mistral. Metadata from doc_metadata.json (286 docs) with TESTPLAN fallback.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
@@ -220,28 +220,30 @@ Aggregates all pipeline outputs (page images, evaluation results, LLM manifest) 
 
 ---
 
-## PAGE-XML Export (Phase 1)
+## PAGE-XML Export (Stage 4)
 
 **Scripts:** `scripts/layout/page_xml_generator.py`, `scripts/layout/mets_generator.py`
 
-PAGE-XML is the intermediate format for layout regions + OCR text. It serves as input for the TEI transformation (Phase 3) and as an optional export for Transkribus-compatible tools.
+PAGE-XML is the intermediate format for layout regions + OCR text. It serves as an optional export for Transkribus-compatible tools and as a future input for TEI transformation.
 
 | Aspect | Details |
 |--------|---------|
 | Schema | PAGE-XML 2013-07-15 (Transkribus standard, confirmed by ZBZ export E23) |
 | Namespace | `http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15` |
-| Layout engine | Docling 2.75 (E19/E20) |
+| Layout source | Gemini-corrected preferred, Docling fallback |
+| OCR source | Gemini B > Gemini A > Mistral |
+| Status | Production: 286 docs, 4,091 pages |
+| Granularity | Region-level (1 TextLine per TextRegion, no line-level coordinates) |
 
 ### Export Structure per Document
 
 ```
 output/page_xml/{doc_id}/
   mets.xml                    # METS-Manifest
-  images/{doc_id}_p001.png    # Page images
   page/{doc_id}_p001.xml      # PAGE-XML per page
 ```
 
-Details: See [PLAN.md](PLAN.md) Phase 1.
+ZBZ tag to PAGE-XML structure type mapping: `zb_heading` -> heading, `zb_paragraph` -> paragraph, `footnote` -> footnote, `caption` -> caption. Regions with `_filter`/`_skip` are excluded.
 
 ---
 

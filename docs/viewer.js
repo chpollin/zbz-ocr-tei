@@ -64,6 +64,9 @@
 
             // Show/hide source buttons
             state.hasGemini = state.docData.pipeline_status.gemini_corrected;
+            if (state.hasLlm) {
+                ZBZ.$('#btn-llm').style.display = '';
+            }
             if (state.hasGemini) {
                 ZBZ.$('#btn-gemini').style.display = '';
             }
@@ -161,7 +164,7 @@
 
         // CER Bars
         var cerM = d.mistral_cer;
-        var cerL = d.evaluation ? d.evaluation.cer_llm : null;
+        var cerL = (d.pipeline_status.llm_corrected && d.evaluation) ? d.evaluation.cer_llm : null;
         var cerG = d.gemini_cer || null;
         var cerD = d.deepseek_stats ? d.deepseek_stats.cer : null;
 
@@ -227,7 +230,7 @@
         // WER
         if (d.evaluation) {
             html += '<div class="doc-info-section">' +
-                '<span class="info-label">WER (LLM)</span>' +
+                '<span class="info-label">WER</span>' +
                 '<span class="info-value">' + ZBZ.fmtPct(d.evaluation.wer_llm) + '</span>' +
                 '</div>';
 

@@ -14,6 +14,29 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-05 | PAGE-XML + TEI Extension (Session 7)
+
+46. PAGE-XML Generator erstellt (scripts/layout/page_xml_generator.py): Erzeugt PAGE-XML 2013-07-15 (Transkribus-Standard) aus Layout-JSON + OCR-Markdown. Layout-Quelle: Gemini-korrigiert bevorzugt, Fallback Docling. OCR-Quelle: Gemini B > Gemini A > Mistral. Ein TextLine pro TextRegion (keine Zeilen-Koordinaten verfuegbar). Output: output/page_xml/{doc_id}/page/{doc_id}_p{NNN}.xml.
+
+47. METS Generator erstellt (scripts/layout/mets_generator.py): METS-Manifest pro Dokument, Transkribus-kompatibel. Wird automatisch von page_xml_generator am Ende von process_document() aufgerufen. Output: output/page_xml/{doc_id}/mets.xml.
+
+48. Config erweitert: PAGE_XML_DIR + ZBZ_TO_PAGE_TYPE Mapping (zb_heading -> heading, zb_paragraph -> paragraph, footnote -> footnote, caption -> caption).
+
+49. TEI Generator erweitert (5 Aenderungen): (a) OCR-Quelle: Gemini B > Gemini A > LLM C > Mistral. (b) Neue get_document_metadata() laedt aus doc_metadata.json (286 Docs) mit TESTPLAN-Fallback. (c) teiHeader nutzt echten Titel, Autor, Datum aus Metadaten. (d) Sprach-Mapping: ISO 639-3 direkt durchreichen. (e) discover_documents() findet alle Gemini-korrigierten Docs.
+
+50. Produktion: PAGE-XML auf allen 286 Docs generiert (4.091 PAGE-XML Dateien + 286 METS). TEI-XML auf allen 285 Docs generiert (4.117 TEI-XML Dateien, alle mit Layout).
+
+### Dateien geaendert
+
+| Datei | Aenderung |
+|-------|-----------|
+| `scripts/config.py` | EXTENDED -- PAGE_XML_DIR, ZBZ_TO_PAGE_TYPE |
+| `scripts/layout/page_xml_generator.py` | NEW -- PAGE-XML 2013-07-15 Generator |
+| `scripts/layout/mets_generator.py` | NEW -- METS-Manifest Generator |
+| `scripts/tei/tei_generator.py` | EXTENDED -- Gemini OCR, doc_metadata.json, teiHeader |
+
+---
+
 ## 2026-03-05 | Code Quality Refactoring (Session 6)
 
 38. generate_dashboard_data.py: N+1-Bug behoben -- gemini_manifest wurde in der per-Doc-Schleife bei jedem Durchlauf neu geladen (286x statt 1x). Fix: Manifest vor der Schleife laden, Lookup-Dict bauen fuer O(1)-Zugriff.

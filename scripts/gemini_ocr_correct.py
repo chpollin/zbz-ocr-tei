@@ -76,19 +76,21 @@ ANALYSIS_SCHEMA = {
     "properties": {
         "corrections": {
             "type": "array",
+            "description": "List of OCR errors found. MUST be empty if OCR quality is good.",
             "items": {
                 "type": "object",
                 "properties": {
                     "original": {
                         "type": "string",
-                        "description": "Text as it appears in OCR",
+                        "description": "Exact substring as it appears in the OCR text. Must be copy-pasted, not paraphrased.",
                     },
                     "corrected": {
                         "type": "string",
-                        "description": "Proposed correction",
+                        "description": "Corrected version of the substring. Empty string means delete (for artifacts).",
                     },
                     "category": {
                         "type": "string",
+                        "description": "Type of OCR error: missing_accent (e->e-acute), wrong_character (rn->m), merged_words, split_word, missing_character, extra_character, ocr_artifact (JSTOR/platform text), punctuation, formatting, other",
                         "enum": [
                             "missing_accent",
                             "wrong_character",
@@ -104,11 +106,12 @@ ANALYSIS_SCHEMA = {
                     },
                     "confidence": {
                         "type": "string",
+                        "description": "high = certain this is an error, medium = likely an error, low = uncertain",
                         "enum": ["high", "medium", "low"],
                     },
                     "justification": {
                         "type": "string",
-                        "description": "Brief reason why this correction is needed",
+                        "description": "One-sentence reason: what OCR error pattern caused this and why the correction is right",
                     },
                 },
                 "required": [
@@ -122,12 +125,15 @@ ANALYSIS_SCHEMA = {
         },
         "overall_quality": {
             "type": "integer",
-            "description": "OCR quality score 0-100 (100=perfect, 0=unreadable)",
+            "description": "OCR quality score 0-100. 95-100 = excellent (no/few errors), 80-94 = good, 60-79 = moderate, below 60 = poor",
         },
-        "num_corrections": {"type": "integer"},
+        "num_corrections": {
+            "type": "integer",
+            "description": "Total number of corrections in the list. Must match len(corrections).",
+        },
         "summary": {
             "type": "string",
-            "description": "Brief summary of OCR quality issues found",
+            "description": "One sentence: main error pattern found or 'No OCR errors detected' if quality is excellent",
         },
     },
     "required": ["corrections", "overall_quality", "num_corrections", "summary"],
@@ -166,11 +172,9 @@ def build_analysis_prompt(variant, metadata):
     description = metadata.get("description") or ""
 
     base = (
-        "You are an OCR quality analyst for scanned academic texts from the "
-        "Jeanne Hersch archive (Zentralbibliothek Zurich, 20th century, "
-        "primarily French and German).\n\n"
-        "You receive OCR text produced by Mistral Document AI from a scanned page. "
-        "Analyze the text and identify OCR errors that need correction.\n\n"
+        "You are an OCR error detection specialist. You analyze OCR text from "
+        "scanned 20th-century academic documents (Jeanne Hersch archive, "
+        "Zentralbibliothek Zurich, primarily French and German).\n\n"
         "Document context:\n"
         "- Language: {lang}\n"
         "- Document type: {doc_type} ({type_desc})\n"
@@ -179,20 +183,39 @@ def build_analysis_prompt(variant, metadata):
         "- Era: {date}\n"
         "- Description: {description}\n\n"
         "{lang_hint}\n\n"
+        "TASK: Identify ONLY genuine OCR scanning errors in the text below. "
+        "The OCR was produced by Mistral Document AI and is generally high quality.\n\n"
         "RULES:\n"
-        "- Only flag CLEAR OCR errors, not stylistic choices or valid alternative spellings\n"
-        "- Common OCR error types: missing/wrong accents (French), wrong characters, "
-        "merged/split words, JSTOR artifacts, repeated page numbers\n"
-        "- Set confidence=high only when you are CERTAIN the change is correct\n"
-        "- Set confidence=medium when likely correct but some ambiguity exists\n"
-        "- Set confidence=low for changes where the original might also be valid\n"
-        "- Do NOT flag Markdown formatting as errors unless clearly broken\n"
-        "- JSTOR headers/footers ('This content downloaded from...') are artifacts: "
-        "flag as ocr_artifact with confidence=high\n"
-        "- Maximum 50 corrections per page (prioritize high-confidence ones)\n"
-        "- Do NOT invent or hallucinate text that is not implied by context\n"
-        "- If the OCR quality is already excellent (few or no errors), "
-        "return an empty corrections list"
+        "1. Flag character-level OCR errors: wrong/missing/extra characters, "
+        "missing accents, character confusion (rn->m, cl->d)\n"
+        "2. Flag platform artifacts (JSTOR footers, e-periodica disclaimers, "
+        "'This content downloaded from...', 'Nutzungsbedingungen') as "
+        "ocr_artifact with confidence=high\n"
+        "3. Do NOT flag valid alternative spellings, stylistic choices, or "
+        "archaic but correct forms\n"
+        "4. Do NOT flag Markdown formatting (headings, bold, italic) as errors\n"
+        "5. Do NOT invent corrections for text you cannot verify from context\n"
+        "6. The 'original' field MUST be an exact substring of the OCR text -- "
+        "copy-paste, do not paraphrase\n"
+        "7. If OCR is already perfect, return an empty corrections list -- "
+        "but do still flag platform artifacts\n"
+        "8. Maximum 50 corrections per page\n\n"
+        "EXAMPLES of correct analysis:\n\n"
+        "Example 1 (French accent error):\n"
+        "  original: \"phenomene\"\n"
+        "  corrected: \"phenomene\" -> no, this is wrong: phenomene has no accent\n"
+        "  CORRECT: original: \"phenomene\", corrected: \"ph\\u00e9nom\\u00e8ne\", "
+        "category: missing_accent, confidence: high\n\n"
+        "Example 2 (OCR character confusion):\n"
+        "  original: \"inconnaisable\", corrected: \"inconnaissable\", "
+        "category: missing_character, confidence: high, "
+        "justification: \"Missing 's' -- common OCR drop in double consonants\"\n\n"
+        "Example 3 (NOT an error -- do not flag):\n"
+        "  \"oeuvre\" vs \"\\u0153uvre\" -- both valid French spellings, do NOT flag\n"
+        "  \"Zurich\" vs \"Z\\u00fcrich\" -- valid without umlaut in French context\n\n"
+        "Example 4 (Platform artifact):\n"
+        "  original: \"This content downloaded from 130.60.149.195...\", "
+        "corrected: \"\", category: ocr_artifact, confidence: high"
     ).format(
         lang=lang,
         doc_type=doc_type,
@@ -206,10 +229,10 @@ def build_analysis_prompt(variant, metadata):
 
     if variant == "B":
         base += (
-            "\n\nYou also receive the scan image of the page. Use the image to VERIFY "
-            "your corrections: compare the OCR text against what is actually visible "
-            "in the scan. Only propose corrections that are supported by the visible "
-            "text in the image."
+            "\n\nYou also receive the scan image. VERIFY every proposed correction "
+            "against the image. Only flag errors where the image clearly shows "
+            "different text than the OCR output. If you cannot read the image "
+            "clearly at a position, do NOT flag it."
         )
 
     return base
@@ -220,24 +243,23 @@ def build_correction_prompt(metadata):
     lang = metadata.get("language", "fra")
 
     return (
-        "You are an OCR text corrector for the Jeanne Hersch archive "
-        "(Zentralbibliothek Zurich, 20th century academic texts).\n\n"
-        "You receive:\n"
-        "1. The original OCR text (from Mistral Document AI)\n"
-        "2. An analysis of OCR errors found in the text\n\n"
-        "Your task: Apply the corrections from the analysis to produce a clean, "
-        "corrected version of the full text.\n\n"
-        "RULES:\n"
-        "- Apply ONLY the corrections listed in the analysis\n"
-        "- Apply only corrections marked as confidence 'high' or 'medium'\n"
-        "- Skip corrections marked as confidence 'low'\n"
-        "- Preserve ALL Markdown formatting (**bold**, *italic*, ## headings)\n"
-        "- Preserve the exact structure and paragraph breaks of the original\n"
-        "- Do NOT add, remove, or rearrange content beyond the listed corrections\n"
-        "- Do NOT paraphrase or rephrase\n"
-        "- Remove OCR artifacts (JSTOR headers, copyright lines) "
-        "flagged in the analysis\n"
-        "- Output ONLY the corrected text, no commentary or explanation\n\n"
+        "You are a precise text editor. Apply ONLY the listed corrections to the "
+        "OCR text. Output the corrected full text.\n\n"
+        "CRITICAL RULES -- ANY VIOLATION IS A TOTAL FAILURE:\n"
+        "1. Apply ONLY corrections marked confidence 'high' or 'medium'\n"
+        "2. SKIP corrections marked 'low'\n"
+        "3. Find each 'original' substring and replace with 'corrected'\n"
+        "4. For ocr_artifact corrections (corrected=''), DELETE the artifact text\n"
+        "5. Do NOT change ANY other text -- every character not in the correction "
+        "list MUST remain identical\n"
+        "6. Do NOT add commentary, notes, explanations, or metadata\n"
+        "7. Do NOT paraphrase, rephrase, or 'improve' the text\n"
+        "8. Do NOT fix errors you notice that are NOT in the correction list\n"
+        "9. Preserve ALL Markdown formatting (## headings, **bold**, *italic*)\n"
+        "10. Preserve exact paragraph breaks and line structure\n"
+        "11. Output ONLY the corrected text, nothing else\n\n"
+        "The output must be character-for-character identical to the input, "
+        "except at the exact positions listed in the corrections.\n\n"
         "Document language: {lang}\n"
     ).format(lang=lang)
 
