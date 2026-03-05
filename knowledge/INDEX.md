@@ -73,6 +73,8 @@ JOURNAL   <-- chronological, references all docs
 | docling-serve (E24) | Layout analysis via REST API (Docker), no local GPU needed | [PIPELINE](PIPELINE.md) |
 | Gemini Layout QA (E25) | Vision-based correction of Docling layout results, both versions preserved | [PIPELINE](PIPELINE.md) |
 | Gemini Layout Detect (E26) | Full re-detection for bad pages via Gemini Vision, 3 modes (qa/detect/auto) | [PIPELINE](PIPELINE.md) |
+| Gemini Classify (Stage 1a) | Visual classification of all 286 docs (type, language, pub_form, title, author) | [PIPELINE](PIPELINE.md) |
+| doc_metadata.json | Central metadata file from Gemini classification, TEI-mappable | [PIPELINE](PIPELINE.md) |
 
 ---
 

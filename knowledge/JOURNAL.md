@@ -14,6 +14,26 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-05 | Stage 1a Klassifikation + Dashboard-Ueberarbeitung
+
+### Session 3: Gemini Dokumentklassifikation + Dashboard-Overhaul
+
+20. Stage 1a: classify_docs.py erstellt -- Gemini 3.1 Flash Lite klassifiziert alle 286 Docs (erste 5 Seiten visuell). Felder: language, pub_form, layout_type, title, author, date, description, has_jstor_cover, num_columns. Structured Output via response_schema. 286/286 erfolgreich.
+
+21. doc_metadata.json als zentrale Metadaten-Datei (data/doc_metadata.json). Ersetzt PILOT_DOCS-Hardcoding in generate_dashboard_data.py. Von tei_generator.py und Dashboard genutzt.
+
+22. Qualitaetspruefung: 80% Typ-Match mit Pilot-Docs (12/15), 86% Sprache (12/14), 60% pub_form (6/10). Spot-Checks 10 zufaelliger Non-Pilot-Docs alle plausibel. 170/170 Pflichtfelder komplett, keine Typ/Spalten-Widersprueche.
+
+23. OCR-Pfad-Bug behoben: output/ocr_results/ enthielt Mistral-Ergebnisse (alter Batch vor Engine-Routing). compute_pipeline_status() zaehlte diese als DeepSeek (272 Docs). Fix: ocr_mistral = has_mistral OR has_ocr_results, ocr_deepseek nur wenn nicht in mistral_results/. 2,906 Dateien nach mistral_results/ kopiert.
+
+24. Dashboard komplett ueberarbeitet: Metriken (Korpus/OCR Mistral/Layout/CER statt Phasen), Korpus-Uebersicht (Typ/Sprache/Form-Verteilung statt Testphasen), Katalog mit Titel/Beschreibung-Spalte und Publikationsform-Labels.
+
+25. Frontend-Fixes: ZBZ.esc() fuer XSS-Schutz, Sprachfilter, PUB_FORM_LABELS in dashboard.js + viewer.js, Viewer-Link aus Header entfernt, title/author/date/pub_form in Viewer Info-Bar.
+
+26. Batch-Status: Classification 286/286 fertig, Mistral OCR 4,117 Seiten fertig, Docling Layout 4,152 fertig, Gemini Layout QA 2,188/4,152 (laeuft).
+
+---
+
 ## 2026-03-05 | Knowledge Refactoring + OCR Production + Viewer Integration
 
 ### Session 2: OCR Production Run + Frontend Fix
