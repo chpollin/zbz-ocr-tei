@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-05T17:51:29",
+  "generated": "2026-03-05T20:48:40",
   "generator": "scripts/generate_dashboard_data.py",
   "project": {
     "title": "Jeanne Hersch Edition",
@@ -16,13 +16,13 @@
     "pilot_docs": 15,
     "docs_with_ocr": 285,
     "docs_with_llm": 0,
-    "docs_with_gemini": 5,
+    "docs_with_gemini": 6,
     "docs_with_layout": 286,
-    "docs_with_tei": 1,
+    "docs_with_tei": 285,
     "docs_with_eval": 4,
     "avg_cer_mistral": 0.064173,
     "avg_cer_llm": 0.034549,
-    "avg_cer_gemini": 0.033045
+    "avg_cer_gemini": 0.033528
   },
   "corpus_overview": {
     "types": {
@@ -289,7 +289,7 @@
         "layout": true,
         "evaluation": false,
         "tei": false,
-        "export": false
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -372,8 +372,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -437,8 +437,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -498,8 +498,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -547,8 +547,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -624,8 +624,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -713,8 +713,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.226,
@@ -790,8 +790,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -842,8 +842,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2395,8 +2395,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2443,8 +2443,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2514,8 +2514,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2615,8 +2615,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2669,8 +2669,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2759,8 +2759,8 @@
         "gemini_corrected": true,
         "layout": true,
         "evaluation": true,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": {
         "cer_llm": 0.030949,
@@ -2770,7 +2770,7 @@
         "status": "OK"
       },
       "mistral_cer": 0.0312,
-      "gemini_cer": 0.030848,
+      "gemini_cer": 0.031555,
       "mistral_stats": {
         "pages": 8,
         "chars": 20121,
@@ -2790,8 +2790,8 @@
       "llm_stats": null,
       "gemini_stats": {
         "analyzed": 8,
-        "corrected": 0,
-        "total_corrections": 16
+        "corrected": 8,
+        "total_corrections": 9
       },
       "layout": {
         "regions_total": 52,
@@ -2836,8 +2836,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2937,8 +2937,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -2990,8 +2990,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3043,8 +3043,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3138,8 +3138,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3239,8 +3239,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3370,8 +3370,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3448,8 +3448,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3532,8 +3532,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3603,8 +3603,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3680,8 +3680,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3782,8 +3782,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -3931,8 +3931,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.0413,
@@ -4015,8 +4015,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4092,8 +4092,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.026,
@@ -4199,8 +4199,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4265,8 +4265,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4335,8 +4335,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4400,8 +4400,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4513,8 +4513,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4577,8 +4577,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4870,8 +4870,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -4947,8 +4947,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5024,8 +5024,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.0558,
@@ -5095,8 +5095,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5177,8 +5177,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5249,8 +5249,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.0371,
@@ -5332,8 +5332,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5391,8 +5391,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5444,8 +5444,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5509,8 +5509,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5574,8 +5574,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5657,8 +5657,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -5728,8 +5728,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -6621,8 +6621,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.0273,
@@ -6932,8 +6932,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7021,8 +7021,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7080,8 +7080,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7139,8 +7139,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7216,8 +7216,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7330,8 +7330,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7431,8 +7431,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7502,8 +7502,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7597,8 +7597,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7668,8 +7668,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7739,8 +7739,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7852,8 +7852,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -7929,8 +7929,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8006,8 +8006,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8059,8 +8059,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8130,8 +8130,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8201,8 +8201,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8308,8 +8308,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8380,8 +8380,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8463,8 +8463,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8546,8 +8546,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8617,8 +8617,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8688,8 +8688,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8808,8 +8808,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8867,8 +8867,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -8992,8 +8992,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9267,8 +9267,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9357,8 +9357,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9488,8 +9488,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9559,8 +9559,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9649,8 +9649,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9774,8 +9774,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9833,8 +9833,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -9910,8 +9910,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10005,8 +10005,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10089,8 +10089,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10160,8 +10160,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10262,8 +10262,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10327,8 +10327,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10392,8 +10392,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10446,8 +10446,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10529,8 +10529,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10596,8 +10596,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -10673,8 +10673,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -11959,11 +11959,11 @@
         "ocr_mistral": true,
         "ocr_deepseek": false,
         "llm_corrected": false,
-        "gemini_corrected": false,
+        "gemini_corrected": true,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12058,8 +12058,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12129,8 +12129,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12182,8 +12182,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12259,8 +12259,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12324,8 +12324,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12401,8 +12401,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12484,8 +12484,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12615,8 +12615,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12740,8 +12740,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12793,8 +12793,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12847,8 +12847,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -12924,8 +12924,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13079,8 +13079,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13186,8 +13186,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13269,8 +13269,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13322,8 +13322,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13434,8 +13434,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13487,8 +13487,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13553,8 +13553,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13623,8 +13623,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13700,8 +13700,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13752,8 +13752,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13811,8 +13811,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -13900,8 +13900,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -14032,8 +14032,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -14091,8 +14091,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -14816,8 +14816,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -14953,8 +14953,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -15012,8 +15012,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -15090,8 +15090,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -15161,8 +15161,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -15244,8 +15244,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -15304,7 +15304,7 @@
         "layout": true,
         "evaluation": true,
         "tei": true,
-        "export": false
+        "page_xml": true
       },
       "evaluation": {
         "cer_llm": 0.038833,
@@ -15334,8 +15334,8 @@
       "llm_stats": null,
       "gemini_stats": {
         "analyzed": 3,
-        "corrected": 0,
-        "total_corrections": 4
+        "corrected": 3,
+        "total_corrections": 14
       },
       "layout": {
         "regions_total": 25,
@@ -15391,8 +15391,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -16956,8 +16956,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -17027,8 +17027,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -17110,8 +17110,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -17282,8 +17282,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -17365,8 +17365,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -17454,8 +17454,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -17561,8 +17561,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -17938,8 +17938,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18027,8 +18027,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18105,8 +18105,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18196,8 +18196,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18255,8 +18255,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18362,8 +18362,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18451,8 +18451,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18540,8 +18540,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18610,8 +18610,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18663,8 +18663,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18770,8 +18770,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18817,8 +18817,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18900,8 +18900,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -18978,8 +18978,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19031,8 +19031,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.0396,
@@ -19186,8 +19186,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19239,8 +19239,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19292,8 +19292,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19375,8 +19375,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19434,8 +19434,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19511,8 +19511,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19630,8 +19630,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19701,8 +19701,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19766,8 +19766,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19849,8 +19849,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -19920,8 +19920,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20004,8 +20004,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20080,8 +20080,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20182,8 +20182,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20247,8 +20247,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20522,8 +20522,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20599,8 +20599,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20669,8 +20669,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20824,8 +20824,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -20913,8 +20913,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -21032,8 +21032,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -21140,8 +21140,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -21235,8 +21235,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -21307,8 +21307,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -21978,8 +21978,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22043,8 +22043,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22120,8 +22120,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22179,8 +22179,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22286,8 +22286,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22357,8 +22357,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22464,8 +22464,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22541,8 +22541,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22600,8 +22600,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22647,8 +22647,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22712,8 +22712,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22759,8 +22759,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22830,8 +22830,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.1807,
@@ -22909,8 +22909,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -22998,8 +22998,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -23267,8 +23267,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -23398,8 +23398,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -23745,8 +23745,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -23829,8 +23829,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -23882,8 +23882,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -23954,8 +23954,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -24487,8 +24487,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -24552,8 +24552,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -24616,8 +24616,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -24693,8 +24693,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -24764,8 +24764,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -24841,8 +24841,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -24936,8 +24936,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.0902,
@@ -24989,8 +24989,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25054,8 +25054,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25167,8 +25167,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25232,8 +25232,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25477,8 +25477,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25591,8 +25591,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25674,8 +25674,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25727,8 +25727,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25793,8 +25793,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -25876,8 +25876,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -26235,8 +26235,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -26403,8 +26403,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -26558,8 +26558,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -26666,8 +26666,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -26737,8 +26737,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -26808,8 +26808,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -28757,8 +28757,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -28918,8 +28918,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -29056,8 +29056,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -29115,8 +29115,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -29186,8 +29186,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30163,19 +30163,19 @@
         "gemini_corrected": true,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.0257,
-      "gemini_cer": 0.025838,
+      "gemini_cer": 0.025687,
       "mistral_stats": null,
       "deepseek_stats": null,
       "llm_stats": null,
       "gemini_stats": {
         "analyzed": 156,
-        "corrected": 36,
-        "total_corrections": 42
+        "corrected": 155,
+        "total_corrections": 14
       },
       "layout": {
         "regions_total": 437,
@@ -30262,8 +30262,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30369,8 +30369,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30446,8 +30446,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30523,8 +30523,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30624,8 +30624,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30774,8 +30774,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30833,8 +30833,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30892,8 +30892,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -30987,8 +30987,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -31088,8 +31088,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -31183,8 +31183,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -31477,8 +31477,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -31584,8 +31584,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -31775,8 +31775,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32014,8 +32014,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32193,8 +32193,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32259,8 +32259,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32318,8 +32318,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32377,8 +32377,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32454,8 +32454,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32513,8 +32513,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32584,8 +32584,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32637,8 +32637,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32756,8 +32756,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32869,8 +32869,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -32976,8 +32976,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33036,8 +33036,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33167,8 +33167,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33334,8 +33334,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33442,8 +33442,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33513,8 +33513,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33644,8 +33644,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33721,8 +33721,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33834,8 +33834,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -33990,8 +33990,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -34139,8 +34139,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -34301,8 +34301,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -34359,8 +34359,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -34544,8 +34544,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -34639,8 +34639,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -34746,8 +34746,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -34805,8 +34805,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35230,8 +35230,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35283,8 +35283,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": 0.04,
@@ -35341,8 +35341,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35424,8 +35424,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35483,8 +35483,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35560,8 +35560,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35643,8 +35643,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35726,8 +35726,8 @@
         "gemini_corrected": true,
         "layout": true,
         "evaluation": true,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": {
         "cer_llm": 0.057184,
@@ -35737,14 +35737,14 @@
         "status": "OK"
       },
       "mistral_cer": 0.0596,
-      "gemini_cer": 0.057658,
+      "gemini_cer": 0.059518,
       "mistral_stats": null,
       "deepseek_stats": null,
       "llm_stats": null,
       "gemini_stats": {
         "analyzed": 7,
-        "corrected": 0,
-        "total_corrections": 11
+        "corrected": 7,
+        "total_corrections": 9
       },
       "layout": {
         "regions_total": 100,
@@ -35813,8 +35813,8 @@
         "gemini_corrected": true,
         "layout": true,
         "evaluation": true,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": {
         "cer_llm": 0.011231,
@@ -35830,7 +35830,7 @@
       "llm_stats": null,
       "gemini_stats": {
         "analyzed": 6,
-        "corrected": 0,
+        "corrected": 6,
         "total_corrections": 1
       },
       "layout": {
@@ -35876,8 +35876,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -35977,8 +35977,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36126,8 +36126,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36192,8 +36192,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36286,8 +36286,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36351,8 +36351,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36465,8 +36465,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36518,8 +36518,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36625,8 +36625,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,
@@ -36798,8 +36798,8 @@
         "gemini_corrected": false,
         "layout": true,
         "evaluation": false,
-        "tei": false,
-        "export": false
+        "tei": true,
+        "page_xml": true
       },
       "evaluation": null,
       "mistral_cer": null,

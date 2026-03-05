@@ -88,6 +88,23 @@
             return _fetchWithFallbacks('tei/' + docId + '/' + page, candidates, 'text');
         },
 
+        // ---- PAGE-XML Fetching ----
+        fetchPageXml: function (docId, page) {
+            var padded = String(page).padStart(3, '0');
+            var candidates = [
+                '../output/page_xml/' + docId + '/page/' + docId + '_p' + padded + '.xml',
+            ];
+            return _fetchWithFallbacks('page_xml/' + docId + '/' + page, candidates, 'text');
+        },
+
+        // ---- METS Fetching (document-level, cached per doc) ----
+        fetchMetsXml: function (docId) {
+            var candidates = [
+                '../output/page_xml/' + docId + '/mets.xml',
+            ];
+            return _fetchWithFallbacks('mets/' + docId, candidates, 'text');
+        },
+
         // ---- Reference TEI Fetching (per-page extraction from whole-document XML) ----
         async fetchRefTeiPage(docId, page) {
             var key = 'ref-tei/' + docId + '/' + page;
@@ -166,6 +183,37 @@
                 _textCache[key] = null;
                 return null;
             }
+        },
+
+        // ---- XML Syntax Highlighting ----
+        highlightXml: function (xml) {
+            var s = xml
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+            s = s.replace(
+                /(&lt;\?xml[^?]*\?&gt;)/g,
+                '<span class="xml-decl">$1</span>'
+            );
+            s = s.replace(
+                /(&lt;!--[\s\S]*?--&gt;)/g,
+                '<span class="xml-comment">$1</span>'
+            );
+            s = s.replace(
+                /(&lt;\/?)(\w[\w:-]*)([\s\S]*?)(\/?)(&gt;)/g,
+                function (m, open, tagName, attrs, slash, close) {
+                    var result = '<span class="xml-tag">' + open + tagName + '</span>';
+                    if (attrs) {
+                        result += attrs.replace(
+                            /([\w:-]+)="([^"]*?)"/g,
+                            '<span class="xml-attr-name">$1</span>=<span class="xml-attr-value">"$2"</span>'
+                        );
+                    }
+                    result += '<span class="xml-tag">' + slash + close + '</span>';
+                    return result;
+                }
+            );
+            return s;
         },
 
         // ---- Layout Region Colors ----
@@ -247,7 +295,7 @@
             { key: 'layout', label: 'LAY', title: 'Layout-Analyse (Docling)' },
             { key: 'tei', label: 'TEI', title: 'TEI-XML generiert' },
             { key: 'evaluation', label: 'EVAL', title: 'CER/WER Evaluation' },
-            { key: 'export', label: 'EXP', title: 'PAGE-XML Export' },
+            { key: 'page_xml', label: 'PAGE', title: 'PAGE-XML Export' },
         ],
 
         renderPipelineStatus: function (status, compact) {

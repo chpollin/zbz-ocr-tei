@@ -48,6 +48,9 @@
         <!-- TEI toggle -->
         <button class="layout-toggle" id="tei-toggle" title="TEI-Panel ein/ausblenden">&lt;/&gt; TEI</button>
 
+        <!-- PAGE toggle -->
+        <button class="layout-toggle" id="page-toggle" title="PAGE-XML-Panel ein/ausblenden">&#9638; PAGE</button>
+
         <!-- Info toggle -->
         <button class="info-toggle" id="info-toggle" title="Dokument-Info ein/ausblenden">&#9432; Info</button>
     </div>
@@ -151,12 +154,35 @@
                     </div>
                 </div>
             </div>
+
+            <div class="viewer-panel" id="page-panel" style="display:none">
+                <div class="viewer-panel-header">
+                    <span>PAGE</span>
+                    <div class="tei-tabs">
+                        <button class="page-tab active" data-mode="regions">Regionen</button>
+                        <button class="page-tab" data-mode="xml">XML</button>
+                        <button class="page-tab" data-mode="mets">METS</button>
+                    </div>
+                </div>
+                <div class="viewer-panel-content viewer-tei">
+                    <div class="tei-content-wrapper">
+                        <div id="page-regions" class="tei-view page-regions"></div>
+                        <div id="page-xml-view" class="tei-view tei-xml-view hidden">
+                            <pre id="page-xml-code"></pre>
+                        </div>
+                        <div id="page-mets-view" class="tei-view tei-xml-view hidden">
+                            <pre id="page-mets-code"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
     <script src="shared.js"></script>
     <script src="tei-viewer.js"></script>
+    <script src="page-viewer.js"></script>
     <script src="viewer.js"></script>
 </body>
 </html>

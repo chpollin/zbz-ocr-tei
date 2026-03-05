@@ -18,6 +18,7 @@
         layoutVisible: false,
         layoutSource: 'docling',
         teiVisible: false,
+        pageVisible: false,
     };
 
     var sourceLabels = {
@@ -361,11 +362,21 @@
     var teiToggle = ZBZ.$('#tei-toggle');
     var divider2 = ZBZ.$('#divider2');
 
+    // ---- PAGE Panel ----
+    var pagePanel = ZBZ.$('#page-panel');
+    var pageToggle = ZBZ.$('#page-toggle');
+
     function toggleTei() {
         state.teiVisible = !state.teiVisible;
         teiToggle.classList.toggle('active', state.teiVisible);
 
         if (state.teiVisible) {
+            // Mutual exclusion: hide PAGE if visible
+            if (state.pageVisible) {
+                state.pageVisible = false;
+                pageToggle.classList.remove('active');
+                pagePanel.style.display = 'none';
+            }
             teiPanel.style.display = '';
             divider2.style.display = '';
             ZBZ.$('#image-panel').style.flex = '1 1 0';
@@ -380,7 +391,33 @@
         }
     }
 
+    function togglePage() {
+        state.pageVisible = !state.pageVisible;
+        pageToggle.classList.toggle('active', state.pageVisible);
+
+        if (state.pageVisible) {
+            // Mutual exclusion: hide TEI if visible
+            if (state.teiVisible) {
+                state.teiVisible = false;
+                teiToggle.classList.remove('active');
+                teiPanel.style.display = 'none';
+            }
+            pagePanel.style.display = '';
+            divider2.style.display = '';
+            ZBZ.$('#image-panel').style.flex = '1 1 0';
+            ZBZ.$('#text-panel').style.flex = '1 1 0';
+            pagePanel.style.flex = '1 1 0';
+            PageViewer.loadPage(state.docId, state.page);
+        } else {
+            pagePanel.style.display = 'none';
+            divider2.style.display = 'none';
+            ZBZ.$('#image-panel').style.flex = '1';
+            ZBZ.$('#text-panel').style.flex = '1';
+        }
+    }
+
     teiToggle.addEventListener('click', function () { toggleTei(); });
+    pageToggle.addEventListener('click', function () { togglePage(); });
 
     // ---- Info Toggle ----
     ZBZ.$('#info-toggle').addEventListener('click', function () {
@@ -420,6 +457,7 @@
         await loadText();
         renderLayout();
         if (state.teiVisible) TeiViewer.loadTei(state.docId, state.page);
+        if (state.pageVisible) PageViewer.loadPage(state.docId, state.page);
 
         pageInfo.textContent = page + ' / ' + state.totalPages;
         prevBtn.disabled = page <= 1;
@@ -476,24 +514,27 @@
         var totalW = layout.offsetWidth;
         var pct = (e.clientX / totalW) * 100;
 
+        var thirdPanelActive = state.teiVisible || state.pageVisible;
+        var thirdPanel = state.teiVisible ? teiPanel : pagePanel;
+
         if (activeDivider === 1) {
-            var minLeft = state.teiVisible ? 15 : 20;
-            var maxLeft = state.teiVisible ? 60 : 80;
+            var minLeft = thirdPanelActive ? 15 : 20;
+            var maxLeft = thirdPanelActive ? 60 : 80;
             pct = Math.max(minLeft, Math.min(maxLeft, pct));
             ZBZ.$('#image-panel').style.flex = '0 0 ' + pct + '%';
-            if (state.teiVisible) {
+            if (thirdPanelActive) {
                 var rest = 100 - pct;
                 ZBZ.$('#text-panel').style.flex = '0 0 ' + (rest / 2) + '%';
-                teiPanel.style.flex = '0 0 ' + (rest / 2) + '%';
+                thirdPanel.style.flex = '0 0 ' + (rest / 2) + '%';
             } else {
                 ZBZ.$('#text-panel').style.flex = '0 0 ' + (100 - pct) + '%';
             }
-        } else if (activeDivider === 2 && state.teiVisible) {
+        } else if (activeDivider === 2 && thirdPanelActive) {
             var imageRect = ZBZ.$('#image-panel').getBoundingClientRect();
             var imageEnd = ((imageRect.right + 4) / totalW) * 100;
             pct = Math.max(imageEnd + 10, Math.min(90, pct));
             ZBZ.$('#text-panel').style.flex = '0 0 ' + (pct - imageEnd) + '%';
-            teiPanel.style.flex = '0 0 ' + (100 - pct) + '%';
+            thirdPanel.style.flex = '0 0 ' + (100 - pct) + '%';
         }
     });
     document.addEventListener('mouseup', function () { activeDivider = null; });

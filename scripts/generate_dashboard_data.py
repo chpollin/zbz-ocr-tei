@@ -24,6 +24,7 @@ from scripts.config import (
     TEI_DIR,
     DOC_METADATA_PATH,
     GEMINI_CORRECTED_A_DIR,
+    PAGE_XML_DIR,
 )
 from scripts.utils import load_json
 
@@ -256,7 +257,7 @@ def compute_pipeline_status(doc_id: str) -> dict:
         "layout": (LAYOUT_DIR / doc_id / "summary.json").is_file(),
         "evaluation": doc_id in (load_eval_doc_ids() or []),
         "tei": any(TEI_DIR.glob(f"{doc_id}_p*.xml")),
-        "export": (OUTPUT_DIR / "export" / doc_id).is_dir(),
+        "page_xml": any((PAGE_XML_DIR / doc_id / "page").glob(f"{doc_id}_p*.xml")),
     }
 
 

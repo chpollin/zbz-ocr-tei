@@ -236,44 +236,7 @@
     // ---- XML Syntax Highlighting ----
     function renderTeiXml(xml) {
         teiState.xmlDone = true;
-        ZBZ.$('#tei-xml-code').innerHTML = highlightXml(xml);
-    }
-
-    function highlightXml(xml) {
-        var s = xml
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
-
-        // XML declaration
-        s = s.replace(
-            /(&lt;\?xml[^?]*\?&gt;)/g,
-            '<span class="xml-decl">$1</span>'
-        );
-
-        // Comments
-        s = s.replace(
-            /(&lt;!--[\s\S]*?--&gt;)/g,
-            '<span class="xml-comment">$1</span>'
-        );
-
-        // Tags with attributes
-        s = s.replace(
-            /(&lt;\/?)(\w[\w:-]*)([\s\S]*?)(\/?)(&gt;)/g,
-            function (m, open, tagName, attrs, slash, close) {
-                var result = '<span class="xml-tag">' + open + tagName + '</span>';
-                if (attrs) {
-                    result += attrs.replace(
-                        /([\w:-]+)="([^"]*?)"/g,
-                        '<span class="xml-attr-name">$1</span>=<span class="xml-attr-value">"$2"</span>'
-                    );
-                }
-                result += '<span class="xml-tag">' + slash + close + '</span>';
-                return result;
-            }
-        );
-
-        return s;
+        ZBZ.$('#tei-xml-code').innerHTML = ZBZ.ZBZ.highlightXml(xml);
     }
 
     // ---- Diff View ----
@@ -282,12 +245,12 @@
         var genContainer = ZBZ.$('#diff-generated');
         var refContainer = ZBZ.$('#diff-reference');
 
-        genContainer.innerHTML = '<pre>' + highlightXml(xml) + '</pre>';
+        genContainer.innerHTML = '<pre>' + ZBZ.highlightXml(xml) + '</pre>';
         refContainer.innerHTML = '<div class="tei-empty">Lade Referenz...</div>';
 
         ZBZ.fetchRefTeiPage(docId, page).then(function (refXml) {
             if (refXml) {
-                refContainer.innerHTML = '<pre>' + highlightXml(refXml) + '</pre>';
+                refContainer.innerHTML = '<pre>' + ZBZ.highlightXml(refXml) + '</pre>';
             } else {
                 refContainer.innerHTML = '<div class="tei-empty">Keine Referenz-TEI fuer dieses Dokument.</div>';
             }

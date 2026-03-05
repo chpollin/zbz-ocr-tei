@@ -245,6 +245,15 @@ output/page_xml/{doc_id}/
 
 ZBZ tag to PAGE-XML structure type mapping: `zb_heading` -> heading, `zb_paragraph` -> paragraph, `footnote` -> footnote, `caption` -> caption. Regions with `_filter`/`_skip` are excluded.
 
+### Frontend Viewer
+
+PAGE-XML and METS can be viewed in `docs/viewer.html` via the PAGE toggle button. The PageViewer module (`docs/page-viewer.js`) provides 3 sub-tabs:
+- **Regionen:** Region cards with type label, ID, coordinates, text preview (color-coded: red=heading, grey=paragraph, blue=footnote, yellow=caption)
+- **XML:** Syntax-highlighted PAGE-XML source
+- **METS:** Document-level METS manifest (syntax-highlighted)
+
+TEI and PAGE panels share the 3rd panel slot (mutual exclusion). Dashboard pipeline status tracks `page_xml` (286/286 docs).
+
 ---
 
 ## CLI Commands

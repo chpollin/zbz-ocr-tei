@@ -14,6 +14,30 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-05 | PAGE-XML/METS Viewer + Refactoring (Session 8)
+
+51. PAGE-XML/METS Viewer im Frontend: Neues PageViewer-Modul (docs/page-viewer.js) mit 3 Tabs: Regionen (Region-Karten mit Typ, ID, Koordinaten, Text-Preview), XML (syntax-highlighted PAGE-XML Source), METS (Dokument-Manifest). PAGE und TEI teilen den 3. Panel-Slot (mutual exclusion).
+
+52. Viewer-Integration: PAGE-Toggle-Button in Header, Divider-Resize fuer 3-Panel-Layout, Seitenwechsel aktualisiert PAGE-Panel. shared.js erweitert um fetchPageXml() und fetchMetsXml() mit Fallback-Caching.
+
+53. Dashboard-Fix: Pipeline-Status von "export" (falscher Pfad) auf "page_xml" korrigiert. Alle 286 Docs korrekt als page_xml: true erkannt. PIPELINE_STEPS Label: EXP -> PAGE.
+
+54. Refactoring: highlightXml() aus tei-viewer.js und page-viewer.js nach shared.js extrahiert als ZBZ.highlightXml(). Beide Viewer nutzen jetzt die gemeinsame Funktion.
+
+### Dateien geaendert
+
+| Datei | Aenderung |
+|-------|-----------|
+| `docs/page-viewer.js` | NEW -- PageViewer-Modul (Regionen/XML/METS) |
+| `docs/viewer.html` | EXTENDED -- PAGE-Button, PAGE-Panel HTML, Script-Tag |
+| `docs/viewer.js` | EXTENDED -- togglePage(), mutual exclusion, Divider |
+| `docs/shared.js` | EXTENDED -- fetchPageXml, fetchMetsXml, highlightXml, PIPELINE_STEPS |
+| `docs/shared.css` | EXTENDED -- PAGE-Region-Card Styles |
+| `docs/tei-viewer.js` | REFACTORED -- highlightXml -> ZBZ.highlightXml |
+| `scripts/generate_dashboard_data.py` | FIX -- export -> page_xml |
+
+---
+
 ## 2026-03-05 | PAGE-XML + TEI Extension (Session 7)
 
 46. PAGE-XML Generator erstellt (scripts/layout/page_xml_generator.py): Erzeugt PAGE-XML 2013-07-15 (Transkribus-Standard) aus Layout-JSON + OCR-Markdown. Layout-Quelle: Gemini-korrigiert bevorzugt, Fallback Docling. OCR-Quelle: Gemini B > Gemini A > Mistral. Ein TextLine pro TextRegion (keine Zeilen-Koordinaten verfuegbar). Output: output/page_xml/{doc_id}/page/{doc_id}_p{NNN}.xml.
