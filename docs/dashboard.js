@@ -28,22 +28,20 @@
     // ---- A) Metriken ----
     function renderMetrics() {
         var s = data.pipeline_summary;
-        var docs = data.documents;
-        var ids = Object.keys(docs);
-        var cM = ids.filter(function (id) { return docs[id].pipeline_status.ocr_mistral; }).length;
-        var cD = ids.filter(function (id) { return docs[id].pipeline_status.ocr_deepseek; }).length;
-        var cL = ids.filter(function (id) { return docs[id].pipeline_status.llm_corrected; }).length;
-        var cLayout = ids.filter(function (id) { return docs[id].pipeline_status.layout; }).length;
-        var cTei = ids.filter(function (id) { return docs[id].pipeline_status.tei; }).length;
 
         ZBZ.$('#metrics').innerHTML =
-            metricCard('Korpus', s.total_docs + ' Dokumente', ZBZ.fmtNum(s.total_pages) + ' Seiten, ' + s.pilot_docs + ' Pilot-Docs') +
-            metricCard('OCR', '<span class="teal">' + cM + '</span> <span class="dim">/ ' + s.total_docs + '</span>',
-                '<span style="color:var(--accent-a)">' + cM + ' Mistral</span>, ' +
-                '<span style="color:var(--accent-b)">' + cD + ' DeepSeek</span>, ' +
-                '<span style="color:var(--accent-c)">' + cL + ' LLM</span>') +
-            metricCard('Layout + TEI', cLayout + ' Layout <span class="dim">/ ' + s.total_docs + '</span>', cTei + ' TEI generiert') +
-            metricCard('Genauigkeit (CER)', '<span class="blue">' + ZBZ.fmtPct(s.avg_cer_mistral) + '</span>', 'Mistral (Pilot, ' + s.pilot_docs + ' Docs)');
+            metricCard('Korpus',
+                s.total_docs + ' Dokumente',
+                ZBZ.fmtNum(s.total_pages) + ' Seiten, ' + s.docs_classified + ' klassifiziert') +
+            metricCard('OCR (Mistral)',
+                '<span class="teal">' + s.docs_with_ocr + '</span> <span class="dim">/ ' + s.total_docs + '</span>',
+                'Mistral Document AI') +
+            metricCard('Layout',
+                s.docs_with_layout + ' <span class="dim">/ ' + s.total_docs + '</span>',
+                'Docling + Gemini QA') +
+            metricCard('CER (Fehlerrate)',
+                s.avg_cer_mistral != null ? '<span class="teal">' + ZBZ.fmtPct(s.avg_cer_mistral) + '</span>' : '-',
+                s.pilot_docs + ' Pilot-Docs evaluiert');
     }
 
     function metricCard(label, value, detail) {
@@ -54,30 +52,38 @@
             '</div>';
     }
 
-    // ---- B) Phasen-Uebersicht ----
+    // ---- B) Korpus-Uebersicht ----
     function renderPhaseSummary() {
-        var phases = data.phases;
-        var html = '<div class="metric-grid" style="grid-template-columns:repeat(' + phases.length + ',1fr)">';
+        var c = data.corpus_overview;
+        if (!c) { ZBZ.$('#phase-summary').innerHTML = ''; return; }
 
-        phases.forEach(function (p) {
-            var cerM = p.avg_cer_mistral != null ? ZBZ.fmtPct(p.avg_cer_mistral) : '-';
-            var cerL = p.avg_cer_llm != null ? ZBZ.fmtPct(p.avg_cer_llm) : '-';
-            var statusTag = p.status === 'completed' ? '<span class="badge-ok">Abgeschlossen</span>' : '<span class="badge-pending">Teilweise</span>';
+        var TYPE_LABELS = { A: 'Einspaltig', B: 'Zweispaltig', C: 'Monografie', D: 'Spezial', '-': 'Offen' };
+        var FORM_LABELS = {
+            journalArticle: 'Artikel', book: 'Buch', bookSection: 'Buchkapitel',
+            encyclopedia: 'Lexikon', brochure: 'Broschure', interview: 'Interview',
+            anthology: 'Sammelband', other: 'Andere', '-': 'Offen',
+        };
 
-            html += '<div class="metric-card">' +
-                '<div class="label">' + p.name + ' (Typ ' + p.doc_type + ')</div>' +
-                '<div class="value" style="font-size:1rem">' +
-                    '<span class="teal">' + cerM + '</span>' +
-                    ' <span class="dim" style="font-size:0.8rem">&#8594;</span> ' +
-                    '<span class="blue">' + cerL + '</span>' +
-                '</div>' +
-                '<div class="detail">' +
-                    p.doc_ids.length + ' Dokumente ' + statusTag +
-                '</div>' +
-                '</div>';
-        });
+        function distCard(title, dist, labels) {
+            var html = '<div class="metric-card"><div class="label">' + title + '</div>';
+            var entries = Object.keys(dist);
+            entries.forEach(function (key) {
+                var label = labels ? (labels[key] || key) : key;
+                var count = dist[key];
+                html += '<div style="display:flex;justify-content:space-between;padding:2px 0;font-size:0.85rem">' +
+                    '<span>' + label + '</span>' +
+                    '<span style="font-weight:600">' + count + '</span></div>';
+            });
+            html += '</div>';
+            return html;
+        }
 
+        var html = '<div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">';
+        html += distCard('Layout-Typen', c.types, TYPE_LABELS);
+        html += distCard('Sprachen', c.languages, null);
+        html += distCard('Publikationsformen', c.forms, FORM_LABELS);
         html += '</div>';
+
         ZBZ.$('#phase-summary').innerHTML = html;
     }
 
@@ -93,15 +99,14 @@
 
         var html = '<div class="doc-table-wrap"><table class="doc-table"><thead><tr>' +
             '<th>ID</th>' +
-            '<th>Beschreibung</th>' +
+            '<th>Titel / Beschreibung</th>' +
             '<th>Typ</th>' +
             '<th>Sprache</th>' +
+            '<th>Form</th>' +
             '<th>Seiten</th>' +
             '<th>Pipeline</th>' +
             '<th>Engines</th>' +
             '<th>CER (Mistral)</th>' +
-            '<th>CER (DS)</th>' +
-            '<th>CER (LLM)</th>' +
             '<th></th>' +
             '</tr></thead><tbody id="catalog-body">';
 
@@ -113,27 +118,45 @@
         ZBZ.$('#doc-catalog').innerHTML = html;
     }
 
+    var PUB_FORM_LABELS = {
+        journalArticle: 'Artikel',
+        book: 'Buch',
+        bookSection: 'Buchkapitel',
+        encyclopedia: 'Lexikon',
+        brochure: 'Broschure',
+        interview: 'Interview',
+        anthology: 'Sammelband',
+        other: 'Andere',
+    };
+
     function catalogRow(d) {
         var cerMistral = d.mistral_cer != null ? ZBZ.cerBadge(d.mistral_cer) : '<span class="tag">-</span>';
-        var cerDs = d.deepseek_stats ? ZBZ.cerBadge(d.deepseek_stats.cer) : '<span class="tag">-</span>';
-        var cerLlm = d.evaluation ? ZBZ.cerBadge(d.evaluation.cer_llm) : '<span class="tag">-</span>';
 
         var engines = [];
         if (d.pipeline_status.ocr_mistral) engines.push('mistral');
         if (d.pipeline_status.ocr_deepseek) engines.push('deepseek');
         if (d.pipeline_status.llm_corrected) engines.push('llm');
 
-        return '<tr data-id="' + d.doc_id + '" data-type="' + d.type + '" data-status="' + docStatusKey(d) + '" data-engines="' + engines.join(',') + '">' +
+        var titleDesc = '';
+        if (d.title) {
+            titleDesc = '<strong>' + ZBZ.esc(d.title) + '</strong>';
+            if (d.desc) titleDesc += '<br><span style="color:var(--text-muted);font-size:0.75rem">' + ZBZ.esc(d.desc) + '</span>';
+        } else {
+            titleDesc = d.desc || '';
+        }
+
+        var formLabel = PUB_FORM_LABELS[d.pub_form] || d.pub_form || '-';
+
+        return '<tr data-id="' + d.doc_id + '" data-type="' + d.type + '" data-lang="' + d.lang + '" data-status="' + docStatusKey(d) + '" data-engines="' + engines.join(',') + '">' +
             '<td><strong>' + d.doc_id + '</strong></td>' +
-            '<td>' + d.desc + '</td>' +
+            '<td>' + titleDesc + '</td>' +
             '<td><span class="tag">' + d.type + '</span></td>' +
             '<td>' + d.lang + '</td>' +
+            '<td>' + formLabel + '</td>' +
             '<td>' + d.page_count + '</td>' +
             '<td>' + ZBZ.renderPipelineStatus(d.pipeline_status) + '</td>' +
             '<td><div class="engine-badges">' + ZBZ.engineBadges(d.pipeline_status) + '</div></td>' +
             '<td>' + cerMistral + '</td>' +
-            '<td>' + cerDs + '</td>' +
-            '<td>' + cerLlm + '</td>' +
             '<td><a href="viewer.html?doc=' + d.doc_id + '">Viewer</a></td>' +
             '</tr>';
     }
@@ -147,18 +170,21 @@
     function initFilters() {
         var search = ZBZ.$('#filter-search');
         var type = ZBZ.$('#filter-type');
+        var lang = ZBZ.$('#filter-lang');
         var status = ZBZ.$('#filter-status');
         var engine = ZBZ.$('#filter-engine');
 
         function apply() {
             var q = search.value.toLowerCase();
             var t = type.value;
+            var l = lang.value;
             var s = status.value;
             var eng = engine.value;
             var rows = ZBZ.$$('#catalog-body tr');
 
             rows.forEach(function (row) {
                 var rowType = row.getAttribute('data-type');
+                var rowLang = row.getAttribute('data-lang') || '';
                 var rowStatus = row.getAttribute('data-status');
                 var rowEngines = row.getAttribute('data-engines') || '';
                 var text = row.textContent.toLowerCase();
@@ -166,6 +192,7 @@
                 var show = true;
                 if (q && text.indexOf(q) === -1) show = false;
                 if (t && rowType !== t) show = false;
+                if (l && rowLang.indexOf(l) === -1) show = false;
                 if (s === 'pilot') {
                     if (rowType === '-') show = false;
                 } else if (s && rowStatus !== s) {
@@ -179,6 +206,7 @@
 
         search.addEventListener('input', apply);
         type.addEventListener('change', apply);
+        lang.addEventListener('change', apply);
         status.addEventListener('change', apply);
         engine.addEventListener('change', apply);
     }

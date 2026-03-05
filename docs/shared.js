@@ -229,6 +229,13 @@
         $: function (sel) { return document.querySelector(sel); },
         $$: function (sel) { return document.querySelectorAll(sel); },
 
+        esc: function (s) {
+            if (s == null) return '';
+            var el = document.createElement('span');
+            el.textContent = String(s);
+            return el.innerHTML;
+        },
+
         // ---- Pipeline Status Rendering ----
         PIPELINE_STEPS: [
             { key: 'images', label: 'IMG', title: 'Bilder extrahiert' },

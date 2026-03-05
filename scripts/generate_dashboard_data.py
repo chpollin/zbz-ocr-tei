@@ -212,10 +212,14 @@ def build_documents(images_manifest, eval_data, llm_manifest):
 
 def compute_pipeline_status(doc_id: str) -> dict:
     """Prueft Datei-Existenz fuer jede Pipeline-Stufe."""
+    has_mistral = any(MISTRAL_RESULTS_DIR.glob(f"{doc_id}_p*.md"))
+    has_ocr_results = any((OUTPUT_DIR / "ocr_results").glob(f"{doc_id}_p*.md"))
+    # DeepSeek nur wenn in ocr_results/ aber NICHT in mistral_results/
+    has_deepseek = has_ocr_results and not has_mistral
     return {
         "images": (IMAGES_DIR / doc_id).is_dir(),
-        "ocr_mistral": any(MISTRAL_RESULTS_DIR.glob(f"{doc_id}_p*.md")),
-        "ocr_deepseek": any((OUTPUT_DIR / "ocr_results").glob(f"{doc_id}_p*.md")),
+        "ocr_mistral": has_mistral or has_ocr_results,
+        "ocr_deepseek": has_deepseek,
         "llm_corrected": any((OUTPUT_DIR / "llm_corrected_c").glob(f"{doc_id}_p*.md")),
         "layout": (LAYOUT_DIR / doc_id / "summary.json").is_file(),
         "evaluation": doc_id in (load_eval_doc_ids() or []),
@@ -263,15 +267,15 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
     if llm_manifest and "totals" in llm_manifest:
         llm_totals = llm_manifest["totals"]
 
+    docs_classified = sum(1 for d in documents.values() if d["type"] != "-")
     pilot_count = sum(1 for d in documents.values() if d["doc_id"] in PILOT_DOCS)
 
     return {
         "ocr_engine": "Mistral Document AI 2512",
-        "llm_model": "Claude Haiku 4.5",
-        "llm_variant": "C (Few-Shot)",
         "total_docs": len(documents),
-        "pilot_docs": pilot_count,
         "total_pages": total_pages,
+        "docs_classified": docs_classified,
+        "pilot_docs": pilot_count,
         "docs_with_ocr": docs_with_ocr,
         "docs_with_llm": docs_with_llm,
         "docs_with_layout": docs_with_layout,
@@ -279,40 +283,20 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
         "docs_with_eval": docs_with_eval,
         "avg_cer_mistral": round(avg_cer_mistral, 6) if avg_cer_mistral else None,
         "avg_cer_llm": round(avg_cer_llm, 6) if avg_cer_llm else None,
-        "total_llm_cost_usd": llm_totals.get("cost_usd"),
-        "total_llm_tokens_in": llm_totals.get("input_tokens"),
-        "total_llm_tokens_out": llm_totals.get("output_tokens"),
     }
 
 
-def build_phases(documents: dict) -> list:
-    """Phase-Level Aggregation."""
-    phase_defs = [
-        {"id": "phase1", "name": "Baseline (einspaltig)", "doc_type": "A"},
-        {"id": "phase2", "name": "Zweispaltig", "doc_type": "B"},
-        {"id": "phase3", "name": "Spezialformate", "doc_type": "D"},
-        {"id": "phase4", "name": "Monografien", "doc_type": "C"},
-    ]
-
-    phases = []
-    for pdef in phase_defs:
-        phase_docs = [d for d in documents.values() if d["phase"] == pdef["id"]]
-        doc_ids = [d["doc_id"] for d in phase_docs]
-
-        cer_mistral = [d["mistral_cer"] for d in phase_docs if d["mistral_cer"] is not None]
-        cer_llm = [d["evaluation"]["cer_llm"] for d in phase_docs if d["evaluation"]]
-
-        phases.append({
-            "id": pdef["id"],
-            "name": pdef["name"],
-            "doc_type": pdef["doc_type"],
-            "doc_ids": doc_ids,
-            "status": "completed" if all(d["pipeline_status"]["ocr_mistral"] for d in phase_docs) else "partial",
-            "avg_cer_mistral": round(sum(cer_mistral) / len(cer_mistral), 6) if cer_mistral else None,
-            "avg_cer_llm": round(sum(cer_llm) / len(cer_llm), 6) if cer_llm else None,
-        })
-
-    return phases
+def build_corpus_overview(documents: dict) -> dict:
+    """Korpus-Verteilung nach Typ, Sprache, Form."""
+    from collections import Counter
+    types = Counter(d["type"] for d in documents.values())
+    langs = Counter(d["lang"] for d in documents.values())
+    forms = Counter(d.get("pub_form") or "-" for d in documents.values())
+    return {
+        "types": dict(types.most_common()),
+        "languages": dict(langs.most_common()),
+        "forms": dict(forms.most_common()),
+    }
 
 
 def main():
@@ -341,7 +325,7 @@ def main():
             "corpus_pages": 7200,
         },
         "pipeline_summary": build_pipeline_summary(documents, llm_manifest),
-        "phases": build_phases(documents),
+        "corpus_overview": build_corpus_overview(documents),
         "documents": documents,
         "benchmark": {
             "timestamp": "2026-02-18",

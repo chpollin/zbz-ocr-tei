@@ -14,7 +14,6 @@
             </div>
             <div class="nav-links">
                 <a href="index.html" class="active">Dashboard</a>
-                <a href="viewer.html?doc=2310">Viewer</a>
             </div>
         </div>
     </header>
@@ -27,8 +26,8 @@
             <div class="metric-grid" id="metrics"></div>
 
             <!-- B) Phasen-Uebersicht -->
-            <div class="section-title">CER nach Testphase</div>
-            <div class="section-subtitle">Mistral OCR &#8594; LLM-korrigiert (Claude Haiku 4.5, Variante C)</div>
+            <div class="section-title">Korpus-Uebersicht</div>
+            <div class="section-subtitle">Verteilung nach Typ, Sprache und Publikationsform (Gemini-Klassifikation)</div>
             <div id="phase-summary"></div>
 
             <!-- C) Dokumentkatalog -->
@@ -42,6 +41,13 @@
                     <option value="C">Typ C - Monografie</option>
                     <option value="D">Typ D - Spezial</option>
                     <option value="-">Nicht klassifiziert</option>
+                </select>
+                <select class="filter-select" id="filter-lang">
+                    <option value="">Alle Sprachen</option>
+                    <option value="FR">Franzoesisch</option>
+                    <option value="DE">Deutsch</option>
+                    <option value="DE/FR">Deutsch/Franzoesisch</option>
+                    <option value="EN">Englisch</option>
                 </select>
                 <select class="filter-select" id="filter-status">
                     <option value="">Alle Status</option>

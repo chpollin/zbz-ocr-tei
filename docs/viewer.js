@@ -83,6 +83,17 @@
         }
     }
 
+    var PUB_FORM_LABELS = {
+        journalArticle: 'Artikel',
+        book: 'Buch',
+        bookSection: 'Buchkapitel',
+        encyclopedia: 'Lexikon',
+        brochure: 'Broschure',
+        interview: 'Interview',
+        anthology: 'Sammelband',
+        other: 'Andere',
+    };
+
     // ---- Document Info Bar ----
     function renderDocInfo() {
         var d = state.docData;
@@ -104,10 +115,11 @@
         }
 
         // Type & Language (with pub_form)
+        var formLabel = PUB_FORM_LABELS[d.pub_form] || d.pub_form || '';
         html += '<div class="doc-info-section">' +
             '<span class="info-label">Typ / Sprache</span>' +
             '<span class="info-value"><span class="tag">' + d.type + '</span> ' + d.lang +
-            (d.pub_form ? ' / ' + d.pub_form : '') + '</span>' +
+            (formLabel ? ' / ' + formLabel : '') + '</span>' +
             '</div>';
 
         // Date
