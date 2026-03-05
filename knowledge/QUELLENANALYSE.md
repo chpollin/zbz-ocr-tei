@@ -167,7 +167,7 @@ Single source of truth for all pilot PDF metadata. Other documents reference thi
 ## References
 
 - [TESTPLAN](TESTPLAN.md) for OCR test results per pilot file
-- [OCR-ENGINES](OCR-ENGINES.md) for engine selection per document type
+- [ENGINES](ENGINES.md) for engine selection per document type
 - [PIPELINE](PIPELINE.md) for pipeline strategies
 
 ---

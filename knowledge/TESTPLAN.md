@@ -10,7 +10,7 @@ status: active
 
 Systematic OCR evaluation across all document types. Single source of truth for test phases, metrics, and results.
 
-**Dependencies:** [QUELLENANALYSE](QUELLENANALYSE.md) (pilot files, document types), [OCR-ENGINES](OCR-ENGINES.md) (engine selection)
+**Dependencies:** [QUELLENANALYSE](QUELLENANALYSE.md) (pilot files, document types), [ENGINES](ENGINES.md) (engine selection)
 
 ---
 
@@ -223,7 +223,7 @@ python scripts/test_all_pdfs.py --phase phase1
 ## References
 
 - [QUELLENANALYSE](QUELLENANALYSE.md) for pilot files and document types
-- [OCR-ENGINES](OCR-ENGINES.md) for engine-specific information
+- [ENGINES](ENGINES.md) for engine-specific information
 - [DECISIONS](DECISIONS.md) for open questions
 
 ---

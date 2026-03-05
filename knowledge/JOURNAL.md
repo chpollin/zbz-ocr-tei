@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-04
+updated: 2026-03-05
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -14,12 +14,63 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-05 | Knowledge Refactoring + Gemini Auto-Mode Progress
+
+### Context
+
+Knowledge base had grown to 14 files with quality issues: outdated metrics, wrong model names, SSoT violations, obsolete research documents. Gemini auto-mode from previous session had processed only 33/286 docs before aborting.
+
+### Completed
+
+1. LEARNINGS.md created -- 15 technical insights from E1-E26 in 6 categories (OCR, Layout, Gemini API, TEI/Pipeline, Development Patterns)
+
+2. Quality metrics corrected across all files:
+   - 62/20/13/5 (ad-hoc) -> 75/10/12/3 (compute_page_quality on 4,152 pages)
+   - "~38% fails" -> "~15% bad+empty" (detect targets only)
+   - PIPELINE.md is SSoT for layout quality metrics
+
+3. All "Gemini 2.5 Flash" references eliminated -- only 3.1 Flash Lite everywhere
+
+4. OCR-ENGINES.md + E19-LAYOUT-ANALYSE.md merged into ENGINES.md:
+   - 512 lines -> 131 lines (token-efficient: no bold, no tables)
+   - 4 active engines: Mistral (OCR prod), DeepSeek (OCR dev), Docling (layout), Gemini (layout QA+detect)
+   - Dropped: Claude (not tested), discontinued models, 5 rejected layout approaches, pilot findings (in TESTPLAN)
+   - E19 architecture decision preserved as summary section
+
+5. Cross-references updated in 8 files (DECISIONS, INDEX, PIPELINE, INFRASTRUKTUR, LEARNINGS, TESTPLAN, QUELLENANALYSE, JOURNAL)
+
+6. INDEX.md cleaned: "Agentic Vision" removed from Key Concepts (obsolete), directory structure updated
+
+7. Gemini auto-mode restarted -- 847/4,152 pages (20.4%) after 51 docs in this session. Aborted at Doc 1530 (timeout). 10 errors (broken PNGs, JSON parse). Resume-capable.
+
+### New/Changed Files
+
+- knowledge/ENGINES.md -- NEW (replaces OCR-ENGINES.md + E19-LAYOUT-ANALYSE.md)
+- knowledge/LEARNINGS.md -- NEW
+- knowledge/OCR-ENGINES.md -- DELETED
+- knowledge/E19-LAYOUT-ANALYSE.md -- DELETED
+- knowledge/INDEX.md -- UPDATED (Document Matrix, Dependencies, Key Concepts, Directory Structure)
+- knowledge/PIPELINE.md -- UPDATED (quality metrics, cross-refs)
+- knowledge/PROJEKT.md -- UPDATED (quality metrics, model name)
+- knowledge/DECISIONS.md -- UPDATED (model name, percentages, cross-refs)
+- knowledge/PLAN.md -- UPDATED (quality metrics, model name)
+- knowledge/JOURNAL.md -- UPDATED (this entry, footer date)
+- knowledge/INFRASTRUKTUR.md -- UPDATED (cross-ref)
+- knowledge/TESTPLAN.md -- UPDATED (cross-refs)
+- knowledge/QUELLENANALYSE.md -- UPDATED (cross-ref)
+
+### Knowledge Base Status
+
+12 documents (was 14): INDEX, PROJEKT, PIPELINE, QUELLENANALYSE, ENGINES, TEI-MAPPING, GND-STRATEGIE, TESTPLAN, INFRASTRUKTUR, DECISIONS, ZBZ-WORKFLOW, JOURNAL, PLAN, LEARNINGS
+
+---
+
 ## 2026-03-04 | Gemini Layout Detect Mode (E26) + Layout Quality Analysis
 
 ### Context
 
 Docling layout analysis complete (286/286 docs, 4,152 pages). Quality analysis revealed:
-- 62% good, 20% warning, 13% bad, 3% empty
+- 62% good, 20% warning, 13% bad, 3% empty *(ad-hoc analysis; superseded by `compute_page_quality`: 75/10/12/3)*
 - Landscape/double pages: 36% bad (vs 14% portrait)
 - Main issues: missing regions, fragmented BBoxes, empty pages
 - Existing Gemini QA (E25) can only fix labels — cannot add regions or change BBoxes
@@ -27,7 +78,7 @@ Docling layout analysis complete (286/286 docs, 4,152 pages). Quality analysis r
 ### Completed
 
 1. **Gemini Layout Detect Mode** (E26, `scripts/layout_qa_gemini.py` EXTENDED):
-   - New `--mode detect`: Gemini 2.5 Flash as full layout detector (Vision + Structured Output)
+   - New `--mode detect`: Gemini 3.1 Flash Lite as full layout detector (Vision + Structured Output)
    - Sends raw scan (no overlay) to Gemini, returns regions with `box_2d` coordinates
    - Coordinate conversion: Gemini `[ymin, xmin, ymax, xmax]` (0-1000) -> project `{x_pct, y_pct, w_pct, h_pct}` (0-100)
    - `text` field = `""` (OCR comes from Mistral, not layout)
@@ -36,7 +87,7 @@ Docling layout analysis complete (286/286 docs, 4,152 pages). Quality analysis r
    - Three modes: `qa` (label fix), `detect` (full detection), `auto` (detect for bad, qa for good)
    - Quality scoring: `compute_page_quality()` classifies pages as good/warning/bad/empty based on coverage
 
-2. **Config extended**: `GEMINI_DETECT_MODEL` — initially `"gemini-2.5-flash"`, switched to `"gemini-3.1-flash-lite-preview"` (equivalent quality, ~10x cheaper)
+2. **Config extended**: `GEMINI_DETECT_MODEL` = `"gemini-3.1-flash-lite-preview"`
 
 3. **Test results**:
    - **Doc 510 p7** (missing paragraph): Gemini detect found 4 regions (vs Docling 2), including the missing middle paragraph
@@ -53,7 +104,7 @@ Docling layout analysis complete (286/286 docs, 4,152 pages). Quality analysis r
 - Rightmost column sometimes missed on wide landscape pages (Doc 900)
 - `picture`/`figure` detection unreliable — photos not always labeled
 - Prompt tuning needed for edge cases (can iterate)
-- Cost: Gemini 2.5 Flash more expensive than Flash Lite (~10x per page)
+- Cost: Flash Lite is the cheapest viable option
 
 ### New/Changed Files
 
@@ -66,10 +117,10 @@ Docling layout analysis complete (286/286 docs, 4,152 pages). Quality analysis r
 | `knowledge/PLAN.md` | EXTENDED -- Phase 1f, layout 286/286 done |
 | `knowledge/PROJEKT.md` | EXTENDED -- Component status |
 
-### Model Switch: 2.5 Flash -> Flash Lite
+### Model: Flash Lite Confirmed
 
-- Tested Doc 510 with Flash Lite: equivalent quality (same 4 regions on p7), ~2.4s/page
-- Cost: Flash Lite ~$1-2 for ~1,570 detect pages (vs ~$8-15 for 2.5 Flash)
+- Tested Doc 510: equivalent quality (same 4 regions on p7), ~2.4s/page
+- Cost: Flash Lite ~$1-2 for ~633 detect pages (15% bad+empty)
 - `auto` mode launched on all 286 docs with Flash Lite
 
 ### Documentation Refactoring (Session 2)
@@ -1090,7 +1141,7 @@ Prompt contains document context from TESTPLAN (type, language, genre).
 ## 2026-02-02 | Gemini 3 Agentic Vision Analysis
 
 - Google Agentic Vision for Gemini 3 Flash (27.01.2026): Think-Act-Observe loop for auto-crop of columns — potential solution for Type-B problem (O10)
-- Details: [OCR-ENGINES](OCR-ENGINES.md) §Gemini
+- Details: [ENGINES](ENGINES.md) §Gemini
 - Sources: [Announcement](https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/), [IIIF Example](https://gist.github.com/charlesLoder/5341c539ab8330cfebc2d807e6b9c765)
 
 ---
@@ -1109,4 +1160,4 @@ Prompt contains document context from TESTPLAN (type, language, genre).
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-03 (Gemini Layout QA E25)*
+*Created: 2026-01-29 | Updated: 2026-03-05*

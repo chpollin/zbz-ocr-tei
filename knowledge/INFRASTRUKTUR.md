@@ -175,7 +175,7 @@ The QA dashboard (`docs/`) is a purely static web application and does not requi
 ## References
 
 - [PIPELINE](PIPELINE.md) for pipeline architecture
-- [OCR-ENGINES](OCR-ENGINES.md) for engine details
+- [ENGINES](ENGINES.md) for engine details
 - [DECISIONS](DECISIONS.md) for open questions
 
 ---

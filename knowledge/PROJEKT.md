@@ -44,7 +44,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | Input | PDF scans (7,200 pages) |
 | Output | TEI-XML (DTA-Basisformat), PAGE-XML + PNG + METS |
 | OCR engines | Mistral OCR 3 (Azure), DeepSeek-OCR-2 (local) |
-| Layout engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) + Gemini 2.5 Flash detect (E26) |
+| Layout engine | Docling 2.75 (RT-DETR V2 Heron, E19/E20) + Gemini 3.1 Flash Lite (E26) |
 | NER | Claude Haiku 4.5 + lobid.org GND API |
 | Mode | Batch, no manual intervention |
 | Implementation plan | [PLAN.md](PLAN.md) |
@@ -90,9 +90,9 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Benchmark UI | Done | `docs/benchmark.html`, Mistral vs DeepSeek |
 | Dashboard redesign | Done | `docs/` with shared.css/js, index.html, viewer.html |
 | Dashboard data | Done | `scripts/generate_dashboard_data.py` -> dashboard.json |
-| Layout analysis (Docling) | Done | 286/286 docs, 4,152 layout JSONs. Quality: 62% good, 20% warning, 13% bad, 3% empty |
+| Layout analysis (Docling) | Done | 286/286 docs, 4,152 layout JSONs. Quality: 75% good, 10% warning, 12% bad, 3% empty |
 | Layout QA (Gemini) | Done | `layout_qa_gemini.py --mode qa`: label corrections (Flash Lite, E25) |
-| Layout Detect (Gemini) | Done | `layout_qa_gemini.py --mode detect`: full re-detection for bad pages (2.5 Flash, E26). Tested on Doc 510, 900 |
+| Layout Detect (Gemini) | Done | `layout_qa_gemini.py --mode detect`: full re-detection for bad pages (Flash Lite, E26). Tested on Doc 510, 900 |
 | TEI generator | Done | `scripts/tei/tei_generator.py`, 383 TEI-XML files, DTA-Basisformat |
 | Viewer TEI panel | Done | 3-panel viewer (facsimile + OCR + TEI), toggle T, rendered view, syntax highlighting, diff, entity sidebar |
 | Viewer TEI refactoring | Done | TEI JS extracted to `docs/tei-viewer.js` (~300 lines), viewer.html 1200->816 lines |
@@ -135,4 +135,4 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-04*
+*Created: 2026-02-18 | Updated: 2026-03-05*

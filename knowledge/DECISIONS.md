@@ -19,10 +19,10 @@ Consolidated register of all decisions and open questions in the project.
 | # | Decision | Rationale | Date | Document |
 |---|----------|-----------|------|----------|
 | E1 | Hybrid pipeline: Docling (layout) + LLM-OCR (text) | Layout analysis without OCR, OCR separately | 2026-01-29 | [PIPELINE](PIPELINE.md) |
-| E2 | Docling only for layout, not for OCR | RapidOCR has encoding problems (e → O) with French text | 2026-01-29 | [OCR-ENGINES](OCR-ENGINES.md) |
+| E2 | Docling only for layout, not for OCR | RapidOCR has encoding problems (e → O) with French text | 2026-01-29 | [ENGINES](ENGINES.md) |
 | E3 | Deterministic first, LLM only for complex cases | Reproducible, cost-effective, debuggable | 2026-01-29 | [PIPELINE](PIPELINE.md) |
 | E4 | 4 document types (A-D) classified | Different pipeline strategies needed | 2026-01-29 | [QUELLENANALYSE](QUELLENANALYSE.md) |
-| E6 | Mistral OCR 3 as production engine | ZBZ has Azure access, no GPU required | 2026-02-14 | [OCR-ENGINES](OCR-ENGINES.md) |
+| E6 | Mistral OCR 3 as production engine | ZBZ has Azure access, no GPU required | 2026-02-14 | [ENGINES](ENGINES.md) |
 | E7 | Quotation remains unchanged | Azure integration no additional effort | 2026-02-14 | [PROJEKT](PROJEKT.md) |
 | E8 | Configurable API endpoints | Switch between local and Azure OCR | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
 | E9 | Containerization with Podman | ZBZ does not use Docker, Podman is OCI-compatible | 2026-02-14 | [INFRASTRUKTUR](INFRASTRUKTUR.md) |
@@ -33,14 +33,14 @@ Consolidated register of all decisions and open questions in the project.
 | E16 | Page-by-page comparison for monographs (>10 TEI pages) | Global alignment fails at 140+ pages; content matching resolves variable PDF/TEI offsets | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E17 | LLM correction optional, not default | Worsens docs with CER <5%; benefit only at CER >10% | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E18 | Content-based page matching instead of fixed offset | TEI facs numbers ≠ PDF page numbers (cover pages, blank pages); fixed offset drifts | 2026-02-25 | [PIPELINE](PIPELINE.md) |
-| E19 | Layout analysis: Docling + Gemini hybrid | Docling (mAP 0.699, free, 17 classes) as primary; Gemini as optional validator (updated to 3.1 Flash Lite, see E25); Kraken as fallback | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
-| E20 | Docling 2.75 confirmed as layout engine (Phase 0) | Type sample passed: all 4 document types correctly detected, column separation Type B works, 0.4-3.3s/page | 2026-02-25 | [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) |
+| E19 | Layout analysis: Docling + Gemini hybrid | Docling (mAP 0.699, free, 17 classes) as primary; Gemini as optional validator (updated to 3.1 Flash Lite, see E25); Kraken as fallback | 2026-02-25 | [ENGINES](ENGINES.md) |
+| E20 | Docling 2.75 confirmed as layout engine (Phase 0) | Type sample passed: all 4 document types correctly detected, column separation Type B works, 0.4-3.3s/page | 2026-02-25 | [ENGINES](ENGINES.md) |
 | E21 | Scope expansion: full pipeline in zbz-ocr-tei | After meeting 25.02.: OCR + layout + PAGE-XML + NER/GND + TEI-XML. ZBZ keeps Transkribus in parallel | 2026-02-25 | [PLAN.md](PLAN.md) |
 | E22 | TEI generator: directly from layout+OCR to TEI (without PAGE-XML) | Will be extended later when PAGE-XML/NER exist. Entity annotation from seed dict (KNOWN_ENTITIES) | 2026-02-25 | [PIPELINE](PIPELINE.md) |
 | E23 | Data delivery Feb 2026: 286 PDFs + 25 TEI-XMLs + 24 PAGE-XML exports | PAGE-XML schema 2013-07-15. PAGE-XML pages empty (no text). Transkribus Collection-ID: 1886177 | 2026-02-27 | [QUELLENANALYSE](QUELLENANALYSE.md) |
 | E24 | docling-serve API for layout analysis (no local GPU needed) | Docker container (`docling-serve-cpu`), same Docling RT-DETR V2 model, identical output format to `run_layout_analysis.py`. CPU ~27s/page, GPU Cloud Run ~28ms/page. Tested on Doc 2310 (3 pages, 24 regions). Optional Cloud Run deployment for production speed | 2026-03-03 | [PIPELINE](PIPELINE.md) |
 | E25 | Gemini 3.1 Flash Lite as Layout QA validator | Overlay-PNG + Layout-JSON to Gemini Vision, corrected JSON back. Both versions preserved (epistemic infrastructure). Structured Output via `response_schema`. SDK: `google-genai`. Cost: ~$4 for 7,200 pages | 2026-03-03 | [PIPELINE](PIPELINE.md) |
-| E26 | Gemini Layout Detect mode (initially 2.5 Flash, switched to 3.1 Flash Lite) | Docling fails on ~38% of pages (landscape, multi-column, dense). Detect mode sends raw scan to Gemini Vision, returns regions with `box_2d` coordinates. Three modes: `qa` (label fix), `detect` (full detection), `auto` (detect for bad, qa for good). Quality scoring routes pages automatically. Flash Lite equivalent quality at ~10x lower cost. Auto mode running on all 286 docs | 2026-03-04 | [PIPELINE](PIPELINE.md) |
+| E26 | Gemini Layout Detect mode (3.1 Flash Lite) | Docling fails on ~15% of pages (bad+empty) (landscape, multi-column, dense). Detect mode sends raw scan to Gemini Vision, returns regions with `box_2d` coordinates. Three modes: `qa` (label fix), `detect` (full detection), `auto` (detect for bad, qa for good). Quality scoring routes pages automatically. Flash Lite equivalent quality at ~10x lower cost. Auto mode running on all 286 docs | 2026-03-04 | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -80,4 +80,4 @@ Consolidated register of all decisions and open questions in the project.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-04*
+*Created: 2026-02-18 | Updated: 2026-03-05*

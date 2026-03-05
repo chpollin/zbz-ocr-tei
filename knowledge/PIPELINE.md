@@ -46,7 +46,7 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 
 **Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
 
-**Layout engine (E19/E20):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). All 286 docs analyzed (4,152 pages). Local GPU (RTX 4060): ~5s/page. Quality: 62% good, 20% warning, 13% bad, 3% empty. Details: [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md).
+**Layout engine (E19/E20):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). All 286 docs analyzed (4,152 pages). Local GPU (RTX 4060): ~5s/page. Quality: 75% good, 10% warning, 12% bad, 3% empty (`compute_page_quality`, 4,152 pages). Details: [ENGINES](ENGINES.md).
 
 **Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var. **Note:** Local GPU via `run_layout_analysis.py` is now preferred (~5s/page on RTX 4060).
 
@@ -59,7 +59,7 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 
 **Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`.
 
-**Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails (~38%). Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA. Cost: ~$1-2 for ~1,570 detect pages.
+**Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails (~15% bad+empty). Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA. Cost: ~$1-2 for ~1,570 detect pages.
 
 ---
 
@@ -74,11 +74,11 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 3. Otherwise → DeepSeek (local, GPU)
 
 Document types: See [QUELLENANALYSE](QUELLENANALYSE.md) §Document Types.
-Engine details: See [OCR-ENGINES](OCR-ENGINES.md).
+Engine details: See [ENGINES](ENGINES.md).
 
 ### Layout Analysis (Type B only)
 
-For two-column documents, `ocr_pipeline.py` internally uses Docling (IBM) with `do_ocr=False` for column detection. Docling's own OCR is not used (RapidOCR has encoding issues). Details: [OCR-ENGINES](OCR-ENGINES.md) §Docling.
+For two-column documents, `ocr_pipeline.py` internally uses Docling (IBM) with `do_ocr=False` for column detection. Docling's own OCR is not used (RapidOCR has encoding issues). Details: [ENGINES](ENGINES.md) §Docling.
 
 ### Prompts
 
@@ -354,10 +354,10 @@ The dashboard shows pipeline status, CER comparison (Mistral/LLM/DeepSeek), engi
 ## References
 
 - [PROJEKT](PROJEKT.md) for ecosystem and milestones
-- [OCR-ENGINES](OCR-ENGINES.md) for engine details
+- [ENGINES](ENGINES.md) for engine details
 - [TESTPLAN](TESTPLAN.md) for test results
 - [INFRASTRUKTUR](INFRASTRUKTUR.md) for deployment
 
 ---
 
-*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-04 (E26: Gemini detect mode, 286/286 layout done)*
+*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-05*

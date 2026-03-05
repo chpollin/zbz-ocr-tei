@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-03-04
+updated: 2026-03-05
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -19,16 +19,16 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [PROJEKT](PROJEKT.md) | What is the project? Pipeline scope and milestones | All | — |
 | [PIPELINE](PIPELINE.md) | How is the pipeline technically structured? | Development | PROJEKT |
 | [QUELLENANALYSE](QUELLENANALYSE.md) | What is the material? Which document types exist? | All | — |
-| [OCR-ENGINES](OCR-ENGINES.md) | Which OCR tools are used and how? | Development | PIPELINE |
+| [ENGINES](ENGINES.md) | Which OCR and layout tools are used? | Development | PIPELINE |
 | [TEI-MAPPING](TEI-MAPPING.md) | Which TEI rules apply? | Development, Edition | QUELLENANALYSE |
 | [GND-STRATEGIE](GND-STRATEGIE.md) | How does entity linking work? | Development, Edition | TEI-MAPPING |
-| [TESTPLAN](TESTPLAN.md) | How is quality measured? What are the results? | Development, QA | QUELLENANALYSE, OCR-ENGINES |
+| [TESTPLAN](TESTPLAN.md) | How is quality measured? What are the results? | Development, QA | QUELLENANALYSE, ENGINES |
 | [INFRASTRUKTUR](INFRASTRUKTUR.md) | How is deployment done? Azure, Podman, CI/CD? | Development, Ops | PIPELINE |
 | [DECISIONS](DECISIONS.md) | What is decided? What is open? | All | All |
 | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) | How does ZBZ work editorially? | All | — |
 | [JOURNAL](JOURNAL.md) | What was done when? | All | — |
 | [PLAN](PLAN.md) | What are the implementation phases? | Development | PROJEKT, PIPELINE |
-| [E19-LAYOUT-ANALYSE](E19-LAYOUT-ANALYSE.md) | Which approach for layout analysis? | Development | PIPELINE |
+| [LEARNINGS](LEARNINGS.md) | What did we learn? Technical patterns and pitfalls | All | All |
 
 ---
 
@@ -38,7 +38,7 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 PROJEKT (Vision, Ecosystem)
     |
     +-->  PIPELINE (7-Stage Pipeline: PDF -> TEI-XML)
-    |        +-->  OCR-ENGINES (DeepSeek, Mistral, Gemini)
+    |        +-->  ENGINES (DeepSeek, Mistral, Gemini, Docling)
     |        +-->  INFRASTRUKTUR (Azure, Podman, CI/CD)
     |        +-->  TESTPLAN (Phases, Metrics)
     |
@@ -51,6 +51,7 @@ PROJEKT (Vision, Ecosystem)
 
 PLAN      <-- implementation phases, depends on PROJEKT + PIPELINE
 DECISIONS <-- cross-cutting, collects from all docs
+LEARNINGS <-- cross-cutting, distills patterns from experiments
 JOURNAL   <-- chronological, references all docs
 ```
 
@@ -64,7 +65,6 @@ JOURNAL   <-- chronological, references all docs
 | 7-Stage Pipeline | Images -> OCR -> Layout -> PAGE-XML -> NER/GND -> TEI-XML -> Evaluation | [PIPELINE](PIPELINE.md) |
 | Document Types A-D | Single-column, Two-column, Monograph, Special | [QUELLENANALYSE](QUELLENANALYSE.md) |
 | DTA-Basisformat | TEI base schema with ZBZ customizations | [TEI-MAPPING](TEI-MAPPING.md) |
-| Agentic Vision | Gemini 3 Think-Act-Observe Loop for columns | [OCR-ENGINES](OCR-ENGINES.md) |
 | NER + GND | Named Entity Recognition + GND linking (Phase 2) | [GND-STRATEGIE](GND-STRATEGIE.md) |
 | CER / WER | Character Error Rate / Word Error Rate | [TESTPLAN](TESTPLAN.md) |
 | Hybrid Pipeline | Docling (Layout) + LLM-OCR (Text) combined | [PIPELINE](PIPELINE.md) |
@@ -97,7 +97,7 @@ knowledge/
 +-- PROJEKT.md            # Vision, ecosystem, milestones
 +-- PIPELINE.md           # Technical pipeline documentation
 +-- QUELLENANALYSE.md     # Corpus, document types, pilot files
-+-- OCR-ENGINES.md        # OCR tools: DeepSeek, Mistral, Gemini, Docling
++-- ENGINES.md            # OCR + Layout engines: Mistral, DeepSeek, Docling, Gemini
 +-- TEI-MAPPING.md        # TEI transformation rules
 +-- GND-STRATEGIE.md      # NER + Entity Linking
 +-- TESTPLAN.md           # Test phases, metrics, results
@@ -106,7 +106,7 @@ knowledge/
 +-- ZBZ-WORKFLOW.md       # ZBZ editorial workflow + integration points
 +-- JOURNAL.md            # Chronological work journal
 +-- PLAN.md               # Implementation plan (phases 0-5)
-+-- E19-LAYOUT-ANALYSE.md # Layout analysis research + decision
++-- LEARNINGS.md           # Technical patterns and pitfalls (E1-E26)
 ```
 
 ---
@@ -120,4 +120,4 @@ knowledge/
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-04*
+*Created: 2026-01-29 | Updated: 2026-03-05*

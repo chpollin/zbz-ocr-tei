@@ -100,7 +100,7 @@ Phase 3 and Phase 4 can be developed in parallel (NER only needs OCR text, not P
 
 - [x] 286/286 docs analyzed (4,152 layout JSONs)
 - [x] Local GPU (RTX 4060): ~5s/page, completed all docs
-- [x] Quality analysis: 62% good, 20% warning, 13% bad, 3% empty
+- [x] Quality analysis: 75% good, 10% warning, 12% bad, 3% empty (`compute_page_quality`, 4,152 pages)
 
 #### 1c: Gemini Layout QA (E25) --- DONE (script ready)
 
@@ -132,7 +132,7 @@ Phase 3 and Phase 4 can be developed in parallel (NER only needs OCR text, not P
 
 #### 1f: Gemini Layout Detect mode (E26) --- DONE (script ready)
 
-- [x] `detect_page()` in `layout_qa_gemini.py`: Gemini 2.5 Flash as full layout detector
+- [x] `detect_page()` in `layout_qa_gemini.py`: Gemini 3.1 Flash Lite as full layout detector
 - [x] Raw scan (no overlay) to Gemini Vision + Structured Output (`DETECT_SCHEMA`)
 - [x] Coordinate conversion: `box_2d` [ymin,xmin,ymax,xmax] (0-1000) -> `{x_pct,y_pct,w_pct,h_pct}` (0-100)
 - [x] `compute_page_quality()`: Routes pages by Docling quality (good/warning/bad/empty)
@@ -225,7 +225,7 @@ PDF-Scans (286 PDFs, E23)
   |                                    |
   +---> layout_qa_gemini.py -----> Corrected Layout JSON      [DONE: QA + Detect modes]
   |     --mode qa  (Flash Lite)        |  (label corrections)
-  |     --mode detect (2.5 Flash)      |  (full re-detection for bad pages)
+  |     --mode detect (Flash Lite)     |  (full re-detection for bad pages)
   |     --mode auto                    |  (routes by quality score)
                                        |
             [PENDING BELOW]            |
@@ -294,7 +294,7 @@ PDF-Scans (286 PDFs, E23)
 | Layout (Docling, local RTX 4060) | ~5s | ~5.5h | $0 |
 | Layout (Docling, CPU/docling-serve) | ~27s | ~31h | $0 |
 | Gemini QA (Flash Lite) | ~4s | ~5h | ~$4 |
-| Gemini Detect (2.5 Flash, bad pages only) | ~6s | ~2h (est. 1,200 pages) | ~$8 |
+| Gemini Detect (Flash Lite, bad pages only) | ~5s | ~2h (est. 633 pages) | ~$1-2 |
 | NER (Haiku 4.5) | ~0.5s | ~1h | ~$5 |
 | TEI transformation | ~0.1s | ~7min | $0 |
 | **Total (GPU path)** | | **~11h** | **~$25 + GPU** |
