@@ -14,6 +14,26 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-05 | Knowledge Refactoring + OCR Production + Viewer Integration
+
+### Session 2: OCR Production Run + Frontend Fix
+
+13. Mistral OCR batch started for all 286 docs (mistral-document-ai-2512 on Azure AI Foundry). First production OCR run. Skip-existing pattern added to ocr_pipeline.py.
+
+14. OCR output path bug fixed: ocr_pipeline.py wrote all engines to ocr_results/. Frontend expects Mistral in mistral_results/, DeepSeek in ocr_results/. Fix: engine-based routing in main(), import MISTRAL_RESULTS_DIR.
+
+15. Gemini thought_signature warning fix: warnings.filterwarnings in layout_qa_gemini.py (PYTHONWARNINGS env var insufficient for SDK-internal warnings).
+
+16. First production verification: Doc 1410 p5 -- German text, special characters (oe/ue/ae/ss/guillemets) perfect, headings detected as ##, two-column layout correctly handled. Confirms pilot CER (5.58%) holds on production data.
+
+17. Discovery: Doc 1410 classified as Type A (single-column) but layout data shows two-column layout on p5 (regions at ~4% and ~51% x_pct). Mistral handles it correctly (page-based OCR), but PAGE-XML generator must account for this.
+
+18. End-to-end viewer integration confirmed: Image + OCR (Mistral) + Layout (Docling + Gemini) display correctly for 95 docs. Dashboard regeneration <10s for 286 docs.
+
+19. Batch status at session end: Gemini 1,633/4,152 pages (39.3%, 128 docs), Mistral OCR 1,211 pages (95 docs). Both running stably.
+
+---
+
 ## 2026-03-05 | Knowledge Refactoring + Gemini Auto-Mode Progress
 
 ### Context

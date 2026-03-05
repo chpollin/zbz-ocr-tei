@@ -22,6 +22,7 @@ from scripts.config import (
     OUTPUT_DIR,
     LAYOUT_DIR,
     TEI_DIR,
+    DOC_METADATA_PATH,
 )
 from scripts.utils import load_json
 
@@ -47,14 +48,35 @@ PILOT_DOCS = {
 
 
 def build_all_docs(images_manifest):
-    """Baut ALL_DOCS aus dem Image-Manifest (alle 286 Docs) + Pilot-Metadaten."""
+    """Baut ALL_DOCS aus doc_metadata.json (Gemini) + Pilot-Metadaten als Fallback."""
     all_docs = {}
+
+    # Gemini-Klassifikation laden (primaere Quelle)
+    gemini_meta = load_json(DOC_METADATA_PATH) or {}
+    gemini_docs = gemini_meta.get("documents", {})
+
+    # Sprach-Mapping: ISO 639-3 -> Kurzform fuer Dashboard
+    lang_map = {"fra": "FR", "deu": "DE", "fra/deu": "DE/FR", "deu/fra": "DE/FR",
+                "eng": "EN", "ita": "IT", "und": "?"}
 
     # Alle Docs aus Manifest uebernehmen
     if images_manifest:
         for entry in images_manifest:
             doc_id = entry["doc_id"]
-            if doc_id in PILOT_DOCS:
+            if doc_id in gemini_docs:
+                gm = gemini_docs[doc_id]
+                lang_raw = gm.get("language", "und")
+                all_docs[doc_id] = {
+                    "type": gm.get("layout_type", "-"),
+                    "lang": lang_map.get(lang_raw, lang_raw.upper()),
+                    "desc": gm.get("description", ""),
+                    "phase": PILOT_DOCS.get(doc_id, {}).get("phase"),
+                    "title": gm.get("title"),
+                    "author": gm.get("author"),
+                    "date": gm.get("date"),
+                    "pub_form": gm.get("pub_form"),
+                }
+            elif doc_id in PILOT_DOCS:
                 all_docs[doc_id] = PILOT_DOCS[doc_id].copy()
             else:
                 all_docs[doc_id] = {
@@ -131,7 +153,11 @@ def build_documents(images_manifest, eval_data, llm_manifest):
             "type": meta["type"],
             "lang": meta["lang"],
             "desc": meta["desc"],
-            "phase": meta["phase"],
+            "phase": meta.get("phase"),
+            "title": meta.get("title"),
+            "author": meta.get("author"),
+            "date": meta.get("date"),
+            "pub_form": meta.get("pub_form"),
             "page_count": 0,
             "pages": [],
             "pipeline_status": compute_pipeline_status(doc_id),

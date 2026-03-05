@@ -22,7 +22,11 @@ import json
 import os
 import sys
 import time
+import warnings
 from pathlib import Path
+
+# Suppress Gemini SDK thought_signature warnings
+warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
 
 from dotenv import load_dotenv
 from PIL import Image

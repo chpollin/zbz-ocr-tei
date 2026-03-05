@@ -33,7 +33,8 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | Stage | Task | Script | Output | Status |
 |-------|------|--------|--------|--------|
 | 1 | PDF → Page images | `scripts/extract_pages.py` | PNG (`docs/images/`) | Production |
-| 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (`output/mistral_results/`) | Production |
+| 1a | Document classification (Gemini) | `scripts/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (286 docs) |
+| 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (Mistral: `output/mistral_results/`, DeepSeek: `output/ocr_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
 | 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (286/286 docs, 4,152 pages) |
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26) |
@@ -55,6 +56,14 @@ Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks 
 **Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`.
 
 **Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails (~15% bad+empty). Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA. Cost: ~$1-2 for ~1,570 detect pages.
+
+---
+
+## Stage 1a: Document Classification
+
+**Script:** `scripts/classify_docs.py`
+
+Sends the first 5 page images per document to Gemini 3.1 Flash Lite Preview. Extracts metadata via Structured Output (response_schema): language, pub_form, layout_type, title, author, date, description, has_jstor_cover, num_columns. Cost: ~$1-2 for 286 docs. Output: `data/doc_metadata.json` (aggregate, TEI-mappable) + `output/classification/{doc_id}_classification.json` (raw per-doc). Resume-capable (skip-existing). Used by tei_generator (teiHeader), generate_dashboard_data (dashboard/viewer), and pipeline routing (engine selection).
 
 ---
 
@@ -196,6 +205,11 @@ Details: See [PLAN.md](PLAN.md) Phase 1.
 # Extract page images (for viewer)
 python scripts/extract_pages.py                              # all PDFs, 150 DPI
 python scripts/extract_pages.py --pdf 2310.pdf --dpi 300     # single PDF
+
+# Document classification (stage 1a, requires GEMINI_API_KEY)
+python -m scripts.classify_docs                              # all 286 docs
+python -m scripts.classify_docs --doc 2310                   # single document
+python -m scripts.classify_docs --force                      # overwrite existing
 
 # OCR (stage 1)
 python scripts/ocr_pipeline.py -i data/scans/2310.pdf -e mistral

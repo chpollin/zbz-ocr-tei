@@ -110,7 +110,7 @@ Single source of truth for all pilot PDF metadata. Other documents reference thi
 | 1180.pdf | 8 | DE/FR | A | Annual report | Title page |
 | 130.pdf | 18 | FR | A | Journal article | Cover page |
 | 290.pdf | 5 | FR | A | Comptes Rendus | Essay |
-| 1410.pdf | 6 | DE/FR | A | Contribution | Bilingual |
+| 1410.pdf | 6 | DE/FR | A | Contribution | Bilingual, partly two-column (p5) |
 | 1060.pdf | 8 | DE | A | Brochure | Speech |
 | 2530.pdf | 2 | FR | B | Article | Two-column |
 | 890.pdf | 7 | DE | B | Teachers' journal | Small font |

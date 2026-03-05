@@ -20,9 +20,9 @@ Dependencies: [PIPELINE](PIPELINE.md)
 
 Role: Primary OCR engine for ZBZ production.
 Model: mistral-document-ai-2512 on Azure AI Foundry (Serverless API, Pay-as-you-go).
-Accuracy: 93.58% CER on 15 docs. Details in [TESTPLAN](TESTPLAN.md).
+Accuracy: 93.58% CER on 15 pilot docs. Production verification (Doc 1410 p5): German special characters, headings, two-column layout all correct. Details in [TESTPLAN](TESTPLAN.md).
 Speed: ~1.3s/page.
-Output: Per-page Markdown with image references and dimensions.
+Output: Per-page Markdown (`output/mistral_results/{doc_id}_p{N}.md`) with image references and dimensions.
 Languages: 36 (de, fr, en, es, it, ...).
 
 Setup:
@@ -38,9 +38,10 @@ API:
 - Annotations: bbox_annotation + document_annotation for structured extraction (max 8 pages)
 
 Common errors:
-- 404 after deployment: append /v1/ocr to endpoint URL
+- 404 after deployment: append /v1/ocr to endpoint URL. Endpoint must be *.models.ai.azure.com (NOT *.services.ai.azure.com project URL)
 - 413 / file too large: compress or split PDF
 - Base64 error: no line breaks in Base64 string
+- "Mistral OCR" not in catalog: rebranded to "Mistral Document AI" (mistral-document-ai-2505 / -2512)
 
 Open:
 - Test extract_header/extract_footer to reduce JSTOR artifacts without LLM
@@ -117,7 +118,7 @@ Quality results:
 
 Lessons: Always use Structured Output (response_schema) for machine-readable LLM results. Always benchmark the cheapest model first. Every batch script must be resume-capable (skip-existing pattern). Vision LLMs are viable layout detectors for fallback, not yet for primary detection.
 
-Warnings: thought_signature parts in Flash Lite responses cause SDK warnings. Harmless. Suppress with PYTHONWARNINGS=ignore or warnings.filterwarnings in code.
+Warnings: thought_signature parts in Flash Lite responses cause SDK warnings. Harmless. Suppress with warnings.filterwarnings("ignore", message=".*thought_signature.*") in code. PYTHONWARNINGS env var is insufficient (SDK-internal warnings bypass it).
 
 ---
 

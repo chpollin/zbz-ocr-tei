@@ -27,7 +27,7 @@ import time
 from pathlib import Path
 
 from scripts.config import (
-    PROJECT_ROOT, SCANS_DIR, OCR_RESULTS_DIR,
+    PROJECT_ROOT, SCANS_DIR, OCR_RESULTS_DIR, MISTRAL_RESULTS_DIR,
     DEEPSEEK_MODEL, DEEPSEEK_PROMPT, MISTRAL_MODEL,
     MISTRAL_MAX_PAGES_PER_REQUEST, MISTRAL_TIMEOUT_SECONDS,
     TWO_COLUMN_DOCS,
@@ -288,6 +288,14 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
         else:
             engine = "deepseek"
 
+    # Skip if first page already exists (resume-capable)
+    first_page = output_dir / f"{pdf_path.stem}_p1.md"
+    if first_page.exists():
+        print(f"\nSKIP: {pdf_path.name} (bereits vorhanden)")
+        # Count existing pages
+        existing = list(output_dir.glob(f"{pdf_path.stem}_p*.md"))
+        return {"doc_id": pdf_path.stem, "pages": len(existing), "engine": engine, "skipped": True}
+
     print(f"\nVerarbeite: {pdf_path.name} (Engine: {engine})")
     print("-" * 50)
 
@@ -331,8 +339,13 @@ def main():
     # .env laden
     load_env()
 
-    # Pfade
-    output_dir = args.output or OCR_RESULTS_DIR
+    # Pfade: Engine-basiert (Mistral -> mistral_results/, DeepSeek -> ocr_results/)
+    if args.output:
+        output_dir = args.output
+    elif args.engine == "mistral":
+        output_dir = MISTRAL_RESULTS_DIR
+    else:
+        output_dir = OCR_RESULTS_DIR
 
     # PDFs sammeln
     if args.input:

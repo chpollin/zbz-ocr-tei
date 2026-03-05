@@ -88,11 +88,34 @@
         var d = state.docData;
         var html = '';
 
-        // Type & Language
+        // Title & Author (from Gemini classification)
+        if (d.title) {
+            html += '<div class="doc-info-section">' +
+                '<span class="info-label">Titel</span>' +
+                '<span class="info-value">' + ZBZ.esc(d.title) + '</span></div>';
+        }
+        if (d.author) {
+            html += '<div class="doc-info-section">' +
+                '<span class="info-label">Autor</span>' +
+                '<span class="info-value">' + ZBZ.esc(d.author) + '</span></div>';
+        }
+        if (d.title || d.author) {
+            html += '<div class="info-divider"></div>';
+        }
+
+        // Type & Language (with pub_form)
         html += '<div class="doc-info-section">' +
             '<span class="info-label">Typ / Sprache</span>' +
-            '<span class="info-value"><span class="tag">' + d.type + '</span> ' + d.lang + '</span>' +
+            '<span class="info-value"><span class="tag">' + d.type + '</span> ' + d.lang +
+            (d.pub_form ? ' / ' + d.pub_form : '') + '</span>' +
             '</div>';
+
+        // Date
+        if (d.date) {
+            html += '<div class="doc-info-section">' +
+                '<span class="info-label">Datum</span>' +
+                '<span class="info-value">' + d.date + '</span></div>';
+        }
 
         html += '<div class="info-divider"></div>';
 

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-04T12:31:17",
+  "generated": "2026-03-05T15:36:55",
   "generator": "scripts/generate_dashboard_data.py",
   "project": {
     "title": "Jeanne Hersch Edition",
@@ -15,7 +15,7 @@
     "total_docs": 286,
     "pilot_docs": 15,
     "total_pages": 4152,
-    "docs_with_ocr": 0,
+    "docs_with_ocr": 95,
     "docs_with_llm": 0,
     "docs_with_layout": 286,
     "docs_with_tei": 1,
@@ -83,10 +83,14 @@
   "documents": {
     "10": {
       "doc_id": "10",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A scholarly article discussing the use of imagery in the philosophical works of Henri Bergson.",
       "phase": null,
+      "title": "Les images dans l'œuvre de M. Bergson",
+      "author": "Jeanne Hersch",
+      "date": "1931",
+      "pub_form": "journalArticle",
       "page_count": 35,
       "pages": [
         {
@@ -328,10 +332,14 @@
     },
     "100": {
       "doc_id": "100",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An analytical text discussing the existential philosophy of Karl Jaspers.",
       "phase": null,
+      "title": "UNE PHILOSOPHIE DE L'EXISTENCE: KARL JASPERS",
+      "author": null,
+      "date": null,
+      "pub_form": "other",
       "page_count": 7,
       "pages": [
         {
@@ -379,8 +387,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -404,10 +412,14 @@
     },
     "1000": {
       "doc_id": "1000",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "A special issue of the educational journal 'Éducateur' from 1973 dedicated to pedagogical issues, featuring a contribution by Jeanne Hersch.",
       "phase": null,
+      "title": "TRANSFORMER L'ÉCOLE OU LA SUPPRIMER ?",
+      "author": "Jeanne Hersch",
+      "date": "1973",
+      "pub_form": "journalArticle",
       "page_count": 4,
       "pages": [
         {
@@ -437,8 +449,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -464,10 +476,14 @@
     },
     "1010": {
       "doc_id": "1010",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "An article by Jeanne Hersch from the journal Médecine et Hygiène discussing the ethical challenges posed by advancements in medical science.",
       "phase": null,
+      "title": "Le philosophe devant les progrès de la science médicale",
+      "author": "Jeanne Hersch",
+      "date": "1973",
+      "pub_form": "journalArticle",
       "page_count": 3,
       "pages": [
         {
@@ -491,8 +507,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -518,10 +534,14 @@
     },
     "1020": {
       "doc_id": "1020",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "A review article by Jeanne Hersch discussing a work on the French Resistance.",
       "phase": null,
+      "title": "La résistance française vue par Jeanne Hersch",
+      "author": "Jeanne Hersch",
+      "date": "1973",
+      "pub_form": "journalArticle",
       "page_count": 1,
       "pages": [
         {
@@ -533,8 +553,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -558,10 +578,14 @@
     },
     "1040": {
       "doc_id": "1040",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An interview with Jeanne Hersch discussing the nature and moral implications of blackmail.",
       "phase": null,
+      "title": "face au chantage",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "brochure",
       "page_count": 6,
       "pages": [
         {
@@ -603,8 +627,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -630,8 +654,12 @@
       "doc_id": "1060",
       "type": "A",
       "lang": "DE",
-      "desc": "Broschure",
+      "desc": "A speech by Jeanne Hersch delivered on the occasion of the first award ceremony of the Foundation for Freedom and Human Rights in 1973.",
       "phase": null,
+      "title": "Ansprache von FRAU PROF. JEANNE HERSCH anlässlich der ersten Preisübergabe am 27. Oktober 1973 im Rathaus zu Bern",
+      "author": "Jeanne Hersch",
+      "date": "1974",
+      "pub_form": "other",
       "page_count": 8,
       "pages": [
         {
@@ -685,8 +713,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -710,10 +738,14 @@
     },
     "1080": {
       "doc_id": "1080",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "DE",
+      "desc": "An essay evaluating the scientific validity of Marxist theory and its methodological consistency across philosophy, sociology, and economics.",
       "phase": null,
+      "title": "Kann der Marxismus wissenschaftlich beurteilt werden?",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "book",
       "page_count": 6,
       "pages": [
         {
@@ -755,8 +787,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -779,10 +811,14 @@
     },
     "1090": {
       "doc_id": "1090",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "An issue of the Swiss newspaper Journal de Genève containing articles on international politics and current affairs.",
       "phase": null,
+      "title": "JOURNAL DE GENEVE",
+      "author": null,
+      "date": "1974",
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -800,8 +836,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -825,10 +861,14 @@
     },
     "110": {
       "doc_id": "110",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "C",
+      "lang": "FR",
+      "desc": "Thèse de doctorat ès lettres présentée à l'Université de Genève.",
       "phase": null,
+      "title": "L'ÊTRE ET LA FORME",
+      "author": "Jeanne Hersch",
+      "date": "1946",
+      "pub_form": "book",
       "page_count": 252,
       "pages": [
         {
@@ -2346,8 +2386,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2372,10 +2412,14 @@
     },
     "1100": {
       "doc_id": "1100",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "An issue of the Swiss newspaper Journal de Genève containing articles on economic trends, human rights, and geopolitical issues.",
       "phase": null,
+      "title": "JOURNAL DE GENEVE",
+      "author": "Marian Stepczynski, Jeanne Hersch, Edouard Saab",
+      "date": "1974",
+      "pub_form": "journalArticle",
       "page_count": 1,
       "pages": [
         {
@@ -2387,8 +2431,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2412,10 +2456,14 @@
     },
     "1120": {
       "doc_id": "1120",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "DE",
+      "desc": "An article discussing the roots of racism and the fundamental importance of human rights.",
       "phase": null,
+      "title": "Die Menschenrechte : gegen den Rassismus, für die Freiheit und die Verschiedenheit",
+      "author": "Hersch, Jeanne",
+      "date": "1974",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -2451,8 +2499,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2476,10 +2524,14 @@
     },
     "1140": {
       "doc_id": "1140",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A philosophical article discussing the impact of educational reforms and contemporary society on the human condition.",
       "phase": null,
+      "title": "Quelques remarques sur les réformes éducatives et la condition humaine",
+      "author": "Jeanne Hersch",
+      "date": "1974",
+      "pub_form": "journalArticle",
       "page_count": 10,
       "pages": [
         {
@@ -2545,8 +2597,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2571,10 +2623,14 @@
     },
     "1170": {
       "doc_id": "1170",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "An article containing a summary of a speech by Jeanne Hersch regarding gender equality and partnership.",
       "phase": null,
+      "title": "Les conférences du congrès : l'homme et la femme, partenaires égaux ? : extraits du résumé de la conférence de Jeanne Hersch",
+      "author": "Jeanne Hersch",
+      "date": "1975",
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -2592,8 +2648,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2619,9 +2675,13 @@
     "1180": {
       "doc_id": "1180",
       "type": "A",
-      "lang": "DE/FR",
-      "desc": "Jahresbericht",
+      "lang": "FR",
+      "desc": "An article by Jeanne Hersch discussing the nature, interdisciplinary challenges, and methodologies of the human sciences.",
       "phase": "phase1",
+      "title": "Tâches et limites des Sciences humaines dans le monde d'aujourd'hui",
+      "author": "Jeanne Hersch",
+      "date": "1975",
+      "pub_form": "journalArticle",
       "page_count": 8,
       "pages": [
         {
@@ -2675,8 +2735,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2714,10 +2774,14 @@
     },
     "1190": {
       "doc_id": "1190",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "A daily Swiss newspaper containing various news articles and notices.",
       "phase": null,
+      "title": "JOURNAL DE GENEVE",
+      "author": null,
+      "date": "1975",
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -2735,8 +2799,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2760,10 +2824,14 @@
     },
     "120": {
       "doc_id": "120",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An article analyzing and critiquing the common misconceptions regarding existentialist philosophy.",
       "phase": null,
+      "title": "La caricature de l'existentialisme et son vrai visage",
+      "author": "Georges Golay",
+      "date": "1946",
+      "pub_form": "journalArticle",
       "page_count": 10,
       "pages": [
         {
@@ -2829,8 +2897,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2854,10 +2922,14 @@
     },
     "1200": {
       "doc_id": "1200",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "A newspaper issue containing various international news reports and political commentaries.",
       "phase": null,
+      "title": "Journal de Genève",
+      "author": null,
+      "date": "1975",
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -2875,8 +2947,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2900,10 +2972,14 @@
     },
     "1210": {
       "doc_id": "1210",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "An issue of the Swiss international newspaper Journal de Genève containing various political and economic articles.",
       "phase": null,
+      "title": "Journal de Genève",
+      "author": null,
+      "date": "1975",
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -2921,8 +2997,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -2946,10 +3022,14 @@
     },
     "1220": {
       "doc_id": "1220",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE",
+      "desc": "An interview with philosopher Jeanne Hersch discussing the relationship between religion, ideology, transcendence, and modern political structures.",
       "phase": null,
+      "title": "Religion, Ideologie und Wirklichkeit",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "interview",
       "page_count": 9,
       "pages": [
         {
@@ -3009,8 +3089,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3034,10 +3114,14 @@
     },
     "1230": {
       "doc_id": "1230",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A chapter titled Une vocation d'arbitre from a book discussing Swiss political identity and neutrality.",
       "phase": null,
+      "title": "LA SUISSE QU'ILS VEULENT",
+      "author": "Jeanne Hersch",
+      "date": "1975",
+      "pub_form": "bookSection",
       "page_count": 10,
       "pages": [
         {
@@ -3103,8 +3187,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3128,10 +3212,14 @@
     },
     "1240": {
       "doc_id": "1240",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "A transcript of a roundtable discussion on euthanasia published in the medical journal Médecine et Hygiène.",
       "phase": null,
+      "title": "Euthanasie",
+      "author": null,
+      "date": "1975",
+      "pub_form": "journalArticle",
       "page_count": 15,
       "pages": [
         {
@@ -3227,8 +3315,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3253,10 +3341,14 @@
     },
     "1250": {
       "doc_id": "1250",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "Proceedings of an interdisciplinary colloquium on abortion held in Geneva in 1974.",
       "phase": null,
+      "title": "L'AVORTEMENT",
+      "author": null,
+      "date": "1975",
+      "pub_form": "book",
       "page_count": 6,
       "pages": [
         {
@@ -3298,8 +3390,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3324,10 +3416,14 @@
     },
     "1260": {
       "doc_id": "1260",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An article discussing the distinction between ideological and religious concepts in modern society.",
       "phase": null,
+      "title": "Confusions idéologiques et dimensions religieuses",
+      "author": "Jeanne HERSCH",
+      "date": null,
+      "pub_form": "journalArticle",
       "page_count": 7,
       "pages": [
         {
@@ -3375,8 +3471,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3400,10 +3496,14 @@
     },
     "1270": {
       "doc_id": "1270",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A philosophical article exploring the concepts of moral order and freedom within the context of scientific determinism and human history.",
       "phase": null,
+      "title": "Ordre moral et liberté",
+      "author": "Jeanne Hersch",
+      "date": "1975",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -3439,8 +3539,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3464,10 +3564,14 @@
     },
     "1280": {
       "doc_id": "1280",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "An article discussing the philosophical and ethical implications of chemistry on humanity and the environment.",
       "phase": null,
+      "title": "L'homme et la nature sous l'emprise de la chimie",
+      "author": "Jeanne Hersch",
+      "date": "1976",
+      "pub_form": "journalArticle",
       "page_count": 6,
       "pages": [
         {
@@ -3509,8 +3613,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3535,10 +3639,14 @@
     },
     "1290": {
       "doc_id": "1290",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FRA/DEU/ITA",
+      "desc": "An issue of the journal Civitas containing an article by Jeanne Hersch titled Le progrès - évidences, ambiguïtés, mensonges.",
       "phase": null,
+      "title": "CIVITAS",
+      "author": "Jeanne Hersch",
+      "date": "1976",
+      "pub_form": "journalArticle",
       "page_count": 10,
       "pages": [
         {
@@ -3604,8 +3712,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3631,8 +3739,12 @@
       "doc_id": "130",
       "type": "A",
       "lang": "FR",
-      "desc": "Zeitschrift",
+      "desc": "An article by Jeanne Hersch discussing the political and cultural necessity of forming a worker elite to guide the new working class.",
       "phase": null,
+      "title": "Le problème de l’élite ouvrière",
+      "author": "Jeanne Hersch",
+      "date": "1947",
+      "pub_form": "journalArticle",
       "page_count": 18,
       "pages": [
         {
@@ -3746,8 +3858,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3772,10 +3884,14 @@
     },
     "1300": {
       "doc_id": "1300",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "DE/FR",
+      "desc": "An article discussing the tension between the mechanical nature of surgical intervention and the human/subjective needs of the patient.",
       "phase": null,
+      "title": "Le chirurgien face à l'angoisse et au nombre",
+      "author": "Jeanne Hersch",
+      "date": "1976",
+      "pub_form": "journalArticle",
       "page_count": 7,
       "pages": [
         {
@@ -3823,8 +3939,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3849,9 +3965,13 @@
     "1330": {
       "doc_id": "1330",
       "type": "D",
-      "lang": "FR",
-      "desc": "Sammelband",
+      "lang": "DE/FR",
+      "desc": "An essay discussing the ethical responsibility of scientists and the role of science in society.",
       "phase": "phase3",
+      "title": "La responsabilité du savant",
+      "author": "Jeanne Hersch",
+      "date": "1976",
+      "pub_form": "book",
       "page_count": 6,
       "pages": [
         {
@@ -3893,8 +4013,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -3918,10 +4038,14 @@
     },
     "1340": {
       "doc_id": "1340",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A scholarly article discussing the philosophical implications of preventive medicine, specifically regarding human responsibility and the search for meaning.",
       "phase": null,
+      "title": "Implications philosophiques du développement de la médecine préventive",
+      "author": "Jeanne Hersch",
+      "date": "1956",
+      "pub_form": "journalArticle",
       "page_count": 11,
       "pages": [
         {
@@ -3993,8 +4117,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4019,10 +4143,14 @@
     },
     "1350": {
       "doc_id": "1350",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An introductory text exploring the lives, philosophies, and contrasting styles of Jean Wahl and Gabriel Marcel.",
       "phase": null,
+      "title": "JEAN WAHL ET GABRIEL MARCEL",
+      "author": "Jeanne Hersch",
+      "date": "1976",
+      "pub_form": "book",
       "page_count": 4,
       "pages": [
         {
@@ -4052,8 +4180,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4076,10 +4204,14 @@
     },
     "1360": {
       "doc_id": "1360",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "DE/FR",
+      "desc": "An analytical text discussing the relationship between power and the will for justice, followed by a philosophical essay on the threat to freedom in society.",
       "phase": null,
+      "title": "UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "anthology",
       "page_count": 5,
       "pages": [
         {
@@ -4115,8 +4247,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4140,10 +4272,14 @@
     },
     "1370": {
       "doc_id": "1370",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE/FR",
+      "desc": "A collection of architectural and social commentary essays focusing on the impact of modern city living on human experience, particularly for children and the elderly.",
       "phase": null,
+      "title": "Vivre en ville ou quelques problèmes pour les architectes",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "bookSection",
       "page_count": 4,
       "pages": [
         {
@@ -4173,8 +4309,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4198,10 +4334,14 @@
     },
     "1380": {
       "doc_id": "1380",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A philosophical essay discussing Kant's three fundamental questions and the interrelation of his Critiques.",
       "phase": null,
+      "title": "« Was kann ich wissen? Was soll ich tun? Was darf ich hoffen? » Essai de paraphrase anachronique et inactuelle",
+      "author": "Jeanne HERSCH",
+      "date": null,
+      "pub_form": "journalArticle",
       "page_count": 12,
       "pages": [
         {
@@ -4279,8 +4419,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4303,10 +4443,14 @@
     },
     "1390": {
       "doc_id": "1390",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE",
+      "desc": "An article discussing the role and challenges of secondary schools in guiding students from childhood to adulthood.",
       "phase": null,
+      "title": "Die Mittelschule: Vom Kind zum Erwachsenen",
+      "author": "Jeanne Hersch",
+      "date": "1976",
+      "pub_form": "journalArticle",
       "page_count": 4,
       "pages": [
         {
@@ -4336,8 +4480,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4361,10 +4505,14 @@
     },
     "140": {
       "doc_id": "140",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An excerpt from a book chapter discussing the philosophical nature of human perspectives and objective reality.",
       "phase": null,
+      "title": "Le choix, le monde, l'existence",
+      "author": "Jeanne Hersch",
+      "date": "1947",
+      "pub_form": "bookSection",
       "page_count": 42,
       "pages": [
         {
@@ -4622,8 +4770,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4647,10 +4795,14 @@
     },
     "1400": {
       "doc_id": "1400",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "DE/FR",
+      "desc": "An article by Jeanne Hersch titled L'écrivain doit se rendre libre published in the journal Welt im Wort / Voix des lettres.",
       "phase": null,
+      "title": "L'écrivain doit se rendre libre",
+      "author": "Jeanne Hersch",
+      "date": "1976",
+      "pub_form": "journalArticle",
       "page_count": 6,
       "pages": [
         {
@@ -4692,8 +4844,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4717,10 +4869,14 @@
     },
     "1410": {
       "doc_id": "1410",
-      "type": "A",
+      "type": "B",
       "lang": "DE/FR",
-      "desc": "Beitrag",
+      "desc": "An article discussing societal and economic changes at the end of the 20th century in the journal Berufsberatung und Berufsbildung.",
       "phase": null,
+      "title": "Gesellschaft und Einzelmensch an der Schwelle einer neuen Epoche",
+      "author": "Prof. Dr. Jeanne Hersch, Prof. Dr. Emil Küng",
+      "date": "1977",
+      "pub_form": "journalArticle",
       "page_count": 6,
       "pages": [
         {
@@ -4762,8 +4918,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4787,10 +4943,14 @@
     },
     "1420": {
       "doc_id": "1420",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "An article exploring the philosophical relationship between humanity and technology, written by Jeanne Hersch.",
       "phase": null,
+      "title": "LA TECHNIQUE, OEUVRE DES HOMMES",
+      "author": "Jeanne HERSCH",
+      "date": "1978",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -4826,8 +4986,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4850,10 +5010,14 @@
     },
     "1430": {
       "doc_id": "1430",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "DE",
+      "desc": "An article discussing human nature, rights, and the endless task of becoming human.",
       "phase": null,
+      "title": "Wir können nur hoffen, Menschen zu werden",
+      "author": "Jeanne Hersch",
+      "date": "1977",
+      "pub_form": "journalArticle",
       "page_count": 7,
       "pages": [
         {
@@ -4901,8 +5065,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4927,10 +5091,14 @@
     },
     "1440": {
       "doc_id": "1440",
-      "type": "D",
+      "type": "B",
       "lang": "DE",
-      "desc": "Interview",
+      "desc": "An interview or discussion featuring Jeanne Hersch on the topic of threatened freedom and political ideology.",
       "phase": "phase3",
+      "title": "Bedrohte Freiheit",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "book",
       "page_count": 5,
       "pages": [
         {
@@ -4966,8 +5134,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -4991,10 +5159,14 @@
     },
     "1460": {
       "doc_id": "1460",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE",
+      "desc": "A speech by Prof. Jeanne Hersch about the integration of disabled people into society, published in the journal Pro Infirmis.",
       "phase": null,
+      "title": "Die Integration des Behinderten",
+      "author": "Prof. Jeanne Hersch",
+      "date": "1977",
+      "pub_form": "journalArticle",
       "page_count": 7,
       "pages": [
         {
@@ -5042,8 +5214,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -5067,10 +5239,14 @@
     },
     "1475": {
       "doc_id": "1475",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "DE/FR",
+      "desc": "An article by Jeanne Hersch about tourism, published in the Angestellten-Revue magazine.",
       "phase": null,
+      "title": "Vom guten und vom schlechten Tourismus",
+      "author": "Jeanne Hersch",
+      "date": "1977",
+      "pub_form": "journalArticle",
       "page_count": 3,
       "pages": [
         {
@@ -5094,8 +5270,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -5119,10 +5295,14 @@
     },
     "1480": {
       "doc_id": "1480",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE/FR",
+      "desc": "A short article by Jeanne Hersch regarding the 1977 day of the sick, followed by book reviews.",
       "phase": null,
+      "title": "Journée des malades 1977",
+      "author": "Jeanne Hersch",
+      "date": "1977",
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -5140,8 +5320,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -5165,10 +5345,14 @@
     },
     "1490": {
       "doc_id": "1490",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE",
+      "desc": "An article discussing the role and conditions of an army within a democratic state, based on a lecture by Jeanne Hersch.",
       "phase": null,
+      "title": "Bedingungen einer Armee in der Demokratie",
+      "author": "Jeanne Hersch",
+      "date": "1977",
+      "pub_form": "journalArticle",
       "page_count": 4,
       "pages": [
         {
@@ -5198,8 +5382,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -5223,10 +5407,14 @@
     },
     "150": {
       "doc_id": "150",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A philosophical article discussing the nature of freedom and its distinction from the concept of choice.",
       "phase": null,
+      "title": "LIBERTÉ SANS CHOIX",
+      "author": "Jeanne Hersch",
+      "date": "1949",
+      "pub_form": "journalArticle",
       "page_count": 4,
       "pages": [
         {
@@ -5256,8 +5444,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -5281,10 +5469,14 @@
     },
     "1500": {
       "doc_id": "1500",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A philosophical article discussing the concept of finitude in human existence.",
       "phase": null,
+      "title": "De la finitude",
+      "author": "Hersch, Jeanne",
+      "date": "1977",
+      "pub_form": "journalArticle",
       "page_count": 7,
       "pages": [
         {
@@ -5332,8 +5524,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -5357,10 +5549,14 @@
     },
     "1510": {
       "doc_id": "1510",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An article by Jeanne Hersch titled \"L'homme est mort\" — qui le DIT? discussing the philosophical implications of the \"death of man\" ideology.",
       "phase": null,
+      "title": "L'individu est-il condamné ? « L'homme est mort » — qui le DIT ?",
+      "author": "Jeanne Hersch",
+      "date": "1978",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -5396,8 +5592,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -5422,9 +5618,13 @@
     "1520": {
       "doc_id": "1520",
       "type": "C",
-      "lang": "?",
-      "desc": "Monografie",
+      "lang": "FR",
+      "desc": "A book about the philosopher Karl Jaspers by Jeanne Hersch.",
       "phase": "phase4",
+      "title": "KARL JASPERS",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "book",
       "page_count": 142,
       "pages": [
         {
@@ -6282,8 +6482,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -6307,10 +6507,14 @@
     },
     "1530": {
       "doc_id": "1530",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An academic lecture by Jeanne Hersch discussing the nature of power, its divine and material origins, and its human dimensions.",
       "phase": null,
+      "title": "Le Pouvoir",
+      "author": "Jeanne Hersch",
+      "date": "1977",
+      "pub_form": "book",
       "page_count": 45,
       "pages": [
         {
@@ -6586,8 +6790,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -6611,10 +6815,14 @@
     },
     "1540": {
       "doc_id": "1540",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "C",
+      "lang": "DE",
+      "desc": "A collection of personal essays and reflections on Jewish identity edited by Hans Jürgen Schultz, including a contribution by Jeanne Hersch.",
       "phase": null,
+      "title": "Mein Judentum",
+      "author": "Hans Jürgen Schultz",
+      "date": "1978",
+      "pub_form": "book",
       "page_count": 8,
       "pages": [
         {
@@ -6668,8 +6876,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -6693,10 +6901,14 @@
     },
     "1560": {
       "doc_id": "1560",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "DE/FR",
+      "desc": "A summary of a speech by Jeanne Hersch regarding the unity of Switzerland, followed by the minutes of a general meeting of the Swiss Public Welfare Society.",
       "phase": null,
+      "title": "Unité de la Suisse d'aujourd'hui",
+      "author": "Jeanne Hersch",
+      "date": "1978",
+      "pub_form": "journalArticle",
       "page_count": 3,
       "pages": [
         {
@@ -6720,8 +6932,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -6745,10 +6957,14 @@
     },
     "1570": {
       "doc_id": "1570",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "An issue of a journal from the Société des Arts containing various editorial contributions and an article by Jeanne Hersch.",
       "phase": null,
+      "title": "SOCIÉTÉ DES ARTS",
+      "author": null,
+      "date": null,
+      "pub_form": "journalArticle",
       "page_count": 3,
       "pages": [
         {
@@ -6772,8 +6988,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -6797,10 +7013,14 @@
     },
     "1580": {
       "doc_id": "1580",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An article published in the journal Cadmos discussing European history and the challenges of modernity.",
       "phase": null,
+      "title": "Quelques réflexions sur l'Europe lasse d'elle-même",
+      "author": "Jeanne Hersch",
+      "date": "1979",
+      "pub_form": "journalArticle",
       "page_count": 6,
       "pages": [
         {
@@ -6842,8 +7062,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -6868,10 +7088,14 @@
     },
     "1590": {
       "doc_id": "1590",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "A journal article discussing the role and contradictions of intellectuals in contemporary European society.",
       "phase": null,
+      "title": "Les intellectuels contre l'Europe ?",
+      "author": "Jeanne Hersch",
+      "date": "1979",
+      "pub_form": "journalArticle",
       "page_count": 12,
       "pages": [
         {
@@ -6949,8 +7173,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -6974,10 +7198,14 @@
     },
     "160": {
       "doc_id": "160",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "The document is a table of contents for the journal Suisse Contemporaine for the year 1949.",
       "phase": null,
+      "title": "Suisse Contemporaine",
+      "author": null,
+      "date": "1949",
+      "pub_form": "journalArticle",
       "page_count": 10,
       "pages": [
         {
@@ -7043,8 +7271,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7068,10 +7296,14 @@
     },
     "1600": {
       "doc_id": "1600",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "Article discussing the philosophical and societal relationship between work, constraint, and freedom in the industrial era.",
       "phase": null,
+      "title": "Le travail entre contrainte et liberté",
+      "author": "Jeanne Hersch",
+      "date": "1979",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -7107,8 +7339,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7132,10 +7364,14 @@
     },
     "1610": {
       "doc_id": "1610",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FRA/ENG/DEU",
+      "desc": "A festschrift titled Reason, Action, and Experience containing essays in honor of Raymond Klibansky.",
       "phase": null,
+      "title": "REASON, ACTION, AND EXPERIENCE",
+      "author": "Helmut Kohlenberger",
+      "date": "1979",
+      "pub_form": "book",
       "page_count": 9,
       "pages": [
         {
@@ -7195,8 +7431,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7220,10 +7456,14 @@
     },
     "1620": {
       "doc_id": "1620",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE",
+      "desc": "An address by Professor Jeanne Hersch given on the occasion of the presentation of the Landis & Gyr literature prize to Emil Zopfi.",
       "phase": null,
+      "title": "Der Schriftsteller für und gegen seine Zeit",
+      "author": "Jeanne Hersch",
+      "date": "1979",
+      "pub_form": "brochure",
       "page_count": 5,
       "pages": [
         {
@@ -7259,8 +7499,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7284,10 +7524,14 @@
     },
     "1630": {
       "doc_id": "1630",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "EN",
+      "desc": "This document is a collection of articles and comments advocating for an effective international convention against torture.",
       "phase": null,
+      "title": "Torture: How to Make the International Convention Effective",
+      "author": null,
+      "date": "1980",
+      "pub_form": "book",
       "page_count": 5,
       "pages": [
         {
@@ -7323,8 +7567,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7348,10 +7592,14 @@
     },
     "1640": {
       "doc_id": "1640",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "C",
+      "lang": "DE/FR",
+      "desc": "This is an anthology of lectures from the University of Bern on the topic of soul, body, mind, and matter.",
       "phase": null,
+      "title": "Seele und Leib - Geist und Materie",
+      "author": "Maja Svilar",
+      "date": "1979",
+      "pub_form": "anthology",
       "page_count": 12,
       "pages": [
         {
@@ -7429,8 +7677,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7454,10 +7702,14 @@
     },
     "1650": {
       "doc_id": "1650",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An essay discussing the paradoxes inherent in the definition, implementation, and human context of human rights.",
       "phase": null,
+      "title": "Quelques paradoxes des droits de l'homme",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "bookSection",
       "page_count": 6,
       "pages": [
         {
@@ -7499,8 +7751,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7524,10 +7776,14 @@
     },
     "1680": {
       "doc_id": "1680",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An article discussing the ethical dilemmas of the patient-physician relationship in modern medicine.",
       "phase": null,
+      "title": "La liberté du malade face à la médecine d'aujourd'hui",
+      "author": "Jeanne Hersch",
+      "date": "1980",
+      "pub_form": "journalArticle",
       "page_count": 6,
       "pages": [
         {
@@ -7569,8 +7825,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7594,10 +7850,14 @@
     },
     "1690": {
       "doc_id": "1690",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "An article by Jeanne Hersch reflecting on the pedagogical and philosophical significance of physical education.",
       "phase": null,
+      "title": "Pourquoi une éducation physique?",
+      "author": "Jeanne Hersch",
+      "date": "1980",
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -7615,8 +7875,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7640,10 +7900,14 @@
     },
     "170": {
       "doc_id": "170",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An essay discussing the tension and necessary synergy between humanism and politics.",
       "phase": null,
+      "title": "LA POLITIQUE ET L'HUMANISME",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -7679,8 +7943,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7704,10 +7968,14 @@
     },
     "1700": {
       "doc_id": "1700",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE/FR",
+      "desc": "An issue of a trilingual magazine for Rotary Clubs in Switzerland and Liechtenstein containing reports and an article by Jeanne Hersch on the relationship between work and leisure.",
       "phase": null,
+      "title": "Der Schweizer Rotarier / Le Rotarien Suisse / Il Rotariano Svizzero",
+      "author": null,
+      "date": "1980",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -7743,8 +8011,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7768,10 +8036,14 @@
     },
     "1710": {
       "doc_id": "1710",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "C",
+      "lang": "FR",
+      "desc": "This document contains the preface and opening pages of a philosophical monograph analyzing Raymond Aron's work.",
       "phase": null,
+      "title": "LA PHILOSOPHIE HISTORIQUE DE RAYMOND ARON",
+      "author": "Gaston Fessard",
+      "date": "1980",
+      "pub_form": "book",
       "page_count": 11,
       "pages": [
         {
@@ -7843,8 +8115,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7869,10 +8141,14 @@
     },
     "1720": {
       "doc_id": "1720",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "FR",
+      "desc": "An essay discussing the evolution of modern values, industry, and the role of human freedom in the context of global economic and social change.",
       "phase": null,
+      "title": "Evolution du monde et permanence des valeurs",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "bookSection",
       "page_count": 5,
       "pages": [
         {
@@ -7908,8 +8184,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -7933,10 +8209,14 @@
     },
     "1730": {
       "doc_id": "1730",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "A",
+      "lang": "DE/FR",
+      "desc": "A collection of conference papers from 1980 regarding the situation of women in Switzerland.",
       "phase": null,
+      "title": "Eine Standortbestimmung / Une détermination de la situation",
+      "author": "Jeanne Hersch",
+      "date": "1981",
+      "pub_form": "anthology",
       "page_count": 7,
       "pages": [
         {
@@ -7984,8 +8264,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8009,10 +8289,14 @@
     },
     "1740": {
       "doc_id": "1740",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "An article discussing the philosophical purposes and significance of physical education.",
       "phase": null,
+      "title": "Réflexions sur les finalités de l'éducation physique",
+      "author": "Jeanne Hersch",
+      "date": "1980",
+      "pub_form": "journalArticle",
       "page_count": 7,
       "pages": [
         {
@@ -8060,8 +8344,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8085,10 +8369,14 @@
     },
     "1755": {
       "doc_id": "1755",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DE/FR",
+      "desc": "An article discussing the philosophical definition of health and illness by Jeanne Hersch, published in the Swiss medical bulletin.",
       "phase": null,
+      "title": "Santé: l'utopie d'une définition",
+      "author": "Jeanne Hersch",
+      "date": "1981",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -8124,8 +8412,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8149,10 +8437,14 @@
     },
     "1760": {
       "doc_id": "1760",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "DEU/FRA/ITA",
+      "desc": "An article published in the Swiss medical bulletin discussing the philosophical definitions of health and illness.",
       "phase": null,
+      "title": "Normalität und Krankheit",
+      "author": "Jeanne Hersch",
+      "date": "1981",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -8188,8 +8480,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8214,10 +8506,14 @@
     },
     "1770": {
       "doc_id": "1770",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "D",
+      "lang": "FR",
+      "desc": "An article discussing the universal concept of human rights from the journal Cadmos.",
       "phase": null,
+      "title": "LES DROITS DE L'HOMME ET L'EUROPE",
+      "author": "Jeanne Hersch",
+      "date": "1981",
+      "pub_form": "journalArticle",
       "page_count": 13,
       "pages": [
         {
@@ -8301,8 +8597,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8326,10 +8622,14 @@
     },
     "1780": {
       "doc_id": "1780",
-      "type": "-",
-      "lang": "-",
-      "desc": "",
+      "type": "B",
+      "lang": "FR",
+      "desc": "An analytical article exploring the nature of the student-teacher relationship, the concept of authority, and the role of freedom in modern pedagogy.",
       "phase": null,
+      "title": "Le rapport maître-élève et l'autorité",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "journalArticle",
       "page_count": 3,
       "pages": [
         {
@@ -8353,8 +8653,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8382,6 +8682,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 14,
       "pages": [
         {
@@ -8471,8 +8775,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8500,6 +8804,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 39,
       "pages": [
         {
@@ -8739,8 +9047,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8769,6 +9077,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -8822,8 +9134,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8851,6 +9163,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 15,
       "pages": [
         {
@@ -8946,8 +9262,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -8975,6 +9291,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -9010,8 +9330,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9040,6 +9360,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -9093,8 +9417,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9122,6 +9446,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 14,
       "pages": [
         {
@@ -9211,8 +9539,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9240,6 +9568,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -9263,8 +9595,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9292,6 +9624,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -9333,8 +9669,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9362,6 +9698,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -9421,8 +9761,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9451,6 +9791,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -9498,8 +9842,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9527,6 +9871,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -9562,8 +9910,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9592,6 +9940,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 10,
       "pages": [
         {
@@ -9657,8 +10009,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9686,6 +10038,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -9715,8 +10071,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9744,6 +10100,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -9773,8 +10133,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9803,6 +10163,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -9820,8 +10184,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9849,6 +10213,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -9896,8 +10264,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9927,6 +10295,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -9956,8 +10328,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -9985,6 +10357,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -10026,8 +10402,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -10055,6 +10431,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 208,
       "pages": [
         {
@@ -11308,8 +11688,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11338,6 +11718,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -11398,7 +11782,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11426,6 +11810,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -11462,7 +11850,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11490,6 +11878,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -11508,7 +11900,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11536,6 +11928,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -11578,7 +11974,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11606,6 +12002,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -11636,7 +12036,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11664,6 +12064,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -11706,7 +12110,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11734,6 +12138,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -11782,7 +12190,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11810,6 +12218,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 15,
       "pages": [
         {
@@ -11906,7 +12318,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -11934,6 +12346,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 14,
       "pages": [
         {
@@ -12024,7 +12440,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12052,6 +12468,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -12070,7 +12490,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12099,6 +12519,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -12117,7 +12541,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12145,6 +12569,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -12187,7 +12615,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12215,6 +12643,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 19,
       "pages": [
         {
@@ -12335,7 +12767,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12363,6 +12795,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -12435,7 +12871,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12463,6 +12899,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -12511,7 +12951,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12539,6 +12979,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -12557,7 +13001,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12584,6 +13028,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 12,
       "pages": [
         {
@@ -12662,7 +13110,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12690,6 +13138,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -12708,7 +13160,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12737,6 +13189,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -12767,7 +13223,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12794,6 +13250,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -12830,7 +13290,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12858,6 +13318,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -12900,7 +13364,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12927,6 +13391,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -12945,7 +13413,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -12973,6 +13441,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -12997,7 +13469,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -13025,6 +13497,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -13079,7 +13555,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -13108,6 +13584,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 15,
       "pages": [
         {
@@ -13204,7 +13684,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -13232,6 +13712,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -13256,7 +13740,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -13284,6 +13768,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 114,
       "pages": [
         {
@@ -13974,7 +14462,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14002,6 +14490,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 16,
       "pages": [
         {
@@ -14104,7 +14596,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14132,6 +14624,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -14156,7 +14652,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14185,6 +14681,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -14227,7 +14727,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14255,6 +14755,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -14291,7 +14795,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14319,6 +14823,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -14367,7 +14875,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14393,8 +14901,12 @@
       "doc_id": "2310",
       "type": "A",
       "lang": "FR",
-      "desc": "Rezension",
+      "desc": "A book review by Jeanne Hersch of Karl Jaspers' Philosophie and a review of Howard P. Kainz's Hegel's Phenomenology.",
       "phase": "phase1",
+      "title": "Philosophie",
+      "author": "Jeanne Hersch",
+      "date": "1986",
+      "pub_form": "journalArticle",
       "page_count": 3,
       "pages": [
         {
@@ -14418,8 +14930,8 @@
       ],
       "pipeline_status": {
         "images": true,
-        "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_mistral": true,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14460,6 +14972,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -14490,7 +15006,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -14518,6 +15034,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 254,
       "pages": [
         {
@@ -16048,7 +16568,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -16076,6 +16596,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -16112,7 +16636,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -16140,6 +16664,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -16188,7 +16716,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -16215,6 +16743,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 22,
       "pages": [
         {
@@ -16353,7 +16885,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -16381,6 +16913,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -16429,7 +16965,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -16457,6 +16993,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -16511,7 +17051,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -16539,6 +17079,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -16611,7 +17155,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -16639,6 +17183,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 56,
       "pages": [
         {
@@ -16981,7 +17529,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17009,6 +17557,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -17063,7 +17615,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17092,6 +17644,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -17134,7 +17690,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17164,6 +17720,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -17218,7 +17778,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17246,6 +17806,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -17270,7 +17834,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17298,6 +17862,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -17370,7 +17938,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17398,6 +17966,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -17452,7 +18024,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17480,6 +18052,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -17534,7 +18110,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17561,6 +18137,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -17597,7 +18177,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17625,6 +18205,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -17643,7 +18227,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17671,6 +18255,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -17743,7 +18331,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17771,6 +18359,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 1,
       "pages": [
         {
@@ -17783,7 +18375,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17811,6 +18403,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -17859,7 +18455,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17888,6 +18484,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -17930,7 +18530,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -17956,8 +18556,12 @@
       "doc_id": "2530",
       "type": "B",
       "lang": "FR",
-      "desc": "Zweispaltig",
+      "desc": "An article by Jeanne Hersch discussing the political and moral complexities of the situation in Israel, including security, negotiations, and Jewish identity.",
       "phase": "phase2",
+      "title": "LA SITUATION D'ISRAËL",
+      "author": "JEANNE HERSCH",
+      "date": null,
+      "pub_form": "journalArticle",
       "page_count": 2,
       "pages": [
         {
@@ -17976,7 +18580,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18004,6 +18608,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 19,
       "pages": [
         {
@@ -18124,7 +18732,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18152,6 +18760,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -18170,7 +18782,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18198,6 +18810,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -18216,7 +18832,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18244,6 +18860,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -18292,7 +18912,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18320,6 +18940,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -18344,7 +18968,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18372,6 +18996,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -18414,7 +19042,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18442,6 +19070,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 13,
       "pages": [
         {
@@ -18526,7 +19158,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18554,6 +19186,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -18590,7 +19226,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18618,6 +19254,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -18648,7 +19288,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18676,6 +19316,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -18724,7 +19368,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18752,6 +19396,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -18788,7 +19436,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18817,6 +19465,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -18865,7 +19517,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18892,6 +19544,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -18934,7 +19590,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -18963,6 +19619,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 10,
       "pages": [
         {
@@ -19029,7 +19689,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19057,6 +19717,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -19087,7 +19751,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19115,6 +19779,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 39,
       "pages": [
         {
@@ -19355,7 +20023,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19383,6 +20051,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -19425,7 +20097,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19452,6 +20124,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -19488,7 +20164,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19516,6 +20192,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 19,
       "pages": [
         {
@@ -19636,7 +20316,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19664,6 +20344,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -19718,7 +20402,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19746,6 +20430,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 13,
       "pages": [
         {
@@ -19830,7 +20518,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19859,6 +20547,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -19931,7 +20623,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -19959,6 +20651,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -20019,7 +20715,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -20048,6 +20744,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -20084,7 +20784,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -20112,6 +20812,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 105,
       "pages": [
         {
@@ -20748,7 +21452,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -20776,6 +21480,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -20806,7 +21514,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -20834,6 +21542,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -20876,7 +21588,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -20904,6 +21616,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -20928,7 +21644,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -20956,6 +21672,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -21028,7 +21748,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21056,6 +21776,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -21092,7 +21816,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21120,6 +21844,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -21192,7 +21920,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21220,6 +21948,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -21262,7 +21994,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21290,6 +22022,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -21314,7 +22050,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21342,6 +22078,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 1,
       "pages": [
         {
@@ -21354,7 +22094,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21382,6 +22122,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -21412,7 +22156,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21440,6 +22184,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 1,
       "pages": [
         {
@@ -21452,7 +22200,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21478,8 +22226,12 @@
       "doc_id": "290",
       "type": "A",
       "lang": "FR",
-      "desc": "Essay",
+      "desc": "A book review article discussing the recent works and philosophy of Karl Jaspers.",
       "phase": "phase1",
+      "title": "L'Œuvre de Karl Jaspers au cours des dernières années",
+      "author": "Jeanne Hersch",
+      "date": "1953",
+      "pub_form": "journalArticle",
       "page_count": 5,
       "pages": [
         {
@@ -21516,7 +22268,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21558,6 +22310,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -21588,7 +22344,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21616,6 +22372,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 8,
       "pages": [
         {
@@ -21670,7 +22430,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21698,6 +22458,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 38,
       "pages": [
         {
@@ -21932,7 +22696,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -21960,6 +22724,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 15,
       "pages": [
         {
@@ -22056,7 +22824,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -22084,6 +22852,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 51,
       "pages": [
         {
@@ -22396,7 +23168,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -22425,6 +23197,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -22473,7 +23249,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -22501,6 +23277,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -22519,7 +23299,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -22548,6 +23328,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -22584,7 +23368,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -22612,6 +23396,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 82,
       "pages": [
         {
@@ -23110,7 +23898,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23138,6 +23926,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -23168,7 +23960,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23195,6 +23987,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -23225,7 +24021,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23253,6 +24049,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -23295,7 +24095,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23323,6 +24123,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -23359,7 +24163,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23387,6 +24191,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -23429,7 +24237,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23455,8 +24263,12 @@
       "doc_id": "3040",
       "type": "B",
       "lang": "FR",
-      "desc": "Lexikon",
+      "desc": "An encyclopedia entry about the philosophy and life of Karl Jaspers.",
       "phase": "phase2",
+      "title": "JASPERS",
+      "author": "Laurent Thirouin",
+      "date": null,
+      "pub_form": "encyclopedia",
       "page_count": 9,
       "pages": [
         {
@@ -23517,7 +24329,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23545,6 +24357,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -23563,7 +24379,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23591,6 +24407,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -23621,7 +24441,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23649,6 +24469,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 12,
       "pages": [
         {
@@ -23727,7 +24551,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23755,6 +24579,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -23785,7 +24613,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -23813,6 +24641,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 34,
       "pages": [
         {
@@ -24023,7 +24855,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24052,6 +24884,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 12,
       "pages": [
         {
@@ -24130,7 +24966,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24158,6 +24994,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -24206,7 +25046,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24234,6 +25074,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -24252,7 +25096,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24281,6 +25125,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -24311,7 +25159,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24339,6 +25187,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -24387,7 +25239,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24415,6 +25267,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 53,
       "pages": [
         {
@@ -24739,7 +25595,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24768,6 +25624,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 21,
       "pages": [
         {
@@ -24900,7 +25760,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -24928,6 +25788,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 19,
       "pages": [
         {
@@ -25048,7 +25912,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -25077,6 +25941,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -25149,7 +26017,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -25177,6 +26045,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -25213,7 +26085,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -25241,6 +26113,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -25277,7 +26153,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -25305,6 +26181,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 318,
       "pages": [
         {
@@ -27219,7 +28099,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -27247,6 +28127,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 20,
       "pages": [
         {
@@ -27373,7 +28257,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -27402,6 +28286,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 16,
       "pages": [
         {
@@ -27504,7 +28392,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -27532,6 +28420,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -27556,7 +28448,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -27584,6 +28476,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -27620,7 +28516,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -27646,8 +28542,12 @@
       "doc_id": "40",
       "type": "C",
       "lang": "FR",
-      "desc": "Roman",
+      "desc": "The title page and opening text of the novel Temps alternés by Jeanne Hersch.",
       "phase": "phase4",
+      "title": "Temps alternés",
+      "author": "Jeanne Hersch",
+      "date": "1942",
+      "pub_form": "book",
       "page_count": 156,
       "pages": [
         {
@@ -28590,7 +29490,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -28618,6 +29518,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -28678,7 +29582,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -28706,6 +29610,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -28778,7 +29686,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -28806,6 +29714,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -28848,7 +29760,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -28876,6 +29788,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -28918,7 +29834,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -28946,6 +29862,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 10,
       "pages": [
         {
@@ -29012,7 +29932,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -29041,6 +29961,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 18,
       "pages": [
         {
@@ -29155,7 +30079,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -29183,6 +30107,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -29207,7 +30135,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -29235,6 +30163,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -29259,7 +30191,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -29287,6 +30219,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -29347,7 +30283,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -29375,6 +30311,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 10,
       "pages": [
         {
@@ -29441,7 +30381,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -29469,6 +30409,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -29529,7 +30473,7 @@
       "pipeline_status": {
         "images": true,
         "ocr_mistral": false,
-        "ocr_deepseek": false,
+        "ocr_deepseek": true,
         "llm_corrected": false,
         "layout": true,
         "evaluation": false,
@@ -29558,6 +30502,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 42,
       "pages": [
         {
@@ -29844,6 +30792,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -29944,6 +30896,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 25,
       "pages": [
         {
@@ -30128,6 +31084,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 33,
       "pages": [
         {
@@ -30360,6 +31320,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 23,
       "pages": [
         {
@@ -30533,6 +31497,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -30591,6 +31559,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -30643,6 +31615,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -30695,6 +31671,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -30765,6 +31745,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -30817,6 +31801,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -30881,6 +31869,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -30927,6 +31919,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 13,
       "pages": [
         {
@@ -31039,6 +32035,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 12,
       "pages": [
         {
@@ -31145,6 +32145,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -31246,6 +32250,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -31298,6 +32306,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 15,
       "pages": [
         {
@@ -31422,6 +32434,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 21,
       "pages": [
         {
@@ -31583,6 +32599,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -31683,6 +32703,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 5,
       "pages": [
         {
@@ -31747,6 +32771,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 15,
       "pages": [
         {
@@ -31871,6 +32899,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -31941,6 +32973,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 12,
       "pages": [
         {
@@ -32048,6 +33084,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 19,
       "pages": [
         {
@@ -32196,6 +33236,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 18,
       "pages": [
         {
@@ -32339,6 +33383,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 20,
       "pages": [
         {
@@ -32492,6 +33540,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -32544,6 +33596,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 24,
       "pages": [
         {
@@ -32722,6 +33778,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -32810,6 +33870,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -32910,6 +33974,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -32962,6 +34030,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 64,
       "pages": [
         {
@@ -33378,8 +34450,12 @@
       "doc_id": "830",
       "type": "D",
       "lang": "FR",
-      "desc": "Bildband",
+      "desc": "An analytical essay by Jeanne Hersch discussing the sculptural depiction of Eve at Autun.",
       "phase": "phase3",
+      "title": "Eve ou la Naissance éternelle du Temps",
+      "author": "Jeanne Hersch",
+      "date": null,
+      "pub_form": "book",
       "page_count": 2,
       "pages": [
         {
@@ -33425,6 +34501,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -33477,6 +34557,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -33553,6 +34637,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 3,
       "pages": [
         {
@@ -33605,6 +34693,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 6,
       "pages": [
         {
@@ -33675,6 +34767,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 7,
       "pages": [
         {
@@ -33749,8 +34845,12 @@
       "doc_id": "890",
       "type": "B",
       "lang": "DE",
-      "desc": "Lehrerzeitung",
+      "desc": "An article discussing the democratization of school and the relationship between education and culture.",
       "phase": "phase2",
+      "title": "Die Demokratisierung der Schule",
+      "author": "Jeanne Hersch",
+      "date": "1970",
+      "pub_form": "journalArticle",
       "page_count": 7,
       "pages": [
         {
@@ -33823,10 +34923,14 @@
     },
     "90": {
       "doc_id": "90",
-      "type": "D",
+      "type": "A",
       "lang": "DE",
-      "desc": "Hist. Druck",
+      "desc": "An article analyzing the literary work of Monique Saint-Hélier published in the journal Schweizer Annalen.",
       "phase": "phase3",
+      "title": "Monique Saint-Hélier",
+      "author": "Jeanne Hersch",
+      "date": "1944",
+      "pub_form": "journalArticle",
       "page_count": 6,
       "pages": [
         {
@@ -33897,6 +35001,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -33943,6 +35051,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 10,
       "pages": [
         {
@@ -34037,6 +35149,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 18,
       "pages": [
         {
@@ -34180,6 +35296,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -34237,6 +35357,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 9,
       "pages": [
         {
@@ -34325,6 +35449,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 4,
       "pages": [
         {
@@ -34384,6 +35512,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 12,
       "pages": [
         {
@@ -34490,6 +35622,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 2,
       "pages": [
         {
@@ -34536,6 +35672,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 11,
       "pages": [
         {
@@ -34636,6 +35776,10 @@
       "lang": "-",
       "desc": "",
       "phase": null,
+      "title": null,
+      "author": null,
+      "date": null,
+      "pub_form": null,
       "page_count": 22,
       "pages": [
         {
