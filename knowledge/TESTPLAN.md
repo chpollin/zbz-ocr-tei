@@ -160,7 +160,7 @@ Note: DeepSeek results are based on 2 test pages per doc, Mistral on all pages.
 2. **Page numbers:** Docling recognizes page numbers (217-220) as `text` instead of `page_footer` — heuristic needed
 3. **Missing footnotes:** No `footnote` label seen in samples (may differ for docs with footnotes)
 
-**Post-Processing (O21):** 3 heuristics planned: overlap filter, single-line merge, page number detection.
+**Post-Processing:** Overlap, single-line, page number issues now handled by Gemini QA/Detect (E25/E26).
 
 ### Rating Scale
 
@@ -178,45 +178,15 @@ Note: DeepSeek results are based on 2 test pages per doc, Mistral on all pages.
 
 ## CLI Commands
 
-```bash
-# OCR with Mistral (no GPU, requires .env)
-python -m scripts.ocr_pipeline -i data/scans/2310.pdf -e mistral -o output/mistral_results
-
-# Evaluation: Mistral, all phases
-python -m scripts.evaluate_ocr --phase all --ocr-dir output/mistral_results --engine mistral
-
-# Evaluation: Single phase
-python -m scripts.evaluate_ocr --phase phase1 --ocr-dir output/mistral_results --engine mistral
-
-# Evaluation: DeepSeek comparison
-python -m scripts.evaluate_ocr --all --ocr-dir output/ocr_results --engine deepseek
-
-# OCR tests by phase with DeepSeek (GPU required)
-python scripts/test_all_pdfs.py --phase phase1
-```
+See [PIPELINE](PIPELINE.md) §CLI Commands for the complete command reference.
 
 ---
 
-## Next Steps
+## Open Items
 
-1. [x] Create test script `test_all_pdfs.py`
-2. [x] Run Phase 1 (DeepSeek baseline)
-3. [x] Create evaluation script `evaluate_ocr.py`
-4. [x] Test Mistral Document AI on Phase 1 (`test_mistral_ocr.py`)
-5. [x] Create benchmark UI (`docs/benchmark.html`)
-6. [x] Calculate CER/WER for Mistral against reference TEI
-7. [x] Run Phase 2-4 with Mistral
-8. [x] Complete evaluation matrix (Phase 1-3)
-9. [ ] Investigate Doc 290: Why CER 18%? Check scan quality
-10. [x] Phase 4 evaluation: Implement page-by-page comparison
-11. [x] OCR + LLM + eval for all 15 pilot documents completed
-12. [ ] Test Gemini 3 Flash on Type B (2530)
-13. [ ] Investigate Doc 1060: CER 22.6% despite Type A — alignment issue
-14. [ ] Derive recommendation for production pipeline
-15. [x] Layout analysis: 8/15 docs analyzed with Docling + overlay PNGs generated
-16. [ ] Implement layout post-processing (O21: overlap, single-line, page numbers)
-17. [ ] Layout analysis for remaining 7 docs (needs GPU)
-18. [ ] Check footnote detection (Doc 3040 = lexicon with footnotes)
+- Investigate Doc 290: CER 18% — scan quality? (low priority)
+- Investigate Doc 1060: CER 22.6% — alignment issue (low priority)
+- Check footnote detection (Doc 3040 = lexicon with footnotes)
 
 ---
 
@@ -228,4 +198,4 @@ python scripts/test_all_pdfs.py --phase phase1
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-02-27 (Layout analysis 8/15 docs + QA results)*
+*Created: 2026-01-29 | Updated: 2026-03-05*

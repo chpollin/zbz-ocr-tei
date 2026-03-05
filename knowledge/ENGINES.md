@@ -10,6 +10,8 @@ status: active
 
 OCR and layout tools in the pipeline. Four active engines, two roles.
 
+Key insight: Model selection matters less than pipeline design -- DeepSeek and Mistral produce similar CER. Invest in layout-aware chunking, page matching, and quality routing. API costs are negligible (~$25 for full 7,200-page pipeline). LLM post-correction hurts at CER <5% (E17).
+
 Dependencies: [PIPELINE](PIPELINE.md)
 
 ---
@@ -85,6 +87,8 @@ Scripts:
 - run_layout_analysis.py: local GPU (~5s/page, preferred)
 - run_layout_cloud.py: docling-serve API (~27s/page CPU, Docker)
 
+Lesson: Coverage-based quality scoring (bbox % of page area) is a strong proxy for layout quality -- no ML needed. Landscape/multi-column pages are the hard cases (~64% bad vs ~14% portrait).
+
 Troubleshooting:
 - Symlink warning on Windows: set HF_HUB_DISABLE_SYMLINKS_WARNING=1
 - CUDA conflict with DeepSeek: run Docling on CPU (default)
@@ -110,6 +114,8 @@ Quality results:
 - QA mode: average score ~70. Catches page numbers, running headers, JSTOR metadata.
 - Detect mode: Doc 510 p7 found 4 regions (vs Docling 2, missing paragraph recovered). Doc 900 p1 found 47 regions (vs Docling 26).
 - Limitations: rightmost column missed on wide landscapes, photo/figure detection unreliable.
+
+Lessons: Always use Structured Output (response_schema) for machine-readable LLM results. Always benchmark the cheapest model first. Every batch script must be resume-capable (skip-existing pattern). Vision LLMs are viable layout detectors for fallback, not yet for primary detection.
 
 Warnings: thought_signature parts in Flash Lite responses cause SDK warnings. Harmless. Suppress with PYTHONWARNINGS=ignore or warnings.filterwarnings in code.
 

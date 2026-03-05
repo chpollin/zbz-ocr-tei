@@ -44,18 +44,13 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 
 **Note on Stage 6:** The TEI generator currently goes directly from layout JSON + OCR Markdown to TEI-XML, without PAGE-XML as an intermediate format. PAGE-XML (Stage 4) and NER (Stage 5) are not yet implemented — once they are, the TEI generator will be extended accordingly.
 
+Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
+
 **Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
 
 **Layout engine (E19/E20):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). All 286 docs analyzed (4,152 pages). Local GPU (RTX 4060): ~5s/page. Quality: 75% good, 10% warning, 12% bad, 3% empty (`compute_page_quality`, 4,152 pages). Details: [ENGINES](ENGINES.md).
 
 **Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var. **Note:** Local GPU via `run_layout_analysis.py` is now preferred (~5s/page on RTX 4060).
-
-**Layout QA (25.02.2026):** Visual inspection of 8 docs (186 overlay PNGs) showed:
-- BBox positioning correct, no systematic offset
-- Headings reliably detected (titles, subtitles, thesis numbers)
-- Two-column layout correctly separated (Doc 1410)
-- **3 issues identified (O21):** (1) Overlapping regions in dense text, (2) single-line fragments as separate regions, (3) page numbers detected as `text` instead of `page_footer`
-- Post-processing needed: overlap filter, single-line merge, page number heuristic
 
 **Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`.
 
@@ -109,98 +104,11 @@ Full results: See [TESTPLAN](TESTPLAN.md) §Results.
 
 **Important:** The LLM does not perform OCR. It only corrects the text produced by Mistral/DeepSeek. It receives document context (type, language, genre) and identifies character errors, missing accents, OCR artifacts.
 
-### Prompts (3 Variants)
+### Prompt (Variant C, Default)
 
-All prompts in `llm_postprocess.py`. Variant C is the default (E17).
+Three variants tested (A/B/C, see `llm_postprocess.py`). Variant C (Few-Shot) is default (E17): best CER/cost tradeoff. Includes typical Mistral OCR errors as examples (missing letters, wrong sequences, merged words, JSTOR artifacts). Language hints (FR: accents/guillemets, DE: umlauts/compounds) inserted dynamically.
 
-**Variant A (Analysis)** — System prompt with `<analysis>` + `<corrected>` blocks:
-```
-Du bist ein Experte fuer OCR-Nachkorrektur akademischer Texte des 20. Jahrhunderts
-von Jeanne Hersch (Philosophin, 1910-2000). Du erhaeltst OCR-Output aus gescannten
-Dokumenten und korrigierst Zeichenfehler.
-
-Regeln:
-- Korrigiere NUR OCR-Fehler (falsche Buchstaben, fehlende Akzente, zusammengeklebte Woerter)
-- Formuliere NICHTS um, erfinde NICHTS
-- Markdown beibehalten
-- Maschinenerzeugte Artefakte (JSTOR-Header, Copyright-Zeilen) entfernen
-- Im Zweifel: unveraendert lassen
-
-{Sprach-Hint}
-
-Antwortformat: 1. <analysis>-Block mit Fehlerliste, 2. <corrected>-Block mit Text
-```
-
-**Variant B (Lean)** — Corrected text only, no analysis block:
-```
-Korrigiere OCR-Fehler im folgenden Text. [Gleiche Regeln wie A, ohne Antwortformat]
-Gib NUR den korrigierten Text aus, ohne Erklaerungen.
-```
-
-**Variant C (Few-Shot, Default)** — Like B, plus typical Mistral OCR errors as examples:
-```
-...
-Typische OCR-Fehler dieser Engine (Mistral Document AI):
-- 'inconnaisable' -> 'inconnaissable' (fehlender Buchstabe)
-- 'etrente' -> 'etreinte' (falsche Zeichenfolge)
-- 'seule tu le courant' -> 'sens-tu le courant' (Wortgrenze falsch)
-- 'rereferme' -> 'se referme' (zusammengeklebte Woerter)
-- 'lisse, comme' -> 'hisse, comme' (aehnliche Buchstaben)
-- 'This content downloaded from...' -> entfernen (JSTOR-Artefakt)
-Gib NUR den korrigierten Text aus, ohne Erklaerungen.
-```
-
-**Language hints** (dynamically inserted, `_lang_hint()` in `llm_postprocess.py:62`):
-
-| Language | Hint |
-|----------|------|
-| FR | Achte auf Akzente, Guillemets, Apostrophe (l', d', qu') |
-| DE | Achte auf Umlaute, Eszett, Komposita |
-| DE/FR | Achte auf Umlaute UND Akzente |
-
-**User message template** (per page, `build_user_message()` in `llm_postprocess.py:136`):
-```
-Dokument: {doc_id}
-Typ: {doc_type} ({Einspaltig|Zweispaltig|Monografie|Spezialformat})
-Sprache: {language}
-Genre: {genre}
-OCR-Engine: Mistral Document AI
-Seite: {page_num} von {total_pages}
-
-<ocr_text>
-{ocr_text}
-</ocr_text>
-```
-
-### Variant Comparison (Phase 1-3, 10 Docs)
-
-| Variant | Avg CER | Notes |
-|---------|---------|-------|
-| A (Analysis) | 5.47% | Best CER, but more expensive (longer output) |
-| B (Lean) | 5.59% | Cheapest |
-| C (Few-Shot) | 5.55% | Best CER/cost tradeoff → Default |
-
-**Pilot results (all 15 docs, Variant C Few-Shot):**
-
-| Phase | Mistral CER | LLM CER | Delta |
-|-------|-------------|---------|-------|
-| Phase 1 (A) | 9.40% | 8.43% | -0.97 |
-| Phase 2 (B) | 6.31% | 6.34% | +0.03 |
-| Phase 3 (D) | 2.88% | 2.72% | -0.16 |
-| Phase 4 (C) | 2.65% | 2.70% | +0.05 |
-| **Total (15 Docs)** | **6.42%** | **6.52%** | **+0.10** |
-
-**Findings:** LLM correction improves docs with CER >10%, slightly degrades quality for good OCR (<5%). Recommendation: use optionally, not as default.
-
-### Optimization Potential (Research 25.02.2026)
-
-| Idea | Expected Effect | Effort | Source |
-|------|-----------------|--------|--------|
-| **Multimodal correction** (scan image + OCR text) | <1% CER per research | Medium (Sonnet/Opus needed, higher cost) | [arXiv:2504.00414](https://arxiv.org/abs/2504.00414) |
-| Larger model (Sonnet instead of Haiku) | Better for FR (training data) | Low (config change only) | [ACL 2025](https://arxiv.org/abs/2502.01205) |
-| Segment length 200-300 words | Optimal per study; we send full pages — already good | None | [ACL 2025](https://arxiv.org/abs/2502.01205) |
-
-**Risk:** 66% of our corpus is French. Studies show that LLM correction for non-English texts often has a negative effect — confirming our observation (Phase 2/4: slight degradation).
+Results: See [TESTPLAN](TESTPLAN.md) §LLM Post-Correction. LLM correction improves docs with CER >10%, slightly degrades good OCR (<5%). Optional, not default.
 
 ---
 

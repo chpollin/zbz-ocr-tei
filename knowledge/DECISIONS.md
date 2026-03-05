@@ -54,7 +54,7 @@ Consolidated register of all decisions and open questions in the project.
 | O11 | Entities without GND entry | Local ID or leave empty? | Phase 2 NER | Own decision |
 | O13 | TEI editorial details (subject headings, GND work records in back matter) | Who creates subject headings? Do they go in teiHeader? | Phase 3 TEI | ZBZ |
 | O18 | Test multimodal LLM correction (scan image + OCR text) | Research shows <1% CER (arXiv:2504.00414); currently text only | Quality | Own test |
-| O21 | Layout region post-processing: overlap, single-liners, page numbers | Docling produces overlapping regions, single-line fragments, misses page_footer. 3 heuristics needed | Phase 1 | Own impl. |
+| ~~O21~~ | ~~Layout region post-processing~~ | Resolved by E25/E26: Gemini QA corrects labels, Detect re-detects bad pages. No manual heuristics needed | — | Closed |
 | O22 | 289 vs. 286 PDF discrepancy | Masterfile counts 289 texts, E23 delivery contains 286. 3 missing unidentified | Clarification | ZBZ |
 
 ---

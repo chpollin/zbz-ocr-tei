@@ -28,7 +28,6 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) | How does ZBZ work editorially? | All | — |
 | [JOURNAL](JOURNAL.md) | What was done when? | All | — |
 | [PLAN](PLAN.md) | What are the implementation phases? | Development | PROJEKT, PIPELINE |
-| [LEARNINGS](LEARNINGS.md) | What did we learn? Technical patterns and pitfalls | All | All |
 
 ---
 
@@ -51,7 +50,6 @@ PROJEKT (Vision, Ecosystem)
 
 PLAN      <-- implementation phases, depends on PROJEKT + PIPELINE
 DECISIONS <-- cross-cutting, collects from all docs
-LEARNINGS <-- cross-cutting, distills patterns from experiments
 JOURNAL   <-- chronological, references all docs
 ```
 
@@ -106,7 +104,6 @@ knowledge/
 +-- ZBZ-WORKFLOW.md       # ZBZ editorial workflow + integration points
 +-- JOURNAL.md            # Chronological work journal
 +-- PLAN.md               # Implementation plan (phases 0-5)
-+-- LEARNINGS.md           # Technical patterns and pitfalls (E1-E26)
 ```
 
 ---

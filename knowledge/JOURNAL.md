@@ -37,31 +37,41 @@ Knowledge base had grown to 14 files with quality issues: outdated metrics, wron
    - Dropped: Claude (not tested), discontinued models, 5 rejected layout approaches, pilot findings (in TESTPLAN)
    - E19 architecture decision preserved as summary section
 
-5. Cross-references updated in 8 files (DECISIONS, INDEX, PIPELINE, INFRASTRUKTUR, LEARNINGS, TESTPLAN, QUELLENANALYSE, JOURNAL)
+5. Cross-references updated in 8 files (DECISIONS, INDEX, PIPELINE, INFRASTRUKTUR, TESTPLAN, QUELLENANALYSE, JOURNAL)
 
 6. INDEX.md cleaned: "Agentic Vision" removed from Key Concepts (obsolete), directory structure updated
 
-7. Gemini auto-mode restarted -- 847/4,152 pages (20.4%) after 51 docs in this session. Aborted at Doc 1530 (timeout). 10 errors (broken PNGs, JSON parse). Resume-capable.
+7. LEARNINGS.md created, then dissolved: takeaways integrated into ENGINES.md (OCR/Layout/Gemini lessons) and PIPELINE.md (TEI/Pipeline lessons). File deleted, INDEX.md updated.
+
+8. PLAN.md rewritten: 339 -> ~120 lines. Done phases compressed to 2 paragraphs. Scripts Inventory + API Keys sections removed (duplicated PIPELINE/.env.example). Phase 2 renamed to "PAGE-XML Generator".
+
+9. TESTPLAN.md cleaned: CLI commands replaced with cross-ref to PIPELINE.md. 18 Next-Steps reduced to 3 open items (8 done archived, 4 obsolete removed).
+
+10. PIPELINE.md trimmed: LLM Post-Correction prompts reduced from 3 variants (~80 lines) to summary of Variant C (~4 lines). Duplicated result tables removed (reference TESTPLAN). Layout QA pilot paragraph removed (superseded by E25/E26).
+
+11. O21 closed in DECISIONS.md: Gemini QA/Detect handles overlap, single-liners, page numbers -- no manual heuristics needed.
+
+12. Gemini auto-mode restarted -- 847/4,152 pages (20.4%) after 51 docs in this session. Aborted at Doc 1530 (timeout). 10 errors (broken PNGs, JSON parse). Resume-capable.
 
 ### New/Changed Files
 
 - knowledge/ENGINES.md -- NEW (replaces OCR-ENGINES.md + E19-LAYOUT-ANALYSE.md)
-- knowledge/LEARNINGS.md -- NEW
 - knowledge/OCR-ENGINES.md -- DELETED
 - knowledge/E19-LAYOUT-ANALYSE.md -- DELETED
+- knowledge/LEARNINGS.md -- CREATED then DELETED (takeaways integrated into source files)
+- knowledge/PLAN.md -- REWRITTEN (339 -> ~120 lines)
+- knowledge/PIPELINE.md -- UPDATED (lessons added, LLM section trimmed, layout QA pilot removed)
+- knowledge/TESTPLAN.md -- UPDATED (CLI dedup, Next-Steps archived, O21 note updated)
+- knowledge/DECISIONS.md -- UPDATED (O21 closed, model name, percentages, cross-refs)
 - knowledge/INDEX.md -- UPDATED (Document Matrix, Dependencies, Key Concepts, Directory Structure)
-- knowledge/PIPELINE.md -- UPDATED (quality metrics, cross-refs)
 - knowledge/PROJEKT.md -- UPDATED (quality metrics, model name)
-- knowledge/DECISIONS.md -- UPDATED (model name, percentages, cross-refs)
-- knowledge/PLAN.md -- UPDATED (quality metrics, model name)
-- knowledge/JOURNAL.md -- UPDATED (this entry, footer date)
+- knowledge/JOURNAL.md -- UPDATED (this entry)
 - knowledge/INFRASTRUKTUR.md -- UPDATED (cross-ref)
-- knowledge/TESTPLAN.md -- UPDATED (cross-refs)
 - knowledge/QUELLENANALYSE.md -- UPDATED (cross-ref)
 
 ### Knowledge Base Status
 
-12 documents (was 14): INDEX, PROJEKT, PIPELINE, QUELLENANALYSE, ENGINES, TEI-MAPPING, GND-STRATEGIE, TESTPLAN, INFRASTRUKTUR, DECISIONS, ZBZ-WORKFLOW, JOURNAL, PLAN, LEARNINGS
+12 documents (was 14): INDEX, PROJEKT, PIPELINE, QUELLENANALYSE, ENGINES, TEI-MAPPING, GND-STRATEGIE, TESTPLAN, INFRASTRUKTUR, DECISIONS, ZBZ-WORKFLOW, JOURNAL, PLAN
 
 ---
 
