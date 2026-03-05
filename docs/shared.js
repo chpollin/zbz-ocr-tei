@@ -36,14 +36,21 @@
             var path = paths[source];
             if (!path) return null;
 
-            try {
-                var r = await fetch(path);
-                if (r.ok) {
-                    var text = await r.text();
-                    _textCache[key] = text;
-                    return text;
-                }
-            } catch (e) { /* ignore */ }
+            var candidates = [path];
+            if (source === 'mistral') {
+                candidates.push('data/examples/' + docId + '/' + docId + '_p' + page + '.md');
+            }
+
+            for (var i = 0; i < candidates.length; i++) {
+                try {
+                    var r = await fetch(candidates[i]);
+                    if (r.ok) {
+                        var text = await r.text();
+                        _textCache[key] = text;
+                        return text;
+                    }
+                } catch (e) { /* ignore */ }
+            }
 
             _textCache[key] = null;
             return null;
@@ -59,15 +66,19 @@
             var padded = String(page).padStart(3, '0');
             var suffix = source === 'gemini' ? '_layout_gemini.json' : '_layout.json';
             var path = '../output/layout/' + docId + '/' + docId + '_p' + padded + suffix;
+            var fallback = 'data/examples/' + docId + '/' + docId + '_p' + padded + suffix;
 
-            try {
-                var r = await fetch(path);
-                if (r.ok) {
-                    var data = await r.json();
-                    _textCache[key] = data;
-                    return data;
-                }
-            } catch (e) { /* ignore */ }
+            var candidates = [path, fallback];
+            for (var i = 0; i < candidates.length; i++) {
+                try {
+                    var r = await fetch(candidates[i]);
+                    if (r.ok) {
+                        var data = await r.json();
+                        _textCache[key] = data;
+                        return data;
+                    }
+                } catch (e) { /* ignore */ }
+            }
 
             _textCache[key] = null;
             return null;
@@ -81,6 +92,7 @@
             var paths = [
                 '../output/tei/' + docId + '_p' + page + '.xml',
                 '../output/tei_xml/' + docId + '_p' + page + '.xml',
+                'data/examples/' + docId + '/' + docId + '_p' + page + '.xml',
             ];
 
             for (var i = 0; i < paths.length; i++) {

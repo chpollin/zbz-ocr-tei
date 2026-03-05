@@ -91,6 +91,9 @@
     function renderCatalog() {
         var docs = data.documents;
         var ids = Object.keys(docs).sort(function (a, b) {
+            var da = DEMO_DOCS[a] ? 0 : 1;
+            var db = DEMO_DOCS[b] ? 0 : 1;
+            if (da !== db) return da - db;
             var pa = docs[a].type !== '-' ? 0 : 1;
             var pb = docs[b].type !== '-' ? 0 : 1;
             if (pa !== pb) return pa - pb;
