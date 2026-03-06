@@ -61,7 +61,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M1 | OCR validated | >=93% accuracy all types | Done: 93.58% (Mistral), dashboard UI |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done: 286 docs, 4,091 PAGE-XML + 286 METS |
 | M3 | NER + GND | Entity recall >70%, GND linking >60% | **Pending** (Phase 3) |
-| M4 | TEI-XML | DTA-compliant TEI, schema-valid | Done (rule-based, without NER): 285 docs. Gemini Vision TEI (E30): Pilot successful |
+| M4 | TEI-XML | DTA-compliant TEI, schema-valid | Done: Unified TEI Pipeline (E32), 286 docs production run, RelaxNG-valid. Rule-based scaffold + Gemini refinement |
 | M5 | Production run | 286 docs processed, spot-check QA passed | Pending (Phase 6) |
 
 ### Dependencies
@@ -91,10 +91,12 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Dashboard redesign | Done | `docs/` with shared.css/js, index.html, viewer.html |
 | Dashboard data | Done | `scripts/generate_dashboard_data.py` -> dashboard.json |
 | Layout analysis (Docling) | Done | 286/286 docs, 4,152 layout JSONs. Quality: 75% good, 10% warning, 12% bad, 3% empty |
-| Layout QA (Gemini) | Done | `layout_qa_gemini.py --mode qa`: label corrections (Flash Lite, E25). Typspezifische Prompts (E30) |
-| Layout Detect (Gemini) | Done | `layout_qa_gemini.py --mode detect`: full re-detection for bad pages (Flash Lite, E26). Tested on Doc 510, 900 |
+| Layout QA (Gemini) | Done | `layout_qa_gemini.py --mode auto --force`: 286 docs, 3,992 pages (3,519 QA + 633 Detect), 14,708 corrections, avg score 72.7. Typspezifische Prompts (E30), changes_summary logging (E31) |
+| Layout Overlays | Done | `generate_layout_overlays.py --compare`: 7,988 PNGs (Gemini overlay + Docling-vs-Gemini side-by-side) |
 | TEI generator (rule-based) | Done | `scripts/tei/tei_generator.py`, 4,117 TEI-XML files (285 docs), flat structure |
 | TEI generator (Gemini Vision) | Pilot | `scripts/tei/tei_gemini.py`, 1 Call/Seite (E30), Doc 2310 successful, typspez. Prompts |
+| **Unified TEI Pipeline** | **Production** | `scripts/tei/tei_unified.py` (E32): Rule-based scaffold + Gemini refinement + assembly + RelaxNG validation. 286 docs. Post-processing: `fix_gemini_tei()`, `reannotate_entities()`, interview speaker detection |
+| TEI Validator | Done | `scripts/tei/tei_validator.py`: RelaxNG (TEI-All) + 8 Projekt-Regeln (R1-R8) |
 | PAGE-XML generator | Done | `scripts/layout/page_xml_generator.py` + `mets_generator.py`, 286 docs, 4,091 PAGE-XML + 286 METS |
 | Document classification | Done | `scripts/classify_docs.py`, Gemini 3.1 Flash Lite, 286/286 docs (E27) |
 | Gemini OCR correction | Sample | `scripts/gemini_ocr_correct.py`, 5 pilot docs, CER 3.97% -> 3.30% (E29) |

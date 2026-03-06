@@ -79,6 +79,10 @@ JOURNAL   <-- chronological, references all docs
 | Gemini Vision TEI (E30) | 3-Pass TEI pipeline with overlay PNGs: Structure -> Enrichment -> Validation | [PIPELINE](PIPELINE.md) |
 | Document-type-specific Prompts (E30) | 4-level hint system (layout type, pub_form, genre, language) for layout + TEI prompts | [PIPELINE](PIPELINE.md) |
 | Genre Inference | Automatic classification into 14 genres via keyword matching on description text | [PIPELINE](PIPELINE.md) |
+| Layout Full Run (E31) | Complete Gemini QA/Detect on 286 docs (3,992 pages, 14,708 corrections, avg score 72.7) | [PIPELINE](PIPELINE.md) |
+| Layout Overlay Generator (E31) | Batch PNG generation with changed-highlighting + Docling-vs-Gemini side-by-side compare | [PIPELINE](PIPELINE.md) |
+| changes_summary (E31) | Per-page label transition logging in layout_gemini.json, aggregated in summary_gemini.json | [PIPELINE](PIPELINE.md) |
+| Digitale Edition (E33) | Public-facing static website at `docs/edition/` with Landing, Catalog, Reader, About. Own design system, `ZBZ.Edition` namespace | [PIPELINE](PIPELINE.md) |
 
 ---
 

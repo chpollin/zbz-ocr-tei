@@ -20,7 +20,7 @@ Data flow from PDF to TEI-XML: stages, scripts, formats. Since the scope expansi
 PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ──→ NER/GND ──→ TEI-XML
          extract_pages    ocr_pipeline  layout/    page_xml_gen    ner/       tei/
          docs/images/     output/       output/    output/         output/    output/
-                          mistral_res/  layout/    page_xml/       entities/  tei/ + tei_gemini/
+                          mistral_res/  layout/    page_xml/       entities/  tei_unified/
                                                        │
                               ┌─────────────────────────┘
                               ▼
@@ -38,14 +38,17 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
 | 2b | Gemini OCR correction (optional) | `scripts/gemini_ocr_correct.py` | Corrected Markdown (`output/gemini_corrected_a/` or `_b/`) | Sample (5 docs), E29 |
 | 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (286/286 docs, 4,152 pages) |
-| 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26) |
+| 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production: 286 docs, 3,992 pages (E25/E26/E31) |
+| 3b | Layout Overlay Generator | `scripts/generate_layout_overlays.py` | Overlay PNGs + side-by-side compare | Production: 7,988 PNGs (E31) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production (286 docs, 4,091 pages) |
 | 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 3** |
 | 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (285 docs, 4,117 files) |
 | 6a | Gemini Vision TEI (1 call/page) | `scripts/tei/tei_gemini.py` | TEI-XML (`output/tei_gemini/`) | Pilot (Doc 2310), E30 |
+| 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **Production (286 docs), E32** |
+| 6c | TEI Validation (RelaxNG + project rules) | `scripts/tei/tei_validator.py` | Validation JSON | Production, E32 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
-**Note on Stage 6:** The rule-based TEI generator goes directly from layout JSON + OCR Markdown to TEI-XML. Produces flat structure (no div hierarchy, no lb, no entities beyond seed dict). **Stage 6a (E30)** replaces this with a Gemini Vision pipeline (default: 1 call/page, optional --refine/--consolidate) that uses overlay PNGs as key input. Document-type-specific prompts at 4 levels (layout type, pub_form, genre, language). OCR source priority: Gemini B > Gemini A > LLM C > Mistral. Metadata from doc_metadata.json (286 docs) with TESTPLAN fallback.
+**Note on Stage 6:** The rule-based TEI generator goes directly from layout JSON + OCR Markdown to TEI-XML. Produces flat structure (no div hierarchy, no lb, no entities beyond seed dict). **Stage 6a (E30)** was the first Gemini Vision approach (standalone, 1 call/page). **Stage 6b (E32)** is the production pipeline: combines enhanced rule-based scaffold (Step 1) with Gemini refinement (Step 2, mapping-table prompt), document assembly (Step 3), and RelaxNG validation (Step 4). Post-processing (`fix_gemini_tei()`) corrects 6 types of Gemini structural errors. Entity re-annotation (`reannotate_entities()`) catches missed mentions. Interview speaker detection in scaffold. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. Cost: ~$17 for 286 docs (Gemini 3.1 Flash Lite). OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
@@ -58,6 +61,10 @@ Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks 
 **Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`. **Document-type-specific prompts (E30):** Since 06.03.2026, prompts are augmented with 4-level hints from `doc_metadata.json` (layout type, pub_form, genre, language) via `build_doc_hints(doc_id)`. Genre is inferred from description text via `infer_genre()` (14 genres).
 
 **Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails (~15% bad+empty). Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA. Cost: ~$1-2 for ~1,570 detect pages.
+
+**Full Run (E31):** `layout_qa_gemini.py --mode auto --force` on all 286 docs. Results: 3,992/4,152 pages processed (160 failed: Invalid Unicode-Escape, Empty Response), 3,519 QA + 633 Detect, 30,714 regions, 14,708 corrections, avg score 72.7. Top change: 894 ADDED regions (missing headers, headings, footnotes). Per-page `changes_summary` logging (label transitions) and per-doc aggregation in `summary_gemini.json`. Visual QA on 10 sample pages (types A/B/C/D): Gemini clearly better than Docling alone.
+
+**Layout Overlay Generator (E31):** `scripts/generate_layout_overlays.py` generates overlay PNGs from Gemini layout JSONs. Uses existing `draw_overlay_from_json()` from `scripts/layout/__init__.py`. Changed-highlighting: yellow border for ADDED regions, orange for label changes. Optional `--compare` flag generates side-by-side Docling-vs-Gemini images (2x width). Output: `_overlay_gemini.png` and `_overlay_compare.png` per page. 7,988 PNGs generated for all 286 docs.
 
 ---
 
@@ -362,6 +369,12 @@ python -m scripts.layout_qa_gemini --mode detect --doc 510 # full re-detection
 python -m scripts.layout_qa_gemini --mode auto             # auto-route by quality
 python -m scripts.layout_qa_gemini --force                 # overwrite existing
 
+# Layout overlay images (stage 3b, no API key needed)
+python -m scripts.generate_layout_overlays                 # Gemini overlays for all docs
+python -m scripts.generate_layout_overlays --doc 2310      # single document
+python -m scripts.generate_layout_overlays --compare        # + Docling-vs-Gemini side-by-side
+python -m scripts.generate_layout_overlays --force          # overwrite existing
+
 # Generate TEI-XML (stage 6, rule-based)
 python -m scripts.tei.tei_generator                      # all documents
 python -m scripts.tei.tei_generator --doc 2310           # single document
@@ -376,6 +389,20 @@ python -m scripts.tei.tei_gemini --doc 2310 --refine     # + 2nd call/page for q
 python -m scripts.tei.tei_gemini --doc 2310 --consolidate # + API doc consolidation
 python -m scripts.tei.tei_gemini --force                 # overwrite existing
 python -m scripts.tei.tei_gemini --dry-run               # show prompts, no API calls
+
+# Unified TEI Pipeline (stage 6b, PRODUCTION, requires GEMINI_API_KEY)
+python -m scripts.tei.tei_unified --doc 2310             # single document (4 steps)
+python -m scripts.tei.tei_unified --sample               # 3 pilot docs (2310, 2530, 1440)
+python -m scripts.tei.tei_unified --all                  # all 286 docs
+python -m scripts.tei.tei_unified --doc 2310 --step 1    # rule-based scaffold only (free)
+python -m scripts.tei.tei_unified --all --validate       # include RelaxNG validation
+python -m scripts.tei.tei_unified --force                # overwrite cached results
+python -m scripts.tei.tei_unified --dry-run              # show prompts, no API calls
+
+# TEI Validation (stage 6c, no API key needed)
+python -m scripts.tei.tei_validator --doc 2310           # validate single document
+python -m scripts.tei.tei_validator --all                # validate all unified TEI
+python -m scripts.tei.tei_validator --report             # save JSON validation report
 
 # Dashboard data (stage 7)
 python -m scripts.generate_dashboard_data
@@ -419,6 +446,61 @@ Full pipeline output (`output/`) is gitignored and only available locally. For t
 **Fallback mechanism:** `shared.js` fetch functions try the primary path (`../output/...`) first, then `data/examples/{doc_id}/...` as fallback. This ensures both local (full data) and online (DEMO data) work without configuration.
 
 **UI indicators:** Disclaimer banner on dashboard + viewer ("Prototyping Interface", "KI-generiert"). DEMO badge (teal tag) on the 4 example docs in the catalog. DEMO docs sorted first.
+
+---
+
+## Digitale Edition (E33)
+
+**Directory:** `docs/edition/`
+
+Public-facing digital edition for researchers and the general public, deployed on GitHub Pages alongside the internal pipeline dashboard. Separate design system, no modifications to the dashboard code.
+
+### Architecture
+
+| File | Purpose | Lines |
+|------|---------|-------|
+| `docs/edition/index.html` | Landing page: Hero, Featured Docs, Corpus Stats | ~102 |
+| `docs/edition/catalog.html` | Document catalog: faceted filters, table/card views, MiniSearch | ~82 |
+| `docs/edition/reader.html` | Reader: Faksimile + TEI side-by-side, entities, XML view | ~67 |
+| `docs/edition/about.html` | About page: Hersch biography, project, pipeline, technology | ~138 |
+| `docs/edition/css/edition.css` | Design system: `--ed-*` CSS vars, dark mode, responsive (3 breakpoints) | ~1300 |
+| `docs/edition/js/edition-shared.js` | Shared module: Nav/Footer slot rendering, Dark Mode, catalog loader, card builder, utilities | ~283 |
+| `docs/edition/js/edition-landing.js` | Landing page: metrics animation, featured docs, corpus stats | ~140 |
+| `docs/edition/js/edition-catalog.js` | Catalog: MiniSearch (CDN), faceted filters, sort, table/card rendering | ~354 |
+| `docs/edition/js/edition-reader.js` | Reader: page navigation, zoom, font toggle, draggable divider, entity sidebar | ~305 |
+| `docs/edition/js/edition-tei.js` | TEI renderer: recursive node rendering, entity extraction, XML view | ~302 |
+| `docs/edition/data/catalog.json` | Generated catalog data (from `scripts/generate_edition_data.py`) | -- |
+| `scripts/generate_edition_data.py` | Data generator: reads dashboard.json + doc_metadata.json, outputs catalog.json, copies TEI XMLs | ~172 |
+
+### Design System
+
+- **Colors:** Parchment `#faf8f5` (bg), Scholarly Navy `#1e3a5f` (primary), Warm Gold `#b8860b` (accent)
+- **Dark Mode:** `.dark` class on `<body>`, all `--ed-*` vars overridden
+- **Typography:** Inter (UI), Source Serif 4 (reading), JetBrains Mono (code/XML)
+- **Responsive:** 1200px (full), 768px (compact), 480px (mobile)
+
+### Key Design Decisions
+
+| Decision | Rationale |
+|----------|-----------|
+| Separate from dashboard (`docs/edition/`) | Dashboard is internal QA tool; edition is public-facing |
+| ES5/IIFE, `ZBZ.Edition` namespace | Consistent with dashboard convention, no build tools |
+| Nav/Footer JS slot pattern (`#ed-nav-slot`) | DRY: nav/footer defined once in JS, HTML has empty slots |
+| `buildCardHtml()` shared helper | DRY: card rendering used by landing + catalog |
+| `sanitizeDocId()` for URL params | Security: only digits allowed, prevents path traversal |
+| MiniSearch via CDN (~22KB) | Client-side fulltext search, no server needed |
+| TEI renderer copied from `tei-viewer.js` | Reading-optimized version, no regression in dashboard viewer |
+| CSS classes for TEI `<hi>` renditions | Replaces inline styles, maintainable via CSS |
+| XML syntax colors as CSS custom properties | Automatic dark mode adaptation |
+| 4 Demo docs (2310, 1000, 1330, 1540) | Same as dashboard demo, expandable to full corpus |
+
+### Data Generation
+
+```bash
+python -m scripts.generate_edition_data   # Generate catalog.json + copy TEI XMLs
+```
+
+Reads `docs/data/dashboard.json` + `data/doc_metadata.json`. Outputs `docs/edition/data/catalog.json` (286 docs, corpus stats, featured list). Copies TEI XMLs for demo docs to `docs/data/examples/`.
 
 ---
 

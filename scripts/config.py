@@ -23,6 +23,11 @@ LAYOUT_DIR = OUTPUT_DIR / "layout"
 CLASSIFICATION_DIR = OUTPUT_DIR / "classification"
 TEI_DIR = OUTPUT_DIR / "tei"
 TEI_GEMINI_DIR = OUTPUT_DIR / "tei_gemini"
+TEI_UNIFIED_DIR = OUTPUT_DIR / "tei_unified"
+
+# Schema-Validierung
+TEI_SCHEMA_DIR = DATA_DIR / "schema"
+TEI_SCHEMA_PATH = TEI_SCHEMA_DIR / "tei_all.rng"
 LLM_CORRECTED_C_DIR = OUTPUT_DIR / "llm_corrected_c"
 GEMINI_CORRECTED_A_DIR = OUTPUT_DIR / "gemini_corrected_a"
 GEMINI_CORRECTED_B_DIR = OUTPUT_DIR / "gemini_corrected_b"

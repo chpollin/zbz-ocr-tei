@@ -19,7 +19,7 @@ Component status: [PROJEKT](PROJEKT.md). Pipeline stages and CLI: [PIPELINE](PIP
 Phase 0 (Pilot: Layout-Eval + OCR + TEI) --- DONE
     |
     v
-Phase 1 (Scale: Layout 286 docs + Gemini QA) --- DONE (auto-mode running)
+Phase 1 (Scale: Layout 286 docs + Gemini QA) --- DONE
     |
     v
 Phase 2 (PAGE-XML generator) --- DONE (286 docs, 4,091 pages)
@@ -43,10 +43,10 @@ Phase 6 (Production: 286 Docs)
 
 Phase 0 -- Pilot (15 docs): Layout evaluation (E19/E20), image extraction (4,152 PNGs), OCR (Mistral, CER 6.42%), LLM correction tested and made optional (E17), TEI-XML (383 files, E22), evaluation + dashboard, data delivery (E23: 286 PDFs + 25 TEI + 24 PAGE-XML).
 
-Phase 1 -- Scale Layout (286 docs): Docling layout on all 4,152 pages (E24 docling-serve, E20 local GPU RTX 4060 ~5s/page). Gemini QA (E25) + Detect (E26) with auto-routing. Viewer integration with Docling/Gemini toggle. Quality: 75% good, 10% warning, 12% bad, 3% empty. Auto-mode running on all 286 docs.
+Phase 1 -- Scale Layout (286 docs): Docling layout on all 4,152 pages (E24 docling-serve, E20 local GPU RTX 4060 ~5s/page). Gemini QA (E25) + Detect (E26) with auto-routing (E31: full run completed). Viewer integration with Docling/Gemini toggle. Quality: 75% good, 10% warning, 12% bad, 3% empty. Full run: 3,992 pages processed, 14,708 corrections, 894 ADDED regions. Overlay generator: 7,988 PNGs.
 
 Open from Phase 1:
-- [ ] Gemini auto-mode: complete run on all 286 docs (847/4,152 pages done)
+- [x] Gemini auto-mode: complete run on all 286 docs (3,992/4,152 pages, 160 failed)
 - [ ] Prompt tuning: rightmost column missed on wide landscapes, picture detection weak
 
 ---
@@ -84,12 +84,14 @@ Current: Rule-based generator (4,117 TEI-XML, 285 docs, flat structure). Gemini 
 - [x] **Gemini Vision TEI Generator** (E30): `scripts/tei/tei_gemini.py`, 3-Pass pipeline
 - [x] **Dokumenttypspezifische Prompts** (E30): 4-Ebenen (Layout-Typ, Pub-Form, Genre, Sprache) in `layout_qa_gemini.py` + `tei_gemini.py`
 - [x] **Pilot Doc 2310** (E30): persName/bibl/lb/div Recall 1.0, valides XML
-- [ ] Pilot auf Doc 2530 (Typ B, 2-Spalten) und Doc 1440 (Typ D, Interview)
-- [ ] scripts/tei/tei_validator.py -- Schema validation + ZBZ content rules
+- [x] **Unified TEI Pipeline** (E32): `tei_unified.py` + `tei_mapping_prompt.py` + `tei_validator.py`
+- [x] **Pilot auf 3 Docs** (E32): 2310 (review), 2530 (standard), 1440 (interview) -- alle RelaxNG-valide
+- [x] scripts/tei/tei_validator.py -- RelaxNG + 8 Projekt-Regeln (R1-R8)
+- [x] LINE breaks (`<lb/>`) from OCR line structure (in unified Step 1)
+- [x] Special document types via genre-conditional mapping table (10 genres)
+- [x] **Qualitaetsfixes** (E32): Entity Re-Annotation, Prompt-Tuning, Interview-Speaker-Erkennung
+- [ ] Unified TEI production run (286 docs, ~$17) -- **RUNNING**
 - [ ] Integrate NER entities from Phase 3
-- [ ] Gemini TEI production run (286 docs, ~$62)
-- [ ] LINE breaks (`<lb>`) from OCR line structure (done in Gemini TEI, missing in rule-based)
-- [ ] Special document types: reviews, interviews, lexicon, monographs (done in Gemini TEI via genre prompts)
 
 ## Phase 5 -- Extended Evaluation
 
@@ -118,8 +120,8 @@ PDF-Scans (286 PDFs)
   +---> run_layout_analysis.py --> Layout JSON (per page)           [DONE: 286/286]
   |         (Docling RT-DETR V2)
   |
-  +---> layout_qa_gemini.py -----> Corrected Layout JSON            [IN PROGRESS: 847/4,152]
-  |     --mode auto (Flash Lite)   (qa for good, detect for bad)
+  +---> layout_qa_gemini.py -----> Corrected Layout JSON            [DONE: 286 docs, 3,992 pages]
+  |     --mode auto (Flash Lite)   (3,519 qa + 633 detect)
   |
   +---> page_xml_generator.py --> PAGE-XML + METS                   [DONE: 286 docs, 4,091 pages]
   |
@@ -129,7 +131,11 @@ PDF-Scans (286 PDFs)
   |
   +---> tei_gemini.py --------> TEI-XML (3-Pass, Gemini Vision)    [PILOT: Doc 2310, E30]
   |
+  +---> tei_unified.py -------> TEI-XML (Scaffold+Gemini+Validate) [PILOT: 3 docs, E32]
+  |
   +---> evaluate_ocr.py -------> CER + Structure + Entity Scores   [DONE for pilot]
+  |
+  +---> generate_edition_data.py -> docs/edition/data/catalog.json  [DONE: E33]
 ```
 
 ---

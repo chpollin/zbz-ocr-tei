@@ -14,13 +14,57 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-06 | Digitale Edition + Refactoring (Session 14)
+
+86. Digitale Edition implementiert (E33): Oeffentliche statische Website unter `docs/edition/` fuer Forscher und Oeffentlichkeit. 4 Seiten (Landing, Katalog, Reader, About), eigenes Design-System (`edition.css`, ~1300 Zeilen), `ZBZ.Edition` Namespace. Parchment-Hintergrund, Scholarly Navy, Warm Gold Akzente. Dark Mode, 3 Responsive-Breakpoints, Print-Styles.
+
+87. Daten-Generator (`scripts/generate_edition_data.py`): Liest `dashboard.json` + `doc_metadata.json`, erzeugt `catalog.json` mit 286 Dokumenten, Korpus-Statistiken, Featured-Liste. Kopiert 21 TEI-XMLs fuer 4 Demo-Docs.
+
+88. Reader (Herzstueck): Faksimile + TEI-Text nebeneinander, draggbarer Panel-Divider, Seitennavigation (Buttons + Tastatur), Zoom (25-300%), Font-Toggle (Serif/Sans), Entitaeten-Sidebar (Personen/Orgs/Werke mit GND-Links), XML-Ansicht mit Syntax-Highlighting.
+
+89. Katalog: 286 Dokumente, facettierte Filter (Typ, Sprache, Publikationsform, Zeitraum), MiniSearch Client-Side Volltextsuche (CDN, ~22KB), Tabelle/Karten-Ansicht, sortierbare Spalten.
+
+90. Optimierungen: Count-Up-Animation (Hero-Metriken), Dark-Mode Sun/Moon SVG-Icons, Hamburger-SVG, Tabellen-Sortierung per Klick, Bild-Fade-In, Zurueck-Pfeil im Reader, Card-Placeholder bei Bild-Fehler, Nav-Brand Gold-Akzent, Hero-Gradient-Overlay, Faksimile-Schachbrett-Hintergrund.
+
+91. Refactoring (DRY + Robustheit): Nav/Footer JS-Slot-Pattern (`#ed-nav-slot`, `#ed-footer-slot`) eliminiert HTML-Duplizierung ueber 4 Seiten. `buildCardHtml()` Shared-Helper ersetzt doppelte Card-Erzeugung in Landing + Katalog. `sanitizeDocId()` fuer Input-Validierung. `parseXml()` try-catch. MiniSearch try-catch Fallback. Divider `window.blur`-Handler. TEI `<hi>` Inline-Styles durch CSS-Klassen ersetzt (`ed-tei-hi-bold/italic/underline/spaced`, `ed-tei-foreign`, `ed-tei-sp`, `ed-tei-speaker`). XML-Syntax-Farben als CSS Custom Properties (`--ed-xml-*`). `aria-expanded` auf Hamburger-Menu. Konsistente Font-Einbindung ueber alle 4 Seiten.
+
+**Decisions:** E33 (Digitale Edition). **Files:** 12 neue/modifizierte Dateien, ~3.200 Zeilen Code.
+
+---
+
+## 2026-03-06 | Unified TEI Pipeline (Session 13)
+
+77. Unified TEI Pipeline konzipiert und implementiert (E32): Kombiniert regelbasierte TEI-Erzeugung (Step 1) mit Gemini-Verfeinerung (Step 2) in 4-Stufen-Pipeline. Ersetzt separaten `tei_generator.py` und `tei_gemini.py` fuer Produktion.
+
+78. `scripts/tei/tei_mapping_prompt.py` erstellt: Mapping-Table-Prompt mit 8 Sektionen (Structure, Line-Level, Inline Formatting, Entities, Language, Corrections, Speech Acts, Omissions) + 10 Genre-spezifische Regelblocks (review, interview, debate, encyclopedia, speech, conference, preface, letter, newspaper, editorial). Systematische Tabelle statt Few-Shot-Prompting.
+
+79. `scripts/tei/tei_unified.py` erstellt (~550 Zeilen): Enhanced rule-based TEI (Step 1: lb, head, note, semantic div, facsimile-Koordinaten aus Gemini/Docling Layout), Gemini Refinement (Step 2: 1 Call/Seite mit Mapping-Table + Overlay-PNG), Document Assembly (Step 3: teiHeader + facsimile + body), Validation (Step 4). CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`.
+
+80. `scripts/tei/tei_validator.py` erstellt: RelaxNG-Schema-Validierung (TEI-All von tei-c.org, Auto-Download) + 8 projektspezifische Regeln (R1-R8: type=naegeli, teiHeader, body, div-types, note-place, persName-ref, language-ident).
+
+81. Schema-Fehler iterativ behoben: (a) `<p>` in `<sourceDesc>` nach `<biblStruct>` entfernt, (b) leeres `<imprint>` mit default `<date>` gefuellt, (c) `<head>` nach `<p>` in `<div>` via `any_content_emitted`-Flag geloest (headings nach Content werden zu `<p>`).
+
+82. Pilot-Validierung: Alle 3 Docs (2310 review, 2530 standard, 1440 interview) RelaxNG-valide mit 0 Schema-Fehlern und 0 Projekt-Warnungen.
+
+83. Gemini Step 2 auf Pilot-Docs ausgefuehrt: dotenv-Integration gefehlt, behoben. `fix_gemini_tei()` Post-Processing erstellt mit 6 Fix-Stufen: (a) `<ab>` mit `<p>` entpacken, (b) `<head>` in `<speaker>` entfernen, (c) `<head><p>` zu `<head>` flatten, (d) `<head>` nach Content zu `<p>` konvertieren, (e) `<sp>` gemischt mit `<p>` in Sub-Divs aufteilen, (f) Entity-Re-Annotation.
+
+84. 3 Qualitaetsfixes implementiert: (a) Prompt-Tuning in `tei_mapping_prompt.py` -- "CRITICAL: Tag EVERY SINGLE mention" + Interview-sp-Verstaerkung. (b) `reannotate_entities()` -- tag-aware Post-Processing, splittet Text an bestehenden Entity-Tags und annotiert nur Luecken. (c) Interview-Speaker-Erkennung in Step 1 Scaffold -- `_is_interview_turn()` Heuristik fuer Q&A-Muster, generiert `<sp>/<speaker>` mit `<persName>` fuer bekannte Entitaeten.
+
+85. Recall-Ergebnisse nach Fixes: Doc 2310 (Review) stabil exzellent: persName 1.0, bibl 1.0, hi 0.94, lb 0.83. Doc 1440 (Interview): speaker 0.63->0.76 (+0.13), bibl 0.5->1.0 (+0.5), lb 1.0. persName-"Regression" (0.54->0.24) ist Artefakt: Referenz-TEI hat 46 leere `<persName>` in `<speaker>`-Tags (Konvention), tatsaechlicher Inline-persName-Recall = 1.0.
+
+---
+
 ## 2026-03-06 | Layout-QA Full Run + Overlay-Generator (Session 12)
 
 72. Layout-QA `changes_summary` Logging: `layout_qa_gemini.py` erweitert -- QA-Modus loggt Label-Transitions pro Seite (z.B. `text->section_header: 2, ADDED: 1`), Detect-Modus loggt `label_counts` pro Seite. Document-Summary aggregiert beides ueber alle Seiten in `summary_gemini.json`.
 
 73. Full Re-Run mit `--force`: Alle 4'152 Seiten (286 Docs) werden mit aktuellem Prompt neu verarbeitet (auto-Modus: QA fuer gute/warning Seiten, Detect fuer bad/empty). Bisherige Ergebnisse ueberschrieben. Fehlerrate ~1% (Invalid Unicode-Escape, Empty Response). Durchschnitt ~6s/Seite, ~10 Seiten/Min.
 
-74. Overlay-Generator Script: `scripts/generate_layout_overlays.py` -- Batch-Erzeugung von Layout-Overlay-PNGs fuer Gemini-Ergebnisse. Nutzt bestehende `draw_overlay_from_json()`. Output: `output/layout/{doc_id}/{doc_id}_p{NNN}_overlay_gemini.png`. Optional: Side-by-side Compare-Bilder (Docling links, Gemini rechts).
+74. Overlay-Generator Script: `scripts/generate_layout_overlays.py` -- Batch-Erzeugung von Layout-Overlay-PNGs fuer Gemini-Ergebnisse. Nutzt bestehende `draw_overlay_from_json()`. Output: `output/layout/{doc_id}/{doc_id}_p{NNN}_overlay_gemini.png`. Optional: Side-by-side Compare-Bilder (Docling links, Gemini rechts). Changed-Highlighting (gelb fuer ADDED/geaenderte Regionen).
+
+75. Full Run Ergebnisse: 286/286 Docs, 3'992 Seiten verarbeitet (3'519 QA + 633 Detect), 30'714 Regionen, 14'708 Korrekturen, Avg Score 72.7. Top-Aenderung: 894 ADDED Regionen (fehlende Headers, Headings, Footnotes). Fehlerrate ~1% (160 Seiten fehlgeschlagen: Invalid Unicode-Escape, Empty Response).
+
+76. Overlay-Bilder erzeugt: 7'988 PNGs (Gemini-Overlay + Docling-vs-Gemini Compare) fuer alle 286 Docs. Visuelle QA-Stichprobe (10 Seiten, Typen A/B/C/D): Gemini klar besser als Docling allein -- erkennt mehr Regionen, findet fehlende section_headers/page_headers/footnotes, zweispaltige Layouts korrekt getrennt. Score-0-Docs sind Detect-Modus (Docling hatte nichts) -- Gemini liefert brauchbare Ergebnisse. Keine neuen systematischen Probleme.
 
 ---
 
