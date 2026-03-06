@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseansicht – Nachlass Jeanne Hersch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/edition.css">
+</head>
+<body class="edition-page">
+
+    <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
+
+    <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
+
+    <main id="main-content" class="ed-reader">
+        <!-- Header Bar -->
+        <div class="ed-reader-header">
+            <h1 class="ed-reader-title">Lade...</h1>
+            <div class="ed-reader-meta"></div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="ed-reader-toolbar">
+            <div class="ed-page-nav">
+                <button class="ed-page-btn" id="page-prev" disabled aria-label="Vorherige Seite">&larr;</button>
+                <span class="ed-page-indicator" id="page-indicator">1 / 1</span>
+                <button class="ed-page-btn" id="page-next" disabled aria-label="Naechste Seite">&rarr;</button>
+            </div>
+            <div class="ed-toolbar-sep"></div>
+            <div class="ed-toolbar-group">
+                <button class="ed-toolbar-btn" id="font-toggle" title="Schriftart wechseln (Serif/Sans)">Aa</button>
+                <button class="ed-toolbar-btn" id="entity-toggle" title="Entitaeten anzeigen">Entitaeten</button>
+                <button class="ed-toolbar-btn" id="xml-toggle" title="XML-Ansicht">XML</button>
+            </div>
+            <div class="ed-toolbar-sep"></div>
+            <div class="ed-toolbar-group">
+                <button class="ed-toolbar-btn" id="zoom-out" title="Verkleinern">-</button>
+                <span class="ed-page-indicator" id="zoom-label">100%</span>
+                <button class="ed-toolbar-btn" id="zoom-in" title="Vergroessern">+</button>
+                <button class="ed-toolbar-btn ed-btn-sm" id="zoom-reset" title="Zoom zuruecksetzen">1:1</button>
+            </div>
+        </div>
+
+        <!-- Panels -->
+        <div class="ed-reader-panels">
+            <div class="ed-panel-faksimile">
+                <div class="ed-empty-state">Bild wird geladen...</div>
+            </div>
+            <div class="ed-panel-divider" title="Ziehen zum Anpassen"></div>
+            <div class="ed-panel-text ed-tei-serif">
+                <div class="ed-text-content">
+                    <div class="ed-skeleton ed-skeleton-block" style="height:400px"></div>
+                </div>
+                <div class="ed-entity-sidebar" aria-label="Entitaeten-Leiste"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/edition-shared.js"></script>
+    <script src="js/edition-tei.js"></script>
+    <script src="js/edition-reader.js"></script>
+</body>
+</html>

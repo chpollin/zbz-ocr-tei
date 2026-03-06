@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ueber das Projekt – Nachlass Jeanne Hersch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/edition.css">
+</head>
+<body class="edition-page">
+
+    <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
+
+    <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
+
+    <main id="main-content" class="ed-section">
+        <div class="ed-about-content">
+
+            <h1 class="ed-section-title">Ueber das Projekt</h1>
+
+            <h2>Jeanne Hersch (1910–2000)</h2>
+            <p>
+                Jeanne Hersch, geboren am 13. Juni 1910 in Genf, war eine der bedeutendsten
+                Schweizer Philosophinnen des 20. Jahrhunderts. Als Schuelerin von Karl Jaspers
+                und Martin Heidegger entwickelte sie eine eigenstaendige existenzphilosophische
+                Position, die Freiheit und Verantwortung ins Zentrum stellte.
+            </p>
+            <p>
+                Von 1956 bis 1977 war sie Professorin fuer Philosophie an der Universitaet Genf.
+                Als Direktorin der Abteilung Philosophie der UNESCO (1966–1968) setzte sie sich
+                international fuer Menschenrechte ein. Ihr Werk <em>Das Recht, ein Mensch zu sein</em>
+                wurde in zahlreiche Sprachen uebersetzt.
+            </p>
+            <p>
+                Hersch publizierte in ueber acht Sprachen — vorwiegend Franzoesisch und Deutsch,
+                aber auch Italienisch, Englisch, Spanisch und weiteren. Ihre Schriften umfassen
+                philosophische Essays, Rezensionen, Vortraege, Interviews und Monografien.
+            </p>
+
+            <h2>Der Nachlass</h2>
+            <p>
+                Die Zentralbibliothek Zuerich (ZBZ) bewahrt den umfangreichen Nachlass
+                Jeanne Herschs. Er umfasst rund 289 Druckschriften mit insgesamt ueber 7.200
+                Seiten. Die Sammlung beinhaltet:
+            </p>
+            <ul>
+                <li>Zeitschriftenartikel und Buchkapitel</li>
+                <li>Vollstaendige Monografien und Essaybaende</li>
+                <li>Enzyklopaedie- und Lexikonartikel</li>
+                <li>Interviews, Vortraege und Broschuren</li>
+                <li>Rezensionen und Besprechungen</li>
+            </ul>
+
+            <h2>Das Projekt</h2>
+            <p>
+                Diese digitale Edition entsteht als Kooperation zwischen der
+                Zentralbibliothek Zuerich und DHCraft. Ziel ist es, den Nachlass
+                Jeanne Herschs digital zugaenglich und durchsuchbar zu machen.
+            </p>
+            <p>
+                Das Projekt kombiniert modernste OCR-Technologie mit standardkonformer
+                TEI-XML-Kodierung, um hochwertige digitale Texte zu erzeugen. Die Ergebnisse
+                werden als statische Website auf GitHub Pages bereitgestellt.
+            </p>
+
+            <h2>Methodik: Die Pipeline</h2>
+            <p>
+                Die Digitalisierung erfolgt in einer automatisierten 7-Stufen-Pipeline:
+            </p>
+            <div class="ed-pipeline-steps">
+                <div class="ed-pipeline-step">
+                    <div class="ed-pipeline-step-num">Stufe 1</div>
+                    <div class="ed-pipeline-step-title">Bilderfassung</div>
+                    <div class="ed-pipeline-step-desc">PDF-Scans in hochaufloesende PNG-Bilder konvertiert (150 DPI).</div>
+                </div>
+                <div class="ed-pipeline-step">
+                    <div class="ed-pipeline-step-num">Stufe 2</div>
+                    <div class="ed-pipeline-step-title">OCR</div>
+                    <div class="ed-pipeline-step-desc">Texterkennung mit Mistral Document AI — spezialisiert auf mehrsprachige historische Dokumente.</div>
+                </div>
+                <div class="ed-pipeline-step">
+                    <div class="ed-pipeline-step-num">Stufe 3</div>
+                    <div class="ed-pipeline-step-title">KI-Korrektur</div>
+                    <div class="ed-pipeline-step-desc">Gemini Vision vergleicht OCR-Text mit Originalbild und korrigiert systematische Fehler.</div>
+                </div>
+                <div class="ed-pipeline-step">
+                    <div class="ed-pipeline-step-num">Stufe 4</div>
+                    <div class="ed-pipeline-step-title">Layout-Analyse</div>
+                    <div class="ed-pipeline-step-desc">Docling und Gemini erkennen Ueberschriften, Absaetze, Fussnoten und Seitenstruktur.</div>
+                </div>
+                <div class="ed-pipeline-step">
+                    <div class="ed-pipeline-step-num">Stufe 5</div>
+                    <div class="ed-pipeline-step-title">TEI-XML</div>
+                    <div class="ed-pipeline-step-desc">Strukturierte Kodierung nach TEI-Standard mit Entitaeten-Erkennung (Personen, Organisationen, Werke).</div>
+                </div>
+                <div class="ed-pipeline-step">
+                    <div class="ed-pipeline-step-num">Stufe 6</div>
+                    <div class="ed-pipeline-step-title">Evaluation</div>
+                    <div class="ed-pipeline-step-desc">Qualitaetsmessung durch CER/WER-Vergleich mit Referenz-Transkriptionen.</div>
+                </div>
+                <div class="ed-pipeline-step">
+                    <div class="ed-pipeline-step-num">Stufe 7</div>
+                    <div class="ed-pipeline-step-title">Publikation</div>
+                    <div class="ed-pipeline-step-desc">Bereitstellung als statische Website mit Faksimile-Viewer, Volltextsuche und Entitaeten-Navigation.</div>
+                </div>
+            </div>
+
+            <h2>Technologie</h2>
+            <ul>
+                <li><strong>OCR:</strong> Mistral Document AI 2512 (primaer), DeepSeek OCR-2 (Benchmark)</li>
+                <li><strong>KI-Korrektur:</strong> Google Gemini 3.1 Flash (Vision-basiert)</li>
+                <li><strong>Layout-Analyse:</strong> IBM Docling + Gemini Vision QA</li>
+                <li><strong>TEI-Kodierung:</strong> Automatisierte TEI-P5-Generierung mit NER (GND-Normdaten)</li>
+                <li><strong>Frontend:</strong> Statisches HTML/CSS/JS, GitHub Pages, kein Build-Tool</li>
+            </ul>
+
+            <h2>Zugang</h2>
+            <p>
+                Derzeit sind vier Dokumente als Demo vollstaendig zugaenglich — mit Faksimile,
+                OCR-Text und TEI-XML. Der vollstaendige Katalog mit 286 Dokumenten ist
+                durchsuchbar; der Ausbau auf das Gesamtkorpus erfolgt schrittweise.
+            </p>
+            <p>
+                <a href="catalog.html" class="ed-btn ed-btn-primary ed-btn-sm">Zum Katalog</a>
+                <a href="../index.html" class="ed-btn ed-btn-outline ed-btn-sm" style="margin-left:var(--ed-space-sm)">Pipeline-Dashboard</a>
+            </p>
+
+        </div>
+    </main>
+
+    <footer class="ed-footer" id="ed-footer-slot"></footer>
+
+    <script src="js/edition-shared.js"></script>
+</body>
+</html>
