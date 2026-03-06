@@ -62,16 +62,17 @@
             return _fetchWithFallbacks(source + '/' + docId + '/' + page, candidates, 'text');
         },
 
-        // ---- Layout Data Fetching ----
-        fetchLayoutData: function (docId, page, source) {
-            source = source || 'gemini';
+        // ---- Layout Data Fetching (Gemini first, Docling fallback) ----
+        fetchLayoutData: function (docId, page) {
             var padded = String(page).padStart(3, '0');
-            var suffix = source === 'gemini' ? '_layout_gemini.json' : '_layout.json';
+            var base = docId + '_p' + padded;
             var candidates = [
-                '../output/layout/' + docId + '/' + docId + '_p' + padded + suffix,
-                'data/examples/' + docId + '/' + docId + '_p' + padded + suffix,
+                '../output/layout/' + docId + '/' + base + '_layout_gemini.json',
+                'data/examples/' + docId + '/' + base + '_layout_gemini.json',
+                '../output/layout/' + docId + '/' + base + '_layout.json',
+                'data/examples/' + docId + '/' + base + '_layout.json',
             ];
-            return _fetchWithFallbacks('layout/' + source + '/' + docId + '/' + page, candidates, 'json');
+            return _fetchWithFallbacks('layout/' + docId + '/' + page, candidates, 'json');
         },
 
         // ---- TEI Fetching ----
@@ -228,6 +229,8 @@
             zb_paragraph: { stroke: '#6b7280', fill: 'rgba(107,114,128,0.08)', label: 'Absatz' },
             footnote:     { stroke: '#2563eb', fill: 'rgba(37,99,235,0.12)',  label: 'Fussnote' },
             caption:      { stroke: '#d97706', fill: 'rgba(217,119,6,0.12)',  label: 'Caption' },
+            _filter:      { stroke: '#9ca3af', fill: 'rgba(156,163,175,0.06)', label: 'Filter' },
+            _skip:        { stroke: '#a855f7', fill: 'rgba(168,85,247,0.08)', label: 'Skip' },
         },
 
         // ---- Formatting ----

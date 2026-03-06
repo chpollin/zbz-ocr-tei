@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-25
-updated: 2026-03-05
+updated: 2026-03-06
 tags: [zbz-ocr-tei, plan, implementation, phases]
 status: active
 ---
@@ -74,18 +74,22 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 
 ## Phase 4 -- TEI-XML Extension
 
-Prerequisite: Phase 3 (NER).
-Current: 4,117 TEI-XML files (285 docs, layout+Gemini-OCR -> TEI, with doc_metadata.json).
+Prerequisite: Phase 3 (NER) for full entities; Gemini Vision TEI works independently.
+Current: Rule-based generator (4,117 TEI-XML, 285 docs, flat structure). Gemini Vision TEI (E30): Pilot Doc 2310 successful.
 
 - [x] teiHeader with real title, author, date from doc_metadata.json
 - [x] OCR source priority: Gemini B > Gemini A > LLM C > Mistral
 - [x] Language mapping: ISO 639-3 + legacy 2-letter fallback
-- [x] Production: 285 docs, 4,117 TEI-XML files
+- [x] Production (rule-based): 285 docs, 4,117 TEI-XML files
+- [x] **Gemini Vision TEI Generator** (E30): `scripts/tei/tei_gemini.py`, 3-Pass pipeline
+- [x] **Dokumenttypspezifische Prompts** (E30): 4-Ebenen (Layout-Typ, Pub-Form, Genre, Sprache) in `layout_qa_gemini.py` + `tei_gemini.py`
+- [x] **Pilot Doc 2310** (E30): persName/bibl/lb/div Recall 1.0, valides XML
+- [ ] Pilot auf Doc 2530 (Typ B, 2-Spalten) und Doc 1440 (Typ D, Interview)
 - [ ] scripts/tei/tei_validator.py -- Schema validation + ZBZ content rules
 - [ ] Integrate NER entities from Phase 3
-- [ ] PAGE-XML as alternative input
-- [ ] Line breaks (`<lb>`) from OCR line structure
-- [ ] Special document types: reviews, interviews, lexicon, monographs
+- [ ] Gemini TEI production run (286 docs, ~$62)
+- [ ] LINE breaks (`<lb>`) from OCR line structure (done in Gemini TEI, missing in rule-based)
+- [ ] Special document types: reviews, interviews, lexicon, monographs (done in Gemini TEI via genre prompts)
 
 ## Phase 5 -- Extended Evaluation
 
@@ -121,7 +125,9 @@ PDF-Scans (286 PDFs)
   |
   +---> ner_pipeline.py -------> Entities + GND-IDs (JSON)          [PENDING]
   |
-  +---> tei_generator.py ------> TEI-XML (DTA-Basisformat)         [DONE: 285 docs, 4,117 files]
+  +---> tei_generator.py ------> TEI-XML (rule-based, flat)         [DONE: 285 docs, 4,117 files]
+  |
+  +---> tei_gemini.py --------> TEI-XML (3-Pass, Gemini Vision)    [PILOT: Doc 2310, E30]
   |
   +---> evaluate_ocr.py -------> CER + Structure + Entity Scores   [DONE for pilot]
 ```
@@ -146,4 +152,4 @@ Picture, Figure -> _skip
 
 ---
 
-Created: 2026-02-25 | Updated: 2026-03-05
+Created: 2026-02-25 | Updated: 2026-03-06

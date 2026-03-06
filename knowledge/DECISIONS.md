@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-05
+updated: 2026-03-06
 tags: [zbz-ocr-tei, decisions, open, decided]
 status: active
 ---
@@ -44,6 +44,7 @@ Consolidated register of all decisions and open questions in the project.
 | E27 | Gemini-basierte Dokumentklassifikation (Stage 1a) | 271/286 Docs ohne Metadaten. Heuristiken versagen (7/15 Pilot-Docs falsch). Gemini 3.1 Flash Lite analysiert erste 5 Seiten visuell, extrahiert language/pub_form/layout_type/title/author/date/description. Structured Output. 286/286 erfolgreich, 80% Typ-Match mit Pilot-Ground-Truth. doc_metadata.json als zentrale Quelle fuer Dashboard + teiHeader | 2026-03-05 | [PIPELINE](PIPELINE.md) |
 | E28 | Online-Demo: 4 DEMO-Docs auf GitHub Pages | Vollstaendige Daten nur lokal (output/ gitignored). 4 Beispieldokumente (2310/A, 1000/B, 1330/D, 1540/C) unter docs/ committet: Bilder (docs/images/), OCR+Layout (docs/data/examples/). shared.js mit Fallback-Pfaden (primaer ../output/, Fallback data/examples/). Disclaimer-Banner + DEMO-Badges im Katalog | 2026-03-05 | [PIPELINE](PIPELINE.md) |
 | E29 | Gemini OCR-Korrektur (Stage 2b) | Zwei-Schritt: Analyse (Structured JSON: Fehler identifizieren + begruenden) + Korrektur (Text anwenden). Zwei Varianten: A=text-only mit Metadaten-Kontext, B=multimodal mit Scan-Bild. Gemini 3.1 Flash Lite. Sample 5 Docs: Variante A avg CER 3.30% (Mistral 3.97%, -0.67pp), Variante B avg CER 3.45% (4 Docs, -0.52pp). Hauptgewinn bei Doc 2310 (7.00%->3.88%). Kosten: ~$1-3 fuer 4,152 Seiten. Viewer-Integration mit Toggle-Button + CER-Balken | 2026-03-05 | [PIPELINE](PIPELINE.md) |
+| E30 | Gemini Vision TEI Generator + Dokumenttypspezifische Prompts | Neuer `tei_gemini.py` ersetzt regelbasierten `tei_generator.py`. Default: 1 Call/Seite (Struktur+Inline), optional --refine und --consolidate. Overlay-PNG als Schluesselinput. 4-Ebenen dokumenttypspezifische Prompts (Layout-Typ, Publikationsform, Genre, Sprache) in `layout_qa_gemini.py` und `tei_gemini.py`. 12 Genre-spezifische TEI-Prompts. Genre-Inference aus description via Keyword-Matching. Pilot Doc 2310: persName/bibl/lb/div Recall 1.0. Kosten: TBD nach Sample-Run (Flash Lite) | 2026-03-06 | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -83,4 +84,4 @@ Consolidated register of all decisions and open questions in the project.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-05*
+*Created: 2026-02-18 | Updated: 2026-03-06*

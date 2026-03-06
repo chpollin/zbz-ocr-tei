@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-03-05
+updated: 2026-03-06
 tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
@@ -20,7 +20,7 @@ Data flow from PDF to TEI-XML: stages, scripts, formats. Since the scope expansi
 PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ──→ NER/GND ──→ TEI-XML
          extract_pages    ocr_pipeline  layout/    page_xml_gen    ner/       tei/
          docs/images/     output/       output/    output/         output/    output/
-                          mistral_res/  layout/    page_xml/       entities/  tei_xml/
+                          mistral_res/  layout/    page_xml/       entities/  tei/ + tei_gemini/
                                                        │
                               ┌─────────────────────────┘
                               ▼
@@ -41,10 +41,11 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production (286 docs, 4,091 pages) |
 | 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 3** |
-| 6 | Layout + OCR → TEI-XML | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (285 docs, 4,117 files) |
+| 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (285 docs, 4,117 files) |
+| 6a | Gemini Vision TEI (1 call/page) | `scripts/tei/tei_gemini.py` | TEI-XML (`output/tei_gemini/`) | Pilot (Doc 2310), E30 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
-**Note on Stage 6:** The TEI generator goes directly from layout JSON + OCR Markdown to TEI-XML. PAGE-XML (Stage 4) is now generated in parallel but not yet used as TEI input. NER (Stage 5) is not yet implemented. OCR source priority: Gemini-corrected B > Gemini-corrected A > LLM-corrected C > Mistral. Metadata from doc_metadata.json (286 docs) with TESTPLAN fallback.
+**Note on Stage 6:** The rule-based TEI generator goes directly from layout JSON + OCR Markdown to TEI-XML. Produces flat structure (no div hierarchy, no lb, no entities beyond seed dict). **Stage 6a (E30)** replaces this with a Gemini Vision pipeline (default: 1 call/page, optional --refine/--consolidate) that uses overlay PNGs as key input. Document-type-specific prompts at 4 levels (layout type, pub_form, genre, language). OCR source priority: Gemini B > Gemini A > LLM C > Mistral. Metadata from doc_metadata.json (286 docs) with TESTPLAN fallback.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
@@ -54,7 +55,7 @@ Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks 
 
 **Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var. **Note:** Local GPU via `run_layout_analysis.py` is now preferred (~5s/page on RTX 4060).
 
-**Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`.
+**Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`. **Document-type-specific prompts (E30):** Since 06.03.2026, prompts are augmented with 4-level hints from `doc_metadata.json` (layout type, pub_form, genre, language) via `build_doc_hints(doc_id)`. Genre is inferred from description text via `infer_genre()` (14 genres).
 
 **Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails (~15% bad+empty). Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA. Cost: ~$1-2 for ~1,570 detect pages.
 
@@ -256,6 +257,56 @@ TEI and PAGE panels share the 3rd panel slot (mutual exclusion). Dashboard pipel
 
 ---
 
+## Stage 6a: Gemini Vision TEI Generator
+
+**Script:** `scripts/tei/tei_gemini.py`
+
+| Aspect | Details |
+|--------|---------|
+| Model | Gemini 3.1 Flash Lite Preview (`gemini-3.1-flash-lite-preview`) |
+| Input | Overlay-PNG + OCR-Markdown + Layout-JSON + doc_metadata.json |
+| Output | TEI-XML (DTA-Basisformat) with div hierarchy, lb, hi, persName, foreign, choice |
+| Approach | Default: 1 call/page. Optional: --refine (2nd call), --consolidate (doc-level) |
+| Cost | ~$0.005/page (1 call), TBD after sample run |
+| Status | Pilot (Doc 2310 successful), E30 |
+
+**Iterative Architecture:**
+
+**Default (1 call/page):** Overlay-PNG + OCR + Layout + Metadata + Known Entities + Few-Shot -> complete TEI fragment with `<div>` hierarchy, `<pb>`, `<head>`, `<p>`, `<note>`, `<lb>`, `<hi>`, `<persName>`, `<foreign>`, `<choice>`, `break="no"`. Document assembled locally (teiHeader + page TEIs).
+
+**Optional --refine:** 2nd Gemini call per page with overlay image, reviews and fixes markup quality (lb positions, entity tagging, formatting).
+
+**Optional --consolidate:** API call for document-level consolidation (cross-page footnotes, entity consistency, div merging). Without this flag, pages are assembled locally with a generated teiHeader.
+
+**Document-type-specific prompts (4 levels):**
+
+| Level | Source | Examples |
+|-------|--------|----------|
+| Layout Type | `layout_type` in doc_metadata.json | A=single-column, B=two-column, C=monograph, D=special |
+| Publication Form | `pub_form` in doc_metadata.json | journalArticle, book, bookSection, interview, encyclopedia |
+| Genre | Inferred from `description` via keyword matching | 14 genres: article, review, interview, speech, debate, newspaper, conference, preface, letter, encyclopedia, editorial, essay, monograph |
+| Language | `language` in doc_metadata.json | mono (fra/deu) or multilingual (fra/deu/ita) |
+
+Genre inference (`infer_genre()`) and hint assembly (`build_doc_hints()`) are defined in `layout_qa_gemini.py` and reused by both layout prompts and TEI prompts.
+
+**Output structure:**
+```
+output/tei_gemini/{doc_id}/
+  {doc_id}_p{NNN}.xml          # Per-page TEI fragment (default)
+  {doc_id}_p{NNN}_refined.xml  # Refined version (optional, --refine)
+  {doc_id}_final.xml           # Assembled document (local) or consolidated (--consolidate)
+  {doc_id}_manifest.json       # Timing, mode, model
+  {doc_id}_eval.json           # Comparison with reference (if available)
+```
+
+**Evaluation (--evaluate):** For documents with reference TEI (`data/referenz-tei/`), computes element-level precision/recall for div, persName, bibl, lb, note, hi, foreign, choice, figure.
+
+**Pilot results (Doc 2310, Typ A, Review, FR):** 3 pages, 54.5s total. persName recall 1.0, bibl recall 1.0, lb recall 1.0, div recall 1.0. Generated `<div type="review">`, `<bibl>` with GND reference, `<foreign>` tags, `break="no"` hyphenation. Qualitatively far superior to rule-based tei_generator.py.
+
+**Reused functions:** `load_ocr_text()`, `load_layout()`, `get_document_metadata()` from `tei_generator.py`; `ensure_overlay()`, `build_doc_hints()`, `infer_genre()` from `layout_qa_gemini.py`; `discover_doc_ids()` from `utils.py`.
+
+---
+
 ## CLI Commands
 
 ```bash
@@ -311,10 +362,20 @@ python -m scripts.layout_qa_gemini --mode detect --doc 510 # full re-detection
 python -m scripts.layout_qa_gemini --mode auto             # auto-route by quality
 python -m scripts.layout_qa_gemini --force                 # overwrite existing
 
-# Generate TEI-XML (stage 6)
+# Generate TEI-XML (stage 6, rule-based)
 python -m scripts.tei.tei_generator                      # all documents
 python -m scripts.tei.tei_generator --doc 2310           # single document
 python -m scripts.tei.tei_generator --doc 2310 --page 2  # single page
+
+# Gemini Vision TEI (stage 6a, requires GEMINI_API_KEY)
+python -m scripts.tei.tei_gemini --doc 2310              # single document (1 call/page)
+python -m scripts.tei.tei_gemini --doc 2310 --evaluate   # with reference comparison
+python -m scripts.tei.tei_gemini --sample                # 3 pilot docs (2310, 2530, 1440)
+python -m scripts.tei.tei_gemini --all                   # all 286 docs
+python -m scripts.tei.tei_gemini --doc 2310 --refine     # + 2nd call/page for quality
+python -m scripts.tei.tei_gemini --doc 2310 --consolidate # + API doc consolidation
+python -m scripts.tei.tei_gemini --force                 # overwrite existing
+python -m scripts.tei.tei_gemini --dry-run               # show prompts, no API calls
 
 # Dashboard data (stage 7)
 python -m scripts.generate_dashboard_data
@@ -370,4 +431,4 @@ Full pipeline output (`output/`) is gitignored and only available locally. For t
 
 ---
 
-*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-05*
+*Created: 2026-01-29 | Renamed from ARCHITEKTUR.md: 2026-02-25 | Updated: 2026-03-06*

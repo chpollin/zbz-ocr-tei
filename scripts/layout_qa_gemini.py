@@ -32,8 +32,8 @@ from dotenv import load_dotenv
 from PIL import Image
 
 from scripts.config import (
-    DOCLING_TO_ZBZ, GEMINI_API_KEY, GEMINI_DETECT_MODEL, GEMINI_MODEL,
-    IMAGES_DIR, LAYOUT_DIR,
+    DOCLING_TO_ZBZ, DOC_METADATA_PATH, GEMINI_API_KEY,
+    GEMINI_DETECT_MODEL, GEMINI_MODEL, IMAGES_DIR, LAYOUT_DIR,
 )
 from scripts.layout import draw_overlay_from_json
 from scripts.utils import discover_doc_ids
@@ -44,42 +44,165 @@ load_dotenv()
 # API Key aus .env (Reload nach dotenv)
 _api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
-PROMPT = """You are a strict layout QA reviewer for scanned pages from the \
-Jeanne Hersch Edition (ZBZ Zurich, 20th century academic texts, \
-primarily French/German). Your job is to AGGRESSIVELY correct mistakes.
+# ---- Dokumenttypspezifische Prompt-Hints (4 Ebenen) ----
 
-IMAGE: The overlay shows colored bounding boxes detected by Docling.
-JSON: The layout regions with labels, zbz_tags, and bounding boxes \
-(x_pct, y_pct, w_pct, h_pct as percentage of image dimensions).
+# doc_metadata.json laden (global, einmalig)
+_doc_metadata = {}
+if DOC_METADATA_PATH.exists():
+    try:
+        _raw = json.loads(DOC_METADATA_PATH.read_text(encoding="utf-8"))
+        _doc_metadata = _raw.get("documents", _raw)
+    except Exception:
+        pass
 
-Label-to-zbz_tag mapping (MUST be consistent):
-  title/section_header -> zb_heading
-  text/paragraph/list_item/table/formula -> zb_paragraph
-  footnote -> footnote
-  caption -> caption
-  page_header/page_footer -> _filter
-  picture/figure -> _skip
+# Ebene 1: Layout-Typ
+LAYOUT_TYPE_HINTS = {
+    "A": "LAYOUT: Single-column flowing text. Focus: distinguish headings from body text, detect footnotes at bottom of page.",
+    "B": "LAYOUT: TWO-COLUMN layout. CRITICAL: detect each column separately as independent text regions. Process left column first (top-to-bottom), then right column. Do NOT merge text across columns into one region. Column gutter is typically at ~50% page width.",
+    "C": "LAYOUT: Monograph/book chapter (long document, many pages). Expect: running headers at top (-> page_header/_filter), chapter headings, continuous body paragraphs. Page numbers at bottom (-> page_footer/_filter).",
+    "D": "LAYOUT: Special/complex format. Examine carefully: may contain interviews (speaker names in bold/caps), illustrations, historical print, newspaper-style multi-article pages, mixed column layouts, or unusual formatting.",
+}
 
-COMMON MISTAKES TO FIX (be aggressive):
-1. PAGE NUMBERS (e.g. "567", "12") labeled as "text" -> change to "page_footer" / _filter
-2. RUNNING HEADERS (e.g. "Analyses et comptes rendus", journal titles at top) \
-   labeled as "text" -> change to "page_header" / _filter
-3. SECTION HEADINGS (titles, author names in caps, bibliographic entries with \
-   author+title+publisher) labeled as "text" -> change to "section_header" / zb_heading
-4. AUTHOR SIGNATURES (e.g. "Jeanne HERSCH.", name at end of review) labeled as \
-   "text" -> keep as "text" but note it in issues
-5. FOOTNOTE MARKERS or footnote text at bottom of page labeled as "text" \
-   -> change to "footnote"
-6. Remove false positives (boxes around empty space, artifacts, logos)
-7. Very small regions (<2% height) that contain only a page number or header \
-   -> change to page_header/page_footer
+# Ebene 2: Publikationsform
+PUB_FORM_HINTS = {
+    "journalArticle": "FORMAT: Journal article -- expect running header with journal name or section title at top of page, page numbers at top or bottom.",
+    "book": "FORMAT: Book/monograph -- expect chapter structure, possibly table of contents, running headers with chapter title.",
+    "bookSection": "FORMAT: Contribution in edited volume -- typically starts with title + author name, then body text. May have section numbering.",
+    "brochure": "FORMAT: Brochure/pamphlet -- shorter text, may have different formatting, possibly with organizational logos.",
+    "interview": "FORMAT: INTERVIEW -- expect speaker names (often in bold, CAPS, or followed by colon/dash) alternating with response text. Detect speaker labels as section_header, NOT as regular text.",
+    "encyclopedia": "FORMAT: ENCYCLOPEDIA entry -- expect lemma heading in bold/caps, structured sub-sections (definition, biography, works, bibliography). Dense, reference-style text.",
+    "anthology": "FORMAT: Anthology contribution -- title + author header, then essay body text.",
+    "other": "FORMAT: Non-standard format -- examine layout carefully for structural patterns.",
+}
 
-RULES:
-- Do NOT change bounding box coordinates
-- DO change labels and zbz_tags aggressively when wrong
-- Set changed=true and explain WHY in change_reason
-- Score 0-100: deduct 10 points per wrong label, 5 per minor issue
-- Be thorough: check EVERY region against what you see in the image"""
+# Ebene 3: Genre (abgeleitet aus description)
+GENRE_HINTS = {
+    "newspaper": "GENRE: NEWSPAPER PAGE -- multiple independent articles on one page, each with its own heading. Detect article boundaries carefully. Very complex layout possible (mixed column widths, boxes, adverts).",
+    "interview": "GENRE: INTERVIEW -- speaker names appear before each turn (often bold, CAPS, or followed by colon/dash). Each speaker turn should be detected as a separate text region. Speaker labels should be section_header.",
+    "review": "GENRE: BOOK REVIEW -- typically starts with a bibliographic entry (author, title, publisher, year, pages) as a heading block. The review text follows as body paragraphs.",
+    "debate": "GENRE: DEBATE/ROUNDTABLE -- multiple speakers, similar to interview but with more participants. Speaker names mark each contribution.",
+    "speech": "GENRE: SPEECH/LECTURE transcript -- usually continuous flowing text with few structural divisions. May have been transcribed from oral presentation.",
+    "conference": "GENRE: CONFERENCE PAPER -- may have abstract block, section numbering, extensive footnotes. Possibly bilingual (abstract in another language).",
+    "preface": "GENRE: PREFACE/FOREWORD -- short introductory meta-text. May reference the main work's author and title.",
+    "letter": "GENRE: LETTER -- has salutation at top, body text, and closing formula with signature. May have date and addressee header.",
+    "encyclopedia": "GENRE: ENCYCLOPEDIA ENTRY -- structured with lemma heading, sub-sections for definition, biography, bibliography. Dense reference-style text with cross-references.",
+    "editorial": "GENRE: EDITORIAL -- short opinion text, usually at beginning of journal issue.",
+}
+
+# Ebene 4: Sprach-Hints
+LANGUAGE_HINTS = {
+    "fra": "LANGUAGE: French text -- watch for guillemets (<< >>), accents (e/e/e), spaces before :;?! (French typographic convention).",
+    "deu": "LANGUAGE: German text -- watch for umlauts (ae/oe/ue), eszett (ss), long compound words.",
+    "eng": "LANGUAGE: English text.",
+    "ita": "LANGUAGE: Italian text -- watch for accents and apostrophes.",
+    "multilingual": "LANGUAGE: MULTILINGUAL document ({languages}) -- text switches between languages. Different sections may have different formatting. Watch for language boundaries.",
+}
+
+
+def infer_genre(description, pub_form):
+    """Genre aus Beschreibung + pub_form ableiten."""
+    if not description:
+        return None
+    desc = description.lower()
+
+    # pub_form hat Vorrang fuer bestimmte Typen
+    if pub_form == "interview":
+        return "interview"
+    if pub_form == "encyclopedia":
+        return "encyclopedia"
+
+    # Keyword-Matching auf description
+    if "newspaper" in desc or "journal de gen" in desc or "zeitung" in desc:
+        return "newspaper"
+    if "interview" in desc or "entretien" in desc:
+        return "interview"
+    if "review" in desc or "compte rendu" in desc or "rezension" in desc or "book review" in desc:
+        return "review"
+    if "roundtable" in desc or "debate" in desc or "discussion" in desc or "dialogue" in desc:
+        return "debate"
+    if "speech" in desc or "lecture" in desc or "vortrag" in desc or "address" in desc or "rede" in desc:
+        return "speech"
+    if "conference" in desc or "congress" in desc or "proceedings" in desc or "colloquium" in desc:
+        return "conference"
+    if "preface" in desc or "foreword" in desc or "introduction" in desc or "vorwort" in desc:
+        return "preface"
+    if "letter" in desc or "brief" in desc:
+        return "letter"
+    if "encyclopedia" in desc or "lexicon" in desc or "dictionnaire" in desc:
+        return "encyclopedia"
+    if "editorial" in desc:
+        return "editorial"
+
+    return None
+
+
+def build_doc_hints(doc_id):
+    """Dokumenttypspezifische Prompt-Erweiterung zusammenbauen."""
+    meta = _doc_metadata.get(str(doc_id), {})
+    if not meta:
+        return ""
+
+    hints = []
+
+    # Ebene 1: Layout-Typ
+    layout_type = meta.get("layout_type", "")
+    if layout_type in LAYOUT_TYPE_HINTS:
+        hints.append(LAYOUT_TYPE_HINTS[layout_type])
+
+    # Ebene 2: Publikationsform
+    pub_form = meta.get("pub_form", "")
+    if pub_form in PUB_FORM_HINTS:
+        hints.append(PUB_FORM_HINTS[pub_form])
+
+    # Ebene 3: Genre
+    genre = infer_genre(meta.get("description", ""), pub_form)
+    if genre and genre in GENRE_HINTS:
+        hints.append(GENRE_HINTS[genre])
+
+    # Ebene 4: Sprache
+    language = meta.get("language", "")
+    if "/" in language:
+        hint = LANGUAGE_HINTS["multilingual"].replace("{languages}", language)
+        hints.append(hint)
+    elif language in LANGUAGE_HINTS:
+        hints.append(LANGUAGE_HINTS[language])
+
+    if not hints:
+        return ""
+
+    return "\n\nDOCUMENT-SPECIFIC CONTEXT:\n" + "\n".join(hints)
+
+PROMPT = """\
+You review layout regions on scanned pages (Jeanne Hersch Edition, ZBZ Zurich, \
+academic French/German texts).
+
+INPUT: Overlay image with colored bounding boxes + JSON with regions.
+
+LABEL MAPPING (enforce strictly):
+  section_header -> zb_heading | text -> zb_paragraph | footnote -> footnote
+  caption -> caption | page_header/page_footer -> _filter | picture -> _skip
+
+TASK 1 — FIX WRONG LABELS:
+- Page numbers ("567") as text -> page_footer/_filter
+- Running headers (journal name at top) as text -> page_header/_filter
+- Headings, titles, bibliographic entries as text -> section_header/zb_heading
+- Footnotes at page bottom as text -> footnote
+- Empty/artifact regions -> _filter
+
+TASK 2 — ADD MISSING REGIONS:
+Look at the image for visible text NOT covered by any existing box. Add with:
+- bbox as page % (x_pct, y_pct, w_pct, h_pct). All values 0-100.
+- page_header: ALWAYS y_pct 0-5. page_footer: ALWAYS y_pct 88-100.
+- text: first few visible words (max 50 chars)
+- changed: true, change_reason: "ADDED: ..."
+Check especially: top/bottom of page, gaps between boxes, column tops.
+
+OUTPUT:
+- Return ALL regions (existing unchanged + corrected + new)
+- Existing regions: keep original text and bbox EXACTLY as provided
+- Only change label and zbz_tag on existing regions
+- changed=true ONLY for label changes or new regions
+- Score 0-100: deduct 10 per wrong or missing label"""
 
 # JSON Schema fuer Structured Output
 QA_SCHEMA = {
@@ -174,6 +297,18 @@ DETECT_SCHEMA = {
 }
 
 
+def _validate_bbox(bbox):
+    """Clip bbox coordinates to valid 0-100 range."""
+    if not bbox:
+        return bbox
+    return {
+        "x_pct": round(max(0, min(100, bbox.get("x_pct", 0))), 3),
+        "y_pct": round(max(0, min(100, bbox.get("y_pct", 0))), 3),
+        "w_pct": round(max(0, min(100, bbox.get("w_pct", 0))), 3),
+        "h_pct": round(max(0, min(100, bbox.get("h_pct", 0))), 3),
+    }
+
+
 def compute_page_quality(layout_data):
     """Docling-Layout-Qualitaet bewerten.
 
@@ -222,6 +357,21 @@ def get_client():
         sys.exit(1)
 
     return genai.Client(api_key=_api_key)
+
+
+def _extract_response_text(response):
+    """Extract text from Gemini response, handling thought_signature parts."""
+    if response.text is not None:
+        return response.text
+    # Fallback: manually search for text parts in candidates
+    try:
+        for candidate in response.candidates:
+            for part in candidate.content.parts:
+                if hasattr(part, "text") and part.text:
+                    return part.text
+    except (AttributeError, IndexError, TypeError):
+        pass
+    return None
 
 
 def ensure_overlay(doc_id, page_str):
@@ -273,27 +423,104 @@ def qa_page(client, doc_id, page_str, force=False):
     # Bild laden
     image = Image.open(overlay_path)
 
-    # Layout-JSON als Text (nur Regionen)
-    layout_text = json.dumps(layout_data.get("regions", []), indent=2)
+    # Layout-JSON als Text (nur Regionen, Text auf 50 Zeichen kuerzen um
+    # Gemini Recitation-Filter zu vermeiden)
+    regions = layout_data.get("regions", [])
+    truncated_regions = []
+    for r in regions:
+        tr = dict(r)
+        if "text" in tr and len(tr["text"]) > 50:
+            tr["text"] = tr["text"][:50] + "..."
+        truncated_regions.append(tr)
+    layout_text = json.dumps(truncated_regions, indent=2)
 
-    # An Gemini senden
+    # Typspezifische Prompt-Erweiterung
+    doc_hints = build_doc_hints(doc_id)
+    full_prompt = PROMPT + doc_hints + "\n\nLayout JSON:\n" + layout_text
+
+    # An Gemini senden (mit 1 Retry bei leerer Antwort)
     t0 = time.time()
     try:
-        response = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=[image, PROMPT + "\n\nLayout JSON:\n" + layout_text],
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=QA_SCHEMA,
-            ),
+        config = types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=QA_SCHEMA,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
         )
+        for attempt in range(2):
+            response = client.models.generate_content(
+                model=GEMINI_MODEL,
+                contents=[image, full_prompt],
+                config=config,
+            )
+            text = _extract_response_text(response)
+            if text is not None:
+                break
+            if attempt == 0:
+                print(f"  RETRY: {doc_id}_p{page_str} (empty response)")
         elapsed = time.time() - t0
 
-        result = json.loads(response.text)
+        if text is None:
+            raise ValueError("Gemini returned empty response after retry")
+        result = json.loads(text)
     except Exception as e:
         elapsed = time.time() - t0
         print(f"  FEHLER: {doc_id}_p{page_str}: {e} ({elapsed:.1f}s)")
         return None
+
+    # -- Post-Processing: Text-Schutz + Bbox-Fixes --
+
+    # Index der Original-Regionen nach Bbox-Schluessel
+    def _bbox_key(r):
+        b = r.get("bbox", {})
+        return (b.get("x_pct"), b.get("y_pct"), b.get("w_pct"), b.get("h_pct"))
+
+    original_text = {_bbox_key(r): r.get("text", "") for r in regions}
+
+    valid_regions = []
+    for region in result.get("regions", []):
+        bbox = region.get("bbox")
+        if bbox:
+            region["bbox"] = _validate_bbox(bbox)
+            if region["bbox"]["w_pct"] <= 0 or region["bbox"]["h_pct"] <= 0:
+                continue
+
+        is_added = region.get("change_reason", "").startswith("ADDED")
+
+        # Text-Schutz: Original-Text wiederherstellen (ausser bei ADDED)
+        if not is_added:
+            key = _bbox_key(region)
+            if key in original_text:
+                region["text"] = original_text[key]
+
+        # Bbox-Anker: ADDED page_header muss oben sein, page_footer unten
+        if is_added and bbox:
+            label = region.get("label", "")
+            if label == "page_header" and region["bbox"]["y_pct"] > 10:
+                region["bbox"]["y_pct"] = 2.0
+                region["bbox"]["h_pct"] = 2.0
+            elif label == "page_footer" and region["bbox"]["y_pct"] < 85:
+                region["bbox"]["y_pct"] = 93.0
+                region["bbox"]["h_pct"] = 3.0
+
+        valid_regions.append(region)
+    result["regions"] = valid_regions
+
+    # -- Changes-Summary: Label-Transitions zaehlen --
+    changes_summary = {}
+    added_count = 0
+    for region in valid_regions:
+        reason = region.get("change_reason", "")
+        if not region.get("changed"):
+            continue
+        if reason.startswith("ADDED"):
+            added_count += 1
+        elif "→" in reason or "->" in reason:
+            # z.B. "LABEL CORRECTION: text→section_header"
+            changes_summary[reason] = changes_summary.get(reason, 0) + 1
+        else:
+            changes_summary[reason] = changes_summary.get(reason, 0) + 1
+    if added_count:
+        changes_summary["ADDED"] = added_count
 
     # Metadaten hinzufuegen
     result["doc_id"] = doc_id
@@ -301,6 +528,8 @@ def qa_page(client, doc_id, page_str, force=False):
     result["elapsed_seconds"] = round(elapsed, 2)
     result["model"] = GEMINI_MODEL
     result["source"] = "gemini"
+    if changes_summary:
+        result["changes_summary"] = changes_summary
 
     # Speichern
     gemini_path.parent.mkdir(parents=True, exist_ok=True)
@@ -338,19 +567,33 @@ def detect_page(client, doc_id, page_str, force=False):
     image = Image.open(img_path)
     img_w, img_h = image.size
 
+    # Typspezifische Prompt-Erweiterung
+    doc_hints = build_doc_hints(doc_id)
+    full_prompt = DETECT_PROMPT + doc_hints
+
     # An Gemini senden
     t0 = time.time()
     try:
-        response = client.models.generate_content(
-            model=GEMINI_DETECT_MODEL,
-            contents=[image, DETECT_PROMPT],
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=DETECT_SCHEMA,
-            ),
+        config = types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=DETECT_SCHEMA,
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
         )
+        for attempt in range(2):
+            response = client.models.generate_content(
+                model=GEMINI_DETECT_MODEL,
+                contents=[image, full_prompt],
+                config=config,
+            )
+            text = _extract_response_text(response)
+            if text is not None:
+                break
+            if attempt == 0:
+                print(f"  RETRY: {doc_id}_p{page_str} (empty response)")
         elapsed = time.time() - t0
-        raw_result = json.loads(response.text)
+        if text is None:
+            raise ValueError("Gemini returned empty response after retry")
+        raw_result = json.loads(text)
     except Exception as e:
         elapsed = time.time() - t0
         print(f"  FEHLER: {doc_id}_p{page_str}: {e} ({elapsed:.1f}s)")
@@ -373,6 +616,12 @@ def detect_page(client, doc_id, page_str, force=False):
             "bbox": gemini_box_to_pct(box_2d),
         })
 
+    # Label-Verteilung fuer Detect-Modus
+    label_counts = {}
+    for r in regions:
+        lbl = r.get("label", "text")
+        label_counts[lbl] = label_counts.get(lbl, 0) + 1
+
     result = {
         "doc_id": doc_id,
         "page": int(page_str),
@@ -385,6 +634,7 @@ def detect_page(client, doc_id, page_str, force=False):
         "source": "gemini-detect",
         "page_orientation": raw_result.get("page_orientation", "unknown"),
         "num_columns": raw_result.get("num_columns", 1),
+        "label_counts": label_counts,
     }
 
     # Speichern
@@ -485,6 +735,15 @@ def process_document(client, doc_id, force=False, mode="qa"):
         issue_counts[issue] = issue_counts.get(issue, 0) + 1
     common_issues = sorted(issue_counts.keys(), key=lambda k: -issue_counts[k])[:5]
 
+    # Aggregierte Changes-Summary und Label-Counts
+    agg_changes = {}
+    agg_labels = {}
+    for r in results:
+        for key, cnt in r.get("changes_summary", {}).items():
+            agg_changes[key] = agg_changes.get(key, 0) + cnt
+        for key, cnt in r.get("label_counts", {}).items():
+            agg_labels[key] = agg_labels.get(key, 0) + cnt
+
     model = GEMINI_DETECT_MODEL if mode in ("detect", "auto") else GEMINI_MODEL
     summary = {
         "doc_id": doc_id,
@@ -499,6 +758,10 @@ def process_document(client, doc_id, force=False, mode="qa"):
         "common_issues": common_issues,
         "model": model,
     }
+    if agg_changes:
+        summary["changes_summary"] = agg_changes
+    if agg_labels:
+        summary["label_counts"] = agg_labels
 
     summary_path = layout_dir / "summary_gemini.json"
     summary_path.parent.mkdir(parents=True, exist_ok=True)

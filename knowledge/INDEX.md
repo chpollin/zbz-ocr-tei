@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-03-05
+updated: 2026-03-06
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -76,6 +76,9 @@ JOURNAL   <-- chronological, references all docs
 | Gemini Classify (Stage 1a) | Visual classification of all 286 docs (type, language, pub_form, title, author) | [PIPELINE](PIPELINE.md) |
 | doc_metadata.json | Central metadata file from Gemini classification, TEI-mappable | [PIPELINE](PIPELINE.md) |
 | Online-Demo (E28) | 4 DEMO docs on GitHub Pages with fallback paths in shared.js | [PIPELINE](PIPELINE.md) |
+| Gemini Vision TEI (E30) | 3-Pass TEI pipeline with overlay PNGs: Structure -> Enrichment -> Validation | [PIPELINE](PIPELINE.md) |
+| Document-type-specific Prompts (E30) | 4-level hint system (layout type, pub_form, genre, language) for layout + TEI prompts | [PIPELINE](PIPELINE.md) |
+| Genre Inference | Automatic classification into 14 genres via keyword matching on description text | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -120,4 +123,4 @@ knowledge/
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-05*
+*Created: 2026-01-29 | Updated: 2026-03-06*

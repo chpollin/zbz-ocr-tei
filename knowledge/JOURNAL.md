@@ -14,6 +14,32 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-06 | Layout-QA Full Run + Overlay-Generator (Session 12)
+
+72. Layout-QA `changes_summary` Logging: `layout_qa_gemini.py` erweitert -- QA-Modus loggt Label-Transitions pro Seite (z.B. `text->section_header: 2, ADDED: 1`), Detect-Modus loggt `label_counts` pro Seite. Document-Summary aggregiert beides ueber alle Seiten in `summary_gemini.json`.
+
+73. Full Re-Run mit `--force`: Alle 4'152 Seiten (286 Docs) werden mit aktuellem Prompt neu verarbeitet (auto-Modus: QA fuer gute/warning Seiten, Detect fuer bad/empty). Bisherige Ergebnisse ueberschrieben. Fehlerrate ~1% (Invalid Unicode-Escape, Empty Response). Durchschnitt ~6s/Seite, ~10 Seiten/Min.
+
+74. Overlay-Generator Script: `scripts/generate_layout_overlays.py` -- Batch-Erzeugung von Layout-Overlay-PNGs fuer Gemini-Ergebnisse. Nutzt bestehende `draw_overlay_from_json()`. Output: `output/layout/{doc_id}/{doc_id}_p{NNN}_overlay_gemini.png`. Optional: Side-by-side Compare-Bilder (Docling links, Gemini rechts).
+
+---
+
+## 2026-03-06 | Gemini Vision TEI Generator + Dokumenttypspezifische Prompts (Session 11)
+
+67. Dokumenttypspezifische Layout-Prompts: `layout_qa_gemini.py` erweitert mit 4-Ebenen-Hint-System basierend auf `doc_metadata.json`. Ebene 1: Layout-Typ (A/B/C/D), Ebene 2: Publikationsform (8 Werte), Ebene 3: Genre (14 Genres aus description via Keyword-Matching: article, review, interview, speech, debate, newspaper, conference, preface, letter, encyclopedia, editorial, essay, monograph), Ebene 4: Sprache (mono/multilingual mit Sprachliste). Funktionen `infer_genre()` und `build_doc_hints()` exportiert fuer Wiederverwendung in tei_gemini.py.
+
+68. Genre-Analyse des Gesamtkorpus: 133 Standard-Artikel, 47 Essays, 26 Vortraege/Reden, 13 Interviews, 13 Konferenz-Beitraege, 11 Rezensionen, 10 Zeitungsseiten, 8 Debatten/Roundtables, 6 Vorworte, 3 Briefe, 2 Enzyklopaedie-Eintraege, 39 mehrsprachige Dokumente. Deutlich mehr Diversitaet als die 4 Layout-Typen.
+
+69. Neuer Gemini Vision TEI Generator: `scripts/tei/tei_gemini.py` (~550 Zeilen). 3-Pass-Pipeline: Pass 1 (Struktur: Overlay-PNG + OCR + Layout + Metadata -> TEI-Skelett mit div-Hierarchie, pb, head, p, note), Pass 2 (Anreicherung: Overlay + Pass-1-TEI + Few-Shot-Snippets -> TEI mit lb, hi, persName, foreign, choice, break="no"), Pass 3 (Validierung: Alle Seiten-TEIs -> finales Dokument mit teiHeader + facsimile). Dokumenttypspezifische TEI-Prompts (12 Genre-Prompts: review, interview, debate, encyclopedia, speech, conference, preface, letter, newspaper, editorial, article, monograph). CLI: --doc, --sample, --all, --pass, --evaluate, --force, --dry-run.
+
+70. Pilot-Ergebnis Doc 2310 (Typ A, Review, FR): 3 Seiten, 54.5s gesamt, alle 3 Passes erfolgreich, valides XML. Evaluation gegen Referenz-TEI: persName Recall 1.0, bibl Recall 1.0, lb Recall 1.0, div Recall 1.0. Generiertes TEI enthaelt div type="review", bibl mit GND-Referenz, foreign-Tags, break="no" Silbentrennung. Qualitativ deutlich besser als regelbasierter tei_generator.py.
+
+71. config.py: `TEI_GEMINI_DIR = OUTPUT_DIR / "tei_gemini"` hinzugefuegt. Output-Struktur: `output/tei_gemini/{doc_id}/{doc_id}_p{NNN}_pass1.xml`, `_pass2.xml`, `_final.xml`, `_manifest.json`, `_eval.json`.
+
+**Decisions:** E30 (Gemini Vision TEI + typspezifische Prompts). **Open:** Pilot auf Doc 2530 (B) und 1440 (D) ausstehend.
+
+---
+
 ## 2026-03-05 | Frontend Refactoring (Session 10)
 
 61. P0 Bug Fix: ZBZ.ZBZ.highlightXml -> ZBZ.highlightXml in tei-viewer.js + page-viewer.js (Doppel-Namespace verursachte Runtime-Error bei XML-Ansicht).

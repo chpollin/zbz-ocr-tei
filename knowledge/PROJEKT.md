@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-05
+updated: 2026-03-06
 tags: [zbz-ocr-tei, project, ecosystem, vision]
 status: active
 ---
@@ -61,7 +61,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M1 | OCR validated | >=93% accuracy all types | Done: 93.58% (Mistral), dashboard UI |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done: 286 docs, 4,091 PAGE-XML + 286 METS |
 | M3 | NER + GND | Entity recall >70%, GND linking >60% | **Pending** (Phase 3) |
-| M4 | TEI-XML | DTA-compliant TEI, schema-valid | Done (without NER): 285 docs, 4,117 TEI-XML files |
+| M4 | TEI-XML | DTA-compliant TEI, schema-valid | Done (rule-based, without NER): 285 docs. Gemini Vision TEI (E30): Pilot successful |
 | M5 | Production run | 286 docs processed, spot-check QA passed | Pending (Phase 6) |
 
 ### Dependencies
@@ -72,7 +72,7 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-## Component Status (05.03.2026)
+## Component Status (06.03.2026)
 
 | Component | Status | Details |
 |-----------|--------|---------|
@@ -91,9 +91,10 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Dashboard redesign | Done | `docs/` with shared.css/js, index.html, viewer.html |
 | Dashboard data | Done | `scripts/generate_dashboard_data.py` -> dashboard.json |
 | Layout analysis (Docling) | Done | 286/286 docs, 4,152 layout JSONs. Quality: 75% good, 10% warning, 12% bad, 3% empty |
-| Layout QA (Gemini) | Done | `layout_qa_gemini.py --mode qa`: label corrections (Flash Lite, E25) |
+| Layout QA (Gemini) | Done | `layout_qa_gemini.py --mode qa`: label corrections (Flash Lite, E25). Typspezifische Prompts (E30) |
 | Layout Detect (Gemini) | Done | `layout_qa_gemini.py --mode detect`: full re-detection for bad pages (Flash Lite, E26). Tested on Doc 510, 900 |
-| TEI generator | Done | `scripts/tei/tei_generator.py`, 4,117 TEI-XML files (285 docs), DTA-Basisformat with layout + doc_metadata |
+| TEI generator (rule-based) | Done | `scripts/tei/tei_generator.py`, 4,117 TEI-XML files (285 docs), flat structure |
+| TEI generator (Gemini Vision) | Pilot | `scripts/tei/tei_gemini.py`, 1 Call/Seite (E30), Doc 2310 successful, typspez. Prompts |
 | PAGE-XML generator | Done | `scripts/layout/page_xml_generator.py` + `mets_generator.py`, 286 docs, 4,091 PAGE-XML + 286 METS |
 | Document classification | Done | `scripts/classify_docs.py`, Gemini 3.1 Flash Lite, 286/286 docs (E27) |
 | Gemini OCR correction | Sample | `scripts/gemini_ocr_correct.py`, 5 pilot docs, CER 3.97% -> 3.30% (E29) |
@@ -125,6 +126,7 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 | Mistral OCR (Azure, 286 docs) | 6-15 USD |
 | LLM correction (Haiku 4.5, 286 docs) | ~35 USD |
 | Gemini Layout QA + Detect | ~12 USD |
+| Gemini TEI Generation (286 docs) | TBD (Flash Lite, ~$5-20 est.) |
 | GPU cloud (optional) | ~10-20 USD |
 
 ---
@@ -138,4 +140,4 @@ M0 (Images) ──► M1 (OCR) ──► M2 (Layout+PAGE-XML) ──► M3 (NER+
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-05*
+*Created: 2026-02-18 | Updated: 2026-03-06*

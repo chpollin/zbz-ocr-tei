@@ -16,7 +16,7 @@
         hasDeepseek: false,
         hasLlm: false,
         layoutVisible: false,
-        layoutSource: 'docling',
+        layoutSource: 'auto',
         teiVisible: false,
         pageVisible: false,
     };
@@ -282,7 +282,7 @@
     async function renderLayout() {
         if (!state.layoutVisible) return;
 
-        var data = await ZBZ.fetchLayoutData(state.docId, state.page, state.layoutSource);
+        var data = await ZBZ.fetchLayoutData(state.docId, state.page);
 
         layoutOverlay.innerHTML = '';
 
@@ -294,15 +294,19 @@
 
         var colors = ZBZ.LAYOUT_COLORS;
         var defaultColor = { stroke: '#6b7280', fill: 'rgba(107,114,128,0.08)', label: '?' };
-
-        var isGemini = state.layoutSource === 'gemini';
+        var isGemini = data.source === 'gemini' || data.source === 'gemini-detect';
 
         data.regions.forEach(function (region) {
             if (!region.bbox) return;
 
             var b = region.bbox;
             var color = colors[region.zbz_tag] || defaultColor;
-            var changed = isGemini && region.changed;
+            // Only highlight as "changed" if the label was actually changed
+            // (not just OCR text corrections)
+            var changed = isGemini && region.changed &&
+                region.change_reason &&
+                !/^Correct(ed|ing) (OCR |text |garbled |corrupted )/i.test(region.change_reason) &&
+                !/^(Cleaned up|Fixing OCR)/i.test(region.change_reason);
 
             var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
             rect.setAttribute('x', b.x_pct);
@@ -346,15 +350,6 @@
     }
 
     layoutToggle.addEventListener('click', function () { toggleLayout(); });
-
-    // ---- Layout Source Toggle ----
-    var layoutSourceSelect = ZBZ.$('#layout-source');
-    layoutSourceSelect.addEventListener('change', function () {
-        state.layoutSource = layoutSourceSelect.value;
-        if (state.layoutVisible) {
-            renderLayout();
-        }
-    });
 
     // ---- TEI Panel ----
     var teiPanel = ZBZ.$('#tei-panel');
