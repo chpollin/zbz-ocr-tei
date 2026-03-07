@@ -909,10 +909,82 @@ def assemble_document(
     # (ausserhalb <div>) in <div type="text"> einwickeln
     result = _fix_orphaned_body_children(result)
 
+    # Post-Assembly Fix: Schema-Verletzungen nach Assembly korrigieren
+    result = _fix_post_assembly_schema(result)
+
     return result
 
 
-def _fix_orphaned_body_children(xml_text: str) -> str:
+def _fix_post_assembly_schema(xml_text: str) -> str:
+    """Post-Assembly-Fixes fuer RelaxNG-Schema-Verletzungen.
+
+    Fix A: <graphic> ohne url-Attribut -> url="unknown" hinzufuegen
+    Fix B: <p> innerhalb <head> -> Inhalt entpacken (Text beibehalten)
+    Fix C: <epigraph> nach Content in <div> -> Inhalt entpacken (divTop-Regel)
+    """
+    try:
+        ET.register_namespace("", TEI_NS)
+        tree = ET.fromstring(xml_text)
+
+        # Fix A: <graphic> ohne url -> url="unknown"
+        for graphic in tree.iter(f"{{{TEI_NS}}}graphic"):
+            if not graphic.get("url"):
+                graphic.set("url", "unknown")
+
+        # Fix B: <p> innerhalb <head> -> Inhalt als Text in <head>
+        for head in list(tree.iter(f"{{{TEI_NS}}}head")):
+            ps_in_head = head.findall(f"{{{TEI_NS}}}p")
+            if not ps_in_head:
+                continue
+            for p in ps_in_head:
+                # p-Inhalt (Text + Kinder) vor dem <p> einfuegen
+                idx = list(head).index(p)
+                p_text = p.text or ""
+                p_children = list(p)
+                # Text vor dem p anhaengen
+                if idx == 0:
+                    head.text = (head.text or "") + p_text
+                else:
+                    prev = list(head)[idx - 1]
+                    prev.tail = (prev.tail or "") + p_text
+                # Kinder des <p> nach oben verschieben
+                for j, child in enumerate(p_children):
+                    head.insert(idx + j, child)
+                # Tail des <p> an letztes verschobenes Kind oder head.text
+                p_tail = p.tail or ""
+                if p_children:
+                    last = p_children[-1]
+                    last.tail = (last.tail or "") + p_tail
+                elif idx == 0:
+                    head.text = (head.text or "") + p_tail
+                else:
+                    prev = list(head)[idx - 1]
+                    prev.tail = (prev.tail or "") + p_tail
+                head.remove(p)
+
+        # Fix C: <epigraph> nach Content in <div> -> entpacken
+        for div in list(tree.iter(f"{{{TEI_NS}}}div")):
+            children = list(div)
+            any_content = False
+            for child in children:
+                tag = child.tag.replace(f"{{{TEI_NS}}}", "")
+                if tag == "epigraph" and any_content:
+                    idx = list(div).index(child)
+                    inner = list(child)
+                    # Epigraph-Text an erstes Kind oder als eigenes <p>
+                    epi_text = (child.text or "").strip()
+                    div.remove(child)
+                    for j, ic in enumerate(inner):
+                        div.insert(idx + j, ic)
+                elif tag not in ("pb", "head"):
+                    any_content = True
+
+        return ET.tostring(tree, encoding="unicode", xml_declaration=True)
+    except Exception:
+        return xml_text
+
+
+
     """Wickelt verwaiste Block-Elemente in <body> und <div> in Sub-<div> ein.
 
     TEI-Regel: wenn ein <div> oder <body> bereits <div>-Kinder hat,
