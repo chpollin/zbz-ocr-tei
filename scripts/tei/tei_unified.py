@@ -481,10 +481,17 @@ def fix_gemini_tei(xml_fragment: str) -> str:
     3. <sp> nach <p>/<figure>/<epigraph> -> split in sub-divs
     4. Entity Re-Annotation: fehlende KNOWN_ENTITIES nachtaggen
     """
-    # Fix -1: <ab> mit <p> darin -> entferne <ab>-Wrapper, behalte <p>
+    # Fix -1: <ab> mit <p> darin -> entferne <ab>-Wrapper, behalte Inhalt
+    # Robuster: matche <ab...>...</ab> und entferne nur wenn <p> drin ist
+    def _unwrap_ab(m):
+        inner = m.group(1)
+        if "<p" in inner or "<p>" in inner:
+            return inner
+        return m.group(0)  # kein <p> -> <ab> behalten
+
     xml_fragment = re.sub(
-        r'<ab[^>]*>\s*((?:<p[^>]*>.*?</p>\s*)+)</ab>',
-        lambda m: m.group(1),
+        r'<ab[^>]*>(.*?)</ab>',
+        _unwrap_ab,
         xml_fragment,
         flags=re.DOTALL,
     )
@@ -532,6 +539,13 @@ def fix_gemini_tei(xml_fragment: str) -> str:
                 if tag == "head" and any_content:
                     # Wandle <head> in <p> um
                     child.tag = f"{{{TEI_NS}}}p"
+                elif tag == "epigraph" and any_content:
+                    # <epigraph> nach Content -> entpacken (innere Elemente)
+                    idx = list(div).index(child)
+                    inner = list(child)
+                    div.remove(child)
+                    for j, ic in enumerate(inner):
+                        div.insert(idx + j, ic)
                 elif tag in ("pb",):
                     pass  # pb zaehlt nicht als Content
                 else:
@@ -599,6 +613,38 @@ def fix_gemini_tei(xml_fragment: str) -> str:
                 if div.get("type"):
                     div.set("n", "1")
                     del div.attrib["type"]
+
+        # Fix 3b: Lose Inline-Elemente direkt in <div> -> in <p> einwickeln
+        # TEI erlaubt kein <lb>/<persName>/<orgName> als direktes Kind von <div>
+        inline_tags = {"lb", "persName", "orgName", "placeName", "hi",
+                       "foreign", "ref", "date", "num"}
+        for div in list(root.iter(f"{{{TEI_NS}}}div")):
+            children = list(div)
+            # Sammle zusammenhaengende Inline-Gruppen
+            groups = []
+            current = []
+            current_start = None
+            for i, child in enumerate(children):
+                tag = child.tag.replace(f"{{{TEI_NS}}}", "")
+                if tag in inline_tags:
+                    if current_start is None:
+                        current_start = i
+                    current.append(child)
+                else:
+                    if current:
+                        groups.append((current_start, current))
+                        current = []
+                        current_start = None
+            if current:
+                groups.append((current_start, current))
+
+            for start_idx, elems in reversed(groups):
+                wrap_p = ET.Element(f"{{{TEI_NS}}}p")
+                wrap_p.tail = "\n"
+                for e in elems:
+                    div.remove(e)
+                    wrap_p.append(e)
+                div.insert(start_idx, wrap_p)
 
         # Zurueck zu String, root-Wrapper entfernen
         ET.register_namespace("", TEI_NS)
@@ -837,7 +883,84 @@ def assemble_document(
     lines.append("  </text>")
     lines.append("</TEI>")
 
-    return "\n".join(lines)
+    result = "\n".join(lines)
+
+    # Post-Assembly Fix: verwaiste <p>/<figure>/<note> direkt in <body>
+    # (ausserhalb <div>) in <div type="text"> einwickeln
+    result = _fix_orphaned_body_children(result)
+
+    return result
+
+
+def _fix_orphaned_body_children(xml_text: str) -> str:
+    """Wickelt verwaiste Block-Elemente in <body> und <div> in Sub-<div> ein.
+
+    TEI-Regel: wenn ein <div> oder <body> bereits <div>-Kinder hat,
+    duerfen keine <p>/<figure>/<note>/<sp> etc. als Geschwister stehen.
+    Diese werden in <div type='text'> eingewickelt.
+    """
+    try:
+        import xml.etree.ElementTree as ET
+        TEI_NS = "http://www.tei-c.org/ns/1.0"
+        ET.register_namespace("", TEI_NS)
+
+        tree = ET.fromstring(xml_text)
+
+        # Fix fuer body UND alle divs
+        containers = [tree.find(f".//{{{TEI_NS}}}body")]
+        containers.extend(tree.iter(f"{{{TEI_NS}}}div"))
+
+        for container in containers:
+            if container is None:
+                continue
+            children = list(container)
+
+            # Hat der Container sowohl <div> als auch Block-Elemente?
+            has_div = any(
+                c.tag == f"{{{TEI_NS}}}div" for c in children
+            )
+            block_tags = {"p", "figure", "note", "sp", "epigraph", "lg",
+                          "table", "list", "ab", "bibl"}
+            has_blocks = any(
+                c.tag.replace(f"{{{TEI_NS}}}", "") in block_tags
+                for c in children
+            )
+
+            if not (has_div and has_blocks):
+                continue
+
+            # Sammle zusammenhaengende Orphan-Gruppen
+            groups = []
+            current_group = []
+            current_start = None
+            for i, child in enumerate(children):
+                tag = child.tag.replace(f"{{{TEI_NS}}}", "")
+                if tag in block_tags:
+                    if current_start is None:
+                        current_start = i
+                    current_group.append(child)
+                else:
+                    if current_group:
+                        groups.append((current_start, current_group))
+                        current_group = []
+                        current_start = None
+            if current_group:
+                groups.append((current_start, current_group))
+
+            # Ersetze jede Gruppe durch ein <div type="text">
+            for start_idx, elems in reversed(groups):
+                wrap_div = ET.Element(f"{{{TEI_NS}}}div")
+                wrap_div.set("type", "text")
+                wrap_div.text = "\n"
+                wrap_div.tail = "\n"
+                for e in elems:
+                    container.remove(e)
+                    wrap_div.append(e)
+                container.insert(start_idx, wrap_div)
+
+        return ET.tostring(tree, encoding="unicode", xml_declaration=True)
+    except Exception:
+        return xml_text
 
 
 # ---------------------------------------------------------------------------

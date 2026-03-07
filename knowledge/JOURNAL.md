@@ -52,6 +52,10 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 85. Recall-Ergebnisse nach Fixes: Doc 2310 (Review) stabil exzellent: persName 1.0, bibl 1.0, hi 0.94, lb 0.83. Doc 1440 (Interview): speaker 0.63->0.76 (+0.13), bibl 0.5->1.0 (+0.5), lb 1.0. persName-"Regression" (0.54->0.24) ist Artefakt: Referenz-TEI hat 46 leere `<persName>` in `<speaker>`-Tags (Konvention), tatsaechlicher Inline-persName-Recall = 1.0.
 
+86. Production Run gestartet (286 Docs, Gemini 3.1 Flash Lite, ~$17). Erste 18 Docs: 5 INVALID. 3 neue Fix-Typen in `tei_unified.py` implementiert: (a) `_fix_orphaned_body_children()` -- Post-Assembly-Fix: verwaiste Block-Elemente (`<p>/<figure>/<note>`) neben `<div>`-Geschwistern in `<div type="text">` einwickeln. (b) Fix 3b: lose Inline-Elemente (`<lb>/<persName>/<orgName>`) direkt in `<div>` in `<p>` einwickeln. (c) `<epigraph>` nach Content im `<div>` entpacken (divTop-Regel). Verbesserter `<ab>`-Unwrap-Regex (robuster, prueft ob `<p>` enthalten).
+
+87. Validierung nach Fixes: 22/23 VALID (Doc 110 braucht nur Reassembly). Production Run laeuft weiter (~1 Doc/min, ~4-5h Restlaufzeit). Pipeline ist resume-faehig (ueberspringt fertige Docs).
+
 ---
 
 ## 2026-03-06 | Layout-QA Full Run + Overlay-Generator (Session 12)

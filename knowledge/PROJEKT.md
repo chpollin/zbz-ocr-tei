@@ -61,7 +61,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M1 | OCR validated | >=93% accuracy all types | Done: 93.58% (Mistral), dashboard UI |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done: 286 docs, 4,091 PAGE-XML + 286 METS |
 | M3 | NER + GND | Entity recall >70%, GND linking >60% | **Pending** (Phase 3) |
-| M4 | TEI-XML | DTA-compliant TEI, schema-valid | Done: Unified TEI Pipeline (E32), 286 docs production run, RelaxNG-valid. Rule-based scaffold + Gemini refinement |
+| M4 | TEI-XML | DTA-compliant TEI, schema-valid | **In Progress**: Unified TEI Pipeline (E32), production run laeuft (22/23 VALID bisher). Rule-based scaffold + Gemini refinement |
 | M5 | Production run | 286 docs processed, spot-check QA passed | Pending (Phase 6) |
 
 ### Dependencies
