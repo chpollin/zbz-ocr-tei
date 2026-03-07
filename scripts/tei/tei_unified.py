@@ -18,12 +18,14 @@ Aufruf:
 """
 
 import argparse
+import functools
 import json
 import os
 import re
 import sys
 import time
 import traceback
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 
@@ -43,6 +45,7 @@ from scripts.config import (
     LAYOUT_DIR,
     LLM_CORRECTED_C_DIR,
     MISTRAL_RESULTS_DIR,
+    TEI_NS,
     TEI_UNIFIED_DIR,
 )
 
@@ -60,16 +63,14 @@ from scripts.tei.tei_mapping_prompt import (
     build_refinement_input,
 )
 
+# Speaker-Erkennung: "Name:" am Zeilenanfang (Interview/Debate)
+SPEAKER_PATTERN = re.compile(r'^([A-Z][a-zA-Z\u00e9\u00e8\u00ea\u00e0\u00e2\u00fc\u00f6\u00e4\s.\-]+?):\s*')
+
 # Lazy import fuer build_doc_hints / infer_genre (vermeidet zirkulaere Imports)
-_layout_qa_module = None
-
-
+@functools.lru_cache(maxsize=1)
 def _get_layout_qa():
-    global _layout_qa_module
-    if _layout_qa_module is None:
-        import scripts.layout_qa_gemini as m
-        _layout_qa_module = m
-    return _layout_qa_module
+    import scripts.layout_qa_gemini as m
+    return m
 
 
 # ---------------------------------------------------------------------------
@@ -101,8 +102,8 @@ def load_layout_gemini(doc_id: str, page: int) -> dict | None:
             docling = json.loads(docling_path.read_text(encoding="utf-8"))
             layout["image_width"] = docling.get("image_width", 0)
             layout["image_height"] = docling.get("image_height", 0)
-        except Exception:
-            pass
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"  WARNUNG: Docling-Fallback fuer Bildgroesse fehlgeschlagen: {e}")
 
     return layout
 
@@ -234,83 +235,55 @@ def insert_line_breaks(text: str, page: int, region_id: int) -> str:
 # Step 1: Enhanced Rule-Based TEI
 # ---------------------------------------------------------------------------
 
-def process_page_step1(
-    doc_id: str,
-    page: int,
-    metadata: dict,
-    genre: str | None,
-) -> tuple[str, dict]:
-    """Step 1: Erzeugt erweitertes regel-basiertes TEI fuer eine Seite.
+def _is_interview_turn(raw_text: str, prev_was_question: bool) -> bool:
+    """Erkennt ob ein Paragraph ein Interview-Turn ist.
+
+    Heuristik:
+    - Endet mit '?' -> Interviewer-Frage
+    - Beginnt mit 'Name:' -> expliziter Speaker
+    - Folgt auf eine Frage -> Antwort
+    """
+    text = raw_text.strip()
+    if not text:
+        return False
+    if text.endswith("?"):
+        return True
+    if SPEAKER_PATTERN.match(text):
+        return True
+    if prev_was_question:
+        return True
+    return False
+
+
+def _compute_facsimile_zones(matched: list[dict], layout: dict | None, page: int) -> dict:
+    """Berechnet Facsimile-Zonen aus gematchten Regionen.
 
     Returns:
-        (tei_fragment, facsimile_data)
-        tei_fragment: TEI body-Fragment (ohne Header)
-        facsimile_data: {zones: [...], image_width, image_height}
+        {zones: [...], image_width, image_height}
     """
-    ocr_text = load_ocr_text(doc_id, page)
-    if not ocr_text:
-        return "", {}
-
-    layout = load_layout_gemini(doc_id, page)
-
-    paragraphs = split_paragraphs(ocr_text)
-
-    if layout and layout.get("regions"):
-        matched = match_paragraphs_to_regions(paragraphs, layout["regions"])
-    else:
-        matched = [
-            {"text": p, "zbz_tag": "zb_paragraph", "label": "text",
-             "region_id": i + 1, "bbox": None}
-            for i, p in enumerate(paragraphs)
-        ]
-
-    # Facsimile-Daten sammeln
     img_w = layout.get("image_width", 0) if layout else 0
     img_h = layout.get("image_height", 0) if layout else 0
     zones = []
-    for m in matched:
-        if m["bbox"]:
-            b = m["bbox"]
-            ulx = int(b["x_pct"] / 100 * img_w)
-            uly = int(b["y_pct"] / 100 * img_h)
-            lrx = int((b["x_pct"] + b["w_pct"]) / 100 * img_w)
-            lry = int((b["y_pct"] + b["h_pct"]) / 100 * img_h)
+    for item in matched:
+        bbox = item["bbox"]
+        if bbox:
+            ulx = int(bbox["x_pct"] / 100 * img_w)
+            uly = int(bbox["y_pct"] / 100 * img_h)
+            lrx = int((bbox["x_pct"] + bbox["w_pct"]) / 100 * img_w)
+            lry = int((bbox["y_pct"] + bbox["h_pct"]) / 100 * img_h)
             zones.append({
-                "zone_id": f"facs_{page}_r_{m['region_id']}",
+                "zone_id": f"facs_{page}_r_{item['region_id']}",
                 "ulx": ulx, "uly": uly, "lrx": lrx, "lry": lry,
             })
+    return {"zones": zones, "image_width": img_w, "image_height": img_h}
 
-    facsimile_data = {
-        "zones": zones,
-        "image_width": img_w,
-        "image_height": img_h,
-    }
 
-    # Interview-Turn-Erkennung: ist ein Paragraph ein Sprecherwechsel?
-    def _is_interview_turn(raw_text: str, prev_was_question: bool) -> bool:
-        """Erkennt ob ein Paragraph ein Interview-Turn ist.
+def _build_tei_body(matched: list[dict], page: int, genre: str | None, is_interview: bool) -> str:
+    """Baut das TEI body-Fragment aus gematchten Regionen.
 
-        Heuristik:
-        - Endet mit '?' -> Interviewer-Frage
-        - Beginnt mit 'Name:' -> expliziter Speaker
-        - Folgt auf eine Frage -> Antwort
-        - Kurzer Text (<200 Zeichen) der auf Frage folgt -> wahrscheinlich Turn
-        """
-        text = raw_text.strip()
-        if not text:
-            return False
-        # Frage
-        if text.endswith("?"):
-            return True
-        # Expliziter Speaker (z.B. "Jeanne Hersch: ...")
-        if re.match(r'^[A-Z][a-zA-Zéèêàâüöä\s\.\-]+?:\s', text):
-            return True
-        # Folgt auf eine Frage -> Antwort
-        if prev_was_question:
-            return True
-        return False
-
-    # TEI body-Fragment erzeugen
+    Returns:
+        TEI-XML Fragment als String.
+    """
     lines = []
 
     # Div-Typ bestimmen
@@ -329,35 +302,28 @@ def process_page_step1(
 
     fn_counter = 0
     any_content_emitted = False
-    is_interview = genre in ("interview", "debate", "conversation")
-    # Fuer Interview-Speaker-Erkennung: alternierend Frage/Antwort
     last_was_question = False
 
-    for m in matched:
-        tag = m["zbz_tag"]
-        rid = m["region_id"]
-        facs_attr = f' facs="#facs_{page}_r_{rid}"' if m["bbox"] else ""
+    for item in matched:
+        tag = item["zbz_tag"]
+        rid = item["region_id"]
+        facs_attr = f' facs="#facs_{page}_r_{rid}"' if item["bbox"] else ""
 
-        raw_text = m["text"]
-        # Markdown-Heading-Prefix entfernen
+        raw_text = item["text"]
         raw_text = re.sub(r'^#{1,6}\s+', '', raw_text, flags=re.MULTILINE)
-        # Markdown-Bild-Referenzen entfernen
         raw_text = re.sub(r'!\[.*?\]\(.*?\)', '', raw_text)
 
-        # XML-Escape, dann Markdown->TEI, dann Entities, dann Line-Breaks
         safe_text = xml_escape(raw_text)
         safe_text = md_to_tei_inline(safe_text)
         safe_text = annotate_entities(safe_text)
         safe_text = insert_line_breaks(safe_text, page, rid)
 
         if tag == "zb_heading" and not any_content_emitted:
-            # TEI: <head> muss erstes Kind von <div> sein
             lines.append(f"        <head{facs_attr}>")
             lines.append(f"          {safe_text}")
             lines.append("        </head>")
             any_content_emitted = True
         elif tag == "zb_heading":
-            # Heading nach anderem Content -> <p> (Gemini korrigiert in Step 2)
             lines.append(f"        <p{facs_attr}>")
             lines.append(f"          {safe_text}")
             lines.append("        </p>")
@@ -378,26 +344,16 @@ def process_page_step1(
             lines.append("        </figure>")
             any_content_emitted = True
         elif is_interview and tag == "zb_paragraph" and _is_interview_turn(raw_text, last_was_question):
-            # Interview: Paragraph als <sp>/<speaker> wrappen
             is_question = raw_text.rstrip().endswith("?")
-            # Expliziter Speaker am Anfang? (z.B. "Jeanne Hersch: ...")
-            speaker_match = re.match(
-                r'^([A-Z][a-zA-Zéèêàâüöä\s\.\-]+?):\s*',
-                raw_text,
-            )
-            if speaker_match:
-                speaker_name = speaker_match.group(1).strip()
-            else:
-                speaker_name = ""
+            speaker_match = SPEAKER_PATTERN.match(raw_text)
+            speaker_name = speaker_match.group(1).strip() if speaker_match else ""
 
-            # Speaker als <persName> wrappen wenn GND bekannt
             if speaker_name and speaker_name in KNOWN_ENTITIES:
                 gnd = KNOWN_ENTITIES[speaker_name]
                 speaker_tei = f'<persName ref="{gnd}">{xml_escape(speaker_name)}</persName>'
             elif speaker_name:
                 speaker_tei = f'<persName ref="GND:unknown">{xml_escape(speaker_name)}</persName>'
             else:
-                # Leerer Speaker -- Gemini ergaenzt in Step 2
                 speaker_tei = ""
 
             lines.append("        <sp>")
@@ -412,14 +368,46 @@ def process_page_step1(
             lines.append(f"        <p{facs_attr}>")
             lines.append(f"          {safe_text}")
             lines.append("        </p>")
-            # Track question pattern fuer naechste Runde
             if is_interview:
                 last_was_question = raw_text.rstrip().endswith("?")
             any_content_emitted = True
 
     lines.append("      </div>")
+    return "\n".join(lines)
 
-    return "\n".join(lines), facsimile_data
+
+def process_page_step1(
+    doc_id: str,
+    page: int,
+    metadata: dict,
+    genre: str | None,
+) -> tuple[str, dict]:
+    """Step 1: Erzeugt erweitertes regel-basiertes TEI fuer eine Seite.
+
+    Returns:
+        (tei_fragment, facsimile_data)
+    """
+    ocr_text = load_ocr_text(doc_id, page)
+    if not ocr_text:
+        return "", {}
+
+    layout = load_layout_gemini(doc_id, page)
+    paragraphs = split_paragraphs(ocr_text)
+
+    if layout and layout.get("regions"):
+        matched = match_paragraphs_to_regions(paragraphs, layout["regions"])
+    else:
+        matched = [
+            {"text": p, "zbz_tag": "zb_paragraph", "label": "text",
+             "region_id": i + 1, "bbox": None}
+            for i, p in enumerate(paragraphs)
+        ]
+
+    facsimile_data = _compute_facsimile_zones(matched, layout, page)
+    is_interview = genre in ("interview", "debate", "conversation")
+    tei_fragment = _build_tei_body(matched, page, genre, is_interview)
+
+    return tei_fragment, facsimile_data
 
 
 # ---------------------------------------------------------------------------
@@ -473,195 +461,218 @@ def reannotate_entities(xml_text: str) -> str:
     return xml_text
 
 
-def fix_gemini_tei(xml_fragment: str) -> str:
-    """Korrigiert haeufige Gemini-TEI-Fehler.
+# ---------------------------------------------------------------------------
+# Shared XML Utilities
+# ---------------------------------------------------------------------------
 
-    1. <head> mit <p> darin -> entferne inneres <p>, behalte Inhalt
-    2. <head> nach <p>/<note> im selben <div> -> wandle in <p> um
-    3. <sp> nach <p>/<figure>/<epigraph> -> split in sub-divs
-    4. Entity Re-Annotation: fehlende KNOWN_ENTITIES nachtaggen
+def _make_element(tag: str, tail: str = None, **attribs):
+    """Erzeugt ein ET.Element mit optionalem tail und Attributen."""
+    elem = ET.Element(tag)
+    if tail is not None:
+        elem.tail = tail
+    for k, v in attribs.items():
+        elem.set(k, v)
+    return elem
+
+
+def _wrap_orphan_groups(container, is_orphan, make_wrapper) -> None:
+    """Wickelt zusammenhaengende Orphan-Kinder eines Containers in Wrapper ein.
+
+    Args:
+        container: ET.Element mit Kindern
+        is_orphan: Callable(child) -> bool, ob Kind eingewickelt werden soll
+        make_wrapper: Callable() -> ET.Element, erzeugt den Wrapper
+    """
+    children = list(container)
+    groups = []
+    current_group = []
+    current_start = None
+    for i, child in enumerate(children):
+        if is_orphan(child):
+            if current_start is None:
+                current_start = i
+            current_group.append(child)
+        else:
+            if current_group:
+                groups.append((current_start, current_group))
+                current_group = []
+                current_start = None
+    if current_group:
+        groups.append((current_start, current_group))
+
+    for start_idx, elems in reversed(groups):
+        wrapper = make_wrapper()
+        for e in elems:
+            container.remove(e)
+            wrapper.append(e)
+        container.insert(start_idx, wrapper)
+
+
+def _fix_simple_patterns(xml: str) -> str:
+    """Regex-basierte Fixes fuer haeufige Gemini-TEI-Fehler.
+
+    Fix -1: <ab> mit <p> darin -> entferne <ab>-Wrapper
+    Fix 0:  <head> innerhalb <speaker> -> entferne <head>-Tags
+    Fix 1:  <head><p ...>...</p></head> -> <head ...>...</head>
     """
     # Fix -1: <ab> mit <p> darin -> entferne <ab>-Wrapper, behalte Inhalt
-    # Robuster: matche <ab...>...</ab> und entferne nur wenn <p> drin ist
     def _unwrap_ab(m):
         inner = m.group(1)
         if "<p" in inner or "<p>" in inner:
             return inner
-        return m.group(0)  # kein <p> -> <ab> behalten
+        return m.group(0)
 
-    xml_fragment = re.sub(
-        r'<ab[^>]*>(.*?)</ab>',
-        _unwrap_ab,
-        xml_fragment,
-        flags=re.DOTALL,
-    )
+    xml = re.sub(r'<ab[^>]*>(.*?)</ab>', _unwrap_ab, xml, flags=re.DOTALL)
 
     # Fix 0: <head> innerhalb <speaker> -> entferne <head>-Tags
-    xml_fragment = re.sub(
+    xml = re.sub(
         r'<speaker>\s*<head[^>]*>(.*?)</head>\s*</speaker>',
         lambda m: f'<speaker>{m.group(1)}</speaker>',
-        xml_fragment,
-        flags=re.DOTALL,
+        xml, flags=re.DOTALL,
     )
 
     # Fix 1: <head><p ...>...</p></head> -> <head ...>...</head>
-    # Uebernimm facs-Attribut vom inneren <p> falls <head> keines hat
-    def fix_head_with_p(match):
+    def _fix_head_with_p(match):
         head_attrs = match.group(1) or ""
         p_attrs = match.group(2) or ""
         content = match.group(3)
-        # facs aus <p> uebernehmen wenn <head> kein facs hat
         if "facs=" not in head_attrs and "facs=" in p_attrs:
             head_attrs = head_attrs.rstrip() + " " + p_attrs.strip()
         return f"<head{head_attrs}>{content}</head>"
 
-    xml_fragment = re.sub(
+    xml = re.sub(
         r'<head([^>]*)>\s*<p([^>]*)>(.*?)</p>\s*</head>',
-        fix_head_with_p,
-        xml_fragment,
-        flags=re.DOTALL,
+        _fix_head_with_p, xml, flags=re.DOTALL,
     )
 
-    # Fix 2: <head> nach Content im selben <div> -> <p>
-    # Fix 3: <sp> nach <p>/<figure>/<epigraph> -> split into sub-divs
-    # Parse als XML und fixe die Struktur
+    return xml
+
+
+def _parse_tei_fragment(xml: str):
+    """Parst ein TEI-Fragment in einen ET-Root mit Namespace-Wrapper.
+
+    Returns:
+        root Element oder None bei ParseError.
+    """
+    wrapped = f'<root xmlns="{TEI_NS}">{xml}</root>'
     try:
-        import xml.etree.ElementTree as ET
-        TEI_NS = "http://www.tei-c.org/ns/1.0"
-        wrapped = f'<root xmlns="{TEI_NS}">{xml_fragment}</root>'
-        root = ET.fromstring(wrapped)
-
-        for div in root.iter(f"{{{TEI_NS}}}div"):
-            children = list(div)
-            any_content = False
-            for child in children:
-                tag = child.tag.replace(f"{{{TEI_NS}}}", "")
-                if tag == "head" and any_content:
-                    # Wandle <head> in <p> um
-                    child.tag = f"{{{TEI_NS}}}p"
-                elif tag == "epigraph" and any_content:
-                    # <epigraph> nach Content -> entpacken (innere Elemente)
-                    idx = list(div).index(child)
-                    inner = list(child)
-                    div.remove(child)
-                    for j, ic in enumerate(inner):
-                        div.insert(idx + j, ic)
-                elif tag in ("pb",):
-                    pass  # pb zaehlt nicht als Content
-                else:
-                    any_content = True
-
-        # Fix 3: <sp> gemischt mit <p>/<figure>/<epigraph> in einem <div>
-        # -> Intro-Content in <div type="text">, Interview in <div type="interview">
-        for div in list(root.iter(f"{{{TEI_NS}}}div")):
-            children = list(div)
-            has_sp = any(
-                c.tag == f"{{{TEI_NS}}}sp" for c in children
-            )
-            has_pre_sp_content = False
-            if has_sp:
-                for c in children:
-                    tag = c.tag.replace(f"{{{TEI_NS}}}", "")
-                    if tag == "sp":
-                        break
-                    if tag in ("p", "figure", "epigraph"):
-                        has_pre_sp_content = True
-
-            if has_sp and has_pre_sp_content:
-                # Sammle pre-sp und sp Elemente
-                pre_sp = []
-                sp_and_after = []
-                found_sp = False
-                pb_elem = None
-                for c in children:
-                    tag = c.tag.replace(f"{{{TEI_NS}}}", "")
-                    if tag == "sp":
-                        found_sp = True
-                    if tag == "pb" and not found_sp:
-                        pb_elem = c
-                        continue
-                    if not found_sp:
-                        pre_sp.append(c)
-                    else:
-                        sp_and_after.append(c)
-
-                # Rebuild: wrapper div n="1" mit sub-divs
-                div_type = div.get("type", "text")
-                # Entferne alle children
-                for c in children:
-                    div.remove(c)
-
-                # pb bleibt im aeusseren div
-                if pb_elem is not None:
-                    div.append(pb_elem)
-
-                # Sub-div fuer intro
-                if pre_sp:
-                    intro_div = ET.SubElement(div, f"{{{TEI_NS}}}div")
-                    intro_div.set("type", "text")
-                    for c in pre_sp:
-                        intro_div.append(c)
-
-                # Sub-div fuer interview/sp
-                if sp_and_after:
-                    sp_div = ET.SubElement(div, f"{{{TEI_NS}}}div")
-                    sp_div.set("type", div_type)
-                    for c in sp_and_after:
-                        sp_div.append(c)
-
-                # Aeusserer div bekommt n="1" statt type
-                if div.get("type"):
-                    div.set("n", "1")
-                    del div.attrib["type"]
-
-        # Fix 3b: Lose Inline-Elemente direkt in <div> -> in <p> einwickeln
-        # TEI erlaubt kein <lb>/<persName>/<orgName> als direktes Kind von <div>
-        inline_tags = {"lb", "persName", "orgName", "placeName", "hi",
-                       "foreign", "ref", "date", "num"}
-        for div in list(root.iter(f"{{{TEI_NS}}}div")):
-            children = list(div)
-            # Sammle zusammenhaengende Inline-Gruppen
-            groups = []
-            current = []
-            current_start = None
-            for i, child in enumerate(children):
-                tag = child.tag.replace(f"{{{TEI_NS}}}", "")
-                if tag in inline_tags:
-                    if current_start is None:
-                        current_start = i
-                    current.append(child)
-                else:
-                    if current:
-                        groups.append((current_start, current))
-                        current = []
-                        current_start = None
-            if current:
-                groups.append((current_start, current))
-
-            for start_idx, elems in reversed(groups):
-                wrap_p = ET.Element(f"{{{TEI_NS}}}p")
-                wrap_p.tail = "\n"
-                for e in elems:
-                    div.remove(e)
-                    wrap_p.append(e)
-                div.insert(start_idx, wrap_p)
-
-        # Zurueck zu String, root-Wrapper entfernen
-        ET.register_namespace("", TEI_NS)
-        result = ET.tostring(root, encoding="unicode")
-        # Root-Tags und Namespace-Deklaration entfernen
-        result = re.sub(r'^<root[^>]*>', '', result)
-        result = re.sub(r'</root>$', '', result)
-        # ns0: Prefix entfernen falls vorhanden
-        result = result.replace("ns0:", "").replace(":ns0", "")
-
-        # Fix 4: Entity Re-Annotation (fehlende KNOWN_ENTITIES nachtaggen)
-        result = reannotate_entities(result)
-
-        return result
+        return ET.fromstring(wrapped)
     except ET.ParseError:
-        # Fallback: mindestens Entity Re-Annotation versuchen
-        return reannotate_entities(xml_fragment)
+        return None
+
+
+def _serialize_tei_fragment(root) -> str:
+    """Serialisiert einen ET-Root zurueck zu TEI-Fragment-String."""
+    ET.register_namespace("", TEI_NS)
+    result = ET.tostring(root, encoding="unicode")
+    result = re.sub(r'^<root[^>]*>', '', result)
+    result = re.sub(r'</root>$', '', result)
+    result = result.replace("ns0:", "").replace(":ns0", "")
+    return result
+
+
+def _fix_structural_issues(xml: str) -> str:
+    """ET-basierte Fixes fuer Strukturprobleme in Gemini-TEI.
+
+    Fix 2:  <head> nach Content -> <p>
+    Fix 2b: <epigraph> nach Content -> entpacken
+    Fix 3:  <sp> gemischt mit <p>/<figure>/<epigraph> -> split in sub-divs
+    Fix 3b: Lose Inline-Elemente in <div> -> in <p> einwickeln
+    """
+    root = _parse_tei_fragment(xml)
+    if root is None:
+        return xml
+
+    # Fix 2 + 2b: <head>/<epigraph> nach Content
+    for div in root.iter(f"{{{TEI_NS}}}div"):
+        children = list(div)
+        any_content = False
+        for child in children:
+            tag = child.tag.replace(f"{{{TEI_NS}}}", "")
+            if tag == "head" and any_content:
+                child.tag = f"{{{TEI_NS}}}p"
+            elif tag == "epigraph" and any_content:
+                idx = list(div).index(child)
+                inner = list(child)
+                div.remove(child)
+                for j, ic in enumerate(inner):
+                    div.insert(idx + j, ic)
+            elif tag in ("pb",):
+                pass
+            else:
+                any_content = True
+
+    # Fix 3: <sp> gemischt mit <p>/<figure>/<epigraph> -> split into sub-divs
+    for div in list(root.iter(f"{{{TEI_NS}}}div")):
+        children = list(div)
+        has_sp = any(c.tag == f"{{{TEI_NS}}}sp" for c in children)
+        has_pre_sp_content = False
+        if has_sp:
+            for c in children:
+                tag = c.tag.replace(f"{{{TEI_NS}}}", "")
+                if tag == "sp":
+                    break
+                if tag in ("p", "figure", "epigraph"):
+                    has_pre_sp_content = True
+
+        if has_sp and has_pre_sp_content:
+            pre_sp = []
+            sp_and_after = []
+            found_sp = False
+            pb_elem = None
+            for c in children:
+                tag = c.tag.replace(f"{{{TEI_NS}}}", "")
+                if tag == "sp":
+                    found_sp = True
+                if tag == "pb" and not found_sp:
+                    pb_elem = c
+                    continue
+                if not found_sp:
+                    pre_sp.append(c)
+                else:
+                    sp_and_after.append(c)
+
+            div_type = div.get("type", "text")
+            for c in children:
+                div.remove(c)
+            if pb_elem is not None:
+                div.append(pb_elem)
+            if pre_sp:
+                intro_div = ET.SubElement(div, f"{{{TEI_NS}}}div")
+                intro_div.set("type", "text")
+                for c in pre_sp:
+                    intro_div.append(c)
+            if sp_and_after:
+                sp_div = ET.SubElement(div, f"{{{TEI_NS}}}div")
+                sp_div.set("type", div_type)
+                for c in sp_and_after:
+                    sp_div.append(c)
+            if div.get("type"):
+                div.set("n", "1")
+                del div.attrib["type"]
+
+    # Fix 3b: Lose Inline-Elemente direkt in <div> -> in <p> einwickeln
+    inline_tags = {"lb", "persName", "orgName", "placeName", "hi",
+                   "foreign", "ref", "date", "num"}
+    for div in list(root.iter(f"{{{TEI_NS}}}div")):
+        _wrap_orphan_groups(
+            div,
+            is_orphan=lambda child: child.tag.replace(f"{{{TEI_NS}}}", "") in inline_tags,
+            make_wrapper=lambda: _make_element(f"{{{TEI_NS}}}p", tail="\n"),
+        )
+
+    return _serialize_tei_fragment(root)
+
+
+def fix_gemini_tei(xml_fragment: str) -> str:
+    """Korrigiert haeufige Gemini-TEI-Fehler (Orchestrator).
+
+    Pipeline: Regex-Fixes -> Struktur-Fixes -> Entity Re-Annotation.
+    """
+    xml_fragment = _fix_simple_patterns(xml_fragment)
+    xml_fragment = _fix_structural_issues(xml_fragment)
+    xml_fragment = reannotate_entities(xml_fragment)
+    return xml_fragment
 
 
 def process_page_step2(
@@ -746,7 +757,6 @@ def process_page_step2(
             result_text = xml_match.group(1)
 
         # Well-formedness pruefen
-        import xml.etree.ElementTree as ET
         ET.fromstring(f"<root>{result_text}</root>")
 
         # Post-Processing: haeufige Gemini-Fehler korrigieren
@@ -754,7 +764,17 @@ def process_page_step2(
 
         return result_text
 
+    except ImportError as e:
+        print(f"  FEHLER: google-genai nicht installiert: {e}")
+        return scaffold_xml
+    except ET.ParseError as e:
+        print(f"  WARNUNG: Gemini-XML nicht wohlgeformt fuer {doc_id} p{page}: {e}")
+        return fix_gemini_tei(scaffold_xml)
     except Exception as e:
+        err_str = str(e).lower()
+        if "api_key" in err_str or "auth" in err_str or "permission" in err_str:
+            print(f"  FEHLER: Gemini-Auth-Fehler fuer {doc_id} p{page}: {e}")
+            raise
         print(f"  WARNUNG: Gemini-Fehler fuer {doc_id} p{page}: {e}")
         return scaffold_xml
 
@@ -900,11 +920,11 @@ def _fix_orphaned_body_children(xml_text: str) -> str:
     Diese werden in <div type='text'> eingewickelt.
     """
     try:
-        import xml.etree.ElementTree as ET
-        TEI_NS = "http://www.tei-c.org/ns/1.0"
         ET.register_namespace("", TEI_NS)
-
         tree = ET.fromstring(xml_text)
+
+        block_tags = {"p", "figure", "note", "sp", "epigraph", "lg",
+                      "table", "list", "ab", "bibl"}
 
         # Fix fuer body UND alle divs
         containers = [tree.find(f".//{{{TEI_NS}}}body")]
@@ -915,12 +935,7 @@ def _fix_orphaned_body_children(xml_text: str) -> str:
                 continue
             children = list(container)
 
-            # Hat der Container sowohl <div> als auch Block-Elemente?
-            has_div = any(
-                c.tag == f"{{{TEI_NS}}}div" for c in children
-            )
-            block_tags = {"p", "figure", "note", "sp", "epigraph", "lg",
-                          "table", "list", "ab", "bibl"}
+            has_div = any(c.tag == f"{{{TEI_NS}}}div" for c in children)
             has_blocks = any(
                 c.tag.replace(f"{{{TEI_NS}}}", "") in block_tags
                 for c in children
@@ -929,34 +944,16 @@ def _fix_orphaned_body_children(xml_text: str) -> str:
             if not (has_div and has_blocks):
                 continue
 
-            # Sammle zusammenhaengende Orphan-Gruppen
-            groups = []
-            current_group = []
-            current_start = None
-            for i, child in enumerate(children):
-                tag = child.tag.replace(f"{{{TEI_NS}}}", "")
-                if tag in block_tags:
-                    if current_start is None:
-                        current_start = i
-                    current_group.append(child)
-                else:
-                    if current_group:
-                        groups.append((current_start, current_group))
-                        current_group = []
-                        current_start = None
-            if current_group:
-                groups.append((current_start, current_group))
+            def _make_text_div():
+                div = _make_element(f"{{{TEI_NS}}}div", tail="\n", type="text")
+                div.text = "\n"
+                return div
 
-            # Ersetze jede Gruppe durch ein <div type="text">
-            for start_idx, elems in reversed(groups):
-                wrap_div = ET.Element(f"{{{TEI_NS}}}div")
-                wrap_div.set("type", "text")
-                wrap_div.text = "\n"
-                wrap_div.tail = "\n"
-                for e in elems:
-                    container.remove(e)
-                    wrap_div.append(e)
-                container.insert(start_idx, wrap_div)
+            _wrap_orphan_groups(
+                container,
+                is_orphan=lambda c: c.tag.replace(f"{{{TEI_NS}}}", "") in block_tags,
+                make_wrapper=_make_text_div,
+            )
 
         return ET.tostring(tree, encoding="unicode", xml_declaration=True)
     except Exception:

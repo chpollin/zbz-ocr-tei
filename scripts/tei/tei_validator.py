@@ -17,10 +17,22 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-from scripts.config import TEI_SCHEMA_DIR, TEI_SCHEMA_PATH, TEI_UNIFIED_DIR
+from scripts.config import (
+    SCHEMA_DOWNLOAD_TIMEOUT,
+    TEI_ALL_URL,
+    TEI_NS,
+    TEI_SCHEMA_DIR,
+    TEI_SCHEMA_PATH,
+    TEI_UNIFIED_DIR,
+    VALID_DIV_TYPES,
+)
 
-TEI_NS = "http://www.tei-c.org/ns/1.0"
-TEI_ALL_URL = "https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+try:
+    from lxml import etree as lxml_etree
+    HAS_LXML = True
+except ImportError:
+    HAS_LXML = False
+    lxml_etree = None
 
 
 # ---------------------------------------------------------------------------
@@ -37,7 +49,8 @@ def ensure_schema() -> Path:
     print(f"Lade TEI-All RelaxNG Schema von {TEI_ALL_URL} ...")
     import urllib.request
     try:
-        urllib.request.urlretrieve(TEI_ALL_URL, str(TEI_SCHEMA_PATH))
+        with urllib.request.urlopen(TEI_ALL_URL, timeout=SCHEMA_DOWNLOAD_TIMEOUT) as resp:
+            TEI_SCHEMA_PATH.write_bytes(resp.read())
         print(f"  Schema gespeichert: {TEI_SCHEMA_PATH}")
     except Exception as e:
         print(f"  WARNUNG: Download fehlgeschlagen: {e}")
@@ -57,20 +70,18 @@ def validate_relaxng(tei_path: Path, schema_path: Path) -> list[dict]:
     Returns:
         Liste von Fehlern: [{"line": int, "message": str}]
     """
-    try:
-        from lxml import etree
-    except ImportError:
+    if not HAS_LXML:
         return [{"line": 0, "message": "lxml nicht installiert -- pip install lxml"}]
 
     try:
-        schema_doc = etree.parse(str(schema_path))
-        relaxng = etree.RelaxNG(schema_doc)
+        schema_doc = lxml_etree.parse(str(schema_path))
+        relaxng = lxml_etree.RelaxNG(schema_doc)
     except Exception as e:
         return [{"line": 0, "message": f"Schema-Fehler: {e}"}]
 
     try:
-        doc = etree.parse(str(tei_path))
-    except etree.XMLSyntaxError as e:
+        doc = lxml_etree.parse(str(tei_path))
+    except lxml_etree.XMLSyntaxError as e:
         return [{"line": getattr(e, "lineno", 0),
                  "message": f"XML-Syntax: {e}"}]
 
@@ -97,20 +108,16 @@ def validate_project_rules(tei_path: Path) -> list[dict]:
     Returns:
         Liste von Warnungen/Fehlern
     """
-    try:
-        from lxml import etree
-    except ImportError:
+    if not HAS_LXML:
         import xml.etree.ElementTree as etree_std
         tree = etree_std.parse(str(tei_path))
         root = tree.getroot()
-        ns = {"tei": TEI_NS}
         errors = []
-        # Minimal-Check mit stdlib
         if "naegeli" not in (root.get("type") or ""):
             errors.append({"line": 0, "message": 'TEI root missing type="naegeli"'})
         return errors
 
-    tree = etree.parse(str(tei_path))
+    tree = lxml_etree.parse(str(tei_path))
     root = tree.getroot()
     ns = {"tei": TEI_NS}
     errors = []
@@ -140,15 +147,10 @@ def validate_project_rules(tei_path: Path) -> list[dict]:
         errors.append({"line": 0, "message": "Kein <div> gefunden", "rule": "R4"})
 
     # R5: div-Typen pruefen
-    valid_types = {
-        "review", "interview", "conversation", "entry",
-        "bibliography", "editorial", "text", "translation",
-        "reprint", "redactional",
-    }
     for div in divs:
         div_type = div.get("type")
         div_n = div.get("n")
-        if div_type and div_type not in valid_types:
+        if div_type and div_type not in VALID_DIV_TYPES:
             errors.append({
                 "line": div.sourceline or 0,
                 "message": f'Unbekannter div type="{div_type}"',

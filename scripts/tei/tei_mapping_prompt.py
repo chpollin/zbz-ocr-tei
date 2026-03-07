@@ -287,9 +287,6 @@ def build_mapping_prompt(doc_context: dict) -> str:
     genre_block = ""
     if genre and genre in GENRE_RULES:
         genre_block = "\n" + GENRE_RULES[genre]
-    # Interview-Regeln auch fuer debate
-    if genre == "debate" and "debate" not in GENRE_RULES:
-        genre_block = "\n" + GENRE_RULES.get("interview", "")
 
     # Entitaeten-Block
     entities_block = build_known_entities_block()

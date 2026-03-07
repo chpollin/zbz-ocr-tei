@@ -25,6 +25,17 @@ TEI_DIR = OUTPUT_DIR / "tei"
 TEI_GEMINI_DIR = OUTPUT_DIR / "tei_gemini"
 TEI_UNIFIED_DIR = OUTPUT_DIR / "tei_unified"
 
+# TEI-Konstanten
+TEI_NS = "http://www.tei-c.org/ns/1.0"
+TEI_ALL_URL = "https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+SCHEMA_DOWNLOAD_TIMEOUT = 30  # Sekunden
+
+VALID_DIV_TYPES = {
+    "review", "interview", "conversation", "entry",
+    "bibliography", "editorial", "text", "translation",
+    "reprint", "redactional",
+}
+
 # Schema-Validierung
 TEI_SCHEMA_DIR = DATA_DIR / "schema"
 TEI_SCHEMA_PATH = TEI_SCHEMA_DIR / "tei_all.rng"

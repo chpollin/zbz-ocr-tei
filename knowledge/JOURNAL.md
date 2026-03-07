@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-06
+updated: 2026-03-07
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,24 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-07 | TEI Pipeline Refactoring (Session 15)
+
+92. Refactoring-Plan umgesetzt (`REFACTORING_PLAN.md`, 7 Phasen). Keine funktionalen Aenderungen, gleicher Output.
+
+93. Phase 1 (Bugs): Dead Code in `tei_mapping_prompt.py` entfernt (debate-Fallback, L291-292). XPath-Bugs in Validator waren bereits korrekt.
+
+94. Phase 2 (Constants): `TEI_NS`, `TEI_ALL_URL`, `SCHEMA_DOWNLOAD_TIMEOUT`, `VALID_DIV_TYPES` nach `config.py` zentralisiert. Lokale Definitionen in `tei_unified.py` und `tei_validator.py` entfernt. Speaker-Regex als `SPEAKER_PATTERN` Konstante. Schema-Download mit Timeout.
+
+95. Phase 3+4 (God-Functions + DRY): `fix_gemini_tei()` in 3 Funktionen aufgeteilt: `_fix_simple_patterns()` (Regex), `_fix_structural_issues()` (ET), `reannotate_entities()`. Shared Utilities: `_parse_tei_fragment()`, `_serialize_tei_fragment()`, `_wrap_orphan_groups()`, `_make_element()`. `_fix_orphaned_body_children()` nutzt jetzt `_wrap_orphan_groups()`.
+
+96. Phase 5 (process_page_step1): In 3 Funktionen aufgeteilt: `_is_interview_turn()` (Modulebene), `_compute_facsimile_zones()`, `_build_tei_body()`.
+
+97. Phase 6 (Error Handling): Silent `except: pass` durch spezifische Exceptions ersetzt. Gemini-Fehler differenziert (Auth -> Abbruch, Parse -> Fallback). lxml-Import top-level in Validator.
+
+98. Phase 7 (Cleanup): `functools.lru_cache` statt mutablem Global fuer Lazy-Import. `xml.etree.ElementTree` als Top-Level-Import.
 
 ---
 
