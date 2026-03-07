@@ -108,25 +108,27 @@ def validate_project_rules(tei_path: Path) -> list[dict]:
     Returns:
         Liste von Warnungen/Fehlern
     """
-    if not HAS_LXML:
+    if HAS_LXML:
+        tree = lxml_etree.parse(str(tei_path))
+        root = tree.getroot()
+
+        def _line(elem):
+            return elem.sourceline or 0
+    else:
         import xml.etree.ElementTree as etree_std
         tree = etree_std.parse(str(tei_path))
         root = tree.getroot()
-        errors = []
-        if "naegeli" not in (root.get("type") or ""):
-            errors.append({"line": 0, "message": 'TEI root missing type="naegeli"'})
-        return errors
 
-    tree = lxml_etree.parse(str(tei_path))
-    root = tree.getroot()
-    ns = {"tei": TEI_NS}
+        def _line(_elem):
+            return 0
+
     errors = []
 
     # R1: TEI type="naegeli"
     tei_type = root.get("type")
     if tei_type != "naegeli":
         errors.append({
-            "line": root.sourceline or 0,
+            "line": _line(root),
             "message": f'TEI root: type="{tei_type}", erwartet "naegeli"',
             "rule": "R1",
         })
@@ -152,13 +154,13 @@ def validate_project_rules(tei_path: Path) -> list[dict]:
         div_n = div.get("n")
         if div_type and div_type not in VALID_DIV_TYPES:
             errors.append({
-                "line": div.sourceline or 0,
+                "line": _line(div),
                 "message": f'Unbekannter div type="{div_type}"',
                 "rule": "R5",
             })
         if not div_type and not div_n:
             errors.append({
-                "line": div.sourceline or 0,
+                "line": _line(div),
                 "message": "div ohne type oder n Attribut",
                 "rule": "R5",
             })
@@ -167,7 +169,7 @@ def validate_project_rules(tei_path: Path) -> list[dict]:
     for note in root.findall(f".//{{{TEI_NS}}}note"):
         if not note.get("place"):
             errors.append({
-                "line": note.sourceline or 0,
+                "line": _line(note),
                 "message": "note ohne place Attribut",
                 "rule": "R6",
             })
@@ -178,7 +180,7 @@ def validate_project_rules(tei_path: Path) -> list[dict]:
             if not elem.get("ref"):
                 text = (elem.text or "")[:30]
                 errors.append({
-                    "line": elem.sourceline or 0,
+                    "line": _line(elem),
                     "message": f'{elem_name} ohne ref: "{text}"',
                     "rule": "R7",
                 })
@@ -188,7 +190,7 @@ def validate_project_rules(tei_path: Path) -> list[dict]:
         ident = lang.get("ident")
         if not ident:
             errors.append({
-                "line": lang.sourceline or 0,
+                "line": _line(lang),
                 "message": "language ohne ident Attribut",
                 "rule": "R8",
             })

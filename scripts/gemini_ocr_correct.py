@@ -27,22 +27,14 @@ Usage:
 
 import argparse
 import json
-import os
 import re
 import sys
 import time
-import warnings
 from datetime import datetime
 from pathlib import Path
 
-# Suppress Gemini SDK thought_signature warnings
-warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
-
-from dotenv import load_dotenv
-
 from scripts.config import (
     DOC_METADATA_PATH,
-    GEMINI_API_KEY,
     GEMINI_CORRECTED_A_DIR,
     GEMINI_CORRECTED_B_DIR,
     GEMINI_MODEL,
@@ -50,11 +42,8 @@ from scripts.config import (
     MISTRAL_RESULTS_DIR,
     get_test_metadata,
 )
+from scripts.gemini_client import get_client, has_api_key
 from scripts.utils import get_phase_doc_ids, load_json, write_json
-
-# .env laden
-load_dotenv()
-_api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 # --- Sample-Docs (5 Pilot-Docs mit Referenz-TEI, alle 4 Typen) ---
 
@@ -331,19 +320,6 @@ def get_doc_metadata(doc_id):
         "date": None,
         "description": "",
     }
-
-
-# --- Gemini Client ---
-
-
-def get_client():
-    """Gemini Client erstellen."""
-    from google import genai
-
-    if not _api_key:
-        print("FEHLER: GEMINI_API_KEY nicht gesetzt. Bitte in .env eintragen.")
-        sys.exit(1)
-    return genai.Client(api_key=_api_key)
 
 
 # --- Seiten-Dateien ---
@@ -701,7 +677,7 @@ def main():
     # Client (nur wenn nicht dry-run)
     client = None
     if not args.dry_run:
-        if not _api_key:
+        if not has_api_key():
             print("FEHLER: GEMINI_API_KEY nicht in .env gesetzt")
             sys.exit(1)
         client = get_client()

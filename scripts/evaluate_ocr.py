@@ -136,14 +136,16 @@ def extract_pages_from_tei(tei_path: Path) -> dict[int, str]:
 
 
 def normalize_text(text: str) -> str:
-    """Normalisiert Text fuer Vergleich."""
+    """Normalisiert Text fuer Vergleich.
+
+    Nutzt postprocess.normalize fuer Zeichennormalisierung (Anfuehrungszeichen,
+    Gedankenstriche, Leerzeichen etc.) und reduziert dann Whitespace.
+    """
+    from scripts.postprocess.normalize import normalize_text as _normalize_chars
+    # Zeichennormalisierung (Anfuehrungszeichen, Dashes, Spaces etc.)
+    text = _normalize_chars(text)
     # Mehrfache Leerzeichen/Zeilenumbrueche reduzieren
     text = re.sub(r'\s+', ' ', text)
-    # Anfuehrungszeichen normalisieren
-    text = text.replace('"', '"').replace('"', '"')
-    text = text.replace("'", "'").replace("'", "'")
-    # Guillemets beibehalten (sind korrekt)
-    # Whitespace am Anfang/Ende entfernen
     text = text.strip()
     return text
 

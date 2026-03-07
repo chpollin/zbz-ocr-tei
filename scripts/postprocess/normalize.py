@@ -11,8 +11,8 @@ Ersetzt typografische Varianten durch einheitliche Zeichen:
 NORMALIZE_MAP = {
     # Anführungszeichen (deutsch/französisch → neutral)
     '„': '"',
-    '"': '"',
-    '"': '"',
+    '\u201c': '"',  # Left double quotation mark
+    '\u201d': '"',  # Right double quotation mark
     '»': '"',
     '«': '"',
     '‹': "'",

@@ -5,15 +5,6 @@ from pathlib import Path
 
 TEI_NS = "http://www.tei-c.org/ns/1.0"
 
-# Pruefe ob lxml verfuegbar ist (R2-R8 brauchen lxml)
-try:
-    from lxml import etree as _lxml_etree
-    HAS_LXML = True
-except ImportError:
-    HAS_LXML = False
-
-requires_lxml = pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
-
 
 def _write_tei(tmp_path, content, name="test.xml"):
     """Hilfsfunktion: schreibt TEI-XML in tmp_path."""
@@ -54,12 +45,9 @@ class TestValidateProjectRules:
         tei = _valid_tei().replace('type="naegeli"', '')
         path = _write_tei(tmp_path, tei)
         errors = validate_project_rules(path)
-        # Ohne lxml: Fehler hat kein "rule"-Key, aber "naegeli" in message
-        assert len(errors) >= 1
-        messages = " ".join(e.get("message", "") for e in errors)
-        assert "naegeli" in messages
+        rules = [e.get("rule") for e in errors]
+        assert "R1" in rules
 
-    @requires_lxml
     def test_r2_missing_header(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = (
@@ -73,7 +61,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R2" in rules
 
-    @requires_lxml
     def test_r3_missing_body(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = (
@@ -90,7 +77,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R3" in rules
 
-    @requires_lxml
     def test_r4_missing_div(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = _valid_tei().replace(
@@ -102,7 +88,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R4" in rules
 
-    @requires_lxml
     def test_r5_invalid_div_type(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = _valid_tei().replace(
@@ -114,7 +99,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R5" in rules
 
-    @requires_lxml
     def test_r6_note_without_place(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = _valid_tei().replace(
@@ -126,7 +110,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R6" in rules
 
-    @requires_lxml
     def test_r6_note_with_place_ok(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = _valid_tei().replace(
@@ -138,7 +121,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R6" not in rules
 
-    @requires_lxml
     def test_r7_persname_without_ref(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = _valid_tei().replace(
@@ -150,7 +132,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R7" in rules
 
-    @requires_lxml
     def test_r7_persname_with_ref_ok(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = _valid_tei().replace(
@@ -162,7 +143,6 @@ class TestValidateProjectRules:
         rules = [e.get("rule") for e in errors]
         assert "R7" not in rules
 
-    @requires_lxml
     def test_r8_language_without_ident(self, tmp_path):
         from scripts.tei.tei_validator import validate_project_rules
         tei = _valid_tei().replace(

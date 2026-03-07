@@ -19,30 +19,19 @@ Usage:
 
 import argparse
 import json
-import os
 import sys
 import time
-import warnings
 from pathlib import Path
 
-# Suppress Gemini SDK thought_signature warnings
-warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
-
-from dotenv import load_dotenv
 from PIL import Image
 
 from scripts.config import (
-    DOCLING_TO_ZBZ, DOC_METADATA_PATH, GEMINI_API_KEY,
+    DOCLING_TO_ZBZ, DOC_METADATA_PATH,
     GEMINI_DETECT_MODEL, GEMINI_MODEL, IMAGES_DIR, LAYOUT_DIR,
 )
+from scripts.gemini_client import get_client
 from scripts.layout import draw_overlay_from_json
 from scripts.utils import discover_doc_ids
-
-# .env laden
-load_dotenv()
-
-# API Key aus .env (Reload nach dotenv)
-_api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 # ---- Dokumenttypspezifische Prompt-Hints (4 Ebenen) ----
 
@@ -346,17 +335,6 @@ def gemini_box_to_pct(box_2d):
         "w_pct": round(max(0, xmax - xmin) / 10.0, 3),
         "h_pct": round(max(0, ymax - ymin) / 10.0, 3),
     }
-
-
-def get_client():
-    """Gemini Client erstellen."""
-    from google import genai
-
-    if not _api_key:
-        print("FEHLER: GEMINI_API_KEY nicht gesetzt. Bitte in .env eintragen.")
-        sys.exit(1)
-
-    return genai.Client(api_key=_api_key)
 
 
 def _extract_response_text(response):

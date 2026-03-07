@@ -9,26 +9,17 @@ Ergebnis: data/doc_metadata.json (kompakt, TEI-mappbar).
 
 import argparse
 import json
-import os
 import sys
 import time
-import warnings
 from datetime import datetime, timezone
 from pathlib import Path
 
-from dotenv import load_dotenv
-
 from scripts.config import (
-    CLASSIFICATION_DIR, DOC_METADATA_PATH, GEMINI_API_KEY,
+    CLASSIFICATION_DIR, DOC_METADATA_PATH,
     GEMINI_MODEL, IMAGES_DIR,
 )
+from scripts.gemini_client import get_client
 from scripts.utils import discover_doc_ids, load_json, write_json
-
-# Gemini SDK warnings unterdruecken
-warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
-
-load_dotenv()
-_api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 MAX_PAGES = 5
 
@@ -98,16 +89,6 @@ Extract the following metadata based ONLY on what is clearly visible:
 - num_columns: dominant number of text columns (1 or 2)
 
 Report only what you can clearly determine. Use null for uncertain fields."""
-
-
-def get_client():
-    """Gemini Client erstellen."""
-    from google import genai
-
-    if not _api_key:
-        print("FEHLER: GEMINI_API_KEY nicht gesetzt. Bitte in .env eintragen.")
-        sys.exit(1)
-    return genai.Client(api_key=_api_key)
 
 
 def classify_document(client, doc_id, force=False):

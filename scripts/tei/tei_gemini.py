@@ -17,31 +17,24 @@ Usage:
 
 import argparse
 import json
-import os
 import re
 import sys
 import time
-import warnings
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-warnings.filterwarnings("ignore", message=".*non-text parts.*thought_signature.*")
-
-from dotenv import load_dotenv
 from PIL import Image
 
 from scripts.config import (
-    DOC_METADATA_PATH, GEMINI_API_KEY, GEMINI_MODEL, IMAGES_DIR,
+    DOC_METADATA_PATH, GEMINI_MODEL, IMAGES_DIR,
     KNOWN_ENTITIES, LAYOUT_DIR, REFERENZ_TEI_DIR, TEI_GEMINI_DIR,
 )
+from scripts.gemini_client import get_client
 from scripts.layout_qa_gemini import build_doc_hints, ensure_overlay, infer_genre
 from scripts.tei.tei_generator import (
     get_document_metadata, load_layout, load_ocr_text,
 )
 from scripts.utils import discover_doc_ids, load_json, write_json
-
-load_dotenv()
-_api_key = os.environ.get("GEMINI_API_KEY", "") or GEMINI_API_KEY
 
 # Sample-Docs: je ein Typ (A/Review, B/Artikel, D/Interview)
 SAMPLE_DOC_IDS = ["2310", "2530", "1440"]
@@ -100,15 +93,6 @@ REF_SNIPPETS = {
 }
 
 # ---- Gemini Client ----
-
-
-def get_client():
-    """Gemini Client erstellen."""
-    from google import genai
-    if not _api_key:
-        print("FEHLER: GEMINI_API_KEY nicht gesetzt.")
-        sys.exit(1)
-    return genai.Client(api_key=_api_key)
 
 
 # ---- Genre-Erkennung ----

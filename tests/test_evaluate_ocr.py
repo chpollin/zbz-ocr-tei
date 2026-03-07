@@ -106,6 +106,17 @@ class TestNormalizeText:
         from scripts.evaluate_ocr import normalize_text
         assert normalize_text("hello\tworld") == "hello world"
 
+    def test_curly_quotes_normalized(self):
+        from scripts.evaluate_ocr import normalize_text
+        # Typografische Anfuehrungszeichen werden durch postprocess.normalize ersetzt
+        result = normalize_text("\u201eHallo\u201c")
+        assert result == '"Hallo"'
+
+    def test_dashes_normalized(self):
+        from scripts.evaluate_ocr import normalize_text
+        result = normalize_text("A \u2013 B")
+        assert result == "A - B"
+
     def test_strip(self):
         from scripts.evaluate_ocr import normalize_text
         assert normalize_text("  text  ") == "text"
