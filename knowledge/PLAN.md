@@ -61,16 +61,23 @@ Open from Phase 1:
 - [ ] Validate against XSD schema (optional)
 - [ ] Transkribus import test (if access available)
 
-## Phase 3 -- NER + GND Linking
+## Phase 3 -- NER + Wikidata Linking (E34)
 
 Prerequisite: OCR text exists (independent of PAGE-XML).
 
-- [ ] scripts/ner/ner_pipeline.py -- LLM-based NER (Claude Haiku 4.5)
-- [ ] scripts/ner/gnd_linker.py -- Seed lookup + lobid.org API
-- [ ] scripts/ner/entity_store.py -- Per-document JSON registry
-- [ ] Entity types: person, organization, work
-- [ ] GND linking: 75 seed entities + lobid.org REST API
-- [ ] Targets: Recall >70%, Precision >80%, GND linking >60%, GND correctness >90%
+- [x] scripts/ner/ner_extract.py -- Gemini Flash Lite NER (6 Entity-Typen)
+- [x] scripts/ner/entity_store.py -- Per-document JSON registry
+- [x] scripts/ner/entity_index.py -- TEI-XML Indices + String-Matching + ID-Vergabe
+- [x] scripts/ner/wikidata_linker.py -- Wikidata API Reconciliation + Cache
+- [x] scripts/ner/ner_inject_tei.py -- TEI Entity Injection
+- [x] data/entities/*.xml -- TEI Entity Indices (person, org, place, work)
+- [x] Entity types: person, organization, place, work, event, date
+- [x] ID-Schema: zbz-p.N, zbz-o.N, zbz-l.N, zbz-w.N, zbz-e.N, zbz-d.N
+- [x] Pilot Doc 2310: 30 Entities, 54 Mentions, 31 Index-Eintraege
+- [ ] Wikidata Reconciliation: Production Run
+- [ ] TEI Injection: Production Run
+- [ ] Viewer: WD/zbz-ID Support in tei-viewer.js + edition-tei.js
+- [ ] Targets: Recall >70%, Precision >80%, Wikidata linking >50%
 
 ## Phase 4 -- TEI-XML Extension
 

@@ -41,12 +41,18 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production: 286 docs, 3,992 pages (E25/E26/E31) |
 | 3b | Layout Overlay Generator | `scripts/generate_layout_overlays.py` | Overlay PNGs + side-by-side compare | Production: 7,988 PNGs (E31) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production (286 docs, 4,091 pages) |
-| 5 | NER + GND | `scripts/ner/ner_pipeline.py` + `gnd_linker.py` | Entity JSON (`output/entities/`) | **Phase 3** |
+| 5 | **NER + Wikidata** | `scripts/ner/ner_extract.py` + `wikidata_linker.py` + `entity_index.py` | Entity JSON (`output/entities/`) + TEI Indices (`data/entities/`) | **Pilot (E34)** |
+| 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | Pilot (Doc 2310), E34 |
+| 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | Pilot, E34 |
+| 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | Pilot, E34 |
+| 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | Pending |
 | 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (285 docs, 4,117 files) |
 | 6a | Gemini Vision TEI (1 call/page) | `scripts/tei/tei_gemini.py` | TEI-XML (`output/tei_gemini/`) | Pilot (Doc 2310), E30 |
 | 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **Production (286 docs), E32** |
 | 6c | TEI Validation (RelaxNG + project rules) | `scripts/tei/tei_validator.py` | Validation JSON | Production, E32 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
+
+**Note on Stage 5 (E34):** Post-hoc NER Pipeline. Gemini Flash Lite extrahiert 6 Entity-Typen (person, organization, place, work, event, date) pro Seite als JSON. EntityStore (`entity_store.py`) aggregiert und dedupliziert pro Dokument. Entity Index (`data/entities/*.xml`) ist die Single Source of Truth: TEI-XML Indices (`listPerson`, `listOrg`, `listPlace`, `listBibl`) mit eigenem ID-Schema (`zbz-p.N`, `zbz-o.N`, `zbz-l.N`, `zbz-w.N`). String-Matching gegen Varianten ermoeglicht automatische Zuordnung ohne API-Call. Wikidata Reconciliation nur fuer neue, unbekannte Entities via `wbsearchentities` + `wbgetentities` (P31 Typ-Check). Nur bei 100%-Match wird QID uebernommen. Kein Gemini fuer ID-Vergabe (Halluzinationsrisiko). TEI Injection (`ner_inject_tei.py`) migriert bestehende `GND:unknown` Refs und fuegt neue Tags hinzu. Output: `output/tei_ner/`. Kosten: ~$1-3 (Gemini) + $0 (Wikidata). CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
 **Note on Stage 6:** The rule-based TEI generator goes directly from layout JSON + OCR Markdown to TEI-XML. Produces flat structure (no div hierarchy, no lb, no entities beyond seed dict). **Stage 6a (E30)** was the first Gemini Vision approach (standalone, 1 call/page). **Stage 6b (E32)** is the production pipeline: combines enhanced rule-based scaffold (Step 1) with Gemini refinement (Step 2, mapping-table prompt), document assembly (Step 3), and RelaxNG validation (Step 4). Post-processing (`fix_gemini_tei()`) corrects 6 types of Gemini structural errors. Entity re-annotation (`reannotate_entities()`) catches missed mentions. Interview speaker detection in scaffold. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. Cost: ~$17 for 286 docs (Gemini 3.1 Flash Lite). OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 

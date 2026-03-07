@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-07
+updated: 2026-03-08
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,18 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-07 | NER Pipeline + Entity Index (Session 16)
+
+100. NER Pipeline Phase 3 implementiert (E34): 6 neue Module in `scripts/ner/`. Post-hoc-Architektur: Gemini Flash Lite extrahiert Entities pro Seite als JSON, EntityStore aggregiert pro Dokument, Wikidata-API reconciled (kein Gemini fuer IDs), TEI Injection schreibt nach `output/tei_ner/`.
+
+101. 6 Entity-Typen: person, organization, place, work, event, date. Wikidata als Primaer-ID-System statt GND (breitere Abdeckung, international).
+
+102. Entity Index als TEI-XML (`data/entities/`): `person_index.xml`, `org_index.xml`, `place_index.xml`, `work_index.xml`. Eigenes ID-Schema: `zbz-p.N`, `zbz-o.N`, `zbz-l.N`, `zbz-w.N`. Varianten fuer String-Matching. Single Source of Truth.
+
+103. Pilot Doc 2310: 30 unique Entities, 54 Mentions. 5 Index-Matches (Seed), 22 neu registriert. Index: 31 Eintraege, 51 Varianten.
 
 ---
 

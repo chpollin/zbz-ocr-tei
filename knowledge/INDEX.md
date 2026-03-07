@@ -63,7 +63,8 @@ JOURNAL   <-- chronological, references all docs
 | 7-Stage Pipeline | Images -> OCR -> Layout -> PAGE-XML -> NER/GND -> TEI-XML -> Evaluation | [PIPELINE](PIPELINE.md) |
 | Document Types A-D | Single-column, Two-column, Monograph, Special | [QUELLENANALYSE](QUELLENANALYSE.md) |
 | DTA-Basisformat | TEI base schema with ZBZ customizations | [TEI-MAPPING](TEI-MAPPING.md) |
-| NER + GND | Named Entity Recognition + GND linking (Phase 2) | [GND-STRATEGIE](GND-STRATEGIE.md) |
+| NER + Wikidata | Named Entity Recognition + Wikidata linking (Phase 3, E34) | [GND-STRATEGIE](GND-STRATEGIE.md) |
+| Entity Index | TEI-XML Indices (`data/entities/`) with internal IDs (zbz-p.N) + Wikidata QIDs | [GND-STRATEGIE](GND-STRATEGIE.md) |
 | CER / WER | Character Error Rate / Word Error Rate | [TESTPLAN](TESTPLAN.md) |
 | Hybrid Pipeline | Docling (Layout) + LLM-OCR (Text) combined | [PIPELINE](PIPELINE.md) |
 | PAGE-XML | Intermediate format for Layout+OCR (Schema 2013-07-15) | [PIPELINE](PIPELINE.md) |
@@ -83,6 +84,7 @@ JOURNAL   <-- chronological, references all docs
 | Layout Overlay Generator (E31) | Batch PNG generation with changed-highlighting + Docling-vs-Gemini side-by-side compare | [PIPELINE](PIPELINE.md) |
 | changes_summary (E31) | Per-page label transition logging in layout_gemini.json, aggregated in summary_gemini.json | [PIPELINE](PIPELINE.md) |
 | Digitale Edition (E33) | Public-facing static website at `docs/edition/` with Landing, Catalog, Reader, About. Own design system, `ZBZ.Edition` namespace | [PIPELINE](PIPELINE.md) |
+| NER Pipeline (E34) | Post-hoc NER via Gemini Flash Lite (6 types), TEI-XML Entity Index, Wikidata Reconciliation, TEI Injection | [PIPELINE](PIPELINE.md) |
 
 ---
 

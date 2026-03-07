@@ -1,16 +1,16 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-27
-tags: [zbz-ocr-tei, gnd, ner, entity-linking]
+updated: 2026-03-07
+tags: [zbz-ocr-tei, gnd, ner, entity-linking, wikidata]
 status: active
 ---
 
-# GND Strategy
+# Entity Linking Strategy (NER + Wikidata)
 
-Strategy for Named Entity Recognition and GND linking in the Hersch edition project.
+Strategy for Named Entity Recognition and entity linking in the Hersch edition project. Since E34: **Wikidata as primary ID system** (replaces GND). Internal TEI-XML indices as Single Source of Truth.
 
-> **Scope:** Since the scope extension (E21), zbz-ocr-tei performs NER + GND linking itself (Phase 2 in [PLAN.md](PLAN.md)). Implementation: `scripts/ner/ner_pipeline.py` + `gnd_linker.py`. GND seed (75 entities) as foundation.
+> **Scope:** zbz-ocr-tei performs NER + entity linking (Phase 3 in [PLAN.md](PLAN.md)). Implementation: `scripts/ner/ner_extract.py` (Gemini NER) + `entity_index.py` (TEI indices) + `wikidata_linker.py` (Wikidata API). Entity Index (`data/entities/`) as foundation.
 
 **Dependencies:** [TEI-MAPPING](TEI-MAPPING.md)
 
@@ -20,15 +20,36 @@ Strategy for Named Entity Recognition and GND linking in the Hersch edition proj
 
 ## Overview
 
-Index compilation is a central editorial goal. All persons, organizations, and works shall be linked with GND-IDs (Gemeinsame Normdatei).
+Index compilation is a central editorial goal. All persons, organizations, places, and works shall be identified and linked with Wikidata-QIDs where possible, otherwise with internal IDs (zbz-p.N, zbz-o.N, etc.).
 
-### Entity Types
+### Entity Types (6)
 
-| Type | TEI Element | Attribute | Example |
-|------|-------------|-----------|---------|
-| Person | `<persName>` | `ref="GND:..."` | `<persName ref="GND:118557106">Karl Jaspers</persName>` |
-| Organization | `<orgName>` | `ref="GND:..."` | `<orgName ref="GND:...">UNESCO</orgName>` |
-| Work | `<bibl>` | `corresp="GND:..."` | `<bibl corresp="GND:4343581-6">Philosophie</bibl>` |
+| Type | TEI Element | Attribute | ID-Schema | Example |
+|------|-------------|-----------|-----------|---------|
+| Person | `<persName>` | `ref="#zbz-p.1"` | zbz-p.N | `<persName ref="#zbz-p.1">Karl Jaspers</persName>` |
+| Organization | `<orgName>` | `ref="#zbz-o.1"` | zbz-o.N | `<orgName ref="#zbz-o.1">UNESCO</orgName>` |
+| Place | `<placeName>` | `ref="#zbz-l.1"` | zbz-l.N | `<placeName ref="#zbz-l.1">Paris</placeName>` |
+| Work | `<bibl>` | `corresp="#zbz-w.1"` | zbz-w.N | `<bibl corresp="#zbz-w.1">Philosophie</bibl>` |
+| Event | `<name type="event">` | `ref="#zbz-e.1"` | zbz-e.N | `<name type="event" ref="#zbz-e.1">Mai 68</name>` |
+| Date | `<date>` | `when="..."` | (kein ID) | `<date when="1947">1947</date>` |
+
+### ID Hierarchy
+
+1. **Internal ID** (zbz-p.N): Immer vorhanden, Single Source of Truth
+2. **Wikidata QID**: Nur wenn per API verifiziert (100%-Match + Typ-Check)
+3. **GND-ID**: Legacy, wird ueber Wikidata P227 Property nachgeschlagen
+
+### Entity Index (TEI-XML)
+
+```
+data/entities/
+  person_index.xml    # <listPerson> mit <person xml:id="zbz-p.1" corresp="https://www.wikidata.org/wiki/Q123559">
+  org_index.xml       # <listOrg>
+  place_index.xml     # <listPlace>
+  work_index.xml      # <listBibl>
+```
+
+Jeder Eintrag hat: `xml:id` (interne ID), optionales `corresp` (Wikidata-URL), `type="main"` + `type="variant"` Namensvarianten fuer String-Matching.
 
 ### Basic Rule
 

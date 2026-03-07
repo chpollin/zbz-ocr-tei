@@ -30,10 +30,19 @@ Complete CLI reference: `knowledge/PIPELINE.md` §CLI Commands.
 
 ```bash
 # Most common commands (no GPU)
-python -m scripts.tei.tei_generator              # Generate TEI-XML
-python scripts/evaluate_ocr.py --all             # Evaluation
-python -m scripts.generate_dashboard_data        # Dashboard data
+python -m scripts.tei.tei_unified --all           # Unified TEI Pipeline (Production)
+python -m scripts.tei.tei_validator --all --report # TEI Validation (RelaxNG)
+python scripts/evaluate_ocr.py --all              # Evaluation
+python -m scripts.generate_dashboard_data         # Dashboard data
+
+# NER Pipeline (Phase 3)
+python -m scripts.ner.ner_extract --doc 2310      # NER extraction (single doc)
+python -m scripts.ner.ner_extract --all           # NER extraction (all docs)
+python -m scripts.ner.entity_index --stats        # Entity Index statistics
+python -m scripts.ner.entity_index --merge-all    # Merge all stores into index
+python -m scripts.ner.wikidata_linker --doc 2310  # Wikidata reconciliation
+python -m scripts.ner.ner_inject_tei --doc 2310   # TEI entity injection
 
 # GPU required
-python -m scripts.run_layout_analysis            # Layout analysis (Docling)
+python -m scripts.run_layout_analysis             # Layout analysis (Docling)
 ```
