@@ -53,3 +53,25 @@ def test_annotate_entities_multiple():
     result = annotate_entities("Heidegger und Sartre diskutierten.")
     assert "GND:118547798" in result  # Heidegger
     assert "GND:118605895" in result  # Sartre
+
+
+def test_md_to_tei_empty_string():
+    from scripts.tei.tei_generator import md_to_tei_inline
+    assert md_to_tei_inline("") == ""
+
+
+def test_annotate_entities_empty_string():
+    from scripts.tei.tei_generator import annotate_entities
+    assert annotate_entities("") == ""
+
+
+def test_annotate_entities_at_string_start():
+    from scripts.tei.tei_generator import annotate_entities
+    result = annotate_entities("Jaspers sagte etwas.")
+    assert "<persName" in result
+
+
+def test_annotate_entities_at_string_end():
+    from scripts.tei.tei_generator import annotate_entities
+    result = annotate_entities("Ein Werk von Jaspers")
+    assert "<persName" in result
