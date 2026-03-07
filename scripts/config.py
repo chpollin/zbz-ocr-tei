@@ -24,6 +24,8 @@ CLASSIFICATION_DIR = OUTPUT_DIR / "classification"
 TEI_DIR = OUTPUT_DIR / "tei"
 TEI_GEMINI_DIR = OUTPUT_DIR / "tei_gemini"
 TEI_UNIFIED_DIR = OUTPUT_DIR / "tei_unified"
+ENTITIES_DIR = OUTPUT_DIR / "entities"
+TEI_NER_DIR = OUTPUT_DIR / "tei_ner"
 
 # TEI-Konstanten
 TEI_NS = "http://www.tei-c.org/ns/1.0"
@@ -76,6 +78,15 @@ DOCLING_SERVE_URL = os.environ.get("DOCLING_SERVE_URL", "http://localhost:5001")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
 GEMINI_DETECT_MODEL = GEMINI_MODEL  # gleich; bei Bedarf separat ueberschreiben
+
+# Wikidata API
+WIKIDATA_API_URL = "https://www.wikidata.org/w/api.php"
+WIKIDATA_RATE_LIMIT = 1.0  # Sekunden zwischen Requests
+WIKIDATA_CACHE_PATH = ENTITIES_DIR / "_wikidata_cache.json"
+WIKIDATA_USER_AGENT = "zbz-ocr-tei/1.0 (DHCraft; Jeanne Hersch Edition)"
+
+# NER Entity-Typen
+NER_ENTITY_TYPES = {"person", "organization", "place", "work", "event", "date"}
 
 # Docling BlockType -> ZBZ Structural Tag
 DOCLING_TO_ZBZ = {

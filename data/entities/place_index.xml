@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Ortsindex -- Jeanne Hersch Edition</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Interner Index, ZBZ/DHCraft</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Automatisch generiert, manuell verifiziert</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listPlace>
+        <place xml:id="zbz-l.1">
+          <placeName type="main">Paris</placeName>
+        </place>
+        <place xml:id="zbz-l.2">
+          <placeName type="main">France</placeName>
+        </place>
+      </listPlace>
+    </body>
+  </text>
+</TEI>

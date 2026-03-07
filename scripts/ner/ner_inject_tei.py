@@ -1,0 +1,358 @@
+"""
+TEI Injection: Fuegt NER-Entities in bestehende TEI-XML ein.
+
+Liest tei_unified _final.xml, ersetzt GND-Refs durch WD-Refs,
+fuegt fehlende Entity-Tags hinzu, schreibt nach tei_ner/.
+
+Aufruf:
+    python -m scripts.ner.ner_inject_tei --doc 2310
+    python -m scripts.ner.ner_inject_tei --all
+    python -m scripts.ner.ner_inject_tei --doc 2310 --validate
+"""
+
+import argparse
+import json
+import re
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+from scripts.config import (
+    ENTITIES_DIR,
+    TEI_NER_DIR,
+    TEI_NS,
+    TEI_UNIFIED_DIR,
+)
+from scripts.ner.entity_store import EntityRecord, EntityStore
+
+# TEI Element-Mapping fuer Entity-Typen
+ENTITY_TEI_MAP = {
+    "person": ("persName", "ref"),
+    "organization": ("orgName", "ref"),
+    "place": ("placeName", "ref"),
+    "work": ("bibl", "corresp"),
+    "event": ("name", "ref"),  # <name type="event" ref="...">
+}
+
+# Tags die bereits Entities enthalten (nicht doppelt taggen)
+ENTITY_TAG_PATTERN = re.compile(
+    r'<(?:persName|orgName|placeName|bibl|name)\b[^>]*>.*?'
+    r'</(?:persName|orgName|placeName|bibl|name)>',
+    re.DOTALL,
+)
+
+
+# ---------------------------------------------------------------------------
+# Ref-Update (GND -> WD)
+# ---------------------------------------------------------------------------
+
+def update_existing_refs(xml_text: str, store: EntityStore) -> str:
+    """Ersetzt bestehende GND-Refs durch WD-Refs wo moeglich.
+
+    GND:unknown -> WD:Q... (wenn resolved)
+    GND:123... -> WD:Q... (wenn GND-to-WD Mapping existiert)
+    """
+    # Build lookup: surface text -> EntityRecord (resolved only)
+    surface_to_rec: dict[str, EntityRecord] = {}
+    for rec in store.get_resolved():
+        for surface in rec.surfaces:
+            surface_to_rec[surface.lower()] = rec
+
+    def _replace_ref(match):
+        full_tag = match.group(0)
+        tag_name = match.group(1)
+        attrs = match.group(2)
+        content = match.group(3)
+
+        # Entity-Text extrahieren (ohne Sub-Tags)
+        text_only = re.sub(r'<[^>]+>', '', content).strip().lower()
+
+        # Lookup
+        rec = surface_to_rec.get(text_only)
+        if not rec:
+            return full_tag
+
+        new_ref = rec.ref_value()
+        if new_ref == "WD:unknown":
+            return full_tag
+
+        # ref= oder corresp= ersetzen
+        if 'ref="GND:unknown"' in attrs:
+            attrs = attrs.replace('ref="GND:unknown"', f'ref="{new_ref}"')
+        elif 'corresp="GND:unknown"' in attrs:
+            attrs = attrs.replace('corresp="GND:unknown"', f'corresp="{new_ref}"')
+        elif re.search(r'ref="GND:\d+"', attrs):
+            # GND-ID behalten als corresp, WD als ref setzen
+            old_ref = re.search(r'ref="(GND:\d+)"', attrs)
+            if old_ref:
+                gnd_ref = old_ref.group(1)
+                attrs = re.sub(
+                    r'ref="GND:\d+"',
+                    f'ref="{new_ref}" corresp="{gnd_ref}"',
+                    attrs,
+                )
+        elif re.search(r'corresp="GND:\d+"', attrs):
+            old_ref = re.search(r'corresp="(GND:\d+)"', attrs)
+            if old_ref:
+                gnd_ref = old_ref.group(1)
+                attrs = re.sub(
+                    r'corresp="GND:\d+"',
+                    f'corresp="{new_ref}"',
+                    attrs,
+                )
+
+        return f"<{tag_name}{attrs}>{content}</{tag_name}>"
+
+    # Pattern fuer alle Entity-Tags mit ref/corresp
+    pattern = re.compile(
+        r'<(persName|orgName|placeName|bibl|name)(\s[^>]*)>(.*?)</\1>',
+        re.DOTALL,
+    )
+    return pattern.sub(_replace_ref, xml_text)
+
+
+# ---------------------------------------------------------------------------
+# Neue Entity-Tags einfuegen
+# ---------------------------------------------------------------------------
+
+def inject_new_entities(xml_text: str, store: EntityStore) -> str:
+    """Fuegt Entity-Tags fuer ungetaggte Mentions ein.
+
+    Verwendet die bewaehrte Tag-aware Split + Placeholder Technik
+    aus reannotate_entities() in tei_unified.py.
+    """
+    # Nur resolved Entities mit hoeherem Count injizieren
+    entities_to_inject = []
+    for rec in store.entities.values():
+        if not rec.is_resolved:
+            continue
+        for surface in rec.surfaces:
+            entities_to_inject.append((surface, rec))
+
+    if not entities_to_inject:
+        return xml_text
+
+    # Laengste zuerst (verhindert Partial Matches)
+    entities_to_inject.sort(key=lambda x: len(x[0]), reverse=True)
+
+    # Tag-aware Split: nur in Text-Teilen annotieren
+    # Split an bestehenden Entity-Tags
+    parts = ENTITY_TAG_PATTERN.split(xml_text)
+    tags = ENTITY_TAG_PATTERN.findall(xml_text)
+
+    # Nur in ungeraden Positionen (Text zwischen Tags) annotieren
+    new_parts = []
+    tag_idx = 0
+    for i, part in enumerate(parts):
+        if i > 0 and tag_idx < len(tags):
+            new_parts.append(tags[tag_idx])
+            tag_idx += 1
+
+        # Nicht in XML-Tags annotieren
+        if '<' in part and '>' in part:
+            # Vorsicht: Teil koennte gemischt sein (Text + Tags)
+            # Nur Text ausserhalb von Tags annotieren
+            annotated = _annotate_text_segments(part, entities_to_inject)
+            new_parts.append(annotated)
+        else:
+            annotated = _annotate_text_segments(part, entities_to_inject)
+            new_parts.append(annotated)
+
+    return "".join(new_parts)
+
+
+def _annotate_text_segments(
+    text: str,
+    entities: list[tuple[str, EntityRecord]],
+) -> str:
+    """Annotiert Entity-Mentions in einem Text-Segment.
+
+    Verwendet Placeholder-Technik um verschachtelte Matches zu vermeiden.
+    """
+    placeholders = {}
+    counter = 0
+
+    for surface, rec in entities:
+        tei_elem, ref_attr = ENTITY_TEI_MAP.get(rec.entity_type, ("name", "ref"))
+        ref_val = rec.ref_value()
+
+        if ref_val == "WD:unknown":
+            continue
+
+        # Tag aufbauen
+        if rec.entity_type == "event":
+            tag = f'<name type="event" {ref_attr}="{ref_val}">{surface}</name>'
+        else:
+            tag = f'<{tei_elem} {ref_attr}="{ref_val}">{surface}</{tei_elem}>'
+
+        placeholder = f"\x00ENT{counter}\x00"
+        placeholders[placeholder] = tag
+        counter += 1
+
+        # Wortgrenzen-Match, nicht in XML-Tags
+        pattern = r'(?<![<\w])' + re.escape(surface) + r'(?![>\w])'
+        text = re.sub(pattern, placeholder, text)
+
+    # Placeholders einsetzen
+    for ph, tag in placeholders.items():
+        text = text.replace(ph, tag)
+
+    return text
+
+
+# ---------------------------------------------------------------------------
+# Dokument-Verarbeitung
+# ---------------------------------------------------------------------------
+
+def process_document(
+    doc_id: str,
+    force: bool = False,
+    validate: bool = False,
+) -> dict:
+    """Injiziert Entities in ein TEI-Dokument.
+
+    Returns:
+        Manifest dict.
+    """
+    start = time.time()
+
+    # Source TEI laden
+    source_path = TEI_UNIFIED_DIR / doc_id / f"{doc_id}_final.xml"
+    if not source_path.exists():
+        print(f"  {doc_id}: kein unified TEI gefunden ({source_path})")
+        return {"doc_id": doc_id, "error": "no_source"}
+
+    # Output pruefen
+    out_dir = TEI_NER_DIR / doc_id
+    out_path = out_dir / f"{doc_id}_final.xml"
+    if out_path.exists() and not force:
+        print(f"  {doc_id}: bereits vorhanden (--force zum Ueberschreiben)")
+        return {"doc_id": doc_id, "skipped": True}
+
+    # Entity Store laden
+    store = EntityStore.load(doc_id)
+    if not store.entities:
+        print(f"  {doc_id}: keine Entities, kopiere Original")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(
+            source_path.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+        return {"doc_id": doc_id, "entities_injected": 0}
+
+    # TEI lesen
+    xml_text = source_path.read_text(encoding="utf-8")
+
+    # Entity-Counts vorher
+    before_counts = {
+        "persName": len(re.findall(r'<persName\b', xml_text)),
+        "orgName": len(re.findall(r'<orgName\b', xml_text)),
+        "placeName": len(re.findall(r'<placeName\b', xml_text)),
+        "bibl": len(re.findall(r'<bibl\b', xml_text)),
+    }
+
+    # Phase 1: Bestehende Refs updaten (GND -> WD)
+    xml_text = update_existing_refs(xml_text, store)
+
+    # Phase 2: Neue Entity-Tags einfuegen
+    xml_text = inject_new_entities(xml_text, store)
+
+    # Entity-Counts nachher
+    after_counts = {
+        "persName": len(re.findall(r'<persName\b', xml_text)),
+        "orgName": len(re.findall(r'<orgName\b', xml_text)),
+        "placeName": len(re.findall(r'<placeName\b', xml_text)),
+        "bibl": len(re.findall(r'<bibl\b', xml_text)),
+    }
+
+    # Speichern
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(xml_text, encoding="utf-8")
+
+    # Validation (optional)
+    validation_result = None
+    if validate:
+        try:
+            from scripts.tei.tei_validator import validate_tei_file
+            validation_result = validate_tei_file(out_path)
+            status = "VALID" if validation_result["valid"] else "INVALID"
+            print(f"    Validation: {status}")
+        except ImportError:
+            print("    WARNUNG: tei_validator nicht verfuegbar")
+
+    elapsed = round(time.time() - start, 1)
+
+    # Manifest
+    manifest = {
+        "doc_id": doc_id,
+        "entities_total": len(store.entities),
+        "entities_resolved": len(store.get_resolved()),
+        "before": before_counts,
+        "after": after_counts,
+        "added": {k: after_counts[k] - before_counts.get(k, 0)
+                  for k in after_counts},
+        "elapsed_seconds": elapsed,
+        "validation": validation_result,
+    }
+
+    manifest_path = out_dir / f"{doc_id}_manifest.json"
+    manifest_path.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+    refs_updated = sum(1 for r in store.get_resolved()
+                       if r.ref_value().startswith("WD:"))
+    total_added = sum(after_counts[k] - before_counts.get(k, 0)
+                      for k in after_counts)
+
+    print(f"  {doc_id}: {refs_updated} refs updated, "
+          f"{total_added} tags added, {elapsed}s")
+
+    return manifest
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="TEI Entity Injection (NER -> TEI)"
+    )
+    parser.add_argument("--doc", help="Einzelnes Dokument")
+    parser.add_argument("--all", action="store_true",
+                        help="Alle Dokumente mit Entities")
+    parser.add_argument("--force", action="store_true",
+                        help="Bestehende ueberschreiben")
+    parser.add_argument("--validate", action="store_true",
+                        help="RelaxNG-Validierung")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Nur anzeigen, nicht schreiben")
+    args = parser.parse_args()
+
+    if args.doc:
+        doc_ids = [args.doc]
+    elif args.all:
+        if not ENTITIES_DIR.exists():
+            print("Keine Entity-Daten. Zuerst ner_extract ausfuehren.")
+            return
+        doc_ids = sorted(d.name for d in ENTITIES_DIR.iterdir()
+                         if d.is_dir() and not d.name.startswith("_"))
+    else:
+        parser.print_help()
+        return
+
+    print(f"TEI Entity Injection: {len(doc_ids)} Dokumente")
+    start = time.time()
+
+    for i, doc_id in enumerate(doc_ids, 1):
+        print(f"[{i}/{len(doc_ids)}] {doc_id}:")
+        process_document(doc_id, force=args.force, validate=args.validate)
+
+    elapsed = round(time.time() - start, 1)
+    print(f"\nFertig in {elapsed}s.")
+
+
+if __name__ == "__main__":
+    main()

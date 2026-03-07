@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Organisationsindex -- Jeanne Hersch Edition</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Interner Index, ZBZ/DHCraft</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Automatisch generiert, manuell verifiziert</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listOrg>
+        <org xml:id="zbz-o.1">
+          <orgName type="main">Presses Universitaires de France</orgName>
+        </org>
+        <org xml:id="zbz-o.2">
+          <orgName type="main">JSTOR</orgName>
+        </org>
+        <org xml:id="zbz-o.3">
+          <orgName type="main">Springer-Verlag</orgName>
+        </org>
+        <org xml:id="zbz-o.4">
+          <orgName type="main">Ohio University Press</orgName>
+        </org>
+      </listOrg>
+    </body>
+  </text>
+</TEI>
