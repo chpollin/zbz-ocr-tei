@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-25
-updated: 2026-03-06
+updated: 2026-03-07
 tags: [zbz-ocr-tei, plan, implementation, phases]
 status: active
 ---
@@ -41,12 +41,11 @@ Phase 6 (Production: 286 Docs)
 
 ## Completed
 
-Phase 0 -- Pilot (15 docs): Layout evaluation (E19/E20), image extraction (4,152 PNGs), OCR (Mistral, CER 6.42%), LLM correction tested and made optional (E17), TEI-XML (383 files, E22), evaluation + dashboard, data delivery (E23: 286 PDFs + 25 TEI + 24 PAGE-XML).
+Phase 0 -- Pilot (15 docs): Layout evaluation (E19/E20), image extraction, OCR (Mistral, E6), LLM correction tested and made optional (E17), TEI-XML (E22), evaluation + dashboard, data delivery (E23).
 
-Phase 1 -- Scale Layout (286 docs): Docling layout on all 4,152 pages (E24 docling-serve, E20 local GPU RTX 4060 ~5s/page). Gemini QA (E25) + Detect (E26) with auto-routing (E31: full run completed). Viewer integration with Docling/Gemini toggle. Quality: 75% good, 10% warning, 12% bad, 3% empty. Full run: 3,992 pages processed, 14,708 corrections, 894 ADDED regions. Overlay generator: 7,988 PNGs.
+Phase 1 -- Scale Layout (286 docs): Docling layout (E24 docling-serve, E20 local GPU). Gemini QA (E25) + Detect (E26) with auto-routing (E31: full run completed). Viewer integration with Docling/Gemini toggle. Overlay generator.
 
 Open from Phase 1:
-- [x] Gemini auto-mode: complete run on all 286 docs (3,992/4,152 pages, 160 failed)
 - [ ] Prompt tuning: rightmost column missed on wide landscapes, picture detection weak
 
 ---
@@ -57,7 +56,7 @@ Open from Phase 1:
 - [x] scripts/layout/mets_generator.py -- METS manifest (PAGE-XML refs)
 - [x] Schema: PAGE-XML 2013-07-15 (Transkribus standard)
 - [x] ID scheme: r_{N} / r_{N}_tl_1 (region-level, 1 TextLine per region)
-- [x] Production: 286 docs, 4,091 PAGE-XML + 286 METS
+- [x] Production run complete
 - [ ] Validate against XSD schema (optional)
 - [ ] Transkribus import test (if access available)
 
@@ -73,7 +72,7 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 - [x] data/entities/*.xml -- TEI Entity Indices (person, org, place, work)
 - [x] Entity types: person, organization, place, work, event, date
 - [x] ID-Schema: zbz-p.N, zbz-o.N, zbz-l.N, zbz-w.N, zbz-e.N, zbz-d.N
-- [x] Pilot Doc 2310: 30 Entities, 54 Mentions, 31 Index-Eintraege
+- [x] Pilot Doc 2310 erfolgreich
 - [ ] Wikidata Reconciliation: Production Run
 - [ ] TEI Injection: Production Run
 - [ ] Viewer: WD/zbz-ID Support in tei-viewer.js + edition-tei.js
@@ -82,29 +81,29 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 ## Phase 4 -- TEI-XML Extension
 
 Prerequisite: Phase 3 (NER) for full entities; Gemini Vision TEI works independently.
-Current: Rule-based generator (4,117 TEI-XML, 285 docs, flat structure). Gemini Vision TEI (E30): Pilot Doc 2310 successful.
+Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot Doc 2310 successful.
 
 - [x] teiHeader with real title, author, date from doc_metadata.json
 - [x] OCR source priority: Gemini B > Gemini A > LLM C > Mistral
 - [x] Language mapping: ISO 639-3 + legacy 2-letter fallback
-- [x] Production (rule-based): 285 docs, 4,117 TEI-XML files
+- [x] Production (rule-based) complete
 - [x] **Gemini Vision TEI Generator** (E30): `scripts/tei/tei_gemini.py`, 3-Pass pipeline
 - [x] **Dokumenttypspezifische Prompts** (E30): 4-Ebenen (Layout-Typ, Pub-Form, Genre, Sprache) in `layout_qa_gemini.py` + `tei_gemini.py`
-- [x] **Pilot Doc 2310** (E30): persName/bibl/lb/div Recall 1.0, valides XML
+- [x] **Pilot Doc 2310** (E30): valides XML
 - [x] **Unified TEI Pipeline** (E32): `tei_unified.py` + `tei_mapping_prompt.py` + `tei_validator.py`
 - [x] **Pilot auf 3 Docs** (E32): 2310 (review), 2530 (standard), 1440 (interview) -- alle RelaxNG-valide
 - [x] scripts/tei/tei_validator.py -- RelaxNG + 8 Projekt-Regeln (R1-R8)
 - [x] LINE breaks (`<lb/>`) from OCR line structure (in unified Step 1)
 - [x] Special document types via genre-conditional mapping table (10 genres)
 - [x] **Qualitaetsfixes** (E32): Entity Re-Annotation, Prompt-Tuning, Interview-Speaker-Erkennung
-- [ ] Unified TEI production run (286 docs, ~$17) -- **RUNNING**
+- [ ] Unified TEI production run -- **RUNNING**
 - [ ] Integrate NER entities from Phase 3
 
 ## Phase 5 -- Extended Evaluation
 
 - [ ] evaluate_ocr.py new mode --mode tei: text CER + structural accuracy + entity scores
 - [ ] Dashboard extended with page_xml, entities, tei_xml stages
-- [ ] Metrics: Text CER <7%, Structural accuracy >80%, Entity P/R >80%/>70%
+- [ ] Zielwerte: Text CER <7%, Structural accuracy >80%, Entity P/R >80%/>70%
 
 ## Phase 6 -- Production Run (286 docs)
 
@@ -119,38 +118,37 @@ Current: Rule-based generator (4,117 TEI-XML, 285 docs, flat structure). Gemini 
 ```
 PDF-Scans (286 PDFs)
   |
-  +---> extract_pages.py ---------> 4,152 PNGs (300 DPI)           [DONE]
+  +---> extract_pages.py ----------> PNGs (300 DPI)
   |
-  +---> ocr_pipeline.py ----------> Markdown (per page)             [DONE: 286/286]
+  +---> ocr_pipeline.py -----------> Markdown (per page)
   |         (Mistral / DeepSeek)
   |
-  +---> run_layout_analysis.py --> Layout JSON (per page)           [DONE: 286/286]
+  +---> run_layout_analysis.py ----> Layout JSON (per page)
   |         (Docling RT-DETR V2)
   |
-  +---> layout_qa_gemini.py -----> Corrected Layout JSON            [DONE: 286 docs, 3,992 pages]
-  |     --mode auto (Flash Lite)   (3,519 qa + 633 detect)
+  +---> layout_qa_gemini.py -------> Corrected Layout JSON
+  |     --mode auto (Flash Lite)
   |
-  +---> page_xml_generator.py --> PAGE-XML + METS                   [DONE: 286 docs, 4,091 pages]
+  +---> page_xml_generator.py ----> PAGE-XML + METS
   |
-  +---> ner_pipeline.py -------> Entities + GND-IDs (JSON)          [PENDING]
+  +---> ner/ (ner_extract +      -> Entities + Wikidata-IDs (JSON)
+  |     entity_index +
+  |     wikidata_linker)
   |
-  +---> tei_generator.py ------> TEI-XML (rule-based, flat)         [DONE: 285 docs, 4,117 files]
+  +---> tei_unified.py -----------> TEI-XML (Scaffold+Gemini+Validate)
   |
-  +---> tei_gemini.py --------> TEI-XML (3-Pass, Gemini Vision)    [PILOT: Doc 2310, E30]
+  +---> evaluate_ocr.py ----------> CER + Structure + Entity Scores
   |
-  +---> tei_unified.py -------> TEI-XML (Scaffold+Gemini+Validate) [PILOT: 3 docs, E32]
-  |
-  +---> evaluate_ocr.py -------> CER + Structure + Entity Scores   [DONE for pilot]
-  |
-  +---> generate_edition_data.py -> docs/edition/data/catalog.json  [DONE: E33]
+  +---> generate_edition_data.py -> docs/edition/data/catalog.json
 ```
+
+Aktueller Status pro Stufe: siehe [PROJEKT](PROJEKT.md) §Component Status.
 
 ---
 
-## Runtime Estimate (286 docs, ~4,100 pages)
+## Runtime Estimate
 
-Full pipeline GPU path: ~11h, ~$25.
-Breakdown: Images <1h/$0, OCR ~1.5h/~$14, Layout ~5.5h/$0, Gemini ~7h/~$5, NER ~1h/~$5, TEI ~7min/$0.
+Kosten: siehe [PROJEKT](PROJEKT.md) §Costs.
 
 ---
 
@@ -165,4 +163,4 @@ Picture, Figure -> _skip
 
 ---
 
-Created: 2026-02-25 | Updated: 2026-03-06
+Created: 2026-02-25 | Updated: 2026-03-07

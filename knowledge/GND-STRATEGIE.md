@@ -93,7 +93,7 @@ OCR → TEI base structure → NER → GND lookup → Validation → Manual QA
 
 ### Challenges
 
-1. **Multilingualism**: 66% French, 30% German — different naming conventions
+1. **Multilingualism**: Mehrheitlich Franzoesisch (siehe [QUELLENANALYSE](QUELLENANALYSE.md) §Language Distribution) — different naming conventions
 2. **Historical variants**: Name spellings may vary
 3. **Context dependency**: "Jaspers" can be a person or a work (possessive: "Jaspers' Philosophie")
 4. **Pronouns**: "He said..." — no linking for pronouns

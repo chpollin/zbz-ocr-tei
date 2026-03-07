@@ -81,7 +81,9 @@ Pilot files and document types: See [QUELLENANALYSE](QUELLENANALYSE.md) §Pilot 
 
 ## Results
 
-### Evaluation Matrix: Mistral Document AI 2512 (18.02.2026)
+> **Hinweis:** Die folgenden Tabellen sind die **Pilot-Baseline** (15 Docs, Feb 2026). Aktuelle Metriken ueber alle 286 Docs: siehe Dashboard (`docs/index.html`) und Evaluation-Output (`output/evaluation/`).
+
+### Evaluation Matrix: Mistral Document AI 2512 (Pilot-Baseline, 18.02.2026)
 
 | PDF | Type | CER | WER | Accuracy | Status | Notes |
 |-----|------|-----|-----|----------|--------|-------|
@@ -114,7 +116,7 @@ Pilot files and document types: See [QUELLENANALYSE](QUELLENANALYSE.md) §Pilot 
 | Phase 3 (Type D) | 2.88% | 12.62% | 97.12% |
 | Phase 4 (Type C) | 2.65% | 12.98% | 97.35% |
 
-### Evaluation Matrix: LLM Post-Correction Haiku 4.5 (19.02.2026)
+### Evaluation Matrix: LLM Post-Correction Haiku 4.5 (Pilot-Baseline, 19.02.2026)
 
 Variant C (Few-Shot), all 15 Docs:
 
@@ -140,7 +142,7 @@ Note: LLM correction improves docs with high CER, slightly degrades results for 
 
 Note: DeepSeek results are based on 2 test pages per doc, Mistral on all pages.
 
-### Layout Analysis: Docling 2.75 (25.02.2026)
+### Layout Analysis: Docling 2.75 (Pilot-Baseline, 25.02.2026)
 
 8/15 docs analyzed (7 docs need GPU: 2530, 290, 3040, 40, 830, 890, 90).
 

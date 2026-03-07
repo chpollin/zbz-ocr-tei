@@ -20,7 +20,7 @@ Analysis of the PDF source digitizations for the Jeanne Hersch edition project. 
 |--------|-------|
 | Total entries in Masterfile | 327 |
 | Excluded (translations/reprints) | 38 |
-| Effective corpus size | 289 texts |
+| Effective corpus size | 286 texts (Masterfile lists 289; 3 missing — see [DECISIONS](DECISIONS.md) O22) |
 | Total page count | approx. 7,200 pages |
 | Median per text | 6 pages |
 | Maximum | 588 pages |

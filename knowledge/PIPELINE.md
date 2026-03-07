@@ -37,40 +37,40 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (Mistral: `output/mistral_results/`, DeepSeek: `output/ocr_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
 | 2b | Gemini OCR correction (optional) | `scripts/gemini_ocr_correct.py` | Corrected Markdown (`output/gemini_corrected_a/` or `_b/`) | Sample (5 docs), E29 |
-| 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production (286/286 docs, 4,152 pages) |
-| 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production: 286 docs, 3,992 pages (E25/E26/E31) |
-| 3b | Layout Overlay Generator | `scripts/generate_layout_overlays.py` | Overlay PNGs + side-by-side compare | Production: 7,988 PNGs (E31) |
-| 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production (286 docs, 4,091 pages) |
+| 3 | Layout analysis | `scripts/run_layout_analysis.py` (local GPU) or `scripts/run_layout_cloud.py` (docling-serve API) | Regions + BBox (JSON, `output/layout/`) + overlay PNGs | Production |
+| 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26/E31) |
+| 3b | Layout Overlay Generator | `scripts/generate_layout_overlays.py` | Overlay PNGs + side-by-side compare | Production (E31) |
+| 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production |
 | 5 | **NER + Wikidata** | `scripts/ner/ner_extract.py` + `wikidata_linker.py` + `entity_index.py` | Entity JSON (`output/entities/`) + TEI Indices (`data/entities/`) | **Pilot (E34)** |
 | 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | Pilot (Doc 2310), E34 |
 | 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | Pilot, E34 |
 | 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | Pilot, E34 |
 | 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | Pending |
-| 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production (285 docs, 4,117 files) |
+| 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production |
 | 6a | Gemini Vision TEI (1 call/page) | `scripts/tei/tei_gemini.py` | TEI-XML (`output/tei_gemini/`) | Pilot (Doc 2310), E30 |
-| 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **Production (286 docs), E32** |
+| 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **Production, E32** |
 | 6c | TEI Validation (RelaxNG + project rules) | `scripts/tei/tei_validator.py` | Validation JSON | Production, E32 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
-**Note on Stage 5 (E34):** Post-hoc NER Pipeline. Gemini Flash Lite extrahiert 6 Entity-Typen (person, organization, place, work, event, date) pro Seite als JSON. EntityStore (`entity_store.py`) aggregiert und dedupliziert pro Dokument. Entity Index (`data/entities/*.xml`) ist die Single Source of Truth: TEI-XML Indices (`listPerson`, `listOrg`, `listPlace`, `listBibl`) mit eigenem ID-Schema (`zbz-p.N`, `zbz-o.N`, `zbz-l.N`, `zbz-w.N`). String-Matching gegen Varianten ermoeglicht automatische Zuordnung ohne API-Call. Wikidata Reconciliation nur fuer neue, unbekannte Entities via `wbsearchentities` + `wbgetentities` (P31 Typ-Check). Nur bei 100%-Match wird QID uebernommen. Kein Gemini fuer ID-Vergabe (Halluzinationsrisiko). TEI Injection (`ner_inject_tei.py`) migriert bestehende `GND:unknown` Refs und fuegt neue Tags hinzu. Output: `output/tei_ner/`. Kosten: ~$1-3 (Gemini) + $0 (Wikidata). CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
+**Note on Stage 5 (E34):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
-**Note on Stage 6:** The rule-based TEI generator goes directly from layout JSON + OCR Markdown to TEI-XML. Produces flat structure (no div hierarchy, no lb, no entities beyond seed dict). **Stage 6a (E30)** was the first Gemini Vision approach (standalone, 1 call/page). **Stage 6b (E32)** is the production pipeline: combines enhanced rule-based scaffold (Step 1) with Gemini refinement (Step 2, mapping-table prompt), document assembly (Step 3), and RelaxNG validation (Step 4). Post-processing (`fix_gemini_tei()`) corrects 6 types of Gemini structural errors. Entity re-annotation (`reannotate_entities()`) catches missed mentions. Interview speaker detection in scaffold. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. Cost: ~$17 for 286 docs (Gemini 3.1 Flash Lite). OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
+**Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (1 call/page). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
 **Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
 
-**Layout engine (E19/E20):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). All 286 docs analyzed (4,152 pages). Local GPU (RTX 4060): ~5s/page. Quality: 75% good, 10% warning, 12% bad, 3% empty (`compute_page_quality`, 4,152 pages). Details: [ENGINES](ENGINES.md).
+**Layout engine (E19/E20):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). Details: [ENGINES](ENGINES.md). Quality metrics: see Dashboard.
 
 **Layout via API (E24):** `run_layout_cloud.py` sends page PNGs to a docling-serve instance (IBM's official API server for Docling). Same output format as `run_layout_analysis.py`. Server: `docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu`. CPU: ~27s/page, GPU (Cloud Run L4): ~28ms/page. Resume-capable, configurable via `DOCLING_SERVE_URL` env var. **Note:** Local GPU via `run_layout_analysis.py` is now preferred (~5s/page on RTX 4060).
 
-**Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. Cost: ~$2 for 4,152 pages. SDK: `google-genai`. **Document-type-specific prompts (E30):** Since 06.03.2026, prompts are augmented with 4-level hints from `doc_metadata.json` (layout type, pub_form, genre, language) via `build_doc_hints(doc_id)`. Genre is inferred from description text via `infer_genre()` (14 genres).
+**Automated Layout QA (E25):** `layout_qa_gemini.py --mode qa` sends Overlay-PNG + Layout-JSON to Gemini 3.1 Flash Lite Preview. Gemini corrects labels, removes false positives, flags missing regions. Returns corrected JSON with quality score (0-100). Both versions preserved: `_layout.json` (Docling original) + `_layout_gemini.json` (Gemini-corrected). Viewer supports toggle between both sources. SDK: `google-genai`. **Document-type-specific prompts (E30):** Prompts augmented with 4-level hints from `doc_metadata.json` (layout type, pub_form, genre, language) via `build_doc_hints(doc_id)`. Genre inferred from description text via `infer_genre()` (14 genres: article, review, interview, speech, debate, newspaper, conference, preface, letter, encyclopedia, editorial, essay, monograph).
 
-**Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails (~15% bad+empty). Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA. Cost: ~$1-2 for ~1,570 detect pages.
+**Gemini Layout Detect (E26):** `layout_qa_gemini.py --mode detect` uses Gemini 3.1 Flash Lite Preview as a full layout detector for pages where Docling fails. Sends raw scan (no overlay) to Gemini Vision with structured output schema. Returns regions with `box_2d` coordinates (0-1000 scale), converted to project format (`x_pct/y_pct/w_pct/h_pct`, 0-100%). Three modes: `--mode qa` (label correction), `--mode detect` (full re-detection), `--mode auto` (routes by Docling quality score — detect for bad/empty, qa for good/warning). Source field: `"gemini-detect"` vs `"gemini"` for QA.
 
-**Full Run (E31):** `layout_qa_gemini.py --mode auto --force` on all 286 docs. Results: 3,992/4,152 pages processed (160 failed: Invalid Unicode-Escape, Empty Response), 3,519 QA + 633 Detect, 30,714 regions, 14,708 corrections, avg score 72.7. Top change: 894 ADDED regions (missing headers, headings, footnotes). Per-page `changes_summary` logging (label transitions) and per-doc aggregation in `summary_gemini.json`. Visual QA on 10 sample pages (types A/B/C/D): Gemini clearly better than Docling alone.
+**Full Run (E31):** `layout_qa_gemini.py --mode auto --force` on all docs. Per-page `changes_summary` logging (label transitions) and per-doc aggregation in `summary_gemini.json`. Results: see Dashboard. Visual QA: Gemini clearly better than Docling alone (more regions, missing headers/headings/footnotes recovered, two-column layouts correct).
 
-**Layout Overlay Generator (E31):** `scripts/generate_layout_overlays.py` generates overlay PNGs from Gemini layout JSONs. Uses existing `draw_overlay_from_json()` from `scripts/layout/__init__.py`. Changed-highlighting: yellow border for ADDED regions, orange for label changes. Optional `--compare` flag generates side-by-side Docling-vs-Gemini images (2x width). Output: `_overlay_gemini.png` and `_overlay_compare.png` per page. 7,988 PNGs generated for all 286 docs.
+**Layout Overlay Generator (E31):** `scripts/generate_layout_overlays.py` generates overlay PNGs from Gemini layout JSONs. Uses existing `draw_overlay_from_json()` from `scripts/layout/__init__.py`. Changed-highlighting: yellow border for ADDED regions, orange for label changes. Optional `--compare` flag generates side-by-side Docling-vs-Gemini images (2x width). Output: `_overlay_gemini.png` and `_overlay_compare.png` per page.
 
 ---
 
@@ -166,18 +166,7 @@ output/
     (same structure)
 ```
 
-**Sample results (5 docs, E29):**
-
-| Doc | Mistral CER | Gemini A CER | Gemini B CER |
-|-----|-------------|--------------|--------------|
-| 2310 | 7.00% | 3.88% | 3.88% |
-| 1180 | 3.12% | 3.08% | 3.09% |
-| 890 | 5.96% | 5.77% | 5.72% |
-| 90 | 1.21% | 1.20% | 1.12% |
-| 40 | 2.57% | 2.58% | n/a |
-| **Avg** | **3.97%** | **3.30%** | **3.45%** (4 docs) |
-
-Variant A avg CER 3.30% vs Mistral 3.97% (-0.67pp). Biggest improvement on Doc 2310 (JSTOR cover, French accents): 7.00% to 3.88%. Both variants improve CER; Variant A slightly better on average and cheaper.
+Sample results: see evaluation output. Both variants improve CER; Variant A slightly better on average and cheaper. Biggest improvement on docs with JSTOR covers and French accents.
 
 ---
 
@@ -297,7 +286,7 @@ TEI and PAGE panels share the 3rd panel slot (mutual exclusion). Dashboard pipel
 |-------|--------|----------|
 | Layout Type | `layout_type` in doc_metadata.json | A=single-column, B=two-column, C=monograph, D=special |
 | Publication Form | `pub_form` in doc_metadata.json | journalArticle, book, bookSection, interview, encyclopedia |
-| Genre | Inferred from `description` via keyword matching | 14 genres: article, review, interview, speech, debate, newspaper, conference, preface, letter, encyclopedia, editorial, essay, monograph |
+| Genre | Inferred from `description` via keyword matching | 14 genres (see E25 above for list) |
 | Language | `language` in doc_metadata.json | mono (fra/deu) or multilingual (fra/deu/ita) |
 
 Genre inference (`infer_genre()`) and hint assembly (`build_doc_hints()`) are defined in `layout_qa_gemini.py` and reused by both layout prompts and TEI prompts.

@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-06
+updated: 2026-03-07
 tags: [zbz-ocr-tei, decisions, open, decided]
 status: active
 ---
@@ -48,7 +48,7 @@ Consolidated register of all decisions and open questions in the project.
 | E31 | Layout-QA Full Run + Overlay-Generator | Full re-run `--mode auto --force` auf 286 Docs: 3,992/4,152 Seiten (160 failed), 14,708 Korrekturen, 894 ADDED Regionen, avg Score 72.7. `changes_summary` Logging (Label-Transitions pro Seite, aggregiert in summary_gemini.json). Neues `generate_layout_overlays.py`: Batch-Overlay-PNGs mit Changed-Highlighting + Side-by-side Docling-vs-Gemini Compare (7,988 PNGs). Visuelle QA: Gemini klar besser als Docling allein (mehr Regionen, fehlende Headers/Headings/Footnotes erkannt, zweispaltige Layouts korrekt) | 2026-03-06 | [PIPELINE](PIPELINE.md) |
 | E32 | Unified TEI Pipeline (Rule-Based Scaffold + Gemini Refinement) | 4-Stufen-Pipeline: Step 1 (enhanced rule-based TEI mit lb, head, note, semantic div, interview-speaker), Step 2 (Gemini Refinement mit Mapping-Table-Prompt, 1 Call/Seite), Step 3 (Document Assembly mit teiHeader/facsimile/body + Post-Assembly-Fix), Step 4 (RelaxNG Validation). Post-Processing: `fix_gemini_tei()` mit 8 Fix-Stufen + `_fix_orphaned_body_children()` + `_fix_post_assembly_schema()` (3 Fixes: graphic-url, p-in-head, epigraph-divTop). Production Run: 50/286 Docs, 50/50 VALID. Kosten Step 2: ~$17 | 2026-03-07 | [PIPELINE](PIPELINE.md) |
 | E34 | NER Pipeline + Entity Index (Phase 3) | Post-hoc NER via Gemini Flash Lite (6 Typen: person, org, place, work, event, date). Wikidata als Primaer-ID statt GND (international, breitere Abdeckung). TEI-XML Entity-Indices (`data/entities/`) als Single Source of Truth mit eigenem ID-Schema (`zbz-p.N`, `zbz-o.N`, `zbz-l.N`, `zbz-w.N`). String-Matching gegen Varianten fuer automatische Zuordnung. Wikidata Reconciliation nur per API (kein LLM fuer IDs). EntityStore pro Dokument (JSON), Entity Index TEI-XML, Wikidata Cache. 6 Module: `ner_extract.py`, `entity_store.py`, `entity_index.py`, `wikidata_linker.py`, `ner_inject_tei.py`. Pilot Doc 2310: 30 Entities, 54 Mentions, 31 Index-Eintraege. Kosten: ~$1-3 Gemini + $0 Wikidata | 2026-03-07 | [PIPELINE](PIPELINE.md), [GND-STRATEGIE](GND-STRATEGIE.md) |
-| E33 | Digitale Edition (`docs/edition/`) | Oeffentliche statische Website neben dem internen Dashboard. 4 Seiten (Landing, Katalog, Reader, About), eigenes Design-System (Parchment/Navy/Gold, Dark Mode, 3 Breakpoints). `ZBZ.Edition` Namespace (ES5/IIFE). Reader: Faksimile+TEI nebeneinander, draggbarer Divider, Entitaeten-Sidebar, XML-Ansicht. Katalog: 286 Docs, MiniSearch, facettierte Filter. DRY-Refactoring: Nav/Footer JS-Slot-Pattern, `buildCardHtml()`, `sanitizeDocId()`, CSS-Klassen statt Inline-Styles. 12 Dateien, ~3.200 Zeilen | 2026-03-06 | [PIPELINE](PIPELINE.md) |
+| E33 | Digitale Edition (`docs/edition/`) | Oeffentliche statische Website neben dem internen Dashboard. 4 Seiten (Landing, Katalog, Reader, About), eigenes Design-System (Parchment/Navy/Gold, Dark Mode, 3 Breakpoints). `ZBZ.Edition` Namespace (ES5/IIFE). Reader: Faksimile+TEI nebeneinander, draggbarer Divider, Entitaeten-Sidebar, XML-Ansicht. Katalog: 286 Docs, MiniSearch, facettierte Filter. DRY-Refactoring: Nav/Footer JS-Slot-Pattern, `buildCardHtml()`, `sanitizeDocId()`, CSS-Klassen statt Inline-Styles. 11 Dateien, ~3.200 Zeilen | 2026-03-06 | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -59,7 +59,7 @@ Consolidated register of all decisions and open questions in the project.
 | O6 | Normalization vs. source fidelity (incl. heading typography) | Clarification with expert Baehler pending | Phase 3 TEI | ZBZ |
 | O8 | Metadata from ALMA/MMSID | MMSIDs needed for teiHeader | Phase 3 TEI | ZBZ |
 | O9 | div-type values front/back matter | editorial, context, translation etc. | Phase 3 TEI | Own decision |
-| O11 | Entities without GND entry | Local ID or leave empty? | Phase 2 NER | Own decision |
+| O11 | Entities without GND entry | Local ID or leave empty? | Phase 3 NER | Own decision |
 | O13 | TEI editorial details (subject headings, GND work records in back matter) | Who creates subject headings? Do they go in teiHeader? | Phase 3 TEI | ZBZ |
 | O18 | Test multimodal LLM correction (scan image + OCR text) | Research shows <1% CER (arXiv:2504.00414); currently text only | Quality | Own test |
 | ~~O21~~ | ~~Layout region post-processing~~ | Resolved by E25/E26: Gemini QA corrects labels, Detect re-detects bad pages. No manual heuristics needed | — | Closed |
@@ -88,4 +88,4 @@ Consolidated register of all decisions and open questions in the project.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-06*
+*Created: 2026-02-18 | Updated: 2026-03-07*

@@ -20,7 +20,7 @@ Dependencies: [PIPELINE](PIPELINE.md)
 
 Role: Primary OCR engine for ZBZ production.
 Model: mistral-document-ai-2512 on Azure AI Foundry (Serverless API, Pay-as-you-go).
-Accuracy: 93.58% CER on 15 pilot docs. Production verification (Doc 1410 p5): German special characters, headings, two-column layout all correct. Details in [TESTPLAN](TESTPLAN.md).
+Accuracy: see [TESTPLAN](TESTPLAN.md) for pilot baseline results.
 Speed: ~1.3s/page.
 Output: Per-page Markdown (`output/mistral_results/{doc_id}_p{N}.md`) with image references and dimensions.
 Languages: 36 (de, fr, en, es, it, ...).
@@ -54,7 +54,7 @@ Open:
 Role: Development OCR engine, actively used for Type A (single-column) and Type C (monographs).
 Model: deepseek-ai/DeepSeek-OCR-2 (3B VLM).
 Hardware: GPU with 8+ GB VRAM, CUDA 12.4+.
-Accuracy: 94-97% on Type A. Details in [TESTPLAN](TESTPLAN.md).
+Accuracy: see [TESTPLAN](TESTPLAN.md) for results.
 Speed: ~1.6s/page (RTX 3070).
 Output: Markdown with bounding boxes.
 
@@ -77,8 +77,7 @@ Sources: https://huggingface.co/deepseek-ai/DeepSeek-OCR-2
 Role: Primary layout engine. Layout analysis only -- no OCR (RapidOCR has encoding issues with French: e becomes O).
 Model: RT-DETR V2 Heron (42.9M params, IBM Research, trained on DocLayNet).
 Speed: ~5s/page (RTX 4060 GPU), ~27s/page (CPU/docling-serve).
-Status: Production -- 286/286 docs, 4,152 pages processed.
-Quality: 75% good, 10% warning, 12% bad, 3% empty (compute_page_quality).
+Status: Production. Quality metrics: see Dashboard.
 
 Detects 17 block types: Title, Section-header, Text, Footnote, Caption, Page-header, Page-footer, Picture, Table, Formula, List-item, Code, Document Index, and more.
 
@@ -101,8 +100,8 @@ Troubleshooting:
 Role: Layout correction and re-detection for pages where Docling fails (~15% bad+empty).
 Model: gemini-3.1-flash-lite-preview.
 SDK: google-genai (new SDK).
-Cost: $0.25/1M input, $1.50/1M output. ~$3-4 for 4,152 pages total.
-Status: Production -- auto mode running on 286 docs.
+Cost: $0.25/1M input, $1.50/1M output.
+Status: Production (auto mode).
 
 Three modes in layout_qa_gemini.py:
 - --mode qa: sends Overlay PNG + Layout JSON to Gemini. Corrects labels, removes false positives. Returns quality score 0-100.
@@ -112,8 +111,8 @@ Three modes in layout_qa_gemini.py:
 Structured Output via response_schema. Both versions preserved: _layout.json (Docling original) + _layout_gemini.json (Gemini corrected).
 
 Quality results:
-- QA mode: average score ~70. Catches page numbers, running headers, JSTOR metadata.
-- Detect mode: Doc 510 p7 found 4 regions (vs Docling 2, missing paragraph recovered). Doc 900 p1 found 47 regions (vs Docling 26).
+- QA mode: corrects labels, removes false positives, flags missing regions.
+- Detect mode: full re-detection for bad/empty pages, recovers missing regions.
 - Limitations: rightmost column missed on wide landscapes, photo/figure detection unreliable.
 
 Lessons: Always use Structured Output (response_schema) for machine-readable LLM results. Always benchmark the cheapest model first. Every batch script must be resume-capable (skip-existing pattern). Vision LLMs are viable layout detectors for fallback, not yet for primary detection.
@@ -130,8 +129,8 @@ Evaluated (25.02.2026): Gemini, Claude, Mistral (for layout), Docling, Surya, Kr
 
 Decision: Docling + Gemini hybrid.
 - Docling: best open-source BBox (mAP 0.699), 17 classes, free, CPU-capable
-- Mistral: stays as text engine (93.58% validated)
-- Gemini: QA validator + detect fallback (~15% bad pages)
+- Mistral: stays as text engine (see [TESTPLAN](TESTPLAN.md))
+- Gemini: QA validator + detect fallback for bad pages
 - Claude: not for layout (no BBox output), valuable for downstream TEI/NER
 
 Fallback: Kraken (native PAGE-XML, historical French docs). ocr-fileformat (UB Mannheim, https://github.com/UB-Mannheim/ocr-fileformat) can convert between 30+ OCR formats including hOCR, PAGE-XML, ALTO, TEI.
