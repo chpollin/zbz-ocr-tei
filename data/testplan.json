@@ -1,0 +1,142 @@
+{
+  "phase1": {
+    "name": "Baseline (einspaltig)",
+    "tests": [
+      {
+        "pdf": "2310.pdf",
+        "pages": [
+          1,
+          2
+        ],
+        "type": "A",
+        "lang": "FR",
+        "desc": "JSTOR Rezension"
+      },
+      {
+        "pdf": "1180.pdf",
+        "pages": [
+          1,
+          2
+        ],
+        "type": "A",
+        "lang": "DE/FR",
+        "desc": "Jahresbericht"
+      },
+      {
+        "pdf": "290.pdf",
+        "pages": [
+          0,
+          1
+        ],
+        "type": "A",
+        "lang": "FR",
+        "desc": "Comptes Rendus"
+      }
+    ]
+  },
+  "phase2": {
+    "name": "Zweispaltig",
+    "tests": [
+      {
+        "pdf": "2530.pdf",
+        "pages": [
+          0,
+          1
+        ],
+        "type": "B",
+        "lang": "FR",
+        "desc": "Zeitschrift zweispaltig"
+      },
+      {
+        "pdf": "890.pdf",
+        "pages": [
+          1,
+          2
+        ],
+        "type": "B",
+        "lang": "DE",
+        "desc": "Lehrerzeitung"
+      },
+      {
+        "pdf": "3040.pdf",
+        "pages": [
+          0,
+          1
+        ],
+        "type": "B",
+        "lang": "FR",
+        "desc": "Lexikon mit Fussnoten"
+      }
+    ]
+  },
+  "phase3": {
+    "name": "Spezialformate",
+    "tests": [
+      {
+        "pdf": "90.pdf",
+        "pages": [
+          1,
+          2
+        ],
+        "type": "D",
+        "lang": "DE",
+        "desc": "Historisch 1944"
+      },
+      {
+        "pdf": "1440.pdf",
+        "pages": [
+          0,
+          1
+        ],
+        "type": "D",
+        "lang": "DE",
+        "desc": "Interview/Dialog"
+      },
+      {
+        "pdf": "830.pdf",
+        "pages": [
+          0,
+          1
+        ],
+        "type": "D",
+        "lang": "FR",
+        "desc": "Bildband"
+      },
+      {
+        "pdf": "1330.pdf",
+        "pages": [
+          0,
+          1
+        ],
+        "type": "D",
+        "lang": "FR",
+        "desc": "Sammelband"
+      }
+    ]
+  },
+  "phase4": {
+    "name": "Monografien",
+    "tests": [
+      {
+        "pdf": "40.pdf",
+        "pages": [
+          4,
+          5
+        ],
+        "type": "C",
+        "lang": "FR",
+        "desc": "Roman"
+      },
+      {
+        "pdf": "1520.pdf",
+        "pages": [
+          2,
+          3
+        ],
+        "type": "C",
+        "lang": "?",
+        "desc": "Monografie"
+      }
+    ]
+  }
+}
