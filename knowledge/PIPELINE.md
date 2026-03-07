@@ -47,18 +47,17 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | Pilot, E34 |
 | 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | Pending |
 | 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production |
-| 6a | Gemini Vision TEI (1 call/page) | `scripts/tei/tei_gemini.py` | TEI-XML (`output/tei_gemini/`) | Pilot (Doc 2310), E30 |
 | 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **Production, E32** |
 | 6c | TEI Validation (RelaxNG + project rules) | `scripts/tei/tei_validator.py` | Validation JSON | Production, E32 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
 **Note on Stage 5 (E34):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
-**Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (1 call/page). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
+**Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
-**Helper scripts:** `extract_pages.py` (page images), `extract_gnd.py` (GND IDs), `postprocess/` (normalization).
+**Helper scripts:** `extract_pages.py` (page images), `postprocess/` (normalization).
 
 **Layout engine (E19/E20):** Docling 2.75 (RT-DETR V2 Heron, 17 block types). Details: [ENGINES](ENGINES.md). Quality metrics: see Dashboard.
 
@@ -258,54 +257,6 @@ PAGE-XML and METS can be viewed in `docs/viewer.html` via the PAGE toggle button
 TEI and PAGE panels share the 3rd panel slot (mutual exclusion). Dashboard pipeline status tracks `page_xml` (286/286 docs).
 
 ---
-
-## Stage 6a: Gemini Vision TEI Generator
-
-**Script:** `scripts/tei/tei_gemini.py`
-
-| Aspect | Details |
-|--------|---------|
-| Model | Gemini 3.1 Flash Lite Preview (`gemini-3.1-flash-lite-preview`) |
-| Input | Overlay-PNG + OCR-Markdown + Layout-JSON + doc_metadata.json |
-| Output | TEI-XML (DTA-Basisformat) with div hierarchy, lb, hi, persName, foreign, choice |
-| Approach | Default: 1 call/page. Optional: --refine (2nd call), --consolidate (doc-level) |
-| Cost | ~$0.005/page (1 call), TBD after sample run |
-| Status | Pilot (Doc 2310 successful), E30 |
-
-**Iterative Architecture:**
-
-**Default (1 call/page):** Overlay-PNG + OCR + Layout + Metadata + Known Entities + Few-Shot -> complete TEI fragment with `<div>` hierarchy, `<pb>`, `<head>`, `<p>`, `<note>`, `<lb>`, `<hi>`, `<persName>`, `<foreign>`, `<choice>`, `break="no"`. Document assembled locally (teiHeader + page TEIs).
-
-**Optional --refine:** 2nd Gemini call per page with overlay image, reviews and fixes markup quality (lb positions, entity tagging, formatting).
-
-**Optional --consolidate:** API call for document-level consolidation (cross-page footnotes, entity consistency, div merging). Without this flag, pages are assembled locally with a generated teiHeader.
-
-**Document-type-specific prompts (4 levels):**
-
-| Level | Source | Examples |
-|-------|--------|----------|
-| Layout Type | `layout_type` in doc_metadata.json | A=single-column, B=two-column, C=monograph, D=special |
-| Publication Form | `pub_form` in doc_metadata.json | journalArticle, book, bookSection, interview, encyclopedia |
-| Genre | Inferred from `description` via keyword matching | 14 genres (see E25 above for list) |
-| Language | `language` in doc_metadata.json | mono (fra/deu) or multilingual (fra/deu/ita) |
-
-Genre inference (`infer_genre()`) and hint assembly (`build_doc_hints()`) are defined in `layout_qa_gemini.py` and reused by both layout prompts and TEI prompts.
-
-**Output structure:**
-```
-output/tei_gemini/{doc_id}/
-  {doc_id}_p{NNN}.xml          # Per-page TEI fragment (default)
-  {doc_id}_p{NNN}_refined.xml  # Refined version (optional, --refine)
-  {doc_id}_final.xml           # Assembled document (local) or consolidated (--consolidate)
-  {doc_id}_manifest.json       # Timing, mode, model
-  {doc_id}_eval.json           # Comparison with reference (if available)
-```
-
-**Evaluation (--evaluate):** For documents with reference TEI (`data/referenz-tei/`), computes element-level precision/recall for div, persName, bibl, lb, note, hi, foreign, choice, figure.
-
-**Pilot results (Doc 2310, Typ A, Review, FR):** 3 pages, 54.5s total. persName recall 1.0, bibl recall 1.0, lb recall 1.0, div recall 1.0. Generated `<div type="review">`, `<bibl>` with GND reference, `<foreign>` tags, `break="no"` hyphenation. Qualitatively far superior to rule-based tei_generator.py.
-
-**Reused functions:** `load_ocr_text()`, `load_layout()`, `get_document_metadata()` from `tei_generator.py`; `ensure_overlay()`, `build_doc_hints()`, `infer_genre()` from `layout_qa_gemini.py`; `discover_doc_ids()` from `utils.py`.
 
 ---
 

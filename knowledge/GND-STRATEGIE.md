@@ -144,8 +144,8 @@ Expected frequent entities (based on her work and biography):
 
 ### Extracted GND Entities (29.01.2026)
 
-**Script:** `scripts/extract_gnd.py`
-**Output:** `output/gnd_analysis/`
+**Script:** (deleted, superseded by NER Pipeline E34)
+**Output:** `output/gnd_analysis/` (historical)
 
 | Type | Count | Most Frequent |
 |------|-------|---------------|

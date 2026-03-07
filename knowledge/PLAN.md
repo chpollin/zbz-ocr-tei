@@ -87,8 +87,8 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [x] OCR source priority: Gemini B > Gemini A > LLM C > Mistral
 - [x] Language mapping: ISO 639-3 + legacy 2-letter fallback
 - [x] Production (rule-based) complete
-- [x] **Gemini Vision TEI Generator** (E30): `scripts/tei/tei_gemini.py`, 3-Pass pipeline
-- [x] **Dokumenttypspezifische Prompts** (E30): 4-Ebenen (Layout-Typ, Pub-Form, Genre, Sprache) in `layout_qa_gemini.py` + `tei_gemini.py`
+- [x] **Gemini Vision TEI Generator** (E30): 3-Pass pipeline (Pilot, superseded by Unified E32)
+- [x] **Dokumenttypspezifische Prompts** (E30): 4-Ebenen (Layout-Typ, Pub-Form, Genre, Sprache) in `layout_qa_gemini.py`
 - [x] **Pilot Doc 2310** (E30): valides XML
 - [x] **Unified TEI Pipeline** (E32): `tei_unified.py` + `tei_mapping_prompt.py` + `tei_validator.py`
 - [x] **Pilot auf 3 Docs** (E32): 2310 (review), 2530 (standard), 1440 (interview) -- alle RelaxNG-valide
