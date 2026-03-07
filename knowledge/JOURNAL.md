@@ -14,7 +14,9 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
-## 2026-03-07 | TEI Pipeline Refactoring (Session 15)
+## 2026-03-07 | TEI Pipeline Refactoring + Validation Fixes (Session 15)
+
+99. Post-Assembly Schema Fixes (`_fix_post_assembly_schema()`): 3 neue Fixes fuer RelaxNG-Verletzungen die erst nach Document Assembly auftreten. Fix A: `<graphic>` ohne `url` -> `url="unknown"`. Fix B: `<p>` in `<head>` -> Inhalt entpacken. Fix C: `<epigraph>` nach Content (divTop-Regel) -> entpacken. Ergebnis: 50/50 unified TEI VALID (vorher 47/50).
 
 92. Refactoring-Plan umgesetzt (`REFACTORING_PLAN.md`, 7 Phasen). Keine funktionalen Aenderungen, gleicher Output.
 
