@@ -25,6 +25,7 @@ from scripts.config import (
     TEI_NS,
     TEI_UNIFIED_DIR,
 )
+from scripts.ner.entity_index import EntityIndex
 from scripts.ner.entity_store import EntityRecord, EntityStore
 
 # TEI Element-Mapping fuer Entity-Typen
@@ -74,7 +75,8 @@ def update_existing_refs(xml_text: str, store: EntityStore) -> str:
         if not rec:
             return full_tag
 
-        new_ref = rec.ref_value()
+        index_id = getattr(rec, '_index_id', None)
+        new_ref = f"#{index_id}" if index_id else rec.ref_value()
         if new_ref == "WD:unknown":
             return full_tag
 
@@ -176,7 +178,10 @@ def _annotate_text_segments(
 
     for surface, rec in entities:
         tei_elem, ref_attr = ENTITY_TEI_MAP.get(rec.entity_type, ("name", "ref"))
-        ref_val = rec.ref_value()
+
+        # Bevorzuge Index-ID (#zbz-p.N), Fallback: WD:Q... / GND:...
+        index_id = getattr(rec, '_index_id', None)
+        ref_val = f"#{index_id}" if index_id else rec.ref_value()
 
         if ref_val == "WD:unknown":
             continue
@@ -231,7 +236,7 @@ def process_document(
         print(f"  {doc_id}: bereits vorhanden (--force zum Ueberschreiben)")
         return {"doc_id": doc_id, "skipped": True}
 
-    # Entity Store laden
+    # Entity Store + Index laden
     store = EntityStore.load(doc_id)
     if not store.entities:
         print(f"  {doc_id}: keine Entities, kopiere Original")
@@ -240,6 +245,14 @@ def process_document(
             source_path.read_text(encoding="utf-8"), encoding="utf-8"
         )
         return {"doc_id": doc_id, "entities_injected": 0}
+
+    # Index-IDs (#zbz-p.N) als primaere Refs zuordnen
+    index = EntityIndex()
+    index.load_all()
+    for rec in store.entities.values():
+        entry = index.match_normalized(rec.normalized, rec.entity_type)
+        if entry:
+            rec._index_id = entry.xml_id  # fuer ref_value_with_index()
 
     # TEI lesen
     xml_text = source_path.read_text(encoding="utf-8")

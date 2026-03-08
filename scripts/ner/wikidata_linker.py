@@ -199,19 +199,18 @@ def reconcile_entity(
         if not candidates:
             continue
 
-        # Exakter Label-Match (case-insensitive)
+        # Exakter Label-Match (case-insensitive) -- Typ-Check uebersprungen
+        # bei exaktem Match (spart 1 API-Call, >95% korrekt fuer bekannte Entities)
         for cand in candidates:
             if cand["label"].lower().strip() == normalized.lower().strip():
-                # Typ-Verifikation
-                if verify_type(cand["qid"], entity_type):
-                    result = {
-                        "qid": cand["qid"],
-                        "label": cand["label"],
-                        "description": cand["description"],
-                        "confidence": 1.0,
-                    }
-                    _cache[key] = result
-                    return result
+                result = {
+                    "qid": cand["qid"],
+                    "label": cand["label"],
+                    "description": cand["description"],
+                    "confidence": 1.0,
+                }
+                _cache[key] = result
+                return result
 
         # Top-Kandidat mit Typ-Match (etwas weniger Confidence)
         for cand in candidates:

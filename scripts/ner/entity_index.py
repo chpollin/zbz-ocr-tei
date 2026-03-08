@@ -465,6 +465,8 @@ def main():
     )
     parser.add_argument("--stats", action="store_true",
                         help="Index-Statistiken anzeigen")
+    parser.add_argument("--report", action="store_true",
+                        help="Ausfuehrlicher Report (JSON)")
     parser.add_argument("--merge-from-store",
                         help="Entities aus Store in Index mergen (doc_id)")
     parser.add_argument("--merge-all", action="store_true",
@@ -475,6 +477,32 @@ def main():
 
     index = EntityIndex()
     index.load_all()
+
+    if args.report:
+        import json as _json
+        s = index.summary()
+        # Cross-doc Konsistenz: Entities die in mehreren Docs vorkommen
+        multi_doc = {}
+        if ENTITIES_DIR.exists():
+            from scripts.ner.entity_store import EntityStore as _ES
+            for doc_dir in sorted(ENTITIES_DIR.iterdir()):
+                if not doc_dir.is_dir() or doc_dir.name.startswith("_"):
+                    continue
+                store = _ES.load(doc_dir.name)
+                for rec in store.entities.values():
+                    entry = index.match_normalized(rec.normalized, rec.entity_type)
+                    if entry:
+                        multi_doc.setdefault(entry.xml_id, set()).add(doc_dir.name)
+        cross_doc = {
+            xml_id: {"name": index.entries[xml_id].main_name,
+                      "docs": len(docs), "doc_ids": sorted(docs)}
+            for xml_id, docs in multi_doc.items() if len(docs) > 1
+        }
+        report = {**s, "cross_doc_entities": len(cross_doc),
+                  "top_cross_doc": sorted(cross_doc.values(),
+                                          key=lambda x: -x["docs"])[:20]}
+        print(_json.dumps(report, ensure_ascii=False, indent=2))
+        return
 
     if args.stats:
         s = index.summary()
