@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-08
+updated: 2026-03-09
 tags: [zbz-ocr-tei, decisions, open, decided]
 status: active
 ---
@@ -48,7 +48,8 @@ Consolidated register of all decisions and open questions in the project.
 | E31 | Layout-QA Full Run + Overlay-Generator | Full re-run `--mode auto --force` auf 286 Docs: 3,992/4,152 Seiten (160 failed), 14,708 Korrekturen, 894 ADDED Regionen, avg Score 72.7. `changes_summary` Logging (Label-Transitions pro Seite, aggregiert in summary_gemini.json). Neues `generate_layout_overlays.py`: Batch-Overlay-PNGs mit Changed-Highlighting + Side-by-side Docling-vs-Gemini Compare (7,988 PNGs). Visuelle QA: Gemini klar besser als Docling allein (mehr Regionen, fehlende Headers/Headings/Footnotes erkannt, zweispaltige Layouts korrekt) | 2026-03-06 | [PIPELINE](PIPELINE.md) |
 | E32 | Unified TEI Pipeline (Rule-Based Scaffold + Gemini Refinement) | 4-Stufen-Pipeline: Step 1 (enhanced rule-based TEI mit lb, head, note, semantic div, interview-speaker), Step 2 (Gemini Refinement mit Mapping-Table-Prompt, 1 Call/Seite), Step 3 (Document Assembly mit teiHeader/facsimile/body + Post-Assembly-Fix), Step 4 (RelaxNG Validation). Post-Processing: `fix_gemini_tei()` mit 8 Fix-Stufen + `_fix_orphaned_body_children()` + `_fix_post_assembly_schema()` (3 Fixes: graphic-url, p-in-head, epigraph-divTop). Production Run: 50/286 Docs, 50/50 VALID. Kosten Step 2: ~$17 | 2026-03-07 | [PIPELINE](PIPELINE.md) |
 | E34 | NER Pipeline + Entity Index (Phase 3) | Post-hoc NER via Gemini Flash Lite (6 Typen: person, org, place, work, event, date). Wikidata als Primaer-ID statt GND (international, breitere Abdeckung). TEI-XML Entity-Indices (`data/entities/`) als Single Source of Truth mit eigenem ID-Schema (`zbz-p.N`, `zbz-o.N`, `zbz-l.N`, `zbz-w.N`). String-Matching gegen Varianten fuer automatische Zuordnung. Wikidata Reconciliation nur per API (kein LLM fuer IDs). EntityStore pro Dokument (JSON), Entity Index TEI-XML, Wikidata Cache. 6 Module: `ner_extract.py`, `entity_store.py`, `entity_index.py`, `wikidata_linker.py`, `ner_inject_tei.py`. Pilot Doc 2310: 30 Entities, 54 Mentions, 31 Index-Eintraege. Kosten: ~$1-3 Gemini + $0 Wikidata | 2026-03-07 | [PIPELINE](PIPELINE.md), [GND-STRATEGIE](GND-STRATEGIE.md) |
-| E33 | Digitale Edition (`docs/edition/`) | Oeffentliche statische Website neben dem internen Dashboard. 4 Seiten (Landing, Katalog, Reader, About), eigenes Design-System (Parchment/Navy/Gold, Dark Mode, 3 Breakpoints). `ZBZ.Edition` Namespace (ES5/IIFE). Reader: Faksimile+TEI nebeneinander, draggbarer Divider, Entitaeten-Sidebar, XML-Ansicht. Katalog: 286 Docs, MiniSearch, facettierte Filter. DRY-Refactoring: Nav/Footer JS-Slot-Pattern, `buildCardHtml()`, `sanitizeDocId()`, CSS-Klassen statt Inline-Styles. 11 Dateien, ~3.200 Zeilen | 2026-03-06 | [PIPELINE](PIPELINE.md) |
+| E33 | Digitale Edition (`docs/edition/`) | Oeffentliche Website neben dem internen Dashboard. Lese-Modus (GitHub Pages) + Edit-Modus (mit Server, siehe E36). 4 Seiten, eigenes Design-System, `ZBZ.Edition` Namespace. Reader: Faksimile+TEI, Entitaeten-Sidebar, XML-Ansicht. Katalog: 286 Docs, MiniSearch, Filter | 2026-03-06 | [EDITION](EDITION.md) |
+| E36 | Curation Editor (Editor in the Loop) | Edit-Modus der Digitalen Edition (E33): WYSIWYG, Struktur-Editing, Entity-Kuration, Review-Workflow. FastAPI Server (localhost:8000), 11 API-Endpoints. Kuratiertes TEI in data/tei_curated/ als Gold-Standard. TEI-Prioritaet: kuratiert > NER > unified > examples | 2026-03-08 | [CURATION](CURATION.md) |
 | E35 | NER Production-Ready (Phase 3 Scale-Up) | 7 Qualitaetsverbesserungen vor Production Run: Known-Entity-Hint 150/Typ (QID-first), Diakritik-Matching (_stripped_lookup), sicheres Surname-Fallback (nur bei 1 Kandidat), Wikidata +9 QIDs, 4-Stufen-Konfidenz (1.0/0.9/0.8/0.6), OCR-Chunking (>8000 chars), Entity-Index statt KNOWN_ENTITY_NAMES (11->393 Namen). Pipeline-Integration: tei_unified.py --ner (Step 5), Dashboard NER-Stats, Edition entity_index.json Export, Katalog Entity-Count Badge, Sidebar Resolution-Status. Evaluation: --lenient (Diakritik-normalisiert), --report (HTML) | 2026-03-08 | [PIPELINE](PIPELINE.md) |
 
 ---
@@ -84,6 +85,8 @@ Consolidated register of all decisions and open questions in the project.
 
 - [PROJEKT](PROJEKT.md) for milestones and status
 - [PIPELINE](PIPELINE.md) for pipeline decisions
+- [EDITION](EDITION.md) for digital edition (E33)
+- [CURATION](CURATION.md) for curation editor (E36)
 - [TEI-MAPPING](TEI-MAPPING.md) for open TEI questions (O6, O8-O9, O13)
 - [JOURNAL](JOURNAL.md) for chronological decision history
 

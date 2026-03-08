@@ -32,5 +32,9 @@ anthropic>=0.39.0
 # Gemini API (Layout QA, Classification, OCR Correction)
 google-genai>=1.0.0
 
+# Curation Server
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+
 # Entwicklung
 pytest>=7.0.0

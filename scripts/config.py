@@ -30,6 +30,7 @@ TEI_GEMINI_DIR = OUTPUT_DIR / "tei_gemini"
 TEI_UNIFIED_DIR = OUTPUT_DIR / "tei_unified"
 ENTITIES_DIR = OUTPUT_DIR / "entities"
 TEI_NER_DIR = OUTPUT_DIR / "tei_ner"
+TEI_CURATED_DIR = DATA_DIR / "tei_curated"
 
 # TEI-Konstanten
 TEI_NS = "http://www.tei-c.org/ns/1.0"

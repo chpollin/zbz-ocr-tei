@@ -34,6 +34,12 @@
                 <button class="ed-toolbar-btn" id="font-toggle" title="Schriftart wechseln (Serif/Sans)">Aa</button>
                 <button class="ed-toolbar-btn" id="entity-toggle" title="Entitaeten anzeigen">Entitaeten</button>
                 <button class="ed-toolbar-btn" id="xml-toggle" title="XML-Ansicht">XML</button>
+                <button class="ed-toolbar-btn" id="edit-toggle" title="Bearbeitungsmodus" style="display:none">Bearbeiten</button>
+            </div>
+            <div class="ed-toolbar-group ed-edit-only">
+                <button class="ed-toolbar-btn ed-btn-save" id="save-btn" title="Speichern (Ctrl+S)" disabled>Speichern</button>
+                <button class="ed-toolbar-btn" id="validate-btn" title="TEI validieren (RelaxNG)">Validieren</button>
+                <span class="ed-save-status" id="save-status"></span>
             </div>
             <div class="ed-toolbar-sep"></div>
             <div class="ed-toolbar-group">
@@ -62,6 +68,7 @@
     <script src="js/edition-shared.js"></script>
     <script src="../entity-utils.js"></script>
     <script src="js/edition-tei.js"></script>
+    <script src="js/edition-editor.js"></script>
     <script src="js/edition-reader.js"></script>
 </body>
 </html>

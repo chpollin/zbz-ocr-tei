@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-08
+updated: 2026-03-09
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,101 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-09 | NER Completion + TEI Entity Injection (Session 22)
+
+125. Wikidata Linking Fortschritt: 67/285 Docs abgeschlossen (1,696/11,685 Entities = 15%), Rest bei 0%. Linking wurde aus Session 21 unterbrochen, neu gestartet.
+
+126. NER Evaluation: Corpus-Metriken erstellt + HTML-Report generiert (output/ner_report.html).
+   - 285 Docs, 3,536 Seiten, 11,685 Entities, 26,197 Mentions
+   - Avg 41 Entities/Doc, 3.3/Seite
+   - Typ-Verteilung: person 36.7%, place 22.3%, date 15.0%, org 13.6%, work 10.8%, event 1.6%
+   - Resolution Rate: 14% (Wikidata Linking noch unvollstaendig)
+
+127. TEI NER Injection: 49/51 Docs mit Entity-Markup versehen (46 neu, 3 bereits vorhanden).
+   - Alle TEI-Unified Docs mit _final.xml und NER-Daten verarbeitet
+   - Output: output/tei_ner/{doc_id}/{doc_id}_ner.xml
+   - TEI NER Validation: 10/49 Docs geprueft, **alle VALID** (0 Schema-Fehler, 0 Warnungen). Rest noch offen.
+   - 2 Docs (1520, 1530+) fehlten _final.xml trotz tei_unified-Verzeichnis
+
+128. Entity Index: 4,100 Eintraege (1,979 Person, 698 Org, 661 Place, 762 Work), 341 mit Wikidata-IDs.
+
+129. Wikidata Linking neu gestartet, bei Doc 21/285 abgebrochen (Session-Ende). Noch im Cache-Bereich (keine neuen API-Queries noetig fuer die ersten 67 Docs). Die restlichen ~218 Docs brauchen einen laengeren Lauf.
+
+130. Knowledge-Update: PIPELINE.md (Stage 5 NER-Metriken von Sample auf Production), PLAN.md (Phase 3 Checkboxen + Phase 4 Status), PROJEKT.md (M3 Done, M4 Counts, Component Table), INDEX.md (Timestamp), README.md (NER/Wikidata/TEI-NER Zeilen).
+
+### Offene Tasks nach Session 22
+- (A) Wikidata Linking: `python -m scripts.ner.wikidata_linker --all` (218 Docs unverlinkt, dauert Stunden)
+- (B) Entity Index Merge: `python -m scripts.ner.entity_index --merge-all` (nach Wikidata Linking)
+- (C) TEI NER Validation: restliche 39/49 Docs validieren
+- (D) TEI Unified Production Run: 235/286 Docs (`python -m scripts.tei.tei_unified --all`, ~$80 Gemini)
+- (E) TEI NER Re-Injection nach (D): dann 286/286 statt 49
+- (F) Kurations-Pilot: Doc 2310 im Editor end-to-end testen
+
+---
+
+## 2026-03-09 | Knowledge Refactoring + NER Production Run (Session 21)
+
+122. Wissensstruktur-Refactoring: Digitale Edition + Curation Editor als zusammengehoeriges System erkannt.
+   - Neues EDITION.md: Architektur, Design System, Datei-Tabelle (aus PIPELINE.md §E33 ausgelagert)
+   - PIPELINE.md §E33 auf 6-Zeilen-Kurzreferenz reduziert (vorher ~55 Zeilen)
+   - CURATION.md: Dependency auf EDITION.md ergaenzt
+   - PLAN.md: Neuer Querschnitt-Abschnitt "Digitale Edition + Curation" (statt Phase-Nummer)
+   - INDEX.md: EDITION.md in Document Matrix, Dependencies, Key Concepts, Directory Structure
+   - DECISIONS.md: E33 verweist auf EDITION.md, E36 auf CURATION.md
+
+123. NER Production Run abgeschlossen:
+   - NER Extraction: 285/286 Docs, 11,220 unique Entities, 25,008 Mentions (~8 Min via Gemini Flash Lite)
+   - Entity Index Merge: 472 -> 4,100 Eintraege (3,516 neu registriert, 5,629 matched)
+   - Wikidata Linking: Production Run gestartet (285 Docs, laeuft)
+
+124. Doku-Updates: README.md (NER/TEI Status, EDITION.md in Doku-Tabelle, Quick Start tei_unified), PROJEKT.md (Component Status NER + Edition/Curation aktualisiert)
+
+---
+
+## 2026-03-09 | Curation Editor Phases 2-5 + Hardening (Session 19+20)
+
+115. Curation Editor Phase 2 (Struktur-Editing):
+   - Floating Block-Toolbar ueber fokussiertem Block: Typ-Dropdown (p/head/note/figure), Teilen/Zusammenfuegen/Loeschen Buttons
+   - Block-Typ-Wechsel aendert CSS-Klasse + data-tei-tag, Serializer erzeugt korrektes TEI
+   - Split: am Cursor teilen, neuer Block gleichen Typs
+   - Merge: Kinder in vorherigen Block verschieben
+   - Delete: Block entfernen
+
+116. Curation Editor Phase 3 (Entity-Kuration):
+   - Text markieren -> Floating Entity-Toolbar (Person/Org/Ort/Werk/Entfernen)
+   - surroundContents wraps Selection in Entity-Span (contenteditable=false)
+   - Klick auf Entity -> Popover mit ref-Eingabe (GND-URI, Wikidata-ID etc.)
+   - Entity-Typ aendern oder komplett entfernen (Unwrap)
+   - Server: Wikidata-Such-Proxy (/api/wikidata/search), Entity-Index-Suche (/api/entities/search)
+
+117. Curation Editor Phase 4 (Review-Workflow):
+   - Status-Badges (Entwurf/Pruefung/Freigegeben) im Reader-Header
+   - Status-Badges im Katalog (Tabellen-Ansicht), Server-Detection
+   - CSS: 3 Badge-Varianten (draft=amber, review=blue, approved=green) + Dark Mode
+
+118. Speicher-Migration: TEI_CURATED_DIR von output/ (gitignored) nach data/tei_curated/ (git-tracked).
+   - Einzeiler in config.py (DATA_DIR statt OUTPUT_DIR)
+   - Publish-Endpoint: POST /api/tei/{doc_id}/publish kopiert approved-Docs nach docs/data/examples/ (GitHub Pages)
+   - Guard: Nur status=approved darf publiziert werden
+
+119. Entity-Autocomplete im Popover:
+   - Parallele Suche: Lokaler Entity Index + Wikidata API (via Server-Proxy)
+   - Ergebnisse in Dropdown mit Sektionen ("Entity Index" / "Wikidata")
+   - Zeigt Name, Ref-ID (GND/QID), Beschreibung
+   - Tastatur-Navigation: Pfeil-Hoch/Runter, Enter zum Auswaehlen
+   - Bug-Fix: Entity-Index-Suche nutzte .get() auf Dataclass -> getattr() korrigiert
+   - Varianten-Match: Durchsucht auch variants-Array, nicht nur main_name
+
+120. TEI-Validierung im Editor:
+   - "Validieren"-Button in Edit-Toolbar
+   - POST /api/tei/{doc_id}/validate-page: RelaxNG via Temp-File + tei_validator.validate_relaxng()
+   - Validierungspanel unter Toolbar zeigt Fehler mit Zeilennummern (rot, schliessbar)
+   - XML wird in minimales TEI-Dokument gewrapped fuer Schema-Validierung
+
+121. Doku-Update: README.md (Curation Editor Abschnitt, scripts/server/, data/tei_curated/), CURATION.md (Autocomplete, Validierung, validate-page Endpoint), PIPELINE.md (Curation Layer Abschnitt)
 
 ---
 
@@ -52,6 +147,17 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
    - Resolution-Status-Indikator (Haken/Fragezeichen) in Entity-Sidebar (edition-tei.js)
    - Count-Badge pro Entity-Typ-Gruppe in Sidebar
    - CSS fuer alle neuen Elemente (Light + Dark Mode)
+
+114. Curation Editor MVP (Phase 1, E36):
+   - FastAPI Server (scripts/server/curation_server.py, ~280 Zeilen): 7 Endpoints (health, get/put page, validate, assemble, get/put status)
+   - Serviert Edition-Frontend + API, Daten in output/tei_curated/{doc_id}/
+   - Kurations-Metadaten (curation.json) mit Seiten-Status + Historie
+   - TEI-Prioritaetskette: kuratiert > NER > unified > examples
+   - Editor-Modul (edition-editor.js, ~370 Zeilen): WYSIWYG contenteditable + DOM-zu-XML Serializer + XML-Textarea-Modus
+   - Edit-Toggle in Reader (edition-reader.js): editMode State, Ctrl+S Save, beforeunload Warnung
+   - Editor-CSS (~100 Zeilen): contenteditable Styles, Save-Button, Toast-Notifications, Dark Mode
+   - Server-Detection: Health-Check beim Laden, Edit-Button nur sichtbar wenn Server laeuft
+   - Verifiziert: Server startet, TEI laden (examples), Save Round-Trip, kuratierte Version hat Prioritaet
 
 ---
 
@@ -1529,4 +1635,4 @@ Prompt contains document context from TESTPLAN (type, language, genre).
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-05*
+*Created: 2026-01-29 | Updated: 2026-03-09*

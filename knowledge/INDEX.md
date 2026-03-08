@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-03-07
+updated: 2026-03-09
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -27,6 +27,8 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [DECISIONS](DECISIONS.md) | What is decided? What is open? | All | All |
 | [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) | How does ZBZ work editorially? | All | — |
 | [JOURNAL](JOURNAL.md) | What was done when? | All | — |
+| [EDITION](EDITION.md) | How does the digital edition work? Architecture, Design System | Development, Edition | PIPELINE |
+| [CURATION](CURATION.md) | How does the Curation Editor work? Server, API, Editor | Development, Edition | EDITION, GND-STRATEGIE |
 | [PLAN](PLAN.md) | What are the implementation phases? | Development | PROJEKT, PIPELINE |
 
 ---
@@ -47,6 +49,9 @@ PROJEKT (Vision, Ecosystem)
     |        +-->  TESTPLAN (Single Source for Results)
     |
     +-->  ZBZ-WORKFLOW (Editorial Context)
+
+EDITION   <-- digital edition (read + curate), depends on PIPELINE
+    +-->  CURATION (edit mode, server, API)
 
 PLAN      <-- implementation phases, depends on PROJEKT + PIPELINE
 DECISIONS <-- cross-cutting, collects from all docs
@@ -83,7 +88,8 @@ JOURNAL   <-- chronological, references all docs
 | Layout Full Run (E31) | Complete Gemini QA/Detect on 286 docs (3,992 pages, 14,708 corrections, avg score 72.7) | [PIPELINE](PIPELINE.md) |
 | Layout Overlay Generator (E31) | Batch PNG generation with changed-highlighting + Docling-vs-Gemini side-by-side compare | [PIPELINE](PIPELINE.md) |
 | changes_summary (E31) | Per-page label transition logging in layout_gemini.json, aggregated in summary_gemini.json | [PIPELINE](PIPELINE.md) |
-| Digitale Edition (E33) | Public-facing static website at `docs/edition/` with Landing, Catalog, Reader, About. Own design system, `ZBZ.Edition` namespace | [PIPELINE](PIPELINE.md) |
+| Digitale Edition (E33) | Lese-Edition + Kurations-Editor in einem System. `docs/edition/`, `ZBZ.Edition` Namespace | [EDITION](EDITION.md), [CURATION](CURATION.md) |
+| Curation Editor (E36) | Edit-Modus der Edition: WYSIWYG, Entity-Kuration, Review-Workflow, FastAPI Server | [CURATION](CURATION.md) |
 | NER Pipeline (E34) | Post-hoc NER via Gemini Flash Lite (6 types), TEI-XML Entity Index, Wikidata Reconciliation, TEI Injection | [PIPELINE](PIPELINE.md) |
 
 ---
@@ -112,10 +118,12 @@ knowledge/
 +-- GND-STRATEGIE.md      # NER + Entity Linking
 +-- TESTPLAN.md           # Test phases, metrics, results
 +-- INFRASTRUKTUR.md      # Azure, Podman, GitLab, CI/CD
++-- EDITION.md            # Digital edition (architecture, design system)
++-- CURATION.md           # Curation editor (server, API, editing)
 +-- DECISIONS.md          # Decided + Open items (prioritized)
 +-- ZBZ-WORKFLOW.md       # ZBZ editorial workflow + integration points
 +-- JOURNAL.md            # Chronological work journal
-+-- PLAN.md               # Implementation plan (phases 0-5)
++-- PLAN.md               # Implementation plan (phases 0-6 + cross-cutting)
 ```
 
 ---
@@ -129,4 +137,4 @@ knowledge/
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-07*
+*Created: 2026-01-29 | Updated: 2026-03-09*

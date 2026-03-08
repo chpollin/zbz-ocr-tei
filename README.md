@@ -11,21 +11,24 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XM
               (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basisformat)
 ```
 
-## Status (08.03.2026)
+## Status (09.03.2026)
 
-286 PDFs received (E23). OCR + Layout + Classification + PAGE-XML + TEI-XML complete for all documents. NER + Wikidata linking validated on 15 sample docs (E34).
+286 PDFs received (E23). OCR + Layout + Classification + PAGE-XML complete for all documents. TEI Unified pipeline validated on 51 docs. NER extraction complete (285/286 docs), 49 docs with entity markup. Wikidata linking 67/285 docs (15%), rest pending.
 
 | Component | Status | Result |
 |-----------|--------|--------|
 | Image extraction | 286/286 Docs | 4,152 page images (PNG) |
 | Document classification | 286/286 Docs | Gemini 3.1 Flash Lite (Stage 1a, E27) |
-| OCR (Mistral) | 285/286 Docs | CER 6.42% (15 Pilot-Docs evaluated) |
+| OCR (Mistral) | 286/286 Docs | CER 6.42% (15 Pilot-Docs evaluated) |
 | Gemini OCR correction | 5/286 Docs | CER 3.97% -> 3.30% (Stage 2b, E29) |
 | Layout analysis (Docling) | 286/286 Docs | 4,152 layout JSONs, RTX 4060 ~5s/page |
 | Gemini Layout QA/Detect | 286/286 Docs | Auto mode: QA for good, detect for bad pages (E25/E26) |
 | PAGE-XML + METS | 286/286 Docs | 4,091 PAGE-XML + 286 METS (Transkribus-compatible) |
-| TEI-XML | 285/286 Docs | 4,117 TEI-XML files (DTA-Basisformat, with layout + metadata) |
-| NER + Wikidata | 15/286 Docs | 472 entity index entries, 328 with Wikidata QIDs (57%) |
+| TEI Unified | 51/286 Docs | Scaffold + Gemini Refinement + RelaxNG Validation (E32) |
+| NER Extraction | 285/286 Docs | 11,685 entities, 26,197 mentions (Gemini Flash Lite, E34/E35) |
+| Entity Index | 4,100 entries | TEI-XML indices in `data/entities/`, 341 with Wikidata QIDs |
+| TEI NER Injection | 49/286 Docs | Entity markup in `output/tei_ner/`, all validated VALID |
+| Wikidata Linking | 67/285 Docs | 15% resolution, remaining 218 docs pending |
 | Evaluation | 15/286 Docs | CER/WER per page + dashboard |
 
 ### OCR Quality by Document Type
@@ -48,15 +51,25 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XM
 | 1330 | D (special) | DE/FR | 6 |
 | 1540 | C (monograph) | DE | 8 |
 
+### Curation Editor (E36)
+
+Browser-basierter Editor fuer manuelle Kuration der Pipeline-generierten TEI-XML. Editoren korrigieren Text, Struktur und Entities direkt im Reader (Edit-Modus). Ein lokaler FastAPI-Server speichert kuratiertes TEI in `data/tei_curated/` (git-tracked, versioniert).
+
+```bash
+python -m scripts.server.curation_server    # http://localhost:8000
+```
+
+Features: WYSIWYG Text-Editing, Block-Toolbar (Typ/Split/Merge), Entity-Tagging mit Autocomplete (Entity Index + Wikidata), RelaxNG-Validierung, Review-Workflow (draft > in_review > approved). Details: [CURATION.md](knowledge/CURATION.md).
+
 ### Next Steps
 
-NER production run (286 docs) -> TEI entity injection -> Production delivery. Details: [PLAN.md](knowledge/PLAN.md).
+TEI Unified production run (remaining 235 docs) -> Wikidata linking completion -> TEI NER injection -> Curation pilot -> Production delivery. Details: [PLAN.md](knowledge/PLAN.md), [EDITION.md](knowledge/EDITION.md), [CURATION.md](knowledge/CURATION.md).
 
 ## Directory Structure
 
 ```
 zbz-ocr-tei/
-  knowledge/              # 13 project documents (Single Source of Truth)
+  knowledge/              # 14 project documents (Single Source of Truth)
   scripts/                # Python pipeline
     config.py             # Central configuration
     ocr_pipeline.py       # OCR (Mistral/DeepSeek)
@@ -71,6 +84,7 @@ zbz-ocr-tei/
     layout/               # PAGE-XML + METS generators
     tei/                  # TEI-XML generator
     ner/                  # NER + Wikidata linking (6 modules, E34)
+    server/               # Curation Server (FastAPI, E36)
     core/                 # Shared data loaders
     postprocess/          # Deterministic post-processing
   docs/                   # Dashboard + QA viewer (GitHub Pages)
@@ -89,6 +103,7 @@ zbz-ocr-tei/
     doc_metadata.json     # Gemini classification (286 docs, versioned)
     referenz-tei/         # 25 reference TEI (ZBZ-annotated)
     page-xml-transkribus/ # 24 Transkribus exports (PAGE-XML)
+    tei_curated/          # Curated TEI gold-standard (versioned, E36)
   output/                 # Generated data (not versioned)
   .env.example            # Template for API keys
 ```
@@ -111,8 +126,8 @@ python -m scripts.ocr_pipeline -i data/scans/2310.pdf -e mistral
 # Layout analysis (GPU for Docling)
 python -m scripts.run_layout_analysis --doc 2310
 
-# Generate TEI-XML (no GPU)
-python -m scripts.tei.tei_generator --doc 2310
+# Generate TEI-XML (no GPU, uses Gemini API)
+python -m scripts.tei.tei_unified --doc 2310
 
 # Evaluation (no GPU)
 python scripts/evaluate_ocr.py --all
@@ -156,6 +171,8 @@ The QA dashboard (`docs/index.html`) shows pipeline status, CER comparison, and 
 | Test plan + results | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
 | TEI rules | [knowledge/TEI-MAPPING.md](knowledge/TEI-MAPPING.md) |
 | OCR + Layout engines | [knowledge/ENGINES.md](knowledge/ENGINES.md) |
+| Digital edition | [knowledge/EDITION.md](knowledge/EDITION.md) |
+| Curation Editor | [knowledge/CURATION.md](knowledge/CURATION.md) |
 | Work journal | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
 
 ## Team
@@ -164,4 +181,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-03-08*
+*Last updated: 2026-03-09*

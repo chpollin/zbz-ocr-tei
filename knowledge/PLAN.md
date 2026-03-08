@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-25
-updated: 2026-03-07
+updated: 2026-03-09
 tags: [zbz-ocr-tei, plan, implementation, phases]
 status: active
 ---
@@ -73,8 +73,11 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 - [x] Entity types: person, organization, place, work, event, date
 - [x] ID-Schema: zbz-p.N, zbz-o.N, zbz-l.N, zbz-w.N, zbz-e.N, zbz-d.N
 - [x] Pilot Doc 2310 erfolgreich
-- [ ] Wikidata Reconciliation: Production Run
-- [ ] TEI Injection: Production Run
+- [x] NER Production Run: 285/286 Docs, 11,685 Entities, 26,197 Mentions (E35)
+- [x] Entity Index Merge: 4,100 Eintraege (person 1,979, org 698, place 661, work 762)
+- [x] TEI Injection Production: 49/286 Docs mit Entity-Markup (alle 10 geprueft VALID)
+- [x] NER Evaluation: HTML-Report (output/ner_report.html)
+- [ ] Wikidata Reconciliation: 67/285 Docs fertig (15%), restliche 218 pending
 - [ ] Viewer: WD/zbz-ID Support in tei-viewer.js + edition-tei.js
 - [ ] Targets: Recall >70%, Precision >80%, Wikidata linking >50%
 
@@ -96,8 +99,9 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [x] LINE breaks (`<lb/>`) from OCR line structure (in unified Step 1)
 - [x] Special document types via genre-conditional mapping table (10 genres)
 - [x] **Qualitaetsfixes** (E32): Entity Re-Annotation, Prompt-Tuning, Interview-Speaker-Erkennung
-- [ ] Unified TEI production run -- **RUNNING**
-- [ ] Integrate NER entities from Phase 3
+- [ ] Unified TEI production run -- **51/286 done** (restliche 235 Docs, ~$80 Gemini)
+- [x] NER Entity Integration: 49/286 Docs mit Entity-Markup (`output/tei_ner/`)
+- [ ] Re-Injection nach Unified-TEI-Completion fuer alle 286 Docs
 
 ## Phase 5 -- Extended Evaluation
 
@@ -110,6 +114,25 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [ ] Process all 286 PDFs through full pipeline
 - [ ] Spot-check QA: manually review 10 random documents
 - [ ] Final acceptance: Doc 2310 in oXygen -> no schema errors, entities linked
+
+---
+
+## Querschnitt: Digitale Edition + Curation (E33/E36)
+
+Kein sequentieller Pipeline-Schritt, sondern Praesentations- und Kurationschicht auf den Pipeline-Ergebnissen. Parallel zu den Phasen 3-6 entwickelt.
+
+**Details:** [EDITION](EDITION.md) (Architektur, Design) | [CURATION](CURATION.md) (Server, API, Editor)
+
+- [x] Lese-Edition: Landing, Katalog, Reader, About (E33)
+- [x] Design System: Parchment/Navy/Gold, Dark Mode, Responsive
+- [x] Curation Server: FastAPI, 11 API Endpoints (E36)
+- [x] Text-Korrektur: WYSIWYG contenteditable + XML-Modus
+- [x] Struktur-Editing: Block-Toolbar (Typ/Split/Merge/Delete)
+- [x] Entity-Kuration: Markieren, Autocomplete (Entity Index + Wikidata)
+- [x] Review-Workflow: Status-Badges, Publish-Endpoint
+- [x] TEI-Validierung: RelaxNG im Editor
+- [ ] Kurations-Durchlauf: Pilot-Docs (2310 etc.) vollstaendig kuratieren
+- [ ] Publish-Workflow mit ZBZ testen
 
 ---
 
@@ -163,4 +186,4 @@ Picture, Figure -> _skip
 
 ---
 
-Created: 2026-02-25 | Updated: 2026-03-07
+Created: 2026-02-25 | Updated: 2026-03-09

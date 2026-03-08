@@ -18,6 +18,7 @@
         serif: true,
         entitiesVisible: false,
         xmlMode: false,
+        editMode: false,
         docMeta: null,
         splitRatio: 50
     };
@@ -57,8 +58,38 @@
             renderHeader();
             bindToolbar();
             initDivider();
+            initEditor();
             showPage(state.page);
         });
+    }
+
+    // --- Editor Init ---
+    function initEditor() {
+        if (typeof ZBZ.EditionEditor === 'undefined') return;
+        var Ed = ZBZ.EditionEditor;
+        Ed.checkServer(function (available) {
+            var editBtn = E.$('#edit-toggle');
+            if (editBtn && available) {
+                editBtn.style.display = '';
+            }
+        });
+    }
+
+    function toggleEditMode() {
+        var Ed = ZBZ.EditionEditor;
+        state.editMode = !state.editMode;
+        Ed.state.active = state.editMode;
+
+        var reader = E.$('.ed-reader');
+        var editBtn = E.$('#edit-toggle');
+        if (reader) reader.classList.toggle('ed-edit-mode', state.editMode);
+        if (editBtn) editBtn.classList.toggle('active', state.editMode);
+
+        if (!state.editMode) {
+            Ed.clearDirty();
+        }
+
+        showPage(state.page);
     }
 
     // --- Header ---
@@ -85,6 +116,49 @@
             if (m.demo) parts.push('<span class="ed-badge ed-badge-demo">Demo</span>');
             metaEl.innerHTML = parts.join(' &middot; ');
         }
+
+        // Load curation status badge (only when server available)
+        loadCurationStatus();
+    }
+
+    // --- Curation Status ---
+    function loadCurationStatus() {
+        var Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
+        if (!Ed || !Ed.state.serverAvailable) return;
+
+        fetch(window.location.origin + '/api/tei/' + state.docId + '/status')
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (meta) {
+                if (!meta || meta.status === 'pipeline') return;
+                renderCurationBadge(meta);
+            })
+            .catch(function () {});
+    }
+
+    function renderCurationBadge(meta) {
+        var metaEl = E.$('.ed-reader-meta');
+        if (!metaEl) return;
+
+        var statusLabels = {
+            draft: 'Entwurf',
+            in_review: 'In Pruefung',
+            approved: 'Freigegeben'
+        };
+        var statusClass = {
+            draft: 'ed-badge-curation-draft',
+            in_review: 'ed-badge-curation-review',
+            approved: 'ed-badge-curation-approved'
+        };
+
+        var label = statusLabels[meta.status] || meta.status;
+        var cls = statusClass[meta.status] || 'ed-badge-curation-draft';
+
+        var badge = document.createElement('span');
+        badge.className = 'ed-badge ' + cls;
+        badge.textContent = label;
+        badge.title = 'Kurations-Status';
+        metaEl.appendChild(document.createTextNode(' '));
+        metaEl.appendChild(badge);
     }
 
     // --- Toolbar ---
@@ -147,11 +221,56 @@
         if (zoomOutBtn) zoomOutBtn.addEventListener('click', function () { setZoom(state.zoom - 25); });
         if (zoomReset) zoomReset.addEventListener('click', function () { setZoom(100); });
 
-        // Keyboard navigation
+        // Edit toggle
+        var editBtn = E.$('#edit-toggle');
+        if (editBtn) {
+            editBtn.addEventListener('click', function () {
+                toggleEditMode();
+            });
+        }
+
+        // Save button
+        var saveBtn = E.$('#save-btn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', function () {
+                if (typeof ZBZ.EditionEditor !== 'undefined') {
+                    var container = E.$('.ed-text-content');
+                    ZBZ.EditionEditor.savePageXml(state.docId, state.page, container, state.xmlMode);
+                }
+            });
+        }
+
+        // Validate button
+        var validateBtn = E.$('#validate-btn');
+        if (validateBtn) {
+            validateBtn.addEventListener('click', function () {
+                validateCurrentPage();
+            });
+        }
+
+        // Keyboard navigation + Ctrl+S
         document.addEventListener('keydown', function (e) {
+            // Ctrl+S: Save
+            if ((e.ctrlKey || e.metaKey) && e.key === 's' && state.editMode) {
+                e.preventDefault();
+                if (typeof ZBZ.EditionEditor !== 'undefined' && ZBZ.EditionEditor.state.dirty) {
+                    var container = E.$('.ed-text-content');
+                    ZBZ.EditionEditor.savePageXml(state.docId, state.page, container, state.xmlMode);
+                }
+                return;
+            }
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.target.contentEditable === 'true') return;
             if (e.key === 'ArrowLeft') { e.preventDefault(); changePage(-1); }
             else if (e.key === 'ArrowRight') { e.preventDefault(); changePage(1); }
+        });
+
+        // Unsaved changes warning
+        window.addEventListener('beforeunload', function (e) {
+            if (typeof ZBZ.EditionEditor !== 'undefined' && ZBZ.EditionEditor.state.dirty) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
         });
     }
 
@@ -224,8 +343,29 @@
 
         container.innerHTML = '<div class="ed-skeleton ed-skeleton-block" style="height:400px"></div>';
 
-        E.fetchTei(state.docId, state.page).then(function (xml) {
-            if (state.xmlMode) {
+        var Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
+
+        // Try server first (curated priority), then static fallback
+        var teiPromise;
+        if (Ed && Ed.state.serverAvailable) {
+            teiPromise = Ed.fetchTeiFromServer(state.docId, state.page)
+                .then(function (data) {
+                    if (data && data.xml) return data.xml;
+                    return E.fetchTei(state.docId, state.page);
+                });
+        } else {
+            teiPromise = E.fetchTei(state.docId, state.page);
+        }
+
+        teiPromise.then(function (xml) {
+            if (state.editMode && Ed) {
+                if (state.xmlMode) {
+                    Ed.renderXmlEditable(xml, container);
+                } else {
+                    Ed.renderEditable(xml, container);
+                }
+                Ed.clearDirty();
+            } else if (state.xmlMode) {
                 T.renderXml(xml, container);
             } else {
                 T.render(xml, container);
@@ -236,6 +376,102 @@
                 var sidebar = E.$('.ed-entity-sidebar');
                 if (sidebar) T.renderEntitySidebar(sidebar);
             }
+        });
+    }
+
+    // --- Validation ---
+    function validateCurrentPage() {
+        var Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
+        if (!Ed || !Ed.state.serverAvailable) {
+            Ed.showToast('Server nicht erreichbar', 'error');
+            return;
+        }
+
+        // Get current XML from editor
+        var container = E.$('.ed-text-content');
+        var xml;
+        if (state.xmlMode) {
+            var textarea = container.querySelector('.ed-xml-editor');
+            xml = textarea ? textarea.value : null;
+        } else {
+            xml = Ed.serializeToXml(container);
+        }
+
+        if (!xml) {
+            Ed.showToast('Kein XML zum Validieren', 'error');
+            return;
+        }
+
+        Ed.showToast('Validiere...', 'info');
+
+        // Wrap in minimal TEI document for RelaxNG validation
+        var fullXml = xml;
+        if (xml.indexOf('<TEI') === -1) {
+            fullXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+                '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n' +
+                '<teiHeader><fileDesc><titleStmt><title>Validation</title></titleStmt>' +
+                '<publicationStmt><p>Validation</p></publicationStmt>' +
+                '<sourceDesc><p>Validation</p></sourceDesc></fileDesc></teiHeader>\n' +
+                '<text><body>' + xml + '</body></text>\n</TEI>';
+        }
+
+        fetch(window.location.origin + '/api/tei/' + state.docId + '/validate-page', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ xml: fullXml })
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (result) {
+                if (result.valid) {
+                    Ed.showToast('TEI ist valide (RelaxNG)', 'success');
+                    _showValidationPanel(null);
+                } else {
+                    var errCount = result.errors ? result.errors.length : 0;
+                    Ed.showToast(errCount + ' Validierungsfehler', 'error');
+                    _showValidationPanel(result.errors);
+                }
+            })
+            .catch(function (err) {
+                Ed.showToast('Validierung fehlgeschlagen: ' + (err.detail || err.message || ''), 'error');
+            });
+    }
+
+    function _showValidationPanel(errors) {
+        // Remove existing panel
+        var existing = E.$('.ed-validation-panel');
+        if (existing) existing.remove();
+
+        if (!errors || errors.length === 0) return;
+
+        var panel = document.createElement('div');
+        panel.className = 'ed-validation-panel';
+        panel.innerHTML = '<div class="ed-validation-header">' +
+            '<strong>Validierungsfehler (' + errors.length + ')</strong>' +
+            '<button class="ed-validation-close" title="Schliessen">&times;</button>' +
+            '</div>';
+
+        var list = document.createElement('div');
+        list.className = 'ed-validation-list';
+        for (var i = 0; i < errors.length; i++) {
+            var err = errors[i];
+            var msg = typeof err === 'string' ? err : (err.message || JSON.stringify(err));
+            var item = document.createElement('div');
+            item.className = 'ed-validation-item';
+            item.textContent = msg;
+            list.appendChild(item);
+        }
+        panel.appendChild(list);
+
+        // Insert below toolbar
+        var toolbar = E.$('.ed-reader-toolbar');
+        if (toolbar && toolbar.parentNode) {
+            toolbar.parentNode.insertBefore(panel, toolbar.nextSibling);
+        } else {
+            document.body.appendChild(panel);
+        }
+
+        panel.querySelector('.ed-validation-close').addEventListener('click', function () {
+            panel.remove();
         });
     }
 

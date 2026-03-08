@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-07
+updated: 2026-03-09
 tags: [zbz-ocr-tei, project, ecosystem, vision]
 status: active
 ---
@@ -60,8 +60,8 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M0 | Image extraction + QA viewer | Images + viewer available | Done |
 | M1 | OCR validated | >=93% accuracy all types | Done (see [TESTPLAN](TESTPLAN.md) + Dashboard) |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done |
-| M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Sample done** (15 Docs, 57% linking, E34) |
-| M4 | TEI-XML | DTA-compliant TEI, schema-valid | **In Progress** (E32, production run laeuft) |
+| M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Done** (285 Docs, 11,685 Entities, Wikidata ~15% ongoing) |
+| M4 | TEI-XML | DTA-compliant TEI, schema-valid | **In Progress** (51/286 unified, 49 mit NER-Markup) |
 | M5 | Production run | 286 docs processed, spot-check QA passed | Pending (Phase 6) |
 
 ### Dependencies
@@ -87,11 +87,13 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 | Layout QA (Gemini) | Done | `scripts/layout_qa_gemini.py --mode auto` (E25/E26/E31) |
 | PAGE-XML generator | Done | `scripts/layout/page_xml_generator.py` + `mets_generator.py` |
 | Document classification | Done | `scripts/classify_docs.py` (E27) |
-| NER + Wikidata | Sample done | `scripts/ner/` (7 Module, E34). 15 Docs, 472 Index-Eintraege, 328 WD-QIDs. Production pending |
-| **Unified TEI Pipeline** | **Production** | `scripts/tei/tei_unified.py` (E32). Production run laeuft |
+| NER Extraction | **Done** | `scripts/ner/` (7 Module, E34/E35). 285/286 Docs, 11,685 Entities, 26,197 Mentions |
+| Entity Index | **Done** | 4,100 Eintraege in `data/entities/`, 341 mit Wikidata. Linking laeuft |
+| TEI NER Injection | **49/286** | `scripts/ner/ner_inject_tei.py`. 49 Docs mit Entity-Markup in `output/tei_ner/` |
+| **Unified TEI Pipeline** | **51/286** | `scripts/tei/tei_unified.py` (E32). Restliche 235 Docs pending (~$80 Gemini) |
 | TEI Validator | Done | `scripts/tei/tei_validator.py`: RelaxNG + 8 Projekt-Regeln |
 | Evaluation + Dashboard | Done | `scripts/evaluate_ocr.py` + `docs/index.html` |
-| Digitale Edition | Done | `docs/edition/` (E33) |
+| Digitale Edition + Curation | Done | `docs/edition/` (E33) + Curation Server (E36). Details: [EDITION](EDITION.md), [CURATION](CURATION.md) |
 | Containerization | Pending | Dockerfile for Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
 

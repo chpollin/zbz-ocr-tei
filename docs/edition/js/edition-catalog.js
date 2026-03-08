@@ -16,7 +16,9 @@
         sortKey: 'id',
         sortAsc: true,
         searchIndex: null,
-        searchQuery: ''
+        searchQuery: '',
+        curationStatuses: {},
+        serverAvailable: false
     };
 
     var filters = {
@@ -39,6 +41,7 @@
             renderFilters();
             bindEvents();
             applyFilters();
+            _checkCurationServer();
         });
     }
 
@@ -292,6 +295,7 @@
             html += '<tr onclick="window.location.href=\'reader.html?doc=' + E.esc(d.id) + '\'" tabindex="0">';
             html += '<td class="td-id">' + E.esc(d.id);
             if (d.demo) html += ' <span class="ed-badge ed-badge-demo">Demo</span>';
+            html += _curationBadgeHtml(d.id);
             html += '</td>';
             html += '<td class="td-title">' + E.esc(d.title || '-') + '</td>';
             html += '<td>' + E.esc(d.author || '-') + '</td>';
@@ -340,6 +344,78 @@
         });
         html += '</div>';
         container.innerHTML = html;
+    }
+
+    // --- Curation Status (Phase 4) ---
+    function _checkCurationServer() {
+        var apiBase = window.location.origin + '/api';
+        fetch(apiBase + '/health', { method: 'GET' })
+            .then(function (r) {
+                if (!r.ok) return;
+                state.serverAvailable = true;
+                // Load statuses for all visible docs (batched)
+                _loadCurationStatuses();
+            })
+            .catch(function () {});
+    }
+
+    function _loadCurationStatuses() {
+        if (!state.serverAvailable) return;
+        var apiBase = window.location.origin + '/api';
+        var docs = state.documents;
+        var pending = 0;
+        var maxConcurrent = 10;
+        var changed = false;
+        var renderTimer = null;
+
+        // Debounced re-render: at most once per 500ms
+        function scheduleRender() {
+            if (renderTimer) return;
+            renderTimer = setTimeout(function () {
+                renderTimer = null;
+                if (changed) {
+                    changed = false;
+                    renderResults();
+                }
+            }, 500);
+        }
+
+        function loadNext(i) {
+            if (i >= docs.length) {
+                // Final render for any remaining changes
+                if (changed) renderResults();
+                return;
+            }
+            if (pending >= maxConcurrent) {
+                setTimeout(function () { loadNext(i); }, 50);
+                return;
+            }
+            pending++;
+            fetch(apiBase + '/tei/' + docs[i].id + '/status')
+                .then(function (r) { return r.ok ? r.json() : null; })
+                .then(function (meta) {
+                    pending--;
+                    if (meta && meta.status && meta.status !== 'pipeline') {
+                        state.curationStatuses[docs[i].id] = meta.status;
+                        changed = true;
+                        scheduleRender();
+                    }
+                    loadNext(i + 1);
+                })
+                .catch(function () {
+                    pending--;
+                    loadNext(i + 1);
+                });
+        }
+        loadNext(0);
+    }
+
+    function _curationBadgeHtml(docId) {
+        var status = state.curationStatuses[docId];
+        if (!status) return '';
+        var labels = { draft: 'Entwurf', in_review: 'Pruefung', approved: 'Freigegeben' };
+        var classes = { draft: 'ed-badge-curation-draft', in_review: 'ed-badge-curation-review', approved: 'ed-badge-curation-approved' };
+        return ' <span class="ed-badge ' + (classes[status] || '') + '">' + E.esc(labels[status] || status) + '</span>';
     }
 
     // --- Auto-init ---

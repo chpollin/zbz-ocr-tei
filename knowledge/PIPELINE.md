@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-03-08
+updated: 2026-03-09
 tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
@@ -41,18 +41,20 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26/E31) |
 | 3b | Layout Overlay Generator | `scripts/generate_layout_overlays.py` | Overlay PNGs + side-by-side compare | Production (E31) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production |
-| 5 | **NER + Wikidata** | `scripts/ner/` (7 Module) | Entity JSON + TEI Indices (`data/entities/`) | **Sample done (E34)** |
-| 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | 15 Docs (Sample), E34 |
-| 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | 472 Eintraege, E34 |
-| 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | 328/472 QIDs (57%), E34 |
-| 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | 3 Docs validiert, E34 |
-| 5e | NER Evaluation | `scripts/ner/ner_evaluate.py` | Metrics (density, P/R/F1 vs GT) | Done, E34 |
+| 5 | **NER + Wikidata** | `scripts/ner/` (7 Module) | Entity JSON + TEI Indices (`data/entities/`) | **Production (285/286, E34/E35)** |
+| 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | 285/286 Docs, 11,685 Entities, 26,197 Mentions |
+| 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | 4,100 Eintraege, 341 mit Wikidata |
+| 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | 67/285 Docs (15%), restliche pending |
+| 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | 49/286 Docs (alle 10 geprueft VALID) |
+| 5e | NER Evaluation | `scripts/ner/ner_evaluate.py` | Metrics (density, P/R/F1 vs GT) + HTML-Report | Done (output/ner_report.html) |
 | 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production |
-| 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **Production, E32** |
+| 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **51/286, E32** |
 | 6c | TEI Validation (RelaxNG + project rules) | `scripts/tei/tei_validator.py` | Validation JSON | Production, E32 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
-**Note on Stage 5 (E34):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). 7 Module: `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker`, `ner_inject_tei`, `ner_evaluate`. Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). Sample-Run (15 Docs): 765 Entities, 472 Index-Eintraege, 328 mit Wikidata-QIDs (57%). CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
+**Curation Layer (E36, post-pipeline):** Manuelle Kuration ueber Browser-Editor (`scripts/server/curation_server.py`, localhost:8000). Nicht Teil der automatischen Pipeline, sondern editoriale Schicht darueber. Kuratiertes TEI in `data/tei_curated/` (git-tracked, Gold-Standard). TEI-Prioritaet: kuratiert > NER > unified > examples. Features: WYSIWYG Text-Editing, Block-Toolbar, Entity-Tagging mit Autocomplete, RelaxNG-Validierung, Review-Workflow (draft > in_review > approved). Publish: freigegebene Docs werden nach `docs/data/examples/` kopiert. Details: [CURATION](CURATION.md).
+
+**Note on Stage 5 (E34/E35):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). 7 Module: `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker`, `ner_inject_tei`, `ner_evaluate`. Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). Production Run (285 Docs): 11,685 Entities, 26,197 Mentions, 4,100 Index-Eintraege, 341 mit Wikidata-QIDs. Typ-Verteilung: person 36.7%, place 22.3%, date 15.0%, org 13.6%, work 10.8%, event 1.6%. CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
 **Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 
@@ -415,58 +417,16 @@ Full pipeline output (`output/`) is gitignored and only available locally. For t
 
 ---
 
-## Digitale Edition (E33)
+## Digitale Edition + Curation (E33/E36)
 
-**Directory:** `docs/edition/`
+**Directory:** `docs/edition/` | **Details:** [EDITION](EDITION.md) (Architektur, Design System) | [CURATION](CURATION.md) (Edit-Modus, Server, API)
 
-Public-facing digital edition for researchers and the general public, deployed on GitHub Pages alongside the internal pipeline dashboard. Separate design system, no modifications to the dashboard code.
-
-### Architecture
-
-| File | Purpose | Lines |
-|------|---------|-------|
-| `docs/edition/index.html` | Landing page: Hero, Featured Docs, Corpus Stats | ~102 |
-| `docs/edition/catalog.html` | Document catalog: faceted filters, table/card views, MiniSearch | ~82 |
-| `docs/edition/reader.html` | Reader: Faksimile + TEI side-by-side, entities, XML view | ~67 |
-| `docs/edition/about.html` | About page: Hersch biography, project, pipeline, technology | ~138 |
-| `docs/edition/css/edition.css` | Design system: `--ed-*` CSS vars, dark mode, responsive (3 breakpoints) | ~1300 |
-| `docs/edition/js/edition-shared.js` | Shared module: Nav/Footer slot rendering, Dark Mode, catalog loader, card builder, utilities | ~283 |
-| `docs/edition/js/edition-landing.js` | Landing page: metrics animation, featured docs, corpus stats | ~140 |
-| `docs/edition/js/edition-catalog.js` | Catalog: MiniSearch (CDN), faceted filters, sort, table/card rendering | ~354 |
-| `docs/edition/js/edition-reader.js` | Reader: page navigation, zoom, font toggle, draggable divider, entity sidebar | ~305 |
-| `docs/edition/js/edition-tei.js` | TEI renderer: recursive node rendering, entity extraction, XML view | ~302 |
-| `docs/edition/data/catalog.json` | Generated catalog data (from `scripts/generate_edition_data.py`) | -- |
-| `scripts/generate_edition_data.py` | Data generator: reads dashboard.json + doc_metadata.json, outputs catalog.json, copies TEI XMLs | ~172 |
-
-### Design System
-
-- **Colors:** Parchment `#faf8f5` (bg), Scholarly Navy `#1e3a5f` (primary), Warm Gold `#b8860b` (accent)
-- **Dark Mode:** `.dark` class on `<body>`, all `--ed-*` vars overridden
-- **Typography:** Inter (UI), Source Serif 4 (reading), JetBrains Mono (code/XML)
-- **Responsive:** 1200px (full), 768px (compact), 480px (mobile)
-
-### Key Design Decisions
-
-| Decision | Rationale |
-|----------|-----------|
-| Separate from dashboard (`docs/edition/`) | Dashboard is internal QA tool; edition is public-facing |
-| ES5/IIFE, `ZBZ.Edition` namespace | Consistent with dashboard convention, no build tools |
-| Nav/Footer JS slot pattern (`#ed-nav-slot`) | DRY: nav/footer defined once in JS, HTML has empty slots |
-| `buildCardHtml()` shared helper | DRY: card rendering used by landing + catalog |
-| `sanitizeDocId()` for URL params | Security: only digits allowed, prevents path traversal |
-| MiniSearch via CDN (~22KB) | Client-side fulltext search, no server needed |
-| TEI renderer copied from `tei-viewer.js` | Reading-optimized version, no regression in dashboard viewer |
-| CSS classes for TEI `<hi>` renditions | Replaces inline styles, maintainable via CSS |
-| XML syntax colors as CSS custom properties | Automatic dark mode adaptation |
-| 4 Demo docs (2310, 1000, 1330, 1540) | Same as dashboard demo, expandable to full corpus |
-
-### Data Generation
+Oeffentliche digitale Edition auf GitHub Pages (Lese-Modus) mit optionalem Kurations-Modus (FastAPI Server). Zwei Modi, ein System: Reader, Katalog, Entity-Sidebar im Lese-Modus; Text-Korrektur, Struktur-Editing, Entity-Kuration, Review-Workflow im Edit-Modus.
 
 ```bash
-python -m scripts.generate_edition_data   # Generate catalog.json + copy TEI XMLs
+python -m scripts.generate_edition_data        # Katalog-Daten generieren
+python -m scripts.server.curation_server       # Edit-Modus starten (localhost:8000)
 ```
-
-Reads `docs/data/dashboard.json` + `data/doc_metadata.json`. Outputs `docs/edition/data/catalog.json` (286 docs, corpus stats, featured list). Copies TEI XMLs for demo docs to `docs/data/examples/`.
 
 ---
 
