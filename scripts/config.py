@@ -189,8 +189,8 @@ KNOWN_ENTITIES = {
     "Heidegger": "GND:118547798",
     "Kant": "GND:118559796",
     "Platon": "GND:118594893",
-    "Sartre": "GND:118605895",
-    "Hannah Arendt": "GND:118502751",
+    "Sartre": "GND:11860564X",
+    "Hannah Arendt": "GND:11850391X",
 }
 
 
