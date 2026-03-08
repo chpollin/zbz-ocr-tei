@@ -29,6 +29,7 @@ from scripts.config import (
     GEMINI_CORRECTED_B_DIR,
     IMAGES_DIR,
     LAYOUT_DIR,
+    LLM_CORRECTED_C_DIR,
     MISTRAL_RESULTS_DIR,
     PAGE_XML_DIR,
     ZBZ_TO_PAGE_TYPE,
@@ -99,6 +100,7 @@ def load_ocr_text_for_page(doc_id, page_num):
     sources = [
         (GEMINI_CORRECTED_B_DIR, "gemini-b"),
         (GEMINI_CORRECTED_A_DIR, "gemini-a"),
+        (LLM_CORRECTED_C_DIR, "llm-c"),
         (MISTRAL_RESULTS_DIR, "mistral"),
     ]
     for base_dir, name in sources:

@@ -13,31 +13,21 @@ Aufruf:
 
 import argparse
 import json
-import os
 import re
 import sys
 import time
 from pathlib import Path
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from scripts.config import (
-    DOC_METADATA_PATH,
     ENTITIES_DIR,
-    GEMINI_CORRECTED_A_DIR,
-    GEMINI_CORRECTED_B_DIR,
+    GEMINI_API_KEY,
     GEMINI_MODEL,
-    LLM_CORRECTED_C_DIR,
-    MISTRAL_RESULTS_DIR,
 )
+from scripts.core.loaders import discover_documents, discover_pages, load_ocr_text
 from scripts.ner.entity_store import EntityStore
-from scripts.tei.tei_generator import get_document_metadata, load_ocr_text
-
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+from scripts.tei.tei_generator import get_document_metadata
 
 SAMPLE_DOCS = ["2310", "2530", "1440"]
 
@@ -180,17 +170,7 @@ def extract_entities_page(
 # Dokument-Verarbeitung
 # ---------------------------------------------------------------------------
 
-def _discover_pages(doc_id: str) -> list[int]:
-    """Findet alle Seitennummern fuer ein Dokument."""
-    pages = set()
-    for base_dir in [GEMINI_CORRECTED_B_DIR, GEMINI_CORRECTED_A_DIR,
-                     LLM_CORRECTED_C_DIR, MISTRAL_RESULTS_DIR]:
-        if base_dir.exists():
-            for f in base_dir.glob(f"{doc_id}_p*.md"):
-                match = re.match(rf'{doc_id}_p(\d+)\.md$', f.name)
-                if match:
-                    pages.add(int(match.group(1)))
-    return sorted(pages)
+# _discover_pages() -> scripts.core.loaders.discover_pages
 
 
 def _build_doc_hints(doc_id: str, metadata: dict) -> str:
@@ -240,7 +220,7 @@ def extract_document(
     doc_hints = _build_doc_hints(doc_id, metadata)
 
     # Seiten ermitteln
-    pages = _discover_pages(doc_id)
+    pages = discover_pages(doc_id)
     if not pages:
         print(f"  {doc_id}: keine Seiten gefunden")
         return {"doc_id": doc_id, "total_pages": 0}
@@ -315,21 +295,7 @@ def extract_document(
     return summary
 
 
-# ---------------------------------------------------------------------------
-# Dokument-Discovery
-# ---------------------------------------------------------------------------
-
-def discover_documents() -> list[str]:
-    """Findet alle Dokumente mit OCR-Daten."""
-    doc_ids = set()
-    for base_dir in [GEMINI_CORRECTED_B_DIR, GEMINI_CORRECTED_A_DIR,
-                     LLM_CORRECTED_C_DIR, MISTRAL_RESULTS_DIR]:
-        if base_dir.exists():
-            for f in base_dir.glob("*_p*.md"):
-                match = re.match(r'(\d+)_p\d+\.md$', f.name)
-                if match:
-                    doc_ids.add(match.group(1))
-    return sorted(doc_ids)
+# discover_documents() -> scripts.core.loaders
 
 
 # ---------------------------------------------------------------------------

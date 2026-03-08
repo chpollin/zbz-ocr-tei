@@ -22,14 +22,15 @@ from xml.sax.saxutils import escape as xml_escape
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     DOC_METADATA_PATH,
-    GEMINI_CORRECTED_A_DIR,
-    GEMINI_CORRECTED_B_DIR,
     LAYOUT_DIR,
-    LLM_CORRECTED_C_DIR,
-    MISTRAL_RESULTS_DIR,
     TEI_DIR,
     KNOWN_ENTITIES,
     get_test_metadata,
+)
+from scripts.core.loaders import (
+    discover_documents,
+    discover_pages,
+    load_ocr_text,
 )
 
 
@@ -120,18 +121,7 @@ def get_document_metadata(doc_id: str) -> dict | None:
     return get_test_metadata(doc_id)
 
 
-# ---------------------------------------------------------------------------
-# OCR-Text laden (Gemini B > Gemini A > LLM C > Mistral)
-# ---------------------------------------------------------------------------
-
-def load_ocr_text(doc_id: str, page: int) -> str | None:
-    """Laedt OCR-Text: Gemini B > Gemini A > LLM C > Mistral."""
-    for base_dir in [GEMINI_CORRECTED_B_DIR, GEMINI_CORRECTED_A_DIR,
-                     LLM_CORRECTED_C_DIR, MISTRAL_RESULTS_DIR]:
-        path = base_dir / f"{doc_id}_p{page}.md"
-        if path.exists():
-            return path.read_text(encoding="utf-8")
-    return None
+# load_ocr_text() -> scripts.core.loaders
 
 
 # ---------------------------------------------------------------------------
@@ -391,17 +381,9 @@ def process_document(doc_id: str) -> list[Path]:
     metadata = get_document_metadata(doc_id)
     generated = []
 
-    # Finde alle verfuegbaren Seiten (OCR-Markdown Dateien)
-    pages = set()
-    for base_dir in [GEMINI_CORRECTED_B_DIR, GEMINI_CORRECTED_A_DIR,
-                     LLM_CORRECTED_C_DIR, MISTRAL_RESULTS_DIR]:
-        if base_dir.exists():
-            for f in base_dir.glob(f"{doc_id}_p*.md"):
-                match = re.search(r'_p(\d+)\.md$', f.name)
-                if match:
-                    pages.add(int(match.group(1)))
+    pages = discover_pages(doc_id)
 
-    for page in sorted(pages):
+    for page in pages:
         result = process_page(doc_id, page, metadata)
         if result:
             generated.append(result)
@@ -409,17 +391,7 @@ def process_document(doc_id: str) -> list[Path]:
     return generated
 
 
-def discover_documents() -> list[str]:
-    """Findet alle Dokumente mit OCR-Daten."""
-    doc_ids = set()
-    for base_dir in [GEMINI_CORRECTED_B_DIR, GEMINI_CORRECTED_A_DIR,
-                     LLM_CORRECTED_C_DIR, MISTRAL_RESULTS_DIR]:
-        if base_dir.exists():
-            for f in base_dir.glob("*_p*.md"):
-                match = re.match(r'(\d+)_p\d+\.md$', f.name)
-                if match:
-                    doc_ids.add(match.group(1))
-    return sorted(doc_ids)
+# discover_documents() -> scripts.core.loaders
 
 
 # ---------------------------------------------------------------------------
