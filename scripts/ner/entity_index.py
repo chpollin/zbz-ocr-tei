@@ -434,6 +434,10 @@ def merge_store_into_index(
                         and len(surface) > 2):
                     entry.variants.append(surface)
                     index._variant_lookup[surface.lower().strip()] = entry.xml_id
+            # Wikidata-QID uebertragen (wenn neu vorhanden)
+            if rec.wikidata_qid and not entry.wikidata_qid:
+                entry.wikidata_qid = rec.wikidata_qid
+                entry.wikidata_url = f"https://www.wikidata.org/wiki/{rec.wikidata_qid}"
             matched += 1
         elif auto_register and rec.entity_type in INDEX_FILES:
             # Neue Entity registrieren
