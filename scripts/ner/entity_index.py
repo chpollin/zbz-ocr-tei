@@ -209,17 +209,18 @@ class EntityIndex:
         return None
 
     def match_normalized(self, normalized: str, entity_type: str) -> IndexEntry | None:
-        """Sucht via normalisiertem Namen (exakt + Varianten)."""
+        """Sucht via normalisiertem Namen (exakt + Nachname-Fallback)."""
         # Exakter Match
         entry = self.match(normalized, entity_type)
         if entry:
             return entry
 
-        # Teilmatch: Nachname-only
+        # Fallback: nur Nachname (letztes Wort), nicht Vorname
         parts = normalized.split()
         if len(parts) > 1:
-            for part in parts:
-                entry = self.match(part, entity_type)
+            surname = parts[-1]
+            if len(surname) > 2:  # Skip kurze Teile ("de", "von")
+                entry = self.match(surname, entity_type)
                 if entry:
                     return entry
 

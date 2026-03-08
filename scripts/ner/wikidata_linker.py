@@ -75,18 +75,25 @@ def _cache_key(entity_type: str, normalized: str) -> str:
 # ---------------------------------------------------------------------------
 
 def _api_get(params: dict) -> dict | None:
-    """Wikidata API GET mit Rate Limiting und User-Agent."""
+    """Wikidata API GET mit Rate Limiting, Retry und User-Agent."""
     params["format"] = "json"
     headers = {"User-Agent": WIKIDATA_USER_AGENT}
-    try:
-        resp = requests.get(WIKIDATA_API_URL, params=params,
-                            headers=headers, timeout=15)
-        resp.raise_for_status()
-        time.sleep(WIKIDATA_RATE_LIMIT)
-        return resp.json()
-    except requests.RequestException as e:
-        print(f"  WARNUNG: Wikidata-API-Fehler: {e}")
-        return None
+    for attempt in range(3):
+        try:
+            resp = requests.get(WIKIDATA_API_URL, params=params,
+                                headers=headers, timeout=15)
+            resp.raise_for_status()
+            time.sleep(WIKIDATA_RATE_LIMIT)
+            return resp.json()
+        except requests.RequestException as e:
+            if attempt < 2:
+                wait = 2 ** (attempt + 1)
+                print(f"  Retry {attempt + 1}/3 Wikidata (warte {wait}s): {e}")
+                time.sleep(wait)
+            else:
+                print(f"  WARNUNG: Wikidata-API-Fehler nach 3 Versuchen: {e}")
+                return None
+    return None
 
 
 def search_wikidata(query: str, language: str = "en",
@@ -183,11 +190,9 @@ def reconcile_entity(
         _cache[key] = None
         return None
 
-    # Sprach-Fallback: Dokumentsprache -> en
+    # Schweizer Korpus: immer FR + DE + EN durchsuchen
     wd_lang = LANG_MAP.get(doc_language, "en")
-    languages = [wd_lang]
-    if wd_lang != "en":
-        languages.append("en")
+    languages = list(dict.fromkeys([wd_lang, "fr", "de", "en"]))  # dedupliziert, Reihenfolge erhalten
 
     for lang in languages:
         candidates = search_wikidata(normalized, language=lang, limit=5)

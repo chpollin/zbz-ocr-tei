@@ -16,6 +16,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
@@ -29,7 +30,19 @@ from scripts.core.loaders import discover_documents, discover_pages, load_ocr_te
 from scripts.ner.entity_store import EntityStore
 from scripts.tei.tei_generator import get_document_metadata
 
-SAMPLE_DOCS = ["2310", "2530", "1440"]
+SAMPLE_DOCS = [
+    "2310", "2530", "1440",  # Original-Pilot (A/FR, B/FR, D/DE)
+    "290", "1180", "890",    # A/FR, A/DE-FR bilingual, B/DE
+    "3040", "90", "830",     # B/FR Lexikon, D/DE 1944, D/FR Bildband
+    "1330", "40", "1520",    # D/FR Sammelband, C/FR Roman, C Monograph
+    "1000", "1540", "100",   # B/FR DEMO, C DEMO, A/FR simple
+]
+
+
+def _strip_diacritics(text: str) -> str:
+    """Strip diacritics for fuzzy matching (Etudes == Etudes)."""
+    nfkd = unicodedata.normalize('NFKD', text)
+    return ''.join(c for c in nfkd if not unicodedata.combining(c)).lower()
 
 # ---------------------------------------------------------------------------
 # NER Prompt
@@ -118,16 +131,37 @@ def extract_entities_page(
     from google import genai
     from google.genai import types
 
-    try:
-        response = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=[types.Part.from_text(text=prompt)],
-            config=types.GenerateContentConfig(
-                temperature=0.1,
-                max_output_tokens=4096,
-            ),
-        )
+    # Retry mit exponentiellem Backoff (3 Versuche)
+    response = None
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(
+                model=GEMINI_MODEL,
+                contents=[types.Part.from_text(text=prompt)],
+                config=types.GenerateContentConfig(
+                    temperature=0.1,
+                    max_output_tokens=4096,
+                ),
+            )
+            break
+        except Exception as e:
+            err_str = str(e).lower()
+            if "api_key" in err_str or "auth" in err_str or "permission" in err_str:
+                raise
+            if attempt < 2:
+                wait = 2 ** (attempt + 1)
+                print(f"  Retry {attempt + 1}/3 fuer {doc_id} p{page} "
+                      f"(warte {wait}s): {e}")
+                time.sleep(wait)
+            else:
+                print(f"  WARNUNG: Gemini-Fehler nach 3 Versuchen "
+                      f"fuer {doc_id} p{page}: {e}")
+                return None
 
+    if response is None:
+        return None
+
+    try:
         result_text = response.text.strip()
 
         # JSON aus Markdown-Fences extrahieren
@@ -138,16 +172,20 @@ def extract_entities_page(
         data = json.loads(result_text)
 
         # Validierung: surface muss im OCR-Text vorkommen
+        ocr_lower = ocr_text.lower()
+        ocr_stripped = _strip_diacritics(ocr_text)
         validated_entities = []
         for ent in data.get("entities", []):
             surface = ent.get("surface", "")
-            if surface and surface in ocr_text:
+            if not surface:
+                continue
+            if surface in ocr_text:
                 validated_entities.append(ent)
-            elif surface:
-                # Fuzzy: case-insensitive Suche
-                if surface.lower() in ocr_text.lower():
-                    validated_entities.append(ent)
-                # else: halluziniert, verwerfen
+            elif surface.lower() in ocr_lower:
+                validated_entities.append(ent)
+            elif _strip_diacritics(surface) in ocr_stripped:
+                # Diakritik-Fallback (Etudes vs Etudes)
+                validated_entities.append(ent)
 
         data["entities"] = validated_entities
         data["entity_count"] = len(validated_entities)
@@ -156,13 +194,6 @@ def extract_entities_page(
 
     except json.JSONDecodeError as e:
         print(f"  WARNUNG: JSON-Parse-Fehler fuer {doc_id} p{page}: {e}")
-        return None
-    except Exception as e:
-        err_str = str(e).lower()
-        if "api_key" in err_str or "auth" in err_str or "permission" in err_str:
-            print(f"  FEHLER: Gemini-Auth-Fehler: {e}")
-            raise
-        print(f"  WARNUNG: Gemini-Fehler fuer {doc_id} p{page}: {e}")
         return None
 
 
