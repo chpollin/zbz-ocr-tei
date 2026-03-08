@@ -32,7 +32,9 @@
             return;
         }
 
-        E.loadCatalog().then(function (catalog) {
+        // Catalog + Entity Index parallel laden
+        Promise.all([E.loadCatalog(), E.loadEntityIndex()]).then(function (results) {
+            var catalog = results[0];
             if (!catalog) return;
 
             // Find document in catalog

@@ -330,6 +330,26 @@
             return html || '<span class="tag">-</span>';
         },
 
+        // ---- Entity Index (for resolving #zbz-* refs) ----
+        _entityIndex: null,
+
+        loadEntityIndex: function () {
+            if (ZBZ._entityIndex) return Promise.resolve(ZBZ._entityIndex);
+            return fetch('data/entity_index.json')
+                .then(function (r) { return r.json(); })
+                .then(function (data) { ZBZ._entityIndex = data; return data; })
+                .catch(function () {
+                    ZBZ._entityIndex = {};
+                    return {};
+                });
+        },
+
+        lookupEntity: function (ref) {
+            if (!ZBZ._entityIndex || !ref) return null;
+            var id = ref.charAt(0) === '#' ? ref.slice(1) : ref;
+            return ZBZ._entityIndex[id] || null;
+        },
+
         // ---- URL State ----
         getParam: function (key) {
             return new URLSearchParams(window.location.search).get(key);

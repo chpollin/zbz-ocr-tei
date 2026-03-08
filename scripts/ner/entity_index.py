@@ -361,6 +361,25 @@ class EntityIndex:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
+    # ----- JSON Export (fuer Edition-Viewer) -----
+
+    def to_json_dict(self) -> dict:
+        """Exportiert den Index als JSON-Dictionary fuer den Edition-Viewer.
+
+        Format: { "zbz-p.1": { type, name, variants, wikidata_qid, wikidata_url, note }, ... }
+        Nur Entries mit Wikidata-QID werden exportiert (verifiziert durch Reconciliation).
+        """
+        result = {}
+        for entry in self.entries.values():
+            result[entry.xml_id] = {
+                "type": entry.entity_type,
+                "name": entry.main_name,
+                "variants": entry.variants,
+                "wikidata_qid": entry.wikidata_qid,
+                "wikidata_url": entry.wikidata_url,
+            }
+        return result
+
     # ----- Statistiken -----
 
     def summary(self) -> dict:
@@ -477,10 +496,24 @@ def main():
                         help="Alle Stores in Index mergen")
     parser.add_argument("--auto-register", action="store_true", default=True,
                         help="Neue Entities automatisch registrieren")
+    parser.add_argument("--export-json", metavar="PATH",
+                        help="Index als JSON exportieren (fuer Edition-Viewer)")
     args = parser.parse_args()
 
     index = EntityIndex()
     index.load_all()
+
+    if args.export_json:
+        import json as _json
+        data = index.to_json_dict()
+        out_path = Path(args.export_json)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(
+            _json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        s = index.summary()
+        print(f"Exportiert: {s['total_entries']} Eintraege nach {out_path}")
+        return
 
     if args.report:
         import json as _json

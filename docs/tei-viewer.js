@@ -213,9 +213,20 @@
 
     function resolveEntityRef(ref) {
         if (!ref) return null;
+        // Primaer: Index-Lookup (#zbz-p.1 -> entity_index.json)
         if (ref.indexOf('#zbz-') === 0) {
+            var entry = ZBZ.lookupEntity(ref);
+            if (entry && entry.wikidata_qid) {
+                return { type: 'wikidata', id: entry.wikidata_qid,
+                         label: entry.name,
+                         url: entry.wikidata_url };
+            }
+            if (entry) {
+                return { type: 'index', id: ref.slice(1), label: entry.name, url: null };
+            }
             return { type: 'index', id: ref.slice(1), label: ref, url: null };
         }
+        // Fallback: direkte WD/GND Refs (Legacy)
         if (ref.indexOf('WD:') === 0) {
             var qid = ref.replace('WD:', '');
             return { type: 'wikidata', id: qid, label: 'WD:' + qid,

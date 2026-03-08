@@ -163,12 +163,24 @@
         }
     }
 
-    // --- Ref Resolution ---
+    // --- Ref Resolution (Entity Index ist primaere Quelle) ---
     function resolveEntityRef(ref) {
         if (!ref) return null;
+        // Primaer: Index-Lookup (#zbz-p.1 -> entity_index.json)
         if (ref.indexOf('#zbz-') === 0) {
+            var entry = E.lookupEntity(ref);
+            if (entry && entry.wikidata_qid) {
+                return { type: 'wikidata', id: entry.wikidata_qid,
+                         label: entry.name,
+                         url: entry.wikidata_url };
+            }
+            // Kein Wikidata -> nur Name anzeigen
+            if (entry) {
+                return { type: 'index', id: ref.slice(1), label: entry.name, url: null };
+            }
             return { type: 'index', id: ref.slice(1), label: ref, url: null };
         }
+        // Fallback: direkte WD/GND Refs (Legacy)
         if (ref.indexOf('WD:') === 0) {
             var qid = ref.replace('WD:', '');
             return { type: 'wikidata', id: qid, label: 'WD:' + qid,

@@ -24,7 +24,7 @@ from scripts.config import (
     DOC_METADATA_PATH,
     LAYOUT_DIR,
     TEI_DIR,
-    KNOWN_ENTITIES,
+    KNOWN_ENTITY_NAMES,
     get_test_metadata,
 )
 from scripts.core.loaders import (
@@ -62,19 +62,19 @@ def md_to_tei_inline(text: str) -> str:
 def annotate_entities(text: str) -> str:
     """Ersetzt bekannte Entitaeten durch TEI-persName-Tags.
 
-    Verwendet die GND-Seed-Liste aus config.py.
+    Taggt nur Namen (ohne ref-Attribut). Authority-IDs (GND/Wikidata)
+    werden spaeter durch ner_inject_tei aus dem Entity Index gesetzt.
     Laengere Namen zuerst, damit "Karl Jaspers" vor "Jaspers" matched.
     Verhindert verschachtelte Tags durch Placeholder-Technik.
     """
-    sorted_names = sorted(KNOWN_ENTITIES.keys(), key=len, reverse=True)
+    sorted_names = sorted(KNOWN_ENTITY_NAMES, key=len, reverse=True)
 
     # Phase 1: Ersetze durch Placeholder (damit kuerzere Matches nicht
     # innerhalb von bereits ersetzten laengeren Matches greifen)
     placeholders = {}
     counter = 0
     for name in sorted_names:
-        gnd = KNOWN_ENTITIES[name]
-        tag = '<persName ref="' + gnd + '">' + name + '</persName>'
+        tag = f'<persName>{name}</persName>'
         placeholder = f"\x00ENTITY{counter}\x00"
         placeholders[placeholder] = tag
         counter += 1

@@ -306,9 +306,6 @@ def extract_document(
         total_entities += result.get("entity_count", 0)
         pages_processed += 1
 
-    # Seed-Entities anwenden
-    seed_matched = store.apply_seed_entities()
-
     # Store speichern
     if not dry_run:
         store.save()
@@ -316,7 +313,6 @@ def extract_document(
     elapsed = round(time.time() - start_time, 1)
     summary = store.summary()
     summary["elapsed_seconds"] = elapsed
-    summary["seed_matched"] = seed_matched
 
     print(f"  {doc_id}: {pages_processed} Seiten, "
           f"{summary['total_entities']} Entities, "

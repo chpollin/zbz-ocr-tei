@@ -50,10 +50,12 @@ ENTITY_TAG_PATTERN = re.compile(
 # ---------------------------------------------------------------------------
 
 def update_existing_refs(xml_text: str, store: EntityStore) -> str:
-    """Ersetzt bestehende GND-Refs durch WD-Refs wo moeglich.
+    """Aktualisiert bestehende Entity-Tags mit Index-Refs.
 
-    GND:unknown -> WD:Q... (wenn resolved)
-    GND:123... -> WD:Q... (wenn GND-to-WD Mapping existiert)
+    Behandelt drei Faelle:
+    1. Tags ohne ref-Attribut -> ref="#zbz-p.N" hinzufuegen
+    2. GND:unknown -> #zbz-p.N (wenn resolved)
+    3. GND:123... -> #zbz-p.N (Index-ID bevorzugt)
     """
     # Build lookup: surface text -> EntityRecord (resolved only)
     surface_to_rec: dict[str, EntityRecord] = {}
@@ -64,7 +66,7 @@ def update_existing_refs(xml_text: str, store: EntityStore) -> str:
     def _replace_ref(match):
         full_tag = match.group(0)
         tag_name = match.group(1)
-        attrs = match.group(2)
+        attrs = match.group(2) or ""  # Kann leer sein bei Tags ohne Attribute
         content = match.group(3)
 
         # Entity-Text extrahieren (ohne Sub-Tags)
@@ -80,36 +82,31 @@ def update_existing_refs(xml_text: str, store: EntityStore) -> str:
         if new_ref == "WD:unknown":
             return full_tag
 
-        # ref= oder corresp= ersetzen
-        if 'ref="GND:unknown"' in attrs:
+        # Ref-Attribut bestimmen
+        ref_attr = "corresp" if tag_name == "bibl" else "ref"
+
+        # Fall 1: Tag hat kein ref/corresp -> hinzufuegen
+        if f'{ref_attr}="' not in attrs and 'ref="' not in attrs and 'corresp="' not in attrs:
+            if attrs:
+                attrs = f'{attrs} {ref_attr}="{new_ref}"'
+            else:
+                attrs = f' {ref_attr}="{new_ref}"'
+        # Fall 2: GND:unknown ersetzen
+        elif 'ref="GND:unknown"' in attrs:
             attrs = attrs.replace('ref="GND:unknown"', f'ref="{new_ref}"')
         elif 'corresp="GND:unknown"' in attrs:
             attrs = attrs.replace('corresp="GND:unknown"', f'corresp="{new_ref}"')
-        elif re.search(r'ref="GND:\d+"', attrs):
-            # GND-ID behalten als corresp, WD als ref setzen
-            old_ref = re.search(r'ref="(GND:\d+)"', attrs)
-            if old_ref:
-                gnd_ref = old_ref.group(1)
-                attrs = re.sub(
-                    r'ref="GND:\d+"',
-                    f'ref="{new_ref}" corresp="{gnd_ref}"',
-                    attrs,
-                )
-        elif re.search(r'corresp="GND:\d+"', attrs):
-            old_ref = re.search(r'corresp="(GND:\d+)"', attrs)
-            if old_ref:
-                gnd_ref = old_ref.group(1)
-                attrs = re.sub(
-                    r'corresp="GND:\d+"',
-                    f'corresp="{new_ref}"',
-                    attrs,
-                )
+        # Fall 3: Bestehende GND-ID ersetzen
+        elif re.search(r'ref="GND:[^"]*"', attrs):
+            attrs = re.sub(r'ref="GND:[^"]*"', f'ref="{new_ref}"', attrs)
+        elif re.search(r'corresp="GND:[^"]*"', attrs):
+            attrs = re.sub(r'corresp="GND:[^"]*"', f'corresp="{new_ref}"', attrs)
 
         return f"<{tag_name}{attrs}>{content}</{tag_name}>"
 
-    # Pattern fuer alle Entity-Tags mit ref/corresp
+    # Pattern fuer alle Entity-Tags (mit und ohne Attribute)
     pattern = re.compile(
-        r'<(persName|orgName|placeName|bibl|name)(\s[^>]*)>(.*?)</\1>',
+        r'<(persName|orgName|placeName|bibl|name)(\s[^>]*)?>([^<]*(?:<(?!/\1>)[^<]*)*)</\1>',
         re.DOTALL,
     )
     return pattern.sub(_replace_ref, xml_text)

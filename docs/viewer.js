@@ -49,6 +49,7 @@
 
         try {
             var data = await ZBZ.loadData();
+            ZBZ.loadEntityIndex(); // Fire-and-forget (non-blocking)
             state.docData = data.documents[state.docId];
 
             if (!state.docData) {

@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-from scripts.config import KNOWN_ENTITIES
+from scripts.config import KNOWN_ENTITY_NAMES
 
 
 # ---------------------------------------------------------------------------
@@ -93,17 +93,17 @@ and ADD any missing ones.
 
 | Phenomenon | TEI Element | Attributes | Rules |
 |---|---|---|---|
-| Person name | <persName> | ref="GND:{id}" | EVERY mention, even if name appears 10+ times. |
-| Unknown person | <persName> | ref="GND:unknown" | When GND ID is not known. EVERY mention. |
-| Organization | <orgName> | ref="GND:{id}" | EVERY mention. |
-| Unknown organization | <orgName> | ref="GND:unknown" | When GND ID is not known. EVERY mention. |
-| Work reference | <bibl> | corresp="GND:{id}" | Book/work titles in reviews or bibliography. |
+| Person name | <persName> | (none) | EVERY mention, even if name appears 10+ times. No ref attribute. |
+| Organization | <orgName> | (none) | EVERY mention. No ref attribute. |
+| Work reference | <bibl> | (none) | Book/work titles in reviews or bibliography. No ref/corresp attribute. |
 | Bibliography list | <listBibl> | (none) | Inside div type="bibliography". Contains <bibl> entries. |
+
+Authority IDs (GND, Wikidata) are added later by the NER pipeline from the Entity Index.
+Do NOT add ref or corresp attributes to entity tags.
 
 EXCEPTIONS:
 - Do NOT annotate entities inside image captions (<figure>/<head>).
 - Avoid nested tagging (person inside work title).
-- In bibliography sections (div type="bibliography"), <bibl> entries do NOT get GND linking.
 
 --- SECTION 5: LANGUAGE SWITCHES ---
 
@@ -242,19 +242,21 @@ GENRE-SPECIFIC RULES (Editorial):
 # ---------------------------------------------------------------------------
 
 def build_known_entities_block() -> str:
-    """Formatiert die bekannten Entitaeten als Prompt-Block."""
-    lines = ["KNOWN ENTITIES (use these GND IDs when you encounter these names):"]
-    # Dedupliziere (laengere Namen zuerst)
-    seen_gnd = {}
-    for name, gnd in sorted(KNOWN_ENTITIES.items(), key=lambda x: -len(x[0])):
-        if gnd not in seen_gnd:
-            seen_gnd[gnd] = []
-        seen_gnd[gnd].append(name)
+    """Formatiert die bekannten Entitaeten als Prompt-Block.
 
-    for gnd, names in seen_gnd.items():
-        lines.append(f"  {' / '.join(names)} -> {gnd}")
+    Nur Namenserkennung -- keine Authority-IDs im Prompt.
+    IDs werden spaeter durch ner_inject_tei aus dem Entity Index gesetzt.
+    """
+    lines = ["KNOWN ENTITIES (tag these names with <persName> when encountered):"]
+    # Dedupliziere: gleiche Personen gruppieren (laengere Namen zuerst)
+    seen = set()
+    for name in sorted(KNOWN_ENTITY_NAMES, key=len, reverse=True):
+        if name not in seen:
+            lines.append(f"  {name}")
+            seen.add(name)
 
-    lines.append("  All other persons/orgs: use ref=\"GND:unknown\"")
+    lines.append("  Tag persons with <persName>Name</persName> (no ref attribute).")
+    lines.append("  Tag organizations with <orgName>Name</orgName> (no ref attribute).")
     return "\n".join(lines)
 
 

@@ -166,6 +166,28 @@
         }
     }
 
+    // --- Entity Index (Reconciliation-verifiziert) ---
+    var _entityIndexCache = null;
+
+    function loadEntityIndex() {
+        if (_entityIndexCache) return Promise.resolve(_entityIndexCache);
+        return fetch('../data/entity_index.json')
+            .then(function (r) { return r.json(); })
+            .then(function (data) { _entityIndexCache = data; return data; })
+            .catch(function () {
+                console.warn('Edition: entity_index.json nicht geladen');
+                _entityIndexCache = {};
+                return {};
+            });
+    }
+
+    function lookupEntity(ref) {
+        if (!_entityIndexCache || !ref) return null;
+        // #zbz-p.1 -> zbz-p.1
+        var id = ref.charAt(0) === '#' ? ref.slice(1) : ref;
+        return _entityIndexCache[id] || null;
+    }
+
     // --- Image/TEI Paths ---
     function imagePath(docId, page) {
         return '../images/' + docId + '/' + docId + '_p' + padPage(page) + '.png';
@@ -273,6 +295,8 @@
         toggleDarkMode: toggleDarkMode,
         imagePath: imagePath,
         fetchTei: fetchTei,
+        loadEntityIndex: loadEntityIndex,
+        lookupEntity: lookupEntity,
         debounce: debounce,
         buildCardHtml: buildCardHtml,
         LANG_LABELS: LANG_LABELS,

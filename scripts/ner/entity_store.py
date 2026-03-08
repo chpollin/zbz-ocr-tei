@@ -9,7 +9,7 @@ import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-from scripts.config import ENTITIES_DIR, KNOWN_ENTITIES, NER_ENTITY_TYPES
+from scripts.config import ENTITIES_DIR, NER_ENTITY_TYPES
 
 
 @dataclass
@@ -92,28 +92,6 @@ class EntityStore:
                     count=1,
                     contexts=[context] if context else [],
                 )
-
-    def apply_seed_entities(self) -> int:
-        """Matcht gegen KNOWN_ENTITIES aus config.py, setzt gnd_id.
-
-        Returns:
-            Anzahl gematchter Entities.
-        """
-        matched = 0
-        for key, rec in self.entities.items():
-            if rec.entity_type != "person":
-                continue
-            for name, gnd_ref in KNOWN_ENTITIES.items():
-                if rec.normalized.lower() == name.lower():
-                    rec.gnd_id = gnd_ref
-                    matched += 1
-                    break
-                # Auch partielle Matches (Nachname)
-                if name.lower() in rec.normalized.lower():
-                    rec.gnd_id = gnd_ref
-                    matched += 1
-                    break
-        return matched
 
     def get_unresolved(self) -> list[EntityRecord]:
         """Entities ohne Wikidata QID."""

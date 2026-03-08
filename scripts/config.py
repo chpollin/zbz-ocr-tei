@@ -178,20 +178,22 @@ TESTPLAN = {
 # Phase-1-Tests (Kurzform fuer Mistral-Benchmark)
 PHASE1_TESTS = TESTPLAN["phase1"]["tests"]
 
-# Bekannte GND-Entitaeten (Seed fuer NER, genutzt von Downstream-Tools)
-KNOWN_ENTITIES = {
-    "Karl Jaspers": "GND:118557106",
-    "Jaspers": "GND:118557106",
-    "Jeanne Hersch": "GND:118815679",
-    "Hersch": "GND:118815679",
-    "Bergson": "GND:118509578",
-    "Kierkegaard": "GND:118562002",
-    "Heidegger": "GND:118547798",
-    "Kant": "GND:118559796",
-    "Platon": "GND:118594893",
-    "Sartre": "GND:11860564X",
-    "Hannah Arendt": "GND:11850391X",
-}
+# Bekannte Entity-Namen (Seed fuer Erkennung im TEI-Mapping).
+# NUR Namensliste -- Authority-IDs (GND/Wikidata) kommen ausschliesslich
+# aus dem Entity Index (data/entities/), befuellt durch Reconciliation.
+KNOWN_ENTITY_NAMES: list[str] = [
+    "Karl Jaspers",
+    "Jaspers",
+    "Jeanne Hersch",
+    "Hersch",
+    "Bergson",
+    "Kierkegaard",
+    "Heidegger",
+    "Kant",
+    "Platon",
+    "Sartre",
+    "Hannah Arendt",
+]
 
 
 def get_test_metadata(doc_id: str) -> dict | None:

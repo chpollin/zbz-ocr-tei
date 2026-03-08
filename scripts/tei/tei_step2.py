@@ -14,7 +14,7 @@ from pathlib import Path
 from scripts.config import (
     GEMINI_MODEL,
     IMAGES_DIR,
-    KNOWN_ENTITIES,
+    KNOWN_ENTITY_NAMES,
     LAYOUT_DIR,
     TEI_NS,
 )
@@ -56,17 +56,17 @@ def get_overlay_path(doc_id: str, page: int) -> Path | None:
 # ---------------------------------------------------------------------------
 
 def reannotate_entities(xml_text: str) -> str:
-    """Tag-aware Entity Re-Annotation: taggt fehlende KNOWN_ENTITIES.
+    """Tag-aware Entity Re-Annotation: taggt fehlende bekannte Entities.
 
     Findet Entitaetsnamen im Text die NICHT bereits innerhalb eines
     <persName>/<orgName>-Tags stehen und fuegt Tags hinzu.
+    Ohne ref-Attribut -- Authority-IDs kommen aus dem Entity Index.
     Laengere Namen zuerst (wie annotate_entities).
     """
-    sorted_names = sorted(KNOWN_ENTITIES.keys(), key=len, reverse=True)
+    sorted_names = sorted(KNOWN_ENTITY_NAMES, key=len, reverse=True)
 
     for name in sorted_names:
-        gnd = KNOWN_ENTITIES[name]
-        tag = f'<persName ref="{gnd}">{name}</persName>'
+        tag = f'<persName>{name}</persName>'
         # Regex: name muss an Wortgrenzen stehen UND darf nicht
         # bereits innerhalb eines <persName>...</persName> sein.
         # Strategie: Split an bestehenden persName/orgName-Tags,
