@@ -174,7 +174,12 @@
                          label: entry.name,
                          url: entry.wikidata_url };
             }
-            // Kein Wikidata -> nur Name anzeigen
+            // Fallback: GND aus Wikidata P227
+            if (entry && entry.gnd_id) {
+                var gid = entry.gnd_id.replace('GND:', '');
+                return { type: 'gnd', id: gid, label: entry.name,
+                         url: 'https://lobid.org/gnd/' + gid };
+            }
             if (entry) {
                 return { type: 'index', id: ref.slice(1), label: entry.name, url: null };
             }

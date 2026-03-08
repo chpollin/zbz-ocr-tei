@@ -123,11 +123,11 @@ def search_wikidata(query: str, language: str = "en",
     return results
 
 
-def get_entity_types(qid: str) -> set[str]:
-    """Holt P31 (instance of) Werte fuer eine Entity.
+def get_entity_claims(qid: str) -> tuple[set[str], str | None]:
+    """Holt P31 (instance of) und P227 (GND-ID) fuer eine Entity.
 
     Returns:
-        Set von QIDs (z.B. {"Q5"} fuer human).
+        (Set von P31-QIDs, GND-ID oder None)
     """
     data = _api_get({
         "action": "wbgetentities",
@@ -135,31 +135,45 @@ def get_entity_types(qid: str) -> set[str]:
         "props": "claims",
     })
     if not data:
-        return set()
+        return set(), None
 
     entity_data = data.get("entities", {}).get(qid, {})
     claims = entity_data.get("claims", {})
-    p31_claims = claims.get("P31", [])
 
+    # P31: instance of
     types = set()
-    for claim in p31_claims:
+    for claim in claims.get("P31", []):
         mainsnak = claim.get("mainsnak", {})
         datavalue = mainsnak.get("datavalue", {})
         value = datavalue.get("value", {})
         if isinstance(value, dict) and "id" in value:
             types.add(value["id"])
 
-    return types
+    # P227: GND-ID
+    gnd_id = None
+    for claim in claims.get("P227", []):
+        mainsnak = claim.get("mainsnak", {})
+        datavalue = mainsnak.get("datavalue", {})
+        value = datavalue.get("value")
+        if isinstance(value, str) and value:
+            gnd_id = value
+            break
+
+    return types, gnd_id
 
 
-def verify_type(qid: str, entity_type: str) -> bool:
-    """Prueft ob eine Entity den erwarteten Typ hat (P31-Check)."""
+def verify_type(qid: str, entity_type: str) -> tuple[bool, str | None]:
+    """Prueft ob eine Entity den erwarteten Typ hat (P31-Check).
+
+    Returns:
+        (type_matches, gnd_id)
+    """
     expected = TYPE_INSTANCE_OF.get(entity_type)
     if not expected:
-        return True  # event, date: kein Type-Check
+        return True, None  # event, date: kein Type-Check
 
-    actual = get_entity_types(qid)
-    return bool(expected & actual)
+    actual_types, gnd_id = get_entity_claims(qid)
+    return bool(expected & actual_types), gnd_id
 
 
 # ---------------------------------------------------------------------------
@@ -199,27 +213,30 @@ def reconcile_entity(
         if not candidates:
             continue
 
-        # Exakter Label-Match (case-insensitive) -- Typ-Check uebersprungen
-        # bei exaktem Match (spart 1 API-Call, >95% korrekt fuer bekannte Entities)
+        # Exakter Label-Match (case-insensitive) -- holt trotzdem GND via P227
         for cand in candidates:
             if cand["label"].lower().strip() == normalized.lower().strip():
+                _, gnd_id = get_entity_claims(cand["qid"])
                 result = {
                     "qid": cand["qid"],
                     "label": cand["label"],
                     "description": cand["description"],
                     "confidence": 1.0,
+                    "gnd_id": gnd_id,
                 }
                 _cache[key] = result
                 return result
 
-        # Top-Kandidat mit Typ-Match (etwas weniger Confidence)
+        # Top-Kandidat mit Typ-Match
         for cand in candidates:
-            if verify_type(cand["qid"], entity_type):
+            type_ok, gnd_id = verify_type(cand["qid"], entity_type)
+            if type_ok:
                 result = {
                     "qid": cand["qid"],
                     "label": cand["label"],
                     "description": cand["description"],
                     "confidence": 0.8,
+                    "gnd_id": gnd_id,
                 }
                 _cache[key] = result
                 return result
@@ -251,6 +268,9 @@ def reconcile_store(store: EntityStore, doc_language: str = "und") -> dict:
             rec.wikidata_label = result["label"]
             rec.wikidata_description = result["description"]
             rec.confidence = result["confidence"]
+            # GND-ID aus Wikidata P227 (verifiziert)
+            if result.get("gnd_id"):
+                rec.gnd_id = f"GND:{result['gnd_id']}"
             resolved_count += 1
         else:
             skipped_count += 1

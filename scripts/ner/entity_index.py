@@ -79,6 +79,7 @@ class IndexEntry:
     variants: list[str] = field(default_factory=list)  # Alle Namensvarianten
     wikidata_qid: str | None = None      # Q123456
     wikidata_url: str | None = None      # https://www.wikidata.org/wiki/Q123456
+    gnd_id: str | None = None            # GND:11860564X (aus Wikidata P227)
     note: str = ""
 
     @property
@@ -377,6 +378,7 @@ class EntityIndex:
                 "variants": entry.variants,
                 "wikidata_qid": entry.wikidata_qid,
                 "wikidata_url": entry.wikidata_url,
+                "gnd_id": entry.gnd_id,
             }
         return result
 
@@ -457,6 +459,9 @@ def merge_store_into_index(
             if rec.wikidata_qid and not entry.wikidata_qid:
                 entry.wikidata_qid = rec.wikidata_qid
                 entry.wikidata_url = f"https://www.wikidata.org/wiki/{rec.wikidata_qid}"
+            # GND-ID uebertragen (aus Wikidata P227)
+            if rec.gnd_id and not entry.gnd_id:
+                entry.gnd_id = rec.gnd_id
             matched += 1
         elif auto_register and rec.entity_type in INDEX_FILES:
             # Neue Entity registrieren

@@ -49,13 +49,18 @@ ENTITY_TAG_PATTERN = re.compile(
 # Ref-Update (GND -> WD)
 # ---------------------------------------------------------------------------
 
-def update_existing_refs(xml_text: str, store: EntityStore) -> str:
+def update_existing_refs(
+    xml_text: str,
+    store: EntityStore,
+    index: "EntityIndex | None" = None,
+) -> str:
     """Aktualisiert bestehende Entity-Tags mit Index-Refs.
 
-    Behandelt drei Faelle:
-    1. Tags ohne ref-Attribut -> ref="#zbz-p.N" hinzufuegen
-    2. GND:unknown -> #zbz-p.N (wenn resolved)
-    3. GND:123... -> #zbz-p.N (Index-ID bevorzugt)
+    Zwei-Pass-Strategie:
+    1. Leaf-Pass: Innere Tags (persName/orgName/placeName ohne Sub-Tags)
+    2. Nested-Pass: Aeussere Tags (bibl etc. die Sub-Tags enthalten)
+
+    Lookup-Reihenfolge: Store -> Entity Index (Fallback).
     """
     # Build lookup: surface text -> EntityRecord (resolved only)
     surface_to_rec: dict[str, EntityRecord] = {}
@@ -63,23 +68,37 @@ def update_existing_refs(xml_text: str, store: EntityStore) -> str:
         for surface in rec.surfaces:
             surface_to_rec[surface.lower()] = rec
 
+    def _resolve_ref(text_only: str, tag_name: str) -> str | None:
+        """Loest einen Entity-Text in einen Index-Ref auf."""
+        # 1. Store-Lookup (hat _index_id)
+        rec = surface_to_rec.get(text_only)
+        if rec:
+            index_id = getattr(rec, '_index_id', None)
+            ref = f"#{index_id}" if index_id else rec.ref_value()
+            if ref != "WD:unknown":
+                return ref
+
+        # 2. Index-Fallback (fuer Entities die im Index aber nicht im Store sind)
+        if index:
+            entity_type = {"persName": "person", "orgName": "organization",
+                           "placeName": "place", "bibl": "work"}.get(tag_name)
+            entry = index.match(text_only, entity_type)
+            if entry:
+                return f"#{entry.xml_id}"
+
+        return None
+
     def _replace_ref(match):
         full_tag = match.group(0)
         tag_name = match.group(1)
-        attrs = match.group(2) or ""  # Kann leer sein bei Tags ohne Attribute
+        attrs = match.group(2) or ""
         content = match.group(3)
 
         # Entity-Text extrahieren (ohne Sub-Tags)
         text_only = re.sub(r'<[^>]+>', '', content).strip().lower()
 
-        # Lookup
-        rec = surface_to_rec.get(text_only)
-        if not rec:
-            return full_tag
-
-        index_id = getattr(rec, '_index_id', None)
-        new_ref = f"#{index_id}" if index_id else rec.ref_value()
-        if new_ref == "WD:unknown":
+        new_ref = _resolve_ref(text_only, tag_name)
+        if not new_ref:
             return full_tag
 
         # Ref-Attribut bestimmen
@@ -87,10 +106,7 @@ def update_existing_refs(xml_text: str, store: EntityStore) -> str:
 
         # Fall 1: Tag hat kein ref/corresp -> hinzufuegen
         if f'{ref_attr}="' not in attrs and 'ref="' not in attrs and 'corresp="' not in attrs:
-            if attrs:
-                attrs = f'{attrs} {ref_attr}="{new_ref}"'
-            else:
-                attrs = f' {ref_attr}="{new_ref}"'
+            attrs = f'{attrs} {ref_attr}="{new_ref}"' if attrs else f' {ref_attr}="{new_ref}"'
         # Fall 2: GND:unknown ersetzen
         elif 'ref="GND:unknown"' in attrs:
             attrs = attrs.replace('ref="GND:unknown"', f'ref="{new_ref}"')
@@ -104,12 +120,21 @@ def update_existing_refs(xml_text: str, store: EntityStore) -> str:
 
         return f"<{tag_name}{attrs}>{content}</{tag_name}>"
 
-    # Pattern fuer alle Entity-Tags (mit und ohne Attribute)
-    pattern = re.compile(
+    # Pass 1: Leaf-Level Entity-Tags (kein Nesting im Content)
+    # Matcht <persName>Karl Jaspers</persName> auch innerhalb von <bibl>
+    leaf_pattern = re.compile(
+        r'<(persName|orgName|placeName|name)(\s[^>]*)?>([^<]*)</\1>',
+    )
+    xml_text = leaf_pattern.sub(_replace_ref, xml_text)
+
+    # Pass 2: Tags mit verschachteltem Content (bibl etc.)
+    nested_pattern = re.compile(
         r'<(persName|orgName|placeName|bibl|name)(\s[^>]*)?>([^<]*(?:<(?!/\1>)[^<]*)*)</\1>',
         re.DOTALL,
     )
-    return pattern.sub(_replace_ref, xml_text)
+    xml_text = nested_pattern.sub(_replace_ref, xml_text)
+
+    return xml_text
 
 
 # ---------------------------------------------------------------------------
@@ -262,8 +287,8 @@ def process_document(
         "bibl": len(re.findall(r'<bibl\b', xml_text)),
     }
 
-    # Phase 1: Bestehende Refs updaten (GND -> WD)
-    xml_text = update_existing_refs(xml_text, store)
+    # Phase 1: Bestehende Refs updaten (GND -> Index-Ref)
+    xml_text = update_existing_refs(xml_text, store, index)
 
     # Phase 2: Neue Entity-Tags einfuegen
     xml_text = inject_new_entities(xml_text, store)

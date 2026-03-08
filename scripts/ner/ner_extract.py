@@ -27,6 +27,7 @@ from scripts.config import (
     GEMINI_MODEL,
 )
 from scripts.core.loaders import discover_documents, discover_pages, load_ocr_text
+from scripts.ner.entity_index import EntityIndex
 from scripts.ner.entity_store import EntityStore
 from scripts.tei.tei_generator import get_document_metadata
 
@@ -37,6 +38,28 @@ SAMPLE_DOCS = [
     "1330", "40", "1520",    # D/FR Sammelband, C/FR Roman, C Monograph
     "1000", "1540", "100",   # B/FR DEMO, C DEMO, A/FR simple
 ]
+
+
+def _build_known_entities_hint(index: EntityIndex) -> str:
+    """Baut Prompt-Kontext aus dem Entity Index (bekannte Namen fuer bessere Erkennung)."""
+    if not index.entries:
+        return ""
+    lines = ["\nKNOWN ENTITIES FROM INDEX (recognize these names and their variants):"]
+    # Top-Entities nach Typ (max 50 pro Typ, sortiert nach Varianten)
+    by_type: dict[str, list] = {}
+    for entry in index.entries.values():
+        by_type.setdefault(entry.entity_type, []).append(entry)
+    for etype in ["person", "organization", "place", "work"]:
+        entries = by_type.get(etype, [])
+        if not entries:
+            continue
+        # Sortiere: Entries mit mehr Varianten zuerst (wichtiger)
+        entries.sort(key=lambda e: len(e.variants), reverse=True)
+        lines.append(f"  {etype.upper()}S:")
+        for entry in entries[:50]:
+            names = [entry.main_name] + entry.variants[:3]
+            lines.append(f"    - {' / '.join(names)}")
+    return "\n".join(lines)
 
 
 def _strip_diacritics(text: str) -> str:
@@ -78,6 +101,7 @@ RULES:
 
 DOCUMENT CONTEXT:
 {doc_hints}
+{known_entities}
 
 Return ONLY a JSON object with this structure:
 {{
@@ -108,6 +132,7 @@ def extract_entities_page(
     page: int,
     ocr_text: str,
     doc_hints: str,
+    known_entities_hint: str = "",
     dry_run: bool = False,
 ) -> dict | None:
     """Extrahiert Entities aus einer Seite via Gemini.
@@ -120,6 +145,7 @@ def extract_entities_page(
 
     prompt = NER_PROMPT.format(
         doc_hints=doc_hints,
+        known_entities=known_entities_hint,
         ocr_text=ocr_text[:8000],  # Max 8k chars OCR (Flash Lite context)
     )
 
@@ -246,9 +272,12 @@ def extract_document(
         existing = json.loads(store_path.read_text(encoding="utf-8"))
         return existing.get("summary", {})
 
-    # Metadaten laden
+    # Metadaten + Entity Index laden
     metadata = get_document_metadata(doc_id) or {}
     doc_hints = _build_doc_hints(doc_id, metadata)
+    index = EntityIndex()
+    index.load_all()
+    known_entities_hint = _build_known_entities_hint(index)
 
     # Seiten ermitteln
     pages = discover_pages(doc_id)
@@ -283,7 +312,8 @@ def extract_document(
 
         ocr_text = load_ocr_text(doc_id, page) or ""
         result = extract_entities_page(
-            client, doc_id, page, ocr_text, doc_hints, dry_run=dry_run
+            client, doc_id, page, ocr_text, doc_hints,
+            known_entities_hint=known_entities_hint, dry_run=dry_run,
         )
 
         if result is None:
@@ -306,6 +336,11 @@ def extract_document(
         total_entities += result.get("entity_count", 0)
         pages_processed += 1
 
+    # String-Matching-Pass: Index-Varianten gegen OCR-Text
+    index_added = 0
+    if index.entries and not dry_run:
+        index_added = _index_matching_pass(store, index, doc_id, pages)
+
     # Store speichern
     if not dry_run:
         store.save()
@@ -313,13 +348,68 @@ def extract_document(
     elapsed = round(time.time() - start_time, 1)
     summary = store.summary()
     summary["elapsed_seconds"] = elapsed
+    summary["index_matched"] = index_added
 
     print(f"  {doc_id}: {pages_processed} Seiten, "
-          f"{summary['total_entities']} Entities, "
+          f"{summary['total_entities']} Entities "
+          f"({index_added} via Index-Match), "
           f"{total_entities} Mentions, "
           f"{elapsed}s")
 
     return summary
+
+
+def _index_matching_pass(
+    store: EntityStore,
+    index: EntityIndex,
+    doc_id: str,
+    pages: list[int],
+) -> int:
+    """Zweiter Pass: Index-Varianten gegen OCR-Text matchen.
+
+    Findet Entities die Gemini uebersehen hat, basierend auf den
+    652+ Varianten im Entity Index. Kein API-Call noetig.
+
+    Returns:
+        Anzahl neu hinzugefuegter Entities.
+    """
+    added = 0
+
+    # Baue Lookup: alle Index-Varianten -> (name, type)
+    # Laengere Varianten zuerst (vermeidet partielle Matches)
+    variant_map: list[tuple[str, str, str]] = []  # (variant, normalized, type)
+    for entry in index.entries.values():
+        if entry.entity_type not in ("person", "organization", "place"):
+            continue  # Werke brauchen komplexere Erkennung
+        for name in entry.all_names:
+            if len(name) > 3:  # Skip zu kurze Varianten
+                variant_map.append((name, entry.main_name, entry.entity_type))
+    variant_map.sort(key=lambda x: len(x[0]), reverse=True)
+
+    for page in pages:
+        ocr_text = load_ocr_text(doc_id, page) or ""
+        if not ocr_text:
+            continue
+
+        for variant, normalized, etype in variant_map:
+            # Wortgrenzen-Match
+            pattern = r'(?<!\w)' + re.escape(variant) + r'(?!\w)'
+            if re.search(pattern, ocr_text):
+                key = f"{etype}:{normalized.lower()}"
+                if key not in store.entities:
+                    # Neue Entity aus Index-Match
+                    store.add_page_entities(page, [{
+                        "surface": variant,
+                        "type": etype,
+                        "normalized": normalized,
+                        "context": f"[Index-Match: {variant}]",
+                    }])
+                    added += 1
+                elif page not in store.entities[key].pages:
+                    store.entities[key].pages.append(page)
+                    store.entities[key].count += 1
+
+    return added
 
 
 # discover_documents() -> scripts.core.loaders
