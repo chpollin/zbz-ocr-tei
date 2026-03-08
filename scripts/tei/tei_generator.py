@@ -24,7 +24,6 @@ from scripts.config import (
     DOC_METADATA_PATH,
     LAYOUT_DIR,
     TEI_DIR,
-    KNOWN_ENTITY_NAMES,
     get_test_metadata,
 )
 from scripts.core.loaders import (
@@ -67,7 +66,8 @@ def annotate_entities(text: str) -> str:
     Laengere Namen zuerst, damit "Karl Jaspers" vor "Jaspers" matched.
     Verhindert verschachtelte Tags durch Placeholder-Technik.
     """
-    sorted_names = sorted(KNOWN_ENTITY_NAMES, key=len, reverse=True)
+    from scripts.tei.tei_mapping_prompt import _load_entity_names
+    sorted_names = sorted(_load_entity_names(), key=len, reverse=True)
 
     # Phase 1: Ersetze durch Placeholder (damit kuerzere Matches nicht
     # innerhalb von bereits ersetzten laengeren Matches greifen)

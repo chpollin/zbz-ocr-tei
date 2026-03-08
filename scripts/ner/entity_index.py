@@ -16,6 +16,7 @@ Aufruf:
 import argparse
 import re
 import sys
+import unicodedata
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -94,12 +95,20 @@ class IndexEntry:
         return f"#{self.xml_id}"
 
 
+def _strip_diacritics(text: str) -> str:
+    """Strip diacritics for fuzzy matching (Etudes == Etudes, Geneve == Geneve)."""
+    nfkd = unicodedata.normalize('NFKD', text)
+    return ''.join(c for c in nfkd if not unicodedata.combining(c)).lower()
+
+
 class EntityIndex:
     """Liest und verwaltet TEI-XML Entity-Indices."""
 
     def __init__(self):
         self.entries: dict[str, IndexEntry] = {}  # key: xml_id
         self._variant_lookup: dict[str, str] = {}  # lowercase variant -> xml_id
+        self._stripped_lookup: dict[str, str] = {}  # diacritics-stripped -> xml_id
+        self._surname_to_ids: dict[str, list[str]] = {}  # surname -> [xml_ids]
         self._next_id: dict[str, int] = {}  # typ -> naechste freie Nummer
 
     def load_all(self) -> None:
@@ -172,6 +181,8 @@ class EntityIndex:
     def _rebuild_lookup(self) -> None:
         """Baut den Varianten-Lookup neu auf."""
         self._variant_lookup.clear()
+        self._stripped_lookup.clear()
+        self._surname_to_ids.clear()
         self._next_id.clear()
 
         for entry in self.entries.values():
@@ -179,6 +190,17 @@ class EntityIndex:
                 key = name.lower().strip()
                 if key:
                     self._variant_lookup[key] = entry.xml_id
+                    # Diakritik-freier Lookup
+                    stripped = _strip_diacritics(name)
+                    if stripped and stripped != key:
+                        self._stripped_lookup[stripped] = entry.xml_id
+
+            # Nachname-Lookup (letztes Wort des Hauptnamens)
+            parts = entry.main_name.split()
+            if len(parts) > 1:
+                surname = parts[-1].lower().strip()
+                if len(surname) > 2:
+                    self._surname_to_ids.setdefault(surname, []).append(entry.xml_id)
 
             # Naechste freie ID tracken
             prefix = ID_PREFIX.get(entry.entity_type, "zbz-x")
@@ -194,6 +216,8 @@ class EntityIndex:
     def match(self, surface: str, entity_type: str | None = None) -> IndexEntry | None:
         """Sucht eine Entity im Index via String-Match.
 
+        Reihenfolge: exakter Match -> Diakritik-Fallback.
+
         Args:
             surface: Zu suchender Name
             entity_type: Optionaler Typ-Filter
@@ -203,6 +227,13 @@ class EntityIndex:
         """
         key = surface.lower().strip()
         xml_id = self._variant_lookup.get(key)
+        if not xml_id:
+            # Diakritik-Fallback (Geneve -> Geneve, Etudes -> Etudes)
+            stripped = _strip_diacritics(surface)
+            xml_id = self._stripped_lookup.get(stripped)
+            if not xml_id:
+                # Auch im normalen Lookup mit stripped key versuchen
+                xml_id = self._variant_lookup.get(stripped)
         if xml_id:
             entry = self.entries[xml_id]
             if entity_type and entry.entity_type != entity_type:
@@ -211,20 +242,29 @@ class EntityIndex:
         return None
 
     def match_normalized(self, normalized: str, entity_type: str) -> IndexEntry | None:
-        """Sucht via normalisiertem Namen (exakt + Nachname-Fallback)."""
-        # Exakter Match
+        """Sucht via normalisiertem Namen (exakt + sicherer Nachname-Fallback).
+
+        Nachname-Fallback nur wenn eindeutig (genau 1 Index-Eintrag mit
+        diesem Nachnamen fuer den gegebenen Typ).
+        """
+        # Exakter Match (inkl. Diakritik-Fallback)
         entry = self.match(normalized, entity_type)
         if entry:
             return entry
 
-        # Fallback: nur Nachname (letztes Wort), nicht Vorname
+        # Sicherer Nachname-Fallback: nur wenn eindeutig
         parts = normalized.split()
         if len(parts) > 1:
-            surname = parts[-1]
-            if len(surname) > 2:  # Skip kurze Teile ("de", "von")
-                entry = self.match(surname, entity_type)
-                if entry:
-                    return entry
+            surname = parts[-1].lower().strip()
+            if len(surname) > 2:
+                candidates = self._surname_to_ids.get(surname, [])
+                # Nur akzeptieren wenn genau 1 Eintrag diesen Nachnamen hat
+                typed_candidates = [
+                    xid for xid in candidates
+                    if self.entries[xid].entity_type == entity_type
+                ]
+                if len(typed_candidates) == 1:
+                    return self.entries[typed_candidates[0]]
 
         return None
 

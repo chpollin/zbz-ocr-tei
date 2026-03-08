@@ -11,7 +11,6 @@ import re
 
 from xml.sax.saxutils import escape as xml_escape
 
-from scripts.config import KNOWN_ENTITY_NAMES
 from scripts.core.loaders import load_layout_gemini, load_ocr_text
 from scripts.tei.tei_generator import (
     annotate_entities,
@@ -239,9 +238,7 @@ def _build_tei_body(matched: list[dict], page: int, genre: str | None, is_interv
             speaker_match = SPEAKER_PATTERN.match(raw_text)
             speaker_name = speaker_match.group(1).strip() if speaker_match else ""
 
-            if speaker_name and speaker_name in KNOWN_ENTITY_NAMES:
-                speaker_tei = f'<persName>{xml_escape(speaker_name)}</persName>'
-            elif speaker_name:
+            if speaker_name:
                 speaker_tei = f'<persName>{xml_escape(speaker_name)}</persName>'
             else:
                 speaker_tei = ""

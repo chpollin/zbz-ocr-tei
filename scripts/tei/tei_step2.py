@@ -14,7 +14,6 @@ from pathlib import Path
 from scripts.config import (
     GEMINI_MODEL,
     IMAGES_DIR,
-    KNOWN_ENTITY_NAMES,
     LAYOUT_DIR,
     TEI_NS,
 )
@@ -63,7 +62,8 @@ def reannotate_entities(xml_text: str) -> str:
     Ohne ref-Attribut -- Authority-IDs kommen aus dem Entity Index.
     Laengere Namen zuerst (wie annotate_entities).
     """
-    sorted_names = sorted(KNOWN_ENTITY_NAMES, key=len, reverse=True)
+    from scripts.tei.tei_mapping_prompt import _load_entity_names
+    sorted_names = sorted(_load_entity_names(), key=len, reverse=True)
 
     for name in sorted_names:
         tag = f'<persName>{name}</persName>'

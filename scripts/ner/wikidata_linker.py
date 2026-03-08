@@ -34,11 +34,18 @@ from scripts.ner.entity_store import EntityStore
 TYPE_INSTANCE_OF = {
     "person": {"Q5"},                          # human
     "organization": {"Q43229", "Q4830453",     # organization, business
-                     "Q3918", "Q7278"},         # university, political party
+                     "Q3918", "Q7278",         # university, political party
+                     "Q11032", "Q157031",      # newspaper, foundation
+                     "Q1616075"},              # think tank
     "place": {"Q515", "Q6256", "Q3624078",     # city, country, admin territory
-              "Q486972", "Q5107"},              # settlement, continent
+              "Q486972", "Q5107",              # settlement, continent
+              "Q532", "Q56061",                # village, admin territorial entity
+              "Q1549591"},                     # big city
     "work": {"Q7725634", "Q571", "Q5633421",   # literary work, book, journal
-             "Q13442814", "Q732577"},           # scholarly article, publication
+             "Q13442814", "Q732577",           # scholarly article, publication
+             "Q54670", "Q43688",               # essay, article
+             "Q1002697", "Q5185279",           # periodical, poem
+             "Q603773", "Q35127"},             # lecture, website/journal
 }
 
 # ISO 639-3 -> Wikidata Sprachcode
@@ -214,21 +221,24 @@ def reconcile_entity(
         if not candidates:
             continue
 
-        # Exakter Label-Match (case-insensitive) -- holt trotzdem GND via P227
+        # Exakter Label-Match (case-insensitive)
         for cand in candidates:
             if cand["label"].lower().strip() == normalized.lower().strip():
-                _, gnd_id = get_entity_claims(cand["qid"])
+                type_ok, gnd_id = verify_type(cand["qid"], entity_type)
+                # 1.0 = exakter Label + Typ verifiziert, 0.9 = exakter Label ohne Typ-Check
+                confidence = 1.0 if type_ok else 0.9
                 result = {
                     "qid": cand["qid"],
                     "label": cand["label"],
                     "description": cand["description"],
-                    "confidence": 1.0,
+                    "confidence": confidence,
+                    "match_type": "exact" if type_ok else "exact_no_type",
                     "gnd_id": gnd_id,
                 }
                 _cache[key] = result
                 return result
 
-        # Top-Kandidat mit Typ-Match
+        # Top-Kandidat mit Typ-Match (0.8) oder ohne (0.6)
         for cand in candidates:
             type_ok, gnd_id = verify_type(cand["qid"], entity_type)
             if type_ok:
@@ -237,10 +247,26 @@ def reconcile_entity(
                     "label": cand["label"],
                     "description": cand["description"],
                     "confidence": 0.8,
+                    "match_type": "type_verified",
                     "gnd_id": gnd_id,
                 }
                 _cache[key] = result
                 return result
+
+        # Fallback: Top-Kandidat ohne Typ-Verifikation (niedrigste Konfidenz)
+        if candidates:
+            cand = candidates[0]
+            _, gnd_id = get_entity_claims(cand["qid"])
+            result = {
+                "qid": cand["qid"],
+                "label": cand["label"],
+                "description": cand["description"],
+                "confidence": 0.6,
+                "match_type": "fallback",
+                "gnd_id": gnd_id,
+            }
+            _cache[key] = result
+            return result
 
     # Kein Match
     _cache[key] = None

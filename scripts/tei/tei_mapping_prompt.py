@@ -12,7 +12,26 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-from scripts.config import KNOWN_ENTITY_NAMES
+def _load_entity_names() -> list[str]:
+    """Laedt Entity-Namen aus dem Entity Index (Personen + Organisationen)."""
+    try:
+        from scripts.ner.entity_index import EntityIndex
+        index = EntityIndex()
+        index.load_all()
+        names = set()
+        for entry in index.entries.values():
+            if entry.entity_type in ("person", "organization"):
+                names.add(entry.main_name)
+                for v in entry.variants:
+                    if len(v) > 3:
+                        names.add(v)
+        return sorted(names)
+    except Exception:
+        return [
+            "Karl Jaspers", "Jaspers", "Jeanne Hersch", "Hersch",
+            "Bergson", "Kierkegaard", "Heidegger", "Kant",
+            "Platon", "Sartre", "Hannah Arendt",
+        ]
 
 
 # ---------------------------------------------------------------------------
@@ -250,7 +269,7 @@ def build_known_entities_block() -> str:
     lines = ["KNOWN ENTITIES (tag these names with <persName> when encountered):"]
     # Dedupliziere: gleiche Personen gruppieren (laengere Namen zuerst)
     seen = set()
-    for name in sorted(KNOWN_ENTITY_NAMES, key=len, reverse=True):
+    for name in sorted(_load_entity_names(), key=len, reverse=True):
         if name not in seen:
             lines.append(f"  {name}")
             seen.add(name)

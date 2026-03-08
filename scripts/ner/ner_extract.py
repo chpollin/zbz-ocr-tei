@@ -45,7 +45,8 @@ def _build_known_entities_hint(index: EntityIndex) -> str:
     if not index.entries:
         return ""
     lines = ["\nKNOWN ENTITIES FROM INDEX (recognize these names and their variants):"]
-    # Top-Entities nach Typ (max 50 pro Typ, sortiert nach Varianten)
+    # Top-Entities nach Typ (max 150 pro Typ)
+    # Sortierung: Wikidata-verifizierte zuerst, dann nach Varianten-Anzahl
     by_type: dict[str, list] = {}
     for entry in index.entries.values():
         by_type.setdefault(entry.entity_type, []).append(entry)
@@ -53,10 +54,10 @@ def _build_known_entities_hint(index: EntityIndex) -> str:
         entries = by_type.get(etype, [])
         if not entries:
             continue
-        # Sortiere: Entries mit mehr Varianten zuerst (wichtiger)
-        entries.sort(key=lambda e: len(e.variants), reverse=True)
+        entries.sort(key=lambda e: (e.wikidata_qid is not None, len(e.variants)),
+                     reverse=True)
         lines.append(f"  {etype.upper()}S:")
-        for entry in entries[:50]:
+        for entry in entries[:150]:
             names = [entry.main_name] + entry.variants[:3]
             lines.append(f"    - {' / '.join(names)}")
     return "\n".join(lines)
@@ -64,6 +65,7 @@ def _build_known_entities_hint(index: EntityIndex) -> str:
 
 def _strip_diacritics(text: str) -> str:
     """Strip diacritics for fuzzy matching (Etudes == Etudes)."""
+    # Gleiche Implementierung wie in entity_index._strip_diacritics
     nfkd = unicodedata.normalize('NFKD', text)
     return ''.join(c for c in nfkd if not unicodedata.combining(c)).lower()
 
@@ -126,6 +128,10 @@ OCR TEXT:
 # Gemini API Call
 # ---------------------------------------------------------------------------
 
+MAX_OCR_CHUNK = 8000
+CHUNK_OVERLAP = 2000
+
+
 def extract_entities_page(
     client,
     doc_id: str,
@@ -137,16 +143,44 @@ def extract_entities_page(
 ) -> dict | None:
     """Extrahiert Entities aus einer Seite via Gemini.
 
+    Bei langen Seiten (>8000 Zeichen) wird in ueberlappende Chunks aufgeteilt
+    und die Ergebnisse gemergt.
+
     Returns:
         Parsed JSON dict oder None bei Fehler.
     """
     if not ocr_text or not ocr_text.strip():
         return {"entities": [], "language": "und", "entity_count": 0}
 
+    # Chunking fuer lange Seiten
+    if len(ocr_text) > MAX_OCR_CHUNK:
+        print(f"  {doc_id} p{page}: Text {len(ocr_text)} Zeichen -> 2 Chunks")
+        chunk1 = ocr_text[:MAX_OCR_CHUNK]
+        chunk2 = ocr_text[MAX_OCR_CHUNK - CHUNK_OVERLAP:]
+        r1 = _extract_single_chunk(client, doc_id, page, chunk1,
+                                   doc_hints, known_entities_hint, dry_run)
+        r2 = _extract_single_chunk(client, doc_id, page, chunk2,
+                                   doc_hints, known_entities_hint, dry_run)
+        return _merge_chunk_results(r1, r2, ocr_text)
+
+    return _extract_single_chunk(client, doc_id, page, ocr_text,
+                                 doc_hints, known_entities_hint, dry_run)
+
+
+def _extract_single_chunk(
+    client,
+    doc_id: str,
+    page: int,
+    ocr_text: str,
+    doc_hints: str,
+    known_entities_hint: str = "",
+    dry_run: bool = False,
+) -> dict | None:
+    """Extrahiert Entities aus einem einzelnen Text-Chunk."""
     prompt = NER_PROMPT.format(
         doc_hints=doc_hints,
         known_entities=known_entities_hint,
-        ocr_text=ocr_text[:8000],  # Max 8k chars OCR (Flash Lite context)
+        ocr_text=ocr_text,
     )
 
     if dry_run:
@@ -221,6 +255,34 @@ def extract_entities_page(
     except json.JSONDecodeError as e:
         print(f"  WARNUNG: JSON-Parse-Fehler fuer {doc_id} p{page}: {e}")
         return None
+
+
+def _merge_chunk_results(r1: dict | None, r2: dict | None,
+                         full_ocr: str) -> dict | None:
+    """Mergt Ergebnisse aus zwei ueberlappenden Chunks.
+
+    Dedupliziert nach (surface.lower(), type).
+    """
+    if r1 is None and r2 is None:
+        return None
+    if r1 is None:
+        return r2
+    if r2 is None:
+        return r1
+
+    seen: set[tuple[str, str]] = set()
+    merged = []
+    for ent in r1.get("entities", []) + r2.get("entities", []):
+        key = (ent.get("surface", "").lower(), ent.get("type", ""))
+        if key not in seen:
+            seen.add(key)
+            merged.append(ent)
+
+    return {
+        "entities": merged,
+        "language": r1.get("language", r2.get("language", "und")),
+        "entity_count": len(merged),
+    }
 
 
 # ---------------------------------------------------------------------------
