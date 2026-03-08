@@ -27,6 +27,7 @@ from scripts.config import (
     WIKIDATA_RATE_LIMIT,
     WIKIDATA_USER_AGENT,
 )
+from scripts.core.loaders import discover_entity_docs
 from scripts.ner.entity_store import EntityStore
 
 # Typ-Filter: NER-Typ -> Wikidata P31 (instance of) QIDs
@@ -357,11 +358,10 @@ def main():
     if args.doc:
         doc_ids = [args.doc]
     elif args.all:
-        if not ENTITIES_DIR.exists():
+        doc_ids = discover_entity_docs()
+        if not doc_ids:
             print("Keine Entity-Daten vorhanden. Zuerst ner_extract ausfuehren.")
             return
-        doc_ids = sorted(d.name for d in ENTITIES_DIR.iterdir()
-                         if d.is_dir() and not d.name.startswith("_"))
     else:
         parser.print_help()
         return

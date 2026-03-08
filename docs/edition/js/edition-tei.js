@@ -32,7 +32,7 @@
             return;
         }
 
-        extractEntities(doc);
+        state.entities = ZBZ.EntityUtils.extractEntities(doc);
 
         var body = doc.querySelector('body');
         if (!body) {
@@ -128,13 +128,13 @@
                 if (hiCls[rend]) elem.className = hiCls[rend];
             }
         } else if (tag === 'persName') {
-            elem = createEntitySpan(node, 'person', node.getAttribute('ref'));
+            elem = ZBZ.EntityUtils.createEntitySpan(node, 'person', node.getAttribute('ref'), 'ed-tei-entity', E.lookupEntity);
         } else if (tag === 'orgName') {
-            elem = createEntitySpan(node, 'org', node.getAttribute('ref'));
+            elem = ZBZ.EntityUtils.createEntitySpan(node, 'org', node.getAttribute('ref'), 'ed-tei-entity', E.lookupEntity);
         } else if (tag === 'placeName') {
-            elem = createEntitySpan(node, 'place', node.getAttribute('ref'));
+            elem = ZBZ.EntityUtils.createEntitySpan(node, 'place', node.getAttribute('ref'), 'ed-tei-entity', E.lookupEntity);
         } else if (tag === 'bibl') {
-            elem = createEntitySpan(node, 'work', node.getAttribute('ref') || node.getAttribute('corresp'));
+            elem = ZBZ.EntityUtils.createEntitySpan(node, 'work', node.getAttribute('ref') || node.getAttribute('corresp'), 'ed-tei-entity', E.lookupEntity);
         } else if (tag === 'lb') {
             container.appendChild(document.createElement('br'));
             return;
@@ -160,94 +160,6 @@
                 renderNode(node.childNodes[i], elem);
             }
             container.appendChild(elem);
-        }
-    }
-
-    // --- Ref Resolution (Entity Index ist primaere Quelle) ---
-    function resolveEntityRef(ref) {
-        if (!ref) return null;
-        // Primaer: Index-Lookup (#zbz-p.1 -> entity_index.json)
-        if (ref.indexOf('#zbz-') === 0) {
-            var entry = E.lookupEntity(ref);
-            if (entry && entry.wikidata_qid) {
-                return { type: 'wikidata', id: entry.wikidata_qid,
-                         label: entry.name,
-                         url: entry.wikidata_url };
-            }
-            // Fallback: GND aus Wikidata P227
-            if (entry && entry.gnd_id) {
-                var gid = entry.gnd_id.replace('GND:', '');
-                return { type: 'gnd', id: gid, label: entry.name,
-                         url: 'https://lobid.org/gnd/' + gid };
-            }
-            if (entry) {
-                return { type: 'index', id: ref.slice(1), label: entry.name, url: null };
-            }
-            return { type: 'index', id: ref.slice(1), label: ref, url: null };
-        }
-        // Fallback: direkte WD/GND Refs (Legacy)
-        if (ref.indexOf('WD:') === 0) {
-            var qid = ref.replace('WD:', '');
-            return { type: 'wikidata', id: qid, label: 'WD:' + qid,
-                     url: 'https://www.wikidata.org/wiki/' + qid };
-        }
-        if (ref.indexOf('GND:') === 0) {
-            var gndId = ref.replace('GND:', '');
-            if (gndId !== 'unknown') {
-                return { type: 'gnd', id: gndId, label: 'GND:' + gndId,
-                         url: 'https://lobid.org/gnd/' + gndId };
-            }
-        }
-        return null;
-    }
-
-    // --- Entity Span ---
-    function createEntitySpan(node, type, ref) {
-        var span = document.createElement('span');
-        span.className = 'ed-tei-entity ed-tei-entity-' + type;
-        if (ref) {
-            span.setAttribute('data-ref', ref);
-            var resolved = resolveEntityRef(ref);
-            if (resolved && resolved.url) {
-                span.addEventListener('click', function () {
-                    window.open(resolved.url, '_blank');
-                });
-            }
-            var tip = document.createElement('span');
-            tip.className = 'ed-tei-entity-tip';
-            tip.textContent = resolved ? resolved.label : ref;
-            span.appendChild(tip);
-        }
-        return span;
-    }
-
-    // --- Entity Extraction ---
-    function extractEntities(doc) {
-        state.entities = { persons: [], orgs: [], places: [], works: [] };
-        addFromQuery(doc, 'persName[ref]', 'persons', 'ref');
-        addFromQuery(doc, 'orgName[ref]', 'orgs', 'ref');
-        addFromQuery(doc, 'placeName[ref]', 'places', 'ref');
-        addFromQuery(doc, 'bibl[ref]', 'works', 'ref');
-        addFromQuery(doc, 'bibl[corresp]:not([ref])', 'works', 'corresp');
-    }
-
-    function addFromQuery(doc, selector, listKey, attrName) {
-        var nodes = doc.querySelectorAll(selector);
-        for (var i = 0; i < nodes.length; i++) {
-            var name = nodes[i].textContent.trim();
-            var ref = nodes[i].getAttribute(attrName);
-            if (!name || !ref) continue;
-            var found = false;
-            for (var j = 0; j < state.entities[listKey].length; j++) {
-                if (state.entities[listKey][j].ref === ref) {
-                    state.entities[listKey][j].count++;
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                state.entities[listKey].push({ name: name, ref: ref, count: 1 });
-            }
         }
     }
 
@@ -299,7 +211,7 @@
                     item.appendChild(cnt);
                 }
 
-                var resolved = resolveEntityRef(ent.ref);
+                var resolved = ZBZ.EntityUtils.resolveEntityRef(ent.ref, E.lookupEntity);
                 if (resolved && resolved.url) {
                     var link = document.createElement('a');
                     link.className = 'ed-entity-item-gnd';

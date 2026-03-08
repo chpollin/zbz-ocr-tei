@@ -10,6 +10,7 @@ import json
 import re
 
 from scripts.config import (
+    ENTITIES_DIR,
     GEMINI_CORRECTED_A_DIR,
     GEMINI_CORRECTED_B_DIR,
     LAYOUT_DIR,
@@ -57,6 +58,16 @@ def discover_documents() -> list[str]:
                 if match:
                     doc_ids.add(match.group(1))
     return sorted(doc_ids)
+
+
+def discover_entity_docs() -> list[str]:
+    """Findet alle Dokumente mit Entity-Daten (ENTITIES_DIR)."""
+    if not ENTITIES_DIR.exists():
+        return []
+    return sorted(
+        d.name for d in ENTITIES_DIR.iterdir()
+        if d.is_dir() and not d.name.startswith("_")
+    )
 
 
 def load_layout_gemini(doc_id: str, page: int) -> dict | None:

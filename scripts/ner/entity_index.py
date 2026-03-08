@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from scripts.config import DATA_DIR, ENTITIES_DIR, TEI_NS
+from scripts.core.loaders import discover_entity_docs
 
 # Index-Verzeichnis
 INDEX_DIR = DATA_DIR / "entities"
@@ -567,11 +568,10 @@ def main():
         return
 
     if args.merge_all:
-        if not ENTITIES_DIR.exists():
+        doc_ids = discover_entity_docs()
+        if not doc_ids:
             print("Keine Entity-Daten.")
             return
-        doc_ids = sorted(d.name for d in ENTITIES_DIR.iterdir()
-                         if d.is_dir() and not d.name.startswith("_"))
         total = {"matched": 0, "registered": 0, "skipped": 0}
         for doc_id in doc_ids:
             result = merge_store_into_index(
