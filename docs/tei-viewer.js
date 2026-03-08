@@ -15,7 +15,7 @@
         renderedDone: false,
         xmlDone: false,
         diffDone: false,
-        entities: { persons: [], orgs: [], works: [] }
+        entities: { persons: [], orgs: [], places: [], works: [] }
     };
 
     // ---- Tab Switching ----
@@ -177,8 +177,10 @@
             elem = createEntitySpan(node, 'person', node.getAttribute('ref'));
         } else if (tag === 'orgName') {
             elem = createEntitySpan(node, 'org', node.getAttribute('ref'));
+        } else if (tag === 'placeName') {
+            elem = createEntitySpan(node, 'place', node.getAttribute('ref'));
         } else if (tag === 'bibl') {
-            elem = createEntitySpan(node, 'work', node.getAttribute('corresp') || node.getAttribute('ref'));
+            elem = createEntitySpan(node, 'work', node.getAttribute('ref') || node.getAttribute('corresp'));
         } else if (tag === 'lb') {
             container.appendChild(document.createElement('br'));
             return;
@@ -209,18 +211,40 @@
         }
     }
 
+    function resolveEntityRef(ref) {
+        if (!ref) return null;
+        if (ref.indexOf('#zbz-') === 0) {
+            return { type: 'index', id: ref.slice(1), label: ref, url: null };
+        }
+        if (ref.indexOf('WD:') === 0) {
+            var qid = ref.replace('WD:', '');
+            return { type: 'wikidata', id: qid, label: 'WD:' + qid,
+                     url: 'https://www.wikidata.org/wiki/' + qid };
+        }
+        if (ref.indexOf('GND:') === 0) {
+            var gndId = ref.replace('GND:', '');
+            if (gndId !== 'unknown') {
+                return { type: 'gnd', id: gndId, label: 'GND:' + gndId,
+                         url: 'https://lobid.org/gnd/' + gndId };
+            }
+        }
+        return null;
+    }
+
     function createEntitySpan(node, type, ref) {
         var span = document.createElement('span');
         span.className = 'tei-entity tei-entity-' + type;
         if (ref) {
             span.setAttribute('data-ref', ref);
-            span.addEventListener('click', function () {
-                var gndId = ref.replace('GND:', '');
-                window.open('https://lobid.org/gnd/' + gndId, '_blank');
-            });
+            var resolved = resolveEntityRef(ref);
+            if (resolved && resolved.url) {
+                span.addEventListener('click', function () {
+                    window.open(resolved.url, '_blank');
+                });
+            }
             var tip = document.createElement('span');
             tip.className = 'tei-entity-tip';
-            tip.textContent = ref;
+            tip.textContent = resolved ? resolved.label : ref;
             span.appendChild(tip);
         }
         return span;
@@ -252,11 +276,13 @@
 
     // ---- Entity Extraction ----
     function extractEntities(doc) {
-        teiState.entities = { persons: [], orgs: [], works: [] };
+        teiState.entities = { persons: [], orgs: [], places: [], works: [] };
 
         addEntitiesFromQuery(doc, 'persName[ref]', 'persons', 'ref');
         addEntitiesFromQuery(doc, 'orgName[ref]', 'orgs', 'ref');
-        addEntitiesFromQuery(doc, 'bibl[corresp]', 'works', 'corresp');
+        addEntitiesFromQuery(doc, 'placeName[ref]', 'places', 'ref');
+        addEntitiesFromQuery(doc, 'bibl[ref]', 'works', 'ref');
+        addEntitiesFromQuery(doc, 'bibl[corresp]:not([ref])', 'works', 'corresp');
     }
 
     function addEntitiesFromQuery(doc, selector, listKey, attrName) {
@@ -290,6 +316,7 @@
     function renderEntitySidebar() {
         renderEntityGroup('#entity-group-persons', teiState.entities.persons);
         renderEntityGroup('#entity-group-orgs', teiState.entities.orgs);
+        renderEntityGroup('#entity-group-places', teiState.entities.places);
         renderEntityGroup('#entity-group-works', teiState.entities.works);
     }
 
@@ -318,14 +345,17 @@
                 item.appendChild(cnt);
             }
 
-            var gnd = document.createElement('a');
-            gnd.className = 'entity-item-gnd';
-            gnd.textContent = 'GND';
-            gnd.href = 'https://lobid.org/gnd/' + ent.ref.replace('GND:', '');
-            gnd.target = '_blank';
-            gnd.title = ent.ref;
-            gnd.addEventListener('click', function (e) { e.stopPropagation(); });
-            item.appendChild(gnd);
+            var resolved = resolveEntityRef(ent.ref);
+            if (resolved && resolved.url) {
+                var link = document.createElement('a');
+                link.className = 'entity-item-gnd';
+                link.textContent = resolved.type === 'wikidata' ? 'WD' : 'GND';
+                link.href = resolved.url;
+                link.target = '_blank';
+                link.title = resolved.label;
+                link.addEventListener('click', function (e) { e.stopPropagation(); });
+                item.appendChild(link);
+            }
 
             item.addEventListener('click', function () { scrollToEntity(ent.ref); });
             list.appendChild(item);

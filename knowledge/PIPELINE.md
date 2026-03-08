@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-03-06
+updated: 2026-03-08
 tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
@@ -41,17 +41,18 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26/E31) |
 | 3b | Layout Overlay Generator | `scripts/generate_layout_overlays.py` | Overlay PNGs + side-by-side compare | Production (E31) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production |
-| 5 | **NER + Wikidata** | `scripts/ner/ner_extract.py` + `wikidata_linker.py` + `entity_index.py` | Entity JSON (`output/entities/`) + TEI Indices (`data/entities/`) | **Pilot (E34)** |
-| 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | Pilot (Doc 2310), E34 |
-| 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | Pilot, E34 |
-| 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | Pilot, E34 |
-| 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | Pending |
+| 5 | **NER + Wikidata** | `scripts/ner/` (7 Module) | Entity JSON + TEI Indices (`data/entities/`) | **Sample done (E34)** |
+| 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | 15 Docs (Sample), E34 |
+| 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | 472 Eintraege, E34 |
+| 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | 328/472 QIDs (57%), E34 |
+| 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | 3 Docs validiert, E34 |
+| 5e | NER Evaluation | `scripts/ner/ner_evaluate.py` | Metrics (density, P/R/F1 vs GT) | Done, E34 |
 | 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production |
 | 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **Production, E32** |
 | 6c | TEI Validation (RelaxNG + project rules) | `scripts/tei/tei_validator.py` | Validation JSON | Production, E32 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
-**Note on Stage 5 (E34):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
+**Note on Stage 5 (E34):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). 7 Module: `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker`, `ner_inject_tei`, `ner_evaluate`. Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). Sample-Run (15 Docs): 765 Entities, 472 Index-Eintraege, 328 mit Wikidata-QIDs (57%). CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
 **Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 
@@ -349,6 +350,25 @@ python -m scripts.tei.tei_unified --dry-run              # show prompts, no API 
 python -m scripts.tei.tei_validator --doc 2310           # validate single document
 python -m scripts.tei.tei_validator --all                # validate all unified TEI
 python -m scripts.tei.tei_validator --report             # save JSON validation report
+
+# NER + Wikidata (stage 5, requires GEMINI_API_KEY for extraction)
+python -m scripts.ner.ner_extract --doc 2310            # single document
+python -m scripts.ner.ner_extract --sample               # 15 sample docs
+python -m scripts.ner.ner_extract --all                  # all documents
+python -m scripts.ner.ner_extract --doc 2310 --force     # overwrite existing
+python -m scripts.ner.ner_extract --doc 2310 --dry-run   # show prompts, no API calls
+python -m scripts.ner.entity_index --merge-all           # merge all stores into index
+python -m scripts.ner.entity_index --stats               # index statistics
+python -m scripts.ner.entity_index --report              # cross-doc consistency report (JSON)
+python -m scripts.ner.wikidata_linker --doc 2310         # reconcile single document
+python -m scripts.ner.wikidata_linker --all              # reconcile all
+python -m scripts.ner.wikidata_linker --stats            # resolution statistics
+python -m scripts.ner.ner_inject_tei --doc 2310          # inject entities into TEI
+python -m scripts.ner.ner_inject_tei --doc 2310 --validate  # with RelaxNG validation
+python -m scripts.ner.ner_inject_tei --all               # inject all documents
+python -m scripts.ner.ner_evaluate --summary             # corpus metrics
+python -m scripts.ner.ner_evaluate --doc 2310            # single doc report
+python -m scripts.ner.ner_evaluate --doc 2310 --gt data/ground_truth/2310_gt.json  # P/R/F1
 
 # Dashboard data (stage 7)
 python -m scripts.generate_dashboard_data

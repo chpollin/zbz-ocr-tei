@@ -60,7 +60,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M0 | Image extraction + QA viewer | Images + viewer available | Done |
 | M1 | OCR validated | >=93% accuracy all types | Done (see [TESTPLAN](TESTPLAN.md) + Dashboard) |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done |
-| M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Pilot done** (Phase 3, E34) |
+| M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Sample done** (15 Docs, 57% linking, E34) |
 | M4 | TEI-XML | DTA-compliant TEI, schema-valid | **In Progress** (E32, production run laeuft) |
 | M5 | Production run | 286 docs processed, spot-check QA passed | Pending (Phase 6) |
 
@@ -87,7 +87,7 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 | Layout QA (Gemini) | Done | `scripts/layout_qa_gemini.py --mode auto` (E25/E26/E31) |
 | PAGE-XML generator | Done | `scripts/layout/page_xml_generator.py` + `mets_generator.py` |
 | Document classification | Done | `scripts/classify_docs.py` (E27) |
-| NER + Wikidata | Pilot done | `scripts/ner/` (6 Module, E34). Production run pending |
+| NER + Wikidata | Sample done | `scripts/ner/` (7 Module, E34). 15 Docs, 472 Index-Eintraege, 328 WD-QIDs. Production pending |
 | **Unified TEI Pipeline** | **Production** | `scripts/tei/tei_unified.py` (E32). Production run laeuft |
 | TEI Validator | Done | `scripts/tei/tei_validator.py`: RelaxNG + 8 Projekt-Regeln |
 | Evaluation + Dashboard | Done | `scripts/evaluate_ocr.py` + `docs/index.html` |
@@ -116,6 +116,7 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 | LLM correction (Haiku 4.5, 286 docs) | ~35 USD |
 | Gemini Layout QA + Detect | ~12 USD |
 | Gemini TEI Generation (286 docs) | ~$17 (Flash Lite, E32) |
+| Gemini NER (286 docs, est.) | ~$5-12 (Flash Lite, E34) |
 | GPU cloud (optional) | ~10-20 USD |
 
 ---
@@ -129,4 +130,4 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-07*
+*Created: 2026-02-18 | Updated: 2026-03-08*

@@ -14,6 +14,20 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## 2026-03-08 | Phase 3 Scale-Up + Frontend (Session 17)
+
+104. tei_unified Refactoring committed: step1/2/3 + core.loaders extrahiert. Orchestrator tei_unified.py von ~1100 auf ~70 Zeilen.
+
+105. NER Robustheit (4 Fixes): Diakritik-Normalisierung (FR 66% Korpus), Retry mit Backoff (Gemini + Wikidata), Surname-only Matching (verhindert falsche Merges), mehrsprachige WD-Suche (FR+DE+EN).
+
+106. Sample-Run 15 Docs: 370 Seiten, 765 Entities, 1827 Mentions. Entity-Index waechst auf 472 Eintraege. Wikidata-Resolution 57% (328/472 mit QIDs). TEI-Injection auf 3 Docs validiert (alle VALID).
+
+107. QID-Merge-Bug gefunden und behoben: merge_store_into_index uebertrug Wikidata-QIDs nur bei NEUEN Eintraegen, nicht bei bestehenden. Fix: QID-Update im matched-Branch. Index von 10 auf 328 QIDs.
+
+108. Frontend: Beide Viewer (tei-viewer.js, edition-tei.js) unterstuetzen jetzt 3 Ref-Formate (#zbz-p.N intern, WD:Q... Wikidata, GND:... lobid.org). placeName als neuer Entity-Typ mit Amber/Orange-Akzent. Sidebar zeigt Orte-Gruppe, Links oeffnen korrekte externe Seiten (WD/GND).
+
+---
+
 ## 2026-03-07 | NER Pipeline + Entity Index (Session 16)
 
 100. NER Pipeline Phase 3 implementiert (E34): 6 neue Module in `scripts/ner/`. Post-hoc-Architektur: Gemini Flash Lite extrahiert Entities pro Seite als JSON, EntityStore aggregiert pro Dokument, Wikidata-API reconciled (kein Gemini fuer IDs), TEI Injection schreibt nach `output/tei_ner/`.

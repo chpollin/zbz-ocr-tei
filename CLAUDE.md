@@ -42,6 +42,8 @@ python -m scripts.ner.entity_index --stats        # Entity Index statistics
 python -m scripts.ner.entity_index --merge-all    # Merge all stores into index
 python -m scripts.ner.wikidata_linker --doc 2310  # Wikidata reconciliation
 python -m scripts.ner.ner_inject_tei --doc 2310   # TEI entity injection
+python -m scripts.ner.ner_evaluate --summary       # NER corpus metrics
+python -m scripts.ner.ner_evaluate --doc 2310      # Single doc NER report
 
 # GPU required
 python -m scripts.run_layout_analysis             # Layout analysis (Docling)

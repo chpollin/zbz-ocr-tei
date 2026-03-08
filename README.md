@@ -7,13 +7,13 @@ LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbib
 Fully automated end-to-end pipeline for 286 documents (4,152 pages) from the estate of Jeanne Hersch:
 
 ```
-PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
-              (PNG)     (Mistral)  (Docling)              (Haiku)    (DTA-Basisformat)
+PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XML
+              (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basisformat)
 ```
 
-## Status (05.03.2026)
+## Status (08.03.2026)
 
-286 PDFs received (E23). OCR + Layout + Classification + PAGE-XML + TEI-XML complete for all documents. NER/GND pending.
+286 PDFs received (E23). OCR + Layout + Classification + PAGE-XML + TEI-XML complete for all documents. NER + Wikidata linking validated on 15 sample docs (E34).
 
 | Component | Status | Result |
 |-----------|--------|--------|
@@ -25,6 +25,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 | Gemini Layout QA/Detect | 286/286 Docs | Auto mode: QA for good, detect for bad pages (E25/E26) |
 | PAGE-XML + METS | 286/286 Docs | 4,091 PAGE-XML + 286 METS (Transkribus-compatible) |
 | TEI-XML | 285/286 Docs | 4,117 TEI-XML files (DTA-Basisformat, with layout + metadata) |
+| NER + Wikidata | 15/286 Docs | 472 entity index entries, 328 with Wikidata QIDs (57%) |
 | Evaluation | 15/286 Docs | CER/WER per page + dashboard |
 
 ### OCR Quality by Document Type
@@ -49,7 +50,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/GND --> TEI-XML
 
 ### Next Steps
 
-NER + GND linking (Phase 3) -> TEI extension with entities (Phase 4) -> Production run (Phase 6). Details: [PLAN.md](knowledge/PLAN.md).
+NER production run (286 docs) -> TEI entity injection -> Production delivery. Details: [PLAN.md](knowledge/PLAN.md).
 
 ## Directory Structure
 
@@ -69,6 +70,8 @@ zbz-ocr-tei/
     generate_dashboard_data.py  # Dashboard data
     layout/               # PAGE-XML + METS generators
     tei/                  # TEI-XML generator
+    ner/                  # NER + Wikidata linking (6 modules, E34)
+    core/                 # Shared data loaders
     postprocess/          # Deterministic post-processing
   docs/                   # Dashboard + QA viewer (GitHub Pages)
     index.html            # Dashboard: metrics, document catalog, CER comparison
@@ -128,7 +131,7 @@ Complete CLI reference: [knowledge/PIPELINE.md](knowledge/PIPELINE.md) §CLI Com
 | DeepSeek-OCR-2 | Local (GPU) | Development |
 | Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
 | Docling 2.75 | Local / docling-serve API (E24) | Layout analysis (BBox + regions) |
-| Gemini 3.1 Flash Lite | Google AI API (E25/E26/E27/E29) | Layout QA/Detect, classification, OCR correction |
+| Gemini 3.1 Flash Lite | Google AI API (E25/E26/E27/E29/E34) | Layout QA/Detect, classification, OCR correction, NER |
 
 ## Dashboard + Viewer
 
@@ -137,7 +140,7 @@ The QA dashboard (`docs/index.html`) shows pipeline status, CER comparison, and 
 - **3-panel layout:** Facsimile + OCR text + TEI-XML or PAGE-XML side by side
 - **TEI viewer:** Rendered view, XML with syntax highlighting, reference diff
 - **PAGE-XML viewer:** Region cards, syntax-highlighted XML, METS manifest
-- **Entity sidebar:** Persons/organizations/works with GND links
+- **Entity sidebar:** Persons/organizations/places/works with Wikidata + GND links
 - **Layout overlay:** SVG BBox visualization over the facsimile (Docling/Gemini toggle)
 - **Gemini QA highlights:** Changed regions shown with yellow dashed borders + change reasons
 
@@ -161,4 +164,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-03-05*
+*Last updated: 2026-03-08*

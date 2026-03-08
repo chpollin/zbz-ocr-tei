@@ -1072,6 +1072,15 @@ header .subtitle {
     background: var(--accent-b-light);
 }
 
+.tei-rendered .tei-entity-place {
+    background: var(--accent-d-bg);
+    border-bottom-color: var(--accent-d);
+}
+
+.tei-rendered .tei-entity-place:hover {
+    background: var(--accent-d-light);
+}
+
 .tei-rendered .tei-entity-work {
     background: var(--accent-a-bg);
     border-bottom-color: var(--accent-a);
@@ -1250,6 +1259,7 @@ header .subtitle {
 
 .entity-type-dot.person { background: var(--accent-c); }
 .entity-type-dot.org { background: var(--accent-b); }
+.entity-type-dot.place { background: var(--accent-d); }
 .entity-type-dot.work { background: var(--accent-a); }
 
 .entity-group-items {
