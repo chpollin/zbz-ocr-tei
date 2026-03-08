@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-07
+updated: 2026-03-08
 tags: [zbz-ocr-tei, decisions, open, decided]
 status: active
 ---
@@ -49,6 +49,7 @@ Consolidated register of all decisions and open questions in the project.
 | E32 | Unified TEI Pipeline (Rule-Based Scaffold + Gemini Refinement) | 4-Stufen-Pipeline: Step 1 (enhanced rule-based TEI mit lb, head, note, semantic div, interview-speaker), Step 2 (Gemini Refinement mit Mapping-Table-Prompt, 1 Call/Seite), Step 3 (Document Assembly mit teiHeader/facsimile/body + Post-Assembly-Fix), Step 4 (RelaxNG Validation). Post-Processing: `fix_gemini_tei()` mit 8 Fix-Stufen + `_fix_orphaned_body_children()` + `_fix_post_assembly_schema()` (3 Fixes: graphic-url, p-in-head, epigraph-divTop). Production Run: 50/286 Docs, 50/50 VALID. Kosten Step 2: ~$17 | 2026-03-07 | [PIPELINE](PIPELINE.md) |
 | E34 | NER Pipeline + Entity Index (Phase 3) | Post-hoc NER via Gemini Flash Lite (6 Typen: person, org, place, work, event, date). Wikidata als Primaer-ID statt GND (international, breitere Abdeckung). TEI-XML Entity-Indices (`data/entities/`) als Single Source of Truth mit eigenem ID-Schema (`zbz-p.N`, `zbz-o.N`, `zbz-l.N`, `zbz-w.N`). String-Matching gegen Varianten fuer automatische Zuordnung. Wikidata Reconciliation nur per API (kein LLM fuer IDs). EntityStore pro Dokument (JSON), Entity Index TEI-XML, Wikidata Cache. 6 Module: `ner_extract.py`, `entity_store.py`, `entity_index.py`, `wikidata_linker.py`, `ner_inject_tei.py`. Pilot Doc 2310: 30 Entities, 54 Mentions, 31 Index-Eintraege. Kosten: ~$1-3 Gemini + $0 Wikidata | 2026-03-07 | [PIPELINE](PIPELINE.md), [GND-STRATEGIE](GND-STRATEGIE.md) |
 | E33 | Digitale Edition (`docs/edition/`) | Oeffentliche statische Website neben dem internen Dashboard. 4 Seiten (Landing, Katalog, Reader, About), eigenes Design-System (Parchment/Navy/Gold, Dark Mode, 3 Breakpoints). `ZBZ.Edition` Namespace (ES5/IIFE). Reader: Faksimile+TEI nebeneinander, draggbarer Divider, Entitaeten-Sidebar, XML-Ansicht. Katalog: 286 Docs, MiniSearch, facettierte Filter. DRY-Refactoring: Nav/Footer JS-Slot-Pattern, `buildCardHtml()`, `sanitizeDocId()`, CSS-Klassen statt Inline-Styles. 11 Dateien, ~3.200 Zeilen | 2026-03-06 | [PIPELINE](PIPELINE.md) |
+| E35 | NER Production-Ready (Phase 3 Scale-Up) | 7 Qualitaetsverbesserungen vor Production Run: Known-Entity-Hint 150/Typ (QID-first), Diakritik-Matching (_stripped_lookup), sicheres Surname-Fallback (nur bei 1 Kandidat), Wikidata +9 QIDs, 4-Stufen-Konfidenz (1.0/0.9/0.8/0.6), OCR-Chunking (>8000 chars), Entity-Index statt KNOWN_ENTITY_NAMES (11->393 Namen). Pipeline-Integration: tei_unified.py --ner (Step 5), Dashboard NER-Stats, Edition entity_index.json Export, Katalog Entity-Count Badge, Sidebar Resolution-Status. Evaluation: --lenient (Diakritik-normalisiert), --report (HTML) | 2026-03-08 | [PIPELINE](PIPELINE.md) |
 
 ---
 
@@ -88,4 +89,4 @@ Consolidated register of all decisions and open questions in the project.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-07*
+*Created: 2026-02-18 | Updated: 2026-03-08*

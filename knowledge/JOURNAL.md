@@ -14,7 +14,7 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
-## 2026-03-08 | Phase 3 Scale-Up + Frontend (Session 17)
+## 2026-03-08 | Phase 3 Scale-Up + Frontend (Session 17+18)
 
 104. tei_unified Refactoring committed: step1/2/3 + core.loaders extrahiert. Orchestrator tei_unified.py von ~1100 auf ~70 Zeilen.
 
@@ -25,6 +25,33 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 107. QID-Merge-Bug gefunden und behoben: merge_store_into_index uebertrug Wikidata-QIDs nur bei NEUEN Eintraegen, nicht bei bestehenden. Fix: QID-Update im matched-Branch. Index von 10 auf 328 QIDs.
 
 108. Frontend: Beide Viewer (tei-viewer.js, edition-tei.js) unterstuetzen jetzt 3 Ref-Formate (#zbz-p.N intern, WD:Q... Wikidata, GND:... lobid.org). placeName als neuer Entity-Typ mit Amber/Orange-Akzent. Sidebar zeigt Orte-Gruppe, Links oeffnen korrekte externe Seiten (WD/GND).
+
+109. NER Phase 1 Qualitaetsverbesserungen (7 Tasks, committed f7e2356):
+   - Known-Entities-Hint von 50 auf 150/Typ, QID-verifizierte zuerst
+   - Diakritik-Matching (_stripped_lookup) im Entity Index
+   - Sicheres Surname-Fallback (nur bei genau 1 Kandidat)
+   - Wikidata TYPE_INSTANCE_OF +9 QIDs (Essay, Zeitung, Stiftung, Dorf etc.)
+   - 4-Stufen Konfidenz (1.0/0.9/0.8/0.6) mit match_type
+   - OCR-Text-Chunking fuer Seiten >8000 Zeichen
+   - KNOWN_ENTITY_NAMES durch Entity Index ersetzt (11 -> 393 Namen)
+
+110. NER Phase 2 Production Run gestartet: `ner_extract --all --force` (286 Docs, ~4152 Seiten).
+
+111. NER Evaluation erweitert (ner_evaluate.py):
+   - `--lenient` Flag fuer Diakritik-normalisierten P/R/F1-Vergleich
+   - `--report <path>` generiert HTML-Report (Korpus-Metriken, Top-20, per-Doc-Tabelle)
+   - Beide Modi (strict + lenient) werden parallel berichtet
+
+112. Pipeline-Integration:
+   - tei_unified.py: `--ner` Flag als Step 5 (Entity-Injection nach Assembly)
+   - generate_dashboard_data.py: NER-Stats pro Doc (entity_count, mention_count, resolution_rate) + Corpus-Level in pipeline_summary
+   - generate_edition_data.py: Automatischer Entity-Index-Export (JSON) + entity_count pro Katalog-Eintrag
+
+113. Frontend NER-Integration:
+   - Entity-Count Badge (ed-badge-ner) in Katalog-Karten (edition-shared.js)
+   - Resolution-Status-Indikator (Haken/Fragezeichen) in Entity-Sidebar (edition-tei.js)
+   - Count-Badge pro Entity-Typ-Gruppe in Sidebar
+   - CSS fuer alle neuen Elemente (Light + Dark Mode)
 
 ---
 

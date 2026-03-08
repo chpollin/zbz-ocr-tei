@@ -185,9 +185,15 @@
         var title = document.createElement('div');
         title.className = 'ed-entity-group-title';
         title.textContent = label;
+        var entities = state.entities[key];
+        if (entities.length) {
+            var badge = document.createElement('span');
+            badge.className = 'ed-entity-group-count';
+            badge.textContent = entities.length;
+            title.appendChild(badge);
+        }
         group.appendChild(title);
 
-        var entities = state.entities[key];
         if (!entities.length) {
             var empty = document.createElement('div');
             empty.className = 'ed-entity-empty';
@@ -212,6 +218,19 @@
                 }
 
                 var resolved = ZBZ.EntityUtils.resolveEntityRef(ent.ref, E.lookupEntity);
+
+                // Resolution status indicator
+                var statusIcon = document.createElement('span');
+                if (resolved && resolved.url) {
+                    statusIcon.className = 'ed-entity-status ed-entity-resolved';
+                    statusIcon.textContent = '\u2713';
+                    statusIcon.title = 'Verifiziert';
+                } else {
+                    statusIcon.className = 'ed-entity-status ed-entity-unresolved';
+                    statusIcon.textContent = '?';
+                    statusIcon.title = 'Nicht aufgeloest';
+                }
+                item.appendChild(statusIcon);
                 if (resolved && resolved.url) {
                     var link = document.createElement('a');
                     link.className = 'ed-entity-item-gnd';

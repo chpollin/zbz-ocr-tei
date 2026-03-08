@@ -13,13 +13,21 @@ Aufruf:
 import argparse
 import json
 import sys
+import unicodedata
+from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from scripts.config import ENTITIES_DIR
+from scripts.config import ENTITIES_DIR, PROJECT_ROOT
 from scripts.ner.entity_index import EntityIndex
 from scripts.ner.entity_store import EntityStore
+
+
+def _strip_diacritics(text: str) -> str:
+    """Strip diacritics for lenient matching."""
+    nfkd = unicodedata.normalize('NFKD', text)
+    return ''.join(c for c in nfkd if not unicodedata.combining(c)).lower()
 
 
 def doc_report(doc_id: str) -> dict:
@@ -115,7 +123,8 @@ def corpus_summary() -> dict:
     }
 
 
-def evaluate_ground_truth(doc_id: str, gt_path: str) -> dict:
+def evaluate_ground_truth(doc_id: str, gt_path: str,
+                          lenient: bool = False) -> dict:
     """Precision/Recall gegen manuell annotiertes Ground Truth.
 
     Ground Truth Format (JSON):
@@ -128,16 +137,21 @@ def evaluate_ground_truth(doc_id: str, gt_path: str) -> dict:
             ]
         }
     }
+
+    Args:
+        lenient: Diakritik-normalisierter Vergleich (Geneve == Geneve)
     """
     gt_data = json.loads(Path(gt_path).read_text(encoding="utf-8"))
     store = EntityStore.load(doc_id)
+
+    normalize = _strip_diacritics if lenient else lambda t: t.lower()
 
     # Ground Truth Entities sammeln
     gt_entities = set()
     for page_str, entities in gt_data.get("pages", {}).items():
         for ent in entities:
             gt_entities.add(
-                (ent["surface"].lower(), ent["type"])
+                (normalize(ent["surface"]), ent["type"])
             )
 
     # Predicted Entities (nur Seiten die im GT vorkommen)
@@ -146,7 +160,7 @@ def evaluate_ground_truth(doc_id: str, gt_path: str) -> dict:
     for rec in store.entities.values():
         if gt_pages & set(rec.pages):
             for surface in rec.surfaces:
-                pred_entities.add((surface.lower(), rec.entity_type))
+                pred_entities.add((normalize(surface), rec.entity_type))
 
     # Precision / Recall
     true_positives = gt_entities & pred_entities
@@ -160,6 +174,7 @@ def evaluate_ground_truth(doc_id: str, gt_path: str) -> dict:
 
     return {
         "doc_id": doc_id,
+        "mode": "lenient" if lenient else "strict",
         "gt_entities": len(gt_entities),
         "pred_entities": len(pred_entities),
         "true_positives": len(true_positives),
@@ -176,6 +191,117 @@ def evaluate_ground_truth(doc_id: str, gt_path: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# HTML Report
+# ---------------------------------------------------------------------------
+
+def _generate_html_report(corpus: dict, output_path: str) -> None:
+    """Erzeugt einen HTML-Report mit NER-Korpus-Metriken."""
+    # Per-Doc Daten sammeln
+    doc_rows = []
+    top_entities = []
+    if ENTITIES_DIR.exists():
+        entity_freq = {}  # (normalized, type) -> count
+        for d in sorted(ENTITIES_DIR.iterdir()):
+            if not d.is_dir() or d.name.startswith("_"):
+                continue
+            report = doc_report(d.name)
+            if "error" not in report:
+                doc_rows.append(report)
+                store = EntityStore.load(d.name)
+                for rec in store.entities.values():
+                    key = (rec.normalized, rec.entity_type)
+                    entity_freq[key] = entity_freq.get(key, 0) + 1
+        # Top-20 cross-doc entities
+        top_entities = sorted(entity_freq.items(), key=lambda x: -x[1])[:20]
+
+    # Typ-Verteilung als HTML-Balken
+    type_bars = ""
+    for t, pct in sorted(
+        corpus.get("type_distribution", {}).items(), key=lambda x: -x[1]
+    ):
+        type_bars += (
+            f'<div style="margin:4px 0">'
+            f'<span style="display:inline-block;width:100px">{t}</span>'
+            f'<span style="display:inline-block;width:{pct * 2}px;'
+            f'height:16px;background:#4a6fa5"></span>'
+            f' {pct}%</div>\n'
+        )
+
+    # Doc-Tabelle
+    doc_table_rows = ""
+    for r in doc_rows:
+        doc_table_rows += (
+            f'<tr><td>{r["doc_id"]}</td>'
+            f'<td>{r["total_entities"]}</td>'
+            f'<td>{r["total_mentions"]}</td>'
+            f'<td>{r["density_per_page"]}</td>'
+            f'<td>{r["resolution_rate"]:.0%}</td></tr>\n'
+        )
+
+    # Top-Entities-Tabelle
+    top_table = ""
+    for (norm, etype), freq in top_entities:
+        top_table += (
+            f'<tr><td>{norm}</td><td>{etype}</td><td>{freq}</td></tr>\n'
+        )
+
+    html = f"""<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>NER Corpus Report</title>
+<style>
+body {{ font-family: system-ui, sans-serif; max-width: 960px; margin: 2em auto; padding: 0 1em; }}
+h1 {{ color: #1a2744; }}
+h2 {{ color: #4a6fa5; border-bottom: 1px solid #ccc; padding-bottom: 4px; }}
+table {{ border-collapse: collapse; width: 100%; margin: 1em 0; }}
+th, td {{ padding: 6px 10px; border: 1px solid #ddd; text-align: left; }}
+th {{ background: #f0f4f8; }}
+.metric {{ display: inline-block; padding: 12px 20px; margin: 6px; background: #f0f4f8; border-radius: 8px; text-align: center; }}
+.metric .value {{ font-size: 1.8em; font-weight: bold; color: #1a2744; }}
+.metric .label {{ font-size: 0.85em; color: #666; }}
+</style>
+</head>
+<body>
+<h1>NER Corpus Report</h1>
+<p>Generiert: {datetime.now().strftime("%Y-%m-%d %H:%M")}</p>
+
+<div>
+<div class="metric"><div class="value">{corpus.get('documents', 0)}</div><div class="label">Dokumente</div></div>
+<div class="metric"><div class="value">{corpus.get('total_entities', 0)}</div><div class="label">Entities</div></div>
+<div class="metric"><div class="value">{corpus.get('total_mentions', 0)}</div><div class="label">Mentions</div></div>
+<div class="metric"><div class="value">{corpus.get('resolution_rate', 0):.0%}</div><div class="label">Resolution</div></div>
+<div class="metric"><div class="value">{corpus.get('avg_entities_per_doc', 0)}</div><div class="label">Avg/Doc</div></div>
+<div class="metric"><div class="value">{corpus.get('avg_density_per_page', 0)}</div><div class="label">Avg/Seite</div></div>
+</div>
+
+<h2>Typ-Verteilung</h2>
+{type_bars}
+
+<h2>Top-20 Entities (Cross-Doc-Frequenz)</h2>
+<table>
+<tr><th>Entity</th><th>Typ</th><th>Docs</th></tr>
+{top_table}
+</table>
+
+<h2>Per-Dokument-Metriken</h2>
+<table>
+<tr><th>Doc</th><th>Entities</th><th>Mentions</th><th>Ent/Seite</th><th>Resolved</th></tr>
+{doc_table_rows}
+</table>
+</body>
+</html>"""
+
+    out = Path(output_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(html, encoding="utf-8")
+    print(f"HTML-Report geschrieben: {out}")
+    print(f"  {corpus.get('documents', 0)} Docs, "
+          f"{corpus.get('total_entities', 0)} Entities, "
+          f"Resolution {corpus.get('resolution_rate', 0):.0%}")
+
+
+# ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
 
@@ -187,9 +313,20 @@ def main():
     parser.add_argument("--summary", action="store_true",
                         help="Korpus-Zusammenfassung")
     parser.add_argument("--gt", help="Ground-Truth JSON-Datei (fuer P/R/F1)")
+    parser.add_argument("--lenient", action="store_true",
+                        help="Diakritik-normalisierter Vergleich")
     parser.add_argument("--json", action="store_true",
                         help="Ausgabe als JSON")
+    parser.add_argument("--report", help="HTML-Report Ausgabepfad")
     args = parser.parse_args()
+
+    if args.report:
+        result = corpus_summary()
+        if "error" in result:
+            print("Keine Entity-Daten vorhanden.")
+            return
+        _generate_html_report(result, args.report)
+        return
 
     if args.summary:
         result = corpus_summary()
@@ -213,25 +350,36 @@ def main():
         return
 
     if args.doc and args.gt:
-        result = evaluate_ground_truth(args.doc, args.gt)
+        result_strict = evaluate_ground_truth(args.doc, args.gt, lenient=False)
+        results = [result_strict]
+        if args.lenient:
+            result_lenient = evaluate_ground_truth(
+                args.doc, args.gt, lenient=True
+            )
+            results.append(result_lenient)
         if args.json:
-            print(json.dumps(result, ensure_ascii=False, indent=2))
+            out = results if args.lenient else results[0]
+            print(json.dumps(out, ensure_ascii=False, indent=2))
         else:
-            print(f"Ground Truth Evaluation: Doc {args.doc}")
-            print(f"  GT Entities:     {result['gt_entities']}")
-            print(f"  Predicted:       {result['pred_entities']}")
-            print(f"  True Positives:  {result['true_positives']}")
-            print(f"  Precision:       {result['precision']:.1%}")
-            print(f"  Recall:          {result['recall']:.1%}")
-            print(f"  F1:              {result['f1']:.1%}")
-            if result['false_negatives']:
-                print(f"  Missed ({len(result['false_negatives'])}):")
-                for fn in result['false_negatives'][:10]:
-                    print(f"    - {fn}")
-            if result['false_positives']:
-                print(f"  Extra ({len(result['false_positives'])}):")
-                for fp in result['false_positives'][:10]:
-                    print(f"    - {fp}")
+            for result in results:
+                mode = result.get("mode", "strict").upper()
+                print(f"Ground Truth Evaluation: Doc {args.doc} ({mode})")
+                print(f"  GT Entities:     {result['gt_entities']}")
+                print(f"  Predicted:       {result['pred_entities']}")
+                print(f"  True Positives:  {result['true_positives']}")
+                print(f"  Precision:       {result['precision']:.1%}")
+                print(f"  Recall:          {result['recall']:.1%}")
+                print(f"  F1:              {result['f1']:.1%}")
+                if result['false_negatives']:
+                    print(f"  Missed ({len(result['false_negatives'])}):")
+                    for fn in result['false_negatives'][:10]:
+                        print(f"    - {fn}")
+                if result['false_positives']:
+                    print(f"  Extra ({len(result['false_positives'])}):")
+                    for fp in result['false_positives'][:10]:
+                        print(f"    - {fp}")
+                if len(results) > 1:
+                    print()
         return
 
     if args.doc:

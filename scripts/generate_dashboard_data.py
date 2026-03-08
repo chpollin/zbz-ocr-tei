@@ -25,6 +25,7 @@ from scripts.config import (
     DOC_METADATA_PATH,
     GEMINI_CORRECTED_A_DIR,
     PAGE_XML_DIR,
+    ENTITIES_DIR,
 )
 from scripts.utils import load_json
 
@@ -154,6 +155,25 @@ def build_documents(images_manifest, eval_data, llm_manifest, gemini_eval_data=N
         if ls:
             layout_summaries[doc_id] = ls
 
+    # NER Entity Summaries laden
+    ner_summaries = {}
+    if ENTITIES_DIR.exists():
+        try:
+            from scripts.ner.entity_store import EntityStore
+            for d in ENTITIES_DIR.iterdir():
+                if d.is_dir() and not d.name.startswith("_"):
+                    store = EntityStore.load(d.name)
+                    s = store.summary()
+                    if s["total_entities"] > 0:
+                        ner_summaries[d.name] = {
+                            "entity_count": s["total_entities"],
+                            "mention_count": s["total_mentions"],
+                            "resolved": s["resolved"],
+                            "resolution_rate": s["resolution_rate"],
+                        }
+        except Exception:
+            pass
+
     # Gemini-Manifest einmal laden + Lookup-Dict bauen
     gemini_manifest = load_json(GEMINI_CORRECTED_A_DIR / "manifest.json")
     gemini_doc_lookup = {}
@@ -237,6 +257,11 @@ def build_documents(images_manifest, eval_data, llm_manifest, gemini_eval_data=N
                 "time_seconds": ls.get("total_time_seconds"),
             }
 
+        # NER Entity Stats
+        if doc_id in ner_summaries:
+            ns = ner_summaries[doc_id]
+            doc["ner"] = ns
+
         documents[doc_id] = doc
 
     return documents
@@ -258,6 +283,7 @@ def compute_pipeline_status(doc_id: str) -> dict:
         "evaluation": doc_id in (load_eval_doc_ids() or []),
         "tei": any(TEI_DIR.glob(f"{doc_id}_p*.xml")),
         "page_xml": any((PAGE_XML_DIR / doc_id / "page").glob(f"{doc_id}_p*.xml")),
+        "ner": (ENTITIES_DIR / doc_id).is_dir() if ENTITIES_DIR.exists() else False,
     }
 
 
@@ -304,6 +330,12 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
     if llm_manifest and "totals" in llm_manifest:
         llm_totals = llm_manifest["totals"]
 
+    # NER Aggregate
+    docs_with_ner = sum(1 for d in documents.values() if d.get("ner"))
+    total_entities = sum(d["ner"]["entity_count"] for d in documents.values() if d.get("ner"))
+    total_mentions = sum(d["ner"]["mention_count"] for d in documents.values() if d.get("ner"))
+    total_ner_resolved = sum(d["ner"]["resolved"] for d in documents.values() if d.get("ner"))
+
     docs_classified = sum(1 for d in documents.values() if d["type"] != "-")
     pilot_count = sum(1 for d in documents.values() if d["doc_id"] in PILOT_DOCS)
 
@@ -322,6 +354,10 @@ def build_pipeline_summary(documents: dict, llm_manifest) -> dict:
         "avg_cer_mistral": round(avg_cer_mistral, 6) if avg_cer_mistral else None,
         "avg_cer_llm": round(avg_cer_llm, 6) if avg_cer_llm else None,
         "avg_cer_gemini": round(avg_cer_gemini, 6) if avg_cer_gemini else None,
+        "docs_with_ner": docs_with_ner,
+        "total_entities": total_entities,
+        "total_mentions": total_mentions,
+        "ner_resolution_rate": round(total_ner_resolved / total_entities, 3) if total_entities else None,
     }
 
 

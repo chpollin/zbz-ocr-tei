@@ -240,6 +240,7 @@
         html += '</p>';
         html += '<span class="ed-badge ed-badge-type">' + esc(TYPE_LABELS[doc.type] || doc.type) + '</span>';
         if (doc.lang) html += ' <span class="ed-badge ed-badge-lang">' + esc(doc.lang) + '</span>';
+        if (doc.entity_count) html += ' <span class="ed-badge ed-badge-ner" title="' + doc.entity_count + ' Entitaeten">' + doc.entity_count + ' Ent.</span>';
         if (doc.demo) html += ' <span class="ed-badge ed-badge-demo">Demo</span>';
         html += '</div></a>';
         return html;

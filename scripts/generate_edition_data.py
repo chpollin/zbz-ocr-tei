@@ -14,7 +14,7 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 
-from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, DOC_METADATA_PATH
+from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, DOC_METADATA_PATH, ENTITIES_DIR
 from scripts.utils import load_json
 
 
@@ -77,6 +77,19 @@ def build_catalog():
     docs = dashboard.get("documents", {})
     overview = dashboard.get("pipeline_summary", {})
 
+    # Entity-Counts vorladen
+    entity_counts = {}
+    if ENTITIES_DIR.exists():
+        try:
+            from scripts.ner.entity_store import EntityStore
+            for d in ENTITIES_DIR.iterdir():
+                if d.is_dir() and not d.name.startswith("_"):
+                    store = EntityStore.load(d.name)
+                    s = store.summary()
+                    entity_counts[d.name] = s["total_entities"]
+        except Exception:
+            pass
+
     # Dokument-Eintraege bauen
     entries = []
     for doc_id, doc in sorted(docs.items(), key=lambda x: int(x[0])):
@@ -91,6 +104,7 @@ def build_catalog():
             "desc": doc.get("desc", ""),
             "page_count": doc.get("page_count", 0),
             "has_tei": doc.get("pipeline_status", {}).get("tei", False),
+            "entity_count": entity_counts.get(doc_id, 0),
             "demo": doc_id in FEATURED_DOCS,
         }
         entries.append(entry)
@@ -135,6 +149,29 @@ def build_catalog():
     return catalog
 
 
+def export_entity_index():
+    """Exportiert den Entity Index als JSON fuer den Edition-Viewer."""
+    try:
+        from scripts.ner.entity_index import EntityIndex
+        index = EntityIndex()
+        index.load_all()
+        if not index.entries:
+            print("  Entity Index: keine Eintraege")
+            return 0
+        data = index.to_json_dict()
+        output_path = DOCS_DIR / "data" / "entity_index.json"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(
+            json.dumps(data, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        print(f"  Entity Index: {len(data)} Eintraege -> {output_path}")
+        return len(data)
+    except Exception as e:
+        print(f"  Entity Index WARNUNG: {e}")
+        return 0
+
+
 def main():
     print("Edition-Daten generieren...")
 
@@ -147,7 +184,10 @@ def main():
     if not catalog:
         return
 
-    # 3. Schreiben
+    # 3. Entity Index exportieren
+    entity_count = export_entity_index()
+
+    # 4. Katalog schreiben
     output_path = DOCS_DIR / "edition" / "data" / "catalog.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
@@ -160,6 +200,8 @@ def main():
     print(f"  Seiten: {catalog['edition']['total_pages']}")
     print(f"  Featured: {catalog['featured']}")
     print(f"  Sprachen: {catalog['edition']['languages']}")
+    if entity_count:
+        print(f"  Entity Index: {entity_count} Eintraege")
 
     # Verifikation
     doc_count = len(catalog["documents"])
