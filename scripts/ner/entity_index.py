@@ -163,6 +163,15 @@ class EntityIndex:
                         main_name = text
                         break
 
+            # GND-ID aus <idno type="GND">
+            gnd_id = None
+            for idno_elem in elem.iter(f"{{{TEI_NS}}}idno"):
+                if idno_elem.get("type") == "GND":
+                    gnd_val = (idno_elem.text or "").strip()
+                    if gnd_val:
+                        gnd_id = f"GND:{gnd_val}"
+                    break
+
             note_elem = elem.find(f"{{{TEI_NS}}}note")
             note = (note_elem.text or "").strip() if note_elem is not None else ""
 
@@ -174,6 +183,7 @@ class EntityIndex:
                     variants=variants,
                     wikidata_qid=wikidata_qid,
                     wikidata_url=corresp if "wikidata" in corresp else None,
+                    gnd_id=gnd_id,
                     note=note,
                 )
                 self.entries[xml_id] = entry
@@ -276,6 +286,7 @@ class EntityIndex:
         entity_type: str,
         variants: list[str] | None = None,
         wikidata_qid: str | None = None,
+        gnd_id: str | None = None,
         note: str = "",
     ) -> IndexEntry:
         """Registriert eine neue Entity und vergibt eine ID.
@@ -295,6 +306,8 @@ class EntityIndex:
             if wikidata_qid and not existing.wikidata_qid:
                 existing.wikidata_qid = wikidata_qid
                 existing.wikidata_url = f"https://www.wikidata.org/wiki/{wikidata_qid}"
+            if gnd_id and not existing.gnd_id:
+                existing.gnd_id = gnd_id
             return existing
 
         # Neue ID vergeben
@@ -314,6 +327,7 @@ class EntityIndex:
             variants=all_variants,
             wikidata_qid=wikidata_qid,
             wikidata_url=f"https://www.wikidata.org/wiki/{wikidata_qid}" if wikidata_qid else None,
+            gnd_id=gnd_id,
             note=note,
         )
 
@@ -388,6 +402,11 @@ class EntityIndex:
                 lines.append(
                     f'          <{name_tag} type="variant">{_xml_escape(variant)}'
                     f'</{name_tag}>'
+                )
+            if entry.gnd_id:
+                gnd_val = entry.gnd_id.replace("GND:", "")
+                lines.append(
+                    f'          <idno type="GND">{_xml_escape(gnd_val)}</idno>'
                 )
             if entry.note:
                 lines.append(
@@ -515,6 +534,7 @@ def merge_store_into_index(
                 entity_type=rec.entity_type,
                 variants=[s for s in rec.surfaces if s != rec.normalized],
                 wikidata_qid=wikidata_qid,
+                gnd_id=rec.gnd_id,
                 note="",
             )
             registered += 1

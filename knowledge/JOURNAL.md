@@ -14,7 +14,7 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
-## 2026-03-12 | Viewer Wikidata/zbz-ID Support (Session 23)
+## 2026-03-12 | Viewer WD/zbz-ID + GND Bug Fix (Session 23)
 
 131. Viewer Entity-Sidebar erweitert (Phase 3 offener Punkt: "WD/zbz-ID Support in tei-viewer.js + edition-tei.js"):
    - Neue `resolveAllLinks()` Funktion in entity-utils.js: gibt alle verfuegbaren Links zurueck (WD + GND), nicht nur den ersten
@@ -25,11 +25,23 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 132. Wikidata Linking Fortschritt: 2,803/11,685 Entities (24%) ueber ~110 Docs. Linking fuer alle 285 Docs gestartet (Hintergrund-Lauf).
 
+133. **GND 0% Bug gefunden und behoben**: Drei Ursachen identifiziert:
+   - entity_index.py `_write_index_file()` schrieb GND-IDs nie in TEI-XML (kein `<idno type="GND">`)
+   - entity_index.py `_load_index_file()` las GND-IDs nie aus TEI-XML
+   - entity_index.py `register_new()` akzeptierte keinen `gnd_id` Parameter
+   - Wikidata-Cache hatte altes Format ohne `gnd_id` Feld (P227 wurde nie zwischengespeichert)
+   - Fix: 4 Code-Aenderungen in entity_index.py + Cache-Backfill (318 QIDs, P227 nachgeholt)
+   - Ergebnis: 0% -> 958/4,408 (21.7%) GND-IDs im Entity Index
+   - TEI-XML Indices mit `<idno type="GND">` (535 person, 121 org, 238 place, 64 work)
+
 ### Geaenderte Dateien
 - docs/entity-utils.js (resolveAllLinks + Tooltip)
 - docs/tei-viewer.js (Sidebar)
 - docs/edition/js/edition-tei.js (Sidebar)
 - docs/shared.css + docs/edition/css/edition.css (neue CSS-Klassen)
+- scripts/ner/entity_index.py (GND write/read/register/merge Fix)
+- data/entities/*.xml (TEI-XML Indices mit GND `<idno>`)
+- docs/data/entity_index.json (958 GND-IDs)
 
 ---
 
