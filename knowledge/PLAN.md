@@ -78,7 +78,7 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 - [x] TEI Injection Production: 49/286 Docs mit Entity-Markup (alle 10 geprueft VALID)
 - [x] NER Evaluation: HTML-Report (output/ner_report.html)
 - [ ] Wikidata Reconciliation: 67/285 Docs fertig (15%), restliche 218 pending
-- [ ] Viewer: WD/zbz-ID Support in tei-viewer.js + edition-tei.js
+- [x] Viewer: WD/zbz-ID Support in tei-viewer.js + edition-tei.js (Session 23)
 - [ ] Targets: Recall >70%, Precision >80%, Wikidata linking >50%
 
 ## Phase 4 -- TEI-XML Extension

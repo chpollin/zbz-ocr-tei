@@ -1302,15 +1302,46 @@ header .subtitle {
     flex-shrink: 0;
 }
 
-.entity-item-gnd {
+.entity-item-gnd,
+.entity-item-link {
     font-size: var(--fs-xs);
     color: var(--text-muted);
     text-decoration: none;
     flex-shrink: 0;
 }
 
-.entity-item-gnd:hover {
+.entity-item-gnd:hover,
+.entity-item-link:hover {
     color: var(--accent-a);
+}
+
+.entity-item-status {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.entity-resolved {
+    background: rgba(34,197,94,0.15);
+    color: #16a34a;
+}
+
+.entity-unresolved {
+    background: rgba(234,179,8,0.15);
+    color: #ca8a04;
+}
+
+.entity-item-zbzid {
+    font-size: var(--fs-2xs);
+    color: var(--text-muted);
+    opacity: 0.7;
+    flex-shrink: 0;
+    font-family: var(--ff-mono);
 }
 
 /* Empty State (viewer panels) — see also .empty-state above for preview columns */

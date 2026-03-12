@@ -52,6 +52,51 @@
     }
 
     /**
+     * Resolve all available links for an entity reference.
+     * @param {string} ref - e.g. "#zbz-p.1", "WD:Q123", "GND:123"
+     * @param {function} lookupFn - Entity index lookup
+     * @returns {object} {zbzId, label, links: [{type, id, url}]}
+     */
+    function resolveAllLinks(ref, lookupFn) {
+        var result = { zbzId: null, label: ref || '', links: [] };
+        if (!ref) return result;
+
+        if (ref.indexOf('#zbz-') === 0) {
+            result.zbzId = ref.slice(1);
+            var entry = lookupFn(ref);
+            if (entry) {
+                result.label = entry.name;
+                if (entry.wikidata_qid) {
+                    result.links.push({ type: 'wikidata', id: entry.wikidata_qid,
+                        url: entry.wikidata_url });
+                }
+                if (entry.gnd_id) {
+                    var gid = entry.gnd_id.replace('GND:', '');
+                    result.links.push({ type: 'gnd', id: gid,
+                        url: 'https://lobid.org/gnd/' + gid });
+                }
+            }
+            return result;
+        }
+        if (ref.indexOf('WD:') === 0) {
+            var qid = ref.replace('WD:', '');
+            result.label = 'WD:' + qid;
+            result.links.push({ type: 'wikidata', id: qid,
+                url: 'https://www.wikidata.org/wiki/' + qid });
+            return result;
+        }
+        if (ref.indexOf('GND:') === 0) {
+            var gndId = ref.replace('GND:', '');
+            if (gndId !== 'unknown') {
+                result.label = 'GND:' + gndId;
+                result.links.push({ type: 'gnd', id: gndId,
+                    url: 'https://lobid.org/gnd/' + gndId });
+            }
+        }
+        return result;
+    }
+
+    /**
      * Create a DOM span for an entity with tooltip and click handler.
      * @param {Element} node - Source XML element
      * @param {string} type - Entity type (person, org, place, work)
@@ -71,9 +116,12 @@
                     window.open(resolved.url, '_blank');
                 });
             }
+            var all = resolveAllLinks(ref, lookupFn);
+            var tipText = all.label;
+            if (all.zbzId) tipText += ' (' + all.zbzId + ')';
             var tip = document.createElement('span');
             tip.className = cssPrefix + '-tip';
-            tip.textContent = resolved ? resolved.label : ref;
+            tip.textContent = tipText;
             span.appendChild(tip);
         }
         return span;
@@ -116,6 +164,7 @@
 
     ZBZ.EntityUtils = {
         resolveEntityRef: resolveEntityRef,
+        resolveAllLinks: resolveAllLinks,
         createEntitySpan: createEntitySpan,
         extractEntities: extractEntities
     };

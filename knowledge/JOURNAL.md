@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-09
+updated: 2026-03-12
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,25 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-12 | Viewer Wikidata/zbz-ID Support (Session 23)
+
+131. Viewer Entity-Sidebar erweitert (Phase 3 offener Punkt: "WD/zbz-ID Support in tei-viewer.js + edition-tei.js"):
+   - Neue `resolveAllLinks()` Funktion in entity-utils.js: gibt alle verfuegbaren Links zurueck (WD + GND), nicht nur den ersten
+   - Sidebar zeigt jetzt separate WD- und GND-Link-Badges (beide wenn vorhanden)
+   - zbz-ID (z.B. zbz-p.1) als Label in Sidebar und Tooltip sichtbar
+   - Resolution-Status (Checkmark/Fragezeichen) auch im Dashboard-Viewer (war vorher nur in Edition)
+   - CSS fuer neue Elemente in shared.css + edition.css
+
+132. Wikidata Linking Fortschritt: 2,803/11,685 Entities (24%) ueber ~110 Docs. Linking fuer alle 285 Docs gestartet (Hintergrund-Lauf).
+
+### Geaenderte Dateien
+- docs/entity-utils.js (resolveAllLinks + Tooltip)
+- docs/tei-viewer.js (Sidebar)
+- docs/edition/js/edition-tei.js (Sidebar)
+- docs/shared.css + docs/edition/css/edition.css (neue CSS-Klassen)
 
 ---
 

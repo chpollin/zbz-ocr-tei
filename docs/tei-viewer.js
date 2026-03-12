@@ -262,10 +262,12 @@
             var item = document.createElement('div');
             item.className = 'entity-item';
 
+            var all = ZBZ.EntityUtils.resolveAllLinks(ent.ref, ZBZ.lookupEntity);
+
             var name = document.createElement('span');
             name.className = 'entity-item-name';
-            name.textContent = ent.name;
-            name.title = ent.name;
+            name.textContent = all.label !== ent.ref ? all.label : ent.name;
+            name.title = all.label !== ent.ref ? all.label : ent.name;
             item.appendChild(name);
 
             if (ent.count > 1) {
@@ -275,16 +277,37 @@
                 item.appendChild(cnt);
             }
 
-            var resolved = ZBZ.EntityUtils.resolveEntityRef(ent.ref, ZBZ.lookupEntity);
-            if (resolved && resolved.url) {
-                var link = document.createElement('a');
-                link.className = 'entity-item-gnd';
-                link.textContent = resolved.type === 'wikidata' ? 'WD' : 'GND';
-                link.href = resolved.url;
-                link.target = '_blank';
-                link.title = resolved.label;
-                link.addEventListener('click', function (e) { e.stopPropagation(); });
-                item.appendChild(link);
+            // Resolution status
+            var statusIcon = document.createElement('span');
+            if (all.links.length > 0) {
+                statusIcon.className = 'entity-item-status entity-resolved';
+                statusIcon.textContent = '\u2713';
+                statusIcon.title = 'Verifiziert';
+            } else {
+                statusIcon.className = 'entity-item-status entity-unresolved';
+                statusIcon.textContent = '?';
+                statusIcon.title = 'Nicht aufgeloest';
+            }
+            item.appendChild(statusIcon);
+
+            // All external links (WD + GND)
+            all.links.forEach(function (lnk) {
+                var a = document.createElement('a');
+                a.className = 'entity-item-link';
+                a.textContent = lnk.type === 'wikidata' ? 'WD' : 'GND';
+                a.href = lnk.url;
+                a.target = '_blank';
+                a.title = lnk.type === 'wikidata' ? 'Wikidata ' + lnk.id : 'GND ' + lnk.id;
+                a.addEventListener('click', function (e) { e.stopPropagation(); });
+                item.appendChild(a);
+            });
+
+            // zbz-ID label
+            if (all.zbzId) {
+                var zbzLabel = document.createElement('span');
+                zbzLabel.className = 'entity-item-zbzid';
+                zbzLabel.textContent = all.zbzId;
+                item.appendChild(zbzLabel);
             }
 
             item.addEventListener('click', function () { scrollToEntity(ent.ref); });
