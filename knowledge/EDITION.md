@@ -18,7 +18,7 @@ Oeffentliche digitale Edition der Jeanne-Hersch-Korrespondenz fuer Forschende un
 
 | Modus | Zugang | Funktion |
 |-------|--------|----------|
-| **Lesen** | `docs/` auf GitHub Pages | Katalog, Reader (Faksimile + TEI), Entities, XML-Ansicht |
+| **Lesen** | `docs/` auf GitHub Pages | Katalog, Register, Reader (Faksimile + TEI), Entities, XML-Ansicht |
 | **Kuratieren** | `localhost:8000` (FastAPI Server) | Alles wie Lesen + Text-Korrektur, Struktur-Editing, Entity-Kuration, Review-Workflow |
 
 Der Edit-Button erscheint automatisch wenn der Server laeuft (Health-Check). Details zum Kurations-Workflow: [CURATION.md](CURATION.md).
@@ -33,16 +33,19 @@ Der Edit-Button erscheint automatisch wenn der Server laeuft (Health-Check). Det
 |-------|-------|--------|
 | `docs/index.html` | Landing: Hero, Featured Docs, Corpus Stats | ~102 |
 | `docs/catalog.html` | Katalog: facettierte Filter, Tabellen-/Kartenansicht, MiniSearch | ~82 |
+| `docs/register.html` | Entity-Register: Typ-Tabs, Suche, Filter, Detail-Expansion | ~78 |
 | `docs/reader.html` | Reader: Faksimile + TEI nebeneinander, Entities, XML-Ansicht | ~67 |
 | `docs/about.html` | About: Hersch-Biographie, Projekt, Pipeline, Technologie | ~138 |
-| `docs/css/edition.css` | Design System: `--ed-*` CSS Vars, 3 Breakpoints | ~1300 |
-| `docs/js/edition-shared.js` | Shared: Nav/Footer Slots, Katalog-Loader, Card Builder | ~283 |
+| `docs/css/edition.css` | Design System: `--ed-*` CSS Vars, 3 Breakpoints | ~1850 |
+| `docs/js/edition-shared.js` | Shared: Nav/Footer Slots, Katalog-Loader, Card Builder | ~320 |
 | `docs/js/edition-landing.js` | Landing: Metriken-Animation, Featured Docs, Corpus Stats | ~140 |
 | `docs/js/edition-catalog.js` | Katalog: MiniSearch (CDN), Filter, Sort, Rendering | ~354 |
+| `docs/js/edition-register.js` | Register: MiniSearch, Typ-Tabs, Filter, Table/Cards, Detail | ~380 |
 | `docs/js/edition-reader.js` | Reader: Seitennavigation, Zoom, Font-Toggle, Divider, Entity Sidebar | ~305 |
 | `docs/js/edition-tei.js` | TEI Renderer: rekursives Node-Rendering, Entity-Extraktion, XML-Ansicht | ~302 |
 | `docs/js/edition-editor.js` | Curation: WYSIWYG, DOM-zu-XML Serializer, Save (nur mit Server) | ~370 |
 | `docs/data/catalog.json` | Generierter Katalog (via `scripts/generate_edition_data.py`) | -- |
+| `docs/data/entity_register.json` | Generiertes Register mit Cross-Doc-Referenzen | -- |
 
 ---
 

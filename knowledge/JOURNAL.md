@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-12
+updated: 2026-03-14
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,26 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-14 | Frontend-Konsolidierung (Session 24)
+
+134. Edition als Hauptfrontend konsolidiert:
+   - Edition-Seiten von docs/edition/ nach docs/ root verschoben (Landing, Katalog, Reader, About)
+   - Pipeline-Seiten nach docs/infrastruktur/ verschoben (Dashboard, Viewer, Benchmark)
+   - Gemeinsame Navigation mit Sub-Nav fuer Infrastruktur-Seiten
+   - Dark Mode entfernt, Design angeglichen (kuehler BG fuer Infrastruktur, Teal-Border)
+   - ES5 -> ES6+ Modernisierung in allen 13 JS-Dateien (const/let, arrow functions, template literals, IIFE)
+   - Console-Logging mit [ZBZ:Modul] Prefix in allen Modulen
+   - CSS Bug-Fix: --ff-mono -> --font-mono
+   - Python-Skripte + Curation Server an neue Pfade angepasst
+   - Knowledge-Dokumente aktualisiert (7 Dateien)
+
+### Geaenderte Dateien
+- docs/ (36 Dateien: HTML, JS, CSS umstrukturiert)
+- scripts/generate_edition_data.py, scripts/server/curation_server.py (Pfad-Anpassungen)
+- knowledge/ (7 Dateien aktualisiert)
 
 ---
 

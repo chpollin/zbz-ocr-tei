@@ -95,6 +95,7 @@
     const NAV_ITEMS = [
         { href: 'index.html', label: 'Start' },
         { href: 'catalog.html', label: 'Katalog' },
+        { href: 'register.html', label: 'Register' },
         { href: 'reader.html', label: 'Leseansicht' },
         { href: 'about.html', label: 'Projekt' },
         { href: 'infrastruktur/index.html', label: 'Epist. Infrastruktur' }
@@ -180,6 +181,22 @@
         // #zbz-p.1 -> zbz-p.1
         const id = ref.charAt(0) === '#' ? ref.slice(1) : ref;
         return _entityIndexCache[id] || null;
+    }
+
+    let _registerCache = null;
+    function loadEntityRegister() {
+        if (_registerCache) return Promise.resolve(_registerCache);
+        return fetch('data/entity_register.json')
+            .then((r) => r.json())
+            .then((data) => {
+                _registerCache = data;
+                _log('EntityRegister', `${data.entities.length} Eintraege geladen`);
+                return data;
+            })
+            .catch(() => {
+                _log('EntityRegister', 'nicht verfuegbar');
+                return null;
+            });
     }
 
     // --- Image/TEI Paths ---
@@ -289,6 +306,7 @@
         imagePath: imagePath,
         fetchTei: fetchTei,
         loadEntityIndex: loadEntityIndex,
+        loadEntityRegister: loadEntityRegister,
         lookupEntity: lookupEntity,
         debounce: debounce,
         buildCardHtml: buildCardHtml,

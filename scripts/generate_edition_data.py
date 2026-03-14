@@ -1,5 +1,5 @@
 """
-Generiert docs/data/catalog.json fuer die Digitale Edition.
+Generiert Edition-Daten: catalog.json, entity_index.json, entity_register.json.
 
 Liest docs/data/dashboard.json + data/doc_metadata.json und erzeugt
 einen kompakten Katalog mit allen Dokumenten + Edition-Metadaten.
@@ -172,6 +172,98 @@ def export_entity_index():
         return 0
 
 
+def export_entity_register():
+    """Exportiert entity_register.json mit Cross-Doc-Referenzen fuer das Register."""
+    try:
+        from scripts.ner.entity_index import EntityIndex
+        from scripts.ner.entity_store import EntityStore
+        from scripts.core.loaders import discover_entity_docs
+
+        index = EntityIndex()
+        index.load_all()
+        if not index.entries:
+            print("  Entity Register: keine Index-Eintraege")
+            return 0
+
+        # Cross-Doc-Aggregation: iteriere alle Entity-Stores
+        entity_docs = {}      # xml_id -> set of doc_ids
+        entity_mentions = {}  # xml_id -> total mention count
+        entity_contexts = {}  # xml_id -> list of context strings (max 3)
+
+        doc_ids = discover_entity_docs()
+        for doc_id in doc_ids:
+            store = EntityStore.load(doc_id)
+            for rec in store.entities.values():
+                if rec.entity_type in ("event", "date"):
+                    continue
+                entry = index.match_normalized(rec.normalized, rec.entity_type)
+                if not entry:
+                    continue
+                xid = entry.xml_id
+                entity_docs.setdefault(xid, set()).add(doc_id)
+                entity_mentions[xid] = entity_mentions.get(xid, 0) + rec.count
+                if xid not in entity_contexts:
+                    entity_contexts[xid] = []
+                for ctx in (rec.contexts or []):
+                    if ctx and len(entity_contexts[xid]) < 3 and ctx not in entity_contexts[xid]:
+                        entity_contexts[xid].append(ctx)
+
+        # Entity-Array bauen
+        entities = []
+        by_type = {}
+        for entry in index.entries.values():
+            xid = entry.xml_id
+            doc_set = entity_docs.get(xid, set())
+            entities.append({
+                "id": xid,
+                "type": entry.entity_type,
+                "name": entry.main_name,
+                "variants": entry.variants,
+                "wikidata_qid": entry.wikidata_qid,
+                "wikidata_url": entry.wikidata_url,
+                "gnd_id": entry.gnd_id,
+                "doc_ids": sorted(doc_set),
+                "doc_count": len(doc_set),
+                "mention_count": entity_mentions.get(xid, 0),
+                "contexts": entity_contexts.get(xid, []),
+            })
+            t = entry.entity_type
+            if t not in by_type:
+                by_type[t] = {"total": 0, "with_wikidata": 0, "with_gnd": 0, "with_docs": 0}
+            by_type[t]["total"] += 1
+            if entry.wikidata_qid:
+                by_type[t]["with_wikidata"] += 1
+            if entry.gnd_id:
+                by_type[t]["with_gnd"] += 1
+            if doc_set:
+                by_type[t]["with_docs"] += 1
+
+        data = {
+            "generated": datetime.now().isoformat(timespec="seconds"),
+            "summary": {
+                "total_entities": len(entities),
+                "total_with_docs": sum(1 for e in entities if e["doc_count"] > 0),
+                "by_type": by_type,
+            },
+            "entities": entities,
+        }
+
+        output_path = DOCS_DIR / "data" / "entity_register.json"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(
+            json.dumps(data, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        with_docs = data["summary"]["total_with_docs"]
+        print(f"  Entity Register: {len(entities)} Eintraege ({with_docs} mit Docs) -> {output_path}")
+        return len(entities)
+    except Exception as e:
+        print(f"  Entity Register WARNUNG: {e}")
+        import traceback
+        traceback.print_exc()
+        return 0
+
+
 def main():
     print("Edition-Daten generieren...")
 
@@ -187,7 +279,10 @@ def main():
     # 3. Entity Index exportieren
     entity_count = export_entity_index()
 
-    # 4. Katalog schreiben
+    # 4. Entity Register exportieren (mit Cross-Doc-Referenzen)
+    register_count = export_entity_register()
+
+    # 5. Katalog schreiben
     output_path = DOCS_DIR / "data" / "catalog.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
@@ -202,6 +297,8 @@ def main():
     print(f"  Sprachen: {catalog['edition']['languages']}")
     if entity_count:
         print(f"  Entity Index: {entity_count} Eintraege")
+    if register_count:
+        print(f"  Entity Register: {register_count} Eintraege")
 
     # Verifikation
     doc_count = len(catalog["documents"])

@@ -243,11 +243,14 @@
                     item.appendChild(a);
                 });
 
-                // zbz-ID label
+                // zbz-ID label (links to register)
                 if (all.zbzId) {
-                    const zbzLabel = document.createElement('span');
+                    const zbzLabel = document.createElement('a');
                     zbzLabel.className = 'ed-entity-item-zbzid';
                     zbzLabel.textContent = all.zbzId;
+                    zbzLabel.href = `register.html?id=${encodeURIComponent(all.zbzId)}`;
+                    zbzLabel.title = 'Im Register anzeigen';
+                    zbzLabel.addEventListener('click', (e) => { e.stopPropagation(); });
                     item.appendChild(zbzLabel);
                 }
 

@@ -11,59 +11,39 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XM
               (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basisformat)
 ```
 
-## Status (09.03.2026)
+## Pipeline Components
 
-286 PDFs received (E23). OCR + Layout + Classification + PAGE-XML complete for all documents. TEI Unified pipeline validated on 51 docs. NER extraction complete (285/286 docs), 49 docs with entity markup. Wikidata linking 67/285 docs (15%), rest pending.
-
-| Component | Status | Result |
+| Component | Engine | Status |
 |-----------|--------|--------|
-| Image extraction | 286/286 Docs | 4,152 page images (PNG) |
-| Document classification | 286/286 Docs | Gemini 3.1 Flash Lite (Stage 1a, E27) |
-| OCR (Mistral) | 286/286 Docs | CER 6.42% (15 Pilot-Docs evaluated) |
-| Gemini OCR correction | 5/286 Docs | CER 3.97% -> 3.30% (Stage 2b, E29) |
-| Layout analysis (Docling) | 286/286 Docs | 4,152 layout JSONs, RTX 4060 ~5s/page |
-| Gemini Layout QA/Detect | 286/286 Docs | Auto mode: QA for good, detect for bad pages (E25/E26) |
-| PAGE-XML + METS | 286/286 Docs | 4,091 PAGE-XML + 286 METS (Transkribus-compatible) |
-| TEI Unified | 51/286 Docs | Scaffold + Gemini Refinement + RelaxNG Validation (E32) |
-| NER Extraction | 285/286 Docs | 11,685 entities, 26,197 mentions (Gemini Flash Lite, E34/E35) |
-| Entity Index | 4,100 entries | TEI-XML indices in `data/entities/`, 341 with Wikidata QIDs |
-| TEI NER Injection | 49/286 Docs | Entity markup in `output/tei_ner/`, all validated VALID |
-| Wikidata Linking | 67/285 Docs | 15% resolution, remaining 218 docs pending |
-| Evaluation | 15/286 Docs | CER/WER per page + dashboard |
+| Image extraction | Python (PDF to PNG) | Done |
+| Document classification | Gemini Flash Lite | Done |
+| OCR | Mistral Document AI (Azure) | Done |
+| OCR correction | Gemini Flash Lite | Pilot |
+| Layout analysis | Docling RT-DETR V2 (local GPU) | Done |
+| Layout QA/Detect | Gemini Flash Lite | Done |
+| PAGE-XML + METS | Rule-based generator | Done |
+| NER extraction | Gemini Flash Lite (6 entity types) | Done |
+| Entity Index + Wikidata/GND linking | Wikidata API + TEI-XML indices | In progress |
+| TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | In progress |
+| TEI NER injection | Rule-based annotation | In progress |
+| Evaluation + Dashboard | CER/WER + interactive QA UI | Done |
+| Curation Editor | Browser WYSIWYG + FastAPI server | Done |
 
-### OCR Quality by Document Type
-
-| Type | Description | Mistral CER | Accuracy |
-|------|-------------|-------------|----------|
-| A | Single-column | 9.40% | 90.60% |
-| B | Two-column | 6.31% | 93.69% |
-| C | Monograph | 2.65% | 97.35% |
-| D | Special format | 2.88% | 97.12% |
+Current metrics and progress: see [Dashboard](https://dhcraft.github.io/zbz-ocr-tei/) or run locally (`docs/infrastruktur/index.html`). Detailed status: [PROJEKT.md](knowledge/PROJEKT.md).
 
 ### Online Demo
 
-4 representative documents are available on [GitHub Pages](https://dhcraft.github.io/zbz-ocr-tei/) with full viewer functionality (facsimile, OCR text, layout overlay). All results are AI-generated. Full data (286 docs) is only available locally.
+4 representative documents are available on [GitHub Pages](https://dhcraft.github.io/zbz-ocr-tei/) with full viewer functionality (facsimile, OCR text, layout overlay, entities). All results are AI-generated. Full data is only available locally.
 
-| Doc | Type | Language | Pages |
-|-----|------|----------|-------|
-| 2310 | A (single-column) | FR | 3 |
-| 1000 | B (two-column) | FR | 4 |
-| 1330 | D (special) | DE/FR | 6 |
-| 1540 | C (monograph) | DE | 8 |
+### Digital Edition + Curation
 
-### Curation Editor (E36)
-
-Browser-basierter Editor fuer manuelle Kuration der Pipeline-generierten TEI-XML. Editoren korrigieren Text, Struktur und Entities direkt im Reader (Edit-Modus). Ein lokaler FastAPI-Server speichert kuratiertes TEI in `data/tei_curated/` (git-tracked, versioniert).
+The edition (`docs/index.html`) provides a reading interface with catalog, reader, and entity sidebar. The integrated curation editor allows editors to correct text, structure, and entities directly in the browser. A local FastAPI server persists curated TEI.
 
 ```bash
 python -m scripts.server.curation_server    # http://localhost:8000
 ```
 
-Features: WYSIWYG Text-Editing, Block-Toolbar (Typ/Split/Merge), Entity-Tagging mit Autocomplete (Entity Index + Wikidata), RelaxNG-Validierung, Review-Workflow (draft > in_review > approved). Details: [CURATION.md](knowledge/CURATION.md).
-
-### Next Steps
-
-TEI Unified production run (remaining 235 docs) -> Wikidata linking completion -> TEI NER injection -> Curation pilot -> Production delivery. Details: [PLAN.md](knowledge/PLAN.md), [EDITION.md](knowledge/EDITION.md), [CURATION.md](knowledge/CURATION.md).
+Details: [EDITION.md](knowledge/EDITION.md), [CURATION.md](knowledge/CURATION.md).
 
 ## Directory Structure
 
@@ -87,16 +67,15 @@ zbz-ocr-tei/
     server/               # Curation Server (FastAPI, E36)
     core/                 # Shared data loaders
     postprocess/          # Deterministic post-processing
-  docs/                   # Dashboard + QA viewer (GitHub Pages)
-    index.html            # Dashboard: metrics, document catalog, CER comparison
-    viewer.html           # 3-panel viewer: facsimile + OCR + TEI/PAGE-XML
-    benchmark.html        # OCR engine comparison (Mistral vs DeepSeek)
-    tei-viewer.js         # TEI rendering: rendered view, diff, entities
-    page-viewer.js        # PAGE-XML rendering: regions, XML, METS
-    dashboard.js / viewer.js  # Dashboard + viewer logic
-    shared.css / shared.js  # Design system + shared utilities
-    data/dashboard.json   # Generated data
-    data/examples/        # 4 DEMO docs (OCR + Layout for online demo)
+  docs/                   # Digital Edition + Pipeline Infrastructure (GitHub Pages)
+    index.html            # Edition landing page
+    catalog.html          # Document catalog
+    reader.html           # TEI reader with entity sidebar
+    about.html            # Project information
+    infrastruktur/        # Pipeline QA tools (dashboard, viewer, benchmark)
+    js/                   # ES6+ modules (edition, TEI, entities, shared)
+    css/                  # Stylesheets
+    data/                 # Dashboard data + 4 DEMO docs
     images/               # Page scans (4 DEMO docs committed, rest local)
   data/                   # Source data (not versioned)
     scans/                # 286 PDF digitizations
@@ -148,16 +127,13 @@ Complete CLI reference: [knowledge/PIPELINE.md](knowledge/PIPELINE.md) §CLI Com
 | Docling 2.75 | Local / docling-serve API (E24) | Layout analysis (BBox + regions) |
 | Gemini 3.1 Flash Lite | Google AI API (E25/E26/E27/E29/E34) | Layout QA/Detect, classification, OCR correction, NER |
 
-## Dashboard + Viewer
+## Pipeline Infrastructure
 
-The QA dashboard (`docs/index.html`) shows pipeline status, CER comparison, and a filterable document catalog. The viewer (`docs/viewer.html`) offers:
+The QA tools are under `docs/infrastruktur/`:
 
-- **3-panel layout:** Facsimile + OCR text + TEI-XML or PAGE-XML side by side
-- **TEI viewer:** Rendered view, XML with syntax highlighting, reference diff
-- **PAGE-XML viewer:** Region cards, syntax-highlighted XML, METS manifest
-- **Entity sidebar:** Persons/organizations/places/works with Wikidata + GND links
-- **Layout overlay:** SVG BBox visualization over the facsimile (Docling/Gemini toggle)
-- **Gemini QA highlights:** Changed regions shown with yellow dashed borders + change reasons
+- **Dashboard:** Pipeline status, CER comparison, filterable document catalog
+- **Viewer:** 3-panel layout (facsimile + OCR + TEI/PAGE-XML), entity sidebar, layout overlay
+- **Benchmark:** OCR engine comparison (Mistral vs DeepSeek)
 
 ## Documentation
 
@@ -181,4 +157,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-03-09*
+*Last updated: 2026-03-14*
