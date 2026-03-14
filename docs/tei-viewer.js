@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    var teiState = {
+    const teiState = {
         mode: 'rendered',
         entitiesVisible: false,
         currentXml: null,
@@ -21,7 +21,7 @@
     // ---- Tab Switching ----
     function switchTeiMode(mode) {
         teiState.mode = mode;
-        ZBZ.$$('.tei-tab').forEach(function (tab) {
+        ZBZ.$$('.tei-tab').forEach((tab) => {
             tab.classList.toggle('active', tab.getAttribute('data-mode') === mode);
         });
         ZBZ.$('#tei-rendered').classList.toggle('hidden', mode !== 'rendered');
@@ -51,7 +51,7 @@
 
         ZBZ.$('#tei-rendered').innerHTML = '<div class="empty-state">Lade...</div>';
 
-        var xml = await ZBZ.fetchPageTei(docId, page);
+        const xml = await ZBZ.fetchPageTei(docId, page);
         teiState.currentXml = xml;
 
         if (!xml) {
@@ -77,11 +77,11 @@
 
     // ---- Rendered View ----
     function renderTeiView(xml) {
-        var container = ZBZ.$('#tei-rendered');
+        const container = ZBZ.$('#tei-rendered');
         container.innerHTML = '';
         teiState.renderedDone = true;
 
-        var doc = parseTeiXml(xml);
+        const doc = parseTeiXml(xml);
         if (!doc) {
             container.innerHTML = '<div class="empty-state">XML-Parse-Fehler</div>';
             return;
@@ -89,7 +89,7 @@
 
         teiState.entities = ZBZ.EntityUtils.extractEntities(doc);
 
-        var body = doc.querySelector('body');
+        const body = doc.querySelector('body');
         if (!body) {
             container.innerHTML = '<div class="empty-state">Kein &lt;body&gt; im TEI</div>';
             return;
@@ -100,33 +100,32 @@
     }
 
     function renderTeiNode(node, container) {
-        var i;
         if (node.nodeType === 3) {
-            var t = node.textContent;
+            const t = node.textContent;
             if (t.trim()) container.appendChild(document.createTextNode(t));
             return;
         }
         if (node.nodeType !== 1) return;
 
-        var tag = node.localName;
+        const tag = node.localName;
 
         // Skip metadata sections
         if (tag === 'teiHeader' || tag === 'facsimile') return;
 
         // Transparent containers — just render children
         if (tag === 'TEI' || tag === 'text' || tag === 'body' || tag === 'div' || tag === 'front' || tag === 'back') {
-            for (i = 0; i < node.childNodes.length; i++) {
+            for (let i = 0; i < node.childNodes.length; i++) {
                 renderTeiNode(node.childNodes[i], container);
             }
             return;
         }
 
-        var elem = null;
+        let elem = null;
 
         if (tag === 'pb') {
             elem = document.createElement('div');
             elem.className = 'tei-pb';
-            elem.textContent = '- Seite ' + (node.getAttribute('n') || '?') + ' -';
+            elem.textContent = `- Seite ${node.getAttribute('n') || '?'} -`;
             container.appendChild(elem);
             return;
         }
@@ -147,18 +146,18 @@
         } else if (tag === 'note') {
             elem = document.createElement('div');
             elem.className = 'tei-note';
-            var nAttr = node.getAttribute('n');
+            const nAttr = node.getAttribute('n');
             if (nAttr) {
-                var lbl = document.createElement('span');
+                const lbl = document.createElement('span');
                 lbl.className = 'tei-note-label';
-                lbl.textContent = '[' + nAttr + ']';
+                lbl.textContent = `[${nAttr}]`;
                 elem.appendChild(lbl);
             }
         } else if (tag === 'figure') {
             elem = document.createElement('div');
             elem.className = 'tei-figure';
         } else if (tag === 'hi') {
-            var rend = node.getAttribute('rendition') || '';
+            const rend = node.getAttribute('rendition') || '';
             elem = document.createElement('span');
             if (rend === '#b') {
                 elem.style.fontWeight = '600';
@@ -187,7 +186,7 @@
         } else if (tag === 'foreign') {
             elem = document.createElement('span');
             elem.style.fontStyle = 'italic';
-            elem.title = 'Sprache: ' + (node.getAttribute('xml:lang') || '?');
+            elem.title = `Sprache: ${node.getAttribute('xml:lang') || '?'}`;
         } else if (tag === 'sp') {
             elem = document.createElement('div');
             elem.className = 'tei-p';
@@ -197,14 +196,14 @@
             elem.style.fontWeight = '600';
         } else {
             // Unknown elements: render children transparently
-            for (i = 0; i < node.childNodes.length; i++) {
+            for (let i = 0; i < node.childNodes.length; i++) {
                 renderTeiNode(node.childNodes[i], container);
             }
             return;
         }
 
         if (elem) {
-            for (i = 0; i < node.childNodes.length; i++) {
+            for (let i = 0; i < node.childNodes.length; i++) {
                 renderTeiNode(node.childNodes[i], elem);
             }
             container.appendChild(elem);
@@ -220,15 +219,15 @@
     // ---- Diff View ----
     function renderTeiDiff(xml, docId, page) {
         teiState.diffDone = true;
-        var genContainer = ZBZ.$('#diff-generated');
-        var refContainer = ZBZ.$('#diff-reference');
+        const genContainer = ZBZ.$('#diff-generated');
+        const refContainer = ZBZ.$('#diff-reference');
 
-        genContainer.innerHTML = '<pre>' + ZBZ.highlightXml(xml) + '</pre>';
+        genContainer.innerHTML = `<pre>${ZBZ.highlightXml(xml)}</pre>`;
         refContainer.innerHTML = '<div class="empty-state">Lade Referenz...</div>';
 
-        ZBZ.fetchRefTeiPage(docId, page).then(function (refXml) {
+        ZBZ.fetchRefTeiPage(docId, page).then((refXml) => {
             if (refXml) {
-                refContainer.innerHTML = '<pre>' + ZBZ.highlightXml(refXml) + '</pre>';
+                refContainer.innerHTML = `<pre>${ZBZ.highlightXml(refXml)}</pre>`;
             } else {
                 refContainer.innerHTML = '<div class="empty-state">Keine Referenz-TEI fuer dieses Dokument.</div>';
             }
@@ -251,34 +250,34 @@
     }
 
     function renderEntityGroup(selector, entities) {
-        var list = ZBZ.$(selector + ' .entity-group-items');
+        const list = ZBZ.$(selector + ' .entity-group-items');
         if (!list) return;
         list.innerHTML = '';
         if (entities.length === 0) {
             list.innerHTML = '<div style="font-size:0.7rem;color:var(--text-muted);padding:2px 0">Keine</div>';
             return;
         }
-        entities.forEach(function (ent) {
-            var item = document.createElement('div');
+        entities.forEach((ent) => {
+            const item = document.createElement('div');
             item.className = 'entity-item';
 
-            var all = ZBZ.EntityUtils.resolveAllLinks(ent.ref, ZBZ.lookupEntity);
+            const all = ZBZ.EntityUtils.resolveAllLinks(ent.ref, ZBZ.lookupEntity);
 
-            var name = document.createElement('span');
+            const name = document.createElement('span');
             name.className = 'entity-item-name';
             name.textContent = all.label !== ent.ref ? all.label : ent.name;
             name.title = all.label !== ent.ref ? all.label : ent.name;
             item.appendChild(name);
 
             if (ent.count > 1) {
-                var cnt = document.createElement('span');
+                const cnt = document.createElement('span');
                 cnt.className = 'entity-item-count';
                 cnt.textContent = ent.count;
                 item.appendChild(cnt);
             }
 
             // Resolution status
-            var statusIcon = document.createElement('span');
+            const statusIcon = document.createElement('span');
             if (all.links.length > 0) {
                 statusIcon.className = 'entity-item-status entity-resolved';
                 statusIcon.textContent = '\u2713';
@@ -291,54 +290,56 @@
             item.appendChild(statusIcon);
 
             // All external links (WD + GND)
-            all.links.forEach(function (lnk) {
-                var a = document.createElement('a');
+            all.links.forEach((lnk) => {
+                const a = document.createElement('a');
                 a.className = 'entity-item-link';
                 a.textContent = lnk.type === 'wikidata' ? 'WD' : 'GND';
                 a.href = lnk.url;
                 a.target = '_blank';
-                a.title = lnk.type === 'wikidata' ? 'Wikidata ' + lnk.id : 'GND ' + lnk.id;
-                a.addEventListener('click', function (e) { e.stopPropagation(); });
+                a.title = lnk.type === 'wikidata' ? `Wikidata ${lnk.id}` : `GND ${lnk.id}`;
+                a.addEventListener('click', (e) => { e.stopPropagation(); });
                 item.appendChild(a);
             });
 
             // zbz-ID label
             if (all.zbzId) {
-                var zbzLabel = document.createElement('span');
+                const zbzLabel = document.createElement('span');
                 zbzLabel.className = 'entity-item-zbzid';
                 zbzLabel.textContent = all.zbzId;
                 item.appendChild(zbzLabel);
             }
 
-            item.addEventListener('click', function () { scrollToEntity(ent.ref); });
+            item.addEventListener('click', () => { scrollToEntity(ent.ref); });
             list.appendChild(item);
         });
     }
 
     function scrollToEntity(ref) {
-        var elem = ZBZ.$('#tei-rendered [data-ref="' + ref + '"]');
+        const elem = ZBZ.$(`#tei-rendered [data-ref="${ref}"]`);
         if (!elem) return;
         // Switch to rendered mode if not there
         if (teiState.mode !== 'rendered') switchTeiMode('rendered');
         elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
         elem.classList.add('highlight-flash');
-        setTimeout(function () { elem.classList.remove('highlight-flash'); }, 1100);
+        setTimeout(() => { elem.classList.remove('highlight-flash'); }, 1100);
     }
 
     // ---- Init: Bind event listeners ----
     function init() {
-        ZBZ.$$('.tei-tab').forEach(function (tab) {
-            tab.addEventListener('click', function () {
+        ZBZ.$$('.tei-tab').forEach((tab) => {
+            tab.addEventListener('click', () => {
                 switchTeiMode(tab.getAttribute('data-mode'));
             });
         });
 
-        ZBZ.$('#entity-toggle').addEventListener('click', function () { toggleEntitySidebar(); });
-        ZBZ.$('#entity-close').addEventListener('click', function () { toggleEntitySidebar(); });
+        ZBZ.$('#entity-toggle').addEventListener('click', () => { toggleEntitySidebar(); });
+        ZBZ.$('#entity-close').addEventListener('click', () => { toggleEntitySidebar(); });
     }
 
     // Auto-init when script loads (DOM is ready since script is at bottom of body)
     init();
+
+    ZBZ.log('TeiViewer', 'ready (rendered/xml/diff)');
 
     // ---- Public API ----
     ZBZ.TeiViewer = {

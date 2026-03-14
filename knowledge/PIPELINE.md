@@ -419,7 +419,7 @@ Full pipeline output (`output/`) is gitignored and only available locally. For t
 
 ## Digitale Edition + Curation (E33/E36)
 
-**Directory:** `docs/edition/` | **Details:** [EDITION](EDITION.md) (Architektur, Design System) | [CURATION](CURATION.md) (Edit-Modus, Server, API)
+**Directory:** Edition: `docs/` | Infrastruktur: `docs/infrastruktur/` | **Details:** [EDITION](EDITION.md) (Architektur, Design System) | [CURATION](CURATION.md) (Edit-Modus, Server, API)
 
 Oeffentliche digitale Edition auf GitHub Pages (Lese-Modus) mit optionalem Kurations-Modus (FastAPI Server). Zwei Modi, ein System: Reader, Katalog, Entity-Sidebar im Lese-Modus; Text-Korrektur, Struktur-Editing, Entity-Kuration, Review-Workflow im Edit-Modus.
 

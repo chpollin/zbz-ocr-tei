@@ -480,10 +480,12 @@ def entity_index_search(q: str = "", limit: int = 10):
 # Static File Serving (Edition Frontend)
 # ---------------------------------------------------------------------------
 
-# Mount edition assets
-app.mount("/edition", StaticFiles(directory=str(DOCS_DIR / "edition"), html=True), name="edition")
+# Mount static assets -- Edition now lives at docs/ root
+app.mount("/css", StaticFiles(directory=str(DOCS_DIR / "css")), name="css")
+app.mount("/js", StaticFiles(directory=str(DOCS_DIR / "js")), name="js")
 app.mount("/images", StaticFiles(directory=str(DOCS_DIR / "images")), name="images")
 app.mount("/data", StaticFiles(directory=str(DOCS_DIR / "data")), name="data")
+app.mount("/infrastruktur", StaticFiles(directory=str(DOCS_DIR / "infrastruktur"), html=True), name="infrastruktur")
 
 # Serve entity-utils.js from docs root
 @app.get("/entity-utils.js")
@@ -497,11 +499,24 @@ def serve_entity_utils():
     raise HTTPException(status_code=404)
 
 
+# Serve Edition HTML pages from docs root
+@app.get("/{page}.html")
+def serve_edition_page(page: str):
+    from fastapi.responses import FileResponse
+    allowed = {"index", "catalog", "reader", "about"}
+    if page not in allowed:
+        raise HTTPException(status_code=404)
+    path = DOCS_DIR / f"{page}.html"
+    if path.exists():
+        return FileResponse(path, media_type="text/html")
+    raise HTTPException(status_code=404)
+
+
 # Root redirect
 @app.get("/")
 def root_redirect():
     from fastapi.responses import RedirectResponse
-    return RedirectResponse(url="/edition/reader.html")
+    return RedirectResponse(url="/reader.html")
 
 
 # ---------------------------------------------------------------------------
@@ -517,7 +532,7 @@ def main():
     import uvicorn
 
     print(f"=== ZBZ Curation Server ===")
-    print(f"  Edition: http://{args.host}:{args.port}/edition/reader.html")
+    print(f"  Edition: http://{args.host}:{args.port}/reader.html")
     print(f"  API:     http://{args.host}:{args.port}/api/health")
     print(f"  Curated: {TEI_CURATED_DIR}")
     print()

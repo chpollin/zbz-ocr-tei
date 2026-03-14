@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epistemische Infrastruktur – Nachlass Jeanne Hersch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/edition.css">
+    <link rel="stylesheet" href="../shared.css">
+</head>
+<body class="edition-page infrastruktur-page">
+
+    <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
+
+    <div class="infra-subnav">
+        <span class="infra-subnav-title">Pipeline</span>
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="viewer.html">Viewer</a>
+        <a href="benchmark.html">Benchmark</a>
+    </div>
+
+    <div class="disclaimer-bar">
+        <strong>Epistemische Infrastruktur</strong> &mdash; Validierung der OCR/Layout/TEI-Pipeline.
+        Alle Ergebnisse (OCR-Text, Layout-Regionen, Metadaten, Klassifikation) sind KI-generiert.
+        Die vollstaendigen Daten liegen nur lokal vor &mdash; online sind 4 Beispieldokumente
+        (<span class="demo-badge-inline">DEMO</span>) verfuegbar.
+    </div>
+
+    <div class="container">
+        <div id="loading">Lade Dashboard-Daten...</div>
+        <div id="app" class="hidden">
+
+            <!-- A) Dashboard-Metriken -->
+            <div class="metric-grid" id="metrics"></div>
+
+            <!-- B) Phasen-Uebersicht -->
+            <div class="section-title">Korpus-Uebersicht</div>
+            <div class="section-subtitle">Verteilung nach Typ, Sprache und Publikationsform (Gemini-Klassifikation)</div>
+            <div id="phase-summary"></div>
+
+            <!-- C) Dokumentkatalog -->
+            <div class="section-title section-gap">Dokumentkatalog</div>
+            <div class="filter-bar" id="filters">
+                <input type="text" class="filter-input" id="filter-search" placeholder="Dokument suchen...">
+                <select class="filter-select" id="filter-type">
+                    <option value="">Alle Typen</option>
+                    <option value="A">Typ A - Einspaltig</option>
+                    <option value="B">Typ B - Zweispaltig</option>
+                    <option value="C">Typ C - Monografie</option>
+                    <option value="D">Typ D - Spezial</option>
+                    <option value="-">Nicht klassifiziert</option>
+                </select>
+                <select class="filter-select" id="filter-lang">
+                    <option value="">Alle Sprachen</option>
+                    <option value="FR">Franzoesisch</option>
+                    <option value="DE">Deutsch</option>
+                    <option value="DE/FR">Deutsch/Franzoesisch</option>
+                    <option value="EN">Englisch</option>
+                </select>
+                <select class="filter-select" id="filter-status">
+                    <option value="">Alle Status</option>
+                    <option value="pilot">Pilot-Docs</option>
+                    <option value="complete">Pipeline komplett</option>
+                    <option value="partial">In Bearbeitung</option>
+                    <option value="pending">Ausstehend</option>
+                </select>
+                <select class="filter-select" id="filter-engine">
+                    <option value="">Alle Engines</option>
+                    <option value="mistral">Mistral</option>
+                    <option value="deepseek">DeepSeek</option>
+                    <option value="llm">LLM-korrigiert</option>
+                </select>
+            </div>
+            <div id="doc-catalog"></div>
+        </div>
+    </div>
+
+    <script src="../js/edition-shared.js"></script>
+    <script src="../shared.js"></script>
+    <script src="../dashboard.js"></script>
+</body>
+</html>

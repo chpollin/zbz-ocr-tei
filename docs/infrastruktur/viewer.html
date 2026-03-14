@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokument - ZBZ OCR Pipeline</title>
-    <link rel="stylesheet" href="shared.css">
+    <title>Dokument-Viewer – Epistemische Infrastruktur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/edition.css">
+    <link rel="stylesheet" href="../shared.css">
 </head>
-<body class="viewer-page">
+<body class="viewer-page infrastruktur-page">
+
     <div class="disclaimer-bar">
-        <strong>Prototyping Interface</strong> &mdash; Validierung der OCR/Layout/TEI-Pipeline.
+        <strong>Epistemische Infrastruktur</strong> &mdash; Validierung der OCR/Layout/TEI-Pipeline.
         Alle Ergebnisse sind KI-generiert. Online sind 4 Beispieldokumente verfuegbar, vollstaendige Daten liegen lokal vor.
     </div>
     <!-- Header -->
@@ -98,15 +103,10 @@
                 </div>
                 <div class="viewer-panel-content viewer-tei">
                     <div class="tei-content-wrapper">
-                        <!-- Rendered View (default) -->
                         <div id="tei-rendered" class="tei-view tei-rendered"></div>
-
-                        <!-- XML Syntax-Highlighted View -->
                         <div id="tei-xml-view" class="tei-view tei-xml-view hidden">
                             <pre id="tei-xml-code"></pre>
                         </div>
-
-                        <!-- Diff View (side-by-side) -->
                         <div id="tei-diff-view" class="tei-view hidden no-padding">
                             <div class="tei-diff-panel">
                                 <div class="tei-diff-column">
@@ -119,8 +119,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Entity Sidebar -->
                         <div id="tei-entity-sidebar" class="tei-entity-sidebar">
                             <div class="entity-sidebar-header">
                                 <span>Entitaeten</span>
@@ -128,27 +126,19 @@
                             </div>
                             <div class="entity-sidebar-content">
                                 <div class="entity-group" id="entity-group-persons">
-                                    <div class="entity-group-header">
-                                        <span class="entity-type-dot person"></span> Personen
-                                    </div>
+                                    <div class="entity-group-header"><span class="entity-type-dot person"></span> Personen</div>
                                     <div class="entity-group-items"></div>
                                 </div>
                                 <div class="entity-group" id="entity-group-orgs">
-                                    <div class="entity-group-header">
-                                        <span class="entity-type-dot org"></span> Organisationen
-                                    </div>
+                                    <div class="entity-group-header"><span class="entity-type-dot org"></span> Organisationen</div>
                                     <div class="entity-group-items"></div>
                                 </div>
                                 <div class="entity-group" id="entity-group-places">
-                                    <div class="entity-group-header">
-                                        <span class="entity-type-dot place"></span> Orte
-                                    </div>
+                                    <div class="entity-group-header"><span class="entity-type-dot place"></span> Orte</div>
                                     <div class="entity-group-items"></div>
                                 </div>
                                 <div class="entity-group" id="entity-group-works">
-                                    <div class="entity-group-header">
-                                        <span class="entity-type-dot work"></span> Werke
-                                    </div>
+                                    <div class="entity-group-header"><span class="entity-type-dot work"></span> Werke</div>
                                     <div class="entity-group-items"></div>
                                 </div>
                             </div>
@@ -181,11 +171,10 @@
         </div>
     </div>
 
-
-    <script src="shared.js"></script>
-    <script src="entity-utils.js"></script>
-    <script src="tei-viewer.js"></script>
-    <script src="page-viewer.js"></script>
-    <script src="viewer.js"></script>
+    <script src="../shared.js"></script>
+    <script src="../entity-utils.js"></script>
+    <script src="../tei-viewer.js"></script>
+    <script src="../page-viewer.js"></script>
+    <script src="../viewer.js"></script>
 </body>
 </html>

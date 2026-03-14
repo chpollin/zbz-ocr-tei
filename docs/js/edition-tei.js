@@ -2,14 +2,14 @@
  * ZBZ Edition – TEI Renderer
  * Renders TEI-XML as readable text with entity extraction.
  * Adapted from docs/tei-viewer.js for reading-optimized display.
- * Namespace: ZBZ.EditionTei (ES5, IIFE)
+ * Namespace: ZBZ.EditionTei (ES6+, IIFE)
  */
 (function () {
     'use strict';
 
-    var E = ZBZ.Edition;
+    const E = ZBZ.Edition;
 
-    var state = {
+    const state = {
         currentXml: null,
         mode: 'rendered',
         entities: { persons: [], orgs: [], places: [], works: [] }
@@ -26,7 +26,7 @@
             return;
         }
 
-        var doc = E.parseXml(xml);
+        const doc = E.parseXml(xml);
         if (!doc) {
             container.innerHTML = '<div class="ed-empty-state">XML-Parse-Fehler</div>';
             return;
@@ -34,7 +34,7 @@
 
         state.entities = ZBZ.EntityUtils.extractEntities(doc);
 
-        var body = doc.querySelector('body');
+        const body = doc.querySelector('body');
         if (!body) {
             container.innerHTML = '<div class="ed-empty-state">Kein &lt;body&gt; im TEI</div>';
             return;
@@ -50,20 +50,19 @@
             container.innerHTML = '<div class="ed-empty-state">Keine TEI-Daten.</div>';
             return;
         }
-        container.innerHTML = '<div class="ed-xml-view">' + E.highlightXml(xml) + '</div>';
+        container.innerHTML = `<div class="ed-xml-view">${E.highlightXml(xml)}</div>`;
     }
 
     // --- Recursive Node Renderer ---
     function renderNode(node, container) {
-        var i;
         if (node.nodeType === 3) {
-            var t = node.textContent;
+            const t = node.textContent;
             if (t.trim()) container.appendChild(document.createTextNode(t));
             return;
         }
         if (node.nodeType !== 1) return;
 
-        var tag = node.localName;
+        const tag = node.localName;
 
         // Skip metadata
         if (tag === 'teiHeader' || tag === 'facsimile') return;
@@ -71,18 +70,18 @@
         // Transparent containers
         if (tag === 'TEI' || tag === 'text' || tag === 'body' || tag === 'div' ||
             tag === 'front' || tag === 'back') {
-            for (i = 0; i < node.childNodes.length; i++) {
+            for (let i = 0; i < node.childNodes.length; i++) {
                 renderNode(node.childNodes[i], container);
             }
             return;
         }
 
-        var elem = null;
+        let elem = null;
 
         if (tag === 'pb') {
             elem = document.createElement('div');
             elem.className = 'ed-tei-pb';
-            elem.textContent = '-- Seite ' + (node.getAttribute('n') || '?') + ' --';
+            elem.textContent = `-- Seite ${node.getAttribute('n') || '?'} --`;
             container.appendChild(elem);
             return;
         }
@@ -103,11 +102,11 @@
         } else if (tag === 'note') {
             elem = document.createElement('div');
             elem.className = 'ed-tei-note';
-            var nAttr = node.getAttribute('n');
+            const nAttr = node.getAttribute('n');
             if (nAttr) {
-                var lbl = document.createElement('span');
+                const lbl = document.createElement('span');
                 lbl.className = 'ed-tei-note-label';
-                lbl.textContent = '[' + nAttr + ']';
+                lbl.textContent = `[${nAttr}]`;
                 elem.appendChild(lbl);
             }
         } else if (tag === 'figure') {
@@ -117,14 +116,14 @@
             container.appendChild(elem);
             return;
         } else if (tag === 'hi') {
-            var rend = node.getAttribute('rendition') || '';
+            const rend = node.getAttribute('rendition') || '';
             if (rend === '#sup') {
                 elem = document.createElement('sup');
             } else if (rend === '#sub') {
                 elem = document.createElement('sub');
             } else {
                 elem = document.createElement('span');
-                var hiCls = { '#b': 'ed-tei-hi-bold', '#i': 'ed-tei-hi-italic', '#u': 'ed-tei-hi-underline', '#g': 'ed-tei-hi-spaced' };
+                const hiCls = { '#b': 'ed-tei-hi-bold', '#i': 'ed-tei-hi-italic', '#u': 'ed-tei-hi-underline', '#g': 'ed-tei-hi-spaced' };
                 if (hiCls[rend]) elem.className = hiCls[rend];
             }
         } else if (tag === 'persName') {
@@ -141,7 +140,7 @@
         } else if (tag === 'foreign') {
             elem = document.createElement('span');
             elem.className = 'ed-tei-foreign';
-            elem.title = 'Sprache: ' + (node.getAttribute('xml:lang') || '?');
+            elem.title = `Sprache: ${node.getAttribute('xml:lang') || '?'}`;
         } else if (tag === 'sp') {
             elem = document.createElement('div');
             elem.className = 'ed-tei-sp';
@@ -149,14 +148,14 @@
             elem = document.createElement('span');
             elem.className = 'ed-tei-speaker';
         } else {
-            for (i = 0; i < node.childNodes.length; i++) {
+            for (let i = 0; i < node.childNodes.length; i++) {
                 renderNode(node.childNodes[i], container);
             }
             return;
         }
 
         if (elem) {
-            for (i = 0; i < node.childNodes.length; i++) {
+            for (let i = 0; i < node.childNodes.length; i++) {
                 renderNode(node.childNodes[i], elem);
             }
             container.appendChild(elem);
@@ -167,7 +166,7 @@
     function renderEntitySidebar(container) {
         container.innerHTML = '';
 
-        var title = document.createElement('div');
+        const title = document.createElement('div');
         title.className = 'ed-entity-sidebar-title';
         title.innerHTML = 'Entitaeten <button class="ed-entity-close" id="entity-close" aria-label="Schliessen">&times;</button>';
         container.appendChild(title);
@@ -179,15 +178,15 @@
     }
 
     function renderGroup(container, label, key) {
-        var group = document.createElement('div');
-        group.className = 'ed-entity-group ed-entity-group-' + key;
+        const group = document.createElement('div');
+        group.className = `ed-entity-group ed-entity-group-${key}`;
 
-        var title = document.createElement('div');
+        const title = document.createElement('div');
         title.className = 'ed-entity-group-title';
         title.textContent = label;
-        var entities = state.entities[key];
+        const entities = state.entities[key];
         if (entities.length) {
-            var badge = document.createElement('span');
+            const badge = document.createElement('span');
             badge.className = 'ed-entity-group-count';
             badge.textContent = entities.length;
             title.appendChild(badge);
@@ -195,32 +194,32 @@
         group.appendChild(title);
 
         if (!entities.length) {
-            var empty = document.createElement('div');
+            const empty = document.createElement('div');
             empty.className = 'ed-entity-empty';
             empty.textContent = 'Keine';
             group.appendChild(empty);
         } else {
-            entities.forEach(function (ent) {
-                var item = document.createElement('div');
+            entities.forEach((ent) => {
+                const item = document.createElement('div');
                 item.className = 'ed-entity-item';
 
-                var all = ZBZ.EntityUtils.resolveAllLinks(ent.ref, E.lookupEntity);
+                const all = ZBZ.EntityUtils.resolveAllLinks(ent.ref, E.lookupEntity);
 
-                var name = document.createElement('span');
+                const name = document.createElement('span');
                 name.className = 'ed-entity-item-name';
                 name.textContent = all.label !== ent.ref ? all.label : ent.name;
                 name.title = all.label !== ent.ref ? all.label : ent.name;
                 item.appendChild(name);
 
                 if (ent.count > 1) {
-                    var cnt = document.createElement('span');
+                    const cnt = document.createElement('span');
                     cnt.className = 'ed-entity-item-count';
                     cnt.textContent = ent.count;
                     item.appendChild(cnt);
                 }
 
                 // Resolution status indicator
-                var statusIcon = document.createElement('span');
+                const statusIcon = document.createElement('span');
                 if (all.links.length > 0) {
                     statusIcon.className = 'ed-entity-status ed-entity-resolved';
                     statusIcon.textContent = '\u2713';
@@ -233,26 +232,26 @@
                 item.appendChild(statusIcon);
 
                 // All external links (WD + GND)
-                all.links.forEach(function (lnk) {
-                    var a = document.createElement('a');
+                all.links.forEach((lnk) => {
+                    const a = document.createElement('a');
                     a.className = 'ed-entity-item-link';
                     a.textContent = lnk.type === 'wikidata' ? 'WD' : 'GND';
                     a.href = lnk.url;
                     a.target = '_blank';
-                    a.title = lnk.type === 'wikidata' ? 'Wikidata ' + lnk.id : 'GND ' + lnk.id;
-                    a.addEventListener('click', function (e) { e.stopPropagation(); });
+                    a.title = lnk.type === 'wikidata' ? `Wikidata ${lnk.id}` : `GND ${lnk.id}`;
+                    a.addEventListener('click', (e) => { e.stopPropagation(); });
                     item.appendChild(a);
                 });
 
                 // zbz-ID label
                 if (all.zbzId) {
-                    var zbzLabel = document.createElement('span');
+                    const zbzLabel = document.createElement('span');
                     zbzLabel.className = 'ed-entity-item-zbzid';
                     zbzLabel.textContent = all.zbzId;
                     item.appendChild(zbzLabel);
                 }
 
-                item.addEventListener('click', function () { scrollToEntity(ent.ref); });
+                item.addEventListener('click', () => { scrollToEntity(ent.ref); });
                 group.appendChild(item);
             });
         }
@@ -261,11 +260,11 @@
     }
 
     function scrollToEntity(ref) {
-        var elem = document.querySelector('.ed-text-content [data-ref="' + ref + '"]');
+        const elem = document.querySelector(`.ed-text-content [data-ref="${ref}"]`);
         if (!elem) return;
         elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
         elem.classList.add('highlight-flash');
-        setTimeout(function () { elem.classList.remove('highlight-flash'); }, 1100);
+        setTimeout(() => { elem.classList.remove('highlight-flash'); }, 1100);
     }
 
     function getEntities() {
@@ -278,6 +277,8 @@
                state.entities.places.length > 0 ||
                state.entities.works.length > 0;
     }
+
+    if (ZBZ.log) ZBZ.log('EditionTei', 'ready');
 
     // --- Public API ---
     ZBZ.EditionTei = {

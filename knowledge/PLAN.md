@@ -162,7 +162,7 @@ PDF-Scans (286 PDFs)
   |
   +---> evaluate_ocr.py ----------> CER + Structure + Entity Scores
   |
-  +---> generate_edition_data.py -> docs/edition/data/catalog.json
+  +---> generate_edition_data.py -> docs/data/catalog.json
 ```
 
 Aktueller Status pro Stufe: siehe [PROJEKT](PROJEKT.md) §Component Status.

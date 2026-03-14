@@ -1,14 +1,14 @@
 /**
  * ZBZ Edition – Catalog Module
  * Document catalog with faceted filters, search, table/card views.
- * Namespace: ZBZ.EditionCatalog (ES5, IIFE)
+ * Namespace: ZBZ.EditionCatalog (ES6+, IIFE)
  */
 (function () {
     'use strict';
 
-    var E = ZBZ.Edition;
+    const E = ZBZ.Edition;
 
-    var state = {
+    const state = {
         catalog: null,
         documents: [],
         filtered: [],
@@ -21,7 +21,7 @@
         serverAvailable: false
     };
 
-    var filters = {
+    const filters = {
         types: [],
         langs: [],
         forms: [],
@@ -31,7 +31,7 @@
 
     // --- Init ---
     function init() {
-        E.loadCatalog().then(function (catalog) {
+        E.loadCatalog().then((catalog) => {
             if (!catalog) return;
             state.catalog = catalog;
             state.documents = catalog.documents || [];
@@ -42,6 +42,8 @@
             bindEvents();
             applyFilters();
             _checkCurationServer();
+
+            ZBZ.log('Catalog', `${state.documents.length} Docs | MiniSearch: ${state.searchIndex ? 'aktiv' : 'aus'}`);
         });
     }
 
@@ -58,14 +60,12 @@
                     prefix: true
                 }
             });
-            state.searchIndex.addAll(state.documents.map(function (d) {
-                return {
-                    id: d.id,
-                    title: d.title || '',
-                    author: d.author || '',
-                    desc: d.desc || ''
-                };
-            }));
+            state.searchIndex.addAll(state.documents.map((d) => ({
+                id: d.id,
+                title: d.title || '',
+                author: d.author || '',
+                desc: d.desc || ''
+            })));
         } catch (e) {
             console.warn('MiniSearch init failed, falling back to simple search:', e);
             state.searchIndex = null;
@@ -74,52 +74,52 @@
 
     // --- Filter Rendering ---
     function renderFilters() {
-        var catalog = state.catalog;
+        const catalog = state.catalog;
         if (!catalog) return;
 
         // Types
-        var typeContainer = E.$('#filter-types');
+        const typeContainer = E.$('#filter-types');
         if (typeContainer) {
-            var types = catalog.corpus && catalog.corpus.types ? catalog.corpus.types : {};
+            const types = catalog.corpus && catalog.corpus.types ? catalog.corpus.types : {};
             renderCheckboxGroup(typeContainer, types, 'type', E.TYPE_LABELS);
         }
 
         // Languages
-        var langContainer = E.$('#filter-langs');
+        const langContainer = E.$('#filter-langs');
         if (langContainer) {
-            var langs = catalog.corpus && catalog.corpus.languages ? catalog.corpus.languages : {};
+            const langs = catalog.corpus && catalog.corpus.languages ? catalog.corpus.languages : {};
             // Show top 6 languages only
-            var sorted = Object.keys(langs).sort(function (a, b) { return langs[b] - langs[a]; });
-            var top = {};
-            sorted.slice(0, 6).forEach(function (k) { top[k] = langs[k]; });
+            const sorted = Object.keys(langs).sort((a, b) => langs[b] - langs[a]);
+            const top = {};
+            sorted.slice(0, 6).forEach((k) => { top[k] = langs[k]; });
             renderCheckboxGroup(langContainer, top, 'lang', E.LANG_LABELS);
         }
 
         // Forms
-        var formContainer = E.$('#filter-forms');
+        const formContainer = E.$('#filter-forms');
         if (formContainer) {
-            var forms = catalog.corpus && catalog.corpus.forms ? catalog.corpus.forms : {};
+            const forms = catalog.corpus && catalog.corpus.forms ? catalog.corpus.forms : {};
             renderCheckboxGroup(formContainer, forms, 'form', E.PUB_FORM_LABELS);
         }
     }
 
     function renderCheckboxGroup(container, counts, prefix, labels) {
         container.innerHTML = '';
-        Object.keys(counts).forEach(function (key) {
-            var label = document.createElement('label');
+        Object.keys(counts).forEach((key) => {
+            const label = document.createElement('label');
             label.className = 'ed-filter-label';
 
-            var cb = document.createElement('input');
+            const cb = document.createElement('input');
             cb.type = 'checkbox';
             cb.value = key;
             cb.name = prefix;
-            cb.addEventListener('change', function () {
+            cb.addEventListener('change', () => {
                 updateFilterState();
                 applyFilters();
             });
 
-            var text = document.createTextNode(' ' + ((labels && labels[key]) || key));
-            var count = document.createElement('span');
+            const text = document.createTextNode(' ' + ((labels && labels[key]) || key));
+            const count = document.createElement('span');
             count.className = 'ed-filter-count';
             count.textContent = counts[key];
 
@@ -133,7 +133,7 @@
     // --- Events ---
     function bindEvents() {
         // Search input
-        var searchInput = E.$('#catalog-search');
+        const searchInput = E.$('#catalog-search');
         if (searchInput) {
             searchInput.addEventListener('input', E.debounce(function () {
                 state.searchQuery = searchInput.value.trim();
@@ -142,19 +142,19 @@
         }
 
         // View toggle
-        E.$$('.ed-view-btn').forEach(function (btn) {
-            btn.addEventListener('click', function () {
+        E.$$('.ed-view-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
                 state.view = btn.getAttribute('data-view');
-                E.$$('.ed-view-btn').forEach(function (b) { b.classList.toggle('active', b === btn); });
+                E.$$('.ed-view-btn').forEach((b) => { b.classList.toggle('active', b === btn); });
                 renderResults();
             });
         });
 
         // Sort select
-        var sortSelect = E.$('#catalog-sort');
+        const sortSelect = E.$('#catalog-sort');
         if (sortSelect) {
-            sortSelect.addEventListener('change', function () {
-                var val = sortSelect.value;
+            sortSelect.addEventListener('change', () => {
+                const val = sortSelect.value;
                 if (val.charAt(0) === '-') {
                     state.sortKey = val.substring(1);
                     state.sortAsc = false;
@@ -167,8 +167,8 @@
         }
 
         // Date range
-        var dateFrom = E.$('#filter-date-from');
-        var dateTo = E.$('#filter-date-to');
+        const dateFrom = E.$('#filter-date-from');
+        const dateTo = E.$('#filter-date-to');
         if (dateFrom) dateFrom.addEventListener('input', E.debounce(function () {
             filters.dateFrom = dateFrom.value;
             applyFilters();
@@ -187,21 +187,21 @@
     }
 
     function getCheckedValues(name) {
-        return E.$$('input[name="' + name + '"]:checked').map(function (cb) { return cb.value; });
+        return E.$$(`input[name="${name}"]:checked`).map((cb) => cb.value);
     }
 
     function applyFilters() {
-        var docs = state.documents;
+        let docs = state.documents;
 
         // Search
         if (state.searchQuery && state.searchIndex) {
-            var results = state.searchIndex.search(state.searchQuery);
-            var ids = {};
-            results.forEach(function (r) { ids[r.id] = true; });
-            docs = docs.filter(function (d) { return ids[d.id]; });
+            const results = state.searchIndex.search(state.searchQuery);
+            const ids = {};
+            results.forEach((r) => { ids[r.id] = true; });
+            docs = docs.filter((d) => ids[d.id]);
         } else if (state.searchQuery) {
-            var q = state.searchQuery.toLowerCase();
-            docs = docs.filter(function (d) {
+            const q = state.searchQuery.toLowerCase();
+            docs = docs.filter((d) => {
                 return (d.title && d.title.toLowerCase().indexOf(q) > -1) ||
                        (d.author && d.author.toLowerCase().indexOf(q) > -1) ||
                        (d.id.indexOf(q) > -1) ||
@@ -211,31 +211,31 @@
 
         // Type filter
         if (filters.types.length) {
-            docs = docs.filter(function (d) { return filters.types.indexOf(d.type) > -1; });
+            docs = docs.filter((d) => filters.types.indexOf(d.type) > -1);
         }
 
         // Language filter
         if (filters.langs.length) {
-            docs = docs.filter(function (d) { return filters.langs.indexOf(d.lang) > -1; });
+            docs = docs.filter((d) => filters.langs.indexOf(d.lang) > -1);
         }
 
         // Form filter
         if (filters.forms.length) {
-            docs = docs.filter(function (d) { return filters.forms.indexOf(d.pub_form) > -1; });
+            docs = docs.filter((d) => filters.forms.indexOf(d.pub_form) > -1);
         }
 
         // Date range
         if (filters.dateFrom) {
-            docs = docs.filter(function (d) { return d.date && d.date >= filters.dateFrom; });
+            docs = docs.filter((d) => d.date && d.date >= filters.dateFrom);
         }
         if (filters.dateTo) {
-            docs = docs.filter(function (d) { return d.date && d.date <= filters.dateTo; });
+            docs = docs.filter((d) => d.date && d.date <= filters.dateTo);
         }
 
         // Sort
-        docs = docs.slice().sort(function (a, b) {
-            var va = getSortValue(a, state.sortKey);
-            var vb = getSortValue(b, state.sortKey);
+        docs = docs.slice().sort((a, b) => {
+            const va = getSortValue(a, state.sortKey);
+            const vb = getSortValue(b, state.sortKey);
             if (va < vb) return state.sortAsc ? -1 : 1;
             if (va > vb) return state.sortAsc ? 1 : -1;
             return 0;
@@ -248,7 +248,7 @@
     function getSortValue(doc, key) {
         if (key === 'id') return parseInt(doc.id, 10);
         if (key === 'pages') return doc.page_count || 0;
-        var v = doc[key];
+        const v = doc[key];
         return v ? String(v).toLowerCase() : '';
     }
 
@@ -263,17 +263,17 @@
     }
 
     function updateResultCount() {
-        var countEl = E.$('#result-count');
+        const countEl = E.$('#result-count');
         if (countEl) {
-            countEl.textContent = 'Zeige ' + state.filtered.length + ' von ' + state.documents.length + ' Dokumenten';
+            countEl.textContent = `Zeige ${state.filtered.length} von ${state.documents.length} Dokumenten`;
         }
     }
 
     function renderTable() {
-        var container = E.$('#catalog-results');
+        const container = E.$('#catalog-results');
         if (!container) return;
 
-        var cols = [
+        const cols = [
             { key: 'id', label: 'ID' },
             { key: 'title', label: 'Titel' },
             { key: 'author', label: 'Autor' },
@@ -282,27 +282,27 @@
             { key: 'lang', label: 'Sprache' },
             { key: 'pages', label: 'Seiten' }
         ];
-        var html = '<div class="ed-table-wrap"><table class="ed-table">';
+        let html = '<div class="ed-table-wrap"><table class="ed-table">';
         html += '<thead><tr>';
-        cols.forEach(function (c) {
-            var sorted = state.sortKey === c.key;
-            var arrow = sorted ? (state.sortAsc ? ' &#9650;' : ' &#9660;') : ' <span class="sort-icon">&#9650;</span>';
-            html += '<th data-sort="' + c.key + '"' + (sorted ? ' class="sorted"' : '') + '>' + c.label + arrow + '</th>';
+        cols.forEach((c) => {
+            const sorted = state.sortKey === c.key;
+            const arrow = sorted ? (state.sortAsc ? ' &#9650;' : ' &#9660;') : ' <span class="sort-icon">&#9650;</span>';
+            html += `<th data-sort="${c.key}"${sorted ? ' class="sorted"' : ''}>${c.label}${arrow}</th>`;
         });
         html += '</tr></thead><tbody>';
 
-        state.filtered.forEach(function (d) {
-            html += '<tr onclick="window.location.href=\'reader.html?doc=' + E.esc(d.id) + '\'" tabindex="0">';
-            html += '<td class="td-id">' + E.esc(d.id);
+        state.filtered.forEach((d) => {
+            html += `<tr onclick="window.location.href='reader.html?doc=${E.esc(d.id)}'" tabindex="0">`;
+            html += `<td class="td-id">${E.esc(d.id)}`;
             if (d.demo) html += ' <span class="ed-badge ed-badge-demo">Demo</span>';
             html += _curationBadgeHtml(d.id);
             html += '</td>';
-            html += '<td class="td-title">' + E.esc(d.title || '-') + '</td>';
-            html += '<td>' + E.esc(d.author || '-') + '</td>';
-            html += '<td>' + E.esc(d.date || '-') + '</td>';
-            html += '<td><span class="ed-badge ed-badge-type">' + E.esc(d.type) + '</span></td>';
-            html += '<td>' + E.esc(d.lang) + '</td>';
-            html += '<td>' + (d.page_count || '-') + '</td>';
+            html += `<td class="td-title">${E.esc(d.title || '-')}</td>`;
+            html += `<td>${E.esc(d.author || '-')}</td>`;
+            html += `<td>${E.esc(d.date || '-')}</td>`;
+            html += `<td><span class="ed-badge ed-badge-type">${E.esc(d.type)}</span></td>`;
+            html += `<td>${E.esc(d.lang)}</td>`;
+            html += `<td>${d.page_count || '-'}</td>`;
             html += '</tr>';
         });
 
@@ -310,9 +310,9 @@
         container.innerHTML = html;
 
         // Table header sort click
-        E.$$('.ed-table th[data-sort]').forEach(function (th) {
-            th.addEventListener('click', function () {
-                var key = th.getAttribute('data-sort');
+        E.$$('.ed-table th[data-sort]').forEach((th) => {
+            th.addEventListener('click', () => {
+                const key = th.getAttribute('data-sort');
                 if (state.sortKey === key) {
                     state.sortAsc = !state.sortAsc;
                 } else {
@@ -320,26 +320,26 @@
                     state.sortAsc = true;
                 }
                 // Sync dropdown
-                var sel = E.$('#catalog-sort');
+                const sel = E.$('#catalog-sort');
                 if (sel) sel.value = (state.sortAsc ? '' : '-') + key;
                 applyFilters();
             });
         });
 
         // Keyboard nav for rows
-        E.$$('.ed-table tbody tr').forEach(function (tr) {
-            tr.addEventListener('keydown', function (e) {
+        E.$$('.ed-table tbody tr').forEach((tr) => {
+            tr.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') tr.click();
             });
         });
     }
 
     function renderCards() {
-        var container = E.$('#catalog-results');
+        const container = E.$('#catalog-results');
         if (!container) return;
 
-        var html = '<div class="ed-catalog-cards">';
-        state.filtered.forEach(function (d) {
+        let html = '<div class="ed-catalog-cards">';
+        state.filtered.forEach((d) => {
             html += E.buildCardHtml(d, { showPages: true });
         });
         html += '</div>';
@@ -348,30 +348,30 @@
 
     // --- Curation Status (Phase 4) ---
     function _checkCurationServer() {
-        var apiBase = window.location.origin + '/api';
+        const apiBase = window.location.origin + '/api';
         fetch(apiBase + '/health', { method: 'GET' })
-            .then(function (r) {
+            .then((r) => {
                 if (!r.ok) return;
                 state.serverAvailable = true;
                 // Load statuses for all visible docs (batched)
                 _loadCurationStatuses();
             })
-            .catch(function () {});
+            .catch(() => {});
     }
 
     function _loadCurationStatuses() {
         if (!state.serverAvailable) return;
-        var apiBase = window.location.origin + '/api';
-        var docs = state.documents;
-        var pending = 0;
-        var maxConcurrent = 10;
-        var changed = false;
-        var renderTimer = null;
+        const apiBase = window.location.origin + '/api';
+        const docs = state.documents;
+        let pending = 0;
+        const maxConcurrent = 10;
+        let changed = false;
+        let renderTimer = null;
 
         // Debounced re-render: at most once per 500ms
         function scheduleRender() {
             if (renderTimer) return;
-            renderTimer = setTimeout(function () {
+            renderTimer = setTimeout(() => {
                 renderTimer = null;
                 if (changed) {
                     changed = false;
@@ -387,13 +387,13 @@
                 return;
             }
             if (pending >= maxConcurrent) {
-                setTimeout(function () { loadNext(i); }, 50);
+                setTimeout(() => { loadNext(i); }, 50);
                 return;
             }
             pending++;
-            fetch(apiBase + '/tei/' + docs[i].id + '/status')
-                .then(function (r) { return r.ok ? r.json() : null; })
-                .then(function (meta) {
+            fetch(`${apiBase}/tei/${docs[i].id}/status`)
+                .then((r) => r.ok ? r.json() : null)
+                .then((meta) => {
                     pending--;
                     if (meta && meta.status && meta.status !== 'pipeline') {
                         state.curationStatuses[docs[i].id] = meta.status;
@@ -402,7 +402,7 @@
                     }
                     loadNext(i + 1);
                 })
-                .catch(function () {
+                .catch(() => {
                     pending--;
                     loadNext(i + 1);
                 });
@@ -411,11 +411,11 @@
     }
 
     function _curationBadgeHtml(docId) {
-        var status = state.curationStatuses[docId];
+        const status = state.curationStatuses[docId];
         if (!status) return '';
-        var labels = { draft: 'Entwurf', in_review: 'Pruefung', approved: 'Freigegeben' };
-        var classes = { draft: 'ed-badge-curation-draft', in_review: 'ed-badge-curation-review', approved: 'ed-badge-curation-approved' };
-        return ' <span class="ed-badge ' + (classes[status] || '') + '">' + E.esc(labels[status] || status) + '</span>';
+        const labels = { draft: 'Entwurf', in_review: 'Pruefung', approved: 'Freigegeben' };
+        const classes = { draft: 'ed-badge-curation-draft', in_review: 'ed-badge-curation-review', approved: 'ed-badge-curation-approved' };
+        return ` <span class="ed-badge ${classes[status] || ''}">${E.esc(labels[status] || status)}</span>`;
     }
 
     // --- Auto-init ---

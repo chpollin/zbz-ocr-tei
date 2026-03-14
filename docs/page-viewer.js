@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    var pageState = {
+    const pageState = {
         mode: 'regions',
         currentXml: null,
         docId: null,
@@ -19,7 +19,7 @@
     // ---- Tab Switching ----
     function switchPageMode(mode) {
         pageState.mode = mode;
-        ZBZ.$$('.page-tab').forEach(function (tab) {
+        ZBZ.$$('.page-tab').forEach((tab) => {
             tab.classList.toggle('active', tab.getAttribute('data-mode') === mode);
         });
         ZBZ.$('#page-regions').classList.toggle('hidden', mode !== 'regions');
@@ -46,7 +46,7 @@
 
         ZBZ.$('#page-regions').innerHTML = '<div class="empty-state">Lade...</div>';
 
-        var xml = await ZBZ.fetchPageXml(docId, page);
+        const xml = await ZBZ.fetchPageXml(docId, page);
         pageState.currentXml = xml;
 
         if (!xml) {
@@ -70,28 +70,28 @@
     }
 
     function extractStructureType(customAttr) {
-        var m = customAttr ? customAttr.match(/structure\s*\{type:(\w+);\}/) : null;
+        const m = customAttr ? customAttr.match(/structure\s*\{type:(\w+);\}/) : null;
         return m ? m[1] : 'unknown';
     }
 
     function parseCoordsPoints(pointsStr) {
         if (!pointsStr) return null;
-        var parts = pointsStr.split(/\s+/);
-        var xs = [];
-        var ys = [];
-        for (var i = 0; i < parts.length; i++) {
-            var pair = parts[i].split(',');
+        const parts = pointsStr.split(/\s+/);
+        const xs = [];
+        const ys = [];
+        for (let i = 0; i < parts.length; i++) {
+            const pair = parts[i].split(',');
             xs.push(parseInt(pair[0]));
             ys.push(parseInt(pair[1]));
         }
-        var minX = Math.min.apply(null, xs);
-        var minY = Math.min.apply(null, ys);
-        var maxX = Math.max.apply(null, xs);
-        var maxY = Math.max.apply(null, ys);
+        const minX = Math.min.apply(null, xs);
+        const minY = Math.min.apply(null, ys);
+        const maxX = Math.max.apply(null, xs);
+        const maxY = Math.max.apply(null, ys);
         return { x: minX, y: minY, w: maxX - minX, h: maxY - minY };
     }
 
-    var REGION_TYPE_INFO = {
+    const REGION_TYPE_INFO = {
         heading:   { label: 'Heading',   cls: 'page-region-heading' },
         paragraph: { label: 'Absatz',    cls: 'page-region-paragraph' },
         footnote:  { label: 'Fussnote',  cls: 'page-region-footnote' },
@@ -101,78 +101,78 @@
 
     // ---- Rendered "Regionen" View ----
     function renderRegions(xml) {
-        var container = ZBZ.$('#page-regions');
+        const container = ZBZ.$('#page-regions');
         container.innerHTML = '';
         pageState.regionsDone = true;
 
-        var doc = parsePageXml(xml);
+        const doc = parsePageXml(xml);
         if (!doc) {
             container.innerHTML = '<div class="empty-state">XML-Parse-Fehler</div>';
             return;
         }
 
-        var pageEl = doc.querySelector('Page');
+        const pageEl = doc.querySelector('Page');
         if (!pageEl) {
             container.innerHTML = '<div class="empty-state">Kein &lt;Page&gt; Element</div>';
             return;
         }
 
-        var imgW = parseInt(pageEl.getAttribute('imageWidth')) || 0;
-        var imgH = parseInt(pageEl.getAttribute('imageHeight')) || 0;
+        const imgW = parseInt(pageEl.getAttribute('imageWidth')) || 0;
+        const imgH = parseInt(pageEl.getAttribute('imageHeight')) || 0;
 
-        var metaHtml = '<div class="page-meta">' +
-            '<span class="page-meta-item">' +
-            '<span class="info-label">Bild</span> ' +
+        const metaHtml = `<div class="page-meta">` +
+            `<span class="page-meta-item">` +
+            `<span class="info-label">Bild</span> ` +
             ZBZ.esc(pageEl.getAttribute('imageFilename') || '') +
-            '</span>' +
-            '<span class="page-meta-item">' +
-            '<span class="info-label">Groesse</span> ' +
-            imgW + ' x ' + imgH + ' px' +
-            '</span>' +
-            '</div>';
+            `</span>` +
+            `<span class="page-meta-item">` +
+            `<span class="info-label">Groesse</span> ` +
+            `${imgW} x ${imgH} px` +
+            `</span>` +
+            `</div>`;
         container.innerHTML = metaHtml;
 
-        var regions = doc.querySelectorAll('TextRegion');
+        const regions = doc.querySelectorAll('TextRegion');
         if (regions.length === 0) {
             container.innerHTML += '<div class="empty-state">Keine TextRegions</div>';
             return;
         }
 
-        var summary = document.createElement('div');
+        const summary = document.createElement('div');
         summary.className = 'page-region-summary';
         summary.textContent = regions.length + ' Regionen';
         container.appendChild(summary);
 
-        for (var i = 0; i < regions.length; i++) {
-            var region = regions[i];
-            var regId = region.getAttribute('id') || '';
-            var customAttr = region.getAttribute('custom') || '';
-            var structType = extractStructureType(customAttr);
-            var typeInfo = REGION_TYPE_INFO[structType] || REGION_TYPE_INFO.unknown;
+        for (let i = 0; i < regions.length; i++) {
+            const region = regions[i];
+            const regId = region.getAttribute('id') || '';
+            const customAttr = region.getAttribute('custom') || '';
+            const structType = extractStructureType(customAttr);
+            const typeInfo = REGION_TYPE_INFO[structType] || REGION_TYPE_INFO.unknown;
 
-            var coordsEl = region.querySelector('Coords');
-            var bbox = coordsEl ? parseCoordsPoints(coordsEl.getAttribute('points')) : null;
+            const coordsEl = region.querySelector('Coords');
+            const bbox = coordsEl ? parseCoordsPoints(coordsEl.getAttribute('points')) : null;
 
-            var textLine = region.querySelector('TextLine TextEquiv Unicode');
-            var text = textLine ? textLine.textContent.trim() : '';
+            const textLine = region.querySelector('TextLine TextEquiv Unicode');
+            const text = textLine ? textLine.textContent.trim() : '';
 
-            var card = document.createElement('div');
+            const card = document.createElement('div');
             card.className = 'page-region-card ' + typeInfo.cls;
 
-            var header = '<div class="page-region-header">' +
-                '<span class="page-region-index">#' + (i + 1) + '</span>' +
-                '<span class="page-region-type">' + typeInfo.label + '</span>' +
-                '<span class="page-region-id">' + ZBZ.esc(regId) + '</span>';
+            let header = `<div class="page-region-header">` +
+                `<span class="page-region-index">#${i + 1}</span>` +
+                `<span class="page-region-type">${typeInfo.label}</span>` +
+                `<span class="page-region-id">${ZBZ.esc(regId)}</span>`;
             if (bbox) {
-                header += '<span class="page-region-coords">' +
-                    bbox.x + ',' + bbox.y + ' ' + bbox.w + 'x' + bbox.h +
-                    '</span>';
+                header += `<span class="page-region-coords">` +
+                    `${bbox.x},${bbox.y} ${bbox.w}x${bbox.h}` +
+                    `</span>`;
             }
             header += '</div>';
 
-            var body = '';
+            let body = '';
             if (text) {
-                var preview = text.length > 120 ? text.substring(0, 120) + '...' : text;
+                const preview = text.length > 120 ? text.substring(0, 120) + '...' : text;
                 body = '<div class="page-region-text">' + ZBZ.esc(preview) + '</div>';
             } else {
                 body = '<div class="page-region-text page-region-empty">(kein Text)</div>';
@@ -192,10 +192,10 @@
     // ---- METS View ----
     async function loadMets(docId) {
         pageState.metsDone = true;
-        var metsContainer = ZBZ.$('#page-mets-code');
+        const metsContainer = ZBZ.$('#page-mets-code');
         metsContainer.innerHTML = '<span style="color:var(--text-muted)">Lade METS...</span>';
 
-        var metsXml = await ZBZ.fetchMetsXml(docId);
+        const metsXml = await ZBZ.fetchMetsXml(docId);
         if (metsXml) {
             metsContainer.innerHTML = ZBZ.highlightXml(metsXml);
         } else {
@@ -206,14 +206,16 @@
 
     // ---- Init ----
     function init() {
-        ZBZ.$$('.page-tab').forEach(function (tab) {
-            tab.addEventListener('click', function () {
+        ZBZ.$$('.page-tab').forEach((tab) => {
+            tab.addEventListener('click', () => {
                 switchPageMode(tab.getAttribute('data-mode'));
             });
         });
     }
 
     init();
+
+    ZBZ.log('PageViewer', 'ready (regions/xml/mets)');
 
     // ---- Public API ----
     ZBZ.PageViewer = {

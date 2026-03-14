@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    var state = {
+    const state = {
         docId: null,
         page: 1,
         totalPages: 0,
@@ -21,7 +21,7 @@
         pageVisible: false,
     };
 
-    var sourceLabels = {
+    const sourceLabels = {
         mistral: 'Mistral OCR',
         llm_corrected: 'LLM-korrigiert (Claude Haiku 4.5)',
         gemini_corrected: 'Gemini-korrigiert (Flash Lite)',
@@ -29,13 +29,13 @@
     };
 
     // DOM refs
-    var docTitle = ZBZ.$('#doc-title');
-    var pageInfo = ZBZ.$('#page-info');
-    var pageImage = ZBZ.$('#page-image');
-    var ocrText = ZBZ.$('#ocr-text');
-    var prevBtn = ZBZ.$('#prev-btn');
-    var nextBtn = ZBZ.$('#next-btn');
-    var textLabel = ZBZ.$('#text-panel-label');
+    const docTitle = ZBZ.$('#doc-title');
+    const pageInfo = ZBZ.$('#page-info');
+    const pageImage = ZBZ.$('#page-image');
+    const ocrText = ZBZ.$('#ocr-text');
+    const prevBtn = ZBZ.$('#prev-btn');
+    const nextBtn = ZBZ.$('#next-btn');
+    const textLabel = ZBZ.$('#text-panel-label');
 
     async function init() {
         state.docId = ZBZ.getParam('doc');
@@ -48,12 +48,12 @@
         }
 
         try {
-            var data = await ZBZ.loadData();
+            const data = await ZBZ.loadData();
             ZBZ.loadEntityIndex(); // Fire-and-forget (non-blocking)
             state.docData = data.documents[state.docId];
 
             if (!state.docData) {
-                docTitle.textContent = 'Dokument ' + state.docId + ' nicht gefunden.';
+                docTitle.textContent = `Dokument ${state.docId} nicht gefunden.`;
                 return;
             }
 
@@ -61,7 +61,7 @@
             state.hasDeepseek = state.docData.deepseek_stats != null;
             state.hasLlm = state.docData.pipeline_status.llm_corrected;
 
-            docTitle.textContent = state.docId + '.pdf - ' + state.docData.desc;
+            docTitle.textContent = `${state.docId}.pdf - ${state.docData.desc}`;
 
             // Show/hide source buttons
             state.hasGemini = state.docData.pipeline_status.gemini_corrected;
@@ -87,140 +87,106 @@
 
             showPage(state.page);
 
+            const engines = [state.docData.pipeline_status.ocr_mistral && 'M', state.hasDeepseek && 'DS', state.hasLlm && 'LLM', state.hasGemini && 'GEM'].filter(Boolean).join('+');
+            ZBZ.log('Viewer', `Doc ${state.docId} | ${state.totalPages} S. | Engines: ${engines} | Source: ${state.source}`);
+
         } catch (e) {
+            ZBZ.log('Viewer', `FEHLER: ${e.message || e}`);
             docTitle.textContent = 'Fehler beim Laden';
         }
     }
 
-    var PUB_FORM_LABELS = ZBZ.PUB_FORM_LABELS;
+    const PUB_FORM_LABELS = ZBZ.PUB_FORM_LABELS;
 
     // ---- Document Info Bar ----
     function renderDocInfo() {
-        var d = state.docData;
-        var html = '';
+        const d = state.docData;
+        let html = '';
 
         // Title & Author (from Gemini classification)
         if (d.title) {
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">Titel</span>' +
-                '<span class="info-value">' + ZBZ.esc(d.title) + '</span></div>';
+            html += `<div class="doc-info-section"><span class="info-label">Titel</span><span class="info-value">${ZBZ.esc(d.title)}</span></div>`;
         }
         if (d.author) {
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">Autor</span>' +
-                '<span class="info-value">' + ZBZ.esc(d.author) + '</span></div>';
+            html += `<div class="doc-info-section"><span class="info-label">Autor</span><span class="info-value">${ZBZ.esc(d.author)}</span></div>`;
         }
         if (d.title || d.author) {
             html += '<div class="info-divider"></div>';
         }
 
         // Type & Language (with pub_form)
-        var formLabel = PUB_FORM_LABELS[d.pub_form] || d.pub_form || '';
-        html += '<div class="doc-info-section">' +
-            '<span class="info-label">Typ / Sprache</span>' +
-            '<span class="info-value"><span class="tag">' + d.type + '</span> ' + d.lang +
-            (formLabel ? ' / ' + formLabel : '') + '</span>' +
-            '</div>';
+        const formLabel = PUB_FORM_LABELS[d.pub_form] || d.pub_form || '';
+        html += `<div class="doc-info-section"><span class="info-label">Typ / Sprache</span><span class="info-value"><span class="tag">${d.type}</span> ${d.lang}${formLabel ? ' / ' + formLabel : ''}</span></div>`;
 
         // Date
         if (d.date) {
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">Datum</span>' +
-                '<span class="info-value">' + d.date + '</span></div>';
+            html += `<div class="doc-info-section"><span class="info-label">Datum</span><span class="info-value">${d.date}</span></div>`;
         }
 
         html += '<div class="info-divider"></div>';
 
         // Pages
-        html += '<div class="doc-info-section">' +
-            '<span class="info-label">Seiten</span>' +
-            '<span class="info-value">' + d.page_count + '</span>' +
-            '</div>';
+        html += `<div class="doc-info-section"><span class="info-label">Seiten</span><span class="info-value">${d.page_count}</span></div>`;
 
         // Phase
         if (d.phase) {
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">Testphase</span>' +
-                '<span class="info-value">' + d.phase + '</span>' +
-                '</div>';
+            html += `<div class="doc-info-section"><span class="info-label">Testphase</span><span class="info-value">${d.phase}</span></div>`;
         }
 
         html += '<div class="info-divider"></div>';
 
         // Pipeline Status
-        html += '<div class="doc-info-section">' +
-            '<span class="info-label">Pipeline</span>' +
-            '<span class="info-value">' + ZBZ.renderPipelineStatus(d.pipeline_status) + '</span>' +
-            '</div>';
+        html += `<div class="doc-info-section"><span class="info-label">Pipeline</span><span class="info-value">${ZBZ.renderPipelineStatus(d.pipeline_status)}</span></div>`;
 
         html += '<div class="info-divider"></div>';
 
         // Engines
-        html += '<div class="doc-info-section">' +
-            '<span class="info-label">Engines</span>' +
-            '<span class="info-value"><span class="engine-badges">' + ZBZ.engineBadges(d.pipeline_status) + '</span></span>' +
-            '</div>';
+        html += `<div class="doc-info-section"><span class="info-label">Engines</span><span class="info-value"><span class="engine-badges">${ZBZ.engineBadges(d.pipeline_status)}</span></span></div>`;
 
         html += '<div class="info-divider"></div>';
 
         // CER Bars
-        var cerM = d.mistral_cer;
-        var cerL = (d.pipeline_status.llm_corrected && d.evaluation) ? d.evaluation.cer_llm : null;
-        var cerG = d.gemini_cer || null;
-        var cerD = d.deepseek_stats ? d.deepseek_stats.cer : null;
+        const cerM = d.mistral_cer;
+        const cerL = (d.pipeline_status.llm_corrected && d.evaluation) ? d.evaluation.cer_llm : null;
+        const cerG = d.gemini_cer || null;
+        const cerD = d.deepseek_stats ? d.deepseek_stats.cer : null;
 
         if (cerM != null || cerL != null || cerG != null || cerD != null) {
-            var maxCer = Math.max(cerM || 0, cerL || 0, cerG || 0, cerD || 0, 0.01);
-            var scale = 100 / (maxCer * 1.3);
+            const maxCer = Math.max(cerM || 0, cerL || 0, cerG || 0, cerD || 0, 0.01);
+            const scale = 100 / (maxCer * 1.3);
 
             html += '<div class="doc-info-section">' +
                 '<span class="info-label">CER Vergleich</span>' +
                 '<div class="cer-mini-bars">';
 
             if (cerM != null) {
-                html += '<div class="cer-mini-bar">' +
-                    '<span class="bar-label">Mistral</span>' +
-                    '<div class="bar-track"><div class="bar-fill teal" style="width:' + Math.max(cerM * scale, 3) + '%"></div></div>' +
-                    '<span class="bar-val" style="color:var(--accent-a)">' + ZBZ.fmtPct(cerM, 1) + '</span>' +
-                    '</div>';
+                html += `<div class="cer-mini-bar"><span class="bar-label">Mistral</span><div class="bar-track"><div class="bar-fill teal" style="width:${Math.max(cerM * scale, 3)}%"></div></div><span class="bar-val" style="color:var(--accent-a)">${ZBZ.fmtPct(cerM, 1)}</span></div>`;
             }
 
             if (cerL != null) {
-                var delta = cerM != null ? cerL - cerM : null;
-                var deltaHtml = '';
+                const delta = cerM != null ? cerL - cerM : null;
+                let deltaHtml = '';
                 if (delta != null) {
-                    var cls = delta < 0 ? 'positive' : (delta > 0 ? 'negative' : '');
-                    var sign = delta < 0 ? '' : '+';
-                    deltaHtml = '<span class="improvement ' + cls + '">' + sign + (delta * 100).toFixed(1) + '</span>';
+                    const cls = delta < 0 ? 'positive' : (delta > 0 ? 'negative' : '');
+                    const sign = delta < 0 ? '' : '+';
+                    deltaHtml = `<span class="improvement ${cls}">${sign}${(delta * 100).toFixed(1)}</span>`;
                 }
-                html += '<div class="cer-mini-bar">' +
-                    '<span class="bar-label">LLM</span>' +
-                    '<div class="bar-track"><div class="bar-fill blue" style="width:' + Math.max(cerL * scale, 3) + '%"></div></div>' +
-                    '<span class="bar-val" style="color:var(--accent-c)">' + ZBZ.fmtPct(cerL, 1) + deltaHtml + '</span>' +
-                    '</div>';
+                html += `<div class="cer-mini-bar"><span class="bar-label">LLM</span><div class="bar-track"><div class="bar-fill blue" style="width:${Math.max(cerL * scale, 3)}%"></div></div><span class="bar-val" style="color:var(--accent-c)">${ZBZ.fmtPct(cerL, 1)}${deltaHtml}</span></div>`;
             }
 
             if (cerG != null) {
-                var deltaG = cerM != null ? cerG - cerM : null;
-                var deltaGHtml = '';
+                const deltaG = cerM != null ? cerG - cerM : null;
+                let deltaGHtml = '';
                 if (deltaG != null) {
-                    var clsG = deltaG < 0 ? 'positive' : (deltaG > 0 ? 'negative' : '');
-                    var signG = deltaG < 0 ? '' : '+';
-                    deltaGHtml = '<span class="improvement ' + clsG + '">' + signG + (deltaG * 100).toFixed(1) + '</span>';
+                    const clsG = deltaG < 0 ? 'positive' : (deltaG > 0 ? 'negative' : '');
+                    const signG = deltaG < 0 ? '' : '+';
+                    deltaGHtml = `<span class="improvement ${clsG}">${signG}${(deltaG * 100).toFixed(1)}</span>`;
                 }
-                html += '<div class="cer-mini-bar">' +
-                    '<span class="bar-label">Gemini</span>' +
-                    '<div class="bar-track"><div class="bar-fill" style="width:' + Math.max(cerG * scale, 3) + '%;background:#f59e0b"></div></div>' +
-                    '<span class="bar-val" style="color:#f59e0b">' + ZBZ.fmtPct(cerG, 1) + deltaGHtml + '</span>' +
-                    '</div>';
+                html += `<div class="cer-mini-bar"><span class="bar-label">Gemini</span><div class="bar-track"><div class="bar-fill" style="width:${Math.max(cerG * scale, 3)}%;background:#f59e0b"></div></div><span class="bar-val" style="color:#f59e0b">${ZBZ.fmtPct(cerG, 1)}${deltaGHtml}</span></div>`;
             }
 
             if (cerD != null) {
-                html += '<div class="cer-mini-bar">' +
-                    '<span class="bar-label">DeepS.</span>' +
-                    '<div class="bar-track"><div class="bar-fill violet" style="width:' + Math.max(cerD * scale, 3) + '%"></div></div>' +
-                    '<span class="bar-val" style="color:var(--accent-b)">' + ZBZ.fmtPct(cerD, 1) + '</span>' +
-                    '</div>';
+                html += `<div class="cer-mini-bar"><span class="bar-label">DeepS.</span><div class="bar-track"><div class="bar-fill violet" style="width:${Math.max(cerD * scale, 3)}%"></div></div><span class="bar-val" style="color:var(--accent-b)">${ZBZ.fmtPct(cerD, 1)}</span></div>`;
             }
 
             html += '</div></div>';
@@ -230,42 +196,30 @@
 
         // WER
         if (d.evaluation) {
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">WER</span>' +
-                '<span class="info-value">' + ZBZ.fmtPct(d.evaluation.wer_llm) + '</span>' +
-                '</div>';
+            html += `<div class="doc-info-section"><span class="info-label">WER</span><span class="info-value">${ZBZ.fmtPct(d.evaluation.wer_llm)}</span></div>`;
 
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">Ref. Zeichen</span>' +
-                '<span class="info-value">' + ZBZ.fmtNum(d.evaluation.ref_chars) + '</span>' +
-                '</div>';
+            html += `<div class="doc-info-section"><span class="info-label">Ref. Zeichen</span><span class="info-value">${ZBZ.fmtNum(d.evaluation.ref_chars)}</span></div>`;
         }
 
         // LLM Stats
         if (d.llm_stats) {
             html += '<div class="info-divider"></div>';
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">LLM Tokens</span>' +
-                '<span class="info-value">' + ZBZ.fmtNum(d.llm_stats.input_tokens + d.llm_stats.output_tokens) + '</span>' +
-                '</div>';
+            html += `<div class="doc-info-section"><span class="info-label">LLM Tokens</span><span class="info-value">${ZBZ.fmtNum(d.llm_stats.input_tokens + d.llm_stats.output_tokens)}</span></div>`;
         }
 
         // DeepSeek info
         if (d.deepseek_stats) {
             html += '<div class="info-divider"></div>';
-            html += '<div class="doc-info-section">' +
-                '<span class="info-label">DeepSeek</span>' +
-                '<span class="info-value">' + d.deepseek_stats.pages + ' S. / ' + ZBZ.fmtNum(d.deepseek_stats.chars) + ' Zeichen</span>' +
-                '</div>';
+            html += `<div class="doc-info-section"><span class="info-label">DeepSeek</span><span class="info-value">${d.deepseek_stats.pages} S. / ${ZBZ.fmtNum(d.deepseek_stats.chars)} Zeichen</span></div>`;
         }
 
         ZBZ.$('#doc-info-inner').innerHTML = html;
     }
 
     // ---- Layout Overlay ----
-    var layoutOverlay = ZBZ.$('#layout-overlay');
-    var layoutToggle = ZBZ.$('#layout-toggle');
-    var imageWrapper = ZBZ.$('#image-wrapper');
+    const layoutOverlay = ZBZ.$('#layout-overlay');
+    const layoutToggle = ZBZ.$('#layout-toggle');
+    const imageWrapper = ZBZ.$('#image-wrapper');
 
     function toggleLayout() {
         state.layoutVisible = !state.layoutVisible;
@@ -283,7 +237,7 @@
     async function renderLayout() {
         if (!state.layoutVisible) return;
 
-        var data = await ZBZ.fetchLayoutData(state.docId, state.page);
+        const data = await ZBZ.fetchLayoutData(state.docId, state.page);
 
         layoutOverlay.innerHTML = '';
 
@@ -293,23 +247,23 @@
 
         layoutOverlay.setAttribute('viewBox', '0 0 100 100');
 
-        var colors = ZBZ.LAYOUT_COLORS;
-        var defaultColor = { stroke: '#6b7280', fill: 'rgba(107,114,128,0.08)', label: '?' };
-        var isGemini = data.source === 'gemini' || data.source === 'gemini-detect';
+        const colors = ZBZ.LAYOUT_COLORS;
+        const defaultColor = { stroke: '#6b7280', fill: 'rgba(107,114,128,0.08)', label: '?' };
+        const isGemini = data.source === 'gemini' || data.source === 'gemini-detect';
 
-        data.regions.forEach(function (region) {
+        data.regions.forEach((region) => {
             if (!region.bbox) return;
 
-            var b = region.bbox;
-            var color = colors[region.zbz_tag] || defaultColor;
+            const b = region.bbox;
+            const color = colors[region.zbz_tag] || defaultColor;
             // Only highlight as "changed" if the label was actually changed
             // (not just OCR text corrections)
-            var changed = isGemini && region.changed &&
+            const changed = isGemini && region.changed &&
                 region.change_reason &&
                 !/^Correct(ed|ing) (OCR |text |garbled |corrupted )/i.test(region.change_reason) &&
                 !/^(Cleaned up|Fixing OCR)/i.test(region.change_reason);
 
-            var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
             rect.setAttribute('x', b.x_pct);
             rect.setAttribute('y', b.y_pct);
             rect.setAttribute('width', b.w_pct);
@@ -327,20 +281,17 @@
                 rect.setAttribute('stroke-width', '0.15');
             }
 
-            var tooltipText = color.label + ': ' + (region.text || '').substring(0, 80);
-            if (changed && region.change_reason) {
-                tooltipText += '\n--- Gemini: ' + region.change_reason;
-            }
-            var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+            const tooltipText = `${color.label}: ${(region.text || '').substring(0, 80)}` +
+                (changed && region.change_reason ? `\n--- Gemini: ${region.change_reason}` : '');
+            const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
             title.textContent = tooltipText;
             rect.appendChild(title);
 
             layoutOverlay.appendChild(rect);
 
-            var labelText = color.label;
-            if (changed) labelText = '* ' + labelText;
+            const labelText = changed ? `* ${color.label}` : color.label;
 
-            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttribute('x', String(b.x_pct + 0.3));
             text.setAttribute('y', String(b.y_pct + 1.2));
             text.setAttribute('fill', changed ? '#eab308' : color.stroke);
@@ -350,27 +301,27 @@
         });
     }
 
-    layoutToggle.addEventListener('click', function () { toggleLayout(); });
+    layoutToggle.addEventListener('click', () => { toggleLayout(); });
 
     // ---- TEI Panel ----
-    var teiPanel = ZBZ.$('#tei-panel');
-    var teiToggle = ZBZ.$('#tei-toggle');
-    var divider2 = ZBZ.$('#divider2');
+    const teiPanel = ZBZ.$('#tei-panel');
+    const teiToggle = ZBZ.$('#tei-toggle');
+    const divider2 = ZBZ.$('#divider2');
 
     // ---- PAGE Panel ----
-    var pagePanel = ZBZ.$('#page-panel');
-    var pageToggle = ZBZ.$('#page-toggle');
+    const pagePanel = ZBZ.$('#page-panel');
+    const pageToggle = ZBZ.$('#page-toggle');
 
     function togglePanel(name) {
-        var isTei = name === 'tei';
-        var panel = isTei ? teiPanel : pagePanel;
-        var toggle = isTei ? teiToggle : pageToggle;
-        var otherKey = isTei ? 'pageVisible' : 'teiVisible';
-        var otherPanel = isTei ? pagePanel : teiPanel;
-        var otherToggle = isTei ? pageToggle : teiToggle;
-        var stateKey = isTei ? 'teiVisible' : 'pageVisible';
-        var imagePanel = ZBZ.$('#image-panel');
-        var textPanel = ZBZ.$('#text-panel');
+        const isTei = name === 'tei';
+        const panel = isTei ? teiPanel : pagePanel;
+        const toggle = isTei ? teiToggle : pageToggle;
+        const otherKey = isTei ? 'pageVisible' : 'teiVisible';
+        const otherPanel = isTei ? pagePanel : teiPanel;
+        const otherToggle = isTei ? pageToggle : teiToggle;
+        const stateKey = isTei ? 'teiVisible' : 'pageVisible';
+        const imagePanel = ZBZ.$('#image-panel');
+        const textPanel = ZBZ.$('#text-panel');
 
         state[stateKey] = !state[stateKey];
         toggle.classList.toggle('active', state[stateKey]);
@@ -399,18 +350,18 @@
         }
     }
 
-    teiToggle.addEventListener('click', function () { togglePanel('tei'); });
-    pageToggle.addEventListener('click', function () { togglePanel('page'); });
+    teiToggle.addEventListener('click', () => { togglePanel('tei'); });
+    pageToggle.addEventListener('click', () => { togglePanel('page'); });
 
     // ---- Info Toggle ----
-    ZBZ.$('#info-toggle').addEventListener('click', function () {
+    ZBZ.$('#info-toggle').addEventListener('click', () => {
         ZBZ.$('#doc-info-bar').classList.toggle('collapsed');
     });
 
     // ---- Source Toggle ----
     function updateSourceToggle() {
-        var btns = ZBZ.$$('#source-toggle .source-btn');
-        btns.forEach(function (btn) {
+        const btns = ZBZ.$$('#source-toggle .source-btn');
+        btns.forEach((btn) => {
             btn.classList.remove('active');
             if (btn.getAttribute('data-source') === state.source) {
                 btn.classList.add('active');
@@ -419,8 +370,8 @@
         textLabel.textContent = sourceLabels[state.source] || 'OCR-Text';
     }
 
-    ZBZ.$$('#source-toggle .source-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
+    ZBZ.$$('#source-toggle .source-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
             state.source = btn.getAttribute('data-source');
             updateSourceToggle();
             loadText();
@@ -434,15 +385,15 @@
         state.page = page;
 
         pageImage.src = ZBZ.imagePath(state.docId, page);
-        pageImage.style.width = state.zoom + '%';
-        imageWrapper.style.width = state.zoom + '%';
+        pageImage.style.width = `${state.zoom}%`;
+        imageWrapper.style.width = `${state.zoom}%`;
 
         await loadText();
         renderLayout();
         if (state.teiVisible) ZBZ.TeiViewer.loadTei(state.docId, state.page);
         if (state.pageVisible) ZBZ.PageViewer.loadPage(state.docId, state.page);
 
-        pageInfo.textContent = page + ' / ' + state.totalPages;
+        pageInfo.textContent = `${page} / ${state.totalPages}`;
         prevBtn.disabled = page <= 1;
         nextBtn.disabled = page >= state.totalPages;
 
@@ -451,7 +402,7 @@
 
     async function loadText() {
         ocrText.textContent = 'Lade...';
-        var text = await ZBZ.fetchPageText(state.source, state.docId, state.page);
+        const text = await ZBZ.fetchPageText(state.source, state.docId, state.page);
         if (text) {
             ocrText.textContent = text;
         } else {
@@ -459,60 +410,60 @@
         }
     }
 
-    prevBtn.addEventListener('click', function () { showPage(state.page - 1); });
-    nextBtn.addEventListener('click', function () { showPage(state.page + 1); });
+    prevBtn.addEventListener('click', () => { showPage(state.page - 1); });
+    nextBtn.addEventListener('click', () => { showPage(state.page + 1); });
 
     // ---- Zoom ----
     function applyZoom(newZoom) {
         state.zoom = newZoom;
-        pageImage.style.width = state.zoom + '%';
-        imageWrapper.style.width = state.zoom + '%';
-        ZBZ.$('#zoom-reset').textContent = state.zoom + '%';
+        pageImage.style.width = `${state.zoom}%`;
+        imageWrapper.style.width = `${state.zoom}%`;
+        ZBZ.$('#zoom-reset').textContent = `${state.zoom}%`;
     }
 
-    ZBZ.$('#zoom-in').addEventListener('click', function () { applyZoom(Math.min(300, state.zoom + 25)); });
-    ZBZ.$('#zoom-out').addEventListener('click', function () { applyZoom(Math.max(25, state.zoom - 25)); });
-    ZBZ.$('#zoom-reset').addEventListener('click', function () { applyZoom(100); });
+    ZBZ.$('#zoom-in').addEventListener('click', () => { applyZoom(Math.min(300, state.zoom + 25)); });
+    ZBZ.$('#zoom-out').addEventListener('click', () => { applyZoom(Math.max(25, state.zoom - 25)); });
+    ZBZ.$('#zoom-reset').addEventListener('click', () => { applyZoom(100); });
 
     // ---- Resizable Dividers ----
-    var divider = ZBZ.$('#divider');
-    var activeDivider = null;
-    var viewerArea = ZBZ.$('.viewer-area');
-    var imagePanelEl = ZBZ.$('#image-panel');
-    var textPanelEl = ZBZ.$('#text-panel');
+    const divider = ZBZ.$('#divider');
+    let activeDivider = null;
+    const viewerArea = ZBZ.$('.viewer-area');
+    const imagePanelEl = ZBZ.$('#image-panel');
+    const textPanelEl = ZBZ.$('#text-panel');
 
-    divider.addEventListener('mousedown', function () { activeDivider = 1; });
-    divider2.addEventListener('mousedown', function () { activeDivider = 2; });
+    divider.addEventListener('mousedown', () => { activeDivider = 1; });
+    divider2.addEventListener('mousedown', () => { activeDivider = 2; });
 
-    document.addEventListener('mousemove', function (e) {
+    document.addEventListener('mousemove', (e) => {
         if (!activeDivider) return;
-        var totalW = viewerArea.offsetWidth;
-        var pct = (e.clientX / totalW) * 100;
+        const totalW = viewerArea.offsetWidth;
+        let pct = (e.clientX / totalW) * 100;
 
-        var thirdPanelActive = state.teiVisible || state.pageVisible;
-        var thirdPanel = state.teiVisible ? teiPanel : pagePanel;
+        const thirdPanelActive = state.teiVisible || state.pageVisible;
+        const thirdPanel = state.teiVisible ? teiPanel : pagePanel;
 
         if (activeDivider === 1) {
-            var minLeft = thirdPanelActive ? 15 : 20;
-            var maxLeft = thirdPanelActive ? 60 : 80;
+            const minLeft = thirdPanelActive ? 15 : 20;
+            const maxLeft = thirdPanelActive ? 60 : 80;
             pct = Math.max(minLeft, Math.min(maxLeft, pct));
-            imagePanelEl.style.flex = '0 0 ' + pct + '%';
+            imagePanelEl.style.flex = `0 0 ${pct}%`;
             if (thirdPanelActive) {
-                var rest = 100 - pct;
-                textPanelEl.style.flex = '0 0 ' + (rest / 2) + '%';
-                thirdPanel.style.flex = '0 0 ' + (rest / 2) + '%';
+                const rest = 100 - pct;
+                textPanelEl.style.flex = `0 0 ${rest / 2}%`;
+                thirdPanel.style.flex = `0 0 ${rest / 2}%`;
             } else {
-                textPanelEl.style.flex = '0 0 ' + (100 - pct) + '%';
+                textPanelEl.style.flex = `0 0 ${100 - pct}%`;
             }
         } else if (activeDivider === 2 && thirdPanelActive) {
-            var imageRect = imagePanelEl.getBoundingClientRect();
-            var imageEnd = ((imageRect.right + 4) / totalW) * 100;
+            const imageRect = imagePanelEl.getBoundingClientRect();
+            const imageEnd = ((imageRect.right + 4) / totalW) * 100;
             pct = Math.max(imageEnd + 10, Math.min(90, pct));
-            textPanelEl.style.flex = '0 0 ' + (pct - imageEnd) + '%';
-            thirdPanel.style.flex = '0 0 ' + (100 - pct) + '%';
+            textPanelEl.style.flex = `0 0 ${pct - imageEnd}%`;
+            thirdPanel.style.flex = `0 0 ${100 - pct}%`;
         }
     });
-    document.addEventListener('mouseup', function () { activeDivider = null; });
+    document.addEventListener('mouseup', () => { activeDivider = null; });
 
     ZBZ.Viewer = { init: init, showPage: showPage };
     init();

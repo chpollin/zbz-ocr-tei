@@ -45,7 +45,7 @@ Edition Reader (read-only)  <-->  Edit-Modus (Curation)
 
 **Start:** `python -m scripts.server.curation_server [--port 8000]`
 
-**URL:** `http://localhost:8000/edition/reader.html`
+**URL:** `http://localhost:8000/reader.html`
 
 ### API Endpoints
 
@@ -139,7 +139,7 @@ Edition Reader (read-only)  <-->  Edit-Modus (Curation)
 
 ```
 1. Pipeline laeuft  → output/tei_unified/ + output/tei_ner/ (transient)
-2. Editor oeffnen   → http://localhost:8000/edition/reader.html?doc=XXXX
+2. Editor oeffnen   → http://localhost:8000/reader.html?doc=XXXX
 3. Text korrigieren  → Speichern → data/tei_curated/{doc_id}/ (persistent)
 4. Status setzen     → draft → in_review → approved
 5. Publizieren       → POST /api/tei/{doc_id}/publish → docs/data/examples/

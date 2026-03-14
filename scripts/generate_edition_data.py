@@ -1,5 +1,5 @@
 """
-Generiert docs/edition/data/catalog.json fuer die Digitale Edition.
+Generiert docs/data/catalog.json fuer die Digitale Edition.
 
 Liest docs/data/dashboard.json + data/doc_metadata.json und erzeugt
 einen kompakten Katalog mit allen Dokumenten + Edition-Metadaten.
@@ -188,7 +188,7 @@ def main():
     entity_count = export_entity_index()
 
     # 4. Katalog schreiben
-    output_path = DOCS_DIR / "edition" / "data" / "catalog.json"
+    output_path = DOCS_DIR / "data" / "catalog.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(catalog, indent=2, ensure_ascii=False),

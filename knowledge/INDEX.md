@@ -88,7 +88,7 @@ JOURNAL   <-- chronological, references all docs
 | Layout Full Run (E31) | Complete Gemini QA/Detect on 286 docs (3,992 pages, 14,708 corrections, avg score 72.7) | [PIPELINE](PIPELINE.md) |
 | Layout Overlay Generator (E31) | Batch PNG generation with changed-highlighting + Docling-vs-Gemini side-by-side compare | [PIPELINE](PIPELINE.md) |
 | changes_summary (E31) | Per-page label transition logging in layout_gemini.json, aggregated in summary_gemini.json | [PIPELINE](PIPELINE.md) |
-| Digitale Edition (E33) | Lese-Edition + Kurations-Editor in einem System. `docs/edition/`, `ZBZ.Edition` Namespace | [EDITION](EDITION.md), [CURATION](CURATION.md) |
+| Digitale Edition (E33) | Lese-Edition + Kurations-Editor in einem System. `docs/`, `ZBZ.Edition` Namespace | [EDITION](EDITION.md), [CURATION](CURATION.md) |
 | Curation Editor (E36) | Edit-Modus der Edition: WYSIWYG, Entity-Kuration, Review-Workflow, FastAPI Server | [CURATION](CURATION.md) |
 | NER Pipeline (E34) | Post-hoc NER via Gemini Flash Lite (6 types), TEI-XML Entity Index, Wikidata Reconciliation, TEI Injection | [PIPELINE](PIPELINE.md) |
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Benchmark – Epistemische Infrastruktur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/edition.css">
+    <link rel="stylesheet" href="../shared.css">
+</head>
+<body class="edition-page infrastruktur-page">
+
+    <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
+
+    <div class="infra-subnav">
+        <span class="infra-subnav-title">Pipeline</span>
+        <a href="index.html">Dashboard</a>
+        <a href="viewer.html?doc=2310">Viewer</a>
+        <a href="benchmark.html" class="active">Benchmark</a>
+    </div>
+
+    <div class="container">
+        <div id="loading">Lade Benchmark-Daten...</div>
+        <div id="app" class="hidden">
+            <div id="info-banner"></div>
+            <div class="metric-grid" id="metrics"></div>
+            <div class="section-title">Dokument-Vergleich</div>
+            <div id="doc-list"></div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <img id="overlay-img" src="" alt="Zoom">
+    </div>
+
+    <script src="../js/edition-shared.js"></script>
+    <script src="../shared.js"></script>
+    <script src="../benchmark.js"></script>
+</body>
+</html>

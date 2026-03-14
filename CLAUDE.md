@@ -22,7 +22,7 @@ Entry point: `knowledge/INDEX.md` — Navigation, document matrix, dependencies,
 - **Windows encoding**: No Unicode special characters in print statements
 - **Paths**: Use absolute paths or pathlib
 - **Output**: JSON for data, HTML for reports
-- **Frontend**: ES5 JavaScript (var, IIFE, no arrow functions), `ZBZ.*` / `TeiViewer.*` namespaces
+- **Frontend**: ES6+ JavaScript (const/let, arrow functions, template literals, IIFE wrappers), `ZBZ.*` / `TeiViewer.*` namespaces
 
 ## Commands
 

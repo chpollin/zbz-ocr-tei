@@ -1,7 +1,7 @@
 /**
  * ZBZ Entity Utilities -- Shared entity resolution and extraction.
  * Used by both pipeline viewer (tei-viewer.js) and edition viewer (edition-tei.js).
- * Namespace: ZBZ.EntityUtils (ES5, IIFE)
+ * Namespace: ZBZ.EntityUtils
  */
 (function () {
     'use strict';
@@ -18,7 +18,7 @@
         if (!ref) return null;
         // Primaer: Index-Lookup (#zbz-p.1 -> entity_index.json)
         if (ref.indexOf('#zbz-') === 0) {
-            var entry = lookupFn(ref);
+            const entry = lookupFn(ref);
             if (entry && entry.wikidata_qid) {
                 return { type: 'wikidata', id: entry.wikidata_qid,
                          label: entry.name,
@@ -26,9 +26,9 @@
             }
             // Fallback: GND aus Wikidata P227
             if (entry && entry.gnd_id) {
-                var gid = entry.gnd_id.replace('GND:', '');
+                const gid = entry.gnd_id.replace('GND:', '');
                 return { type: 'gnd', id: gid, label: entry.name,
-                         url: 'https://lobid.org/gnd/' + gid };
+                         url: `https://lobid.org/gnd/${gid}` };
             }
             if (entry) {
                 return { type: 'index', id: ref.slice(1), label: entry.name, url: null };
@@ -37,15 +37,15 @@
         }
         // Fallback: direkte WD/GND Refs (Legacy)
         if (ref.indexOf('WD:') === 0) {
-            var qid = ref.replace('WD:', '');
-            return { type: 'wikidata', id: qid, label: 'WD:' + qid,
-                     url: 'https://www.wikidata.org/wiki/' + qid };
+            const qid = ref.replace('WD:', '');
+            return { type: 'wikidata', id: qid, label: `WD:${qid}`,
+                     url: `https://www.wikidata.org/wiki/${qid}` };
         }
         if (ref.indexOf('GND:') === 0) {
-            var gndId = ref.replace('GND:', '');
+            const gndId = ref.replace('GND:', '');
             if (gndId !== 'unknown') {
-                return { type: 'gnd', id: gndId, label: 'GND:' + gndId,
-                         url: 'https://lobid.org/gnd/' + gndId };
+                return { type: 'gnd', id: gndId, label: `GND:${gndId}`,
+                         url: `https://lobid.org/gnd/${gndId}` };
             }
         }
         return null;
@@ -58,12 +58,12 @@
      * @returns {object} {zbzId, label, links: [{type, id, url}]}
      */
     function resolveAllLinks(ref, lookupFn) {
-        var result = { zbzId: null, label: ref || '', links: [] };
+        const result = { zbzId: null, label: ref || '', links: [] };
         if (!ref) return result;
 
         if (ref.indexOf('#zbz-') === 0) {
             result.zbzId = ref.slice(1);
-            var entry = lookupFn(ref);
+            const entry = lookupFn(ref);
             if (entry) {
                 result.label = entry.name;
                 if (entry.wikidata_qid) {
@@ -71,26 +71,26 @@
                         url: entry.wikidata_url });
                 }
                 if (entry.gnd_id) {
-                    var gid = entry.gnd_id.replace('GND:', '');
+                    const gid = entry.gnd_id.replace('GND:', '');
                     result.links.push({ type: 'gnd', id: gid,
-                        url: 'https://lobid.org/gnd/' + gid });
+                        url: `https://lobid.org/gnd/${gid}` });
                 }
             }
             return result;
         }
         if (ref.indexOf('WD:') === 0) {
-            var qid = ref.replace('WD:', '');
-            result.label = 'WD:' + qid;
+            const qid = ref.replace('WD:', '');
+            result.label = `WD:${qid}`;
             result.links.push({ type: 'wikidata', id: qid,
-                url: 'https://www.wikidata.org/wiki/' + qid });
+                url: `https://www.wikidata.org/wiki/${qid}` });
             return result;
         }
         if (ref.indexOf('GND:') === 0) {
-            var gndId = ref.replace('GND:', '');
+            const gndId = ref.replace('GND:', '');
             if (gndId !== 'unknown') {
-                result.label = 'GND:' + gndId;
+                result.label = `GND:${gndId}`;
                 result.links.push({ type: 'gnd', id: gndId,
-                    url: 'https://lobid.org/gnd/' + gndId });
+                    url: `https://lobid.org/gnd/${gndId}` });
             }
         }
         return result;
@@ -106,21 +106,21 @@
      * @returns {Element}
      */
     function createEntitySpan(node, type, ref, cssPrefix, lookupFn) {
-        var span = document.createElement('span');
-        span.className = cssPrefix + ' ' + cssPrefix + '-' + type;
+        const span = document.createElement('span');
+        span.className = `${cssPrefix} ${cssPrefix}-${type}`;
         if (ref) {
             span.setAttribute('data-ref', ref);
-            var resolved = resolveEntityRef(ref, lookupFn);
+            const resolved = resolveEntityRef(ref, lookupFn);
             if (resolved && resolved.url) {
-                span.addEventListener('click', function () {
+                span.addEventListener('click', () => {
                     window.open(resolved.url, '_blank');
                 });
             }
-            var all = resolveAllLinks(ref, lookupFn);
-            var tipText = all.label;
-            if (all.zbzId) tipText += ' (' + all.zbzId + ')';
-            var tip = document.createElement('span');
-            tip.className = cssPrefix + '-tip';
+            const all = resolveAllLinks(ref, lookupFn);
+            let tipText = all.label;
+            if (all.zbzId) tipText += ` (${all.zbzId})`;
+            const tip = document.createElement('span');
+            tip.className = `${cssPrefix}-tip`;
             tip.textContent = tipText;
             span.appendChild(tip);
         }
@@ -133,7 +133,7 @@
      * @returns {object} {persons: [], orgs: [], places: [], works: []}
      */
     function extractEntities(doc) {
-        var entities = { persons: [], orgs: [], places: [], works: [] };
+        const entities = { persons: [], orgs: [], places: [], works: [] };
         _addFromQuery(doc, 'persName[ref]', entities, 'persons', 'ref');
         _addFromQuery(doc, 'orgName[ref]', entities, 'orgs', 'ref');
         _addFromQuery(doc, 'placeName[ref]', entities, 'places', 'ref');
@@ -143,13 +143,13 @@
     }
 
     function _addFromQuery(doc, selector, entities, listKey, attrName) {
-        var nodes = doc.querySelectorAll(selector);
-        for (var i = 0; i < nodes.length; i++) {
-            var name = nodes[i].textContent.trim();
-            var ref = nodes[i].getAttribute(attrName);
+        const nodes = doc.querySelectorAll(selector);
+        for (let i = 0; i < nodes.length; i++) {
+            const name = nodes[i].textContent.trim();
+            const ref = nodes[i].getAttribute(attrName);
             if (!name || !ref) continue;
-            var found = false;
-            for (var j = 0; j < entities[listKey].length; j++) {
+            let found = false;
+            for (let j = 0; j < entities[listKey].length; j++) {
                 if (entities[listKey][j].ref === ref) {
                     entities[listKey][j].count++;
                     found = true;
@@ -161,6 +161,8 @@
             }
         }
     }
+
+    if (ZBZ.log) ZBZ.log('EntityUtils', 'ready');
 
     ZBZ.EntityUtils = {
         resolveEntityRef: resolveEntityRef,

@@ -5,8 +5,11 @@
 (function () {
     'use strict';
 
-    var _data = null;
-    var _textCache = {};
+    // Auto-detect base path when loaded from infrastruktur/ subdirectory
+    const _basePath = window.location.pathname.indexOf('/infrastruktur/') > -1 ? '../' : '';
+
+    let _data = null;
+    const _textCache = {};
 
     /**
      * Generic fetch with fallback candidates and caching.
@@ -18,12 +21,12 @@
     function _fetchWithFallbacks(cacheKey, candidates, parseAs) {
         if (_textCache[cacheKey] !== undefined) return Promise.resolve(_textCache[cacheKey]);
 
-        return (async function () {
-            for (var i = 0; i < candidates.length; i++) {
+        return (async () => {
+            for (let i = 0; i < candidates.length; i++) {
                 try {
-                    var r = await fetch(candidates[i]);
+                    const r = await fetch(candidates[i]);
                     if (r.ok) {
-                        var result = parseAs === 'json' ? await r.json() : await r.text();
+                        const result = parseAs === 'json' ? await r.json() : await r.text();
                         _textCache[cacheKey] = result;
                         return result;
                     }
@@ -34,11 +37,13 @@
         })();
     }
 
-    var ZBZ = {
+    const ZBZ = {
+        _basePath: _basePath,
+
         // ---- Data Loading ----
         loadData: async function() {
             if (_data) return _data;
-            var r = await fetch('data/dashboard.json');
+            const r = await fetch(_basePath + 'data/dashboard.json');
             if (!r.ok) throw new Error('dashboard.json nicht gefunden');
             _data = await r.json();
             return _data;
@@ -46,80 +51,80 @@
 
         // ---- Text Fetching (OCR pages) ----
         fetchPageText: function (source, docId, page) {
-            var paths = {
-                mistral: '../output/mistral_results/' + docId + '_p' + page + '.md',
-                deepseek: '../output/ocr_results/' + docId + '_p' + page + '.md',
-                llm_corrected: '../output/llm_corrected_c/' + docId + '_p' + page + '.md',
-                gemini_corrected: '../output/gemini_corrected_a/' + docId + '_p' + page + '.md',
+            const paths = {
+                mistral: `${_basePath}../output/mistral_results/${docId}_p${page}.md`,
+                deepseek: `${_basePath}../output/ocr_results/${docId}_p${page}.md`,
+                llm_corrected: `${_basePath}../output/llm_corrected_c/${docId}_p${page}.md`,
+                gemini_corrected: `${_basePath}../output/gemini_corrected_a/${docId}_p${page}.md`,
             };
-            var path = paths[source];
+            const path = paths[source];
             if (!path) return Promise.resolve(null);
 
-            var candidates = [path];
+            const candidates = [path];
             if (source === 'mistral') {
-                candidates.push('data/examples/' + docId + '/' + docId + '_p' + page + '.md');
+                candidates.push(`${_basePath}data/examples/${docId}/${docId}_p${page}.md`);
             }
             return _fetchWithFallbacks(source + '/' + docId + '/' + page, candidates, 'text');
         },
 
         // ---- Layout Data Fetching (Gemini first, Docling fallback) ----
         fetchLayoutData: function (docId, page) {
-            var padded = String(page).padStart(3, '0');
-            var base = docId + '_p' + padded;
-            var candidates = [
-                '../output/layout/' + docId + '/' + base + '_layout_gemini.json',
-                'data/examples/' + docId + '/' + base + '_layout_gemini.json',
-                '../output/layout/' + docId + '/' + base + '_layout.json',
-                'data/examples/' + docId + '/' + base + '_layout.json',
+            const padded = String(page).padStart(3, '0');
+            const base = docId + '_p' + padded;
+            const candidates = [
+                `${_basePath}../output/layout/${docId}/${base}_layout_gemini.json`,
+                `${_basePath}data/examples/${docId}/${base}_layout_gemini.json`,
+                `${_basePath}../output/layout/${docId}/${base}_layout.json`,
+                `${_basePath}data/examples/${docId}/${base}_layout.json`,
             ];
             return _fetchWithFallbacks('layout/' + docId + '/' + page, candidates, 'json');
         },
 
         // ---- TEI Fetching ----
         fetchPageTei: function (docId, page) {
-            var candidates = [
-                '../output/tei/' + docId + '_p' + page + '.xml',
-                '../output/tei_xml/' + docId + '_p' + page + '.xml',
-                'data/examples/' + docId + '/' + docId + '_p' + page + '.xml',
+            const candidates = [
+                `${_basePath}../output/tei/${docId}_p${page}.xml`,
+                `${_basePath}../output/tei_xml/${docId}_p${page}.xml`,
+                `${_basePath}data/examples/${docId}/${docId}_p${page}.xml`,
             ];
             return _fetchWithFallbacks('tei/' + docId + '/' + page, candidates, 'text');
         },
 
         // ---- PAGE-XML Fetching ----
         fetchPageXml: function (docId, page) {
-            var padded = String(page).padStart(3, '0');
-            var candidates = [
-                '../output/page_xml/' + docId + '/page/' + docId + '_p' + padded + '.xml',
+            const padded = String(page).padStart(3, '0');
+            const candidates = [
+                `${_basePath}../output/page_xml/${docId}/page/${docId}_p${padded}.xml`,
             ];
             return _fetchWithFallbacks('page_xml/' + docId + '/' + page, candidates, 'text');
         },
 
         // ---- METS Fetching (document-level, cached per doc) ----
         fetchMetsXml: function (docId) {
-            var candidates = [
-                '../output/page_xml/' + docId + '/mets.xml',
+            const candidates = [
+                `${_basePath}../output/page_xml/${docId}/mets.xml`,
             ];
             return _fetchWithFallbacks('mets/' + docId, candidates, 'text');
         },
 
         // ---- Reference TEI Fetching (per-page extraction from whole-document XML) ----
         fetchRefTeiPage: async function(docId, page) {
-            var key = 'ref-tei/' + docId + '/' + page;
+            const key = 'ref-tei/' + docId + '/' + page;
             if (_textCache[key] !== undefined) return _textCache[key];
 
             // Cache the whole document under a separate key
-            var docKey = 'ref-tei-doc/' + docId;
-            var docXml = _textCache[docKey];
+            const docKey = 'ref-tei-doc/' + docId;
+            let docXml = _textCache[docKey];
 
             if (docXml === undefined) {
-                var refPaths = [
-                    '../data/referenz-tei/Pilot/' + docId + '.xml',
-                    '../data/referenz-tei/' + docId + '.xml',
+                const refPaths = [
+                    `${_basePath}../data/referenz-tei/Pilot/${docId}.xml`,
+                    `${_basePath}../data/referenz-tei/${docId}.xml`,
                 ];
                 docXml = null;
-                for (var j = 0; j < refPaths.length; j++) {
+                for (let j = 0; j < refPaths.length; j++) {
                     try {
-                        var r = await fetch(refPaths[j]);
+                        const r = await fetch(refPaths[j]);
                         if (r.ok) {
                             docXml = await r.text();
                             break;
@@ -136,13 +141,13 @@
 
             // Parse and extract page content between <pb n="page"> and next <pb>
             try {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(docXml, 'text/xml');
-                var pbs = doc.querySelectorAll('pb');
-                var targetPb = null;
-                var targetIdx = -1;
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(docXml, 'text/xml');
+                const pbs = doc.querySelectorAll('pb');
+                let targetPb = null;
+                let targetIdx = -1;
 
-                for (var i = 0; i < pbs.length; i++) {
+                for (let i = 0; i < pbs.length; i++) {
                     if (pbs[i].getAttribute('n') == page) {
                         targetPb = pbs[i];
                         targetIdx = i;
@@ -156,10 +161,10 @@
                 }
 
                 // Collect nodes between this pb and the next
-                var nextPb = targetIdx + 1 < pbs.length ? pbs[targetIdx + 1] : null;
-                var serializer = new XMLSerializer();
-                var result = serializer.serializeToString(targetPb) + '\n';
-                var node = targetPb.nextSibling;
+                const nextPb = targetIdx + 1 < pbs.length ? pbs[targetIdx + 1] : null;
+                const serializer = new XMLSerializer();
+                let result = serializer.serializeToString(targetPb) + '\n';
+                let node = targetPb.nextSibling;
 
                 while (node && node !== nextPb) {
                     if (node.nodeType === 1 || (node.nodeType === 3 && node.textContent.trim())) {
@@ -169,10 +174,11 @@
                 }
 
                 // Wrap in minimal TEI structure
-                var pageXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
-                    '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n<text><body><div n="1">\n' +
-                    result +
-                    '</div></body></text>\n</TEI>';
+                const pageXml = `<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<text><body><div n="1">
+${result}</div></body></text>
+</TEI>`;
 
                 _textCache[key] = pageXml;
                 return pageXml;
@@ -184,17 +190,17 @@
 
         // ---- XML Parsing ----
         parseXml: function (xml) {
-            var cleaned = xml
+            const cleaned = xml
                 .replace(/\s+xmlns(:\w+)?\s*=\s*["'][^"']*["']/g, '')
                 .replace(/\s+xsi:\w+\s*=\s*["'][^"']*["']/g, '');
-            var doc = new DOMParser().parseFromString(cleaned, 'text/xml');
+            const doc = new DOMParser().parseFromString(cleaned, 'text/xml');
             if (doc.querySelector('parsererror')) return null;
             return doc;
         },
 
         // ---- XML Syntax Highlighting ----
         highlightXml: function (xml) {
-            var s = xml
+            let s = xml
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
@@ -208,8 +214,8 @@
             );
             s = s.replace(
                 /(&lt;\/?)(\w[\w:-]*)([\s\S]*?)(\/?)(&gt;)/g,
-                function (m, open, tagName, attrs, slash, close) {
-                    var result = '<span class="xml-tag">' + open + tagName + '</span>';
+                (m, open, tagName, attrs, slash, close) => {
+                    let result = '<span class="xml-tag">' + open + tagName + '</span>';
                     if (attrs) {
                         result += attrs.replace(
                             /([\w:-]+)="([^"]*?)"/g,
@@ -250,7 +256,7 @@
         },
 
         imagePath: function (docId, page) {
-            return 'images/' + docId + '/' + docId + '_p' + ZBZ.padPage(page) + '.png';
+            return `${_basePath}images/${docId}/${docId}_p${ZBZ.padPage(page)}.png`;
         },
 
         // ---- Publication Form Labels (shared) ----
@@ -268,19 +274,19 @@
         // ---- CER Status ----
         cerBadge: function (cer) {
             if (cer == null) return '<span class="tag">n/a</span>';
-            var pct = cer * 100;
+            const pct = cer * 100;
             if (pct <= 3) return '<span class="badge-ok">' + pct.toFixed(1) + '%</span>';
             if (pct <= 7) return '<span class="badge-pending">' + pct.toFixed(1) + '%</span>';
             return '<span class="badge-error">' + pct.toFixed(1) + '%</span>';
         },
 
         // ---- DOM Helpers ----
-        $: function (sel) { return document.querySelector(sel); },
-        $$: function (sel) { return document.querySelectorAll(sel); },
+        $: (sel) => document.querySelector(sel),
+        $$: (sel) => document.querySelectorAll(sel),
 
         esc: function (s) {
             if (s == null) return '';
-            var el = document.createElement('span');
+            const el = document.createElement('span');
             el.textContent = String(s);
             return el.innerHTML;
         },
@@ -298,21 +304,21 @@
         ],
 
         renderPipelineStatus: function (status, compact) {
-            var steps = ZBZ.PIPELINE_STEPS;
-            var cls = compact ? 'pipeline-steps compact' : 'pipeline-steps';
-            var html = '<div class="' + cls + '">';
-            steps.forEach(function (s) {
+            const steps = ZBZ.PIPELINE_STEPS;
+            const cls = compact ? 'pipeline-steps compact' : 'pipeline-steps';
+            let html = '<div class="' + cls + '">';
+            steps.forEach((s) => {
                 if (s.composite) {
-                    var anyDone = s.composite.some(function (k) { return status[k]; });
-                    var done = anyDone ? ' done' : '';
-                    var dots = '';
+                    const anyDone = s.composite.some((k) => status[k]);
+                    const done = anyDone ? ' done' : '';
+                    let dots = '';
                     if (!compact) {
                         if (status.ocr_mistral) dots += '<span class="engine-dot teal" title="Mistral"></span>';
                         if (status.ocr_deepseek) dots += '<span class="engine-dot violet" title="DeepSeek"></span>';
                     }
                     html += '<div class="pipeline-step' + done + '" title="' + s.title + '">' + s.label + dots + '</div>';
                 } else {
-                    var done = status[s.key] ? ' done' : '';
+                    const done = status[s.key] ? ' done' : '';
                     html += '<div class="pipeline-step' + done + '" title="' + s.title + '">' + s.label + '</div>';
                 }
             });
@@ -322,7 +328,7 @@
 
         // ---- Engine Badges ----
         engineBadges: function (pipelineStatus) {
-            var html = '';
+            let html = '';
             if (pipelineStatus.ocr_mistral) html += '<span class="tag teal">M</span>';
             if (pipelineStatus.ocr_deepseek) html += '<span class="tag violet">DS</span>';
             if (pipelineStatus.llm_corrected) html += '<span class="tag blue">LLM</span>';
@@ -335,10 +341,10 @@
 
         loadEntityIndex: function () {
             if (ZBZ._entityIndex) return Promise.resolve(ZBZ._entityIndex);
-            return fetch('data/entity_index.json')
-                .then(function (r) { return r.json(); })
-                .then(function (data) { ZBZ._entityIndex = data; return data; })
-                .catch(function () {
+            return fetch(_basePath + 'data/entity_index.json')
+                .then((r) => r.json())
+                .then((data) => { ZBZ._entityIndex = data; return data; })
+                .catch(() => {
                     ZBZ._entityIndex = {};
                     return {};
                 });
@@ -346,7 +352,7 @@
 
         lookupEntity: function (ref) {
             if (!ZBZ._entityIndex || !ref) return null;
-            var id = ref.charAt(0) === '#' ? ref.slice(1) : ref;
+            const id = ref.charAt(0) === '#' ? ref.slice(1) : ref;
             return ZBZ._entityIndex[id] || null;
         },
 
@@ -356,8 +362,8 @@
         },
 
         setParams: function (obj) {
-            var params = new URLSearchParams(window.location.search);
-            Object.keys(obj).forEach(function (k) {
+            const params = new URLSearchParams(window.location.search);
+            Object.keys(obj).forEach((k) => {
                 if (obj[k] == null) params.delete(k);
                 else params.set(k, obj[k]);
             });
@@ -365,5 +371,10 @@
         },
     };
 
+    // ---- Console Logging ----
+    const _logStyles = 'color:#0f766e;font-weight:600';
+    ZBZ.log = (module, msg) => console.log(`%c[ZBZ:${module}]%c ${msg}`, _logStyles, '');
+
     window.ZBZ = ZBZ;
+    ZBZ.log('Core', `basePath="${_basePath || '.'}" | shared.js ready`);
 })();
