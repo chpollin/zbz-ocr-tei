@@ -281,63 +281,66 @@
 
     function extractPageFromFull(xml, page) {
         if (!xml) return null;
+        // Work on the raw XML string (not DOM-serialized) for consistent <pb/> format
         const clean = xml.replace(/\s+xmlns\s*=\s*"[^"]*"/g, '');
-        const doc = new DOMParser().parseFromString(clean, 'text/xml');
-        if (doc.querySelector('parsererror')) return null;
 
-        const body = doc.querySelector('body');
-        if (!body) return null;
+        // Find <body> content
+        const bodyStart = clean.indexOf('<body');
+        const bodyEnd = clean.lastIndexOf('</body>');
+        if (bodyStart === -1 || bodyEnd === -1) return null;
+        const bodyContent = clean.substring(bodyStart, bodyEnd + 7); // includes <body>...</body>
 
-        const pbs = Array.prototype.slice.call(body.querySelectorAll('pb'));
-        if (!pbs.length) {
-            return page === 1 ? new XMLSerializer().serializeToString(body) : null;
-        }
-
-        // Find the <pb> for the target page
-        let startPb = null;
-        let startIdx = -1;
-        for (let i = 0; i < pbs.length; i++) {
-            const n = parseInt(pbs[i].getAttribute('n'), 10);
-            if (n === page) {
-                startPb = pbs[i];
-                startIdx = i;
-                break;
-            }
-        }
-        if (!startPb) return null;
-
-        const endPb = startIdx + 1 < pbs.length ? pbs[startIdx + 1] : null;
-
-        // Collect nodes between startPb and endPb (walk siblings)
-        const frag = doc.createDocumentFragment();
-        // We need to walk through the DOM tree collecting content for this page.
-        // Strategy: serialize body, find text between <pb n="page"> and next <pb>.
-        const bodyStr = new XMLSerializer().serializeToString(body);
-        const pbRegex = /<pb\s[^>]*n="(\d+)"[^>]*\/>/g;
+        // Find all <pb> positions — match both <pb .../> and <pb ...></pb>
+        const pbRegex = /<pb\s[^>]*?n="(\d+)"[^>]*?(?:\/>|><\/pb>)/g;
         const pbPositions = [];
-        let match;
-        while ((match = pbRegex.exec(bodyStr)) !== null) {
-            pbPositions.push({ n: parseInt(match[1], 10), start: match.index, end: match.index + match[0].length });
+        let m;
+        while ((m = pbRegex.exec(bodyContent)) !== null) {
+            pbPositions.push({ n: parseInt(m[1], 10), pos: m.index, end: m.index + m[0].length });
         }
 
-        let targetStart = -1;
-        let targetEnd = bodyStr.length;
+        if (!pbPositions.length) {
+            return page === 1 ? bodyContent : null;
+        }
+
+        // Find the target page
+        let targetIdx = -1;
         for (let i = 0; i < pbPositions.length; i++) {
             if (pbPositions[i].n === page) {
-                targetStart = pbPositions[i].start;
-                if (i + 1 < pbPositions.length) {
-                    targetEnd = pbPositions[i + 1].start;
-                } else {
-                    // Until </body>
-                    const bodyClose = bodyStr.lastIndexOf('</body>');
-                    if (bodyClose > targetStart) targetEnd = bodyClose;
-                }
+                targetIdx = i;
                 break;
             }
         }
+        if (targetIdx === -1) return null;
 
-        if (targetStart === -1) return null;
-        return bodyStr.substring(targetStart, targetEnd);
+        const segStart = pbPositions[targetIdx].pos;
+        let segEnd;
+        if (targetIdx + 1 < pbPositions.length) {
+            segEnd = pbPositions[targetIdx + 1].pos;
+        } else {
+            // Last page: until </body>
+            const closeBody = bodyContent.lastIndexOf('</body>');
+            segEnd = closeBody > segStart ? closeBody : bodyContent.length;
+        }
+
+        // Extract segment
+        let segment = bodyContent.substring(segStart, segEnd);
+
+        // Fix unclosed/unmatched tags: count opening and closing div/p/note tags
+        // and add missing closers/openers to make valid XML
+        const tags = ['div', 'p', 'note', 'head', 'hi', 'foreign', 'sp'];
+        tags.forEach((tag) => {
+            const opens = (segment.match(new RegExp('<' + tag + '[\\s>]', 'g')) || []).length;
+            const closes = (segment.match(new RegExp('</' + tag + '>', 'g')) || []).length;
+            if (opens > closes) {
+                // Add missing closers at end
+                for (let j = 0; j < opens - closes; j++) segment += '</' + tag + '>';
+            } else if (closes > opens) {
+                // Add missing openers at start
+                for (let j = 0; j < closes - opens; j++) segment = '<' + tag + '>' + segment;
+            }
+        });
+
+        return '<body>' + segment + '</body>';
     }
 
     function extractRevisionDesc(xml) {
