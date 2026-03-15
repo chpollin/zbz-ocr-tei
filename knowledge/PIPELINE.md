@@ -62,6 +62,13 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 
 **Entity-Tagging (Step 1+2):** `annotate_entities()` und `reannotate_entities()` nutzen den Entity Index fuer typkorrekte Tags (persName/orgName/placeName/bibl) mit interner ID als ref-Attribut (`#zbz-p.N`, `#zbz-o.N`, `#zbz-l.N`, `#zbz-w.N`). Alle 4 Entity-Typen werden getaggt (nicht nur Personen). Gemini-Prompt zeigt Entities nach Typ gruppiert. Interne IDs verlinken via Entity Index weiter auf Wikidata/GND.
 
+**Quality Learnings (Session 26, 100-Doc Test):**
+1. **Step-2-Cache invalidieren bei Pipeline-Aenderungen:** `--force` regeneriert Step 1+3, aber Step 2 kommt aus Cache (`_refined.xml`). Bei Prompt- oder Scaffold-Aenderungen muessen die `_refined.xml` manuell geloescht werden, damit Gemini den neuen Input sieht. Sonst wirken Fixes nicht (W6-Artefakte).
+2. **Gemini taggt gelegentlich Nicht-Entities:** "Redacteur en chef", "Tirage", generische Begriffe. Inhaerent bei LLM-basierter NER. Loesung: Curation Editor (Human-in-the-Loop), nicht Code-Fix.
+3. **Entity-Index-Qualitaet bestimmt TEI-Qualitaet:** Stopwort-Filter (`_ENTITY_STOPWORDS`) noetig, weil NER-Extraktion unkritisch generische Begriffe als Entities uebernimmt (Dieu, Monde, suisse). Stopwort-Liste pflegen vor Production Run.
+4. **Validierung deckt Struktur, nicht Semantik:** RelaxNG + W1-W10 fangen Strukturprobleme. Inhaltliche Fehler (falscher Entity-Typ bei spezifischem Vorkommen, fehlende Absaetze) nur per Bildvergleich im Curation Editor erkennbar.
+5. **Production-Run-Kommando:** `python -m scripts.tei.tei_unified --all --ner` (ohne `--force` fuer Cache-Nutzung, mit `--force` fuer volle Regenerierung). Validation ist Default (aktiv), HTML-Report automatisch nach `--all`.
+
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
 **Helper scripts:** `extract_pages.py` (page images), `postprocess/` (normalization).
