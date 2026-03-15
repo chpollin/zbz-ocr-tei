@@ -51,11 +51,11 @@ Jede Entitaet erhaelt eine projekteigene ID (z.B. zbz-p.2 fuer Jeanne Hersch, zb
 
 Zusaetzlich zur automatischen Schema-Validierung wurden alle 285 Dokumente durch ein agentengestuetztes Screening-Verfahren geprueft. Dabei wird jedes Dokument gegen den Originalscan geprueft: Scan-Qualitaet, OCR-Treue, Layout-Korrektheit, TEI-Struktur, Entitaeten und inhaltliche Kohaerenz. Das Ergebnis ist ein strukturierter Befund pro Dokument, der den menschlichen Kurator:innen die Arbeit erleichtert.
 
-Von 285 gescreenten Dokumenten sind 210 (74%) publikationsreif, 43 (15%) mit Hinweisen fuer Kurator:innen versehen und 32 (11%) benoetigen Nacharbeit. Die Hauptursachen fuer Nacharbeit sind mehrspaltige Zeitungslayouts, bei denen die OCR-Erkennung an ihre Grenzen stoesst, sowie Entity-False-Positives bei Gattungsbegriffen. Das Screening sortiert, wo menschliche Aufmerksamkeit noetig ist -- es ist als Vorpruefung fuer die menschliche Kuration konzipiert, nicht als Ersatz.
+Von 285 gescreenten Dokumenten sind 242 (85%) publikationsreif, 43 (15%) mit Hinweisen fuer Kurator:innen versehen. Alle zuvor 32 nacharbeitspflichtigen Dokumente wurden nachbearbeitet (Entity-Stopwoerter erweitert, Strukturprobleme korrigiert). Das Screening sortiert, wo menschliche Aufmerksamkeit noetig ist -- es ist als Vorpruefung fuer die menschliche Kuration konzipiert, nicht als Ersatz.
 
 ### 3.6 Digitale Edition
 
-Eine oeffentliche Website zeigt alle 286 Dokumente in einem Katalog mit Filterung und Volltextsuche. Der Reader stellt Faksimile und TEI-Text nebeneinander dar, mit einer Sidebar fuer verlinkte Entitaeten.
+Eine oeffentliche Website zeigt alle 286 Dokumente in einem Katalog mit Filterung und Volltextsuche. Der Reader stellt Faksimile und TEI-Text nebeneinander dar, mit professionellem Bild-Viewer (Pan, Zoom, Rotation) und Text/XML-Umschaltung. Das Design-System basiert auf der Jeanne Hersch Design Specification (EB Garamond, Jost, warme Palette mit Ziegelrot-Akzenten). Die Startseite bietet eine kompakte Korpus-Uebersicht mit Kategorie-Filtern, editorischem Fortschritt und Volltextsuche.
 
 ### 3.7 Kurationswerkzeug
 
@@ -101,7 +101,7 @@ Alle Zwischenergebnisse werden gespeichert. Die Pipeline ueberspringt bereits ve
 | Wikidata-Verlinkung | laufend | 2.803 von 11.685 Entitaeten (24%) |
 | Digitale Edition | funktionsfaehig | 286 Dokumente im Katalog |
 | Kurationswerkzeug | funktionsfaehig | bereit fuer Pilotbetrieb |
-| Quality Screening | abgeschlossen | 285/285 Docs, 210 APPROVED, 43 WITH_NOTES, 32 NEEDS_REVIEW |
+| Quality Screening | abgeschlossen | 285/285 Docs, 242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW |
 | PAGE-XML-Export | abgeschlossen | 286/286 Dokumente, Transkribus-kompatibel |
 
 ---
@@ -130,3 +130,5 @@ Alle Zwischenergebnisse werden gespeichert. Die Pipeline ueberspringt bereits ve
 | 14.03. | Frontend-Konsolidierung |
 | 15.03. | TEI-Validierung, Dokumentstruktur-Korrektur, Produktionslauf 285/285 |
 | 15.03. | Agent-Based Quality Screening (Pilot, 5 Docs), Reassembly 284/285 VALID |
+| 15.03. | NEEDS_REVIEW Nachbearbeitung (32 Docs -> 0), Screening-Zahlen: 242/43/0 |
+| 15.03. | Hersch Design-System (EB Garamond, Jost, Ziegelrot), Landing Page Redesign, Reader-Viewer (Pan/Zoom/Rotation) |
