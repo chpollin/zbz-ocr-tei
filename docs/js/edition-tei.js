@@ -254,7 +254,10 @@
                     const zbzLabel = document.createElement('a');
                     zbzLabel.className = 'ed-entity-item-zbzid';
                     zbzLabel.textContent = all.zbzId;
-                    zbzLabel.href = `register.html?id=${encodeURIComponent(all.zbzId)}`;
+                    // Route to type-specific register page
+                    const regPages = { 'p': 'register-personen.html', 'o': 'register-organisationen.html', 'l': 'register-orte.html', 'w': 'register-werke.html' };
+                    const typeChar = (all.zbzId.match(/^zbz-([a-z])\./) || [])[1] || 'p';
+                    zbzLabel.href = `${regPages[typeChar] || 'register-personen.html'}?id=${encodeURIComponent(all.zbzId)}`;
                     zbzLabel.title = 'Im Register anzeigen';
                     zbzLabel.addEventListener('click', (e) => { e.stopPropagation(); });
                     item.appendChild(zbzLabel);

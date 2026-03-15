@@ -1,6 +1,7 @@
 /**
  * ZBZ Edition – Register Module
- * Entity register with type tabs, faceted filters, search, table/card views.
+ * Per-type entity register with faceted filters, search, table/card views.
+ * Type is determined by data-register-type attribute on <body>.
  * Namespace: ZBZ.EditionRegister (ES6+, IIFE)
  */
 (function () {
@@ -11,12 +12,18 @@
     const $$ = E.$$;
     const _log = (msg) => console.log(`[ZBZ:Register] ${msg}`);
 
+    // Read entity type from <body data-register-type="person|organization|place|work">
+    const PAGE_TYPE = document.body.dataset.registerType;
+    if (!PAGE_TYPE) {
+        _log('Kein data-register-type auf <body> gefunden, Abbruch.');
+        return;
+    }
+
     const state = {
         data: null,
-        entities: [],
+        entities: [],      // only entities of PAGE_TYPE
         filtered: [],
         catalog: null,
-        activeType: 'all',
         view: 'table',
         sortKey: 'name',
         sortAsc: true,
@@ -44,8 +51,6 @@
         work: 'Werk'
     };
 
-    const TYPES_ORDER = ['person', 'organization', 'place', 'work'];
-
     // --- Init ---
 
     function init() {
@@ -56,13 +61,14 @@
                     return;
                 }
                 state.data = registerData;
-                state.entities = registerData.entities;
+                // Filter to only this page's type right away
+                state.entities = registerData.entities.filter((e) => e.type === PAGE_TYPE);
                 state.catalog = catalogData;
-                _log(`${state.entities.length} Entities geladen`);
+                _log(`${state.entities.length} ${TYPE_LABELS[PAGE_TYPE]} geladen (von ${registerData.entities.length} gesamt)`);
 
                 readUrlState();
                 initSearchIndex();
-                renderTabs();
+                renderTypeStats();
                 renderFilters();
                 bindEvents();
                 applyFilters();
@@ -72,10 +78,6 @@
     // --- URL State ---
 
     function readUrlState() {
-        const type = E.getParam('type');
-        if (type && (type === 'all' || TYPES_ORDER.includes(type))) {
-            state.activeType = type;
-        }
         const q = E.getParam('q');
         if (q) {
             state.searchQuery = q;
@@ -102,7 +104,6 @@
 
     function syncUrlState() {
         const params = {};
-        if (state.activeType !== 'all') params.type = state.activeType;
         if (state.searchQuery) params.q = state.searchQuery;
         const sortVal = (state.sortAsc ? '' : '-') + state.sortKey;
         if (sortVal !== 'name') params.sort = sortVal;
@@ -130,48 +131,24 @@
             variantStr: (ent.variants || []).join(' ')
         }));
         state.searchIndex.addAll(docs);
-        _log(`MiniSearch: ${docs.length} Entities indexiert`);
+        _log(`MiniSearch: ${docs.length} ${TYPE_LABELS[PAGE_TYPE]} indexiert`);
     }
 
-    // --- Tabs ---
-
-    function renderTabs() {
-        const container = $('#register-tabs');
-        if (!container) return;
-
-        const counts = { all: state.entities.length };
-        TYPES_ORDER.forEach((t) => {
-            counts[t] = state.entities.filter((e) => e.type === t).length;
-        });
-
-        let html = `<button class="ed-register-tab${state.activeType === 'all' ? ' active' : ''}" role="tab" data-type="all">Alle <span class="ed-register-tab-count">${E.fmtNum(counts.all)}</span></button>`;
-        TYPES_ORDER.forEach((t) => {
-            const active = state.activeType === t ? ' active' : '';
-            html += `<button class="ed-register-tab${active}" role="tab" data-type="${t}">${TYPE_LABELS[t]} <span class="ed-register-tab-count">${E.fmtNum(counts[t])}</span></button>`;
-        });
-        container.innerHTML = html;
-
-        // Type summary stats
-        renderTypeStats();
-    }
+    // --- Type Stats ---
 
     function renderTypeStats() {
         const summ = state.data && state.data.summary ? state.data.summary.by_type : null;
-        if (!summ) return;
         const container = $('#register-type-stats');
         if (!container) return;
 
-        const t = state.activeType;
-        if (t === 'all') {
+        if (summ && summ[PAGE_TYPE]) {
+            const s = summ[PAGE_TYPE];
+            container.innerHTML = `<span>${E.fmtNum(s.total)} ${TYPE_LABELS[PAGE_TYPE]}</span> · <span>${E.fmtNum(s.with_wikidata)} Wikidata</span> · <span>${E.fmtNum(s.with_gnd)} GND</span> · <span>${E.fmtNum(s.with_docs)} in Docs</span>`;
+        } else {
             const total = state.entities.length;
             const wd = state.entities.filter((e) => e.wikidata_qid).length;
             const gnd = state.entities.filter((e) => e.gnd_id).length;
             container.innerHTML = `<span>${E.fmtNum(total)} Eintraege</span> · <span>${E.fmtNum(wd)} Wikidata</span> · <span>${E.fmtNum(gnd)} GND</span>`;
-        } else if (summ[t]) {
-            const s = summ[t];
-            container.innerHTML = `<span>${E.fmtNum(s.total)} ${TYPE_LABELS[t] || t}</span> · <span>${E.fmtNum(s.with_wikidata)} Wikidata</span> · <span>${E.fmtNum(s.with_gnd)} GND</span> · <span>${E.fmtNum(s.with_docs)} in Docs</span>`;
-        } else {
-            container.innerHTML = '';
         }
     }
 
@@ -210,11 +187,6 @@
     function applyFilters() {
         readFilters();
         let list = state.entities;
-
-        // Type tab
-        if (state.activeType !== 'all') {
-            list = list.filter((e) => e.type === state.activeType);
-        }
 
         // Search
         if (state.searchQuery.trim()) {
@@ -271,7 +243,7 @@
         const container = $('#register-results');
         const countEl = $('#result-count');
         if (countEl) {
-            countEl.textContent = `${E.fmtNum(state.filtered.length)} von ${E.fmtNum(state.entities.length)} Eintraegen`;
+            countEl.textContent = `${E.fmtNum(state.filtered.length)} von ${E.fmtNum(state.entities.length)} ${TYPE_LABELS[PAGE_TYPE]}`;
         }
 
         if (state.view === 'table') {
@@ -298,7 +270,6 @@
 
         let html = `<div class="ed-table-wrap"><table class="ed-table ed-register-table">
             <thead><tr>
-                <th data-sort="type" style="width:40px">Typ ${sortIcon('type')}</th>
                 <th data-sort="name">Name ${sortIcon('name')}</th>
                 <th data-sort="doc_count" style="width:60px;text-align:right">Dok. ${sortIcon('doc_count')}</th>
                 <th data-sort="mention_count" style="width:60px;text-align:right">Erw. ${sortIcon('mention_count')}</th>
@@ -308,12 +279,10 @@
 
         state.filtered.forEach((ent) => {
             const expanded = state.expandedId === ent.id;
-            const dotClass = `ed-entity-dot ed-entity-dot-${ent.type}`;
             const links = buildLinkBadges(ent);
             const varCount = (ent.variants || []).length;
 
             html += `<tr class="ed-register-row${expanded ? ' expanded' : ''}" data-id="${E.esc(ent.id)}">
-                <td><span class="${dotClass}" title="${E.esc(TYPE_SINGULAR[ent.type] || ent.type)}"></span></td>
                 <td><strong>${E.esc(ent.name)}</strong>${varCount > 0 ? ` <span class="ed-text-muted">(${varCount})</span>` : ''}${ent.contexts && ent.contexts.length > 0 ? '<div class="ed-register-context-preview">' + E.esc(ent.contexts[0].length > 100 ? ent.contexts[0].substring(0, 97) + '...' : ent.contexts[0]) + '</div>' : ''}</td>
                 <td style="text-align:right">${ent.doc_count}</td>
                 <td style="text-align:right">${ent.mention_count}</td>
@@ -322,7 +291,7 @@
             </tr>`;
 
             if (expanded) {
-                html += buildDetailRow(ent, 6);
+                html += buildDetailRow(ent, 5);
             }
         });
 
@@ -472,20 +441,6 @@
     // --- Events ---
 
     function bindEvents() {
-        // Tab clicks
-        const tabContainer = $('#register-tabs');
-        if (tabContainer) {
-            tabContainer.addEventListener('click', (e) => {
-                const tab = e.target.closest('.ed-register-tab');
-                if (!tab) return;
-                state.activeType = tab.dataset.type;
-                state.expandedId = null;
-                tabContainer.querySelectorAll('.ed-register-tab').forEach((t) => t.classList.remove('active'));
-                tab.classList.add('active');
-                applyFilters();
-            });
-        }
-
         // Search
         const searchEl = $('#register-search');
         if (searchEl) {
@@ -549,7 +504,7 @@
                     state.sortAsc = !state.sortAsc;
                 } else {
                     state.sortKey = key;
-                    state.sortAsc = key === 'name' || key === 'type';
+                    state.sortAsc = key === 'name';
                 }
                 const sortEl = $('#register-sort');
                 if (sortEl) sortEl.value = (state.sortAsc ? '' : '-') + key;

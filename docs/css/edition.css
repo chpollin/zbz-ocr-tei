@@ -237,6 +237,79 @@ img { max-width: 100%; height: auto; }
   border-bottom-color: var(--h-ziegelrot);
   text-decoration: none;
 }
+/* --- Nav Dropdown --- */
+.ed-nav-dropdown {
+  position: relative;
+}
+.ed-nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--h-text-secondary);
+  font-size: var(--ed-text-sm);
+  font-family: var(--ed-font-sans);
+  font-weight: 500;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: var(--ed-space-xs) 0;
+  cursor: pointer;
+  transition: var(--ed-transition);
+}
+.ed-nav-dropdown-toggle:hover,
+.ed-nav-dropdown-toggle.active {
+  color: var(--h-text);
+  border-bottom-color: var(--h-ziegelrot);
+}
+.ed-nav-chevron {
+  transition: transform 0.2s ease;
+}
+.ed-nav-dropdown.open .ed-nav-chevron {
+  transform: rotate(180deg);
+}
+.ed-nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  margin: 0;
+  padding: var(--ed-space-xs) 0;
+  background: var(--h-surface);
+  border: 1px solid var(--h-border);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px var(--h-shadow);
+  min-width: 180px;
+  z-index: 200;
+}
+.ed-nav-dropdown.open .ed-nav-dropdown-menu {
+  display: block;
+}
+.ed-nav-dropdown-menu li {
+  margin: 0;
+}
+.ed-nav-dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--h-text-secondary);
+  font-size: var(--ed-text-sm);
+  font-family: var(--ed-font-sans);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--ed-transition);
+  white-space: nowrap;
+  border-bottom: none !important;
+}
+.ed-nav-dropdown-menu a:hover {
+  background: var(--h-bg-alt);
+  color: var(--h-text);
+}
+.ed-nav-dropdown-menu a.active {
+  color: var(--h-ziegelrot);
+  font-weight: 600;
+}
+
 /* Mobile nav hamburger */
 .ed-nav-hamburger {
   display: none;
@@ -1846,6 +1919,18 @@ img { max-width: 100%; height: auto; }
     gap: var(--ed-space-md);
     box-shadow: var(--ed-shadow-lg);
     border-top: 1px solid var(--h-border);
+  }
+  .ed-nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding-left: var(--ed-space-md);
+    min-width: auto;
+  }
+  .ed-nav-dropdown-menu a {
+    padding: 4px 0;
   }
 
   .ed-hero { padding: var(--ed-space-2xl) var(--ed-space-md); }

@@ -95,7 +95,12 @@
     const NAV_ITEMS = [
         { href: 'index.html', label: 'Start' },
         { href: 'catalog.html', label: 'Katalog' },
-        { href: 'register.html', label: 'Register' },
+        { label: 'Register', children: [
+            { href: 'register-personen.html', label: 'Personen' },
+            { href: 'register-organisationen.html', label: 'Organisationen' },
+            { href: 'register-orte.html', label: 'Orte' },
+            { href: 'register-werke.html', label: 'Werke' }
+        ]},
         { href: 'about.html', label: 'Projekt' },
         { href: 'infrastruktur/index.html', label: 'Promptotyping-Artefakte' }
     ];
@@ -107,9 +112,22 @@
 
         const path = window.location.pathname;
         const isInfra = path.indexOf('/infrastruktur/') > -1;
-        // Fix hrefs for infrastruktur pages (prefix ../)
         const hrefPrefix = isInfra ? '../' : '';
+
         const links = NAV_ITEMS.map((item) => {
+            // Dropdown item (has children)
+            if (item.children) {
+                const childActive = item.children.some((c) => !isInfra && path.indexOf(c.href) > -1);
+                const childLinks = item.children.map((child) => {
+                    const href = hrefPrefix + child.href;
+                    const active = !isInfra && path.indexOf(child.href) > -1;
+                    return `<li><a href="${href}"${active ? ' class="active"' : ''}>${child.label}</a></li>`;
+                }).join('');
+                return `<li class="ed-nav-dropdown">` +
+                    `<button class="ed-nav-dropdown-toggle${childActive ? ' active' : ''}" aria-expanded="false">${item.label} <svg class="ed-nav-chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>` +
+                    `<ul class="ed-nav-dropdown-menu">${childLinks}</ul></li>`;
+            }
+            // Regular item
             const href = hrefPrefix + item.href;
             let active = false;
             if (item.href.indexOf('infrastruktur/') === 0) {
@@ -139,6 +157,10 @@
             `<div class="ed-footer-links">` +
             `<a href="${p}index.html">Startseite</a>` +
             `<a href="${p}catalog.html">Katalog</a>` +
+            `<a href="${p}register-personen.html">Personen</a>` +
+            `<a href="${p}register-organisationen.html">Organisationen</a>` +
+            `<a href="${p}register-orte.html">Orte</a>` +
+            `<a href="${p}register-werke.html">Werke</a>` +
             `<a href="${p}about.html">Projekt</a>` +
             `<a href="${p}infrastruktur/index.html">Promptotyping-Artefakte</a>` +
             `</div>` +
@@ -154,6 +176,32 @@
                 hamburger.setAttribute('aria-expanded', String(open));
             });
         }
+
+        // Dropdown toggles
+        $$('.ed-nav-dropdown-toggle').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const li = btn.closest('.ed-nav-dropdown');
+                const wasOpen = li.classList.contains('open');
+                // Close all other dropdowns
+                $$('.ed-nav-dropdown.open').forEach((d) => {
+                    d.classList.remove('open');
+                    d.querySelector('.ed-nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+                });
+                if (!wasOpen) {
+                    li.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Close dropdown on outside click
+        document.addEventListener('click', () => {
+            $$('.ed-nav-dropdown.open').forEach((d) => {
+                d.classList.remove('open');
+                d.querySelector('.ed-nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+            });
+        });
     }
 
     // --- Entity Index (Reconciliation-verifiziert) ---
