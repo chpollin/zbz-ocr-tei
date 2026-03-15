@@ -40,7 +40,8 @@ SCHEMA_DOWNLOAD_TIMEOUT = 30  # Sekunden
 VALID_DIV_TYPES = {
     "review", "interview", "conversation", "entry",
     "bibliography", "editorial", "text", "translation",
-    "reprint", "redactional",
+    "reprint", "redactional", "speech", "conference",
+    "letter", "preface",
 }
 
 # Schema-Validierung

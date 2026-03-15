@@ -370,7 +370,22 @@ def _fix_post_assembly_schema(xml_text: str) -> str:
                     prev.tail = (prev.tail or "") + p_tail
                 head.remove(p)
 
-        # Fix C: <epigraph> nach Content in <div> -> entpacken
+        # Fix C: <head> nach Content in <div> -> zu <p> konvertieren
+        # TEI verlangt <head> nur am Anfang eines div (vor Content).
+        # Nach dem div-Merge koennen Seiten-Headers mitten im div stehen.
+        for div in list(tree.iter(f"{{{TEI_NS}}}div")):
+            children = list(div)
+            seen_content = False
+            for child in children:
+                tag = child.tag.replace(f"{{{TEI_NS}}}", "")
+                if tag in ("pb",):
+                    continue
+                if tag == "head" and seen_content:
+                    child.tag = f"{{{TEI_NS}}}p"
+                elif tag != "head":
+                    seen_content = True
+
+        # Fix D: <epigraph> nach Content in <div> -> entpacken
         for div in list(tree.iter(f"{{{TEI_NS}}}div")):
             children = list(div)
             any_content = False
@@ -404,7 +419,7 @@ def _fix_orphaned_body_children(xml_text: str) -> str:
         tree = ET.fromstring(xml_text)
 
         block_tags = {"p", "figure", "note", "sp", "epigraph", "lg",
-                      "table", "list", "ab", "bibl"}
+                      "table", "list", "ab", "bibl", "head"}
 
         # Fix fuer body UND alle divs
         containers = [tree.find(f".//{{{TEI_NS}}}body")]
