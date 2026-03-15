@@ -1,0 +1,40 @@
+{
+  "doc_id": "2160",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [3, 6],
+      "notes": "Kein Overlay S.1 vorhanden. S.6 Overlay zeigt saubere Absatzerkennung im literarischen Text."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutscher literarisch-philosophischer Essay Am Rande der Zeit. Poetische Sprache korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "12 Seiten. S.1 ExLibris-Deckblatt, S.2 Buchtitel, ab S.3 Hersch-Text. Einspaltiges Layout."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. biblStruct type=bookSection. langUsage deu."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 12, "orgName": 4, "placeName": 5, "bibl": 38},
+      "notes": "Hohe bibl-Dichte durch zentrale Begriffe (Trennung, Zeit) als Werkreferenzen. Charlot, Gott, Fichte als persName."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Literarisch-philosophischer Essay ueber Trennung und Zeitlichkeit. Kohaerenter poetischer Stil."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Saubere Edition eines literarisch-philosophischen Essays. Hohe bibl-Dichte."
+}

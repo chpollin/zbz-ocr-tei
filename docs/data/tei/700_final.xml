@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Mythos und Politik</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">700</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>Mythos und Politik</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1965</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). Bekannte Entity-False-Positives (Mensch, Wahl, Rolle, Herzen) -- projektweites Muster</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1257" lry="1740">
+      <zone xml:id="facs_1_r_1" ulx="135" uly="214" lrx="705" lry="240" />
+      <zone xml:id="facs_1_r_2" ulx="135" uly="247" lrx="363" lry="353" />
+      <zone xml:id="facs_1_r_3" ulx="436" uly="483" lrx="931" lry="516" />
+      <zone xml:id="facs_1_r_4" ulx="140" uly="600" lrx="196" lry="622" />
+      <zone xml:id="facs_1_r_5" ulx="384" uly="600" lrx="511" lry="622" />
+      <zone xml:id="facs_1_r_6" ulx="384" uly="654" lrx="592" lry="678" />
+      <zone xml:id="facs_1_r_7" ulx="140" uly="655" lrx="291" lry="678" />
+      <zone xml:id="facs_1_r_8" ulx="140" uly="683" lrx="272" lry="706" />
+      <zone xml:id="facs_1_r_9" ulx="384" uly="683" lrx="587" lry="706" />
+      <zone xml:id="facs_1_r_10" ulx="140" uly="715" lrx="227" lry="737" />
+      <zone xml:id="facs_1_r_11" ulx="384" uly="715" lrx="527" lry="737" />
+      <zone xml:id="facs_1_r_12" ulx="140" uly="805" lrx="295" lry="843" />
+      <zone xml:id="facs_1_r_13" ulx="384" uly="807" lrx="663" lry="840" />
+      <zone xml:id="facs_1_r_14" ulx="140" uly="901" lrx="241" lry="923" />
+      <zone xml:id="facs_1_r_15" ulx="384" uly="901" lrx="806" lry="923" />
+      <zone xml:id="facs_1_r_16" ulx="140" uly="958" lrx="191" lry="983" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="636" lry="991">
+      <zone xml:id="facs_2_r_1" ulx="95" uly="13" lrx="545" lry="57" />
+      <zone xml:id="facs_2_r_2" ulx="95" uly="76" lrx="537" lry="213" />
+      <zone xml:id="facs_2_r_3" ulx="97" uly="926" lrx="243" lry="964" />
+      <zone xml:id="facs_2_r_4" ulx="268" uly="927" lrx="372" lry="965" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="636" lry="991">
+      <zone xml:id="facs_3_r_1" ulx="48" uly="36" lrx="396" lry="61" />
+      <zone xml:id="facs_3_r_2" ulx="48" uly="72" lrx="603" lry="138" />
+      <zone xml:id="facs_3_r_3" ulx="48" uly="138" lrx="602" lry="230" />
+      <zone xml:id="facs_3_r_4" ulx="48" uly="225" lrx="602" lry="269" />
+      <zone xml:id="facs_3_r_5" ulx="46" uly="268" lrx="601" lry="449" />
+      <zone xml:id="facs_3_r_6" ulx="46" uly="442" lrx="602" lry="751" />
+      <zone xml:id="facs_3_r_7" ulx="47" uly="768" lrx="597" lry="902" />
+      <zone xml:id="facs_3_r_8" ulx="47" uly="896" lrx="597" lry="945" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="655" lry="1039">
+      <zone xml:id="facs_4_r_1" ulx="32" uly="51" lrx="590" lry="378" />
+      <zone xml:id="facs_4_r_2" ulx="36" uly="373" lrx="590" lry="486" />
+      <zone xml:id="facs_4_r_3" ulx="38" uly="682" lrx="595" lry="965" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="655" lry="1039">
+      <zone xml:id="facs_5_r_1" ulx="64" uly="41" lrx="619" lry="656" />
+      <zone xml:id="facs_5_r_2" ulx="65" uly="650" lrx="618" lry="961" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="655" lry="1016">
+      <zone xml:id="facs_6_r_1" ulx="35" uly="32" lrx="590" lry="622" />
+      <zone xml:id="facs_6_r_2" ulx="36" uly="621" lrx="591" lry="948" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="654" lry="1016">
+      <zone xml:id="facs_7_r_1" ulx="68" uly="23" lrx="631" lry="180" />
+      <zone xml:id="facs_7_r_2" ulx="65" uly="221" lrx="627" lry="939" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="655" lry="1016">
+      <zone xml:id="facs_8_r_1" ulx="34" uly="38" lrx="588" lry="107" />
+      <zone xml:id="facs_8_r_2" ulx="34" uly="102" lrx="590" lry="263" />
+      <zone xml:id="facs_8_r_3" ulx="35" uly="258" lrx="590" lry="307" />
+      <zone xml:id="facs_8_r_4" ulx="35" uly="321" lrx="596" lry="953" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="654" lry="1016">
+      <zone xml:id="facs_9_r_1" ulx="72" uly="40" lrx="633" lry="306" />
+      <zone xml:id="facs_9_r_2" ulx="70" uly="305" lrx="630" lry="590" />
+      <zone xml:id="facs_9_r_3" ulx="70" uly="589" lrx="626" lry="743" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="655" lry="1016">
+      <zone xml:id="facs_10_r_1" ulx="35" uly="41" lrx="590" lry="156" />
+      <zone xml:id="facs_10_r_2" ulx="35" uly="150" lrx="591" lry="658" />
+      <zone xml:id="facs_10_r_3" ulx="37" uly="651" lrx="593" lry="811" />
+      <zone xml:id="facs_10_r_4" ulx="40" uly="802" lrx="594" lry="958" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="654" lry="1016">
+      <zone xml:id="facs_11_r_1" ulx="67" uly="39" lrx="629" lry="178" />
+      <zone xml:id="facs_11_r_2" ulx="65" uly="193" lrx="626" lry="699" />
+      <zone xml:id="facs_11_r_3" ulx="63" uly="692" lrx="619" lry="954" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="655" lry="1016">
+      <zone xml:id="facs_12_r_1" ulx="32" uly="47" lrx="590" lry="159" />
+      <zone xml:id="facs_12_r_2" ulx="33" uly="155" lrx="592" lry="508" />
+      <zone xml:id="facs_12_r_3" ulx="38" uly="657" lrx="594" lry="963" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="654" lry="1016">
+      <zone xml:id="facs_13_r_1" ulx="70" uly="65" lrx="630" lry="152" />
+      <zone xml:id="facs_13_r_2" ulx="68" uly="152" lrx="630" lry="395" />
+      <zone xml:id="facs_13_r_3" ulx="68" uly="392" lrx="626" lry="572" />
+      <zone xml:id="facs_13_r_4" ulx="67" uly="568" lrx="625" lry="810" />
+      <zone xml:id="facs_13_r_5" ulx="66" uly="804" lrx="620" lry="959" />
+    </surface>
+    <surface xml:id="facs_14" ulx="0" uly="0" lrx="655" lry="1016">
+      <zone xml:id="facs_14_r_1" ulx="35" uly="46" lrx="592" lry="310" />
+      <zone xml:id="facs_14_r_2" ulx="37" uly="311" lrx="594" lry="445" />
+      <zone xml:id="facs_14_r_3" ulx="37" uly="442" lrx="596" lry="914" />
+      <zone xml:id="facs_14_r_4" ulx="43" uly="912" lrx="596" lry="961" />
+    </surface>
+    <surface xml:id="facs_15" ulx="0" uly="0" lrx="654" lry="1016">
+      <zone xml:id="facs_15_r_1" ulx="74" uly="37" lrx="635" lry="198" />
+      <zone xml:id="facs_15_r_2" ulx="74" uly="195" lrx="633" lry="568" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Elektronischer Dokumentenlieferdienst
+        </head>
+        <p facs="#facs_1_r_2">
+          <orgName ref="#zbz-o.45">Universitätsbibliothek Basel</orgName><lb facs="#facs_1_l_2_1" n="N001" />Schönbeinstrasse 18-20<lb facs="#facs_1_l_2_2" n="N002" />CH-4056 <placeName ref="#zbz-l.9">Basel</placeName><lb facs="#facs_1_l_2_3" n="N003" />info-ub@unibas.ch
+        </p>
+        <p facs="#facs_1_r_3">
+          
+        </p>
+        <p facs="#facs_1_r_4">
+          BA-ZBZ-ZBZ-ME-250521-02
+        </p>
+        <p facs="#facs_1_r_5">
+          Name<lb facs="#facs_1_l_5_1" n="N001" />BASEL_ZBZ
+        </p>
+        <p facs="#facs_1_r_6">
+          E-Mail-Adresse<lb facs="#facs_1_l_6_1" n="N001" />fernleihe@zb.uzh.ch
+        </p>
+        <p facs="#facs_1_r_7">
+          Bestelldatum<lb facs="#facs_1_l_7_1" n="N001" />2025-05-21 14:40:28
+        </p>
+        <p facs="#facs_1_r_8">
+          Lieferart<lb facs="#facs_1_l_8_1" n="N001" />MYBIB_EDOC
+        </p>
+        <p facs="#facs_1_r_9">
+          Signatur<lb facs="#facs_1_l_9_1" n="N001" />UBH Bro 15700
+        </p>
+        <p facs="#facs_1_r_10">
+          Zeitschrift<lb facs="#facs_1_l_10_1" n="N001" />Die Wirklichkeit des Mythos zehn Vorträge
+        </p>
+        <p facs="#facs_1_r_11">
+          ISSN<lb facs="#facs_1_l_11_1" n="N001" />Band/Heft<lb facs="#facs_1_l_11_2" n="N002" />Jahr<lb facs="#facs_1_l_11_3" n="N003" />1965
+        </p>
+        <p facs="#facs_1_r_12">
+          Autor des Artikels<lb facs="#facs_1_l_12_1" n="N001" /><persName ref="#zbz-p.2">Hersch, Jeanne</persName>
+        </p>
+        <p facs="#facs_1_r_13">
+          Titel des Artikels<lb facs="#facs_1_l_13_1" n="N001" /><bibl ref="#zbz-w.681">Mythos und Politik</bibl>
+        </p>
+        <p facs="#facs_1_r_14">
+          Seiten<lb facs="#facs_1_l_14_1" n="N001" />79–91
+        </p>
+        <p facs="#facs_1_r_15">
+          Informationen
+        </p>
+        <p facs="#facs_1_r_16">
+          Vermerk Bibliothek
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Die Wirklichkeit des Mythos
+        </p>
+        <p facs="#facs_2_r_2">
+          Zehn Vorträge von<lb facs="#facs_2_l_2_1" n="N001" /><persName ref="#zbz-p.1786">Stefan Andres</persName> · <persName ref="#zbz-p.1787">Adolf E. Jensen</persName><lb facs="#facs_2_l_2_2" n="N002" /><persName ref="#zbz-p.1788">Friedrich Georg Jünger</persName> · <persName ref="#zbz-p.1">Karl Jaspers</persName><lb facs="#facs_2_l_2_3" n="N003" /><persName ref="#zbz-p.1789">Adolf Portmann</persName> · <persName ref="#zbz-p.2">Jeanne Hersch</persName> · <persName ref="#zbz-p.1790">Heinrich Lützeler</persName><lb facs="#facs_2_l_2_4" n="N004" /><persName ref="#zbz-p.1791">Friedrich Gogarten</persName> · <persName ref="#zbz-p.1792">Michael Schmaus</persName> · <persName ref="#zbz-p.893">Karl Kerényi</persName><lb facs="#facs_2_l_2_5" n="N005" />Eingeleitet und herausgegeben von <persName ref="#zbz-p.1793">Kurt Hoffmann</persName>
+        </p>
+        <p facs="#facs_2_r_3">
+          
+        </p>
+        <p facs="#facs_2_r_4">
+          <orgName ref="#zbz-o.608">Droemer Knaur</orgName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>: MYTHOS UND POLITIK
+        </p>
+        <p facs="#facs_3_r_2">
+          Wenn ich das mir gestellte Thema zu verstehen suche, so glaube ich, daß man von mir erwartet, zu zeigen, inwieweit der Mythos an der Politik teilhat.
+        </p>
+        <p facs="#facs_3_r_3">
+          Man setzt also von vornherein voraus, daß der Mythos einen Teil der Politik darstellt und daß es auch einen anderen Teil gibt. Indem man diesen anderen Teil dem Mythos entgegensetzt, erteilt man ihm den eindeutigen Sinn der Wirklichkeit.
+        </p>
+        <p facs="#facs_3_r_4">
+          Explizit formuliert müßte mein Thema folglich heißen: Mythos und Wirklichkeit in der Politik.
+        </p>
+        <p facs="#facs_3_r_5">
+          Dann fragt man wohl, was ein Mythos sei, nicht aber, was die Wirklichkeit sei. Ganz im Gegenteil: indem man auf die Frage, was ein Mythos sei, zu antworten versucht, bezieht man sich auf einen schon implizit vorhandenen Wirklichkeitsbegriff, von dem man annimmt, daß er Allgemeingut des menschlichen Geistes ist, unerschütterlich, objektiver als die Objektivität selbst. Und man nimmt an, daß die diesbezüglichen Meinungsunterschiede nur in der Vielfalt der Kriterien ihren <bibl ref="#zbz-w.43">Ursprung</bibl> haben.
+        </p>
+        <p facs="#facs_3_r_6">
+          Der Mythos ist ohne Zweifel ein schwieriger Begriff. Aber der Wirklichkeitsbegriff ist noch viel undurchsichtiger. Jeder Mythos lebt schon im Raum der Sprache; der ärmste, unbestimmteste Mythos erzählt schon so etwas wie eine Geschichte. Aber die Wirklichkeit scheint vor den Worten, Einstellungen, Entscheidungen, immer schon dagewesen zu sein. Die Worte, die der Wirklichkeit ihren Sinn verdanken, haben sie schon irgendwie verloren. Die Einstellungen, die alle auf sie hingerichtet sind, lösen sich von ihr. Die Entscheidungen, denen sie ihr Gewicht verleiht, stellen sie in Frage. Das banale und doch immer neue Grundstaunen der <bibl ref="#zbz-w.1">Philosophie</bibl>, das nie aufhört, Probleme zu stellen, entspringt der Tatsache, daß es Wirklichkeit nur im Bewußtsein gibt, daß aber dieses Bewußtsein, das nie auf das Wort verzichten kann, dadurch immer schon einen Wirklichkeitsverlust bedingt.
+        </p>
+        <p facs="#facs_3_r_7">
+          Hier geht es aber nicht um jene dialektische Falle. Hier geht es um Politik. Die Politik ist der Ort, wo in der Vergrößerung der kollektiven Realität, das Schwergewicht der Dinge am sichtbarsten mit den Absichten der Menschen, die Kräfte der außermenschlichen oder sozialen »Natur« mit den wertverwirklichenden Plänen aufeinanderprallen.
+        </p>
+        <p facs="#facs_3_r_8">
+          Was wird nun hier als »Wirklichkeit«, was als »Mythos« bezeichnet? – Wir sind heute den Worten gegenüber mißtrauisch geworden.
+        </p>
+        <p>
+          79
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          den. »Worte, Worte, Du hast schon reden.« Noch nie sind wohl soziale Ideale so großzügig und so allgemeingültig gewesen, im zweifachen Sinn: so von allen anerkannt und so die Rechte aller anerkennend. Gerade aber ist die Distanz zwischen jenen Idealen und den geschichtlichen Fakten dieses Jahrhunderts nie schärfer sichtbar gewesen, nie hat sie den leichten Flug großer Worte so sehr gedemütigt. Die Rhetorik, wenigstens die, die in der Hauptsache in der Erhabenheit eines bestimmten Wortschatzes ruhte, ist tot. Worte, Werte, Ideale werden dann in den Bereich des Mythos abgeschoben, d.h. eines Märchens, das den Zweck hat, die Wirklichkeit zu verschleiern. Und als politische Wirklichkeit werden also nur noch die Güter anerkannt, ihre Produktion und Verteilung einerseits – andererseits die Macht, ihre Werkzeuge und die hierarchischen Beziehungen, die sie den Einzelnen und den Gemeinschaften aufzwingt.
+        </p>
+        <p facs="#facs_4_r_2">
+          Das Vorbild des politischen Mythos wären dann zum Beispiel die »Tabus«, auf denen, in primitiven Gesellschaften, die Macht und die Privilegien der Zauberer beruhe. »Mythisch« ist dann das Eigentliche des »Tabus«, der Begriff der Zauberei selbst. »Wirklich« wäre die faktische Macht des Zauberers, die materiellen Güter und die konkreten Rechte, die er dieser Macht verdankt.
+        </p>
+        <p facs="#facs_4_r_3">
+          Die Politik »entmythisieren« bedeutet dann den Mythos entschleiern, in doppeltem Sinn: es wird gezeigt, daß »es sich um einen Mythos handelt«, d.h. um eine sprachliche Erfindung, ein Märchen, schließlich eine Lüge, die auf nichts beruht – und es wird gezeigt, daß dieser Mythos, diese Lüge, eine ganz und gar wirkliche Funktion auszufüllen hat, d.h., daß sie im Bereich der Verteilung der Macht und der Güter sehr bestimmte Ergebnisse zeitigt.
+        </p>
+        <p>
+          Was man allgemein »die <bibl ref="#zbz-w.586">marxistische Methode</bibl>« nennt, reduziert sich fast ausschließlich auf eine solche Entschleierung, aber mit bestimmten Zügen, die ihr eigentümlich sind und die, wie mir scheint, ihren Wert ausmachen. Es genügt ihr nicht, die Wirksamkeit des Mythos zu vernichten, indem sie ihn als unbegründete Lüge erscheinen läßt. Er ist allerdings unbegründet, aber nicht ursachlos. Es gibt in der Wirklichkeit nichts, was seinen Wahrheitsanspruch rechtfertigen könnte, wohl aber faktische Bedingungen, die sein Entstehen erklären und die seine Lüge selbst ausdrückt und widerspiegelt. Der Mythos wird auf diese Weise entwertet und der Natur einverleibt und entwertet durch diese Naturalisierung selbst. Dadurch, daß die <bibl ref="#zbz-w.586">marxistische Methode</bibl> den Mythos in das »wirkliche« Gewebe des Eigentums – und der
+        </p>
+        <p>
+          80
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          Machtbeziehungen integriert, negiert sie schon den Wert, den Sinn, die Wirksamkeit, die er für sich in Anspruch nimmt; und da gibt es, im Kern des <bibl ref="#zbz-w.837">Marxismus</bibl> und sozusagen wider seinen Willen, wie eine Klage über die unversöhnliche Scheidung zwischen kausaler Erklärung und Wert. Dann aber, und durch dieselbe Gedankenbewegung, die den Wert des Mythos aufhebt, betont die <bibl ref="#zbz-w.586">marxistische Methode</bibl> dessen Wirksamkeit, und die Notwendigkeit, sie zu bekämpfen, wird für die <bibl ref="#zbz-w.586">marxistische Methode</bibl> zur eigenen Rechtfertigung. Indem sie also den Mythos entlarvt, um dadurch die Wirklichkeit zu ändern, wirft sie ein volles und mächtiges Licht auf eine Grundwahrheit: nämlich, daß beide Begriffe, Mythos und Wirklichkeit, die durch die Entlarvung notwendig scharf entgegengesetzt werden, als bildeten sie einen klaren und durchsichtigen Gegensatz, faktisch untrennbar sind – wenigstens in der Politik. Die »mythische« Unklarheit und Trübung zwischen Werten und faktischen Beziehungen im Bereich der Macht und der Güter ist nicht nur bei dem zu entlarvenden »idealistischen« Gegner vorhanden: sie gehört wesentlich zur Politik als solcher. In der Tat will jede Absicht, angesichts faktischer Gegebenheiten, einem Wert Wirksamkeit verleihen – also einer Nicht-Tatsache Wirklichkeit einspritzen –, also Tatsachen und Werte vermischen, Tatsachen ändern durch etwas, was keine Tatsache ist. Da es sich um ein kollektives Eingreifen handelt, kann dieses Eingreifen den punktuellen Charakter einer persönlichen Entscheidung oder Handlung nicht haben: es verdichtet sich unvermeidlich in Sinngebungen, Deutungen, Urteilen, Plänen, es wird zum Mythos. Die marxistische Entlarvung selbst kann hier keine Ausnahme sein.
+        </p>
+        <p facs="#facs_5_r_2">
+          Es kann auf der Ebene reiner Tatsachen keine Politik geben. Es gibt streng genommen keine »realistische« Politik. Jede Politik enthält, neben der Feststellung dessen, was ist, den Mythos dessen, was sein kann. Und freilich ist dieser Mythos nicht »neben« der Feststellung, sondern in deren Kern. Denn die Feststellung einer despotischen Regierung z. B. ist unmöglich, ohne daß der »Mythos« einer Welt des Rechtes und der Freiheit herangezogen würde. Für Menschen, die gar keinen Bezug zu diesem Mythos hätten, wäre Despotismus eben keiner. Der Mythos der Koinzidenz, des Zusammenfallens von Macht und Wert wird im wesentlichen Sinne von den Machthabern aller Zeiten fast als ein apriori vorgefunden, das die Verschmelzung von Macht und ethischem Prestige in ihrer Person rechtfertigt, um gleichzeitig Furcht und Ehrfurcht hervorzurufen (in mehreren Sprachen wird
+        </p>
+        <p>
+          81
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          sogar beides mit ein und demselben Wort bezeichnet), so daß die Regeln der bestehenden Ordnung zu Merkmalen der Gerechtigkeit werden und ihrer Herrschaft den Stempel des moralischen Rechtsspruches aufdrücken. Die Politik, in dem Maße, als sie einer sozialen Realität Werte einverleibt, ist das bevorzugte <orgName ref="#zbz-o.33">Reich</orgName> der Mythen. Jeder politisch tätige <persName ref="#zbz-p.1251">Mensch</persName>, der sein Tun wirklich in seiner politischen Dimension erlebt, kennt die Gegenwart einer Geschichte, die jetzt, eben jetzt, geschrieben wird, und die er nun mitschreibt, indem er ihr eine bestimmte Linie, ein bestimmtes Schema geben möchte, dessen Bedeutung und Rechtfertigung von einem positivistischen Standpunkt aus unwirklich bleibt. Indem er dieser gegenwärtigen Geschichte einen zusammenhängenden Sinn zu geben versucht, fühlt er aber, wie sie gleichzeitig in einer unbestimmten, ihm fremden Dimension der <bibl ref="#zbz-w.705">Zeit</bibl> verschwimmt, durch die sie ihm entflieht. Jenseits dieser Geschichte, an der er mitschreibt, die sein eigener Mythos ist, von der sein und seiner Mitmenschen Schicksal abhängt, ahnt er, daß die große Geschichte, die sich ihm entzieht und in der er lebt, deren Anfang und Ende ihm unbegreiflich bleiben, weder »a story told by an idiot« ist, noch Gegenstand einer positiven Wissenschaft, und auch keine Technik, die eines schönen künftigen Tages Glück und Gerechtigkeit endgültig herstellen wird – sondern ein Mythos, dessen Wesen oder Wege von keiner Theorie je erschöpft werden und dem er nur dann begegnet, wenn er durch eine entschiedene Handlung der unzerstörbaren Hoffnung Ausdruck gibt, daß jene große Geschichte einen – wenn auch geheimnisvollen – Sinn hat.
+        </p>
+        <p facs="#facs_6_r_2">
+          Es könnte sein, daß, indem man die Lüge des Mythos entlarvt, man einer schlimmeren Lüge zum Opfer fällt, indem man glaubt, den Mythos gänzlich ausschließen zu können. Tatsächlich bietet die menschliche Geschichte in ihrer Kürze schon genug unfruchtbaren Greuel, um Zweifel zu erwecken über ihren Sinn, und über die <placeName ref="#zbz-l.565">Rolle</placeName> der Menschen in ihr. Es stimmt aber auch, daß der beschrittene Weg von den Höhlenmenschen bis zur <bibl ref="#zbz-w.705">Zeit</bibl> der Atomenergie einen Fortschritt aufzuzeigen scheint. Keine Bilanz kann jedoch aufgestellt werden, denn wir können hier keine Ganzheit umfassen und bewerten. Wir leben inmitten zahlloser Indizien, Zeichen, vieldeutiger Aspekte, die eine wachsende Klarheit und Deutlichkeit als widerspruchsvoll erscheinen läßt. Es bleibt aber, daß nichts die Hoffnung verbietet, und daß die Tat möglich ist. Wir müssen also hoffen und tun. Und dieses »müssen« schiebt hier keine moralische Aufforderung hinein, es drückt
+        </p>
+        <p>
+          82
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          eine Hoffnung und eine Entscheidung aus, die schon immer da sind. Dieser Art Hoffnung, dieser Art Entscheidung, entspricht ein Wissen besonderer Art, ein Wissen, das nicht durch sich selbst wahr ist, das, sobald es sich als selbstgenügend in der totalen Bejahung und Verneinung isoliert, lügenhaft wird – das nur für die Hoffnung selbst wahr ist. Das ist der »Mythos«, der es dem Menschen ermöglicht, der Geschichte jenes schwere »Ja« zu sagen, das in jeder politischen Handlung vorausgesetzt ist.
+        </p>
+        <p facs="#facs_7_r_2">
+          Wenn nun die Beziehung des Menschen zur Geschichte und zur Politik Beziehung zu einem »Mythos« ist, wird man infolgedessen zugeben müssen, daß in diesem Bereich Unbestimmtheit, Unsicherheit, Willkür herrscht, so daß Wahres und Falsches, Klärung und Propaganda, Wertvolles und Verbrecherisches nicht mehr zu unterscheiden wären? Man hat vom »<persName ref="#zbz-p.64">Hitlermythos</persName>«, vom »kommunistischen Mythos«, vom »Mythos der <bibl ref="#zbz-w.478">Demokratie</bibl>« gesprochen. Sind also alle diese Mythen gleich legitim? Werden wir dadurch, daß wir die »Entmythisierung« der Politik im Sinne eines Absterbens der Ideologien ablehnen, jeder beliebigen Ideologie freies Feld lassen? Wenn die »Realität« uns als vielschichtig erscheint, als bestände sie aus einer Vielfalt von Mythen, müssen wir, infolge dieser extremen Brüchigkeit des geschichtlich »Wirklichen«, uns in der Bodenlosigkeit verlieren und uns dem verzweifelten Nihilismus des »Alles ist erlaubt« ergeben?
+        </p>
+        <p>
+          Merken wir hier, wie auffallend und vielleicht beunruhigend wichtig heute die Idee der Hermeneutik, der »Deutung« geworden ist. Es geht ja nicht um unschuldige Deutungen, die von einer einzigen, substanziellen Grundwirklichkeit gegeben würden, der sie für immer untergeordnet bleiben, ohne sie je angreifen oder gar antasten zu können. Die Deutung erscheint als zu allen Ebenen des Seins gehörend, als ein jede Ebene wesentlich konstituierendes Element, so daß ihre ontologische Verantwortung ständig sich steigert, während gleichzeitig die Willkür der endlosen Möglichkeiten bis ins Unendliche wächst. Zu unserem Thema: der politische Mythos deutet die politische Wirklichkeit, aber gleichzeitig bestimmt er sie, er macht aus ihr, was sie ist. Seine Wirksamkeit wird zum Maß seiner Wahrheit, nicht zunächst weil »der Zweck die Mittel rechtfertigt«, sondern weil als konstituierendes Element des Wirklichen und des Seins der Mythos wahr wird im Maße seiner gelungenen Inkarnation. Als die <persName ref="#zbz-p.54">Griechen</persName> jenes Wunder vollbrachten, das Theoretische in seiner Reinheit von jeder Praxis zu trennen, ahnten sie wohl nicht,
+        </p>
+        <p>
+          83
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          daß der theorisierende Blick eines Tages scharf genug werden würde, um sich selbst als unwiderruflich praktisch, in der Wirksamkeit unvermeidlich verwurzelt, zu entdecken.
+        </p>
+        <p facs="#facs_8_r_2">
+          Diese praktische Verwurzelung der Theorie ist eine wichtige Entdeckung der modernen <bibl ref="#zbz-w.705">Zeit</bibl> gewesen. Man muß sich jedoch fragen, ob sie wirklich zur absoluten Haltlosigkeit oder Bestandslosigkeit führen muß, wo Wahr und Falsch, Aufrichtigkeit und Lüge eins werden – oder ob diese Bestandslosigkeit, diese Haltlosigkeit selbst nicht eher noch einer positivistischen Deutung dieser Entdeckung entspringen.
+        </p>
+        <p facs="#facs_8_r_3">
+          In der Tat führen zwei entgegengesetzte Typen des Positivismus fast gerade von der Entdeckung des Mythos zum Nihilismus des »Alles ist erlaubt«.
+        </p>
+        <p facs="#facs_8_r_4">
+          Erstens: der politische Mythos ist eine Lüge des Gegners. Man soll ihm eine entmythisierte Politik entgegenstellen, die auf einer wissenschaftlichen Erklärung der Tatsachen beruht und sich in Tatsachen umsetzen läßt. Eine solche Politik ist prinzipiell »wahr«, und sie würde die Übereinstimmung aller Vernunftwesen für sich gewinnen, wenn alle ihrer <bibl ref="#zbz-w.68">Vernunft</bibl> folgen würden. Wie man gleich merkt, wird hier der mythische Charakter der »politischen Wirklichkeit«, sobald er entdeckt wurde, auch zugleich geleugnet, da er auf eine Naivität oder Heuchelei des Anderen reduziert wird, da eine nicht-mythische Politik gleichzeitig als möglich und als eigener Anspruch hingestellt wird. – Was erlaubt es aber, die Entmythisierung genau da aufhören zu lassen, wo sie sich gegen den Entmythisierenden wenden würde? Nehmen wir an, daß die entmythisierte Wahrheit der »realistischen« Politik von der Art der naturwissenschaftlichen Wahrheiten sei, so daß sie Mittel und Zwecke mit der allgemeingültigen Evidenz der Technik verbinden, und mit derselben Evidenz auch die Zwecke selbst rechtfertigen könnte. Dann würde der Begriff »Zweck« selbst jeden Sinn verlieren, denn es gäbe keine <persName ref="#zbz-p.89">Wahl</persName>, kein persönliches Engagement, keine Verantwortung mehr; es gäbe kein Ziel, das nicht selbst gleichzeitig Ursache und Wirkung wäre, eingefangen in den Ketten des Determinismus; es gäbe keinen Menschen mehr, und also keine Politik, die von ihm und für ihn geführt wäre. Noch mehr: die wissenschaftliche Evidenz, in deren Glanz sich diese Verneinungen ins Endlose verbreiten, wäre dann selbst von ihnen ihres Sinnes beraubt, denn jeder Satz wäre nur eine Tatsache unter anderen Tatsachen, und die Wahrheit verschwindet mit der Möglichkeit der Bevorzugung und Wertung. – Vielleicht aber wird der Wert der »realistischen«
+        </p>
+        <p>
+          84
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          Politik abgeleitet von einer bestimmten Vorstellung des Menschen, der menschlichen Gesellschaft, und einer bestimmten Orientierung der Geschichte? – Dann muß man anerkennen, daß der beim Gegner entlarvte Mythos im Kern der Entlarvung und des Entlarvenden selbst wieder auftaucht und ihn im Namen derselben mythosfreien positiven »Wahrheit« gleichzeitig mit seinem Gegner verurteilt – wobei sie beide durch den Mythos von dieser Wahrheit unwiderruflich getrennt bleiben. Wird aber dann nicht jene positive, doch unerreichbare Wahrheit selbst zu einem Mythos? – zum wissenschaftlichen objektivierenden Mythos, zu einer von jeder Spur menschlichen Geistes befreiten Wahrheit – ein Noumenon?
+        </p>
+        <p facs="#facs_9_r_2">
+          Zweitens: jede Politik gründet auf einem Mythos. Von einem positivistischen Standpunkt aus ist aber das Mythische immer willkürlich, da die einzig anerkannte Notwendigkeit diejenige ist, die Tatsachen verbindet. Also haben, was Wahrheit anbetrifft, alle Mythen den gleichen Wert. Es genügt also den zu wählen, der für die Verwirklichung eines Zweckes am wirksamsten erscheint, welches auch immer die Gründe für die <persName ref="#zbz-p.89">Wahl</persName> des Zweckes sind. Es gibt wohltuende und schädliche Mythen. In allen Fällen sind sie nur noch Mittel zum Zweck, und die endlose Willkür läßt uns wieder bei der reinen politischen Technik stranden, deren Begründung verlorengeht, da der <persName ref="#zbz-p.1251">Mensch</persName> nicht mehr er selbst sein kann. Indem die Wahrheit sich selbst negiert, vernichtet sie seine Ziele und den Sinn seiner Freiheit.
+        </p>
+        <p facs="#facs_9_r_3">
+          Auf der Ebene der Politik ist also der Positivismus streng genommen unhaltbar: entweder versucht er die politische Existenz aufrechtzuerhalten und dann negiert er sich; oder er versucht sich selbst um jeden Preis zu behaupten, und dann muß er jede politische Wirklichkeit leugnen oder vernichten, so wie auch den Wert der Wahrheit, den er für sich in Anspruch zu nehmen nicht aufhören kann.
+        </p>
+        <p>
+          Diese Erörterungen scheinen etwas kompliziert zu sein, und freilich, wäre unsere <bibl ref="#zbz-w.705">Zeit</bibl> nicht so tief im anspruchsvollen aufgeklärten Aberglauben gefangen, wären sie überflüssig. Denn es sollte von vornherein klar sein, daß es keine eigentliche Politik weder für den, der weiß, noch für den, der verneint, geben kann. Der Wissende kann nur feststellen und voraussagen, der Verneinende kann sich nur unterwerfen und verzweifeln. Es gibt also keine Politik für den Wissenden, keine für den Verneinenden, sondern nur für den Hoffenden. Jede Hoffnung aber setzt einen Mythos voraus, der erst durch sie Wahrheit und Wirklichkeit gewinnt,
+        </p>
+        <p>
+          85
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          86<lb facs="#facs_10_l_1_1" n="N001" />jene ihm eigene Wahrheit und Wirklichkeit, im Möglichen schwebend, im Unbedingten verwurzelt, im Tatsächlichen durch Handlung und deren Ergebnisse verankert. Ohne die Hoffnung ist der Mythos nur noch Lüge, Propaganda, leeres Versprechen, chèque sans provision, Märchen für Sklaven.
+        </p>
+        <p facs="#facs_10_r_2">
+          Der politische Mythos enthält größere Schwierigkeiten. Die erste besteht darin, daß er sich als politisches Handeln auf der positiven Ebene der Güter und der Macht zu verwirklichen hat, und auf eine so vollkommene Weise, daß er selbst überflüssig wird – während er als Mythos, der nur durch die Hoffnung wahr ist, für immer unwiderruflich zwischen einem unvollkommenen Jetzt und einer immer künftigen Zukunft in der Schwebe bleibt. Die zweite Schwierigkeit besteht darin, daß es tatsächlich im politischen Mythos um Hervorbringen und Verteilung der Güter, um Mittel und Kontrolle der Macht geht, also um meßbare Gegebenheiten der heutigen Welt, und daß die Hoffnung gerade diese Welt der Schwerkraft und des Determinismus umgestalten möchte. Hier entsteht etwas wie ein ständiges, zum Wesen der Sache gehörendes Nicht-Zusammentreffen von Mythos und Gegebenheit. Denn die präzise <bibl ref="#zbz-w.93">Begegnung</bibl> von Tat und Gegebenheit geschieht nur im Jetzt, während der Mythos immer sinngebend die Vergangenheit mit der Zukunft verbindet, und das Jetzt nie trifft. – Jede Propaganda versucht, diese Schwierigkeiten dem Scheine nach zu überwinden oder zu leugnen. Sie unterdrückt dann das Eine dem Anderen oder sie bezieht sich auf eine Zukunft, wo Beides versöhnt, oder sogar identisch wird. Deswegen ist Propaganda immer, obwohl in sehr verschiedenen Gestalten, bemüht, eschatologisch zu werden.
+        </p>
+        <p facs="#facs_10_r_3">
+          Konkret aber ist es gerade für den ehrlichen politischen Mythos kennzeichnend, daß er die Schwierigkeit aufrechterhält, so daß die unaufhebbare und wirkungsvolle Vieldeutigkeit jeder politischen Wirklichkeit besteht. Es gehört zur tiefsten Notwendigkeit des menschlichen Schicksals, daß diese Lage immer mit den Versuchungen der Propaganda und der verführerischen Illusion im Gegensatz steht.
+        </p>
+        <p facs="#facs_10_r_4">
+          Der politische Mythos ist also weder positive Realität noch reine Fiktion, er ist eine wirksame Fiktion. Natürlich könnte man erwidern, daß jeder Plan, jedes Programm auch eine Fiktion ist, die Wirksamkeit für sich in Anspruch nimmt. Der Unterschied aber zwischen Programm und Mythos ist, daß das Programm für die Zukunft eine objektive Veränderung der Dinge und Beziehungen plant, während der Mythos gleichzeitig seinen Sinn auf die
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          unmittelbare Gegenwart bezieht und dadurch das Wesen des Handelnden angeht. Er faßt die Vieldeutigkeit der politischen, der menschlichen, der zeitlichen Wirklichkeit in sich zusammen. Er ist nicht nur Vorschrift für künftige Gestaltung, sondern unmittelbarer Anspruch wie jener Torso Apollos, in den <persName ref="#zbz-p.182">Rilke</persName> die Aufforderung legt: »Du mußt dein Leben ändern.«
+        </p>
+        <p facs="#facs_11_r_2">
+          Der auf sein rein fiktives Sein reduzierte Mythos läßt ethisch reine, intellektuell klare, kompromißlose Stellungnahmen zu, im Vergleich zu denen das reale wirksame politische Handeln nur noch Empörung hervorrufen kann. Darin besteht die große Versuchung jener politischen Kreise, denen durch unglückliche Umstände, durch Mangel an Macht und an Kampfmitteln, jede Wirksamkeit während längerer <bibl ref="#zbz-w.705">Zeit</bibl> verweigert wird: ihr Moralismus und ihr moralischer Dogmatismus steigert sich, sowie auch ihre Empörung gegen »die Anderen«. Bald entstehen in der Gruppe selbst unüberwindliche Gegensätze, und die Einen werden in den Augen der Anderen zu Verrätern. So kann man verstehen, wie das Unglück der Verbannten, wenn es lange dauert, die Schärfe ihrer Streite und ihrer Anklagen vermehrt. In der Politik ist eine fortwährende Unwirksamkeit ethisch ungesund, denn jeder ist dann geneigt, sich in eine ihm eigene wirklichkeitsfremde dogmatische Treue zum Mythos zu flüchten. Selbst aber in einer normalen Lage findet der reine Idealismus und die Empörung gegen Andere sehr leicht lauten Beifall bei den Menschenmengen. Die Propaganda besteht meistens darin, daß man das faktische Handeln des Gegners mit dem vergleicht, was der politische Mythos als reine Fiktion verlangen würde – während man die eigenen Entscheidungen durch den ganzen Zusammenhang realer Notwendigkeiten erklärt.
+        </p>
+        <p facs="#facs_11_r_3">
+          Die Propaganda wird dann am gefährlichsten, wenn es ihr gelingt, den Schein einer Übereinstimmung idealistischer Reinheit und realistischer Notwendigkeit zu erwecken. Dann erreicht sie die höchste Wirksamkeit, weil die Lüge ganz undurchschaubar geworden ist. Hier müssen wir nebenbei bemerken, daß in der Politik, die immer ein mythisches Element enthält, die Lüge nie ein reines Nichts sein kann: sie wird zur Tatsache durch ihre reale Wirksamkeit. Ihre Undurchdringlichkeit selbst steigert ihr Faszinationsvermögen und schenkt ihr eine sie transzendierende Tiefe. – Denken wir z.B. an jene Lehren, wo die Propaganda die materielle Notwendigkeit der Dinge in den Dienst der mythischen Fiktion setzt, so daß sie, wie <persName ref="#zbz-p.52">Simone Weil</persName> es ausdrückte, zu
+        </p>
+        <p>
+          87
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          »einer das Gute hervorbringenden Maschine« wird. Nur eines verliert man dann aus dem Auge: eine solche Maschine, die die Autonomie des Willens aufheben würde, würde gleichzeitig das Ende der politischen Wirklichkeit und des Menschen selbst bedeuten.
+        </p>
+        <p facs="#facs_12_r_2">
+          Man erreicht keine eindeutige politische Realität, indem man die politischen Mythen auszuschließen oder zu entschleiern versucht, als handele es sich um eine einfache Subtraktion. »Das Ende der Ideologien«, von dem heute oft die Rede ist, würde nicht den Anfang einer neuen <bibl ref="#zbz-w.705">Zeit</bibl> bedeuten, wo die Politik aufrichtig, kontrollierbar, nur auf soziale »Realitäten« und auf Gemeinsinn gegründet wäre. »Das Ende der Ideologien« würde das Verkennen der wahren Natur des Politischen mit sich bringen. Die Folge wäre, entweder die blinde und dumpfe Herrschaft einer nicht erkannten, ignorierten und also unbestrittenen Ideologie, oder das Verschwinden der politischen Ebene zugunsten einer reinen Technokratie, deren Werte und Ziele als selbstverständlich gälten und also wiederum fraglos und unbestritten herrschen würden. In beiden Fällen wären die Menschen von der Tyrannei geknechtet, so tief, daß die Freiheit ihren Sinn verlieren würde, und es gäbe den Menschen nicht mehr.
+        </p>
+        <p facs="#facs_12_r_3">
+          Man sollte anerkennen, daß das Wort »Mythos« weniger mythisch ist als das Wort »Wirklichkeit«. Es gibt einen Mythos der »politischen Wirklichkeit«, während das Wort »Mythos« schon das zweideutige Wesen dessen, was es bezeichnet, von selbst entschleiert. Diese Zweideutigkeit wurzelt im Menschsein selbst: in dessen Zeitlichkeit.
+        </p>
+        <p>
+          In der Tat läßt sich die Zeitlichkeit nicht zu einer entmythisierten Wirklichkeit reduzieren. Sobald man aufhört, sie als Raum zu denken, wird sie unfaßbar und widersprüchlich, wenn die Wesensunterschiede ihrer Momente (Vergangenheit, Gegenwart, Zukunft) nicht in einer Freiheit gestaltet werden, die die Vergangenheit erzählt, sich eine Zukunft erfindet, sich einer Gegenwart einverleibt. Wären diese Momente voneinander unabhängig, so hätte man es in jedem mit einer radikal getrennten »Wirklichkeit« zu tun: in der Vergangenheit die Wirklichkeit der Sachen, in der Zukunft die der Einbildungskraft, in der Gegenwart die des Tuns. Es ist aber nicht so. Die drei Momente sind derart voneinander abhängig, derart verflochten, daß jedes, obgleich die beiden anderen ihm seine Eindeutigkeit nehmen, ihnen doch seine Wirklichkeit verdankt. Getrennt wäre es in der Eindeutigkeit nur
+        </p>
+        <p>
+          88
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          Fiktion. Diese wesentliche, konstituierende Zweideutigkeit, ohne die es weder Freiheit noch Geschichte gäbe, der die ganze menschliche Realität ihre Struktur verdankt, findet eben im Wort »Mythos« ihren Ausdruck. Sie wird dadurch nicht geklärt – aber auch nicht verraten.
+        </p>
+        <p facs="#facs_13_r_2">
+          Der Verrat beginnt, wenn der Mythos seine eigene Natur leugnet und den Anspruch erhebt, eine positive Realität zu sein. Er wird dann entweder das Vorhandene sakralisieren (als konservativer Mythos), oder sich in der Unbestimmtheit der Zukunft breit machen (als fortschrittlicher Mythos). Der eine sieht den Wert in den von der Vergangenheit geerbten Sachen, der andere in den die Zukunft vorbereitenden Märchen. Beide vergessen oder verschleiern das entscheidende Gewicht des jetzigen Augenblicks, wo die Freiheit einsetzt, wo die zeitlichen Momente einen Knoten bilden, wo die Quelle ihrer eigenen mythischen Wahrheit entspringt.
+        </p>
+        <p facs="#facs_13_r_3">
+          Die politische Wahrheit erreicht man nicht, indem man den Mythos ausschaltet, sondern indem man in der Gegenwart die Spannung entgegengesetzter Mythen erträgt. Dann wird man die Widersprüche, die sich daraus ergeben, auf sich nehmen, so wie auch die unvereinbaren Forderungen der Werte, woraus keineswegs folgt, daß diese Werte falsch sind, daß alles erlaubt ist –, sondern im Gegenteil, daß sie alle gelten und daß alles versucht werden muß, ohne das Versprechen einer Vollendung.
+        </p>
+        <p facs="#facs_13_r_4">
+          So wird jede Eschatologie ausgeschlossen. Anstatt der <bibl ref="#zbz-w.705">Zeit</bibl> entfliehen zu wollen, weiß der Mythos um sein zeitliches Wesen und findet seine Tiefe im <persName ref="#zbz-p.1407">Herzen</persName> der <bibl ref="#zbz-w.705">Zeit</bibl>, im gegenwärtigen Augenblick, seinen Spannungen und seiner gegenwärtigen Transzendenz. Aber dieser Augenblick bleibt als Wurzel außerhalb der Politik. Auf der politischen Ebene verdichtet er sich gewissermaßen und verleiht seinen Wert jener unbestimmten Dauer, die wir »unsere <bibl ref="#zbz-w.705">Zeit</bibl>« nennen. Hier entdecken wir die unmittelbaren Ursachen der sozialen und politischen Bedingungen, unter denen wir leben, und die nahe Zukunft, die uns betrifft, uns bewegt und in einem bestimmten Maße unsere Aufgabe ist.
+        </p>
+        <p facs="#facs_13_r_5">
+          Der echte Mythos kann also weder total, noch endgültig sein, und jeder Mythos, der den Anspruch auf Totalität und Endgültigkeit erhebt, ist ein Feind dieses echten Mythos – auch derjenige, der behauptet, alle Mythen entlarvt zu haben. Was den echten Mythos beschäftigt, was für ihn Stoff und Aufgabe ist – nicht obgleich, sondern weil er Mythos ist –, das sind die faktischen Tatbestände der gegenwärtigen <bibl ref="#zbz-w.705">Zeit</bibl>.
+        </p>
+        <p>
+          89
+        </p>
+      <pb facs="#facs_14" n="14" />
+        <p facs="#facs_14_r_1">
+          Die jetzige Verwirrung der Geister hat der <bibl ref="#zbz-w.67">Idee der Totalität</bibl> eine unerhörte Anziehungskraft gegeben. Die meisten sehnen sich nach einer totalen Erklärung, nach einem totalen System der Werte und der zweckmäßigen Handlungen, und träumen darüber hinaus von einem allumfassenden Ingenieur der Geschichte. Und wenn unsere Zeitgenossen dumpf spüren, daß eine solche Totalität dem Menschen doch verweigert bleibt, empfinden sie oft eine Art verzweifelten Haß für den Menschen, den sie zu einem Tier oder einem Robot zu reduzieren trachten –, oder sie fangen an, von einem Übermenschen zu träumen, der die vieldeutigen – aber vollkommenen – Bedingungen menschlicher Freiheit überwunden hätte.
+        </p>
+        <p facs="#facs_14_r_2">
+          <bibl ref="#zbz-w.657">Der Mensch</bibl> aber bleibt <persName ref="#zbz-p.1251">Mensch</persName>, in der <bibl ref="#zbz-w.705">Zeit</bibl>. Ohne Mythen ist er kein <persName ref="#zbz-p.1251">Mensch</persName>. Aber er hört auch auf <persName ref="#zbz-p.1251">Mensch</persName> zu sein, wenn seine Mythen, durch ihren Anspruch auf Totalität, den vergänglichen heutigen Tatbeständen, dem heutigen Leben und Tod, den heutigen Leiden und Freuden, der heutigen Liebe, dem heutigen Zwang und Entbehren, ihr Gewicht nehmen wollen.
+        </p>
+        <p facs="#facs_14_r_3">
+          Die Welt der Politik ist bitter, und man ist oft versucht, bestimmte Menschen, ob Gegner oder Verbündete, dafür verantwortlich zu machen. Diese Bitterkeit aber wurzelt tiefer, nämlich in der Tatsache, daß während die politische Handlung im Dienste des Mythos vollzogen wird, in dem sie ihre Rechtfertigung und ihren Sinn findet, sie auch das Bestehen und Wachsen der sie vollziehenden Macht verlangt. Nirgends so stark und so unausweichlich wie in der Politik zeigt sich die praktische Antinomie, die in jedem leibhaften ethischen Subjekt steckt: um Hungernden zu helfen, muß man selbst essen. Um zu handeln, muß man das eigene Leben retten. Um wirksam zu handeln, muß man über Macht verfügen. Um den Menschen besser zu dienen, muß man bald die Macht der anderen für sich selbst brauchbar machen – und sie schwächen und zerstören, falls sie ein Hindernis ist. Man sieht sogleich, wie unklar das Verhältnis der Mittel und Ziele wird, wie leicht es eine Umkehr erleidet: dient die Macht dem Mythos, oder der Mythos der Macht? In den Grimassen der Propaganda ist der Mythos nur noch eines der Mittel der Macht, oder deren Abbild, oder Maske, oder Rechtfertigung; und die Macht selbst kann zum Mythos erhoben werden, als sei sie Selbstzweck, oder Kennzeichen der Legitimität, wie eine Art Gottesurteil.
+        </p>
+        <p facs="#facs_14_r_4">
+          Jede politische Partei – und ich meine damit jede Sammlung von Menschen mit dem Zweck eines gemeinsamen politischen Ziels –,
+        </p>
+        <p>
+          90
+        </p>
+      <pb facs="#facs_15" n="15" />
+        <p facs="#facs_15_r_1">
+          sobald sie wirksam wird, steht in dieser problematischen Zweideutigkeit. Auch jede <orgName ref="#zbz-o.71">Kirche</orgName>: der große unüberwindliche Unterschied zwischen <persName ref="#zbz-p.58">Christus</persName> und seiner <orgName ref="#zbz-o.71">Kirche</orgName> besteht darin, daß <persName ref="#zbz-p.58">Christus</persName> – <persName ref="#zbz-p.50">Gott</persName>-<persName ref="#zbz-p.1251">Mensch</persName>, und nicht Gesellschaft – gänzlich in seinem Mythos aufgehen konnte, während die <orgName ref="#zbz-o.71">Kirche</orgName> die Pflicht hat, zu bestehen, und für diesen Bestand, also für ihre Macht, kämpfen muß.
+        </p>
+        <p facs="#facs_15_r_2">
+          Der naive Idealismus ist in der Politik nur Purismus, Unwirksamkeit, Flucht zu einem Mythos, der, weil wirkungslos, keiner mehr ist, sondern ein reiner Schein, der der Selbstbefriedigung dient. Der entlarvende Zynismus, der nur an die Wirklichkeit der Machtverhältnisse glaubt, verkennt das Wesen des Politischen, weil er keine Beziehung zu einem wirksamen Mythos hat. Der Mythos klebt am Politischen. Die Macht auch – sei es die der Polizei oder des Reichtums. Mythos und Macht kleben aneinander. Das politische Handeln verlangt und verbindet sie immer. Aber gerade deswegen ist es die erste und ständige Pflicht jedes politischen Denkens, sie unerbittlich voneinander zu unterscheiden. Das Schlimmste geschieht, die Korruption erreicht ihren Höhepunkt, wenn der Mythos zu einer Tarnung wird, und im Interesse der Macht die Leiden und Qualen nicht nur verbirgt, sondern sogar verklärt. Der Mythos, wenn er rein ist, fordert eine klare, nüchterne, ungetrübte Vorstellung der Lebensbedingungen der Menschen im Jetzt.
+        </p>
+        <p>
+          91
+        </p>
+      </div>
+      </body></text>
+</TEI>

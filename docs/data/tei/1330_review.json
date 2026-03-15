@@ -1,0 +1,47 @@
+{
+  "doc_id": "1330",
+  "reviewer": "quality-screener",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages_inspected": ["p1", "p3"],
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 1 Warning (W3 pb/surface Mismatch: 7 pb, 6 surfaces)"
+    },
+    {
+      "severity": "info",
+      "code": "S1",
+      "msg": "6 Seiten, Sammelband-Kontext mit Vorwort + Hersch-Text + Weidmann-Anschluss"
+    },
+    {
+      "severity": "info",
+      "code": "S2",
+      "msg": "Multi-div-Struktur (div type=text), Thesen als nummerierte list/items, pb-Mismatch durch Doppelseiten-Scans harmlos"
+    },
+    {
+      "severity": "info",
+      "code": "S4",
+      "msg": "pb/surface Mismatch: 7 pb, 6 surfaces -- strukturbedingt, kein Fehler"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 6p 3o 0l 2w = 11; Hersch GND:118815679, Monod, Heisenberg getaggt"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S.1: Zweispalten-Layout korrekt, Zonen passen zu Textbloecken"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Franzoesischer Essay ueber Verantwortung des Wissenschaftlers, kohaerenter Gedankengang; Uebergang zu deutschem Text (Weidmann) sauber"
+    }
+  ]
+}

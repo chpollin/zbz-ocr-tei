@@ -1,0 +1,46 @@
+{
+  "doc_id": "2950",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [3, 5],
+      "notes": "7pp Buchbeitrag (Symposiumsvortrag Hersch + Beginn Rosenmayr). Querformat-Scan, Buchfalz sichtbar."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutscher Text korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltig (S.3) bzw. zweispaltig (S.4ff). Overlay S.3+S.5 geprueft."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Warnings."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "fail",
+      "counts": {"persName": 31, "orgName": 6, "placeName": 5, "bibl": 15},
+      "notes": "SYSTEMATISCHE FEHLTAGGINGS: 9x persName 'Mensch' (zbz-p.1251, ist kein Personenname), 7x bibl 'Zeit' (zbz-w.705, bedeutet hier 'time' nicht Zeitung), 3x bibl 'Der Mensch' (zbz-w.657, bedeutet 'der Mensch' im Allgemeinen), 1x placeName 'Rolle' (zbz-l.565, bedeutet hier 'Rolle/role' nicht Ortsname)."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Hersch-Vortrag ueber Alter, Pensionierung, Lebensqualitaet. Text inhaltlich koharent, S.7 enthaelt Beginn des naechsten Referats (Rosenmayr)."
+    }
+  },
+  "findings": [
+    "KRITISCH: 9x persName 'Mensch' -- Gattungsbegriff, kein Personenname",
+    "KRITISCH: 7x bibl 'Zeit' -- bedeutet 'time', nicht Zeitungsreferenz",
+    "3x bibl 'Der Mensch' -- Gattungsbegriff, kein Werktitel",
+    "1x placeName 'Rolle' -- bedeutet 'role', nicht Ortschaft Rolle",
+    "S.7 enthaelt Beginn des Folgereferats Rosenmayr (Dokumentgrenze)"
+  ],
+  "overall_notes": "20 falsche Entity-Tags muessen bereinigt werden. Mensch/Zeit/Rolle sind kontextabhaengige Woerter, die hier als Gattungsbegriffe und nicht als Eigennamen verwendet werden."
+}

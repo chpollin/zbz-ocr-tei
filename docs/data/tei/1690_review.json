@@ -1,0 +1,52 @@
+{
+  "doc_id": "1690",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        2
+      ],
+      "notes": "2 Seiten Sporterziehung in der Schule 7/8/1980, S.33/34. Overlay zeigt mehrspaltige Erkennung."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gute OCR-Qualitaet. Franzoesischer Hersch-Text klar lesbar. Italienische Einleitung korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Dreispaltig S.1, zweispaltig S.2. Zitate korrekt eingerueckt."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "Valide. Titel Pourquoi une education physique? korrekt. Sprache fra. Datum 1980."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 2,
+        "orgName": 0,
+        "placeName": 0,
+        "bibl": 1
+      },
+      "notes": "Hersch (#zbz-p.2), Rimbaud (#zbz-p.173) korrekt. bibl Die Hoffnung Mensch zu sein (#zbz-w.92)."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Hochkohaerenter philosophischer Text ueber Sporterziehung."
+    }
+  },
+  "findings": [
+    "Exzellenter Hersch-Vortrag ueber Sporterziehung",
+    "Italienische Einleitung fehlt Sprach-Annotation (kein foreign-Element)",
+    "Hersch-Werkverweis Die Hoffnung Mensch zu sein korrekt als bibl"
+  ],
+  "overall_notes": "Sporterziehung in der Schule 7/8/1980. Hersch-Vortrag. Ausgezeichnete Qualitaet."
+}

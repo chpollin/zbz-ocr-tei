@@ -1,0 +1,48 @@
+{
+  "doc_id": "2010",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1],
+      "notes": "2-Seiten-Dokument. Overlay zeigt Zweispalten-Zeitschriftenlayout."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text gut erkannt, keine OCR-Fehler sichtbar."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Zweispalten-Layout korrekt segmentiert."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "Valide, 0 Warnungen. div type='review' korrekt fuer Zeitschriftenartikel."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 4,
+        "orgName": 5,
+        "placeName": 6,
+        "bibl": 5
+      },
+      "notes": "Hersch, Beckett, Bernard korrekt. Organisationen (Medecine et Hygiene, Masson, Hopital Saint-Louis) plausibel. 'Pierre' in Adresszeile 'avenue Pierre-Odier' faelschlich als persName."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Seite 2 enthaelt nach Hersch-Text umfangreiche Buchrezensionen (Haematologie, Neurologie) aus derselben Zeitschrift-Ausgabe, die nicht von Hersch stammen -- Doppelseitenscan."
+    }
+  },
+  "findings": [
+    "Seite 2 enthaelt fremde Buchrezensionen aus derselben Zeitschriftausgabe (Medecine et Hygiene)",
+    "'Pierre' in 'avenue Pierre-Odier' faelschlich als persName getaggt (ist Strassenname)"
+  ],
+  "overall_notes": "Hersch-Essay 'L'angoisse face a la solitude' korrekt kodiert. Seite 2 enthaelt zusaetzlichen Zeitschrifteninhalt (Buchrezensionen), der nicht zum Hersch-Artikel gehoert -- Doppelseitenscan-Artefakt."
+}

@@ -1,0 +1,641 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">SIMMETRIA E STORIA</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">990</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>SIMMETRIA E STORIA</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="ita" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-t4" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Header: SIMMETRIA E STORIA, Jeanne Hersch, ita, biblStruct/bookSection; Validator: VALID, 0 Fehler, 0 Warnings; Entities: 76p 3o 7l 0w = 86 (+1 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_1_r_1" ulx="279" uly="88" lrx="450" lry="115" />
+      <zone xml:id="facs_1_r_2" ulx="232" uly="135" lrx="495" lry="162" />
+      <zone xml:id="facs_1_r_3" ulx="81" uly="376" lrx="646" lry="532" />
+      <zone xml:id="facs_1_r_4" ulx="81" uly="523" lrx="646" lry="939" />
+      <zone xml:id="facs_1_r_5" ulx="81" uly="938" lrx="646" lry="1114" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_2_r_1" ulx="34" uly="85" lrx="602" lry="187" />
+      <zone xml:id="facs_2_r_2" ulx="34" uly="182" lrx="603" lry="408" />
+      <zone xml:id="facs_2_r_3" ulx="35" uly="404" lrx="601" lry="551" />
+      <zone xml:id="facs_2_r_4" ulx="35" uly="548" lrx="603" lry="703" />
+      <zone xml:id="facs_2_r_5" ulx="34" uly="696" lrx="602" lry="1122" />
+      <zone xml:id="facs_2_r_6" ulx="375" uly="1168" lrx="392" lry="1189" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_3_r_1" ulx="66" uly="78" lrx="634" lry="187" />
+      <zone xml:id="facs_3_r_2" ulx="69" uly="174" lrx="632" lry="306" />
+      <zone xml:id="facs_3_r_3" ulx="65" uly="299" lrx="634" lry="673" />
+      <zone xml:id="facs_3_r_4" ulx="68" uly="666" lrx="632" lry="790" />
+      <zone xml:id="facs_3_r_5" ulx="67" uly="789" lrx="632" lry="934" />
+      <zone xml:id="facs_3_r_6" ulx="67" uly="935" lrx="633" lry="1114" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_4_r_1" ulx="56" uly="79" lrx="623" lry="236" />
+      <zone xml:id="facs_4_r_2" ulx="56" uly="226" lrx="624" lry="522" />
+      <zone xml:id="facs_4_r_3" ulx="57" uly="521" lrx="623" lry="691" />
+      <zone xml:id="facs_4_r_4" ulx="59" uly="692" lrx="625" lry="795" />
+      <zone xml:id="facs_4_r_5" ulx="57" uly="789" lrx="623" lry="1038" />
+      <zone xml:id="facs_4_r_6" ulx="59" uly="1033" lrx="623" lry="1112" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_5_r_1" ulx="86" uly="82" lrx="652" lry="229" />
+      <zone xml:id="facs_5_r_2" ulx="85" uly="229" lrx="652" lry="381" />
+      <zone xml:id="facs_5_r_3" ulx="87" uly="376" lrx="653" lry="551" />
+      <zone xml:id="facs_5_r_4" ulx="86" uly="546" lrx="652" lry="967" />
+      <zone xml:id="facs_5_r_5" ulx="86" uly="961" lrx="650" lry="1083" />
+      <zone xml:id="facs_5_r_6" ulx="123" uly="1082" lrx="649" lry="1108" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_6_r_1" ulx="34" uly="80" lrx="602" lry="184" />
+      <zone xml:id="facs_6_r_2" ulx="34" uly="177" lrx="603" lry="498" />
+      <zone xml:id="facs_6_r_3" ulx="35" uly="497" lrx="602" lry="595" />
+      <zone xml:id="facs_6_r_4" ulx="36" uly="593" lrx="602" lry="723" />
+      <zone xml:id="facs_6_r_5" ulx="36" uly="717" lrx="602" lry="1112" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_7_r_1" ulx="73" uly="83" lrx="637" lry="137" />
+      <zone xml:id="facs_7_r_2" ulx="73" uly="130" lrx="638" lry="382" />
+      <zone xml:id="facs_7_r_3" ulx="70" uly="377" lrx="638" lry="648" />
+      <zone xml:id="facs_7_r_4" ulx="69" uly="648" lrx="636" lry="825" />
+      <zone xml:id="facs_7_r_5" ulx="69" uly="820" lrx="636" lry="1112" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_8_r_1" ulx="53" uly="86" lrx="609" lry="228" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_9_r_1" ulx="73" uly="281" lrx="640" lry="655" />
+      <zone xml:id="facs_9_r_2" ulx="76" uly="652" lrx="642" lry="921" />
+      <zone xml:id="facs_9_r_3" ulx="79" uly="916" lrx="643" lry="1052" />
+      <zone xml:id="facs_9_r_4" ulx="286" uly="933" lrx="379" lry="960" />
+      <zone xml:id="facs_9_r_5" ulx="81" uly="1048" lrx="644" lry="1118" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_10_r_1" ulx="51" uly="91" lrx="616" lry="229" />
+      <zone xml:id="facs_10_r_2" ulx="49" uly="221" lrx="616" lry="405" />
+      <zone xml:id="facs_10_r_3" ulx="49" uly="396" lrx="616" lry="493" />
+      <zone xml:id="facs_10_r_4" ulx="48" uly="505" lrx="616" lry="839" />
+      <zone xml:id="facs_10_r_5" ulx="48" uly="835" lrx="612" lry="950" />
+      <zone xml:id="facs_10_r_6" ulx="48" uly="963" lrx="612" lry="1120" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_11_r_1" ulx="77" uly="86" lrx="642" lry="221" />
+      <zone xml:id="facs_11_r_2" ulx="79" uly="246" lrx="642" lry="317" />
+      <zone xml:id="facs_11_r_3" ulx="78" uly="339" lrx="642" lry="449" />
+      <zone xml:id="facs_11_r_4" ulx="78" uly="446" lrx="644" lry="651" />
+      <zone xml:id="facs_11_r_5" ulx="79" uly="647" lrx="643" lry="829" />
+      <zone xml:id="facs_11_r_6" ulx="79" uly="825" lrx="644" lry="964" />
+      <zone xml:id="facs_11_r_7" ulx="80" uly="955" lrx="644" lry="1070" />
+      <zone xml:id="facs_11_r_8" ulx="82" uly="1065" lrx="644" lry="1115" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_12_r_1" ulx="46" uly="88" lrx="611" lry="134" />
+      <zone xml:id="facs_12_r_2" ulx="48" uly="131" lrx="611" lry="230" />
+      <zone xml:id="facs_12_r_3" ulx="47" uly="241" lrx="614" lry="336" />
+      <zone xml:id="facs_12_r_4" ulx="48" uly="348" lrx="615" lry="488" />
+      <zone xml:id="facs_12_r_5" ulx="48" uly="479" lrx="617" lry="1012" />
+      <zone xml:id="facs_12_r_6" ulx="53" uly="1007" lrx="615" lry="1118" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_13_r_1" ulx="67" uly="87" lrx="631" lry="246" />
+      <zone xml:id="facs_13_r_2" ulx="66" uly="256" lrx="630" lry="461" />
+      <zone xml:id="facs_13_r_3" ulx="64" uly="457" lrx="630" lry="790" />
+      <zone xml:id="facs_13_r_4" ulx="62" uly="786" lrx="627" lry="1074" />
+      <zone xml:id="facs_13_r_5" ulx="65" uly="1065" lrx="627" lry="1116" />
+    </surface>
+    <surface xml:id="facs_14" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_14_r_1" ulx="59" uly="91" lrx="626" lry="180" />
+      <zone xml:id="facs_14_r_2" ulx="58" uly="176" lrx="626" lry="649" />
+      <zone xml:id="facs_14_r_3" ulx="60" uly="641" lrx="627" lry="908" />
+      <zone xml:id="facs_14_r_4" ulx="60" uly="917" lrx="626" lry="1080" />
+      <zone xml:id="facs_14_r_5" ulx="61" uly="1069" lrx="626" lry="1117" />
+    </surface>
+    <surface xml:id="facs_15" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_15_r_1" ulx="71" uly="84" lrx="633" lry="130" />
+      <zone xml:id="facs_15_r_2" ulx="67" uly="152" lrx="633" lry="372" />
+      <zone xml:id="facs_15_r_3" ulx="67" uly="394" lrx="634" lry="554" />
+      <zone xml:id="facs_15_r_4" ulx="68" uly="568" lrx="633" lry="659" />
+      <zone xml:id="facs_15_r_5" ulx="68" uly="674" lrx="634" lry="1119" />
+    </surface>
+    <surface xml:id="facs_16" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_16_r_1" ulx="60" uly="86" lrx="626" lry="294" />
+      <zone xml:id="facs_16_r_2" ulx="61" uly="285" lrx="627" lry="548" />
+      <zone xml:id="facs_16_r_3" ulx="59" uly="548" lrx="626" lry="751" />
+      <zone xml:id="facs_16_r_4" ulx="60" uly="744" lrx="624" lry="903" />
+      <zone xml:id="facs_16_r_5" ulx="57" uly="915" lrx="623" lry="1097" />
+    </surface>
+    <surface xml:id="facs_17" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_17_r_1" ulx="65" uly="91" lrx="629" lry="255" />
+      <zone xml:id="facs_17_r_2" ulx="65" uly="271" lrx="628" lry="408" />
+      <zone xml:id="facs_17_r_3" ulx="62" uly="403" lrx="628" lry="516" />
+      <zone xml:id="facs_17_r_4" ulx="61" uly="514" lrx="626" lry="1032" />
+      <zone xml:id="facs_17_r_5" ulx="59" uly="1025" lrx="623" lry="1125" />
+    </surface>
+    <surface xml:id="facs_18" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_18_r_1" ulx="62" uly="89" lrx="629" lry="465" />
+      <zone xml:id="facs_18_r_2" ulx="59" uly="465" lrx="629" lry="821" />
+      <zone xml:id="facs_18_r_3" ulx="61" uly="820" lrx="627" lry="1028" />
+      <zone xml:id="facs_18_r_4" ulx="60" uly="1023" lrx="627" lry="1117" />
+    </surface>
+    <surface xml:id="facs_19" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_19_r_1" ulx="75" uly="81" lrx="640" lry="125" />
+      <zone xml:id="facs_19_r_2" ulx="77" uly="692" lrx="641" lry="788" />
+      <zone xml:id="facs_19_r_3" ulx="76" uly="781" lrx="642" lry="1115" />
+    </surface>
+    <surface xml:id="facs_20" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_20_r_1" ulx="52" uly="84" lrx="619" lry="288" />
+      <zone xml:id="facs_20_r_2" ulx="50" uly="281" lrx="618" lry="574" />
+      <zone xml:id="facs_20_r_3" ulx="49" uly="568" lrx="616" lry="685" />
+      <zone xml:id="facs_20_r_4" ulx="48" uly="693" lrx="617" lry="964" />
+      <zone xml:id="facs_20_r_5" ulx="48" uly="958" lrx="612" lry="1117" />
+    </surface>
+    <surface xml:id="facs_21" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_21_r_1" ulx="78" uly="88" lrx="642" lry="309" />
+      <zone xml:id="facs_21_r_2" ulx="77" uly="307" lrx="639" lry="424" />
+      <zone xml:id="facs_21_r_3" ulx="75" uly="417" lrx="641" lry="597" />
+      <zone xml:id="facs_21_r_4" ulx="72" uly="592" lrx="638" lry="795" />
+      <zone xml:id="facs_21_r_5" ulx="71" uly="790" lrx="634" lry="861" />
+      <zone xml:id="facs_21_r_6" ulx="69" uly="872" lrx="633" lry="1050" />
+      <zone xml:id="facs_21_r_7" ulx="69" uly="1043" lrx="631" lry="1119" />
+    </surface>
+    <surface xml:id="facs_22" ulx="0" uly="0" lrx="663" lry="1208">
+      <zone xml:id="facs_22_r_1" ulx="53" uly="84" lrx="620" lry="314" />
+      <zone xml:id="facs_22_r_2" ulx="54" uly="305" lrx="622" lry="575" />
+      <zone xml:id="facs_22_r_3" ulx="52" uly="591" lrx="620" lry="861" />
+      <zone xml:id="facs_22_r_4" ulx="54" uly="877" lrx="619" lry="989" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          229
+        </head>
+        <p facs="#facs_1_r_2">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_1_r_3">
+          SIMMETRIA E STORIA
+        </p>
+        <p facs="#facs_1_r_4">
+          Era mia intenzione far sì che questa relazione si saldasse con le precedenti; purtroppo questo non è stato possibile nemmeno ricorrendo ad un movimento di traslazione, né ad un movimento di rotazione e né ad uno di sovrapposizione. Resterò quindi fedele al progetto che avevo concepito inizialmente.
+        </p>
+        <p facs="#facs_1_r_5">
+          Vorrei tuttavia dapprima riprendere i due « schemi di simmetria » cui ci si è fin qui riferiti. Il primo si presenta soprattutto in fisica: si tratta di una simmetria di invarianza e di ripetizione, che è stata illustrata e discussa, anche in riferimento ad altri campi di indagine (si veda ad esempio la « simmetria del merletto » sulla quale si è soffermato <persName ref="#zbz-p.1128">Roger Caillois</persName>). Essa è caratterizzata dalla possibilità di sovrapporre un elemento ad un altro, con un movimento di traslazione spazio-temporale. Il secondo, sul quale si è soffermato <persName ref="#zbz-p.1230">Evandro Agazzi</persName> nella sua relazione, prospetta una simmetria che chiamerei centrata, oppure ‘architetturale’: anch’essa è situata nello spazio e nel tempo. Una illustrazione di questo schema è fornito ad esempio dalle due parti di un frontone, oppure dalle due mani: simili tra loro ma non esattamente sovrapponibili. Queste non possono essere sostituite l’una all’altra mediante un movimento di traslazione.
+        </p>
+        <p>
+          Il primo schema di simmetria può essere applicato, in linea di principio, all’infinito. Nello stesso modo in cui il merletto, almeno in linea di principio, può essere continuato all’infinito, anche l’invarianza può essere perseguita all’infinito: nella sua relazione, <persName ref="#zbz-p.1969">Scheurer</persName> ci ha mostrato come questo sia il solo modo corretto di usare questa nozione. Infatti, se non si tende all’infinito, si
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          230
+        </p>
+        <p facs="#facs_2_r_2">
+          deve far intervenire l'eterogeneità dei « bordi » della serie; in tal modo però è resa imperfetta e alla fine viene annullata la simmetria così come viene considerata in questo schema.
+        </p>
+        <p facs="#facs_2_r_3">
+          Al contrario mi sembra che il secondo schema, quello della simmetria centrata, non tenda in linea di principio all’infinito, ma all’unità. All’unità delle due ‘parti’ di cui si compone la simmetria, e di tutti i loro elementi. Questo schema tende a comporre una unità e direi perfino una unicità. Esso esclude la possibilità di un processo ripetitivo continuo che tenda all’infinito; al contrario, tende alla costituzione di una unità, una unicità talmente autosufficiente, da divenire una specie di totalità.
+        </p>
+        <p facs="#facs_2_r_4">
+          Sembra che il secondo schema rappresenti una sorta di difesa contro la relativizzazione e l’instabilità del primo, preservandoci dallo scorrimento indefinito e prospettandoci una struttura unificata, chiusa e unica che, come ho già detto, può essere illustrata con l’esempio del frontone.
+        </p>
+        <p facs="#facs_2_r_5">
+          Devo confessare che prima di ascoltare le precedenti relazioni il secondo schema rappresentava il mio unico punto di riferimento; tuttavia fin dalla prima relazione sono stata obbligata ad estendere il mio orizzonte, il mio senso della simmetria, e ad affiancare la ‘simmetria di merletto’ a quella del frontone.
+        </p>
+        <p facs="#facs_2_r_6">
+          È proprio per una sorta di adesione immediata, spontanea, vorrei dire ingenua, del mio pensiero al secondo schema, che avevo deciso di parlare in questa relazione di simmetria e storia. Mi sembrava in tal modo di aver scelto il campo più lontano dal secondo schema della simmetria, quello in cui la sua presenza è meno evidente e nel quale prevale soprattutto la tendenza ad ignorarne l’esistenza. Oggi, infatti, nelle ricerche storiche si tende piuttosto a trovare la ripetizione di analogie approssimative, che permettano di cogliere quelle che talvolta vengono chiamate le « leggi della storia » e di considerare perciò la storia alla stregua della natura, applicando ad essa il primo schema ripetitivo continuo e non centrato. Lo storico si comporta allora come il fisico: egli confronta due momenti di uno stesso processo, l’uno precedente e l’altro seguente; tuttavia in questo processo, che va dal primo verso il dopo, non
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          esiste un centro, nel senso che non è possibile definire « l'istante ». Nella fisica e nella storia, ridotta a schema ripetitivo, non c'è l'articolazione dell'« istante ». Sussiste unicamente la distinzione del prima e del dopo.
+        </p>
+        <p facs="#facs_3_r_2">
+          Proprio perché, nell'affrontare il problema della simmetria e della storia, prendo in considerazione il termine simmetria secondo il suo secondo schema, vorrei tentare di definirne alcune caratteristiche peculiari, ponendone in risalto la portata e la efficacia.
+        </p>
+        <p facs="#facs_3_r_3">
+          Il secondo schema, quello del frontone, quello detto anche « architetturale », si impossessa di una pluralità di elementi tra loro differenti, esistenti in numero pari (va qui sottolineata l'importanza del numero pari), per farne una unità, ovvero un numero dispari. Esso tende a fornire una specie di solidarietà organica, direi perfino di solidità, fondata sul duplice, sull'aspetto di unità del duplice, del quadruplo e del sestuplo. Le coppie di zampe rappresentano un solido appoggio per l'unità organica, tuttavia la loro simmetria conferisce ad esse anche una solidità di un altro ordine: quello dell'uno. La solidità dell'indivisibile e dell'indecomponibile. Allorché la simmetria, intesa nel secondo schema, si appropria di una pluralità di elementi, questa pluralità diventa indecomponibile.
+        </p>
+        <p facs="#facs_3_r_4">
+          Ritengo che, in una simmetria così intesa, vi sia una dialettica tra il medesimo e l'« altro », nel significato platonico dei termini: il medesimo con l'ausilio dell'« altro », ricompone il medesimo rendendolo al tempo stesso industruttibile.
+        </p>
+        <p facs="#facs_3_r_5">
+          Il secondo schema implica dunque un elemento di stabilità, di staticità, a differenza del primo che implica un processo indefinito nella sua continuità. Nel secondo schema vi è un elemento, prossimo al principio di identità, che ha un valore, e non può che averlo nel diverso.
+        </p>
+        <p facs="#facs_3_r_6">
+          Effettivamente, nella tautologia, il principio di identità si annulla: non si può affermare che la perfezione del principio di identità risieda nella totalità. Il principio di identità viene rappresentato mediante la formula A = A, ma non appena viene applicato esso serve ad identificare A e B, annullandosi necessariamente se diventa pura tautologia. In modo analogo la simmetria
+        </p>
+        <p>
+          231
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          232
+        </p>
+        <p facs="#facs_4_r_2">
+          perde ogni sua efficacia unificatrice e consolidatrice se diventa la semplice ripetizione invertita dell'identico, ovvero una simmetria formale: una volta ridotta unicamente a sovrapposizione mediante rotazioni o ripiegamento, la simmetria è svuotata, al pari del principio di identità che non venga applicato al molteplice.
+        </p>
+        <p facs="#facs_4_r_3">
+          Ritengo che l'asse di simmetria rappresenti in questo secondo schema l'elemento essenziale e decisivo. L'asse, il piano o il momento di simmetria, cioè l'uno centrale, l'uno unico, non ha alcun termine simmetrico o corrispondente e non costituisce più una coppia. È in qualche modo il medesimo allo stato puro, privo di ripetizione; è la condizione di simmetria di tutti gli elementi simmetrici, i quali non esistono che per esso e che a loro volta lo fanno esistere, creando in tal modo l'unità della configurazione. Ritengo che questo centro, questo asse di simmetria rappresenti la causa prima, il senso e il termine ultimo della simmetria.
+        </p>
+        <p facs="#facs_4_r_4">
+          Quale rapporto vi può essere con la storia, che è l'essenza stessa dell'anti-simmetria? La tesi su cui vorrei brevemente soffermarmi è di per sé paradossale: sebbene la storia sia essenzialmente antisimmetrica, non si può concepire la storia senza che si faccia posto alla « simmetria centrata », nel significato da essa assunto nel secondo schema.
+        </p>
+        <p facs="#facs_4_r_5">
+          Perché vi sia storia occorre che siano soddisfatte un certo numero di condizioni. Voglio precisare, ben inteso, che qui non mi riferisco alla storia della natura, ma unicamente a quella degli uomini.
+        </p>
+        <p facs="#facs_4_r_6">
+          La prima condizione che deve essere soddisfatta perché vi sia storia, è che si abbia effettivamente una successione di avvenimenti, ovvero uno svolgimento non ripetitivo di alterità. (Se questo svolgimento fosse strettamente ripetitivo, non vi sarebbe più storia). La ricerca approssimativa di « invarianti » o di analogie, nel significato da queste assunto nel primo schema della simmetria, può essere applicata a questo svolgimento unicamente in modo non pregnante. In ogni caso, una tale successione non rappresenterebbe una storia.
+        </p>
+        <p>
+          Perché questo avvenga, occorre che mediante la successione prenda forma qualcosa che si possa tentare di decifrare come avente un senso. La parola « senso » viene
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          qui usata nelle due accezioni del termine, cioè una certa orientazione, una certa direzione, ed inoltre un certo significato, per quanto incerto e imperfetto possa essere. Se raccontiamo una storia ad un bambino, questo ci ascolta a bocca aperta e, se poi ci interrompiamo, ci dice: «E allora»?
+        </p>
+        <p facs="#facs_5_r_2">
+          Tale sarà la sua reazione solo se il nostro racconto è riuscito a diventare una storia e non solamente una successione di fatti. Senza questa sorta di movimento verso... (verso che cosa?), essenziale per uno svolgimento cui è attribuibile un senso, non potremmo mai parlare di una storia.
+        </p>
+        <p facs="#facs_5_r_3">
+          Tale senso, nelle due accezioni del termine, esiste, ovvero è dotato di realtà, anche solamente pensata, unicamente per un uomo che sia situato storicamente in questo svolgimento. Solo per lui questa storia può essere una storia. Ora, perché vi sia una storia, nel punto in cui è situato l'uomo che considera la storia, deve essere posto un asse di simmetria.
+        </p>
+        <p facs="#facs_5_r_4">
+          A partire dal momento in cui l'uomo è situato in questa storia, essa viene articolandosi, da una parte e dall'altra di questo asse, secondo due prospettive, per certi aspetti simmetriche, per altri del tutto dissimmetriche: la prospettiva del passato e quella del futuro.
+        </p>
+        <p facs="#facs_5_r_5">
+          La storia, in quanto svolgimento non ripetitivo, non implica necessariamente l'esistenza di un tale asse. Tuttavia la storia che diventa storia implica una tale situazione dell'uomo, per il quale essa acquista senso o il quale tenta, e non può che tentare, di attribuirle un senso. L'asse della situazione presente separa le due prospettive del passato e del futuro. Queste due prospettive sono talmente «forti» per l'uomo collocato nella storia, o per chi adotta il suo punto di vista, che il tempo sembra allontanarsi da lui verso il passato, pur proiettandolo verso il futuro. È come se il tempo scorresse contemporaneamente verso due direzioni opposte.
+        </p>
+        <p facs="#facs_5_r_6">
+          Il presente, l'asse del presente, diventa in questa prospettiva la sorgente del tempo, che di lì scorre verso il passato, spingendosi sempre più lontano, e che tende verso l'avvenire, avvicinandosi senza sosta a qualche cosa di indefinito.
+        </p>
+        <p>
+          Una tale struttura è in contraddizione con la struttura
+        </p>
+        <p>
+          233
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          tura « prima-dopo »; tuttavia essa è costitutiva del tempo storico. Solo accettando ciò che sembrerebbe logicamente impossibile, ma che resta indispensabile per il senso vissuto della storia, la storia diventa possibile.
+        </p>
+        <p facs="#facs_6_r_2">
+          Ho affermato precedentemente che passato e futuro formano ad un tempo una simmetria e una dissimmetria: una simmetria qualora si faccia astrazione da tutto ciò che concorre a definire il soggetto storico. Si tratta dunque di due prospettive astratte che hanno in comune la proprietà, come già diceva <persName ref="#zbz-p.671">S. Agostino</persName>, l'una di non essere più, l'altra di non essere ancora — dunque, in entrambi i casi di non essere, e tuttavia di essere, in una certa maniera. Entrambe hanno in comune questa ambiguità, e in questo sono simmetriche. Sono però dissimmetriche in questo: nel passato non è più possibile agire, mentre il futuro è la dimensione stessa del progetto d'azione.
+        </p>
+        <p facs="#facs_6_r_3">
+          Intendo tuttavia sottolineare, in questa sede, unicamente l'enorme importanza del presente, ovvero dell'asse che separa queste due prospettive, in quanto costitutive della storia.
+        </p>
+        <p facs="#facs_6_r_4">
+          Rispetto all'asse del presente, se consideriamo il passato e il futuro, applicheremo il primo o il secondo schema di simmetria? la « simmetria di merletto » o la « simmetria centrata »? Per quanto mi riguarda, sarei portata a rispondere: entrambe.
+        </p>
+        <p facs="#facs_6_r_5">
+          Si applica il primo schema se si considera il passato, virtualmente infinito, nella sua interezza; il passato come tale, insieme all'avvenire come tale, con le sue prospettive illimitate, in cui si ritrovano le potenzialità di « merletto ». Tuttavia si ricompone, in un intorno dell'asse, una sorta di simmetria limitata, che è quella che ci permette di vivere e di valorizzare quanto viviamo nella storia, cioè di strappare (come ho già detto per il secondo schema) un certo lasso di tempo allo scorrimento e alla svalorizzazione. È come dire che non abbiamo tra passato e presente soltanto un asse di simmetria, un punto, un momento puntuale. Non c'è soltanto questo punto, in relazione al quale <persName ref="#zbz-p.671">S. Agostino</persName> affermava di non riuscire a comprendere cosa fosse il tempo. Noi viviamo un certo spessore di tempo, che chiamiamo presente e nel quale sono racchiusi un tratto
+        </p>
+        <p>
+          234
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          del passato e uno del futuro, posti rispettivamente da una parte e dall'altra del momento presente.
+        </p>
+        <p facs="#facs_7_r_2">
+          È quello che sono solita chiamare « la piccola durata ». La piccola durata si forma attraverso una specie di « presentificazione » di un piccolo elemento del passato e di un altro del futuro, per cui l'asse, invece di essere puntuale, acquista un suo spessore. Noi viviamo come se questo piccolo lasso di tempo non trascorresse mai. Esso non scorre verso l'avvenire, così come non scorre verso il passato; si può dire che lo trasportiamo con noi, oppure che è costantemente immobile, fissato dalla simmetria attorno all'asse del presente.
+        </p>
+        <p facs="#facs_7_r_3">
+          Grazie a questa simmetria, schematizzata nel secondo schema, la piccola durata giunge a fornire una specie di rappresentazione miniaturizzata della totalità che si oppone allo svolgimento. Se vi fosse unicamente svolgimento, nulla avrebbe peso e importanza. Ad esempio i tre astronauti, che tentano oggi di raggiungere la terra, sarebbero completamente nullificati nello scorrimento infinito del tempo e, al più, si congiungerebbero con le innumerevoli vittime della storia dell'uomo. Essi non acquisterebbero consistenza come pure non acquisterebbero la loro unicità.
+        </p>
+        <p facs="#facs_7_r_4">
+          Vi è in ciò, ritengo, una specie di funzione esteriorizzante della simmetria, che rappresenta una eccezione nello svolgimento della storia, nello stesso modo in cui l'asse della simmetria rappresenta una eccezione nella simmetria centrata. Tuttavia nello stesso tempo essa sostiene l'essere della storia e permette a questa di essere ciò che è, cioè qualche cosa che può avere un senso.
+        </p>
+        <p facs="#facs_7_r_5">
+          Ho affermato che la piccola durata miniaturizza in qualche modo la totalità; vorrei aggiungere che sotto un aspetto mitico essa è una sorta di miniatura della totalità del tempo. Essa si sfrangia sia verso il passato, sia verso il futuro, ma sappiamo che avremmo potuto applicare il suo schema di valorizzazione per la simmetria ovunque, nel tempo, sia esistito qualcuno. In qualche modo, dunque, tutto il passato e tutto il futuro sono ripresi da questo tipo di simmetria. Essa rappresenta un contrappunto allo svolgimento, e crea, ritengo, insieme ad esso, per niente affatto abolendolo, la possibilità del senso della storia.
+        </p>
+        <p>
+          235
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          236
+        </p>
+        <p>
+          Ritengo dunque che la simmetria sia indispensabile in quanto struttura costitutiva essenziale della storia, rappresentando in essa un elemento di permanenza, e consentendo quel momento di sospensione che permette l'attribuzione di un senso che non si sarebbe mai potuto cogliere né possedere.
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          237
+        </p>
+        <p facs="#facs_9_r_2">
+          DISCUSSIONE
+        </p>
+        <p facs="#facs_9_r_3">
+          D'ORMESSON - Ho ascoltato con molto interesse la relazione della Signorina <persName ref="#zbz-p.2">Hersch</persName>, e mi sembra che in essa il concetto di tempo sia stato offuscato a tal punto da farci credere che il tempo la infastidisca, spingendola a soffermarsi soprattutto sull'idea di piccola durata che non trascorre mai. Non vorrei riprendere la concezione bergsoniana del tempo sostituito dallo spazio, ma credo che sia possibile affermare che il tempo possiede due caratteristiche fondamentali: da una parte, infatti, il tempo trascorre, dall'altra, invece, dura; la Signorina <persName ref="#zbz-p.2">Hersch</persName> naturalmente ha privilegiato il tempo che dura rispetto al tempo che trascorre. Non può che essere così in quanto il tempo presentatoci e che possiede una simmetria è un tempo-spazio, ovvero il tempo del calendario. Ovviamente nel calendario vi è una simmetria attorno all'istante presente, visualizzata da due frecce rivolte nei due sensi: domani è simmetrico a ieri e dopodomani è simmetrico a l'altro ieri.
+        </p>
+        <p facs="#facs_9_r_4">
+          Tuttavia le due caratteristiche del calendario sono che, per un verso, il tempo è del tutto immobile, statico, in quanto il tempo che dura annulla il tempo che passa; per l'altro verso — e ciò può essere più grave — non solo in esso vi è simmetria, ma addirittura tutto è simmetrico, essendoci dati quanti centri e piani di simmetria desideriamo: si può infatti cambiare l'istante presente e spostarlo nel luogo desiderato facendoci ritrovare una nuova configurazione di simmetria. Si tratta di considerare domani come centro di simmetria e scalare l'altro ieri e dopo domani. È possibile scalare di una o due settimane, di tre o di sei giorni ma la simmetria resterà sempre fissata e arbitraria.
+        </p>
+        <p facs="#facs_9_r_5">
+          Allora contrapposto al tempo che dura, al tempo del calendario, o al tempo della piccola durata della Signorina <persName ref="#zbz-p.2">Hersch</persName>, trasformato in una idea di grande durata, vi è il tempo vero, quello in cui la freccia non è orientata in due sensi diversi a partire dall'istante presente, ma solo nell'unica direzione che va dall'inizio alla fine.
+        </p>
+        <p>
+          Naturalmente in questa storia che trascorre non può esserci simmetria; al più vi può essere ciò che Caillois chiama la simmetria di merletto, ovvero una simmetria di ripetizione,
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          ma intesa solo come degradazione. Questa è la celebre idea di <persName ref="#zbz-p.14">Marx</persName> secondo cui la storia si ripete sempre, ma la seconda volta come caricatura della prima: <persName ref="#zbz-p.1970">Napoleone III</persName> è la farsa di <persName ref="#zbz-p.1971">Napoleone I</persName>. In questa prospettiva vi è simmetria, da una parte solo come traslazione, ripetizione, e dall'altra come degradazione.
+        </p>
+        <p facs="#facs_10_r_2">
+          Nella storia, nel tempo che trascorre, l'idea di simmetria si identifica con l'eterno ritorno, inteso, ancora, come una simmetria di ripetizione. Non sarebbe perciò sufficiente la resurrezione di <persName ref="#zbz-p.1972">Lazzaro</persName>; è necessario che egli ringiovanisca, cioè che l'eterno ritorno si realizzi come una inversione temporale. Credo che anche i più accesi sostenitori di questa concezione non abbiano mai immaginato un tempo che regredisce.
+        </p>
+        <p facs="#facs_10_r_3">
+          L'obiezione che rivolgo alla Signorina <persName ref="#zbz-p.2">Hersch</persName> si può dunque sintetizzare in questi termini: il tempo dura, ma al tempo stesso passa, e non solo passa ma è irreversibile; e l'irreversibilità è la negazione stessa della simmetria.
+        </p>
+        <p facs="#facs_10_r_4">
+          <persName ref="#zbz-p.2">Hersch</persName> - Forse non si è compreso quanto ho cercato di dire. Il tempo non mi infastidisce affatto perché sono convinta che esso è la condizione indispensabile per la storia. Ho insistito sull'aspetto della simmetria, sull'asse di simmetria e sull'aspetto dell'« anti-scorrimento » del tempo, perché penso che ciascuno dei presenti avrebbe afferrato immediatamente il problema dello svolgimento storico; mi è sembrato quindi del tutto inutile insistere su questo punto. D'altra parte non si è trattato assolutamente di « paralizzare » il tempo. d'Ormesson ha parlato della simmetria del tempo del calendario; io ho parlato del tempo del soggetto concreto che vive la storia e non del tempo del calendario, il quale non solo non è simmetrico, ma è informe. Il tempo-spazio, infatti, non possiede alcuna forma, non è strutturato e, quindi, non può nemmeno essere simmetrico.
+        </p>
+        <p facs="#facs_10_r_5">
+          L'eterno ritorno, inoltre, non ha nulla a che vedere con la storia. Ho solo cercato di indicare un certo numero di condizioni, di solito del tutto trascurate, che permettono alla storia di caratterizzarsi come tale. Lo scorrimento del tempo a tal fine non è certamente sufficiente.
+        </p>
+        <p facs="#facs_10_r_6">
+          <persName ref="#zbz-p.586">Mathieu</persName> - Ho apprezzato la relazione della Signorina <persName ref="#zbz-p.2">Hersch</persName> come un contributo alla soluzione di quel difficile problema che è il dare un significato alla storia, ovvero il rendere la storia un fatto unitario, e desidero porre una domanda. È stato affermato che l'oggetto della simmetria del secondo schema è un oggetto pari, che viene unificato divenendo così un numero dispari: l'unità. Mi chiedo allora se
+        </p>
+        <p>
+          238
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          tre punti soltanto possano formare il materiale per una simmetria e se, in questo caso, il punto centrale deve essere raddoppiato attorno all'asse di simmetria che lo attraversa. Dobbiamo cioè considerare questo punto come due punti, oppure si può concepire l'oggetto della simmetria anche come numero dispari?
+        </p>
+        <p facs="#facs_11_r_2">
+          <persName ref="#zbz-p.2">HERSCH</persName> - Per fare una simmetria con tre punti occorre considerare uno di questi punti come asse e disporre simmetricamente gli altri due.
+        </p>
+        <p facs="#facs_11_r_3">
+          DALLA PORTA - La relazione che stiamo discutendo mi sembra stimolante soprattutto perché la schematizzazione presentata dei due tipi di simmetria mette bene in luce, a mio avviso, le due prospettive fondamentali dalle quali è possibile considerare la storia.
+        </p>
+        <p facs="#facs_11_r_4">
+          Se si vuol vedere la storia solo come uno svolgimento dei fatti, allora si ottiene una traslazione aperiodica, se invece si pensa che i fatti tendano a riprodursi — d'Ormesson chiamava questo l'eterno ritorno, che è alla base delle grandi tradizioni orientali, come la civiltà Indu, in cui la storia è intesa come un'eterna ripetizione di cicli aventi una struttura simile, anche se non identica — allora ritroviamo lo schema del merletto con un disegno sempre uguale che si riproduce periodicamente.
+        </p>
+        <p facs="#facs_11_r_5">
+          Quando passiamo alla concezione cristiana o islamica troviamo lo schema con un centro, in quanto vi è un avvento eccezionale che qualifica uno solo di questi cicli. La periodicità dei cicli è infatti interrotta da uno di essi, caratterizzato da un avvenimento centrale: la nascita del <persName ref="#zbz-p.58">Cristo</persName> o l'apparizione del Profeta, che diventa l'origine dei tempi e rispetto ad esso si distingue, anche sul piano storico, il passato dal futuro in modo assoluto.
+        </p>
+        <p facs="#facs_11_r_6">
+          Da questo punto di vista si può accettare quanto affermava la Signorina <persName ref="#zbz-p.2">Hersch</persName> sul problema delle differenti origini attribuite da ciascun individuo all'asse storico, laddove l'insieme di questi diversi soggettivismi, diciamo, con diversi centri, possono armonizzarsi in una visione più vasta in cui un evento capitale polarizzi tutto l'insieme.
+        </p>
+        <p facs="#facs_11_r_7">
+          Proseguendo nell'estrapolazione, direi che il futuro e il passato, che sono per noi differenti in questa visione centrale, assumono sub specie aeternitatis aspetti equivalenti, tanto più simmetrici quanto più la prospettiva si identifica con la visione divina.
+        </p>
+        <p facs="#facs_11_r_8">
+          Invece nella prospettiva dell'eterno ritorno, possiamo avere una successione di cicli centrali e qualificati indivi
+        </p>
+        <p>
+          239
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          dualmente, l'uno succedente all'altro e integrantisi in una visione di traslazione.
+        </p>
+        <p facs="#facs_12_r_2">
+          In questo senso mi sembra che le concezioni di d'Ormesson e della Signorina <persName ref="#zbz-p.2">Hersch</persName> non siano contraddittorie, ma in qualche modo complementari, come due visioni alternative e sovrapponibili secondo il punto di vista adottato.
+        </p>
+        <p facs="#facs_12_r_3">
+          <persName ref="#zbz-p.2">HERSCH</persName> - Mi sembra che nel secondo caso, considerato da <persName ref="#zbz-p.2055">Dalla Porta</persName>, senza l'occhio di <persName ref="#zbz-p.50">Dio</persName> le due prospettive divengono identiche invece che simmetriche. Mentre in <persName ref="#zbz-p.671">S. Agostino</persName> credo vi sia una simmetria parziale.
+        </p>
+        <p facs="#facs_12_r_4">
+          <persName ref="#zbz-p.1128">CAILLOIS</persName> - d'Ormesson ha individuato correttamente che, qualora si operi una distinzione tra una storia rettilinea e una storia circolare, quella dell'eterno ritorno, la simmetria speculare cercata nella storia non può essere in nessun caso la seconda, in quanto occorrerebbe che il nuovo ciclo fosse invertito rispetto al precedente.
+        </p>
+        <p facs="#facs_12_r_5">
+          Esiste tuttavia una concezione buddista della storia, di per sé aberrante, che si differenzia da quella dei cicli, ricordata precedentemente. Questa si fonda sul concetto di totalità simmetrica della storia; il tempo inizia con la nascita di <persName ref="#zbz-p.1973">Budda</persName>, fissata a qualche migliaio di anni fa quando l'uomo si trovava allo stato selvaggio. Egli riusciva tuttavia a svilupparsi gradualmente tendendo a raggiungere l'età dell'oro in cui regna la virtù e l'armonia. Questo processo si realizza per fasi di 50.000 anni. In seguito, sempre con fasi identiche, il mondo ridiscende, per così dire, la scala: dapprima scompare la carità, quindi cominciano ad alterarsi le relazioni umane e a prendere il sopravvento la violenza. 50.000 anni più tardi sopraggiunge nell'uomo la perdita della favella e le parole non hanno più un significato stringente. La decadenza è esattamente simmetrica allo sviluppo, e finalmente al termine della « parabola » il mondo ritorna allo stesso stato selvaggio da cui era partito. In questo modo, si ha veramente una concezione della storia ispirata dalla simmetria speculare. Questa stessa concezione sussiste, in forma più elaborata, in parte degli storici moderni che immaginano cicli storici in cui l'umanità, muovendo da una situazione di barbarie, tende verso un secolo d'oro, un punto di equilibrio e di perfezione, inizio di una decadenza che riporta la cultura alla sua primitiva condizione selvaggia.
+        </p>
+        <p facs="#facs_12_r_6">
+          Questa stessa concezione si ritrova d'altra parte espressa con chiarezza nella storia dell'arte. Ritengo tuttavia che la simmetria speculare della storia non sia una sua intrinseca caratteristica, ma derivi soltanto dalla nostra concezione della storia stessa.
+        </p>
+        <p>
+          240
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          16.<lb facs="#facs_13_l_1_1" n="N001" />241
+        </p>
+        <p facs="#facs_13_r_2">
+          <persName ref="#zbz-p.2">HERSCH</persName> - Penso che quest'ottica tipica del buddismo rappresenti, in rapporto a quanto ho sostenuto, uno dei livelli indispensabili perché vi sia storia, nel significato occidentale del termine. È certamente vero che questo livello esiste anche nelle concezioni occidentali, ma se lo si isola dagli altri, per considerarlo autonomamente, il concetto di storia perde il significato che noi gli attribuiamo.
+        </p>
+        <p facs="#facs_13_r_3">
+          <persName ref="#zbz-p.1230">AGAZZI</persName> - Penso che il problema della storia debba essere considerato da due differenti prospettive a seconda che la si intenda come insieme di <hi rendition="#i">res gestae</hi> (cioè come totalità di ciò che passa) o piuttosto come <hi rendition="#i">historia rerum gestarum</hi> (cioè come scienza che si occupa di descrivere le cose che sono accadute). Mi pare che nella relazione della Signorina <persName ref="#zbz-p.2">Hersch</persName> la storia sia stata considerata nel suo primo significato e mi trovo perfettamente d'accordo su quanto è stato affermato, eccetto su un punto.
+        </p>
+        <p facs="#facs_13_r_4">
+          Non mi sembra strano che la storia possa presentare delle ripetizioni e non ritengo che ciò tolga ad essa di interesse. Per la vita personale si può affermare: ogni uomo viene al mondo, quindi arriva all'adolescenza, poi alla maturità e alla vecchiaia, per passare infine dalla vecchiaia alla morte. È una ripetizione continua, ma non mi sento di affermare che per questo la vita è priva di significato: sappiamo tutti che dobbiamo percorrere alcune tappe obbligate e che lo sviluppo seguito è esattamente lo stesso, nella sua struttura, per ognuno di noi, ma al tempo stesso sappiamo di avere una storia personale ricchissima di significati, la quale, anche se vi è questa ripetizione, non è mai la ripetizione della storia degli altri. Quindi, pur essendo convinto che la storia non è sottoposta ad una ripetizione ciclica, non riesco a formulare una obiezione particolare a questa concezione.
+        </p>
+        <p facs="#facs_13_r_5">
+          Non credo che la storia concepita, in un certo senso, ciclicamente sia necessariamente sprovvista di significato e debba identificarsi <hi rendition="#i">tout court</hi> con la storia che si ripete; si è solo individuata in essa una struttura. Tuttavia, come il fisico sa bene che se si applica la stessa legge a differenti condizioni iniziali si ottengono sviluppi differenti, così possiamo ritenere che una struttura ciclica applicata a eventi distinti (e ciò accade necessariamente poiché il tempo trascorre) propone una certa struttura, che determina lo sviluppo di ogni storia, senza che vi sia perdita di singolarità e di irripetibilità. In tal modo questo tipo di simmetria possibile, di ripetizione, non potrebbe offuscare, a mio avviso, l'idea di storia come storia di ciò che passa.
+        </p>
+        <p>
+          Credo che a questo punto sia necessario fare qualche considerazione sulla storia intesa come « scienza » di ciò che
+        </p>
+      <pb facs="#facs_14" n="14" />
+        <p facs="#facs_14_r_1">
+          passa, ovvero come storiografia. Quando si fa storia come scienza si è costretti a costruire una simmetria del tutto simile a quella delle scienze sperimentali, come ad esempio la fisica.
+        </p>
+        <p facs="#facs_14_r_2">
+          Facciamo un esempio e consideriamo il problema della nascita del capitalismo nell'<placeName ref="#zbz-l.14">Europa</placeName> alla fine del medioevo. Si inizia col proporre alcune ipotesi di invarianza che si è obbligati a verificare alla luce dei fatti sperimentali — questi nel caso specifico sono i dati dei « documenti ». Così, ad esempio, si può avere l'ipotesi di <persName ref="#zbz-p.1974">Sombart</persName> secondo cui il capitalismo nacque perché alcuni proprietari terrieri, in seguito ad un forte incremento demografico, hanno potuto vendere i loro terreni come aree edificabili, entrando così in possesso di enormi quantità di denaro. Tuttavia questa ipotesi è stata smentita, visto che ricerche successive di storici tedeschi hanno dimostrato che ad <placeName ref="#zbz-l.659">Augusta</placeName> e in altre importanti città, i primi capitalisti non erano stati originariamente proprietari immobiliari. Non intendo entrare nei dettagli di questo problema particolare; è sufficiente sottolineare che il procedimento è identico alla formulazione di una ipotesi fisica per l'interpretazione di alcuni risultati sperimentali: si cerca un invariante che, proposto come ipotesi, possa spiegare i fatti considerati, ferma restando la possibilità di poter abbandonare l'ipotesi fatta qualora si pervenga ad un contro esempio valido.
+        </p>
+        <p facs="#facs_14_r_3">
+          Mi pare che nell'interpretazione storica ci si avvicini di molto a questo procedimento: si parte da alcuni dati, per formulare poi una ipotesi di invarianza, facendo cioè intervenire considerazioni di simmetria del tutto analoghe a quelle delle leggi sperimentali, al fine di interpretare i fatti stessi. Ma non solo: occorre riuscire a prevedere nuovi fatti. Il che non significa anticipare quello che accadrà domani, dopodomani o nel 1980, ma ciò che nuovi « documenti del passato » saranno in grado di indicarci. Ci si attende che, se l'ipotesi è buona, se il principio di simmetria è valido, tutto ciò che si potrà scoprire in futuro riguardo a un argomento passato dovrà confermare l'ipotesi.
+        </p>
+        <p facs="#facs_14_r_4">
+          <persName ref="#zbz-p.2">HERSCH</persName> - Premetto che non voglio escludere questa possibilità, tuttavia, a mio avviso, la struttura complessa delle condizioni storiche impedisce a qualsiasi teoria di essere la sola valida: con una teoria storica, infatti, si colgono solo alcuni aspetti. Ora quando <persName ref="#zbz-p.1230">Agazzi</persName> afferma che nella storia tutto accade come in fisica, si applica implicitamente la simmetria del primo tipo.
+        </p>
+        <p facs="#facs_14_r_5">
+          Ma su ciò ho forti dubbi in quanto esiste una differenza strutturale tra la storia e la fisica; la storia può infatti es
+        </p>
+        <p>
+          242
+        </p>
+      <pb facs="#facs_15" n="15" />
+        <p facs="#facs_15_r_1">
+          243
+        </p>
+        <p facs="#facs_15_r_2">
+          sere tale solo se le cose avvengono in seguito all'intervento dell'uomo.
+        </p>
+        <p facs="#facs_15_r_3">
+          <persName ref="#zbz-p.1230">AGAZZI</persName> - Forse non ho spiegato bene il mio punto di vista. Quando ci si occupa di un periodo passato, che è già morto, trascorso, e si vuol fare la storia di questa epoca è come se si volesse descrivere la storia di un oggetto fisico, poiché sul passato è escluso ogni possibile intervento umano. Si tratta solo di comprendere ciò che è stato, e non ciò che avrebbe potuto essere. Non vedo quindi come si possa proporre una interpretazione del passato senza proporre una qualche ipotesi interpretativa che si accordi con i dati documentari.
+        </p>
+        <p facs="#facs_15_r_4">
+          <persName ref="#zbz-p.2">HERSCH</persName> - Questa interpretazione può essere proposta benissimo purché si sappia che la natura della realtà da interpretare implica la possibilità di uno sviluppo alternativo; e non a causa della natura inesauribile della realtà, come è, ad esempio, quella fisica, o di un fattore naturale imprevedibile, ma per la natura stessa della storia, che in parte è fatta dagli uomini.
+        </p>
+        <p facs="#facs_15_r_5">
+          <persName ref="#zbz-p.1230">AGAZZI</persName> - Non sono d'accordo, ma forse non è opportuno proseguire la discussione su questo punto visto che sarebbe necessario premettere una analisi troppo dettagliata del problema.
+        </p>
+        <p>
+          <persName ref="#zbz-p.1975">ROGER</persName> - Mi sembra che la Signorina <persName ref="#zbz-p.2">Hersch</persName> parlando di storia abbia accentuato soprattutto l'aspetto individuale, soggettivo. È certo che dalla nostra prospettiva, ovvero dall'istante presente, vediamo il passato e l'avvenire rapportati alla nostra collocazione temporale: è così che si possono immaginare due frecce simmetriche e di senso opposto. Resta solo da stabilire se vi sia una simmetria esatta. Possiamo affermare con certezza che l'uomo inizia a far storia cercando di interpretare il passato solo perché è preoccupato del futuro e che dal punto di vista psicologico si individua una doppia « direzione »: si può esprimere un giudizio positivo del passato solo se si è fiduciosi nell'avvenire, e viceversa. Quindi la concezione che lo storico ha del passato è influenzata dalla sua visione del futuro. In quanto storici dobbiamo cercare di superare questo punto di vista soggettivo e di non farci vincere dalla tentazione psicologica, quasi naturale, di considerare le cose dalla fine. Se invece vogliamo fare storia intesa, nel significato dato ad essa da <persName ref="#zbz-p.1230">Agazzi</persName>, come conoscenza e interpretazione del passato, penso che l'atteggiamento della Signorina <persName ref="#zbz-p.2">Hersch</persName> sia pericoloso, visto che, se
+        </p>
+      <pb facs="#facs_16" n="16" />
+        <p facs="#facs_16_r_1">
+          244
+        </p>
+        <p facs="#facs_16_r_2">
+          si getta uno sguardo dal presente verso il passato, si ottiene una orientazione rigorosamente invertita, in senso cronologico, dello svolgimento storico per non parlare della concatenazione causale degli avvenimenti. D'altra parte se si isola la microdurata, si tronca il passato dal futuro rendendo così inintellegibili tutti i fenomeni. Se dunque l'atteggiamento della Signorina <persName ref="#zbz-p.2">Hersch</persName> è perfettamente coerente sul piano psicologico sembra del tutto fuorviante per chi cerchi di comprendere i fenomeni nel loro sviluppo storico.
+        </p>
+        <p facs="#facs_16_r_3">
+          Non credo, per altro, che l'avvenimento centrale della venuta del Redentore o del Profeta, della concezione cristiana o musulmana della storia, qui ricordato da <persName ref="#zbz-p.2055">Dalla Porta</persName>, possa costituire un centro di simmetria, in quanto è evidente che, anche se si prende in considerazione la traiettoria totale della storia dell'umanità, in questa visione si parte dall'eternità per entrare nella storia e per ritornare di nuovo all'eternità, dove, questa volta, <persName ref="#zbz-p.50">Dio</persName> non è solo: qui il contenuto essenziale della storia si aggiunge, in modo evidentemente misterioso, all'eternità primitiva. Ha dunque un significato dire: dall'eternità all'eternità, a cui è associata una traiettoria orientata.
+        </p>
+        <p facs="#facs_16_r_4">
+          Sono invece d'accordo con la concezione della storia espressa da <persName ref="#zbz-p.1230">Agazzi</persName>, in cui alcune strutture si deformano costantemente presentando tuttavia invarianti che ne permettono l'intellegibilità. Se avessimo, invece, strutture rigorosamente eterogenee, succedentesi le une alle altre, sarebbe impossibile comprendere l'insieme. Per questo non sono convinto della obiezione rivolta a questo punto di vista dalla Signorina <persName ref="#zbz-p.2">Hersch</persName>, secondo cui in tal modo si finisce per considerare questa concezione come la sola possibile.
+        </p>
+        <p facs="#facs_16_r_5">
+          Se volessimo comprendere la storia, tenendo conto di tutti gli individui, saremmo portati a comportarci come un fisico che vuole spiegare la natura sapendo come si comporta ogni elettrone. Tuttavia questo non è il nostro caso: al livello in cui speriamo di avere una conoscenza della storia gli individui non sono certamente trascurabili, ma non dimentichiamo che quando li studiamo essi sono morti.
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">HERSCH</persName> - Il carattere contraddittorio delle critiche che mi sono state rivolte non può che consolarmi. d'Ormesson mi ha rimproverato di parlare del calendario e del tempo-spazio, che non è più un tempo, mentre <persName ref="#zbz-p.1975">Roger</persName> mi ha rimproverato di essermi limitata a considerare un tempo soggettivo, individuale, particolare. Mi sembra che le due critiche presentino una contrapposizione così radicale da essere giustificate solo se ho commesso due errori in una sola volta.
+        </p>
+        <p>
+          Ha ragione <persName ref="#zbz-p.1975">Roger</persName> quando mi obietta di aver separato il
+        </p>
+      <pb facs="#facs_17" n="17" />
+        <p facs="#facs_17_r_1">
+          passato dall'avvenire rendendo così inintellegibili i fenomeni. Egli ha colto proprio quello che ho cercato di fare; mi sono proposta di introdurre un elemento permanente di inintellegibilità, nella intellegibilità accessibile, perché questa dimensione non intellegibile mi sembra essenziale nella storia. Forse il mio punto di vista è pericoloso, ma credo sia molto più pericoloso ignorare questo limite di intellegibilità.
+        </p>
+        <p facs="#facs_17_r_2">
+          <persName ref="#zbz-p.1976">DIETERLEN</persName> - Le civiltà di cui mi occupo nelle mie ricerche sono molto evolute e presentano, per ogni etnia, caratteri comuni formulati con linguaggi diversi e che si traducono nell'organizzazione socio-religiosa, nell'economia, nelle credenze e nelle manifestazioni e, naturalmente, nel comportamento degli individui.
+        </p>
+        <p facs="#facs_17_r_3">
+          Studiando la storia, intesa non come storia locale o come cronaca, ma come storia di tutti i tempi che continua su un piano che si può definire internazionale, si è colpiti dall'importanza del ruolo attribuito alle manifestazioni religiose collettive.
+        </p>
+        <p facs="#facs_17_r_4">
+          Cosa individuiamo nelle civiltà che hanno subito numerose evoluzioni storiche, per il solo fatto che si sono trovate al centro di guerre, conquiste e colonizzazioni? Si assiste al fatto che, per ragioni di strutture sociali da una parte, e di strutture religiose dall'altra, ragioni che sono del tutto inseparabili nelle civiltà tradizionali, la cronaca viene progressivamente introdotta al livello dei concetti che implicano la permanenza, la continuità e la successione. Le cerimonie settennali dei <persName ref="#zbz-p.1977">Malinké</persName>, le cerimonie sessantenali del Sigui presso i <persName ref="#zbz-p.1978">Dogon</persName>, hanno come scopo principale di riattualizzare in queste popolazioni la storia del mondo; non si tratta solo della storia dei <persName ref="#zbz-p.1978">Dogon</persName> o dei <persName ref="#zbz-p.1977">Malinké</persName>, ma di quella dell'uomo dalla sua creazione. Durante la rifondazione settennale del santuario del Mandé a <placeName ref="#zbz-l.660">Kangaba</placeName> i genealogisti <persName ref="#zbz-p.1977">Malinké</persName> recitano per dodici ore consecutive (tutta una notte) testi sacri, nei quali è riferita la storia della creazione del mondo e quella degli uomini; essi introducono progressivamente la storia della fondazione dell'impero del Mandé, della conversione all'islamismo, della formazione del regno <persName ref="#zbz-p.1979">Bambara</persName>, della colonizzazione, ecc. Essi sottolineano, dunque, la presenza di una continuità che affonda le sue radici, talvolta le sue motivazioni, non solo nella protostoria, ma anche nel mito cosmogonico.
+        </p>
+        <p facs="#facs_17_r_5">
+          Ho assistito personalmente, prima dell'indipendenza, alla rifondazione settennale del Santuario del Mandé a <placeName ref="#zbz-l.660">Kangaba</placeName> (<placeName ref="#zbz-l.661">Malí</placeName>), e ho pubblicato un commento al simbolismo delle figure eseguite ritualmente sulla parete intonacata dell'edi
+        </p>
+        <p>
+          245
+        </p>
+      <pb facs="#facs_18" n="18" />
+        <p facs="#facs_18_r_1">
+          ficio e a quella del tetto conico, fatto di bambù e di paglia. In occasione della prima cerimonia che si è tenuta dopo l'indipendenza, gli agenti dei riti hanno disegnato sul circuito del santuario, accanto a figure tradizionali, le bandiere del <placeName ref="#zbz-l.661">Malí</placeName>. L'avvento straordinario dell'indipendenza veniva così registrato al livello della tradizione, in una prospettiva del tempo mitica, storica e politica. Questo ingresso dell'indipendenza nella tradizione — simbolizzata dalle bandiere — fu sottolineato dalle sei bandiere scelte; il numero sei è fondamentalmente legato alla genesi dell'universo e precisamente a quella del primo « seme » vivente, immagine dell'atomo, in quanto ne indica la formazione del sesso, dunque la sua riproduzione futura e la proliferazione della vita. Il tetto del Santuario, composto dai sei spigoli che mettono in luce lo stesso simbolismo, viene rifatto contemporaneamente all'intonacatura e alle pitture rituali del Santuario stesso.
+        </p>
+        <p facs="#facs_18_r_2">
+          Altri esempi sono forniti dalle cerimonie sessantenali del Sigui presso i <persName ref="#zbz-p.1978">Dogon</persName>, che si sono svolte dal 1967 in diverse regioni, e della durata complessiva di sei o otto anni, e dalle cerimonie annuali della società iniziatica del <orgName ref="#zbz-o.698">Komo</orgName> presso i <persName ref="#zbz-p.1979">Bambara</persName>. Si tratta in tutti i casi di rendere di nuovo attuali alcune tappe importanti della storia mitica dell'umanità, in una prospettiva dinamica: quanto accade, cioè la storia, è introdotto in una continuità. I fruitori si rivolgono verso un passato compiuto ma sempre vivo — in quanto contiene i prolegomeni dei fondamenti della vita e del suo sviluppo, — assorbono il presente e guardano verso il futuro, in una stessa prospettiva. Dal che deriva l'introduzione pressoché perenne — nelle uscite di maschere dogon e bambara — di avvenimenti o fatti notevoli (maschera « marabut », « governatore », « etnologo », « aereo » poi « turista », « macchina elettronica », ecc.).
+        </p>
+        <p facs="#facs_18_r_3">
+          Presso i <persName ref="#zbz-p.1979">Bambara</persName>, l'insegnamento, essenzialmente religioso, impartito dalla società iniziatica del <orgName ref="#zbz-o.698">Komo</orgName>, è basato su classificazioni di tipo enciclopedico degli esseri e delle cose: si tratta di insegnare progressivamente agli iniziati tutto ciò che della natura, della cultura, dell'uomo, della società, ecc. fu o è stato di recente registrato e classificato. Da qui la risposta degli iniziati ai sostenitori e agli « apostoli » dell'islamismo: « Il culto di <persName ref="#zbz-p.50">Hallah</persName> è certamente veritiero, ma quello del <orgName ref="#zbz-o.698">Komo</orgName> è l'evidenza stessa ».
+        </p>
+        <p facs="#facs_18_r_4">
+          Mi sembra che questi esempi dimostrino come il problema della storia — e parallelamente della preistoria — così come viene concepito dalle civiltà dell'<placeName ref="#zbz-l.190">Africa occidentale</placeName> è essenzialmente differente da come siamo soliti considerarlo noi.
+        </p>
+        <p>
+          246
+        </p>
+      <pb facs="#facs_19" n="19" />
+        <p facs="#facs_19_r_1">
+          <persName ref="#zbz-p.1969">SCHEURER</persName> - In questo intervento intendo affrontare tre punti:
+        </p>
+        <p facs="#facs_19_r_2">
+          a) Mi sembra che nella sua relazione la Signorina <persName ref="#zbz-p.2">Hersch</persName> abbia considerato il presente in rapporto al sentimento del vivere; vorrei quindi sapere in che modo il proprio presente possa ricongiungersi con quello degli altri, soprattutto se vi è una profonda differenza culturale tra i soggetti. È possibile, ad esempio, mettere in relazione, sulla base del punto di vista scelto, il presente del lettore con il presente di un autore?
+        </p>
+        <p facs="#facs_19_r_3">
+          b) Ritengo sia necessario precisare con quali significati si può usare la parola storia. Vi può, infatti, essere storia fin tanto che la vivo o la viviamo; si è parlato, inoltre, di sistemi che esprimono la storia, e della concezione della storia in differenti culture. Infine vi è il problema, come ricordavano <persName ref="#zbz-p.1230">Agazzi</persName> e <persName ref="#zbz-p.1975">Roger</persName>, della storia come scienza oggettiva. Da quest’ultimo punto di vista non penso che vi sia molta dissimmetria tra il passato e il futuro. Diciamo sempre che il passato è intoccabile mentre l’avvenire è il possibile, il dominio stesso della libertà, ma ritengo che vi siano altrettante possibilità di cambiare il passato, semplicemente per la scelta che noi ora facciamo delle informazioni ricavate dal passato. Proprio per questo, nuovi dati obiettivi possono modificare la storia, come pure ogni altra storia del passato, e non solo quella del passato degli uomini. Con dati nuovi, infatti, non intendo soltanto la scoperta di nuovi manoscritti, o la scoperta di un tempio sotterrato da qualche parte, ma anche la scoperta di nuovi tipi di stelle che provengono da un passato remoto.
+        </p>
+        <p>
+          Si pone allora il problema di ricostruire questo passato in funzione della stessa evoluzione dei dati raccolti. Da questo punto di vista, mi rendo conto di avere una certa libertà nel manipolare il passato.
+        </p>
+        <p>
+          D’altra parte, è lo stesso quando si vuole agire sul futuro. Dal punto di vista relativistico non esistono eventi che accadono: gli eventi sono. Così, sfortunatamente per me, la mia morte è, anche se, buon per me, ignoro in quale punto dello spazio esiste questo fenomeno, questo evento. Mi resta soltanto da eliminare, del tutto liberamente, tra tutte le possibilità che mi si presentano, un certo numero, prefiggendomi un certo scopo, una certa direzione. Infatti, rispetto all’istante che vivo ora, constato una diminuzione di informazione nei due sensi. Consideriamo ad esempio l’esplosione verificatasi a bordo dell’Apollo XIII, forse causata dall’urto di una meteora. Si era stabilito che il razzo si muovesse seguendo le due leggi fondamentali dei sistemi chiusi e si era valutato che, rispetto alle meteoriti, l’apertura del sistema fosse molto piccola. La probabilità di in
+        </p>
+        <p>
+          247
+        </p>
+      <pb facs="#facs_20" n="20" />
+        <p facs="#facs_20_r_1">
+          contrarre un meteorite era estremamente piccola e, infatti, in base ai calcoli, uno squarcio di questo tipo si sarebbe verificato solo in un viaggio di cento anni, invece si è prodotto già al tredicesimo volo. Il significato fisico esatto del termine caso è proprio questo; si devono considerare i sistemi chiusi, i soli di cui si riesca a descrivere l'evoluzione, soltanto come una approssimazione, come una legalizzazione della realtà. Di conseguenza, più considero un futuro lontano, meno sicure sono le mie previsioni.
+        </p>
+        <p facs="#facs_20_r_2">
+          Così è pure per il passato, rispetto al quale sono informato sugli avvenimenti prossimi da un insieme di documenti, mentre l'informazione diminuisce considerevolmente man mano che mi allontano dal presente. Vi è dunque una diminuzione di informazione verso il passato come verso il futuro.
+        </p>
+        <p facs="#facs_20_r_3">
+          c) Per concludere vorrei soffermarmi sulla nozione di <hi rendition="#i">significato della storia</hi>. Siamo portati a ricercare un significato nella storia in quanto noi rappresentiamo sistemi in stato di equilibrio metastabile evolventi secondo processi irreversibili. Dalla constatazione che gli altri, cioè il nostro prossimo, hanno un'evoluzione dello stesso tipo, siamo spinti a fare una statistica di questi sistemi che evolvono similmente. È questo che tentiamo di chiamare il significato della storia.
+        </p>
+        <p facs="#facs_20_r_4">
+          Mi sembra innegabile che nella storia esista una orientazione dovuta all'evoluzione di un sistema non in equilibrio, ma volendo affermare che in ciò è possibile individuare un significato si solleva un problema al quale non so dare una risposta.
+        </p>
+        <p facs="#facs_20_r_5">
+          <persName ref="#zbz-p.2">HERSCH</persName> - Cercherò di rispondere a <persName ref="#zbz-p.1969">Scheurer</persName> su qualche punto. Inizio dal problema della comunicazione del presente cosciente, vissuto, con il presente cosciente di un soggetto di un'altra civiltà. Una delle difficoltà principali sta proprio nelle differenze connesse al concetto di tempo. Più si indagano le civiltà straniere, più ci si rende conto che esse non possiedono lo stesso concetto di tempo. Le parole sono segnate da una esperienza del tempo veramente differente che, di conseguenza, modifica la natura della storia. Ci si può anche domandare in certi casi se vi sia ancora storia, nel significato che attribuiamo ad essa, o se si debba attribuire alla storia un significato molto più vasto.
+        </p>
+        <p>
+          Quando <persName ref="#zbz-p.1969">Scheurer</persName> mi chiede se il mio presente può coincidere con il presente di un autore, forse intende dire con il presente suscitato dall'opera di un autore. Certe letture, più del momento comunicativo implicano l'identificazione o il « mimo » interiore. Questo genere di letture fornisce al nostro senso del presente una elasticità, una ricchezza che di per sé non possiede.
+        </p>
+        <p>
+          248
+        </p>
+      <pb facs="#facs_21" n="21" />
+        <p facs="#facs_21_r_1">
+          Quanto alla storia come scienza obiettiva, non so cosa <persName ref="#zbz-p.1969">Scheurer</persName> intende per storia, né, a dire il vero, per scienza obiettiva. <persName ref="#zbz-p.1969">Scheurer</persName> si è soffermato successivamente sulla possibilità di cambiare il passato manipolandolo, in base alla scelta dei dati; mi pare che vi sia una contraddizione tra « scienza obiettiva » e questa possibilità di manipolare il passato. Vorrei tener fermo il fatto che l'intenzione di essere oggettivo implica la profonda convinzione relativistica che i fatti del passato si sono svolti in una certa maniera e non in un'altra.
+        </p>
+        <p facs="#facs_21_r_2">
+          L'errore commesso, o il reperimento sempre parziale di questi fatti, non modifica in nulla questa « realtà » del passato. A noi è dato, certamente, di scegliere i dati, ma per la capacità che questi hanno di farci cogliere quel passato di cui supponiamo l'esistenza reale.
+        </p>
+        <p facs="#facs_21_r_3">
+          Mi rifiuto di rinunciare a questa intenzione. So bene che non possiamo raggiungere il passato così come esso è stato, e che il passato non può esaurirsi nelle nostre conoscenze storiche; so bene, inoltre, che la conoscenza può essere modificata con il tempo, con i dati in nostro possesso, con la nostra struttura interpretativa, ma non potrei mai affermare, come ha fatto <persName ref="#zbz-p.1969">Scheurer</persName>, che abbiamo la libertà di manipolare e la possibilità di cambiare.
+        </p>
+        <p facs="#facs_21_r_4">
+          <persName ref="#zbz-p.1969">Scheurer</persName> ha affermato, tra l'altro, che per il fisico relativista non esistono eventi e non esiste storia. Certamente la storia fa parte della natura e, da una certa angolazione, è possibile inglobarla nella natura senza attribuire ad essa uno status privilegiato. Ma, se non si accetta questa possibilità, allora la sua specificità è soltanto negata e non esiste più. Non si tratta più di considerare la storia in un certo modo, ma di abolirla dal suo contesto di natura. Allora non vi sarà più storia, né, d'altronde, umanità.
+        </p>
+        <p facs="#facs_21_r_5">
+          Penso che la stessa annotazione possa essere rivolta al capovolgimento della storia: la storia invertita non sarebbe più storia ma qualche cosa d'altro.
+        </p>
+        <p facs="#facs_21_r_6">
+          <persName ref="#zbz-p.1969">SCHEURER</persName> - La risposta data dalla Signorina <persName ref="#zbz-p.2">Hersch</persName> sul primo punto mi ha soddisfatto totalmente; meno quelle sugli altri. Ho sollevato brevemente, nel precedente intervento, il problema della oggettività della storia, anche se non sono sicuro che la storia possa essere considerata come una scienza e avere lo stesso status della fisica. Io conosco i criteri di obiettività della fisica, desidererei che gli storici mi definissero il loro.
+        </p>
+        <p facs="#facs_21_r_7">
+          Per quanto riguarda poi il problema dello sviluppo, non vedo perché si debba privilegiare la storia, ovvero gli eventi che riguardano gli esseri umani rispetto agli eventi del mondo
+        </p>
+        <p>
+          249
+        </p>
+      <pb facs="#facs_22" n="22" />
+        <p facs="#facs_22_r_1">
+          organico e inorganico. Si è portati ad operare una simile distinzione perché ci collochiamo in una prospettiva antropomorfica; non vi è motivo di accettarla se, come io ho fatto, si sceglie un punto di vista astratto. Ma dirò di più, alcune scienze, come l'economia e le scienze sociali, si troverebbero in uno stato di sviluppo più avanzato dal punto di vista del mio criterio di scientificità della natura, se si fosse abbandonata questa impostazione antropomorfica che ci impedisce di vedere, di semplificare i fenomeni e di poter scegliere un certo numero di relazioni obiettive.
+        </p>
+        <p facs="#facs_22_r_2">
+          In particolare, in economia, se invece di considerare l'acquirente, il venditore e il produttore attraverso le informazioni disponibili o delle quali non sappiamo liberarci, perché l'acquirente ha dei riti, il venditore degli interessi, ecc. li considerassimo unicamente come tipi di popolazioni (due tipi di particelle che interagiscono tra loro scambiandosi un certo numero di termini) in una teoria della comunicazione del tutto generale, penso che si avrebbe la possibilità di stabilire uno schema su cui si potrebbero sviluppare delle scienze umane obiettive come le scienze esatte. Mi sembra, d'altra parte, che la matematica applicata alla sociologia e all'economia attuale spinga nella direzione indicata.
+        </p>
+        <p facs="#facs_22_r_3">
+          <persName ref="#zbz-p.2">HERSCH</persName> - <persName ref="#zbz-p.1969">Scheurer</persName> ha esposto con la massima chiarezza quanto ho cercato di combattere. La sua posizione può infatti essere estesa anche alla vita: gli esseri viventi potrebbero, infatti, essere considerati come un ammasso di particelle simili a cose inanimate. <persName ref="#zbz-p.1969">Scheurer</persName> coglie nel segno quando afferma che la mia concezione della storia è antropomorfica, ma ritengo che la storia non può che essere tale: col voler evitare di introdurre le categorie antropomorfiche, si finisce per ignorare la realtà storica. Solo un essere diverso dall'uomo potrebbe essere spinto a trattare la società umana come un insieme di particelle ma in tal caso, esso non concepirebbe né la storia, né la società umana, né l'uomo.
+        </p>
+        <p facs="#facs_22_r_4">
+          <persName ref="#zbz-p.1969">SCHEURER</persName> - Ho un certo ideale di conoscenza obiettiva, che cerco di raggiungere in fisica, ma malgrado ciò pratico un altro tipo di conoscenza della natura: di fronte allo spettacolo del tramonto non ragiono con sistemi di equazioni differenziali.
+        </p>
+        <p>
+          250
+        </p>
+      </div>
+      </body></text>
+</TEI>

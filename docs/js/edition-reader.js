@@ -2,7 +2,7 @@
  * ZBZ Edition – Reader Module
  * Faksimile + TEI side-by-side reader with page navigation,
  * zoom, font toggle, entity sidebar, XML view.
- * Namespace: ZBZ.EditionReader (ES5, IIFE)
+ * Namespace: ZBZ.EditionReader (ES6+, IIFE)
  */
 (function () {
     'use strict';
@@ -60,6 +60,7 @@
             initDivider();
             initEditor();
             showPage(state.page);
+            loadRevisionDesc();
 
             ZBZ.log('Reader', `Doc ${state.docId} | S.${state.page}/${state.totalPages} | Entities: ${state.docMeta.entity_count || 0}`);
         });
@@ -116,6 +117,9 @@
             if (m.lang) parts.push('<span class="ed-badge ed-badge-lang">' + E.esc(m.lang) + '</span>');
             if (m.page_count) parts.push(m.page_count + ' Seiten');
             if (m.demo) parts.push('<span class="ed-badge ed-badge-demo">Demo</span>');
+            if (m.screening) {
+                parts.push(E.screeningBadgeHtml(m.screening));
+            }
             metaEl.innerHTML = parts.join(' &middot; ');
         }
 
@@ -140,27 +144,106 @@
     function renderCurationBadge(meta) {
         const metaEl = E.$('.ed-reader-meta');
         if (!metaEl) return;
+        const badgeHtml = E.curationBadgeHtml(meta.status);
+        if (!badgeHtml) return;
+        const span = document.createElement('span');
+        span.innerHTML = ' ' + badgeHtml;
+        metaEl.appendChild(span);
+    }
 
-        const statusLabels = {
-            draft: 'Entwurf',
-            in_review: 'In Pruefung',
-            approved: 'Freigegeben'
-        };
-        const statusClass = {
-            draft: 'ed-badge-curation-draft',
-            in_review: 'ed-badge-curation-review',
-            approved: 'ed-badge-curation-approved'
-        };
+    // --- Revision History ---
+    function loadRevisionDesc() {
+        E.fetchFullTei(state.docId).then((xml) => {
+            if (!xml) return;
+            const changes = E.extractRevisionDesc(xml);
+            if (changes && changes.length) {
+                renderRevisionPanel(changes);
+            }
+        });
+    }
 
-        const label = statusLabels[meta.status] || meta.status;
-        const cls = statusClass[meta.status] || 'ed-badge-curation-draft';
+    function renderRevisionPanel(changes) {
+        const toolbar = E.$('.ed-reader-toolbar');
+        if (!toolbar) return;
 
-        const badge = document.createElement('span');
-        badge.className = 'ed-badge ' + cls;
-        badge.textContent = label;
-        badge.title = 'Kurations-Status';
-        metaEl.appendChild(document.createTextNode(' '));
-        metaEl.appendChild(badge);
+        // Remove existing panel
+        const existing = E.$('.ed-revision-panel');
+        if (existing) existing.remove();
+
+        const panel = document.createElement('div');
+        panel.className = 'ed-revision-panel';
+
+        // Latest status for summary
+        const lastChange = changes[changes.length - 1];
+        const statusText = lastChange.status ? ` \u2014 ${lastChange.status}` : '';
+
+        panel.innerHTML =
+            `<button class="ed-revision-toggle" aria-expanded="false">` +
+            `<span>Revisionsgeschichte (${changes.length})${E.esc(statusText)}</span>` +
+            `<span class="ed-chevron">&#9660;</span></button>` +
+            `<div class="ed-revision-timeline"></div>`;
+
+        const timeline = panel.querySelector('.ed-revision-timeline');
+        changes.forEach((ch) => {
+            const entry = document.createElement('div');
+            entry.className = 'ed-revision-entry';
+            let statusHtml = '';
+            if (ch.status) {
+                statusHtml = ` <span class="ed-revision-status" data-status="${E.esc(ch.status)}">${E.esc(ch.status)}</span>`;
+            }
+            entry.innerHTML =
+                `<span class="ed-revision-date">${E.esc(ch.when)}</span>` +
+                `<span class="ed-revision-who">${E.esc(ch.who)}</span>` +
+                `<span class="ed-revision-text">${E.esc(ch.text)}${statusHtml}</span>`;
+            timeline.appendChild(entry);
+        });
+
+        // Toggle
+        const toggle = panel.querySelector('.ed-revision-toggle');
+        toggle.addEventListener('click', () => {
+            const open = panel.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', String(open));
+        });
+
+        // Auto-expand for NEEDS_REVIEW
+        if (lastChange.status === 'NEEDS_REVIEW') {
+            panel.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+        }
+
+        toolbar.after(panel);
+
+        // Page thumbnails strip
+        renderPageThumbs();
+    }
+
+    function renderPageThumbs() {
+        if (!state.totalPages || state.totalPages <= 1) return;
+        const toolbar = E.$('.ed-reader-toolbar');
+        if (!toolbar) return;
+
+        // Remove existing
+        const existing = E.$('.ed-page-thumbs');
+        if (existing) existing.remove();
+
+        const strip = document.createElement('div');
+        strip.className = 'ed-page-thumbs';
+        for (let i = 1; i <= state.totalPages; i++) {
+            const thumb = document.createElement('button');
+            thumb.className = 'ed-page-thumb' + (i === state.page ? ' active' : '');
+            thumb.textContent = i;
+            thumb.title = `Seite ${i}`;
+            thumb.addEventListener('click', () => { showPage(i); });
+            strip.appendChild(thumb);
+        }
+
+        // Insert after revision panel if present, else after toolbar
+        const revPanel = E.$('.ed-revision-panel');
+        if (revPanel) {
+            revPanel.after(strip);
+        } else {
+            toolbar.after(strip);
+        }
     }
 
     // --- Toolbar ---
@@ -168,8 +251,8 @@
         const prevBtn = E.$('#page-prev');
         const nextBtn = E.$('#page-next');
 
-        if (prevBtn) prevBtn.addEventListener('click', () => { changePage(-1); });
-        if (nextBtn) nextBtn.addEventListener('click', () => { changePage(1); });
+        if (prevBtn) { prevBtn.title = 'Vorherige Seite (Pfeiltaste links)'; prevBtn.addEventListener('click', () => { changePage(-1); }); }
+        if (nextBtn) { nextBtn.title = 'Naechste Seite (Pfeiltaste rechts)'; nextBtn.addEventListener('click', () => { changePage(1); }); }
 
         // Font toggle
         const fontBtn = E.$('#font-toggle');
@@ -300,8 +383,15 @@
         state.page = page;
         E.setParams({ doc: state.docId, page: page });
         updatePageIndicator();
+        updatePageThumbs();
         loadFaksimile();
         loadTei();
+    }
+
+    function updatePageThumbs() {
+        E.$$('.ed-page-thumb').forEach((t) => {
+            t.classList.toggle('active', parseInt(t.textContent, 10) === state.page);
+        });
     }
 
     function updatePageIndicator() {

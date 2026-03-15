@@ -1,0 +1,45 @@
+{
+  "doc_id": "920",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [3, 10, 17],
+      "notes": "Overlay p003 (Inhaltsverzeichnis), p010 (frz. Text), p017 (span. Text) geprueft. Zonenabdeckung korrekt, Druckqualitaet gut."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Mehrsprachiger Text (eng/fra/deu) aus Symposium-Band. Alle drei Sprachen sauber erfasst. Proceedings-Struktur mit Seitenzahlen."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "18 Seiten. S.1-2 Titel, S.3 Inhaltsverzeichnis, S.4-18 Textteil mit Beitraegen in verschiedenen Sprachen (Hersch-Beitrag fra/deu, Discussion eng/fra/span). Einspaltig."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. sourceDesc/bibl korrekt. langUsage mit eng+fra+deu. Titel: The Challenge of Life: Biomedical Progress and Human Values (1972)."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 34,
+        "orgName": 4,
+        "placeName": 5,
+        "bibl": 25
+      },
+      "notes": "Hohe Entity-Dichte passend zum Symposium-Kontext. Viele Diskussionsteilnehmer korrekt getaggt. Mensch (zbz-p.1251, 6x) ist bekanntes False-Positive."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Symposiumsband mit Hersch-Beitrag und anschliessender Diskussion. Mehrsprachigkeit (fra Haupttext, deu/eng/span Diskussion) koharent. Thema: Biomedizin und menschliche Werte."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Solide Edition eines mehrsprachigen Symposiumsbandes. Dreisprachige langUsage korrekt. Reiche Entitaetsannotation der Diskussionsteilnehmer."
+}

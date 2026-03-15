@@ -1,0 +1,449 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Der Mensch ist nicht planbar</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">790</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Der Mensch ist nicht planbar</title>
+          <author>Jeanne Hersch</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:warning L5:n/a L6:warning L7:ok). 12 <speaker><persName>-Tags enthalten Satzfragmente statt Personennamen -- W9-Warning, aber keine strukturelle Fehlcodierung; Bekannte Entity-False-Positives (Mensch, Philosophen) -- projektweites Muster</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="784" lry="666">
+      <zone xml:id="facs_1_r_1" ulx="83" uly="77" lrx="351" lry="161" />
+      <zone xml:id="facs_1_r_2" ulx="402" uly="79" lrx="543" lry="101" />
+      <zone xml:id="facs_1_r_3" ulx="406" uly="187" lrx="591" lry="205" />
+      <zone xml:id="facs_1_r_4" ulx="406" uly="217" lrx="709" lry="365" />
+      <zone xml:id="facs_1_r_5" ulx="406" uly="381" lrx="709" lry="530" />
+      <zone xml:id="facs_1_r_6" ulx="406" uly="546" lrx="709" lry="600" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="835" lry="699">
+      <zone xml:id="facs_2_r_1" ulx="431" uly="76" lrx="714" lry="289" />
+      <zone xml:id="facs_2_r_2" ulx="105" uly="77" lrx="383" lry="302" />
+      <zone xml:id="facs_2_r_3" ulx="436" uly="425" lrx="717" lry="579" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="814" lry="668">
+      <zone xml:id="facs_3_r_1" ulx="110" uly="79" lrx="384" lry="359" />
+      <zone xml:id="facs_3_r_2" ulx="434" uly="112" lrx="702" lry="171" />
+      <zone xml:id="facs_3_r_3" ulx="437" uly="256" lrx="714" lry="350" />
+      <zone xml:id="facs_3_r_4" ulx="125" uly="483" lrx="257" lry="502" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="790" lry="675">
+      <zone xml:id="facs_4_r_1" ulx="105" uly="79" lrx="289" lry="169" />
+      <zone xml:id="facs_4_r_2" ulx="430" uly="79" lrx="614" lry="169" />
+      <zone xml:id="facs_4_r_3" ulx="430" uly="171" lrx="614" lry="303" />
+      <zone xml:id="facs_4_r_4" ulx="105" uly="180" lrx="289" lry="202" />
+      <zone xml:id="facs_4_r_5" ulx="105" uly="213" lrx="289" lry="303" />
+      <zone xml:id="facs_4_r_6" ulx="430" uly="311" lrx="614" lry="379" />
+      <zone xml:id="facs_4_r_7" ulx="105" uly="312" lrx="289" lry="357" />
+      <zone xml:id="facs_4_r_8" ulx="105" uly="365" lrx="202" lry="373" />
+      <zone xml:id="facs_4_r_9" ulx="105" uly="382" lrx="180" lry="388" />
+      <zone xml:id="facs_4_r_10" ulx="430" uly="388" lrx="614" lry="455" />
+      <zone xml:id="facs_4_r_11" ulx="105" uly="398" lrx="210" lry="405" />
+      <zone xml:id="facs_4_r_12" ulx="105" uly="413" lrx="199" lry="421" />
+      <zone xml:id="facs_4_r_13" ulx="105" uly="430" lrx="289" lry="474" />
+      <zone xml:id="facs_4_r_14" ulx="430" uly="464" lrx="614" lry="543" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="815" lry="670">
+      <zone xml:id="facs_5_r_1" ulx="103" uly="77" lrx="368" lry="356" />
+      <zone xml:id="facs_5_r_2" ulx="414" uly="198" lrx="451" lry="215" />
+      <zone xml:id="facs_5_r_3" ulx="414" uly="236" lrx="694" lry="388" />
+      <zone xml:id="facs_5_r_4" ulx="105" uly="361" lrx="141" lry="382" />
+      <zone xml:id="facs_5_r_5" ulx="157" uly="534" lrx="266" lry="574" />
+      <zone xml:id="facs_5_r_6" ulx="414" uly="555" lrx="694" lry="590" />
+      <zone xml:id="facs_5_r_7" ulx="98" uly="575" lrx="113" lry="587" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="815" lry="665">
+      <zone xml:id="facs_6_r_1" ulx="112" uly="138" lrx="372" lry="211" />
+      <zone xml:id="facs_6_r_2" ulx="453" uly="419" lrx="715" lry="544" />
+      <zone xml:id="facs_6_r_3" ulx="95" uly="492" lrx="384" lry="555" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="810" lry="664">
+      <zone xml:id="facs_7_r_1" ulx="116" uly="93" lrx="389" lry="242" />
+      <zone xml:id="facs_7_r_2" ulx="497" uly="260" lrx="713" lry="374" />
+      <zone xml:id="facs_7_r_3" ulx="115" uly="510" lrx="396" lry="561" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="815" lry="668">
+      <zone xml:id="facs_8_r_1" ulx="434" uly="127" lrx="715" lry="293" />
+      <zone xml:id="facs_8_r_2" ulx="114" uly="137" lrx="389" lry="294" />
+      <zone xml:id="facs_8_r_3" ulx="628" uly="325" lrx="669" lry="339" />
+      <zone xml:id="facs_8_r_4" ulx="448" uly="408" lrx="471" lry="421" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="790" lry="685">
+      <zone xml:id="facs_9_r_1" ulx="410" uly="70" lrx="684" lry="119" />
+      <zone xml:id="facs_9_r_2" ulx="81" uly="77" lrx="355" lry="140" />
+      <zone xml:id="facs_9_r_3" ulx="410" uly="128" lrx="684" lry="148" />
+      <zone xml:id="facs_9_r_4" ulx="81" uly="153" lrx="249" lry="163" />
+      <zone xml:id="facs_9_r_5" ulx="410" uly="158" lrx="684" lry="234" />
+      <zone xml:id="facs_9_r_6" ulx="81" uly="169" lrx="355" lry="384" />
+      <zone xml:id="facs_9_r_7" ulx="410" uly="243" lrx="684" lry="302" />
+      <zone xml:id="facs_9_r_8" ulx="410" uly="311" lrx="684" lry="342" />
+      <zone xml:id="facs_9_r_9" ulx="410" uly="352" lrx="684" lry="535" />
+      <zone xml:id="facs_9_r_10" ulx="81" uly="394" lrx="354" lry="425" />
+      <zone xml:id="facs_9_r_11" ulx="81" uly="432" lrx="355" lry="598" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div type="interview">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          einmal unterstreichen: Erziehung und Bildung des Menschen zu verantwortlichem Handeln an seinem Platz. Das zu erreichen ist eine sehr schwere Aufgabe. Aber sie ist unabdingbar und unaufschiebbar. Wenn wir die nötige Ausdauer haben, sind die Chancen groß, daß wir sie bewältigen.
+        </p>
+        <p facs="#facs_1_r_2">
+          Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <placeName ref="#zbz-l.48">Genf</placeName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <bibl ref="#zbz-w.657">Der Mensch</bibl> ist nicht planbar
+        </p>
+        <p facs="#facs_1_r_4">
+          Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName> studierte Literatur und <bibl ref="#zbz-w.1">Philosophie</bibl> in <placeName ref="#zbz-l.48">Genf</placeName>, <placeName ref="#zbz-l.1">Paris</placeName> (<placeName ref="#zbz-l.700">Sorbonne</placeName>), <placeName ref="#zbz-l.21">Heidelberg</placeName> und <placeName ref="#zbz-l.65">Freiburg i. Br.</placeName> Sie unterrichtete an der <orgName ref="#zbz-o.132">Ecole Internationale de Genève</orgName>, unternahm längere Reisen nach <placeName ref="#zbz-l.155">Chile</placeName> und <placeName ref="#zbz-l.156">Thailand</placeName> und doktorierte 1946. Lehraufträge führten sie an die <orgName ref="#zbz-o.133">Pennsylvania State University</orgName> und ans <orgName ref="#zbz-o.134">Hunter College</orgName> der <orgName ref="#zbz-o.135">New York City University</orgName>. Sie war zuerst Privatdozentin, dann a. o. Professor und ist seit 1952 ordentlicher Professor für <bibl ref="#zbz-w.1">Philosophie</bibl> an der <orgName ref="#zbz-o.6">Universität Genf</orgName>. Werke: «<bibl ref="#zbz-w.199">L’Illusion philosophique</bibl>», 1936 (deutsch: «<bibl ref="#zbz-w.200">Die Illusion, der Weg der Philosophie</bibl>»); «<bibl ref="#zbz-w.141">L’être et la forme</bibl>», 1946; «<bibl ref="#zbz-w.201">Idéologies et réalités</bibl>», 1956 (deutsch «<bibl ref="#zbz-w.197">Die Ideologien und die Wirklichkeit</bibl>»); Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName> hat zahlreiche Werke von <persName ref="#zbz-p.1">Karl Jaspers</persName> und <persName ref="#zbz-p.658">Czeslaw Milosz</persName> ins Französische übersetzt.
+        </p>
+        <p facs="#facs_1_r_5">
+          Schulziel im Wohlstandsstaat heißt unser Gesprächsthema. Der Wohlstandsstaat gibt einerseits mehr Mittel für die Schule; andererseits aber bringt er wohl auch gewisse Gefährdungen mit sich – auch für die Schule, indem das Streben nach Spezialisierung und materiellen Gewinn allzusehr ins Zentrum unseres Daseins gerückt scheint. In diesem Zusammenhang beschäftigt mich die Frage nach dem geistigen Standort, nach der Funktion der Schule in der Gegenwart.
+        </p>
+        <sp>
+          <speaker><persName>Zunächst einmal</persName></speaker>
+          <p facs="#facs_1_r_6">
+            Zunächst einmal: Die Schule hat im Wohlstandsstaat mehr Mittel zur Verfügung. Das stimmt: mehr Mittel als früher. Aber im Verhältnis zum tatsächlich vorhandenen Wohlstand finde ich, daß die Schule wenig Mittel zur Verfügung hat.
+          </p>
+        </sp>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Es gibt jetzt praktische, grundlegende Schwierigkeiten, die größer geworden sind als früher: Wir haben mehr Kinder in den Schulen, Kinder mit neuen Schwierigkeiten; die Schule muß mehr Aufgaben der Familien übernehmen, die diese nicht mehr erfüllt oder erfüllen kann und so weiter. Dabei gibt es rund um uns eine sehr reiche Welt, die mehr und mehr auf die Kinder einwirkt und sie zerstreut, während die Schule im Vergleich zu diesem allgemeinen Wohlstand nicht zu reich, sondern zu wenig reich ist, um in dieser Welt standzuhalten. Es ist unglaublich wenig, was wir in die Erziehung investieren im Vergleich mit dem, was wir könnten. Es ist erstaunlich, wie wenig wir uns in der <placeName ref="#zbz-l.10">Schweiz</placeName> darüber Rechenschaft geben, was man in den Staaten rings um uns in dieser Hinsicht tut.
+        </p>
+        <p facs="#facs_2_r_2">
+          Dann die Frage der Spezialisierung, der Vorbereitung von Menschen für die Arbeitsplätze, die die Industrie offen hält. Da erscheint mir besonders gefährlich, daß die Wirtschaft auf die Bereitschaft und – ich möchte beinahe sagen: die Komplizität – der Studenten, der jungen Menschen überhaupt zählen kann. Die Wirtschaft will so schnell als möglich ausgebildete Spezialisten und die jungen Leute wollen so schnell als möglich einen Posten haben, um Geld zu verdienen, um gleich Erwachsene zu sein. Also verzichten sie freiwillig auf eine tiefere Bildung zugunsten ihres materiellen Fortkommens. Ich höre zum Beispiel oft von Studenten – und vielleicht sagen es auch die Eltern –: «Wir lernen zuviel, das uns nachher im Beruf gar nichts nützt. Wir werden zu wenig auf den Beruf vorbereitet.» Sie wollen also genau das, was die Wirtschaft auch will, beide sind gleicher Meinung. Nun, dieses schöne Einverständnis müßte man im Grunde stören, weil es eine Gefahr ist.
+        </p>
+        <p facs="#facs_2_r_3">
+          Aber da gibt es noch einen andern Punkt in dieser Frage der Spezialisierung. Und hier ist mir etwas nicht ganz geheuer in Ihrer Fragestellung. Man stellt sich oft vor, daß es darum gehe, eine breitere Ausbildung zu geben und zu verhindern, daß die Kinder zu schnell etwas ganz Spezielles lernen. Aber ich glaube, heute stellt sich die Frage nicht ganz so. Die Alternative zur breiten Bildung ist nicht das Enge, sondern die Alternative heißt: das oberflächlich Enge oder das tiefe Enge. Ich würde also nicht gegen die Spezialisierung eintreten für eine «culture générale», wie man es bei uns genannt hat. Das muß man auch haben. Aber wichtig ist, im besonderen Gebiet tief genug einzudringen, so daß die Breite sich sozusagen in der Tiefe öffnet.
+        </p>
+        <p>
+          Die Menschen wissen jetzt eigentlich viel zu viel über zu vieles – und sie verstehen es doch nicht. Daher, glaube ich, laufen sie eine ganz besondere Gefahr im Geistigen heute – und das hat Folgen im Politischen und so weiter: Es ist die Gefahr eines neuen Aberglaubens, des Aberglaubens der Wissenschaft. Was die Leute dann wissenschaftlich nennen und was sie als wissenschaftlich annehmen, ist schlimmer als frühere Magie. Sie haben gar keine Kriterien mehr.
+        </p>
+        <p>
+          Ich glaube, man müßte jetzt als allgemeines Prinzip der Erziehung in der Schule folgendes anerkennen und verwirklichen: Die Menschen brauchen einen ganz weiten Rahmen in viel mehr Gebieten als vorher, damit, um es so zu sagen, Schubladen und Schränke bereitgestellt werden, in welchen die Dinge, die zur Bildung gehören, nachher ihren Platz finden. Neben diesen vielen, einigermaßen leeren Schubladen aber müssen die Kinder kleine, konkrete Ausschnitte ganz genau und ganz tief erarbeiten. Also: ganz weit und ganz eng. Aber nicht in der Mitte. Meistens hält man sich mehr oder weniger in der Mitte,
+        </p>
+        <p>
+          60<lb facs="#facs_2_l_6_1" n="N001" />61
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          streitet um ein bißchen mehr oder ein bißchen weniger. Das ist nicht das Wichtige. Ein Beispiel: Ich habe einmal im Sekundarunterricht der <orgName ref="#zbz-o.402">Ecole Internationale</orgName> für Abiturienten Geschichte der <bibl ref="#zbz-w.1">Philosophie</bibl> gelehrt, zweimal vierzig Minuten pro Woche. Das ist nichts, um die <bibl ref="#zbz-w.1">Philosophie</bibl> vom 7. Jahrhundert vor <persName ref="#zbz-p.58">Christus</persName> bis heute darzustellen. Ich habe es gemacht, indem ich sehr vereinfachte, dabei aber kleine Textstücke ganz genau bearbeitete, damit die Kinder eine Erfahrung hatten. Denn sehen Sie, das Schlimmste sind Leute, die zwar Wissen, aber keine Erfahrung besitzen, denn dann wissen sie in Wirklichkeit nicht, was ihr Wissen bedeutet, sie haben keine Ahnung davon. Wenn man aber einen kleinen Teil sehr gründlich bearbeitet, dann erkennt man, was Wissen bedeutet. Deswegen sind die großen Gelehrten nicht abergläubisch, während jene, die ich Halb- und Viertelgelehrte nenne, so abergläubisch sind und totalisieren usw., was die echten Wissenschafter nicht tun. Das müssen die Kinder lernen: Das Menschliche der Geschichte der Wissenschaft und die richtige Tragweite, dessen, was man heute weiß. Dann werden sie nicht betrogen. Wir müssen eine scharfe <bibl ref="#zbz-w.371">Trennung</bibl> ziehen zwischen dem allgemeinen Rahmen und dem ganz Konkreten. Das ist methodisch.
+        </p>
+        <p facs="#facs_3_r_2">
+          Das gilt auch für die Volksschule? Ich gebe davon aus, daß die <bibl ref="#zbz-w.705">Zeit</bibl> der Volksschule eine sehr entscheidende <bibl ref="#zbz-w.705">Zeit</bibl> im Leben des Menschen ist, daß man also in dieser <bibl ref="#zbz-w.705">Zeit</bibl> dem jungen Menschen ein Fundament gibt, damit er nachher das Ganze...
+        </p>
+        <p facs="#facs_3_r_3">
+          ... ich würde nicht sagen ein Fundament, denn das ist leer. Ein Rahmen...
+        </p>
+        <p facs="#facs_3_r_4">
+          ... so daß er, wenn er die Schule verläßt, in jedem Gebiet diesen weiten Rahmen besitzt...
+        </p>
+        <sp>
+          <speaker><persName>Damit er die nötige Ehrfurcht bekommt. Noch ein Beispiel</persName></speaker>
+          <p>
+            Damit er die nötige Ehrfurcht bekommt. Noch ein Beispiel: Die Geschichte der Malerei – sie sollte in den Unterricht einbezogen werden, aber sie sollte nicht in Einzelheiten zerlegt werden. Die Kinder sollen die großen Etappen kennen. Jedoch finde ich es viel wichtiger, daß man sie alle selber malen und zeichnen und ihre Malereien und Zeichnungen miteinander vergleichen und klassifizieren, gewissermaßen in der Geschichte der Kunst einordnen läßt. Dann haben sie eine ganz konkrete, lebendige Erfahrung. Das ist viel wichtiger als das viele Wissen, viele Namen usw.
+          </p>
+        </sp>
+        <p>
+          Sie haben ein Ideal gezeichnet. Wie aber sieht die Praxis aus? Ich glaube, es ist nicht sehr weit her mit der Praxis in dieser Hinsicht. Man streitet meistens über Programme, ob man dieses oder jenes noch dazu geben soll oder nicht, während das in meinen Augen gar nicht das Wichtigste ist. Das Programm kann sehr weit sein, wenn es sehr vereinfacht ist, aber eben unter der Bedingung, daß man hier und dort etwas ganz genau erarbeitet. Es gibt einzelne Lehrer, die es tun. Aber in der Diskussion über die Schule ist dieser Standpunkt, soweit ich es überblicke, kaum zu vernehmen.
+        </p>
+        <sp>
+          <speaker />
+          <p>
+            Sie haben mit Recht gesagt, daß der Wohlstandsstaat zwar das Geld für die Schule hätte, es aber noch zu wenig zur Verfügung stellt. Wenn er nun heute kommen würde und bereit wäre, viel mehr auszugeben, wie würden Sie es investieren, was für ein Ziel würden Sie stellen?
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p>
+            Sie meinen das Ziel, nicht die Organisation?
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p>
+            Das grundsätzliche Ziel.
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>Das Grundsätzliche ist folgendes</persName></speaker>
+          <p>
+            Das Grundsätzliche ist folgendes: Die Erziehung ist kein Mittel, sie ist Zweck. Der Wohlstand ist da, damit
+          </p>
+        </sp>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          man mehr und mehr tun kann für die Erziehung und Bildung. Aber nicht schulmeisterlich, nicht indem man die Menschen zu Modellen formt. Die Wirtschaft – wozu ist sie da? Damit Menschen da sind. Heute ist es oft umgekehrt: Man meint, der <persName ref="#zbz-p.1251">Mensch</persName> sei da, damit die Wirtschaft funktioniere.
+        </p>
+        <p facs="#facs_4_r_2">
+          Das heißt, auch die Schule ist nicht in erster Linie für die Wirtschaft da...
+        </p>
+        <p facs="#facs_4_r_3">
+          ... sondern im Gegenteil, die Wirtschaft ist für die Schule da und die Schule für den Menschen. Und hier stellt sich auch die Frage der Erwachsenenbildung, die immer wichtiger wird. Die Welt verändert sich so schnell. Wir alle müssen uns weiterbilden, damit wir mitkommen und wissen, wo wir stehen.
+        </p>
+        <p facs="#facs_4_r_4">
+          So wichtig und notwendig die Erwachsenenbildung ist, so wichtig und notwendig ist es, daß wir in der Schule, die der <persName ref="#zbz-p.1251">Mensch</persName> im Alter von sieben bis fünfzehn oder achtzehn Jahren besucht, das Richtige zu seiner Entfaltung tun.
+        </p>
+        <p facs="#facs_4_r_5">
+          Ganz einverstanden.
+        </p>
+        <sp>
+          <speaker><persName>Sie sagen</persName></speaker>
+          <p facs="#facs_4_r_6">
+            Sie sagen: Die Welt verändert sich ungeheuer rasch...
+          </p>
+        </sp>
+        <p facs="#facs_4_r_7">
+          Alles verändert sich.
+        </p>
+        <p facs="#facs_4_r_8">
+          Auch bei uns in der <placeName ref="#zbz-l.10">Schweiz</placeName>...
+        </p>
+        <p facs="#facs_4_r_9">
+          Nicht genug, aber es kommt.
+        </p>
+        <p facs="#facs_4_r_10">
+          Äußerlich mindestens hat sich schon sehr viel verändert. Vor zwanzig, dreißig Jahren waren die Binnenwanderung, die Regionalplanung, die Gastarbeiter, der Straßenbau noch kaum Probleme. Heute sind sie es. Wie kann die Schule sie zur Kenntnis nehmen? Versucht sie es? Will sie es? Mir scheint, sie tut es noch zu wenig.
+        </p>
+        <p facs="#facs_4_r_11">
+          Ich glaube, das liegt in großem Maße am Aberglauben unserer Neutralität. Wir sind nicht nur außenpolitisch neutral, sondern auch die Schule muß neutral sein. Das heißt: man darf in der Schule über nichts reden, das kontroverserweckend ist. Da aber heutzutage sozusagen alle aktuellen Fragen kontroverserweckend sind, kann man keine aktuellen Fragen behandeln. Man ist zu ängstlich, um es zu tun. Es gibt eine tiefe Ängstlichkeit in der <placeName ref="#zbz-l.10">Schweiz</placeName>, eine ängstliche Vorsicht. Dadurch kommt eine Sterilität in die Schule. Ich bin ganz dafür daß die Schule neutral sein soll. Aber der Lehrer muß doch die Gegenwart in die Schule eindringen lassen. Neutralität in der Schule heißt meiner Meinung nach, die Verschiedenheit der Meinungen erscheinen, die Fragen zu stellen und nicht die Kinder in ihrem traditionellen Denkkreis schlummern zu lassen.
+        </p>
+        <p facs="#facs_4_r_12">
+          Man hat <bibl ref="#zbz-w.451">Angst</bibl>, jemanden vor den Kopf zu stoßen, an Tabus zu rühren, Schwierigkeiten zu bekommen mit Eltern, Schulbehörden, vielleicht auch etwas Falsches zu sagen und damit die eigene Autorität zu erschüttern...
+        </p>
+        <p facs="#facs_4_r_13">
+          Und wie. Wie aber will man den Schülern den Sinn für das Suchen des Wahren geben, wenn man selbst nie wagt, etwas Falsches zu sagen? Wenn man mit sich selbst so sehr beschäftigt ist, daß man nie wagt, sich auch einmal zu blamieren? Das ist einfach sinnwidrig für die Schule selbst.
+        </p>
+        <p facs="#facs_4_r_14">
+          Nun stimmt diese ängstliche Vorsicht doch aber eigentlich gar nicht mit den formulierten Schulzielen überein, ja ist ihnen sogar entgegengesetzt. In den meisten Schulgesetzen nämlich heißt es – und die Schulleute bestätigen es –, daß die Schule das Kind zu einem urteilsfähigen, denkenden, verantwortungsbewußten Menschen bilden und erziehen soll.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          Ja, aber die Leute verstehen darunter sehr oft, und besonders in unserem Lande, den Kindern gute, ethische Prinzipien zu vermitteln, mit deren Hilfe sie stets jeder Situation gewachsen sein würden. Wenn sie diese Prinzipien befolgen, werden sie anständige Bürger sein, und infolgedessen wird alles funktionieren. Aber das genügt nicht. Daher kommt der für uns oft so charakteristische moralisierende und pharisäische <placeName ref="#zbz-l.229">Zug</placeName>. Viele <orgName ref="#zbz-o.760">Schweizer</orgName> glauben: Ach, wenn so gute, anständige Leute wie wir die Welt regieren würden, dann würde alles glatt gehen. Sie sehen nicht, daß es faktische Probleme gibt, die sehr schwer zu lösen sind, wo etwa zwei Forderungen gleichzeitig sehr wichtig sind und einander doch widersprechen. Was tut man da? Die wirkliche Schwierigkeit wahrnehmen. Und dann wird man perplex. Aber manchmal muß man eben perplex werden. Wir müssen weniger ethische Prinzipien dozieren, als den Sinn für die Vielfältigkeit des Lebens und der Menschen, der Absichten, der Glaubensarten, der Auffassungen wecken.
+        </p>
+        <p facs="#facs_5_r_2">
+          Das ist auch eine der Fragen, die mich beschäftigt, die ethische Bildung.
+        </p>
+        <p facs="#facs_5_r_3">
+          Ja, Sie haben sie in Ihrem Brief angedeutet, wo Sie fragen, ob wir die ethische Bildung nicht vernachlässigten. Ich weiß nicht genau, was das bedeuten soll. Vielleicht ist es richtig, vielleicht ist es falsch. Ich glaube, es wäre ganz falsch, wenn man die Forderung nach einem einstimmigen ethischen Unterricht stellen würde. Man muß den Mut haben, die Vielfältigkeit der Erscheinungen als Faktum anzunehmen. Darüber müssen wir uns Gedanken machen.
+        </p>
+        <p facs="#facs_5_r_4">
+          Wenn ich die Frage einer Vertiefung der ethischen Grundlagen aufwerfe, so meine ich nicht eine Theorie der Ethik in der Schule.
+        </p>
+        <p facs="#facs_5_r_5">
+          Schule, die haben wir schon in den Fächern biblische Geschichte und Sittenlehre, im Religionsunterricht usw., sondern ich meine die Hinführung des Kindes zu verantwortlichem Verhalten dem Nächsten gegenüber. Ich bin auf dem Dorf aufgewachsen. Wenn dort jemand krank war, wußte man das und tat etwas...
+        </p>
+        <p facs="#facs_5_r_6">
+          Ja, und heute kann man sterben und man findet einen nach zwei Wochen im Bett.
+        </p>
+        <p facs="#facs_5_r_7">
+          Es geht um das ethische Handeln.
+        </p>
+        <sp>
+          <speaker><persName>Dann bin ich ganz einverstanden. Noch mehr</persName></speaker>
+          <p>
+            Dann bin ich ganz einverstanden. Noch mehr: Hier stimmt die Ethik mit bestimmten neuen, beobachtenden Methoden im Unterricht überein; denn man lernt ein bißchen das Milieu ringsum zu sehen, fragt sich: Wie ist dies und jenes eigentlich? Wie leben die Menschen? Was tun sie? Das machen moderne Schulen. Sie führen sogenannte Enquêtes, Untersuchungen, durch, nicht wie man es mit Insekten macht, sondern mit lebendigen Menschen. Nehmen wir die Fremdarbeiter bei uns. Das könnte eine Gelegenheit sein, diese Verantwortung für den Nächsten zu entwickeln. Aber sie wird kaum wahrgenommen.
+          </p>
+        </sp>
+        <p>
+          Gewisse Leute haben den Antisemitismus durch den Antiitalianismus ersetzt. Es wäre besser, wir würden, statt nur die Gefahren der Überfremdung, auch ihre Chancen sehen.
+        </p>
+        <p>
+          Man plant sehr teure Austausche von Kindern und Erwachsenen, um einander kennenzulernen. Aber wenn sich das auf natürliche Weise ergibt, will man nicht zusammenkommen. Natürlich bringt dieses Zusammenleben Probleme. Aber erst wenn wir auf dem Friedhof liegen, werden wir keine Probleme mehr haben.
+        </p>
+        <sp>
+          <speaker><persName>Das alles würde unter anderem bedeuten</persName></speaker>
+          <p>
+            Das alles würde unter anderem bedeuten: kleinere Schulklassen. Und das hängt mit dem Geld zusammen. Kleinere Klassen heißt mehr Lehrer, mehr Schulzimmer usw.
+          </p>
+        </sp>
+        <p>
+          66<lb facs="#facs_5_l_12_1" n="N001" />67
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <sp>
+          <speaker><persName>Es würde auch bedeuten</persName></speaker>
+          <p facs="#facs_6_r_1">
+            Es würde auch bedeuten: Vermehrte Aufmerksamkeit für die Lehrer, vertieftere Ausbildung, Weiterbildung...
+          </p>
+        </sp>
+        <p facs="#facs_6_r_2">
+          Und das braucht wieder Geld. Und es braucht auch <bibl ref="#zbz-w.705">Zeit</bibl>, was schwieriger ist. Wissen Sie, daß man mir aus Mangel an Lehrern meine Studenten nach einem, zwei Semestern wegnimmt? Das ist keine Lösung. Da müßte man etwas anderes finden. Es gibt Lernmaschinen, wo die Kinder fast spielend üben und lernen. Es gibt auch neue Lehrmethoden. Der Mathematikunterricht zum Beispiel wird vollkommen erneuert. Aber ob die jungen Lehrer genügend ausgebildet werden, um dazu bereit zu sein? Auch die Weiterbildung ist unentbehrlich.
+        </p>
+        <p facs="#facs_6_r_3">
+          Sie ist von Kanton zu Kanton verschieden. In wenigen ist sie obligatorisch, in den meisten fakultativ.
+        </p>
+        <p>
+          Hier stellt sich die Frage des Föderalismus. Ich frage mich, ob wir nicht eine schweizerische Institution haben müßten, wo die Lehrer in gewissen Abständen während einer gewissen <bibl ref="#zbz-w.705">Zeit</bibl> sich treffen, auf schweizerischer Ebene, vielleicht auch mit ausländischen Kollegen, sich kennenlernen und sich neuen Erkenntnissen und Erfahrungen öffnen. Alle, aus allen Kantonen im Laufe der <bibl ref="#zbz-w.705">Zeit</bibl>.
+        </p>
+        <p>
+          Der <orgName ref="#zbz-o.66">Schweizerische Lehrerverein</orgName> unternimmt solche Versuche, und mit gutem Erfolg. – Wichtig scheint mir auch die Stellung des Lehrers in unserer Gesellschaft. Ein Gymnasiallehrer gilt mehr als ein Sekundarlehrer, ein Sekundarlehrer mehr als ein Primarlehrer.
+        </p>
+        <sp>
+          <speaker><persName>Dieses ganze hierarchische Denken ist in meinen Augen einfach lächerlich. Ich meine</persName></speaker>
+          <p>
+            Dieses ganze hierarchische Denken ist in meinen Augen einfach lächerlich. Ich meine: Die Arbeit im Kindergarten ist eine andere als jene an der <orgName ref="#zbz-o.46">Universität</orgName>. Aber es gibt Menschen, die mit kleinen Kindern genial sind,
+          </p>
+        </sp>
+        <p>
+          viel genialer als eine Menge Universitätsprofessoren. Nun, das hängt mit unserer Gesellschaft zusammen: Derjenige, welcher mehr verdient, ist mehr wert. Wäre das nicht so, dann sollten Lehrer und überhaupt Intellektuelle nicht beleidigt sein, daß ein Krämer mehr verdient als sie. Ich finde das eigentlich ganz normal, denn der Krämer hat als Ziel seiner Arbeit dieses Geld, während der Lehrer oder der Professor dieses Geld braucht um zu leben, aber es ist nicht sein Ziel. Der Intellektuelle will oft, wie man bei Ihnen sagt, den Fünfer und das Weggli. Er arbeitet nicht für das Geld, aber er will es doch haben.
+        </p>
+        <sp>
+          <speaker><persName>Das ist ja wieder so ein Zwiespalt in unserer schweizerischen Existenz</persName></speaker>
+          <p>
+            Das ist ja wieder so ein Zwiespalt in unserer schweizerischen Existenz: Wir berufen uns ständig auf <persName ref="#zbz-p.1819">Pestalozzi</persName> und <persName ref="#zbz-p.1820">Dunant</persName> – die arm waren –, auf unsere ideellen Werte, während unser praktisches Leben heute doch in einem sehr starken Maße auf materiellen Gewinn ausgerichtet ist.
+          </p>
+        </sp>
+        <p>
+          Am liebsten haben wir es, wenn <bibl ref="#zbz-w.698">Pestalozzi-Prinzipien</bibl> und Geldverdienen sich vereinigen lassen. Nun, ich glaube, man muß genug Geld haben, um es vergessen zu können. Wenn man zuviel hat, kann man es nicht vergessen, und wenn man zu wenig hat, kann man es auch nicht vergessen. Um das Geld heute vergessen zu können, muß man ziemlich viel haben. Also: Die Lehrer müssen gut bezahlt sein. Dann können andere ruhig mehr verdienen. Aber es darf nicht sein, daß Lehrer in der Hierarchie der Bürger gering geachtet werden, weil andere mehr verdienen. Das ist schädlich für den Unterricht. Denn die Kinder müssen den Lehrer achten, und sie werden es nicht tun, wenn diese Achtung ihm im Elternhaus und von der Umwelt versagt wird, weil er weniger verdient als der Krämer.
+        </p>
+        <p>
+          68<lb facs="#facs_6_l_10_1" n="N001" />69
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <sp>
+          <speaker />
+          <p facs="#facs_7_r_1">
+            Wie aber können wir dieses verschobene Wertbewußtsein ändern?
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p facs="#facs_7_r_2">
+            Das ist etwas sehr Schwieriges, denn es erfordert eine Umkehr der innern Haltung. Und das kann man nicht planen. Man muß versuchen, die Dinge in der guten Richtung zu lenken. Ich habe keinen technischen Weg, wie man dieses falsche Denken verändern kann. Aber vielleicht wäre dies eine Möglichkeit: Mit der Geschichte der Wissenschaften und der Künste am konkreten Beispiel zeigen, wie viel Bedeutendes in der Armut geschehen ist, so daß die Ehrfurcht vor der Armut oder doch dem Nicht-reich-Sein wieder wach wird. Für mich ist das ein sehr wichtiger Punkt: Humanistische Wissenschaft. Und das kann doch nichts anderes sein als die erlebte Geschichte der Menschen, die die Wissenschaft gemacht haben, zu zeigen an einem Leben, zwei Leben, einer Entdeckung, zwei Entdeckungen, mit wie wenig Mitteln, unter welchen Umständen, mit welchem Einsatz, welcher Leidenschaft der Wissenschaft gelebt wurde.
+          </p>
+        </sp>
+        <p facs="#facs_7_r_3">
+          Im Augenblick macht es den Anschein, daß sich noch allzu viele in der entgegengesetzten Richtung bewegen. Man hat manchmal den Eindruck, daß wir auf dem besten Wege seien, die Basis unseres Lebens selbst anzugreifen und zu zerstören. Ich denke nicht nur an die Bedrohung durch einen Nuklearkrieg. Ich denke an die weltweite Gefährdung der Gewässer, der Luft, des Bodens. Ich frage mich, ob wir noch genug <bibl ref="#zbz-w.705">Zeit</bibl> haben, zu dieser Einsicht zu kommen, die die Voraussetzung der inneren Umwandlung wäre, von der Sie sprachen. Manchmal scheint mir, es müßte wie ein Alarmruf durch die Welt gehen, um uns aus dem Schlaf, aus der Trägheit aufzurütteln.
+        </p>
+        <p>
+          Besinnung ist nötig. Aber Alarmrufe sind immer zweideutig und voll von Unechtheit. Man spricht heute so viel von <bibl ref="#zbz-w.451">Angst</bibl>, von Bedrohung usw. – und in Wirklichkeit
+        </p>
+        <p>
+          keit leben die Menschen – wenigstens in der <placeName ref="#zbz-l.10">Schweiz</placeName> – ganz ruhig und gemütlich. Die Ängstlichkeit, von der wir eben sprachen, ist ja etwas ganz anderes. Ich bin einverstanden, man muß die Leute wecken. Aber nicht so, daß man sagt, jetzt müssen wir alles planen, für alles die wissenschaftliche Lösung finden, jetzt müssen wir psychologisch-wissenschaftlich lernen, wie man die Kinder erziehen soll usw. Man muß Sinn haben für das, was sich nicht planen läßt, sonst kommt die Katastrophe nämlich durch das Planen selbst.
+        </p>
+        <sp>
+          <speaker><persName>Also ganz konkret</persName></speaker>
+          <p>
+            Also ganz konkret: Die Fragen der Gewässerverschmutzung, der Luftverunreinigung, des Lärms usw., ich glaube, die werden gelöst, denn das sind technische Fragen. Es gibt die Frage der Überbevölkerung der Erde, die wird wahrscheinlich auch gelöst. Die Atombombe: Wir sollen nicht vergessen, daß man zu andern Zeiten viel größere Ängste gehabt hat: die <bibl ref="#zbz-w.451">Angst</bibl> vor der Cholera zum Beispiel, die plötzlich ausbrach und neun Zehntel der Bevölkerung unter schrecklichen Schmerzen wegraffte. Wir haben unsere Probleme. Sie sind radikal. Aber wie können wir zur Besinnung kommen? Mir scheint, das kann nur indirekt geschehen, durch dieses konkrete Erziehen, durch ein konkretes Erwecken und nicht durch das Sprechen darüber.
+          </p>
+        </sp>
+        <p>
+          Ich denke jetzt an <persName ref="#zbz-p.1819">Pestalozzi</persName>. Er hat zu seiner <bibl ref="#zbz-w.705">Zeit</bibl> eine große Denkarbeit geleistet, die, so glaube ich, auch heute noch gültig ist in bezug auf die Erziehung des Menschen. Um <persName ref="#zbz-p.1819">Pestalozzi</persName> herum waren eine ganze Reihe bedeutender Menschen, die seine Ideen aufgenommen, gelehrt, praktiziert und auch propagiert haben. Man hat über diese Ideen also gesprochen. Heute scheint mir, wir leben, was die Schule anbetrifft – auch auf andern Gebieten – ein wenig von der Hand in den Mund. Gewiß kann man nicht alles planen, aber wir müßten die Dinge überdenken, eben
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          72<lb facs="#facs_8_l_1_1" n="N001" />73
+        </p>
+        <p facs="#facs_8_r_2">
+          auch im Gespräch, wir müssten doch zu einer Konzeption unserer heutigen Schule kommen.
+        </p>
+        <p facs="#facs_8_r_3">
+          <persName ref="#zbz-p.1819">Pestalozzi</persName> lebte noch in einer einigermaßen übereinstimmenden Welt. Die Meinungsverschiedenheiten, der Meinungskampf hatten damals nicht die Wucht und die Tiefe, die sie jetzt haben. Es gibt doch jetzt unter den Menschen kaum Worte, die eindeutig sind; sie haben den einen Sinn in dieser Ideologie und einen anderen in jener Ideologie. Deswegen kann man so etwas, was <persName ref="#zbz-p.1819">Pestalozzi</persName> damals konnte, jetzt nicht tun. Der Einzelne muß die Kraft haben, sich selbst den Problemen zu stellen. Das ist die Schwierigkeit: Wenn man in einer einigermaßen bedrohten Welt lebt, dann besteht die Tendenz, gleich wieder Einstimmigkeit zu finden, während die Gefahren – davon bin ich tief überzeugt – nur durch den Einzelnen bestanden werden können. Wir haben nicht ganz den Mut, das zu bejahen. Sicher, die Gefahr ist da; denn ob der Einzelne es kann, ob er diese moderne Freiheit auf seinen Schultern zu tragen vermag oder nicht, das wissen wir nicht. Es ist eine Glaubensfrage. Man muß es riskieren.
+        </p>
+        <p facs="#facs_8_r_4">
+          Aber man kann ihm helfen.
+        </p>
+        <p>
+          Man kann nicht nur, man muß ihm helfen; denn er kommt nicht allein zu seiner Freiheit. Ich sagte: Die Schule ist nicht Mittel zum Zweck. Aber wenn sie Mittel ist, dann ist sie es zu diesem Zweck, diese Freiheit zu bestehen. Das klingt vielleicht enttäuschend. Man möchte einen Plan haben, ein Programm. Man kann teilweise planen, man kann manches programmieren – aber das Letzte nicht.
+        </p>
+        <p>
+          Es scheint mir jetzt weniger wichtig, fertige Antworten oder Rezepte zu geben, als überhaupt die Fragen zu klären, zu sehen, bewußt zu machen. Ich glaube, es ist schon einiges getan,
+        </p>
+        <sp>
+          <speaker />
+          <p>
+            wenn wir uns wieder einmal ganz gründlich die Frage stellen: Warum schicke ich mein Kind in die Schule? Was macht die Schule mit den Kindern? Was will sie erreichen?
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p>
+            Ich glaube, wir müssen verschiedene Alternativen überwinden. Die Alternative Humanismus oder Wissenschaft; sie ist falsch. Dann die Alternative Berufsbildung oder Erziehung. Meiner Meinung nach kann die Erziehung sehr gut durch die Berufsbildung geschehen, wenn die Berufsbildung human verstanden wird. Aber das verlangt vom Lehrer wirklich eine sehr differenzierte Art zu lehren, also zu verstehen, daß jeder Beruf seine Geschichte hat und dadurch zu der ganzen Kultur gehört. Da muß sich einiges ändern. Und man muß vor allem bereit sein, einverstanden sein, daß der junge <persName ref="#zbz-p.1251">Mensch</persName> anders wird, als ich bin. Das muß man wirklich, wirklich annehmen und dem jungen Menschen auch die Mittel in die Hand geben, daß er es kann, wenn er es will...
+          </p>
+        </sp>
+        <p>
+          ...die Mittel, die ihn fähig machen, die Freiheit zu tragen, von der sie sprachen.
+        </p>
+        <p>
+          Und man muß genug Vertrauen haben, in sich selbst, in die Eltern, in die Umwelt – und hoffen, daß dabei keine Katastrophe herauskommt. Aber eine Bildung ohne Gefahr gibt es nicht. Dann ist sie nur Malerei: Man bemalt den Menschen äußerlich, die Fassade, statt ihn innerlich zur Freiheit fähig zu machen.
+        </p>
+        <sp>
+          <speaker><persName>Ich könnte mir zum Beispiel folgendes denken</persName></speaker>
+          <p>
+            Ich könnte mir zum Beispiel folgendes denken: Kompetente Leute, Physiker, Politiker, <persName ref="#zbz-p.1360">Philosophen</persName>, Künstler usw. gehen in die Schulen und beantworten Fragen der Schüler. Dann werden die Kinder weniger abergläubisch in bezug auf die Wissenschaft.
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p>
+            Meinen Sie nicht, daß man auch die Erkenntnisse der <bibl ref="#zbz-w.66">Psychologie</bibl> in der Schule vermehrt verwerten müßte?
+          </p>
+        </sp>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          Ich würde sagen, ja, aber wiederum: ohne Aberglauben. Es ist ein Aberglaube, von der <bibl ref="#zbz-w.66">Psychologie</bibl> die Lösung aller Probleme zu erwarten. Ein wahrer Psychologe denkt nicht so. Er weiß: Die <bibl ref="#zbz-w.66">Psychologie</bibl> weiß etwas vom Menschen, aber er soll nicht zu ihrem Objekt reduziert werden.
+        </p>
+        <sp>
+          <speaker />
+          <p facs="#facs_9_r_2">
+            Den Philosophieunterricht befürworten Sie?
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p facs="#facs_9_r_3">
+            Ich finde, daß <bibl ref="#zbz-w.1">Philosophie</bibl> Kindern im Alter von siebzehn Jahren ausgezeichnet vermittelt werden kann. In diesem Alter haben selbst diejenigen Sinn dafür, die ihn später nicht mehr haben. Man tut das in <placeName ref="#zbz-l.2">Frankreich</placeName>. Ich habe dieses Programm lange gelehrt. Es kommt darauf an, wie man es macht. In der <bibl ref="#zbz-w.1">Philosophie</bibl> wird alles in Frage gestellt. Und das brauchen wir heute: wir müssen in Frage stellen. Aber da ist man wieder ängstlich. Man denkt: Da kommen <persName ref="#zbz-p.14">Marxisten</persName>, oder <orgName ref="#zbz-o.71">Katholiken</orgName>, oder <persName ref="#zbz-p.50">Gott</persName> weiß was. Die <orgName ref="#zbz-o.71">Katholiken</orgName> sind die einzigen, die wirklich <bibl ref="#zbz-w.1">Philosophie</bibl> treiben in der Schule, denn sie haben eine feste Lehre. Die andern sind einfach erschrocken, tun meistens sehr wenig. Aber das ist kein Weg.
+          </p>
+        </sp>
+        <p facs="#facs_9_r_4">
+          Sie haben nun verschiedene Möglichkeiten genannt, was man tun könnte und tun müßte, aber Sie sind gegen Pläne und Programme...
+        </p>
+        <p facs="#facs_9_r_5">
+          Doch, natürlich muß man auch Pläne und Programme überlegen. Die Tendenz aber ist meistens die, so zu unterrichten, wie man selbst unterrichtet worden ist. Davon sollten wir wegkommen. Wir können wecken, stimulieren, die Bedingungen schaffen, unter denen die wahre Arbeit vom Lehrer zum Kind und umgekehrt wirklich geschehen kann, wo das Kind anerkannt wird als künftiger <persName ref="#zbz-p.1251">Mensch</persName> und als jetziger <persName ref="#zbz-p.1251">Mensch</persName> in seiner Art.
+        </p>
+        <p facs="#facs_9_r_6">
+          Und sich wiederum bewußt werden, daß es neben intellektuellen Fähigkeiten und erlernbaren Fertigkeiten auch den Charakter zu entwickeln gilt, das Verantwortungsbewußtsein, die Hilfsbereitschaft.
+        </p>
+        <p facs="#facs_9_r_7">
+          Man soll es nicht trennen. Das gehört zusammen. Das eine wird durch das andere befruchtet.
+        </p>
+        <p facs="#facs_9_r_8">
+          Die Vielfältigkeit unserer Gegenwart zu erkennen und anzuerkennen und in die Schule zu tragen, dem kann – ich komme noch einmal darauf zurück – eben doch auch das Gespräch, das echte Gespräch verantwortlicher und kompetenter Persönlichkeiten dienen. Denken und sich über die Dinge klar werden, heißt ja auch, sich mit den andern auseinandersetzen.
+        </p>
+        <p facs="#facs_9_r_9">
+          Ganz bestimmt. Ich glaube, das wird auch getan, vielleicht nicht genug. Vielleicht müßte man öfters für Lehrer ein Wochenende haben, zwei, drei Tage oder eine Woche, für ihre berufliche Erneuerung auf allen Gebieten.
+        </p>
+        <sp>
+          <speaker><persName>In bezug auf die Schule</persName></speaker>
+          <p facs="#facs_9_r_10">
+            In bezug auf die Schule: Gespräche nicht nur zwischen Lehrern, sondern auch mit Leuten der Wissenschaft, der Wirtschaft, der Kultur, der Politik, mit Eltern.
+          </p>
+        </sp>
+        <p facs="#facs_9_r_11">
+          Einverstanden. Aber die Schwierigkeit, zu einem fruchtbaren Gespräch über Wissenschaft in der Pädagogik zu kommen, liegt einerseits bei jenen, die nichts davon wissen wollen und andererseits bei denen, die zu viel davon reden. Beide stören das Eigentliche. Die ersten sind taub und starr und stur, und die andern sind, wie ich sagte, abergläubisch. Sie verlieren den Sinn für das Menschliche, denn sie glauben an eine Technik auf diesem Gebiet. Das ist gerade so falsch. Es geht um den Menschen, und der eben ist nicht planbar. Alles kommt zuletzt auf den Lehrer an.
+        </p>
+      </div>
+      </body></text>
+</TEI>

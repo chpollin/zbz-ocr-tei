@@ -1,0 +1,27 @@
+{
+  "doc_id": "3220",
+  "reviewer": "quality-screening-t2",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 5,
+  "status": "NEEDS_REVIEW",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "T1",
+      "msg": "Author name OCR error: 'Jeanne Bersch' statt 'Jeanne Hersch' (line 112)"
+    },
+    {
+      "severity": "info",
+      "code": "S3",
+      "msg": "S.1 enthaelt vorhergehenden Konferenz-Diskussionstext (Compliance-Thema) vor Hersch-Vortrag. Korrekt als zusammengehoeriges Dokument erfasst."
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 5p 3o 1l 4w = 13"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "doc_id": "3150",
+  "reviewer": "quality-screening-t2",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 4,
+  "status": "NEEDS_REVIEW",
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Mensch' (5x) tagged as persName ref=zbz-p.1251 -- generic noun 'der Mensch', not a person entity"
+    },
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Wahl' (1x) tagged as persName ref=zbz-p.89 -- 'freie Wahl' (free choice), not a person"
+    },
+    {
+      "severity": "info",
+      "code": "W6",
+      "msg": "Validator: Keine lb-Elemente im body (4 Seiten)"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 10p 2o 0l 4w = 16"
+    }
+  ]
+}

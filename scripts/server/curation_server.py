@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     DOCS_DIR,
     TEI_CURATED_DIR,
+    TEI_FINAL_DIR,
     TEI_NER_DIR,
     TEI_UNIFIED_DIR,
 )
@@ -72,7 +73,7 @@ def _pad_page(page: int) -> str:
 
 
 def _find_page_tei(doc_id: str, page: int) -> tuple:
-    """Findet Seiten-TEI mit Prioritaet: kuratiert > NER > unified > examples."""
+    """Findet Seiten-TEI mit Prioritaet: kuratiert > tei_final > examples > NER > unified."""
     padded = _pad_page(page)
 
     # 1. Kuratiert
@@ -80,21 +81,26 @@ def _find_page_tei(doc_id: str, page: int) -> tuple:
     if curated.exists():
         return curated.read_text(encoding="utf-8"), "curated"
 
-    # 2. Beispiele (Demo-Docs auf GitHub Pages)
+    # 2. Finale TEIs (gescreent, mit revisionDesc)
+    final = TEI_FINAL_DIR / f"{doc_id}_final.xml"
+    if final.exists():
+        xml = _extract_page_from_final(final, page)
+        if xml:
+            return xml, "tei_final"
+
+    # 3. Beispiele (Demo-Docs auf GitHub Pages)
     examples = DOCS_DIR / "data" / "examples" / doc_id / f"{doc_id}_p{page}.xml"
     if examples.exists():
         return examples.read_text(encoding="utf-8"), "examples"
 
-    # 3. NER-angereichert (Seiten-Level existiert nicht einzeln, aber final.xml schon)
-    # 4. Unified pipeline (ebenso nur final.xml)
-    # Fuer Seiten-Level-Zugriff: extrahieren wir aus final.xml
+    # 4. NER-angereichert / 5. Unified pipeline
     for source_dir, source_name in [
         (TEI_NER_DIR / doc_id, "ner"),
         (TEI_UNIFIED_DIR / doc_id, "unified"),
     ]:
-        final = source_dir / f"{doc_id}_final.xml"
-        if final.exists():
-            xml = _extract_page_from_final(final, page)
+        final_path = source_dir / f"{doc_id}_final.xml"
+        if final_path.exists():
+            xml = _extract_page_from_final(final_path, page)
             if xml:
                 return xml, source_name
 
@@ -102,15 +108,40 @@ def _find_page_tei(doc_id: str, page: int) -> tuple:
 
 
 def _extract_page_from_final(final_path: Path, page: int) -> str:
-    """Extrahiert eine einzelne Seite aus einem assemblierten TEI-Dokument."""
+    """Extrahiert eine einzelne Seite aus einem assemblierten TEI-Dokument per <pb>-Splitting."""
     try:
         content = final_path.read_text(encoding="utf-8")
-        # Einfache Strategie: Body-Inhalt zurueckgeben
-        # Fuer den Editor genuegt der gesamte Body als Seiten-Kontext
-        # (spaeter kann man per <pb> splitten)
-        body_match = re.search(r"<body[^>]*>(.*?)</body>", content, re.DOTALL)
-        if body_match:
-            return body_match.group(0)
+        # Namespace entfernen fuer einfacheres Regex
+        clean = re.sub(r'\s+xmlns\s*=\s*"[^"]*"', '', content)
+
+        # Alle <pb>-Positionen finden
+        pb_pattern = re.compile(r'<pb\s[^>]*n="(\d+)"[^>]*/>')
+        matches = list(pb_pattern.finditer(clean))
+
+        if not matches:
+            # Kein <pb>: Ganzen Body fuer Seite 1
+            if page == 1:
+                body_match = re.search(r"<body[^>]*>(.*?)</body>", clean, re.DOTALL)
+                return body_match.group(0) if body_match else None
+            return None
+
+        # Zielseite finden
+        target_idx = None
+        for i, m in enumerate(matches):
+            if int(m.group(1)) == page:
+                target_idx = i
+                break
+
+        if target_idx is None:
+            return None
+
+        start = matches[target_idx].start()
+        end = matches[target_idx + 1].start() if target_idx + 1 < len(matches) else clean.find('</body>')
+        if end == -1:
+            end = len(clean)
+
+        page_content = clean[start:end]
+        return f'<div type="page">{page_content}</div>'
     except Exception:
         pass
     return None
@@ -138,6 +169,29 @@ def _save_curation_meta(doc_id: str, meta: dict):
     )
 
 
+def _inject_revision_change(doc_id: str, page: int):
+    """Fuegt ein <change>-Element in die revisionDesc des finalen TEI ein."""
+    final_path = TEI_FINAL_DIR / f"{doc_id}_final.xml"
+    if not final_path.exists():
+        return
+    try:
+        content = final_path.read_text(encoding="utf-8")
+        now = datetime.now().strftime("%Y-%m-%d")
+        change = (
+            f'    <change when="{now}" who="curation-editor" status="draft">'
+            f'Seite {page} manuell bearbeitet</change>\n'
+        )
+        # Vor </revisionDesc> einfuegen
+        if "</revisionDesc>" in content:
+            content = content.replace(
+                "</revisionDesc>",
+                change + "  </revisionDesc>",
+            )
+            final_path.write_text(content, encoding="utf-8")
+    except Exception:
+        pass
+
+
 def _validate_xml_wellformed(xml: str) -> list:
     """Prueft XML-Wohlgeformtheit. Gibt Liste von Fehlern zurueck."""
     errors = []
@@ -159,6 +213,30 @@ def health():
         "curated_dir": str(TEI_CURATED_DIR),
         "docs_dir": str(DOCS_DIR),
     }
+
+
+@app.get("/api/tei/{doc_id}/full")
+def get_full_tei(doc_id: str):
+    """Liefert das vollstaendige finale TEI-XML eines Dokuments."""
+    doc_id = _sanitize_doc_id(doc_id)
+
+    # Prioritaet: kuratiert > tei_final > ner > unified
+    candidates = [
+        (TEI_CURATED_DIR / doc_id / f"{doc_id}_final.xml", "curated"),
+        (TEI_FINAL_DIR / f"{doc_id}_final.xml", "tei_final"),
+    ]
+    for source_dir, source_name in [(TEI_NER_DIR, "ner"), (TEI_UNIFIED_DIR, "unified")]:
+        candidates.append((source_dir / doc_id / f"{doc_id}_final.xml", source_name))
+
+    for path, source in candidates:
+        if path.exists():
+            return {
+                "xml": path.read_text(encoding="utf-8"),
+                "source": source,
+                "doc_id": doc_id,
+            }
+
+    raise HTTPException(status_code=404, detail=f"Kein TEI fuer {doc_id}")
 
 
 @app.get("/api/tei/{doc_id}/page/{page}")
@@ -200,6 +278,9 @@ def save_page_tei(doc_id: str, page: int, body: SavePageRequest):
         "page": page,
     })
     _save_curation_meta(doc_id, meta)
+
+    # RevisionDesc im finalen TEI aktualisieren
+    _inject_revision_change(doc_id, page)
 
     # Optionale Validierung
     validation = None

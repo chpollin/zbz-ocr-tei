@@ -1,0 +1,44 @@
+{
+  "doc_id": "2030",
+  "reviewer": "quality-screen-manual",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 4,
+  "status": "APPROVED",
+  "pages_inspected": [1, 3],
+  "validator": "VALID (0 errors, 0 warnings)",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1: Buch-Scan, rechte Seite nur, Regionen korrekt, Daumen sichtbar"
+    },
+    {
+      "severity": "info",
+      "code": "L3",
+      "msg": "Overlay S.3: Zweispaltig (Buchseiten links/rechts), Regionen korrekt"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Sprache ita korrekt, durchgehend italienisch, Fachphilosophie"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "1 Fussnote (fn4-1) am Ende, Abgrenzung zum Folgeaufsatz (Penzo) korrekt"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 32p 1o 2l 11w = 46, Jaspers-dominiert, Heidegger/Hegel/Jean Wahl plausibel"
+    },
+    {
+      "severity": "info",
+      "code": "K1",
+      "msg": "Kohaerenz: Essay ueber Jaspers' Ontologie, Uebergang zum Folgetext (Penzo) sauber"
+    }
+  ]
+}

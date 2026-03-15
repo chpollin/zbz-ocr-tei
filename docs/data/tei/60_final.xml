@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Dieu contre Dieu</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">60</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Dieu contre Dieu</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1943</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). DIEU (Gott) faelschlicherweise als persName getaggt (8x in Running Headers); Homme als persName getaggt (4x) -- philosophischer Allgemeinbegriff</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="505" lry="746">
+      <zone xml:id="facs_1_r_1" ulx="36" uly="47" lrx="406" lry="96" />
+      <zone xml:id="facs_1_r_2" ulx="134" uly="174" lrx="299" lry="198" />
+      <zone xml:id="facs_1_r_3" ulx="41" uly="281" lrx="238" lry="315" />
+      <zone xml:id="facs_1_r_4" ulx="57" uly="353" lrx="396" lry="394" />
+      <zone xml:id="facs_1_r_5" ulx="57" uly="415" lrx="398" lry="454" />
+      <zone xml:id="facs_1_r_6" ulx="259" uly="544" lrx="281" lry="554" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="917" lry="732">
+      <zone xml:id="facs_2_r_1" ulx="98" uly="66" lrx="420" lry="131" />
+      <zone xml:id="facs_2_r_2" ulx="494" uly="66" lrx="845" lry="101" />
+      <zone xml:id="facs_2_r_3" ulx="494" uly="113" lrx="845" lry="160" />
+      <zone xml:id="facs_2_r_4" ulx="98" uly="167" lrx="265" lry="177" />
+      <zone xml:id="facs_2_r_5" ulx="494" uly="170" lrx="845" lry="220" />
+      <zone xml:id="facs_2_r_6" ulx="98" uly="183" lrx="420" lry="219" />
+      <zone xml:id="facs_2_r_7" ulx="494" uly="230" lrx="845" lry="279" />
+      <zone xml:id="facs_2_r_8" ulx="98" uly="235" lrx="419" lry="268" />
+      <zone xml:id="facs_2_r_9" ulx="98" uly="280" lrx="420" lry="303" />
+      <zone xml:id="facs_2_r_10" ulx="494" uly="290" lrx="845" lry="338" />
+      <zone xml:id="facs_2_r_11" ulx="98" uly="315" lrx="420" lry="335" />
+      <zone xml:id="facs_2_r_12" ulx="98" uly="344" lrx="420" lry="367" />
+      <zone xml:id="facs_2_r_13" ulx="494" uly="349" lrx="845" lry="384" />
+      <zone xml:id="facs_2_r_14" ulx="98" uly="374" lrx="420" lry="421" />
+      <zone xml:id="facs_2_r_15" ulx="494" uly="393" lrx="657" lry="414" />
+      <zone xml:id="facs_2_r_16" ulx="494" uly="421" lrx="574" lry="442" />
+      <zone xml:id="facs_2_r_17" ulx="98" uly="427" lrx="420" lry="462" />
+      <zone xml:id="facs_2_r_18" ulx="494" uly="451" lrx="845" lry="488" />
+      <zone xml:id="facs_2_r_19" ulx="98" uly="469" lrx="420" lry="505" />
+      <zone xml:id="facs_2_r_20" ulx="494" uly="495" lrx="764" lry="516" />
+      <zone xml:id="facs_2_r_21" ulx="494" uly="524" lrx="674" lry="535" />
+      <zone xml:id="facs_2_r_22" ulx="494" uly="542" lrx="845" lry="577" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="527" lry="730">
+      <zone xml:id="facs_3_r_1" ulx="79" uly="71" lrx="434" lry="154" />
+      <zone xml:id="facs_3_r_2" ulx="79" uly="154" lrx="434" lry="249" />
+      <zone xml:id="facs_3_r_3" ulx="99" uly="261" lrx="197" lry="274" />
+      <zone xml:id="facs_3_r_4" ulx="79" uly="274" lrx="434" lry="354" />
+      <zone xml:id="facs_3_r_5" ulx="79" uly="354" lrx="434" lry="401" />
+      <zone xml:id="facs_3_r_6" ulx="79" uly="409" lrx="434" lry="573" />
+      <zone xml:id="facs_3_r_7" ulx="79" uly="573" lrx="434" lry="606" />
+      <zone xml:id="facs_3_r_8" ulx="99" uly="606" lrx="202" lry="619" />
+      <zone xml:id="facs_3_r_9" ulx="319" uly="617" lrx="428" lry="632" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <placeName ref="#zbz-l.164">SUISSE</placeName> CONTEMPORAINE<lb facs="#facs_1_l_1_1" n="N001" /><placeName ref="#zbz-l.164">SUISSE</placeName> ROMANDE VIIème SÉRIE<lb facs="#facs_1_l_1_2" n="N002" />JUILLET 1943<lb facs="#facs_1_l_1_3" n="N003" />TROISIÈME ANNÉE<lb facs="#facs_1_l_1_4" n="N004" />NUMÉRO 7
+        </head>
+        <p facs="#facs_1_r_2">
+          <persName ref="#zbz-p.50">DIEU</persName> CONTRE <persName ref="#zbz-p.50">DIEU</persName>
+        </p>
+        <p facs="#facs_1_r_3">
+          HOMMAGE A <persName ref="#zbz-p.1">KARL JASPERS</persName>
+        </p>
+        <p facs="#facs_1_r_4">
+          POUR SON SOIXANTIÈME ANNIVERSAIRE
+        </p>
+        <p facs="#facs_1_r_5">
+          Dieu sentit durer l'éternité.
+        </p>
+        <p facs="#facs_1_r_6">
+          Terrible efficacité de Dieu ! Dès qu'il sentit durer l'éternité, elle cessa d'être et tomba dans le temps.
+        </p>
+        <p>
+          Et Dieu s'ennuya de n'avoir en face de Lui, à tous les instants du temps, infiniment, que Lui-même.
+        </p>
+        <p>
+          Dieu sentit qu'il avait dormi sa force. Qu'est-ce qu'une force endormie ? Il avait été le corps immense et dormant de la force, et déjà il ne le comprenait plus. Il voulut se servir de la force comme d'un outil.
+        </p>
+        <p>
+          Terrible efficacité de Dieu ! Dès qu'il voulut se servir d'elle, elle fut hors de Lui. Lui qui n'avait pas de corps, il eut deux mains. La force afflua dans ses mains. Et Dieu redouta, dans ses mains étrangères, cette toute-puissance.
+        </p>
+        <p>
+          Dieu se tenait là, avec ses deux mains gonflées de toute-puissance, au centre de l'être paisible sans fissure que rien ne distinguait du néant. Ses deux mains gonflées n'en pouvaient plus d'être pleines et étreintes par la plénitude.
+        </p>
+        <p>
+          Dieu sentit ses paumes rapprochées qui faisaient comme une corbeille débordante. Et il essaya de créer des êtres.
+        </p>
+        <p>
+          Il créa d'abord l'Arbre : mille puissances diffuses nouées en un tronc souverain, épanoui enfin en mille branches créatrices, chargées d'astres, de clameurs, de nids, gorgées de cieux et de vents. L'Arbre serait la forme du monde.
+        </p>
+        <p>
+          Dieu aima l'Arbre et le fit divin.
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          558<lb facs="#facs_2_l_1_1" n="N001" /><persName ref="#zbz-p.50">DIEU</persName> CONTRE <persName ref="#zbz-p.50">DIEU</persName>
+        </p>
+        <p facs="#facs_2_r_2">
+          Mais l'Arbre à peine né flotta une seconde seulement sur les bords aisés de la création, avec la légèreté docile des fantômes. Flotta, — attiré déjà par le vertige absolu du centre de l'être. Trouva dans les doigts de Dieu ses racines et ses branches, et dans l'être de Dieu son tronc affirmatif. Trouva, coïncida, sombra. S'abolit.
+        </p>
+        <p facs="#facs_2_r_3">
+          Dieu se retrouva seul et entier.
+        </p>
+        <p facs="#facs_2_r_4">
+          Dieu avait aimé l'Arbre et lui avait donné tant d'être que l'Arbre s'était perdu en Lui. Il avait voulu un autre divin, — et voilà qu'il n'y avait pas d'autre divin que Lui-même.
+        </p>
+        <p facs="#facs_2_r_5">
+          Dieu voulut alléger ses mains et diminuer leur puissance. Donner moins.
+        </p>
+        <p facs="#facs_2_r_6">
+          Il essaya de créer la Rivière, le Ciel, le Corps vivant, le Fruit, mais la Rivière s'écoula dans l'unique lit majestueux de Sa durée, le Ciel s'arrondissait sur l'unique voûte plastique de Son infini, le Vivant ne vivait que des battements de Son propre cœur, et Son unique plénitude gonflait le Fruit au sein de l'identité.
+        </p>
+        <p facs="#facs_2_r_7">
+          Ses lourdes mains dispensaient massivement l'être.
+        </p>
+        <p facs="#facs_2_r_8">
+          Et Dieu souffrit.
+        </p>
+        <p facs="#facs_2_r_9">
+          Terrible efficacité de Dieu ! Dès qu'il souffrit, le manque fut. Le manque, la fissure, l'absence.
+        </p>
+        <p facs="#facs_2_r_10">
+          Le manque permit à Dieu de créer hors de lui. Le manque lui donna l'espace et le contour. Le manque secourut Dieu contre Son irrépressible plénitude.
+        </p>
+        <p facs="#facs_2_r_11">
+          Le manque d'abord étonna Dieu. Il éprouva pour la première fois comme étrangère cette matière du manque qui glissait entre ses doigts : si légère, plus fluide que la plus lointaine de Ses pensées, et qui était n'importe quoi. Elle s'infiltrait dans la matière divine, la traversait de fins filets d'inconséquence et d'ironie. Et il n'y avait plus de matière divine.
+        </p>
+        <p facs="#facs_2_r_12">
+          La main de Dieu écrivait en vain le Verbe dans le manque sans trace. Le manque cédait trop vite sous son doigt et se refermait sans un sillage.
+        </p>
+        <p facs="#facs_2_r_13">
+          Dieu secoua sa main. Il la secoua tant qu'il put, rejetant loin de lui le plus de manque possible. Comme le manque était
+        </p>
+        <p facs="#facs_2_r_14">
+          559<lb facs="#facs_2_l_14_1" n="N001" /><persName ref="#zbz-p.50">DIEU</persName> CONTRE <persName ref="#zbz-p.50">DIEU</persName>
+        </p>
+        <p facs="#facs_2_r_15">
+          très léger, il alla tomber très loin de Dieu. La masse qu'il forma là-bas resta sans transparence devant l'esprit de Dieu. Et la Terre fut.
+        </p>
+        <p facs="#facs_2_r_16">
+          Dieu alors créa l'Arbre à nouveau, mais d'une main appauvrie, mêlée de manque et de mort. Il enracina l'Arbre à la terre pour l'empêcher de perdre l'être en revenant à Lui. Il le cerna d'un inflexible liséré d'absence, le sépara à jamais, le multiplia. Et les arbres furent.
+        </p>
+        <p facs="#facs_2_r_17">
+          Dieu créa la Rivière à nouveau, mais il disloqua son cours et lui refusa la force de remonter jusqu'à Lui. Bruissante et lente, brisée en innombrables filets, elle glissa sur les pentes divergentes de la terre, se cherchant sans espoir. Et les rivières furent.
+        </p>
+        <p facs="#facs_2_r_18">
+          Dieu créa le Ciel aux limites du néant pur. Il l'échelonna dans l'inaccessible, le rejeta sans cesse au-delà de lui-même, le mit « ailleurs », lui déroba même son azur. Et tendant à l'azur que nul être ne possède, les cieux furent.
+        </p>
+        <p facs="#facs_2_r_19">
+          Dieu créa le Corps vivant. Mais à l'aide du manque il en brisa le cœur, et il y eut une multitude de cœurs. Il enferma loin du Sien chaque cœur isolé qui battit tout seul dans sa cage d'os et de chair. Et il le resserra entre deux morts. Alors les vivants furent.
+        </p>
+        <p facs="#facs_2_r_20">
+          Dieu se trouva au milieu du temps et de l'espace, au milieu de ses œuvres qui ne lui ressemblaient pas.
+        </p>
+        <p facs="#facs_2_r_21">
+          Il se sentit seul.
+        </p>
+        <p facs="#facs_2_r_22">
+          Il avait été tout, et il était seul.
+        </p>
+        <p>
+          Il voulut créer l'<persName ref="#zbz-p.926">Homme</persName> à son image. Mais il n'avait pas d'image. Et un être ayant une image ne pouvait pas Lui ressembler. Et un être ne pouvait pas Lui ressembler sans perdre l'être en Lui.
+        </p>
+        <p>
+          Dieu travailla à faire un être qui Lui ressemblât autant qu'il était possible.
+        </p>
+        <p>
+          Dieu lui donna l'Intelligence.
+        </p>
+        <p>
+          L'Intelligence aussitôt lia le divers en une cohésion qui était celle-là même de Dieu. Elle doubla d'une ombre pensée Son acte créateur. Elle fit écho, à l'unisson ou à l'octave, à Ses pensées éternelles, et rien d'autre.
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          560<lb facs="#facs_3_l_1_1" n="N001" /><persName ref="#zbz-p.50">DIEU</persName> CONTRE <persName ref="#zbz-p.50">DIEU</persName>
+        </p>
+        <p facs="#facs_3_r_2">
+          Dieu alors la fixa, l'attacha en un point de la terre, encombra sa vue de quelques brins d'herbe mouvants, lui déroba l'universel.
+        </p>
+        <p facs="#facs_3_r_3">
+          Sans l'universel, l'Intelligence se flétrit sous la main créatrice en une mosaïque inerte. L'<persName ref="#zbz-p.926">Homme</persName> ne ressembla pas à Dieu, mais aux pierres de la terre.
+        </p>
+        <p facs="#facs_3_r_4">
+          Dieu fit miroiter l'universel au bord de l'horizon inaccessible, au fond des cieux fugitifs, et sauva l'Intelligence. Il lui rendit les sphères et les triangles et Ses pensées éternelles d'avant le temps. Il les lui rendit, mais vides et séparées à jamais des perspectives encombrées de paysages. L'Intelligence se mit en route, parmi les perspectives des perspectives. Vers l'impossible.
+        </p>
+        <p facs="#facs_3_r_5">
+          Dieu donna l'Amour.
+        </p>
+        <p facs="#facs_3_r_6">
+          Par l'Amour la créature faillit s'abolir dans l'élan rêveusement créateur de Dieu. Dieu alors interposa les images, refusa à l'Amour son objet infini, le voua à la grille séparatrice des symboles. L'<persName ref="#zbz-p.926">Homme</persName> s'égara dans le maquis des images, il aima les surfaces limitées et inépuisables des images, insatiablement.
+        </p>
+        <p facs="#facs_3_r_7">
+          Dieu alors fit que par amour la créature dut haïr et tuer : car l'objet de son amour était mortel et vulnérable et devait être défendu.
+        </p>
+        <p facs="#facs_3_r_8">
+          L'<persName ref="#zbz-p.926">Homme</persName> ainsi devint le champ de bataille de Dieu contre lui-même. Chaque perfection menaçait d'abolir la créature, et, pour la sauver de l'Un, Dieu devait puiser chaque fois plus profond, dans le vide glissant du manque, un remède pire. Chaque abîme à son tour rétablissait autour de Dieu son unicité essentielle, et Dieu déversait une plus riche plénitude. Dieu meurtrissait ses mains dans ce pétrissage contre sa propre substance.
+        </p>
+        <p facs="#facs_3_r_9">
+          Et l'Autre monstrueux naissait, dont les creux et les bosses, sous les retouches divines, érigeaient un Possible que Dieu même n'avait pas conçu.
+        </p>
+        <p>
+          Les hommes furent. Si attirés, si proches de Dieu, que ce n'était pas trop du meurtre et du blasphème pour les séparer.
+        </p>
+        <p>
+          Et Dieu les aima.
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>.
+        </p>
+      </div>
+      </body></text>
+</TEI>

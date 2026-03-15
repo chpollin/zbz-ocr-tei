@@ -1,0 +1,47 @@
+{
+  "doc_id": "240",
+  "reviewer": "quality-screening-agent",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 3,
+  "pages": 11,
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1/6/11: Layout-Regionen korrekt erkannt, single-column Fliesstext"
+    },
+    {
+      "severity": "info",
+      "code": "L2",
+      "msg": "OCR-Text liest sich fluessig, kohaerenter franzoesischer Essay ueber Demokratie und Erziehung"
+    },
+    {
+      "severity": "info",
+      "code": "L4",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings"
+    },
+    {
+      "severity": "warning",
+      "code": "S3",
+      "msg": "S.1 Z.175: Doppelt-escaped Ampersand &amp;amp; statt &amp; (Deckblatt ZBZ, kosmetisch)"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "1 Fussnote korrekt als note[@place='foot'] kodiert"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 13p 8o 16l 10w = 47. Referenzen plausibel (Hersch, Voltaire, Karamazov, Europa, Zuerich)"
+    },
+    {
+      "severity": "info",
+      "code": "L7",
+      "msg": "Gesamtkohaerenz: Vollstaendiger Artikel Hersch 1952, Monde Nouveau. Text logisch durchgehend S.3-11"
+    }
+  ]
+}

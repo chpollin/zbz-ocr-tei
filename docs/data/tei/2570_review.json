@@ -1,0 +1,36 @@
+{
+  "doc_id": "2570",
+  "reviewer": "quality-screen-claude",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "pages_inspected": ["p001", "p004"],
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S.1: Schreibmaschinentext, Zonen korrekt. S.4: FRA-Allocution korrekt"
+    },
+    {
+      "severity": "warning",
+      "code": "L2",
+      "msg": "S.5 facs-Zonen mit uebergrossen Koordinaten (lrx bis 10959, Surface nur 1109x1704) -- systematisches Layoutmuster, kein Textverlust"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 31p 0o 57l 5w = 93, bilingual DEU+FRA korrekt annotiert"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Sprache DEU+FRA korrekt, Gorbatschow-Analyse koharent, 7 Seiten vollstaendig"
+    }
+  ]
+}

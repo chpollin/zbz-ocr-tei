@@ -1,0 +1,48 @@
+{
+  "doc_id": "790",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [2, 5, 8],
+      "notes": "Zweispaltiges Zeitschriftenlayout (Doppelseiten-Scans). Overlays zeigen korrekte Zonensegmentierung beider Spalten. Leichte Daumen-Artefakte am Rand, textlich irrelevant."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Dt. Interviewtext (Der Mensch ist nicht planbar) gut erfasst. Dialog-Struktur mit Fragen und Antworten erkennbar."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "9 Seiten, zweispaltig. Interview-Struktur mit <sp>/<speaker>-Elementen. Mehrere <speaker> enthalten <persName>-Tags mit Satzfragmenten als Pseudo-Personennamen (z.B. 'Zunaechst einmal', 'Das Grundsaetzliche ist folgendes') -- 12 solcher Faelle. Seitenzahlen (60-75) als eigene Absaetze."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": ["W9: 12/57 Entity-Tags ohne ref"],
+      "notes": "VALID mit 1 Warning (W9). Die 12 ref-losen Tags sind die <persName> in <speaker>-Elementen -- keine echten Personen, sondern Satzanfaenge des Interviewten."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 24,
+        "orgName": 6,
+        "placeName": 8,
+        "bibl": 15
+      },
+      "notes": "Entity-Dichte angemessen. Hersch-Biographie (S.1) korrekt annotiert mit Werktiteln. Bekannte False-Positives: 'Mensch' (zbz-p.1251, 4x), 'Philosophen' (zbz-p.1360). 12 <persName> ohne ref in <speaker>-Tags sind keine echten Entitaeten."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerentes Interview ueber Schulziele im Wohlstandsstaat. Dialog-Struktur durchgehend, endet mit Zusammenfassung. Pestalozzi, Schweizer Bildungssystem thematisiert."
+    }
+  },
+  "findings": [
+    "12 <speaker><persName>-Tags enthalten Satzfragmente statt Personennamen -- W9-Warning, aber keine strukturelle Fehlcodierung",
+    "Bekannte Entity-False-Positives (Mensch, Philosophen) -- projektweites Muster"
+  ],
+  "overall_notes": "Interview-Edition mit spezifischem Strukturmuster: <speaker>-Elemente tragen faelschlich <persName>-Tags auf Satzanfaengen. Inhaltlich solide, W9-Warning erwartet."
+}

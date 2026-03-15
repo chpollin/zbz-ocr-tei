@@ -1,0 +1,38 @@
+{
+  "doc_id": "2260",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 114,
+  "lang": "fra",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: Textes, Jeanne Hersch, fra, 1985"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "4 Fussnoten"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 107p 4o 41l 20w = 172"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Textsammlung mit Inhaltsverzeichnis und Kolophon, acheve d'imprimer, ZBZ-Signatur am Ende"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-14T10:47:47",
+  "generated": "2026-03-15T20:12:25",
   "generator": "scripts/generate_edition_data.py",
   "edition": {
     "title": "Nachlass Jeanne Hersch",
@@ -47,6 +47,15 @@
       "brochure": 8,
       "interview": 5,
       "encyclopedia": 2
+    },
+    "screening": {
+      "NOT_SCREENED": 1,
+      "APPROVED": 210,
+      "APPROVED_WITH_NOTES": 43,
+      "NEEDS_REVIEW": 32
+    },
+    "curation": {
+      "uncurated": 286
     }
   },
   "labels": {
@@ -88,6 +97,10 @@
       "page_count": 35,
       "has_tei": false,
       "entity_count": 0,
+      "screening": null,
+      "screening_reviewer": null,
+      "screening_date": null,
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -102,6 +115,10 @@
       "page_count": 208,
       "has_tei": true,
       "entity_count": 149,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -116,6 +133,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 5,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -130,6 +151,10 @@
       "page_count": 156,
       "has_tei": true,
       "entity_count": 67,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -144,6 +169,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 12,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -158,6 +187,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 5,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -172,6 +205,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 14,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -186,6 +223,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 38,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -200,6 +241,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 63,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -214,6 +259,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 6,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -228,6 +277,10 @@
       "page_count": 252,
       "has_tei": true,
       "entity_count": 159,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -242,6 +295,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 51,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -256,6 +313,10 @@
       "page_count": 18,
       "has_tei": true,
       "entity_count": 11,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -270,6 +331,10 @@
       "page_count": 42,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -284,6 +349,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 8,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -298,6 +367,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 118,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t3",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -312,6 +385,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 3,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -326,6 +403,10 @@
       "page_count": 14,
       "has_tei": true,
       "entity_count": 17,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t3",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -340,6 +421,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t3",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -354,6 +439,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 38,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t3",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -368,6 +457,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 8,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -382,6 +475,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 52,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -396,6 +493,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 22,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -410,6 +511,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 25,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-agent",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -424,6 +529,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 56,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-agent",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -438,6 +547,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 19,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -452,6 +565,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 79,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -466,6 +583,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 34,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -480,6 +601,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 11,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -494,6 +619,10 @@
       "page_count": 318,
       "has_tei": true,
       "entity_count": 231,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -508,6 +637,10 @@
       "page_count": 20,
       "has_tei": true,
       "entity_count": 49,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-agent",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -522,6 +655,10 @@
       "page_count": 16,
       "has_tei": true,
       "entity_count": 49,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-agent",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -536,6 +673,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -550,6 +691,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -564,6 +709,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4.6-screening",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -578,6 +727,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 54,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4.6-screening",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -592,6 +745,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 9,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -606,6 +763,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 93,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -620,6 +781,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 22,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4.6-screening",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -634,6 +799,10 @@
       "page_count": 18,
       "has_tei": true,
       "entity_count": 23,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4.6-screening",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -648,6 +817,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 74,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -662,6 +835,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 8,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -676,6 +853,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -690,6 +871,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 14,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -704,6 +889,10 @@
       "page_count": 42,
       "has_tei": true,
       "entity_count": 126,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -718,6 +907,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -732,6 +925,10 @@
       "page_count": 25,
       "has_tei": true,
       "entity_count": 72,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -746,6 +943,10 @@
       "page_count": 33,
       "has_tei": true,
       "entity_count": 68,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -760,6 +961,10 @@
       "page_count": 23,
       "has_tei": true,
       "entity_count": 35,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -774,6 +979,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -788,6 +997,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 31,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -802,6 +1015,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -816,6 +1033,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 36,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -830,6 +1051,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 10,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -844,6 +1069,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 45,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -858,6 +1087,10 @@
       "page_count": 13,
       "has_tei": true,
       "entity_count": 96,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -872,6 +1105,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 19,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -886,6 +1123,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 203,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -900,6 +1141,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 87,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -914,6 +1159,10 @@
       "page_count": 15,
       "has_tei": true,
       "entity_count": 37,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -928,6 +1177,10 @@
       "page_count": 21,
       "has_tei": true,
       "entity_count": 38,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -942,6 +1195,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -956,6 +1213,10 @@
       "page_count": 15,
       "has_tei": true,
       "entity_count": 28,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -970,6 +1231,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 27,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -984,6 +1249,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 17,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -998,6 +1267,10 @@
       "page_count": 19,
       "has_tei": true,
       "entity_count": 41,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1012,6 +1285,10 @@
       "page_count": 18,
       "has_tei": true,
       "entity_count": 32,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1026,6 +1303,10 @@
       "page_count": 20,
       "has_tei": true,
       "entity_count": 88,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1040,6 +1321,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 27,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1054,6 +1339,10 @@
       "page_count": 24,
       "has_tei": true,
       "entity_count": 55,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1068,6 +1357,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 51,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1082,6 +1375,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1096,6 +1393,10 @@
       "page_count": 64,
       "has_tei": true,
       "entity_count": 516,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1110,6 +1411,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 10,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1124,6 +1429,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1138,6 +1447,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1152,6 +1465,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1166,6 +1483,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 93,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1180,6 +1501,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 59,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1194,6 +1519,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 55,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1208,6 +1537,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 60,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1222,6 +1555,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 9,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1236,6 +1573,10 @@
       "page_count": 18,
       "has_tei": true,
       "entity_count": 43,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1250,6 +1591,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 22,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1264,6 +1609,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 98,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1278,6 +1627,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 61,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1292,6 +1645,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 39,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1306,6 +1663,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 6,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1320,6 +1681,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 56,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1334,6 +1699,10 @@
       "page_count": 22,
       "has_tei": true,
       "entity_count": 38,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1348,6 +1717,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": true
     },
     {
@@ -1362,6 +1735,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 31,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1376,6 +1753,10 @@
       "page_count": 1,
       "has_tei": true,
       "entity_count": 25,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1390,6 +1771,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 14,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1404,6 +1789,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1418,6 +1807,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 23,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1432,6 +1825,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 66,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1446,6 +1843,10 @@
       "page_count": 1,
       "has_tei": true,
       "entity_count": 22,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1460,6 +1861,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 24,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1474,6 +1879,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 25,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1488,6 +1897,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 5,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1502,6 +1915,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1516,6 +1933,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 80,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1530,6 +1951,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 50,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1544,6 +1969,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 49,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1558,6 +1987,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 74,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1572,6 +2005,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1586,6 +2023,10 @@
       "page_count": 15,
       "has_tei": true,
       "entity_count": 101,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1600,6 +2041,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 24,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1614,6 +2059,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 9,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1628,6 +2077,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 12,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1642,6 +2095,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 45,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1656,6 +2113,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 36,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1670,6 +2131,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1684,6 +2149,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 25,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": true
     },
     {
@@ -1698,6 +2167,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 19,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1712,6 +2185,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 35,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1726,6 +2203,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 24,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1740,6 +2221,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1754,6 +2239,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 17,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1768,6 +2257,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 7,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1782,6 +2275,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1796,6 +2293,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 26,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1810,6 +2311,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 7,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1824,6 +2329,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1838,6 +2347,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1852,6 +2365,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1866,6 +2383,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1880,6 +2401,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 38,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1894,6 +2419,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 35,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1908,6 +2437,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1922,6 +2455,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1936,6 +2473,10 @@
       "page_count": 142,
       "has_tei": true,
       "entity_count": 272,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1950,6 +2491,10 @@
       "page_count": 45,
       "has_tei": true,
       "entity_count": 139,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1964,6 +2509,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 92,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": true
     },
     {
@@ -1978,6 +2527,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 19,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -1992,6 +2545,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 52,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2006,6 +2563,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 21,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2020,6 +2581,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 36,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2034,6 +2599,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 19,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2048,6 +2617,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 72,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2062,6 +2635,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 27,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2076,6 +2653,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 14,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2090,6 +2671,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2104,6 +2689,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2118,6 +2707,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 11,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2132,6 +2725,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 5,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2146,6 +2743,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 48,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2160,6 +2761,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 76,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2174,6 +2779,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 24,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2188,6 +2797,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2202,6 +2815,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2216,6 +2833,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 40,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2230,6 +2851,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 48,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screening-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2244,6 +2869,10 @@
       "page_count": 13,
       "has_tei": true,
       "entity_count": 48,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2258,6 +2887,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 7,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2272,6 +2905,10 @@
       "page_count": 39,
       "has_tei": true,
       "entity_count": 32,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2286,6 +2923,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 28,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2300,6 +2941,10 @@
       "page_count": 15,
       "has_tei": true,
       "entity_count": 109,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2314,6 +2959,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 11,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2328,6 +2977,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 40,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2342,6 +2995,10 @@
       "page_count": 14,
       "has_tei": true,
       "entity_count": 137,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2356,6 +3013,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 54,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2370,6 +3031,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 19,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2384,6 +3049,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2398,6 +3067,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 42,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2412,6 +3085,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 97,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2426,6 +3103,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2440,6 +3121,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 9,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2454,6 +3139,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 6,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2468,6 +3157,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 32,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2482,6 +3175,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 7,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2496,6 +3193,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screen-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2510,6 +3211,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 17,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screen-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2524,6 +3229,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2538,6 +3247,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 10,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2552,6 +3265,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2566,6 +3283,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 12,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2580,6 +3301,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 51,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2594,6 +3319,10 @@
       "page_count": 15,
       "has_tei": true,
       "entity_count": 43,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2608,6 +3337,10 @@
       "page_count": 14,
       "has_tei": true,
       "entity_count": 23,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2622,6 +3355,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 21,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2636,6 +3373,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 28,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2650,6 +3391,10 @@
       "page_count": 19,
       "has_tei": true,
       "entity_count": 66,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2664,6 +3409,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 41,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2678,6 +3427,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 8,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2692,6 +3445,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2706,6 +3463,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 36,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2720,6 +3481,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 8,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2734,6 +3499,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 10,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2748,6 +3517,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 21,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2762,6 +3535,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 14,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2776,6 +3553,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 40,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2790,6 +3571,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 64,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2804,6 +3589,10 @@
       "page_count": 15,
       "has_tei": true,
       "entity_count": 23,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2818,6 +3607,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 32,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2832,6 +3625,10 @@
       "page_count": 114,
       "has_tei": true,
       "entity_count": 79,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2846,6 +3643,10 @@
       "page_count": 16,
       "has_tei": true,
       "entity_count": 12,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2860,6 +3661,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2874,6 +3679,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 35,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2888,6 +3697,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2902,6 +3715,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": true
     },
     {
@@ -2916,6 +3733,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 50,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2930,6 +3751,10 @@
       "page_count": 254,
       "has_tei": true,
       "entity_count": 558,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2944,6 +3769,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2958,6 +3787,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2972,6 +3805,10 @@
       "page_count": 22,
       "has_tei": true,
       "entity_count": 32,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -2986,6 +3823,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 10,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3000,6 +3841,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 17,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3014,6 +3859,10 @@
       "page_count": 56,
       "has_tei": true,
       "entity_count": 71,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3028,6 +3877,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 48,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3042,6 +3895,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3056,6 +3913,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3070,6 +3931,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3084,6 +3949,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 47,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3098,6 +3967,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 32,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3112,6 +3985,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 24,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3126,6 +4003,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3140,6 +4021,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 9,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3154,6 +4039,10 @@
       "page_count": 1,
       "has_tei": true,
       "entity_count": 5,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3168,6 +4057,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 61,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screener-manual",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3182,6 +4075,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 66,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3196,6 +4093,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3210,6 +4111,10 @@
       "page_count": 19,
       "has_tei": true,
       "entity_count": 20,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3224,6 +4129,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3238,6 +4147,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 18,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3252,6 +4165,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 32,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3266,6 +4183,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3280,6 +4201,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 28,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3294,6 +4219,10 @@
       "page_count": 13,
       "has_tei": true,
       "entity_count": 23,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3308,6 +4237,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 19,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3322,6 +4255,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 11,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3336,6 +4273,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screen-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3350,6 +4291,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 11,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-claude",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3364,6 +4309,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 10,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3378,6 +4327,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 84,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3392,6 +4345,10 @@
       "page_count": 10,
       "has_tei": true,
       "entity_count": 39,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3406,6 +4363,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3420,6 +4381,10 @@
       "page_count": 39,
       "has_tei": true,
       "entity_count": 84,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3434,6 +4399,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 28,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3448,6 +4417,10 @@
       "page_count": 19,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3462,6 +4435,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 64,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3476,6 +4453,10 @@
       "page_count": 13,
       "has_tei": true,
       "entity_count": 90,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3490,6 +4471,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 29,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3504,6 +4489,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 72,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3518,6 +4507,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 6,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3532,6 +4525,10 @@
       "page_count": 105,
       "has_tei": true,
       "entity_count": 110,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3546,6 +4543,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 3,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screen-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3560,6 +4561,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 47,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3574,6 +4579,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3588,6 +4597,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 35,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3602,6 +4615,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 22,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3616,6 +4633,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3630,6 +4651,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 30,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3644,6 +4669,10 @@
       "page_count": 3,
       "has_tei": true,
       "entity_count": 4,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3658,6 +4687,10 @@
       "page_count": 1,
       "has_tei": true,
       "entity_count": 6,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3672,6 +4705,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3686,6 +4723,10 @@
       "page_count": 1,
       "has_tei": true,
       "entity_count": 36,
+      "screening": "APPROVED_WITH_NOTES",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3700,6 +4741,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 6,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3714,6 +4759,10 @@
       "page_count": 8,
       "has_tei": true,
       "entity_count": 9,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3728,6 +4777,10 @@
       "page_count": 38,
       "has_tei": true,
       "entity_count": 31,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3742,6 +4795,10 @@
       "page_count": 15,
       "has_tei": true,
       "entity_count": 58,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3756,6 +4813,10 @@
       "page_count": 51,
       "has_tei": true,
       "entity_count": 124,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3770,6 +4831,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 37,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3784,6 +4849,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 56,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3798,6 +4867,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 15,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3812,6 +4885,10 @@
       "page_count": 82,
       "has_tei": true,
       "entity_count": 60,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3826,6 +4903,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 7,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3840,6 +4921,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 17,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3854,6 +4939,10 @@
       "page_count": 6,
       "has_tei": true,
       "entity_count": 13,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3868,6 +4957,10 @@
       "page_count": 9,
       "has_tei": true,
       "entity_count": 79,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3882,6 +4975,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 9,
+      "screening": "APPROVED",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3896,6 +4993,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 41,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3910,6 +5011,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 57,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3924,6 +5029,10 @@
       "page_count": 34,
       "has_tei": true,
       "entity_count": 132,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3938,6 +5047,10 @@
       "page_count": 12,
       "has_tei": true,
       "entity_count": 26,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3952,6 +5065,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3966,6 +5083,10 @@
       "page_count": 2,
       "has_tei": true,
       "entity_count": 45,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "agent-screening-v2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3980,6 +5101,10 @@
       "page_count": 4,
       "has_tei": true,
       "entity_count": 6,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -3994,6 +5119,10 @@
       "page_count": 7,
       "has_tei": true,
       "entity_count": 10,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -4008,6 +5137,10 @@
       "page_count": 53,
       "has_tei": true,
       "entity_count": 75,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -4022,6 +5155,10 @@
       "page_count": 21,
       "has_tei": true,
       "entity_count": 58,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screener-t4",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -4036,6 +5173,10 @@
       "page_count": 19,
       "has_tei": true,
       "entity_count": 106,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -4050,6 +5191,10 @@
       "page_count": 11,
       "has_tei": true,
       "entity_count": 24,
+      "screening": "APPROVED",
+      "screening_reviewer": "claude-opus-4-6-quality-screener",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -4064,6 +5209,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 16,
+      "screening": "NEEDS_REVIEW",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     },
     {
@@ -4078,6 +5227,10 @@
       "page_count": 5,
       "has_tei": true,
       "entity_count": 17,
+      "screening": "APPROVED",
+      "screening_reviewer": "quality-screening-t2",
+      "screening_date": "2026-03-15",
+      "curation": "uncurated",
       "demo": false
     }
   ]

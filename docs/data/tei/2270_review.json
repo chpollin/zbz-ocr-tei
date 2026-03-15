@@ -1,0 +1,40 @@
+{
+  "doc_id": "2270",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 8],
+      "notes": "S.1 Overlay zeigt Titelseite korrekt mit Titel und Autorenangabe. Englischer Text."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Englischer philosophischer Text The Conditions of Meaning korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "16 Seiten. Einspaltiges Buchlayout. Seitenzahlen als separate Absaetze."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler. W6 ignoriert (keine lb-Elemente, bei 16 Seiten akzeptabel)."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 16, "orgName": 1, "placeName": 0, "bibl": 1},
+      "notes": "Philosophischer Text mit wenigen konkreten Entitaeten. Hersch, Augustin, Descartes als persName. Keine placeName thematisch begruendet."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Philosophischer Essay ueber Sinnbedingungen am Ende des 20. Jahrhunderts. Kohaerenter englischer Text."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Saubere Edition eines englischen philosophischen Essays. Geringe Entitaetsdichte thematisch begruendet."
+}

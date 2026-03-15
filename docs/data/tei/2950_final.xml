@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">ALTERnativen: Brüche im Lebenslauf</title>
+        <author>Martina B. Güntert-Dubach, Ruth A. Meyer Schweizer</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2950</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>ALTERnativen: Brüche im Lebenslauf</title>
+            <author>Martina B. Güntert-Dubach, Ruth A. Meyer Schweizer</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1995</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:fail L7:ok). KRITISCH: 9x persName 'Mensch' -- Gattungsbegriff, kein Personenname; KRITISCH: 7x bibl 'Zeit' -- bedeutet 'time', nicht Zeitungsreferenz; 3x bibl 'Der Mensch' -- Gattungsbegriff, kein Werktitel (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="973" lry="755">
+      <zone xml:id="facs_1_r_1" ulx="523" uly="59" lrx="745" lry="108" />
+      <zone xml:id="facs_1_r_2" ulx="523" uly="141" lrx="804" lry="187" />
+      <zone xml:id="facs_1_r_3" ulx="523" uly="259" lrx="754" lry="274" />
+      <zone xml:id="facs_1_r_4" ulx="523" uly="295" lrx="769" lry="432" />
+      <zone xml:id="facs_1_r_5" ulx="523" uly="658" lrx="799" lry="672" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1043" lry="860">
+      <zone xml:id="facs_2_r_1" ulx="84" uly="83" lrx="471" lry="118" />
+      <zone xml:id="facs_2_r_2" ulx="565" uly="145" lrx="691" lry="159" />
+      <zone xml:id="facs_2_r_3" ulx="972" uly="191" lrx="979" lry="200" />
+      <zone xml:id="facs_2_r_4" ulx="565" uly="194" lrx="817" lry="220" />
+      <zone xml:id="facs_2_r_5" ulx="969" uly="245" lrx="979" lry="255" />
+      <zone xml:id="facs_2_r_6" ulx="565" uly="245" lrx="816" lry="269" />
+      <zone xml:id="facs_2_r_7" ulx="565" uly="295" lrx="671" lry="307" />
+      <zone xml:id="facs_2_r_8" ulx="972" uly="296" lrx="979" lry="306" />
+      <zone xml:id="facs_2_r_9" ulx="101" uly="317" lrx="233" lry="348" />
+      <zone xml:id="facs_2_r_10" ulx="565" uly="331" lrx="862" lry="365" />
+      <zone xml:id="facs_2_r_11" ulx="969" uly="366" lrx="979" lry="376" />
+      <zone xml:id="facs_2_r_12" ulx="565" uly="417" lrx="684" lry="430" />
+      <zone xml:id="facs_2_r_13" ulx="565" uly="475" lrx="786" lry="501" />
+      <zone xml:id="facs_2_r_14" ulx="969" uly="504" lrx="979" lry="513" />
+      <zone xml:id="facs_2_r_15" ulx="565" uly="548" lrx="786" lry="578" />
+      <zone xml:id="facs_2_r_16" ulx="969" uly="561" lrx="979" lry="571" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1012" lry="769">
+      <zone xml:id="facs_3_r_1" ulx="583" uly="77" lrx="881" lry="126" />
+      <zone xml:id="facs_3_r_2" ulx="685" uly="129" lrx="785" lry="149" />
+      <zone xml:id="facs_3_r_3" ulx="522" uly="203" lrx="950" lry="383" />
+      <zone xml:id="facs_3_r_4" ulx="516" uly="400" lrx="947" lry="616" />
+      <zone xml:id="facs_3_r_5" ulx="514" uly="638" lrx="944" lry="710" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1019" lry="769">
+      <zone xml:id="facs_4_r_1" ulx="543" uly="97" lrx="956" lry="214" />
+      <zone xml:id="facs_4_r_2" ulx="81" uly="101" lrx="490" lry="276" />
+      <zone xml:id="facs_4_r_3" ulx="535" uly="238" lrx="952" lry="599" />
+      <zone xml:id="facs_4_r_4" ulx="75" uly="336" lrx="487" lry="516" />
+      <zone xml:id="facs_4_r_5" ulx="69" uly="535" lrx="482" lry="692" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="993" lry="770">
+      <zone xml:id="facs_5_r_1" ulx="82" uly="91" lrx="476" lry="133" />
+      <zone xml:id="facs_5_r_2" ulx="65" uly="152" lrx="475" lry="388" />
+      <zone xml:id="facs_5_r_3" ulx="515" uly="369" lrx="926" lry="544" />
+      <zone xml:id="facs_5_r_4" ulx="39" uly="430" lrx="464" lry="684" />
+      <zone xml:id="facs_5_r_5" ulx="509" uly="605" lrx="931" lry="697" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1001" lry="769">
+      <zone xml:id="facs_6_r_1" ulx="516" uly="259" lrx="932" lry="659" />
+      <zone xml:id="facs_6_r_2" ulx="558" uly="967" lrx="973" lry="1251" />
+      <zone xml:id="facs_6_r_3" ulx="379" uly="5800" lrx="798" lry="6873" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1082" lry="763">
+      <zone xml:id="facs_7_r_1" ulx="616" uly="62" lrx="932" lry="96" />
+      <zone xml:id="facs_7_r_2" ulx="85" uly="94" lrx="505" lry="432" />
+      <zone xml:id="facs_7_r_3" ulx="708" uly="96" lrx="843" lry="119" />
+      <zone xml:id="facs_7_r_4" ulx="557" uly="174" lrx="985" lry="245" />
+      <zone xml:id="facs_7_r_5" ulx="557" uly="253" lrx="982" lry="352" />
+      <zone xml:id="facs_7_r_6" ulx="557" uly="364" lrx="979" lry="480" />
+      <zone xml:id="facs_7_r_7" ulx="556" uly="533" lrx="942" lry="559" />
+      <zone xml:id="facs_7_r_8" ulx="552" uly="571" lrx="976" lry="701" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Ka 666
+        </head>
+        <p facs="#facs_1_r_2">
+          Dr. <persName ref="#zbz-p.1318">Martina B. Güntert-Dubach</persName><lb facs="#facs_1_l_2_1" n="N001" />Prof. Dr. <persName ref="#zbz-p.1319">Ruth A. Meyer Schweizer</persName><lb facs="#facs_1_l_2_2" n="N002" />(Herausgeberinnen)
+        </p>
+        <p facs="#facs_1_r_3">
+          ALTERnativen<lb facs="#facs_1_l_3_1" n="N001" />Brüche im Lebenslauf
+        </p>
+        <p facs="#facs_1_r_4">
+          Herausgegeben unter Mitarbeit von
+        </p>
+        <p facs="#facs_1_r_5">
+          - Prof. Dr. <persName ref="#zbz-p.1320">Ellen J. Beer</persName><lb facs="#facs_1_l_5_1" n="N001" />- Prof. Dr. <persName ref="#zbz-p.1321">Hans-Ulrich Fisch</persName><lb facs="#facs_1_l_5_2" n="N002" />- Prof. Dr. <persName ref="#zbz-p.1322">Wolfgang Lienemann</persName><lb facs="#facs_1_l_5_3" n="N003" />- Stud. phil. hist. <persName ref="#zbz-p.1323">Isabelle M. Messerli</persName><lb facs="#facs_1_l_5_4" n="N004" />- Stud. phil. hist. <persName ref="#zbz-p.1324">Renate Stohler Berger</persName><lb facs="#facs_1_l_5_5" n="N005" />- PD Dr. <persName ref="#zbz-p.1325">Andreas E. Stuck</persName><lb facs="#facs_1_l_5_6" n="N006" />- Prof. Dr. <persName ref="#zbz-p.1326">Norbert Thom</persName><lb facs="#facs_1_l_5_7" n="N007" />- Prof. Dr. <persName ref="#zbz-p.1327">Ewald R. Weibel</persName>
+        </p>
+        <p>
+          <orgName ref="#zbz-o.425">Verlag Paul Haupt</orgName> <placeName ref="#zbz-l.6">Bern</placeName> · <placeName ref="#zbz-l.46">Stuttgart</placeName> · <placeName ref="#zbz-l.11">Wien</placeName>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <bibl ref="#zbz-w.546">Symposium</bibl> und Publikationen wurden durch die Stiftung «<orgName ref="#zbz-o.46">Universität</orgName> und Gesellschaft» unterstützt
+        </p>
+        <p facs="#facs_2_r_2">
+          Volladendicke Spony<lb facs="#facs_2_l_2_1" n="N001" />der Uni<lb facs="#facs_2_l_2_2" n="N002" />1996/180
+        </p>
+        <p facs="#facs_2_r_3">
+          5
+        </p>
+        <p facs="#facs_2_r_4">
+          Inhaltsverzeichnis
+        </p>
+        <p facs="#facs_2_r_5">
+          <persName ref="#zbz-p.1327">Ewald R. Weibel</persName><lb facs="#facs_2_l_5_1" n="N001" />Vorwort<lb facs="#facs_2_l_5_2" n="N002" />9
+        </p>
+        <p facs="#facs_2_r_6">
+          <persName ref="#zbz-p.1319">Ruth A. Meyer Schweizer</persName><lb facs="#facs_2_l_6_1" n="N001" />ALTERnativen: Einführung und Fragestellung<lb facs="#facs_2_l_6_2" n="N002" />11
+        </p>
+        <p facs="#facs_2_r_7">
+          <persName ref="#zbz-p.1328">Hermann Fehr</persName><lb facs="#facs_2_l_7_1" n="N001" />Grusswort des Politikers<lb facs="#facs_2_l_7_2" n="N002" />15
+        </p>
+        <p facs="#facs_2_r_8">
+          <persName ref="#zbz-p.1319">Ruth A. Meyer Schweizer</persName>, <persName ref="#zbz-p.1318">Martina B. Güntert-Dubach</persName><lb facs="#facs_2_l_8_1" n="N001" />ALTERnativen: Synthese der Referate, Diskussionen, Arbeitsgruppenberichte und des Schlussvotums<lb facs="#facs_2_l_8_2" n="N002" />19
+        </p>
+        <p facs="#facs_2_r_9">
+          Übersichtsreferate
+        </p>
+        <p facs="#facs_2_r_10">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_2_l_10_1" n="N001" /><bibl ref="#zbz-w.537">Pensionierung - Lebensqualität im Alter - Verlust des Partners und Tod</bibl><lb facs="#facs_2_l_10_2" n="N002" />53
+        </p>
+        <p facs="#facs_2_r_11">
+          <persName ref="#zbz-p.1329">Leopold Rosenmayr</persName><lb facs="#facs_2_l_11_1" n="N001" />Künftige Aufwertung des höheren Alters?<lb facs="#facs_2_l_11_2" n="N002" />61
+        </p>
+        <p facs="#facs_2_r_12">
+          <persName ref="#zbz-p.1330">Werner Haug</persName><lb facs="#facs_2_l_12_1" n="N001" />Ursachen, Perspektiven und Probleme der demographischen Alterung<lb facs="#facs_2_l_12_2" n="N002" />81
+        </p>
+        <p facs="#facs_2_r_13">
+          <persName ref="#zbz-p.1331">Hans-Dieter Schneider</persName><lb facs="#facs_2_l_13_1" n="N001" />Die Bewältigung kritischer Ereignisse<lb facs="#facs_2_l_13_2" n="N002" />99
+        </p>
+        <p facs="#facs_2_r_14">
+          <orgName ref="#zbz-o.48">Die Deutsche Bibliothek</orgName> – CIP-Einheitsaufnahme
+        </p>
+        <p facs="#facs_2_r_15">
+          ALTERnativen:<lb facs="#facs_2_l_15_1" n="N001" />Brüche im Lebenslauf /<lb facs="#facs_2_l_15_2" n="N002" /><persName ref="#zbz-p.1318">Martina B. Güntert-Dubach</persName> ; <persName ref="#zbz-p.1319">Ruth A. Meyer Schweizer</persName> (Hrsg.).<lb facs="#facs_2_l_15_3" n="N003" />Hrsg. unter Mitarb. von <persName ref="#zbz-p.1320">Ellen J Beer</persName> ... –<lb facs="#facs_2_l_15_4" n="N004" /><placeName ref="#zbz-l.6">Bern</placeName> ; <placeName ref="#zbz-l.46">Stuttgart</placeName> ; <placeName ref="#zbz-l.11">Wien</placeName> ; Haupt, 1995<lb facs="#facs_2_l_15_5" n="N005" />(Publikation der Akademischen Kommission der <orgName ref="#zbz-o.213">Universität Bern</orgName>)<lb facs="#facs_2_l_15_6" n="N006" />ISBN 3-258-05226-3<lb facs="#facs_2_l_15_7" n="N007" />NE: Güntert-Dubach, Martina B. [Hrsg.]
+        </p>
+        <p facs="#facs_2_r_16">
+          Alle Rechte vorbehalten.<lb facs="#facs_2_l_16_1" n="N001" />Copyright © 1995 by <orgName ref="#zbz-o.425">Paul Haupt</orgName> <placeName ref="#zbz-l.6">Berne</placeName><lb facs="#facs_2_l_16_2" n="N002" />Jede Art der Vervielfältigung ohne Genehmigung des Verlages ist unzulässig<lb facs="#facs_2_l_16_3" n="N003" />Dieses Papier ist umweltverträglich, weil chlorfrei hergestellt<lb facs="#facs_2_l_16_4" n="N004" />Printed in <placeName ref="#zbz-l.10">Switzerland</placeName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          53
+        </p>
+        <p facs="#facs_3_r_2">
+          <bibl ref="#zbz-w.537">Pensionierung - Lebensqualität im Alter - Verlust des Partners und Tod</bibl>
+        </p>
+        <p facs="#facs_3_r_3">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_3_r_4">
+          Eingangs möchte ich mich für die Einladung bedanken, an diesem <bibl ref="#zbz-w.546">Symposium</bibl> zu sprechen. Ich habe das Gefühl, dass ich beinahe jenseits des Alters stehe, in dem man eingeladen werden sollte. Die meisten von Ihnen, die hier sprechen, sind noch jung, während ich schon zu alt bin, um vor Ihnen zu erscheinen. Ich werde jedoch diesen Umstand nützen, um etwas zum Ausdruck zu bringen, was ich in meinem Leben sehr gerne gesagt habe, um eine Art Widerspruch aufzudecken. Es gibt nämlich eine ganz bestimmte Ähnlichkeit in der Art und Weise, wie man zum Beispiel die Probleme der Jugend und jene des hohen Alters darstellt. In beiden Darstellungen finden wir eine ähnliche Stilart, und vielleicht sogar – so würde ich es zu sagen wagen – eine ähnliche Fehleinschätzung.
+        </p>
+        <p facs="#facs_3_r_5">
+          Einschätzung der Gegenwart – Wie steht es eigentlich mit der Jugend heutzutage? Wenn die Erwachsenen von ihr sprechen, dann etwa so: Die Gesellschaft ist noch nie so schlecht gewesen, die Menschen sind noch nie so unglücklich gewesen, sie können kaum ihr Leben ertragen. Die Jugendlichen haben es heute schrecklich schwer, sie haben keine Möglichkeiten mehr, denn der Weg in die Zukunft ist kaputt und zerschlagen. Und dann ist man erstaunt, dass die Jungen sich nicht mehr auf einen nützlichen Beruf in einer solchen Gesellschaft vorbereiten wollen! Da erntet man aber nur, was man gesät hat. Denn wenn man so oft wiederholt, dass die Geschichte einen falschen Weg eingeschlagen hat – warum soll man sich da beeilen, eine eigene <placeName ref="#zbz-l.565">Rolle</placeName> in ihr zu spielen? Jener Jugendpessimismus ist doch sehr begreiflich, – und die Auffassung des Lebens der Erwachsenen und Alten ist auch nicht günstiger.
+        </p>
+        <p>
+          Fortschritte im Leben der Alten – Man ist – <persName ref="#zbz-p.50">Gott</persName> sei Dank – empfindlich geworden für das Leiden der Alten. Und weil man nun einmal empfindlich geworden ist, betont man immer wieder, dass die alten Leute, und die sehr Alten wie ich, nun Gegenstände des Mitleids sind, und dass sie besondere
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          54 <persName ref="#zbz-p.2">Jeanne HERsCH</persName><lb facs="#facs_4_l_1_1" n="N001" /><bibl ref="#zbz-w.537">Pensionierung - Lebensqualität im Alter - Verlust des Partners und Tod</bibl> 55
+        </p>
+        <p facs="#facs_4_r_2">
+          Gesetze brauchen, um geschützt zu werden, weil sie sich von sich aus nicht helfen können. Die Alten werden aber auf diese Weise zur Passivität getrieben, genauso wie die Jungen in die Passivität getrieben werden wegen des aufgezeichneten allgemeinen Trends der Geschichte. Es ist mir sehr oft aufgefallen, dass man in Seniorenuniversitäten und in anderen Institutionen immer wieder überlegt, wie man den alten Leuten helfen und wie man ihnen eine Zerstreuung verschaffen könnte, wie man ihnen helfen könnte, die <bibl ref="#zbz-w.705">Zeit</bibl> zu überwinden, die ihnen übrigbleibt. Es fällt auf, dass man sich dort nur sehr selten fragt: Was können diese alten Leute für die anderen noch tun? Und glauben Sie mir, das, was sie für die anderen noch tun können, würde ihnen selbst eigentlich mehr helfen, als die wohlwollende Hilfe des Zeitvertreibs. Es fehlen doch so viele Menschen in unserer Gesellschaft, Eltern und Grosseltern, die Kinder und ganz junge Leute nötig hätten, während Väter und Mütter von ihrer Arbeit überfordert werden.
+        </p>
+        <p facs="#facs_4_r_3">
+          Möglichkeiten der Alten – In einem bestimmten Sinn ist die Gesellschaft in früheren Jahren nicht schrecklicher, sondern eher besser gewesen. Ich kann mich erinnern, dass in meiner Jugend der Milchmann die Milch ins Haus gebracht hat; es gab Leute, die Brötchen am Sonntag ins Haus gebracht haben, wenn sie bestellt waren. Dinge von einer Zärtlichkeit, wie man sie sich heute gar nicht mehr vorstellen kann (vielleicht haben Sie das noch in <placeName ref="#zbz-l.6">Bern</placeName>, aber bei uns in <placeName ref="#zbz-l.48">Genf</placeName> gibt es das nicht mehr). Viele kleine Kinder haben keine Eltern zu Hause. Warum können dann Grosseltern diese nicht ersetzen? Und sogar Grosseltern nicht von Geburt aus, sondern wohlwollende Grosseltern? Warum denkt man nicht an diese Möglichkeiten, die Gegenwart so viel menschlicher in unserer Gesellschaft zu gestalten?
+        </p>
+        <p facs="#facs_4_r_4">
+          Hilfreiche Verpflichtungen – Mir scheint es, dass eine solche Tätigkeit den alten Leuten sogar mehr Hilfe bringen würde, als es die Vorlesungen in den Seniorenuniversitäten vermöchten. Ich glaube, dass wenn ein alter <persName ref="#zbz-p.1251">Mensch</persName>, der keine Berufsverpflichtung mehr hat, sich überlegt: "Ich darf nicht vergessen, dass ich übermorgen da und da sein muss, denn ich habe eine Verabredung mit einem Kind, mit einer Mutter, mit jemandem der Familie, mit dem ich oder für den ich etwas tun soll", dann sind die zwei dazwischenliegenden Tage schon gerettet. Denn diese <bibl ref="#zbz-w.705">Zeit</bibl> wird von Erwartung erfüllt: Der betroffene alte <persName ref="#zbz-p.1251">Mensch</persName> sieht eine Verpflichtung vor sich, die er nicht vergessen darf – und vielen Menschen könnte das helfen.
+        </p>
+        <p facs="#facs_4_r_5">
+          Natürlich hängen die drei Themen des Symposiums, die ich eigentlich hier behandeln sollte (was ich eben sagte, gehört nicht dazu), auch von Tatsachen, von Fakten ab, die manches ermöglichen und manches nicht. Es gibt alte Leute, die nicht mehr gehen oder stehen können, die physisch leiden. Aber ich spreche jetzt von jenen, und sie sind zahlreich, die noch gehen können, und die sich trotzdem in der Einsamkeit quälen. Jenen könnte aber wahrscheinlich in irgend einer Art und Weise geholfen werden.
+        </p>
+        <p>
+          Vorbereitungen auf das Alter – Ich mache jetzt eine zweite Bemerkung, die einen Widerspruch in sich trägt. Es ist die folgende: Ich glaube, dass man sein hohes Alter eigentlich während seines ganzen Lebens vorbereitet, ohne dabei daran zu denken – <persName ref="#zbz-p.50">Gott</persName> behüte. Ich möchte wirklich nicht ein zwanzigjähriges Mädchen sehen, das überlegt, wie es sein Alter vorbereiten soll. Aber es stimmt doch, dass im hohen Alter sehr vieles davon abhängt, wie und auf welche Weise man sein bisheriges Leben gestaltet hat. Ich möchte im folgenden so etwas wie eine Regel aufstellen: Je mehr man während seines Lebens am Geschehen seiner Umwelt interessiert war, ob es nun Menschen, Fragen der Wissenschaft, oder Kunst und Sport betraf, jedenfalls irgend etwas, was um einen herum geschah, desto besser hat man sich damit einen Raum für das Alter vorbereitet, in dem man dieses sein Alter wird vergessen können. Dieses Vergessen ist eben die kostbarste Art, das Alter zu ertragen: Wenn man nicht an das Alter denkt, sondern mit dem beschäftigt ist, wofür man sich sein Leben lang interessiert hat. Das hat übrigens für alle Bereiche des Lebens seine Gültigkeit, es stimmt überall. Ich bin zum Beispiel überzeugt, dass ein Kind, das immer um seine Mutter kreist und beständig fragt: "Mutter, was machen wir jetzt, wohin gehen wir jetzt? Ich langweile mich", schon für die Drogen bereit ist, wohingegen ein anderes Kind, das irgend eine Leidenschaft besitzt und sich für irgend etwas wirklich interessiert, und sei es auch etwas, das den Eltern zwar nicht so gefällt, an dem das Kind jedoch wirklich hängt, schon gerettet ist. Ich glaube, diese Fähigkeit pflegt man in der Schule nicht genug. Es wäre gut, wenn man in der Schule so lesen lernt, dass man eine Geschichte nicht bis zum Schluss vorgelesen oder erzählt bekommt, sondern in der Mitte abbricht, so wie dies in den Feuilletons des 19. Jahrhunderts geschah, in denen "Fortsetzung folgt" stand. Dann wartet man mit gespannter Neugier auf etwas. Die Kinder sollten schon von klein auf lernen, sich auf den freien Moment zu freuen, wo sie endlich dazu kommen, das zu tun, was sie
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          56 <persName ref="#zbz-p.2">Jeanne HERSCH</persName><lb facs="#facs_5_l_1_1" n="N001" /><bibl ref="#zbz-w.537">Pensionierung - Lebensqualität im Alter - Verlust des Partners und Tod</bibl> 57
+        </p>
+        <p facs="#facs_5_r_2">
+          interessiert, statt immer zu fragen: Was tun wir nun mit der Freizeit? Das ist sehr wichtig – sehr wichtig für das hohe Alter.
+        </p>
+        <p facs="#facs_5_r_3">
+          Kostbare <bibl ref="#zbz-w.705">Zeit</bibl> – Alte Leute, die zuviel <bibl ref="#zbz-w.705">Zeit</bibl> zu vertreiben haben, sind sehr unglücklich. Sie handeln meistens zweckwidrig. Wenn zum Beispiel eine Verwandte oder ein Freund zu Besuch kommt, beschweren sie sich, weil sie so lange nicht gekommen sind. Sie sind so unangenehm in ihrem Klagen darüber, dass der oder die Betreffende nicht mehr wiederkommt. Das ist natürlich kontraproduktiv. Die Situation ist eine ganz andere, wenn der betroffene <persName ref="#zbz-p.1251">Mensch</persName> nicht genug <bibl ref="#zbz-w.705">Zeit</bibl> gehabt hat, um das zu lesen oder zu sehen, was ihn in irgendeiner Weise interessiert. Das setzt natürlich wieder Bedingungen voraus, bei denen man nicht klagen kann. Es gibt zum Beispiel alte Leute, die nicht sehen oder nur schlecht sehen, was einen grossen Unterschied ausmacht. Sehr viel hängt folglich von Fakten ab, aber nicht alles, und nicht so viel wie man sich vorstellt. <bibl ref="#zbz-w.657">Der Mensch</bibl> weiß schließlich genug, um irgendwelche Auswege mit Hilfe der Wissenschaft zu finden. Man hat viele Apparate oder sonstige Mittel, mit denen man dem Leiden – und der Langeweile – begegnen kann.
+        </p>
+        <p facs="#facs_5_r_4">
+          Erwartung – Ich glaube, dass man sich gemeinsam mit anderen Leuten mehr Gedanken darüber machen sollte, was man für sich und für die anderen tun kann. Die richtige Frage ist: Wie kann ich freie <bibl ref="#zbz-w.705">Zeit</bibl> gewinnen für dieses oder jenes? Es ist müssig zu fragen: Wer hilft mir, meine <bibl ref="#zbz-w.705">Zeit</bibl> zu vertreiben? Im Gegenteil, dieser Punkt ist etwas ganz Wesentliches, sowohl für die Kinder und die Jungen, als auch für die Alten. Alle sind wir uns da eigentlich sehr ähnlich. Und weil wir uns ähnlich sind, wird es für alle im Alter leichter, wenn sie sich im Leben für vieles interessiert haben und mehr <bibl ref="#zbz-w.705">Zeit</bibl> auf etwas verwenden, wofür es sich lohnt. In diesem Sinne, meine ich, bereiten die Menschen wirklich ihr Leben lang – und eigentlich ohne es meistens zu wissen – die Art und Weise wie sie alt werden vor. Das Seltsame daran ist, dass sich dabei ziemliche Widersprüche ergeben. Es ist wahr, dass das Denken an sein Alter die von mir empfohlene Haltung hemmt. Man möchte es eigentlich vergessen. Das tut man auch – <persName ref="#zbz-p.50">Gott</persName> sei Dank. Wenn man zwanzig oder dreißig Jahre alt ist, denkt man nicht daran, wie es im Alter sein wird, oder doch nur in ganz seltenen Momenten. Mit Recht – man ist mit einer Sache beschäftigt, die im Augenblick viel wich-
+        </p>
+        <p facs="#facs_5_r_5">
+          tiger ist, und damit bereitet man sich zugleich jenen Raum vor, den man als alter <persName ref="#zbz-p.1251">Mensch</persName> geniessen wird. Es gibt aber noch einen anderen Aspekt: Je mehr man für sich plant, desto weniger funktioniert es. Je mehr man für andere plant, umso besser funktioniert es, weil man durch das Mit-sich-Beschäftigtsein die Hindernisse als gewichtiger empfindet, als wenn es um etwas geht, das einen nicht unmittelbar betrifft. So entstehen Haltungen, die ein Gefühl des Anspruchs erwecken, etwa der Art: Ich habe einen Anspruch darauf als alter <persName ref="#zbz-p.1251">Mensch</persName> stolz zu sein; ich habe einen Anspruch darauf, einen Besuch zu erhalten, wenn ich nicht selbst hingehen kann. Solche Ansprüche führen merkwürdigerweise dazu, dass sich ein <persName ref="#zbz-p.1251">Mensch</persName> verkrampft, und wenn er sich verkrampft, leidet er viel mehr. Das ist bei einem alten Menschen genauso wahr, als müsste er jetzt noch Skilaufen lernen. Je mehr Ansprüche er erhebt, um gewisse Hilfen zu bekommen, umso verkrampfter, empfindlicher, empörter und schmerzempfindlicher wird er reagieren, wenn das Ermangelte ausbleibt. Ich glaube daher, dass es für den alten Menschen ganz wichtig ist, locker zu bleiben. Locker bleiben bedeutet aber in erster Linie, keinen festen Anspruch stellen.
+        </p>
+        <p>
+          Wer hat uns je versprochen, dass es leicht sein werde, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein? So wie die Gesellschaft ist, vermag sie nicht zu befriedigen. Man soll bestimmt nicht so konservativ sein wie möglich. Die alten Menschen, die in meiner Jugend einfach nichts hatten, keine materielle Hilfe bekamen, nicht mehr bezahlt wurden und irgendwo auf der Straße standen und das Nötigste entbehrten: Das war sicher nicht das Richtige. Es war die Aufgabe der anderen Menschen dafür zu sorgen, dass sich das ändert. Und es ist anders geworden – <persName ref="#zbz-p.50">Gott</persName> sei Dank. Statt immer zu betonen und zu unterstreichen was schlimmer in den letzten fünfzig oder sechzig Jahren wurde, gilt es zu fragen: "Was tue ich, damit eine Verbesserung eintritt?" Das ist eine Haltung, die gar nicht konservativ, gar nicht zufrieden ist mit dem, was ist – sie entsteht vielmehr durch das Bewusstsein, dass das Menschsein nicht vollendet ist, sondern im Werden der Geschichte steht.
+        </p>
+        <p>
+          Fortschritt – Wir sind Teil der Geschichte; es geht weiter, und was man für mich erworben hat, das habe ich jetzt wiederum für andere zu erwerben. Wir sprechen oft zu den Jungen und auch zu den Alten, so als wäre die Geschichte zu Ende. Und man spricht von allem, was fehlt. Ich finde, man müsste, um etwas Mut daraus zu schöpfen und das Gefühl der Verpflichtung
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          58 <persName ref="#zbz-p.2">Jeanne HERsCH</persName><lb facs="#facs_6_l_1_1" n="N001" /><bibl ref="#zbz-w.537">Pensionierung - Lebensqualität im Alter - Verlust des Partners und Tod</bibl> 59
+        </p>
+        <p facs="#facs_6_r_2">
+          tung damit zu wecken, manchmal auch betonen, was wir seit fünfzig oder sechzig Jahren erreicht haben. Das ist ungeheuer wichtig. Es handelt sich nicht nur um materielles Leben. Denken wir an die Demütigung der alten Menschen in meiner Jugendzeit, in der fast nichts an materieller Hilfe für alte Leute vorhanden war. Alles mussten sie von ihren Nächsten erhoffen; denken Sie auch an die Leute auf dem Lande, wo die Alten nichts Eigenes hatten und immer auf die Arbeit und den Erwerb der anderen angewiesen waren. Viele Leute, zumal jüngere Menschen (und das können Sie mir glauben, dass der <persName ref="#zbz-p.1251">Mensch</persName> nicht immer so liebenswürdig ist), haben es die Alten spüren lassen, dass sie eine Last waren. Sehr viele alte Leute sind mit dem Gefühl gestorben, eine Last geworden zu sein. Die Frage, ob man das Recht habe jemandem den Tod zu geben, wenn man glaubt, dass er zu sehr leide, oder nicht, ist eine Luxusfrage, die man sich erst stellen kann, wenn die materielle Ebene in Ordnung gebracht ist. Nun gibt es die Altersversicherung. Und über diesen Fortschritt müsste man nicht nur die alten Leute aufklären, denn die wissen es ja, sondern ganz speziell die Jungen. Ihnen muss man begreiflich machen, wie neu das alles ist, wie viele Einschränkungen dafür nötig gewesen sind. Es gilt zu sagen: Die Geschichte geht weiter, du bist jung, die Geschichte erwartet deinen Beitrag. Vor dir hat man vieles verwirklicht, jetzt bist du an der Reihe, jetzt kommt deine Verpflichtung. Das ist genau das Gegenteil von dem, was man den Jungen meistens sagt.
+        </p>
+        <p facs="#facs_6_r_3">
+          Ich habe gesagt, die Geschichte erwarte jeden Menschen, solange er lebt. Solange er lebt, wird er seine Freude daran haben, dass er noch da ist und noch etwas für die Geschichte tun kann. Er hat soviel von der Geschichte bekommen. Und dieser Sinn der Solidarität zwischen dem einzelnen Menschen und der Lebenserleichterung durch die Geschichte ist etwas, das nicht verloren gehen darf, denn es ist wesentlich für den Sinn des Lebens. Ich halte das für ganz wesentlich.
+        </p>
+        <p>
+          Menschsein – Wenn ein alter <persName ref="#zbz-p.1251">Mensch</persName>, wie zum Beispiel ich, das Gefühl hat, seine Kraft sei nicht mehr dieselbe, dann muss er sagen: Ich tue, was ich kann, mehr kann ich nicht, aber was ich vermag, das kann ich tun; und solange ich tue, was ich kann, ist es gut. Ich kann etwas tun solange ich lebe, und sei es nur durch die Art, wie ich lebe. Da ich noch lebe, stellt sich die Frage, ob ich mich beklage, oder ob ich Dankeschön sage. Es ist schon eine Erleichterung, wenn jemand, der lebt und leidet, trotzdem noch
+        </p>
+        <p>
+          den Willen hat, ein Stück Schnee zu sehen, oder etwas blauen Himmel, und Dankeschön sagt. Dann ist es für jeden, der das hört und das sieht, eine Freude und eine Hilfe. Das ist wesentlich. Es wirkt dann ganz natürlich und nicht gekünstelt, wenn man bedenkt, dass uns nie versprochen worden ist, <persName ref="#zbz-p.1251">Mensch</persName> zu sein werde leicht sein – denn leicht ist es nie. Warum wohl?
+        </p>
+        <p>
+          Bewusstsein – <bibl ref="#zbz-w.657">Der Mensch</bibl> ist wahrscheinlich das einzige Tier auf der Welt, das über seinen Tod nachdenkt. Ich bin da nicht ganz sicher, denn ich habe zu einer <bibl ref="#zbz-w.705">Zeit</bibl> sehr gehofft, für fünf Minuten in meinen Hund hineinschlüpfen zu können, und es ist mir nie gelungen. Wir wissen nicht, was das bedeutet, eine Katze, ein Hund oder ein Vogel zu sein. Aber wir wissen, was das ist, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein. Wir wissen, dass wir denken und fühlen und daraus die Folgerungen ziehen können. Aus diesem Wissen kommt man zu der Überzeugung, dass es nicht leicht ist, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein, aber es ist wunderbar. Wenn es aber wunderbar ist, ist es etwas, wofür man wiederum Dankeschön sagen kann. Aus diesem Grund darf man auch niemals sagen, ich leide zu sehr. Wenn es dazu kommt, dass man wirklich zu sehr leidet, darf man es vielleicht sagen. Man kann es nicht sagen, wenn man – so wie ich jetzt – ohne Leid vor Ihnen steht. Man sagt sehr schnell Unüberlegtes. Ein Schmerz ist etwas sehr Brennendes, und es gibt Schmerzen, die fast nicht oder wirklich nicht zu ertragen sind. Wenn man sie aber nicht mehr erträgt, stirbt man meistens. Das aber dauert manchmal lange, und der <persName ref="#zbz-p.1251">Mensch</persName> ist sich dessen bewusst. Er weiss, dass er leidet, und das Leid verdoppelt sich sozusagen durch sein Wissen darum. Ich nehme an, dass der <persName ref="#zbz-p.1251">Mensch</persName> eine grössere Leidensfähigkeit hat als ein Tier. Das stimmt vielleicht gar nicht, denn ich bin nie ein Tier gewesen, und ich weiss nicht, was ein Tier empfindet. Von einem Menschen kann man das auch nicht sicher behaupten, denn vom Extrem des Leidens kann fast niemand sagen, dass er es wirklich erlebt hat. Aber es ist eben nicht leicht, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein. Man müsste von Anfang an das Gefühl erleben, und das Gefühl verbreiten, was "bewusst zu leben" heisst, eine Vorstellung von dem zu haben, was nun kommt, die Frage nach dem Sinn stellen zu können. Überhaupt ist das Bewusstsein – dass es dieses unglaubliche Privileg gibt –, dass der <persName ref="#zbz-p.1251">Mensch</persName>, soviel wir wissen, dessen einziger Träger ist und die grosse Ausnahme in der Natur darstellt, seltsam und schwierig.
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          60<lb facs="#facs_7_l_1_1" n="N001" /><persName ref="#zbz-p.2">Jeanne HERSCH</persName>
+        </p>
+        <p facs="#facs_7_r_2">
+          Dankbarkeit – Warum ist es nicht leicht als <persName ref="#zbz-p.1251">Mensch</persName> zu leben? Weil man gleichzeitig <persName ref="#zbz-p.1251">Mensch</persName> ist und Tier, und dazu noch: eine Sache. Wenn ein menschlicher lebender Körper durch ein Fenster auf die Strasse fällt, dann fällt er genau so wie ein Kartoffelsack. Er ist den Gesetzen der Physik unterworfen. Wenn ein <persName ref="#zbz-p.1251">Mensch</persName> im Kampf mit seiner Lebenskraft versucht, sein Leben zu retten oder ein Wesen zu verteidigen, ist er dem Gesetz des Lebens unterworfen. Er gehört nämlich zum <orgName ref="#zbz-o.33">Reich</orgName> des Lebendigen, wo das Gesetz des Stärkeren herrscht. Er gehört in das Gebiet der Physik, in das Gebiet des Lebendigen und in das Gebiet des Bewusstseins, welches das Menschliche ist. Diese drei Gebiete widersprechen einander und der <persName ref="#zbz-p.1251">Mensch</persName> muss, soll und kann nicht anders, als diese drei Gebiete zu akzeptieren, zu erfragen, und sich zu entscheiden. Er entscheidet sich für das eine oder für das andere, er entscheidet und unterwirft sich oder auch nicht, er nimmt etwas auf sich oder auch nicht. <bibl ref="#zbz-w.657">Der Mensch</bibl> ist das einzige Wesen, soviel wir wissen, das so ist. Und es ist gar nicht leicht, als ein solches Wesen zu leben. Deswegen sagte ich: wer hat uns versprochen, dass Menschsein bequem sei? Es ist nicht bequem, es ist schwierig und es ist immer schwierig gewesen. Wir versuchen durch die Geschichte manches zu verbessern und das Abkommen jedes Menschen, jedes Jungen, jedes Alten, ist mit der Geschichte seiner eigenen <bibl ref="#zbz-w.705">Zeit</bibl> da. Folglich ist es dringend nötig, sozusagen einen "acte de présence" zu machen, das heisst gegenwärtig zu sein und zu antworten: Ja, ich bin da. So oft und solange man es kann, mit der Flexibilität, die es einem erlaubt, zu danken.
+        </p>
+        <p facs="#facs_7_r_3">
+          61<lb facs="#facs_7_l_3_1" n="N001" />Künftige Aufwertung des höheren Alters?<lb facs="#facs_7_l_3_2" n="N002" />LEOPOLD ROSENMAYR
+        </p>
+        <p facs="#facs_7_r_4">
+          Sie werden in meinem Beitrag eine gewisse Buntscheckigkeit erkennen können. Sie entsteht durch den Versuch, Ihnen sowohl aus der Forschung als auch aus der philosophisch inspirierten Reflexion Einblicke und Vorschläge zur Wahrnehmung von Chancen im Alter zu vermitteln.
+        </p>
+        <p facs="#facs_7_r_5">
+          Obwohl Neubestimmungen des Verhältnisses zur menschlichen und natürlichen Umwelt nötig waren, leben wir – so <persName ref="#zbz-p.1319">Ruth A. MEYER SCHWEIZER</persName> (1995, 250) – nicht in einer <bibl ref="#zbz-w.705">Zeit</bibl> neuer Entwürfe. <persName ref="#zbz-p.55">Albert EINSTEIN</persName> hatte schon formuliert: "Wir leben in einer <bibl ref="#zbz-w.705">Zeit</bibl> vollkommener Mittel und verworrener Ziele." Ich möchte hinzufügen, dass wir auch in einer <bibl ref="#zbz-w.705">Zeit</bibl> der Rezepte und der "Tips" leben.
+        </p>
+        <p facs="#facs_7_r_6">
+          Man muss sich sogar fragen, wieweit sich nicht auch Wissenschaftler daran mitschuldig machen, dass in der Seniorenszene die Tipgeber und Phrasendrescher einen gewissen Markt finden. So bin ich auch sehr glücklich und geehrt, dass ich hier auf einer Tagung reden darf, die sich vom Senioren-Rummel deutlich abhebt. Da wurde ja gleich zu Beginn von <persName ref="#zbz-p.2">Jeanne HERSCH</persName> kritisch auf die Theorie-Praxis-Beziehung in Altersfragen und damit auch auf die Mitverantwortung des Forschers hinsichtlich der Anwendung von Ergebnissen hingewiesen, so dass ich daran anknüpfen möchte.
+        </p>
+        <p facs="#facs_7_r_7">
+          1. Vielschichtiges Verhältnis von Theorie und Praxis
+        </p>
+        <p facs="#facs_7_r_8">
+          Denken und Tun, so <persName ref="#zbz-p.273">Johann Wolfgang GOETHE</persName>, verhalten sich wie Einatmen zu Ausatmen. Zu Grunde liege ein Kreislauf, ein in sich verbundener Prozess. Auch sein grosser Zeitgenosse, <persName ref="#zbz-p.6">Immanuel KANT</persName>, bestand auf der Verbindung von Denken und Tun. In der "<bibl ref="#zbz-w.538">Berlinischen Monatsschrift</bibl>" vom September 1793 veröffentlichte <persName ref="#zbz-p.6">KANT</persName> einen Aufsatz über den Gemeinspruch "Das mag in der Theorie richtig sein, taugt aber nicht für die Praxis". Darin findet sich der Satz: "Es kann ... niemand sich für praktisch bewandert in einer Wissenschaft ausgeben und doch die Theorie verachten
+        </p>
+      </div>
+      </body></text>
+</TEI>

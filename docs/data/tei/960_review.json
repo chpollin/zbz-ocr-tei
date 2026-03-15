@@ -1,0 +1,32 @@
+{
+  "doc_id": "960",
+  "reviewer": "quality-screener-claude",
+  "date": "2026-03-15",
+  "tier": 3,
+  "pages": 12,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 13p 36o 4l 10w = 63"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S.1: Titelblatt korrekt erfasst, Regionen konsistent"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Sprache fra korrekt, Festschrift Gagnebin, A quoi bon une Faculte des Lettres"
+    }
+  ]
+}

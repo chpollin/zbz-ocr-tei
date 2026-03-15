@@ -1,0 +1,49 @@
+{
+  "doc_id": "470",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "warning",
+      "pages_inspected": [1],
+      "notes": "Seite 1 komplexe Zeitungsseite (Medecine et Hygiene, 1959) mit Mehrspaltenlayout, Werbung, Kopfzeilen. 66+ Zonen auf Seite 1."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "Medizinischer Fachtext mit OCR-Fehlern in Fachterminologie: 'arteriection', 'sous-strabondienne', 'hennismamente'. Betrifft Nicht-Hersch-Teil (Delachaux-Artikel). Hersch-Text nur im SOMMAIRE erwaehnt (Seite 26)."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "Komplexes Mehrspaltenlayout. Region-Typen weitgehend korrekt, aber viele kleine Regionen."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. Titel 'Medecine et Hygiene' ist Zeitschriftentitel, nicht Hersch-Artikeltitel."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 55,
+        "orgName": 15,
+        "placeName": 22,
+        "bibl": 4
+      },
+      "notes": "Viele Entities wegen umfangreichem Zeitungsinhalt (Redaktionsliste, Sommaire, Fachartikel). Angemessen."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "TEI-Body enthaelt primaer Delachaux-Artikel, nicht Hersch-Artikel. Hersch-Beitrag ('La medecine aux prises avec l'humain') nur im Sommaire (Seite 26). OCR-Qualitaet des medizinischen Textes maessig."
+    }
+  },
+  "findings": [
+    "Titel im TEI ist Zeitschriftentitel, nicht Hersch-Artikeltitel",
+    "Hersch-Artikel nur im Sommaire erwaehnt, Haupttext fehlt in gescannten Seiten",
+    "OCR-Fehler in medizinischer Fachterminologie"
+  ],
+  "overall_notes": "Fachzeitschriften-Titelseite mit medizinischem Artikel eines anderen Autors. Hersch-Beitrag auf Seite 26, nicht in den 3 gescannten Seiten. Strukturell valide, inhaltlich nur indirekter Hersch-Bezug."
+}

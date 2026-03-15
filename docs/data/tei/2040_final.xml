@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Maschinenindustrie in der Bewährungsprobe</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2040</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Maschinenindustrie in der Bewährungsprobe</title>
+          <author>Jeanne Hersch</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). 3x persName Mensch (zbz-p.1251) false positive; Seitenzahlen 24-29 als eigene Absaetze</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1034" lry="738">
+      <zone xml:id="facs_1_r_1" ulx="632" uly="224" lrx="965" lry="282" />
+      <zone xml:id="facs_1_r_2" ulx="631" uly="333" lrx="737" lry="346" />
+      <zone xml:id="facs_1_r_3" ulx="631" uly="360" lrx="726" lry="406" />
+      <zone xml:id="facs_1_r_4" ulx="631" uly="628" lrx="884" lry="657" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1038" lry="741">
+      <zone xml:id="facs_2_r_1" ulx="631" uly="55" lrx="893" lry="105" />
+      <zone xml:id="facs_2_r_2" ulx="59" uly="70" lrx="401" lry="165" />
+      <zone xml:id="facs_2_r_3" ulx="631" uly="122" lrx="852" lry="140" />
+      <zone xml:id="facs_2_r_4" ulx="61" uly="223" lrx="289" lry="243" />
+      <zone xml:id="facs_2_r_5" ulx="61" uly="240" lrx="400" lry="425" />
+      <zone xml:id="facs_2_r_6" ulx="630" uly="287" lrx="971" lry="337" />
+      <zone xml:id="facs_2_r_7" ulx="644" uly="573" lrx="822" lry="632" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1038" lry="738">
+      <zone xml:id="facs_3_r_1" ulx="631" uly="75" lrx="975" lry="157" />
+      <zone xml:id="facs_3_r_2" ulx="64" uly="82" lrx="406" lry="149" />
+      <zone xml:id="facs_3_r_3" ulx="65" uly="144" lrx="406" lry="284" />
+      <zone xml:id="facs_3_r_4" ulx="631" uly="169" lrx="937" lry="233" />
+      <zone xml:id="facs_3_r_5" ulx="268" uly="406" lrx="330" lry="420" />
+      <zone xml:id="facs_3_r_6" ulx="631" uly="557" lrx="678" lry="570" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1031" lry="738">
+      <zone xml:id="facs_4_r_1" ulx="61" uly="63" lrx="451" lry="211" />
+      <zone xml:id="facs_4_r_2" ulx="629" uly="63" lrx="967" lry="158" />
+      <zone xml:id="facs_4_r_3" ulx="629" uly="162" lrx="967" lry="211" />
+      <zone xml:id="facs_4_r_4" ulx="629" uly="214" lrx="967" lry="440" />
+      <zone xml:id="facs_4_r_5" ulx="61" uly="215" lrx="451" lry="252" />
+      <zone xml:id="facs_4_r_6" ulx="61" uly="256" lrx="451" lry="562" />
+      <zone xml:id="facs_4_r_7" ulx="629" uly="445" lrx="967" lry="608" />
+      <zone xml:id="facs_4_r_8" ulx="61" uly="566" lrx="451" lry="661" />
+      <zone xml:id="facs_4_r_9" ulx="629" uly="611" lrx="967" lry="665" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1042" lry="741">
+      <zone xml:id="facs_5_r_1" ulx="60" uly="64" lrx="404" lry="98" />
+      <zone xml:id="facs_5_r_2" ulx="647" uly="96" lrx="784" lry="112" />
+      <zone xml:id="facs_5_r_3" ulx="63" uly="141" lrx="404" lry="338" />
+      <zone xml:id="facs_5_r_4" ulx="633" uly="183" lrx="974" lry="356" />
+      <zone xml:id="facs_5_r_5" ulx="635" uly="487" lrx="970" lry="515" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1035" lry="741">
+      <zone xml:id="facs_6_r_1" ulx="627" uly="54" lrx="810" lry="74" />
+      <zone xml:id="facs_6_r_2" ulx="62" uly="67" lrx="472" lry="114" />
+      <zone xml:id="facs_6_r_3" ulx="560" uly="108" lrx="971" lry="320" />
+      <zone xml:id="facs_6_r_4" ulx="62" uly="123" lrx="472" lry="254" />
+      <zone xml:id="facs_6_r_5" ulx="62" uly="262" lrx="472" lry="393" />
+      <zone xml:id="facs_6_r_6" ulx="560" uly="328" lrx="971" lry="472" />
+      <zone xml:id="facs_6_r_7" ulx="560" uly="480" lrx="971" lry="624" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <orgName ref="#zbz-o.324">VSM</orgName>
+        </head>
+        <p facs="#facs_1_r_2">
+          Maschinenindustrie in der Bewährungsprobe
+        </p>
+        <p facs="#facs_1_r_3">
+          Mit Beiträgen von
+        </p>
+        <p facs="#facs_1_r_4">
+          <persName ref="#zbz-p.798">Pierre Borgeaud</persName><lb facs="#facs_1_l_4_1" n="N001" /><persName ref="#zbz-p.799">Kurt Furgler</persName><lb facs="#facs_1_l_4_2" n="N002" /><persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Herausgegeben vom <orgName ref="#zbz-o.324">Verein Schweizerischer Maschinen-Industrieller</orgName> (<orgName ref="#zbz-o.324">VSM</orgName>)
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          recht schwierigen Begleitumständen. Ihm kommt besondere Bedeutung zu, und mir scheint, dass ein Teil der immer noch guten Lage in unserem Land, ein wesentlicher Teil, mit dieser Bereitschaft zum sozialen Frieden zusammenhängt, wo jeder sich voll einsetzt, sich selbst treu, hart ringt um Lösungen von Fragen, aber letzten Endes weiß, dass der soziale Friede uns allen auch den politischen Frieden, den Frieden in Freiheit zu erhalten hilft.
+        </p>
+        <p facs="#facs_2_r_2">
+          Und, last but not least, führungsstarke, risikobereite und entscheidungsfreudige Unternehmer. Das sind ein paar zentrale Punkte dessen, was mir in einer Gesamtstrategie dieser Wirtschaftspolitik als wichtig erscheint.
+        </p>
+        <p facs="#facs_2_r_3">
+          Ich komme zum Schluss. Im Zentrum unserer Wirtschaft, im Zentrum unseres Staates steht der <persName ref="#zbz-p.1251">Mensch</persName>, jeder in seiner Einmaligkeit, mit all seinen Talenten, mit der Möglichkeit zu deren Entfaltung, mit seinem Sehnen nach Glück. Im Betrieb und in der eidgenössischen Gemeinschaft finden Arbeitgeber und Arbeitnehmer Partner, die ihnen jene Lasten mittragen helfen, für welche die eigene Kraft nicht ausreicht. Keiner genügt sich selbst, alle brauchen den Mitmenschen. Ihr Jubiläum ist Anlass zur Freude und zum Nachdenken über <persName ref="#zbz-p.1251">Mensch</persName> und Maschine, <persName ref="#zbz-p.1251">Mensch</persName> und Technik. Es liegt an uns und an denen, die nach uns kommen, Maschine und Technik sinnvoll zu gebrauchen, sie in den Dienst des Menschen, ja der Menschheit zu stellen. Dazu wünsche ich Ihnen an diesem bedeutsamen Geburtstag Glück und Erfolg.
+        </p>
+        <p facs="#facs_2_r_4">
+          La technique est un moyen, non une fin
+        </p>
+        <p facs="#facs_2_r_5">
+          par <persName ref="#zbz-p.2">Jeanne Hersch</persName>, professeur, <placeName ref="#zbz-l.5">Genève</placeName>
+        </p>
+        <p facs="#facs_2_r_6">
+          La division du travail, la répartition des tâches a été poussée très loin, de nos jours. La plupart des hommes vraiment compétents dans telle ou telle fonction se trouvent accaparés par leurs tâches quotidiennes, ils subissent constamment la pression des circonstances, des urgences, des impératifs du moment. Ils doivent sans cesse faire face aux transformations rapides qui se produisent dans les domaines où ils travaillent. Dès lors l’urgent passe presque toujours avant l’essentiel. L’urgent ne permet pas d’attendre, il comporte toujours des délais précis, alors que pour l’essentiel il semble qu’on ait l’éternité devant soi.
+        </p>
+        <p facs="#facs_2_r_7">
+          Je suppose que c’est à cause de cette situation générale qu’on demande de temps en temps à quelqu’un de parler de choses qu’il ne connaît pas à des gens qui les connaissent, en espérant que, trop ignorant des urgences, il parlera de l’essentiel. C’est ce qui m’arrive aujourd’hui.
+        </p>
+        <p>
+          Il n’est pas certain que l’incompétence donne qualité pour parler de l’essentiel. Mais enfin, puisqu’on m’a demandé de traiter du problème essentiel de la place et du rôle de la technique dans notre condition d’homme, et puisque ce problème me tient très sérieusement et très constamment à cœur, je vais faire de mon mieux pour y réfléchir devant vous.
+        </p>
+        <p>
+          Je n’espère pas vous donner de nouvelles idées, ni réussir à tirer des conclusions claires. Peut-être même vais-je embrouiller les idées claires que vous avez déjà. Il faut sans doute que certaines données qui paraissent de tout temps évidentes, aller de soi, s’embrouillent jusqu’à un certain point pour que l’esprit s’ouvre à l’actualité, à la manière
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          nouvelle dont les problèmes nous assaillent et nous pressent, aux réflexions neuves qu'appelle leur solution.
+        </p>
+        <p facs="#facs_3_r_2">
+          Bien que je ne connaisse pas grand-chose à la technique, j'ai beaucoup réfléchi à sa nature, et plus j'y réfléchis, plus elle m'apparaît comme étant une réalité complexe, et même, parfois, contradictoire.
+        </p>
+        <p facs="#facs_3_r_3">
+          La technique est faite de moyens. Qu'est-ce qu'un moyen? Trouver le moyen de réaliser quelque chose, c'est utiliser le déterminisme physique et chimique de la nature pour l'orienter vers un but, pour le subordonner à une fin qu'on se propose d'atteindre. Au lieu de réaliser quelque chose uniquement avec ses mains, ses pieds, son corps, sa force physique à soi, on utilise le déterminisme physique ou chimique en vue d'une fin que ce déterminisme n'impliquait nullement, et qu'en tant qu'êtres humains nous lui imposons.
+        </p>
+        <p facs="#facs_3_r_4">
+          Ainsi, l'essence de la technique peut être résumée de la manière suivante: un déterminisme naturel asservi à une finalité humaine, choisie, voulue par des hommes. <bibl ref="#zbz-w.603">Le problème</bibl> qu'elle implique, c'est le problème humain, le problème de notre liberté, dans ce ménage de plus en plus complexe que nous entretenons tous les jours, sous mille formes, avec la technique, un ménage où s'emmêlent notre liberté et le déterminisme de la réalité à laquelle nous avons affaire.
+        </p>
+        <p facs="#facs_3_r_5">
+          Or, à ce qu'il me semble, parmi les gens qui ont acquis des compétences, même très poussées, dans tel ou tel domaine de la technique, peu s'interrogent sur la nature réelle de cette technique, de son progrès, des inventions qu'on peut y faire. Le résultat, c'est que cette technique, omniprésente dans notre vie et dans notre monde, se trouve être, encore moins que les sciences de la nature, intellectuellement et culturellement «digérée» par nos contemporains. Elle reste, leur semble-t-il, extérieure à la culture, rejetée exclusivement dans l'ordre matériel et mécanique, où il s'agit de satisfaire des besoins exclusivement matériels; et tous ceux qui travaillent à la développer et à en développer les conquêtes passent alors pour de purs «matérialistes», entraînant la civilisation dans une voie sans issue où les hommes vont perdre leur humanité.
+        </p>
+        <p facs="#facs_3_r_6">
+          Une telle manière de penser et de sentir, et donc d'écrire et d'exprimer, est actuellement répandue partout, parmi toute la gent «créatrice», intellectuelle, artistique, enseignante, informatrice, de notre <placeName ref="#zbz-l.27">Occident</placeName>. Les slogans surabondent et se répètent, ils chantent la nocivité et la non-valeur des sciences, et surtout des techniques.
+        </p>
+        <p>
+          Si ce discrédit a pu se vulgariser à tel point, c'est que les savants et les ingénieurs, fascinés et obnubilés par la richesse et les potentialités des sciences et des techniques, n'ont guère cherché à en comprendre – et à en faire comprendre – le devenir, l'histoire, le sens, c'est-à-dire tout ce qui, dans l'aventure de l'esprit scientifique et inventif, est proprement humain. Le succès même occultait en quelque sorte le sens et la finalité.
+        </p>
+        <p>
+          Nous l'avons vu dès le début de ce texte: la technique est quelque chose d'extrêmement complexe puisqu'elle est faite de liberté et de déterminisme, et de l'échange entre les deux. Mais les choses se sont encore compliquées du fait que la société industrielle (technologique) est devenue à son tour, objectivement, et presque indépendamment des volontés humaines dont elle vit, «une seconde nature».
+        </p>
+        <p>
+          J'entends ces mots littéralement: il y a la nature physico-chimique, et puis il y a une sorte de «nature industrielle». Il existe une réalité objective du monde industriel, à laquelle vous avez affaire, dont vous subissez les accélérations et les ralentendos, les contraintes, les chutes, les transformations, etc. Vous êtes obligés d'en tenir compte, tout comme l'agriculteur subit les contraintes du vent, de la pluie et des températures. La société industrielle s'impose, consistante, conséquente, et les économistes, avec beaucoup de raison, essaient de l'étudier comme le physicien étudie la nature – mais, il est vrai, avec moins de succès.
+        </p>
+        <p>
+          Nous voyons donc s'instaurer, à un deuxième niveau, une relation complexe entre le déterminisme de cette seconde nature et la liberté individuelle ou collective des hommes. Ce deuxième déterminisme n'abolit pas le premier, il s'y ajoute. Il devient dès lors difficile de parler simplement, avec bonne conscience, de «libre entreprise», de «libre concurrence», etc., parce que cette liberté est tout engoncée dans les déterminismes objectifs de la réalité industrielle,
+        </p>
+        <p>
+          24<lb facs="#facs_3_l_11_1" n="N001" />25
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          26
+        </p>
+        <p facs="#facs_4_r_2">
+          déterminismes que l'on s'efforce de comprendre à leur tour (comme ceux de la nature physique) pour s'en rendre maître. Mais comme je l'ai dit, les économistes, jusqu'à présent, réussissent moins bien que les physiciens, — preuve en soi que lorsque la grave récession où nous sommes brusquement entrés a commencé, presque personne, à ce que je sais, ne l'avait annoncée, malgré toutes les chaires d'économie de nos universités. Il est d'ailleurs normal qu'une jeune science comme celle-ci, aux prises avec une réalité encore bien plus complexe que la nature physique, éprouve des difficultés.
+        </p>
+        <p facs="#facs_4_r_3">
+          C'est sur ce fond de confusion inextricable, sur deux niveaux, entre liberté et déterminisme, qu'il convient de comprendre le titre de mon exposé : « La technique n'est pas une fin, mais un moyen. »
+        </p>
+        <p facs="#facs_4_r_4">
+          Si l'on veut jeter l'anathème sur la technique, il faut le jeter sur l'homme tout entier. En effet, dès que l'homme agit, il y a de la technique dans son action. La technique est inséparable de l'action humaine. Pas de technique sans action, pas d'action sans technique. L'homme est toujours — quelle que soit sa situation et l'époque où il vit — insatisfait, d'une certaine manière, de ce qui l'entoure. Il est contraire à la nature humaine de dire : « Eh bien, maintenant c'est parfait. Je m'assieds, je me couche, ça y est. » L'être humain est fondamentalement un être insatisfait face au monde tel qu'il est. Il entreprend donc de le changer. Le ressort de l'action humaine, c'est le manque. Il y a un homme, et il lui manque quelque chose. Ce quelque chose, il le cherche. Il veut que ce dont il dispose soit différent, et il cherche les moyens de le changer. Le premier feu qui a été allumé, la première roue qu'on a fait tourner, le premier silex qui a été lancé, c'étaient déjà des moyens techniques.
+        </p>
+        <p facs="#facs_4_r_5">
+          Pourquoi cette technique ? L'homme, par nature insatisfait, est aussi un animal lent, qui ne peut que difficilement fuir devant ce qui le menace ou courir assez vite vers ce qu'il désire : quelque autre animal arrivera avant lui. C'est aussi un animal désarmé : il n'a ni griffes, ni crocs, ni serres, ni venin. C'est un animal au plus haut point vulnérable : aucune cuirasse, aucune protection. Vivre et survivre a été pour lui d'emblée un défi fantastique. Pour vivre et survivre il a dû d'emblée recourir à des techniques.
+        </p>
+        <p facs="#facs_4_r_6">
+          27
+        </p>
+        <p facs="#facs_4_r_7">
+          Mais il faut ajouter à cela que vivre et survivre, pour un être humain, ce n'est pas seulement rester vivant. C'est pouvoir vivre en homme, vivre une vie digne d'un homme. Le contenu de cette expression a varié selon les époques, les lieux, les groupes. Mais il y a toujours eu des conditions. Si celles-ci ne sont pas remplies, l'homme a dit : « Ce n'est pas une vie, plutôt mourir. » Cela, l'homme est probablement dans l'univers à peu près le seul à le dire.
+        </p>
+        <p facs="#facs_4_r_8">
+          Il faut donc reconnaître, sous peine d'irréalité, à la fois que l'homme est asservi à la nature et qu'il s'oppose à elle — qu'il lui faut utiliser la nature en pliant le déterminisme à ses fins propres —, sous peine de mort, ou du moins sous peine de non-vie proprement humaine.
+        </p>
+        <p facs="#facs_4_r_9">
+          Telle est, je crois, la racine vive de la technique, et je trouve que cela devrait être enseigné et montré à tous les niveaux de l'école. Les tout petits enfants peuvent comprendre pourquoi les hommes ont eu recours à la technique, afin qu'elle n'apparaisse pas à la fin comme quelque chose d'adventice et d'artificiel, plaqué comme un plafond inerte, mort, écrasant, sur notre civilisation tout entière. Il nous faut retrouver le cheminement vivant qui va des origines à notre monde industriel actuel, afin que la technique retrouve son sens vivant au service des hommes d'aujourd'hui. Il s'est produit comme une hémorragie de sens, qui risque d'être mortelle pour notre civilisation et notre culture tout entières.
+        </p>
+        <p>
+          Vous tous, qui avez tant de tâches pressantes dont je n'ai aucune idée, vous avez sans doute très peu de temps pour penser à cette nécessité. Pourtant, lorsqu'il s'agit de comprendre la réalité d'aujourd'hui, rien ne peut remplacer l'expérience de ceux qui la font ce qu'elle est. Une osmose est indispensable entre eux et ceux qui parlent, s'expriment, forment les enfants et les jeunes. Or il y a, dans le monde de l'industrie considéré dans son ensemble, une certaine indifférence à l'égard des problèmes d'éducation et de culture, à l'égard de ce qui se dit, s'écrit, se manifeste, dans les media, les journaux, les livres, les programmes scolaires. Cette indifférence s'explique, mais ses conséquences sont graves.
+        </p>
+        <p>
+          Il risque de se produire un schisme entraînant dans la culture une perte de sens du réel, une incompréhension arrogante de la nature et de la réalité de la technique, entre
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          28
+        </p>
+        <p facs="#facs_5_r_2">
+          déterminisme et liberté. De l'autre côté, parmi ceux qui contribuent au développement de la technique, on en vient à porter bien haut le drapeau de la liberté, sans se soucier des moyens de la faire vivre, de l'exprimer, de la nourrir et d'en transmettre le sens.
+        </p>
+        <p facs="#facs_5_r_3">
+          Il y a là quelque chose de tout-à-fait fondamental. L'homme ne change rien au déterminisme, mais le connaissant, il le plie à ses fins. Et quelles sont ces fins? Il s'agit de réduire les servitudes de l'homme à l'égard du déterminisme. Nous découvrons ici une ruse essentielle de l'humanité, qui se sert du déterminisme de la nature pour réduire son propre asservissement à ce déterminisme en gagnant du temps. «Du temps», c'est quelque chose de capital. S'imagine-t-on ce que cela peut signifier pour des hommes, d'avoir plus de temps? On disait naguère: «Time is money» — le temps, c'est de l'argent. Mais la vérité, c'est que pour l'être humain, l'argent, c'est en tout premier lieu du temps, du temps pour vivre en homme, pour vivre comme on choisit de vivre, selon sa propre liberté.
+        </p>
+        <p facs="#facs_5_r_4">
+          Quand je dis que la technique n'est pas une fin, mais un moyen, je dis qu'elle est — ou qu'elle devrait être — un moyen d'augmenter progressivement la liberté des hommes en leur ouvrant toujours plus de possibilités. Il faut aussi nourrir leur liberté; sinon ils n'auront qu'un temps vide qui leur donne le vertige, et que la seule technique remplira de ses produits.
+        </p>
+        <p facs="#facs_5_r_5">
+          On le voit: la technique ne saurait créer des hommes libres, mais elle permet de créer les conditions favorables au «devenir libre» des hommes. C'est ce qui fait d'elle, non une fin, mais le plus précieux des moyens.
+        </p>
+        <p>
+          Le cycle de la technique entre déterminisme et liberté est à mon avis un cycle béni — mais seulement dans la mesure où la finalité de la technique est extra-technique. Il ne s'agit nullement, on l'aura compris, de séparer radicalement technique d'un côté, liberté et culture de l'autre, mais au contraire, de reconnaître qu'elles sont interconnectées ou devraient l'être, et que la technique augmente les chances de la liberté et de la culture, ou du moins devrait les augmenter. Il y a là tout un champ de réflexion que je n'ai pas le temps de développer devant vous, mais qui est aujourd'hui de première nécessité, si nous ne voulons pas que l'année prochaine ressemble à «<bibl ref="#zbz-w.327">1984</bibl>» selon <persName ref="#zbz-p.761">Orwell</persName>.
+        </p>
+        <p>
+          C'est exactement ce qui nous menace, par delà la crise actuelle, et certes la crise ne rend pas la réflexion à ce sujet plus facile.
+        </p>
+        <p>
+          La nouvelle technologie, l'informatique, la robotique, etc., posent des problèmes extrêmement graves de formation, mais c'est loin d'être tout. Même si on réussit à éduquer sur mesure des hommes capables d'accomplir parfaitement le travail exigé par les techniques de demain, des hommes qui ne travailleraient que peu d'heures et se gaveraient de télévision le reste du temps, même si on arrive à réaliser ainsi une étable modèle, sans problème, sans révolution et sans attentat, je crois qu'on se trouvera bientôt dans une situation catastrophique. C'est que l'être humain ne peut pas vivre sans que sa vie ait un sens. Or ce sens n'est jamais donné par la technique. C'est la technique qui attend toujours que la liberté des hommes lui donne un sens. Les plus grands succès techniques, fussent ceux qui semblent aujourd'hui les plus difficiles à atteindre, n'apporteraient pas le salut.
+        </p>
+        <p>
+          Il y faut une espèce de conversion, qui ne serait pas une conversion individuelle, qui devrait être en quelque sorte celle de la pensée sociale industrielle, par laquelle toute la technologie contemporaine se subordonnerait à son sens pour l'homme.
+        </p>
+        <p>
+          La liberté, le sens, sont la raison d'être et la justification de la technique, en même temps que la condition d'une vie vraiment humaine. Or nous vivons dans un monde technique devenu pour nous à peu près illisible. On n'enseigne pas aux enfants à lire, dans les produits techniques qui les entourent, les intentions, les peines, l'effort des hommes, les sacrifices acceptés, la raison d'être et l'espérance investies. On a perdu le sens humain de la technique.
+        </p>
+        <p>
+          On ne peut plus, j'en suis sûre, compter simplement sur une régulation quasi divine du devenir technologique par les lois du marché et de la libre concurrence. On ne peut plus considérer le succès ou l'échec dans l'affrontement de la concurrence comme constituant une sorte de Jugement de Dieu. Il est devenu indispensable d'inventer et de mettre en place des mécanismes collectifs d'autorégulation, corri
+        </p>
+        <p>
+          29
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          geant, face à certains problèmes devenus cruciaux, les mécanismes de la concurrence et du marché, afin de subordonner l'évolution technologique aux finalités essentielles des hommes.
+        </p>
+        <p facs="#facs_6_r_2">
+          Certaines idées qui, jusqu'à présent, ne jouaient presque aucun rôle, deviennent très importantes aujourd'hui – par exemple l'idée de limite. La libre concurrence s'ouvrait sur l'infini. Il semblait qu'on allait faire toujours tout ce qu'on serait capable de faire : diversifier, améliorer, spécifier, diminuer les prix, augmenter les quantités, intervenir dans tous les processus de la vie. Or il semble aujourd'hui que dans tous les domaines – je ne peux ici que mentionner cela – l'idée de limite, quasi chassée de tous les horizons depuis le XVIe siècle, s'impose désormais à nous. Nous allons affronter une époque où il y aura des choses qu'on pourra faire et qu'il ne faudra pas faire, ou qu'il vaudra mieux ne pas faire.
+        </p>
+        <p facs="#facs_6_r_3">
+          La créativité est à la mode, je ne suis pas sûre que l'esprit de création le soit aussi. Mais il est certain qu'il va falloir inventer, là aussi, des déontologies et des moyens d'autorégulation. Ceux-ci, dans un monde devenu aussi petit, étroit, serré, interdépendant, que le nôtre, ne ressembleront pas aux formules protectionnistes d'autrefois. Ce seront au contraire des formules de solidarité, et d'abord avec ceux qui, comme nous, veulent que la technique soit au service de la liberté.
+        </p>
+        <p facs="#facs_6_r_4">
+          Steckbrief des <orgName ref="#zbz-o.324">VSM</orgName>
+        </p>
+        <p facs="#facs_6_r_5">
+          Der <orgName ref="#zbz-o.324">Verein Schweizerischer Maschinen-Industrieller</orgName> – abgekürzt <orgName ref="#zbz-o.324">VSM</orgName> – ist die wirtschaftlich-technische Dachorganisation der schweizerischen Maschinen- und Metallindustrie. Er zählt an die 500 Mitgliedfirmen, die sich ihm als unabhängige Unternehmen zur Bearbeitung gemeinsamer Probleme und zur Vertretung gemeinsamer Interessen angeschlossen haben. In den Statuten wird die Förderung und Wahrung der Interessen dieses Industriezweiges als Zweck des Vereins in den Vordergrund gestellt. Besonderer Nachdruck wird dabei auf die Wirtschaftspolitik und die Technik gelegt.
+        </p>
+        <p facs="#facs_6_r_6">
+          Seit seiner Gründung im Jahr 1883 ist der <orgName ref="#zbz-o.324">VSM</orgName> bestrebt, die Anliegen der verschiedenen Zweige dieser vielgestaltigen Branche zu koordinieren, so vorab in Fragen der Wirtschafts- und der Handelspolitik, des Messe- und Ausstellungswesens, des Vertragsrechts oder anderer juristischer Fragen. Ferner betreut er die Normung in diesen Fachbereichen auf nationaler und internationaler Ebene. Aufgrund der ausgeprägten Exportabhängigkeit seiner Mitgliedfirmen kommt der Bearbeitung von Exportproblemen in der Tätigkeit des <orgName ref="#zbz-o.324">VSM</orgName> besondere Bedeutung zu.
+        </p>
+        <p facs="#facs_6_r_7">
+          Die Mitgliedfirmen des <orgName ref="#zbz-o.324">VSM</orgName> beschäftigen rund 210 000 Mitarbeiter; das sind fast zwei Drittel aller Arbeitnehmer der schweizerischen Maschinen- und Metallindustrie. Der <orgName ref="#zbz-o.324">VSM</orgName> ist damit eine der grössten Industrieorganisationen des Landes und für die ganze Branche repräsentativ. Ein weiteres Charakteristikum ist die breit abgestützte Milizorganisation: Im Vorstand, in 11 Fachgruppen, 8 Gruppierungen und 8 Fachkommissionen finden sich über 600 Per
+        </p>
+      </div>
+      </body></text>
+</TEI>

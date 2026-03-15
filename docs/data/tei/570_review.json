@@ -1,0 +1,45 @@
+{
+  "doc_id": "570",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1],
+      "notes": "Seite 1 e-periodica Metadatenseite (Studia philosophica, 1961). Seiten 2-3 Buchbesprechungen."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Text sauber und praezise, inkl. franzoesischer Zitate und philosophischer Fachbegriffe."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Region-Typen korrekt. Trennung zwischen Brunner- und Hersch-Rezension korrekt."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": ["W6: Keine <lb/> Elemente im body (3 Seiten)"],
+      "notes": "VALID. W6 erwartbar. div type=review korrekt."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 21,
+        "orgName": 1,
+        "placeName": 5,
+        "bibl": 11
+      },
+      "notes": "Reiche Entity-Verteilung passend fuer Buchbesprechungen. Philosophennamen und Werktitel korrekt referenziert."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Buchbesprechungen: Brunner ueber Moreau, Hersch ueber Leyvraz, Beginn Semerari. Franzoesisch durchgehend. Text vollstaendig."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Sauberes Dokument mit Buchbesprechungen aus Studia philosophica (1961). Hersch-Beitrag klar identifiziert und vollstaendig."
+}

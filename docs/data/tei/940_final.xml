@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">gymnasium helveticum</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">940</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>gymnasium helveticum</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1972</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-claude" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 0 Warnings; 1 Fussnote (S.5); Entities: 17p 18o 32l 9w = 76 (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_1_r_1" ulx="399" uly="330" lrx="1001" lry="496" />
+      <zone xml:id="facs_1_r_2" ulx="391" uly="975" lrx="507" lry="1017" />
+      <zone xml:id="facs_1_r_3" ulx="146" uly="1186" lrx="952" lry="1224" />
+      <zone xml:id="facs_1_r_4" ulx="128" uly="1280" lrx="966" lry="1365" />
+      <zone xml:id="facs_1_r_5" ulx="129" uly="1421" lrx="745" lry="1456" />
+      <zone xml:id="facs_1_r_6" ulx="29" uly="1510" lrx="817" lry="1549" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_2_r_1" ulx="239" uly="325" lrx="376" lry="359" />
+      <zone xml:id="facs_2_r_2" ulx="235" uly="357" lrx="953" lry="465" />
+      <zone xml:id="facs_2_r_3" ulx="237" uly="494" lrx="929" lry="534" />
+      <zone xml:id="facs_2_r_4" ulx="235" uly="725" lrx="707" lry="807" />
+      <zone xml:id="facs_2_r_5" ulx="235" uly="844" lrx="1080" lry="1018" />
+      <zone xml:id="facs_2_r_6" ulx="238" uly="1050" lrx="520" lry="1081" />
+      <zone xml:id="facs_2_r_7" ulx="237" uly="1077" lrx="986" lry="1115" />
+      <zone xml:id="facs_2_r_8" ulx="236" uly="1107" lrx="365" lry="1132" />
+      <zone xml:id="facs_2_r_9" ulx="827" uly="1111" lrx="974" lry="1142" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_3_r_1" ulx="78" uly="327" lrx="285" lry="358" />
+      <zone xml:id="facs_3_r_2" ulx="17" uly="369" lrx="512" lry="393" />
+      <zone xml:id="facs_3_r_3" ulx="78" uly="450" lrx="324" lry="479" />
+      <zone xml:id="facs_3_r_4" ulx="19" uly="492" lrx="766" lry="518" />
+      <zone xml:id="facs_3_r_5" ulx="78" uly="571" lrx="266" lry="600" />
+      <zone xml:id="facs_3_r_6" ulx="19" uly="612" lrx="347" lry="639" />
+      <zone xml:id="facs_3_r_7" ulx="78" uly="695" lrx="356" lry="724" />
+      <zone xml:id="facs_3_r_8" ulx="19" uly="734" lrx="416" lry="763" />
+      <zone xml:id="facs_3_r_9" ulx="90" uly="852" lrx="495" lry="883" />
+      <zone xml:id="facs_3_r_10" ulx="19" uly="913" lrx="715" lry="939" />
+      <zone xml:id="facs_3_r_11" ulx="18" uly="956" lrx="828" lry="983" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_4_r_1" ulx="12" uly="351" lrx="283" lry="390" />
+      <zone xml:id="facs_4_r_2" ulx="13" uly="394" lrx="933" lry="454" />
+      <zone xml:id="facs_4_r_3" ulx="11" uly="454" lrx="935" lry="577" />
+      <zone xml:id="facs_4_r_4" ulx="11" uly="578" lrx="326" lry="614" />
+      <zone xml:id="facs_4_r_5" ulx="11" uly="651" lrx="198" lry="692" />
+      <zone xml:id="facs_4_r_6" ulx="11" uly="694" lrx="934" lry="807" />
+      <zone xml:id="facs_4_r_7" ulx="9" uly="814" lrx="935" lry="903" />
+      <zone xml:id="facs_4_r_8" ulx="13" uly="904" lrx="328" lry="948" />
+      <zone xml:id="facs_4_r_9" ulx="11" uly="987" lrx="206" lry="1018" />
+      <zone xml:id="facs_4_r_10" ulx="8" uly="1052" lrx="922" lry="1116" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_5_r_1" ulx="25" uly="21" lrx="478" lry="99" />
+      <zone xml:id="facs_5_r_2" ulx="29" uly="111" lrx="234" lry="146" />
+      <zone xml:id="facs_5_r_3" ulx="31" uly="330" lrx="978" lry="514" />
+      <zone xml:id="facs_5_r_4" ulx="31" uly="550" lrx="980" lry="760" />
+      <zone xml:id="facs_5_r_5" ulx="35" uly="771" lrx="982" lry="1119" />
+      <zone xml:id="facs_5_r_6" ulx="37" uly="1141" lrx="988" lry="1498" />
+      <zone xml:id="facs_5_r_7" ulx="62" uly="1525" lrx="988" lry="1614" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_6_r_1" ulx="200" uly="327" lrx="1156" lry="644" />
+      <zone xml:id="facs_6_r_2" ulx="204" uly="644" lrx="1154" lry="881" />
+      <zone xml:id="facs_6_r_3" ulx="202" uly="915" lrx="1154" lry="1222" />
+      <zone xml:id="facs_6_r_4" ulx="204" uly="1256" lrx="1157" lry="1469" />
+      <zone xml:id="facs_6_r_5" ulx="200" uly="1501" lrx="1154" lry="1615" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_7_r_1" ulx="29" uly="337" lrx="971" lry="448" />
+      <zone xml:id="facs_7_r_2" ulx="29" uly="436" lrx="975" lry="758" />
+      <zone xml:id="facs_7_r_3" ulx="32" uly="771" lrx="985" lry="1550" />
+      <zone xml:id="facs_7_r_4" ulx="38" uly="1540" lrx="986" lry="1621" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_8_r_1" ulx="211" uly="332" lrx="1163" lry="440" />
+      <zone xml:id="facs_8_r_2" ulx="206" uly="465" lrx="1163" lry="784" />
+      <zone xml:id="facs_8_r_3" ulx="206" uly="777" lrx="1163" lry="1064" />
+      <zone xml:id="facs_8_r_4" ulx="204" uly="1085" lrx="1159" lry="1443" />
+      <zone xml:id="facs_8_r_5" ulx="203" uly="1431" lrx="1159" lry="1605" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1169" lry="1705">
+      <zone xml:id="facs_9_r_1" ulx="38" uly="324" lrx="991" lry="749" />
+      <zone xml:id="facs_9_r_2" ulx="42" uly="769" lrx="992" lry="990" />
+      <zone xml:id="facs_9_r_3" ulx="43" uly="972" lrx="996" lry="1194" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          1165
+        </head>
+        <p facs="#facs_1_r_2">
+          <bibl ref="#zbz-w.741">gymnasium helveticum</bibl>
+        </p>
+        <p facs="#facs_1_r_3">
+          6/1972
+        </p>
+        <p facs="#facs_1_r_4">
+          <persName ref="#zbz-p.1924">Otto Woodtli</persName> Lehren und Lernen am Gymnasium
+        </p>
+        <p facs="#facs_1_r_5">
+          G. Priesemann Die Fachsprachen des Unterrichts – ein Kontextproblem
+        </p>
+        <p facs="#facs_1_r_6">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Le pluralisme culturel
+        </p>
+        <p>
+          <persName ref="#zbz-p.160">Jacques</persName>-A.Tschoumy Le <placeName ref="#zbz-l.117">Jura</placeName> et l’Ecole romande
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Herausgeber:<lb facs="#facs_2_l_1_1" n="N001" /><orgName ref="#zbz-o.67">Verein Schweizerischer Gymnasiallehrer</orgName><lb facs="#facs_2_l_1_2" n="N002" /><orgName ref="#zbz-o.674">Société suisse des professeurs de l'enseignement secondaire</orgName><lb facs="#facs_2_l_1_3" n="N003" /><orgName ref="#zbz-o.675">Società svizzera degli insegnanti delle scuole secondarie</orgName>
+        </p>
+        <p facs="#facs_2_r_2">
+          Präsident: <persName ref="#zbz-p.1918">François Hublard</persName>, Oberwilerstraße 40, 4103 <placeName ref="#zbz-l.639">Bottmingen</placeName><lb facs="#facs_2_l_2_1" n="N001" /><orgName ref="#zbz-o.737">Gymnasium am Kohlenberg</orgName>, 4000 <placeName ref="#zbz-l.9">Basel</placeName>, 061 23 98 32
+        </p>
+        <p facs="#facs_2_r_3">
+          Zeitschrift für die schweizerische Mittelschule<lb facs="#facs_2_l_3_1" n="N001" />Revue de l'enseignement secondaire suisse<lb facs="#facs_2_l_3_2" n="N002" />Rivista della scuola secondaria svizzera
+        </p>
+        <p facs="#facs_2_r_4">
+          Redaktion: Verantwortlicher Redaktor und Redaktor für die deutsche <placeName ref="#zbz-l.10">Schweiz</placeName>:<lb facs="#facs_2_l_4_1" n="N001" />Dr. <persName ref="#zbz-p.1919">Max Huldi</persName>, Baselstraße 114, 4144 <placeName ref="#zbz-l.640">Arlesheim</placeName>, 061 46 58 33<lb facs="#facs_2_l_4_2" n="N002" />Rédacteur pour la <placeName ref="#zbz-l.157">Suisse romande</placeName>: <persName ref="#zbz-p.1920">Christophe Baroni</persName>, 5, Maupertius, 1260 <placeName ref="#zbz-l.641">Nyon</placeName>, tél. 022 61 24 82<lb facs="#facs_2_l_4_3" n="N003" />Die Besprechung unverlangt eingesandter Schriften bleibt vorbehalten<lb facs="#facs_2_l_4_4" n="N004" />Le compte rendu des livres non demandés est réservé
+        </p>
+        <p facs="#facs_2_r_5">
+          Anzeigenverwaltung/Annonces:<lb facs="#facs_2_l_5_1" n="N001" />Dr. <persName ref="#zbz-p.1921">H. Dütsch</persName>, Bahnhofstraße 37, Postfach 880, 8022 <placeName ref="#zbz-l.45">Zürich</placeName>, 01 23 83 83<lb facs="#facs_2_l_5_2" n="N002" />Preise/Prix:<lb facs="#facs_2_l_5_3" n="N003" />Reklamen im Textteil/Réclames vis-à-vis texte<lb facs="#facs_2_l_5_4" n="N004" />Inseratenteil am Schluß des Heftes/Partie publicitaire<lb facs="#facs_2_l_5_5" n="N005" />à la fin du fascicule
+        </p>
+        <p facs="#facs_2_r_6">
+          1/1 Seite/page<lb facs="#facs_2_l_6_1" n="N001" />Fr. 300.-<lb facs="#facs_2_l_6_2" n="N002" />Fr. 275.-<lb facs="#facs_2_l_6_3" n="N003" />1/2 Seite/page<lb facs="#facs_2_l_6_4" n="N004" />Fr. 180.-<lb facs="#facs_2_l_6_5" n="N005" />Fr. 165.-
+        </p>
+        <p facs="#facs_2_r_7">
+          Verlag, Herstellung, Auslieferung/Edité et imprimé chez <orgName ref="#zbz-o.163">Sauerländer AG</orgName>, CH-5001 <placeName ref="#zbz-l.76">Aarau</placeName>, Tel. 064 22 12 64, Postscheck 50-308
+        </p>
+        <p facs="#facs_2_r_8">
+          Erscheint alle zwei Monate/Paraît tous les deux mois<lb facs="#facs_2_l_8_1" n="N001" />Bezugspreis für die Einzelnummer/Prix par numéro: Fr. 5.-<lb facs="#facs_2_l_8_2" n="N002" />Redaktionsschluß/Dernier délai d'envoi des manuscrits:<lb facs="#facs_2_l_8_3" n="N003" />20.11./10.1./10.3./1.5./1.7./10.9.
+        </p>
+        <p facs="#facs_2_r_9">
+          Nachdruck nur mit Genehmigung der Redaktoren gestattet – Die Autoren zeichnen für ihre Artikel selbst verantwortlich<lb facs="#facs_2_l_9_1" n="N001" />Tous droits réservés – Les articles n’engagent que la responsabilité des auteurs
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Band 26<lb facs="#facs_3_l_1_1" n="N001" />Nr. 6<lb facs="#facs_3_l_1_2" n="N002" />17. Oktober 1972<lb facs="#facs_3_l_1_3" n="N003" /><bibl ref="#zbz-w.741">gymnasium helveticum</bibl>
+        </p>
+        <p facs="#facs_3_r_2">
+          <persName ref="#zbz-p.1924">Otto Woodtli</persName>
+        </p>
+        <p facs="#facs_3_r_3">
+          526 Lehren und Lernen am Gymnasium
+        </p>
+        <p facs="#facs_3_r_4">
+          <persName ref="#zbz-p.1923">Gerhard Priesemann</persName>
+        </p>
+        <p facs="#facs_3_r_5">
+          545 Die Fachsprachen des Unterrichts – ein Kontextproblem
+        </p>
+        <p facs="#facs_3_r_6">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_7">
+          567 Le pluralisme culturel
+        </p>
+        <p facs="#facs_3_r_8">
+          <persName ref="#zbz-p.1922">Jacques-A. Tschoumy</persName>
+        </p>
+        <p facs="#facs_3_r_9">
+          572 Le <placeName ref="#zbz-l.117">Jura</placeName> et l’Ecole romande
+        </p>
+        <p facs="#facs_3_r_10">
+          Informationen / Tour d’horizon
+        </p>
+        <p facs="#facs_3_r_11">
+          581 <orgName ref="#zbz-o.760">Schweizer</orgName> Schulfragen / Problèmes de l’école suisse<lb facs="#facs_3_l_11_1" n="N001" />585 <orgName ref="#zbz-o.753">Internationale</orgName> Organisationen / Organisations internationales<lb facs="#facs_3_l_11_2" n="N002" />587 Universitäten / Universités<lb facs="#facs_3_l_11_3" n="N003" />591 Schulreformen / Réformes scolaires<lb facs="#facs_3_l_11_4" n="N004" />597 Stelleninserate / Places vacantes
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Unsere Autoren
+        </p>
+        <p facs="#facs_4_r_2">
+          <persName ref="#zbz-p.1923">GERHARD PRIESEMANN</persName>
+        </p>
+        <p facs="#facs_4_r_3">
+          * 1925. Dr.phil. 1951–1967 Gymnasiallehrer, 1967–1971 Professor für Pädagogik an der Technischen <orgName ref="#zbz-o.518">Universität Berlin</orgName>, seit 1972 Professor für Pädagogik an der <orgName ref="#zbz-o.627">Universität Kiel</orgName><lb facs="#facs_4_l_3_1" n="N001" />Wichtigste Veröffentlichungen: Grundfragen und Grundlagen des altsprachlichen Unterrichts, <placeName ref="#zbz-l.20">Göttingen</placeName> 1962; Die höhere Schule, von innen gesehen, <placeName ref="#zbz-l.20">Göttingen</placeName> 1964; Beiträge zur Sprachlehre, <placeName ref="#zbz-l.46">Stuttgart</placeName> 1967; Zur Theorie der Unterrichtssprache = Sprache und Lernen, Band 11, <placeName ref="#zbz-l.583">Düsseldorf</placeName> 1971; (Herausgeber), Der Beginn des Schulfernsehens in <placeName ref="#zbz-l.16">Berlin</placeName>, <placeName ref="#zbz-l.22">München</placeName> 1972<lb facs="#facs_4_l_3_2" n="N002" />Dorfstraße 24, D-2302 <placeName ref="#zbz-l.642">Flintbek</placeName>
+        </p>
+        <p facs="#facs_4_r_4">
+          <persName ref="#zbz-p.1924">OTTO WOODTLI</persName>
+        </p>
+        <p facs="#facs_4_r_5">
+          * 1916. Dr.phil. Seit 1965 a.o. Professor für Allgemeine Didaktik des Mittelschulunterrichts und Geschichte des höheren Schulwesens an der <orgName ref="#zbz-o.46">Universität Zürich</orgName>. Ehemaliger Präsident des Vereins Schweizerischer Deutschlehrer (Fachverband des vsg) und Gymnasiallehrer für Deutsch am Lehrerseminar <placeName ref="#zbz-l.643">Küsnacht ZH</placeName><lb facs="#facs_4_l_5_1" n="N001" />Publikationen: Bildung und Zeitgeist, Grundlagen und Probleme der Gymnasialbildung, <placeName ref="#zbz-l.16">Berlin</placeName> 1959; Erziehung zur <bibl ref="#zbz-w.478">Demokratie</bibl>, Der politische Auftrag des höheren Schulwesens der <placeName ref="#zbz-l.10">Schweiz</placeName>, <placeName ref="#zbz-l.405">Erlenbach</placeName> 1961<lb facs="#facs_4_l_5_2" n="N002" />Sägegasse 17, 8702 <placeName ref="#zbz-l.313">Zollikon ZH</placeName>
+        </p>
+        <p facs="#facs_4_r_6">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_4_r_7">
+          * 1910. Docteur ès lettres. Dès 1949 elle enseigne dans la chaire de philosophie de l'<orgName ref="#zbz-o.6">Université de Genève</orgName>. Entre 1966 et 1968 chef de la Division de philosophie à l'<orgName ref="#zbz-o.382">Unesco</orgName> (<placeName ref="#zbz-l.1">Paris</placeName>); depuis 1970 représentante suisse au Conseil exécutif de l'<orgName ref="#zbz-o.382">Unesco</orgName><lb facs="#facs_4_l_7_1" n="N001" />Publications principales: <bibl ref="#zbz-w.742">Illusions philosophiques</bibl>, 1936; <bibl ref="#zbz-w.116">Temps alternés</bibl>, 1943; <bibl ref="#zbz-w.141">L'Etre et la Forme</bibl>, 1946; <bibl ref="#zbz-w.201">Idéologies et Réalités</bibl>, 1956
+        </p>
+        <p facs="#facs_4_r_8">
+          <persName ref="#zbz-p.1922">JACQUES-A. TSCHOUMY</persName>
+        </p>
+        <p facs="#facs_4_r_9">
+          * 1931. Dès 1965 directeur de l'<orgName ref="#zbz-o.676">École normale de Delémont</orgName> et chef de la délégation jurassienne de la <orgName ref="#zbz-o.677">CIRCE</orgName><lb facs="#facs_4_l_9_1" n="N001" />Publication: <bibl ref="#zbz-w.743">École et orientation professionnelle</bibl>, SPJ, 1965<lb facs="#facs_4_l_9_2" n="N002" />2, faubourg des Capucins, 2800 <placeName ref="#zbz-l.442">Delémont</placeName>
+        </p>
+        <p facs="#facs_4_r_10">
+          525
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          567
+        </p>
+        <p facs="#facs_5_r_2">
+          Le pluralisme culturel
+        </p>
+        <p facs="#facs_5_r_3">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_5_r_4">
+          Zusammenfassung: Die <placeName ref="#zbz-l.5">Genfer</placeName> Philosophin sprach in diesem Vortrag (gehalten im Frühling 1972 in <placeName ref="#zbz-l.338">Ottawa</placeName> anlässlich eines Seminars der <orgName ref="#zbz-o.382">Unesco</orgName>) von der Zugehörigkeit zu verschiedenen Kulturgebieten und Sprachregionen. Zwar nennt sie <placeName ref="#zbz-l.269">Kanada</placeName> und <placeName ref="#zbz-l.282">Indien</placeName>, aber ihre Betrachtungen haben wohl auch für die <placeName ref="#zbz-l.10">Schweiz</placeName> besondere Gültigkeit. Wohl macht Mehrsprachigkeit den einzelnen Schwierigkeiten, aber gleichzeitig ist es eine wichtige Chance, sich von der Suprematie der einen Kultur zu lösen¹.
+        </p>
+        <p facs="#facs_5_r_5">
+          Le pluralisme culturel, à l'intérieur d'un pays, s'il est, par sa diversité même, source de richesse et de mobilité inventive, soulève cependant toujours de grandes difficultés. Celles-ci tiennent aussi bien à la nature de la culture qu'à celle de l'être humain. Toute culture comporte des données contradictoires et répond à des besoins contradictoires, de sorte que les problèmes qu'elle pose sont d'une extrême complexité. En voici quelques exemples :
+        </p>
+        <p facs="#facs_5_r_6">
+          - Une culture donnée est faite de tous les liens constitutifs d'une communauté, et c'est à travers elle que les individus se sentent membres d'une unité commune. Mais en même temps, c'est la culture qui fournit aux individus l'air « transnational » qui les rend indépendants de leur communauté, c'est à travers elle qu'ils ont accès à une source vive autonome, irréductible aux conformismes traditionnels. Il importe de comprendre d'emblée que ces deux fonctions unificatrice et affranchissante de la culture ne sont pas, comme il pourrait sembler, juxtaposées, tel secteur culturel remplissant l'une et tel autre l'autre. En réalité, les deux fonctions n'en font qu'une : il s'agit d'un double aspect d'une même réalité.
+        </p>
+        <note place="foot" n="1" xml:id="fn5-1" facs="#facs_5_r_7">
+          L'individu a besoin d'appartenir à une collectivité et il en a le droit. Mais il a aussi, et du même coup, le droit de devenir individuellement lui-même. Et il a encore, et du même coup, droit à l'ouverture sur le vaste monde. Ces exigences entraînent souvent des contradictions très concrètes, notamment dans le domaine linguistique. Songeons par exemple à un pays comme l'<placeName ref="#zbz-l.31">Inde</placeName>, aux très nombreuses langues vernaculaires. Il est certes recommandable d'apprendre à lire dans la langue maternelle, donc vernaculaire. Mais ensuite, pour disposer d'un instrument linguistique au niveau national, l'enfant devra apprendre à parler, lire et écrire une seconde langue — qui ne lui ouvre pas encore le vaste monde. Il lui faudra alors en apprendre une troisième. Il est démocratique de
+        </note>
+        <p>
+          ¹ In der Zeitschrift <bibl ref="#zbz-w.744">Unescopresse</bibl> (Juni 1972) sind breite Teile des vorliegenden Referates in deutscher Übersetzung veröffentlicht. Die Zeitschrift ist gratis erhältlich bei der Nationalen <orgName ref="#zbz-o.382">Unesco</orgName>-Kommission, Eigerstraße 80, 3003 <placeName ref="#zbz-l.6">Bern</placeName>.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          568
+        </p>
+        <p facs="#facs_6_r_2">
+          reconnaître à une minorité le droit de préserver, d'enseigner et de cultiver sa propre langue. Mais comment ne pas voir qu'en respectant ce droit on sacrifie ceux d'un très grand nombre d'individus ? Car combien d'enfants, dans la population pauvre d'un pays en développement, feront des études assez longues pour leur permettre d'acquérir trois langues différentes ? Et combien se trouveront au contraire enfermés définitivement dans les étroites limites de leur groupe minoritaire, ou au mieux, dans celles de leur nation ? Les droits démocratiques du groupe ne sont pas toujours compatibles avec ceux des individus.
+        </p>
+        <p facs="#facs_6_r_3">
+          Sur ce point, le <placeName ref="#zbz-l.269">Canada</placeName> est privilégié : les langues de ses deux plus vastes communautés sont toutes deux des langues de communication universelle. Il semble donc évident que dans ce pays il sera aussi bien dans l'intérêt de la nation que dans celui des personnes que chacun apprenne les deux langues, dans toute la mesure du possible — tout en préservant nettement la prééminence et l'immédiateté de l'une d'elles, car il reste essentiel, je crois, d'avoir une langue maternelle et une seule.
+        </p>
+        <p facs="#facs_6_r_4">
+          Les choses se compliquent encore du fait qu'un individu n'appartient pas seulement à une seule communauté, mais à plusieurs, constituées selon des clivages divers, par exemple : pays, groupe minoritaire, religion, classe sociale, etc. Cette pluralité d'appartenance est bonne pour la liberté et l'indépendance individuelle : elle empêche tout monolithisme statique, elle stimule le sens critique et l'invention de synthèses originales en intériorisant les affrontements. Elle rend en revanche plus difficile la conquête du bonheur. Il me semble d'ailleurs improbable que la stimulation culturelle implique automatiquement un accroissement du bonheur.
+        </p>
+        <p facs="#facs_6_r_5">
+          Du point de vue de l'<orgName ref="#zbz-o.754">État</orgName>, il importe au plus haut point que les clivages des diverses appartenances individuelles ne coïncident pas. Il vaut mieux que les différences linguistiques ne coïncident pas avec des différences religieuses, et que ces deux différences ne coïncident pas avec des différences de classes ou d'occupations. De telles coïncidences sont toujours dangereuses et conduisent presque inévitablement à des conflits.
+        </p>
+        <p>
+          - Une culture comporte nécessairement la conservation et la transmission de certains « biens » : formes, valeurs, œuvres, rites, rythmes de vie, fêtes, usages, langages. Elle constitue une tradition. En même temps, elle affranchit de cer-
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          taines contraintes naturelles, elle offre des choix, elle suscite des mouvements de libération, et c'est à travers elle que s'accomplissent les changements qui ne sont pas l'effet pur des forces brutales.
+        </p>
+        <p facs="#facs_7_r_2">
+          Ces deux aspects sont, ici encore, inséparables. Les théories contemporaines sur «la culture bourgeoise manipulatrice» ne ramènent pas les esprits à quelque état, vide, d'indétermination originelle, mais imposent, et ne peuvent pas ne pas imposer, un endoctrinement politique. Il est vain de rêver à un être humain qui, vierge de culture, aurait dans la vie et l'histoire la légèreté d'un voyageur sans bagage. Cet idéal nihiliste ne saurait fournir aucun motif à la liberté, et donc aucun sens à l'action. Au contraire, l'exercice de la liberté exige le poids des traditions culturelles, en même temps que leur difficile affrontement. Ici le pluralisme culturel a un rôle essentiel à jouer.
+        </p>
+        <p facs="#facs_7_r_3">
+          Il faut reconnaître encore, à l'intérieur de la culture, un pluralisme nécessaire de nature et de fonction. On a coutume de dissocier et même d'opposer la culture en tant qu'activité «désintéressée» (c'est-à-dire ne tendant à aucun avantage matériel et technique) à la culture en tant que processus d'adaptation aux tâches sans cesse changeantes de la civilisation scientifique et technique. Ici aussi, il importe d'éviter aussi bien une dislocation radicale entre les deux fonctions de «désintéressement» (qu'on nommerait mieux, sans doute, «détachement» ou «prise de distance») et d'«adaptation utilitaire», que l'absorption de l'une par l'autre. C'est une chance pour notre temps que les nécessités techniques d'aujourd'hui imposent une formation multiple, étendue, et permettant de nombreux «recyclages». Cette chance contribue dans une large mesure à la démocratisation des études et aux tentatives d'éducation permanente. Le purisme, en voulant toujours éviter les mélanges et imposer un choix entre «culture désintéressée» et «formation utile», tend à en annihiler les effets bien-faisants. En outre, malgré ses prétentions contradictoires, ce purisme ne correspond pas aux réalités du développement culturel. Il se trouve en effet qu'à l'exception des tâches par trop parcellaires et automatiques, acquérir une formation utile, c'est s'engager en même temps dans un processus culturel désintéressé ; et inversement, toute expérience culturelle vécue rend l'homme mieux capable de s'adapter à une tâche utile. Il appartient aux enseignants de tirer parti, dans tous les domaines, de cette précieuse interdépendance en inventant les méthodes capables de lui donner la plus grande fécondité.
+        </p>
+        <p facs="#facs_7_r_4">
+          Il semble bien que nous soyons encore bien trop hantés – parfois à notre insu – par un besoin d'«homogéniser» les cultures et leurs divers aspects. La voie
+        </p>
+        <p>
+          569
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          réelle est sans doute inverse : il s'agit de les épanouir avec toute la pluralité virtuelle qu'elles contiennent – mais à condition, bien sûr, de soutenir l'effort sans fin de communication et de compréhension.
+        </p>
+        <p facs="#facs_8_r_2">
+          Enfin, s'il est vrai que le pluralisme culturel est une richesse, s'il est vrai aussi que les diverses cultures contemporaines appartiennent encore à des âges historiques bien différents, il n'en est pas moins nécessaire que toutes absorbent en elles une même donnée contemporaine à laquelle aucune ne saurait échapper : celle de la civilisation scientifique et technique. A toutes se pose le problème difficile d'intégrer en elles la science et la technique. Il s'agit, par delà les modes d'emploi, les utilisations, les résultats de la science et de la technique, de retrouver l'histoire vécue de leur création, les processus de volonté et de pensée qui en ont permis le déploiement.
+        </p>
+        <p facs="#facs_8_r_3">
+          Du même coup, on saisira leur portée réelle et ses limites, et on s'affranchira progressivement d'une superstition scientifique, aussi obscurantiste et peut-être plus dangereuse qu'aucune superstition des temps passés. On retrouvera aussi le sens de la hiérarchie entre les moyens et les fins. Au lieu de chercher le sens ultime de la vie dans les produits de la technique, ou au contraire de jeter l'anathème sur notre civilisation tout entière, on apprendra à reconnaître leur juste prix aux merveilles qui ne cessent de multiplier notre expérience, sans pourtant réduire la culture à une affaire de confort ou d'hygiène.
+        </p>
+        <p facs="#facs_8_r_4">
+          Reste à payer le prix de la culture, et celui du pluralisme qui la rend plus chère encore. Dans les sociétés développées et riches, il appartient aux hommes de choisir les canaux qui orientent cette richesse. Je parlais tout à l'heure de l'apprentissage des langues. Il devrait devenir normal, pour tout pays développé, de permettre à chaque citoyen l'acquisition au moins d'une langue étrangère de circulation universelle. Un autre exemple : dans les pays où les postes de télévision sont très nombreux, les téléspectateurs devraient être capables de se partager entièrement les frais des programmes, sans consentir à des périodes de publicité. On verrait alors si sont sincères les protestations contre l'asservissement de la culture aux intérêts capitalistes.
+        </p>
+        <p facs="#facs_8_r_5">
+          A propos de pluralisme, il faudrait assurer une protection et des ressources plus grandes aux groupes culturels les plus faibles. Certes, au niveau de la nature ou de l'économie, c'est le plus fort qui l'emporte. Mais culture et politique ont précisément pour tâche de substituer à cette loi une autre loi : celle des choix de la liberté.
+        </p>
+        <p>
+          570
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          Il est de mode aujourd'hui de parler toujours, à propos de culture, de « participation active », et cela avec raison. La culture occidentale, en tous cas, a toujours eu un caractère inventif et contestataire. Le penseur ou l'artiste se hâte d'exprimer la face des choses que la société où il vit a tendance à ignorer. Suivant le conseil de <persName ref="#zbz-p.52">SIMONE WEIL</persName>, il choisit, pour y mettre son œuvre, le plateau de la balance qui se trouve être le plus léger. On n'a pas attendu 1968 pour caricaturer la société bourgeoise — il suffit de penser aux peintres, aux poètes et aux écrivains du 19ᵉ siècle. Mais cette contestation n'a pas à être confondue avec une mobilisation directe, par une pure propagande. La culture n'est pas propagande. C'est pourquoi « la participation active » n'exclut nullement « une réceptivité active », essentielle à la culture, et qui seule permet au pluralisme de devenir la richesse de tous.
+        </p>
+        <p facs="#facs_9_r_2">
+          Il faut savoir que les différences culturelles sont profondes, et il faut y consentir. Elles résident dans des tissus symboliques, mystérieux et puissants, où s'enracine l'identité d'un groupe. Ces tissus sont à la fois des obstacles à la compréhension et à la réceptivité des autres, et des conditions de vraie compréhension et de réceptivité plus profonde, dans la mesure où ils sont respectés.
+        </p>
+        <p facs="#facs_9_r_3">
+          A tous les niveaux on est amené aujourd'hui à établir des « politiques culturelles », des plans pour le développement des cultures et leur compréhension réciproque. Mais ce qui donne leur sens à ces plans se trouve au-delà et ne peut pas être planifié. Ce sont : les valeurs, les réseaux symboliques, et surtout le sens d'une vérité jamais possédée, que les autres, dans leur liberté intangible, cherchent autrement que nous.
+        </p>
+        <p>
+          571
+        </p>
+      </div>
+      </body></text>
+</TEI>

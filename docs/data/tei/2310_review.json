@@ -1,0 +1,49 @@
+{
+  "doc_id": "2310",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "JSTOR-Scan, Overlay zeigt saubere Buchrezension. 2 Seiten."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text sauber erkannt. Akzente korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Korrekte Zonenerkennung. Einspaltig, Fussnote korrekt."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [
+        "W10"
+      ],
+      "notes": "VALID. W10 normal fuer Philosophie. div type=review passend."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 18,
+        "orgName": 0,
+        "placeName": 0,
+        "bibl": 2
+      },
+      "notes": "Jaspers, Hersch, Kierkegaard etc. korrekt mit GND."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerenter philosophischer Diskurs. Zwei Rezensionen."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Saubere Buchrezension. Alle Schichten in Ordnung."
+}

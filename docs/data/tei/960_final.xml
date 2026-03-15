@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">A QUOI BON UNE FACULTE DES LETTRES A LA FIN DU XXE SIECLE ?</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">960</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>A QUOI BON UNE FACULTE DES LETTRES A LA FIN DU XXE SIECLE ?</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1973</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-claude" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 0 Warnings; Entities: 13p 36o 4l 10w = 63; Overlay S.1: Titelblatt korrekt erfasst, Regionen konsistent (+1 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="945" lry="1358">
+      <zone xml:id="facs_1_r_1" ulx="236" uly="234" lrx="670" lry="554" />
+      <zone xml:id="facs_1_r_2" ulx="155" uly="641" lrx="748" lry="728" />
+      <zone xml:id="facs_1_r_3" ulx="296" uly="1146" lrx="608" lry="1183" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_2_r_1" ulx="295" uly="429" lrx="709" lry="551" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="945" lry="1358">
+      <zone xml:id="facs_3_r_1" ulx="329" uly="125" lrx="522" lry="159" />
+      <zone xml:id="facs_3_r_2" ulx="91" uly="244" lrx="764" lry="311" />
+      <zone xml:id="facs_3_r_3" ulx="437" uly="364" lrx="764" lry="409" />
+      <zone xml:id="facs_3_r_4" ulx="89" uly="485" lrx="766" lry="671" />
+      <zone xml:id="facs_3_r_5" ulx="90" uly="688" lrx="766" lry="985" />
+      <zone xml:id="facs_3_r_6" ulx="91" uly="1001" lrx="766" lry="1187" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_4_r_1" ulx="421" uly="115" lrx="560" lry="139" />
+      <zone xml:id="facs_4_r_2" ulx="159" uly="153" lrx="832" lry="273" />
+      <zone xml:id="facs_4_r_3" ulx="157" uly="265" lrx="835" lry="699" />
+      <zone xml:id="facs_4_r_4" ulx="158" uly="692" lrx="833" lry="790" />
+      <zone xml:id="facs_4_r_5" ulx="158" uly="783" lrx="833" lry="855" />
+      <zone xml:id="facs_4_r_6" ulx="158" uly="851" lrx="835" lry="1105" />
+      <zone xml:id="facs_4_r_7" ulx="160" uly="1103" lrx="834" lry="1182" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_5_r_1" ulx="103" uly="159" lrx="780" lry="321" />
+      <zone xml:id="facs_5_r_2" ulx="105" uly="313" lrx="781" lry="570" />
+      <zone xml:id="facs_5_r_3" ulx="104" uly="558" lrx="780" lry="771" />
+      <zone xml:id="facs_5_r_4" ulx="104" uly="784" lrx="780" lry="1184" />
+      <zone xml:id="facs_5_r_5" ulx="1342" uly="1236" lrx="2000" lry="1256" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_6_r_1" ulx="400" uly="119" lrx="544" lry="139" />
+      <zone xml:id="facs_6_r_2" ulx="156" uly="152" lrx="830" lry="275" />
+      <zone xml:id="facs_6_r_3" ulx="157" uly="267" lrx="832" lry="568" />
+      <zone xml:id="facs_6_r_4" ulx="158" uly="558" lrx="834" lry="608" />
+      <zone xml:id="facs_6_r_5" ulx="158" uly="602" lrx="833" lry="789" />
+      <zone xml:id="facs_6_r_6" ulx="158" uly="783" lrx="834" lry="1052" />
+      <zone xml:id="facs_6_r_7" ulx="159" uly="1063" lrx="834" lry="1181" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_7_r_1" ulx="102" uly="153" lrx="780" lry="294" />
+      <zone xml:id="facs_7_r_2" ulx="102" uly="286" lrx="779" lry="403" />
+      <zone xml:id="facs_7_r_3" ulx="103" uly="401" lrx="779" lry="521" />
+      <zone xml:id="facs_7_r_4" ulx="102" uly="513" lrx="779" lry="652" />
+      <zone xml:id="facs_7_r_5" ulx="102" uly="647" lrx="779" lry="741" />
+      <zone xml:id="facs_7_r_6" ulx="102" uly="737" lrx="778" lry="877" />
+      <zone xml:id="facs_7_r_7" ulx="103" uly="871" lrx="777" lry="947" />
+      <zone xml:id="facs_7_r_8" ulx="103" uly="949" lrx="778" lry="1112" />
+      <zone xml:id="facs_7_r_9" ulx="104" uly="1106" lrx="777" lry="1181" />
+      <zone xml:id="facs_7_r_10" ulx="1389" uly="1182" lrx="8089" lry="1372" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_8_r_1" ulx="403" uly="114" lrx="543" lry="137" />
+      <zone xml:id="facs_8_r_2" ulx="143" uly="148" lrx="771" lry="203" />
+      <zone xml:id="facs_8_r_3" ulx="142" uly="620" lrx="817" lry="897" />
+      <zone xml:id="facs_8_r_4" ulx="144" uly="913" lrx="816" lry="983" />
+      <zone xml:id="facs_8_r_5" ulx="143" uly="990" lrx="819" lry="1171" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="945" lry="1358">
+      <zone xml:id="facs_9_r_1" ulx="1313" uly="1113" lrx="5046" lry="1371" />
+      <zone xml:id="facs_9_r_2" ulx="960" uly="1522" lrx="7740" lry="4027" />
+      <zone xml:id="facs_9_r_3" ulx="982" uly="3997" lrx="7733" lry="5176" />
+      <zone xml:id="facs_9_r_4" ulx="977" uly="5322" lrx="7727" lry="6992" />
+      <zone xml:id="facs_9_r_5" ulx="977" uly="6883" lrx="7736" lry="8939" />
+      <zone xml:id="facs_9_r_6" ulx="977" uly="8923" lrx="7730" lry="11062" />
+      <zone xml:id="facs_9_r_7" ulx="986" uly="11012" lrx="7729" lry="11762" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_10_r_1" ulx="414" uly="108" lrx="597" lry="126" />
+      <zone xml:id="facs_10_r_2" ulx="148" uly="150" lrx="825" lry="332" />
+      <zone xml:id="facs_10_r_3" ulx="150" uly="325" lrx="826" lry="552" />
+      <zone xml:id="facs_10_r_4" ulx="150" uly="550" lrx="825" lry="669" />
+      <zone xml:id="facs_10_r_5" ulx="149" uly="684" lrx="825" lry="1079" />
+      <zone xml:id="facs_10_r_6" ulx="148" uly="1074" lrx="824" lry="1173" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="945" lry="1358">
+      <zone xml:id="facs_11_r_1" ulx="1256" uly="1208" lrx="6076" lry="1493" />
+      <zone xml:id="facs_11_r_2" ulx="926" uly="1629" lrx="7711" lry="3653" />
+      <zone xml:id="facs_11_r_3" ulx="926" uly="3625" lrx="7711" lry="6151" />
+      <zone xml:id="facs_11_r_4" ulx="926" uly="6124" lrx="7711" lry="9057" />
+      <zone xml:id="facs_11_r_5" ulx="926" uly="9030" lrx="7711" lry="10252" />
+      <zone xml:id="facs_11_r_6" ulx="935" uly="10402" lrx="7720" lry="11855" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="945" lry="1359">
+      <zone xml:id="facs_12_r_1" ulx="410" uly="116" lrx="534" lry="133" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="letter">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Littérature Histoire Linguistique
+        </head>
+        <p facs="#facs_1_r_2">
+          RECUEIL D'ÉTUDES OFFERT A BERNARD GAGNEBIN
+        </p>
+        <p facs="#facs_1_r_3">
+          <orgName ref="#zbz-o.21">L'AGE D'HOMME</orgName>
+        </p>
+        <p>
+          <hi rendition="#i">C 2 Gagn 1973</hi>
+        </p>
+        <p>
+          Komparatistisches Seminar<lb facs="#facs_1_l_5_1" n="N001" /><orgName ref="#zbz-o.46">Universität Zürich</orgName>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          CET OUVRAGE A ÉTÉ TIRÉ À 550 EXEMPLAIRES<lb facs="#facs_2_l_1_1" n="N001" />DONT 50 SUR PAPIER JOHANNOT<lb facs="#facs_2_l_1_2" n="N002" />NUMÉROTÉS À LA MAIN DE I À L. CES EXEMPLAIRES SONT ORNÉS D'UN DESSIN<lb facs="#facs_2_l_1_3" n="N003" />DE JOSEPH CZAPSKI SIGNÉ PAR L'ARTISTE.
+        </p>
+        <p>
+          © 1973, <placeName ref="#zbz-l.19">Lausanne</placeName>, les auteurs et <orgName ref="#zbz-o.21">l'Age d'Homme</orgName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_2">
+          A QUOI BON UNE <orgName ref="#zbz-o.14">FACULTÉ DES LETTRES</orgName> A LA FIN DU XXᵉ SIÈCLE?
+        </p>
+        <p facs="#facs_3_r_3">
+          En hommage reconnaissant et affectueux à <persName ref="#zbz-p.1963">Bernard Gagnebin</persName>.
+        </p>
+        <p facs="#facs_3_r_4">
+          Notre Doyen, depuis plus de dix ans, se débat dans une jungle de problèmes qui ne trouvent jamais de solution adéquate, mais qui, parce qu'ils sont concrets et réels, permettent des progrès constants. Il y a d'abord ceux que pose le nombre sans cesse croissant des étudiants, ainsi que les exigences accrues d'un enseignement moderne : on n'a jamais assez d'enseignants, de locaux, de documentation, d'installations techniques. Les crédits, même s'ils croissent, ne suffisent pas. Et le souci de la qualité, à travers cette croissance quantitative, doit être maintenu à tout prix.
+        </p>
+        <p facs="#facs_3_r_5">
+          Mais d'autres difficultés plus sourdes, plus diffuses, sont aussi plus déprimantes. C'est l'utilité même d'une <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> qui est aujourd'hui contestée, parfois niée, par certains collègues d'autres Facultés, par des autorités, par les mass media, et d'une manière générale, par « l'esprit du temps ». La situation est paradoxale. D'une part, alors qu'on s'efforce depuis des années, dans la plupart des pays développés, de décider les étudiants à entreprendre des études scientifiques et techniques, ils s'obstinent malgré tout à affluer dans les Facultés littéraires, comme si ces études répondaient à quelque irrépressible besoin. D'autre part, on rencontre un peu partout des gens qui, même s'ils ne le disent pas en autant de termes, nourrissent la conviction que ces études sont périmées — simple survivance d'une civilisation médiévale, rhétorique et pré-scientifique — et qu'il conviendrait de les abolir à la première occasion, malgré les protestations des rétrogrades qui en sont épris.
+        </p>
+        <p facs="#facs_3_r_6">
+          Et, de fait, à quoi peuvent-elles servir ?
+        </p>
+        <p>
+          L'utilité de la <orgName ref="#zbz-o.694">Faculté de Médecine</orgName> ne se discute pas, ni non plus celle des <orgName ref="#zbz-o.283">Sciences</orgName>, dont les prodigieux progrès ont accru jusqu'à la démesure le savoir et le pouvoir des hommes. Les <orgName ref="#zbz-o.157">Sciences économiques et sociales</orgName>, dévoilant les techniques et les mécanismes politiques, économiques, sociaux, permettent une sorte d'objectivation et de généralisation sociale du « Connais-toi toi-même » socratique, elles donnent — ou croient donner — une compétence permettant d'agir sur le donné social en vue du bonheur collectif. Le Droit, qui conjugue en lui la fixité de normes
+        </p>
+        <p>
+          285
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_4_r_2">
+          établies avec les règles qui en permettent l'évolution et l'adaptation aux changements de l'histoire, continue à fournir au juriste les moyens d'assurer sa propre défense et celle des autres dans la jungle de la société, ainsi que les compétences utiles à l'acquisition et à l'exercice de tous genres de pouvoir.
+        </p>
+        <p facs="#facs_4_r_3">
+          Mais les <bibl ref="#zbz-w.187">Lettres</bibl> ? L'apprentissage des langues étrangères peut se faire par des séjours à l'étranger, et dans des écoles professionnelles à l'aide de techniques accélérées. La connaissance de la langue maternelle n'a pas à être approfondie, au contraire : il importe d'en retrouver l'usage « spontané », altéré par l'école. L'orthographe n'est qu'un préjugé au service d'une sélection qui sauvegarde les privilèges de classe. Quant à la littérature, celle du passé mérite tout juste d'être considérée comme l'un des symptômes, à une époque donnée, des structures sociales et politiques et des attitudes qu'elles ont engendrées. Son intérêt est donc purement historique, on pourrait fort bien l'étudier, de ce point de vue, en <orgName ref="#zbz-o.157">Sciences économiques et sociales</orgName>. La littérature actuelle n'a pas besoin de faire l'objet d'un enseignement universitaire. Elle parle directement au public d'aujourd'hui, surtout aux étudiants. On pourrait en dire autant de l'histoire de l'art et de l'art contemporain. Que reste-t-il ? <bibl ref="#zbz-w.85">La philosophie</bibl> ? Mais qui ne sait que, depuis ses origines, la philosophie n'a cessé de poser des problèmes insolubles, engageant les esprits dans des impasses et bloquant le progrès des sciences ? Comme l'ont dit et répété maints penseurs de notre temps : quand un problème ne peut être résolu, c'est qu'il n'existe pas ; et ce dont on ne peut rien dire, il faut n'en pas parler.
+        </p>
+        <p facs="#facs_4_r_4">
+          Pourquoi étudierait-on l'antiquité ou le moyen âge, — des pensées, des croyances, des goûts, des modes de vie si éloignés de nous et qui sont pour nous, depuis longtemps, « dépassés » ? Ce qui nous importe, c'est la réalité contemporaine et son proche futur.
+        </p>
+        <p facs="#facs_4_r_5">
+          <persName ref="#zbz-p.64">Hitler</persName> clamait déjà (j'ai encore sa voix dans les oreilles) : « Nicht die griechischen Kaiser brauchen wir zu kennen, nicht die römischen Könige ! »
+        </p>
+        <p facs="#facs_4_r_6">
+          Certains font un pas de plus : non seulement la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> est à leurs yeux une survivance du passé, non seulement elle dispense un enseignement périmé, mais encore elle ne survit aujourd'hui que grâce à un malentendu qui confine à l'escroquerie. En effet, selon eux, la plupart des étudiants qui s'y inscrivent espèrent, même s'ils n'osent l'avouer ouvertement, y devenir des poètes ou des écrivains. Comptant sur cette « créativité » dont, selon l'opinion de plus en plus répandue aujourd'hui, tout être humain se trouve démocratiquement doté à sa naissance, ils attendent d'une formation littéraire, historique ou philosophique, qu'elle fasse fructifier ces dons innés par l'acquisition scientifique et technique du métier.
+        </p>
+        <p facs="#facs_4_r_7">
+          Or c'est souvent l'inverse qui se produit. De même qu'un fragile sens musical, enfantin ou adolescent, se perd souvent dans l'exercice des gammes ou du solfège, ainsi l'étudiant, qui croyait avoir composé quelques
+        </p>
+        <p>
+          286
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          A QUOI BON UNE <orgName ref="#zbz-o.14">FACULTÉ DES LETTRES</orgName> A LA FIN DU XXe SIÈCLE ?
+        </p>
+        <p facs="#facs_5_r_2">
+          vers ou construit l'ébauche d'une nouvelle conception du monde et de l'histoire, peut avoir l'impression d'une <hi rendition="#i">diminutio capitis</hi> lorsque la rencontre des grandes œuvres et des pensées les plus profondes le réduit au silence en l'éclairant sur la portée de son bavardage. Ayant passé sa licence, il se retrouve non pas génie, non pas candidat à un prix Nobel de littérature, mais à un poste d'enseignement dans les écoles secondaires. Déçu, plein de rancune, il se prépare à affronter sa classe.
+        </p>
+        <p facs="#facs_5_r_3">
+          Lui a-t-on au moins appris à enseigner ? Pas tout-à-fait. La <orgName ref="#zbz-o.14">Faculté</orgName> espère l'avoir rendu capable d'enseigner, ce qui n'est pas la même chose. Elle se refuse à être une « école normale », et cela non par snobisme et goût du prestige universitaire pur, mais parce qu'il y règne la conviction diffuse que si l'apprentissage de l'enseignement est nécessaire, il ne porte pas cependant sur l'essentiel. L'essentiel, ce n'est ni une doctrine, ni une technique pédagogique, ni un programme, ni quoi que ce soit de planifiable. C'est la manière dont l'enseignant s'est approprié son savoir — car, pour enseigner, il faut avoir quelque chose à enseigner —, ce qu'il en a fait pour lui-même, et la générosité avec laquelle il désire le transmettre à ceux que la situation d'enseignement groupe autour de lui.
+        </p>
+        <p facs="#facs_5_r_4">
+          Seulement, la perplexité est grande. Donner un enseignement, mais lequel ? A quelles fins ? En un temps où les plus hautes autorités responsables, au niveau national et international, en viennent à mettre en accusation l'institution scolaire elle-même comme servante de l'ordre social, la chose imprimée comme propageant l'élitisme, la civilisation parlée et écrite tout entière comme destructrice du sens critique et de la créativité, — quelles sont donc les tâches d'enseignement auxquelles les étudiants devraient être préparés ? A quoi bon un enseignement quel qu'il soit, s'il importe seulement d'en revenir au jaillissement spontanéiste ?
+        </p>
+        <p facs="#facs_5_r_5">
+          Il est très difficile de répondre à cette mise en question, diffuse ou explicite, de la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName>. D'abord, les motifs de ceux qui ne lui trouvent plus de raison d'être sont extrêmement différents et proviennent de courants de pensée et de sentiments hétérogènes, qui, parcourant notre société, se rencontrent parfois sur certains points, alors qu'ils s'opposent radicalement sur d'autres. L'un d'eux, par exemple, est le courant scientiste, rationaliste et positiviste, qui croit pouvoir fonder l'éducation tout entière, l'organisation équitable de la société, la paix universelle et la fraternité humaine, sur le seul enseignement des sciences, sur l'objectivité et la rationalité. Un autre rêve de retrouver, grâce à un rejet de l'histoire passée, de ses traditions, divergences, rancunes et préjugés, l'unanimité et l'égalité originelles qu'elle nous a fait perdre. Il n'y a presque rien de commun entre ces deux courants. Pourtant on les a vus s'allier et même se fondre pour mener en commun le combat contre tout ce qui, dans la formation traditionnelle, tend à éduquer l'affectivité, le goût, le sens des valeurs, du mystère ou du sacré. Les uns n'en veulent rien savoir. Les autres pensent qu'il n'y a dans ce domaine ni éducation, ni progrès,
+        </p>
+        <p>
+          287
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_6_r_2">
+          mais seulement une perfection spontanée, au service d'une créativité futuriste. Les uns et les autres subodorent dans toute « formation » de ce genre des tendances passéistes, conservatrices, répétitives, qui font obstacle au futur et aux perspectives révolutionnaires — si différentes et divergentes qu'en soient d'ailleurs les représentations.
+        </p>
+        <p facs="#facs_6_r_3">
+          Or il est bien vrai que la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName>, s'occupant essentiellement de culture, n'a et ne peut avoir pour champ d'étude que des faits, des actes, des pensées, des œuvres du passé, un passé plus ou moins éloigné. Elle ne peut décrire et interpréter que des œuvres déjà faites, fussent-elles presque contemporaines. Comme, d'autre part, elle choisit nécessairement, dans l'immense masse des productions littéraires accumulées par les générations humaines, celles qui, pour une raison ou pour une autre, ont une portée, un poids, une signification ou une perfection exceptionnelles, l'enseignement qu'elle dispense valorise ce patrimoine. L'étudiant qui assimile vraiment cet enseignement n'apprend pas seulement à connaître, il apprend aussi à aimer. Le passé devient son passé. Il a un passé, au sens fort où l'on a une mémoire — où l'on peut presque dire, avec <persName ref="#zbz-p.3">Bergson</persName>, qu'on est sa mémoire.
+        </p>
+        <p facs="#facs_6_r_4">
+          <placeName ref="#zbz-l.13">Est</placeName>-ce là, comme beaucoup le pensent ou le ressentent, un bagage alourdissant, et donc conservateur ?
+        </p>
+        <p facs="#facs_6_r_5">
+          La <orgName ref="#zbz-o.14">Faculté des Lettres</orgName>, à ce point de vue, présente la même ambiguïté que la culture elle-même. Toute culture, celle des champs comme celle des esprits, implique un facteur sédentaire, une fixation, une transmission, une continuité, une mémoire. Elle rattache les hommes à..., elle leur inspire des attachements, elle les attache. Ils n'ont jamais, dans une culture, la légèreté d'un voyageur sans bagage. Elle les alourdit, car ils ont quelque chose à perdre, et donc aussi quelque chose à sauver. Elle est, jusque chez les nomades (peut-être surtout chez eux) une force de permanence.
+        </p>
+        <p facs="#facs_6_r_6">
+          D'un autre côté, une culture sans la prise de distance permettant la réflexion, l'examen critique, la conception d'un autre possible, n'est qu'une culture dormante, parce qu'elle informe des libertés encore incapables de s'opposer à elle. Ceux qui s'imaginent avoir inventé la contestation en 1968 se situent, bon gré mal gré, du moins en <placeName ref="#zbz-l.27">Occident</placeName>, dans une tradition de critique et de révolte aussi ancienne que notre culture elle-même, et devenue de plus en plus radicale au fur et à mesure que la modernité déployait ses conséquences — la modernité comme l'a illustrée <persName ref="#zbz-p.938">Kafka</persName> : l'image d'un homme avançant au-dessus de l'eau et tassant, à chacun de ses pas, la poutre qui portera son pas suivant. Un homme qui se veut seul sans la capacité de l'être, entouré de frères sans s'attacher à personne, source de toute valeur et prêt à se détruire lui-même.
+        </p>
+        <p facs="#facs_6_r_7">
+          Mais cela n'est pas nouveau. N'importe quel véritable créateur de culture se trouve aux prises avec une réalité donnée dont certains aspects sont vus, dits, acceptés ou rejetés, digérés en quelque sorte, par les clichés de l'époque, — mais dont d'autres échappent et se dérobent. Ces derniers ne sont pas nécessairement cachés, ni subtils. Parfois ils sont en
+        </p>
+        <p>
+          288
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          A QUOI BON UNE <orgName ref="#zbz-o.14">FACULTÉ DES LETTRES</orgName> A LA FIN DU XXe SIÈCLE ?
+        </p>
+        <p facs="#facs_7_r_2">
+          surface, évidents, massifs, et pourtant on les omet, à la lettre on ne les voit pas. Rien n'est plus caractéristique d'une époque que sa cécité propre. Il y a eu celle de la bonne conscience bourgeoise, contre laquelle se sont déployés les arts et la littérature de caricature et de dénonciation du XIXe et du XXe siècle. Il y a aujourd'hui celle des révolutionnaires millénaristes, qui croient pouvoir éliminer le malheur.
+        </p>
+        <p facs="#facs_7_r_3">
+          La culture s'attache à percevoir et à exprimer ce que dissimulent slogans et clichés. Elle va par tradition à contre-courant. Elle se détache et s'écarte pour mieux voir et entendre, non ce que tout le monde dit, mais justement ce que la parole de tout le monde empêche d'entendre, ce que la vision de tout le monde empêche de voir.
+        </p>
+        <p facs="#facs_7_r_4">
+          Pour obtenir ce recul, elle se sert surtout de la pluralité des moments, des niveaux, des points de vue. Elle fait plus que s'intéresser à ce qui est autre : elle l'approfondit, elle s'y essaie, elle le mime. Le lointain, dans le temps ou dans l'espace, joue ici un rôle privilégié, par sa distance historique et sa parenté humaine.
+        </p>
+        <p facs="#facs_7_r_5">
+          On pourrait la croire essentiellement comparative, et de fait certains ont l'air de s'en tenir là. Mais c'est qu'ils en sont restés aux moyens. Les comparaisons explicites sont au service d'autre chose : une saisie — toujours imparfaite — de chaque manière différente d'être un homme dans son unicité. On ne compare que pour atteindre cette incomparable unicité, qui ne prend son sens que pour l'unicité actuelle de l'homme d'aujourd'hui.
+        </p>
+        <p facs="#facs_7_r_6">
+          Nous voici ramenés à la brûlure du présent. Alourdie de la substance d'un passé, la culture tire de cette substance même de quoi s'actualiser, unique, dans le présent, en s'arrachant au « tout fait » banalisé de ce présent et en inventant l'incarnation concrète des rêves d'avenir.
+        </p>
+        <p facs="#facs_7_r_7">
+          Une culture qui se complaît en elle-même et qui fait sa propre apologie en se refusant à ce qui est autre — qu'elle soit explicitement conformiste ou verbalement anti-conformiste — est une anticulture qui ne peut engendrer que des œuvres académiques, de style « pompier ». Une vraie culture s'accepte elle-même en toute simplicité, avec les conflits qu'elle implique et qui l'entraînent, sans infidélité, vers autre chose.
+        </p>
+        <p facs="#facs_7_r_8">
+          Elle est donc à la fois substance et passage. Elle ressemble à la fameuse flèche de <persName ref="#zbz-p.274">Zénon</persName>, « qui vole et qui ne vole pas ». Elle est histoire et trans-histoire. Elle est donc : changement au nom d'une permanence.
+        </p>
+        <p facs="#facs_7_r_9">
+          C'est en cette intersection étrange qu'une <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> doit vivre. On y interprète tout : les textes, les faits, les actes, les œuvres d'art, les mots et les structures des langues, les implications de la condition humaine. Interpréter, ce n'est ni savoir, ni « faire de la recherche ». C'est pourquoi, lorsqu'un professeur de la <orgName ref="#zbz-o.14">Faculté</orgName> reçoit l'un des questionnaires devenus indispensables aux statistiques et à la justification des crédits, il se trouve plongé, s'il est honnête, dans une perplexité profonde.
+        </p>
+        <p facs="#facs_7_r_10">
+          En effet, on lui demande quelles recherches il a menées à chef, et avec quels résultats ; quelles recherches il a en cours et quelles en sont les perspectives, pour la science pure et pour l'application, de quels collabo
+        </p>
+        <p>
+          289
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_8_r_2">
+          rateurs et de quelles installations techniques il prévoit le besoin ; comment il compte conjuguer ses recherches et son enseignement ; etc.
+        </p>
+        <p facs="#facs_8_r_3">
+          Or, des « recherches », au sens où l'entendent ceux qui ont établi les questionnaires, c'est-à-dire au sens donné à ce terme dans les Facultés des <orgName ref="#zbz-o.283">Sciences</orgName> exactes et naturelles, il faudrait, parmi les professeurs de la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> qui en font réellement, distinguer encore entre ceux que celles-ci amènent à des « résultats » au sens des sciences exactes, et ceux pour qui elles ne sont qu'une exigence préalable ouvrant la voie au vrai travail, qui redevient interprétation. Ainsi, un historien peut entreprendre une recherche quasi-scientifique pour établir avec certitude les faits tels qu'ils se sont véritablement déroulés, — par exemple, quel a été réellement l'auteur ou l'agent d'un attentat politique. Un latiniste peut faire la critique de plusieurs versions d'un texte pour en éliminer les lectures fautives. Mais à supposer que l'un et l'autre parviennent non seulement à une certitude, mais à une évidence qui s'impose à tous, ce résultat scientifique ne prendra intérêt et importance que par les interprétations ultérieures, en vue desquelles, le plus souvent, la recherche a été entreprise. En <bibl ref="#zbz-w.187">Lettres</bibl>, le certain des faits est là pour l'incertain de l'interprétation. Ce qui signifie qu'en somme, contrairement au principe rappelé ci-dessus, on y parle surtout de ce qu'on ne sait pas, et même, de ce qu'il est impossible de « savoir ».
+        </p>
+        <p facs="#facs_8_r_4">
+          Comment répondre alors aux questionnaires ? Certains, désireux d'obtenir un budget pour acheter des livres indispensables, se procurer quelques moyens audio-visuels, ou pour pouvoir emmener leurs étudiants jusqu'à un musée, un monument, une fouille, essayent de répondre en termes « scientifiques », comme s'ils étaient des physiciens ou des biochimistes. Mais bien sûr, tirant de leur mieux sur le sens des mots, ils n'arrivent, malgré d'audacieux efforts, à justifier qu'une demande de budget minime, en comparaison de ceux des laboratoires de science ou de médecine — même s'ils se mettent à appeler « laboratoires » leurs bibliothèques et leurs salles d'exercices pratiques. Un budget minime, et qu'ils n'obtiendront pas, puisque ce budget même les classe bien loin derrière les « vrais » scientifiques, au nombre desquels ils essayent de se compter.
+        </p>
+        <p facs="#facs_8_r_5">
+          D'autres professeurs, lassés d'avance par les difficiles transpositions du sens des mots que leur imposent des questionnaires nullement faits pour eux, les envoient simplement à la corbeille à papier. Le Doyen se débrouillera. Il s'est toujours débrouillé.
+        </p>
+        <p>
+          Donc, la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> est surtout un lieu d'interprétation. On y interprète des textes de toutes les époques, en diverses langues, en divers domaines. On y interprète des faits et des théories. On y interprète même les méthodes des sciences et la portée de leurs conquêtes — et on devrait le faire davantage. On y interprète des problèmes, anciens ou actuels, momentanés ou éternels, ainsi que les solutions qui ont été proposées. On y interprète l'interprétation, ses conditions, ses intentions, le langage dont elle se sert.
+        </p>
+        <p>
+          290
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          A QUOI BON UNE <orgName ref="#zbz-o.14">FACULTÉ DES LETTRES</orgName> À LA FIN DU XX° SIÈCLE ?
+        </p>
+        <p facs="#facs_9_r_2">
+          Réflexive et critique, la <orgName ref="#zbz-o.14">Faculté</orgName> ne sort jamais — ou presque — de l'ambiguïté. Qu'est-ce, en effet, qu'une « explication de texte » ? S'agit-il de replacer le texte dans son moment historique et de découvrir, dans la pensée, la démarche ou le style, des symptômes permettant de porter un diagnostic sur son contexte politique et social, ou à l'inverse d'y reconnaître les effets de conditions historiques préalablement connues ? Ou bien s'agit-il de prendre le texte, forme et fond, comme « une chose » réelle qui désormais existe malgré les changements de l'histoire, et qui, avec son épaisseur cohérente d'être (de pensée, de style), nous parle aujourd'hui, <hi rendition="#i">bic et nunc</hi> — pour nous faire exister, nous qui avons encore à devenir ?
+        </p>
+        <p facs="#facs_9_r_3">
+          En <bibl ref="#zbz-w.187">Lettres</bibl>, on fait les deux. On fait même les deux à la fois. Et cela illustre la sorte de conservatisme critique et révolutionnaire qui est inhérent à la culture — et donc à la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> : le passé, tout en restant passé, devient un agent créateur du futur. Il n'est même pas nécessaire d'en parler : l'exercice d'interprétation par lui-même fait devenir, fait advenir, le maître et l'étudiant, face au monde actuel.
+        </p>
+        <p facs="#facs_9_r_4">
+          Qu'est-ce qui est « recherche » là-dedans, qu'est-ce qui est réflexion et méditation, ou même simplement : plaisir ? Comment discerner entre « apprendre à connaître » et « devenir soi-même » quand ce ne sont que deux aspects d'une seule et même activité ? Et qui dira où finit l'enseignement et où commence la recherche quand le maître avec les élèves tourne et retourne le texte pour essayer d'y pénétrer par des voies d'accès diverses et, pour finir, le retrouve et le contemple, intact ?
+        </p>
+        <p facs="#facs_9_r_5">
+          Oui, diront certains, c'est bien ce que nous pensions. Tout cela, c'est du verbalisme scolastique, un piétinement sur place, une activité stérile, sans but, sans chemin, sans critères. Comment laisser des jeunes se fourvoyer là-dedans à une époque où, dans d'autres Facultés, on déchiffre les énigmes de l'univers et de la vie, on apprend à transformer le monde, la société, l'âme humaine elle-même, à l'aide de techniques bien définies, à prolonger la vie et à supprimer la souffrance ? La formation par les <bibl ref="#zbz-w.187">Lettres</bibl> est aujourd'hui inutilisable, à supposer que ce genre d'apprentissage mérite le nom de « formation ».
+        </p>
+        <p facs="#facs_9_r_6">
+          De fait, en lettres, on apprend relativement peu de chose : dans l'océan des œuvres et des événements, on saisit quelques grandes lignes et on approfondit quelques exemples, plus ou moins arbitrairement choisis. Quelques principes de méthode, quelques techniques, qui d'ailleurs trouvent rarement leur emploi, justement à cause de l'unicité de chaque objet d'étude, quelques règles à respecter, et la conscience d'immenses terres inconnues que plusieurs vies ne permettraient pas d'explorer — c'est à peu près tout. En revanche, on fait en <bibl ref="#zbz-w.187">Lettres</bibl> des expériences qu'on n'oublie plus.
+        </p>
+        <p facs="#facs_9_r_7">
+          Je ne veux pas dire qu'on « expérimente », non. L'expérimentation se réduit à presque rien. On fait des expériences, au sens où on en fait au fil de la vie, c'est-à-dire qu'on fait des rencontres, d'hommes et d'œuvres,
+        </p>
+        <p>
+          291
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_10_r_2">
+          vivants ou morts. Ces rencontres sont suscitées par les programmes et les examens, les bibliographies données dans les cours, les moments privilégiés dans certains séminaires. Mais les fameux « plans d'études » devenus indispensables n'y peuvent pas grand'chose, et je les ai toujours considérés, quant à l'essentiel, comme fictifs. Il y a ainsi, en <bibl ref="#zbz-w.187">Lettres</bibl>, une façade administrativement indispensable qui n'a que peu de rapport avec la substance de ce qui s'y fait, et qu'il faut respecter scrupuleusement sans la prendre au sérieux.
+        </p>
+        <p facs="#facs_10_r_3">
+          Voici que nous approchons du centre de la question. L'enseignement, en <bibl ref="#zbz-w.187">Lettres</bibl>, offre des occasions de rencontres aux étudiants. Il s'adresse à leur liberté. Il ne peut pas savoir d'avance ce que ceux-ci feront de ce qui leur est offert. C'est pourquoi l'interprétation y tient plus de place que le savoir. C'est pourquoi on y multiplie et on y diversifie autant qu'on le peut les contacts avec des réalités de pensée et de style, éloignées les unes des autres dans l'espace et plus encore dans le temps. C'est pourquoi on y nourrit, par l'expérience vécue des actes et des œuvres, ce « sens de l'histoire » dont tout le monde parle aujourd'hui en ne lui donnant guère un substrat concret.
+        </p>
+        <p facs="#facs_10_r_4">
+          Certes, il faut emmagasiner des connaissances, car sur quoi pourrait bien s'exercer une tête bien faite, mais vide ? Mais ces connaissances sont là pour que chacun vive avec elles, vive d'elles, dans ce qu'il pense, dans ce qu'il fait, dans ce qu'il est. <persName ref="#zbz-p.182">Rilke</persName> termine abruptement sa description du <persName ref="#zbz-p.937">torse d'Apollon</persName> par ce vers : « <bibl ref="#zbz-w.502">Du musst dein Leben ändern</bibl> ».
+        </p>
+        <p facs="#facs_10_r_5">
+          Périmée, la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> ? Et si c'était le contraire ? Dans un ouvrage sur l'éducation, publié récemment sous les auspices de l'<orgName ref="#zbz-o.382">Unesco</orgName> et sous la signature de sept éminents ministres des divers continents, il est dit que tout acte pédagogique doit être désormais scientifique et technique. On peut se demander ce que cela veut dire et si cela est vrai. À une époque où le problème des loisirs et celui de la vie après la retraite professionnelle se posent avec force, qui sait si les hommes, libérés de plus en plus des besoins vitaux immédiats grâce à la technique, ne vont pas progressivement se tourner vers autre chose qu'elle, vers ces biens de culture que la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> essaye de sauver dans l'arche, pendant le grand déluge industriel ? Qui sait s'ils ne voudront pas apprendre le latin, le grec, le sanscrit, le chinois, et s'ils ne chercheront pas des maîtres qui les aident à déchiffrer leur histoire passée, à scander des poèmes ou à creuser un raisonnement philosophique, afin de nourrir et d'éclairer le sens de leur vie et de leur présence au monde ? Qui sait si ce ne seront pas là les plus beaux fruits non techniques de la technique, qui trouverait ainsi son sens (il n'est pas en elle), et sa justification ?
+        </p>
+        <p facs="#facs_10_r_6">
+          Ainsi se trouve posée la question du sens. Le titre de ce texte la posait pour la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> : « <bibl ref="#zbz-w.760">A quoi bon une Faculté des Lettres... ?</bibl> » J'ai fait croire, au début, qu'il était facile de justifier l'existence des autres Facultés. Si cela semblait facile, c'est qu'on pouvait leur assi
+        </p>
+        <p>
+          292
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          A QUOI BON UNE <orgName ref="#zbz-o.14">FACULTÉ DES LETTRES</orgName> À LA FIN DU XXe SIÈCLE ?
+        </p>
+        <p facs="#facs_11_r_2">
+          gner une fin, valorisée en quelque sorte extérieurement à elles : santé, savoir, puissance sur la nature ou la société, richesse, bonheur. Mais si nous voulions pousser l'interrogation plus loin, demander par exemple pourquoi ces biens convoités par les hommes méritent tant d'efforts, il nous faudrait approfondir ce que sont ces hommes et découvrir ce qui peut bien rendre leurs désirs si dignes d'intérêt. Nous serions ainsi amenés à considérer leur condition propre d'êtres capables de conscience, de tradition, de liberté, de création, d'histoire. Nous redevriendrions tous des étudiants en lettres.
+        </p>
+        <p facs="#facs_11_r_3">
+          On découvre ainsi que s'il est difficile de justifier l'existence de la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName>, c'est que le travail qui s'y fait, avant d'avoir une finalité extrinsèque, est à lui-même sa propre fin et qu'il valorise les autres finalités. La <orgName ref="#zbz-o.14">Faculté des Lettres</orgName> est nécessaire à tous, et en quelque sorte sous-jacente aux autres Facultés. Les compétences qu'elle donne sont mal définies parce qu'idéalement elles devraient être celles de tous. Elle est une sorte de <orgName ref="#zbz-o.14">Faculté</orgName>-remords, indispensable. Elle contribue à entretenir dans la société le sens du sens ultime et indéfinissable des diverses compétences spécifiques — le sens qui les porte, les justifie et leur assigne — ou devrait leur assigner — les limites non rationnelles dont la transgression les rend inhumaines et criminelles.
+        </p>
+        <p facs="#facs_11_r_4">
+          Ce qui fonde tout n'a plus de fondement. Ce qui sert d'ultime justification n'a plus de justification. On ne peut guère expliquer rationnellement pourquoi il ne faut pas faire l'amour tout nu sur la <placeName ref="#zbz-l.658">place du Molard</placeName>, endormir les vieillards inutiles, ou faire taire les poètes contestataires. Ceux qui tentent héroïquement de justifier de tels interdits dans les débats de la télévision sont le plus souvent aisément battus par les arguments « rationnels », massifs et simples, de leurs contradicteurs. L'interdit — dans la mesure où ces choses sont encore interdites — réside dans une sorte d'instinct spiritualisé vivant au cœur de la liberté de chacun, qui s'appelle « culture ». Cet « instinct » porte et anime la rationalité elle-même, et c'est lui qui impose qu'on s'incline devant les évidences de la science. Le respect de la science et de la raison n'est pas lui-même « rationnel ».
+        </p>
+        <p facs="#facs_11_r_5">
+          Cette « culture » est un produit et un agent de l'histoire, et pourtant c'est à travers elle que l'histoire plonge au-delà, jusqu'à sa source intemporelle. Elle n'a rien d'abstrait. Elle est le domaine immense où vit la <orgName ref="#zbz-o.14">Faculté des Lettres</orgName>, où ses professeurs et ses étudiants apprennent à faire acte de présence à leur présent grâce à l'inépuisable passé.
+        </p>
+        <p facs="#facs_11_r_6">
+          Notre Doyen, pendant plus de dix ans, s'est tenu là, a vécu ces problèmes. Vigilant, prenant le pouls de la <orgName ref="#zbz-o.14">Faculté</orgName> pour percevoir d'avance ses besoins essentiels et ceux de chacun de ses membres, discernant sans cesse entre la permanence et les exigences de changement d'une part, les modes démagogiques et éphémères de l'autre, souple et strict, ne subordonnant jamais à rien « l'intérêt de la <orgName ref="#zbz-o.14">Faculté</orgName> », ne recherchant aucun
+        </p>
+        <p>
+          293
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          294
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p>
+          affrontement mais ne cédant à aucune pression et capable, au nom de la qualité, de se faire, hélas, des ennemis, il a campé dans son bureau jusqu’à des heures improbables. Il a vécu jour après jour la nécessité complexe et contestée de notre <orgName ref="#zbz-o.14">Faculté</orgName> — subissant l’époque, l’administration, les statistiques, les personnalités, tenant compte de tout « par dedans » et orienté vers un futur prévisible, pour lui déjà concret.
+        </p>
+      </div>
+      </body></text>
+</TEI>

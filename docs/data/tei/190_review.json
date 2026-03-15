@@ -1,0 +1,37 @@
+{
+  "doc_id": "190",
+  "reviewer": "quality-screening-t3",
+  "date": "2026-03-15",
+  "tier": 3,
+  "pages": 9,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Kierkegaard' (1x, S.8) tagged as bibl ref=zbz-w.529 -- refers to the philosopher, not a book title"
+    },
+    {
+      "severity": "warning",
+      "code": "W6",
+      "msg": "Validator: Keine lb-Elemente im body (9 Seiten)"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "1 Fussnote (S.2, korrekt als note)"
+    },
+    {
+      "severity": "info",
+      "code": "S1",
+      "msg": "S.1 e-periodica Metadaten, S.2-9 Hersch-Vortrag 'La transcendance du singulier' (Studia Philosophica 1950)"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 14p 2o 2l 4w = 22"
+    }
+  ]
+}

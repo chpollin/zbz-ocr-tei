@@ -1,0 +1,43 @@
+{
+  "doc_id": "1520",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 142,
+  "lang": "fra",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: KARL JASPERS, Jeanne Hersch, fra, bibl"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "38 Fussnoten"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 319p 73o 122l 341w = 855, davon 80 GND-Refs"
+    },
+    {
+      "severity": "warning",
+      "code": "E2",
+      "msg": "80 Entity-Refs mit GND-Schema statt zbz-Schema (aelterer Pipeline-Lauf)"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Monographie ueber Karl Jaspers, Bibliographie am Ende, div-Struktur mit Kapiteln, reichhaltige Entity-Annotation"
+    }
+  ]
+}

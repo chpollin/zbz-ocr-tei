@@ -1,0 +1,52 @@
+{
+  "doc_id": "860",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "Buchseite, gut lesbar. 3 Seiten."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutscher Text korrekt. Vorwort zu Erica Wallachs Buch."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Saubere Erkennung einer Buchseite."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [
+        "W6"
+      ],
+      "notes": "VALID. W6 bekanntes Muster."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 6,
+        "orgName": 0,
+        "placeName": 8,
+        "bibl": 3
+      },
+      "notes": "Wallach, Mata Hari, Fields korrekt. 'Zeit' (zbz-w.705) 3x als bibl -- normales Substantiv. 'Amerikaner'/'Mensch' als persName fragwuerdig."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vorwort von Hersch. div type=preface korrekt. Sprache deu korrekt."
+    }
+  },
+  "findings": [
+    "'Zeit' (zbz-w.705) 3x als bibl -- normales Substantiv, kein Werktitel.",
+    "'Amerikaner' und 'Mensch' als persName -- Gattungsbegriffe."
+  ],
+  "overall_notes": "Text und Layout gut. Entity-Tagging hat systematische Fehler bei Gattungsbegriffen."
+}

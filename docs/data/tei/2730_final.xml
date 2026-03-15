@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Heidelberger Jahrbücher</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2730</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Heidelberger Jahrbücher</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1990</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="claude-opus-4-6-quality-screener" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Heidelberger Jahrbuecher 1990, Laudatio auf Ricoeur. German/French. 1 Fussnote. Entities: 122p 25o 47l 35w = 229. Validator: 0 errors, 0 warnings</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1005" lry="1430">
+      <zone xml:id="facs_1_r_1" ulx="25" uly="68" lrx="950" lry="180" />
+      <zone xml:id="facs_1_r_2" ulx="25" uly="207" lrx="850" lry="313" />
+      <zone xml:id="facs_1_r_3" ulx="882" uly="208" lrx="957" lry="245" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1004" lry="1430">
+      <graphic url="2.png" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_3_r_1" ulx="252" uly="143" lrx="749" lry="310" />
+      <zone xml:id="facs_3_r_2" ulx="433" uly="350" lrx="569" lry="390" />
+      <zone xml:id="facs_3_r_3" ulx="380" uly="519" lrx="619" lry="632" />
+      <zone xml:id="facs_3_r_4" ulx="388" uly="1165" lrx="622" lry="1182" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_4_r_1" ulx="428" uly="138" lrx="574" lry="160" />
+      <zone xml:id="facs_4_r_2" ulx="164" uly="158" lrx="837" lry="208" />
+      <zone xml:id="facs_4_r_3" ulx="450" uly="226" lrx="555" lry="252" />
+      <zone xml:id="facs_4_r_4" ulx="399" uly="251" lrx="604" lry="269" />
+      <zone xml:id="facs_4_r_5" ulx="219" uly="268" lrx="785" lry="301" />
+      <zone xml:id="facs_4_r_6" ulx="333" uly="316" lrx="671" lry="363" />
+      <zone xml:id="facs_4_r_7" ulx="241" uly="479" lrx="759" lry="608" />
+      <zone xml:id="facs_4_r_8" ulx="234" uly="621" lrx="765" lry="689" />
+      <zone xml:id="facs_4_r_9" ulx="112" uly="921" lrx="891" lry="969" />
+      <zone xml:id="facs_4_r_10" ulx="256" uly="985" lrx="477" lry="1023" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_5_r_1" ulx="360" uly="335" lrx="643" lry="364" />
+      <zone xml:id="facs_5_r_2" ulx="112" uly="436" lrx="890" lry="1311" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_6_r_1" ulx="1104" uly="1322" lrx="8935" lry="1966" />
+      <zone xml:id="facs_6_r_2" ulx="1104" uly="2102" lrx="7429" lry="2388" />
+      <zone xml:id="facs_6_r_3" ulx="1355" uly="2459" lrx="8935" lry="2817" />
+      <zone xml:id="facs_6_r_4" ulx="1355" uly="2802" lrx="8935" lry="3517" />
+      <zone xml:id="facs_6_r_5" ulx="1355" uly="3432" lrx="8935" lry="3789" />
+      <zone xml:id="facs_6_r_6" ulx="1355" uly="3789" lrx="8935" lry="4504" />
+      <zone xml:id="facs_6_r_7" ulx="1355" uly="4433" lrx="8935" lry="4790" />
+      <zone xml:id="facs_6_r_8" ulx="1104" uly="4933" lrx="8935" lry="5648" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1005" lry="1430">
+      <zone xml:id="facs_7_r_1" ulx="318" uly="339" lrx="706" lry="364" />
+      <zone xml:id="facs_7_r_2" ulx="122" uly="421" lrx="877" lry="1289" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_8_r_1" ulx="113" uly="85" lrx="886" lry="228" />
+      <zone xml:id="facs_8_r_2" ulx="113" uly="228" lrx="886" lry="969" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_9_r_1" ulx="358" uly="127" lrx="643" lry="164" />
+      <zone xml:id="facs_9_r_2" ulx="298" uly="346" lrx="699" lry="372" />
+      <zone xml:id="facs_9_r_3" ulx="413" uly="404" lrx="592" lry="432" />
+      <zone xml:id="facs_9_r_4" ulx="109" uly="467" lrx="892" lry="749" />
+      <zone xml:id="facs_9_r_5" ulx="111" uly="741" lrx="894" lry="829" />
+      <zone xml:id="facs_9_r_6" ulx="133" uly="820" lrx="776" lry="853" />
+      <zone xml:id="facs_9_r_7" ulx="111" uly="904" lrx="893" lry="1018" />
+      <zone xml:id="facs_9_r_8" ulx="111" uly="1011" lrx="893" lry="1203" />
+      <zone xml:id="facs_9_r_9" ulx="113" uly="1269" lrx="892" lry="1318" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_10_r_1" ulx="108" uly="123" lrx="894" lry="539" />
+      <zone xml:id="facs_10_r_2" ulx="109" uly="535" lrx="894" lry="775" />
+      <zone xml:id="facs_10_r_3" ulx="110" uly="776" lrx="894" lry="1018" />
+      <zone xml:id="facs_10_r_4" ulx="111" uly="1018" lrx="892" lry="1107" />
+      <zone xml:id="facs_10_r_5" ulx="110" uly="1097" lrx="893" lry="1322" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_11_r_1" ulx="106" uly="130" lrx="890" lry="191" />
+      <zone xml:id="facs_11_r_2" ulx="110" uly="182" lrx="890" lry="247" />
+      <zone xml:id="facs_11_r_3" ulx="108" uly="239" lrx="891" lry="355" />
+      <zone xml:id="facs_11_r_4" ulx="107" uly="345" lrx="891" lry="464" />
+      <zone xml:id="facs_11_r_5" ulx="108" uly="455" lrx="892" lry="813" />
+      <zone xml:id="facs_11_r_6" ulx="108" uly="807" lrx="892" lry="974" />
+      <zone xml:id="facs_11_r_7" ulx="109" uly="968" lrx="891" lry="1114" />
+      <zone xml:id="facs_11_r_8" ulx="109" uly="1105" lrx="893" lry="1329" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_12_r_1" ulx="109" uly="130" lrx="894" lry="296" />
+      <zone xml:id="facs_12_r_2" ulx="108" uly="290" lrx="894" lry="775" />
+      <zone xml:id="facs_12_r_3" ulx="108" uly="774" lrx="893" lry="1078" />
+      <zone xml:id="facs_12_r_4" ulx="109" uly="1072" lrx="893" lry="1318" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="1004" lry="1430">
+      <zone xml:id="facs_13_r_1" ulx="108" uly="130" lrx="890" lry="272" />
+      <zone xml:id="facs_13_r_2" ulx="109" uly="266" lrx="891" lry="409" />
+      <zone xml:id="facs_13_r_3" ulx="134" uly="402" lrx="554" lry="434" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <bibl ref="#zbz-w.498">HEIDELBERGER JAHRBUCHER</bibl> 1990 XXXIV
+        </head>
+        <p facs="#facs_1_r_2">
+          
+        </p>
+        <p facs="#facs_1_r_3">
+          <orgName ref="#zbz-o.3">SPRINGER-VERLAG</orgName>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p>
+          <bibl ref="#zbz-w.498">HEIDELBERGER JAHRBÜCHER</bibl>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <bibl ref="#zbz-w.498">HEIDELBERGER JAHRBÜCHER</bibl>
+        </p>
+        <p facs="#facs_3_r_2">
+          XXXIV
+        </p>
+        <p facs="#facs_3_r_3">
+          <hi rendition="#i">Herausgegeben von der <orgName ref="#zbz-o.32">Universitäts-Gesellschaft Heidelberg</orgName></hi>
+        </p>
+        <p facs="#facs_3_r_4">
+          <orgName ref="#zbz-o.3">SPRINGER-VERLAG</orgName><lb facs="#facs_3_l_4_1" n="N001" /><placeName ref="#zbz-l.16">BERLIN</placeName> <placeName ref="#zbz-l.21">HEIDELBERG</placeName> <placeName ref="#zbz-l.52">NEW YORK</placeName><lb facs="#facs_3_l_4_2" n="N002" /><placeName ref="#zbz-l.263">LONDON</placeName> <placeName ref="#zbz-l.1">PARIS</placeName> <placeName ref="#zbz-l.225">TOKYO</placeName><lb facs="#facs_3_l_4_3" n="N003" /><placeName ref="#zbz-l.449">HONG KONG</placeName> <placeName ref="#zbz-l.450">BARCELONA</placeName><lb facs="#facs_3_l_4_4" n="N004" />1990
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Redaktionsausschuß:<lb facs="#facs_4_l_1_1" n="N001" />G. Christian Amstutz, <persName ref="#zbz-p.945">Martin</persName> Bopp, Karlheinz Misera, Elmar Mittler, Helmut Neubauer, Dietrich Ritschl, <persName ref="#zbz-p.1113">Friedrich</persName> Vogel
+        </p>
+        <p facs="#facs_4_r_2">
+          Schriftleitung:<lb facs="#facs_4_l_2_1" n="N001" />Professor Dr. <persName ref="#zbz-p.1215">Reiner Wiehl</persName><lb facs="#facs_4_l_2_2" n="N002" />Philosophisches Seminar der <orgName ref="#zbz-o.46">Universität</orgName>, Marsiliusplatz 1, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+        <p facs="#facs_4_r_3">
+          Schriften-Verzeichnis der Heidelberger Dozenten:<lb facs="#facs_4_l_3_1" n="N001" />Hiltraud Zell
+        </p>
+        <p facs="#facs_4_r_4">
+          Die <bibl ref="#zbz-w.498">Heidelberger Jahrbücher</bibl> erschienen seit 1808 unter den folgenden Titeln:<lb facs="#facs_4_l_4_1" n="N001" />Heidelbergische Jahrbücher der Literatur. Jg. 1–10. 1808–1817<lb facs="#facs_4_l_4_2" n="N002" /><bibl ref="#zbz-w.498">Heidelberger Jahrbücher</bibl> der Literatur. Jg. 11–65. 1818–1872<lb facs="#facs_4_l_4_3" n="N003" />Neue <bibl ref="#zbz-w.498">Heidelberger Jahrbücher</bibl>. Jg. 1–21. 1891–1919<lb facs="#facs_4_l_4_4" n="N004" />Neue <bibl ref="#zbz-w.498">Heidelberger Jahrbücher</bibl>. Neue Folge. 1924–1941. 1950–1955/56<lb facs="#facs_4_l_4_5" n="N005" /><bibl ref="#zbz-w.498">Heidelberger Jahrbücher</bibl>. I ff. 1957 ff.
+        </p>
+        <p facs="#facs_4_r_5">
+          Die Verleger waren bis 1814 Mohr &amp;amp; Zimmer, bis 1820 Mohr &amp;amp; Winter,<lb facs="#facs_4_l_5_1" n="N001" />1821–1828 Oswald, 1829–1839 Winter, 1840–1872 Mohr, 1891–1956 Koester,<lb facs="#facs_4_l_5_2" n="N002" />seit 1957 <orgName ref="#zbz-o.3">Springer</orgName>, alle in <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+        <p facs="#facs_4_r_6">
+          Der Umschlag wurde von Hermann Zapf, <placeName ref="#zbz-l.23">Frankfurt a.M.</placeName>, entworfen. Er verwendete hierfür die von ihm geschaffene Schrift „Michelangelo“
+        </p>
+        <p facs="#facs_4_r_7">
+          ISBN-13:978-3-540-52862-3<lb facs="#facs_4_l_7_1" n="N001" />e-ISBN-13:978-3-642-75882-9<lb facs="#facs_4_l_7_2" n="N002" />DOI: 10.1007/978-3-642-75882-9
+        </p>
+        <p facs="#facs_4_r_8">
+          Dieses Werk ist urheberrechtlich geschützt. Die dadurch begründeten Rechte, insbesondere die der Übersetzung, des Nachdrucks, des Vortrags, der Entnahme von Abbildungen und Tabellen, der Funksendung, der Mikroverfilmung oder der Vervielfältigung auf anderen Wegen und der Speicherung in Datenverarbeitungsanlagen, bleiben, auch bei nur auszugsweiser Verwertung, vorbehalten. Eine Vervielfältigung dieses Werkes oder von Teilen dieses Werkes ist auch im Einzelfall nur in den Grenzen der gesetzlichen Bestimmungen des Urheberrechtsgesetzes der <placeName ref="#zbz-l.26">Bundesrepublik Deutschland</placeName> vom 9. September 1965 in der jeweils geltenden Fassung zulässig. Sie ist grundsätzlich vergütungspflichtig. Zuwiderhandlungen unterliegen den Strafbestimmungen des Urheberrechtsgesetzes.
+        </p>
+        <p facs="#facs_4_r_9">
+          © <orgName ref="#zbz-o.3">Springer-Verlag</orgName> <placeName ref="#zbz-l.16">Berlin</placeName> <placeName ref="#zbz-l.21">Heidelberg</placeName> 1990
+        </p>
+        <p facs="#facs_4_r_10">
+          Gedruckt auf säurefreiem Papier
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          INHALTSVERZEICHNIS
+        </p>
+        <p facs="#facs_5_r_2">
+          <persName ref="#zbz-p.1199">Arthur Henkel</persName> Wie <persName ref="#zbz-p.1200">Napoleon</persName> den „<bibl ref="#zbz-w.499">Werther</bibl>“ las . . . . . . . . . 1
+        </p>
+        <p>
+          Gedenkfeier zum 150. Todestag von <persName ref="#zbz-p.1201">A.F.J. Thibaut</persName>
+        </p>
+        <p>
+          <persName ref="#zbz-p.1202">Hans Hattenbauer</persName> <persName ref="#zbz-p.1201">Anton Friedrich Justus Thibaut</persName> und die Reinheit der Jurisprudenz . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+        </p>
+        <p>
+          <persName ref="#zbz-p.1203">Martin Staehelin</persName> <persName ref="#zbz-p.1201">Anton Friedrich Justus Thibaut</persName> und die Musikgeschichte . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+        </p>
+        <p>
+          <persName ref="#zbz-p.1204">Günther Debon</persName> <persName ref="#zbz-p.1205">Eichendorff</persName>, <placeName ref="#zbz-l.21">Heidelberg</placeName> und die Blaue Blume . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+        </p>
+        <p>
+          <persName ref="#zbz-p.1206">Ludwig Finscher</persName> Wie fange ich an? Ein Kompositionsproblem im 19. Jahrhundert . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71
+        </p>
+        <p>
+          <persName ref="#zbz-p.1">Karl-Jaspers</persName>-Preis 1989
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Laudatio auf <persName ref="#zbz-p.592">Paul Ricoeur</persName> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 83
+        </p>
+        <p>
+          <persName ref="#zbz-p.592">Paul Ricoeur</persName> Dankesrede . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+        </p>
+        <p>
+          <persName ref="#zbz-p.1207">Hubertus Tellenbach</persName> Phänomenologische Analyse der mitmenschlichen <bibl ref="#zbz-w.93">Begegnung</bibl> im gesunden und im psychotischen <bibl ref="#zbz-w.55">Dasein</bibl> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 95
+        </p>
+        <p>
+          <persName ref="#zbz-p.1208">Hermann Lang</persName> Das Gespräch als Therapie . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105
+        </p>
+        <p>
+          50 Jahre Heidelberger „Chirurgie“
+        </p>
+        <p>
+          <persName ref="#zbz-p.1209">Fritz Linder</persName> Der Wandel der Chirurgie zwischen 1945 und 1980 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 119
+        </p>
+        <p>
+          <persName ref="#zbz-p.1210">Christian Herfarth</persName> Klinische und wissenschaftliche Perspektiven der <orgName ref="#zbz-o.480">Chirurgischen Universitätsklinik Heidelberg</orgName> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 131
+        </p>
+        <p>
+          <persName ref="#zbz-p.1211">Peter Anselm Riedl</persName> Die baulichen Aktivitäten der Heidelberger Chirurgie . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 137
+        </p>
+        <p>
+          <persName ref="#zbz-p.1212">Albrecht Dible</persName> Der griechische Klassizismus . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 147
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          Inhaltsverzeichnis
+        </p>
+        <p facs="#facs_6_r_2">
+          <persName ref="#zbz-p.1213">Adolf Martin Ritter</persName> <persName ref="#zbz-p.1214">Hans von Campenhausen</persName> (16.12.1903–6.1.1989)<lb facs="#facs_6_l_2_1" n="N001" />– ein protestantischer Kirchenhistoriker in seinem Jahrhundert  .  157
+        </p>
+        <p facs="#facs_6_r_3">
+          Die Ausstrahlung der hermeneutischen <bibl ref="#zbz-w.1">Philosophie</bibl>
+        </p>
+        <p facs="#facs_6_r_4">
+          <persName ref="#zbz-p.1215">Reiner Wiehl</persName> Erfahrung und philosophische Praxis  .  171<lb facs="#facs_6_l_4_1" n="N001" /><persName ref="#zbz-p.1216">Valerio Verra</persName> Hans-<orgName ref="#zbz-o.544">Georg</orgName> Gadamers hermeneutische <bibl ref="#zbz-w.1">Philosophie</bibl> in <placeName ref="#zbz-l.243">Italien</placeName>  .  177<lb facs="#facs_6_l_4_2" n="N002" /><persName ref="#zbz-p.1218">Emilio Lledò</persName> Gedächtnis  .  189<lb facs="#facs_6_l_4_3" n="N003" /><persName ref="#zbz-p.1219">Christopher Smith</persName> Sichberatenlassen, Nachgiebigkeit, Verständnis – <persName ref="#zbz-p.1220">Aristoteles</persName>, <persName ref="#zbz-p.1217">Gadamer</persName> und „Reasoning“  .  197<lb facs="#facs_6_l_4_4" n="N004" /><persName ref="#zbz-p.1217">Hans-Georg Gadamer</persName> Nachwort  .  207
+        </p>
+        <p facs="#facs_6_r_5">
+          <persName ref="#zbz-p.1221">Felix von Cube</persName>, <persName ref="#zbz-p.1222">Volker Storch</persName> Umweltzerstörung – Tatsachen, Ursachen, pädagogische Konsequenzen  .  211<lb facs="#facs_6_l_5_1" n="N001" /><persName ref="#zbz-p.1223">Ulrich Knefelkamp</persName> „Brasiliana“ in der <orgName ref="#zbz-o.32">Universitätsbibliothek Heidelberg</orgName>  233
+        </p>
+        <p facs="#facs_6_r_6">
+          Bibliographie
+        </p>
+        <p facs="#facs_6_r_7">
+          Schriftenverzeichnis der Heidelberger Dozenten. Veröffentlichungen aus dem Jahr 1989  243<lb facs="#facs_6_l_7_1" n="N001" />Theologische Fakultät 245 – Juristische Fakultät 250 – Fakultät für naturwissenschaftliche Medizin 256 – Fakultät für Theoretische Medizin 263 – Fakultät für Klinische Medizin I 281 – Fakultät für Klinische Medizin II 314 – Fakultät für Klinische Medizin <placeName ref="#zbz-l.165">Mannheim</placeName> 323 – Philosophisch-historische Fakultät 338 – Fakultät für Orientalistik und Altertumswissenschaft 342 – Neophilologische Fakultät 347 – Wirtschaftswissenschaftliche Fakultät 354 – Fakultät für Sozial- und Verhaltenswissenschaften 355 – Fakultät für Mathematik 360 – Fakultät für Chemie 361 – Fakultät für Pharmazie 368 – Fakultät für Physik und Astronomie 371 – Fakultät für Biologie 382 – Fakultät für Geowissenschaften 392 – Zentrale Einrichtungen 395 – Mit der <orgName ref="#zbz-o.46">Universität</orgName> verbundene wissenschaftliche Einrichtungen 396
+        </p>
+        <p facs="#facs_6_r_8">
+          Alphabetisches Namenregister zur Dozentenbibliographie  401
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          MITARBEITER DIESES BANDES
+        </p>
+        <p facs="#facs_7_r_2">
+          Prof. Dr. <persName ref="#zbz-p.1221">Felix von Cube</persName>, Erziehungswissenschaftliches Institut der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Akademiestraße, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName><lb facs="#facs_7_l_2_1" n="N001" />Prof. Dr. <persName ref="#zbz-p.1204">Günther Debon</persName>, Im Rosengarten 6, 6903 Neckargemünd<lb facs="#facs_7_l_2_2" n="N002" />Prof. Dr. Dr. h.c. Albrecht Dihle, Emeritus für klassische Philologie der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Schillingsrotter Platz 7, 5000 <placeName ref="#zbz-l.318">Köln</placeName> 51<lb facs="#facs_7_l_2_3" n="N003" />Prof. Dr. <persName ref="#zbz-p.1206">Ludwig Finscher</persName>, Direktor des Musikwissenschaftlichen Instituts der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Augustinergasse 4, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName><lb facs="#facs_7_l_2_4" n="N004" />Prof. Dr. Dr. h.c. <persName ref="#zbz-p.1217">Hans-Georg Gadamer</persName>, Emeritus für <bibl ref="#zbz-w.1">Philosophie</bibl>, Am Büchsenackerhang 53, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName><lb facs="#facs_7_l_2_5" n="N005" />Prof. Dr. Hans Hattenhauer, Juristisches Seminar der <orgName ref="#zbz-o.481">Georg-August-Universität</orgName>, 3400 <placeName ref="#zbz-l.20">Göttingen</placeName><lb facs="#facs_7_l_2_6" n="N006" />Prof. Dr. <persName ref="#zbz-p.1199">Arthur Henkel</persName>, Emeritus für deutsche Philologie der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Heiligenbergstraße 9a, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName><lb facs="#facs_7_l_2_7" n="N007" />Prof. Dr. <persName ref="#zbz-p.1210">Christian Herfarth</persName>, Geschäftsführender Ärztlicher Direktor der Chirurgischen Universitätsklinik, Im Neuenheimer Feld 110, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName><lb facs="#facs_7_l_2_8" n="N008" />Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName>, Emeritus für <bibl ref="#zbz-w.1">Philosophie</bibl> der <orgName ref="#zbz-o.45">Universität Basel</orgName>, 14, Av. <persName ref="#zbz-p.158">Pierre</persName>-Odier, CH-<placeName ref="#zbz-l.5">1208 Genève</placeName><lb facs="#facs_7_l_2_9" n="N009" />Dr. Dr. <persName ref="#zbz-p.1223">Ulrich Knefelkamp</persName>, Titusstraße 121, 8600 <placeName ref="#zbz-l.505">Bamberg</placeName><lb facs="#facs_7_l_2_10" n="N010" />Prof. Dr. Dr. <persName ref="#zbz-p.1208">Hermann Lang</persName>, Direktor des Instituts für Psychotherapie und medizinische <bibl ref="#zbz-w.66">Psychologie</bibl>, Klinikum 2 der <orgName ref="#zbz-o.482">Universität Würzburg</orgName>, Klinikstraße 3, 8700 <placeName ref="#zbz-l.451">Würzburg</placeName>
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          VIII
+        </p>
+        <p facs="#facs_8_r_2">
+          Mitarbeiter dieses Bandes
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1209">Fritz Linder</persName>, ehem. Direktor der Chirurgischen Universitätsklinik, Waldweg 25, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+        <p>
+          Prof. Dr. Emilio Lledó, O'Donnell 19, <placeName ref="#zbz-l.144">Madrid</placeName> 9
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1211">Peter Anselm Riedl</persName>, Kunsthistorisches Institut der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Seminarstraße 4, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.87">Paul Ricœur</persName>, 19, Rue de Antony, F-92 Châtenay-Malabry
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1213">Adolf Martin Ritter</persName>, Theologisches Seminar der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Kisselgasse 4, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1219">Christopher Smith</persName>, 123 Market St., Apt. I, Portsmouth, NH 03801, <placeName ref="#zbz-l.285">USA</placeName>
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1203">Martin Staehelin</persName>, Direktor des Musikwissenschaftlichen Seminars der <orgName ref="#zbz-o.481">Georg-August-Universität</orgName>, Kurze Geismarstraße 1, 3400 <placeName ref="#zbz-l.20">Göttingen</placeName>
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1222">Volker Storch</persName>, Zoologisches Institut der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Im Neuenheimer Feld 230, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+        <p>
+          Prof. Dr. Dr. <persName ref="#zbz-p.1207">Hubertus Tellenbach</persName>, Emeritus für Psychiatrie der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Runge-Straße 43, 8000 <placeName ref="#zbz-l.22">München</placeName> 71
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1216">Valerio Verra</persName>, Via Flaminia 701, I-00191 <placeName ref="#zbz-l.145">Roma</placeName>
+        </p>
+        <p>
+          Prof. Dr. <persName ref="#zbz-p.1215">Reiner Wiehl</persName>, Direktor des Philosophischen Seminars der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName>, Marsiliusplatz 1, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+        <p>
+          Dipl.-Bibl. Hiltraud Zell, Greifstraße 6, 6900 <placeName ref="#zbz-l.21">Heidelberg</placeName>
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          <persName ref="#zbz-p.1">Karl-Jaspers</persName>-Preis 1989
+        </p>
+        <p facs="#facs_9_r_2">
+          LAUDATIO AUF PAUL RICOEUR
+        </p>
+        <p facs="#facs_9_r_3">
+          Von <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_9_r_4">
+          Quelques mots d'excuse d'abord à l'adresse de <persName ref="#zbz-p.592">Paul Ricoeur</persName> et de tous les assistants. La «présence au monde» de notre lauréat a été si riche et si multiple tout au long de sa vie que je me suis trouvée dans une grande perplexité. Il est l'auteur d'ouvrages importants dans des domaines étonnamment divers, qu'il a successivement approfondis. Il a été un professeur influent, en <placeName ref="#zbz-l.2">France</placeName>, en <placeName ref="#zbz-l.29">Europe</placeName>, aux <placeName ref="#zbz-l.411">Etats-Unis</placeName>. Il a été un homme présent à son temps dans le domaine politique, il a pris mainte fois publiquement position. Il a été pendant cinq ans prisonnier de guerre. Il a été un extraordinaire lecteur, infatigable, allant jusqu'à épuiser ce que tel ou tel avait écrit, cherchant l'adversaire et la résistance. Il a été un critique, curieux et pénétrant.
+        </p>
+        <p facs="#facs_9_r_5">
+          Si j'avais traité de tout cela dans ma laudatio, je n'aurais pu qu'énumérer des généralités, ce qui serait bien ennuyeux. C'est pourquoi j'ai décidé de m'en tenir à un aspect qui me frappe particulièrement.
+        </p>
+        <p facs="#facs_9_r_6">
+          Je vous en demande – et je lui en demande – d'avance pardon.
+        </p>
+        <p facs="#facs_9_r_7">
+          Es ist für mich eine bewegende Freude und eine – etwas einschüchternde – Ehre, die Laudatio für <persName ref="#zbz-p.592">Paul Ricoeur</persName> zu halten anlässlich der Übergabe des <persName ref="#zbz-p.1">Karl-Jaspers</persName>-Preises, den die <orgName ref="#zbz-o.32">Ruprecht-Karls-Universität</orgName> und die <placeName ref="#zbz-l.21">Stadt Heidelberg</placeName> ihm heute zusprechen.
+        </p>
+        <p facs="#facs_9_r_8">
+          <persName ref="#zbz-p.592">Paul Ricoeur</persName> hat im Jahr 1947 in <placeName ref="#zbz-l.2">Frankreich</placeName> das erste Buch über <persName ref="#zbz-p.1">Karl Jaspers</persName> veröffentlicht, in Zusammenarbeit mit <persName ref="#zbz-p.86">Mikel Dufrenne</persName>. Als sie daran arbeiteten, befinden sie sich in deutscher Gefangenschaft. Sie faßten so klar und getreu wie nur möglich das erste große philosophische Werk <persName ref="#zbz-p.1">Jaspers'</persName> zusammen, das er nach den Jahren seiner psychiatrischen Tätigkeit und nach seinem Übergangswerk, <bibl ref="#zbz-w.66">Psychologie der Weltanschauungen</bibl>, veröffentlicht hatte: es hieß ganz einfach <bibl ref="#zbz-w.1">Philosophie</bibl>.
+        </p>
+        <note place="foot" n="1" xml:id="fn9-1" facs="#facs_9_r_9">
+          * Rede anläßlich der <persName ref="#zbz-p.1">Karl-Jaspers</persName>-Preisverleihung am 28.1.1990 in der Alten Aula verliehen durch die <placeName ref="#zbz-l.21">Stadt Heidelberg</placeName> und die <orgName ref="#zbz-o.32">Ruprecht-Karls-Universität Heidelberg</orgName>.
+        </note>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_10_r_2">
+          Aber <persName ref="#zbz-p.592">Ricoeur</persName> ist nicht bei <persName ref="#zbz-p.1">Jaspers</persName> geblieben. Schon im letzten Kapitel des ihm gewidmeten Buches, nachdem er ihn tiefgreifend verstanden hatte, nahm er deutlich Abstand. Das Wesen seiner Ablehnung bestätigt die Antwort, die ich immer wieder auf die Frage gegeben habe, warum <placeName ref="#zbz-l.2">Frankreich</placeName> für <persName ref="#zbz-p.1">Jaspers’</persName> Denken nicht empfänglicher gewesen ist: In <placeName ref="#zbz-l.2">Frankreich</placeName>, sagte ich, verstehe man nicht wirklich, was er mit dem Ausdruck „philosophischer Glaube“ meint. Die Franzosen wähnen weder genug Glauben, noch genug Unglauben darin zu spüren. Die einen deuten ihn als einen losen Rationalismus, die anderen als ein eingeschüchtertes Glaubensbekenntnis. Während in Wirklichkeit <persName ref="#zbz-p.1">Jaspers’</persName> Entscheidung philosophisch war; er wollte weder die <bibl ref="#zbz-w.68">Vernunft</bibl>, noch die Transzendenz opfern, da er überzeugt war, daß keine echte Existenz möglich ist ohne diese beiden. Deshalb, nachdem er die Kritik von <persName ref="#zbz-p.592">Ricoeur</persName> und <persName ref="#zbz-p.86">Dufrenne</persName> im 4. Teil ihres Buches gelesen hatte, stellte er fest, daß er mißverstanden worden war – obgleich ihm das Mitfühlen und das Mitdenken der beiden Autoren nahe ging und er sich dadurch ermuntert fühlte.
+        </p>
+        <p facs="#facs_10_r_3">
+          Also entfernte sich <persName ref="#zbz-p.592">Ricoeur</persName> von <persName ref="#zbz-p.1">Jaspers</persName>, blieb aber sich selbst treu. Unermüdlich hat er immer wieder die wichtigsten Denker dieses Jahrhunderts befragt, in erster Linie diejenigen, die den Menschen und das Menschsein objektiv und unpersönlich zu verstehen versuchten, und auf diese Weise vom meditativ indirekt denkenden <persName ref="#zbz-p.592">Paul Ricoeur</persName> lange und schwierige Umwege verlangten. Je mühsamer die Umwege, desto kostbarer, so glaube ich, schienen ihm die erreichten Ergebnisse zu sein. Vielleicht stand <persName ref="#zbz-p.1">Jaspers’</persName> Weg demjenigen von <persName ref="#zbz-p.592">Paul Ricoeur</persName> zu nahe, um seinem eigenen Suchen genügend Widerstand entgegenzusetzen.
+        </p>
+        <p facs="#facs_10_r_4">
+          Die Autoren, die <persName ref="#zbz-p.592">Ricoeur</persName> mit Vorliebe studierte, waren die, die er selbst „les maîtres du soupçon“ nannte, diejenigen, welche die Illusionen und Bequemlichkeiten des guten Glaubens oder der Moralität bloßlegten: <bibl ref="#zbz-w.530">Nietzsche</bibl>, <persName ref="#zbz-p.48">Freud</persName>, <persName ref="#zbz-p.14">Marx</persName>, – vielleicht sogar auch <persName ref="#zbz-p.46">Husserl</persName>. Bei jedem sucht er Hindernisse für das eigene Denken. Es ist als wäre für ihn die <bibl ref="#zbz-w.1">Philosophie</bibl> der Tradition zu leicht geworden, mit ihrer scheinbaren Transparenz, ihrem angeblich eindeutigen Ton, ihrer quasi Zeitlosigkeit. <persName ref="#zbz-p.179">Descartes</persName>. <persName ref="#zbz-p.6">Kant</persName>. Und wohl nach diesem letzten Denker auch <persName ref="#zbz-p.1">Jaspers</persName>, der gewiß in der modernen <bibl ref="#zbz-w.1">Philosophie</bibl> als <persName ref="#zbz-p.6">Kantianer</persName> dasteht.
+        </p>
+        <p facs="#facs_10_r_5">
+          Die Frage nach dem Wahren zwingt <persName ref="#zbz-p.592">Ricoeur</persName>, eine Vorfrage zu stellen: Ist das Wahre möglich? Zu welchen Bedingungen? Diese Frage aber bedingt eine neue Vorfrage: Kann ein Sinn ausgesagt werden?
+        </p>
+        <p>
+          Zum Ausklang unseres Jahrhunderts ist die Antwort zunächst negativ. Denn was ausgesagt wird, wird zum Symptom bevor es zum Ziel wird – selbst wenn „die Ursache“, die diese Folge hervorgebracht hat, durch die verschiedenen Problematiken und Informatiken die mechanische Klarheit verloren hat, die sie früher besaß. Zum Beispiel, was ausgesagt wird, hängt geschichtlich oder soziologisch von wirtschaftlichen Verhältnissen ab, psychologisch von dem, was im Unbewußten vor sich geht. Wer sich vergewissern will, ob das Wahre möglich ist, entdeckt das Unwahre schon in der gestellten Frage, in dem Grund,
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          Laudatio auf <persName ref="#zbz-p.592">Paul Ricoeur</persName>
+        </p>
+        <p facs="#facs_11_r_2">
+          aus dem sie gestellt wird, und sogar in dem, was er zu sein behauptet, um sie überhaupt stellen zu können.
+        </p>
+        <p facs="#facs_11_r_3">
+          Noch mehr, es gibt nur noch ungreifbare Phänomene; die Sprache, in der die Frage gestellt wird, entblättert sich auch in abgeleitete Figuren, usw.
+        </p>
+        <p facs="#facs_11_r_4">
+          Von seinen strengen Forderungen umringt, kann <persName ref="#zbz-p.592">Ricoeur</persName> nichts tun, bevor er die Unmöglichkeiten des Wahren oder der Aussagen interpretiert hat. Er verfällt in die Ausweglosigkeit und die Paradoxien <persName ref="#zbz-p.15">Nietzsches</persName>, in die Reduktion von <persName ref="#zbz-p.46">Husserl</persName>, in die Enthüllungen <persName ref="#zbz-p.48">Freud’s</persName>, in die Entlarvungen von <persName ref="#zbz-p.14">Marx</persName>.
+        </p>
+        <p facs="#facs_11_r_5">
+          Der Weg, der ihm allenfalls eine Möglichkeit anbietet, ist der, auf dem es nicht mehr darum geht, einen Sinn auszusagen, sondern einen Text auszulegen, d. h. also, den Sinn eines <bibl ref="#zbz-w.514">Textes</bibl> zu verdoppeln, indem ihm eine reflexive Wirksamkeit zugesprochen wird.
+        </p>
+        <p facs="#facs_11_r_6">
+          Interpretation, schreibt <persName ref="#zbz-p.592">Ricoeur</persName>, heißt, Doppelsinn verstehen. Es handelt sich hier zunächst um <persName ref="#zbz-p.48">Freud’s</persName> Traumdeutung; da hat man es mit dem Symbol und seinen Problemen, oder mit seinem Problem, zu tun; man steht also mitten in der Hermeneutik. Was wir doch gleich bemerken müssen: der „Doppelsinn“ ist nicht einfach ein verdoppelter Sinn, in dem beides von derselben Natur ist. „Je m’avance masqué“, zitiert <persName ref="#zbz-p.592">Ricoeur</persName>. Die Maske ist eben nicht die Erscheinung eines zweiten Gesichts. <persName ref="#zbz-p.592">Ricoeur</persName> will beide Begriffe, „Symbol“ und „Deutung“, gegeneinander begrenzen. In der Intentionalität des Doppelsinnes wird man versuchen, den Sinn, das indirekte Ziel des Symbols, zu finden. Dazu gehört ein existentieller Akt, durch den die abstrakte Reflexion zur konkreten Reflexion übergeht, so daß beide Teile der hermeneutischen Antinomie eins werden: Destitution und Institution. Das Objekt, worauf dieser Akt hinzielt, ist, was auf französisch „le sacré“ genannt wird.
+        </p>
+        <p facs="#facs_11_r_7">
+          Im Grunde genommen handelt all dies vom Menschsein, in dem begehrt, gehandelt, gesprochen, erkannt, geglaubt und gezweifelt wird. Und das ohne Ende. Könnte der <persName ref="#zbz-p.1251">Mensch</persName> Befriedigung erlangen, so würde er etwas entbehren, das wichtiger ist als die Lust: er würde keine Symbolisierung kennen. <persName ref="#zbz-p.592">Ricoeur</persName> schreibt: „Le désir donne à parler en tant que demande insatiable“ (als unersättliche Forderung).
+        </p>
+        <p facs="#facs_11_r_8">
+          Diese endlose Unbefriedigtheit scheint mir die <placeName ref="#zbz-l.565">Rolle</placeName> zu spielen, die in <persName ref="#zbz-p.1">Jaspers’</persName> <bibl ref="#zbz-w.1">Philosophie</bibl> der Chiffre des erlebten Scheiterns entspricht. <persName ref="#zbz-p.592">Ricoeur’s</persName> Ansicht, wonach die Kultur, eng an Sprache und Austausch gebunden, eine widerspruchsvolle und unmögliche Aufgabe bleibt, geht in dieselbe Richtung: sie stellt – ohne Verzweiflung, und übrigens ohne Verzicht – das Scheitern fest.
+        </p>
+        <p>
+          <persName ref="#zbz-p.592">Ricoeur</persName> ist von Grund auf ein Mann des Glaubens, eines Glaubens aber, den er nie zu bekämpfen aufhört. Und um diesem Glauben zum schwierigsten Sieg zu verhelfen, greift er mit Vorliebe nach den Herausforderungen der Atheisten, Denunzianten, Reduktionisten. Voller Begierde gebraucht er das Realitätsprinzip gegen die Bequemlichkeiten der Wahnvorstellung und des Traumes, um eine endlose Forderung aufrecht zu erhalten. Die Begierde wartet nicht auf Lust; sie verlangt Realität, und sei es jene des Todes, mit Hilfe der Reflexion, einer Hermeneutik, die Archäologie und Teleologie zu einer einzigen Dialektik
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_12_r_2">
+          verbindet. Und er schreibt: „Die reflexive <bibl ref="#zbz-w.1">Philosophie</bibl> soll wieder in Angriff genommen, der Umweg durch die Strukturen, den objektiven Sinn, die anonyme Welt der Kultur verlängert, das abstrakte und unpersönliche Moment der Sprache dem Akt des Wortes und seiner reflexiven Macht einverleibt werden.“ Es ist wohl dieselbe Forderung, die ihn dazu bewegt hat, die Probleme des logischen Positivismus auch noch gründlich zu studieren.
+        </p>
+        <p facs="#facs_12_r_3">
+          Und doch, in seiner Arbeit über <persName ref="#zbz-p.48">Freud</persName>, hat <persName ref="#zbz-p.592">Ricoeur</persName> geschrieben: „Es ist nicht meine Absicht, <persName ref="#zbz-p.48">Freud</persName> zu vervollständigen. Ich will ihn verstehen, indem ich mich selbst verstehe.“ Er bekennt damit, daß er dieses Werk als ein philosophisches, und auf philosophische Weise, liest. Genauso hat auch <persName ref="#zbz-p.1">Jaspers</persName> jedes echte Lesen derer, die er „<bibl ref="#zbz-w.45">die Großen Philosophen</bibl>“ nannte, aufgefaßt. Die Frage stellt sich jedoch: gehört wirklich das Werk von <persName ref="#zbz-p.48">Freud</persName> zur <hi rendition="#i"><bibl ref="#zbz-w.358">philosophia perennis</bibl></hi>, und eignet es sich also für ein solches Lesen? Oder hat nicht vielleicht <persName ref="#zbz-p.592">Ricoeur</persName> dieses Werk irgendwie neu geschaffen und dessen Widerstände tief verändert, die es nun ermöglichen, es mit seinem Glauben zu versöhnen? – Vielleicht ist das Werk von <persName ref="#zbz-p.48">Freud</persName>, wie auch das von <persName ref="#zbz-p.14">Marx</persName>, nicht eine jener großen „philosophischen Chiffren“ der europäischen Tradition, mit deren Hilfe <persName ref="#zbz-p.1">Jaspers</persName> immer wieder, durch die Enteignung des Nichtwissens, die Transzendenz suchte. Wenn es aber so wäre, dann müßten wir zugeben, daß <persName ref="#zbz-p.592">Ricoeur</persName> selbst, durch das eigene Denken, aus diesen ihm fremden Werken, wirksame „philosophische Chiffren“ gemacht hat. Dank ihm haben ihre Begriffe eine neue Dichte gewonnen, ein wirksames Geheimnis, einen stärkeren ethischen Imperativ. Dank ihm können sie die religiöse Symbolik in Richtung des Dunklen und des Klaren bereichern.
+        </p>
+        <p facs="#facs_12_r_4">
+          Er hat sicher recht, wenn er behauptet, daß wir „durch die vieldeutigen Bedeutungen der Selbsterkenntnis die Problematik des <hi rendition="#i">Cogito</hi> gründlich verändern“. Er sagt mit Recht, daß die Reflexion dann zur Kritik werden kann, nicht, im Sinne <persName ref="#zbz-p.6">Kants</persName>, einer Rechtfertigung der Wissenschaft und der Pflicht, sondern weil das <hi rendition="#i">Cogito</hi> nur über den Umweg einer Entzifferung der Lebensdokumente wiedergewonnen werden kann (Dokumente, anscheinend in erster Linie diejenigen der „maîtres du soupçon“, die gezeigt haben, daß das unmittelbare Bewußtsein zunächst „falsches Bewußtsein“ ist). Eine reflexive <bibl ref="#zbz-w.1">Philosophie</bibl> – etwas ganz anderes, sagt <persName ref="#zbz-p.592">Ricoeur</persName>, als eine <bibl ref="#zbz-w.1">Philosophie</bibl> des Bewußtseins – gründet in einer <hi rendition="#i"><bibl ref="#zbz-w.8">Logik</bibl> „des Doppelsinnes“</hi>, die der Hermeneutik eigen ist, gerade der Doppelsinn, durch den „die Symbole zu denken geben“.
+        </p>
+        <p>
+          Vielleicht vereinfacht <persName ref="#zbz-p.592">Ricoeur</persName> etwas das <hi rendition="#i">Cogito</hi> von <persName ref="#zbz-p.179">Descartes</persName>, vielleicht sogar dasjenige von <persName ref="#zbz-p.46">Husserl</persName>, wie auch die „<bibl ref="#zbz-w.1">Philosophie</bibl> des Bewußtseins“ von <persName ref="#zbz-p.6">Kant</persName>. Diese letztere insbesondere scheint mir in ihrer Sprache und auf ihre Weise gleichzeitig auch eine reflexive <bibl ref="#zbz-w.1">Philosophie</bibl> zu sein, vor allem, wenn man es vermeidet, die <hi rendition="#i"><bibl ref="#zbz-w.222">Kritik der Urteilskraft</bibl></hi> von den beiden anderen zu trennen. Aber indem <persName ref="#zbz-p.592">Ricoeur</persName> sich bemüht, die philosophische Reflexion gerade bei denjenigen unserer Fast-Zeitgenossen zu verstehen, die mit Hilfe des Verdachts versuchten, das Menschsein bloßzustellen, hat er einen fruchtbaren Umweg gewählt. Er lehrt uns, sie so zu lesen und zu verstehen, wie sie sich selber
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          Laudatio auf <persName ref="#zbz-p.592">Paul Ricoeur</persName><lb facs="#facs_13_l_1_1" n="N001" />87
+        </p>
+        <p facs="#facs_13_r_2">
+          vielleicht nicht verstanden haben – und nicht verstanden werden wollten. <persName ref="#zbz-p.592">Ricoeur</persName> philosophiert meistens als ein unermüdlicher, leidenschaftlicher Hermeneutiker anderer Werke. Dabei vertieft er sein eigenes reflexives Bewußtsein und weckt dasjenige seiner Leser auf. So wirken, durch mehrschichtige Symbole, die Quellen seiner Freiheit und die Hoffnungen seines Glaubens weiter.
+        </p>
+        <p facs="#facs_13_r_3">
+          Andere haben für uns vergangene und fast vergessene Zeiten der <bibl ref="#zbz-w.1">Philosophie</bibl> wieder aufleben lassen. <persName ref="#zbz-p.592">Ricoeur</persName> ist sozusagen der magische Archäologe der Gegenwart oder der nahen Vergangenheit: er ermöglicht es uns, manche Denker unseres Jahrhunderts zu lesen als gehörten sie, ihnen selber vielleicht zum Trotz, zur ewigen <bibl ref="#zbz-w.1">Philosophie</bibl>.
+        </p>
+        <p>
+          Dafür sagen wir ihm heute großen Dank.
+        </p>
+      </div>
+      </body></text>
+</TEI>

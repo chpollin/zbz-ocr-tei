@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Problematik der medizinischen Entscheidungen in der Gegenwart</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2650</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Problematik der medizinischen Entscheidungen in der Gegenwart</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1989</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screen-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 0 Warnings; Overlay S1+S3: Titelseite Aerztezeitung korrekt erfasst, Inhaltsverzeichnis S3 viele Regionen aber plausibel; 1 Fussnote korrekt als note[@place='foot'] (+3 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1197" lry="1751">
+      <zone xml:id="facs_1_r_1" ulx="82" uly="298" lrx="1255" lry="1043" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1248" lry="1765">
+      <zone xml:id="facs_2_r_1" ulx="633" uly="123" lrx="1139" lry="162" />
+      <zone xml:id="facs_2_r_2" ulx="114" uly="132" lrx="231" lry="160" />
+      <zone xml:id="facs_2_r_3" ulx="701" uly="264" lrx="794" lry="284" />
+      <zone xml:id="facs_2_r_4" ulx="633" uly="265" lrx="678" lry="291" />
+      <zone xml:id="facs_2_r_5" ulx="144" uly="281" lrx="409" lry="316" />
+      <zone xml:id="facs_2_r_6" ulx="143" uly="315" lrx="407" lry="332" />
+      <zone xml:id="facs_2_r_7" ulx="701" uly="319" lrx="784" lry="337" />
+      <zone xml:id="facs_2_r_8" ulx="633" uly="322" lrx="681" lry="348" />
+      <zone xml:id="facs_2_r_9" ulx="141" uly="330" lrx="508" lry="381" />
+      <zone xml:id="facs_2_r_10" ulx="701" uly="337" lrx="812" lry="358" />
+      <zone xml:id="facs_2_r_11" ulx="143" uly="407" lrx="479" lry="426" />
+      <zone xml:id="facs_2_r_12" ulx="141" uly="436" lrx="381" lry="453" />
+      <zone xml:id="facs_2_r_13" ulx="633" uly="447" lrx="823" lry="505" />
+      <zone xml:id="facs_2_r_14" ulx="143" uly="468" lrx="285" lry="486" />
+      <zone xml:id="facs_2_r_15" ulx="143" uly="485" lrx="282" lry="501" />
+      <zone xml:id="facs_2_r_16" ulx="143" uly="500" lrx="269" lry="517" />
+      <zone xml:id="facs_2_r_17" ulx="143" uly="515" lrx="272" lry="532" />
+      <zone xml:id="facs_2_r_18" ulx="633" uly="523" lrx="1141" lry="562" />
+      <zone xml:id="facs_2_r_19" ulx="143" uly="531" lrx="286" lry="549" />
+      <zone xml:id="facs_2_r_20" ulx="701" uly="559" lrx="878" lry="580" />
+      <zone xml:id="facs_2_r_21" ulx="142" uly="574" lrx="603" lry="622" />
+      <zone xml:id="facs_2_r_22" ulx="141" uly="620" lrx="595" lry="641" />
+      <zone xml:id="facs_2_r_23" ulx="142" uly="651" lrx="472" lry="669" />
+      <zone xml:id="facs_2_r_24" ulx="636" uly="667" lrx="878" lry="723" />
+      <zone xml:id="facs_2_r_25" ulx="142" uly="682" lrx="609" lry="778" />
+      <zone xml:id="facs_2_r_26" ulx="634" uly="741" lrx="907" lry="771" />
+      <zone xml:id="facs_2_r_27" ulx="704" uly="762" lrx="781" lry="780" />
+      <zone xml:id="facs_2_r_28" ulx="142" uly="774" lrx="610" lry="822" />
+      <zone xml:id="facs_2_r_29" ulx="704" uly="778" lrx="1141" lry="907" />
+      <zone xml:id="facs_2_r_30" ulx="143" uly="833" lrx="610" lry="870" />
+      <zone xml:id="facs_2_r_31" ulx="144" uly="888" lrx="380" lry="921" />
+      <zone xml:id="facs_2_r_32" ulx="703" uly="906" lrx="1143" lry="1048" />
+      <zone xml:id="facs_2_r_33" ulx="144" uly="935" lrx="483" lry="952" />
+      <zone xml:id="facs_2_r_34" ulx="144" uly="949" lrx="426" lry="966" />
+      <zone xml:id="facs_2_r_35" ulx="144" uly="981" lrx="423" lry="998" />
+      <zone xml:id="facs_2_r_36" ulx="146" uly="996" lrx="547" lry="1013" />
+      <zone xml:id="facs_2_r_37" ulx="147" uly="1040" lrx="402" lry="1057" />
+      <zone xml:id="facs_2_r_38" ulx="148" uly="1072" lrx="287" lry="1087" />
+      <zone xml:id="facs_2_r_39" ulx="708" uly="1078" lrx="1136" lry="1100" />
+      <zone xml:id="facs_2_r_40" ulx="640" uly="1081" lrx="688" lry="1106" />
+      <zone xml:id="facs_2_r_41" ulx="148" uly="1087" lrx="285" lry="1104" />
+      <zone xml:id="facs_2_r_42" ulx="148" uly="1118" lrx="275" lry="1136" />
+      <zone xml:id="facs_2_r_43" ulx="708" uly="1145" lrx="865" lry="1163" />
+      <zone xml:id="facs_2_r_44" ulx="641" uly="1146" lrx="688" lry="1172" />
+      <zone xml:id="facs_2_r_45" ulx="150" uly="1148" lrx="312" lry="1166" />
+      <zone xml:id="facs_2_r_46" ulx="708" uly="1163" lrx="799" lry="1181" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1247" lry="1751">
+      <zone xml:id="facs_3_r_1" ulx="647" uly="264" lrx="813" lry="321" />
+      <zone xml:id="facs_3_r_2" ulx="118" uly="274" lrx="291" lry="349" />
+      <zone xml:id="facs_3_r_3" ulx="639" uly="343" lrx="856" lry="398" />
+      <zone xml:id="facs_3_r_4" ulx="183" uly="366" lrx="623" lry="424" />
+      <zone xml:id="facs_3_r_5" ulx="706" uly="414" lrx="1141" lry="489" />
+      <zone xml:id="facs_3_r_6" ulx="638" uly="507" lrx="865" lry="564" />
+      <zone xml:id="facs_3_r_7" ulx="117" uly="510" lrx="257" lry="568" />
+      <zone xml:id="facs_3_r_8" ulx="705" uly="577" lrx="1108" lry="602" />
+      <zone xml:id="facs_3_r_9" ulx="185" uly="586" lrx="568" lry="643" />
+      <zone xml:id="facs_3_r_10" ulx="705" uly="613" lrx="1079" lry="635" />
+      <zone xml:id="facs_3_r_11" ulx="705" uly="645" lrx="891" lry="666" />
+      <zone xml:id="facs_3_r_12" ulx="705" uly="679" lrx="850" lry="699" />
+      <zone xml:id="facs_3_r_13" ulx="705" uly="711" lrx="1067" lry="733" />
+      <zone xml:id="facs_3_r_14" ulx="118" uly="728" lrx="328" lry="787" />
+      <zone xml:id="facs_3_r_15" ulx="705" uly="744" lrx="1141" lry="799" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1250" lry="1757">
+      <zone xml:id="facs_4_r_1" ulx="459" uly="258" lrx="1136" lry="402" />
+      <zone xml:id="facs_4_r_2" ulx="111" uly="339" lrx="346" lry="389" />
+      <zone xml:id="facs_4_r_3" ulx="458" uly="484" lrx="793" lry="605" />
+      <zone xml:id="facs_4_r_4" ulx="106" uly="485" lrx="444" lry="1490" />
+      <zone xml:id="facs_4_r_5" ulx="455" uly="627" lrx="794" lry="1631" />
+      <zone xml:id="facs_4_r_6" ulx="806" uly="1119" lrx="1137" lry="1631" />
+      <zone xml:id="facs_4_r_7" ulx="106" uly="1566" lrx="436" lry="1631" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1249" lry="1761">
+      <zone xml:id="facs_5_r_1" ulx="1186" uly="2623" lrx="4546" lry="7801" />
+      <zone xml:id="facs_5_r_2" ulx="4683" uly="4613" lrx="8068" lry="16289" />
+      <zone xml:id="facs_5_r_3" ulx="8205" uly="6550" lrx="11578" lry="13911" />
+      <zone xml:id="facs_5_r_4" ulx="1186" uly="7783" lrx="4533" lry="16289" />
+      <zone xml:id="facs_5_r_5" ulx="8193" uly="14123" lrx="11553" lry="16324" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1244" lry="1763">
+      <zone xml:id="facs_6_r_1" ulx="99" uly="267" lrx="438" lry="930" />
+      <zone xml:id="facs_6_r_2" ulx="801" uly="268" lrx="1136" lry="1048" />
+      <zone xml:id="facs_6_r_3" ulx="99" uly="952" lrx="435" lry="1372" />
+      <zone xml:id="facs_6_r_4" ulx="450" uly="978" lrx="786" lry="1372" />
+      <zone xml:id="facs_6_r_5" ulx="800" uly="1074" lrx="1131" lry="1371" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <placeName ref="#zbz-l.6">Bern</placeName>, 10. Mai 1989<lb facs="#facs_1_l_1_1" n="N001" />19/1989
+        </head>
+        <p>
+          Ärzte Médecins Medici
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          - <orgName ref="#zbz-o.453">Conférence suisse des médecins dirigeants d'hôpitaux</orgName><lb facs="#facs_1_l_4_1" n="N001" />- «Krebs und Alternativmedizin»<lb facs="#facs_1_l_4_2" n="N002" />- Problematik der medizinischen Entscheidungen<lb facs="#facs_1_l_4_3" n="N003" />- Fortbildungs-Seminar <orgName ref="#zbz-o.454">FMH</orgName>
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          weizerische Ärztezeitung <bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl> <bibl ref="#zbz-w.281">Bollettino dei medici svizzeri</bibl>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Impressum
+        </p>
+        <p facs="#facs_2_r_2">
+          Inhalt Sommaire Sommario
+        </p>
+        <p facs="#facs_2_r_3">
+          Verantwortlich für die Redaktion:
+        </p>
+        <p facs="#facs_2_r_4">
+          <persName ref="#zbz-p.1134">Reto Steiner</persName>
+        </p>
+        <p facs="#facs_2_r_5">
+          Redaktionssekretariat: Frau <persName ref="#zbz-p.1135">Charlotte Tschumi</persName><lb facs="#facs_2_l_5_1" n="N001" />Generalsekretariat der <placeName ref="#zbz-l.10">Schweiz</placeName>. Ärzteorganisation,<lb facs="#facs_2_l_5_2" n="N002" />3000 <placeName ref="#zbz-l.6">Bern</placeName> 16, Elfenstrasse 18, Tel. 031 43 55 43<lb facs="#facs_2_l_5_3" n="N003" />Stellvertretung: Dr. iur. <persName ref="#zbz-p.907">Karl Appert</persName>, <orgName ref="#zbz-o.760">Schweizer</orgName> Ärzte-Information,<lb facs="#facs_2_l_5_4" n="N004" />8008 <placeName ref="#zbz-l.45">Zürich</placeName>, Seefeldstrasse 198, Tel. 01 55 05 05<lb facs="#facs_2_l_5_5" n="N005" /><persName ref="#zbz-p.1136">Catherine Laubscher</persName>, avocate, Serviée romand d'information médicale,<lb facs="#facs_2_l_5_6" n="N006" />1010 <placeName ref="#zbz-l.19">Lausanne</placeName>, Case postale, rte d'Oron, Tel. 021 32 16 74
+        </p>
+        <p facs="#facs_2_r_6">
+          Informationskommission der <orgName ref="#zbz-o.454">FMH</orgName>:
+        </p>
+        <p facs="#facs_2_r_7">
+          Dr. <persName ref="#zbz-p.1137">H. R. Sahli</persName>, <placeName ref="#zbz-l.437">Thun</placeName><lb facs="#facs_2_l_7_1" n="N001" />Dr. <persName ref="#zbz-p.1138">B. Schreiber</persName>, <placeName ref="#zbz-l.5">Genève</placeName><lb facs="#facs_2_l_7_2" n="N002" />Dr. <persName ref="#zbz-p.1139">W. Flury</persName>, <placeName ref="#zbz-l.438">Langenthal</placeName><lb facs="#facs_2_l_7_3" n="N003" />Dr. <persName ref="#zbz-p.1140">S. Gilardi</persName>, <placeName ref="#zbz-l.439">Locarno</placeName><lb facs="#facs_2_l_7_4" n="N004" />Dr. <persName ref="#zbz-p.909">A. Hunziker</persName>, <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_2_l_7_5" n="N005" />Dr. <persName ref="#zbz-p.1141">R. Kressig</persName>, <placeName ref="#zbz-l.184">St. Gallen</placeName><lb facs="#facs_2_l_7_6" n="N006" />Dr. <persName ref="#zbz-p.1142">A. Nussbaumer</persName>, <placeName ref="#zbz-l.440">Monthey</placeName>
+        </p>
+        <p facs="#facs_2_r_8">
+          Redaktionsschluss für Originalartikel und Bekanntmachungen: Montagvormittag, eine Woche vor Erscheinen. Sämtliche Manuskripte sind an die Redaktion zu richten.<lb facs="#facs_2_l_8_1" n="N001" />Namentlich gezeichnete Beiträge sind als Meinung des Verfassers zu verstehen.
+        </p>
+        <p facs="#facs_2_r_9">
+          Verlag, Anzeigenverwaltung und Abonnements:
+        </p>
+        <p facs="#facs_2_r_10">
+          <orgName ref="#zbz-o.236">Hans Huber AG</orgName>, Länggassstrasse 76, Postfach, 3000 <placeName ref="#zbz-l.6">Bern</placeName> 9, Telefon 031 24 25 33, Telefax 031 24 33 80 – Erscheint wöchentlich. – Jahresabonnement <placeName ref="#zbz-l.10">Schweiz</placeName> Fr. 132.-, Ausland (<placeName ref="#zbz-l.14">Europa</placeName>) sFr. 210.- (inkl. Porto und Versandgebühren). Postscheckkonto 30-6675-8. Die Bezugsdauer verlängert sich jeweils um ein weiteres Jahr, wenn nicht bis zum 1. Oktober schriftlich gekündigt wird. – Insereberschluss: Geschäftsinserate 3 Wochen vor Erscheinen, Stelleninserate am Dienstag der vorangehenden Woche, 16 Uhr.<lb facs="#facs_2_l_10_1" n="N001" />In <placeName ref="#zbz-l.240">Belgien</placeName>, <placeName ref="#zbz-l.160">Dänemark</placeName>, <placeName ref="#zbz-l.241">Deutschland</placeName>, <placeName ref="#zbz-l.242">Finnland</placeName>, <placeName ref="#zbz-l.243">Italien</placeName>, <placeName ref="#zbz-l.244">Luxemburg</placeName>, <placeName ref="#zbz-l.245">Norwegen</placeName>, <placeName ref="#zbz-l.96">Portugal</placeName> und <placeName ref="#zbz-l.246">Schweden</placeName> kann die «Ärztezeitung» durch die Postämter bestellt werden.
+        </p>
+        <p facs="#facs_2_r_11">
+          Druck und Spedition:
+        </p>
+        <p facs="#facs_2_r_12">
+          <orgName ref="#zbz-o.455">BUGRA SUISSE</orgName>, Buechler Grafino AG, «<bibl ref="#zbz-w.489">Schweizerische Ärztezeitung</bibl>», 3084 <placeName ref="#zbz-l.247">Wabern</placeName>.
+        </p>
+        <p facs="#facs_2_r_13">
+          Responsable de la rédaction:
+        </p>
+        <p facs="#facs_2_r_14">
+          <persName ref="#zbz-p.1134">Reto Steiner</persName>
+        </p>
+        <p facs="#facs_2_r_15">
+          Secrétariat de rédaction: M° <persName ref="#zbz-p.1135">Charlotte Tschumi</persName><lb facs="#facs_2_l_15_1" n="N001" />Secrétariat général des institutions du corps médical suisse,<lb facs="#facs_2_l_15_2" n="N002" />3000 <placeName ref="#zbz-l.6">Berne</placeName> 16, Elfenstrasse 18, tél. 031 43 55 43<lb facs="#facs_2_l_15_3" n="N003" />Remplaçant: Dr. iur. <persName ref="#zbz-p.907">Karl Appert</persName>, <orgName ref="#zbz-o.760">Schweizer</orgName> Ärzte-Information,<lb facs="#facs_2_l_15_4" n="N004" />8008 <placeName ref="#zbz-l.45">Zürich</placeName>, Seefeldstrasse 198, tél. 01 55 05 05<lb facs="#facs_2_l_15_5" n="N005" /><persName ref="#zbz-p.1136">Catherine Laubscher</persName>, avocate, Service romand d'information médicale,<lb facs="#facs_2_l_15_6" n="N006" />1010 <placeName ref="#zbz-l.19">Lausanne</placeName>, Case postale, rte d'Oron, tél. 021 32 16 74
+        </p>
+        <p facs="#facs_2_r_16">
+          <orgName ref="#zbz-o.20">Commission</orgName> d'information de la <orgName ref="#zbz-o.454">FMH</orgName>
+        </p>
+        <p facs="#facs_2_r_17">
+          D' <persName ref="#zbz-p.1137">H. R. Sahli</persName>, Thoune<lb facs="#facs_2_l_17_1" n="N001" />D' <persName ref="#zbz-p.1138">B. Schreiber</persName>, <placeName ref="#zbz-l.5">Genève</placeName><lb facs="#facs_2_l_17_2" n="N002" />D' <persName ref="#zbz-p.1139">W. Flury</persName>, <placeName ref="#zbz-l.438">Langenthal</placeName><lb facs="#facs_2_l_17_3" n="N003" />D' <persName ref="#zbz-p.1140">S. Gilardi</persName>, <placeName ref="#zbz-l.439">Locarno</placeName><lb facs="#facs_2_l_17_4" n="N004" />D' <persName ref="#zbz-p.909">A. Hunziker</persName>, <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_2_l_17_5" n="N005" />D' <persName ref="#zbz-p.1141">R. Kressig</persName>, <placeName ref="#zbz-l.184">St. Gallen</placeName><lb facs="#facs_2_l_17_6" n="N006" />D' <persName ref="#zbz-p.1142">A. Nussbaumer</persName>, <placeName ref="#zbz-l.440">Monthey</placeName>
+        </p>
+        <p facs="#facs_2_r_18">
+          Dernier délai pour les articles originaux et les communications: le lundi matin de la semaine précédant celle de la parution. Toutes les manuscrits doivent être adressés à la rédaction.<lb facs="#facs_2_l_18_1" n="N001" />Les textes signés ne reflètent que l'opinion de l'auteur.
+        </p>
+        <p facs="#facs_2_r_19">
+          Editions, régie des annonces et abonnements:
+        </p>
+        <p facs="#facs_2_r_20">
+          <orgName ref="#zbz-o.237">Hans Huber SA</orgName>, Länggassstrasse 76, Case postale, 3000 <placeName ref="#zbz-l.6">Berne</placeName> 9, tél. 031 24 25 33, Télécopieur 031 24 33 80 – Parait tous les huit jours. – Abonnement annuel <placeName ref="#zbz-l.705">Suisse</placeName> Fr.s.132.-, étranger (<placeName ref="#zbz-l.29">Europe</placeName>) Fr.s.210.- (incl. frais de porte et d'expédition). – Compte de chèques postaux 30-6675-8. La durée d'abonnement se renouvelle automatiquement chaque année si vous n'annultez pas l'abonnement par écrit jusqu'au 1er octobre. Dernier délai pour la remise des annonces commerciales, 3 semaines avant la parution; offres et demandes d'emploi, le mardi (18 h) de la semaine précédant la parution.<lb facs="#facs_2_l_20_1" n="N001" />On peut s'abonner directement par la poste dans les pays ci-après: <placeName ref="#zbz-l.26">Allemagne</placeName>, <placeName ref="#zbz-l.108">Belgique</placeName>, <placeName ref="#zbz-l.160">Danemark</placeName>, <placeName ref="#zbz-l.320">Finlande</placeName>, <placeName ref="#zbz-l.110">Italie</placeName>, <placeName ref="#zbz-l.549">Luxembourg</placeName>, <placeName ref="#zbz-l.148">Norvège</placeName>, <placeName ref="#zbz-l.96">Portugal</placeName> et <placeName ref="#zbz-l.80">Suède</placeName>.
+        </p>
+        <p facs="#facs_2_r_21">
+          Impression et expédition:
+        </p>
+        <p facs="#facs_2_r_22">
+          <orgName ref="#zbz-o.455">BUGRA SUISSE</orgName>, Buechler Grafino SA, «<bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl>», 3084 <placeName ref="#zbz-l.247">Wabern</placeName>.
+        </p>
+        <p facs="#facs_2_r_23">
+          70. Jahrgang<lb facs="#facs_2_l_23_1" n="N001" />Erscheint jeden Mittwoch
+        </p>
+        <p facs="#facs_2_r_24">
+          801 Spectrum
+        </p>
+        <p facs="#facs_2_r_25">
+          803 Editorial
+        </p>
+        <p facs="#facs_2_r_26">
+          Dr. <persName ref="#zbz-p.1143">Max Giger</persName>
+        </p>
+        <p facs="#facs_2_r_27">
+          Standespolitik
+        </p>
+        <p facs="#facs_2_r_28">
+          Politique professionnelle<lb facs="#facs_2_l_28_1" n="N001" />Politica professionale
+        </p>
+        <p facs="#facs_2_r_29">
+          804 <orgName ref="#zbz-o.453">Conférence suisse des médecins dirigeants d'hôpitaux</orgName> (CMDH)
+        </p>
+        <p facs="#facs_2_r_30">
+          <persName ref="#zbz-p.907">Karl Appert</persName>, D' en droit
+        </p>
+        <p facs="#facs_2_r_31">
+          Wissenswertes für den Arzt
+        </p>
+        <p facs="#facs_2_r_32">
+          Noté à l'intention des médecins<lb facs="#facs_2_l_32_1" n="N001" />Notato per il medico
+        </p>
+        <p facs="#facs_2_r_33">
+          805 Le dialogue de sourds
+        </p>
+        <p facs="#facs_2_r_34">
+          <persName ref="#zbz-p.1134">R. Steiner</persName>
+        </p>
+        <p facs="#facs_2_r_35">
+          Im Februar hat in <placeName ref="#zbz-l.184">St. Gallen</placeName> das 2. <orgName ref="#zbz-o.753">Internationale</orgName> <bibl ref="#zbz-w.546">Symposium</bibl> «Krebs und Alternativmedizin» stattgefunden, an dem wissenschaftlich fundierte Informationen und kritische Diskussionen über schulmedizinische Grenzgebiete sowie über Alternativmethoden in der Behandlung von Krebskrankheiten vermittelt wurden. Die beiden Organisationen des Symposiums ziehen in einem Interview Bilanz.
+        </p>
+        <p facs="#facs_2_r_36">
+          En février s'est tenu à St-Gall le 2e <bibl ref="#zbz-w.546">Symposium</bibl> international «Cancer et médecines parallèles». Des informations scientifiquement fondées y ont été apportées et une discussion critique s'est établie à propos des domaines aux confins de la médecine classique et des méthodes parallèles dans le traitement des affections cancéreuses. Les deux organisateurs du symposium tirent le bilan de cette réunion.
+        </p>
+        <p facs="#facs_2_r_37">
+          808 Rechtliche Grenzen ärztlicher Therapiefreiheit
+        </p>
+        <p facs="#facs_2_r_38">
+          Dr. iur. <persName ref="#zbz-p.1144">J. Gross</persName>
+        </p>
+        <p facs="#facs_2_r_39">
+          812 Hinter der Mauer
+        </p>
+        <p facs="#facs_2_r_40">
+          <persName ref="#zbz-p.1145">P. D. Juelke</persName>
+        </p>
+        <p facs="#facs_2_r_41">
+          Diplomrede eines Diplomanden anlässlich der Staats-examensfeier der Medizinischen Fakultät der <orgName ref="#zbz-o.46">Universität Zürich</orgName> im Dezember 1988
+        </p>
+        <p facs="#facs_2_r_42">
+          Exposé présenté par un nouveau diplômé à l'occasion de la cérémonie de fin d'études à la <orgName ref="#zbz-o.694">Faculté de médecine</orgName> de l'<orgName ref="#zbz-o.46">Université de Zurich</orgName>
+        </p>
+        <p facs="#facs_2_r_43">
+          815 <bibl ref="#zbz-w.488">Problematik der medizinischen Entscheidungen in der Gegenwart</bibl>
+        </p>
+        <p facs="#facs_2_r_44">
+          Prof. Dr. <persName ref="#zbz-p.2">J. Hersch</persName>
+        </p>
+        <p facs="#facs_2_r_45">
+          Wie weit reicht die menschliche Entscheidung? Wo beginnt die Hybris, die Übertreibung? Wo fängt der <persName ref="#zbz-p.1251">Mensch</persName> an, über eine göttliche Macht zu verfügen, die ihm eigentlich nicht mehr zukommt? Welches sind die Grundbedingungen, damit die ganze ärztliche Tätigkeit, und überhaupt die ganze Forschung, ihren Sinn behält? Fragen und Antworten der bekannten <placeName ref="#zbz-l.5">Genfer</placeName> Philosophin.
+        </p>
+        <p facs="#facs_2_r_46">
+          Jusqu'où va le libre arbitre? Où commence l'«hybris», ou la démesure? A partir de quand l'être humain s'arroge-t-il un pouvoir divin, qui en fait, ne lui appartient pas? Quelles exigences doit-on poser pour conserver leur sens à l'ensemble de l'art médical et à la recherche? <bibl ref="#zbz-w.85">La philosophie</bibl> genevoise bien connue pose les questions et y apporte ses réponses.
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Medizinische<lb facs="#facs_3_l_1_1" n="N001" />Fachgesellschaften<lb facs="#facs_3_l_1_2" n="N002" />Sociétés de médecine<lb facs="#facs_3_l_1_3" n="N003" />Società di specialisti
+        </p>
+        <p facs="#facs_3_r_2">
+          818 <orgName ref="#zbz-o.456">Schweizerische Gesellschaft für Pädiatrie</orgName>/Ernährungs-kommission<lb facs="#facs_3_l_2_1" n="N001" />Empfehlungen für die Säuglingsernährung
+        </p>
+        <p facs="#facs_3_r_3">
+          Jahresberichte<lb facs="#facs_3_l_3_1" n="N001" />Rapports annuels<lb facs="#facs_3_l_3_2" n="N002" />Rapporti annuali
+        </p>
+        <p facs="#facs_3_r_4">
+          822 <orgName ref="#zbz-o.457">Commission interfacultés médicale suisse</orgName> (CIMS)<lb facs="#facs_3_l_4_1" n="N001" />Rapport annuel 1988<lb facs="#facs_3_l_4_2" n="N002" />Prof. <persName ref="#zbz-p.1146">F. Largiadèr</persName>
+        </p>
+        <p facs="#facs_3_r_5">
+          Medizinische Hilfsberufe<lb facs="#facs_3_l_5_1" n="N001" />Professions paramédicales<lb facs="#facs_3_l_5_2" n="N002" />Professioni paramediche
+        </p>
+        <p facs="#facs_3_r_6">
+          825 <orgName ref="#zbz-o.454">FMH</orgName>-PFA-Pilotkurs: Besseres Deutsch
+        </p>
+        <p facs="#facs_3_r_7">
+          Bekanntmachungen<lb facs="#facs_3_l_7_1" n="N001" />Communications<lb facs="#facs_3_l_7_2" n="N002" />Comunicazioni
+        </p>
+        <p facs="#facs_3_r_8">
+          Personalien<lb facs="#facs_3_l_8_1" n="N001" />Nouvelles du corps médical<lb facs="#facs_3_l_8_2" n="N002" />Notizie del ceto medico
+        </p>
+        <p facs="#facs_3_r_9">
+          826 Todesfälle / Décès / Decessi<lb facs="#facs_3_l_9_1" n="N001" />Praxiseröffnungen / Nouveaux cabinets médicaux / Apertura di nuovi studi medici<lb facs="#facs_3_l_9_2" n="N002" />Ernennungen / Nominations / Nomine
+        </p>
+        <p facs="#facs_3_r_10">
+          Offizielle Bekanntmachungen<lb facs="#facs_3_l_10_1" n="N001" />Communications officielles<lb facs="#facs_3_l_10_2" n="N002" />Comunicazioni ufficiali
+        </p>
+        <p facs="#facs_3_r_11">
+          826 Fortbildungsveranstaltung <orgName ref="#zbz-o.458">Bündner Ärzteverein</orgName>, <placeName ref="#zbz-l.178">Chur</placeName><lb facs="#facs_3_l_11_1" n="N001" />826 Journée médico-chirurgicale, <placeName ref="#zbz-l.103">La Chaux-de-Fonds</placeName><lb facs="#facs_3_l_11_2" n="N002" />826 DF Seminar, ZLF, <placeName ref="#zbz-l.9">Basel</placeName><lb facs="#facs_3_l_11_3" n="N003" />826 Médecine du sport<lb facs="#facs_3_l_11_4" n="N004" />826 Colloque des orthopédistes romands, <placeName ref="#zbz-l.19">Lausanne</placeName><lb facs="#facs_3_l_11_5" n="N005" />827 Fachexamen / Examen de spécialiste 1989/90<lb facs="#facs_3_l_11_6" n="N006" /><orgName ref="#zbz-o.459">Schweiz. Gesellschaft für Anästhesiologie und Reanimation</orgName>, <placeName ref="#zbz-l.6">Bern</placeName><lb facs="#facs_3_l_11_7" n="N007" />827 7. Fortbildungstagung der <orgName ref="#zbz-o.460">Fachgruppe Schulärzte</orgName> / 7e journée de perfectionnement du Groupe de spécialistes médecins scolaires, <placeName ref="#zbz-l.45">Zurich</placeName><lb facs="#facs_3_l_11_8" n="N008" />827 <orgName ref="#zbz-o.461">Schweiz. Gesellschaft für Balneologie und Bioklimatologie</orgName>, Jahrestagung und Mitgliederversammlung, <placeName ref="#zbz-l.441">Vulpera</placeName><lb facs="#facs_3_l_11_9" n="N009" />828 <orgName ref="#zbz-o.462">Société suisse de médecine physique et réhabilitation</orgName>, <orgName ref="#zbz-o.463">Société suisse de rhumatologie</orgName>, congrès commun, <placeName ref="#zbz-l.65">Fribourg</placeName><lb facs="#facs_3_l_11_10" n="N010" />828 Balint-Gruppe <placeName ref="#zbz-l.313">Zollikon</placeName><lb facs="#facs_3_l_11_11" n="N011" />828 Generika statt teure Originalmedikamente – Tagung der <orgName ref="#zbz-o.464">SGGP</orgName>, <placeName ref="#zbz-l.6">Bern</placeName><lb facs="#facs_3_l_11_12" n="N012" />828 Diagnostik der tiefen Venenthrombose, Kurs, <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_3_l_11_13" n="N013" />829 6th Course in Interventional Cardiology, <placeName ref="#zbz-l.5">Geneva</placeName><lb facs="#facs_3_l_11_14" n="N014" />829 Psychosomatische Diagnostik und Therapie, <placeName ref="#zbz-l.9">Basel</placeName><lb facs="#facs_3_l_11_15" n="N015" />829 Prix de sénologie, <persName ref="#zbz-p.1147">Ch. M. Gros</persName><lb facs="#facs_3_l_11_16" n="N016" />829 <placeName ref="#zbz-l.10">Schweiz</placeName>. Gesellschaft für Pädiatrie, Jahresversammlung, <placeName ref="#zbz-l.442">Delémont</placeName><lb facs="#facs_3_l_11_17" n="N017" />830 Fortbildungs-Seminare <orgName ref="#zbz-o.454">FMH</orgName>, Ausbildung des Arztes 2000<lb facs="#facs_3_l_11_18" n="N018" />833 <orgName ref="#zbz-o.465">Société suisse de radiologie et médecine nucléaire</orgName>, 76e Congrès, <placeName ref="#zbz-l.103">La Chaux-de-Fonds</placeName><lb facs="#facs_3_l_11_19" n="N019" />835 Ultraschalldiagnostik, <placeName ref="#zbz-l.9">Basel</placeName>
+        </p>
+        <p facs="#facs_3_r_12">
+          Kongresskalender<lb facs="#facs_3_l_12_1" n="N001" />Dates à retenir<lb facs="#facs_3_l_12_2" n="N002" />Date da ricordare
+        </p>
+        <p facs="#facs_3_r_13">
+          836 Heute mit unvollständigem Kalender
+        </p>
+        <p facs="#facs_3_r_14">
+          Stellenvermittlung<lb facs="#facs_3_l_14_1" n="N001" />Office de placement<lb facs="#facs_3_l_14_2" n="N002" />Ufficio di collocamento
+        </p>
+        <p facs="#facs_3_r_15">
+          838 Stellenvermittlungsanzeiger des Ärztesekretariats, Elfenstrasse 18, 3006 <placeName ref="#zbz-l.6">Bern</placeName>
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Wissenswertes für den Arzt Noté à l'intention des médecins Notato per il medico<lb facs="#facs_4_l_1_1" n="N001" />815
+        </p>
+        <p facs="#facs_4_r_2">
+          Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_4_l_2_1" n="N001" /><placeName ref="#zbz-l.48">Genf</placeName>
+        </p>
+        <p facs="#facs_4_r_3">
+          Ich möchte Ihnen allen herzlich dazu gratulieren, dass Sie diese sechs Jahre Studium – es ist ein schweres Studium – ausgehalten haben. Sie haben sehr viel gelernt und gearbeitet. Die Medizin hat Fortschritte gemacht, und diese Fortschritte haben sich so angehäuft, dass Sie immer mehr und mehr zu lernen haben. Sie wissen mehr über den Körper, über seine chemische und physikalische Struktur, sowie über alle Wissenschaften, die da mitspielen. Sie wissen immer mehr über die Mittel, die man brauchen soll und deren Beherrschung immer komplizierter und schwieriger wird. Sie müssen auch die neuen Werkzeuge kennen, die Ihnen zur Verfügung stehen, damit Sie genau wissen, was wirklich im Körper des Patienten vor sich geht. Alle diese fantastischen Fortschritte in der medizinischen Forschung und in der ärztlichen Technik – die vielleicht noch größer sind als diejenigen, welche die Fahrt zum Mond ermöglicht haben – müssen von Ihnen, Studenten der Medizin, beherrscht werden. Denn die Folgen dieses Wissens sind fast nicht zu glauben: die Dauer des Lebens ist für Frauen fast dreimal so lang, für die Männer zweimal so lang wie es noch vor einigen Jahrzehnten war, und wir bleiben viel länger jung. Manche Frauen sehen wie Schwestern ihrer Töchter aus. Auch gegen das Leiden verfügt man heute über immer wirksamere Mittel. Hier möchte ich all denjenigen, die durch ihr
+        </p>
+        <p facs="#facs_4_r_4">
+          1) Festvortrag gehalten anlässlich der Staatsexamensfeier vom 10. Dezember 1988 in <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_4_r_5">
+          Problematik der medizinischen Entscheidungen in der Gegenwart¹)
+        </p>
+        <p facs="#facs_4_r_6">
+          Opfer und ihre Lebensarbeit all diese Fortschritte in der Vergangenheit und heute weiterhin ermöglicht haben, meine Dankbarkeit ausdrücken.
+        </p>
+        <note place="foot" n="1" xml:id="fn4-1" facs="#facs_4_r_7">
+          Nach dieser optimistischen Einführung muss ich aber auch noch etwas anderes feststellen: Mit der Macht der Ärzte, die über diese neuen Mittel verfügen, wächst auch eine Unsicherheit oder sogar Verlegenheit in ihrer Körperschaft und verbreitet sich ausserhalb derselben bis in die Gesellschaft hinein. Es stellen sich immer mehr Probleme über die Art und Weise und über das Ausmass, in dem man zu diesen wunderbaren Möglichkeiten der Wissenschaft und der Technik greifen darf. Jeden Tag stellen sich neue Probleme, ethisch, technisch und ökonomisch entscheidende Probleme. Gleichzeitig verbreitet sich in der Gesellschaft ein leidenschaftlicher Anspruch auf Medizin: Alle laufen zum Arzt, alle wollen wissen, ob sie irgendeine Krankheit haben, ob sie vielleicht stärker, schöner, glücklicher sein könnten. Alle Möglichkeiten werden immer mehr missbraucht. Parallel dazu entwickelt sich eine Art Ablehnung gegen die Medizin und Ärzte – paradoxerweise und widerspruchsvoll. Man läuft zu ihnen und man schimpft über sie. Und nicht nur über sie, sondern überhaupt über unsere ganze technische und wissenschaftliche Zivilisation: Ununterbrochen wird sie jeden Tag in jeder Zeitung angeprangert und beschmutzt. Sie sei eine rein materialistische Angelegenheit, die nur Verachtung verdiene. Als sei zum Beispiel die Verlängerung des Lebens ein rein materialistischer Ge-
+        </note>
+        <p>
+          winn; als sei es keine Wohltat für die Seele, seine lieben Nächsten länger auf dieser Erde behalten zu können. Diese Zivilisation hätte einen ganz schlechten Weg eingeschlagen und stände jetzt vor lauter Ausweglosigkeiten. Zum Beispiel sagt man: «Ja schön, wir leben länger, wir behalten unsere Lieben länger bei uns; aber was kommt dabei heraus? Es werden weniger Kinder geboren, man hat immer neue Mittel, um Geburten zu verhindern, und dadurch wird die Bevölkerung älter und älter: Ist es wirklich ein Glück, wenn die Mehrheit der Menschen als alte Menschen lebt? Sind nicht junge Menschen glücklicher als alte? Wäre es im ganzen nicht besser, wenn mehr junge und weniger alte Menschen leben würden?» – Auch das hat seinen Sinn. Welche Bemühungen sind also sinnvoll, welche sinnlos? Man lebt in der Fragwürdigkeit und im Widerspruch.
+        </p>
+        <p>
+          Es stellen sich eine Menge Fragen über den Sinn und die Tragweite der Grundwerte wie zum Beispiel: Wir verfügen über neue Mittel; hat die Macht, die wir ihnen verdanken, Grenzen? Sollen überhaupt Grenzen anerkannt werden? Können, dürfen, sollen Forscher sagen: Bis hierher gehen wir, aber nicht mehr weiter? Solche Grenzen gibt es jetzt. Manche Ärzte und Forscher haben gesagt: Das tun wir nicht mehr, denn dabei laufen wir Gefahr, den Menschen zu zerstören! Zum Beispiel auf den Gebieten der genetischen Manipulation und der künstlichen Empfängnis. Man sagt: Diese Eltern wollen unbedingt Kinder haben, also haben sie ein Recht darauf, Kinder zu haben. Stimmt es wirklich, dass,
+        </p>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 70, 1989, Heft 19 10.5.89
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          Wissenswertes für den Arzt – Noté à l'intention des médecins – Notato per il medico
+        </p>
+        <p facs="#facs_5_r_2">
+          wenn ein <persName ref="#zbz-p.1251">Mensch</persName> etwas unbedingt will, er deswegen auch ein Recht darauf besitzt? – Auch andere Fragen stellen sich: Die Spitzenbehandlungen der modernen medizinischen Wissenschaft sind so teuer und verlangen so viel <bibl ref="#zbz-w.705">Zeit</bibl>, dass es ausgeschlossen ist, sie für alle Kranken zu verwenden. Wer soll nun den Vorteil einer solchen Behandlung genießen? Wie wird man diejenigen Menschen auswählen, die diese Behandlungen bekommen und die, die sie nicht bekommen werden? Medizinisch gesprochen ist das für einen Arzt eine entsetzliche Frage; sie widerspricht den Menschenrechten. Denn eigentlich sollte jeder <persName ref="#zbz-p.1251">Mensch</persName> ein Recht haben, auf die beste Art behandelt zu werden.
+        </p>
+        <p facs="#facs_5_r_3">
+          Wie weit reicht also die menschliche Entscheidung? Wo beginnt die Hybris, die Übertreibung? Wo fängt der <persName ref="#zbz-p.1251">Mensch</persName> an, über eine göttliche Macht zu verfügen, die ihm eigentlich nicht mehr zukommt? Welches sind die Grundbedingungen, damit diese ganze ärztliche Tätigkeit, und überhaupt die ganze Forschung, ihren Sinn behält? Und was für einen Sinn überhaupt haben sie? Welches ist der Sinn? Man möchte zunächst antworten, das Ziel, woher der Sinn kommt, heisst Gesundheit. Ziel und Sinn bestehen darin, dass jeder <persName ref="#zbz-p.1251">Mensch</persName> so gesund wie möglich und so lange wie möglich gesund leben kann. Ist aber wirklich Gesundheit der eigentliche Sinn des Lebens? Ist ein Leben dadurch sinnvoll, dass der Betreffende gesund ist? Wenn man krank ist, dann sieht es schon so aus! Wenn man krank ist, ist es sinnvoll, diese Krankheit zu bekämpfen, um gesund zu werden. Denn die Gesundheit ist eine Grundbedingung, damit man alles andere tun kann. Aber eine Grundbedingung ist noch nicht ein Sinn. Und wenn die meisten Menschen den Sinn ihres Lebens darin sehen würden, dass sie gesund bleiben, dann wären sie schon dadurch krank. Man kann
+        </p>
+        <p facs="#facs_5_r_4">
+          sich sogar fragen: Hat vielleicht die Krankheit, das Leid im Menschsein einen Sinn? Erinnert uns vielleicht das Leid oder die Krankheit an etwas Wesentliches? – Nämlich daran, dass wir als sterbliche Wesen leben und von dieser Sterblichkeit wissen.
+        </p>
+        <p facs="#facs_5_r_5">
+          Der französische Dichter <persName ref="#zbz-p.173">Rimbaud</persName> sagte vom Menschen, er sei eine Seele und ein Körper. Ich habe es oft gesagt: In dieser Aussage ist weder «Seele» noch «Körper» das wichtigste Wort, sondern das Wort «und». Der Ort des Menschseins ist in diesem «und», das heisst in der Kreuzung von Körper und Seele. Da ist das Menschsein, da geschieht das entscheidend Menschliche. Dass wir mit einem Körper zu tun haben, ist nicht zufällig, nicht beiläufig, sondern wesentlich. Der Körper ist da, und wir müssen uns damit abfinden: Die Einheit von Körper und Seele ist unsere Aufgabe, und zu dieser Aufgabe soll uns der Arzt eigentlich verhelfen. Es handelt sich also nicht grundsätzlich darum, den Körper zu vergessen, sondern als <persName ref="#zbz-p.1251">Mensch</persName> leben zu lernen, also mit dem Körper, mit der Anstrengung, gesund zu bleiben oder zu werden. Der Sinn aber besteht nicht darin. Es kommt sehr darauf an, dass Patient und Arzt immer wieder den Weg zu diesen Grundgegebenheiten finden – also: zum gemeinsamen Menschsein.
+        </p>
+        <p>
+          Nun habe ich manchmal das Gefühl, dass die Menschen unserer <bibl ref="#zbz-w.705">Zeit</bibl>, in unserem Jahrhundert, soviel Furchtbares erlebt, gehört oder indirekt erlebt haben, dass sie sich ständig nach der Ruhe der Unschuld sehnen. Heutzutage ist überhaupt, in der <bibl ref="#zbz-w.66">Psychologie</bibl>, in der Psychiatrie usw., der Begriff Schuld fast verschwunden. Man möchte von der Schuld nicht mehr hören. Unschuldig wäre aber nur ein Engel, der nur eine Seele hätte, ein Tier, das nur einen Körper hätte, und ein Roboter, der eine Maschine wäre. <bibl ref="#zbz-w.657">Der Mensch</bibl> ist es eben nie wegen jenes und, wo sein Menschsein sich verwirklicht. Und
+        </p>
+        <p>
+          es kommt darauf an, dass wir lernen, unser Menschsein nicht nur zu ertragen, sondern auch zu lieben. Der Arzt hat also unter seinen vielen Pflichten auch die Aufgabe, nicht durch grosse Reden, sondern durch die Art, wie er den Menschen behandelt, diesen einzelnen Menschen mit seinem Menschsein so zu versöhnen, damit er es nicht nur erträgt, sondern liebt. Damit er sich freut, die ganz grosse Ausnahme in dieser Welt zu sein wegen jenes und, das nur ihm gehört. Weder Engel, noch Tier, noch Roboter!
+        </p>
+        <p>
+          In den Methoden zur Bekämpfung von AIDS, zum Beispiel, wird oft die ganze Sexualität des Menschen so banalisiert, dass die Ärzte das, was sie auf der einen Seite gewinnen, auf der anderen Seite wieder verlieren, da die Menschen als Männer und Frauen wie Hunde oder Katzen werden. Hier möchte ich noch etwas betonen, was die Ärzte nicht vergessen sollten: Die Beziehung Arzt-Patient ist keine geschlossene Beziehung; auch außerhalb, in der ganzen Gesellschaft, verbreitet sie ihren Einfluss. Man braucht nur zu beobachten, wie manche Behandlungsmethoden die ganze Gesellschaft in ihrer Selbstdeutung und ihrer Wesensart geprägt haben. Was sich zwischen Arzt und Patient abspielt, wirkt außerhalb, wie wenn Sie einen Stein ins Wasser werfen und sich Kreise auf dem Wasser verbreiten. In jeder Behandlung sollte man sich also fragen: Zerstöre ich dabei nicht den Sinn für den Menschen als <persName ref="#zbz-p.1251">Mensch</persName>? Diese zusätzliche Verantwortung möchte ich den jungen Ärzten mitgeben.
+        </p>
+        <p>
+          Wenn die <orgName ref="#zbz-o.55">Weltgesundheitsorganisation</orgName> in ihrem ersten Satz behauptet: «Jeder <persName ref="#zbz-p.1251">Mensch</persName> hat ein Recht auf Gesundheit», kann ich gar nicht verstehen, dass Ärzte das unterschrieben haben. Was bedeutet «Recht auf Gesundheit»? Was sie in Wirklichkeit sagen wollten, war, dass jeder <persName ref="#zbz-p.1251">Mensch</persName>, der krank ist,
+        </p>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 70, 1989, Heft 19 10.5.89
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          Wissenswertes für den Arzt Noté à l'intention des médecins Notato per il medico
+        </p>
+        <p facs="#facs_6_r_2">
+          ein Recht hat, behandelt zu werden: das ist aber kein «Recht auf Gesundheit». Und wenn dieselbe Organisation die Gesundheit definiert als das vollkommene Wohlbefinden in physischer, psychischer und sozialer Hinsicht, dann frage ich: Kennt jemand einen solchen Zustand auf Erden? Es gibt also nur kranke Menschen! Dadurch, dass man einen so übertriebenen Anspruch erhebt, betont man die Unerträglichkeit jedes Nicht-Wohlbefindens, was die Menschen wieder krank macht. Im Gegenteil: Ein guter Wagen ist nicht der, der tadellos auf einer Autostrasse fährt, sondern auch auf einem ganz schlechten Weg. Gesundheit ist die Fähigkeit, das Menschsein auch dann, wenn es physisch nicht so perfekt ist, seelisch zu ertragen. Alle müssen wir in dieser Richtung wachsen, da wir eben wissen, dass wir schliesslich sterben werden. Und auch die Ärzte, die uns behandeln, wissen das.
+        </p>
+        <p facs="#facs_6_r_3">
+          Warum hat der <persName ref="#zbz-p.1251">Mensch</persName> Rechte? Weil er die Fähigkeit hat, aus sich ein freies, verantwortliches Subjekt zu machen. Und weil jeder <persName ref="#zbz-p.1251">Mensch</persName> diese Fähigkeit und also die Berufung hat, besitzt er prinzipiell Menschenrechte. Um diese Fähigkeit lebendig zu erhalten, bemüht sich nicht nur jeder <persName ref="#zbz-p.1251">Mensch</persName> für sich, sondern auch seine Mitmenschen und in erster Linie die Ärzte. Es geht also darum, dass der Arzt in jedem Patienten sozusagen ein Objekt seiner Ehrfurcht sieht, weil dieser Patient, was er auch schon erlangt oder nicht erlangt hat, die Fähigkeit hat – solange er noch at-
+        </p>
+        <p facs="#facs_6_r_4">
+          met –, aus sich ein freies, verantwortliches Subjekt zu machen. Wenn er nah am Sterben ist, hat er noch die Fähigkeit, irgendwie zu entscheiden, wie er stirbt. Hat er sie nicht mehr, dann ist er schon jenseits des Menschseins, er ist menschlich schon gestorben. Leben ist eben für Menschen kein eindeutiger Begriff. Menschen sagen manchmal – obgleich sie noch am Leben sind: Ce n’est plus une vie. Das ist kein Leben mehr. Was heisst das? Das bedeutet, dass das biologische Leben noch kein Menschenleben ist. Und da stellen sich für Ärzte äusserst schwierige Fragen, wenn sie zu entscheiden haben, wo das menschliche Leben aufhört, wo es wirklich keine Hoffnung mehr auf Freiheit und Verantwortung gibt. Fragen, die die Ärzte eigentlich überfordern, die aber nicht zu vermeiden sind. Solche Entscheidungen kann, wie ich glaube, keiner allein treffen, sondern nur gemeinsam mit anderen Ärzten.
+        </p>
+        <p facs="#facs_6_r_5">
+          Zum Abschluss möchte ich an die jungen Ärzte eine dringende Bitte richten: Sie sollen für sich selbst die Gewohnheit pflegen, der alltäglichen Arbeit zum Trotz, sich nie an Krankheit, Leid und Tod zu gewöhnen. Es kommt darauf an, dass Sie in den kommenden Jahren und Jahrzehnten, wenn Sie Ärzte und wohltuende Ärzte werden, jeden Patienten so behandeln, als wäre er der erste oder sogar der einzige. Vergessen Sie nie, dass jeder <persName ref="#zbz-p.1251">Mensch</persName>, mit dem Sie zu tun haben, in einem bestimmten Sinn einzig ist. Mein Lehrer, <persName ref="#zbz-p.1">Jaspers</persName>, der selbst
+        </p>
+        <p>
+          Arzt war, brauchte oft diesen sehr schönen deutschen Ausdruck, den wir auf Französisch nicht haben: «je einzig». Dieser Ausdruck sollte Ihnen gegenwärtig sein, bevor Sie irgendeinen Kranken sehen, damit Sie bei all dem Wissen, bei all der Erfahrung die Frische des Einzigartigen beibehalten. Dann werden Sie auch dem Kranken als <persName ref="#zbz-p.1251">Mensch</persName> entgegentreten und Wissen und Erfahrung nie mechanisch anwenden. Allerdings gehöre ich gar nicht zu denen, die glauben, dass es genügt, wenn der Arzt den ganzen Menschen mit tiefer Sympathie behandeln will, ohne genaues Wissen und Forschen anzuwenden, überall, wo es möglich ist. Die Wissenschaft hat überhaupt erst angefangen, Fortschritte zu machen, seit sie zur Einsicht kam, dass sie nicht das Ganze kennen kann, sondern nur gerade Bruchstücke; erst durch diese bescheidene Forschung im Kleinen konnte sie allmählich fortschreiten. Beides muss gleichzeitig ertragen werden: das objektive, sachliche Kleine und das einzigartige Ganze jedes Menschen mit seiner Berufung, frei und verantwortlich zu werden.
+        </p>
+        <p>
+          Ich sprach von <persName ref="#zbz-p.1">Jaspers</persName>. Er sagte: «Die Hoffnung ist, dass zwischen dem Arzt und dem Kranken ein Verhältnis entsteht von zwei vernünftigen Wesen, von denen das eine mehr weiß und deswegen dem anderen mehr helfen kann.» Unter zwei jeweils einzigen vernünftigen Wesen wie Arzt und Patient besteht eine menschliche Gleichheit, obgleich der Arzt mehr weiß. Und das sollen Sie bitte nie vergessen! □
+        </p>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 70, 1989, Heft 19 10.5.89
+        </p>
+      </div>
+      </body></text>
+</TEI>

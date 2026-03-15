@@ -1,0 +1,37 @@
+{
+  "doc_id": "940",
+  "reviewer": "quality-screener-claude",
+  "date": "2026-03-15",
+  "tier": 3,
+  "pages": 9,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "1 Fussnote (S.5)"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 17p 18o 32l 9w = 76"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S.1+5+9: Layout-Regionen plausibel, Docling/Gemini konsistent"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Sprache fra+deu korrekt, Text koharent, Hersch-Vortrag Le pluralisme culturel"
+    }
+  ]
+}

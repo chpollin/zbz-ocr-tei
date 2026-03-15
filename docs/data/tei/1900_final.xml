@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Europe et condition humaine</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1900</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>Europe et condition humaine</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-manual" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 1 Warning (W6: keine lb-Elemente auf 7 Seiten); Entities: 13p 0o 32l 1w = 46; persName 'Europeens' (zbz-p.436, 6x) und 'Europeen' (zbz-p.733, 1x) -- Adjektiv/Sammelbegriff faelschlich als Personenname annotiert (+4 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_1_r_1" ulx="116" uly="164" lrx="1067" lry="387" />
+      <zone xml:id="facs_1_r_2" ulx="124" uly="598" lrx="1129" lry="879" />
+      <zone xml:id="facs_1_r_3" ulx="125" uly="881" lrx="1132" lry="1014" />
+      <zone xml:id="facs_1_r_4" ulx="123" uly="1106" lrx="507" lry="1146" />
+      <zone xml:id="facs_1_r_5" ulx="125" uly="1170" lrx="1129" lry="1271" />
+      <zone xml:id="facs_1_r_6" ulx="125" uly="1270" lrx="1133" lry="1397" />
+      <zone xml:id="facs_1_r_7" ulx="122" uly="1398" lrx="1130" lry="1593" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_2_r_1" ulx="109" uly="160" lrx="1138" lry="449" />
+      <zone xml:id="facs_2_r_2" ulx="110" uly="443" lrx="1136" lry="571" />
+      <zone xml:id="facs_2_r_3" ulx="108" uly="568" lrx="1135" lry="816" />
+      <zone xml:id="facs_2_r_4" ulx="108" uly="815" lrx="1132" lry="1189" />
+      <zone xml:id="facs_2_r_5" ulx="106" uly="1179" lrx="1126" lry="1525" />
+      <zone xml:id="facs_2_r_6" ulx="110" uly="1521" lrx="1123" lry="1598" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_3_r_1" ulx="130" uly="89" lrx="276" lry="118" />
+      <zone xml:id="facs_3_r_2" ulx="131" uly="169" lrx="1139" lry="423" />
+      <zone xml:id="facs_3_r_3" ulx="130" uly="419" lrx="1140" lry="706" />
+      <zone xml:id="facs_3_r_4" ulx="133" uly="699" lrx="1142" lry="770" />
+      <zone xml:id="facs_3_r_5" ulx="191" uly="764" lrx="657" lry="800" />
+      <zone xml:id="facs_3_r_6" ulx="131" uly="829" lrx="250" lry="866" />
+      <zone xml:id="facs_3_r_7" ulx="131" uly="870" lrx="1142" lry="1036" />
+      <zone xml:id="facs_3_r_8" ulx="132" uly="1030" lrx="1141" lry="1195" />
+      <zone xml:id="facs_3_r_9" ulx="131" uly="1183" lrx="1143" lry="1312" />
+      <zone xml:id="facs_3_r_10" ulx="131" uly="1304" lrx="1142" lry="1597" />
+      <zone xml:id="facs_3_r_11" ulx="131" uly="1611" lrx="162" lry="1637" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_4_r_1" ulx="6274" uly="912" lrx="11668" lry="1158" />
+      <zone xml:id="facs_4_r_2" ulx="1624" uly="1702" lrx="5381" lry="2035" />
+      <zone xml:id="facs_4_r_3" ulx="1016" uly="2193" lrx="11333" lry="4527" />
+      <zone xml:id="facs_4_r_4" ulx="1016" uly="4440" lrx="11321" lry="6458" />
+      <zone xml:id="facs_4_r_5" ulx="1041" uly="6440" lrx="11333" lry="7932" />
+      <zone xml:id="facs_4_r_6" ulx="1041" uly="7950" lrx="11271" lry="8897" />
+      <zone xml:id="facs_4_r_7" ulx="992" uly="9161" lrx="11222" lry="11126" />
+      <zone xml:id="facs_4_r_8" ulx="1016" uly="11074" lrx="11209" lry="13039" />
+      <zone xml:id="facs_4_r_9" ulx="1029" uly="12969" lrx="11234" lry="15163" />
+      <zone xml:id="facs_4_r_10" ulx="1078" uly="15215" lrx="11246" lry="15865" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_5_r_1" ulx="139" uly="89" lrx="285" lry="122" />
+      <zone xml:id="facs_5_r_2" ulx="138" uly="167" lrx="1149" lry="272" />
+      <zone xml:id="facs_5_r_3" ulx="139" uly="290" lrx="1149" lry="577" />
+      <zone xml:id="facs_5_r_4" ulx="142" uly="571" lrx="1150" lry="763" />
+      <zone xml:id="facs_5_r_5" ulx="140" uly="755" lrx="1147" lry="855" />
+      <zone xml:id="facs_5_r_6" ulx="138" uly="1066" lrx="1149" lry="1322" />
+      <zone xml:id="facs_5_r_7" ulx="141" uly="1358" lrx="404" lry="1383" />
+      <zone xml:id="facs_5_r_8" ulx="141" uly="1397" lrx="1149" lry="1524" />
+      <zone xml:id="facs_5_r_9" ulx="142" uly="1524" lrx="1147" lry="1593" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_6_r_1" ulx="92" uly="156" lrx="1126" lry="424" />
+      <zone xml:id="facs_6_r_2" ulx="97" uly="409" lrx="1125" lry="701" />
+      <zone xml:id="facs_6_r_3" ulx="98" uly="690" lrx="1124" lry="862" />
+      <zone xml:id="facs_6_r_4" ulx="159" uly="851" lrx="1116" lry="891" />
+      <zone xml:id="facs_6_r_5" ulx="100" uly="994" lrx="1122" lry="1275" />
+      <zone xml:id="facs_6_r_6" ulx="102" uly="1275" lrx="1122" lry="1435" />
+      <zone xml:id="facs_6_r_7" ulx="102" uly="1430" lrx="1123" lry="1593" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_7_r_1" ulx="149" uly="89" lrx="295" lry="117" />
+      <zone xml:id="facs_7_r_2" ulx="149" uly="167" lrx="1153" lry="260" />
+      <zone xml:id="facs_7_r_3" ulx="151" uly="262" lrx="1153" lry="393" />
+      <zone xml:id="facs_7_r_4" ulx="150" uly="388" lrx="1155" lry="607" />
+      <zone xml:id="facs_7_r_5" ulx="152" uly="603" lrx="1156" lry="736" />
+      <zone xml:id="facs_7_r_6" ulx="151" uly="829" lrx="1154" lry="958" />
+      <zone xml:id="facs_7_r_7" ulx="877" uly="981" lrx="1094" lry="1012" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <placeName ref="#zbz-l.29">Europe</placeName> et condition humaine
+        </head>
+        <p facs="#facs_1_r_2">
+          <placeName ref="#zbz-l.29">L'Europe</placeName> a connu, sur cette terre, un destin exceptionnel. Parmi les innombrables facteurs qui peuvent avoir contribué à ce destin, je crois en repérer un plus central que beaucoup d'autres, en ce sens que beaucoup d'autres me paraissent dériver de lui. Ce facteur, c'est que les <persName ref="#zbz-p.436">Européens</persName>, très tôt, et avec des conséquences variées au cours de leur histoire, ont reconnu et accepté leur condition d'hommes, avec ses possibles, ses servitudes et ses limites, en même temps que ses exigences sans fin. Or aujourd'hui, ils n'y consentent plus. Par-delà tous les problèmes politiques, sociaux, culturels, économiques, par-delà succès et échecs, idéologies et contre-idéologies, il y a là davantage même qu'une crise morale ou qu'une crise de civilisation : une rébellion contre la condition humaine.
+        </p>
+        <p facs="#facs_1_r_3">
+          Bien entendu, les observations qui suivent ne sont pas « scientifiques ». Elles ne peuvent être ni démontrées, ni vérifiées. Je les soumets simplement au jugement du lecteur, qui les mettra à l'épreuve en examinant s'il trouve ou non de quoi les illustrer, dans sa propre expérience d'<persName ref="#zbz-p.733">Européen</persName>.
+        </p>
+        <p facs="#facs_1_r_4">
+          Quelques symptômes d'un refus
+        </p>
+        <p facs="#facs_1_r_5">
+          La démesure du refus européen, le décalage entre son objet réel (la condition humaine) et son objet explicite (l'ordre politique, le gouvernement, le capitalisme, la société de consommation) entraîne de toutes parts incohérences et inconséquences.
+        </p>
+        <p facs="#facs_1_r_6">
+          Alors que l'humanité n'a jamais connu une élévation du niveau de vie (dans tous les domaines, et pas seulement « matériel ») comparable à celle qui s'est produite en <placeName ref="#zbz-l.60">Europe occidentale</placeName> depuis 1950, jamais le Ciel ni les responsables n'ont été assourdis par plus de plaintes, de fureurs et de récriminations.
+        </p>
+        <p facs="#facs_1_r_7">
+          Moins manifeste, mais plus saisissant peut-être est le contraste entre ce que disent, écrivent et même pensent nos contemporains européens, et ce qu'ils vivent en fait au fil des jours. Il y a comme une « théorie » diffuse qui imbibe les consciences au niveau verbal, qui déclenche par les mots des états affectifs tenaces, parfois violents, et qui est presque sans rapport avec le climat où se déroulent les circonstances de la vie. C'est pourquoi les questionnaires des sociologues sont tellement trompeurs.
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <placeName ref="#zbz-l.29">EUROPE</placeName> ET CONDITION HUMAINE
+        </p>
+        <p facs="#facs_2_r_2">
+          Ainsi : au niveau du « dire » et du « penser », les <persName ref="#zbz-p.436">Européens</persName> de l'<placeName ref="#zbz-l.12">Ouest</placeName> sont torturés par une terrible mauvaise conscience. Ils ont honte de leur histoire, de leur passé « colonial », de leur civilisation « matérialiste », de l'exploitation « capitaliste » dont ils se sentent à la fois les bénéficiaires (à cause du <placeName ref="#zbz-l.301">Tiers Monde</placeName>) et les victimes (à cause de leur fondamentale insatisfaction). La mauvaise conscience va de pair avec des sentiments de frustration intolérables : comment supporter, dans la société de consommation, de désirer quelque chose sans pouvoir l'acquérir ? Dans les ateliers, les usines, les administrations, règnent les rivalités, le remâchage de l'injustice subie, la promotion d'autrui ressentie comme un passe-droit.
+        </p>
+        <p facs="#facs_2_r_3">
+          On se plaint du manque de responsabilité, de dialogue et d'information, mais si une occasion s'offre, elle ne suscite le plus souvent l'intérêt que d'une petite minorité politiquement mobilisée. Un syndicat tente-t-il de réunir ses membres à de telles fins, il lui faut pouvoir prendre sur l'horaire de travail, ou alors indemniser les participants.
+        </p>
+        <p facs="#facs_2_r_4">
+          Le besoin le plus impérieux de tous serait celui de la justice, comprise dans un sens égalitaire, entre citoyens d'un même Etat, mais aussi entre États industrialisés et pays en développement. Cette exigence aboutit parfois à des actes de violence, rarement à des sacrifices personnels ou collectifs : il doit être possible d'instaurer une justice égalitaire pour tous sans sacrifier pour personne : ni travail supplémentaire, ni abaissement du niveau de vie. Dès lors, la société telle qu'elle est ne mérite que mépris, et ceux qui recourent à la violence et au crime ne sont que les victimes irresponsables de l'injustice régnante.
+        </p>
+        <p facs="#facs_2_r_5">
+          À côté de la justice, et tendant d'ailleurs à constituer avec elle une exigence unique, le bien proclamé le plus précieux, celui auquel rien ne doit théoriquement être subordonné, c'est la liberté. Or nos contemporains se déclarent tous opprimés. Même lorsqu'ils partent en vacances, ils s'estiment manipulés par les agences de voyage et la publicité. Ils sont donc pour toutes les libérations — à commencer par celles qui n'exigent aucune conquête réelle sur les forces d'oppression, et au premier rang celle des mœurs, la liberté sexuelle. Il suffira de libéraliser les mœurs et d'informer les enfants. Seulement, il est des domaines — et la sexualité en est un — où l'information, c'est un peu comme si, pour rendre manifeste la nature de la nuit, on l'inondait de néon. Et si la sexualité se détache à la fois du rituel et du sacré, de la fidélité et de la transmission de la vie, comme aussi de ce qui la relie à la nature entière, comment l'empêcher de sombrer dans la trivialité et l'ennui ? Plutôt que de devenir obsessionnelle, elle paraît, à échéance, menacée d'extinction.
+        </p>
+        <p facs="#facs_2_r_6">
+          L'exigence de liberté telle qu'elle retentit ne laisse au terme même de « liberté » que son sens le plus primitif : la possibilité de faire ce qu'on veut, quand on veut, comme on veut. « Pourquoi, me demandait une étudiante, chacun ne ferait-il pas dans la vie ce qui l'amuse ? ». En effet — pourquoi ? La liberté est censée être donnée de nature, et cela doublement : il n'existerait aucune nécessité de satisfaire d'abord des besoins vitaux par un travail qui permette, au-delà, d'accéder à des choix : aucune nécessité non plus de travailler sur soi pour se rendre capable de liberté. Être libre est une capacité virtuelle innée, la possibilité de l'actualiser est donnée par la nature. C'est la société, son « système » de fonctionnement et d'éducation, qui nous prive aujourd'hui de l'une et de l'autre. Il suffirait donc de supprimer, ou plus simplement de nier, les obstacles qu'elle nous oppose.
+        </p>
+        <p>
+          On pourrait multiplier les exemples. Ils montrent tous que l'aspiration idéale dont on se réclame dispense d'affronter, pour les façonner, les réalités données de la vie, avec la
+        </p>
+        <p>
+          247
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          248
+        </p>
+        <p facs="#facs_3_r_2">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName>
+        </p>
+        <p facs="#facs_3_r_3">
+          résistance et la pesanteur qui leur sont propres, et se complaît au contraire à des perspectives fictives, artificielles, rêvées sur mesure — ailleurs. Ainsi la recherche de la fraternité — ce refuge face à la solitude moderne — déploie rarement ses effets dans la famille, qui est là, mais dont les contraintes sont jugées intolérables, encore plus rarement dans la communauté naturelle du travail, où se multiplient tensions et rivalités, mais dans des rassemblements de tout genre dont la raison d'être déclarée importe peu pourvu qu'on s'y sente ensemble. En somme, on situe l'essentiel hors du réel, afin de n'avoir pas à affronter les rigueurs et les contraintes de l'incarnation.
+        </p>
+        <p facs="#facs_3_r_4">
+          Organiser sans trêve, contre l'angoisse, des manifestations pour sauver le monde de la guerre et de la bombe atomique, de la pollution et des risques d'accidents nucléaires, de l'épuisement de l'air, de l'eau, de la terre, du feu, c'est encore et toujours se donner l'émotion d'intervenir ailleurs que là où les problèmes se posent. Cela permet de ne jamais envisager l'ensemble des effets des options que l'on proclame, d'ignorer corrélations et interdépendances. Il suffit de paralyser à tout prix les méchants gouvernements et les stupides patrons d'où vient tout le mal. Jamais plus ne s'impose le prix qu'il faudrait payer soi-même. En ce temps d'autocritique, de psychanalyse, de réflexivité, qui donc accepte encore un mouvement de pensée qui tournerait l'aiguillon contre soi-même?
+        </p>
+        <p facs="#facs_3_r_5">
+          La prétention à un angélisme gratuit est devenue universelle. La contrepartie, c'est que par facilité cet angélisme évite les résistances du réel et manque son incarnation.
+        </p>
+        <p facs="#facs_3_r_6">
+          Rien de plus contraire à notre <placeName ref="#zbz-l.29">Europe</placeName>.
+        </p>
+        <p facs="#facs_3_r_7">
+          <placeName ref="#zbz-l.29">L'Europe</placeName>
+        </p>
+        <p facs="#facs_3_r_8">
+          Les remarques qui précèdent sont les symptômes d'un « mal » anti-européen que j'appelle provisoirement, faute de mieux, le refus de la condition humaine. Ce mal me paraît miner l'<placeName ref="#zbz-l.29">Europe</placeName> au plus profond d'elle-même. Il risque de rendre vains ses progrès, ses succès, et d'accroître sa vulnérabilité face aux menaces que comportent pour elle la situation présente et la répartition des forces dans le monde.
+        </p>
+        <p facs="#facs_3_r_9">
+          On dira que ces remarques ne concernent pas la seule <placeName ref="#zbz-l.29">Europe</placeName>, mais bien l'ensemble des pays industrialisés ayant atteint, relativement au passé, un haut niveau de vie. Peut-être s'appliqueraient-elles même, dans une mesure impossible à connaître, à ce qui se dit et se vit secrètement dans des pays totalitaires avancés, sous la croûte imposée de la propagande. Alors pourquoi parler ici d'<placeName ref="#zbz-l.29">Europe</placeName>?
+        </p>
+        <p facs="#facs_3_r_10">
+          C'est qu'à mon sens, un tel refus de la condition humaine s'oppose radicalement à ce que l'<placeName ref="#zbz-l.29">Europe</placeName> a été en tant qu'entité culturelle au fil de son devenir. Une certaine manière d'assumer l'étrange condition qui est celle des hommes s'y est imposée parce qu'elle semblait aller de soi.
+        </p>
+        <p facs="#facs_3_r_11">
+          Plus qu'ailleurs, me semble-t-il, mieux qu'ailleurs — peut-être même, malgré le paradoxe apparent, plus humblement qu'ailleurs — les <persName ref="#zbz-p.436">Européens</persName> ont reconnu leur condition d'hommes et y ont consenti : ni anges, ni bêtes, mais les deux à la fois. Ni anges, ni bêtes, mais sans que l'ange se laisse oublier, sans que la bête soit vaincue. La condition humaine se concevait, à partir de données à explorer et à assumer, comme une visée efficace, sans abdication et sans aboutissement. Se soumettre aux données pour réaliser ce qu'elles semblent exclure, mais qui, à son tour, ne les exclura pas. « Soumettre la nature en lui obéissant. » Faire de la légèreté avec de la pesanteur qui reste de la pesanteur ; et avec du mécanique qui reste mécanique, faire de la liberté.
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          <placeName ref="#zbz-l.29">EUROPE</placeName> ET CONDITION HUMAINE
+        </p>
+        <p facs="#facs_4_r_2">
+          En voici quelques illustrations :
+        </p>
+        <p facs="#facs_4_r_3">
+          La science. Au cours des siècles, des développements remarquables se sont produits, hors d'<placeName ref="#zbz-l.29">Europe</placeName>, qui auraient pu, semble-t-il, donner naissance plus tôt à ce qu'on a appelé la science moderne. On s'est souvent demandé pourquoi ils avaient tourné court. Il est plus que probable qu'il a fallu, en <placeName ref="#zbz-l.29">Europe</placeName>, la conjoncture favorable d'un grand nombre de facteurs — conjoncture statistiquement improbable — pour engendrer la science moderne. Quelques-uns, que je tiens pour essentiels, dérivent, me semble-t-il, du consentement à la condition d'homme, dont il vient d'être question.
+        </p>
+        <p facs="#facs_4_r_4">
+          Rien de plus contraire au développement de la science que l'impatience, l'exigence immédiate d'une compréhension totale et de la puissance qui en découle. Magie et miracle. Pour que la science naisse, il a fallu que les hommes se plient au pas-à-pas de la recherche toujours fragmentaire, qui se déploie sans fin dans l'inconnu. Il a fallu la soumission à la finitude en même temps que le refus, à l'infini, de toute borne définitive. « Sich bescheiden », disait <persName ref="#zbz-p.1">Jaspers</persName>.
+        </p>
+        <p facs="#facs_4_r_5">
+          Des philosophes très anciens avaient opposé l'une à l'autre les deux sources de la connaissance : données sensibles et rationalité, imposant entre elles un choix qui excluait l'une ou l'autre, ou qui subordonnait l'une à l'évidence de l'autre. La science est née en substituant à ce choix une polarité créatrice. L'objectivité, condition suprême de validité, comportait la reconnaissance à la fois du donné sensible et de l'autorité de la raison.
+        </p>
+        <p facs="#facs_4_r_6">
+          Elle érigeait le vrai en valeur indépendante de tout pouvoir et de tout prestige. Valeur absolue, mais « incarnée » dans la particularité d'un savoir toujours partiel, parce que toujours tendu vers une inaccessible totalité.
+        </p>
+        <p facs="#facs_4_r_7">
+          Le travail. Dès <bibl ref="#zbz-w.48">la Genèse</bibl>, le travail apparaît en même temps que la conscience du bien et du mal, que le besoin et l'histoire — en même temps que l'homme proprement dit. Il est saisi d'emblée comme une malédiction transcendante, décrétée par Dieu, mais constitutive de la condition d'homme. Décrétée et constitutive, cette malédiction sera toujours à alléger (et c'est bien cet allégement progressif qui est un élément essentiel de ce qu'on appelle progrès), mais jamais à éliminer, sous peine d'attenter à l'essence humaine.
+        </p>
+        <p facs="#facs_4_r_8">
+          C'est pourquoi le travail, en <placeName ref="#zbz-l.29">Europe</placeName>, a fait problème au cours des siècles, à la fois valorisé et dévalorisé, à la fois condition de dignité et signe de servitude, avec des degrés et sous des formes variables selon les époques. Aujourd'hui encore, on parle de « droit au travail » (ce qui n'équivaut pas à un « droit au salaire »), bien que se propage en même temps le sentiment profond que le temps de travail est soustrait à la « vraie vie », celle-ci étant dans les congés et les vacances.
+        </p>
+        <p facs="#facs_4_r_9">
+          Il faut ajouter qu'en <placeName ref="#zbz-l.29">Europe</placeName>, jusqu'à une époque relativement récente, le travail n'était pas considéré seulement dans son rapport avec celui qui travaille, mais aussi, d'une part, avec l'objet qu'il produisait, et d'autre part, avec les autres hommes auxquels il procurait ce dont ils avaient besoin. Ainsi se mêlait, à la malédiction constitutive de la condition humaine, au niveau du vécu affectif, la satisfaction et le prestige de produire quelque chose, en même temps que la fierté d'être utile aux autres et, de ce fait, d'acquérir des droits.
+        </p>
+        <p facs="#facs_4_r_10">
+          Ces éléments constitutifs premiers ont été obscurcis, parfois même détruits, par des conditions d'exploitation intolérables et inhumaines. Mais l'amélioration actuelle de ces
+        </p>
+        <p>
+          249
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          250
+        </p>
+        <p facs="#facs_5_r_2">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName>
+        </p>
+        <p facs="#facs_5_r_3">
+          conditions ne semble pas les faire renaître, au contraire. Peut-être doit-on à leur disparition et au vide inhumain qui en résulte la nostalgie, qui se répand aujourd'hui, de la condition d'artiste ou d'artisan, dans laquelle l'objet produit retrouve son importance.
+        </p>
+        <p facs="#facs_5_r_4">
+          L'histoire. On sait bien aujourd'hui que l'<placeName ref="#zbz-l.29">Europe</placeName> est loin d'avoir le monopole d'un passé historique, et certes, tous les peuples ont un passé, fait de la succession des événements, des hommes, des changements survenus dans les formes de vie, les rapports de force et ainsi de suite. Pourtant l'histoire n'est à proprement parler histoire que lorsqu'elle est appréhendée comme telle et que les hommes se savent d'une certaine manière saisis par elle, en même temps qu'ils lui font subir leur action. Je ne veux pas dire par là que l'histoire n'ait commencé qu'avec la philosophie de l'histoire, mais seulement que les <persName ref="#zbz-p.436">Européens</persName> ont eu un rapport diffus à l'histoire, vécu entre le destin et la liberté, dont l'origine semble se perdre dans la nuit des temps.
+        </p>
+        <p facs="#facs_5_r_5">
+          Peut-être l'histoire commence-t-elle avec la nostalgie et l'espérance. La nostalgie n'est pas le malaise d'une rêverie mélancolique. Elle implique la claire conscience d'une situation donnée, et sa confrontation avec un souvenir et une attente qui suscitent un désir actif. L'histoire, née en même temps que le travail par la conscience du bien et du mal, lors de la Chute, comporte d'emblée, face à la situation donnée, la nostalgie du <placeName ref="#zbz-l.302">Paradis</placeName> perdu et l'espérance active de le retrouver.
+        </p>
+        <p facs="#facs_5_r_6">
+          La situation donnée est à la fois reconnue et refusée, refusée telle qu'elle est, mais reconnue comme seule réalité à partir de laquelle le travail nostalgique pourra s'accomplir.
+        </p>
+        <p facs="#facs_5_r_7">
+          Il n'est pas possible de constituer les événements successifs en une Histoire sans les rattacher à une tentative de « progrès » (quel que soit le contenu qu'on donne à ce mot), fût-ce pour en manifester l'échec. Il n'est pas davantage possible de le faire sans qu'un « acquis » se sédimente par leur succession et constitue ce qu'on nomme « tradition ». L'histoire, en <placeName ref="#zbz-l.29">Europe</placeName>, a été vécue dans cette polarité de la tradition et du progrès, l'un conditionnant et valorisant l'autre tout en s'opposant à lui. (Le progrès est d'ailleurs, en <placeName ref="#zbz-l.29">Europe</placeName>, une valeur traditionnelle.) Les conflits qui en découlent ne peuvent avoir de fin.
+        </p>
+        <p facs="#facs_5_r_8">
+          On nous parle souvent de la fin de l'histoire. Mais hors quelques sectes et de quelques époques exaltées, l'<placeName ref="#zbz-l.29">Europe</placeName> y a-t-elle jamais cru ? Le cours des événements et l'action des hommes ont en <placeName ref="#zbz-l.29">Europe</placeName>, me semble-t-il, tiré leur sens, dans l'ensemble, d'une dimension transcendante, transhistorique, non d'un état futur définitif, situé dans la continuité du temps. La Chute, avec la malédiction qui lui est liée, n'est pas non plus située vraiment dans le passé, et pas davantage le <placeName ref="#zbz-l.173">jardin d'Eden</placeName>. De même, l'objet final de l'espérance n'est pas dans le futur, mais à travers la réalité temporelle de l'histoire, au-delà du temps. L'homme qui vit engagé dans l'histoire renonce donc à son achèvement.
+        </p>
+        <p facs="#facs_5_r_9">
+          La condition humaine
+        </p>
+        <p>
+          Les remarques qui précèdent sont sommaires et sans doute contestables (comment parler de l'<placeName ref="#zbz-l.29">Europe</placeName> « en général », sans tenir compte de la diversité et même des contrastes entre les époques ?). Il reste pourtant que les polarités ici dégagées sont celles-là mêmes qui déterminent la condition humaine.
+        </p>
+        <p>
+          Découvrir et reconnaître l'absolu irréductible de la conscience individuelle tout en maintenant le réseau impératif des contraintes collectives — bien plus : intérioriser le
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          <placeName ref="#zbz-l.29">EUROPE</placeName> ET CONDITION HUMAINE
+        </p>
+        <p facs="#facs_6_r_2">
+          respect de ces contraintes dans la conscience individuelle sans pourtant leur subordonner celle-ci, telle a été la tâche que s'est donné l'esprit européen, si loin que nous le connaissions. Qu'en fait l'histoire de l'<placeName ref="#zbz-l.29">Europe</placeName> abonde en violations et en servitudes, cela n'est pas douteux. Et pourtant cette tâche a été reconnue même aux époques où on s'y attend le moins. Ce n'est pas l'un des moindres mérites de notre ami <persName ref="#zbz-p.734">Léo Moulin</persName> d'avoir montré que jusqu'à dans les Constitutions médiévales des Ordres religieux, où pourtant l'autorité se réclamait de Dieu même, le refus absolu de la conscience était reconnu comme ultime et ne devait être subordonné à rien.
+        </p>
+        <p facs="#facs_6_r_3">
+          La condition humaine a été assumée en <placeName ref="#zbz-l.29">Europe</placeName> en tant qu'elle est faite de données « mixtes » et même contradictoires, et pourtant indissociables, qu'il faut bien supporter à la fois. Pas de corps sans âme, ni d'âme sans corps. Même <persName ref="#zbz-p.7">Platon</persName>, lorsqu'il fait du corps la prison de l'âme, n'incite pas à se débarrasser de cette prison ni à l'ignorer, mais seulement à rendre agissante dès cette vie, à l'intérieur de la polarité, la libération transcendante qu'apportera la mort. Pas de pouvoir sans cette efficacité mêlée de la force et de la reconnaissance, qui engendre l'autorité en rendant efficace une réalité symbolique. Pas de sens dans les réalités immanentes sans source transcendante de sens, mais pas de transcendance sans incarnation dans l'immanence et sa relativité.
+        </p>
+        <p facs="#facs_6_r_4">
+          L'analyse « scientifique » tend à défaire l'intrication du factuel et du symbolique, à disloquer ces antithèses insolubles et indispensables. La propagande, à sa suite, les « dénonce » comme autant de ruses idéologiques. La liberté morale, lasse d'être écartelée sans fin entre la confusion du relatif et l'inaccessible absolu, se laisse tenter et cède aux tentations de l'irréalisme angélique.
+        </p>
+        <p facs="#facs_6_r_5">
+          La condition humaine, on dirait qu'aujourd'hui les <persName ref="#zbz-p.436">Européens</persName> ne la supportent plus.
+        </p>
+        <p facs="#facs_6_r_6">
+          *
+        </p>
+        <p facs="#facs_6_r_7">
+          Il est vrai que les forfaits totalitaires de notre siècle ne sont pas propres à nous la rendre supportable. Ils nous ont révélé, comme on dit, « de quoi l'homme est capable ». L'air historique que nous respirons s'est imprégné d'une sorte d'horreur de l'homme et de ce qui l'a fait tel qu'il est : société et histoire. C'est une horreur bien différente de la mauvaise conscience, dont l'aiguillon cruel se tourne contre le moi et exige de lui qu'il change. C'est même presque l'inverse : l'horreur de l'homme en général, de sa société et de son histoire, rend au moi une sorte d'innocence, et même de supériorité. Désormais, on fera mieux. On va changer la vie, inventer et créer un homme nouveau par un choix de société.
+        </p>
+        <p>
+          Tout le monde sent bien que ce n'est pas fini, que les forfaits totalitaires continuent à déployer leurs effets dans l'histoire. Mais d'ordinaire on se contente de penser à des survivances idéologiques, à la résurgence de certains mouvements. En réalité, les effets en sont bien plus profondément infiltrés. Notre attitude envers ce qui fait notre condition en est tout imprégnée. Ainsi :
+        </p>
+        <p>
+          1° Structures et institutions, radicalement discréditées, ont perdu l'autorité symbolique qui leur permettait d'exiger moralement respect et obéissance. La violence et l'illégalité ont été du côté du bon droit, de la dignité et de la vérité, et elles peuvent l'être encore, elles le sont encore dans bien des pays. Une telle justification, vécue en notre temps avec une radicalité et sur une échelle probablement sans précédent, ne s'oublie pas. La Loi, par
+        </p>
+        <p>
+          251
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          252
+        </p>
+        <p facs="#facs_7_r_2">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName>
+        </p>
+        <p facs="#facs_7_r_3">
+          exemple, ne s'est pas remise de cette déchirure. <persName ref="#zbz-p.18">Socrate</persName>, aujourd'hui, ne choisirait pas de mourir par respect d'une loi injustement appliquée. Ou plutôt : il ne peut plus y avoir de <persName ref="#zbz-p.18">Socrate</persName>.
+        </p>
+        <p facs="#facs_7_r_4">
+          2° L'expérience du « mal absolu » engendre le refus d'une lente progression humaine parmi les mélanges et les compromis. Elle incite à l'angélisme, à l'exigence vide d'un homme, d'une société, d'un monde neufs, conformes à des normes « chimiquement pures », d'une convergence paradisiaque — et à un irréalisme pathétique et prétentieux.
+        </p>
+        <p facs="#facs_7_r_5">
+          3° Une telle perspective ne s'accommode ni de ce qui a été, ni de ce qui est, fût-ce comme matériau réel en vue du futur. D'où le refus de l'histoire, du passé, du donné et de sa résistance. L'irréalisme ne peut soutenir ses prétentions que dans la malléabilité du néant. D'où l'horreur des réformes, qui prennent appui sur ce qui est. Même si on parle beaucoup d'histoire, c'est une histoire sans histoire, abstraite, pour une génération sans pères, sans hérédité et sans héritage. Seule a du prestige la table rase, elle seule est digne de « l'homme nouveau ».
+        </p>
+        <p facs="#facs_7_r_6">
+          L'entreprise peut paraître héroïque, au point de négliger les limites humaines. En fait, à force d'analyse, de purisme abstrait, à force de démystifier et de démythifier la condition humaine pour mieux la refaire à notre gré, nous l'avons décomposée jusqu'à la platitude et à la destruction. On sait depuis longtemps que celui qui veut faire l'ange fait la bête.
+        </p>
+        <p facs="#facs_7_r_7">
+          *
+        </p>
+        <p>
+          Mais s'il est vrai que nous devons l'<placeName ref="#zbz-l.29">Europe</placeName> à des <persName ref="#zbz-p.436">Européens</persName> qui ont accepté les chances et les risques, les tragédies et les limites, les audaces et l'inachèvement, les appétits et les sacrifices, et toutes les polarités de la condition humaine — que va-t-elle devenir, maintenant qu'ils n'y consentent plus ?
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne HERSCH</persName>.
+        </p>
+      </div>
+      </body></text>
+</TEI>

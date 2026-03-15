@@ -1,0 +1,47 @@
+{
+  "doc_id": "3020",
+  "reviewer": "quality-screening-t2",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 6,
+  "status": "NEEDS_REVIEW",
+  "errors": 0,
+  "warnings": 4,
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Mensch' (30+x) tagged as persName ref=zbz-p.1251 -- generic noun throughout Vortrag, not a person entity. Systematic NER error."
+    },
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Wahl' (5x) tagged as persName ref=zbz-p.89 -- generic noun 'die Wahl' (choice), not a person"
+    },
+    {
+      "severity": "warning",
+      "code": "T1",
+      "msg": "Running title corrupted on p2/p3/p4: 'Versennung', 'Verneimung', 'Raumluft als Vernutzung' statt 'Verneinung'"
+    },
+    {
+      "severity": "warning",
+      "code": "W9",
+      "msg": "Validator: 3/82 Entity-Tags ohne ref, keine lb-Elemente auf 6 Seiten"
+    },
+    {
+      "severity": "info",
+      "code": "T2",
+      "msg": "Various OCR residuals: 'mixempfinden', 'sofangen', 'dezonigen', 'Weitigstens', 'essender', 'schlufend'"
+    },
+    {
+      "severity": "info",
+      "code": "S2",
+      "msg": "sp-Element mit leerem speaker (line 115, 121): Vortrag als interview getypt"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 45p 2o 4l 15w = 66"
+    }
+  ]
+}

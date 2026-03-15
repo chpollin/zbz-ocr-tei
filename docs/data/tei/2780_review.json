@@ -1,0 +1,33 @@
+{
+  "doc_id": "2780",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 105,
+  "lang": "fra",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: Temps et musique, Jeanne Hersch, fra, 1990"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 100p 4o 38l 47w = 189"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Essaysammlung Musik/Zeit, Inhaltsverzeichnis S.100, Kolophon, Verlagsliste am Ende"
+    }
+  ]
+}

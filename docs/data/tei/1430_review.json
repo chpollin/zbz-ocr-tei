@@ -1,0 +1,45 @@
+{
+  "doc_id": "1430",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 4],
+      "notes": "S.1 E-Periodica-Deckblatt korrekt erkannt. S.4 zweispaltig mit Zwischenueberschriften, Zonen sauber getrennt."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutsch korrekt, Umlaute intakt, Worttrennungen modelliert. Laengerer Text ueber 7 Seiten ohne sichtbare OCR-Fehler."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "7 Seiten, E-Periodica-Metadatenseite + 6 Textseiten. Zweispaltiges Layout durchgaengig korrekt aufgeloest."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. Interviewstruktur mit sp/speaker. Sektionsueberschriften als div/head."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 9,
+        "orgName": 3,
+        "placeName": 0,
+        "bibl": 0
+      },
+      "notes": "Hersch, Adam, Eva, Kafka u.a. markiert. Orgs wie ETH-Bibliothek, E-Periodica. Philosophischer Interviewtext."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Interview/Gespraech ueber Menschsein, Glueck, Freiheit, Arbeit. Kohaerenter Argumentationsfluss ueber alle 7 Seiten."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Umfangreiches Tier-2-Dokument (7 Seiten). Saubere zweispaltige Aufloesung, Interviewformat korrekt modelliert."
+}

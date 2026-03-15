@@ -1,0 +1,40 @@
+{
+  "doc_id": "2130",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 6],
+      "notes": "Kein Overlay S.1 (nur Gemini). S.1 Querformat (1055x727), danach Hochformat."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text ueber technische Entwicklung und conditio humana korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "11 Seiten. S.1 Querformat, danach Hochformat. Einspaltiges Layout, Fussnoten vorhanden."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. bibl im sourceDesc, kein Datum. langUsage fra."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 44, "orgName": 5, "placeName": 10, "bibl": 6},
+      "notes": "Dichte Personenreferenzen. Jaspers, Kant, Heidegger, Marx als Referenzen."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Philosophischer Vortrag ueber technische Entwicklung und conditio humana. Kohaerenter Text."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Saubere Edition eines philosophischen Vortrags auf Franzoesisch."
+}

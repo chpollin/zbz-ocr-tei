@@ -1,0 +1,51 @@
+{
+  "doc_id": "630",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "pages_inspected": ["p1", "p7", "p13"],
+  "errors": 2,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L4",
+      "msg": "TEI-Validator: VALID (0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings)"
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay p1/p7/p13: S.1 Lieferschein korrekt erkannt, S.7-13 Textseiten Layout sauber"
+    },
+    {
+      "severity": "error",
+      "code": "L6",
+      "msg": "placeName ref zbz-l.13 auf 'Est' in 'Est-ce que...' -- 4 Instanzen. Franzoesische Fragekonstruktion als Ortsname Osteuropa fehlgetaggt. Falsch-positiv, muss korrigiert werden."
+    },
+    {
+      "severity": "error",
+      "code": "L6",
+      "msg": "persName ref zbz-p.2 (=Jeanne Hersch) auf 'Liebmann Hersch' (S.3). Liebmann Hersch ist der Vater, ein anderer Mensch. Falsche Entity-Zuordnung."
+    },
+    {
+      "severity": "warning",
+      "code": "L3",
+      "msg": "S.1 ist ein Elektronischer Dokumentenlieferdienst-Zettel (UB Basel), kein Publikationsinhalt. Korrekt transkribiert, aber Verwaltungsmaterial."
+    },
+    {
+      "severity": "info",
+      "code": "L7",
+      "msg": "Franzoesischer Vortrag 'L'Europe, est-ce notre affaire?' (1963, Lausanne, USC). 13 Seiten, kohaerenter Argumentationsstrang Europa-Foederalismus-Schweiz-Neutralitaet. Historische Referenzen (CED, Schuman, Traites de Rome, de Gaulle) korrekt."
+    },
+    {
+      "severity": "info",
+      "code": "L6",
+      "msg": "Entities: 49p 35o 128l 19w = 231. Hohe Dichte, Personen und Orte grossteils plausibel."
+    },
+    {
+      "severity": "info",
+      "code": "L2",
+      "msg": "OCR-Qualitaet hoch, franzoesische Akzente korrekt, lange Absaetze fehlerfrei."
+    }
+  ]
+}

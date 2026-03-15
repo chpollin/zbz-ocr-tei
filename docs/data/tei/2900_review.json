@@ -1,0 +1,40 @@
+{
+  "doc_id": "2900",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 2],
+      "notes": "4pp Zeitschriftenartikel Philosophica. Einspaltig, klarer Druck."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltig. Overlay S.1+S.2 geprueft, Segmentierung korrekt."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": ["W6: Keine lb-Elemente (4 Seiten)"],
+      "notes": "VALID. W6 unkritisch."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 4, "orgName": 1, "placeName": 0, "bibl": 1},
+      "notes": "Wenige Entities, passend zum abstrakten philosophischen Thema. Jaspers, Hersch, Hitler, Kant korrekt."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Philosophischer Aufsatz ueber Freiheit und Macht. Kohaerenter Argumentationstext."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Kompakter philosophischer Aufsatz ohne Maengel."
+}

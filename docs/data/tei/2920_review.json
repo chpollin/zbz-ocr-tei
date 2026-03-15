@@ -1,0 +1,33 @@
+{
+  "doc_id": "2920",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 38,
+  "lang": "fra",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: La philosophie en Europe, J. Hersch, fra, 1993, biblStruct/bookSection"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 18p 17o 4l 120w = 159"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Essay ueber Menschenrechte und Philosophie in Europa, Camus/Vargas Llosa/Jaspers, kohaerenter Abschluss"
+    }
+  ]
+}

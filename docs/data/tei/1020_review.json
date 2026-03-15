@@ -1,0 +1,51 @@
+{
+  "doc_id": "1020",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "Zeitungsseite Tribune de Geneve, 1 Seite mit Foto."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "Ueberwiegend gut, aber OCR-Unschaerfen in einzelnen Passagen."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Mehrspaltige Zeitungsseite mit Bild. figure-Element vorhanden."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 8,
+        "orgName": 4,
+        "placeName": 1,
+        "bibl": 0
+      },
+      "notes": "Frenay, Moulin, Malraux, Hersch plausibel. Alle refs 'GND:unknown' -- kein ZBZ-Register."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Buchbesprechung Frenay-Resistance-Buch. div type=review korrekt. Sprache fra korrekt."
+    }
+  },
+  "findings": [
+    "Alle Entity-Refs sind 'GND:unknown' -- ZBZ-Register-Matching fehlt.",
+    "OCR-Unschaerfen in Zeitungstext.",
+    "Keine bibl-Refs obwohl Buchbesprechung."
+  ],
+  "overall_notes": "Gute Buchbesprechung, kohaerenter Text. Entity-Matching auf ZBZ-Register nachzuholen."
+}

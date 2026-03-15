@@ -1,0 +1,53 @@
+{
+  "doc_id": "1475",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        2,
+        3
+      ],
+      "notes": "3 Seiten: S.1 Bestellformular UB Basel, S.2 VSAM Titelseite, S.3 Artikeltext + franzoesische Version."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gute OCR-Qualitaet. Deutscher Haupttext und franzoesische Parallelversion klar lesbar."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "3-Spalten auf S.2/S.3. Inhaltsverzeichnis, Editorial, Artikel, Impressum korrekt segmentiert."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "Valide. Titel Vom guten und vom schlechten Tourismus korrekt. Sprache deu+fra. Datum 1977."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 5,
+        "orgName": 4,
+        "placeName": 0,
+        "bibl": 0
+      },
+      "notes": "Hersch (GND:118815679) korrekt. Jaspers (GND:118557106) im Editorial. foreign xml:lang=fra korrekt."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerenter bilingualer Artikel. Deutsche/franzoesische Version konsistent."
+    }
+  },
+  "findings": [
+    "Sehr gute Gesamtqualitaet: bilingualer Artikel mit klarer Struktur",
+    "S.1 Bestellformular (Fernleihe UB Basel) dokumentiert Provenienz",
+    "foreign-Element korrekt fuer Sprachmischung"
+  ],
+  "overall_notes": "VSAM Angestellten-Revue 7/8 1977. Bilingualer Hersch-Artikel ueber Tourismuskritik. Ausgezeichnete Qualitaet."
+}

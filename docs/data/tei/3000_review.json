@@ -1,0 +1,22 @@
+{
+  "doc_id": "3000",
+  "reviewer": "quality-screening-t2",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 6,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Homme' (1x) tagged as persName ref=zbz-p.926 -- generic noun, not a person"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 5p 1o 0l 8w = 14"
+    }
+  ]
+}

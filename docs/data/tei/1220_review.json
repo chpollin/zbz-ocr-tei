@@ -1,0 +1,37 @@
+{
+  "doc_id": "1220",
+  "reviewer": "quality-screener-claude",
+  "date": "2026-03-15",
+  "tier": 3,
+  "pages": 10,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 1 Warning"
+    },
+    {
+      "severity": "warning",
+      "code": "W3",
+      "msg": "9 surfaces vs 10 pb: pb n=82 und n=83 referenzieren beide #facs_9 -- doppelte facs-Referenz"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 81p 13o 4l 1w = 99 (GND-Referenzen)"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S.1: Zweispalten-Layout Buch korrekt erkannt"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Sprache deu korrekt, Religion Ideologie und Wirklichkeit, Seitenzahlen-Spruenge plausibel (Buchkapitel)"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "doc_id": "1560",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        2,
+        3
+      ],
+      "notes": "3 Seiten: S.1 Titelseite Zeitschrift fuer Gemeinnuetzigkeit, S.2 Hersch-Referat, S.3 Fortsetzung + Protokoll."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gute OCR-Qualitaet. Franzoesischer Referatstext klar lesbar. Protokollteil mit Namensliste korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltiges Layout, gut strukturiert. Titelseite, Referat, Protokoll als logische Abschnitte."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "Valide. type=speech passend. Titel Unite de la Suisse d aujourdhui korrekt. Sprache fra+deu. Datum 1978."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 4,
+        "orgName": 1,
+        "placeName": 15,
+        "bibl": 1
+      },
+      "notes": "Hersch #zbz-p.2 korrekt. Fortgeschrittene Projekt-Referenzen."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Hochkohaerentes Hersch-Referat ueber Schweizer Einheit. Klare Thesen."
+    }
+  },
+  "findings": [
+    "Exzellente Qualitaet: kohaerentes Referat mit klarer Argumentation",
+    "Fortgeschrittene Entity-Resolution mit Projekt-Referenzen",
+    "S.3 Protokoll der 148. SGG-Versammlung"
+  ],
+  "overall_notes": "Schweizerische Zeitschrift fuer Gemeinnuetzigkeit Nov/Dez 1978. Hersch-Referat an SGG-Versammlung. Ausgezeichnete Qualitaet."
+}

@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">La caricature de l'existentialisme et son vrai visage</title>
+        <author>Georges Golay</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">120</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>La caricature de l'existentialisme et son vrai visage</title>
+            <author>Georges Golay</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1946</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). Dokument beginnt mit dem Ende eines Croce-Artikels von Georges Golay (S.338); div-Struktur trennt beide Texte korrekt.; Einige persName-Referenzen verwenden GND:unknown (Racine, Augustin, Pascal, Descartes, Nietzsche, Jean Wahl, Gabriel Marcel).; Seitennummerierung springt: Mischung aus Originalseitenzahlen und laufender Zaehlung.</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_1_r_1" ulx="292" uly="88" lrx="814" lry="225" />
+      <zone xml:id="facs_1_r_2" ulx="898" uly="173" lrx="1401" lry="274" />
+      <zone xml:id="facs_1_r_3" ulx="519" uly="260" lrx="551" lry="281" />
+      <zone xml:id="facs_1_r_4" ulx="271" uly="308" lrx="814" lry="507" />
+      <zone xml:id="facs_1_r_5" ulx="948" uly="317" lrx="1358" lry="344" />
+      <zone xml:id="facs_1_r_6" ulx="858" uly="366" lrx="1476" lry="1032" />
+      <zone xml:id="facs_1_r_7" ulx="260" uly="505" lrx="806" lry="674" />
+      <zone xml:id="facs_1_r_8" ulx="260" uly="687" lrx="798" lry="1025" />
+      <zone xml:id="facs_1_r_9" ulx="618" uly="1012" lrx="797" lry="1034" />
+      <zone xml:id="facs_1_r_10" ulx="898" uly="1041" lrx="1431" lry="1097" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_2_r_1" ulx="927" uly="89" lrx="1498" lry="116" />
+      <zone xml:id="facs_2_r_2" ulx="301" uly="119" lrx="842" lry="345" />
+      <zone xml:id="facs_2_r_3" ulx="889" uly="128" lrx="1502" lry="396" />
+      <zone xml:id="facs_2_r_4" ulx="296" uly="339" lrx="833" lry="403" />
+      <zone xml:id="facs_2_r_5" ulx="878" uly="377" lrx="1509" lry="1129" />
+      <zone xml:id="facs_2_r_6" ulx="276" uly="403" lrx="829" lry="596" />
+      <zone xml:id="facs_2_r_7" ulx="259" uly="596" lrx="823" lry="820" />
+      <zone xml:id="facs_2_r_8" ulx="252" uly="813" lrx="827" lry="1156" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_3_r_1" ulx="538" uly="52" lrx="1062" lry="81" />
+      <zone xml:id="facs_3_r_2" ulx="879" uly="89" lrx="1518" lry="948" />
+      <zone xml:id="facs_3_r_3" ulx="292" uly="104" lrx="838" lry="384" />
+      <zone xml:id="facs_3_r_4" ulx="277" uly="407" lrx="837" lry="621" />
+      <zone xml:id="facs_3_r_5" ulx="263" uly="615" lrx="837" lry="1040" />
+      <zone xml:id="facs_3_r_6" ulx="903" uly="940" lrx="1522" lry="1061" />
+      <zone xml:id="facs_3_r_7" ulx="903" uly="940" lrx="1522" lry="1061" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_4_r_1" ulx="301" uly="89" lrx="840" lry="256" />
+      <zone xml:id="facs_4_r_2" ulx="882" uly="110" lrx="1508" lry="1098" />
+      <zone xml:id="facs_4_r_3" ulx="427" uly="309" lrx="764" lry="345" />
+      <zone xml:id="facs_4_r_4" ulx="268" uly="365" lrx="844" lry="1101" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_5_r_1" ulx="287" uly="89" lrx="843" lry="141" />
+      <zone xml:id="facs_5_r_2" ulx="895" uly="97" lrx="1531" lry="128" />
+      <zone xml:id="facs_5_r_3" ulx="895" uly="130" lrx="1531" lry="1122" />
+      <zone xml:id="facs_5_r_4" ulx="287" uly="141" lrx="843" lry="382" />
+      <zone xml:id="facs_5_r_5" ulx="246" uly="384" lrx="839" lry="1130" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_6_r_1" ulx="1448" uly="27" lrx="1508" lry="49" />
+      <zone xml:id="facs_6_r_2" ulx="876" uly="57" lrx="1535" lry="449" />
+      <zone xml:id="facs_6_r_3" ulx="241" uly="77" lrx="832" lry="687" />
+      <zone xml:id="facs_6_r_4" ulx="243" uly="99" lrx="304" lry="121" />
+      <zone xml:id="facs_6_r_5" ulx="886" uly="411" lrx="1547" lry="663" />
+      <zone xml:id="facs_6_r_6" ulx="895" uly="665" lrx="1561" lry="1050" />
+      <zone xml:id="facs_6_r_7" ulx="231" uly="712" lrx="831" lry="860" />
+      <zone xml:id="facs_6_r_8" ulx="226" uly="847" lrx="834" lry="1149" />
+      <zone xml:id="facs_6_r_9" ulx="915" uly="1032" lrx="1561" lry="1147" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_7_r_1" ulx="1482" uly="31" lrx="1535" lry="55" />
+      <zone xml:id="facs_7_r_2" ulx="850" uly="63" lrx="1494" lry="596" />
+      <zone xml:id="facs_7_r_3" ulx="233" uly="103" lrx="800" lry="224" />
+      <zone xml:id="facs_7_r_4" ulx="230" uly="213" lrx="806" lry="415" />
+      <zone xml:id="facs_7_r_5" ulx="228" uly="409" lrx="805" lry="687" />
+      <zone xml:id="facs_7_r_6" ulx="887" uly="595" lrx="1624" lry="1140" />
+      <zone xml:id="facs_7_r_7" ulx="220" uly="704" lrx="804" lry="855" />
+      <zone xml:id="facs_7_r_8" ulx="329" uly="920" lrx="695" lry="959" />
+      <zone xml:id="facs_7_r_9" ulx="224" uly="969" lrx="804" lry="1140" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_8_r_1" ulx="877" uly="102" lrx="1493" lry="162" />
+      <zone xml:id="facs_8_r_2" ulx="290" uly="117" lrx="836" lry="168" />
+      <zone xml:id="facs_8_r_3" ulx="877" uly="162" lrx="1493" lry="721" />
+      <zone xml:id="facs_8_r_4" ulx="290" uly="168" lrx="836" lry="552" />
+      <zone xml:id="facs_8_r_5" ulx="284" uly="546" lrx="831" lry="627" />
+      <zone xml:id="facs_8_r_6" ulx="264" uly="622" lrx="831" lry="1115" />
+      <zone xml:id="facs_8_r_7" ulx="878" uly="747" lrx="1491" lry="1037" />
+      <zone xml:id="facs_8_r_8" ulx="888" uly="1068" lrx="1445" lry="1140" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_9_r_1" ulx="253" uly="102" lrx="822" lry="628" />
+      <zone xml:id="facs_9_r_2" ulx="242" uly="612" lrx="818" lry="780" />
+      <zone xml:id="facs_9_r_3" ulx="226" uly="755" lrx="814" lry="1094" />
+      <zone xml:id="facs_9_r_4" ulx="1755" uly="806" lrx="3510" lry="992" />
+      <zone xml:id="facs_9_r_5" ulx="1755" uly="917" lrx="3510" lry="1091" />
+      <zone xml:id="facs_9_r_6" ulx="1755" uly="1054" lrx="3510" lry="2294" />
+      <zone xml:id="facs_9_r_7" ulx="888" uly="1084" lrx="931" lry="1118" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="1755" lry="1240">
+      <zone xml:id="facs_10_r_1" ulx="1508" uly="31" lrx="1549" lry="49" />
+      <zone xml:id="facs_10_r_2" ulx="883" uly="57" lrx="1534" lry="747" />
+      <zone xml:id="facs_10_r_3" ulx="537" uly="74" lrx="707" lry="106" />
+      <zone xml:id="facs_10_r_4" ulx="225" uly="82" lrx="844" lry="1137" />
+      <zone xml:id="facs_10_r_5" ulx="1336" uly="1043" lrx="1509" lry="1084" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="338" />
+        <div type="text">
+<p facs="#facs_1_r_1">
+          <lb facs="#facs_1_r_1" n="N001" />338 <persName ref="GND:11852278X">BENEDETTO CROCE</persName>
+        </p>
+        <p facs="#facs_1_r_2">
+          <lb facs="#facs_1_r_2" n="N001" />lès par les forces supérieures de l'esprit. Ils ont fait couler <lb facs="#facs_1_r_2" n="N002" />des torrents de sang, ils ont accumulé des ruines, mais n'ont <lb facs="#facs_1_r_2" n="N003" />rien construit. Le monde vient d'en faire la tragique expérience.
+        </p>
+        </div>
+<div n="2">
+          <head>
+            <lb facs="#facs_1_r_3" n="N001" />IV.
+          </head>
+          <p facs="#facs_1_r_4">
+            <lb facs="#facs_1_r_4" n="N001" />Bien que <persName ref="GND:11852278X">Benedetto Croce</persName> soit en pleine activité et qu'il <lb facs="#facs_1_r_4" n="N002" />puisse sur certains points compléter encore son œuvre, <lb facs="#facs_1_r_4" n="N003" />éclairer peut-être encore certains aspects restés dans l'ombre, <lb facs="#facs_1_r_4" n="N004" />développer telle et telle partie de sa doctrine, on peut dire <lb facs="#facs_1_r_4" n="N005" />que cette œuvre est maintenant édifiée. Il est en droit d'affirmer, <lb facs="#facs_1_r_4" n="N006" />comme le poète : <hi rendition="#i">exegi monumentum</hi>. L'édifice est là, <lb facs="#facs_1_r_4" n="N007" />imposant, dressant sa masse dans le paysage de la spéculation <lb facs="#facs_1_r_4" n="N008" />contemporaine.
+          </p>
+          <p facs="#facs_1_r_5">
+            <lb facs="#facs_1_r_5" n="N001" />L'influence du penseur de Naples a été immense et a pour <lb facs="#facs_1_r_5" n="N002" />ainsi dire renouvelé le climat culturel de l'Italie. Ceux-là <lb facs="#facs_1_r_5" n="N003" />même qui l'ont abandonné pour suivre d'autres voies, à un <lb facs="#facs_1_r_5" n="N004" />moment décisif de leur développement spirituel, lui doivent <lb facs="#facs_1_r_5" n="N005" />tous des points de départ et des positions dialectiques. La <lb facs="#facs_1_r_5" n="N006" />plupart de ceux qui sont devenus, dans une certaine mesure, <lb facs="#facs_1_r_5" n="N007" />ses adversaires ont commencé par être à son école.
+          </p>
+          <p facs="#facs_1_r_6">
+            <lb facs="#facs_1_r_6" n="N001" />Il est juste qu'il en soit ainsi. Aucun système, si complet, <lb facs="#facs_1_r_6" n="N002" />si organique soit-il, n'est définitif. Ce qui est définitif est <lb facs="#facs_1_r_6" n="N003" />mort, et l'esprit ne cesse de progresser, de surmonter de <lb facs="#facs_1_r_6" n="N004" />nouvelles positions et de créer de nouvelles synthèses. C'est <lb facs="#facs_1_r_6" n="N005" />avoir bien compris <persName ref="GND:11852278X">Croce</persName> que de le dépasser et d'entreprendre <lb facs="#facs_1_r_6" n="N006" />librement l'étude des problèmes que pose à toute heure, à <lb facs="#facs_1_r_6" n="N007" />chaque instant, la réalité mouvante de l'histoire qui se fait <lb facs="#facs_1_r_6" n="N008" />et se renouvelle incessamment dans son inexorable devenir. <lb facs="#facs_1_r_6" n="N009" />Aucune foi, aucun enseignement ne doit être une chaîne. <lb facs="#facs_1_r_6" n="N010" />Penser, c'est travailler, comme l'a dit <persName ref="GND:11852278X">Croce</persName>, à la philosophie, <lb facs="#facs_1_r_6" n="N011" />c'est-à-dire au progrès de la pensée.
+          </p>
+          <p facs="#facs_1_r_7">
+            <lb facs="#facs_1_r_7" n="N001" /><persName ref="GND:unknown">GEORGES GOLAY</persName>.
+          </p>
+        </div>
+        <div n="2">
+          <div type="text">
+<head>
+            <lb facs="#facs_1_r_8" n="N001" />La caricature de l'existentialisme et son vrai visage<hi rendition="#sup">1</hi>
+          </head>
+          </div>
+<div n="3">
+            <head>
+              <lb facs="#facs_1_r_9" n="N001" />I. LA SOTTISE DES SLOGANS A LA MODE.
+            </head>
+            <p facs="#facs_1_r_10">
+              <lb facs="#facs_1_r_10" n="N001" />En me mettant à parler à mon tour de l'existentialisme, <lb facs="#facs_1_r_10" n="N002" />j'éprouve une véritable gêne. On en discute partout, on <lb facs="#facs_1_r_10" n="N003" />l'attaque partout. Entre deux bouffées de cigarettes, entre <lb facs="#facs_1_r_10" n="N004" />deux danses, entre deux descentes à ski, on fait une profession <lb facs="#facs_1_r_10" n="N005" />de foi — le plus souvent on rejette loin de soi, avec mépris, <lb facs="#facs_1_r_10" n="N006" />cette doctrine corrompue. C'est à peine si certains s'aperçoivent, <lb facs="#facs_1_r_10" n="N007" />à de rares instants, qu'ils ne connaissent pas ce dont ils parlent. <lb facs="#facs_1_r_10" n="N008" />J'ai été l'élève du plus pur des existentialistes, <persName ref="GND:118557106">Karl Jaspers</persName>. <lb facs="#facs_1_r_10" n="N009" />Peut-être pourrai-je, en essayant de dire ce qu'est véritablement <lb facs="#facs_1_r_10" n="N010" />ce mouvement philosophique, faire comprendre ce qu'il peut <lb facs="#facs_1_r_10" n="N011" />donner, ce qu'il m'a donné, endiguer ce flux d'ignorance <lb facs="#facs_1_r_10" n="N012" />agressive ou de mauvaise foi? Je sais bien que non, et que <lb facs="#facs_1_r_10" n="N013" />mes paroles iront sans doute s'abîmer dans la confusion <lb facs="#facs_1_r_10" n="N014" />générale des autres bavardages. Il s'agit d'une conception <lb facs="#facs_1_r_10" n="N015" />philosophique difficile, qui demande, pour être comprise, <lb facs="#facs_1_r_10" n="N016" />à être située dans l'ensemble de la tradition philosophique <lb facs="#facs_1_r_10" n="N017" />européenne. Si l'on me comprend mal, cela fera encore des <lb facs="#facs_1_r_10" n="N018" />malentendus, encore de ces préjugés haineux et injustes qui <lb facs="#facs_1_r_10" n="N019" />ferment les âmes et les intelligences. Mais que les pires <lb facs="#facs_1_r_10" n="N020" />calomnies. Et si le temps dont je dispose est certes insuffisant <lb facs="#facs_1_r_10" n="N021" />pour exposer sans malentendu fût-ce les grandes lignes de <lb facs="#facs_1_r_10" n="N022" />l'existentialisme, il me permettra peut-être d'éveiller un doute <lb facs="#facs_1_r_10" n="N023" />dans quelques esprits, de façon que tel ou tel se
+            </p>
+          </div>
+        </div>
+        <div type="text">
+<note place="foot" n="1" xml:id="fn1-1">
+          <lb facs="#facs_1_r_11" n="N001" />¹ Causeries faites à <orgName ref="GND:unknown">Radio-Genève</orgName>, les 8 et 22 mars et le 5 avril 1946.
+        </note>
+      </div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          340<lb facs="#facs_2_l_1_1" n="N001" />LA CARICATURE DE L'EXISTENTIALISME
+        </head>
+        <p facs="#facs_2_r_2">
+          <lb facs="#facs_2_l_2_1" n="N001" />dise : « Après tout, c'est vrai, moi, je ne sais pas ce que c'est ».
+        </p>
+        <p facs="#facs_2_r_3">
+          <lb facs="#facs_2_l_3_1" n="N001" />Ce serait déjà un beau résultat. Car alors il deviendrait possible que l'un ou l'autre s'attache à comprendre et cherche<lb facs="#facs_2_l_3_2" n="N002" /> par lui-même. Et comme l'a dit <persName ref="GND:118605895">Sartre</persName>, « si, parmi les personnes qui eussent pu trouver des principes de pensée et des règles de conduite dans cette philosophie et qui en ont été détournées par ces absurdes critiques, il en était une seule que je puisse toucher et détromper, cela vaudrait encore la peine de parler pour elle ».
+        </p>
+        <p facs="#facs_2_r_4">
+          <lb facs="#facs_2_l_4_1" n="N001" />Je voudrais d'abord résumer les principaux slogans anti-existentialistes qui remplissent les colonnes des gazettes.
+        </p>
+        <p facs="#facs_2_r_5">
+          <lb facs="#facs_2_l_5_1" n="N001" />Il y a d'abord ceux qui concernent l'origine de l'existentialisme. Certains déclarent qu'il s'agit d'une doctrine inventée<lb facs="#facs_2_l_5_2" n="N002" /> par J.-P. <persName ref="GND:118605895">Sartre</persName>, et qui reflète par là l'atmosphère de catastrophe de la dernière guerre. D'autres, ayant entendu<lb facs="#facs_2_l_5_3" n="N003" /> parler des sources dont <persName ref="GND:118605895">Sartre</persName> se réclame en toute honnêteté, déclarent qu'il s'agit d'une philosophie essentiellement allemande<lb facs="#facs_2_l_5_4" n="N004" /> de l'entre-deux-guerres, dont la conséquence naturelle fut le régime national-socialiste.
+        </p>
+        <p facs="#facs_2_r_6">
+          <lb facs="#facs_2_l_6_1" n="N001" />Puis il y a les slogans de fond : l'existentialisme, dit-on, est une pensée nihiliste, athée, qui fait de l'homme un néant<lb facs="#facs_2_l_6_2" n="N002" /> et de la vie un non-sens. C'est pourquoi pour lui les seules attitudes spirituelles acceptables seraient l'angoisse et le<lb facs="#facs_2_l_6_3" n="N003" /> désespoir, attitudes distinguées et inefficaces qui permettraient à l'existentialiste de se retirer dans une tour d'ivoire et<lb facs="#facs_2_l_6_4" n="N004" /> de se désintéresser entièrement du monde contemporain, de son prochain, de l'avenir de l'humanité.
+        </p>
+        <p facs="#facs_2_r_7">
+          <lb facs="#facs_2_l_7_1" n="N001" />Par une étrange contradiction, les caricaturistes de l'existentialisme ne se contentent pas de le représenter comme un<lb facs="#facs_2_l_7_2" n="N002" /> quiétisme, une fuite loin des responsabilités pratiques : ils déclarent en même temps que l'existentialisme est une doctrine<lb facs="#facs_2_l_7_3" n="N003" /> de l'action, exclusivement de l'action, avec tous les excès que cela comporte. <persName ref="GND:118605895">Sartre</persName>, disent-ils, refuse toute liberté à<lb facs="#facs_2_l_7_4" n="N004" /> l'homme — son seul refuge est dans l'action. Et ils ne voient même pas qu'ils lui prêtent là une conception simplement<lb facs="#facs_2_l_7_5" n="N005" /> absurde ! Cette action, d'ailleurs, selon eux, est débarrassée de toute morale. Elle découle d'un égoïsme absolu.
+        </p>
+        <p facs="#facs_2_r_8">
+          <lb facs="#facs_2_l_8_1" n="N001" />LA CARICATURE DE L'EXISTENTIALISME 341
+        </p>
+        <p>
+          <lb facs="#facs_2_l_9_1" n="N001" />elle tend à l'érotisme, à la violence, ou même au sadisme. L'homme, débarrassé de toute préoccupation morale et<lb facs="#facs_2_l_9_2" n="N002" /> spirituelle, ne cherche plus qu'à satisfaire ses viscères. Enfin, pour couronner le tout, il faut bien que toute pensée,<lb facs="#facs_2_l_9_3" n="N003" /> aujourd'hui, reçoive son étiquette politique. Faut-il dire que l'existentialisme est de droite ou de gauche ? communiste,<lb facs="#facs_2_l_9_4" n="N004" /> fasciste, démocrate, capitaliste, socialiste ? On s'est bientôt mis d'accord : pour les marxistes, il est l'image même du<lb facs="#facs_2_l_9_5" n="N005" /> capitalisme ; pour les gens de droite, il sera une sorte de marxisme larvé. Et voilà, on pourra l'attaquer de toutes parts.
+        </p>
+        <p>
+          <lb facs="#facs_2_l_10_1" n="N001" />Tel est le réquisitoire. Pour qui sait un peu de quoi il s'agit en réalité dans la pensée des existentialistes, ce réquisitoire<lb facs="#facs_2_l_10_2" n="N002" /> est profondément déprimant. Non pas tant pour l'existentialisme même qui, de toute façon, n'a jamais pu espérer une<lb facs="#facs_2_l_10_3" n="N003" /> vulgarisation vraiment compréhensive, que pour le niveau de conscience intellectuelle qu'un pareil ramassis d'absurdités<lb facs="#facs_2_l_10_4" n="N004" /> révèle chez ceux qui les répandent avec une insolente assurance. Ces censeurs sévères qui parlent au nom de la morale<lb facs="#facs_2_l_10_5" n="N005" /> et de la culture, je voudrais bien les interroger : quels ouvrages existentialistes ont-ils lus ? Peut-être, dans le meilleur des<lb facs="#facs_2_l_10_6" n="N006" /> cas, connaissent-ils une ou deux pièces de théâtre, peut-être ont-ils feuilleté un roman. Mais cela ne suffit pas. Prenons<lb facs="#facs_2_l_10_7" n="N007" /> un exemple classique. Lorsqu'on connaît le jansénisme de <persName ref="GND:unknown">Racine</persName>, on comprend mieux le personnage de<lb facs="#facs_2_l_10_8" n="N008" /> Phèdre ; mais je mets au défi quiconque ne sait rien du jansénisme de s'en faire une notion adéquate par la seule lecture<lb facs="#facs_2_l_10_9" n="N009" /> de Phèdre. Et si quelqu'un s'y essayait, je crains fort que la doctrine résultant de son exégèse ne soit propre à scandaliser,<lb facs="#facs_2_l_10_10" n="N010" /> elle aussi, les honnêtes gens. Il y a un ouvrage philosophique de <persName ref="GND:118605895">Sartre</persName> qui expose la première étape de sa pensée ;<lb facs="#facs_2_l_10_11" n="N011" /> c'est <bibl corresp="GND:unknown">L'Être et le Néant</bibl>. Seulement il a plus de sept cents pages bien fines et serrées, d'une lecture plutôt ardue,<lb facs="#facs_2_l_10_12" n="N012" /> et par-dessus le marché il est introuvable. Parmi les journalistes qui font profession, Geneve comme à Paris, d'exécrer<lb facs="#facs_2_l_10_13" n="N013" /> l'existentialisme en général et <persName ref="GND:118605895">Sartre</persName> en particulier, qui donc l'a lu ? — Pourtant, si tout était déjà dans les pièces de<lb facs="#facs_2_l_10_14" n="N014" /> théâtre, pourquoi donc <persName ref="GND:118605895">Sartre</persName> se serait-il donné la peine d'écrire ce gros bouquin ?
+        </p>
+      </div>
+<pb facs="#facs_3" n="342" />
+        <div type="text">
+<head facs="#facs_3_r_1">
+          <lb facs="#facs_3_r_1" n="N001" />342 LA CARICATURE DE L'EXISTENTIALISME
+        </head>
+        <p facs="#facs_3_r_2">
+          <lb facs="#facs_3_r_2" n="N001" />Je sais bien que pour certains, une doctrine se trouve déjà
+          <lb facs="#facs_3_r_2" n="N002" />condamnée du fait qu'elle est difficile à comprendre et qu'il
+          <lb facs="#facs_3_r_2" n="N003" />faut sept cents pages pour l'exposer. Mais alors, qu'on dise
+          <lb facs="#facs_3_r_2" n="N004" />que c'est là le crime de l'existentialisme, et non érotisme,
+          <lb facs="#facs_3_r_2" n="N005" />sadisme, etc. ! Qu'on le dise — et je répondrai d'abord qu'au<lb break="no" facs="#facs_3_r_2" n="N006" />cune pensée philosophique n'a jamais été facile à communiquer ;
+          <lb facs="#facs_3_r_2" n="N007" />et ensuite qu'un philosophe classique du XVIIe siècle,
+          <lb facs="#facs_3_r_2" n="N008" /><persName ref="GND:118615369">Spinoza</persName>, dont on ne contestera pas l'effort vers la netteté
+          <lb facs="#facs_3_r_2" n="N009" />rationnelle, terminait son éthique en disant : « Tout ce qui
+          <lb facs="#facs_3_r_2" n="N010" />est beau est difficile autant que rare ».
+        </p>
+        <p facs="#facs_3_r_3">
+          <lb facs="#facs_3_r_3" n="N001" />Dois-je dire que les attaques contre la philosophie de
+          <lb facs="#facs_3_r_3" n="N002" />l'existence n'ont rien à faire avec celle-ci ? Ce serait trop
+          <lb facs="#facs_3_r_3" n="N003" />beau : il reste toujours, dans toute caricature, si déformante
+          <lb facs="#facs_3_r_3" n="N004" />qu'elle soit, quelque chose du modèle, par quoi surtout le
+          <lb facs="#facs_3_r_3" n="N005" />modèle est offensé. Je vais essayer, maintenant, d'indiquer
+          <lb facs="#facs_3_r_3" n="N006" />en quelques mots non ce qu'est l'existentialisme, mais au
+          <lb facs="#facs_3_r_3" n="N007" />moins dans quelle direction il faut pointer les antennes de
+          <lb facs="#facs_3_r_3" n="N008" />l'esprit pour essayer de le comprendre.
+        </p>
+        <p facs="#facs_3_r_4">
+          <lb facs="#facs_3_r_4" n="N001" />Il y a deux façons d'être au monde : l'une, c'est la façon
+          <lb facs="#facs_3_r_4" n="N002" />des choses qui, une fois qu'elles ont été créées, sont simple<lb break="no" facs="#facs_3_r_4" n="N003" />ment là et n'ont plus aucun choix devant elles : elles sont
+          <lb facs="#facs_3_r_4" n="N004" />une fois pour toutes ce qu'elles sont, et elles le restent tant
+          <lb facs="#facs_3_r_4" n="N005" />que des forces extérieures à elles ne les détruisent pas ;
+          <lb facs="#facs_3_r_4" n="N006" />l'autre façon d'être appartient aux hommes : tant qu'ils sont
+          <lb facs="#facs_3_r_4" n="N007" />en vie, ils ont à choisir ce qu'ils vont être. Ils n'ont pas une
+          <lb facs="#facs_3_r_4" n="N008" />fois pour toutes tel caractère, tel comportement, telle
+          <lb facs="#facs_3_r_4" n="N009" />fonction. Ils déterminent leur caractère, leur comportement,
+          <lb facs="#facs_3_r_4" n="N010" />leur fonction, par leur choix. Et l'essentiel en eux n'est pas
+          <lb facs="#facs_3_r_4" n="N011" />ce qu'on peut constater qu'ils sont, mais ce qu'ils peuvent
+          <lb facs="#facs_3_r_4" n="N012" />faire d'eux-mêmes. Leur définition n'est pas donnée d'avance,
+          <lb facs="#facs_3_r_4" n="N013" />mais au contraire ils écrivent leur définition par les choix
+          <lb facs="#facs_3_r_4" n="N014" />qu'ils font tout le long de leur vie, et cette définition ne sera
+          <lb facs="#facs_3_r_4" n="N015" />définitive qu'à l'instant de leur mort. L'accomplissement de
+          <lb facs="#facs_3_r_4" n="N016" />ce choix continuel, c'est ce qu'on appelle l'existence.
+        </p>
+        <p facs="#facs_3_r_5">
+          <lb facs="#facs_3_r_5" n="N001" />On voit donc aussitôt que toute philosophie existentialiste
+          <lb facs="#facs_3_r_5" n="N002" />est une philosophie de la liberté, et par là de la responsabilité
+        </p>
+        </div>
+<pb facs="#facs_3" n="343" />
+        <div type="text">
+<p facs="#facs_3_r_6">
+          <lb facs="#facs_3_r_6" n="N001" />343 LA CARICATURE DE L'EXISTENTIALISME
+        </p>
+        <p facs="#facs_3_r_7">
+          <lb facs="#facs_3_r_7" n="N001" />radicale, dans laquelle la préoccupation morale et spirituelle
+          <lb facs="#facs_3_r_7" n="N002" />atteint sa plus décisive urgence, puisque tout l'être de
+          <lb facs="#facs_3_r_7" n="N003" />l'homme est sans cesse en question et dépend de son choix.
+          <lb facs="#facs_3_r_7" n="N004" />On voit aussi que c'est une philosophie de l'espérance,
+          <lb facs="#facs_3_r_7" n="N005" />puisque rien n'est jamais perdu jusqu'à l'instant de la mort,
+          <lb facs="#facs_3_r_7" n="N006" />puisque l'existence a toujours du possible devant elle — et
+          <lb facs="#facs_3_r_7" n="N007" />nous verrons plus loin dans quel sens la pensée existentialiste
+          <lb facs="#facs_3_r_7" n="N008" />entend le trop fameux « désespoir » qu'on lui reproche sans
+          <lb facs="#facs_3_r_7" n="N009" />cesse. On voit encore que l'existence humaine étant la valeur
+          <lb facs="#facs_3_r_7" n="N010" />centrale d'une telle doctrine, l'existence d'autrui exige
+          <lb facs="#facs_3_r_7" n="N011" />aussitôt qu'on préserve ses possibles, qu'on lui laisse sa
+          <lb facs="#facs_3_r_7" n="N012" />possibilité de choix, ce qui exclut d'emblée l'« égoïsme
+          <lb facs="#facs_3_r_7" n="N013" />absolu », ou l'érotisme dans lequel l'autre n'est plus une
+          <lb facs="#facs_3_r_7" n="N014" />existence, mais un objet ; et de même se trouvent exclus
+          <lb facs="#facs_3_r_7" n="N015" />violence, sadisme et tyrannie.
+        </p>
+        <p>
+          <lb n="N001" />Enfin l'existentialisme n'a été ni créé, ni défini par <persName ref="GND:118605895">Sartre</persName>.
+          <lb n="N002" />Il est loin d'être tout récent. Nous verrons ce qu'il a été en
+          <lb n="N003" />Allemagne, ce qu'il a été et ce qu'il est en France. Nous
+          <lb n="N004" />comprenons déjà qu'il est impossible de considérer le
+          <lb n="N005" />national-socialisme comme découlant de la philosophie
+          <lb n="N006" />existentielle. Et nous le verrons, s'il est vrai que <persName ref="GND:118605895">Sartre</persName> est
+          <lb n="N007" />athée, d'autres existentialistes sont profondément religieux.
+          <lb n="N008" />Peut-être se rendra-t-on compte, enfin, du fait qu'il s'agit
+          <lb n="N009" />dans ce mouvement, non de viscères et de tripes, mais de
+          <lb n="N010" />pensée et de courage. Malgré leurs divergences individuelles,
+          <lb n="N011" />les existentialistes ont en commun la radicalité avec laquelle
+          <lb n="N012" />ils poussent l'usage de la raison jusqu'à ses dernières limites.
+          <lb n="N013" />L'expérience rationnelle des limites prend chez eux une
+          <lb n="N014" />valeur d'appel héroïque proche souvent de celui de <persName ref="GND:118591843">Pascal</persName> :
+          <lb n="N015" />l'homme répond : « Présent » par sa foi et son action là où
+          <lb n="N016" />tout appui extérieur lui manque, et c'est là que se réalise
+          <lb n="N017" />son existence.
+        </p>
+        <p>
+          <lb n="N001" />Pour conclure ce premier exposé, je rappellerai que la
+          <lb n="N002" />culture générale ne consiste pas à savoir parler de n'importe
+          <lb n="N003" />quoi, mais à savoir de quoi l'on peut parler, et pour le reste,
+          <lb n="N004" />à savoir écouter et à vouloir entendre.
+        </p>
+        <p>
+          <lb n="N001" /><persName ref="GND:118605895">Sartre</persName> lui-même écrit : « Le cas de l'existentialisme,
+          <lb n="N002" />philosophie abstraite et défendue par quelques hommes sans
+        </p>
+      </div>
+<pb facs="#facs_4" n="344" />
+        <div type="text">
+<p facs="#facs_4_r_1">
+          <lb facs="#facs_4_l_1_1" n="N001" />344 LA CARICATURE DE L'EXISTENTIALISME<lb facs="#facs_4_l_1_2" n="N002" />345
+        </p>
+        <p facs="#facs_4_r_2">
+          <lb facs="#facs_4_l_2_1" n="N001" />pouvoir, est bien mince et bien indigne, mais dans ce cas comme dans mille autres, selon que vous continuerez à mentir à son sujet ou que, tout en l'attaquant, vous lui rendrez justice, vous déciderez de ce que sera l'homme. Puissiez-vous le comprendre et en ressentir un peu de salutaire angoisse.
+        </p>
+        </div>
+<div n="2">
+          <p facs="#facs_4_r_3">
+            <lb facs="#facs_4_l_3_1" n="N001" />II. L'EXISTENTIALISME EN ALLEMAGNE.
+          </p>
+          <p facs="#facs_4_r_4">
+            <lb facs="#facs_4_l_4_1" n="N001" />Nous avons vu que l'existentialisme n'a été ni créé, ni défini par <persName ref="GND:118605895">Sartre</persName> — ce qui ne tend d'ailleurs nullement à minimiser l'œuvre de ce dernier. Non, l'existentialisme est beaucoup plus ancien. En un certain sens, on peut dire qu'avant la lettre, il est aussi ancien que la réflexion philosophique de l'Occident lui-même. On peut reconnaître une attitude existentialiste chez tous les penseurs pour lesquels l'homme s'accomplit véritablement, non dans l'univers physique qu'explorent l'expérience sensible et la technique, ni non plus dans un système rationnel bouclant bien et subsistant par lui-même, mais là où l'univers physique se fissure ou se dérobe, là où le système rationnel se disloque dans la contradiction irréductible, bref, là où, ne pouvant plus se rassurer grâce à un savoir anonyme, l'homme est acculé à lui-même ou à sa foi. Dans ce sens, et pour ne citer que quelques noms au hasard, il y a de l'existentialisme chez <persName ref="GND:118594893">Platon</persName>, chez <persName ref="GND:unknown">Augustin</persName>, chez <persName ref="GND:unknown">Pascal</persName>, jusqu'à chez <persName ref="GND:unknown">Descartes</persName> (quoique là, il s'agisse d'un foyer vivant dont l'œuvre s'écarte souvent), jusqu'à chez <persName ref="GND:118559796">Kant</persName>. Existentialiste, encore, <persName ref="GND:unknown">Nietzsche</persName>, non, comme on se plaît à le répéter, parce que sa théorie du surhomme supprimerait toute morale pour laisser libre cours à ce qu'il est convenu d'appeler « un égoïsme absolu », mais parce qu'en toute son œuvre, et dans sa théorie du surhomme également, il refuse de voir dans l'« homme » une créature de fait, une fois pour toutes donnée et définie, et qu'il considère comme essentiel non ce que l'homme est, mais le mouvement par lequel il doit sans cesse se dépasser lui-même — ce bond hors
+          </p>
+          <p facs="#facs_4_r_5">
+            <lb facs="#facs_4_l_5_1" n="N001" />du règne du fait, dans le vide de la liberté, qui est légèreté, héroïsme, confiance, joie.
+          </p>
+          <p facs="#facs_4_r_6">
+            <lb facs="#facs_4_l_6_1" n="N001" />Mais celui dont surtout est issu l'existentialisme allemand, c'est <persName ref="GND:118562002">Kierkegaard</persName>, le penseur chrétien danois du siècle dernier. C'est lui qui, le premier, a dit de sa philosophie qu'elle était « existentielle », et sa présence à l'origine de ce mouvement suffit à réfuter l'erreur, aujourd'hui si répandue, selon laquelle l'existentialisme est, par définition, une philosophie athée. La méditation de <persName ref="GND:118562002">Kierkegaard</persName> est tout entière centrée sur le tragique chrétien. Il développe sous tous ses aspects, des plus simples aux plus compliqués, ce qu'on pourrait appeler une dialectique des périls spirituels. L'être spirituel, son salut, son juste rapport avec Dieu, est sans cesse menacé par des tentations multiples et contradictoires. Par exemple, l'être spirituel ne peut pas penser son existence (c'est-à-dire son rapport avec lui-même et son rapport avec Dieu), car penser son existence, ce serait faire d'elle une chose, un objet immédiat, et lui enlever son authenticité. Mais il ne peut pas non plus renoncer à la penser, parce que ce serait renoncer à tendre à elle, et par là même renoncer à exister. La condition de l'homme est telle que lorsqu'il s'approche de l'essentiel, du véritable rapport avec Dieu, par la pensée, il s'en sépare, qu'en prétendant s'en emparer il le détruit, qu'en y renonçant, il se perd. De là l'importance des notions de néant, de désespoir et d'angoisse. L'homme n'est lui-même, il n'existe, au sens fort du mot, que s'il se maintient dans un rapport qui, dès qu'il est pensé, apparaît comme impossible. Dès qu'il sort de ce rapport, soit parce qu'il s'imagine posséder ce à quoi il ne peut que tendre, soit parce qu'il désespère et renonce, devant l'impossibilité du rapport proposé, il cesse d'exister, il perd à la fois son existence et son rapport à Dieu, il est la proie du néant. Ce néant, c'est donc la perte du rapport existentiel. L'angoisse, c'est la conscience même que l'existence n'est pas donnée une fois pour toutes, qu'elle n'est pas un fait, qu'elle est sans cesse à sauver du néant, malgré la discontinuité, l'absurde, le paradoxe qui l'assaillent de toute part — ou mieux : par la
+          </p>
+        </div>
+      <pb facs="#facs_5" n="5" />
+        <div type="text">
+<head facs="#facs_5_r_1">
+          <lb facs="#facs_5_r_1" n="N001" />346 LA CARICATURE DE L'EXISTENTIALISME
+        </head>
+        <p facs="#facs_5_r_2">
+          <lb facs="#facs_5_r_2" n="N001" />discontinuité, l'absurde et le paradoxe — car c'est là, en ces failles de l'objectivité, que l'authentique subjectivité vécue de l'existence peut s'accomplir. Le désespoir est ambigu; car s'il est, comme le dit <persName ref="GND:118562002">Kierkegaard</persName>, la maladie mortelle de l'âme, qui risque de la faire renoncer à l'existence, il est en même temps la condition de l'existence. Pour exister, il faut désespérer de la continuité et de la cohérence objective, il faut renoncer aussi à toute possession de l'existence. Il faut accepter qu'elle reste à jamais inséparable de l'angoisse.
+        </p>
+        <p facs="#facs_5_r_3">
+          <lb facs="#facs_5_r_3" n="N001" />Tous ces mots, malheureusement, sont chargés à l'excès de puissance pathétique, affective. Les philosophes qui s'en sont servis ont beau insister pour que le lecteur les transpose du plan sentimental sur le plan métaphysique, le malentendu subsiste toujours. Et sans doute la malheureuse vogue tapageuse que l'existentialisme connaît aujourd'hui provient-elle aussi, en partie, de ce vocabulaire trop sensationnel. Ce n'est pourtant pas une raison pour qu'on ne se donne pas la peine, si l'on veut en parler, de comprendre le sens réel de telles notions. On s'apercevra vite qu'elles n'ont rien de nihiliste, rien non plus du prestige romantique de la douleur ou du mal du siècle. Si elles désignent un échec, un refus, une menace, elles ont en même temps une efficacité positive, elles sont un appel contre le néant, contre le désespoir, contre l'angoisse, à la véritable existence espérée quand même, à la seule véritable espérance qui est au delà, et non en deçà, du désespoir. Nous retrouverons chez tous les existentialistes, à des degrés divers, cette méthode indirecte typique de <persName ref="GND:118562002">Kierkegaard</persName> : comme si en disant les choses directement, en nommant directement ce qui compte par-dessus tout, on le détruisait en créant l'illusion d'une possession facile, à la portée de la main, objective. De là, chez <persName ref="GND:118562002">Kierkegaard</persName>, si souvent l'expression masquée, faussement abstraite, faussement anonyme, ou faussement sentimentale, nécessitant une sorte de déchiffrage, avec l'expérience intérieure d'un choc en retour ; de là l'usage de l'ironie ; de là la prédilection pour les pièges rationnels, paradoxes ou contradictions.
+        </p>
+        <p facs="#facs_5_r_4">
+          <lb facs="#facs_5_r_4" n="N001" />347 LA CARICATURE DE L'EXISTENTIALISME
+        </p>
+        <p facs="#facs_5_r_5">
+          <lb facs="#facs_5_r_5" n="N001" />On pourrait s'étonner qu'à propos de l'existentialisme allemand, je m'attarde si longuement sur un philosophe danois. Mais c'est que d'abord sa méditation est née d'un violent retournement contre <persName ref="GND:118547739">Hegel</persName> dont il a bouleversé la dialectique. Et c'est surtout qu'elle a exercé une immense influence sur la pensée allemande, tant sur les théologiens que sur les philosophes — tant sur <persName ref="GND:118506810">Karl Barth</persName> que sur des existentialistes comme <persName ref="GND:118547798">Heidegger</persName> et <persName ref="GND:118557106">Jaspers</persName>.
+        </p>
+        <p>
+          <lb n="N001" />Chez le philosophe contemporain Martin <persName ref="GND:118547798">Heidegger</persName>, l'influence de <persName ref="GND:118562002">Kierkegaard</persName> est venue se fondre plus particulièrement avec celles de la scolastique, de <persName ref="GND:118559796">Kant</persName>, et de la phénoménologie (qu'actuellement la mode confond constamment avec l'existentialisme). La scolastique a imprimé au style de <persName ref="GND:118547798">Heidegger</persName> une sorte de rigueur verbale grâce à laquelle des structures exclusivement dynamiques, loin d'être mimées souplement par un langage aussi fluide et suggestif que possible, comme chez un <persName ref="GND:118509578">Bergson</persName> par exemple, se trouvent fixées dans leur fonctionnement même par des néologismes dont l'étymologie pourra servir au raisonnement. <persName ref="GND:118559796">Kant</persName> a communiqué à la méthode de <persName ref="GND:118547798">Heidegger</persName> sa pureté formelle, son rejet de tout résidu d'expérience concrète, de façon que n'en soient retenues que les pures conditions. La phénoménologie, elle, est une méthode qui avait été surtout élaborée par <persName ref="GND:118555056">Husserl</persName> et qui consiste en un effort pour éliminer de la recherche à la fois le contenu particulier de l'expérience et toute construction de l'esprit à propos de l'expérience (par exemple toute hypothèse de chose en soi), de façon à décrire, de la façon la plus immédiate possible, les structures impliquées dans les rapports du moi avec les choses, du moi avec lui-même, ou du moi avec autrui. Grâce à ces dépouillements successifs <persName ref="GND:118547798">Heidegger</persName> dégage avec une grande force l'existence, décisives, de la condition humaine. L'homme, selon lui, est jeté dans un monde dont la nature lui est étrangère, un monde de choses situées autour de lui dans l'espace
+        </p>
+      </div>
+<pb facs="#facs_6" n="6" />
+        <div type="text">
+<p facs="#facs_6_r_1">
+          <lb facs="#facs_6_r_1" n="N001" />348 LA CARICATURE DE L'EXISTENTIALISME
+        </p>
+        <p facs="#facs_6_r_2">
+          <lb facs="#facs_6_r_2" n="N001" />et qui lui sont proposées comme des instruments d'action. Ce qu'il importe de comprendre ici, c'est que l'homme n'est pas d'abord l'homme, une certaine essence, puis accidentellement plongé dans le monde. Non, être-dans-le-monde représente une structure fondamentale de la condition humaine. L'homme est jeté dans le monde, il éprouve de l'angoisse à ne pas pouvoir s'assurer de son être en tant que totalité ; le néant, source de l'angoisse, lui apparaît partout comme le fond négatif sur lequel se détache l'être et contre lequel s'affirme l'existence ; et le fait que tout le long de la vie il va à la mort est encore une structure existentielle fondamentale. La mort n'est pas pour la vie un fait extérieur ou terminal : être aiguillé sur la mort donne à chaque instant de la vie, au temps tout entier, sa structure humaine. Plus exactement on pourrait dire que la présence de la mort dans toute la vie, ou, si l'on veut, que la finitude de fait de la condition humaine représente sans cesse une possibilité décisive pour l'existence : ici encore, ce n'est pas la théorie, donc pas la philosophie qui dira ce qu'est ou ce que sera l'existence, mais c'est l'existence elle-même qui, dans l'angoisse et par l'angoisse, décidera de sa propre authenticité.
+        </p>
+        <p facs="#facs_6_r_3">
+          <lb facs="#facs_6_r_3" n="N001" />J'en arrive à celui que j'ai appelé dans notre première causerie « le plus pur des existentialistes », celui dont la pensée et la vie réfutent avec le plus de limpidité les accusations élevées à tort et à travers contre l'existentialisme en général : <persName ref="GND:118557106">Karl Jaspers</persName>.
+        </p>
+        <p facs="#facs_6_r_4">
+          <lb facs="#facs_6_r_4" n="N001" />Il y a dans sa philosophie trois notions positives fondamentales : le monde, l'existence, la transcendance, et deux négatives : la limite et l'échec. C'est par l'expérience de la limite et de l'échec que nous arrivons à l'existence et à la transcendance. La transcendance peut en bien des cas être appelée, plus près de la langue courante, Dieu. Si <persName ref="GND:118557106">Jaspers</persName> évite en général ce mot, c'est sans doute par la réserve caractéristique dont nous avons déjà parlé : la philosophie ne peut parler de la transcendance que théoriquement, et cette notion théorique ne doit pas donner l'illusion de suffire, de dispenser
+        </p>
+        <p facs="#facs_6_r_5">
+          <lb facs="#facs_6_r_5" n="N001" />349 LA CARICATURE DE L'EXISTENTIALISME de l'expérience réelle, pour laquelle le nom de Dieu devrait être réservé.
+        </p>
+        <p facs="#facs_6_r_6">
+          <lb facs="#facs_6_r_6" n="N001" />La philosophie, dit <persName ref="GND:118557106">Jaspers</persName>, cherche l'être total. Elle espère d'abord le trouver sous la forme du monde total, par l'unité des sciences. Or la recherche scientifique elle-même nous accule à des limites définitives. Le monde ne se referme pas sur lui-même, la connaissance du monde ne peut pas être la connaissance de l'être. Le philosophe prend conscience de ces limites, de cet inachèvement non accidentel, mais essentiel. L'évidence reste relative ; le monde reste pour nous incomplet et brisé. En essayant de le saisir dans sa totalité et son unité, j'ai échoué.
+        </p>
+        <p facs="#facs_6_r_7">
+          <lb facs="#facs_6_r_7" n="N001" />L'échec aux limites du monde me rejette vers moi-même. Je me trouve dans le vide. Il n'y a plus autour de moi que des séries de rapports s'appuyant les uns sur les autres, mais nulle part un point d'appui qui tienne par lui-même. C'est à ce moment que mon angoisse se distingue de l'infini des rapports flottants, et s'oppose à eux. Le lieu de mon angoisse n'est plus un anneau de la chaîne des rapports. Je trouve là ce qui, dans le moi, ne pourra jamais devenir objet, ni pour autrui, ni pour moi-même. C'est l'existence.
+        </p>
+        <p facs="#facs_6_r_8">
+          <lb facs="#facs_6_r_8" n="N001" />Lorsqu'on cherchait l'être absolu dans l'unité du monde, tout devenait relatif pour pouvoir entrer dans une chaîne causale ; maintenant qu'il s'agit d'éclairer l'existence, on tente de dégager des possibilités pour un absolu. Ainsi, c'est par un bond qu'on passe de la nature à l'existence, c'est-à-dire à la liberté. La pensée existentielle, cette pensée forcément indirecte puisqu'elle vise l'existence qui ne peut pas être un objet, c'est la philosophie. Ainsi, la limite, négative du point de vue scientifique, devient positive pour l'existence : « Je suis moi-même là où je ne me dérobe plus derrière un point de vue objectif que je ne fais que représenter, là où ni moi-même, ni l'existence d'autrui ne peuvent plus devenir objets pour moi ».
+        </p>
+        <p facs="#facs_6_r_9">
+          <lb facs="#facs_6_r_9" n="N001" />L'existence ne trouve sa réalité que dans la communication avec une autre existence, et pourtant chacune a sa vérité qui est pour elle une vérité absolue. La communication est
+        </p>
+      </div>
+<pb facs="#facs_7" n="7" />
+        <div type="text">
+<p facs="#facs_7_r_2">
+          <lb facs="#facs_7_r_2" n="N001" />donc une lutte, lutte révélatrice et créatrice de soi et de l'autre. L'existence <lb facs="#facs_7_r_2" n="N002" />véritable connaît, respecte et aime la vérité de l'existence d'autrui, là où <lb facs="#facs_7_r_2" n="N003" />elle la rencontre, comme un absolu, justement parce qu'elle a elle-même <lb facs="#facs_7_r_2" n="N004" />le sien.
+        </p>
+        <p facs="#facs_7_r_3">
+          <lb facs="#facs_7_r_3" n="N001" />Mais la lutte existentielle des vérités, et l'absolu de ma vérité, me forcent <lb facs="#facs_7_r_3" n="N002" />à chercher l'unité objective dans la transcendance. Pour l'existence, toute <lb facs="#facs_7_r_3" n="N003" />réalité peut devenir chiffre (signe secret) de la transcendance. Seulement <lb facs="#facs_7_r_3" n="N004" />ce chiffre est toujours fugace, je ne peux pas le garder comme un objet, <lb facs="#facs_7_r_3" n="N005" />et aucune pensée visant directement la transcendance ne saurait l'atteindre.
+        </p>
+        <p facs="#facs_7_r_4">
+          <lb facs="#facs_7_r_4" n="N001" />L'échec me cerne donc de toutes parts. Mais l'échec lui-même, c'est le <lb facs="#facs_7_r_4" n="N002" />chiffre suprême de la transcendance. C'est son silence propre, le silence <lb facs="#facs_7_r_4" n="N003" />qui parle d'elle pour l'existence, à condition que la pensée ne soit pas seule <lb facs="#facs_7_r_4" n="N004" />à aller de l'avant, délaissant la réalité objective et se grisant de perfection <lb facs="#facs_7_r_4" n="N005" />facile. <persName ref="GND:118557106">Jaspers</persName> écrit : « C'est par le chemin de la souffrance, sans détacher <lb facs="#facs_7_r_4" n="N006" />les yeux de l'impitoyable visage de la réalité empirique du monde, et c'est <lb facs="#facs_7_r_4" n="N007" />dans l'absolu de la communication dans laquelle s'engage le moi, que <lb facs="#facs_7_r_4" n="N008" />l'existence possible peut atteindre ce qu'aucun plan ne livre et qui, dès <lb facs="#facs_7_r_4" n="N009" />qu'on le désire, devient absurde : dans l'échec, l'expérience de l'être ».
+        </p>
+        <p facs="#facs_7_r_5">
+          <lb facs="#facs_7_r_5" n="N001" />Et maintenant, après ces brèves esquisses qui mutilent, hélas, leur modèle, <lb facs="#facs_7_r_5" n="N002" />je vous en prie, rappelez-vous les caricatures de l'existentialisme : nihilisme, <lb facs="#facs_7_r_5" n="N003" />disait-on, égoïsme forcené, viscères, abolition de tout souci spirituel ou <lb facs="#facs_7_r_5" n="N004" />moral... Rappelez-vous et jugez.
+        </p>
+        </div>
+<div n="2">
+          <head>
+            <lb facs="#facs_7_r_6" n="N001" />III. L'EXISTENTIALISME EN FRANCE.
+          </head>
+          <p facs="#facs_7_r_7">
+            <lb facs="#facs_7_r_7" n="N001" />En France, plusieurs années avant la dernière guerre, le mouvement <lb facs="#facs_7_r_7" n="N002" />existentialiste avait éveillé un écho, non pas très étendu, mais profond. <lb facs="#facs_7_r_7" n="N003" />Des penseurs éminents publièrent entre autres dans les <hi rendition="#i">Recherches <lb facs="#facs_7_r_7" n="N004" />philosophiques</hi> des études critiques sur <persName ref="GND:118562002">Kierkegaard</persName> et sur les philosophes <lb facs="#facs_7_r_7" n="N005" />allemands
+          </p>
+          <p facs="#facs_7_r_9">
+            <lb facs="#facs_7_r_9" n="N001" />dont nous avons parlé, ou bien des recherches originales d'inspiration <lb facs="#facs_7_r_9" n="N002" />analogue. <persName ref="GND:unknown">Jean Wahl</persName>, <persName ref="GND:unknown">Gabriel Marcel</persName>, d'autres encore, approfondissaient <lb facs="#facs_7_r_9" n="N003" />cette notion d'existence qui ouvrait à la philosophie des voies d'accès, <lb facs="#facs_7_r_9" n="N004" />des méthodes, un langage renouvelés, qui suggérait même une nouvelle <lb facs="#facs_7_r_9" n="N005" />façon de recueillir le patrimoine philosophique de l'Occident, grâce à une <lb facs="#facs_7_r_9" n="N006" />manière de lire moins extérieure, moins objectivement critique, plus <lb facs="#facs_7_r_9" n="N007" />concentrée sur la source vive, centrale et informulable, de chaque pensée <lb facs="#facs_7_r_9" n="N008" />originale. <persName ref="GND:118509578">Bergson</persName>, d'ailleurs, avait frayé le chemin, assouplissant, <lb facs="#facs_7_r_9" n="N009" />approfondissant, et précisant aussi, l'usage de la sympathie intuitive. Il en <lb facs="#facs_7_r_9" n="N010" />résulta alors comme une nouvelle virginité du regard philosophique : on <lb facs="#facs_7_r_9" n="N011" />semblait avoir reconquis le don de poser un problème neuf, ou du moins <lb facs="#facs_7_r_9" n="N012" />de poser un vieux problème comme s'il était neuf, avec toute son intensité, <lb facs="#facs_7_r_9" n="N013" />son immédiateté, avec, surtout, le sens aigu de la portée vitale qu'aura, <lb facs="#facs_7_r_9" n="N014" />pour l'homme qui le pose, la solution qu'il pourra recevoir, ou la découverte <lb facs="#facs_7_r_9" n="N015" />de son caractère insoluble.
+          </p>
+          <p>
+            <lb facs="#facs_7_r_10" n="N001" />Puis il y eut le long silence de la guerre.
+          </p>
+          <p>
+            <lb facs="#facs_7_r_11" n="N001" />C'est peu de temps après qu'elle eut pris fin qu'on entendit soudain parler, <lb facs="#facs_7_r_11" n="N002" />de tous les côtés à la fois, d'une nouvelle épidémie française, comme on <lb facs="#facs_7_r_11" n="N003" />disait, qui avait nom « existentialisme ». — Que s'était-il donc passé ? <lb facs="#facs_7_r_11" n="N004" />Comment une recherche philosophique aussi abstraite (si même elle <lb facs="#facs_7_r_11" n="N005" />débouche finalement sur la réalité la plus concrète, l'acte libre), aussi <lb facs="#facs_7_r_11" n="N006" />difficile, nécessitant, pour être saisie, la présence à l'esprit d'une tradition <lb facs="#facs_7_r_11" n="N007" />de pensée européenne à peine connue du grand public, exigeant un <lb facs="#facs_7_r_11" n="N008" />outillage de termes techniques assez éloignés du langage de « l'honnête <lb facs="#facs_7_r_11" n="N009" />homme », un long travail et beaucoup de ténacité dans l'exploration des <lb facs="#facs_7_r_11" n="N010" />limites humaines, comment une telle recherche avait-elle pu, sans avoir <lb facs="#facs_7_r_11" n="N011" />été vulgarisée par aucun artiste de la langue, aucun virtuose de la <lb facs="#facs_7_r_11" n="N012" />suggestion intellectuelle comparable à <persName ref="GND:118509578">Bergson</persName>, obtenir l'adhésion ou <lb facs="#facs_7_r_11" n="N013" />déchaîner l'hostilité d'un public visiblement beaucoup plus vaste même <lb facs="#facs_7_r_11" n="N014" />que celui qu'il est convenu d'appeler « le grand public » ?
+          </p>
+        </div>
+      <pb facs="#facs_8" n="8" />
+        <div type="text">
+<head facs="#facs_8_r_1">
+          352<lb facs="#facs_8_l_1_1" n="N001" />LA CARICATURE DE L'EXISTENTIALISME
+        </head>
+        <p facs="#facs_8_r_2">
+          Il y avait eu <persName ref="GND:118605895">Sartre</persName>, <persName ref="GND:118518739">Camus</persName>, <persName ref="GND:118507877">Simone de Beauvoir</persName>. On n'entendait presque plus parler des existentialistes d'avant la guerre. Mais il se trouvait que ceux de l'après-guerre étaient capables d'écrire, outre des traités de philosophie, des romans et des pièces de théâtre. Certains lurent les romans, beaucoup virent jouer les pièces, quelques-uns allèrent jusqu'à arracher au gros bouquin difficile qu'est <bibl corresp="GND:118605895">L'Être et le Néant</bibl> quelques formules isolées et d'autant plus paradoxales. <persName ref="GND:118605895">Sartre</persName>, après <persName ref="GND:118547798">Heidegger</persName>, parle de néant et même de « néantisation », c'est donc qu'il est nihiliste. Il porte à la scène des criminels, c'est donc qu'à ses yeux le crime est le véritable épanouissement de l'existence. Et si <persName ref="GND:118518739">Camus</persName>, de son côté, laisse <bibl corresp="GND:118518739">Caligula</bibl>, le long de sa pièce, s'enfoncer dans l'atroce impasse d'une logique poussée jusqu'à la folie, c'est que <bibl corresp="GND:118518739">Caligula</bibl> nous est proposé comme modèle d'existence, et que la vie, selon <persName ref="GND:118518739">Camus</persName>, n'a aucun sens.
+        </p>
+        <p facs="#facs_8_r_3">
+          D'où, naturellement, égoïsme, érotisme, sadisme, etc. Ainsi s'est faite une gloire, ainsi s'est vulgarisée une philosophie.
+        </p>
+        <p facs="#facs_8_r_4">
+          Laissons <persName ref="GND:118518739">Camus</persName> hors du jeu. D'abord il déclare lui-même qu'il n'est pas existentialiste, et il donne à sa recherche le nom de philosophie de l'absurde. Evidemment, les critiques qui ont trouvé commode de condamner une bonne fois <persName ref="GND:118518739">Camus</persName> et <persName ref="GND:118605895">Sartre</persName> d'un coup, refusent de les croire lorsqu'ils déclarent avoir élaboré leur doctrine sans s'être connus, et n'avoir fait, lors de leurs rencontres, plus tard, que souligner des divergences. Je pense pourtant qu'ils savent mieux que le « public » ce qui en est. Ensuite, je ne peux pas parler de <persName ref="GND:118518739">Camus</persName> philosophie parce que je n'ai encore jamais eu entre les mains son ouvrage intitulé <bibl corresp="GND:118518739">Sisyphe</bibl>. Quand je l'aurai lu, j'en parlerai peut-être, mais pas avant. J'ai lu et vu jouer deux pièces de lui : <bibl corresp="GND:118518739">Caligula</bibl> et <bibl corresp="GND:118518739">Le Malentendu</bibl>. Lors de la représentation de cette dernière, quelqu'un s'indignait qu'on portât à la scène des œuvres chargées d'une telle philosophie. J'ai demandé à cette personne de m'expliquer ce qu'était donc cette philosophie. « Mais voyons, m'a-t-on répondu, c'est du nihilisme ! Cela veut dire que la vie ne vaut rien ! » Et
+        </p>
+        <p facs="#facs_8_r_5">
+          353<lb facs="#facs_8_l_5_1" n="N001" />LA CARICATURE DE L'EXISTENTIALISME
+        </p>
+        <p facs="#facs_8_r_6">
+          comme je demandais à quoi l'on avait vu cela, on me répondit que tout finissait par une catastrophe. La belle raison ! Est-ce qu'en général presque toutes les tragédies, depuis qu'on fait des tragédies, ne finissent pas ainsi, à commencer par les dénouements chez les <persName ref="GND:unknown">Grecs</persName> ? Mais j'objectai en vain : on savait d'avance, en arrivant au théâtre, de quelle philosophie il s'agissait, et qu'il convenait de s'en indigner. Pour mon compte, je me déclare totalement incapable de tirer une philosophie de <bibl corresp="GND:118518739">Caligula</bibl>, et encore moins du <bibl corresp="GND:118518739">Malentendu</bibl>. De <persName ref="GND:118605895">Sartre</persName>, et de l'existentialisme en général, je n'y retrouve qu'un besoin d'absolu qui, égaré ou décapité par la vie, ne perd pas néanmoins son sens et sa valeur par son échec. Deux ordres s'affrontent, qui ne peuvent ni coïncider, ni s'exclure. L'homme est à la fois le lieu et l'agent de ce combat. Je tiens <persName ref="GND:118518739">Camus</persName> pour un véritable auteur dramatique, capable du dépouillement, de la simplification sans raideur, de la nudité non dépourvue de mystère, qui produisent à la scène l'impression de grandeur. Il est moins psychologue-mécanicien et moins géomètre que <persName ref="GND:118605895">Sartre</persName> (du moins celui de <bibl corresp="GND:118605895">Huis-clos</bibl>), plus proche du mythe et de la poésie, surtout dans <bibl corresp="GND:118518739">Le Malentendu</bibl>, que je préfère. Mais de sa philosophie je ne sais encore à peu près rien.
+        </p>
+        <p facs="#facs_8_r_7">
+          Par contre, si je ne connais qu'une petite partie des romans et des pièces de <persName ref="GND:118605895">Sartre</persName>, je suis persuadée que <bibl corresp="GND:118605895">L'Être et le Néant</bibl> est un très grand livre qui fera date dans l'histoire de la philosophie française. Mais cet ouvrage est écrit dans une langue très technique, calquée sur la terminologie allemande, de <persName ref="GND:118547798">Heidegger</persName> surtout. Pour résumer sa pensée, il vaut mieux suivre l'aperçu très condensé et simplifié qu'il en donne lui-même dans un petit article publié en réponse aux basses déformations des critiques<note place="foot" n="1" xml:id="fn8-1" facs="#facs_8_r_8">¹ A propos de l'existentialisme, mise au point par J.-P. <persName ref="GND:118605895">Sartre</persName>. Article paru dans <orgName ref="GND:unknown">Action</orgName> et reproduit dans <orgName ref="GND:unknown">Lettres</orgName>, premier cahier de 1945.</note>. Tout y est vraiment repensé selon la langue française. Et si ses détracteurs avaient
+        </p>
+      </div>
+<pb facs="#facs_9" n="355" />
+        <div type="text">
+<p facs="#facs_9_r_1">
+          <lb facs="#facs_9_r_1" n="N001" />354 LA CARICATURE DE L'EXISTENTIALISME
+        </p>
+        <p facs="#facs_9_r_2">
+          <lb facs="#facs_9_r_2" n="N001" />bien voulu lire ces sept pages, ils se seraient sans doute retenus <lb facs="#facs_9_r_2" n="N002" />d'écrire un certain nombre de monstrueuses sottises.
+        </p>
+        <p facs="#facs_9_r_3">
+          <lb facs="#facs_9_r_3" n="N001" /><persName ref="GND:118605895">Sartre</persName> essaye de définir l'existentialisme. L'essence d'une <lb facs="#facs_9_r_3" n="N002" />chose, dit-il, se référant à une terminologie traditionnelle, <lb facs="#facs_9_r_3" n="N003" />c'est un ensemble constant de propriétés; son existence, <lb facs="#facs_9_r_3" n="N004" />c'est sa présence effective dans le monde. La tradition conçoit <lb facs="#facs_9_r_3" n="N005" />l'essence comme précédant l'existence, c'est-à-dire que l'idée <lb facs="#facs_9_r_3" n="N006" />de la chose existe avant la chose, comme un modèle avant <lb facs="#facs_9_r_3" n="N007" />sa copie, comme une idée en Dieu avant sa réalisation. Selon <lb facs="#facs_9_r_3" n="N008" />cette conception, « les petits pois, par exemple, poussent et <lb facs="#facs_9_r_3" n="N009" />s'arrondissent conformément à l'idée de petits pois, et les <lb facs="#facs_9_r_3" n="N010" />cornichons sont cornichons parce qu'ils participent à l'essence <lb facs="#facs_9_r_3" n="N011" />de cornichon ». De même la tradition religieuse, qui sur ce <lb facs="#facs_9_r_3" n="N012" />point s'est perpétuée même chez ceux qui n'avaient plus la <lb facs="#facs_9_r_3" n="N013" />foi, par exemple au <hi rendition="#sup">XVIIIe</hi> siècle, conçoit une essence commune <lb facs="#facs_9_r_3" n="N014" />à tous les hommes, qui s'appelle nature humaine et qui précède <lb facs="#facs_9_r_3" n="N015" />l'existence de chaque homme. L'existentialisme, au contraire, <lb facs="#facs_9_r_3" n="N016" />pense que chez l'homme, et seulement chez l'homme, c'est <lb facs="#facs_9_r_3" n="N017" />l'existence qui précède l'essence.
+        </p>
+        <p facs="#facs_9_r_4">
+          <lb facs="#facs_9_r_4" n="N001" />Cela veut dire que l'essence n'est pas donnée une fois pour <lb facs="#facs_9_r_4" n="N002" />toutes; ce que l'homme fait ne découle pas d'elle. Au <lb facs="#facs_9_r_4" n="N003" />contraire, il crée sans cesse son essence par ce qu'il fait. <lb facs="#facs_9_r_4" n="N004" />« C'est en se jetant dans le monde, en y souffrant, en y <lb facs="#facs_9_r_4" n="N005" />luttant qu'il se définit peu à peu. » Et cette définition reste <lb facs="#facs_9_r_4" n="N006" />ouverte tant qu'il vit; elle ne devient définitive qu'avec sa mort.
+        </p>
+        <p facs="#facs_9_r_5">
+          <lb facs="#facs_9_r_5" n="N001" /><persName ref="GND:118605895">Sartre</persName> indique ici combien il est absurde de vouloir <lb facs="#facs_9_r_5" n="N002" />rattacher l'existentialisme à une attitude politique quelconque. <lb facs="#facs_9_r_5" n="N003" />En soi il n'est ni fasciste, ni conservateur, ni communiste, <lb facs="#facs_9_r_5" n="N004" />ni démocrate. Chez <persName ref="GND:118562002">Kierkegaard</persName>, dit <persName ref="GND:118605895">Sartre</persName>, il allait de pair <lb facs="#facs_9_r_5" n="N005" />avec la foi religieuse. Dans la France d'aujourd'hui (c'est-à-dire <lb facs="#facs_9_r_5" n="N006" />dans le groupe de <persName ref="GND:118605895">Sartre</persName> et de ses amis) il tend à s'accompagner <lb facs="#facs_9_r_5" n="N007" />d'une déclaration d'athéisme. Mais <persName ref="GND:118605895">Sartre</persName> lui-même reconnaît <lb facs="#facs_9_r_5" n="N008" />que ce n'est pas absolument nécessaire. La devise existentialiste <lb facs="#facs_9_r_5" n="N009" />de l'homme, selon lui, se réduit à ceci: « Faire et en faisant <lb facs="#facs_9_r_5" n="N010" />se faire et n'être rien que ce qu'il s'est fait ». En d'autres <lb facs="#facs_9_r_5" n="N011" />termes: être une liberté, et seulement une
+        </p>
+        <p facs="#facs_9_r_6">
+          <lb facs="#facs_9_r_6" n="N001" />Mais, dira-t-on, nous y voilà ! Plus aucune contrainte, aucune <lb facs="#facs_9_r_6" n="N002" />norme, aucune morale. Le champ laissé libre à tous les <lb facs="#facs_9_r_6" n="N003" />appétits. — Détrompez-vous. Si la liberté, selon <persName ref="GND:118605895">Sartre</persName>, ne <lb facs="#facs_9_r_6" n="N004" />se laisse pas définir par une règle douée d'une réalité <lb facs="#facs_9_r_6" n="N005" />indépendante, si elle ne peut pas comparaître devant une <lb facs="#facs_9_r_6" n="N006" />instance supérieure, sa responsabilité, loin d'être annulée, <lb facs="#facs_9_r_6" n="N007" />n'en pèse que plus lourd. En effet, dans le monde des choses, <lb facs="#facs_9_r_6" n="N008" />que <persName ref="GND:118605895">Sartre</persName> nomme « l'en soi », et qui, comme il le dit, <lb facs="#facs_9_r_6" n="N009" />« est ce qu'il est » sans avoir aucune distance de soi à soi, <lb facs="#facs_9_r_6" n="N010" />aucune faille dans le sein de son être, il n'y a ni liberté ni <lb facs="#facs_9_r_6" n="N011" />responsabilité. Dans l'en-soi surgit le sujet conscient que <lb facs="#facs_9_r_6" n="N012" /><persName ref="GND:118605895">Sartre</persName> nomme le « pour-soi » et qui « est ce qu'il n'est pas <lb facs="#facs_9_r_6" n="N013" />et n'est pas ce qu'il est », parce que l'essentiel de son être <lb facs="#facs_9_r_6" n="N014" />n'est pas ce qu'il est déjà, mais ce qu'il a à être, son être <lb facs="#facs_9_r_6" n="N015" />futur, son avenir immédiat, sa décision imminente. Lorsque <lb facs="#facs_9_r_6" n="N016" />surgit ainsi le sujet, projetant devant lui sur le monde le <lb facs="#facs_9_r_6" n="N017" />vide, le néant nécessaire à sa liberté, cela fait que le monde <lb facs="#facs_9_r_6" n="N018" />tout entier, son sens, sa valeur, et le sens et la valeur de <lb facs="#facs_9_r_6" n="N019" />l'homme dans le monde se trouvent mis en question. « En <lb facs="#facs_9_r_6" n="N020" />chaque cas, écrit <persName ref="GND:118605895">Sartre</persName>, nous devons décider seuls, sans <lb facs="#facs_9_r_6" n="N021" />point d'appui, sans guides et cependant pour tous ». Si selon <persName ref="GND:unknown">Ponge</persName> <lb facs="#facs_9_r_6" n="N022" />l'homme est l'avenir de l'homme, c'est nous qui, par chacun <lb facs="#facs_9_r_6" n="N023" />de nos gestes, décidons ce que sera cet avenir, et par là ce <lb facs="#facs_9_r_6" n="N024" />qu'est l'homme. D'où l'angoisse, l'angoisse qui n'a rien à <lb facs="#facs_9_r_6" n="N025" />faire avec la neurasthénie et qui est la conscience d'assumer <lb facs="#facs_9_r_6" n="N026" />les conditions de l'homme sur un fond de néant. De même <lb facs="#facs_9_r_6" n="N027" />le désespoir, pour <persName ref="GND:118605895">Sartre</persName>, n'a rien « d'un bel égarement <lb facs="#facs_9_r_6" n="N028" />romantique ». Il est « la conscience sèche et lucide de la <lb facs="#facs_9_r_6" n="N029" />condition humaine », c'est-à-dire la conscience de n'avoir <lb facs="#facs_9_r_6" n="N030" />rien à espérer hors de ce qu'on fera soi-même de soi. « Le <lb facs="#facs_9_r_6" n="N031" />désespoir ne fait qu'un optimisme: celui de l'homme qui <lb facs="#facs_9_r_6" n="N032" />n'attend rien, qui sait qu'il n'a aucun droit et que rien ne lui <lb facs="#facs_9_r_6" n="N033" />est dû, qui se réjouit de compter sur soi seul et d'agir seul <lb facs="#facs_9_r_6" n="N034" />pour le bien de tous. »
+        </p>
+        <note place="foot" n="1" xml:id="fn9-1" facs="#facs_9_r_7">
+          <lb facs="#facs_9_r_7" n="N001" />Il n'est pas douteux que des traits appartenant à <persName ref="GND:118605895">Sartre</persName>
+        </note>
+      </div>
+<pb facs="#facs_10" n="356" />
+        <div type="text">
+<head facs="#facs_10_r_1">
+          <lb facs="#facs_10_r_1" n="N001" />356 LA CARICATURE DE L'EXISTENTIALISME
+        </head>
+        <p facs="#facs_10_r_2">
+          <lb facs="#facs_10_r_2" n="N001" />personnellement ont été généralisés et considérés comme <lb facs="#facs_10_r_2" n="N002" />caractéristiques de l'existentialisme en général, soulevant <lb facs="#facs_10_r_2" n="N003" />contre tout ce mouvement philosophique une indignation <lb facs="#facs_10_r_2" n="N004" />que, mieux informé, on eût réservé au caractère, aux goûts <lb facs="#facs_10_r_2" n="N005" />ou aux tendances littéraires de <persName ref="GND:118605895">Sartre</persName>. Ainsi l'on sait que <bibl corresp="GND:unknown">L'Être et le Néant</bibl>, <lb facs="#facs_10_r_2" n="N006" />par exemple, contient de longues analyses du visqueux, <lb facs="#facs_10_r_2" n="N007" />du vertige, de la mauvaise foi. La plupart des titres des <lb facs="#facs_10_r_2" n="N008" />œuvres de <persName ref="GND:118605895">Sartre</persName> ont par eux-mêmes quelque chose <lb facs="#facs_10_r_2" n="N009" />d'étouffant, ils suggèrent une atmosphère corrompue, <lb facs="#facs_10_r_2" n="N010" />irrespirable : <bibl corresp="GND:unknown">La Nausée</bibl>, <bibl corresp="GND:unknown">Le Mur</bibl>, <bibl corresp="GND:unknown">Huis-clos</bibl>, <bibl corresp="GND:unknown">Les Mouches</bibl>. <persName ref="GND:118605895">Sartre</persName> <lb facs="#facs_10_r_2" n="N011" />lui-même déclare que le reproche de « travailler dans <lb facs="#facs_10_r_2" n="N012" />l'ordure » n'atteint que lui, non l'existentialisme. Mais il s'en <lb facs="#facs_10_r_2" n="N013" />explique. C'est qu'il répugne avant tout à une littérature <lb facs="#facs_10_r_2" n="N014" />qui serait pour ainsi dire une inflation du bien. Il est trop <lb facs="#facs_10_r_2" n="N015" />facile de « donner le spectacle de l'héroïsme et de la pureté ». <lb facs="#facs_10_r_2" n="N016" />Et cela plaît, car on se procure ainsi l'illusion qu'il est aussi <lb facs="#facs_10_r_2" n="N017" />aisé de faire le bien. « Eh bien non, s'écrie <persName ref="GND:118605895">Sartre</persName>, ce n'est pas <lb facs="#facs_10_r_2" n="N018" />aisé. » Ce n'est pas une raison, direz-vous, pour se complaire <lb facs="#facs_10_r_2" n="N019" />dans les vomissements, l'infanticide ou le gluant. Mais on <lb facs="#facs_10_r_2" n="N020" />devine, je crois, chez <persName ref="GND:118605895">Sartre</persName>, l'endroit dont cette prédilection <lb facs="#facs_10_r_2" n="N021" />répugnante est l'envers : un besoin vital de rigueur. Tout <lb facs="#facs_10_r_2" n="N022" />se passe comme si l'analyse philosophique ou la transposition <lb facs="#facs_10_r_2" n="N023" />sur le plan esthétique étaient destinées à purifier l'être de <lb facs="#facs_10_r_2" n="N024" />la banalité molle dans laquelle le fait déchoir la vie quotidienne <lb facs="#facs_10_r_2" n="N025" />vécue dans la mauvaise foi, c'est-à-dire dans l'anonymat <lb facs="#facs_10_r_2" n="N026" />paresseux où l'existence se dilue parmi une fausse cohérence <lb facs="#facs_10_r_2" n="N027" />sociale qui la dispense d'assumer sa liberté. Vue sous cet <lb facs="#facs_10_r_2" n="N028" />angle, et malgré le tempérament tout personnel qu'elle révèle, <lb facs="#facs_10_r_2" n="N029" />la voie choisie par <persName ref="GND:118605895">Sartre</persName>, qui passe à travers le règne de la <lb facs="#facs_10_r_2" n="N030" />répugnance, n'est pas sans rappeler les moyens d'expression <lb facs="#facs_10_r_2" n="N031" />indirects dont nous avons vu déjà qu'ils sont caractéristiques <lb facs="#facs_10_r_2" n="N032" />du mouvement existentialiste. <persName ref="GND:118562002">Kierkegaard</persName> usait de masques, <lb facs="#facs_10_r_2" n="N033" />de travestis, de paradoxes, de toutes les sortes de pièges. <lb facs="#facs_10_r_2" n="N034" />Obsédé par le problème religieux et lui sacrifiant sa paix <lb facs="#facs_10_r_2" n="N035" />et son bonheur terrestres, il écrit le <bibl corresp="GND:unknown">Journal d'un séducteur</bibl>. <lb facs="#facs_10_r_2" n="N036" />Pour <persName ref="GND:118547798">Heidegger</persName>, si Dieu n'est pas présent dans sa pensée, <lb facs="#facs_10_r_2" n="N037" />il n'est pas non plus nul : c'est son absence
+        </p>
+        <p facs="#facs_10_r_3">
+          <lb facs="#facs_10_r_3" n="N001" />357 LA CARICATURE DE L'EXISTENTIALISME
+        </p>
+        <p facs="#facs_10_r_4">
+          <lb facs="#facs_10_r_4" n="N001" />que signifient toutes les démarches de cette philosophie, <lb facs="#facs_10_r_4" n="N002" />mais une absence tellement efficace qu'elle paraît conditionner <lb facs="#facs_10_r_4" n="N003" />toute présence et en être le sens ultime. <persName ref="GND:118557106">Jaspers</persName> s'avance <lb facs="#facs_10_r_4" n="N004" />jusqu'aux limites de tous les pouvoirs humains pour trouver <lb facs="#facs_10_r_4" n="N005" />dans l'échec même le langage de la transcendance, le chiffre <lb facs="#facs_10_r_4" n="N006" />de l'être. <persName ref="GND:118605895">Sartre</persName>, à son tour, se sert du néant pour appeler <lb facs="#facs_10_r_4" n="N007" />l'homme à l'existence, de termes emprisonnants pour l'éveiller <lb facs="#facs_10_r_4" n="N008" />à la liberté, et il peint avec insistance la mollesse et l'à <lb facs="#facs_10_r_4" n="N009" />peu près, tout ce qui inspire le dégoût, pour donner plus de <lb facs="#facs_10_r_4" n="N010" />force à son besoin d'absolu. On ne stimule pas un besoin en <lb facs="#facs_10_r_4" n="N011" />donnant l'illusion qu'il est satisfait. Parler d'absolu, d'héroïsme, <lb facs="#facs_10_r_4" n="N012" />d'abnégation, c'est en quelque sorte faire croire qu'ils sont <lb facs="#facs_10_r_4" n="N013" />là, donnés et offerts de la même manière que ces mots eux-<lb break="no" facs="#facs_10_r_4" n="N014" />mêmes. C'est risquer de retomber dans la mauvaise foi. Aussi <lb facs="#facs_10_r_4" n="N015" /><persName ref="GND:118605895">Sartre</persName> préfère-t-il parler de la nausée, qui n'est nausée <lb facs="#facs_10_r_4" n="N016" />que par rapport au monde rigoureux de l'absolu, ce monde <lb facs="#facs_10_r_4" n="N017" />qui n'est jamais, mais demande sans cesse à être par la <lb facs="#facs_10_r_4" n="N018" />décision rigoureuse de l'existence. Et son œuvre littéraire, <lb facs="#facs_10_r_4" n="N019" />loin de contenir sa doctrine philosophique, n'est sans doute <lb facs="#facs_10_r_4" n="N020" />qu'un instrument d'éveil, de mise en alerte, un moyen pour <lb facs="#facs_10_r_4" n="N021" />révéler le caractère nauséeux de l'anonyme quotidien et de <lb facs="#facs_10_r_4" n="N022" />ses fuites lâches aux mille formes, et pour éveiller ainsi dans <lb facs="#facs_10_r_4" n="N023" />l'âme l'insatisfaction profonde que la liberté doit connaître <lb facs="#facs_10_r_4" n="N024" />et vaincre sans fin.
+        </p>
+        <p facs="#facs_10_r_5">
+          <lb facs="#facs_10_r_5" n="N001" />Ainsi l'existentialisme est bien, comme le dit <persName ref="GND:118605895">Sartre</persName>, <lb facs="#facs_10_r_5" n="N002" />une philosophie humaniste. Elle veut ramener l'homme à sa <lb facs="#facs_10_r_5" n="N003" />condition propre qui est de décider de son être face au monde <lb facs="#facs_10_r_5" n="N004" />et aux prises avec lui, grâce à la faille de néant que fait surgir <lb facs="#facs_10_r_5" n="N005" />le sujet conscient. Si l'homme peut décider de son être, c'est <lb facs="#facs_10_r_5" n="N006" />que son être n'est pas assuré. Et l'homme ne décide pas de <lb facs="#facs_10_r_5" n="N007" />son être par la théorie, sur le plan des mots, mais sur le plan <lb facs="#facs_10_r_5" n="N008" />« de l'action, de l'effort, du combat, de la solidarité », c'est-<lb break="no" facs="#facs_10_r_5" n="N009" />à-dire par la manière dont il s'engage envers les autres. Si <lb facs="#facs_10_r_5" n="N010" />bien que la réflexion philosophique débouche sur la vie.
+        </p>
+        <p facs="#facs_10_r_6">
+          <lb facs="#facs_10_r_6" n="N001" /><persName ref="GND:118815679">JEANNE HERSCH</persName>.
+        </p>
+      </div>
+</div>
+</body></text>
+</TEI>

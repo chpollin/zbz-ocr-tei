@@ -1,0 +1,58 @@
+{
+  "doc_id": "2550",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "Overlay: komplexes Doppelseiten-Layout mit Editorial, Hersch-Beitrag, Interview."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "Massive OCR-Fehler im Editorial: Lernwaeschemengen, soliderierenden, Foeskeln. Duplizierte Bloecke."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "Mehrspaltig-verschachtelt. Drei Artikel vermischt."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": [
+        "W9"
+      ],
+      "notes": "VALID. Aber Autor Hans Ebertart falsch (sollte Jeanne Hersch sein). sp mit unsinnigen speaker."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 13,
+        "orgName": 7,
+        "placeName": 6,
+        "bibl": 29
+      },
+      "notes": "Demokratie 29x als bibl. Alois Radr statt Riklin. Jeanne Herach statt Hersch."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Drei Artikel vermischt. Duplizierte Absaetze."
+    }
+  },
+  "findings": [
+    "AUTOR FALSCH: Hans Ebertart statt Jeanne Hersch",
+    "Massive OCR-Fehler im Editorial",
+    "Drei Artikel vermischt",
+    "Duplizierte Textbloecke",
+    "Demokratie 29x als bibl",
+    "sp mit unsinnigen speaker",
+    "Alois Radr statt Riklin (OCR)",
+    "Jeanne Herach statt Hersch (OCR)"
+  ],
+  "overall_notes": "Schwerwiegend: falscher Autor, drei Artikel vermischt, OCR-Fehler, Duplikate. Braucht Ueberarbeitung."
+}

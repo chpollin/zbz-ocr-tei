@@ -1,0 +1,50 @@
+{
+  "doc_id": "2150",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1],
+      "notes": "2-Seiten-Dokument (Querformat). Overlay zeigt Buchseiten-Doppelseite."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer und italienischer Text gut erkannt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Querformat-Doppelseite korrekt segmentiert."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": ["W6: Keine lb im body"],
+      "notes": "Valide, aber: sourceDesc verwendet bibl statt biblStruct -- inkonsistent mit Projektstandard. Kein Datum in sourceDesc."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 9,
+        "orgName": 0,
+        "placeName": 7,
+        "bibl": 1
+      },
+      "notes": "Hersch, Patocchi, Larese, Alceste, Admete, Ulysse korrekt. Griechenland-Bezuege (Grece, Athenes, Olympe) plausibel."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "TITEL IST '2150' -- das ist die Doc-ID, nicht ein echter Titel. Sollte z.B. 'A la veille de mon premier voyage en Grece' heissen. Zwei Autoren-Texte: Hersch (fra) + Patocchi (ita). Zweisprachig korrekt deklariert."
+    }
+  },
+  "findings": [
+    "KRITISCH: Titel ist '2150' (Doc-ID statt Artikeltitel)",
+    "sourceDesc verwendet bibl statt biblStruct (Projektstandard-Abweichung)",
+    "Kein Datum in sourceDesc",
+    "Zwei separate Autorentexte (Hersch/Patocchi) in einem div"
+  ],
+  "overall_notes": "Fehlender Titel ist ein echtes Problem -- muss korrigiert werden. Der Text selbst ist korrekt kodiert, zweisprachig (fra/ita) korrekt deklariert. Dino-Larese-Festschrift-Beitraege."
+}

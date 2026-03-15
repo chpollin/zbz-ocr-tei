@@ -1,0 +1,49 @@
+{
+  "doc_id": "840",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "n/a",
+      "pages_inspected": [],
+      "notes": "Kein Overlay. 3 Seiten."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutsch und Franzoesisch korrekt transkribiert. Gedenkrede fuer Karl Jaspers."
+    },
+    "L3_layout": {
+      "score": "n/a",
+      "notes": "Kein Overlay verfuegbar."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 12,
+        "orgName": 1,
+        "placeName": 2,
+        "bibl": 4
+      },
+      "notes": "Jaspers, Hersch, Arendt, Saner korrekt. Mensch (zbz-p.1251) 3x als persName -- Gattungsbegriff."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Gedenkfeier Jaspers 1969. div type=speech korrekt. Sprache fra+deu korrekt."
+    }
+  },
+  "findings": [
+    "Mensch (zbz-p.1251) als persName 3x -- Gattungsbegriff.",
+    "Doppeltes Ampersand-Encoding bei Helbing & Lichtenhahn.",
+    "Leeres p-Element auf Seite 1."
+  ],
+  "overall_notes": "Gute Qualitaet. Kosmetische Entity-Fehler."
+}

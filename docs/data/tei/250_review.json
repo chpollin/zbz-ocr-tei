@@ -1,0 +1,42 @@
+{
+  "doc_id": "250",
+  "reviewer": "quality-screening-agent",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 3,
+  "pages": 11,
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1/6/11: Layout-Regionen korrekt, single-column Fliesstext"
+    },
+    {
+      "severity": "info",
+      "code": "L2",
+      "msg": "OCR-Text kohaerenter franzoesischer Feuilleton-Bericht ueber Festival des Arts 1952"
+    },
+    {
+      "severity": "warning",
+      "code": "L3",
+      "msg": "Facsimile-Anomalie: Zonen auf S.5/6/7/8 mit Koordinaten weit ueber Surface-Grenzen (z.B. facs_5_r_1 ulx=1365 bei surface lrx=1241). Kein Einfluss auf Text, aber Layout-Metadaten fehlerhaft"
+    },
+    {
+      "severity": "info",
+      "code": "L4",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 39p 8o 20l 22w = 89. Reiche Annotation: Stravinski, Britten, Bartok, Ravel, Balanchine, Picasso, etc."
+    },
+    {
+      "severity": "info",
+      "code": "L7",
+      "msg": "Gesamtkohaerenz: Vollstaendiger Artikel Hersch 1952, Monde Nouveau. Musikfestival-Kritik, durchgehend S.2-11"
+    }
+  ]
+}

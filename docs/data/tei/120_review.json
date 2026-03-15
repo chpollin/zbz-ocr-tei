@@ -1,0 +1,49 @@
+{
+  "doc_id": "120",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 5, 10],
+      "notes": "Doppelseiten-Scans aus gedrucktem Buch. S.1 und S.5 zeigen Buchfalz mittig, Text links und rechts gut lesbar. S.10 letzte Seite mit Signatur Jeanne Hersch."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Anspruchsvoller franzoesischer philosophischer Text (Existentialismus) sauber transkribiert. Fremdsprachige Terme (exegi monumentum) und Hyphenierung (break=no) korrekt. Fussnoten erfasst."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "10 surfaces vs. 11 pb-Elemente (W3, ignoriert). Doppelseiten-Layout korrekt in Zweispalten-Zonen aufgeloest."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Schema-/Projekt-Fehler. W3 (surface/pb Mismatch) ignoriert per Anweisung."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 97,
+        "orgName": 3,
+        "placeName": 0,
+        "bibl": 18
+      },
+      "notes": "Sehr reiche persName-Annotation (97): Sartre, Jaspers, Kierkegaard, Heidegger, Camus, Beauvoir, Croce, Spinoza, Pascal, Kant, Bergson, Husserl u.v.m. GND-Referenzen verwendet. 18 bibl-Eintraege. orgName: Radio-Geneve, Action, Lettres."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Drei Radio-Causeries (1946) zum Existentialismus: I. Slogans, II. Deutschland, III. Frankreich. Beginnt mit Ende eines Croce-Artikels von Georges Golay. Hersch-Text startet korrekt abgetrennt per div. Sprache fra."
+    }
+  },
+  "findings": [
+    "Dokument beginnt mit dem Ende eines Croce-Artikels von Georges Golay (S.338); div-Struktur trennt beide Texte korrekt.",
+    "Einige persName-Referenzen verwenden GND:unknown (Racine, Augustin, Pascal, Descartes, Nietzsche, Jean Wahl, Gabriel Marcel).",
+    "Seitennummerierung springt: Mischung aus Originalseitenzahlen und laufender Zaehlung."
+  ],
+  "overall_notes": "Umfangreicher philosophischer Text (10 Doppelseiten-Scans). Exzellente Entity-Annotation mit 97 persName und GND-IDs. Struktur sauber."
+}

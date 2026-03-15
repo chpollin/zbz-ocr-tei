@@ -1,0 +1,42 @@
+{
+  "doc_id": "90",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [3, 4],
+      "notes": "Kein p001-Overlay. p003 zeigt saubere Erkennung (Fliesstext). p004 zeigt Einzelseite mit Seitenzahl 658."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gemischter de/fr Text. Franzoesische Zitate korrekt in deutschem Text eingebettet. Sonderbuchstaben (ss, Umlaute) sauber."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "6 Seiten. S.1 Titelblatt (Schweizer Annalen), S.2 Inhaltsverzeichnis, S.3-6 Artikel. Facs-Koordinaten auf S.4 auffaellig gross (ulx=526..8122), vermutlich Hochaufloesungs-Scan."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {"persName": 49, "orgName": 6, "placeName": 7, "bibl": 16},
+      "notes": "Falsche persName: 'Mensch' (zbz-p.1251, 1x), 'Gott' (zbz-p.50, 2x), 'Wahl' (zbz-p.89, 1x) sind Appellativa. 'Aargauer' (zbz-p.1311) ist Teil von 'Neue Aargauer Zeitung' (Zeitung). Inhaltsverzeichnis S.2 enthaelt viele korrekte Entity-Tags. Korrekt: Rilke, Racine, Sophokles, Monique Saint-Helir."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Literaturkritik ueber Monique Saint-Heliers Romane. Koherenter Aufbau. Franzoesische Zitate korrekt eingebettet. Sprache korrekt als deu markiert (Haupttext deutsch)."
+    }
+  },
+  "findings": [
+    "L6: 4-5 falsche persName-Tags (Mensch, Gott, Wahl, Aargauer als Appellativa/Fragmente)"
+  ],
+  "overall_notes": "Guter Gesamtzustand. Entity-Annotation hat einige false positives bei Appellativa (Mensch, Gott, Wahl) und einem Zeitungsnamen (Aargauer). Kein Blocker."
+}

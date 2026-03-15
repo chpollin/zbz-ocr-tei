@@ -1,0 +1,35 @@
+{
+  "doc_id": "230",
+  "reviewer": "quality-screener-t2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "E2",
+      "msg": "S.3 Z.180/S.4: 'Est-ce' als placeName zbz-l.13 getaggt (franz. Fragepartikel, kein Ort) -- bekanntes Pattern, 2x"
+    },
+    {
+      "severity": "info",
+      "code": "S1",
+      "msg": "S.1-2 Bestellformular ZBZ, S.3-5 Artikel (fra), Layout-Overlay S.1+S.3 korrekt"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 7p 11o 40l 4w = 62"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Sprache fra/deu korrekt, Text koharent, Spaak/Hersch/Europa-Thematik konsistent"
+    }
+  ]
+}

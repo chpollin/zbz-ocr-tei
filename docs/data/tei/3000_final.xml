@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">TOLÉRANCE ENTRE LIBERTÉ ET VÉRITÉ</title>
+        <author>Jeanne HERSCH</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">3000</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>TOLÉRANCE ENTRE LIBERTÉ ET VÉRITÉ</title>
+          <author>Jeanne HERSCH</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screening-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). 'Homme' (1x) tagged as persName ref=zbz-p.926 -- generic noun, not a person; Entities: 5p 1o 0l 8w = 14</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1090" lry="813">
+      <zone xml:id="facs_1_r_1" ulx="636" uly="298" lrx="949" lry="339" />
+      <zone xml:id="facs_1_r_2" ulx="742" uly="406" lrx="842" lry="421" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1056" lry="793">
+      <zone xml:id="facs_2_r_1" ulx="592" uly="287" lrx="953" lry="390" />
+      <zone xml:id="facs_2_r_2" ulx="592" uly="410" lrx="953" lry="638" />
+      <zone xml:id="facs_2_r_3" ulx="592" uly="651" lrx="953" lry="664" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1059" lry="807">
+      <zone xml:id="facs_3_r_1" ulx="87" uly="188" lrx="459" lry="353" />
+      <zone xml:id="facs_3_r_2" ulx="580" uly="364" lrx="947" lry="445" />
+      <zone xml:id="facs_3_r_3" ulx="602" uly="520" lrx="948" lry="630" />
+      <zone xml:id="facs_3_r_4" ulx="89" uly="556" lrx="459" lry="685" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1021" lry="810">
+      <zone xml:id="facs_4_r_1" ulx="88" uly="102" lrx="451" lry="357" />
+      <zone xml:id="facs_4_r_2" ulx="557" uly="202" lrx="919" lry="474" />
+      <zone xml:id="facs_4_r_3" ulx="77" uly="394" lrx="444" lry="600" />
+      <zone xml:id="facs_4_r_4" ulx="75" uly="633" lrx="200" lry="663" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1060" lry="807">
+      <zone xml:id="facs_5_r_1" ulx="240" uly="90" lrx="351" lry="107" />
+      <zone xml:id="facs_5_r_2" ulx="579" uly="97" lrx="950" lry="223" />
+      <zone xml:id="facs_5_r_3" ulx="97" uly="172" lrx="471" lry="204" />
+      <zone xml:id="facs_5_r_4" ulx="580" uly="240" lrx="951" lry="321" />
+      <zone xml:id="facs_5_r_5" ulx="94" uly="244" lrx="472" lry="588" />
+      <zone xml:id="facs_5_r_6" ulx="584" uly="546" lrx="952" lry="636" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1048" lry="821">
+      <zone xml:id="facs_6_r_1" ulx="100" uly="94" lrx="464" lry="117" />
+      <zone xml:id="facs_6_r_2" ulx="100" uly="129" lrx="465" lry="383" />
+      <zone xml:id="facs_6_r_3" ulx="635" uly="292" lrx="905" lry="334" />
+      <zone xml:id="facs_6_r_4" ulx="709" uly="398" lrx="823" lry="412" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <bibl ref="#zbz-w.76">TOLÉRANCE</bibl><lb facs="#facs_1_l_1_1" n="N001" />ENTRE LIBERTÉ ET VÉRITÉ
+        </head>
+        <p facs="#facs_1_r_2">
+          <persName ref="#zbz-p.2">Jeanne HERSCH</persName>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          La tolérance n'est pas, comme on le pense souvent, une vertu d'urbanité à mettre sur le même plan que la politesse. Elle n'est pas, ou ne devrait pas être, l'huile qui permet aux rouages des volontés humaines de tourner plus facilement malgré leurs divergences. La tolérance véritable a la même racine que les <bibl ref="#zbz-w.285">droits de l'homme</bibl>. Or cette racine est en même temps celle de la liberté et de la vérité. Une racine sauvage, peu diplomatique, plongeant dans une exigence absolue.
+        </p>
+        <p facs="#facs_2_r_2">
+          C'est parce que l'être humain est capable de s'engager absolument — risquant sa vie et parfois davantage — qu'il a des droits inconditionnels. C'est parce que son engagement envers ce qu'il croit vrai peut être absolu qu'il y a violation de l'humain à tenter de lui imposer par la contrainte une conviction différente de la sienne, ou à exiger de lui un comportement opposé. L'absolu de la conviction ou de l'exigence morale dont découle sa conduite exige de l'autre être humain, non une plus grande tiédeur de la conviction ou de l'exigence morale, mais un absolu respect de cette conviction ou de cette exigence différente, même s'il est loin de la partager. Tel est le fondement des <bibl ref="#zbz-w.285">droits de l'homme</bibl>. Et tel est aussi le fondement de la tolérance vraie, qui ne sacrifie rien de la vérité.
+        </p>
+        <p facs="#facs_2_r_3">
+          Quiconque prétend imposer un comportement ou une con
+        </p>
+        <p>
+          49
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          viction par la contrainte ou la menace ne se contente pas de violer les <bibl ref="#zbz-w.285">droits de l'homme</bibl>, mais s'engage encore dans une action vide de sens. En effet, toute conviction, tout comportement volontaire est l'aboutissement d'une pensée. Or toute pensée contrainte est un non-sens, c'est-à-dire une non-pensée. Il n'y a de pensée qu'à la recherche d'un sens vrai. S'il n'en était pas ainsi, on pourrait concevoir une quête du vrai cohérente pour l'entendement et qui pourtant n'entrainerait pas l'adhésion. Il serait possible de dire, à propos d'une démonstration géométrique par exemple, « je comprends la démonstration, mais je ne suis pas d'accord ». Or s'il s'agit d'une preuve purement rationnelle, une telle déclaration n'a pas de sens. Ou bien je ne comprends pas la démonstration, ce qui signifie que je n'éprouve pas la contrainte qu'elle prétend exercer sur ma raison, et que par conséquent ma pensée reste libre à son égard, — ou bien je la comprends, ce qui signifie du même coup que j'en accepte la nécessité.
+        </p>
+        <p facs="#facs_3_r_2">
+          Au niveau du rationnel pur, comme aussi à celui de l'expérimentation empirique — quoique déjà à un moindre degré — il y a coïncidence entre la reconnaissance d'une évidence et la liberté de jugement, entre « comprendre » et « consentir ». Mais cette coïncidence cesse dès que la subjectivité du penseur se met à jouer un rôle, dès qu'interviennent les données historiques constitutives de son « je », dans son inépuisable réalité concrète.
+        </p>
+        <p facs="#facs_3_r_3">
+          C'est à ce niveau que les problèmes de libre adhésion commencent à se poser, en même temps que s'esquissent les tentations de contrainte. Ici s'affirment les diverses cultures, traditions, confessions, philosophies, — ce qui semble aller sans dire et qui peut être contesté, ce qui exige parfois l'enjeu total de l'être et de la vie, ce qui reste à jamais contestable et n'est jamais évident. Et c'est ici, — parce que leur respect ne va jamais sans dire bien que leur violation soit absurde — que s'impose absolument le respect des <bibl ref="#zbz-w.285">droits de l'homme</bibl>.
+        </p>
+        <p facs="#facs_3_r_4">
+          Certains pensent que l'ennemi irréductible des droits de l'<persName ref="#zbz-p.926">Homme</persName>, c'est l'absolu, quel qu'il soit. Et ils cherchent, par gain de paix et de tolérance, à le mettre hors jeu, ramenant l'humanité tout entière aux certitudes rationnelles ou empiriques des sciences. Je crois qu'ils font fausse route. En effet, il reste, au niveau empirique, l'alternative extrême : vivre ou mourir, qui s'impose à l'humanité autrement qu'à toutes les autres espèces vivantes, à travers sa conscience de l'histoire. Supprimer de l'horizon humain l'absolu qui porte sa nature morale, ce serait réduire l'homme à son être-animal et le condamner à la seule lutte pour la vie, sans autre foi ni loi que le succès. Ce serait la fin de sa spécificité. Il n'y aurait plus de droits de l'<persName ref="#zbz-p.926">Homme</persName> ; l'intolérance perdrait peut-être son aiguillon, mais la tolérance perdrait son sens.
+        </p>
+        <p>
+          Si on veut que l'homme soit, il faut assumer sa condition tout entière, avec les risques accrus que comporte la présence de l'absolu dans sa nature morale. Il n'y a pas d'humanité au rabais, simplifiée et débarrassée de ses difficultés propres. C'est pourquoi il faut que l'homme ait des droits, et des droits absolus. Et c'est pourquoi l'écheveau de ces droits est aussi enchevétré, plein de contradictions et de paradoxes.
+        </p>
+        <p>
+          Ne fût-ce que la contradiction qui exclut le recours à la force, alors que le respect dû à une adhésion absolue semble parfois l'exiger.
+        </p>
+        <p>
+          Fondamentalement, l'intolérance exige d'autrui qu'il se rende le plus possible semblable à soi, ou à une quelconque majorité. Cette exigence réductive s'exerce selon quatre modes d'activités principales : penser, croire, agir, être. L'impérialisme de l'intolérance se fonde sur la valorisation exclusive des options propres, par opposition à ce que d'autres peuvent penser, croire, faire ou être. En son centre, il y a une identification de soi, avec toutes ses caractéristiques personnelles, ethniques, culturelles, religieuses, historiques, avec les valeurs humaines elles-mêmes, si bien que le soi finit par coïncider avec le bien
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          de l'humanité comme telle. Il y a ainsi, au cœur de toute tolérance, la prétendue possession d'un modèle privilégié. Au niveau de la pensée, il s'agit de posséder la vérité, ou du moins de maîtriser les méthodes qui en garantissent l'approche. Au niveau des croyances, il s'agit d'appartenir à la tradition la mieux fondée dans les données historiques, comme aussi la plus féconde et la plus créatrice au long des siècles, celle qui répond le mieux aux besoins du développement humain. Au niveau de l'action, on revendiquera les développements historiques les plus favorables à la paix, au bien-être, à l'organisation des sociétés humaines. Au niveau de l'être et du devenir, on mettra en lumière les œuvres les plus propres à ouvrir, en étendue et en profondeur, les perspectives les plus riches, multiples et diverses, incitant les hommes à actualiser dans leur vie les différents aspects de leur liberté responsable, de cette capacité qu'ils ont d'inventer leur présence sur terre et de choisir la trace qu'ils veulent y laisser.
+        </p>
+        <p facs="#facs_4_r_2">
+          Mais il saute aux yeux que l'intolérance qui se réclame de telles valeurs et de telles finalités est elle-même, dans sa prétention à détenir le modèle humain unique, en contradiction avec sa propre justification. La condition de l'homme est ainsi faite qu'elle n'échappe pas à ses contradictions intérieures, et que la reconnaissance de ces contradictions entre des exigences pour elle essentielles s'impose dès qu'elle s'assume elle-même. C'est dire que, loin de pouvoir au départ brandir un modèle de condition humaine exclusif, qu'il suffirait d'imposer aux autres <hi rendition="#i">ad majorem hominis gloriam</hi>, l'humanité de l'homme exige une ascèse, l'exploration d'un non-savoir, d'un champ d'exigences irréductiblement contradictoires, correspondant non pas à la connaissance d'un modèle, mais à la discipline de dépossession d'un savoir.
+        </p>
+        <p facs="#facs_4_r_3">
+          La tolérance véritable ne grandit pas, comme certains l'imaginent, grâce à une indifférence croissante à l'égard du vrai. Au contraire : ce qui importe, c'est d'élucider les valeurs, les critères et les significations qui constituent le vrai pour l'être
+        </p>
+        <p facs="#facs_4_r_4">
+          humain, et de lui apprendre à diversifier, en la précisant, la nature de l'adhésion qu'il lui donne. On n'adhère pas à la vérification d'une hypothèse scientifique comme à un principe politique, ou encore à une foi religieuse, à une tradition ethnique, ou à une forme d'art, à une conception de la musique, à une exigence esthétique, ou à une échelle de valeurs morales.
+        </p>
+        <p>
+          Selon la nature de l'adhésion qui est en cause, l'intolérance, elle aussi, sera toute différente. Mais il s'agit d'abord de savoir le prix qu'on reconnaît à la différence, et même à la divergence, dans ces divers domaines. Il se peut que la divergence suscite l'hostilité ou le mépris, mais il se peut aussi qu'elle éveille l'intérêt et la curiosité. Tout dépend d'abord du degré de profondeur ou d'élaboration des évidences ou des convictions admises d'emblée — mais aussi de la bienveillance imaginative avec laquelle sont considérées d'emblée les attitudes hétérodoxes. Certaines sont ouvertes à tous vents, ce qui ne suffit pas à prouver une vraie disponibilité en profondeur, mais peut ne découler que d'une attitude superficielle et d'une absence totale d'engagement. D'autres au contraire, profondément enracinés dans une conviction donnée, essaient de comprendre — de mimer — celle d'autrui à une égale profondeur ; ils lui « prêtent » alors leur être intérieur ; et ce faisant, il se peut que grandisse en eux, soudain, une dimension créatrice qu'ils ne soupçonnaient pas. Tels sont les risques, telles sont les chances, de la véritable communication humaine.
+        </p>
+        <p>
+          La dépossession d'un savoir unique est la condition préalable à une telle croissance intérieure. Mais il ne s'agit pas simplement d'un « dogme négatif ». Il s'agit d'avoir vraiment fait l'expérience intérieure de l'unité de l'être, irréductible à la multiplicité de nos approches, de leurs discontinuités, de leur complexité, des contradictions et des incohérences dans les dimensions de notre propre esprit, de l'inadéquation de nos critères, pour comprendre et accepter que la quête humaine reste engagée dans le temps, sans fin. Et que l'autre homme, quel qu'il soit, y soit engagé autrement que moi, à sa manière,
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          et mérite comme tel, à cause du possible qui ne cesse, pour lui comme pour moi, de transcender l'acquis, l'absolu respect dont la tolérance est le difficile reflet.
+        </p>
+        <p facs="#facs_5_r_2">
+          Dans ce sens, la tolérance, loin d'être une tiède commodité à base d'indifférence, prend sa source dans la vocation sans fin, absolue, de la condition historique de l'être humain, en quête d'une vérité jamais atteinte.
+        </p>
+        <p facs="#facs_5_r_3">
+          C'est dire que là encore, l'erreur — et la tentation — consiste à substituer une prétendue « propriété », un « avoir » de vérités et de principes d'action, à un approfondissement d'être, de déploiement de soi-même. L'alternative est toujours : vais-je imposer à autrui ma pensée, ma conviction, ma manière d'organiser la vie, ce qui est actuellement « le vrai » ou « le bien » à mes yeux, à l'aide de tous les moyens de contrainte dont je dispose, afin d'imposer « ce vrai » ou « ce bien » dans le monde, hors de moi, — ou vais-je essayer, par l'imagination, à tous les niveaux où j'en suis capable, de « mimer », avec mon être propre, la pensée, la conviction, le « vrai » et le « bien » d'autrui et sa manière d'organiser la vie, en admettant dans mon attitude première des limitations ou des erreurs pouvant entraîner des mutilations de ma possible condition humaine, celle qu'il est de mon devoir de sujet libre et responsable de réaliser ? Telle est l'alternative, pour des sujets humains toujours transcendés par la vérité de leur vocation. Elle comporte, certes, une composante de non-savoir, de non-propriété définitive — et je voudrais dire ici, avec <persName ref="#zbz-p.1">Karl Jaspers</persName>, un sens de la transcendance du vrai, sans lequel, contrairement à ce que l'on pense souvent, aucun engagement ne peut être véritablement absolu.
+        </p>
+        <p facs="#facs_5_r_4">
+          On admet d'étranges renversements. On commence à comprendre pourquoi la philosophie, par exemple, ne peut être qu'« amie », et non « propriétaire » de la sagesse, — pourquoi, fondamentalement, « aimer la sagesse » interdit de prétendre à sa possession. On commence à saisir le rôle que peut jouer
+        </p>
+        <p facs="#facs_5_r_5">
+          la contradiction jusque dans notre pensée rationnelle, qui, sans elle, serait incapable de dire d'elle-même — non sans beaucoup de répugnance — que le respect absolu des <bibl ref="#zbz-w.285">droits de l'homme</bibl> n'est pas seulement quelque chose que je dois à tout être humain, quels que soient sa condition ethnique ou son degré de développement, mais que ce respect est même une condition préalable pour que n'importe quel acte de ma pensée puisse avoir son sens.
+        </p>
+        <p facs="#facs_5_r_6">
+          Alors qu'en revanche, n'importe quelle tentative d'imposer à des êtres humains, quels qu'ils soient, une manière de penser, de croire, d'agir ou de juger, est vouée au seul non-sens du règne de la force causale, à cela près qu'elle reste irrémédiablement une trahison de soi.
+        </p>
+        <p>
+          Peut-être pourrions-nous voir un peu plus clair en essayant de saisir la nature de l'impatience, ou même de l'irritation, qui s'empare de nous lorsque nous constatons la manière dont autrui nous refuse son adhésion. Il faut, bien sûr, distinguer plusieurs niveaux et prendre des exemples où les enjeux concrets soient aussi peu importants que possible, parce que ce qu'il nous importe de saisir, c'est la divergence d'appréciation elle-même, indépendamment des conséquences.
+        </p>
+        <p>
+          La divergence entre deux sujets peut porter, disons, sur l'authenticité d'un document jouant un rôle dans une histoire sacrée. Cette divergence peut être indifférente pour les deux interlocuteurs. Elle peut être indifférente pour l'un des deux, alors que pour l'autre elle touche au cœur de sa foi. Elle peut pour ce dernier laisser en suspens la foi de l'autre, ou encore acquérir pour lui, du fait de cette contestation, une portée supplémentaire. Le fait nu qui est contesté prend donc selon les cas une signification, et de ce fait une efficacité, différente. Son appréciation dépend d'autre chose que de sa réalité empirique. Elle passe par le suspens constitutif d'un non-savoir.
+        </p>
+        <p>
+          Et c'est par conscience de non-savoir, et par soif de vérité,
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          que chacun a besoin de comprendre — vraiment comprendre, c'est-à-dire mimer — l'effort de savoir, et la conscience partielle de vérité, qui est celle d'autrui.
+        </p>
+        <p facs="#facs_6_r_2">
+          Il suit de ce qui précède que la véritable tolérance, loin de renoncer à la vérité par gain de paix, stimule en profondeur sa recherche authentique. Mais il n'en découle pas qu'elle puisse fonder la paix. C'est que la vérité est loin d'être seule en cause. L'homme, disait <persName ref="#zbz-p.173">Rimbaud</persName>, est une âme et un corps. Dès que le corps est impliqué, il s'agit de vivre ou de mourir, et encore, non pas soi seul. Or comme on l'a vu récemment, tout secours à la vie finit par être acculé à choisir entre le recours à la force ou l'abandon. Un droit imposé par la seule force n'est pas le droit ni la vérité ; mais il n'y a pas non plus de droit sans police. L'angélisme est pour l'homme un luxe inhumain, — d'où la naissance, aux <orgName ref="#zbz-o.55">Nations unies</orgName>, d'un risque et d'un espoir nouveau, avec le devoir d'ingérence dans les affaires des États.
+        </p>
+        <p facs="#facs_6_r_3">
+          56
+        </p>
+        <p facs="#facs_6_r_4">
+          <bibl ref="#zbz-w.76">TOLÉRANCE</bibl><lb facs="#facs_6_l_4_1" n="N001" />UNE VERTU INCOMMODE
+        </p>
+        <p>
+          <persName ref="#zbz-p.1376">Bernard WILLIAMS</persName>
+        </p>
+      </div>
+      </body></text>
+</TEI>

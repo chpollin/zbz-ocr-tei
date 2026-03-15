@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Die Frau heute - Gerede und ernste Verantwortung</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">730</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Die Frau heute - Gerede und ernste Verantwortung</title>
+          <author>Jeanne Hersch</author>
+          <date>1966</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). No issues found</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_1_r_1" ulx="911" uly="38" lrx="1147" lry="97" />
+      <zone xml:id="facs_1_r_2" ulx="648" uly="154" lrx="1105" lry="307" />
+      <zone xml:id="facs_1_r_3" ulx="106" uly="698" lrx="499" lry="737" />
+      <zone xml:id="facs_1_r_4" ulx="105" uly="773" lrx="882" lry="891" />
+      <zone xml:id="facs_1_r_5" ulx="109" uly="1252" lrx="1111" lry="1382" />
+      <zone xml:id="facs_1_r_6" ulx="914" uly="1463" lrx="1111" lry="1501" />
+      <zone xml:id="facs_1_r_7" ulx="914" uly="1503" lrx="1111" lry="1529" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_2_r_1" ulx="467" uly="1082" lrx="615" lry="1126" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_3_r_1" ulx="114" uly="103" lrx="1117" lry="924" />
+      <zone xml:id="facs_3_r_2" ulx="116" uly="938" lrx="1114" lry="1193" />
+      <zone xml:id="facs_3_r_3" ulx="116" uly="1211" lrx="1113" lry="1580" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_4_r_1" ulx="145" uly="93" lrx="1128" lry="1234" />
+      <zone xml:id="facs_4_r_2" ulx="156" uly="1243" lrx="1129" lry="1450" />
+      <zone xml:id="facs_4_r_3" ulx="159" uly="1464" lrx="1132" lry="1614" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_5_r_1" ulx="116" uly="161" lrx="1127" lry="538" />
+      <zone xml:id="facs_5_r_2" ulx="119" uly="572" lrx="1121" lry="686" />
+      <zone xml:id="facs_5_r_3" ulx="114" uly="693" lrx="1121" lry="1558" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_6_r_1" ulx="143" uly="92" lrx="1110" lry="188" />
+      <zone xml:id="facs_6_r_2" ulx="144" uly="196" lrx="1123" lry="1116" />
+      <zone xml:id="facs_6_r_3" ulx="153" uly="1128" lrx="1130" lry="1613" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_7_r_1" ulx="115" uly="159" lrx="1128" lry="562" />
+      <zone xml:id="facs_7_r_2" ulx="113" uly="584" lrx="1123" lry="1109" />
+      <zone xml:id="facs_7_r_3" ulx="113" uly="1134" lrx="1118" lry="1549" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_8_r_1" ulx="125" uly="89" lrx="1118" lry="1293" />
+      <zone xml:id="facs_8_r_2" ulx="187" uly="1389" lrx="1123" lry="1619" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_9_r_1" ulx="119" uly="86" lrx="1120" lry="645" />
+      <zone xml:id="facs_9_r_2" ulx="118" uly="650" lrx="1120" lry="1084" />
+      <zone xml:id="facs_9_r_3" ulx="120" uly="1093" lrx="1120" lry="1582" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_10_r_1" ulx="128" uly="153" lrx="1116" lry="473" />
+      <zone xml:id="facs_10_r_2" ulx="132" uly="486" lrx="1119" lry="1196" />
+      <zone xml:id="facs_10_r_3" ulx="134" uly="1207" lrx="1122" lry="1559" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_11_r_1" ulx="125" uly="87" lrx="1115" lry="409" />
+      <zone xml:id="facs_11_r_2" ulx="119" uly="424" lrx="1111" lry="797" />
+      <zone xml:id="facs_11_r_3" ulx="116" uly="814" lrx="1100" lry="958" />
+      <zone xml:id="facs_11_r_4" ulx="114" uly="979" lrx="1093" lry="1095" />
+      <zone xml:id="facs_11_r_5" ulx="114" uly="1110" lrx="1092" lry="1230" />
+      <zone xml:id="facs_11_r_6" ulx="146" uly="1518" lrx="926" lry="1565" />
+      <zone xml:id="facs_11_r_7" ulx="145" uly="1562" lrx="1087" lry="1596" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="1240" lry="1755">
+      <graphic url="12.png" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="speech">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Btm 14946
+        </head>
+        <p facs="#facs_1_r_2">
+          PRÊT EXCLU
+        </p>
+        <p facs="#facs_1_r_3">
+          1866 | 1966
+        </p>
+        <p facs="#facs_1_r_4">
+          <orgName ref="#zbz-o.610">Luisenschule Essen</orgName>
+        </p>
+        <p facs="#facs_1_r_5">
+          Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_1_r_6">
+          Die Frau heute -<lb facs="#facs_1_l_6_1" n="N001" />Gerede und ernste Verantwortung
+        </p>
+        <p facs="#facs_1_r_7">
+          Den Schülerinnen, Eltern, Freunden und Gönnern überreicht die <orgName ref="#zbz-o.610">Luisenschule</orgName> zur Erinnerung an ihr hundertjähriges Jubiläum den Text der Ansprache, die Frau Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName> (<orgName ref="#zbz-o.6">Universität Genf</orgName>, z. Z. <orgName ref="#zbz-o.382">Unesco</orgName>, <placeName ref="#zbz-l.1">Paris</placeName>) bei dem Festakt am 18. Oktober 1966 gehalten hat.
+        </p>
+        <p>
+          DR. JACOBS<lb facs="#facs_1_l_8_1" n="N001" />Oberstudiendirektor
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          
+        </p>
+        <p>
+          2001 165
+        </p>
+        <p>
+          GE <orgName ref="#zbz-o.539">Bibliothèque de Genève</orgName>
+        </p>
+        <p>
+          
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Meine Damen und Herren! Liebe Kollegen und Kolleginnen, die im Unterricht sind! Liebe Schülerinnen! Ich glaube, als ich diese Einladung angenommen habe, — daß ich nicht ganz wußte, warum. Aber jetzt weiß ich ganz genau: das war aus Sehnsucht nach der Schule. Ich habe 20 Jahre meines Lebens in einer Höheren Schule verbracht. 20 Jahre meines Lebens habe ich Latein, französische Literatur, französischen Aufsatz und <bibl ref="#zbz-w.1">Philosophie</bibl> in einer Höheren Schule unterrichtet. Ich weiß ganz genau, was es bedeutet, in einer Höheren Schule zu leben und dort tätig zu sein. Ich kenne die Klasse, das leidenschaftliche Spiel unter Lehrer und Schülerinnen, das sich da abspielt, und wo jeder Fremdkörper schrecklich störend wirkt. Gerade das habe ich irgendwie hier, in dieser großen Schulklasse, wiedergefunden. Deswegen bin ich wahrscheinlich gekommen. Und ich danke Ihnen herzlich dafür, daß Sie mich eingeladen haben, um die Freude des Tages mit mir zu teilen, obgleich ich gar kein Recht darauf habe. Ich danke Ihnen für die Ehre des Vertrauens, mich mit der Festrede zu beauftragen. Ich bitte Sie alle, mich zu entschuldigen, wenn ich Deutsch-Fehler mache, wenn ich Ihre Sprache „verderbe“. Ich bin ja französischer Sprache; ich werde mich bemühen, aber Fehler werden doch da sein, und nun können die Schülerinnen mal die Fehler nachrechnen. (Heiterkeit und Beifall) Eine Schule, die 100 Jahre alt ist und die so jung aussieht! Was ist da eigentlich 100jährig? Wer? Die ersten Schülerinnen sind schon lange gestorben, die ersten Lehrer auch. Einige sind da, die fliegen in den nächsten Monaten weg. Andere, die da sind, werden etwas später wegfliegen. Was ist da, was durch alle diese historischen Tragödien durchgelebt hat? Was ist das? Ich weiß es schlecht, denn ich gehöre nicht zur <orgName ref="#zbz-o.610">Luisenschule</orgName>. Aber nach all dem, was ich bis jetzt gehört und irgendwie gerochen habe, habe ich das Gefühl, daß das eine bestimmte Freiheit ist, — eine bestimmte Freiheit, die als Ergebnis hat, daß man seine Schule frei liebt. Das habe ich gleich empfunden, als ich am Flugplatz abgeholt wurde. Da leuchtete im Gesicht der beiden Lehrerinnen, die mich abgeholt haben, nicht nur das freundschaftliche Entgegenkommen zu mir, sondern gerade die Liebe zur Schule. Das habe ich gleich empfunden und jetzt wieder hier, in Ihrer Musik. So etwas trügt nicht.
+        </p>
+        <p facs="#facs_3_r_2">
+          Oberschulunterricht ist dem Universitätsunterricht keineswegs untergeordnet, meiner Ansicht nach. Ich habe sehr oft von der <orgName ref="#zbz-o.46">Universität</orgName> her mit Sehnsucht an die Höhere Schule gedacht. Das Leben des Unterrichts in der Höheren Schule, der Kontakt mit den jüngeren Menschen, ihre Empfänglichkeit, alles das ist unvergleichlich. Das einzige, worin Universitätsprofessoren glücklicher sind, ist, daß sie egoistischer sein können: sie behalten mehr freie <bibl ref="#zbz-w.705">Zeit</bibl> für ihre eigene Arbeit, statt sie restlos ihren Schülern zu geben. In dieser Hinsicht sollten eigentlich alle Schülerinnen und ihre Eltern ihre Lehrer noch mehr achten, als wenn sie Universitätsprofessoren wären. (Beifall)
+        </p>
+        <p facs="#facs_3_r_3">
+          Nun komme ich zu meinem Thema „Die Frau heute — Gerede und ernste Verantwortung“. Zunächst einmal „Gerede“. Ich glaube, daß das „ewig Weibliche“ Gerede ist. Entschuldigen Sie, wenn ich manche oder manchen von Ihnen beleidige. (Heiterkeit) Aber ich glaube wirklich, daß das „ewig Weibliche“ Gerede ist. Nicht, daß es nicht so etwas gibt; ich glaube, daß so etwas irgendwie existiert. Aber sobald es genannt wird, sobald man damit argumentiert, wird es Gerede. Das ist gerade etwas, was vor dem Wort einfach verschwindet; es ist nicht mehr da, wenn man davon redet. Es ist manchmal da, wenn man daran nicht denkt. Als Mythos, auf der Ebene des Mythos, ist das ein sehr schöner Mythos, und ich glaube, daß er ein ganz tiefes Bedürfnis ausdrückt. Aber wenn man es wörtlich nimmt und damit argumentiert, dann — das hat die Geschichte bewiesen — wird er mißbraucht, wurde er mißbraucht, um Jahrtausende hindurch die Frauen in verschiedenen Formen der furchtbarsten Knechtschaft zu halten. Er wurde mißbraucht: <orgName ref="#zbz-o.71">Kirche</orgName>, Küche, Kinder, die drei berühmten K der Hitlerzeit. Das bedeutet nicht, daß das ganz falsch ist, daß die Frau nicht in die
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          <orgName ref="#zbz-o.71">Kirche</orgName>, nicht in die Küche, nicht unter die Kinder gehört; aber wenn man daraus eine Mystik aufbaut und dann die Mystik mißbraucht, um sozial ungerechte, unmenschliche Verhältnisse zu rechtfertigen, dann wird es einfach Gerede und mißbrauchte Schönheit. Ich habe oft gedacht, daß die Unterwerfung und die Knechtschaft der Frauen — durch die Jahrtausende, wie ich sagte — heute überhaupt nicht mehr in unserer Vorstellung gefaßt werden kann. Wir stellen uns diese vergangenen Umstände gar nicht mehr vor. Wir können sie gar nicht mehr mit der heutigen Situation vergleichen. Ich meine nicht damit, daß heutzutage alles vollkommen ist; nein, aber im Vergleich mit dem, was gewesen, ist eine solche Veränderung geschehen, eine solche Befreiung, daß wir uns das Damalige gar nicht mehr vorstellen. Auf dem Lande und später in den Betrieben haben die Frauen die schwersten Arbeiten gehabt — mit ihrem „ewig Weiblichen“ — und die Arbeiten, die am wenigsten bezahlt waren. Und sie standen in voller Abhängigkeit von anderen, von den Eltern zuerst, von dem Mann nachher, in so voller Abhängigkeit des Geistes, der Seele, des Leibes, daß sie nicht mal dachten, daß es vielleicht anders sein könnte. Es hat sicher durch die Jahrhunderte so viele Vergewaltigungen gegeben, intime Vergewaltigungen des alltäglichen Lebens, so vieles Geben, Schenken, Verkaufen sozusagen der Frauen unter der Decke ganz anständiger Gesellschaftsformen, daß diese unerträgliche Situation tief in die Frauen hineingekommen ist, so tief in ihr Selbstverständnis eingegraben wurde, daß ihnen nicht mal die Idee kam, sich zu befreien oder wegzugehen. Selbst wenn sie es hätten tun können, haben sie es nicht getan. Und nicht nur aus Pflichtgefühl — sehr oft aus Pflichtgefühl, aber nicht nur aus Pflichtgefühl. Manchmal gab es nicht mal Pflicht, aber der Einfall kam ihnen nicht, den Einfall hatten sie nicht, ihr Schicksal selbst zu ändern. Das müssen wir uns einmal vergegenwärtigen. Es ist nicht leicht, denn die Literatur und die Geschichte zeigen uns sehr wenig davon. Warum? Weil es immer so ist, daß die Literatur und die Geschichte diejenigen darstellt, die zu Worte gekommen sind, die Ausdrucksmittel hatten, die sich ausdrücken konnten. Und wenn man sich ausdrücken kann, ist man schon nicht mehr ganz so ausgeliefert, wie man es ist, wenn man die Ausdrucksmittel nicht hat. Das größte Elend der Welt ist immer schweigsam. Wenn man es hört, ist es schon nicht so schlimm. Und mit den Frauen ist das auch so gewesen. Die Analphabeten in der Welt sprechen nicht für sich selbst, schreiben nicht für sich selbst. Und die Frauen durch die Jahrtausende waren mehr oder weniger in ihrer großen Masse in einer solchen Situation. Natürlich gab es immer verhältnismäßig kleine Kreise, wo Frauen eine <placeName ref="#zbz-l.565">Rolle</placeName> gespielt haben, wo sie einen Einfluß geübt haben, wo sie Herrin des Hauses waren usw. Aber das war bestimmt im großen und ganzen eine Minorität in der Welt. Und deswegen müssen wir auch heutzutage, an diesem Jubiläumstag, mit Dankbarkeit an die Frauen und an die Männer denken, die unsere Befreiung erreicht haben. Wir müssen uns bewußt werden der Vorteile, die wir heute genießen, und der Verantwortungen, die das mit sich bringt.
+        </p>
+        <p facs="#facs_4_r_2">
+          Aber heutzutage sind noch viele junge Frauen, glaube ich, und vielleicht Mädchen, durch eine Auffassung beeinflußt, die ihnen sagt: „Passen Sie auf! Sie sind in Gefahr, das ‚ewig Weibliche‘ zu verlieren. Werden Sie nicht zu gescheit, lernen Sie nicht zu viel! Ihre Intelligenz soll nicht zu klar werden. Vielleicht verlieren Sie dabei jene magische weibliche Intuition. Dann werden Sie rein intellektuell denken können wie eine Maschine, aber das spezifisch Weibliche verlieren Sie dabei, und das Herz und die Gefühle. Sie werden hart und trocken und halb tot.“ (Heiterkeit)
+        </p>
+        <p facs="#facs_4_r_3">
+          Jetzt will ich Ihnen etwas sagen. Ich spreche sehr selten davon, weil es sich eben um etwas handelt, wovon man nicht zu oft reden soll. Ich mache heute eine Ausnahme. (Heiterkeit) Glauben Sie mir, der Weiblichkeit entflieht keine Frau. Auch wenn sie es tausendmal möchte, auch wenn sie versuchen wollte, wie ein Mann zu werden, auch wenn sie tüchtig Mathematik und die Ingenieurstudien betreibt, bleibt
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          sie eine Frau. Da ist gar keine Gefahr, und man braucht gar nicht künstlich nach diesem „ewig Weiblichen“ zu laufen. Im Gegenteil: Wenn man glaubt, davon frei zu sein, wird man wieder von hinten an dem Rücken festgehalten und wieder in Griff genommen. Wichtig ist aber, daß man nicht zu sehr an die von den Männern beschriebenen Merkmale der Weiblichkeit glauben soll. (Heiterkeit und Beifall) Also keine künstliche Weiblichkeit, keine künstlich gepflegte Weiblichkeit. Und merken Sie noch eins! Das moderne Leben, sagt man, hat das Leben der Frauen umgewälzt, zu einem Grad, daß man die Folgen noch gar nicht ermessen kann. Ich glaube, das stimmt, das ist wahr. Aber — stimmt das nicht auch für die Männer? Ist das moderne Leben nicht für einen Typ der Männer gemacht, den es in der traditionellen Vorstellung gar nicht gegeben hat? Wo hat man in früherer <bibl ref="#zbz-w.705">Zeit</bibl> die Männlichkeit in einem Büro gesehen? (Heiterkeit und starker Beifall) Aber die große Mehrheit der Männer lebt jetzt in Büros, und niemand sagt, daß sie dabei ihre Männlichkeit verloren haben. (Heiterkeit)
+        </p>
+        <p facs="#facs_5_r_2">
+          Ich finde überhaupt diese Sorge für die Männlichkeit oder für die Weiblichkeit eigentlich verdächtig und unnatürlich. Es macht mich immer ein bißchen mißtrauisch, wenn ein Mann seine Männlichkeit betont oder eine Frau ihre Weiblichkeit. Bitte, lassen wir uns einfach so sein, wie wir sind, und glauben, daß unsere männliche oder weibliche Natur eben da ist. (Beifall)
+        </p>
+        <p facs="#facs_5_r_3">
+          Das ist die eine Seite des Geredes. Dann gibt es die andere. Es ist das Gerede über die absolute Gleichheit des Mannes und der Frau. Ich habe z. B. neulich erlebt, wie eine Frau, eine energische und verdienstvolle Feministin, ganz empört war darüber, daß in einem Schulplan in den Stunden, wo die Knaben Holzarbeit hatten, die Mädchen Kochstunden hatten. Sie fand, das sei eine furchtbare Diskriminierung. Das kann ich nicht verstehen. Jene absolute Gleichheit von Mann und Frau, die bedeutet, daß alle dasselbe in derselben <bibl ref="#zbz-w.705">Zeit</bibl> lernen müssen, ist für mich sinnlos. Erstens gibt es absolute Gleichheit faktisch nirgends, nicht nur nicht zwischen Männern und Frauen, sondern auch unter Männern und auch unter Frauen nicht. Wenn man von der Gleichheit der Menschen spricht, dann meint man damit gar nicht, daß sie gleich stark oder gleich schön oder gleich gut oder gleich intelligent sind. Man behauptet nur, daß jedes Menschenwesen in sich ein bestimmtes Geheimnis hat, nämlich das Geheimnis seiner Freiheit, seiner vernünftigen Freiheit. Und da ist etwas, wo etwas, was nicht vorauszusehen ist, immer geschehen kann und was das Heiligste in jedem Menschenwesen ist: in dieser Beziehung sind sie gleich. Eigentlich in etwas, wo man nichts weiß und worüber man objektiv nichts wissen kann. Aber in dem objektiv Feststellbaren sind die Menschen gar nicht gleich. Also sind Männer und Frauen, auch wenn sie wollen, nicht in diesem Sinne gleich. Gleichheit kann nur bedeuten, daß sie gleiche Möglichkeiten haben sollen, weil sie alle jenes Geheimnis gleich haben, jenes Geheimnis der vernünftigen Freiheit. Das hat nichts damit zu tun, daß sie identisch sein sollen. Was wirklich diskriminierend wäre, das wäre, wenn in den Stunden, in denen die Knaben etwa eine intellektuelle Übung machen, sagen wir Mathematik, die Mädchen stricken. Ich stricke sehr gern. (Heiterkeit) Aber Stricken übt nicht den mathematischen Sinn. Man muß allerdings beim Stricken rechnen, aber auf eine Weise, die doch den mathematischen Sinn nicht übt. Das wäre diskriminierend, gemäß dem alten Vorurteil, wonach die Frau in ihren Denkmöglichkeiten nicht so geübt wird wie der Mann. Man muß weiter gegen die Diskriminierung in den Unterrichtsfächern kämpfen, da, wo sie die Chancen einer verantwortungsvollen Menschlichkeit in Leben und Arbeit für die Frau vermindern; aber nicht für eine chimärische, unwirkliche und nicht mal wünschbare Identität. Wer wünscht das? Wer wünscht überhaupt, daß ein Mann und eine Frau dasselbe sind? Ich wünsche überhaupt, daß alle Männer so verschieden werden untereinander wie nur möglich — und die Frauen auch. Die Verschiedenheit, das ist der Reichtum der Menschheit. Und die wahre Gleichheit ist die der Verant-
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          wortungsfähigkeit. Und die soll tatsächlich in aller Gestalt in Schutz genommen werden überall da, wo es immer noch Diskrimination gibt, z. B. wo Eltern von vornherein viel lieber ihre Knaben längere <bibl ref="#zbz-w.705">Zeit</bibl> in die Schule schicken als ihre Mädchen.
+        </p>
+        <p facs="#facs_6_r_2">
+          Also: Gerede vom „ewig Weiblichen“ im Sinne, wie ich es eben gesagt habe, und Gerede von der absoluten Gleichheit des Mannes und der Frau. Nun komme ich dazu, von der echten Verantwortung zu sprechen. Wir leben heute in einer Welt, die sozusagen gespalten ist vor ganz scharfen Möglichkeiten und Drohungen. Nie sind die Drohungen und nie die Chancen so groß gewesen für die Menschheit. Es hat nie so schlecht und nie so gut gehen können. Es hängt alles von uns ab. Ich habe — das muß ich Ihnen sagen — ich habe unsere <bibl ref="#zbz-w.705">Zeit</bibl> furchtbar gern, weil es eine <bibl ref="#zbz-w.705">Zeit</bibl> ist, wo die schönen Worte, die man durch die Jahrhunderte gebraucht hat, ohne zu viel Verpflichtung, — wo diese schönen Worte eine Probe geworden sind. Z. B., man hat so lange gesagt, alle Menschen sind Brüder. Aber es gab keine Möglichkeit, alle Menschen der Erde ordentlich zu ernähren, ordentlich zu unterrichten, ordentlich auszubilden, ihnen menschliche Möglichkeiten wirklich zu geben. Und da es die Möglichkeiten nicht gab, hatte man eben die Pflicht nicht, und deswegen konnte man es gewissermaßen mit gutem Gewissen wiederholen: alle Menschen sind Brüder. Denn man hatte das Gefühl, vielleicht tut man, was man kann, mehr kann man eben nicht. Jetzt aber kann man. Jetzt ist es anders. Jetzt können wir es nicht mehr so wiederholen, denn wir müssen es tun. Es ist sozusagen, wie wir auf französisch sagen, „l'heure de vérité“, die Stunde der Wahrheit, wo man sehen wird, ob diese Worte ernst waren oder nur Gerede. Es ist jetzt möglich — und also Pflicht geworden, diese großen Worte in die geschichtliche Wirklichkeit wirklich zu verkörpern, ihnen faktische Gegenwart zu geben. Genauso wirklich sind die Drohungen des Schlimmsten geworden, und dabei denke ich nicht mal an die Atombombe und die allgemeine Vernichtung der Menschen, sondern an viel undramatischere Dinge, z. B. wenn die Bewohner der reichen Länder allmählich resignieren und sagen: schließlich kommt man doch zu keinem Ergebnis in den Entwicklungsländern; also kümmern wir uns um unsere eigene Sache, und überlassen wir die anderen ihrem Schicksal. Oder wenn wir in eine Gesellschaft kommen, wo alles wie in einem großen Betrieb freiheitslos technisch funktioniert, so daß die Menschen schließlich nur noch Produktionsmittel sind, Produktionsmittel im Dienste des mechanischen Betriebs, und nicht mehr freie Konsumenten, so daß sie keinen anderen Zweck im Studium und im Leben haben, als Güter hervorzubringen. Vor diesen extremen besten und schlimmsten Möglichkeiten ist also die Verantwortung jedes einzelnen Menschen ungeheuer gestiegen.
+        </p>
+        <p facs="#facs_6_r_3">
+          Und was nun mit der Frau? Diese Verantwortung, glaube ich, trägt die Frau auf ihre Weise, vor sich selbst, vor dem Mann, vor den Kindern, vor dem Beruf, vor dem Lande, vor der Menschheit und vor allem, womit sie in Berührung kommt: vor der Kultur. Ich will einiges darüber sagen. Zunächst einmal Verantwortung vor sich selbst. Es gibt eine Formel, — man sagt, man will sein Wesen erfüllen. Das ist wieder so etwas Merkwürdiges. Seltsamerweise, wer sehr viel daran denkt, „sein Wesen zu erfüllen“, erfüllt es nicht. Das ist wieder so etwas, was geschieht, indem man an etwas anderes oder an andere denkt. Wenn man wirklich etwas verwirklicht, z. B. eine <orgName ref="#zbz-o.610">Luisenschule</orgName> aufrechterhält, wenn man eine Klasse wirklich unterrichtet, wenn man Kranke pflegt, wenn man dem Frieden Chancen gibt, dann vergißt man, sein Wesen auszufüllen, — und es erfüllt sich. Es erfüllt sich auf eine vergeßliche Weise; es erfüllt sich sozusagen indirekt, indem man an etwas anderes denkt. Und da komme ich wieder zu der Schulerfahrung und zu dem Studiumssinn. Ich kann mich ganz genau erinnern, wie ich in die Schule kam, — oft mit meinen persönlichen Sorgen, manchmal mit dem Gefühl: ich werde heute nicht unterrichten können. Alle Lehrer kennen das: „Ich werde nicht unterrichten können.“ Und da kommt man in die Klasse, und alle persönliche Sorge ist weg. Und wenn man aus der Schule wieder heraus-
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          kommt, findet man sein persönliches Leben wieder, das einen auf der Schwelle erwartete. Aber in der Klasse gab es nichts davon. Ich glaube, der Sinn des Studiums ist auch von einer solchen Art. Mancher studiert, um in der Gesellschaft einen bestimmten Status zu erreichen — es ist sehr gut, daß man dadurch einen Status erreicht —, aber das ist nicht der Sinn der Sache. Und deswegen ist das Studium auch für Mädchen so wichtig, genauso wie für Jungen. Es hat keinen Sinn zu meinen, das Mädchen werde sowieso den Status des Mannes haben, die Studien, die es gemacht hat, spielten also keine <placeName ref="#zbz-l.565">Rolle</placeName>. Das Studium ist eine Möglichkeit, sich in der Welt zu situieren, zu wissen, wo man steht, in welcher Welt, wie diese Welt ist, wie diese Welt sich verändert, wie man in dieser Veränderung mitwirken kann, wie man sie beeinflussen kann, wie man alle Probleme des alltäglichen Lebens, die eigenen und die der Gemeinschaft, klar denken kann, wie man die Gedanken, die einem wiederholt werden, vom Radio, vom Fernsehen usw., prüfen kann, wie man objektiv zu einer Meinung kommen kann. Im <placeName ref="#zbz-l.2">Französischen</placeName> hat man die Verbindung der zwei Wörter „justesse“ und „justice“: was korrekt gedacht ist, entspricht der Gerechtigkeit. Die Korrektheit und die Gerechtigkeit, die passen zusammen.
+        </p>
+        <p facs="#facs_7_r_2">
+          Durch das Studium erwirbt man eine Vielheit von Ebenen, auf denen man leben, auf denen man verstehen kann: die Ebene des Alltäglichen, die Ebene des Ökonomischen, der Preise, der Dinge des Budgets, die Ebene, wo man Musik hört, die Ebene, wo man etwas liest, die Ebene, wo man etwas versteht, die Ebene der weiten Welt, die Ebene des Glaubens usw. Eine Vielheit der Pläne, eine Möglichkeit des Treffens, des Begegnens, im Raum und in der <bibl ref="#zbz-w.705">Zeit</bibl>. Und daraus entspringt eine Möglichkeit der Freude, die gar nichts damit zu tun hat, ob man einen Status erreicht oder nicht, sondern der Freude in jedem Status. Also ist es in der Verantwortung sich selbst gegenüber eine Pflicht für die Frau, alle Möglichkeiten zum Lernen und schöpferischen Tätigsein wahrzunehmen. Und hier möchte ich eine kleine Bemerkung machen, eine Nebenbemerkung. Es gibt ein Vorurteil, wonach man glaubt, daß die Frauen begabt sind für Sprachen, Literatur, Kunst, vielleicht <bibl ref="#zbz-w.1">Philosophie</bibl>, aber nicht begabt für Naturwissenschaft, Technik usw. Ich glaube — ich kann das nicht mit voller Sicherheit behaupten —, aber ich glaube, daß es falsch ist. Bis jetzt haben die Frauen mehr in den Laboratorien und in der Naturwissenschaft erreicht als in den literarischen Berufen. In den Laboratorien arbeiten die Frauen sehr gut, ihre Sorgfalt, ihre Gewissenhaftigkeit spielen eine sehr große <placeName ref="#zbz-l.565">Rolle</placeName>. Ich glaube, da sollten Lehrer und Schülerinnen nachdenken, denn vielleicht versäumen sie manchmal Möglichkeiten aus einer bestimmten Furcht vor dem Wissenschaftlichen, die der Wahrheit der Erfahrung nicht entspricht.
+        </p>
+        <p facs="#facs_7_r_3">
+          Nun, die Verantwortung vor sich selbst hat noch eine Seite, die ich erwähnen möchte. Die Frau heutzutage hat viel mehr Möglichkeiten, ist viel verantwortlicher, wie ich’s am Anfang sagte, viel freier, genießt eine viel größere Ehrfurcht, aber sie hat ein schweres Leben. Viele Frauen haben zwei, drei Leben in ihrem Leben: Haushalt, Beruf, Familie, gesellschaftliches Leben usw. usw. Ich habe eine Frau gekannt, die mir sieben, acht Leben vorgerechnet hat, die sie in ihrem Leben hatte. Die Frauen haben also ein kompliziertes und schweres Leben. Und die 24 Stunden sind für sie meistens wirklich nicht genug. Hier komme ich auf eine ihrer Pflichten zu sprechen, die ich für sehr wichtig halte: die Frau darf nicht zu müde werden. Sie verträgt es schlecht, müde zu sein. Wenn sie müde wird, dann rächt es sich an ihrer Arbeit und an ihrer Umwelt. Es ist also eine Pflicht für die Gesellschaft ringsum, die Arbeits- teilung und die Arbeitsmöglichkeiten so zu schaffen, daß die Frauen einen Beruf ausüben können und doch nicht überlastet werden. Das ist wirklich notwendig. Die Frauen haben meistens eine große nervöse Möglichkeit, sich zu überanstrengen. Und sie tun es gern, besonders wenn sie irgendwelche Leidenschaft haben oder wenn sie Menschen lieben. Sie tun alles grenzenlos; aber dann werden sie müde und verlieren dabei oft die Kontrolle über sich selbst, Geschmeidigkeit und Geduld.
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          Dann die Verantwortung dem Mann gegenüber; die ist meiner Ansicht nach heutzutage sehr, sehr wichtig. Es ist die Frau, die die Ebene bestimmt, auf der der Mann ihr gefällt. Ich weiß nicht, ob Sie mich verstehen. Je nach dem Anspruch der Frau werden die Männer sich zufrieden geben mit sich selbst; die Qualität der Erwartung der Frau wirkt stark auf das Niveau der Männer, der jungen Männer, der Knaben. Sehr vieles hängt von den Frauen und den jungen Mädchen ab. Wenn der junge Mann weiß, daß er dem Mädchen gefällt auf einer Ebene der Vulgarität, der Sinnlosigkeit, des blöden Lachens, der blöden Aufregung, dann wird er dabei bleiben. Wenn es der Frau mißfällt, wird er etwas anderes suchen. Diese Ebene der Forderung ist oft entscheidend. Ich kann mich erinnern an ein Mädchen, das sagte, als es ganz jung war, es wolle schwer zu lieben sein. Es wolle nicht, daß man es zu leicht liebe. Es wolle, daß man etwas zu überwinden habe, ehe man es liebe, damit die Tatsache, es zu lieben, schon eine Selektion bedeuten würde. Vielleicht ist das ein bißchen übertrieben, aber es hat etwas für sich. Die junge Frau kann auch gleich am Anfang des gemeinsamen Lebens für den jungen Mann ein Grund der Atrophie und der Feigheit werden*. Die überfrühte Heirat ist an sich sehr selten für die Entwicklung beider jungen Leute günstig. Diese Sitte hat in <placeName ref="#zbz-l.51">Amerika</placeName> angefangen, sie geht jetzt bei uns weiter. Die Frau und nachher das Kind werden eine Ursache dafür sein, daß der junge Mann so schnell wie möglich verdient und so viel verdient wie möglich, auf Kosten seines Studiums und seiner intellektuellen und kulturellen Entwicklung. Dazu kommt noch, daß diese frühe, überfrühe Verantwortung für Frau und Kinder für den jungen Mann leicht ein Grund der Feigheit werden kann, denn er gerät zu schnell in die Mühle ökonomischer Abhängigkeiten. Hier möchte ich doch noch etwas sagen. Ich habe von Ihren Lehrern gehört, daß manche unter Ihnen wegen des Dritten Reiches fragen: wie ist das alles möglich gewesen? Es ist eine furchtbar schwere Frage. Ich werde nicht mal versuchen, sie hier zu beantworten. Aber eines muß man sagen: Etwas, was dazu beigetragen hat, ist, daß, als das geschah, die Menschen sehr selten vor einer entscheidenden Alternative gestanden haben: entweder Feigheit ertragen oder sterben. Wenn das so gewesen wäre wie in den großen Tragödien der klassischen Literatur, hätten sich wahrscheinlich viel mehr Leute dem Grauenhaften widersetzt. Aber es war nicht so. Und es ist meistens in unserer heutigen Welt nicht so. Die Frage des Mutes oder der Feigheit stellt sich nicht mehr wie in der <bibl ref="#zbz-w.705">Zeit</bibl> des Ritters und des Drachens. Wie ich vorher sagte, leben die Männer heute in Büros und nicht mehr im Kampf mit dem Drachen. Oder der Drachen ist was ganz anderes geworden. Es ist ein hinterlistiger Drachen! In den Büros stellt sich die Alternative ganz anders als Leben oder Tod. Sie heißt: bekomme ich ein Avancement, werde ich befördert, werde ich nächstes Jahr mehr verdienen —, oder werde ich meinen Posten verlieren, irgendwo hinten hocken, während meine Kollegen vorwärtskommen —, wenn ich dem und dem und dem nachgebe? So sind die kleinen, winzigen Gelegenheiten des Mutes oder der Feigheit, wo gar nicht das Leben im Spiel ist, sondern kleine Sachen, die die Frau freuen, die Familie sichern würden. Und dann denkt man: „Ich bin ein guter Vater, die Frau
+        </p>
+        <note place="foot" n="1" xml:id="fn8-1" facs="#facs_8_r_2">
+          *) An dieser Stelle lautet die Diktion auf dem Tonband: „Das ist dann ganz schrecklich. Die jungen Leute heiraten jetzt furchtbar früh, meiner Ansicht nach viel zu früh. Das ist eine andere Frage. Ich habe heute leider nicht die <bibl ref="#zbz-w.705">Zeit</bibl>, diese Frage zu diskutieren. Aber ich glaube, das ist gar nicht gut. Das hat in <placeName ref="#zbz-l.51">Amerika</placeName> angefangen, das geht jetzt weiter bei uns, und ich finde, das ist nicht gut. Aber wenn schon diese Frühheiraten geschehen, dann sollte man sich folgende Frage stellen: Bis zu welchem Grade wird die Frau, und nachher das Kind, eine Ursache dafür, daß der junge Mann sich nicht mehr entwickelt, daß er so schnell wie möglich verdient und so viel verdient wie nur möglich, weil das der Frau eventuell gefällt? Und weiter: Inwiefern kann diese Verantwortung, diese frühe, überfrühe Verantwortung für die Frau und für die Kinder für den jungen Mann ein Grund der Feigheit werden?“
+        </note>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          wird sich freuen, wenn ich nur das nicht zu ernst nehme —, und allein kann ich sowieso nicht viel dafür.“ So geschieht nach und nach das Grauenhafte. Und so stellt sich die Frage heute. Es gibt heutzutage, in unserer Situation, auch viele Gelegenheiten, wo in Miniatur die Frage des hinterlistigen Drachens gestellt wird. Wie sie entschieden wird, hängt sehr viel von der Frau ab. Sie darf nicht auf die tragischen Alternativen und auf die ganz großartigen Gelegenheiten des Lebens warten, bis sie den Mann unterstützt, sondern der Mann muß wissen, daß er der Erwartung der Frau entsprechen muß, hier und jetzt, in den kleinen Gelegenheiten des Lebens. Also darf die Frau, da sie jetzt selbst eine offene Welt hat, den Mann nicht knechten durch ihre Bedürfnisse und die Bedürfnisse der Kinder. Sie muß ihm helfen, zu wachsen und seinen Mut zu entfalten, ihn nicht begrenzen, ihn nicht einschließen. Es gibt jetzt noch Frauen, die es kaum ertragen, ihren Mann arbeiten zu sehen; sie sind auf seine Arbeit eifersüchtig. Sie wollen, daß er die Arbeit wegläßt, daß er sich nur um sie kümmert. Die Frau muß fähig werden, die Arbeit des Mannes nach Möglichkeit nicht nur zu achten, sondern zu verstehen — zu folgen. Und auch da ist es wesentlich, daß sie lernt; denn je mehr sie gelernt und geübt hat, je mehr sie mitmacht in der Arbeit, in den politischen Fragen usw., desto mehr wird sie interessiert, und desto kräftiger wird sie den Mann in seiner Tätigkeit und Entfaltung unterstützen und anspornen.
+        </p>
+        <p facs="#facs_9_r_2">
+          Merken Sie, heutzutage ist die durchschnittliche Dauer des Lebens fast zweimal so lang geworden wie früher. Ich verstehe nicht, warum unter solchen Verhältnissen die jungen Menschen nicht ein klein bißchen warten können, bis sie heiraten. (Heiterkeit) Sie haben genug Jahre vor sich, um ihre Treue zu beweisen, eine ganze Menge Jahre, ein ganzes langes, langes Leben. Aber dieses Leben, damit es voll erlebt wird, braucht Tätigkeit, Interessen, sonst wird es leer. Ich bin fest überzeugt, daß viele mißlungene Heiraten mißlungen sind nicht wegen jener Charakterfehler, die man immer erwähnt, sondern einfach aus Leere. Es ist nichts so Schädliches im Leben wie die Leere, denn die Leere ist langweilig. Die Fülle dagegen erfindet, erfindet jeden Tag etwas Neues. Und diese erfinderische, schöpferische Kraft, das ist es, was die Ehe nährt durch das lange Leben hindurch. Wenn die Frau selbst sich weiterentwickelt, im Werden bleibt, dann liebt sie ihren Mann nicht so, wie er ist, wie ein totes Faktum, das da im Armstuhl sitzt (Heiterkeit), sondern die Möglichkeiten dieses Mannes, sein Werden. Dadurch wird alles lebendig, und die Langeweile kann vermieden werden.
+        </p>
+        <p facs="#facs_9_r_3">
+          Von der Verantwortung den Kindern gegenüber will ich sehr wenig sprechen, denn das weiß jeder. Aber hier wieder möchte ich die Eltern in erster Linie darauf aufmerksam machen, daß das Niveau der Ausbildung der Frau sich gleich in der Erziehung der Kinder widerspiegelt. Die ersten Möglichkeiten der neuen Generation liegen in der Erziehung der künftigen Mutter. Jeder weiß heutzutage, daß das Wichtigste in einem Menschen schon vor dem siebten Jahr geschieht — das Entscheidendste. Also ist es wirklich wesentlich, daß die Frauen studieren, auch wenn sie später eventuell keinen Beruf ausüben. Hier muß ich aber noch eine Bemerkung hinzufügen: Eine vierzigjährige Frau kann schon erwachsene Kinder haben, sie kann sogar — wie einige, die ich kenne — Großmutter sein. Was tut sie dann? Sie ist frei, sie hat keine Kinder mehr zu Hause, und sie hat noch ein langes Leben vor sich. Warum kann sie dann nicht von 40 Jahren bis zu 80 Jahren noch etwas Wichtiges und Interessantes tun? (Heiterkeit) Aber um dazu fähig zu sein, muß sie in ihrer Jugend in der Schule gelernt haben; sie muß wissen, was Lernen ist; und sie muß in erster Linie in der Schule gelernt haben, daß das Studium nie fertig ist. Das Studium ist nie fertig. Ein fertiges Studium, das ist ein Widerspruch im Wort. Das Studium in einer sich verwandelnden Welt wie dieser dauert so lange wie das Leben. Um das zu begreifen, sind Schule und Hochschule unentbehrlich.
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          Nun die Verantwortung im Beruf. Der Beruf ist nicht nur Mittel, der Beruf ist auch Zweck. Er ist Mittel, um etwas zu verdienen, um den anderen, der Gesellschaft, was jeder ihr schuldet, mit eigener Arbeit zu zahlen. Er ist aber auch Zweck. Der Beruf ist im Leben wesentlich. Es gibt keine Berufe, die nichts mit dem Wesen des Menschen zu tun haben. Die Verachtung vor so vielen Arbeiten kann ich schlecht verstehen. Es gibt natürlich Interessantere und langweiligere Arbeiten, und es gibt Arbeiten, bei denen es schwierig ist, interessiert zu sein. Selbst dann kann man jedoch noch mit der Arbeit spielen, man kann mit sich selbst Wettbewerbe machen, man kann verschiedene Techniken erfinden, man kann versuchen, zu sparen, die Ordnung der Operationen zu wechseln, um zu sehen, welche die leichtere und günstigere ist. Erst schlimmstenfalls, wenn die Arbeit ganz mechanisch wird, kann man an etwas anderes denken.
+        </p>
+        <p facs="#facs_10_r_2">
+          Jetzt komme ich zu einem Punkt, den ich für sehr, sehr wichtig halte: die politische Verantwortung. Der Zugang der Frau zur Politik kann etwas sehr Wohltuendes sein. Ich spreche jetzt nicht einmal von den Rechten der Frau, sondern von dem Ergebnis ihrer Mitwirkung. Der Mann ist sehr beredsam, er spricht viel, meistens mehr als die Frau, er hält leichter große Reden. (Heiterkeit) Aber die Frau ist es gewohnt, auf den Markt zu gehen und einzukaufen. Und da muß sie sachlich und sauber rechnen. Wenn sie das Nötige kaufen soll, muß sie das Geld dafür haben. Das ist eine alltägliche, streng nüchterne Erfahrung. Was ich damit sagen will, ist, daß auch in der heutigen Welt und auch nach all den Veränderungen, von denen ich sprach, die Frau viel wortwörtlicher ist als der Mann. Jeden Tag kann sie — muß sie — die Versprechen mit den Tatsachen vergleichen. Infolgedessen interessiert sie sich wenig für Politik, solange sie glaubt, daß Politik sich in Reden erschöpft. Versteht sie aber den Zusammenhang zwischen politischen Reden und alltäglichen realen Zuständen, dann interessiert sie sich auf kritisch konkrete Weise dafür. Die meisten Frauen haben leider nicht gelernt, die Wirkungen der Politik in allen Bereichen des Alltags einzusehen. Sie kennen die Kanäle zwischen den verschiedenen Ebenen des privaten und öffentlichen Lebens schlecht. Sie halten für abstrakt, was nur allgemein ist, was nur im weiteren Raum geschieht. Sie glauben, daß es wirkungslos ist. Und weil sie oft leere Reden hören, glauben sie, daß die politische Wirklichkeit als Ganzes keine konkreten Folgen hat. Aber die politische Wirklichkeit hat Folgen und verlangt ständige Wachsamkeit. Und das müssen die Frauen praktisch lernen. Ich wäre dafür, daß man eine Art Unterricht erfindet — ich glaube, den gibt es gar nicht, — eine Art Unterricht, in dem man gerade die Kanäle, durch die manche politischen Entscheidungen ihre Folgen im alltäglichen Leben haben, ganz genau verfolgt und aufweist. Z. B. die Verhältnisse des <orgName ref="#zbz-o.56">Gemeinsamen Marktes</orgName> und des alltäglichen Lebens. Dann könnte die Frau ihre ernste wortwörtliche Sorge auch der politischen Ebene widmen. Und das wäre ganz wesentlich.
+        </p>
+        <p facs="#facs_10_r_3">
+          Am allerentscheidendsten ist letztlich die politische Entwicklung dadurch, daß sie den Frieden oder den Krieg vorbereitet. Um diesen Punkt herum häufen sich bequeme Lügen und beredte Illusionen. Man behauptet oft, daß die Frau, weil sie enger und direkter als der Mann mit Leben, Liebe und Kind verbunden ist, die natürliche Berufung und Begabung hat, den Frieden gegen die männliche Kampflust zu bewahren. Das wäre vielleicht wahr (selbst dann aber nicht ganz sicher), wenn moderne Kriege aus einem klaren Beschluß der Völker entstünden. Es ist aber nicht so. Kriege entstehen aus einer Unmenge von Faktoren, zu denen jede politische Wendung, jede politische Haltung, jedes ethische Urteil und sogar jede Lebensweise der Gruppen und des einzelnen beitragen können und meistens faktisch beitragen. Es genügt also keineswegs, „gegen den Krieg zu sein“, sondern es braucht die alltägliche verantwortliche politische — und sogar private Wachsamkeit aller Bürger und Bürgerinnen, um den Frieden zu wahren.
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          Durch die Weise z. B., wie eine einheimische Mutter das Kind eines ausländischen Nachbarn behandelt, trägt sie zum zukünftigen Frieden oder Krieg bei. Und sie tut es auch durch die Weise, wie sie den drohenden Hunger in den Entwicklungsländern empfindet, und durch die Opfer, die sie bereit oder nicht bereit ist, auf sich zu nehmen, um diese Drohung zu entfernen. Fast durch jede politische Entscheidung — nicht nur der Außenpolitik, sondern auch der Innenpolitik und der Wahlen — werden die Chancen des Krieges und des Friedens beeinflußt. Es genügt also nicht, nett und freundlich zu sein und gute Absichten zu hegen. Man muß wachsam sein, sich erkundigen, so viel wie möglich wissen und verstehen wollen, die Verantwortung mittragen — und sie nie unter dem Schein der Demut träge, feige und abergläubisch irgendwelchen „Übermenschen“, die „es besser zu wissen“ behaupten, überlassen*).
+        </p>
+        <p facs="#facs_11_r_2">
+          Dazu kommt noch etwas anderes. Weil die Frau unmittelbar „den Frieden will“, darf sie sich doch nicht mit bequemen kurzsichtigen „Lösungen“ zufrieden geben, die die unentrinnbaren scharfen Entscheidungen nur verschieben, so daß das Schlimmste, das dem Frieden droht, gerade <bibl ref="#zbz-w.705">Zeit</bibl> hat, zu wachsen und mächtig zu werden. Unsere Geschichte ist schon zu lang, wir haben zu viele und zu schreckliche Kriege erlebt, um weiter zu glauben, daß freundliche Gefühle genügen, um Konflikte zu vermeiden oder zu regeln. Konflikte wird es unter Menschen geben, so lange es Menschen geben wird, und der menschliche Frieden kann nicht der eines friedlichen Stalles sein. Was aber geschehen kann und muß, ist die sittliche Herrschaft eines überstaatlichen Rechtes, so daß die entstehenden Konflikte jeder Art nie mehr durch Gewalt, sondern durch Schiedsspruch oder andere rechtliche Verfahren gelöst oder tragbar gemacht werden. Gewalt ist an sich sinnlos, und kein gewaltsamer Sieg kann je ein Recht beweisen.
+        </p>
+        <p facs="#facs_11_r_3">
+          Die Frauen haben hier eine besonders große Verpflichtung, die ihnen besonders schwerfällt: sie haben es nicht leicht, ihre unmittelbaren Gefühle des Anspruchs oder der Empörung zu überwinden, um eine kalte rechtliche Ordnung anzuerkennen und zu achten. Dazu müssen sie sich aber erziehen, um dann ihre Kinder dazu erziehen zu können. Denn ohne Rechtsordnung in der Welt kann es keinen Frieden geben.
+        </p>
+        <p facs="#facs_11_r_4">
+          Ich glaube, ich habe eigentlich zu lange gesprochen, so wie ein Mann. (Heiterkeit) Und ich bitte sehr um Entschuldigung, denn die beiden Männer**), die vor mir gesprochen haben, haben sich so kurz gefaßt, daß es wirklich für mich eine Schande ist. (Große Heiterkeit)
+        </p>
+        <p facs="#facs_11_r_5">
+          Aber ich möchte Ihnen nochmals für die Gelegenheit danken, die Sie mir gegeben haben. Ich möchte der <orgName ref="#zbz-o.610">Luisenschule</orgName> ein langes, glückliches, volles, freies Leben wünschen. Ich möchte eine schöne, volle Zukunft allen Schülerinnen wünschen, die hier sind, und dem Kollegium nochmals danken. Danke! (Langanhaltender Beifall)
+        </p>
+        <note place="foot" n="1" xml:id="fn11-1" facs="#facs_11_r_6">
+          *) Die Worte über die Verantwortung der Frau für den Frieden in der Welt hat die Rednerin wegen Zeitmangels nicht gesprochen. Sie wurden nachträglich von ihr eingefügt.
+        </note>
+        <note place="foot" n="2" xml:id="fn11-2" facs="#facs_11_r_7">
+          **) Vorher hatte Oberstudiendirektor Dr. <persName ref="#zbz-p.1795">Jacobs</persName> die Festversammlung begrüßt, Oberbürgermeister <persName ref="#zbz-p.1796">Nieswandt</persName> hatte die Glückwünsche der Stadt überbracht.
+        </note>
+      <pb facs="#facs_12" n="12" />
+        <p>
+          Nachdruck, auch auszugsweise, verboten.
+        </p>
+      </div>
+      </body></text>
+</TEI>

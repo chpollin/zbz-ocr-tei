@@ -1,0 +1,43 @@
+{
+  "doc_id": "3190",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 21,
+  "lang": "eng",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: Hazards of Learning, G. R. Urban, eng"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 1 Warning (W9: 4/197 ohne ref)"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 115p 52o 30l 29w = 226"
+    },
+    {
+      "severity": "info",
+      "code": "S3",
+      "msg": "sp/speaker-Struktur, 1x speaker-Misklassifikation (ganzer Satz als speaker-Text)"
+    },
+    {
+      "severity": "info",
+      "code": "S1",
+      "msg": "Kopie-Vermerke (subito e.V. / ZBZ) korrekt als Faksimile-Text erhalten"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Interview Hersch/Urban ueber Universitaet, Jugend, Nihilismus, kohaerenter Dialog"
+    }
+  ]
+}

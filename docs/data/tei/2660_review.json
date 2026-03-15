@@ -1,0 +1,27 @@
+{
+  "doc_id": "2660",
+  "reviewer": "claude-opus-4-6-quality-screener",
+  "date": "2026-03-15",
+  "tier": 3,
+  "pages": 10,
+  "status": "NEEDS_REVIEW",
+  "errors": 1,
+  "warnings": 2,
+  "findings": [
+    {
+      "severity": "error",
+      "code": "S3",
+      "msg": "Spurious <sp>/<speaker> on p.6: 'Gesetzen beruhen', 'In der schoenen Vorstellung...', 'Nun sagt man auf franzoesisch' -- prose incorrectly wrapped as dialogue"
+    },
+    {
+      "severity": "warning",
+      "code": "L1",
+      "msg": "Anomalous zone coordinate facs_9_r_4: uly=10686, far outside page bounds (lry=1190)"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 34p 8o 17l 14w = 73; W9: 4/59 ohne ref"
+    }
+  ]
+}

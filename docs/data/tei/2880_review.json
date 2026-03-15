@@ -1,0 +1,40 @@
+{
+  "doc_id": "2880",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 2],
+      "notes": "4pp Dankesrede Jaspers-Preis. Einspaltig, klarer Druck."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutscher Text korrekt. Scharfes S, Umlaute erhalten."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltig. Gemini-Overlay S.1+S.2 geprueft, Zonen korrekt."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Warnings. 1 Fussnote korrekt kodiert."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 11, "orgName": 1, "placeName": 1, "bibl": 6},
+      "notes": "Jaspers, Kant, Gott, Kierkegaard, Nietzsche korrekt. Werkverweise (Vernunft und Existenz, Grosse Philosophen etc.) passend."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Philosophische Rede ueber philosophia negativa. Kohaerenter akademischer Text."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Sauberes Dokument, philosophischer Fachtext ohne Maengel."
+}

@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Le travail entre contrainte et liberté</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1600</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Le travail entre contrainte et liberté</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1979</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 6p 16o 8l 10w = 40; zbz-refs present; Validator: VALID, 0 errors, 0 warnings; Overlay S2+S3: multi-column magazine layout; many small zones but acceptable (+1 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1117" lry="1659">
+      <zone xml:id="facs_1_r_1" ulx="378" uly="129" lrx="831" lry="260" />
+      <zone xml:id="facs_1_r_2" ulx="378" uly="331" lrx="1073" lry="374" />
+      <zone xml:id="facs_1_r_3" ulx="378" uly="552" lrx="961" lry="635" />
+      <zone xml:id="facs_1_r_4" ulx="641" uly="766" lrx="928" lry="809" />
+      <zone xml:id="facs_1_r_5" ulx="648" uly="1494" lrx="1073" lry="1597" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1117" lry="1665">
+      <zone xml:id="facs_2_r_1" ulx="737" uly="72" lrx="1051" lry="410" />
+      <zone xml:id="facs_2_r_2" ulx="59" uly="121" lrx="604" lry="233" />
+      <zone xml:id="facs_2_r_3" ulx="62" uly="272" lrx="280" lry="316" />
+      <zone xml:id="facs_2_r_4" ulx="64" uly="360" lrx="112" lry="375" />
+      <zone xml:id="facs_2_r_5" ulx="744" uly="424" lrx="1055" lry="643" />
+      <zone xml:id="facs_2_r_6" ulx="65" uly="443" lrx="718" lry="582" />
+      <zone xml:id="facs_2_r_7" ulx="749" uly="727" lrx="932" lry="754" />
+      <zone xml:id="facs_2_r_8" ulx="748" uly="763" lrx="1058" lry="1027" />
+      <zone xml:id="facs_2_r_9" ulx="74" uly="818" lrx="344" lry="858" />
+      <zone xml:id="facs_2_r_10" ulx="418" uly="839" lrx="727" lry="1126" />
+      <zone xml:id="facs_2_r_11" ulx="74" uly="897" lrx="393" lry="991" />
+      <zone xml:id="facs_2_r_12" ulx="78" uly="1043" lrx="395" lry="1164" />
+      <zone xml:id="facs_2_r_13" ulx="768" uly="1053" lrx="954" lry="1077" />
+      <zone xml:id="facs_2_r_14" ulx="751" uly="1087" lrx="1059" lry="1185" />
+      <zone xml:id="facs_2_r_15" ulx="81" uly="1176" lrx="398" lry="1558" />
+      <zone xml:id="facs_2_r_16" ulx="753" uly="1197" lrx="1061" lry="1315" />
+      <zone xml:id="facs_2_r_17" ulx="423" uly="1279" lrx="662" lry="1311" />
+      <zone xml:id="facs_2_r_18" ulx="422" uly="1318" lrx="730" lry="1559" />
+      <zone xml:id="facs_2_r_19" ulx="755" uly="1486" lrx="1063" lry="1560" />
+      <zone xml:id="facs_2_r_20" ulx="1027" uly="1595" lrx="1065" lry="1615" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1117" lry="1665">
+      <zone xml:id="facs_3_r_1" ulx="57" uly="57" lrx="368" lry="236" />
+      <zone xml:id="facs_3_r_2" ulx="728" uly="57" lrx="1036" lry="325" />
+      <zone xml:id="facs_3_r_3" ulx="57" uly="238" lrx="368" lry="915" />
+      <zone xml:id="facs_3_r_4" ulx="389" uly="784" lrx="699" lry="1232" />
+      <zone xml:id="facs_3_r_5" ulx="723" uly="1128" lrx="973" lry="1168" />
+      <zone xml:id="facs_3_r_6" ulx="721" uly="1205" lrx="1029" lry="1574" />
+      <zone xml:id="facs_3_r_7" ulx="55" uly="1320" lrx="385" lry="1364" />
+      <zone xml:id="facs_3_r_8" ulx="392" uly="1340" lrx="672" lry="1370" />
+      <zone xml:id="facs_3_r_9" ulx="388" uly="1374" lrx="695" lry="1547" />
+      <zone xml:id="facs_3_r_10" ulx="55" uly="1375" lrx="363" lry="1544" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1117" lry="1665">
+      <zone xml:id="facs_4_r_1" ulx="104" uly="51" lrx="423" lry="291" />
+      <zone xml:id="facs_4_r_2" ulx="451" uly="334" lrx="759" lry="620" />
+      <zone xml:id="facs_4_r_3" ulx="107" uly="370" lrx="412" lry="409" />
+      <zone xml:id="facs_4_r_4" ulx="106" uly="425" lrx="429" lry="1031" />
+      <zone xml:id="facs_4_r_5" ulx="783" uly="502" lrx="1094" lry="936" />
+      <zone xml:id="facs_4_r_6" ulx="466" uly="664" lrx="749" lry="922" />
+      <zone xml:id="facs_4_r_7" ulx="789" uly="1019" lrx="1018" lry="1045" />
+      <zone xml:id="facs_4_r_8" ulx="457" uly="1020" lrx="715" lry="1046" />
+      <zone xml:id="facs_4_r_9" ulx="458" uly="1054" lrx="766" lry="1539" />
+      <zone xml:id="facs_4_r_10" ulx="789" uly="1055" lrx="1099" lry="1538" />
+      <zone xml:id="facs_4_r_11" ulx="120" uly="1155" lrx="393" lry="1175" />
+      <zone xml:id="facs_4_r_12" ulx="119" uly="1188" lrx="432" lry="1356" />
+      <zone xml:id="facs_4_r_13" ulx="124" uly="1370" lrx="435" lry="1539" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1117" lry="1665">
+      <zone xml:id="facs_5_r_1" ulx="53" uly="75" lrx="366" lry="317" />
+      <zone xml:id="facs_5_r_2" ulx="401" uly="167" lrx="686" lry="532" />
+      <zone xml:id="facs_5_r_3" ulx="53" uly="382" lrx="364" lry="718" />
+      <zone xml:id="facs_5_r_4" ulx="725" uly="477" lrx="1032" lry="670" />
+      <zone xml:id="facs_5_r_5" ulx="388" uly="573" lrx="702" lry="1079" />
+      <zone xml:id="facs_5_r_6" ulx="55" uly="834" lrx="362" lry="877" />
+      <zone xml:id="facs_5_r_7" ulx="52" uly="891" lrx="363" lry="1321" />
+      <zone xml:id="facs_5_r_8" ulx="726" uly="936" lrx="910" lry="960" />
+      <zone xml:id="facs_5_r_9" ulx="722" uly="996" lrx="1030" lry="1172" />
+      <zone xml:id="facs_5_r_10" ulx="389" uly="1194" lrx="653" lry="1234" />
+      <zone xml:id="facs_5_r_11" ulx="386" uly="1250" lrx="695" lry="1560" />
+      <zone xml:id="facs_5_r_12" ulx="721" uly="1270" lrx="818" lry="1296" />
+      <zone xml:id="facs_5_r_13" ulx="721" uly="1309" lrx="1026" lry="1535" />
+      <zone xml:id="facs_5_r_14" ulx="69" uly="1357" lrx="351" lry="1560" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          O
+        </p>
+        <p facs="#facs_1_r_2">
+          <bibl ref="#zbz-w.259">Management-Zeitschrift</bibl> Industrielle Organisation
+        </p>
+        <p facs="#facs_1_r_3">
+          #
+        </p>
+        <p facs="#facs_1_r_4">
+          Fachorgan folgender Institutionen:
+        </p>
+        <note place="foot" n="1" xml:id="fn1-1" facs="#facs_1_r_5">
+          - <orgName ref="#zbz-o.198">BWI Betriebswissenschaftliches Institut der ETH</orgName><lb facs="#facs_1_l_5_1" n="N001" />- <orgName ref="#zbz-o.199">ASOS Schweiz. Gesellschaft für Management</orgName><lb facs="#facs_1_l_5_2" n="N002" />- <orgName ref="#zbz-o.200">SVI Schweiz. Verein für Instandhaltung</orgName><lb facs="#facs_1_l_5_3" n="N003" />- <orgName ref="#zbz-o.201">SVOR Schweiz. Vereinigung für Operations Research</orgName><lb facs="#facs_1_l_5_4" n="N004" />- <orgName ref="#zbz-o.202">VSBI Vereinigung Schweiz. Betriebsingenieure</orgName>
+        </note>
+        <p>
+          Herausgeber: <orgName ref="#zbz-o.198">Betriebswissenschaftliches Institut der Eidg. Technischen Hochschule</orgName> in <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p>
+          1979
+        </p>
+        <p>
+          48. Jahrgang / Année 48 / Volume 48
+        </p>
+        <p>
+          Verantwortlicher Schriftleiter:<lb facs="#facs_1_l_9_1" n="N001" />Dr. rer. pol. Roland H. Scheuchzer
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          verlag industrielle organisation
+        </p>
+        <p>
+          Zürichbergstraße 18, CH-8028 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p>
+          © Copyright 1979
+        </p>
+        <p>
+          Für jeden Nachdruck ist die vorherige schriftliche
+        </p>
+        <p>
+          Zustimmung der Verlagsleitung einzuholen
+        </p>
+        <p>
+          Druck (Offset): <orgName ref="#zbz-o.203">Buchdruckerei Berichthaus</orgName>, <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <bibl ref="#zbz-w.258">Le travail entre contrainte et liberté</bibl>
+        </p>
+        <p facs="#facs_2_r_2">
+          Prof. Dr <persName ref="#zbz-p.2">Jeanne Hersch</persName>,<lb facs="#facs_2_l_2_1" n="N001" /><orgName ref="#zbz-o.6">Université de Genève</orgName>
+        </p>
+        <p facs="#facs_2_r_3">
+          DK 331
+        </p>
+        <p facs="#facs_2_r_4">
+          Le travail, droit ou servitude? – Dans la société industrielle, il s'est séparé de l'objet produit; il n'est plus vécu comme service rendu; les conditions ambiantes sont souvent pénibles; le temps qu'il prend est dérobé aux joies de la consommation. D'où le rêve d'une société d'artistes créateurs. Mais les contraintes ont une fonction et le travail ne disparaîtra pas. Il importe: de compenser peine ou ennui; d'intégrer travail et loisir; d'aménager la vie professionnelle des femmes; de réconcilier l'homme et son travail.
+        </p>
+        <p facs="#facs_2_r_5">
+          Le travail – un droit ou une servitude?
+        </p>
+        <p facs="#facs_2_r_6">
+          Le terme «travail» est tellement général, il englobe des choses si différentes, qu'on peut lui faire dire à peu près n'importe quoi. Quand j'étais écolière, nous chantions en classe:
+        </p>
+        <p facs="#facs_2_r_7">
+          Travaillons ma mie en chantant,<lb facs="#facs_2_l_7_1" n="N001" />Travailler, youpst, c'est la vie.
+        </p>
+        <p facs="#facs_2_r_8">
+          Refrain inimaginable aujourd'hui: le terme n'évoque guère que l'ouvrière asservie à la chaîne d'une fabrique de saucisses («La Salamandre») ou le comptable humilié d'un gros capitaliste.
+        </p>
+        <p facs="#facs_2_r_9">
+          Nous sommes d'ailleurs plongés dans les contradictions. Luttant contre le chômage, on parle du «Droit au travail» comme d'un des droits fondamentaux, dont le respect est nécessaire à la dignité humaine. Mais lorsqu'on lutte pour 35 heures de travail par semaine au lieu de 40, il s'agit de réduire la part de la servitude, de l'abrutissement, de l'humiliation. C'est pourquoi d'ailleurs «la mère au foyer» d'une famille nombreuse «ne travaille pas», dit-on. Mais d'un autre côté on cherche à la convaincre qu'elle s'est résignée à une condition où elle ne peut ni donner sa mesure, ni «s'épanouir». Elle «s'épanouirait»
+        </p>
+        <p facs="#facs_2_r_10">
+          en revanche si elle, «travaillait», c'est-à-dire si elle avait au-dehors une activité salariée. Celles qui l'encouragent ainsi sont le plus souvent avocates, professeurs, médecins, politiciennes. Elles semblent admettre qu'un travail payé dans une buanderie, une centrale téléphonique, un magasin de chaussures, ou simplement à la machine à écrire, donnerait à la mère de famille des chances d'«épanouissement» égales aux leurs, ou en tout cas bien supérieures à celles des tâches familiales.
+        </p>
+        <p facs="#facs_2_r_11">
+          L'ambiguïté du «travail», dans la société actuelle, touche à l'incohérence. Mais il y a à cela des raisons bien réelles.
+        </p>
+        <p facs="#facs_2_r_12">
+          De quel travail s'agit-il?
+        </p>
+        <p facs="#facs_2_r_13">
+          La vérité, c'est qu'il y a de telles différences entre les diverses sortes de travail qu'il est même difficile de leur trouver quelque chose de commun. Il y a d'abord les extrêmes: le travail de l'interprète virtuose ou du compositeur, de l'inventeur, ou de la mère aimante, est une raison de vivre – le travail du manœuvre l'empêche d'exister. Entre ces extrêmes, il y a toutes les variantes, tous les degrés, toutes les combinaisons, proportions et disproportions. Le cuisinier, la couturière, l'enseignant connaissent tour à tour, et parfois même ensemble, la lassitude des corvées et l'enthousiasme de l'effort vers la réussite. Même chez le créateur, l'endurance, la patience, la corvée, ont nécessairement leur part. Jusque chez «l'ouvrier spécialisé», il reste une application, un effort vers plus d'habileté, d'adresse du geste et du rythme, un certain concours avec soi-même. Ce mélange est inscrit dans l'être humain.
+        </p>
+        <p facs="#facs_2_r_14">
+          Mais, selon la proportion, variable à l'extrême, de libre élaboration ou d'exécution asservie qu'impliquent les diverses sortes de travail, l'attitude à son égard varie du tout au tout. C'est ce qui explique les incohérences mentionnées plus haut, selon qu'on généralise tel ou tel travail pour en faire le travail en général, panacée ou esclavage.
+        </p>
+        <p facs="#facs_2_r_15">
+          Le travail a changé
+        </p>
+        <p facs="#facs_2_r_16">
+          Or il n'est pas douteux que la nature du travail, ses conditions, son contexte, se trouvent profondément transformés dans la société industrielle, si on les compare à ce qu'ils étaient à l'âge agraire et artisanal. En outre, le contexte actuel de notre «société de consommation» transforme le rapport du travailleur à son temps de travail et de loisir, comme aussi au résultat de son effort et au sens de son activité.
+        </p>
+        <p facs="#facs_2_r_17">
+          A l'âge agraire et artisanal
+        </p>
+        <p facs="#facs_2_r_18">
+          Il ne faut certes pas idéaliser les travaux dans les champs ou les bourgs d'autrefois. Mais il ne faut pas non plus oublier leurs traits les plus évidents.
+        </p>
+        <p facs="#facs_2_r_19">
+          D'abord, le travail s'imposait comme une nécessité à presque tous. On voyait les autres travailler autour de soi, ce qui leur permettait tant bien que mal de vivre et de faire vivre leurs familles.
+        </p>
+        <p facs="#facs_2_r_20">
+          Ensuite, le travail tendait à un résultat bien concret et déterminé: une bonne récolte, un beau troupeau, un objet, un fonctionnement, – et ce résultat dépendait manifestement de la quantité et de la qualité de l'effort.
+        </p>
+        <p>
+          Quand la récolte, la bête ou l'objet étaient vendus, le cycle de l'échange était chargé de sens. Qui vendait du blé
+        </p>
+        <p>
+          <bibl ref="#zbz-w.259">Management-Zeitschrift</bibl> io 48 (1979) Nr.5 <persName ref="#zbz-p.2">Jeanne Hersch</persName> <bibl ref="#zbz-w.258">Le travail entre contrainte et liberté</bibl> © <orgName ref="#zbz-o.204">Verlag Industrielle Organisation</orgName> <orgName ref="#zbz-o.205">BWI ETH</orgName> – Zürichbergstraße 18, CH-8028 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          ou du fromage avait conscience de participer à une activité nourricière. Qui ferrait un cheval rendait service à un voisin. Qui fabriquait une table l'entourait d'avance de ses convives. Chacun avait une fonction, rendait un service, se savait utile.
+        </p>
+        <p facs="#facs_3_r_2">
+          Enfin, le travail était fatigant, souvent très dur, on aurait souvent souhaité plus de temps pour le repos. Mais le travail n'était pas « ce qui vous empêche de faire autre chose », parce qu'« autre chose » existait à peine. Être éveillé, c'était se mettre au travail. Les « distractions » n'avaient ni leur sens, ni leur place, pour la bonne raison que dans la vie quotidienne il n'y en avait pour ainsi dire pas. De temps en temps une fête interrompait la succession des labeurs, mais c'était à peu près tout. Souvent, dans les longs mois d'hiver, on ne faisait que changer de travail. La santé, c'était pouvoir travailler ; la maladie vous condamnait aux heures vides — bien plus longues que celles de l'effort.
+        </p>
+        <p facs="#facs_3_r_3">
+          A l'âge industriel
+        </p>
+        <p facs="#facs_3_r_4">
+          Tout cela est changé, dans la société industrielle d'aujourd'hui. La conscience de la nécessité du travail s'est largement effacée. Les gens ont grandi dans des villes où le travail productif est devenu à peu près invisible. Enfants, ils n'ont pas vu travailler leurs parents. Ce qu'il y avait, partout autour d'eux, c'était des choses à vendre et à acheter. Ces choses, ils ont à peine le sentiment que des hommes ont peiné pour les produire ; elles sont un peu comme des produits naturels, offerts à ceux qui ont les moyens de les acquérir. Il semble qu'on pourrait très bien vivre sans travailler, et d'ailleurs on voit vivre des gens qui n'ont pas l'air de vraiment travailler. Alors, comme le demandait une étudiante, « pourquoi chacun ne ferait-il pas ce qui lui plaît ? »
+        </p>
+        <p facs="#facs_3_r_5">
+          Le travail séparé de ce qu'il produit
+        </p>
+        <p facs="#facs_3_r_6">
+          Ensuite, celui qui travaille, qui produit des choses, n'a avec ces choses qu'un rapport très lointain, inessentiel. On a assez souligné la frustration qu'impliquent les tâches parcellaires, le travail à la chaîne — mais il y a quelque chose de plus général : on ne travaille plus pour produire ceci, tel objet déterminé, mais pour gagner le plus d'argent possible le plus vite possible. Le « ceci », l'objet, n'est qu'une transition vers cet argent. Cela est aussi vrai de l'ouvrier que du patron, du patron que de l'ouvrier. L'un et l'autre sont prêts, le plus souvent, à changer d'activité, à produire autre chose, si cela peut rapporter davantage.
+        </p>
+        <p facs="#facs_3_r_7">
+          se sent à sa juste place dans le monde, qu'il croit y avoir sa place. L'homme se sent bien dans une équipe ou une cérémonie parce qu'il y fait quelque chose de nécessaire à l'ensemble. S'il n'était pas là, il y aurait un trou. De cette manière, même le travail à la chaîne peut procurer une satisfaction qui aide à vivre, parce qu'il comporte un geste
+        </p>
+        <p facs="#facs_3_r_8">
+          
+        </p>
+        <p facs="#facs_3_r_9">
+          Certes, d'un point de vue purement économique, une telle mobilité est excellente, qu'on cherche d'ailleurs à favoriser par toutes sortes de recyclages. Mais cela implique — et il faut le savoir — un profond relâchement du lien entre le producteur et l'objet produit. Celui-ci n'est plus la réalité concrète qui justifie et récompense l'effort, et qu'on peut, d'une certaine manière, « aimer », mais seulement moyen, prétexte à un gain, abstrait comme l'argent lui-même. On a fait du drap ? Eh bien, on fera des disques, ou autre chose. Rien d'essentiel n'est changé — ou bien, seul l'essentiel est changé : le rapport de la main et de la tête qui travaillent avec la raison d'être de ce travail.
+        </p>
+        <p facs="#facs_3_r_10">
+          Le travail séparé de son sens
+        </p>
+        <p>
+          Du même coup, l'effacement de l'objet produit, ou du moins l'indifférence à son égard, annihile le sens du service rendu par le travail. Le sentiment de rendre un service spécifique est indispensable à la santé mentale de tout être humain. C'est grâce à ce sentiment qu'il nécessaire qui s'insère dans un ensemble, qui a donc un sens, et un sens immédiatement vécu. Mais lorsqu'il ne s'agit plus de ce geste, mais seulement d'un temps vendu contre de l'argent, le sens, l'équipe, l'insertion, le service rendu, l'objet produit, tout sombre à la fois dans l'abstraction de la non-vie, solitaire et vide.
+        </p>
+        <p>
+          Le travail, obstacle à la consommation des loisirs
+        </p>
+        <p>
+          Il ne reste plus, dès lors, qu'à travailler le moins longtemps possible en gagnant le plus possible, de façon à retrouver « la vraie vie » hors du travail, celle « des loisirs ». Les loisirs deviennent la part essentielle de l'existence, la seule digne d'un être humain, où il prend sa revanche sur l'autre, en consommant tout ce que la société industrielle peut offrir contre de l'argent. Et plus nombreux et variés deviennent les plaisirs accessibles pendant les loisirs, plus haïssable et aliénée devient la part de la vie qu'apparemment sans raison on se voit contraint de consacrer au travail.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.259">Management-Zeitschrift</bibl> in 48 (1979) Nr. 5 <persName ref="#zbz-p.2">Jeanne Hersch</persName> <bibl ref="#zbz-w.258">Le travail entre contrainte et liberté</bibl>
+        </p>
+        <p>
+          © <orgName ref="#zbz-o.204">Verlag Industrielle Organisation</orgName> <orgName ref="#zbz-o.205">BWI ETH</orgName> – Zürichbergstraße 18, CH-8028 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          
+        </p>
+        <p facs="#facs_4_r_2">
+          Foto: Richard Schreuder
+        </p>
+        <p facs="#facs_4_r_3">
+          Ajoutons à cela les conditions de travail souvent difficiles à supporter: dépendance, petits conflits, humiliations – bruits, odeurs, cadences – fatigue physique ou mentale, rigidité des horaires, contrôles mécaniques – et nous comprendrons sans doute l'immense besoin de fuir qui jette sur les routes, aux weekends et aux vacances, les foules de nos villes.
+        </p>
+        <p facs="#facs_4_r_4">
+          Le rêve : une société d'artistes créateurs
+        </p>
+        <p facs="#facs_4_r_5">
+          Mais il faut bien rentrer, reprendre le travail. Alors on se met à rêver d'un ailleurs, d'une autre société, où n'existerait plus qu'un seul travail, celui de l'art. Comme on se sent asservi à un effort auquel on se refuse de tout son être, on se convainc qu'il suffirait d'en être délivré pour voir s'épanouir, en soi et en chacun, « la créativité » seule digne d'un être humain, celle des arts. Virtuellement, de naissance, nous sommes tous des artistes. C'est la société – d'abord l'école, puis les contraintes du gagne-pain – qui étouffe et écrase ces dons. Frustration et révolte. Ce n'est pas du tout qu'on refuse de travailler! Mais on veut travailler comme on imagine – à tort – que travaillent les artistes créateurs : sans contraintes, dans la pure liberté. Bien sûr, on ne se demande pas un instant ce que pourrait bien être une société composée exclusivement de peintres, de musiciens et de poètes, comment des hommes pourraient y vivre, et si les arts, privés de toute résistance et sans autre nourriture qu'eux-mêmes, y auraient encore un sens.
+        </p>
+        <p facs="#facs_4_r_6">
+          La fonction des contraintes
+        </p>
+        <p facs="#facs_4_r_7">
+          Cela nous amène à nous interroger sur les contraintes mêmes du travail et à nous demander si elles n'auraient pas en tant que telles, et bien qu'elles ne soient guère agréables, des fonctions indispensables, aussi bien pour l'individu que pour la société.
+        </p>
+        <p facs="#facs_4_r_8">
+          Pour la société, d'abord. En dehors des rites et des fêtes, réduits dans la société moderne à bien peu de chose, ce sont les contraintes du travail qui constituent aujourd'hui les solides rendez-vous sociaux de nos contemporains. Elles ont en quelque sorte pris le relais
+        </p>
+        <p facs="#facs_4_r_9">
+          des formes collectives de la société traditionnelle, ou des grandes rencontres d'échange qu'étaient les foires d'autrefois. Elles concrétisent, dans l'expérience quotidienne, la présence de l'empire de ce que <persName ref="#zbz-p.16">Hegel</persName> appelait « l'esprit objectif », c'est-à-dire l'efficience symbolique de règles et de modèles imposés, le plus clairement illustrée par celle du Droit, – très anémiée aujourd'hui.
+        </p>
+        <p facs="#facs_4_r_10">
+          Mais les contraintes du travail jouent aussi un rôle important pour l'équilibre mental des individus. Ceux-ci ne s'en rendent pas compte, le plus souvent, aussi longtemps qu'ils les subissent. C'est au moment où elles cessent de se faire sentir, par exemple à l'heure de la retraite ou d'un chômage forcé, qu'elles laissent derrière elles un profond désarroi – comme si soudain la pesanteur habituelle faisait défaut, abandonnant le travailleur chancelant au vertige de ses choix arbitraires.
+        </p>
+        <p facs="#facs_4_r_11">
+          Les statistiques confirment d'ailleurs que les suicides sont plus fréquents dans les professions dont l'encadrement est faible, où le travail s'exerce presque librement, au gré de celui qui l'exécute, et qu'ils sont plus rares au contraire dans les activités fortement structurées, réglées du dehors, où les contraintes ne sont supportées qu'avec peine. Ce que l'homme désire n'est donc pas toujours ce dont il a vitalement besoin.
+        </p>
+        <p facs="#facs_4_r_12">
+          Compenser peine ou ennui
+        </p>
+        <p facs="#facs_4_r_13">
+          Un problème très important, c'est celui de la relation qui s'établit entre le temps de travail et le temps de loisir. Tout dépend ici de la nature objective du travail et de l'attitude subjective du travailleur à son égard. A un extrême, il y a le travail objectivement trop pénible, ou trop ennuyeux, ou qui s'accomplit dans des conditions trop désagréables (bruits, odeurs, températures, rythmes) pour que le travailleur puisse d'aucune manière y prendre goût ou intérêt, de sorte que son seul désir, c'est d'en réduire la durée et de l'oublier, sans y investir la moindre parcelle de son être. Si aucune technique ne permet encore, par le recours aux machines, d'éliminer un tel travail, il faudra bien lui trouver des compensations du côté du temps de loisir : réduire la durée du travail, allonger les
+        </p>
+        <p>
+          vacances, abaisser l'âge de la retraite, élever le salaire, accroître les avantages offerts pour les loisirs. Mais il ne s'agira que d'un pis-aller, auquel la société ne devrait jamais se résigner définitivement. – A l'autre extrême, il y a le travail accompli avec passion, auquel on se livrerait même sans aucun besoin d'un gagne-pain, et dont l'intérêt est tel que tout temps libre lui est volontiers consacré. Dans ce cas, la distinction entre temps de travail et temps de loisir s'efface. Il reste, certes, une lourde part d'effort, de peine, de patience, de corvée, dans toute activité humaine, quelle qu'elle soit. Mais la vie, portée tout entière par une seule vocation, retrouve ici son unité.
+        </p>
+        <p>
+          La plupart des hommes passent leur vie entre ces extrêmes. Ils trouvent plus ou moins d'intérêt aux tâches qu'ils accomplissent professionnellement, en gagnant leur vie, ils ont plus ou moins besoin d'en être délivrés dans leurs loisirs. Jusqu'ici, on a consacré bien plus d'efforts et de luttes à la réduction de la durée du travail qu'à son intégration dans l'unité d'une vie où il trouverait son sens. L'une des causes en a été la détérioration du contexte et des conditions du travail dans la société industrielle. Une autre, le divorce survenu entre l'effort productif et l'objet concret produit, par suite de la substitution du gain ou du profit à cet objet, substitution dont il a été question plus haut.
+        </p>
+        <p>
+          Intégrer travail et loisir
+        </p>
+        <p>
+          De grands progrès ont été accomplis grâce aux récents développements de la technique industrielle, quant à la nature du travail et à ses conditions. Il devient sans doute possible – et donc nécessaire – de surmonter « l'affectivité négative » à l'égard de la plupart des travaux à accomplir, et de leur rendre, sinon un attrait, du moins un sens. Ce sens peut naître du rapport à l'objet produit, ou à l'équipe dans laquelle le travailleur remplit une fonction nécessaire, ou du service rendu aux consommateurs et à la société, ou de la compétence, de l'habileté, du savoir-faire, ou d'autres aspects encore. Il pourrait être alimenté et enrichi si les occupations de loisir avaient un rapport avec le travail, et si celui-ci à son tour donnait une densité, un poids nouveau, aux occupations de
+        </p>
+        <p>
+          <bibl ref="#zbz-w.259">Management-Zeitschrift</bibl> in 48 (1979) Nr. 5 <persName ref="#zbz-p.2">Jeanne Hersch</persName> <bibl ref="#zbz-w.258">La travail entre contrainte et liberté</bibl>
+        </p>
+        <p>
+          © <orgName ref="#zbz-o.204">Verlag Industrielle Organisation</orgName> <orgName ref="#zbz-o.205">BWI ETH</orgName> – Zürichbergstraße 18, CH-8028 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          loisir. Ainsi, par exemple, si les voyages de plus en plus fréquents et souvent très lointains auxquels on consacre ses vacances étaient, d'une manière ou d'une autre, reliés au domaine où s'exécutent les tâches quotidiennes, ils se personnaliseraient et s'enracineraient dans la vie réelle, au lieu de ressembler assez vite aux souvenirs laissés par une émission de télévision.
+        </p>
+        <p facs="#facs_5_r_2">
+          Il est difficile de suggérer des voies et moyens pour relier entre eux travail et loisir, car ces voies et moyens ne peuvent être que spécifiques pour chaque genre d'activité. Mais il est certain que ces liens seraient bénéfiques pour tous. En particulier, le malheur du chômage serait moins cruel s'il ne laissait pas le travailleur dans le vide du pur «non-travail», s'il lui ouvrait malgré tout la possibilité d'une activité de loisir, non pas vide de sens et servant seulement à tuer le temps, mais d'une activité sérieuse parce que liée au travail qui a occupé sa vie et qu'il retrouvera le plus vite possible.
+        </p>
+        <p facs="#facs_5_r_3">
+          Aménager la vie professionnelle des femmes
+        </p>
+        <p facs="#facs_5_r_4">
+          Je voudrais ici dire quelques mots des difficultés particulières qui sont celles des femmes. Je ne suis pas de celles qui pensent que la condition de «femme au foyer», ni surtout celle de «mère au foyer», constitue nécessairement une mutilation personnelle et implique le sacrifice d'un «épanouissement» que seul un travail rémunéré à l'extérieur serait capable de procurer. Au contraire, le travail de la mère de famille représente l'une des rares survivances du travail de l'ère préindustrielle, où un très grand nombre de travaux agricoles ou artisanaux, s'effectuaient chez soi, organisés et contrôlés par le travailleur lui-même, et n'étaient guère séparés d'un temps de loisir.
+        </p>
+        <p facs="#facs_5_r_5">
+          En revanche, je pense que les femmes doivent avoir le choix d'avoir ou non une activité professionnelle, et qu'il faut leur en donner la possibilité, même si elles ont des enfants, même si — comme il me paraît normal — elles tiennent à les élever elles-mêmes. Or, dans ce dernier cas, il faut qu'elles puissent disposer, non
+        </p>
+        <p facs="#facs_5_r_6">
+          de quelques mois, ni même de deux ou trois ans, lors d'une ou de plusieurs naissances, mais d'une quinzaine d'années.
+        </p>
+        <p facs="#facs_5_r_7">
+          Si cela est reconnu, les associations féminines et les organisations professionnelles, patronales et syndicales, se trouvent devant une tâche considérable, complexe, difficile, mais prioritaire : aménager la carrière professionnelle des femmes, de façon à réserver à la maternité sa large place nécessaire, mais à sauvegarder en même temps leurs chances de réintégration dans leur métier pour la longue période de vie qui les attend aujourd'hui après le moment où leur présence active à la maison sera devenue moins nécessaire, leurs enfants ayant grandi.
+        </p>
+        <p facs="#facs_5_r_8">
+          Quand cette étape est franchie, la plupart des femmes n'ont guère plus de quarante ans ; il leur en reste presque autant à vivre. Il faut qu'elles puissent faire quelque chose de ce temps de vie, — professionnellement si elles le désirent. Cela implique qu'on leur ménage des contacts, espacés, mais réguliers, avec leur travail, tout au long de leur «retraite maternelle» (un mois par an, une après-midi par semaine, ou toute autre formule, selon le métier) afin qu'elles continuent à être «à jour», au courant des changements intervenus. Cela implique aussi qu'on soit prêt à les réintégrer sans difficulté plus tard. Certes, un tel aménagement soulève quantité de problèmes, mais ils ne sont pas insolubles, si on le veut. Après tout, les hommes aussi veulent qu'il y ait des enfants.
+        </p>
+        <p facs="#facs_5_r_9">
+          Réconcilier l'homme et son travail
+        </p>
+        <p facs="#facs_5_r_10">
+          Mais l'avenir ne dépend pas seulement d'aménagements matériels et sociaux, si importants que ceux-ci puissent être. Il dépend surtout d'une réconciliation en profondeur entre l'homme et son travail, donc aussi entre l'homme et les contraintes du travail. Cette réconciliation ne sera possible que si, d'une part, ces contraintes sont réduites à l'inévitable, et si, d'autre part, l'homme apprend à reconnaître que sa condition implique par nature du travail et des contraintes.
+        </p>
+        <p facs="#facs_5_r_11">
+          L'erreur, ou même la perversion, lourde de conséquences inhumaines, commence lorsqu'on projette dans l'avenir des solutions totales, grâce auxquelles on fait miroiter une humanité et une société délivrées de toute peine, de toute contrainte, et rendues au <placeName ref="#zbz-l.173">jardin d'Eden</placeName>. Alors la réalité telle qu'elle est devient insupportable. Alors les améliorations partielles, les progrès spécifiques, les solutions du moment apportées à des difficultés concrètes, perdent leur attrait. La visée maximaliste de l'impossible dispense des tâches efficaces qui, une fois remplies, amélioreraient les chances, pour beaucoup, de devenir des hommes.
+        </p>
+        <p facs="#facs_5_r_12">
+          Les perspectives de l'avenir restent ouvertes. Les efforts, toujours partiels, vers plus d'humanité, restent nécessaires. Mais ils n'aboliront jamais ni la finitude, ni la contrainte. Les hommes sont ainsi faits que sans la contrainte du travail il n'y a pas non plus pour eux de liberté du loisir.
+        </p>
+        <p facs="#facs_5_r_13">
+          Zusammenfassung
+        </p>
+        <p facs="#facs_5_r_14">
+          Die Arbeit: Recht oder Knechtschaft? – In der Industriegesellschaft hat sie sich vom produzierten Gegenstand getrennt ; sie wird nicht mehr als geleisteter Dienst erlebt ; die Umgebung ist oft schwer erträglich ; die Arbeitszeit geht auf Kosten der Freuden der Konsumzeit. Daher der Traum von einer freien Gesellschaft von Künstlern. Aber der Zwang hat eine Funktion, und die Arbeit wird nicht verschwinden. Was getan werden muß : Mühsal oder Langeweile kompensieren ; Arbeit und Freizeit verbinden ; das Berufsleben der Frauen ausbauen ; den Menschen mit seiner Arbeit versöhnen.
+        </p>
+        <p>
+          Summary
+        </p>
+        <p>
+          Work : a right or servitude? – In the industrial society, it has separated itself from the object being produced; work is no longer looked upon as a service rendered; quite frequently the environment is difficult to tolerate; working hours are performed at the cost of the joys of consumption. This is the reason for the artist's dream of a free society. But the constraint has a function and the work will not disappear. What must be done? Compensate toil or boredom; unify work and leisure time; expand the professional life of women, reconcile man with his work.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.259">Management-Zeitschrift</bibl> io 48 (1979) Nr.5 <persName ref="#zbz-p.2">Jeanne Hersch</persName> <bibl ref="#zbz-w.258">Le travail entre contrainte et liberté</bibl>
+        </p>
+        <p>
+          © <orgName ref="#zbz-o.204">Verlag Industrielle Organisation</orgName> <orgName ref="#zbz-o.205">BWI ETH</orgName> – Zürichbergstraße 18, CH-8028 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+      </div>
+      </body></text>
+</TEI>

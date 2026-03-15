@@ -1,0 +1,49 @@
+{
+  "doc_id": "2320",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [2, 3],
+      "notes": "4 Seiten. S.1 Titelblatt (Logos), S.2 Inhaltsverzeichnis, S.3-4 Artikeltext. Overlay S.2 zeigt kleinteilige Zonensegmentierung. Overlay S.3 zeigt zweispaltiges Layout korrekt."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gemischtsprachig deutsch/franzoesisch. Umlaute und Sonderzeichen korrekt. Franzoesische Diakritika sauber."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "S.2 Inhaltsverzeichnis sehr stark fragmentiert -- jede Zeile als eigenes p-Element (>60 p). Funktional korrekt aber hohe Granularitaet. S.3-4 Artikeltext in Spalten korrekt aufgeloest."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Schema-Fehler, 0 Projekt-Fehler. W6 ignoriert. 4 surfaces. Viele p-Elemente ohne facs-Referenz auf S.2."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 22,
+        "orgName": 3,
+        "placeName": 8,
+        "bibl": 5
+      },
+      "notes": "Hersch, Jaspers, Bach, Hindemith, Frank Martin, Schoeck u.a. korrekt annotiert. False-Positives: Wahl (zbz-p.89) und Mensch (zbz-p.1251) als persName."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Zeitschriftenartikel mit Titelblatt, Inhaltsverzeichnis und Artikeltext. Sprachkombi fra+deu korrekt im Header. Text koharent."
+    }
+  },
+  "findings": [
+    "persName ref=zbz-p.89 fuer Wahl (2x) -- False-Positive, Wahl ist deutsches Substantiv (Freiheit der Wahl).",
+    "persName ref=zbz-p.1251 fuer Mensch (2x) -- False-Positive, Gattungsbegriff.",
+    "Inhaltsverzeichnis (S.2) extrem granular segmentiert mit >60 einzelnen p-Elementen."
+  ],
+  "overall_notes": "Solide TEI-Edition. Zwei systematische False-Positive-Annotationen (Wahl, Mensch als persName)."
+}

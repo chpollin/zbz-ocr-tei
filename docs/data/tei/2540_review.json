@@ -1,0 +1,40 @@
+{
+  "doc_id": "2540",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 10],
+      "notes": "S.1 Overlay zeigt Interview-Titel und Fliesstext korrekt. Contarini-Frage und Hersch-Antwort gut segmentiert."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutsches Interview Wir sind fuer das Paradies nicht begabt korrekt transkribiert. Dialog-Format sauber."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "20 Seiten. Interview-Format mit Frage/Antwort-Wechsel. Einspaltiges Layout."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": ["W9"],
+      "notes": "VALID, 0 Fehler. W9: 29/79 Entity-Tags ohne ref (NER-Injection ausstehend)."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {"persName": 59, "orgName": 4, "placeName": 4, "bibl": 20},
+      "notes": "29 von 79 Entity-Tags ohne ref-Attribut. NER-Injection noch ausstehend. Hohe persName-Dichte im Interview."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Interview mit Hersch ueber Arbeit, Paradies, menschliche Bedingung. Kohaerenter Dialog."
+    }
+  },
+  "findings": ["29/79 Entity-Tags ohne ref-Attribut (W9). NER-Injection ausstehend."],
+  "overall_notes": "Gute Edition eines Interviews. W9 (fehlende ref-Attribute) benoetigt NER-Nachbearbeitung."
+}

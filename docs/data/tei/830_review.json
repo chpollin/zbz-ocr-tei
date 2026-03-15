@@ -1,0 +1,49 @@
+{
+  "doc_id": "830",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "n/a",
+      "pages_inspected": [],
+      "notes": "Kein Overlay vorhanden. 2 Seiten."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer literarischer Text korrekt transkribiert. Anspruchsvolle Syntax fehlerfrei."
+    },
+    "L3_layout": {
+      "score": "n/a",
+      "notes": "Kein Overlay verfuegbar."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [
+        "W6"
+      ],
+      "notes": "VALID, 0 Fehler. W6 bekanntes Muster."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 5,
+        "orgName": 0,
+        "placeName": 1,
+        "bibl": 2
+      },
+      "notes": "Eve, Gislebertus, Jesse, Hersch korrekt. Autun als placeName korrekt."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vollstaendiger Essay Eve ou la Naissance eternelle du Temps. Ekphrastischer Text. Titel, Autor, Sprache (fra) korrekt."
+    }
+  },
+  "findings": [
+    "Seitenzahlen 3.34 und 3.35 als eigene p-Elemente -- Artefakte des Quellbands."
+  ],
+  "overall_notes": "Exzellenter franzoesischer Essay, sauber transkribiert."
+}

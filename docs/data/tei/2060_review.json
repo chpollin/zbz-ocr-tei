@@ -1,0 +1,40 @@
+{
+  "doc_id": "2060",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 8],
+      "notes": "S.1 Overlay zeigt Konferenz-Titelseite korrekt. Teilnehmerliste in zwei Spalten erkannt."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutscher Vortrag zur Krisen-Diskussion in Europa. Muendlicher Stil korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "15 Seiten. Einspaltiges Layout ab S.3. Seitenzahlen korrekt als separate Absaetze."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. biblStruct type=bookSection. div type=speech."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 22, "orgName": 8, "placeName": 15, "bibl": 19},
+      "notes": "Lobkowicz, Jonas, Hersch, Spaemann korrekt. Europa als zentraler Ort."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vortrag zur Krisen-Diskussion 1983, Hanns Martin Schleyer-Stiftung. Kohaerenter muendlicher Stil."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Saubere Edition eines Kongressvortrags mit Diskussionsliste."
+}

@@ -1,0 +1,48 @@
+{
+  "doc_id": "60",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1],
+      "notes": "Seite 1 lesbar. Layout-Boxen korrekt platziert auf Titel, Widmung und Textbloecke. Seite 2 ist Doppelseite (2 Spalten), Seite 3 einspaltig."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gemini-JSON Seite 1 zeigt OCR-Artefakte (z.B. 'CONTEMPOIAINE SUISSE', 'Dicu senlit'), aber TEI-Text ist korrekt und sauber. Gemini-Korrektur hat gegriffen (P6)."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Region-Typen im JSON korrekt: section_header fuer Titel, text fuer Absaetze. TEI head-Element korrekt fuer Zeitschriften-Kopf."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. biblStruct type=journalArticle, Sprache fra, Datum 1943 korrekt."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 14,
+        "orgName": 0,
+        "placeName": 2,
+        "bibl": 1
+      },
+      "notes": "'DIEU' (Gott) wird 8x als persName ref=#zbz-p.50 getaggt in Running Headers 'DIEU CONTRE DIEU'. Kein Personenname. 'Homme' (4x als persName ref=#zbz-p.926) ist philosophischer Allgemeinbegriff. Karl Jaspers und Jeanne Hersch korrekt."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vollstaendiger philosophisch-poetischer Essay. Sprache Franzoesisch durchgehend. Beginnt mit Widmung an Karl Jaspers, endet mit Signatur 'JEANNE HERSCH'. Kein Abbruch."
+    }
+  },
+  "findings": [
+    "DIEU (Gott) faelschlicherweise als persName getaggt (8x in Running Headers)",
+    "Homme als persName getaggt (4x) -- philosophischer Allgemeinbegriff"
+  ],
+  "overall_notes": "Literarisch-philosophischer Text 'Dieu contre Dieu' (1943), Hommage an Karl Jaspers. Text vollstaendig und koharent. Entity-Tagging fuer 'Dieu' und 'Homme' sachlich falsch, aber strukturell harmlos."
+}

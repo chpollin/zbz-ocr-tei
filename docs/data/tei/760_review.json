@@ -1,0 +1,45 @@
+{
+  "doc_id": "760",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 10, 20],
+      "notes": "Overlays nur als _compare/_gemini vorhanden (kein _overlay.png). Gemini-Overlays zeigen korrekte Zonenabdeckung. Druckqualitaet gut."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Frz. Kunstkritik-Text (Le Temps dans l'OEuvre de Marc Chagall) gut erfasst. Poetische Passagen und Bildbeschreibungen korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "20 Seiten. S.1 Titelblatt, S.2-20 Textteil. Einspaltig. Einige Seiten mit Bildunterschriften. Fussnoten vorhanden und korrekt codiert."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. biblStruct/journalArticle. Sprache fra. Datum 'unknown' -- koharent mit fehlendem Erscheinungsjahr."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 49,
+        "orgName": 12,
+        "placeName": 19,
+        "bibl": 28
+      },
+      "notes": "Sehr hohe Entity-Dichte passend zum kunsthistorischen Text mit vielen Kuenstler- und Ortsnamen. Chagall, Vitebsk, Paris, Bible etc. reich annotiert."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerenter Essay ueber Zeit in Chagalls Werk. Philosophisch-aesthetischer Text mit biographischen Bezuegen. Durchgehender Argumentationsfaden."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Hochwertige Edition eines frz. Kunstessays mit sehr reicher Entitaetsannotation (49 persName, 19 placeName)."
+}

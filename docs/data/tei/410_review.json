@@ -1,0 +1,61 @@
+{
+  "doc_id": "410",
+  "reviewer": "claude-opus-4.6-screening",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 3,
+  "pages": 11,
+  "pages_inspected": [1, 6, 11],
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "layer": "L4",
+      "severity": "ok",
+      "code": "V0",
+      "msg": "TEI VALID: 0 Schema-Fehler, 0 Projekt-Fehler, 1 Warning (W9: 14/200 Entity-Tags ohne ref)"
+    },
+    {
+      "layer": "L1",
+      "severity": "ok",
+      "code": "S0",
+      "msg": "Layout-Overlay S.1/6/11: Doppelseiten-Scans korrekt segmentiert, Sprecher-Labels und Absaetze erkannt"
+    },
+    {
+      "layer": "L2",
+      "severity": "ok",
+      "code": "O0",
+      "msg": "OCR-Text koherent, deutsch, Radiodiskussion-Format (Sprecherwechsel HERSCH/SCHENCK/BRINGOLF etc.) korrekt abgebildet"
+    },
+    {
+      "layer": "L3",
+      "severity": "ok",
+      "code": "L0",
+      "msg": "Struktur: 1 div, 11 pb, Dialogformat. S.11 enthaelt Inhaltsverzeichnis der Sendereihe. sourceDesc als bibl (nicht biblStruct) -- akzeptabel fuer pub_form=other"
+    },
+    {
+      "layer": "L6",
+      "severity": "warning",
+      "code": "E1",
+      "msg": "14/200 Entity-Tags ohne ref (W9). NER-Injection unvollstaendig -- Kuration noetig"
+    },
+    {
+      "layer": "L6",
+      "severity": "warning",
+      "code": "E2",
+      "msg": "Entity 'Troisieme Reich' (zbz-o) als Index-Match fuer 'Reich' im Kontext -- moeglicherweise falsche Zuordnung. Entity 'Paul de Tarse' fuer 'Paul' (Schmid-Ammann gemeint) -- Kuration empfohlen"
+    },
+    {
+      "layer": "L6",
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 174p 11o 15l 55w = 255. Reiche Entitaeten-Landschaft (Marx 109x, viele Diskussionsteilnehmer). Werke (Brumaire, Kapital, Manifest) korrekt"
+    },
+    {
+      "layer": "L7",
+      "severity": "ok",
+      "code": "K0",
+      "msg": "Kohaerenz: Vollstaendige Radiodiskussion 'Karl Marx heute' (Basel 1958) mit 6 Teilnehmern, Inhaltsverzeichnis am Ende. Liest sich als Edition"
+    }
+  ]
+}

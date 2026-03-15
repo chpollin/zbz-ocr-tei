@@ -1,0 +1,42 @@
+{
+  "doc_id": "200",
+  "reviewer": "quality-screening-t3",
+  "date": "2026-03-15",
+  "tier": 3,
+  "pages": 9,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 3,
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Kierkegaard' (2x, S.4+6) tagged as bibl ref=zbz-w.529 -- refers to the philosopher, not a book title"
+    },
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Nietzsche' (1x, S.7) tagged as bibl ref=zbz-w.530 -- refers to the philosopher, not a book title"
+    },
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Internationale' (1x, S.2) tagged as orgName ref=zbz-o.753 -- generic adjective in 'Revue Mensuelle Internationale', not an org"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "2 Fussnoten (S.5+9, korrekt als note)"
+    },
+    {
+      "severity": "info",
+      "code": "S1",
+      "msg": "S.1 ZBZ-Begleitschreiben, S.2 Titelblatt Syntheses, S.3-9 Hersch-Essay 'L'Existentialisme devant l'Opinion Publique' (1950)"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 36p 8o 8l 19w = 71"
+    }
+  ]
+}

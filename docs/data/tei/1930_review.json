@@ -1,0 +1,45 @@
+{
+  "doc_id": "1930",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "tier": 2,
+  "pages": 4,
+  "language": "fra/eng",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p003"],
+  "errors": 1,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V1",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 3p 2o 3l 2w = 10"
+    },
+    {
+      "severity": "error",
+      "code": "T3",
+      "msg": "S.2 Z.99: persName 'J. BERSCH' (zbz-p.2) -- OCR-Fehler, korrekt waere 'J. HERSCH'. Autorinnenname im Vortragsheader falsch gelesen"
+    },
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "Nur 10 Entities auf 4 Seiten mit langem franzoesischem Vortrag -- deutlich unterdurchschnittliche Annotationsdichte. Zahlreiche nicht-annotierte Eigennamen: Oppenheimer (nur einmal annotiert), Club de Rome, Omo, etc."
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Kein Overlay verfuegbar. EIRMA-Konferenzformat (Goeteborg 1982). Zweispaltig auf S.2-4 (franzoesisch links, englisch rechts angedeutet, nur franzoesisch transkribiert)"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Kohaerenter franzoesischer Konferenzvortrag ueber R&D als Investition fuer die Gesellschaft. Herschs typische Argumentation (Sinn der Technik, Gratitude, Bildung der Lehrlinge, Frauenarbeit). Sprachlich korrekt"
+    }
+  ]
+}

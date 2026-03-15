@@ -1,0 +1,41 @@
+{
+  "doc_id": "500",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "pages_inspected": ["p1", "p5", "p9"],
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L4",
+      "msg": "TEI-Validator: VALID (0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings)"
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay p1/p5/p9: Zweispaltiges Layout korrekt erkannt, Leserichtung stimmt"
+    },
+    {
+      "severity": "warning",
+      "code": "L6",
+      "msg": "S.9: placeName ref zbz-l.13 auf 'Est' in 'Est-ce vraiment' -- falsch-positiv. Franzoesische Fragekonstruktion 'Est-ce que', kein Ortsname Ost/Osteuropa."
+    },
+    {
+      "severity": "info",
+      "code": "L7",
+      "msg": "Franzoesischer Vortrag 'Theorie et pratique du socialisme' (1959). Argumentationsstrang Marxismus-Demokratie-Sozialismus koharent ueber 9 Seiten. Seitenzahlen (235-241) korrekt fortlaufend."
+    },
+    {
+      "severity": "info",
+      "code": "L6",
+      "msg": "Entities: 1p 7o 2l 0w = 10. Gering aber plausibel (Suisse, Etat als orgName)."
+    },
+    {
+      "severity": "info",
+      "code": "L2",
+      "msg": "OCR-Qualitaet hoch, franzoesische Akzente und Interpunktion korrekt."
+    }
+  ]
+}

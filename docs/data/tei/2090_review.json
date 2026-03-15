@@ -1,0 +1,49 @@
+{
+  "doc_id": "2090",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1],
+      "notes": "2-Seiten-Dokument. Overlay zeigt Zeitungs-Titelseite (Agora) und Innenseite mit Hersch-Text."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Text gut erkannt. Interview-Format (R.A./D.H.) korrekt wiedergegeben."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Komplexes Mehrspalten-Layout der Universitaetszeitung korrekt segmentiert."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "Valide, 0 Warnungen. div n=1 ohne type."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 5,
+        "orgName": 5,
+        "placeName": 6,
+        "bibl": 3
+      },
+      "notes": "Entitaeten plausibel: Arraya, Handley, Hersch, Soljenitsyne. Laender korrekt. bibl ref='zbz-w.1' fuer 'PHILOSOPHIE' fragwuerdig -- ist Rubrik-Ueberschrift."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Titel 'Agora Journal Universitaire' ist der Zeitungsname, nicht der Artikeltitel. Seite 1: Interview Arraya/Handley. Seite 2: Hersch-Essay 'L'ecrivain et la liberte'. Zwei verschiedene Texte in einem div."
+    }
+  },
+  "findings": [
+    "Titel 'Agora Journal Universitaire' ist Zeitungsname, nicht Artikeltitel",
+    "Zwei unabhaengige Texte (Interview + Hersch-Essay) in einem div zusammengefasst",
+    "bibl-Tag fuer 'PHILOSOPHIE' (Rubrikname) fragwuerdig"
+  ],
+  "overall_notes": "Universitaetszeitung Agora mit Interview und Hersch-Essay. Strukturell funktional, aber Titel und div-Abgrenzung unspezifisch. Fuer Tier-1 akzeptabel."
+}

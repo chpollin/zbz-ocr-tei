@@ -1,0 +1,49 @@
+{
+  "doc_id": "2370",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [2, 4],
+      "notes": "7 Seiten (p2-p7). S.2 Titelblatt der Militaerpublikation. S.4 Overlay zeigt einspaltigen Textblock korrekt."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text. Akzente und Sonderzeichen korrekt. Militaerisch-philosophischer Wortschatz sauber erfasst."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "Kolumnentitel variieren verdaechtig: DIVISION DE CAMPAGNE (S.3,5,7), DECISION DE CAMPAGNE (S.4), DIPLOME DE COMPAGNE (S.6) -- vermutlich OCR-Fehler. Sternchen-Trenner als p mit hi rendition=#i."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings. 6 surfaces. lb-Elemente in Titelseite vorhanden."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 3,
+        "orgName": 0,
+        "placeName": 4,
+        "bibl": 2
+      },
+      "notes": "Hersch, Guillaume Tell, Rimbaud korrekt. PlaceNames: Basel, Suisse (zwei verschiedene Referenzen zbz-l.521 und zbz-l.705 fuer denselben Ort -- Inkonsistenz). Bibl: Droits de l homme."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Essay L armee le sol et la liberte in Militaerpublikation La Deuxieme Division. Kohaerenter politisch-philosophischer Text. Sprache fra korrekt."
+    }
+  },
+  "findings": [
+    "Kolumnentitel OCR-Fehler: DECISION DE CAMPAGNE (S.4), DIPLOME DE COMPAGNE (S.6) statt DIVISION DE CAMPAGNE.",
+    "Suisse hat zwei verschiedene Referenzen: zbz-l.521 und zbz-l.705 -- Inkonsistenz.",
+    "S.2: 101 8561 als separater Absatz -- Bibliotheksnotiz/Signatur."
+  ],
+  "overall_notes": "Gute TEI-Edition einer Militaerpublikation. Kolumnentitel-OCR-Fehler auf S.4 und S.6 beachten. Suisse-Referenz-Inkonsistenz."
+}

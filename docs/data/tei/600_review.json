@@ -1,0 +1,25 @@
+{
+  "doc_id": "600",
+  "reviewer": "quality-screener",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 44p 2o 1l 5w = 52"
+    },
+    {
+      "severity": "info",
+      "code": "QS",
+      "msg": "Tier 2 Screener: 5 Seiten, fra+deu. Literarische Erzaehlung 'Le combat de dragon' (Festgabe Carlo Schmid). Overlay S.3 pruefen: Zwei-Spalten-Layout korrekt. sourceDesc nutzt bibl statt biblStruct -- akzeptabel. Chevalier-persName durchgehend annotiert. Katz-Beitrag (deu) am Ende. Kohaerenter literarischer Text."
+    }
+  ]
+}

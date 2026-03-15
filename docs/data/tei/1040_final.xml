@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">face au chantage</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1040</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>face au chantage</title>
+          <author>Jeanne Hersch</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-manual" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings, 1 Fussnote; Entities: 20p 9o 0l 6w = 35; Overlay S.1: Buchcover 'face au chantage', Titelei und Autorenliste korrekt erfasst (+4 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="508" lry="695">
+      <zone xml:id="facs_1_r_1" ulx="94" uly="47" lrx="248" lry="81" />
+      <zone xml:id="facs_1_r_2" ulx="92" uly="184" lrx="434" lry="327" />
+      <zone xml:id="facs_1_r_3" ulx="70" uly="410" lrx="459" lry="462" />
+      <zone xml:id="facs_1_r_4" ulx="202" uly="531" lrx="302" lry="554" />
+      <zone xml:id="facs_1_r_5" ulx="270" uly="563" lrx="403" lry="585" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="949" lry="701">
+      <zone xml:id="facs_2_r_1" ulx="518" uly="268" lrx="892" lry="326" />
+      <zone xml:id="facs_2_r_2" ulx="519" uly="337" lrx="895" lry="418" />
+      <zone xml:id="facs_2_r_3" ulx="47" uly="370" lrx="216" lry="387" />
+      <zone xml:id="facs_2_r_4" ulx="44" uly="396" lrx="434" lry="436" />
+      <zone xml:id="facs_2_r_5" ulx="43" uly="446" lrx="434" lry="488" />
+      <zone xml:id="facs_2_r_6" ulx="44" uly="497" lrx="333" lry="526" />
+      <zone xml:id="facs_2_r_7" ulx="43" uly="534" lrx="403" lry="563" />
+      <zone xml:id="facs_2_r_8" ulx="42" uly="573" lrx="179" lry="602" />
+      <zone xml:id="facs_2_r_9" ulx="519" uly="585" lrx="656" lry="599" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="946" lry="723">
+      <zone xml:id="facs_3_r_1" ulx="597" uly="96" lrx="792" lry="113" />
+      <zone xml:id="facs_3_r_2" ulx="563" uly="124" lrx="828" lry="142" />
+      <zone xml:id="facs_3_r_3" ulx="507" uly="203" lrx="535" lry="216" />
+      <zone xml:id="facs_3_r_4" ulx="505" uly="216" lrx="809" lry="245" />
+      <zone xml:id="facs_3_r_5" ulx="503" uly="251" lrx="878" lry="312" />
+      <zone xml:id="facs_3_r_6" ulx="502" uly="323" lrx="558" lry="337" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1009" lry="712">
+      <zone xml:id="facs_4_r_1" ulx="551" uly="98" lrx="581" lry="113" />
+      <zone xml:id="facs_4_r_2" ulx="78" uly="142" lrx="103" lry="155" />
+      <zone xml:id="facs_4_r_3" ulx="550" uly="153" lrx="608" lry="168" />
+      <zone xml:id="facs_4_r_4" ulx="77" uly="156" lrx="462" lry="196" />
+      <zone xml:id="facs_4_r_5" ulx="550" uly="177" lrx="934" lry="264" />
+      <zone xml:id="facs_4_r_6" ulx="78" uly="203" lrx="135" lry="216" />
+      <zone xml:id="facs_4_r_7" ulx="77" uly="217" lrx="464" lry="450" />
+      <zone xml:id="facs_4_r_8" ulx="552" uly="272" lrx="935" lry="439" />
+      <zone xml:id="facs_4_r_9" ulx="76" uly="454" lrx="462" lry="619" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1005" lry="724">
+      <zone xml:id="facs_5_r_1" ulx="63" uly="104" lrx="447" lry="153" />
+      <zone xml:id="facs_5_r_2" ulx="64" uly="168" lrx="90" lry="182" />
+      <zone xml:id="facs_5_r_3" ulx="63" uly="196" lrx="288" lry="230" />
+      <zone xml:id="facs_5_r_4" ulx="63" uly="238" lrx="123" lry="252" />
+      <zone xml:id="facs_5_r_5" ulx="63" uly="251" lrx="448" lry="350" />
+      <zone xml:id="facs_5_r_6" ulx="545" uly="267" lrx="717" lry="285" />
+      <zone xml:id="facs_5_r_7" ulx="545" uly="298" lrx="603" lry="312" />
+      <zone xml:id="facs_5_r_8" ulx="545" uly="320" lrx="932" lry="476" />
+      <zone xml:id="facs_5_r_9" ulx="65" uly="361" lrx="95" lry="374" />
+      <zone xml:id="facs_5_r_10" ulx="65" uly="374" lrx="362" lry="391" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1001" lry="723">
+      <zone xml:id="facs_6_r_1" ulx="65" uly="97" lrx="447" lry="144" />
+      <zone xml:id="facs_6_r_2" ulx="59" uly="162" lrx="447" lry="239" />
+      <zone xml:id="facs_6_r_3" ulx="59" uly="271" lrx="331" lry="292" />
+      <zone xml:id="facs_6_r_4" ulx="653" uly="311" lrx="833" lry="349" />
+      <zone xml:id="facs_6_r_5" ulx="60" uly="317" lrx="447" lry="416" />
+      <zone xml:id="facs_6_r_6" ulx="61" uly="424" lrx="447" lry="551" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div type="interview" n="1">
+  <pb facs="#facs_1" n="1" />
+  
+    <div type="text">
+<p facs="#facs_1_r_1">
+      <lb facs="#facs_1_l_1_1" n="N001" />Bro 62. 309
+    </p>
+  
+  <p>
+    <title type="main">face au chantage</title>
+  </p>
+  </div>
+<div n="2">
+    <head>
+      <persName ref="GND:118815679">1. JEANNE HERSCH</persName>
+    </head>
+    <p facs="#facs_1_r_4">
+      <lb facs="#facs_1_l_4_1" n="N001" />à paraître:
+    </p>
+    <list>
+      <item>
+        <p facs="#facs_1_r_5">
+          <lb facs="#facs_1_l_5_1" n="N001" />2. <persName ref="GND:unknown">Jules Moch</persName>
+          <lb facs="#facs_1_l_5_2" n="N002" />3. <persName ref="GND:unknown">Alfred Kastler</persName>
+        </p>
+      </item>
+    </list>
+  </div>
+</div>
+<div n="1" type="interview">
+        <pb facs="#facs_2" n="2" />
+        <div type="bibliography">
+          <head>Parmi nos autres publications:</head>
+          <listBibl>
+            <bibl>"LA PRESENCE MILITAIRE SOVIETIQUE EN R.A.U."<lb facs="#facs_2_l_3_1" n="N001" />(Extraits du "Strategic Survey 1970" de l'<orgName ref="GND:unknown">International Institute for Strategic Studies</orgName>, London)</bibl>
+            <bibl>"LES FORCES ARMEES AU PROCHE-ORIENT"<lb facs="#facs_2_l_4_1" n="N001" />(Extraits du "Military Balance 1971-1972" de l'<orgName ref="GND:unknown">International Institute for Strategic Studies</orgName>, London)</bibl>
+            <bibl>"UNE MINORITE MUSULMANE: LES KURDES"<lb facs="#facs_2_l_5_1" n="N001" />de <persName ref="GND:unknown">Jean Ivy</persName></bibl>
+            <bibl>"UNE MINORITE CHRETIENNE: LES COPTES EN EGYPTE"<lb facs="#facs_2_l_6_1" n="N001" />de <persName ref="GND:unknown">Y. Masriya</persName></bibl>
+            <bibl>"LE MONDE ARABE"<lb facs="#facs_2_l_7_1" n="N001" />de <persName ref="GND:unknown">Harold W. Glidden</persName></bibl>
+          </listBibl>
+        </div>
+        
+          <div type="text">
+<p facs="#facs_2_r_8">
+            g/02/Buri<lb facs="#facs_2_l_8_1" n="N001" />KATALOG
+          </p>
+        
+        <p facs="#facs_2_r_9">
+          Professeur de philosophie, disciple et traductrice de <persName ref="GND:118557106">Jaspers</persName>, nommée durant deux ans directeur de la Division de philosophie à l'<orgName ref="GND:unknown">UNESCO</orgName>, <persName ref="GND:118815679">Jeanne Hersch</persName> ajoute alors à ses propres ouvrages un volume insolite :
+        </p>
+        <p>
+          <hi rendition="#i">Le Droit d'être un homme</hi><hi rendition="#sup">1</hi>, recueil de textes de tous âges et de tous temps.
+        </p>
+        <p>
+          Les offenses faites à ce "droit d'humanité" la trouvent toujours prête à combattre, et vouant au combat une loyauté intraitable et lucide.
+        </p>
+        <note place="foot" n="1" xml:id="fn2-1">
+          (1) Editions <orgName ref="GND:unknown">Unesco</orgName>, 1968.
+        </note>
+      </div>
+</div>
+<div type="interview">
+        <pb facs="#facs_3" n="3" />
+        <head>
+          INTERVIEW DE <persName ref="GND:118815679">JEANNE HERSCH</persName><lb facs="#facs_3_l_1_1" n="N001" />Professeur de philosophie à l'<orgName ref="GND:unknown">Université de Genève</orgName>
+        </head>
+        <sp>
+          <speaker>CID:</speaker>
+          <p facs="#facs_3_r_2">
+            <lb facs="#facs_3_l_2_1" n="N001" />Quand on vous parle de chantage, pensez-vous à la pression qu'on<lb facs="#facs_3_l_2_2" n="N002" /> exerce pour obtenir une chose à laquelle on n'a pas droit?
+          </p>
+          <p facs="#facs_3_r_3">
+            <lb facs="#facs_3_l_3_1" n="N001" />Peut-on également parler de chantage lorsque l'on tente d'obtenir une<lb facs="#facs_3_l_3_2" n="N002" /> chose à laquelle on a droit? Autrement dit, l'élément péjoratif lié au<lb facs="#facs_3_l_3_3" n="N003" /> mot chantage dépend-il uniquement d'une pression malhonnête, ou<lb facs="#facs_3_l_3_4" n="N004" /> aussi de l'objet que l'on cherche à obtenir et auquel on n'a pas droit?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:118815679">J. Hersch</persName>:</speaker>
+          <p facs="#facs_3_r_4">
+            <lb facs="#facs_3_l_4_1" n="N001" />Selon moi, il y a chantage lorsqu'il y a violation de la volonté et de la<lb facs="#facs_3_l_4_2" n="N002" /> conscience morale d'un homme ou d'une collectivité. Celui qui cède à<lb facs="#facs_3_l_4_3" n="N003" /> un chantage n'est pas seulement forcé d'agir comme il ne voudrait pas<lb facs="#facs_3_l_4_4" n="N004" /> agir, de dire ce qu'il ne voudrait pas dire ou de taire ce qu'il ne voudrait<lb facs="#facs_3_l_4_5" n="N005" /> pas taire, mais il est forcé d'agir et de parler comme sa conscience lui<lb facs="#facs_3_l_4_6" n="N006" /> interdit de le faire. Il se peut fort bien que celui qui exerce son chantage<lb facs="#facs_3_l_4_7" n="N007" /> croie poursuivre des buts à ses yeux louables, comme par exemple<lb facs="#facs_3_l_4_8" n="N008" /> obtenir des informations qui permettront de sauver des vies, d'empêcher<lb facs="#facs_3_l_4_9" n="N009" /> des attentats, ou parfois au contraire de les réussir. Mais cette apprécia-<lb break="no" facs="#facs_3_l_4_10" n="N010" />tion ne change rien au fait qu'il contraint sa victime en son centre le plus<lb facs="#facs_3_l_4_11" n="N011" /> inviolable, qu'il la réduit à être traitée envers elle-même, à renier son<lb facs="#facs_3_l_4_12" n="N012" /> propre sens du bien et du mal, à agir contre sa propre conscience, et par<lb facs="#facs_3_l_4_13" n="N013" /> là à perdre sa dignité et son respect de soi.
+          </p>
+        </sp>
+        <p facs="#facs_3_r_5">
+          <lb facs="#facs_3_l_5_1" n="N001" />Ainsi donc, ce qui est décisif ici, ce n'est pas le but du maître-chanteur,<lb facs="#facs_3_l_5_2" n="N002" /> ni un prétendu jugement objectif porté sur le résultat du chantage par<lb facs="#facs_3_l_5_3" n="N003" /> un tiers, impersonnellement. Ce qui est décisif, c'est la violence faite au<lb facs="#facs_3_l_5_4" n="N004" /> jugement moral de la victime. Celle-ci se trouve privée de ce qui la fait<lb facs="#facs_3_l_5_5" n="N005" /> humaine : liberté et responsabilité. Elle est en quelque sorte acculée au<lb facs="#facs_3_l_5_6" n="N006" /> seul choix : céder (c'est-à-dire trahir) ou perdre ce qui
+        </p>
+      </div>
+<div n="1" type="interview">
+        <pb facs="#facs_4" n="4" />
+        <div type="text"><p facs="#facs_4_r_1">
+          <lb facs="#facs_4_l_1_1" n="N001" />lui est le plus cher et le plus indispensable. En général, le chantage est<lb facs="#facs_4_l_1_2" n="N002" />conçu de telle manière qu'elle ne peut pas simplement se sacrifier,<lb facs="#facs_4_l_1_3" n="N003" />elle, mourir. Il lui faut sacrifier autrui. C'est monstrueux.
+        </p>
+        </div><div type="interview"><sp>
+          <speaker><persName ref="GND:unknown">CID</persName></speaker>
+          <p facs="#facs_4_r_2">
+            <lb facs="#facs_4_l_2_1" n="N001" />Que pensez-vous de cette phrase de Barrès: “Le chantage suppose des<lb facs="#facs_4_l_2_2" n="N002" />menaces sous conditions pour extorquer des sommes auxquelles on n’a<lb facs="#facs_4_l_2_3" n="N003" />aucun droit”?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:118815679">J. Hersch</persName></speaker>
+          <p facs="#facs_4_r_3">
+            <lb facs="#facs_4_l_3_1" n="N001" />Je trouve que la phrase de Barrès est correcte en ce qui concerne la<lb facs="#facs_4_l_3_2" n="N002" />forme la plus banale du chantage, mais que même là elle n’en saisit pas<lb facs="#facs_4_l_3_3" n="N003" />le nerf. En somme elle le réduit à un vol accompagné de menaces. Le cas<lb facs="#facs_4_l_3_4" n="N004" />typique serait alors celui du cambrioleur qui lève un revolver sur le<lb facs="#facs_4_l_3_5" n="N005" />caissier: “Si tu bouges, je tire.” Mais, même dans cette forme simple de<lb facs="#facs_4_l_3_6" n="N006" />violence, l’élément du chantage n’intervient qu’en tant que le caissier<lb facs="#facs_4_l_3_7" n="N007" />peut physiquement donner l’alarme, qu’il pense devoir le faire, et que la<lb facs="#facs_4_l_3_8" n="N008" />menace, l’empêchant de faire ce qu’il doit, fait de lui un lâche à ses<lb facs="#facs_4_l_3_9" n="N009" />propres yeux. Le chantage devient beaucoup plus net lorsque le maître<lb facs="#facs_4_l_3_10" n="N010" break="no" />chanteur détient des preuves qui feraient perdre à la victime le respect<lb facs="#facs_4_l_3_11" n="N011" />et l’amour de ses proches et plongeraient ceux-ci dans le malheur. Si la<lb facs="#facs_4_l_3_12" n="N012" />victime rachète ces preuves, le mal absolu du chantage ne réside pas dans<lb facs="#facs_4_l_3_13" n="N013" />le fait que le maître-chanteur “lui extorque des sommes auxquelles il n’a<lb facs="#facs_4_l_3_14" n="N014" />pas droit”. Il se trouve dans le fait que la victime “récompense” un acte<lb facs="#facs_4_l_3_15" n="N015" />qu’elle méprise afin de sauvegarder un mensonge qui lui est devenu<lb facs="#facs_4_l_3_16" n="N016" />indispensable, mais qu’elle méprise aussi, ce qui redouble le mépris qu’elle<lb facs="#facs_4_l_3_17" n="N017" />a pour elle-même.
+          </p>
+          <p facs="#facs_4_r_4">
+            <lb facs="#facs_4_l_4_1" n="N001" />Pourtant, ces deux formes de chantage nous paraissent aujourd’hui peu<lb facs="#facs_4_l_4_2" n="N002" />typiques à côté de celles dont nous prenons l’habitude: kidnappings,<lb facs="#facs_4_l_4_3" n="N003" />détournements d’avion, privation du pétrole, etc. Ici, il ne s’agit plus<lb facs="#facs_4_l_4_4" n="N004" />essentiellement d’“extorquer des sommes”, mais de menacer la vie des<lb facs="#facs_4_l_4_5" n="N005" />autres afin de contraindre les victimes à fouler aux pieds ce qu’elles<lb facs="#facs_4_l_4_6" n="N006" />considèrent comme l’honneur et le droit. Par exemple: donner des millions<lb facs="#facs_4_l_4_7" n="N007" />à des criminels, libérer des hommes qui ont été remis à la justice, porter<lb facs="#facs_4_l_4_8" n="N008" />sur des événements historiques ou politiques des appréciations dictées par<lb facs="#facs_4_l_4_9" n="N009" />les maîtres-chanteurs. Pour moi, plutôt qu’au vol, le chantage s’apparente<lb facs="#facs_4_l_4_10" n="N010" />à la torture. C’est une espèce de torture affective et morale qui met la<lb facs="#facs_4_l_4_11" n="N011" />volonté de l’homme knock out et lui fait faire ce que sa conscience lui<lb facs="#facs_4_l_4_12" n="N012" />interdit de faire.
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:unknown">CID</persName></speaker>
+          <p facs="#facs_4_r_5">
+            <lb facs="#facs_4_l_5_1" n="N001" />Dans l’embargo sur le pétrole que nous avons connu avant la hausse<lb facs="#facs_4_l_5_2" n="N002" />actuelle des prix, s’agissait-il, à votre avis, d’un chantage?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:118815679">J. Hersch</persName></speaker>
+          <p facs="#facs_4_r_6">
+            <lb facs="#facs_4_l_6_1" n="N001" />A mon avis, oui. C’était un chantage dans la mesure où le pétrole était<lb facs="#facs_4_l_6_2" n="N002" />vitalement indispensable aux pays visés. Les pays occidentaux, en tout<lb facs="#facs_4_l_6_3" n="N003" />cas dans les années actuelles (cela ne sera peut-être pas toujours le cas,<lb facs="#facs_4_l_6_4" n="N004" />espérons-le), ne peuvent pas exister sans pétrole. Quand on les en prive<lb facs="#facs_4_l_6_5" n="N005" />pour les forcer à juger une situation d’une façon déterminée et à prendre<lb facs="#facs_4_l_6_6" n="N006" />des décisions politiques imposées, comme c’était le cas à ce stade, c’est<lb facs="#facs_4_l_6_7" n="N007" />véritablement un acte de chantage.
+          </p>
+          <p facs="#facs_4_r_7">
+            <lb facs="#facs_4_l_7_1" n="N001" />Je sais, on peut prétendre que chacun a le droit de vendre ou de ne pas<lb facs="#facs_4_l_7_2" n="N002" />vendre ce qui lui appartient et que, par conséquent, les Arabes ont le<lb facs="#facs_4_l_7_3" n="N003" />droit de refuser de le vendre, ce pétrole. Mais non. C’est dépasser le droit<lb facs="#facs_4_l_7_4" n="N004" />de propriété. Supposez, par exemple, que quelqu’un possède un lac ou une<lb facs="#facs_4_l_7_5" n="N005" />rivière; si le peuple alentour meurt de soif, le propriétaire n’a pas le<lb facs="#facs_4_l_7_6" n="N006" />droit de refuser l’eau de ce lac ou de cette rivière sous prétexte qu’elle<lb facs="#facs_4_l_7_7" n="N007" />lui appartient. S’il mettait des conditions morales et politiques à l’accès<lb facs="#facs_4_l_7_8" n="N008" />à l’eau, ce serait un acte de chantage. Il faut encore ajouter une chose:<lb facs="#facs_4_l_7_9" n="N009" />ce pétrole, malgré tout, n’est pas une pure propriété arabe, car ce sont<lb facs="#facs_4_l_7_10" n="N010" />quand même les Occidentaux qui l’ont mis en exploitation. Mais, même s’il<lb facs="#facs_4_l_7_11" n="N011" />s’agissait d’une propriété arabe intégrale, ce serait encore du chantage.
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:unknown">CID</persName></speaker>
+          <p facs="#facs_4_r_8">
+            <lb facs="#facs_4_l_8_1" n="N001" />Celui qui exerce le chantage n’a-t-il pas à l’avance une opinion bien<lb facs="#facs_4_l_8_2" n="N002" />établie de la lâcheté ou de la faiblesse de l’autre?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:118815679">J. Hersch</persName></speaker>
+          <p facs="#facs_4_r_9">
+            <lb facs="#facs_4_l_9_1" n="N001" />Il n’en est peut-être pas sûr d’avance, mais il espère certainement<lb facs="#facs_4_l_9_2" n="N002" />constater la lâcheté ou la faiblesse de l’autre. C’est un bien étrange et<lb facs="#facs_4_l_9_3" n="N003" />vil triomphe que celui qu’on retire de l’humiliation morale d’autrui. Le<lb facs="#facs_4_l_9_4" n="N004" />maître-chanteur veut rendre l’autre lâche ou faible au point de le voir<lb facs="#facs_4_l_9_5" n="N005" />céder; c’est beaucoup plus un acte qu’un diagnostic. Bien audacieux serait<lb facs="#facs_4_l_9_6" n="N006" />d’ailleurs celui qui pourrait jurer d’avance que, quelle que soit la<lb facs="#facs_4_l_9_7" n="N007" />situation, il ne cédera jamais à un chantage. Ici, encore, il ne s’agit pas
+          </p>
+        </sp>
+      </div><pb facs="#facs_5" n="5" />
+        <div type="text"><p facs="#facs_5_r_1">
+          <lb facs="#facs_5_l_1_1" n="N001" />d'une certitude de fait, mais d'une résolution, d'un serment qu'on se<lb facs="#facs_5_l_1_2" n="N002" />fait à soi-même. Chacun d'entre nous peut décider en son for intérieur<lb facs="#facs_5_l_1_3" n="N003" />que, quoi qu'il arrive, jamais il ne cédera à un chantage, quel qu'en soit<lb facs="#facs_5_l_1_4" n="N004" />l'enjeu.
+        </p>
+        </div><div type="interview"><sp>
+          <speaker><orgName ref="GND:unknown">CID</orgName></speaker>
+          <p facs="#facs_5_r_2">
+            <lb facs="#facs_5_l_2_1" n="N001" />On peut imaginer quel sentiment provoque le maître-chanteur chez<lb facs="#facs_5_l_2_2" n="N002" />celui qui en est l'objet. Que peut-on penser des sentiments de l'un pour<lb facs="#facs_5_l_2_3" n="N003" />l'autre entre ces deux antagonistes?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:118815679">J. Hersch</persName></speaker>
+          <p facs="#facs_5_r_3">
+            <lb facs="#facs_5_l_3_1" n="N001" />Je crois que les sentiments qui animent le maître-chanteur sont des<lb facs="#facs_5_l_3_2" n="N002" />sentiments de mépris virtuel; il se prépare à triompher par le mépris.<lb facs="#facs_5_l_3_3" n="N003" />Le recours au chantage à lui seul est déjà un acte méprisant. Chez la<lb facs="#facs_5_l_3_4" n="N004" />victime, cela ne peut susciter que la haine. La haine et le mépris de<lb facs="#facs_5_l_3_5" n="N005" />l'autre. Des deux côtés la relation se déshumanise. Il reste un rapport<lb facs="#facs_5_l_3_6" n="N006" />de force; et le mépris est justement la trace de la liberté et de la<lb facs="#facs_5_l_3_7" n="N007" />dignité niées et perdues.
+          </p>
+        </sp>
+        <sp>
+          <speaker><orgName ref="GND:unknown">CID</orgName></speaker>
+          <p facs="#facs_5_r_4">
+            <lb facs="#facs_5_l_4_1" n="N001" />En est-il ainsi, à votre avis, dans toutes les civilisations?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:118815679">J. Hersch</persName></speaker>
+          <p facs="#facs_5_r_5">
+            <lb facs="#facs_5_l_5_1" n="N001" />Je suis en train de réfléchir, je pense que oui, dans la mesure où une<lb facs="#facs_5_l_5_2" n="N002" />civilisation est saine et forte. Dans toutes les civilisations, on trouve<lb facs="#facs_5_l_5_3" n="N003" />sous les formes les plus diverses, le sentiment que quelque chose est<lb facs="#facs_5_l_5_4" n="N004" />dû à l'être humain, qu'il y a en chacun une dignité, un honneur qui ne<lb facs="#facs_5_l_5_5" n="N005" />doit pas être foulé au pied.
+          </p>
+          <p facs="#facs_5_r_6">
+            <lb facs="#facs_5_l_6_1" n="N001" />Mais il y a des époques de décadence où le sens de l'honneur (je<lb facs="#facs_5_l_6_2" n="N002" />prononce avec une certaine gêne ce mot qui a joué un si grand rôle<lb facs="#facs_5_l_6_3" n="N003" />dans notre tradition et dont on a tant abusé, mais on le prononce<lb facs="#facs_5_l_6_4" n="N004" />rarement aujourd'hui, c'est pourquoi j'ai envie de le prononcer de<lb facs="#facs_5_l_6_5" n="N005" />temps en temps), ce sens de l'honneur peut s'émousser. J'ai<lb facs="#facs_5_l_6_6" n="N006" />l'impression que de nos jours il est très émoussé. Voyez la sorte de<lb facs="#facs_5_l_6_7" n="N007" />bienveillance qui anime des commentateurs de journaux, de la radio,<lb facs="#facs_5_l_6_8" n="N008" />de la TV, lorsque se produisent, par exemple, des enlèvements de<lb facs="#facs_5_l_6_9" n="N009" />personnes ou des détournements d'avion. La plupart semblent trouver<lb facs="#facs_5_l_6_10" n="N010" />naturel qu'on obéisse aux maîtres-chanteurs, qu'on paie les rançons
+          </p>
+          <p facs="#facs_5_r_7">
+            <lb facs="#facs_5_l_7_1" n="N001" />exigées, qu'on rachète les victimes. Or, d'abord, c'est offensant pour le<lb facs="#facs_5_l_7_2" n="N002" />sens de l'honneur. Mais en outre, cela contribue à propager le chantage<lb facs="#facs_5_l_7_3" n="N003" />et à engendrer d'autres tentatives de rapt. Chaque rachat contribue à la<lb facs="#facs_5_l_7_4" n="N004" />perte de victimes ultérieures. Céder au chantage, c'est détruire le droit,<lb facs="#facs_5_l_7_5" n="N005" />multiplier les maîtres-chanteurs, désagréger la colonne vertébrale<lb facs="#facs_5_l_7_6" n="N006" />morale de la société. On n'a plus le sentiment aigu de l'offense qu'on<lb facs="#facs_5_l_7_7" n="N007" />subit lorsqu'on est objet de chantage. On devient mou, dans une peau<lb facs="#facs_5_l_7_8" n="N008" />épaisse. Où est l'homme, alors?
+          </p>
+        </sp>
+        <sp>
+          <speaker><orgName ref="GND:unknown">CID</orgName></speaker>
+          <p facs="#facs_5_r_8">
+            <lb facs="#facs_5_l_8_1" n="N001" />Que pouvez-vous dire des ressemblances et des différences entre le<lb facs="#facs_5_l_8_2" n="N002" />chantage exercé par un individu sur un autre et le chantage collectif<lb facs="#facs_5_l_8_3" n="N003" />auquel on assiste actuellement?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName ref="GND:118815679">J. Hersch</persName></speaker>
+          <p facs="#facs_5_r_9">
+            <lb facs="#facs_5_l_9_1" n="N001" />Le chantage collectif est bien plus difficile à braver que le chantage<lb facs="#facs_5_l_9_2" n="N002" />individuel. Nous touchons ici à la profonde différence qui existe entre<lb facs="#facs_5_l_9_3" n="N003" />responsabilité morale individuelle et responsabilité politique.<lb facs="#facs_5_l_9_4" n="N004" />L'individu peut, face aux contraintes du chantage ou de la torture,<lb facs="#facs_5_l_9_5" n="N005" />dire: "Plutôt mourir". Mais l'homme d'Etat, responsable d'un peuple?<lb facs="#facs_5_l_9_6" n="N006" />Il peut, jusqu'à un certain point, faire accepter à ce peuple des<lb facs="#facs_5_l_9_7" n="N007" />privations: les gens auront plus froid, ils se priveront de voiture<lb facs="#facs_5_l_9_8" n="N008" />certains jours, ils verront baisser leur niveau de vie. Mais il ne peut pas,<lb facs="#facs_5_l_9_9" n="N009" />sans l'assentiment explicite de tous, laisser se répandre la paralysie<lb facs="#facs_5_l_9_10" n="N010" />industrielle, le chaos économique, le chômage, l'effondrement de la<lb facs="#facs_5_l_9_11" n="N011" />monnaie. Ce serait trahir sa charge, faire payer par le peuple entier le<lb facs="#facs_5_l_9_12" n="N012" />prix de sa propre intégrité.
+          </p>
+          <p facs="#facs_5_r_10">
+            <lb facs="#facs_5_l_10_1" n="N001" />D'autre part, et en sens inverse, qu'un individu cède au chantage, les<lb facs="#facs_5_l_10_2" n="N002" />conséquences seront tout de même bien moins graves que si c'est un<lb facs="#facs_5_l_10_3" n="N003" />gouvernement, incarnant comme tel l'honneur d'un pays. Conséquences<lb facs="#facs_5_l_10_4" n="N004" />pour tous les citoyens d'abord, puis face aux autres pays. Un Etat qui<lb facs="#facs_5_l_10_5" n="N005" />cède au chantage se défait lui-même. Dans les circonstances actuelles,<lb facs="#facs_5_l_10_6" n="N006" />les gouvernements ont besoin, pour résister au chantage, en tout premier<lb facs="#facs_5_l_10_7" n="N007" />lieu, du soutien que leur donne chaque citoyen, en refusant<lb facs="#facs_5_l_10_8" n="N008" />personnellement de céder, en acceptant les conséquences de ce refus,<lb facs="#facs_5_l_10_9" n="N009" />par sa discipline et sa consommation réduite. C'est là pour les<lb facs="#facs_5_l_10_10" n="N010" />gouvernements une condition non suffisante, mais nécessaire de<lb facs="#facs_5_l_10_11" n="N011" />résistance au chantage. Ensuite, ils doivent faire
+          </p>
+        </sp>
+      </div></div>
+<div type="interview">
+        <pb facs="#facs_6" n="8" />
+        <p facs="#facs_6_r_1">
+          <lb facs="#facs_6_r_1" n="N001" />l'impossible pour n'avoir jamais à choisir, au nom de leur peuple, entre <lb facs="#facs_6_r_1" n="N002" />la lâcheté et le chaos, donc s'unir et chercher ensemble les nouvelles <lb facs="#facs_6_r_1" n="N003" />sources d'énergie et les nouvelles manières de l'utiliser, afin de <lb facs="#facs_6_r_1" n="N004" />desserrer progressivement l'étau de leur dépendance actuelle.
+        </p>
+        <p facs="#facs_6_r_2">
+          <lb facs="#facs_6_r_2" n="N001" />Je voudrais ajouter encore un mot. Ce qu'il faut éviter à tout prix, <lb facs="#facs_6_r_2" n="N002" />c'est le mélange, la combinaison de motifs qui tiennent à la <lb facs="#facs_6_r_2" n="N003" />soumission au chantage et de motifs hautement moraux. Ce qu'il y a <lb facs="#facs_6_r_2" n="N004" />de plus ignoble chez quelqu'un qui cède au chantage, c'est <lb facs="#facs_6_r_2" n="N005" />l'embellissement de sa conduite par des justifications morales. S'il <lb facs="#facs_6_r_2" n="N006" />se croit forcé de céder, au moins qu'il dise: "Il me faut du pétrole, <lb facs="#facs_6_r_2" n="N007" />je ne peux pas faire autrement."
+        </p>
+        <p facs="#facs_6_r_3">
+          <lb facs="#facs_6_r_3" n="N001" />Mais qu'il ne nous sorte pas le Droit et la Morale.
+        </p>
+        <p facs="#facs_6_r_4">
+          <lb facs="#facs_6_r_4" n="N001" />Mais rien, jamais, ne peut légitimer le chantage, parce qu'il instaure le <lb facs="#facs_6_r_4" n="N002" />règne de la lâcheté. Il ne faudrait pas croire que la sagesse doive <lb facs="#facs_6_r_4" n="N003" />dissoudre ce refus irréductible qui vit en nous. Pensons à <persName ref="GND:unknown">Gandhi</persName>, <lb facs="#facs_6_r_4" n="N004" />ce maître de la non-violence: il rattachait la non-violence à la <lb facs="#facs_6_r_4" n="N005" />liberté et à l'irréductible fierté humaine; et il a dit que s'il lui fallait <lb facs="#facs_6_r_4" n="N006" />une fois choisir entre la lâcheté et la violence, il choisirait la <lb facs="#facs_6_r_4" n="N007" />violence. Céder au chantage, c'est tomber moralement en servitude <lb facs="#facs_6_r_4" n="N008" />avant d'y être réduit en fait, c'est être un esclave virtuel, indigne <lb facs="#facs_6_r_4" n="N009" />de la liberté.
+        </p>
+        <p facs="#facs_6_r_5">
+          <lb facs="#facs_6_r_5" n="N001" />La différence entre le chantage et la contrainte pure et simple, c'est <lb facs="#facs_6_r_5" n="N002" />que cette dernière est matérielle, elle appartient au règne de la <lb facs="#facs_6_r_5" n="N003" />force pure et rend à sa victime l'innocence, parce que la victime est <lb facs="#facs_6_r_5" n="N004" />effectivement réduite à l'impuissance. Un homme baillonné ne subit <lb facs="#facs_6_r_5" n="N005" />aucun chantage, il ne peut pas donner l'alarme. Celui qui se tait ou <lb facs="#facs_6_r_5" n="N006" />qui parle sous le chantage peut faire autrement. Simplement, il y a <lb facs="#facs_6_r_5" n="N007" />quelque chose qu'il redoute davantage de perdre que l'honneur. Il se <lb facs="#facs_6_r_5" n="N008" />fait esclave librement. Et c'est ce que veut le maître-chanteur. Tel <lb facs="#facs_6_r_5" n="N009" />est le cœur répugnant du chantage.
+        </p>
+        <ab type="redactional">
+          <lb facs="#facs_6_r_6" n="N001" />Achevé d'imprimer le 15 mars 1974 <lb facs="#facs_6_r_6" n="N002" />sur les presses de l'<orgName ref="GND:unknown">Imprimerie Avenir s.a.</orgName> <lb facs="#facs_6_r_6" n="N003" />10, rue de l'Avenir - CH 1207 Genève
+        </ab>
+        <p>
+          <lb facs="#facs_6_r_7" n="N001" />- 8 -
+        </p>
+      </div>
+    </body></text>
+</TEI>

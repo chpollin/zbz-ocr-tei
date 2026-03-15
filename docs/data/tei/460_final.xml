@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">L'Europe au défi</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">460</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>L'Europe au défi</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1959</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="claude-opus-4.6-screening" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). TEI VALID: 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings; Zone-Koordinaten auf S.5, S.14, S.18 ueberschreiten Surface-Grenzen massiv (z.B. zone lrx=6737 bei surface lrx=747). Layout-Analyse lieferte Pixel-Koordinaten statt normalisierte Werte; S.1 ist Bibliotheks-Lieferschein (UB Basel, Dokumentenlieferdienst). S.2 Titelblatt. S.17-18 Beginn des naechsten Kapitels (Henri Frenay). Kein strukturelles Problem (+6 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1108" lry="1564">
+      <zone xml:id="facs_1_r_1" ulx="104" uly="161" lrx="635" lry="190" />
+      <zone xml:id="facs_1_r_2" ulx="104" uly="192" lrx="346" lry="289" />
+      <zone xml:id="facs_1_r_3" ulx="382" uly="417" lrx="850" lry="453" />
+      <zone xml:id="facs_1_r_4" ulx="103" uly="522" lrx="157" lry="545" />
+      <zone xml:id="facs_1_r_5" ulx="332" uly="522" lrx="447" lry="547" />
+      <zone xml:id="facs_1_r_6" ulx="104" uly="573" lrx="244" lry="595" />
+      <zone xml:id="facs_1_r_7" ulx="330" uly="573" lrx="522" lry="597" />
+      <zone xml:id="facs_1_r_8" ulx="103" uly="599" lrx="226" lry="620" />
+      <zone xml:id="facs_1_r_9" ulx="330" uly="599" lrx="516" lry="620" />
+      <zone xml:id="facs_1_r_10" ulx="103" uly="622" lrx="181" lry="645" />
+      <zone xml:id="facs_1_r_11" ulx="330" uly="622" lrx="462" lry="645" />
+      <zone xml:id="facs_1_r_12" ulx="103" uly="711" lrx="247" lry="756" />
+      <zone xml:id="facs_1_r_13" ulx="330" uly="711" lrx="575" lry="756" />
+      <zone xml:id="facs_1_r_14" ulx="100" uly="802" lrx="196" lry="825" />
+      <zone xml:id="facs_1_r_15" ulx="330" uly="802" lrx="483" lry="825" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="721" lry="976">
+      <zone xml:id="facs_2_r_1" ulx="87" uly="81" lrx="598" lry="180" />
+      <zone xml:id="facs_2_r_2" ulx="158" uly="198" lrx="534" lry="360" />
+      <zone xml:id="facs_2_r_3" ulx="275" uly="862" lrx="470" lry="903" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="836" lry="973">
+      <zone xml:id="facs_3_r_1" ulx="158" uly="33" lrx="433" lry="111" />
+      <zone xml:id="facs_3_r_2" ulx="158" uly="372" lrx="747" lry="458" />
+      <zone xml:id="facs_3_r_3" ulx="159" uly="453" lrx="757" lry="910" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_4_r_1" ulx="63" uly="141" lrx="660" lry="650" />
+      <zone xml:id="facs_4_r_2" ulx="67" uly="728" lrx="662" lry="921" />
+      <zone xml:id="facs_4_r_3" ulx="70" uly="916" lrx="662" lry="973" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_5_r_1" ulx="791" uly="1520" lrx="6737" lry="3496" />
+      <zone xml:id="facs_5_r_2" ulx="791" uly="3496" lrx="6737" lry="6526" />
+      <zone xml:id="facs_5_r_3" ulx="821" uly="7348" lrx="6767" lry="9768" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_6_r_1" ulx="87" uly="116" lrx="671" lry="173" />
+      <zone xml:id="facs_6_r_2" ulx="87" uly="173" lrx="673" lry="306" />
+      <zone xml:id="facs_6_r_3" ulx="78" uly="359" lrx="675" lry="921" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_7_r_1" ulx="81" uly="207" lrx="678" lry="800" />
+      <zone xml:id="facs_7_r_2" ulx="87" uly="818" lrx="685" lry="961" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_8_r_1" ulx="83" uly="115" lrx="673" lry="312" />
+      <zone xml:id="facs_8_r_2" ulx="71" uly="299" lrx="669" lry="892" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_9_r_1" ulx="78" uly="212" lrx="674" lry="402" />
+      <zone xml:id="facs_9_r_2" ulx="80" uly="399" lrx="681" lry="827" />
+      <zone xml:id="facs_9_r_3" ulx="84" uly="824" lrx="680" lry="969" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_10_r_1" ulx="88" uly="136" lrx="666" lry="265" />
+      <zone xml:id="facs_10_r_2" ulx="88" uly="347" lrx="667" lry="558" />
+      <zone xml:id="facs_10_r_3" ulx="85" uly="562" lrx="674" lry="957" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_11_r_1" ulx="88" uly="135" lrx="683" lry="384" />
+      <zone xml:id="facs_11_r_2" ulx="94" uly="456" lrx="685" lry="694" />
+      <zone xml:id="facs_11_r_3" ulx="96" uly="696" lrx="691" lry="919" />
+      <zone xml:id="facs_11_r_4" ulx="99" uly="908" lrx="693" lry="971" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_12_r_1" ulx="67" uly="132" lrx="661" lry="244" />
+      <zone xml:id="facs_12_r_2" ulx="68" uly="239" lrx="659" lry="487" />
+      <zone xml:id="facs_12_r_3" ulx="67" uly="505" lrx="669" lry="885" />
+      <zone xml:id="facs_12_r_4" ulx="71" uly="879" lrx="668" lry="967" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_13_r_1" ulx="86" uly="141" lrx="684" lry="622" />
+      <zone xml:id="facs_13_r_2" ulx="97" uly="699" lrx="695" lry="973" />
+    </surface>
+    <surface xml:id="facs_14" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_14_r_1" ulx="737" uly="1261" lrx="1335" lry="2896" />
+      <zone xml:id="facs_14_r_2" ulx="657" uly="3674" lrx="6633" lry="9612" />
+    </surface>
+    <surface xml:id="facs_15" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_15_r_1" ulx="72" uly="133" lrx="667" lry="254" />
+      <zone xml:id="facs_15_r_2" ulx="77" uly="239" lrx="679" lry="972" />
+    </surface>
+    <surface xml:id="facs_16" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_16_r_1" ulx="81" uly="143" lrx="674" lry="279" />
+      <zone xml:id="facs_16_r_2" ulx="80" uly="280" lrx="673" lry="395" />
+      <zone xml:id="facs_16_r_3" ulx="81" uly="384" lrx="669" lry="528" />
+    </surface>
+    <surface xml:id="facs_17" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_17_r_1" ulx="41" uly="104" lrx="496" lry="201" />
+      <zone xml:id="facs_17_r_2" ulx="237" uly="420" lrx="591" lry="490" />
+      <zone xml:id="facs_17_r_3" ulx="247" uly="555" lrx="598" lry="604" />
+      <zone xml:id="facs_17_r_4" ulx="257" uly="620" lrx="603" lry="695" />
+      <zone xml:id="facs_17_r_5" ulx="313" uly="697" lrx="583" lry="772" />
+      <zone xml:id="facs_17_r_6" ulx="78" uly="806" lrx="635" lry="997" />
+    </surface>
+    <surface xml:id="facs_18" ulx="0" uly="0" lrx="747" lry="1110">
+      <zone xml:id="facs_18_r_1" ulx="873" uly="1443" lrx="6835" lry="3108" />
+      <zone xml:id="facs_18_r_2" ulx="829" uly="3052" lrx="6790" lry="4972" />
+      <zone xml:id="facs_18_r_3" ulx="836" uly="4917" lrx="6767" lry="6038" />
+      <zone xml:id="facs_18_r_4" ulx="821" uly="5949" lrx="6782" lry="9257" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Elektronischer Dokumentenlieferdienst<lb facs="#facs_1_l_1_1" n="N001" /><orgName ref="#zbz-o.45">Universitätsbibliothek Basel</orgName><lb facs="#facs_1_l_1_2" n="N002" />Schönbeinstrasse 18-20<lb facs="#facs_1_l_1_3" n="N003" />CH-4056 <placeName ref="#zbz-l.9">Basel</placeName><lb facs="#facs_1_l_1_4" n="N004" />info-ub@unibas.ch
+        </head>
+        <p facs="#facs_1_r_2">
+          
+        </p>
+        <p facs="#facs_1_r_3">
+          BA-ZBZ-ZBZ-ME-250515-03
+        </p>
+        <p facs="#facs_1_r_4">
+          Name<lb facs="#facs_1_l_4_1" n="N001" />BASEL_ZBZ
+        </p>
+        <p facs="#facs_1_r_5">
+          E-Mail-Adresse<lb facs="#facs_1_l_5_1" n="N001" />fernleihe@zb.uzh.ch
+        </p>
+        <p facs="#facs_1_r_6">
+          Bestelldatum<lb facs="#facs_1_l_6_1" n="N001" />2025-05-15 13:18:36
+        </p>
+        <p facs="#facs_1_r_7">
+          Lieferart<lb facs="#facs_1_l_7_1" n="N001" />MYBIB_EDOC
+        </p>
+        <p facs="#facs_1_r_8">
+          Signatur<lb facs="#facs_1_l_8_1" n="N001" />UBH Pb 36013
+        </p>
+        <p facs="#facs_1_r_9">
+          Zeitschrift<lb facs="#facs_1_l_9_1" n="N001" /><bibl ref="#zbz-w.620">L'Europe au défi</bibl>
+        </p>
+        <p facs="#facs_1_r_10">
+          ISSN<lb facs="#facs_1_l_10_1" n="N001" />Band/Heft<lb facs="#facs_1_l_10_2" n="N002" />Jahr<lb facs="#facs_1_l_10_3" n="N003" />1959
+        </p>
+        <p facs="#facs_1_r_11">
+          Autor des Artikels<lb facs="#facs_1_l_11_1" n="N001" /><persName ref="#zbz-p.2">Hersch, Jeanne</persName>
+        </p>
+        <p facs="#facs_1_r_12">
+          Titel des Artikels<lb facs="#facs_1_l_12_1" n="N001" />«<bibl ref="#zbz-w.620">L'Europe au défi</bibl>»
+        </p>
+        <p facs="#facs_1_r_13">
+          Seiten<lb facs="#facs_1_l_13_1" n="N001" />S. 1–16
+        </p>
+        <p facs="#facs_1_r_14">
+          Informationen
+        </p>
+        <p facs="#facs_1_r_15">
+          Vermerk Bibliothek
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          tribune libre
+        </p>
+        <p facs="#facs_2_r_2">
+          <placeName ref="#zbz-l.29">EUROPE</placeName><lb facs="#facs_2_l_2_1" n="N001" />AU DÉFI
+        </p>
+        <p facs="#facs_2_r_3">
+          par
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne HERSCH</persName> - <persName ref="#zbz-p.196">Henri FRENAY</persName><lb facs="#facs_2_l_4_1" n="N001" />Henri RIEBEN - François BONDY<lb facs="#facs_2_l_4_2" n="N002" />G.P.M. GALLOIS - <persName ref="#zbz-p.999">André PHILIP</persName>
+        </p>
+        <p>
+          <orgName ref="#zbz-o.24">PLON</orgName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI<lb facs="#facs_3_l_1_1" n="N001" />par <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_2">
+          Il ne s'agit ici ni d'un ouvrage de propagande, ni d'un ensemble de recettes politiques. Il s'agit de faire le point.
+        </p>
+        <p facs="#facs_3_r_3">
+          Autour de nous, l'espace et le temps ont changé. Tous deux, à la fois, se rétrécissent, se creusent et se boursouflent vertigineusement. L'espace : pays naguère grands, devenus minuscules, subissant de tous côtés l'assaut d'événements survenus ailleurs ; présence de tous les ailleurs sur les écrans, dans les bruits et les voix perçus jusque dans le sommeil ; notre continent, réduit à presque rien sur cette mappemonde où faim et richesse hurlent jusqu'à nous leurs appels à l'aide et leurs slogans publicitaires ; et la planète, plus petite que la mappemonde parmi les pistes entrouvertes de l'étendue sidérale. Ni les fauves, ni les silences éternels n'effraient plus personne. Ni Dieu, semble-t-il. Il ne rassure plus, non plus. Les hommes, pourtant, continuent à avoir peur — d'un seul être encore : de l'homme. — Le temps : n'importe qui survole du regard plusieurs dizaines de milliers d'années d'histoire
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_4_r_2">
+          humaine et voit cette durée se réduire à presque rien sur le fond des périodes astronomiques. Une immensité de passé s'est ouverte, où l'homme n'était pas. Une immensité d'avenir s'ouvre, où l'homme, peut-être, ne sera plus. Un certain regard, trop vaste, dévalorise tout. Guerres passées, massacres, bonheurs, morts — en somme qu'importe? Le réel a la même présence que l'imaginaire, l'actualité se vit comme une reconstitution. Sur l'écran de la télévision les <bibl ref="#zbz-w.220">Trois Mousquetaires</bibl>, la guerre d'<placeName ref="#zbz-l.134">Algérie</placeName>, l'arrivée sur la Lune, ont tout juste la même densité. De plus en plus, vivre, c'est se raconter ou se laisser raconter des histoires. Ainsi l'ouvrier, le mercredi, à son poste de travail, se raconte son dimanche précédent ou son dimanche suivant, qu'il a passé et passera à se faire raconter les jours de quelqu'un d'autre. « Maintenant » n'est nulle part. Ou alors c'est le point même où l'on a peur, et où l'on étouffe la peur en se racontant des histoires d'avant et d'après.
+        </p>
+        <p facs="#facs_4_r_3">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          Il y a bien, pourtant, quelque part, le loyer à payer, le gosse à conduire au Zoo, les haricots à cuire, et l'examen, et la séance, et le malade, et le dentiste. Mais entre cela et les histoires racontées il n'y a rien. Cela ne s'articule pas. Les histoires se racontent, on les raconte — et l'histoire aussi, fleuve géant et nul. Toi, moi, nous n'y sommes pour rien.
+        </p>
+        <p>
+          Ce n'est pas une plainte que j'exhale là, pas du tout. Nous sommes bien contents de n'y être pour rien.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_5_r_2">
+          Nous craignons plutôt d'y être pour quelque chose, ou alors d'être pris à partie trop violemment, interpellés. Si seulement nous pouvions ne plus être dans le coup du tout, sortir une bonne foi de l'histoire, nous déclarer définitivement neutres et contre toute guerre, et nous boucher les oreilles; écouter des histoires, bon, mais assumer l'histoire, jamais plus.
+        </p>
+        <p facs="#facs_5_r_3">
+          Car, après tout, ce temps qui n'a plus de maintenant, il est encore assez agréable à vivre, chez nous, en <placeName ref="#zbz-l.29">Europe</placeName>. Et ces cris de famine — famine de pain, famine de dignité — qui sont poussés par des multitudes ailleurs, pourquoi n'en pas faire une histoire de plus, émouvante et douloureuse comme toutes les belles histoires, — pourquoi ne pas les mettre au passé et les ajouter aux plaintes poussées longtemps, longtemps, par ces multitudes de morts dont chacun de nos pas foule la poussière et pour lesquels, en toute conscience, nous ne pouvons plus rien?
+        </p>
+        <p>
+          *
+        </p>
+        <p>
+          Le livre que voici dit que c'est impossible. Le livre que voici avertit. Il ne raconte aucune histoire. Il décrit un moment qui est notre maintenant. Il tente de nous acculer à notre hic et nunc, c'est-à-dire au point où, entre le passé et l'avenir, royaumes des histoires, nous choisissons notre sort réel. Et ne pas choisir, c'est encore choisir. Car on n'est jamais sûr, c'est vrai, en agissant, d'obtenir exactement ce qu'on a choisi. Mais si nous ne nous en mêlons pas, un avenir à peu près
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_6_r_2">
+          prévisible se dessine, que nous aurons choisi sans l'avoir voulu.
+        </p>
+        <p facs="#facs_6_r_3">
+          Le livre que voici dit : Voilà l'enjeu. Voilà ce qui menace. Voilà ce qui est possible. Aujourd'hui, voilà nos chances. Elles ne sont pas permanentes. Elles sont celles d'aujourd'hui, non de demain. <persName ref="#zbz-p.436">Européens</persName>, à vous !
+        </p>
+        <p>
+          On verra qu'il a été écrit par des hommes qui pensent froidement et qui aiment avec ardeur. Qu'aiment-ils? <placeName ref="#zbz-l.29">L'Europe</placeName>, certes, mais qu'est-ce à dire? Ce n'est pas un territoire, d'ailleurs bien mal délimité. Ce n'est pas une « nation », au sens où l'on verra ce mot défini plus loin, puisque « la nation européenne » n'existe pas et que nul ne songe à la faire exister. C'est peut-être « une patrie », si l'on entend par là une réalité complexe, à la fois concrète et vague, puissante, chargée d'affectivité, liée à des sensations, des expériences, des sentiments si anciens qu'il est absurde de tenter d'en démêler l'écheveau. C'est peut-être davantage une patrie que ne le sont nos « nations », abstraites et juridiques, prétentieuses au point de ne reconnaître au-dessus d'elles aucune loi. Peut-être, après tout, cette communauté « <placeName ref="#zbz-l.29">Europe</placeName> », qui s'est déchirée elle-même et que nul pendant longtemps n'a nommée, est-elle plus proche, en vérité, que la nation, dans notre cœur, du village ou de la rue, de la montagne ou du fleuve, du champ de blé ou des cheminées où se garde à jamais notre enfance.
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_7_r_2">
+          Mais les hommes qui ont écrit ce livre aiment autre chose et luttent pour autre chose encore : une certaine manière, sur terre, d'être un homme, qui a été celle des <persName ref="#zbz-p.436">Européens</persName>. Ce qui la caractérise à mes yeux, c'est un constant effort d'incarnation. <persName ref="#zbz-p.1932">Les Européens</persName> ne cultivent guère l'expérience intérieure pour elle-même, solitaire, ponctuelle, absolue. Même les mystiques parmi eux recherchent une efficacité. Ils n'ont pratiqué qu'exceptionnellement le retrait ascétique, individuel ou collectif, qui abandonne le monde à ce qu'il est dans l'espoir d'une grâce libérée de toute pesanteur. Ils restent sans cesse dans la tension qui lie et oppose la pensée à la chose, la chose à la pensée, s'obstinant à un va-et-vient où chacune est éprouvée par l'autre. Toute hypothèse veut être vérifiée, les expériences et les usages suscitent les hypothèses, les actes demandent leur sens aux valeurs, et toutes les valeurs recherchent l'épreuve des faits. Mis à distance par le regard de la conscience, ce qui est ne bouche plus les perspectives, temporelles et spatiales, où s'engendre ce qui peut être ou ce qui devrait être. L'éventail des possibles s'ouvre devant le choix actif.
+        </p>
+        <p>
+          Dès qu'il y a choix, il y a lutte. C'en est fait de l'unanimité. Les volontés diverses entrent en conflit. D'autant plus qu'il ne s'agit pas de vouloir seulement, ni d'imaginer, ni de rêver, mais d'incarner ceci ou cela, hic et nunc, dans cet univers de matière où chaque
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          6<lb facs="#facs_8_l_1_1" n="N001" /><placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_8_r_2">
+          chose qui est en exclut une autre. Des hommes, âme et corps, conçoivent des desseins et acceptent les lois et les risques de leur insertion dans ce qui est. Ils ne se soumettent pas à une réalité donnée, ils ne s'y résignent pas; ils s'en détachent, la regardent et se révoltent. Mais c'est une révolte soumise à un ordre non encore réel, qui la dépasse.
+        </p>
+        <p>
+          Diversité, ruptures, changements, crises. Les États se cherchent des significations, les idées se cherchent des sociétés à modeler. Les croyances s'emparent des corps humains, les mettent en mouvement, les jettent à l'assaut de la nature et les uns contre les autres. Elles veulent prendre corps. L'esprit ne se contente ni de la matière, ni de lui-même; il lui faut l'affrontement, l'incarnation, comme l'épreuve du feu. Ce n'est pas un hasard si, au début des temps modernes, de cette aventure prodigieuse et sans précédent que fut et qu'est encore la révolution scientifique et technique, nous trouvons le dualisme impitoyable de <persName ref="#zbz-p.179">Descartes</persName> : d'un côté la matière, dénudée, dépouillée de toute spontanéité, de tout mélange (fût-il affectif ou vital) avec autre chose que son intégrale passivité, réduite au pur mécanisme, — de l'autre la pensée, dégagée elle aussi de tout emmêlement avec l'innocence de l'inertie, réduite au pur vouloir rationnel, — et les deux aux prises l'une avec l'autre, se purifiant chacune de l'autre par leur affrontement. Cette radicalité dans la distinction s'écarte de tout bon sens; elle paraîtrait caricaturale si elle n'était symbolique.
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_9_r_2">
+          De cette <placeName ref="#zbz-l.29">Europe</placeName> activement incarnatrice, jamais cependant la mystique et la soumission religieuse n'ont disparu. Parfois, rationalisme et mystique s'y croisent ; les certitudes logiques peuvent prendre alors l'éclat de « vérités éternelles », par lesquelles on rejoint la pensée même du <persName ref="#zbz-p.50">Créateur</persName> ; ou, plus directement encore, elles sont des « visions en Dieu ».
+        </p>
+        <p facs="#facs_9_r_3">
+          Mais ce sont là des points de croisement de voies distinctes, non un emmêlement confus. <placeName ref="#zbz-l.29">L'Europe</placeName> a multiplié séparations et distinctions, jusqu'au cœur du sacré, jusqu'au cœur aussi de l'inextricable cohésion sociale. Par exemple, douloureusement, à travers crises et guerres, elle a séparé l'<orgName ref="#zbz-o.71">Église</orgName> et l'<orgName ref="#zbz-o.754">État</orgName>. Elle a cherché à remplacer partout l'unité confuse et forte du donné social par un pluralisme articulé, suscitant l'affrontement, la contestation, les confrontations, non les synthèses. Engendrant problèmes et conflits, attisant choix et exclusives, aussi peu monolithique que tolérante, aiguisant les crêtes séparatrices, précisant, durcissant les alternatives, l'<placeName ref="#zbz-l.29">Europe</placeName> s'est jetée, corps et âme, dans cette source de plus en plus intense de diversités créatrices et de monotones horreurs qu'on appelle l'histoire.
+        </p>
+        <p>
+          Nulle part dans l'univers, à ce qu'il semble, l'histoire n'a proliféré comme elle l'a fait en <placeName ref="#zbz-l.29">Europe</placeName>. Nulle part elle n'a multiplié ainsi, dans des laps de temps relativement brefs, les empires et les effondrements, les révolutions et les guerres, les tentatives héroïques
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_10_r_2">
+          et les défaites, nulle part elle n'a ainsi ramifié les arts, la musique, la philosophie. Nulle part, sans doute, les peuples n'ont vécu aussi vite. Et c'est sans doute pour ces raisons que la révolution scientifique et technique s'est produite ici, et non ailleurs.
+        </p>
+        <p facs="#facs_10_r_3">
+          *
+        </p>
+        <p>
+          Mais si l'<placeName ref="#zbz-l.29">Europe</placeName> est pour nous — ou doit être — une patrie, comment ne pas voir, ne fût-ce que par amour, sinon par justice, son visage coupable? Incarnatrice, avons-nous dit. Incarnatrice de conceptions, d'idées, de valeurs. Dès lors, c'est d'elle avant tout qu'il nous faudra exiger que concordent le faire et le dire, le faire et le croire, le faire et le penser. Et que voyons-nous aujourd'hui?
+        </p>
+        <p>
+          Une poussière d'États, chacun jaloux d'une souveraineté nationale absolue, intangible, sacrée, ne souffrant au-dessus d'eux ni loi, ni autorité, aucun ordre commun, aucune entrave — mais tous impuissants devant n'importe quelle menace, n'importe quel chantage, dépendant en fait jusque dans leur souffle, jusque dans la circulation de leur sang économique, de décisions prises ailleurs. Une poussière d'États proclamant leur reconnaissance philosophique et religieuse d'une valeur essentielle à laquelle tout doit être subordonné sans qu'on puisse elle-même la subordonner à rien celle de la personne humaine, en tant que sujet capable de liberté et de responsabilité, à la fois source et raison d'être de toute culture; — mais des masses humaines y vivent asservies au gagne-pain, et l'instinct de liberté
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_11_r_2">
+          s'y débat comme il peut, sans horizon, parmi les pressions contradictoires, entre le temps vendu de la journée et le temps dormi de la nuit, et sans que l'univers de la culture entrouvre ses trésors. Une poussière d'États qui prétendent encore régner sur d'autres, tirer profit de lointaines foules réduites à merci davantage par la faim que par la force, foules « inférieures », composées d'« hommes » si l'on veut, mais au sens zoologique seulement.
+        </p>
+        <p facs="#facs_11_r_3">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p facs="#facs_11_r_4">
+          — Tout cela est-il vrai? Peut-être pour certains, pour beaucoup. Il me semble quand même avoir cédé un moment à quelques slogans de l'éloquence à la mode. En fait, les hommes d'<placeName ref="#zbz-l.29">Europe</placeName>, récemment, ont fini par découvrir que leurs anciens esclaves des autres continents étaient bien des frères humains, puisqu'ils les voyaient révoltés. Les découvrant frères, ils ont pris peur. Beaucoup ne songent qu'à tout planter là et à fuir.
+        </p>
+        <p>
+          Mais comment fuir quand ces exigences dont « les autres » nous assaillent, ce sont les nôtres? Nous les avons nous-mêmes semées aux quatre vents. Et fuir — où? Il n'y a plus de lieu où fuir, sur cette terre étroite et solidaire. Plus moyen même de se recroqueviller chez soi pour durer et attendre. Car ce qui se passe ailleurs se passe ici, se passe partout. Et nos tâches sont partout.
+        </p>
+        <p>
+          Démesurées, elles nous incitent à refuser l'héritage. Hériter des biens, un immense capital investi — cruel-
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          10
+        </p>
+        <p facs="#facs_12_r_2">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_12_r_3">
+          lement investi par le capital libre, aveugle et impitoyable du xixe siècle, — des musées, des trésors déjà accumulés, donc passés, à la bonne heure. Mais hériter des tâches, et par elles un avenir?
+        </p>
+        <p facs="#facs_12_r_4">
+          Nous avons envie de répondre : impossible. Nous sommes de vieilles nations, divisées à l'intérieur d'elles-mêmes et entre elles. Nous tenons à tout ce qui nous divise, à nos souvenirs atroces, à nos rancunes liées à nos gloires, à ce sang versé, et même à nos crimes, s'ils furent nôtres. Nous sommes de vieux peuples individualistes, et chacun de nos efforts, militaire, sportif, industriel, trouve son sens dans le prestige qu'il donne à un drapeau, rival d'autres drapeaux.
+        </p>
+        <p>
+          Il y a des pays, non loin de nous, un peu plus à l'est, qui n'ont plus vraiment de drapeau. Cela nous gêne un peu. Il est vrai que « drapeau » ici est un peu une manière de dire, un euphémisme imagé ; car ce que nous pensons réellement, c'est que les hommes là-bas, ne peuvent plus être eux-mêmes, penser ce qu'ils pensent, croire ce qu'ils croient, aimer et haïr ce qu'ils haïssent ou aiment. Nous réussissons parfois à croire qu'ils en ont peut-être moins besoin que nous, que de longues traditions les ont habitués à se passer de ce qui, pour nous, rend l'air respirable. Évidemment nous n'en sommes pas bien certains, mais comme de toute façon nous ne pouvons rien faire pour les libérer, mieux vaut croire qu'il en est ainsi.
+        </p>
+        <p>
+          Certains craignent que la contrainte ne s'étende jusqu'à nous. Mais cela, nous trouvons que dans nos vieux pays raisonnables, c'est difficile à imaginer. On
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_13_r_2">
+          11
+        </p>
+        <p>
+          n'osera pas s'attaquer à nous. Notre passé nous protège, n'est-ce pas, et de toute façon, nous en avons vu d'autres. Et puis, nous sommes trop faibles : que pouvons-nous faire entre les deux Grands? Tenons-nous tranquilles, comptons sur les <persName ref="#zbz-p.1940">Américains</persName>; même si nous les insultons, ils ne peuvent nous abandonner; et les <persName ref="#zbz-p.1478">Russes</persName> ont besoin de paix. Quant aux pays sous-développés d'<placeName ref="#zbz-l.387">Afrique</placeName>, d'<placeName ref="#zbz-l.28">Asie</placeName>, d'<placeName ref="#zbz-l.445">Amérique du Sud</placeName>, les besoins y sont si immenses que mieux vaut ne rien faire. Que peut la <placeName ref="#zbz-l.29">Petite Europe</placeName> devant le raz de marée démographique, l'insurrection des races, les menaces de famine? Et la stratégie atomique, et l'utilisation pacifique de l'énergie nucléaire, et la recherche scientifique, laissons tout cela à de plus riches et de plus puissants. Nos savants iront travailler dans leurs laboratoires, nous conduirons les étrangers à travers nos musées et nos églises, et la vie continuera, car chez nous, on sait vivre.
+        </p>
+        <p>
+          *
+        </p>
+        <p>
+          Ce livre dit qu'elle ne continuera pas. Il résulte de chacune des études réunies ici une alternative extrême. Ou bien les <persName ref="#zbz-p.436">Européens</persName> ne saisiront pas l'année, l'heure qui s'offre, pour s'unir et remplir ensemble les tâches qui s'imposent aujourd'hui, et alors, rapidement, inéluctablement, le déclin de leur prestige, de leur productivité, de leur pouvoir concurrentiel, de leur influence politique, de leur sécurité militaire, de leur créativité scientifique, technique, artistique ira s'accentuant, élargissant l'écart entre eux et les grandes
+        </p>
+      <pb facs="#facs_14" n="14" />
+        <p facs="#facs_14_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_14_r_2">
+          puissances continentales. Ou bien ils s'uniront et s'attaqueront à leurs tâches, profitant de la révolution atomique et des chances immenses qu'elle donne à une population techniquement et intellectuellement entraînée, habituée au travail, à la réflexion, à l'initiative, — et alors tous les espoirs sont permis.
+        </p>
+        <p>
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          Il y a encore, en <placeName ref="#zbz-l.29">Europe</placeName>, des idéalistes paresseux qui rêvent d'un art prospérant dans des mansardes sans feu, sous les pinceaux d'un peintre aux joues blafardes. De telles mansardes, de tels peintres sont toujours possibles. Mais une civilisation, comme tout être humain, est aussi un corps. Quand ce corps devient exsangue, le reste s'amenuise, dépérit ou s'en va ailleurs. L'<placeName ref="#zbz-l.411">Amérique</placeName> a déjà beaucoup écrémé l'<placeName ref="#zbz-l.29">Europe</placeName> de ses savants et de ses artistes, et il est absurde de mépriser comme « vendus aux dollars » ceux qui sont partis. Tout créateur recherche les conditions favorables à sa création. Il est évident qu'un physicien a besoin de laboratoires et d'instruments. Mais un peintre a besoin d'acheteurs et un musicien d'un public. Pour qu'il y ait des physiciens, des laboratoires, des peintres, des musiciens, des publics, il faut une productivité élevée, des loisirs, une main-d'œuvre précieuse. Si la productivité baisse, la main-d'œuvre perd sa valeur, les loisirs diminuent, les marchés se rétrécissent, et les choses empirent selon une progression catastrophique. L'expérience, en effet, montre que l'écart entre pays avancés et retardataires ne peut, sauf intervention extraordinaire de l'extérieur,
+        </p>
+      <pb facs="#facs_15" n="15" />
+        <p facs="#facs_15_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_15_r_2">
+          que s'aggraver. <placeName ref="#zbz-l.29">L'Europe</placeName> devenue pays sous-développé ne pourra plus, l'heure passée, rattraper ses chances. Elle s'enlisera de plus en plus dans les marais marginaux de l'histoire à venir.
+        </p>
+        <p>
+          Devant de telles perspectives, certains préfèrent se boucher les yeux et les oreilles et rêver à la grandeur passée. Il leur semble, au fond, que la partie est déjà perdue. Mais les auteurs de ce livre leur disent que non. Ils disent : un fédéralisme faisant régner la paix par le droit entre nos États permettrait de sauvegarder notre patrimoine par une gestion commune. Ils disent : au moment où le monde s'engage dans la troisième révolution industrielle, celle de l'énergie nucléaire, de l'automation, de la cybernétique et de la chimie de synthèse, il reste à l'<placeName ref="#zbz-l.29">Europe</placeName> quelques brèves années pour rattraper son retard ou se vassaliser ; et qu'on n'ait pas recours à l'alibi de l'impuissance : l'<placeName ref="#zbz-l.29">Europe</placeName> peut rattraper le retard ; si elle abdique, c'est que nous l'aurons choisi. Ils disent : une <placeName ref="#zbz-l.60">Europe occidentale</placeName> balkanisée, c'est-à-dire morcelée en petits États aussi ambitieux et susceptibles qu'impuissants, n'a rien à proposer à une <placeName ref="#zbz-l.29">Europe</placeName> balkanique soviétisée : aucun espoir, même pas un dessein ; elle doit se changer elle-même si elle veut se préparer à accueillir un jour ces patries. Ils disent : la garantie militaire américaine, sur laquelle, tout en maugréant contre elle, l'<placeName ref="#zbz-l.29">Europe</placeName> voudrait pouvoir compter à coup sûr, devient douteuse et pourrait même être supprimée ; l'<placeName ref="#zbz-l.29">Europe</placeName> doit et peut prendre le relais, à condition de trouver en elle la force morale de vivre et de lutter dans un monde de plus en plus dur. Ils disent : l'<placeName ref="#zbz-l.29">Europe</placeName>, si elle rompt sans
+        </p>
+      <pb facs="#facs_16" n="16" />
+        <p facs="#facs_16_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_16_r_2">
+          réticence avec son passé colonial, peut encore et doit assumer des tâches mondiales, inventant une politique extérieure commune, réalisant en premier lieu cette <placeName ref="#zbz-l.523">Eurafrique</placeName> qu'imposent des réalités économiques permanentes.
+        </p>
+        <p facs="#facs_16_r_3">
+          Tous, ils disent : il faut, tout de suite, sans attendre. Tous, ils disent : nous pouvons. Affaire d'invention, affaire de courage, affaire de liberté, en somme, de réponse au présent.
+        </p>
+        <p>
+          L'histoire, le monde, son propre passé, ses propres valeurs, ses forfaits, ses exploits jettent à l'<placeName ref="#zbz-l.29">Europe</placeName> un défi mortel. Nous pensons que pour elle-même, pour l'histoire et le monde, pour l'homme où qu'il soit, il est nécessaire et urgent qu'elle sache le relever.
+        </p>
+      <pb facs="#facs_17" n="17" />
+        <p facs="#facs_17_r_1">
+          NATIONALISME ET PATRIOTISME
+        </p>
+        <p facs="#facs_17_r_2">
+          par <persName ref="#zbz-p.196">Henri Frenay</persName>
+        </p>
+        <p facs="#facs_17_r_3">
+          « La souveraineté nationale est le principe du pouvoir dans tout régime de démocratie libérale... Elle définit la source de l'autorité, l'origine du droit de commander.
+        </p>
+        <p facs="#facs_17_r_4">
+          « …………
+        </p>
+        <p facs="#facs_17_r_5">
+          « Comment admettre que l'on sert son pays en transférant les droits fondamentaux de décision à une autorité supérieure...
+        </p>
+        <p facs="#facs_17_r_6">
+          « …………
+        </p>
+        <p>
+          « La véritable équipe de la supranationalité est consciente de ce qu'elle souhaite : qu'il n'y ait plus de <placeName ref="#zbz-l.2">France</placeName>... »
+        </p>
+        <p>
+          <persName ref="#zbz-p.1564">Michel Debré</persName>,<lb facs="#facs_17_l_8_1" n="N001" /><bibl ref="#zbz-w.621">Ces princes qui nous gouvernent</bibl><lb facs="#facs_17_l_8_2" n="N002" />(<orgName ref="#zbz-o.24">Plon</orgName> – Tribune Libre).
+        </p>
+        <p>
+          Lorsqu'il me fut demandé de collaborer à cet ouvrage, j'avais depuis quelques années déjà l'intention d'entreprendre une sérieuse étude sur le sujet « Nationalisme et Patriotisme ». Mon ambition était même d'en faire un livre dont, faute de temps, j'avais reporté la rédaction au moment où je jouirais du calme de la retraite.
+        </p>
+        <p>
+          15
+        </p>
+      <pb facs="#facs_18" n="18" />
+        <p facs="#facs_18_r_1">
+          <placeName ref="#zbz-l.29">L'EUROPE</placeName> AU DÉFI
+        </p>
+        <p facs="#facs_18_r_2">
+          La lecture du livre de <persName ref="#zbz-p.1564">Michel Debré</persName>, cité en exergue, fit que je me ravisai. J'acceptai l'offre qui m'était faite tout en ayant pleinement conscience de l'impossibilité où je me trouverais de traiter au fond en quelques pages un sujet aussi complexe relevant de nombreuses disciplines.
+        </p>
+        <p facs="#facs_18_r_3">
+          C'est donc avec beaucoup d'humilité que je prends la plume. De nombreux auteurs avant moi, ont consacré d'importants ouvrages à l'étude du nationalisme ou du patriotisme, et cette modeste étude leur doit beaucoup. Il m'a semblé cependant que les rapports entre ces deux sentiments et leurs conséquences dans le domaine politique ont été trop souvent négligés.
+        </p>
+        <p facs="#facs_18_r_4">
+          Mon propos ne sera donc pas de faire une étude approfondie de la Patrie et de la Nation. Je me bornerai à en rappeler brièvement les traits essentiels strictement nécessaires à l'objet que je poursuis.
+        </p>
+        <p>
+          Je ne suis ni un historien, ni un sociologue, ni un philosophe, mais un homme auquel son action au service de l'<placeName ref="#zbz-l.29">Europe</placeName> dans les années d'après-guerre a permis de faire maintes observations et d'acquérir une certaine expérience. J'ai maintenant acquis la conviction que la confusion qui règne entre ces mots Patrie et Nation est de loin le principal obstacle dressé sur la route qui doit conduire l'<placeName ref="#zbz-l.29">Europe</placeName> à son unité. C'est donc un problème politique que je voudrais contribuer à résoudre et non une question d'ordre métaphysique. Les pages qui suivent n'ont pas d'autre objet.
+        </p>
+      </div>
+      </body></text>
+</TEI>

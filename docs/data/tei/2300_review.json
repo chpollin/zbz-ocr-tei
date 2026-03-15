@@ -1,0 +1,45 @@
+{
+  "doc_id": "2300",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [2, 4],
+      "notes": "6 Seiten (p2-p7). Overlay S.2 zeigt einspaltiges Journal-Layout mit sauberer Regionserkennung. S.4 ebenfalls korrekte Zonen."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Englischer akademischer Text. OCR-Qualitaet hoch. Deutsche Fachbegriffe (Dasein, Bewusstsein ueberhaupt, Geist) korrekt erfasst."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltiges Layout. Absaetze korrekt segmentiert. Journal-Kopf auf S.2 korrekt als head mit orgName-Annotation."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Schema-Fehler, 0 Projekt-Fehler. W6 ignoriert. 6 surfaces. hi rendition=#i fuer Kursivierung korrekt eingesetzt."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 24,
+        "orgName": 2,
+        "placeName": 1,
+        "bibl": 10
+      },
+      "notes": "Jaspers dominant, korrekt durchgehend annotiert. Plato, Kant, Hegel, Heidegger, Bultmann, God annotiert. OrgName: Journal of the British Society for Phenomenology, University of Geneva."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vollstaendiger Aufsatz The Central Gesture in Jaspers Philosophy. Kohaerenter philosophischer Text. Sprache eng korrekt."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Sauber edierter englischsprachiger philosophischer Aufsatz. Dichte Entitaetsannotation mit korrekten Referenzen."
+}

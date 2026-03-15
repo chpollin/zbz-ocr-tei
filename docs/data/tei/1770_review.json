@@ -1,0 +1,45 @@
+{
+  "doc_id": "1770",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 7, 13],
+      "notes": "CADMOS-Zeitschriftenheft (Ete 1981). S.1 Cover mit handschriftlicher '1770' (Doc-ID). Layout korrekt erkannt. Textseiten gut lesbar."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Dichter franzoesischer philosophischer Text ueber Droits de l'homme. Sauber transkribiert. Keine OCR-Artefakte."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "13 Seiten. S.1-2 Cover/Impressum, S.3-13 Artikeltext. Seitenzahlen (18-28) als p-Elemente. Einspaltig."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID (0 Fehler, 0 Warnings). biblStruct type=journalArticle, Sprache fra, Datum 1981 korrekt. monogr/title leer -- CADMOS als Zeitschriftenname fehlt formal. Entities: 21p 14o 22l 38w = 95."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 21,
+        "orgName": 14,
+        "placeName": 22,
+        "bibl": 38
+      },
+      "notes": "Reichhaltige Annotation. 'Droits de l'homme' konsequent als bibl getaggt (Hauptthema des Textes). Personen (Hersch, Rougemont, Friedlaender, Attali, Maheu etc.) korrekt. Orte (Europe, Occident, Geneve, Paris, etc.) plausibel. orgName (UNESCO, Centre Europeen, etc.) korrekt."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vollstaendiger Essay 'Le concept des droits de l'homme est-il un concept universel?' CADMOS 1981. Hersch argumentiert fuer Universalitaet der Menschenrechte aus UNESCO-Erfahrung. Beginnt S.3, endet S.13 mit Punkt 4 und Signatur. Kohaerenter, hochrangiger philosophischer Text."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Herausragender Essay ueber Universalitaet der Menschenrechte (CADMOS 1981). 13 Seiten, reichhaltig annotiert mit 95 Entities. Text vollstaendig, kohaerenter und exemplarisch gut strukturiert. Keine Beanstandungen."
+}

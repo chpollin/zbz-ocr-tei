@@ -1,0 +1,41 @@
+{
+  "doc_id": "1730",
+  "reviewer": "quality-screening-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "pages_inspected": ["2", "4"],
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 3p 3o 3l 3w = 12"
+    },
+    {
+      "severity": "info",
+      "code": "VAL",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "TEXT",
+      "msg": "Fra/Deu, Forum der Schweizerfrauen 1980, Hersch ueber condition feminine, kohaerenter Vortrag"
+    },
+    {
+      "severity": "info",
+      "code": "LAYOUT",
+      "msg": "Overlay S.2+S.4: Zweispalten-Layout korrekt, Seitenzahlen 22/23 sichtbar"
+    },
+    {
+      "severity": "minor",
+      "code": "NER",
+      "msg": "persName Anglais (#zbz-p.2082) in 'les Anglais appellent' -- Volksbezeichnung, kein Personenname"
+    },
+    {
+      "severity": "info",
+      "code": "STRUCT",
+      "msg": "sourceDesc nutzt bibl statt biblStruct -- valides TEI, abweichend vom Korpus-Standard"
+    }
+  ]
+}

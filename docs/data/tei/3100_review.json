@@ -1,0 +1,38 @@
+{
+  "doc_id": "3100",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 34,
+  "lang": "fra/deu",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: La question de Dieu et la philosophie aujourd'hui, Mende/Widmer/Hersch, fra+deu, 1970, journalArticle"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "1 Fussnote"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 262p 41o 18l 76w = 397"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Zweisprachige Diskussion (fra/deu) ueber Gottesfrage, Sprachwechsel korrekt erhalten"
+    }
+  ]
+}

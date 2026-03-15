@@ -1,0 +1,54 @@
+{
+  "doc_id": "1090",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "Journal de Geneve, 1. August 1974. 2 Seiten."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "SCHWERE OCR-PROBLEME. Hersch-Artikel stark halluziniert. Unsinnige Woerter ('laceration', 'Pumole', 'antientimialiste'). Seite 2: massive Textduplikate."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "88 Zonen auf Seite 2 -- extrem fragmentiert. Duplikate durch Layout-Fehler."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID laut Validator, aber strukturell mangelhaft."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 20,
+        "orgName": 10,
+        "placeName": 0,
+        "bibl": 0
+      },
+      "notes": "Alle refs 'GND:unknown' ausser Hersch (GND:118815679)."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "KRITISCH: Hersch-Beitrag verzerrt. Titel 'JOURNAL DE GENEVE' statt Artikeltitel. Massive Duplikate auf Seite 2. ~15 verschiedene Artikel/Anzeigen in einem Doc."
+    }
+  },
+  "findings": [
+    "KRITISCH: Hersch-Beitrag stark halluziniert/verzerrt.",
+    "KRITISCH: Massive Textduplikate auf Seite 2.",
+    "KRITISCH: Titel ist 'JOURNAL DE GENEVE' statt Hersch-Artikeltitel.",
+    "88 Zonen auf Seite 2 -- extreme Fragmentierung.",
+    "OCR-Artefakte: 'A VENTRE' statt 'A VENDRE', 'antientimialiste'.",
+    "Alle Entity-Refs ausser Hersch sind 'GND:unknown'."
+  ],
+  "overall_notes": "Grundlegende Ueberarbeitung noetig. Hersch-Artikel verzerrt, massive Duplikate. Mehrspaltiges Zeitungslayout hat Pipeline ueberfordert."
+}

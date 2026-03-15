@@ -1,0 +1,53 @@
+{
+  "doc_id": "1570",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        2,
+        3
+      ],
+      "notes": "3 Seiten Societe des Arts Bulletin (Athenee). S.1 Inhaltsverzeichnis, S.2 Editorial, S.3 Hersch-Artikel."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gute OCR-Qualitaet. Hersch-Text auf S.3 klar lesbar."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "S.1 Tabellenstruktur. S.2 einspaltig. S.3 zweispaltig mit Hersch-Artikel und CV."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": [],
+      "notes": "Valide. type=editorial passt fuer Gesamtpublikation. Titel generisch SOCIETE DES ARTS. Datum unknown (ca. 1979)."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 18,
+        "orgName": 12,
+        "placeName": 10,
+        "bibl": 2
+      },
+      "notes": "Reichhaltige Entitaeten mit Projekt-Referenzen. Hersch, Einstein, Planck, Soares."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Hersch-Text praegnanter Essay ueber Mass Media. CV am Ende. Kohaerenter Text."
+    }
+  },
+  "findings": [
+    "Titel generisch SOCIETE DES ARTS -- Hersch-Artikel heisst Les Mass Media sur la sellette",
+    "Datum unknown -- ca. 1979 (Einstein-Centenaire)",
+    "Hersch-CV am Textende"
+  ],
+  "overall_notes": "Societe des Arts Bulletin ca. 1979. Hersch-Beitrag ueber Mass Media. Sehr gute Qualitaet. Datum fehlt."
+}

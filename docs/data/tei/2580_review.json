@@ -1,0 +1,52 @@
+{
+  "doc_id": "2580",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "Overlay: Doppelseiten (Buch). 3 Seiten. Portraetfoto."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutsch sauber. Keine OCR-Fehler."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltig, klare Absatzstruktur."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID. div ohne type. Sprache deu korrekt."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 3,
+        "orgName": 3,
+        "placeName": 12,
+        "bibl": 2
+      },
+      "notes": "Herzen als persName falsch (im Herzen Europas). Rolle als placeName falsch."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerenter Essay Schweiz/Europa. Hubacher-Beginn am Ende miterfasst."
+    }
+  },
+  "findings": [
+    "Herzen als persName falsch",
+    "Rolle als placeName falsch",
+    "Hubacher-Beitrag am Ende miterfasst",
+    "div ohne type"
+  ],
+  "overall_notes": "Guter Essay, vollstaendig. Kleinere Entity-Fehler und leichte Ueberlappung."
+}

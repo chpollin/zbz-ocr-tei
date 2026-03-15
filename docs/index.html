@@ -38,44 +38,72 @@
                     <span class="ed-hero-metric-label">Zeitraum</span>
                 </div>
             </div>
-            <a href="catalog.html" class="ed-btn ed-btn-primary">Katalog durchsuchen</a>
         </div>
     </header>
 
     <main id="main-content">
-        <!-- Featured Documents -->
-        <section class="ed-section">
+        <!-- Quick Search -->
+        <section class="ed-section" style="padding-top:var(--ed-space-xl);padding-bottom:var(--ed-space-lg)">
+            <div class="ed-section-inner" style="max-width:720px;margin:0 auto">
+                <div class="ed-hero-search">
+                    <input type="search" class="ed-search-input ed-search-hero" id="hero-search"
+                           placeholder="Volltextsuche in Dokumenten, Personen, Orten..." aria-label="Volltextsuche">
+                    <button class="ed-btn ed-btn-primary" id="hero-search-btn">Suchen</button>
+                </div>
+                <div class="ed-search-suggestions" id="search-suggestions"></div>
+            </div>
+        </section>
+
+        <!-- Screening Overview -->
+        <section class="ed-section ed-section-alt" style="padding-top:var(--ed-space-xl)">
             <div class="ed-section-inner">
-                <h2 class="ed-section-title">Ausgewaehlte Dokumente</h2>
-                <div class="ed-featured-grid" id="featured-grid">
-                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
-                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
-                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
-                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
+                <h2 class="ed-section-title">Editorischer Fortschritt</h2>
+                <div class="ed-screening-grid" id="screening-overview">
+                    <div class="ed-skeleton ed-skeleton-block" style="height:100px"></div>
+                    <div class="ed-skeleton ed-skeleton-block" style="height:100px"></div>
+                    <div class="ed-skeleton ed-skeleton-block" style="height:100px"></div>
+                    <div class="ed-skeleton ed-skeleton-block" style="height:100px"></div>
+                </div>
+                <div style="margin-top:var(--ed-space-md)">
+                    <div style="display:flex;justify-content:space-between;font-size:var(--ed-text-xs);color:var(--ed-text-muted);margin-bottom:4px">
+                        <span>LLM-Screening</span>
+                        <span id="screening-pct"></span>
+                    </div>
+                    <div class="ed-screening-progress" id="screening-progress">
+                        <div class="ed-screening-progress-bar" style="width:0%"></div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:var(--ed-text-xs);color:var(--ed-text-muted);margin-bottom:4px;margin-top:var(--ed-space-sm)">
+                        <span>Editor-Kuration</span>
+                        <span id="curation-pct"></span>
+                    </div>
+                    <div class="ed-screening-progress" id="curation-progress">
+                        <div class="ed-screening-progress-bar" style="width:0%;background:var(--ed-navy)"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Corpus Overview -->
+        <!-- Category Browsing -->
+        <section class="ed-section">
+            <div class="ed-section-inner">
+                <h2 class="ed-section-title">Nach Kategorie durchsuchen</h2>
+                <div id="category-tiles"></div>
+            </div>
+        </section>
+
+        <!-- Recently Screened Documents -->
         <section class="ed-section ed-section-alt">
             <div class="ed-section-inner">
-                <h2 class="ed-section-title">Korpus-Uebersicht</h2>
-                <div class="ed-stats-grid">
-                    <div class="ed-stat-card">
-                        <h3>Sprachen</h3>
-                        <div class="ed-bar-chart" id="stats-languages">
-                            <div class="ed-skeleton ed-skeleton-text" style="width:80%"></div>
-                            <div class="ed-skeleton ed-skeleton-text" style="width:60%"></div>
-                            <div class="ed-skeleton ed-skeleton-text" style="width:40%"></div>
-                        </div>
-                    </div>
-                    <div class="ed-stat-card">
-                        <h3>Dokumenttypen</h3>
-                        <div class="ed-pills" id="stats-types"></div>
-                        <h3 style="margin-top:var(--ed-space-lg)">Publikationsformen</h3>
-                        <div class="ed-pills" id="stats-forms"></div>
-                    </div>
+                <h2 class="ed-section-title">Zuletzt bearbeitet</h2>
+                <div class="ed-featured-grid" id="recent-docs-grid">
+                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
+                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
+                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
+                    <div class="ed-skeleton ed-skeleton-block" style="height:280px"></div>
                 </div>
+                <p style="text-align:center;margin-top:var(--ed-space-lg)">
+                    <a href="catalog.html" class="ed-btn ed-btn-outline ed-btn-sm">Alle Dokumente im Katalog</a>
+                </p>
             </div>
         </section>
 
@@ -96,6 +124,7 @@
 
     <footer class="ed-footer" id="ed-footer-slot"></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
     <script src="js/edition-shared.js"></script>
     <script src="js/edition-landing.js"></script>
 </body>

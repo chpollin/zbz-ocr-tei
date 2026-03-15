@@ -1,0 +1,61 @@
+{
+  "doc_id": "690",
+  "reviewer": "quality-screening-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "pages": 11,
+  "tier": 3,
+  "pages_inspected": [1, 7, 11],
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "layer": "L1",
+      "severity": "info",
+      "code": "L1-ok",
+      "msg": "Scan quality acceptable. Book spread photos (two-page spreads from bound volume, fingers visible). Layout overlay shows correct region detection despite photographic distortion."
+    },
+    {
+      "layer": "L2",
+      "severity": "info",
+      "code": "L2-ok",
+      "msg": "OCR text excellent despite book-spread scan source. Dense philosophical French prose reads coherently. Complex argumentation on development, rationality, and social institutions accurately captured."
+    },
+    {
+      "layer": "L3",
+      "severity": "info",
+      "code": "L3-ok",
+      "msg": "Layout correctly handled. Page 1 starts with Raymond Aron's introduction, then Hersch's essay begins. Roman-numeral sections (I, II, III) correctly separated. Running headers and page numbers captured."
+    },
+    {
+      "layer": "L4",
+      "severity": "info",
+      "code": "L4-ok",
+      "msg": "TEI VALID. 0 schema errors, 0 project errors, 0 warnings."
+    },
+    {
+      "layer": "L6",
+      "severity": "warning",
+      "code": "E1-false",
+      "msg": "False positive entity: '<placeName ref=\"#zbz-l.13\">Est</placeName>-ce' -- French verb 'Est' (is) at sentence start falsely tagged as place name (East). Occurs at least twice."
+    },
+    {
+      "layer": "L6",
+      "severity": "warning",
+      "code": "E1-type",
+      "msg": "Entity type mismatch: 'Antigone' tagged as bibl (#zbz-w.838) -- in context refers to the character/person, not the play. 'Ismene' (#zbz-p.617) correctly tagged as person."
+    },
+    {
+      "layer": "L6",
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 78p 3o 5l 4w = 90. Density appropriate. Key persons (Raymond Aron, Jeanne Hersch, Ginsberg, Schaff, Simone Weil, Max Weber, Platon, Socrate, Oppenheimer) correctly tagged."
+    },
+    {
+      "layer": "L7",
+      "severity": "info",
+      "code": "L7-ok",
+      "msg": "Document coherent: 'Developpement, conduites humaines et institutions sociales' -- philosophical essay responding to Ginsberg and Aron on development, rationality, and moralization. Begins with Aron's introduction, followed by Hersch's 3-part essay. Date unknown (metadata says 'unknown'). Ends with conclusion on freedom and rationality. Complete."
+    }
+  ]
+}

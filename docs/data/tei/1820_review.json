@@ -1,0 +1,50 @@
+{
+  "doc_id": "1820",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 8,
+  "language": "fra/deu",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p004"],
+  "errors": 0,
+  "warnings": 3,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V1",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 10p 11o 23l 3w = 47"
+    },
+    {
+      "severity": "warning",
+      "code": "E2",
+      "msg": "S.2 Z.162: 'Marie-Louise Wahl' auf zwei persName-Tags gesplittet (zbz-p.858 Marie + zbz-p.89 Wahl) -- sollte ein zusammenhaengender Name sein"
+    },
+    {
+      "severity": "warning",
+      "code": "E3",
+      "msg": "S.2 Z.162: placeName 'Egg' (zbz-l.360) fuer Personenname 'Dr. Maria Egg' -- falsche Typzuordnung"
+    },
+    {
+      "severity": "warning",
+      "code": "E3",
+      "msg": "S.3 Z.193: bibl 'Le probleme' (zbz-w.603) -- Alltagsausdruck faelschlich als Werk annotiert"
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1: Pro Infirmis Titelblatt mit Naturfoto, Layout-Regionen passen zum TEI-Kopf. Overlay S.4: Zweispaltige Textseite, Zonen plausibel"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Kohaerenter franzoesischer Vortrag (Hersch ueber Euthanasie/Avortement) mit deutscher Zusammenfassung am Ende. Sprachlich korrekt, philosophischer Argumentationsfluss intakt"
+    }
+  ]
+}

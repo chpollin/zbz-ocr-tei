@@ -34,6 +34,9 @@
                     <h3>Publikationsform</h3>
                     <div class="ed-filter-group" id="filter-forms"></div>
 
+                    <h3>Screening-Status</h3>
+                    <div class="ed-filter-group" id="filter-screening"></div>
+
                     <h3>Zeitraum</h3>
                     <div class="ed-date-range">
                         <input type="text" class="ed-date-input" id="filter-date-from" placeholder="Von" aria-label="Datum von">
@@ -50,6 +53,7 @@
                             <div class="ed-view-toggle">
                                 <button class="ed-view-btn active" data-view="table">Tabelle</button>
                                 <button class="ed-view-btn" data-view="cards">Karten</button>
+                                <button class="ed-view-btn" data-view="gallery">Galerie</button>
                             </div>
                             <select class="ed-sort-select" id="catalog-sort" aria-label="Sortierung">
                                 <option value="id">ID aufsteigend</option>
@@ -60,6 +64,7 @@
                                 <option value="date">Datum aufsteigend</option>
                                 <option value="-date">Datum absteigend</option>
                                 <option value="-pages">Seiten absteigend</option>
+                                <option value="screening">Screening-Status</option>
                             </select>
                         </div>
                     </div>

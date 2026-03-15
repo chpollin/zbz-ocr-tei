@@ -1,0 +1,52 @@
+{
+  "doc_id": "2440",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [],
+      "notes": "Kein Overlay. 3 Seiten Interview."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "Seite 1 OCR-Artefakte: ONEELIOU2. head y6019|1984|9-10. Ab Seite 2 sauber."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Interview-Struktur erkennbar. Bibliographieliste am Ende."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [
+        "W9"
+      ],
+      "notes": "VALID. W9 (2/38 ohne ref) akzeptabel. div type=interview passend."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 9,
+        "orgName": 5,
+        "placeName": 10,
+        "bibl": 14
+      },
+      "notes": "Europaeens als persName fragwuerdig. sp-speaker fehlerhaft."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Seite 1 fragmentiert. Ab Seite 2 kohaerentes Interview."
+    }
+  },
+  "findings": [
+    "OCR-Artefakt ONEELIOU2 auf Seite 1",
+    "head mit Scan-Metadaten",
+    "Europaeens als persName",
+    "sp-Elemente mit unsinnigen speaker-Inhalten"
+  ],
+  "overall_notes": "Vollstaendiges Interview. OCR-Artefakte S.1 und fehlerhafte sp/speaker am Ende."
+}

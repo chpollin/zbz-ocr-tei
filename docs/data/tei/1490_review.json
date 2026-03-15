@@ -1,0 +1,45 @@
+{
+  "doc_id": "1490",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 3],
+      "notes": "S.1 E-Periodica-Deckblatt. S.3 Doppelseite (Landscape) mit zweispaltigem Text -- Zonen korrekt getrennt."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutsch korrekt, Umlaute intakt. choice/sic/corr fuer Sekcion->Sektion auf S.2 (dreimal). Militaer-Fachsprache korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "4 Seiten. S.1-2 Portrait, S.3-4 Landscape (Doppelseiten). Zweispaltiges Layout korrekt aufgeloest. Inhaltsverzeichnis als div mit Zeilenlisten."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. Vortragsbericht in dritter Person korrekt strukturiert. Mehrere div-Ebenen fuer Unterthemen."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 5,
+        "orgName": 9,
+        "placeName": 0,
+        "bibl": 0
+      },
+      "notes": "Hersch (GND), Dominique Brunner. Diverse Org-Referenzen: Schweizerischer Fourierverband, ETH-Bibliothek, E-Periodica, Bundesrat, Offiziersgesellschaft Baselland. Hohes orgName-Aufkommen passend fuer militaerischen Kontext."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vortrag ueber Armee und Demokratie. Klar gegliedert: Demokratie-Bedingungen, Gewalt, Hierarchie, Dienstverweigerer, Rechtfertigung. Zweiter Artikel (Luftschutztruppen) folgt als eigener div."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Militaerzeitschrift mit Hersch-Vortrag. Saubere Strukturierung, OCR-Korrekturen vorhanden. Zweiter Artikel im selben Heft korrekt als separater div."
+}

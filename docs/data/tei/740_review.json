@@ -1,0 +1,45 @@
+{
+  "doc_id": "740",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [3, 10, 18],
+      "notes": "Overlay p001 fehlt (Lieferformular). S.3, S.10, S.18 geprueft -- saubere Zonenabdeckung auf typografisch anspruchsvollen Seiten (Gallimard-Satz, Kolumnentitel)."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Frz. philosophischer Text (Kierkegaard-Colloquium Unesco 1964) hochwertig erfasst. Zahlreiche Zitate mit Anfuehrungszeichen korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "19 Seiten. S.1 Lieferformular, S.2 Titelblatt, S.3-19 Textteil. Kolumnentitel (Seitenzahlen + Autorenname/Buchtitel) als separate Zonen. Einspaltig."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. biblStruct/bookSection korrekt. Sprache fra. Hersch, L'instant, in: Kierkegaard vivant (1966)."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 24,
+        "orgName": 10,
+        "placeName": 3,
+        "bibl": 33
+      },
+      "notes": "Hohe Entity-Dichte passend zum Colloquium-Kontext. Sartre, Heidegger, Jaspers, Marcel, Platon, Hegel, Marx, Kierkegaard korrekt referenziert. bibl-Tags fuer Kierkegaard vivant und Werktitel."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerenter philosophischer Vortrag ueber den Begriff des Augenblicks bei Kierkegaard. S.94-110 laut Quellenangabe, Text laeuft durchgehend. Schluss auf S.19 mit Unesco-Bezug."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Hochwertige Edition eines frz. philosophischen Colloquium-Beitrags mit dichter Entitaetsannotation."
+}

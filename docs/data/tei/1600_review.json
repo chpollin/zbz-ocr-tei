@@ -1,0 +1,30 @@
+{
+  "doc_id": "1600",
+  "reviewer": "quality-screener-t2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 6p 16o 8l 10w = 40; zbz-refs present"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 errors, 0 warnings"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S2+S3: multi-column magazine layout; many small zones but acceptable"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "French text coherent; essay on work in industrial society; Zusammenfassung + Summary confirm trilingual article"
+    }
+  ]
+}

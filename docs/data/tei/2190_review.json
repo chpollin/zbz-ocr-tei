@@ -1,0 +1,53 @@
+{
+  "doc_id": "2190",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        3
+      ],
+      "notes": "5pp Zeitschriftenartikel (zweispaltig). Sauberer Druck."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text korrekt erkannt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Zweispaltiges Layout korrekt segmentiert."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_errors": 0,
+      "validator_warnings": 0,
+      "notes": "VALID."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 44,
+        "orgName": 4,
+        "placeName": 8,
+        "bibl": 6
+      },
+      "notes": "placeName Est (zbz-l.13) in Est-ce que false positive. persName Allemands (zbz-p.42) ist Volksbezeichnung."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Hersch-Essay Style moral contre belle ame ueber Raymond Aron -- kohaerenter Nachruf."
+    }
+  },
+  "findings": [
+    "placeName Est (zbz-l.13) false positive -- frz. Fragewort",
+    "persName Allemands (zbz-p.42) -- Volksbezeichnung",
+    "Seitenzahlen 169, 171 als eigene Absaetze"
+  ],
+  "overall_notes": "Hochwertige Edition. Entity-Fehler sind bekannte Homonym-Probleme."
+}

@@ -1,0 +1,43 @@
+{
+  "doc_id": "1270",
+  "reviewer": "quality-screener-t2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 5,
+  "lang": "fra",
+  "validator": "VALID (0 errors, 1 warning: W10 persName-only)",
+  "pages_inspected": ["p001", "p003"],
+  "findings": [
+    {
+      "severity": "info",
+      "category": "metadata",
+      "msg": "Titel 'Ordre moral et liberte' korrekt. biblStruct journalArticle, Revue de Theologie et de Philosophie, Band 25 (1975). DOI vorhanden. Sprache fra korrekt."
+    },
+    {
+      "severity": "info",
+      "category": "structure",
+      "msg": "5 Seiten. S.1 e-periodica Metadatenseite. S.2 Titelseite mit Textbeginn. Abschnittstrenner (* * *). Seitenzahlen 126-128. Klare Argumentationsstruktur: Ordre, Moral, Liberte, Synthese."
+    },
+    {
+      "severity": "info",
+      "category": "entities",
+      "msg": "Hersch (GND:118815679), Bergson (GND:118509578), Spinoza (GND:118616110), Kant (GND:118559796), Jacques Monod (GND:118583549). bibl fuer Critique du Jugement (GND:4124564-8), Critique de la Raison pure (GND:4033447-8). Delsol, Jauch als persName ref=GND:unknown."
+    },
+    {
+      "severity": "info",
+      "category": "text_quality",
+      "msg": "Philosophischer Text koharent. foreign fuer lat (hic et nunc, mens instantanea). hi rendition=i fuer Hervorhebungen. Trennungen korrekt."
+    },
+    {
+      "severity": "info",
+      "category": "layout",
+      "msg": "p001-Overlay: e-periodica Metadatenseite. p003-Overlay: Einspaltig, Textbloecke und Abschnittstrenner korrekt erfasst."
+    },
+    {
+      "severity": "minor",
+      "category": "entities",
+      "msg": "Validator-Warning W10: 14 persName aber 0 orgName/placeName. Akzeptabel fuer rein philosophischen Text ohne institutionellen Bezug ab S.2."
+    }
+  ]
+}

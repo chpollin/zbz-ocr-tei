@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Normalität und Krankheit</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1760</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Normalität und Krankheit</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1981</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screening-manual" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 29p 29o 58l 16w = 132; 1 Fussnoten; Validator: VALID, 0 Fehler, 0 Warnings (+7 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1213" lry="1761">
+      <zone xml:id="facs_1_r_1" ulx="74" uly="297" lrx="1178" lry="1046" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1226" lry="1744">
+      <zone xml:id="facs_2_r_1" ulx="728" uly="78" lrx="1033" lry="298" />
+      <zone xml:id="facs_2_r_2" ulx="166" uly="126" lrx="336" lry="170" />
+      <zone xml:id="facs_2_r_3" ulx="732" uly="326" lrx="1149" lry="353" />
+      <zone xml:id="facs_2_r_4" ulx="162" uly="332" lrx="422" lry="350" />
+      <zone xml:id="facs_2_r_5" ulx="515" uly="333" lrx="718" lry="389" />
+      <zone xml:id="facs_2_r_6" ulx="731" uly="350" lrx="1169" lry="407" />
+      <zone xml:id="facs_2_r_7" ulx="158" uly="357" lrx="456" lry="416" />
+      <zone xml:id="facs_2_r_8" ulx="731" uly="414" lrx="1090" lry="444" />
+      <zone xml:id="facs_2_r_9" ulx="160" uly="422" lrx="313" lry="438" />
+      <zone xml:id="facs_2_r_10" ulx="732" uly="438" lrx="1171" lry="513" />
+      <zone xml:id="facs_2_r_11" ulx="159" uly="449" lrx="178" lry="464" />
+      <zone xml:id="facs_2_r_12" ulx="159" uly="461" lrx="301" lry="478" />
+      <zone xml:id="facs_2_r_13" ulx="160" uly="473" lrx="374" lry="491" />
+      <zone xml:id="facs_2_r_14" ulx="157" uly="523" lrx="455" lry="566" />
+      <zone xml:id="facs_2_r_15" ulx="734" uly="523" lrx="1168" lry="565" />
+      <zone xml:id="facs_2_r_16" ulx="516" uly="528" lrx="693" lry="603" />
+      <zone xml:id="facs_2_r_17" ulx="735" uly="565" lrx="830" lry="583" />
+      <zone xml:id="facs_2_r_18" ulx="733" uly="581" lrx="1169" lry="673" />
+      <zone xml:id="facs_2_r_19" ulx="735" uly="668" lrx="1171" lry="744" />
+      <zone xml:id="facs_2_r_20" ulx="155" uly="683" lrx="372" lry="701" />
+      <zone xml:id="facs_2_r_21" ulx="155" uly="696" lrx="457" lry="832" />
+      <zone xml:id="facs_2_r_22" ulx="737" uly="752" lrx="1085" lry="778" />
+      <zone xml:id="facs_2_r_23" ulx="736" uly="774" lrx="899" lry="793" />
+      <zone xml:id="facs_2_r_24" ulx="736" uly="792" lrx="1170" lry="884" />
+      <zone xml:id="facs_2_r_25" ulx="156" uly="837" lrx="459" lry="893" />
+      <zone xml:id="facs_2_r_26" ulx="737" uly="892" lrx="1035" lry="918" />
+      <zone xml:id="facs_2_r_27" ulx="159" uly="900" lrx="304" lry="916" />
+      <zone xml:id="facs_2_r_28" ulx="159" uly="914" lrx="209" lry="928" />
+      <zone xml:id="facs_2_r_29" ulx="215" uly="914" lrx="258" lry="928" />
+      <zone xml:id="facs_2_r_30" ulx="736" uly="916" lrx="897" lry="934" />
+      <zone xml:id="facs_2_r_31" ulx="733" uly="932" lrx="1171" lry="1027" />
+      <zone xml:id="facs_2_r_32" ulx="204" uly="961" lrx="257" lry="978" />
+      <zone xml:id="facs_2_r_33" ulx="158" uly="992" lrx="219" lry="1004" />
+      <zone xml:id="facs_2_r_34" ulx="307" uly="1015" lrx="431" lry="1031" />
+      <zone xml:id="facs_2_r_35" ulx="734" uly="1038" lrx="1095" lry="1064" />
+      <zone xml:id="facs_2_r_36" ulx="517" uly="1045" lrx="722" lry="1170" />
+      <zone xml:id="facs_2_r_37" ulx="733" uly="1059" lrx="1169" lry="1188" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1220" lry="1751">
+      <zone xml:id="facs_3_r_1" ulx="777" uly="115" lrx="1073" lry="242" />
+      <zone xml:id="facs_3_r_2" ulx="273" uly="125" lrx="534" lry="194" />
+      <zone xml:id="facs_3_r_3" ulx="778" uly="330" lrx="925" lry="354" />
+      <zone xml:id="facs_3_r_4" ulx="273" uly="332" lrx="612" lry="362" />
+      <zone xml:id="facs_3_r_5" ulx="272" uly="357" lrx="712" lry="466" />
+      <zone xml:id="facs_3_r_6" ulx="778" uly="371" lrx="1005" lry="430" />
+      <zone xml:id="facs_3_r_7" ulx="834" uly="435" lrx="1080" lry="544" />
+      <zone xml:id="facs_3_r_8" ulx="779" uly="437" lrx="828" lry="455" />
+      <zone xml:id="facs_3_r_9" ulx="272" uly="476" lrx="711" lry="537" />
+      <zone xml:id="facs_3_r_10" ulx="273" uly="546" lrx="711" lry="590" />
+      <zone xml:id="facs_3_r_11" ulx="778" uly="583" lrx="1016" lry="644" />
+      <zone xml:id="facs_3_r_12" ulx="275" uly="599" lrx="622" lry="627" />
+      <zone xml:id="facs_3_r_13" ulx="273" uly="636" lrx="713" lry="682" />
+      <zone xml:id="facs_3_r_14" ulx="779" uly="647" lrx="1051" lry="686" />
+      <zone xml:id="facs_3_r_15" ulx="273" uly="688" lrx="712" lry="731" />
+      <zone xml:id="facs_3_r_16" ulx="779" uly="697" lrx="1079" lry="718" />
+      <zone xml:id="facs_3_r_17" ulx="777" uly="725" lrx="925" lry="746" />
+      <zone xml:id="facs_3_r_18" ulx="273" uly="741" lrx="712" lry="786" />
+      <zone xml:id="facs_3_r_19" ulx="274" uly="795" lrx="712" lry="838" />
+      <zone xml:id="facs_3_r_20" ulx="273" uly="846" lrx="711" lry="891" />
+      <zone xml:id="facs_3_r_21" ulx="56" uly="856" lrx="236" lry="929" />
+      <zone xml:id="facs_3_r_22" ulx="273" uly="888" lrx="523" lry="914" />
+      <zone xml:id="facs_3_r_23" ulx="273" uly="917" lrx="713" lry="963" />
+      <zone xml:id="facs_3_r_24" ulx="274" uly="961" lrx="410" lry="980" />
+      <zone xml:id="facs_3_r_25" ulx="272" uly="987" lrx="711" lry="1054" />
+      <zone xml:id="facs_3_r_26" ulx="832" uly="989" lrx="1068" lry="1030" />
+      <zone xml:id="facs_3_r_27" ulx="778" uly="990" lrx="826" lry="1007" />
+      <zone xml:id="facs_3_r_28" ulx="58" uly="998" lrx="140" lry="1051" />
+      <zone xml:id="facs_3_r_29" ulx="778" uly="1035" lrx="827" lry="1061" />
+      <zone xml:id="facs_3_r_30" ulx="834" uly="1036" lrx="1026" lry="1057" />
+      <zone xml:id="facs_3_r_31" ulx="274" uly="1060" lrx="711" lry="1123" />
+      <zone xml:id="facs_3_r_32" ulx="832" uly="1064" lrx="1069" lry="1105" />
+      <zone xml:id="facs_3_r_33" ulx="777" uly="1065" lrx="827" lry="1086" />
+      <zone xml:id="facs_3_r_34" ulx="832" uly="1110" lrx="1056" lry="1134" />
+      <zone xml:id="facs_3_r_35" ulx="777" uly="1113" lrx="827" lry="1134" />
+      <zone xml:id="facs_3_r_36" ulx="276" uly="1121" lrx="299" lry="1139" />
+      <zone xml:id="facs_3_r_37" ulx="303" uly="1121" lrx="401" lry="1139" />
+      <zone xml:id="facs_3_r_38" ulx="273" uly="1137" lrx="711" lry="1174" />
+      <zone xml:id="facs_3_r_39" ulx="776" uly="1140" lrx="1052" lry="1195" />
+      <zone xml:id="facs_3_r_40" ulx="274" uly="1185" lrx="710" lry="1265" />
+      <zone xml:id="facs_3_r_41" ulx="56" uly="1190" lrx="245" lry="1245" />
+      <zone xml:id="facs_3_r_42" ulx="830" uly="1204" lrx="1054" lry="1262" />
+      <zone xml:id="facs_3_r_43" ulx="777" uly="1205" lrx="824" lry="1222" />
+      <zone xml:id="facs_3_r_44" ulx="274" uly="1275" lrx="709" lry="1317" />
+      <zone xml:id="facs_3_r_45" ulx="56" uly="1281" lrx="198" lry="1334" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1219" lry="1738">
+      <zone xml:id="facs_4_r_1" ulx="59" uly="98" lrx="788" lry="163" />
+      <zone xml:id="facs_4_r_2" ulx="60" uly="185" lrx="374" lry="212" />
+      <zone xml:id="facs_4_r_3" ulx="55" uly="238" lrx="561" lry="418" />
+      <zone xml:id="facs_4_r_4" ulx="579" uly="238" lrx="1082" lry="472" />
+      <zone xml:id="facs_4_r_5" ulx="56" uly="418" lrx="561" lry="610" />
+      <zone xml:id="facs_4_r_6" ulx="580" uly="475" lrx="1085" lry="765" />
+      <zone xml:id="facs_4_r_7" ulx="55" uly="606" lrx="561" lry="980" />
+      <zone xml:id="facs_4_r_8" ulx="579" uly="762" lrx="1085" lry="1005" />
+      <zone xml:id="facs_4_r_9" ulx="55" uly="976" lrx="563" lry="1424" />
+      <zone xml:id="facs_4_r_10" ulx="580" uly="1003" lrx="1084" lry="1187" />
+      <zone xml:id="facs_4_r_11" ulx="580" uly="1190" lrx="1084" lry="1457" />
+      <zone xml:id="facs_4_r_12" ulx="57" uly="1429" lrx="560" lry="1454" />
+      <zone xml:id="facs_4_r_13" ulx="579" uly="1455" lrx="1085" lry="1560" />
+      <zone xml:id="facs_4_r_14" ulx="58" uly="1520" lrx="560" lry="1583" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1234" lry="1742">
+      <zone xml:id="facs_5_r_1" ulx="163" uly="96" lrx="669" lry="157" />
+      <zone xml:id="facs_5_r_2" ulx="163" uly="152" lrx="670" lry="312" />
+      <zone xml:id="facs_5_r_3" ulx="688" uly="176" lrx="1197" lry="500" />
+      <zone xml:id="facs_5_r_4" ulx="167" uly="313" lrx="667" lry="371" />
+      <zone xml:id="facs_5_r_5" ulx="165" uly="362" lrx="669" lry="552" />
+      <zone xml:id="facs_5_r_6" ulx="688" uly="498" lrx="1193" lry="794" />
+      <zone xml:id="facs_5_r_7" ulx="164" uly="549" lrx="670" lry="814" />
+      <zone xml:id="facs_5_r_8" ulx="163" uly="813" lrx="666" lry="921" />
+      <zone xml:id="facs_5_r_9" ulx="163" uly="916" lrx="668" lry="1056" />
+      <zone xml:id="facs_5_r_10" ulx="162" uly="1053" lrx="664" lry="1189" />
+      <zone xml:id="facs_5_r_11" ulx="158" uly="1211" lrx="663" lry="1369" />
+      <zone xml:id="facs_5_r_12" ulx="155" uly="1373" lrx="659" lry="1588" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <placeName ref="#zbz-l.6">Bern</placeName>, 27. Mai 1981<lb facs="#facs_1_l_1_1" n="N001" />21/1981
+        </head>
+        <p>
+          <orgName ref="#zbz-o.217">Schweiz Akademie der med. Wissenschaften</orgName>:<lb facs="#facs_1_l_2_1" n="N001" />Ethische Richtlinien
+        </p>
+        <p>
+          Ärzte<lb facs="#facs_1_l_3_1" n="N001" />Médecins<lb facs="#facs_1_l_3_2" n="N002" />Medici
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          <bibl ref="#zbz-w.279">Ärzteärztliche Ärztezeitung</bibl> <bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl> <bibl ref="#zbz-w.281">Bollettino dei medici svizzeri</bibl>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <bibl ref="#zbz-w.489">Schweizerische Ärztezeitung</bibl> | <bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl> Band 62, 1981, Heft 21 27.5.81
+        </p>
+        <p facs="#facs_2_r_2">
+          Impressum
+        </p>
+        <p facs="#facs_2_r_3">
+          Verantwortlich für die Redaktion: <persName ref="#zbz-p.639">Carlo Grassi</persName>
+        </p>
+        <p facs="#facs_2_r_4">
+          Generalsekretariat der <placeName ref="#zbz-l.10">Schweiz</placeName>. Ärzteorganisation, 3000 <placeName ref="#zbz-l.6">Bern</placeName> 16,<lb facs="#facs_2_l_4_1" n="N001" />Elfenstr. 18, Tel. 031 435543<lb facs="#facs_2_l_4_2" n="N002" />Redaktionssekretariat: Frau <persName ref="#zbz-p.640">Charlotte Borer</persName>
+        </p>
+        <p facs="#facs_2_r_5">
+          Aufsichtskommission:
+        </p>
+        <p facs="#facs_2_r_6">
+          Dr. <persName ref="#zbz-p.427">K. Zimmermann</persName>, 8008 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_2_l_6_1" n="N001" />Dr. <persName ref="#zbz-p.641">L. Fierz</persName>, 3000 <placeName ref="#zbz-l.6">Bern</placeName><lb facs="#facs_2_l_6_2" n="N002" />Dr. <persName ref="#zbz-p.642">P. Oehrli</persName>, 1009 <placeName ref="#zbz-l.125">Pully</placeName><lb facs="#facs_2_l_6_3" n="N003" />Dr. <persName ref="#zbz-p.643">F. Schönenberger</persName>, 1700 <placeName ref="#zbz-l.65">Freiburg</placeName><lb facs="#facs_2_l_6_4" n="N004" />Dr. <persName ref="#zbz-p.644">A. Seiler</persName>, 3000 <placeName ref="#zbz-l.6">Bern</placeName><lb facs="#facs_2_l_6_5" n="N005" />Prof. <persName ref="#zbz-p.645">H. Wiseler</persName>, 8008 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_2_r_7">
+          Redaktionsschluss für Originalartikel und Bekanntmachungen: Montagvormittag, eine Woche vor Erscheinen.
+        </p>
+        <p facs="#facs_2_r_8">
+          Namentlich gezeichnete Beiträge sind als Meinung des Verfassers zu verstehen.
+        </p>
+        <p facs="#facs_2_r_9">
+          Sämtliche die »Ärztezeitung« betreffenden Korrespondenzen sind ausschließlich an die Redaktion – nicht an den Verlag – zu richten. Auch die Manuskripte sind direkt an die Redaktion zu adressieren.
+        </p>
+        <p facs="#facs_2_r_10">
+          Verlag und Anzeigenverwaltung:
+        </p>
+        <p facs="#facs_2_r_11">
+          <orgName ref="#zbz-o.236">Hans Huber AG</orgName>, Zeughausgasse 22, Postfach, 3000 <placeName ref="#zbz-l.6">Bern</placeName> 7, Telefon 031 229331. – Erscheint wöchentlich. – Jahresabonnement: <placeName ref="#zbz-l.10">Schweiz</placeName> Fr.70.–; Ausland sFr.78.– (inkl. Porto und Versandgebühren). Postscheckkonto 30-6675. (Mitglieder der Verbindung der <orgName ref="#zbz-o.760">Schweizer</orgName> Ärzte erhalten die »Ärztezeitung« gratis.) – Inseratenschluss: Geschäftssinnsrate 3 Wochen vor Erscheinen, Stelleninserate am Dienstag der vorangehenden Woche, 16 Uhr.
+        </p>
+        <p facs="#facs_2_r_12">
+          In <placeName ref="#zbz-l.240">Belgien</placeName>, <placeName ref="#zbz-l.160">Dänemark</placeName>, <placeName ref="#zbz-l.241">Deutschland</placeName>, <placeName ref="#zbz-l.242">Finnland</placeName>, <placeName ref="#zbz-l.243">Italien</placeName>, <placeName ref="#zbz-l.244">Luxemburg</placeName>, <placeName ref="#zbz-l.245">Norwegen</placeName>, <placeName ref="#zbz-l.96">Portugal</placeName> und <placeName ref="#zbz-l.246">Schweden</placeName> kann die »Ärztezeitung« durch die Postämter bestellt werden.
+        </p>
+        <p facs="#facs_2_r_13">
+          Druck und Spedition:
+        </p>
+        <p facs="#facs_2_r_14">
+          Büchler «CoAG», «<bibl ref="#zbz-w.489">Schweizerische Ärztezeitung</bibl>», 3084 <placeName ref="#zbz-l.247">Wabern</placeName>.
+        </p>
+        <p facs="#facs_2_r_15">
+          Responsable pour la rédaction: <persName ref="#zbz-p.639">Carlo Grassi</persName>
+        </p>
+        <p facs="#facs_2_r_16">
+          Secrétariat général des institutions du corps médical suisse.<lb facs="#facs_2_l_16_1" n="N001" />3000 <placeName ref="#zbz-l.6">Berne</placeName> 16, Elfenstrasse 18, tél. 031 435543<lb facs="#facs_2_l_16_2" n="N002" />Secrétariat de rédaction: Mme <persName ref="#zbz-p.640">Charlotte Borer</persName>
+        </p>
+        <p facs="#facs_2_r_17">
+          <orgName ref="#zbz-o.20">Commission</orgName> de surveillance:
+        </p>
+        <p facs="#facs_2_r_18">
+          Df. <persName ref="#zbz-p.427">K. Zimmermann</persName>, 8008 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_2_l_18_1" n="N001" />Df. <persName ref="#zbz-p.641">L. Fierz</persName>, 3000 <placeName ref="#zbz-l.6">Berne</placeName><lb facs="#facs_2_l_18_2" n="N002" />Df. <persName ref="#zbz-p.642">P. Oehrli</persName>, 1009 <placeName ref="#zbz-l.125">Pully</placeName><lb facs="#facs_2_l_18_3" n="N003" />Df. <persName ref="#zbz-p.643">F. Schönenberger</persName>, 1700 <placeName ref="#zbz-l.65">Fribourg</placeName><lb facs="#facs_2_l_18_4" n="N004" />Df. <persName ref="#zbz-p.644">A. Seiler</persName>, 3000 <placeName ref="#zbz-l.6">Bern</placeName><lb facs="#facs_2_l_18_5" n="N005" />Prof. <persName ref="#zbz-p.645">H. Wiseler</persName>, 8008 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_2_r_19">
+          Demier délai pour les articles originaux et les communications:
+        </p>
+        <p facs="#facs_2_r_20">
+          le lundi matin de la semaine précédant celle de la parution.
+        </p>
+        <p facs="#facs_2_r_21">
+          Les textes signés ne reflètent que l'opinion de l'auteur.
+        </p>
+        <p facs="#facs_2_r_22">
+          Toute la correspondance relative au «<bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl>» de même que les manuscrits qui lui sont destinés doivent être adressés à la rédaction et non à l'éditeur.
+        </p>
+        <p facs="#facs_2_r_23">
+          Editions et règle des annonces:
+        </p>
+        <p facs="#facs_2_r_24">
+          <orgName ref="#zbz-o.237">Hans Huber SA</orgName>, 22, Zeughausgasse, case postale, 3000 <placeName ref="#zbz-l.6">Berne</placeName> 7, tél. 031 229331. – Parait tous les huit jours. – Abonnement annuel <placeName ref="#zbz-l.705">Suisse</placeName> Fr.70.–; étranger Fr. a. 78.– (incl. frais de ports et d'expédition). – Compte de chèques postaux 30-6675. (Les membres de la <orgName ref="#zbz-o.152">Fédération des médecins suisses</orgName> reçoivent le «Bulletin» gratuitement.) Demier délai pour la remise des annonces: commerciales, 3 semaines avant la parution; offres et demandes d'emploi, le mardi (16 h) de la semaine précédant la parution.
+        </p>
+        <p facs="#facs_2_r_25">
+          On peut s'abonner directement par la poste dans les pays ci-après: <placeName ref="#zbz-l.26">Allemagne</placeName>, <placeName ref="#zbz-l.108">Belgique</placeName>, <placeName ref="#zbz-l.160">Danemark</placeName>, <placeName ref="#zbz-l.320">Finlande</placeName>, <placeName ref="#zbz-l.110">Italie</placeName>, <placeName ref="#zbz-l.549">Luxembourg</placeName>, <placeName ref="#zbz-l.148">Norvège</placeName>, <placeName ref="#zbz-l.96">Portugal</placeName> et <placeName ref="#zbz-l.80">Suède</placeName>.
+        </p>
+        <p facs="#facs_2_r_26">
+          Impression et expédition:
+        </p>
+        <p facs="#facs_2_r_27">
+          Büchler «Cie SA», «<bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl>», 3084 <placeName ref="#zbz-l.247">Wabern</placeName>.
+        </p>
+        <p facs="#facs_2_r_28">
+          Inhalt<lb facs="#facs_2_l_28_1" n="N001" />Sommaire<lb facs="#facs_2_l_28_2" n="N002" />Sommario
+        </p>
+        <p facs="#facs_2_r_29">
+          Standespolitik<lb facs="#facs_2_l_29_1" n="N001" />Politique professionnelle<lb facs="#facs_2_l_29_2" n="N002" />Politica professionale
+        </p>
+        <p facs="#facs_2_r_30">
+          1523 Séance de la Chambre médicale suisse<lb facs="#facs_2_l_30_1" n="N001" />Exposé détaillé sur cette séance extraordinaire, assorti d'un résumé des principaux objets traités et des décisions auxquelles ils ont donné lieu.
+        </p>
+        <p facs="#facs_2_r_31">
+          1525 Délibérations du Comité central<lb facs="#facs_2_l_31_1" n="N001" />Prophylaxie médicale primaire, assurance-maladie, réglementation <orgName ref="#zbz-o.454">FMH</orgName> et formation postgraduée, tels sont les points essentiels traités lors de la séance du CC du 30 avril.
+        </p>
+        <p facs="#facs_2_r_32">
+          1527 Ehe- und Familienberatung durch den Hausarzt<lb facs="#facs_2_l_32_1" n="N001" />Dr. <persName ref="#zbz-p.646">J. Bösch</persName><lb facs="#facs_2_l_32_2" n="N002" />Die Arbeit behandelt den wichtigen Bereich der hausärztlichen Behandlung, beleuchtet die derzeitige Situation des Familienarztes und umschreibt die Anforderungen für eine sinnvolle hausärztliche Ehe- und Familienberatung.<lb facs="#facs_2_l_32_3" n="N003" />Etude sur l'important domaine du médecin de famille, sa situation actuelle et les exigences requises en vue de fournir des conseils judicieux dans le cadre de l'union conjugale et de la famille.
+        </p>
+        <p facs="#facs_2_r_33">
+          1531 Santé: l'utopie d'une définition<lb facs="#facs_2_l_33_1" n="N001" />Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_2_l_33_2" n="N002" />Exposé fait à l'occasion de l'assemblée de printemps de la <orgName ref="#zbz-o.238">Société médicale du Seeland</orgName> par la conférencière renommée qu'est Mme <persName ref="#zbz-p.2">Jeanne Hersch</persName>. A la notion de la santé définie par l'<orgName ref="#zbz-o.164">OMS</orgName>, elle oppose une définition plus réaliste.
+        </p>
+        <p facs="#facs_2_r_34">
+          1533 Normalität und Krankheit<lb facs="#facs_2_l_34_1" n="N001" />Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_2_l_34_2" n="N002" />Die bekannte und kompetente Referentin sprach anlässlich der Frühjahrsversammlung des Ärztlichen Bezirksvereins <placeName ref="#zbz-l.208">Biel</placeName>. Dem <orgName ref="#zbz-o.239">WHO</orgName>-Definitionsbegriff zur Gesundheit wird eine realistischere Formulierung gegenübergestellt.
+        </p>
+        <p facs="#facs_2_r_35">
+          <placeName ref="#zbz-l.10">Schweiz</placeName>. Akademie der medizinischen Wissenschaften<lb facs="#facs_2_l_35_1" n="N001" /><orgName ref="#zbz-o.145">Académie suisse des sciences médicales</orgName><lb facs="#facs_2_l_35_2" n="N002" /><orgName ref="#zbz-o.217">Accademia svizzera delle scienze mediche</orgName>
+        </p>
+        <p facs="#facs_2_r_36">
+          1535 Medizinisch-ethische Richtlinien<lb facs="#facs_2_l_36_1" n="N001" />Nach Abschluss der ersten Lesung der Überarbeitung bestehender und der Erarbeitung neuer Richtlinien durch die <orgName ref="#zbz-o.217">Schweizerische Akademie der medizinischen Wissenschaften</orgName> werden die Texte im Sinne einer Vernehmlassung durch die Ärzteschaft publiziert. Die Richtlinien wurden durch die Medizinisch-ethische Kommission der <orgName ref="#zbz-o.217">SAMW</orgName> erarbeitet.
+        </p>
+        <p facs="#facs_2_r_37">
+          1536 Richtlinien für die Organisation und Tätigkeit der Zentralen medizinisch-ethischen Kommission der <orgName ref="#zbz-o.217">SAMW</orgName> (neu)<lb facs="#facs_2_l_37_1" n="N001" />1537 Richtlinien für Forschungsuntersuchungen am Menschen<lb facs="#facs_2_l_37_2" n="N002" />1539 Richtlinien für die Sterbehilfe<lb facs="#facs_2_l_37_3" n="N003" />1541 Medizinisch-ethische Richtlinien zur Transplantation<lb facs="#facs_2_l_37_4" n="N004" />1542 Richtlinien für die Definition und die Diagnose des Todes<lb facs="#facs_2_l_37_5" n="N005" />1543 Medizinisch-ethische Richtlinien für die artifizielle Insemination (neu)<lb facs="#facs_2_l_37_6" n="N006" />1544 Medizinisch-ethische Richtlinien zur Sterilisation (neu)
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <placeName ref="#zbz-l.6">Bern</placeName>, 27. Mai 1981
+        </p>
+        <p facs="#facs_3_r_2">
+          62. Jahrgang
+        </p>
+        <p facs="#facs_3_r_3">
+          Erscheint jeden Mittwoch
+        </p>
+        <p facs="#facs_3_r_4">
+          Medizinische Fachgesellschaften<lb facs="#facs_3_l_4_1" n="N001" />Sociétés de médecine<lb facs="#facs_3_l_4_2" n="N002" />Società di specialisti
+        </p>
+        <p facs="#facs_3_r_5">
+          Mosaik<lb facs="#facs_3_l_5_1" n="N001" />Mosaïque<lb facs="#facs_3_l_5_2" n="N002" />Mosaico
+        </p>
+        <p facs="#facs_3_r_6">
+          Die Meinung der Leser<lb facs="#facs_3_l_6_1" n="N001" />Le coin du lecteur<lb facs="#facs_3_l_6_2" n="N002" />La tribuna del lettore
+        </p>
+        <p facs="#facs_3_r_7">
+          Umschau<lb facs="#facs_3_l_7_1" n="N001" />Echos de partout<lb facs="#facs_3_l_7_2" n="N002" />Rivista
+        </p>
+        <p facs="#facs_3_r_8">
+          Pressespiegel<lb facs="#facs_3_l_8_1" n="N001" />Revue de presse<lb facs="#facs_3_l_8_2" n="N002" />Eco della stampa
+        </p>
+        <p facs="#facs_3_r_9">
+          Das kulturelle Stethoskop<lb facs="#facs_3_l_9_1" n="N001" />Reflets culturels<lb facs="#facs_3_l_9_2" n="N002" />Stetoscopio culturale
+        </p>
+        <p facs="#facs_3_r_10">
+          1546 Directives d'éthique médicale<lb facs="#facs_3_l_10_1" n="N001" />Les textes portant sur le remaniement d'anciennes directives et sur l'élaboration de nouvelles ayant été approuvés en première lecture sont publiés ici à l'intention du corps médical aux fins de consultation. Ils émanent de la <orgName ref="#zbz-o.20">Commission</orgName> centrale d'éthique médicale de l'<orgName ref="#zbz-o.217">ASSM</orgName>.
+        </p>
+        <p facs="#facs_3_r_11">
+          1547 Directives pour l'organisation et l'activité de la <orgName ref="#zbz-o.20">Commission</orgName> centrale d'éthique médicale de l'<orgName ref="#zbz-o.217">ASSM</orgName> (nouveau)
+        </p>
+        <p facs="#facs_3_r_12">
+          1548 Directives pour la recherche expérimentale sur l'homme
+        </p>
+        <p facs="#facs_3_r_13">
+          1550 Directives concernant l'euthanasie
+        </p>
+        <p facs="#facs_3_r_14">
+          1552 Recommandations d'éthique médicale pour les transplantations
+        </p>
+        <p facs="#facs_3_r_15">
+          1553 Directives pour la définition et le diagnostic de la mort
+        </p>
+        <p facs="#facs_3_r_16">
+          1554 Recommandations d'éthique médicale sur l'insémination artificielle (nouveau)
+        </p>
+        <p facs="#facs_3_r_17">
+          1555 Recommandations d'éthique médicale pour la stérilisation (nouveau)
+        </p>
+        <p facs="#facs_3_r_18">
+          1556 Familienplanungs- und Beratungsstellen in der <placeName ref="#zbz-l.10">Schweiz</placeName><lb facs="#facs_3_l_18_1" n="N001" />Ein nachgeführtes Verzeichnis.
+        </p>
+        <p facs="#facs_3_r_19">
+          1556 Planning familial et services de consultation en <placeName ref="#zbz-l.705">Suisse</placeName><lb facs="#facs_3_l_19_1" n="N001" />Liste mise à jour
+        </p>
+        <p facs="#facs_3_r_20">
+          1558 Eine Spezialreise für Arztgattinnen, Arztgehilfinnen und Arztsekretärinnen nach <placeName ref="#zbz-l.1">Paris</placeName>, <placeName ref="#zbz-l.237">Grasse</placeName> und <placeName ref="#zbz-l.238">Nizza</placeName>
+        </p>
+        <p facs="#facs_3_r_21">
+          1559 Abenteuer und Naturwunder in <placeName ref="#zbz-l.239">Brasilien</placeName>. Ein Erlebnisbericht von unserer Ärzte-Brasilienreise<lb facs="#facs_3_l_21_1" n="N001" />Dr. <persName ref="#zbz-p.647">R. Zeerleder</persName><lb facs="#facs_3_l_21_2" n="N002" />Compte rendu du voyage au <placeName ref="#zbz-l.239">Brésil</placeName> destiné aux médecins.
+        </p>
+        <p facs="#facs_3_r_22">
+          1562 Replik und Duplik zum Beitrag «Psychotherapie der Depression». («<bibl ref="#zbz-w.279">SÄZ</bibl>» Nr. 15 vom 15. April 1981. Réplique et duplique sur l'article «Psychothérapie de la dépression».
+        </p>
+        <p facs="#facs_3_r_23">
+          1565 U.a.: <placeName ref="#zbz-l.50">Polen</placeName> weiterhin in Not. Nochmals ein Aufruf.<lb facs="#facs_3_l_23_1" n="N001" />En autres: La détresse continue en <placeName ref="#zbz-l.50">Pologne</placeName>. Un nouvel appel à l'aide.
+        </p>
+        <p facs="#facs_3_r_24">
+          1568 Entre autres: La santé du personnel hospitalier laisse à désirer / Accidents couverts par la <orgName ref="#zbz-o.240">CNA</orgName> / Le tiers monde manque de médecins
+        </p>
+        <p facs="#facs_3_r_25">
+          1571 Die Botschaft, Reto Caslano
+        </p>
+        <p facs="#facs_3_r_26">
+          Bekanntmachungen<lb facs="#facs_3_l_26_1" n="N001" />Communications<lb facs="#facs_3_l_26_2" n="N002" />Comunicazioni
+        </p>
+        <p facs="#facs_3_r_27">
+          1573 Radio / TV
+        </p>
+        <p facs="#facs_3_r_28">
+          Personalien<lb facs="#facs_3_l_28_1" n="N001" />Nouvelles du corps médical<lb facs="#facs_3_l_28_2" n="N002" />Notizie del ceto medico
+        </p>
+        <p facs="#facs_3_r_29">
+          1574 Todesfälle / Décès / Decessi<lb facs="#facs_3_l_29_1" n="N001" />Praxiseröffnungen / Nouveaux cabinets médicaux / Apertura di nuovi studi medici<lb facs="#facs_3_l_29_2" n="N002" />Ernennungen / Nominations / Nomine
+        </p>
+        <p facs="#facs_3_r_30">
+          Offizielle Bekanntmachungen<lb facs="#facs_3_l_30_1" n="N001" />Communications officielles<lb facs="#facs_3_l_30_2" n="N002" />Comunicazioni ufficiali
+        </p>
+        <p facs="#facs_3_r_31">
+          1575 Aufnahme von Mitgliedern / Admission de membres
+        </p>
+        <p facs="#facs_3_r_32">
+          1576 Cours de radioprotection 1982
+        </p>
+        <p facs="#facs_3_r_33">
+          1576 <placeName ref="#zbz-l.1">Paris</placeName>-Reise
+        </p>
+        <p facs="#facs_3_r_34">
+          
+        </p>
+        <p facs="#facs_3_r_35">
+          1577 60 J. <persName ref="#zbz-p.2079">Zürcher</persName> Kinder- und Jugendpsychiatrie: <bibl ref="#zbz-w.546">Symposium</bibl>
+        </p>
+        <p facs="#facs_3_r_36">
+          1578 20. Silser Studienwoche
+        </p>
+        <p facs="#facs_3_r_37">
+          1579 31. Tagung der Nobelpreisträger in <placeName ref="#zbz-l.248">Lindau</placeName>
+        </p>
+        <p facs="#facs_3_r_38">
+          1579 2. Int. Kopfschmerzkongress
+        </p>
+        <p facs="#facs_3_r_39">
+          1580 <orgName ref="#zbz-o.575">Société</orgName> suisse de médecine sociale et préventive; Journées scientifiques
+        </p>
+        <p facs="#facs_3_r_40">
+          1582 X. Int. <bibl ref="#zbz-w.546">Symposium</bibl> über Probleme der orthopädischen Chirurgie
+        </p>
+        <p facs="#facs_3_r_41">
+          Kongresskalender<lb facs="#facs_3_l_41_1" n="N001" />Dates à retenir<lb facs="#facs_3_l_41_2" n="N002" />Date da ricordare
+        </p>
+        <p facs="#facs_3_r_42">
+          1586 Heute mit unvollständigem Kalender
+        </p>
+        <p facs="#facs_3_r_43">
+          Stellenvermittlung<lb facs="#facs_3_l_43_1" n="N001" />Office de placement<lb facs="#facs_3_l_43_2" n="N002" />Ufficio di collocamento
+        </p>
+        <p facs="#facs_3_r_44">
+          1590 Stellenvermittlungsanzeiger des Ärztesekretariats, Elfenstrasse 18, <placeName ref="#zbz-l.6">Bern</placeName>
+        </p>
+        <p facs="#facs_3_r_45">
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 62, 1981, Heft 21 27.5.81
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Normalität und Krankheit¹
+        </p>
+        <p facs="#facs_4_r_2">
+          Frau Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <placeName ref="#zbz-l.48">Genf</placeName>
+        </p>
+        <p facs="#facs_4_r_3">
+          BÄI. «Ich komme mir vor wie ein Ei, das ein Huhn belehren will», meinte – in Anlehnung an ein polnisches Sprichwort – die bekannte <placeName ref="#zbz-l.5">Genfer</placeName> Philosophin <persName ref="#zbz-p.2">Jeanne Hersch</persName>, als sie sich im Anschluss an die ordentliche Frühjahrsversammlung des <orgName ref="#zbz-o.241">Ärztlichen Bezirksvereins Seeland</orgName> an ein zahlreich erschienenes Publikum wandte.
+        </p>
+        <p facs="#facs_4_r_4">
+          Ihre Befürchtungen waren unbegründet. Mit ihren Ausführungen zum Thema «Normalität und Krankheit», in dem sie Grenzgebiete des ärztlichen Tuns auslotete, gelang es ihr, jeden einzelnen ihrer Zuhörer gleichermassen zu begeistern: Die anwesenden Spezialisten waren genauso gefesselt wie die vielen eingeladenen Nicht-Mediziner.
+        </p>
+        <p facs="#facs_4_r_5">
+          In einer bestechend klaren Argumentation zeigte sie die Schwierigkeiten einer Definition der Gesundheit bzw. der Krankheit auf. Die Kriterien, die wir zur Grenzziehung zwischen gesund und krank, zwischen normal und abweichend heranziehen können, sind äußerst verschiedenartig und widersprüchlich und gründen in ihrer Mehrzahl auf Wertvorstellungen. Über objektive Kriterien verfügen wir nicht. Dennoch lässt sich durch eine Rückbesinnung auf die Grundlagen des Menschseins nachweisen, dass der utopische Gesundheitsbegriff, den die <orgName ref="#zbz-o.55">Weltgesundheitsorganisation</orgName> (<orgName ref="#zbz-o.239">WHO</orgName>) propagiert, ausgerechnet das spezifisch Menschliche vernachlässigt und insofern gänzlich unbrauchbar ist.
+        </p>
+        <p facs="#facs_4_r_6">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> ging dabei von der Überlegung aus, dass der Krankheitsbegriff in einer engen Beziehung zum Weltbild des Menschen steht. In einem geschichtlichen Abriss lassen sich dabei vier Hauptphasen unterscheiden, die zeitlich aufeinanderfolgen, die aber alle, in unterschiedlichem Ausmass, noch immer unsere heutigen Anschauungen prägen. In einer ersten Phase sieht sich der <persName ref="#zbz-p.1251">Mensch</persName> in einem Kosmos eingebettet, der von einer höheren Macht bestimmt wird. Gesundheit ist somit ein Zeichen für die Übereinstimmung mit der Gottheit, Krankheit die Folge einer schuldhaften Störung der äußeren Harmonie, das heisst Strafe für eine böse Tat, durch die man die Gottheit verstimmt hat. Mit mehr oder weniger magischen Mitteln wird man versuchen, diese Gottheit zu versöhnen oder günstig zu stimmen.
+        </p>
+        <p facs="#facs_4_r_7">
+          In einer zweiten Phase ist das Menschenbild ein rein mechanisches. <bibl ref="#zbz-w.657">Der Mensch</bibl> wird dabei, unter Vernachlässigung der spezifisch menschlichen Eigenschaften, mit einer Maschine gleichgesetzt. Wie jede Maschine ist er störungsanfällig, für sein – mehr oder weniger gutes – Funktionieren sind physische Prozesse verantwortlich. Krankheit ist in dieser Sicht, wie die Gesundheit, das Resultat «metallischer Reaktionen» im Körper, für die den Menschen kein Verschulden trifft.
+        </p>
+        <p facs="#facs_4_r_8">
+          In einer dritten Phase betrachtet man die Gesundheit als den Normalzustand, auf den der <persName ref="#zbz-p.1251">Mensch</persName> ein Anrecht hat. Krankheit ist demzufolge die Verweigerung dieses Rechts und deshalb skandalös. Verantwortlich für diesen Skandal macht man, mangels einer andern anzurufenden Instanz, die Gesellschaft. Sie ist es, die dem Menschen die Gesundheit verweigert, auf die er ein Anrecht hat. Folgerichtig fordert man denn auch von der Gesellschaft, sie müsse so beschaffen sein, dass man in ihr nicht krank werden könne.
+        </p>
+        <p facs="#facs_4_r_9">
+          Die konsequente Weiterführung dieses Gedankengangs führt in einer vierten Phase zu einer seltsamen Umkehrung der Werte: Eine Gesellschaft, die das Krankwerden nicht verhindert, ist nicht menschengerecht, ist selber «krank». Die Krankheit des Menschen ist folglich Ausdruck eines Protestes des Körpers oder der Psyche gegen diese «krankmachende» Gesellschaft und somit eine eigentlich «gesunde» Gegenreaktion.
+        </p>
+        <p facs="#facs_4_r_10">
+          Diese Begriffsverwirrung ist heute zum Beispiel bei Sozialarbeitern weit verbreitet und führt zu Gewissenskonflikten: Wenn die Gesellschaft krank ist, ist der Kranke ja gesund. Wenn man ihn nun in die Gesellschaft reintegriert, macht man ihn eigentlich krank und sich selbst zum Komplizen der kranken Gesellschaft.
+        </p>
+        <p facs="#facs_4_r_11">
+          Wir stellen fest: Die auf den ersten Blick so klar definierten Begriffe «Gesundheit» und «Krankheit» sind nur scheinbar eindeutig. Mit dem Begriff «Gesundheit» bezeichnen wir zwei verschiedene Bereiche, die nur teilweise übereinstimmen. Einerseits setzen wir Gesundheit gleich mit Normalität: Gesund ist, was der Norm entspricht; als krank bezeichnen wir, was allzustark vom Durchschnitt der Menschheit abweicht, was ausserhalb einer tolerierten Bandbreite figuriert.
+        </p>
+        <p facs="#facs_4_r_12">
+          Andererseits verbinden wir aber mit den Begriffen «Gesundheit» und «Krankheit» auch Wertvorstellungen: Gesundheit ist unter diesem Aspekt «gut», das heisst angenehm, erstrebenswert, Krankheit ist «schlecht».
+        </p>
+        <p facs="#facs_4_r_13">
+          ---
+        </p>
+        <note place="foot" n="1" xml:id="fn4-1" facs="#facs_4_r_14">
+          ¹ Referat, gehalten im Anschluss an die Frühjahrsversammlung des <orgName ref="#zbz-o.241">Ärztlichen Bezirksvereins Seeland</orgName> in <placeName ref="#zbz-l.208">Biel</placeName> am 12. März 1981.
+        </note>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 62, 1981, Heft 21 27.5.81
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          Nun entspricht aber keineswegs alles, was normal ist, auch einem positiven Wert.
+        </p>
+        <p facs="#facs_5_r_2">
+          Nun sind aber die Begriffe der (körperlichen) Gesundheit und der (gesellschaftlichen) Normalität keineswegs deckungsgleich. Im Gegenteil: Normal sind Abnutzungserscheinungen, normal sind Altersbeschwerden, normal ist schliesslich der Tod. Kurz: Für den Menschen ist es normal, krank zu sein.
+        </p>
+        <p facs="#facs_5_r_3">
+          Diese Erkenntnis ist nicht neu: in früheren Zeiten war sie sogar allgemein akzeptiert.
+        </p>
+        <p facs="#facs_5_r_4">
+          Ein gewisses Mass an Beschwerden und Behinderungen galt als durchaus normal. Man lebte und funktionierte mit und trotz Krankheiten. Ebenso lag auch die gesellschaftliche Toleranzgrenze sehr viel höher als heute, wo wir ein abweichendes, «krankhaftes» Verhalten schon sehr schnell als für die Gesellschaft nicht mehr tragbar erachten.
+        </p>
+        <p facs="#facs_5_r_5">
+          Diese Verengung der Bandbreite des gesellschaftlich akzeptablen Verhaltens geht Hand in Hand mit gesteigerten Ansprüchen an das individuelle Wohlbefinden. Wir sind heute sehr viel schneller so weit, dass wir ein persönliches Leiden als nicht mehr erträglich einstufen. Diese beiden Faktoren bilden zusammen die wohl wichtigste Ursache für die enorme Steigerung der Gesundheitsausgaben, für die zunehmende Medikalisierung unserer Gesellschaft.
+        </p>
+        <p facs="#facs_5_r_6">
+          Nun gehört es aber zum spezifisch Menschlichen, dass wir uns nicht mit einem rein biologischen (Über-)Leben begnügen können, unser Leben muss auch lebenswert sein, muss also einen Sinn haben.
+        </p>
+        <p facs="#facs_5_r_7">
+          Wenn wir unser Leben einzig und allein darauf ausrichten, die Krankheit zu vermeiden und dem Tod zu entgehen, führt das schlussendlich zu einer viel gravierenderen Krankheit: dem Sinnverlust und der Langeweile.
+        </p>
+        <p facs="#facs_5_r_8">
+          Leben heisst also für den Menschen: krank sein können und meistens auch ein wenig krank sein. Gesund wäre demzufolge der <persName ref="#zbz-p.1251">Mensch</persName>, der die Gewissheit des Todes und die Wahrscheinlichkeit der Krankheit ertragen kann. Dies wiederum kann er nur, wenn er seinem Leben einen Sinn gibt.
+        </p>
+        <p facs="#facs_5_r_9">
+          Aufgrund dieser Überlegungen lässt sich nun nachweisen, dass zum Beispiel die Gesundheitsdefinition der <orgName ref="#zbz-o.239">WHO</orgName> (<orgName ref="#zbz-o.55">Weltgesundheitsorganisation</orgName>) absurde Leerformeln sind, die ein utopisches Paradies vorgaukeln und damit den echten Problemen ausweichen.
+        </p>
+        <p facs="#facs_5_r_10">
+          Gesundheit wird von der <orgName ref="#zbz-o.239">WHO</orgName> definiert als «Zustand des vollständigen körperlichen, geistigen und sozialen Wohlbefindens und nicht nur des Freizeins von Krankheit oder Gebrechen.» Wie kann ein «vollständiges Wohlbefinden» im Bewusstsein der Sterblichkeit des Menschen überhaupt existieren? <bibl ref="#zbz-w.657">Der Mensch</bibl> ist für dieses «Wohlbefinden» gar nicht geschaffen: Nicht nur, weil es auf die Dauer höchst
+        </p>
+        <p facs="#facs_5_r_11">
+          langweilig wäre, sondern weil das Bewusstsein eines Mangels, die Sehnsucht, das Streben nach Verbesserung das eigentlich Menschliche an uns ist.
+        </p>
+        <p facs="#facs_5_r_12">
+          Die <orgName ref="#zbz-o.239">WHO</orgName> postuliert weiter, dass «das für jeden Menschen erreichbare Höchstmass an Gesundheit» eines seiner Grundrechte sei. Ein Recht auf Gesundheit ist nun allerdings von niemandem zu garantieren, allerhöchstens ließe sich ein für alle Menschen gleiches Recht auf die bestmögliche Behandlung oder Pflege vertreten. Doch gibt es andererseits mehr und mehr Behandlungsmethoden, die nicht generalisierbar sind. Ein solcher Artikel trägt nicht nur nichts zur Gesundheit bei, sondern macht den Menschen sogar krank, nämlich unfähig, etwas zu ertragen.
+        </p>
+        <p>
+          Im Bereich der Medizin gälte es vielmehr, den Menschen als Menschen ernst zu nehmen, ihm also ein sinnvolles Leben zu ermöglichen. Als Leitbild könnte eine Gesundheitsdefinition wie die folgende dienen: «Gesundheit ist die Fähigkeit, mit den geringstmöglichen physischen und psychischen Einschränkungen unserer Freiheit, als <persName ref="#zbz-p.1251">Mensch</persName> zu leben.» Wir müssen lernen, die Mühen, die diese Freiheit beinhaltet, zu akzeptieren und zu ertragen. Aufgabe des Arztes ist es, dem Kranken zu helfen, diese Freiheit wiederzugewinnen.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 62, 1981, Heft 21 27.5.81
+        </p>
+      </div>
+      </body></text>
+</TEI>

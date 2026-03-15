@@ -1,0 +1,47 @@
+{
+  "doc_id": "2290",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 3],
+      "notes": "6-seitiges zweispaltiges Magazinlayout. Overlay S.1 zeigt saubere Zonenerkennung der Spalten. Overlay S.3 bestaetigt korrekte Spaltentrennung und Regionszuordnung."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text durchgehend fehlerfrei. Akzente korrekt (accent aigu, accent grave, cedille). Zitate und Eigennamen sauber erfasst."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Zweispaltiges Layout korrekt in Lesereihenfolge aufgeloest. Zwischenueberschriften (Successive et simultanee, Libre et necessaire, Corps et ame, etc.) als eigene Absaetze. Seitenzahlen (486, 487) als p erhalten."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Schema-Fehler, 0 Projekt-Fehler. W6 ignoriert. Facsimile mit 6 surfaces, zones korrekt referenziert. Zone facs_1_r_9 hat uly=13514 ausserhalb Seitenbereich -- Artefakt, nicht strukturbrechend."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 15,
+        "orgName": 0,
+        "placeName": 7,
+        "bibl": 11
+      },
+      "notes": "Hersch, Rimbaud, Ansermet, Bach, Mozart, Beethoven, Schubert, Bartok, Debussy, Rilke, Kafka, Gabriel Marcel, Palestrina, Jaspers alle mit ref. PlaceNames: Salzbourg, Europe, Italie, France. Werkverweise: Cosi fan tutte, Requiem, Wozzeck, Antigone."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vollstaendiger Essay La musique et la liberte von Hersch, Salzburg 1985. Textfluss ueber 6 Seiten koharent. Schlusszitat Cournot gehoert zur Druckvorlage. Sprache fra korrekt."
+    }
+  },
+  "findings": [
+    "Zone facs_1_r_9 hat uly=13514, weit ausserhalb der Seitenkoordinaten (lry=1510) -- Artefakt aus Layout-Erkennung."
+  ],
+  "overall_notes": "Hochwertige TEI-Edition eines franzoesischen Essays. Reiche Entitaetsannotation. Alle Schichten solide."
+}

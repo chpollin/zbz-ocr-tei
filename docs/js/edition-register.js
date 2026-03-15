@@ -150,6 +150,29 @@
             html += `<button class="ed-register-tab${active}" role="tab" data-type="${t}">${TYPE_LABELS[t]} <span class="ed-register-tab-count">${E.fmtNum(counts[t])}</span></button>`;
         });
         container.innerHTML = html;
+
+        // Type summary stats
+        renderTypeStats();
+    }
+
+    function renderTypeStats() {
+        const summ = state.data && state.data.summary ? state.data.summary.by_type : null;
+        if (!summ) return;
+        const container = $('#register-type-stats');
+        if (!container) return;
+
+        const t = state.activeType;
+        if (t === 'all') {
+            const total = state.entities.length;
+            const wd = state.entities.filter((e) => e.wikidata_qid).length;
+            const gnd = state.entities.filter((e) => e.gnd_id).length;
+            container.innerHTML = `<span>${E.fmtNum(total)} Eintraege</span> · <span>${E.fmtNum(wd)} Wikidata</span> · <span>${E.fmtNum(gnd)} GND</span>`;
+        } else if (summ[t]) {
+            const s = summ[t];
+            container.innerHTML = `<span>${E.fmtNum(s.total)} ${TYPE_LABELS[t] || t}</span> · <span>${E.fmtNum(s.with_wikidata)} Wikidata</span> · <span>${E.fmtNum(s.with_gnd)} GND</span> · <span>${E.fmtNum(s.with_docs)} in Docs</span>`;
+        } else {
+            container.innerHTML = '';
+        }
     }
 
     // --- Filters ---
@@ -394,7 +417,8 @@
             const docs = ent.doc_ids.slice(0, 20);
             docs.forEach((docId) => {
                 const title = lookupDocTitle(docId);
-                html += `<a class="ed-register-doc-link" href="reader.html?doc=${E.esc(docId)}" title="${E.esc(title)}">${E.esc(docId)}</a> `;
+                const shortTitle = title.length > 40 ? title.substring(0, 37) + '...' : title;
+                html += `<a class="ed-register-doc-link" href="reader.html?doc=${E.esc(docId)}" title="${E.esc(title)}">${E.esc(docId)} – ${E.esc(shortTitle)}</a> `;
             });
             if (ent.doc_ids.length > 20) {
                 html += `<span class="ed-text-muted">und ${ent.doc_ids.length - 20} weitere</span>`;

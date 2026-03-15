@@ -1,0 +1,40 @@
+{
+  "doc_id": "2840",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 3],
+      "notes": "6pp Zeitschriftenartikel, Zweispalten-Layout. Sauberer Druck."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Zweispaltig. Overlay S.1+S.3 geprueft, Segmentierung korrekt."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": ["W6: Keine lb-Elemente (6 Seiten)"],
+      "notes": "VALID. 1 Fussnote korrekt kodiert (note place=foot). W6 unkritisch."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 11, "orgName": 14, "placeName": 26, "bibl": 2},
+      "notes": "Viele Ortsnamen (Europa-Thematik). Institutionen korrekt. Balois/Genevois als Demonym-persName akzeptabel."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Hersch ueber Schweiz und europaeische Foederation. Politischer Essay, kohaerenter Argumentationsfluss."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Solides Dokument, reichhaltige Entity-Annotation passend zum Europa-Thema."
+}

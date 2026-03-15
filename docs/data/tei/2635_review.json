@@ -1,0 +1,41 @@
+{
+  "doc_id": "2635",
+  "reviewer": "quality-screen-claude",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "pages_inspected": ["p001", "p003"],
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: 0 Fehler, 1 Warning (W6: keine lb im body)"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S.1: Magazinseite mit Foto, Zonen korrekt. S.3: Doppelseite abgedeckt"
+    },
+    {
+      "severity": "warning",
+      "code": "W6",
+      "msg": "Keine <lb/> Elemente im body (5 Seiten) -- Zweispaltentext ohne Zeilenumbrueche"
+    },
+    {
+      "severity": "info",
+      "code": "S3",
+      "msg": "<figure> auf S.1 korrekt fuer Foto von Jeanne Hersch"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 19p 3o 3l 11w = 36, Koriagin/Solschenizyn/Antigone korrekt"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Sprache DEU korrekt, Vortrag ueber Leid koharent, 5 Seiten vollstaendig"
+    }
+  ]
+}

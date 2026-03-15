@@ -1,0 +1,43 @@
+{
+  "doc_id": "2910",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [4, 6],
+      "notes": "8pp Buchbeitrag, Zweispalten. S.1-3 Vorwort/Titelseite, S.4-8 Hersch-Text."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "S.2 komplett defekt: Tabellenstruktur '| | | |' statt Text (vermutlich Verlagsinformation/Porträtbild)."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Zweispaltig ab S.4. Overlay S.4+S.6 geprueft, Zonen korrekt."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": [],
+      "notes": "VALID, aber S.1-3 sind Paratexte (Herausgebername, Bildseite, Titelseite) im body statt front."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 10, "orgName": 1, "placeName": 24, "bibl": 1},
+      "notes": "Europa-Thema, viele Ortsnamen passend. Europeens als Demonym-persName akzeptabel."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Hersch ueber Europa als Kontinent der Inkarnation. Kohaerenter Essay."
+    }
+  },
+  "findings": [
+    "S.2 defekt: Tabellenartefakt statt Inhalt (Bild oder Verlagsinformation?)",
+    "S.1-3 Paratexte (Vorwort Inderkum, Bild, Titelseite) im body statt front"
+  ],
+  "overall_notes": "Textinhalt ab S.4 gut, aber S.2 Artefakt und fehlende front/body-Trennung erfordern manuelle Pruefung."
+}

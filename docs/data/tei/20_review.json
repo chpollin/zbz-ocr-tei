@@ -1,0 +1,42 @@
+{
+  "doc_id": "20",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "Overlay S.1 inspiziert"
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Text koharent"
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Layout korrekt"
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID"
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {},
+      "notes": "Entity-Verteilung plausibel"
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Text vollstaendig und koharent"
+    }
+  },
+  "findings": [],
+  "overall_notes": "Monographie/Langdokument, agent-gescreent via Batch-Review (Tier 4). Erste + mittlere + letzte Seite inspiziert."
+}

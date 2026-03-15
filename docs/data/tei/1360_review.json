@@ -1,0 +1,42 @@
+{
+  "doc_id": "1360",
+  "reviewer": "quality-screener",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages_inspected": ["p1", "p3"],
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 1 Warning (W10 17p 0o 0l)"
+    },
+    {
+      "severity": "info",
+      "code": "S1",
+      "msg": "5 Seiten, Sammelband-Beitrag mit Fussnote und Uebergang zu Thielicke (deu)"
+    },
+    {
+      "severity": "info",
+      "code": "S2",
+      "msg": "Fussnote mit bibl korrekt; foreign xml:lang=deu fuer deutschen Folgeartikel; div-Struktur sauber"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 17p 0o 0l 4w = 21; Max Weber, Platon, Simone Weil, Raymond Aron, Soljenitsyne getaggt; W10 begruendet -- Orte wie France, Berne, U.R.S.S. nicht als placeName, akzeptabel"
+    },
+    {
+      "severity": "info",
+      "code": "L0",
+      "msg": "Overlay S.1: Zweispalten-Layout, Titelbereich und Textbloecke korrekt zugeordnet"
+    },
+    {
+      "severity": "info",
+      "code": "T0",
+      "msg": "Franzoesischer philosophischer Essay ueber Ubiquitaet der Macht und Gerechtigkeit; Simone-Weil-Zitat korrekt eingebettet; kohaerenter Argumentationsgang"
+    }
+  ]
+}

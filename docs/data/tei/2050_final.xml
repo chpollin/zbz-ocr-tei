@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Philosophie der Freiheit</title>
+        <author>Rudolf Lengert</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2050</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Philosophie der Freiheit</title>
+          <author>Rudolf Lengert</author>
+          <date>1983</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). Mehrere persName false positives (Jaspers-Kenner, Kantianer, Psychiater, Christ, Juenger, Philosophen, Gott); placeName Rolle ist dt. Wort, nicht Ortsname; Seitenzahlen 92-101 als eigene Absaetze</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1173" lry="819">
+      <zone xml:id="facs_1_r_1" ulx="734" uly="168" lrx="924" lry="188" />
+      <zone xml:id="facs_1_r_2" ulx="737" uly="207" lrx="966" lry="274" />
+      <zone xml:id="facs_1_r_3" ulx="790" uly="300" lrx="907" lry="317" />
+      <zone xml:id="facs_1_r_4" ulx="733" uly="326" lrx="960" lry="338" />
+      <zone xml:id="facs_1_r_5" ulx="804" uly="379" lrx="899" lry="396" />
+      <zone xml:id="facs_1_r_6" ulx="808" uly="399" lrx="890" lry="411" />
+      <zone xml:id="facs_1_r_7" ulx="809" uly="416" lrx="887" lry="425" />
+      <zone xml:id="facs_1_r_8" ulx="815" uly="431" lrx="883" lry="443" />
+      <zone xml:id="facs_1_r_9" ulx="809" uly="445" lrx="889" lry="457" />
+      <zone xml:id="facs_1_r_10" ulx="816" uly="460" lrx="880" lry="472" />
+      <zone xml:id="facs_1_r_11" ulx="808" uly="475" lrx="887" lry="486" />
+      <zone xml:id="facs_1_r_12" ulx="811" uly="489" lrx="885" lry="501" />
+      <zone xml:id="facs_1_r_13" ulx="802" uly="504" lrx="893" lry="515" />
+      <zone xml:id="facs_1_r_14" ulx="816" uly="517" lrx="876" lry="527" />
+      <zone xml:id="facs_1_r_15" ulx="804" uly="530" lrx="893" lry="543" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1129" lry="791">
+      <zone xml:id="facs_2_r_1" ulx="601" uly="64" lrx="757" lry="88" />
+      <zone xml:id="facs_2_r_2" ulx="469" uly="236" lrx="547" lry="261" />
+      <zone xml:id="facs_2_r_3" ulx="601" uly="248" lrx="1029" lry="704" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1139" lry="781">
+      <zone xml:id="facs_3_r_1" ulx="612" uly="206" lrx="713" lry="219" />
+      <zone xml:id="facs_3_r_2" ulx="612" uly="263" lrx="970" lry="282" />
+      <zone xml:id="facs_3_r_3" ulx="612" uly="331" lrx="1034" lry="378" />
+      <zone xml:id="facs_3_r_4" ulx="612" uly="389" lrx="1034" lry="438" />
+      <zone xml:id="facs_3_r_5" ulx="612" uly="445" lrx="1034" lry="638" />
+      <zone xml:id="facs_3_r_6" ulx="612" uly="666" lrx="1034" lry="678" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1101" lry="781">
+      <zone xml:id="facs_4_r_1" ulx="125" uly="58" lrx="531" lry="171" />
+      <zone xml:id="facs_4_r_2" ulx="582" uly="58" lrx="988" lry="121" />
+      <zone xml:id="facs_4_r_3" ulx="582" uly="124" lrx="988" lry="232" />
+      <zone xml:id="facs_4_r_4" ulx="125" uly="174" lrx="531" lry="268" />
+      <zone xml:id="facs_4_r_5" ulx="582" uly="234" lrx="988" lry="342" />
+      <zone xml:id="facs_4_r_6" ulx="125" uly="271" lrx="531" lry="342" />
+      <zone xml:id="facs_4_r_7" ulx="125" uly="345" lrx="531" lry="388" />
+      <zone xml:id="facs_4_r_8" ulx="582" uly="345" lrx="988" lry="518" />
+      <zone xml:id="facs_4_r_9" ulx="125" uly="389" lrx="531" lry="541" />
+      <zone xml:id="facs_4_r_10" ulx="582" uly="520" lrx="988" lry="595" />
+      <zone xml:id="facs_4_r_11" ulx="125" uly="546" lrx="531" lry="595" />
+      <zone xml:id="facs_4_r_12" ulx="125" uly="596" lrx="531" lry="645" />
+      <zone xml:id="facs_4_r_13" ulx="582" uly="596" lrx="988" lry="669" />
+      <zone xml:id="facs_4_r_14" ulx="125" uly="646" lrx="531" lry="693" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1101" lry="788">
+      <zone xml:id="facs_5_r_1" ulx="115" uly="20" lrx="533" lry="170" />
+      <zone xml:id="facs_5_r_2" ulx="564" uly="20" lrx="983" lry="68" />
+      <zone xml:id="facs_5_r_3" ulx="564" uly="70" lrx="983" lry="225" />
+      <zone xml:id="facs_5_r_4" ulx="115" uly="171" lrx="533" lry="244" />
+      <zone xml:id="facs_5_r_5" ulx="564" uly="226" lrx="983" lry="354" />
+      <zone xml:id="facs_5_r_6" ulx="115" uly="245" lrx="533" lry="354" />
+      <zone xml:id="facs_5_r_7" ulx="115" uly="356" lrx="533" lry="563" />
+      <zone xml:id="facs_5_r_8" ulx="564" uly="356" lrx="983" lry="483" />
+      <zone xml:id="facs_5_r_9" ulx="564" uly="485" lrx="983" lry="613" />
+      <zone xml:id="facs_5_r_10" ulx="115" uly="564" lrx="533" lry="657" />
+      <zone xml:id="facs_5_r_11" ulx="564" uly="614" lrx="983" lry="683" />
+      <zone xml:id="facs_5_r_12" ulx="115" uly="658" lrx="533" lry="683" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1031" lry="771">
+      <zone xml:id="facs_6_r_1" ulx="73" uly="33" lrx="500" lry="82" />
+      <zone xml:id="facs_6_r_2" ulx="534" uly="33" lrx="961" lry="101" />
+      <zone xml:id="facs_6_r_3" ulx="73" uly="91" lrx="500" lry="119" />
+      <zone xml:id="facs_6_r_4" ulx="534" uly="108" lrx="961" lry="168" />
+      <zone xml:id="facs_6_r_5" ulx="73" uly="126" lrx="500" lry="154" />
+      <zone xml:id="facs_6_r_6" ulx="73" uly="161" lrx="501" lry="190" />
+      <zone xml:id="facs_6_r_7" ulx="534" uly="175" lrx="961" lry="249" />
+      <zone xml:id="facs_6_r_8" ulx="73" uly="197" lrx="500" lry="233" />
+      <zone xml:id="facs_6_r_9" ulx="73" uly="240" lrx="500" lry="337" />
+      <zone xml:id="facs_6_r_10" ulx="534" uly="256" lrx="961" lry="331" />
+      <zone xml:id="facs_6_r_11" ulx="534" uly="338" lrx="961" lry="413" />
+      <zone xml:id="facs_6_r_12" ulx="73" uly="343" lrx="500" lry="494" />
+      <zone xml:id="facs_6_r_13" ulx="534" uly="420" lrx="961" lry="479" />
+      <zone xml:id="facs_6_r_14" ulx="534" uly="486" lrx="961" lry="591" />
+      <zone xml:id="facs_6_r_15" ulx="73" uly="501" lrx="500" lry="577" />
+      <zone xml:id="facs_6_r_16" ulx="73" uly="584" lrx="500" lry="644" />
+      <zone xml:id="facs_6_r_17" ulx="534" uly="598" lrx="961" lry="644" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1041" lry="768">
+      <zone xml:id="facs_7_r_1" ulx="81" uly="19" lrx="498" lry="105" />
+      <zone xml:id="facs_7_r_2" ulx="563" uly="19" lrx="957" lry="50" />
+      <zone xml:id="facs_7_r_3" ulx="563" uly="53" lrx="957" lry="110" />
+      <zone xml:id="facs_7_r_4" ulx="81" uly="105" lrx="498" lry="163" />
+      <zone xml:id="facs_7_r_5" ulx="563" uly="113" lrx="957" lry="171" />
+      <zone xml:id="facs_7_r_6" ulx="81" uly="166" lrx="498" lry="314" />
+      <zone xml:id="facs_7_r_7" ulx="81" uly="317" lrx="498" lry="390" />
+      <zone xml:id="facs_7_r_8" ulx="81" uly="393" lrx="498" lry="466" />
+      <zone xml:id="facs_7_r_9" ulx="81" uly="469" lrx="498" lry="569" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          GGN 372
+        </head>
+        <p facs="#facs_1_r_2">
+          <persName ref="#zbz-p.800">Rudolf Lengert</persName> (Hg.)
+        </p>
+        <p facs="#facs_1_r_3">
+          <bibl ref="#zbz-w.22">Philosophie der Freiheit</bibl>
+        </p>
+        <p facs="#facs_1_r_4">
+          <persName ref="#zbz-p.1">KARL JASPERS</persName>
+        </p>
+        <p facs="#facs_1_r_5">
+          23. Februar 1883 - 26. Februar 1969
+        </p>
+        <p facs="#facs_1_r_6">
+          mit Beiträgen von
+        </p>
+        <p facs="#facs_1_r_7">
+          <persName ref="#zbz-p.801">Peter Gottwald</persName>
+        </p>
+        <p facs="#facs_1_r_8">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_1_r_9">
+          <persName ref="#zbz-p.802">Karl Kunert</persName>
+        </p>
+        <p facs="#facs_1_r_10">
+          <persName ref="#zbz-p.800">Rudolf Lengert</persName>
+        </p>
+        <p facs="#facs_1_r_11">
+          <persName ref="#zbz-p.803">Günther Roth</persName>
+        </p>
+        <p facs="#facs_1_r_12">
+          <persName ref="#zbz-p.804">Wolfgang Rudzio</persName>
+        </p>
+        <p facs="#facs_1_r_13">
+          <persName ref="#zbz-p.805">Hans Saner</persName>
+        </p>
+        <p facs="#facs_1_r_14">
+          <persName ref="#zbz-p.806">Ekkehard Seeber</persName>
+        </p>
+        <p facs="#facs_1_r_15">
+          <orgName ref="#zbz-o.325">HEINZ HOLZBERG VERLAG</orgName> - <placeName ref="#zbz-l.24">OLDENBURG</placeName>
+        </p>
+        <p>
+          1883 - 1944-0
+        </p>
+        <p>
+          Pch
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <bibl ref="#zbz-w.364">Schriftenreihe der Universität Oldenburg</bibl>
+        </p>
+        <p facs="#facs_2_r_2">
+          Wissenschaftlicher Beirat:<lb facs="#facs_2_l_2_1" n="N001" />Prof. Dr. <persName ref="#zbz-p.807">Friedrich W. Busch</persName><lb facs="#facs_2_l_2_2" n="N002" />Prof. Dr. <persName ref="#zbz-p.808">Ulrich Kattmann</persName><lb facs="#facs_2_l_2_3" n="N003" />Prof. Dr. <persName ref="#zbz-p.809">Gerhard Kraiker</persName><lb facs="#facs_2_l_2_4" n="N004" />Prof. Dr. <persName ref="#zbz-p.810">Wolfgang Pfaffenberger</persName><lb facs="#facs_2_l_2_5" n="N005" />Prof. Dr. <persName ref="#zbz-p.811">Heinrich Schmidt</persName><lb facs="#facs_2_l_2_6" n="N006" />Prof. Dr. <persName ref="#zbz-p.812">Wolfgang Schulenberg</persName><lb facs="#facs_2_l_2_7" n="N007" />Prof. Dr. <persName ref="#zbz-p.813">Ulrich Thiergard</persName>
+        </p>
+        <p facs="#facs_2_r_3">
+          Dieser Band wurde gefördert mit Mitteln der <orgName ref="#zbz-o.326">Universität Oldenburg</orgName>, der <orgName ref="#zbz-o.327">Oldenburgischen Landschaft</orgName> und der <placeName ref="#zbz-l.24">Stadt Oldenburg</placeName>
+        </p>
+        <p>
+          CIP-Kurztitelaufnahme der <orgName ref="#zbz-o.48">Deutschen Bibliothek</orgName>
+        </p>
+        <p>
+          <bibl ref="#zbz-w.22">Philosophie der Freiheit</bibl>:<lb facs="#facs_2_l_5_1" n="N001" /><persName ref="#zbz-p.1">Karl Jaspers</persName>, 23. Februar 1883 – 26. Februar 1969 /<lb facs="#facs_2_l_5_2" n="N002" />[<persName ref="#zbz-p.1">Karl-Jaspers</persName>-<bibl ref="#zbz-w.546">Symposium</bibl>, anläßl. d. 100 Geburtsstagen<lb facs="#facs_2_l_5_3" n="N003" />d. <persName ref="#zbz-p.1360">Philosophen</persName> u. Ehrenbürgers d. <placeName ref="#zbz-l.24">Stadt Oldenburg</placeName>].<lb facs="#facs_2_l_5_4" n="N004" /><persName ref="#zbz-p.800">Rudolf Lengert</persName> (Hg.): Mit Beitr. von <persName ref="#zbz-p.801">Peter Gottwald</persName> . . .<lb facs="#facs_2_l_5_5" n="N005" />[Veranst. von d. <placeName ref="#zbz-l.24">Stadt Oldenburg</placeName> (Oldb)<lb facs="#facs_2_l_5_6" n="N006" />u. d. <orgName ref="#zbz-o.326">Univ. Oldenburg</orgName>]. – <placeName ref="#zbz-l.24">Oldenburg</placeName>: Holzberg, 1983.<lb facs="#facs_2_l_5_7" n="N007" />(<bibl ref="#zbz-w.364">Schriftenreihe der Universität Oldenburg</bibl>)<lb facs="#facs_2_l_5_8" n="N008" />ISBN 3-87358-166-3<lb facs="#facs_2_l_5_9" n="N009" />NE: <persName ref="#zbz-p.800">Lengert, Rudolf</persName> [Hg.]; <persName ref="#zbz-p.801">Gottwald, Peter</persName> [Mitverf.];<lb facs="#facs_2_l_5_10" n="N010" /><persName ref="#zbz-p.1">Karl-Jaspers</persName>-<bibl ref="#zbz-w.546">Symposium</bibl> (1983)
+        </p>
+        <p>
+          © 1983 <orgName ref="#zbz-o.328">Heinz Holzberg Verlag KG</orgName> – Alle Rechte vorbehalten<lb facs="#facs_2_l_6_1" n="N001" />Gedruckt bei <orgName ref="#zbz-o.329">Isensee</orgName> in <placeName ref="#zbz-l.24">Oldenburg</placeName>
+        </p>
+        <p>
+          Inhaltsverzeichnis
+        </p>
+        <p>
+          Vorwort des Herausgebers 9
+        </p>
+        <p>
+          <persName ref="#zbz-p.800">Rudolf Lengert</persName><lb facs="#facs_2_l_9_1" n="N001" />Die Gefährdung der Freiheit durch die empirischen Wissenschaften 15
+        </p>
+        <p>
+          <persName ref="#zbz-p.803">Günther Roth</persName><lb facs="#facs_2_l_10_1" n="N001" />Philosophischer Glaube und Offenbarungsglaube bei <persName ref="#zbz-p.1">Karl Jaspers</persName> 31
+        </p>
+        <p>
+          <persName ref="#zbz-p.805">Hans Saner</persName><lb facs="#facs_2_l_11_1" n="N001" /><persName ref="#zbz-p.1">Jaspers’</persName> Idee einer kommenden Weltphilosophie 49
+        </p>
+        <p>
+          <persName ref="#zbz-p.804">Wolfgang Rudzio</persName><lb facs="#facs_2_l_12_1" n="N001" />Gefährdungen der Freiheit, <persName ref="#zbz-p.1">Karl Jaspers</persName> als politischer Schriftsteller 63
+        </p>
+        <p>
+          <persName ref="#zbz-p.801">Peter Gottwald</persName><lb facs="#facs_2_l_13_1" n="N001" /><persName ref="#zbz-p.1">Jaspers’</persName> Weg von der Psychiatrie zur <bibl ref="#zbz-w.1">Philosophie</bibl>: Was bedeutet er für die Psychiatrie heute? 79
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_2_l_14_1" n="N001" />Untrennbarkeit von <bibl ref="#zbz-w.68">Vernunft und Existenz</bibl> 93
+        </p>
+        <p>
+          <persName ref="#zbz-p.802">Karl Kunert</persName><lb facs="#facs_2_l_15_1" n="N001" />Existenzphilosophie – die Gegenwartsgestalt der <bibl ref="#zbz-w.358">philosophia perennis</bibl> 103
+        </p>
+        <p>
+          <persName ref="#zbz-p.806">Ekkehard Seeber</persName><lb facs="#facs_2_l_16_1" n="N001" />Anmerkungen zu einem berühmten Oldenburger und zu seinen politischen Schriften 121
+        </p>
+        <p>
+          Liste der Werke von <persName ref="#zbz-p.1">Karl Jaspers</persName> 128
+        </p>
+        <p>
+          Lebensdaten von <persName ref="#zbz-p.1">Karl Jaspers</persName> 133
+        </p>
+        <p>
+          Autorenverzeichnis 136
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          92<lb facs="#facs_3_l_1_1" n="N001" />93
+        </p>
+        <p facs="#facs_3_r_2">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_3">
+          Untrennbarkeit von <bibl ref="#zbz-w.68">Vernunft und Existenz</bibl>
+        </p>
+        <p facs="#facs_3_r_4">
+          Im Jahre 1937, kurz nachdem <persName ref="#zbz-p.1">Jaspers</persName> durch die nationalsozialistischen Behörden seinen Lehrstuhl für <bibl ref="#zbz-w.1">Philosophie</bibl> an der <orgName ref="#zbz-o.32">Universität Heidelberg</orgName> verlor und in den Ruhestand versetzt wurde, konnte er noch in <placeName ref="#zbz-l.272">Holland</placeName> fünf öffentliche Vorträge halten, ehe er ganz zum Schweigen verurteilt wurde bis nach der deutschen Niederlage 1945.
+        </p>
+        <p facs="#facs_3_r_5">
+          Diese fünf Vorträge haben im Werk von <persName ref="#zbz-p.1">Jaspers</persName> ein ganz besonderes Gewicht. Sie bekamen den allgemeinen Titel <hi rendition="#i"><bibl ref="#zbz-w.68">Vernunft und Existenz</bibl></hi>, und man findet in ihnen schon einen großen Teil der philosophischen Substanz, die vom <persName ref="#zbz-p.1360">Philosophen</persName> in den folgenden Jahren weiter ausgearbeitet wurde. Ich meine damit das große Werk „<bibl ref="#zbz-w.26">Von der Wahrheit</bibl>“.
+        </p>
+        <p facs="#facs_3_r_6">
+          Ich möchte hier ganz besonders den ersten Vortrag erwähnen. Der Zweck dieses Vortrages ist, die gegenwärtige philosophische Lage zu schildern. Wir leben in einer <bibl ref="#zbz-w.705">Zeit</bibl>, meint <persName ref="#zbz-p.1">Jaspers</persName>, nach einem tiefen Riß in der Geschichte der <hi rendition="#i"><bibl ref="#zbz-w.358">philosophia perennis</bibl></hi>. Bei allem Sinn für Tragik, Tod und Bedrohung des Sinnhaften hat sich in der Vergangenheit die <hi rendition="#i"><bibl ref="#zbz-w.358">philosophia perennis</bibl></hi> aus einem tiefen Zutrauen heraus und auf einen Sinn hin entwickelt. Nun hat sich im <bibl ref="#zbz-w.15">Geist</bibl> der <bibl ref="#zbz-w.705">Zeit</bibl> eine Öde verbreitet, eine Leere, die von den vielen Werken der Kultur nur verschleiert, aber nicht wieder ausgefüllt wird. Im Gegenteil: man könnte sagen, daß die Erfolge der Wissenschaften und die Wagnisse von Ästhetik und Kunst jene Leere gleichzeitig schmücken und fördern. Etwas Furchtbares ist im Gange, wogegen die Denker der Tradition nicht mehr genügen – wie unentbehrlich sie für uns in ihrer Großartigkeit auch bleiben – ja, unentbehrlicher denn je. Sie genügen nicht, weil sie das herankommende Furchtbare noch nicht ahnen konnten. Unter den verschiedensten Gestalten, durch die verschiedensten Gedankengänge bezog sich ihre <bibl ref="#zbz-w.68">Vernunft</bibl> auf das Sein, und selbst im radikalen Idealismus blieb für sie das Sein im Sein verankert.
+        </p>
+        <p>
+          Nun stellt <persName ref="#zbz-p.1">Jaspers</persName> in dem ersten Vortrag die zwei gefährlichen Ausnahmen dar, die, auf der Schwelle unserer neuen Epoche, nie mehr vergessen oder beiseite gelassen werden dürfen: <hi rendition="#i"><bibl ref="#zbz-w.530">Nietzsche</bibl> und <bibl ref="#zbz-w.529">Kierkegaard</bibl></hi>. Beide haben nicht nur gespürt, sondern in ihrem ganzen Denken
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          94
+        </p>
+        <p facs="#facs_4_r_2">
+          und Wesen erlebt, was sich veränderte: <bibl ref="#zbz-w.530">Nietzsche</bibl>, der Verneiner, der zu allen philosophischen, mythischen, poetischen Ausdrucksweisen griff, um seinen Nihilismus bis zur Vollendung, wie ein Tanz im Nichts, vollenden zu können, - und <bibl ref="#zbz-w.529">Kierkegaard</bibl>, der nur als <persName ref="#zbz-p.58">Christ</persName> leben konnte und dabei unentwegt bewies, wie unmöglich es ist, wahrhaft <persName ref="#zbz-p.58">Christ</persName> zu sein. Was die beiden „Ausnahmen“ verbindet, ist die empfindliche, grenzenlose Redlichkeit, die nie zurückschreckt, die nie vergißt, die das Furchtbare sieht, indem sie in den Abgrund der Leere hineinschaut. Beide gehen dadurch zu Grunde. Sie dürfen keine <persName ref="#zbz-p.1560">Jünger</persName> haben, keine Schüler. Sie nachahmen, ihnen folgen, ist sinnwidrig.
+        </p>
+        <p facs="#facs_4_r_3">
+          Aber nun darf niemand so tun, leben, denken, als hätte es sie nicht gegeben, als wäre dieses Grauen von vernünftigen Augen nicht existenziell ermessen worden. Wenn ein Weg zum transzendenten Sein noch möglich ist, dann niemals sie vergessend oder beiseite lassend, sondern durch sie hindurch. Und daß ein Weg möglich ist, das hofft der philosophische Glaube, denn Existenz als solche ist, indem sie sich auf Transzendenz bezieht.
+        </p>
+        <p facs="#facs_4_r_4">
+          Es ist zwar nicht so, daß <persName ref="#zbz-p.1">Jaspers</persName> etwa Existenzphilosophie für eine Neuigkeit unserer <bibl ref="#zbz-w.705">Zeit</bibl> – nach <bibl ref="#zbz-w.530">Nietzsche</bibl> und <bibl ref="#zbz-w.529">Kierkegaard</bibl> – hielt. Keineswegs. Existenz hat er bei allen großen <persName ref="#zbz-p.1360">Philosophen</persName> der Vergangenheit gesucht, getroffen, nachvollzogen. Nur war sie in früheren Zeiten nicht gezwungen, wie heute, durch den Nihilismus hindurch mit Hilfe der <bibl ref="#zbz-w.68">Vernunft</bibl> den Zugang zum Sein zu suchen.
+        </p>
+        <p facs="#facs_4_r_5">
+          Versuchen wir nun, diese Worte: <bibl ref="#zbz-w.68">Vernunft</bibl>, Existenz, im <persName ref="#zbz-p.1">Jaspersschen</persName> Sinne besser zu verstehen.
+        </p>
+        <p facs="#facs_4_r_6">
+          <bibl ref="#zbz-w.68">Vernunft</bibl>. Der Gebrauch des Wortes ist bei <persName ref="#zbz-p.1">Jaspers</persName> zunächst von <persName ref="#zbz-p.6">Kant</persName> abgeleitet; sie wird, wie bei <persName ref="#zbz-p.6">Kant</persName>, vom Verstand unterschieden. Dieser Unterschied ist für den Sinn von <bibl ref="#zbz-w.68">Vernunft</bibl> wesentlich.
+        </p>
+        <p facs="#facs_4_r_7">
+          (Ich möchte hier in Klammern eine Bemerkung machen: es ist wohl sehr bedeutungsvoll, daß es auf französisch diese klare Unterscheidung zwischen zwei verwandten Termini nicht gibt. Man spricht von „raison“, wovon man dann die zwei Adjektive „rationnel“ und „raisonnable“ ableitet, – von denen „rationnel“ eher dem Verstand entspricht, und „raisonnable“ eher der <bibl ref="#zbz-w.68">Vernunft</bibl>, aber keineswegs mit dem vollen Sinn von „vernünftig“. Meistens übersetzt man, besonders bei <persName ref="#zbz-p.6">Kant</persName>, Verstand mit „entendement“ und <bibl ref="#zbz-w.68">Vernunft</bibl> mit „raison“, – wobei diese beiden Begriffe, für mittelalterliche Denker vor allem, auch umgekehrt gebraucht worden sind. Ich schließe daraus, daß es eigentlich im <placeName ref="#zbz-l.2">Französischen</placeName> das Wort <bibl ref="#zbz-w.68">Vernunft</bibl> im Kantischen – und <persName ref="#zbz-p.1">Jaspersschen</persName> – Sinn gar nicht gibt, und daß dies wahrscheinlich der Grund ist für das traditionelle Mißverstehen <persName ref="#zbz-p.6">Kants</persName> in <placeName ref="#zbz-l.2">Frankreich</placeName>.)
+        </p>
+        <p facs="#facs_4_r_8">
+          Nun ist der Begriff <bibl ref="#zbz-w.68">Vernunft</bibl> bei <persName ref="#zbz-p.1">Jaspers</persName> von <persName ref="#zbz-p.6">Kant</persName> abgeleitet, wird aber so sehr erweitert, daß er ganz anders wirkt.
+        </p>
+        <p facs="#facs_4_r_9">
+          Verstand ist für <persName ref="#zbz-p.1">Jaspers</persName> das wichtigste Werkzeug des „Bewußtseins überhaupt“, d. h. also das, was dem Menschen erlaubt, apodiktische Gedankengänge zu vollziehen, also zeitlose, für jeden gültige Gedankengänge.
+        </p>
+        <p facs="#facs_4_r_10">
+          Hier muß gleich betont werden, daß dieses Rationale von <persName ref="#zbz-p.1">Jaspers</persName> keineswegs verachtet wird, denn er erkennt darin, in einem bestimmten Sinn, das, was als Maß, als Norm, oder sogar als Ideal dem Subjekt vorschwebt, wenn es nach Gewißheit in der Wahrheit strebt, wenn es den Forderungen dieser Gewißheit gemäß sein will.
+        </p>
+        <p facs="#facs_4_r_11">
+          Gerade im Vergleich zur Klarheit und zum zwingenden Wissen des Rationalen erfährt das
+        </p>
+        <p facs="#facs_4_r_12">
+          95
+        </p>
+        <p facs="#facs_4_r_13">
+          Subjekt den Unterschied zu dem, was sich nie so erfahren läßt. Es begegnet der Vielheit des „Umgreifenden“ und den Grenzen des rational Wißbaren.
+        </p>
+        <p facs="#facs_4_r_14">
+          Man spürt hier, wie sehr <persName ref="#zbz-p.1">Jaspers</persName> <persName ref="#zbz-p.6">Kantianer</persName> ist. Grenzen sind in seinem Denken, so wie bei <persName ref="#zbz-p.6">Kant</persName>, der eigentliche Ort philosophischen Denkens. Es bestehen jedoch Unterschiede in den Akzenten: für <persName ref="#zbz-p.6">Kant</persName> sind im Verstand die Kategorien das Wesentliche, aus denen, als a priori Erkenntnisformen, die Erscheinungshafigkeit der empirischen Welt folgt, während bei <persName ref="#zbz-p.1">Jaspers</persName> das Entscheidende beim Verstand die Apodiktizität ist, und auch das nie vollendete Weiterforschungen in der objektiven Natur.
+        </p>
+        <p>
+          Im Unterschied zum Verstand ist <bibl ref="#zbz-w.68">Vernunft</bibl> bei <persName ref="#zbz-p.6">Kant</persName> das notwendige Vorwegnehmen der unerreichbaren Ganzheiten als Ideen: Welt, Seele, <persName ref="#zbz-p.50">Gott</persName>; im Bereich der Ethik die Vorwegnahme der Einheit von Pflicht und Glück als unmögliches und doch unentbehrliches Ziel; in der Urteilskraft das Zusammenfallen von Zweckmäßigkeit und Erfüllung. So ist <bibl ref="#zbz-w.68">Vernunft</bibl> bei <persName ref="#zbz-p.6">Kant</persName> wesentlich eine überschauende Funktion, eine Dynamik: als Setzung unerreichbarer Zwecke, hält sie den Verstand in endloser Bewegung – und nicht nur den Verstand, sondern auch den guten Willen und die Urteilskraft. Sie setzt die transzendenten Totalitäten, nährt die Anstrengung und macht aus der menschlichen Endlichkeit ein Streben und eine Sehnsucht ohne Ende. Wenn die <bibl ref="#zbz-w.68">Vernunft</bibl> bei <persName ref="#zbz-p.16">Hegel</persName> durch die ihr eigene Dialektik es dem Subjekt ermöglicht, sich des Standpunktes <persName ref="#zbz-p.50">Gottes</persName> zu bemächtigen, so ist bei <persName ref="#zbz-p.6">Kant</persName> die Funktion der <bibl ref="#zbz-w.68">Vernunft</bibl> umgekehrt: gerade durch die Totalität der Ideen, die ein unendliches, endloses Streben verlangt, wird das menschliche Subjekt unwiderruflich an seine Endlichkeit genagelt.
+        </p>
+        <p>
+          Bei <persName ref="#zbz-p.1">Jaspers</persName> ist die Betonung wieder anders. Die <bibl ref="#zbz-w.68">Vernunft</bibl> bewirkt weniger ein ständiges „Darüberhinaus“ als ein Bedürfnis nach Bindung von Allem mit Allem, Einheit der Vielheiten, ein Aufeinander-angewiesen-sein, eine Aufhebung der Zerstreuung, des Nebeneinander und der Gleichwertigkeit. Alles geht alles an. Alle gehen alle an. Wenn der Verstand durch die strenge Spezifizität seiner apodiktischen Methoden in der objektiven Erfahrung ganz bestimmte Zusammenhänge in der Kontinuität erfaßt, weist die <bibl ref="#zbz-w.68">Vernunft</bibl> dagegen auf ein alle umgreifendes Sein, in dem alles auf alles angewiesen ist. Sie ist offen in die Unendlichkeit, aber als Vorwegnahme von Einheit und Ganzheit. Es darf also nichts vergessen, vernachlässigt, bagatellisiert, unterschätzt, als unwichtig verworfen werden. Auch Übel, Tod, Unvernünftiges muß aufgenommen werden. Hier gibt es bei <persName ref="#zbz-p.1">Jaspers</persName>, im Anspruch der <bibl ref="#zbz-w.68">Vernunft</bibl>, ein eigentümliches Zusammen treffen von ethischem Befehl, von wissenschaftlicher Methode und von ontologischem Sinn – bei allem Unterschied, ein spinozistischer Anspruch. Wenn nicht alles in Betracht gezogen und beibehalten wird, dann ist das Sein verfehlt.
+        </p>
+        <p>
+          Die <bibl ref="#zbz-w.68">Vernunft</bibl> braucht den Verstand als ihr Werkzeug, aber da sie der unendliche Raum ist, in dem alles zu allem gehören soll, ist sie auch mit ihm in Konflikt. Darüber kann man, zum Beispiel, im Dritten Band der <bibl ref="#zbz-w.1">Philosophie</bibl>, das Kapitel lesen über die „Sich schließende <bibl ref="#zbz-w.88">Weltorientierung</bibl>, – Positivismus und Idealismus“.
+        </p>
+        <p>
+          Hier schwebt <persName ref="#zbz-p.1">Jaspers</persName> offensichtlich unter dem Wort „Idealismus“. <persName ref="#zbz-p.16">Hegel</persName> vor: in seiner <bibl ref="#zbz-w.1">Philosophie</bibl> herrscht <bibl ref="#zbz-w.68">Vernunft</bibl> allein, ohne den Forderungen des Verstandes Rechenschaft zu tragen, so daß sie sich wie im Besitz der Totalität aufspielt, als spräche sie vom Standpunkt <persName ref="#zbz-p.50">Gottes</persName> aus. Auf diese Weise entwickelt sie eine eigentümliche Denkmethode, die Dialektik, und unterwegs gibt sie ihr eigenes Gesetz preis, indem sie das, was ihre Bewegung stört, einfach bagatellisiert oder entwertet. Dagegen behauptet der Positivismus sich selbst als selbstgenügendes Verfahren von Verstand und Erfahrung, ohne Relativierung durch die <bibl ref="#zbz-w.68">Vernunft</bibl>.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          96
+        </p>
+        <p facs="#facs_5_r_2">
+          Nebenbei können wir hier etwas zur Entwicklung der <persName ref="#zbz-p.1">Jaspersschen</persName> <bibl ref="#zbz-w.1">Philosophie</bibl> bemerken: die Grundeinstellung, die Perspektiven, der Sinn der Vielheit und des Einen, das Gegenspiel von Absolutem und Relativem, der Wille zur unendlichen Offenheit und <bibl ref="#zbz-w.68">Vernunft</bibl> und zur absoluten Verwurzelung im existenziellen <bibl ref="#zbz-w.43">Ursprung</bibl>, all das spürt man schon in seinen ersten Werken, als er noch <persName ref="#zbz-p.410">Psychiater</persName> war, in der „<bibl ref="#zbz-w.10">Psychopathologie</bibl>“, in den Kritiken der Psychopathologischen Schriften, und dann im Übergangswerk, der „<bibl ref="#zbz-w.66">Psychologie der Weltanschauungen</bibl>“. Das Existenzielle, die Existenz ist schon zentral und grundlegend in dem Werk „<bibl ref="#zbz-w.1">Philosophie</bibl>“, während das Wort <bibl ref="#zbz-w.68">Vernunft</bibl> dort sehr selten vorkommt. Erst viel später, erst in „<bibl ref="#zbz-w.68">Vernunft und Existenz</bibl>“, und hauptsächlich in „<bibl ref="#zbz-w.26">Von der Wahrheit</bibl>“ kommt das Wort <bibl ref="#zbz-w.68">Vernunft</bibl> zu seiner vollen Geltung. Wie ist das zu erklären? Ich glaube so: für <persName ref="#zbz-p.1">Jaspers</persName> gehörten Existenz und <bibl ref="#zbz-w.68">Vernunft</bibl> von Anfang an zusammen. Existenz aber mußte zentral behandelt werden, weil sie gegen den objektivierenden Strom der <bibl ref="#zbz-w.705">Zeit</bibl> Widerstand zu leisten hatte. <bibl ref="#zbz-w.68">Vernunft</bibl> spielte sozusagen selbstverständlich in <persName ref="#zbz-p.1">Jaspers</persName> <bibl ref="#zbz-w.1">Philosophie</bibl> eine wichtige <placeName ref="#zbz-l.565">Rolle</placeName>: Er kam ja von der Wissenschaft, schätzte und liebte das Tatsächliche, war faktengierig, und gleichzeitig war ihm in allen Perspektiven der unendlich weite Blick unerläßlich. Also brauchte er das Wort <bibl ref="#zbz-w.68">Vernunft</bibl> kaum. Erst später entdeckte er, wie wenig selbstverständlich <bibl ref="#zbz-w.68">Vernunft</bibl> ist und wie Existenz ohne sie leicht pervertiert werden kann.
+        </p>
+        <p facs="#facs_5_r_3">
+          Existenz. Der Begriff stammt von <bibl ref="#zbz-w.529">Kierkegaard</bibl>. Wenn <bibl ref="#zbz-w.68">Vernunft</bibl> dazu da ist, um den grenzenlosen Raum des Denkens zu öffnen, in dem alles mit allem in Beziehung treten soll, so daß dadurch eine unendliche, nie zu fassende Einheit entsteht, so ist Existenz punktueller <bibl ref="#zbz-w.43">Ursprung</bibl>. So wie die <bibl ref="#zbz-w.68">Vernunft</bibl> entspricht sie auch der Einheit des Seins, nicht aber als allumfassender Raum möglichen Denkens, sondern als jeweilige Einigkeit, nicht als Drang zur Ganzheit, sondern als Unbedingtheit des Selbstseins. Sie gehört nicht dem Bereich der Tatsachen an, sondern dem der Freiheit, und wo sie hinzielt, ist nicht die Totalität der Welt, sondern die verborgene Transzendenz.
+        </p>
+        <p facs="#facs_5_r_4">
+          Man kann sie also kaum sprachlich fassen, denn mit dem Sprechen kommen Begriffe und Kategorien ins Spiel, was nicht zu vermeiden und hier widersinnig ist. Deswegen spricht <persName ref="#zbz-p.1">Jaspers</persName> meistens nur von „möglicher Existenz“, da nur ihre Möglichkeit und nie sie selbst behauptet werden kann. Auch gibt es von ihr kein Wissen, man kann sie nur, wie <persName ref="#zbz-p.1">Jaspers</persName> sagt, „erhellen“, was keiner Feststellung entspricht, sondern nur den Sinn haben kann, sie zu „wecken“, an sie zu „appellieren“, ihre echten Chancen sichtbar zu machen.
+        </p>
+        <p facs="#facs_5_r_5">
+          „<bibl ref="#zbz-w.41">Existenzerhellung</bibl>“ kann meistens nur zu negativen Ausdrucksweisen greifen: es wird eine eingrenzende Kritik geübt gegen alle vermeintlichen Sachlichkeiten im Wissen, die Existenz unter scheinbarem Wissen, Universalität, Objektivität, Ausschließlichkeit und eindeutigen Einsichten ersticken möchten. Auch wird dabei Existenz selbst an ihr echtes Wesen, ihren echten Sinn erinnert, so daß sie sowohl auf eine allgemeine, unpersönliche Gültigkeit verzichtet, wie auch jeder Versuchung der momentanen Willkür widersteht. Denn nicht durch Allgemeingültigkeit bewährt sie sich durch die <bibl ref="#zbz-w.705">Zeit</bibl>, auch nicht durch ästhetische, ungebundene Intensität der Augenblicke, sondern durch Treue, durch Übersetzung der transzendenten Bezogenheit auf die Ewigkeit der Transzendenz in die einfache Folge aller Tage. Nur diese Treue verdient nach <persName ref="#zbz-p.1">Jaspers</persName> Freiheit genannt zu werden.
+        </p>
+        <p facs="#facs_5_r_6">
+          Behauptet, besessen, festgestellt kann sie aber nie werden. Sie kann niemals als Rechtfertigung
+        </p>
+        <p facs="#facs_5_r_7">
+          97
+        </p>
+        <p facs="#facs_5_r_8">
+          gegen Sitte oder gemeinsamen Glauben gebraucht werden. Sie kann nur erlebt, nie aber gebraucht werden.
+        </p>
+        <p facs="#facs_5_r_9">
+          Der Anspruch auf Totalität in Wissen oder Geltung ist ihr also fremd. Sie ist nur mögliches Sein eines bestimmten Menschen oder Seinsmöglichkeit eines bestimmten Menschen.
+        </p>
+        <p facs="#facs_5_r_10">
+          Nie des Menschen überhaupt. Denn das Besondere der konkreten Lage in Raum und <bibl ref="#zbz-w.705">Zeit</bibl> ist ihr keineswegs fremd oder gleichgültig. Im Gegenteil: wenn der Verstand, von der <bibl ref="#zbz-w.68">Vernunft</bibl> immer weiter in Bewegung gehalten, seinem Wesen nach in Verallgemeinerungen fortschreitet, so daß das konkret Einzelne für ihn überhaupt nicht erschließbar ist, schließt Existenz das Allgemeine dadurch aus, daß sie ein jeweils einziger <bibl ref="#zbz-w.43">Ursprung</bibl> ist und daß sie als solcher sich in einer gegebenen Situation, in einem konkret gegebenen Ort, in einer konkret gegebenen geschichtlichen <bibl ref="#zbz-w.705">Zeit</bibl> befindet. Diese nicht gewählten, faktischen Gegebenheiten nennt <persName ref="#zbz-p.1">Jaspers</persName> „<bibl ref="#zbz-w.50">Grenzsituationen</bibl>“: sie gehören gar nicht zufällig, sondern wesentlich zum jeweiligen Menschsein, und aus ihnen lernt Existenz gleichzeitig die tiefe Bescheidenheit ihrer unaufhebbaren Abhängigkeit vom schicksalhaft Gegebenen und ihre eigene Absolutheit als freier <bibl ref="#zbz-w.43">Ursprung</bibl>. Während die <bibl ref="#zbz-w.68">Vernunft</bibl> in der <bibl ref="#zbz-w.705">Zeit</bibl> große beständige Gebilde zu entdecken sucht, und endlich durch sie das Ganze der <bibl ref="#zbz-w.705">Zeit</bibl> ergreifen möchte, entspringt Existenz dem einzigen Augenblick, nicht wie eine Folge aus seiner Ursache, sondern als ein Entschluß, der auf eine gegebene Wirklichkeit angesichts der Transzendenz antwortet.
+        </p>
+        <p facs="#facs_5_r_11">
+          Deswegen ist für <persName ref="#zbz-p.1">Jaspers</persName> das, was er „<bibl ref="#zbz-w.55">Dasein</bibl>“ nennt, so wichtig. Das Wort <bibl ref="#zbz-w.55">Dasein</bibl> hat für ihn einen ganz anderen Sinn als für <persName ref="#zbz-p.5">Heidegger</persName>, und dadurch entstehen viele Mißverständnisse. Für ihn bezeichnet <bibl ref="#zbz-w.55">Dasein</bibl> die vitale Gegenwart eines Subjekts in seiner faktischen Welt. <bibl ref="#zbz-w.55">Dasein</bibl> ist also nicht einfach ein „In-der-Welt-sein“, sondern ein lebendiges Bestehen vor den körperlichen Wirklichkeiten und vor den anderen. Es ist nicht nur in Raum und <bibl ref="#zbz-w.705">Zeit</bibl>, jedoch auch in Raum und <bibl ref="#zbz-w.705">Zeit</bibl>. Jedes <bibl ref="#zbz-w.55">Dasein</bibl> ist ein einziges <bibl ref="#zbz-w.55">Dasein</bibl>. Es vernimmt, was es umgibt und wirkt darauf ein. Es wird geboren und es stirbt, in einer Zeitfolge, in der andere, früher und später, geboren werden und sterben. Es erlebt Begierde und Absichten, es verlangt Leben und Glück, - was es aber erfährt bleibt vorübergehend, ohne Bestand. Da es leben will und immer von anderem bedroht wird, bemüht es sich um Macht und muß immer wieder kämpfen. Seine Unruhe währt so lange wie es selbst.
+        </p>
+        <p facs="#facs_5_r_12">
+          Dieses <bibl ref="#zbz-w.55">Dasein</bibl> als vitale Grundbedingung jedes Subjekts, und jeder Wirklichkeit für dieses Subjekt, ist als sein lebendiger Körper, immer gegenwärtig. <persName ref="#zbz-p.1">Jaspers</persName> vergißt es nie, und deswegen verfällt er nie irgendwelcher Engelhaftigkeit. Das grundlegende Ja des Daseins, das keine andere Rechtfertigung des Lebens verlangt als das Leben selbst, gibt dem Tod seinen Stachel. Das Wunder, sagt <persName ref="#zbz-p.1">Jaspers</persName>, das Rätsel der Rätsel ist, daß dieses <bibl ref="#zbz-w.55">Dasein</bibl> seiner selbst und seiner Welt bewußt werden kann. Nur im Lichte dieses Bewußtseins können wir das Sein entdecken, denn wir kommen auf den Gedanken: ich könnte auch nicht sein, das alles könnte nicht sein - aber tatsächlich: ich bin. Daß so ein Denken an der Grenze möglich ist, zeigt, daß das <bibl ref="#zbz-w.55">Dasein</bibl> nicht das Letzte, keine Selbstschöpfung ist.
+        </p>
+        <p>
+          In dieser Besonderheit, Einzigartigkeit, Bedrohtheit des Daseins wurzelt auch Existenz. Hier ist sie zeitlich an eine Situation genagelt, durch die allein ihr Wirklichkeit entgegentritt. Wollte sich Existenz vom <bibl ref="#zbz-w.55">Dasein</bibl> loslösen, so würde sie sich im „Schweigen“ selbst verraten und verlieren.
+        </p>
+        <p>
+          <persName ref="#zbz-p.6">Kant</persName> zeigte, daß die Ideen der <bibl ref="#zbz-w.68">Vernunft</bibl> für den Verstand nicht brauchbar sind, weil sie als Totalitäten keine Denkgegenstände sein können. Ähnlich, aber anders, kann bei <persName ref="#zbz-p.1">Jaspers</persName> Exi
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          98
+        </p>
+        <p facs="#facs_6_r_2">
+          stenz nicht ohne Sinnverschiebung Gegenstand des Denkens werden. Der Verstand bekommt sie nicht in den Griff. Sie ist an ihre Besonderheit gebunden - das Gegenteil von der <bibl ref="#zbz-w.68">Vernunft</bibl>. Noch mehr: Verstand und <bibl ref="#zbz-w.68">Vernunft</bibl> wollen so unpersönlich sein wie nur möglich, während Existenz der Mittelpunkt, der <bibl ref="#zbz-w.43">Ursprung</bibl> dessen ist, was das persönlichste Selbstsein ausmacht.
+        </p>
+        <p facs="#facs_6_r_3">
+          Solche Gegensätze, zusammen mit der ständigen Betonung von Existenz als von dem Eigentlichen, hat zur Folge gehabt, daß man aus <persName ref="#zbz-p.1">Jaspers</persName> einen irrationalistischen oder sogar antirationalistischen Denker zu machen versuchte. Das ist natürlich widersinnig.
+        </p>
+        <p facs="#facs_6_r_4">
+          Wir müssen nun zu verstehen versuchen, daß weder Existenz ohne <bibl ref="#zbz-w.68">Vernunft</bibl>, noch <bibl ref="#zbz-w.68">Vernunft</bibl> ohne Existenz eigentlich bestehen kann.
+        </p>
+        <p facs="#facs_6_r_5">
+          Daß sie in ihrer Widersprüchlichkeit zusammengehören, zeigt zum Beispiel schon der Titel eines Werkes, das vom japanischen <persName ref="#zbz-p.1">Jaspers-Kenner</persName>, Professor Hashimoto, geschrieben wurde: das Buch heißt: „Die existentielle <bibl ref="#zbz-w.68">Vernunft</bibl>“.
+        </p>
+        <p facs="#facs_6_r_6">
+          <bibl ref="#zbz-w.68">Vernunft</bibl>, als auf das Ganze gerichtetes Denken, ist schon von sich aus auf eine Art „Gerechtigkeit“ ausgerichtet: alles soll im Ganzen seinen richtigen Ort und Maß haben, es darf nichts versäumt werden - sonst wird das ganze Bild, und damit jedes Element in ihm, verzerrt und entstellt. Nur zweierlei kommt in dieser Nur-<bibl ref="#zbz-w.68">Vernunft</bibl> unvermeidlich nicht zu seinem Recht: einerseits die jeweils einzige Unbedingtheit des Einzelnen, andererseits das Ganze, das für sie noch nicht das Sein sein kann.
+        </p>
+        <p facs="#facs_6_r_7">
+          <bibl ref="#zbz-w.68">Vernunft</bibl> allein versteht sich selbst als Raum und Gesetz der allgemeingültigen, unendlichen Zugehörigkeit. Sie gehört allen und niemandem. Sie ist kein Standpunkt, oder sie ist irgendein Standpunkt. Sie ist die alles umfassende Rationalität, die, jedem offen stehend, von niemandem bewohnt wird, - und für die niemand sein eigenes Selbstsein aufs Spiel setzt.
+        </p>
+        <p facs="#facs_6_r_8">
+          Nehmen wir ein Beispiel, das <persName ref="#zbz-p.1">Jaspers</persName> wiederholt im Kolleg erwähnte: er verglich <persName ref="#zbz-p.814">Galilei</persName> und <persName ref="#zbz-p.51">Giordano Bruno</persName>. <persName ref="#zbz-p.814">Galilei</persName>, als er zugab, sich geirrt zu haben, und dann in petto von der Erde sagte „E pur si muove“, bezog sich auf jene unsterbliche <bibl ref="#zbz-w.68">Vernunft</bibl>, für die es sich eben nicht lohnt, zu sterben, weil sie für sich selbst spricht und daher unsterblich ist. <persName ref="#zbz-p.51">Giordano Bruno</persName> hingegen brachte die existentielle <bibl ref="#zbz-w.68">Vernunft</bibl> ins Spiel: Mit seinem Tode bürgte er für seine existentielle Wahrheit. Er ist also nicht gestorben, damit der wahre Satz „die Erde dreht sich“ wahr bleibe, wozu sein Tod gar nicht nötig gewesen wäre, sondern damit die Wahrheit, die er durch seine Existenz bezeugte, als unbedingter Anspruch geschichtlich gegenwärtig sei.
+        </p>
+        <p facs="#facs_6_r_9">
+          Wir haben früher gesehen, wie die unendlich offene <bibl ref="#zbz-w.68">Vernunft</bibl> sich der endlichen Werkzeuge des Verstandes endlos bedient. Symmetrisch, aber anders, ist das Verhältnis von Existenz und <bibl ref="#zbz-w.55">Dasein</bibl>. Existenz, sagten wir, ist im <bibl ref="#zbz-w.55">Dasein</bibl> und in den <bibl ref="#zbz-w.50">Grenzsituationen</bibl>, die sich daraus ergeben, verankert. Sie ist also zunächst an die vitalen, praktischen Interessen des Daseins und seiner Zeitlage gebunden. Gleichzeitig aber ist sie Unbedingtheit - „quer zur <bibl ref="#zbz-w.705">Zeit</bibl>“, wie <persName ref="#zbz-p.1">Jaspers</persName> sagt, steht sie vor der ewigen Transzendenz. Sie ist zugleich an der Vitalität des Daseins, in der Gewißheit des Todes lebend, interessiert, und hat an der Wahrheit des Seins ihr absolutes Interesse, aus dem nun auch das Wahre für die <bibl ref="#zbz-w.68">Vernunft</bibl> seinen Sinn hat.
+        </p>
+        <p facs="#facs_6_r_10">
+          Nur zusammen mit der Existenz hat die <bibl ref="#zbz-w.68">Vernunft</bibl>, oder sagen wir besser: nur als existentielle <bibl ref="#zbz-w.68">Vernunft</bibl> hat die <bibl ref="#zbz-w.68">Vernunft</bibl> ihr Gewicht, ihren Sinn, ihren Inhalt. Es ist bezeichnend, daß manche zeitgenössischen Forschungen so aufgefaßt werden, als hätten sie mit Wahrheit und
+        </p>
+        <p facs="#facs_6_r_11">
+          99
+        </p>
+        <p facs="#facs_6_r_12">
+          Sein eigentlich nichts zu tun. Bestimmte Physiker behaupten, daß die von ihnen erfundenen, mathematisch formulierten Gesetze, mit der empirischen, physischen Wirklichkeit gar nichts mehr zu tun hätten, es genüge, daß sie erfolgreich angewendet werden könnten. „It works“. Anderseits gibt es in der Literaturwissenschaft hermeneutische Werke, die die Sorge, einen Text „richtig“, das heißt in dem Sinne, wie er vom Autor geschrieben wurde, zu deuten, „für überholt“ halten. Für sie geht es nicht darum, den Weg zu einer ursprünglichen Absicht wiederzufinden, sondern lediglich eine neue Interpretation zu erfinden. „Es ist interessant“, sagt man.
+        </p>
+        <p facs="#facs_6_r_13">
+          Wichtig ist nicht, daß die wahre Deutung schwer zu finden oder überhaupt nicht zu erzielen sei, was oft stimmt, sondern daß man überhaupt keine Kriterien mehr anerkennt, weil die Absicht selbst, das Wahre zu suchen, jede Substanz verloren zu haben scheint, so daß nur eine „kreative Willkür“, deren Produkt nur noch „wirken“ oder „funktionieren“ soll, angestrebt wird. Ich meine, hierin eine Umkehrung des Verhältnisses von Wissenschaft und Technik erkennen zu können, eine Zerstörung des existentiellen Ursprungs wissenschaftlicher Forschung, sowie die Herrschaft gewalttätiger Willkür über den Willen, sich dem Wahren zu unterwerfen.
+        </p>
+        <p facs="#facs_6_r_14">
+          Dadurch wird ein vermeintliches Wissen zu nichtigen Luftblasen ohne Bezug zu etwas, das ist, und man muß sich fragen, ob hier die Vorbedingungen jedes Denkens nicht zerstört werden.
+        </p>
+        <p facs="#facs_6_r_15">
+          Man erinnere sich, wie grundlegend für <persName ref="#zbz-p.6">Kant</persName> dieses Vorrecht der Vorbedingungen des Denkens war. Immer wieder ist die Form seiner Gedankengänge gerade die: da wir etwas denken, müssen die Vorbedingungen dafür gegeben sein; da wir überhaupt denken, müssen die Vorbedingungen da sein. So war die Beweisführung. Bei <persName ref="#zbz-p.1">Jaspers</persName> gilt das auch. Es ist aber bei ihm nicht nur eine theoretische Beschreibung, sondern gleichzeitig im Theoretischen eine moralische Haltung. Er empfahl immer wieder: wer das Wahre sucht, muß <bibl ref="#zbz-w.18">sich bescheiden</bibl>. Der alles verbindende Totalitätsanspruch der <bibl ref="#zbz-w.68">Vernunft</bibl> braucht die Bescheidenheit der Existenz vor dem transzendenten Sein.
+        </p>
+        <p facs="#facs_6_r_16">
+          Umgekehrt kann die Existenz die <bibl ref="#zbz-w.68">Vernunft</bibl> nicht entbehren.
+        </p>
+        <p facs="#facs_6_r_17">
+          Der unendlichen Offenheit der <bibl ref="#zbz-w.68">Vernunft</bibl> gegenüber ist Existenz manchmal wie eingesperrt in der punktuellen Absolutheit ihrer bestimmten Forderung. Es kann ihr der Raum fehlen, wo andere Existenzen sind, oder wo Möglichkeiten jenseits einer verzweifelnden Gegenwart noch Hoffnung gestatten. Wenn der Kampf zwischen absolut entschiedenen, existentiellen Überzeugungen nicht mehr die liebende Kommunikation erlaubt, dann gibt es noch, außer dem physischen Schlagen und Zerschlagen, die letzte Möglichkeit der vernünftigen Auseinandersetzung nach den Regeln der faktischen Kontrollierbarkeit, der <bibl ref="#zbz-w.8">Logik</bibl> und der Lauterkeit. Als Raum der Unendlichkeit läßt die <bibl ref="#zbz-w.68">Vernunft</bibl>, jenseits des Entweder-Oder der Existenz, vielleicht noch andere Möglichkeiten entstehen.
+        </p>
+        <p>
+          Ein Beispiel etwa, das von <persName ref="#zbz-p.1">Jaspers</persName> in seinem Buch über „<bibl ref="#zbz-w.63">Die Atombombe und die Zukunft der Menschheit</bibl>“ behandelt wurde: angesichts einer vielleicht totalen Bedrohung des Lebens oder der Freiheit, kann die Ablehnung der Bombe nicht mehr selbstverständlich und einmütig sein. Die Frage kann nicht vorher für jede <bibl ref="#zbz-w.705">Zeit</bibl> beantwortet werden, denn Leben ist für Existenz nie das Letzte. Sie muß aber geklärt werden, damit man nicht unversehens gezwungen wird, sie so oder so blind zu „entscheiden“, was keine Entscheidung wäre. Sie muß geschichtlich geklärt werden, damit jetzt in Hinsicht auf später vernünftig getan werde, was vielleicht
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          verhindern kann, daß sich die Alternative: Leben oder Freiheit, je mit dieser Ausschließlichkeit stellt. Nur vernünftige Klarheit über das, was auf dem Spiel steht, und über alle Möglichkeiten, die noch bestehen, können die aktuelle Politik präventiv beeinflussen.
+        </p>
+        <p facs="#facs_7_r_2">
+          Nie wird dadurch die äußerste Möglichkeit ausgeschlossen, noch das Absolute aufgegeben. Mut besteht aber weder in einer voreiligen Unterwerfung noch in der Voraussage und Übernahme eines fatalen Ausgangs, sondern im Wissen und Nichtwissen, das Mögliche zu tun und bis zuletzt die Hoffnung zu bewahren. Denn der Raum der <bibl ref="#zbz-w.68">Vernunft</bibl> ist immer weiter als die Voraussicht der Zukunft, und Existenz bezieht sich auf Transzendenz nur im absoluten Jetzt.
+        </p>
+        <p facs="#facs_7_r_3">
+          Überall warnt <persName ref="#zbz-p.1">Jaspers</persName> vor den Versuchungen der Selbstgenügsamkeit und Ausschließlichkeit, sei es auf der Seite des punktuellen Absoluten der Existenz, sei es mit der im Prinzip auf eine totale Einheit offenen <bibl ref="#zbz-w.68">Vernunft</bibl>. Das Pathos zur Existenz ist immer in Gefahr, sich von der Willkür einer extremen Entscheidung, von der Intensität eines isolierten Erlebnisses verführen zu lassen. Es kann auch, um nur eine Anspielung von <persName ref="#zbz-p.1">Jaspers</persName> an eine Ausdrucksweise von <persName ref="#zbz-p.16">Hegel</persName> zu erwähnen, das Gesetz des Tages vergessend, sich der Leidenschaft der Nacht hingeben. Das Pathos der <bibl ref="#zbz-w.68">Vernunft</bibl> kann sein Gefallen an der weiteren Voraussage, an der alles umgreifenden Verallgemeinerung finden, an einer Rechtfertigung der <bibl ref="#zbz-w.705">Zeit</bibl> und der Geschichte im Ganzen, die jede existentielle Gegenwart ihres existentiellen Stachels beraubt, das unbegreifliche Übel und Unglück bagatellisiert, und sich mit der Verabsolutierung einer Perspektive zufrieden gibt.
+        </p>
+        <p facs="#facs_7_r_4">
+          Es ist im ganzen Werk von <persName ref="#zbz-p.1">Jaspers</persName> eine ständige Sorge, nach allen Seiten jede Verabsolutierung eines Besonderen (eines Standpunktes, einer Art der Erfahrung, einer Tätigkeit, eines Modus des Selbstseins . . .) zu bekämpfen, wie er auch die andere Art der Verabsolutierung, die von irgendeinem angeblichen Ganzen hergeleitet wird, nie und nirgends zuläßt. Denn jede falsche Verabsolutierung sperrt den Zugang zum echten Absoluten. „Sich bescheiden“ bedeutet eben, im Widerstand gegen jede Art von „Schwelgen“ die Möglichkeit der Existenz wach zu halten.
+        </p>
+        <p facs="#facs_7_r_5">
+          In diesem Sinn ist selbst die Systematik seines Werkes nicht dazu da, die Illusion eines ganzheitlichen Denkens unter die Herrschaft der <bibl ref="#zbz-w.68">Vernunft</bibl> zu geben, sondern umgekehrt: durch die Systematik selbst wird bei <persName ref="#zbz-p.1">Jaspers</persName> immer wieder erfahren, wie unerreichbar die Ganzheit bleibt. Das liegt nicht hauptsächlich an der Begrenztheit jedes Wissens, sondern vielmehr an der Natur des Denkens, das sich jeweils in einem Umgreifenden vollzieht, das dem anderen fremd bleibt, und das das Umgreifende aller Umgreifenden zwar nennen, aber gerade nicht in einem Gedanken vollziehen kann.
+        </p>
+        <p facs="#facs_7_r_6">
+          Charakteristisch für <persName ref="#zbz-p.1">Jaspers</persName> ist es, daß er an die Existenz und ihren Bezug zur Transzendenz gerade nicht durch eine Auflockerung der <bibl ref="#zbz-w.8">Logik</bibl> im Denken appelliert, sondern im Gegenteil, durch ein strengeres logisches Prüfen letzter philosophischer Gedankengänge der großen Tradition, wobei sichtbar wird, daß sie notwendig und unvermeidlich die Form eines logischen Zirkels nehmen. Dieser in der <bibl ref="#zbz-w.68">Vernunft</bibl> vollzogene Zirkel wird dann gerade als solcher für Existenz eine Chiffre des Transzendierens. Systematik und <bibl ref="#zbz-w.8">Logik</bibl> bekommen also als solche eine existentielle Funktion, die sie dann verlieren, wenn ein reduzierendes logisches Denken fälschlich das, was alogisch ist, dem Anschein nach rationalisiert. Philosophisch unecht kann ein Denken werden, wenn es die Wahrheit einer sturen <bibl ref="#zbz-w.8">Logik</bibl> opfert, oder wenn es, der
+        </p>
+        <p facs="#facs_7_r_7">
+          Sehnsucht der <bibl ref="#zbz-w.68">Vernunft</bibl> entsprechend, auf einen absoluten Besitz des Ganzen Anspruch erhebt.
+        </p>
+        <p facs="#facs_7_r_8">
+          Existenz wird als Freiheit geübt, indem sie jede feste Struktur der Systematik oder der <bibl ref="#zbz-w.8">Logik</bibl> zugleich sucht, anerkennt, braucht, und dann doch wieder in der Schwebe behält und fahren läßt. Der <bibl ref="#zbz-w.15">Geist</bibl> des Tanzes, um mit <bibl ref="#zbz-w.530">Nietzsche</bibl> zu reden, ist hier gerade ein Zeichen des letzten Ernstes, der nichts besitzt. Aber auch der Inhalt eines solchen Satzes muß wieder durch die philosophische Bewegung aufgehoben werden.
+        </p>
+        <p facs="#facs_7_r_9">
+          Warum das? Weil der philosophisch Denkende sich selbst durch sein Denken existentiell verändert, so daß er am Ende anders denkt. Nicht nur im philosophischen Denken wird der Inhalt der Aussagen von der <bibl ref="#zbz-w.68">Vernunft</bibl> in Bezug auf die unendliche Wahrheit beurteilt, sondern da geschieht existentiell etwas mit dem Denkenden, der sich bemüht, die Wahrheit so sprechen zu lassen, wie sie überhaupt im Menschsein sprechen kann.
+        </p>
+      </div>
+      </body></text>
+</TEI>

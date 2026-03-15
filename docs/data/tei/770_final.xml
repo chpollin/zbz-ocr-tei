@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">770</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">770</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>770</title>
+          <author>Jeanne Hersch</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:n/a L2:ok L3:ok L4:warning L5:n/a L6:warning L7:warning). Titel im Header ist '770' statt 'La Suisse et l'Europe'; sourceDesc verwendet bibl statt biblStruct; Fremder Text (Robert Bratschi) im selben div wie Hersch-Essay (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1091" lry="826">
+      <zone xml:id="facs_1_r_1" ulx="582" uly="105" lrx="984" lry="194" />
+      <zone xml:id="facs_1_r_2" ulx="237" uly="179" lrx="367" lry="194" />
+      <zone xml:id="facs_1_r_3" ulx="582" uly="200" lrx="982" lry="258" />
+      <zone xml:id="facs_1_r_4" ulx="253" uly="203" lrx="350" lry="218" />
+      <zone xml:id="facs_1_r_5" ulx="108" uly="244" lrx="502" lry="419" />
+      <zone xml:id="facs_1_r_6" ulx="582" uly="263" lrx="982" lry="322" />
+      <zone xml:id="facs_1_r_7" ulx="582" uly="326" lrx="982" lry="460" />
+      <zone xml:id="facs_1_r_8" ulx="108" uly="424" lrx="502" lry="482" />
+      <zone xml:id="facs_1_r_9" ulx="582" uly="465" lrx="982" lry="601" />
+      <zone xml:id="facs_1_r_10" ulx="108" uly="488" lrx="502" lry="613" />
+      <zone xml:id="facs_1_r_11" ulx="582" uly="606" lrx="984" lry="696" />
+      <zone xml:id="facs_1_r_12" ulx="108" uly="617" lrx="253" lry="627" />
+      <zone xml:id="facs_1_r_13" ulx="108" uly="631" lrx="502" lry="675" />
+      <zone xml:id="facs_1_r_14" ulx="108" uly="680" lrx="502" lry="725" />
+      <zone xml:id="facs_1_r_15" ulx="582" uly="701" lrx="976" lry="725" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1096" lry="848">
+      <zone xml:id="facs_2_r_1" ulx="301" uly="78" lrx="352" lry="88" />
+      <zone xml:id="facs_2_r_2" ulx="109" uly="109" lrx="517" lry="167" />
+      <zone xml:id="facs_2_r_3" ulx="577" uly="126" lrx="985" lry="236" />
+      <zone xml:id="facs_2_r_4" ulx="109" uly="170" lrx="517" lry="228" />
+      <zone xml:id="facs_2_r_5" ulx="109" uly="231" lrx="517" lry="307" />
+      <zone xml:id="facs_2_r_6" ulx="577" uly="239" lrx="985" lry="316" />
+      <zone xml:id="facs_2_r_7" ulx="109" uly="311" lrx="517" lry="396" />
+      <zone xml:id="facs_2_r_8" ulx="577" uly="319" lrx="985" lry="396" />
+      <zone xml:id="facs_2_r_9" ulx="109" uly="399" lrx="517" lry="475" />
+      <zone xml:id="facs_2_r_10" ulx="577" uly="399" lrx="985" lry="475" />
+      <zone xml:id="facs_2_r_11" ulx="109" uly="479" lrx="517" lry="555" />
+      <zone xml:id="facs_2_r_12" ulx="577" uly="479" lrx="985" lry="555" />
+      <zone xml:id="facs_2_r_13" ulx="109" uly="558" lrx="517" lry="635" />
+      <zone xml:id="facs_2_r_14" ulx="577" uly="558" lrx="985" lry="672" />
+      <zone xml:id="facs_2_r_15" ulx="109" uly="638" lrx="517" lry="714" />
+      <zone xml:id="facs_2_r_16" ulx="577" uly="675" lrx="985" lry="757" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1094" lry="841">
+      <zone xml:id="facs_3_r_1" ulx="100" uly="108" lrx="517" lry="357" />
+      <zone xml:id="facs_3_r_2" ulx="592" uly="169" lrx="992" lry="214" />
+      <zone xml:id="facs_3_r_3" ulx="613" uly="233" lrx="817" lry="244" />
+      <zone xml:id="facs_3_r_4" ulx="574" uly="270" lrx="992" lry="349" />
+      <zone xml:id="facs_3_r_5" ulx="574" uly="355" lrx="992" lry="402" />
+      <zone xml:id="facs_3_r_6" ulx="100" uly="359" lrx="517" lry="385" />
+      <zone xml:id="facs_3_r_7" ulx="574" uly="407" lrx="992" lry="467" />
+      <zone xml:id="facs_3_r_8" ulx="574" uly="472" lrx="992" lry="539" />
+      <zone xml:id="facs_3_r_9" ulx="574" uly="544" lrx="992" lry="611" />
+      <zone xml:id="facs_3_r_10" ulx="574" uly="616" lrx="992" lry="742" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          34<lb facs="#facs_1_l_1_1" n="N001" /><persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_1_r_2">
+          <placeName ref="#zbz-l.521">La Suisse</placeName> et l'<placeName ref="#zbz-l.29">Europe</placeName><lb facs="#facs_1_l_2_1" n="N001" />par <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <placeName ref="#zbz-l.521">La Suisse</placeName> n'est en aucune façon un produit naturel. Qu'elle se situe à la source des grands fleuves dont les cours divergents arrosent l'<placeName ref="#zbz-l.29">Europe</placeName> ne la prédestinait nullement à se constituer en Etat. Pas, ou très peu, de données communes dans les réalités géopolitiques de ses cantons. Et même, semble-t-il, peu de données complémentaires.
+        </p>
+        <p facs="#facs_1_r_4">
+          L'amour engendre ses raisons. Belle, l'aimée l'est parce qu'elle est maigre ou plantureuse, sévère ou souriante, blonde ou brune, puissante ou fragile. La patrie aimée se pare des frontières naturelles, mers ou montagnes, qui la délimitent, l'isolent et la protègent, ou de la vulnérabilité de ses plaines ouvertes à l'infini. Comme tout objet aimé, la patrie est ressentie comme nécessaire, c'est-à-dire, contre toute raison, comme condition de l'ordre et du sens dans le monde. Bien avant d'être — tel est le sentiment de ses fils — elle ne pouvait pas ne pas être. Et elle ne pourrait pas, sans scandale, cesser d'être un jour.
+        </p>
+        <p facs="#facs_1_r_5">
+          La <placeName ref="#zbz-l.2">France</placeName> est un hexagone, l'<placeName ref="#zbz-l.110">Italie</placeName> une botte, l'<placeName ref="#zbz-l.159">Angleterre</placeName> une île. On éprouve ici, fortement, combien de telles déterminations, bien que limitatives, donnent de densité à un être. L'<placeName ref="#zbz-l.26">Allemagne</placeName> n'est jamais sortie de l'angoisse que lui donnent ses frontières indécises. <placeName ref="#zbz-l.521">La Suisse</placeName>? Qui donc, en dehors des états-majors, a jamais pensé à ses frontières?
+        </p>
+        <p facs="#facs_1_r_6">
+          Parfaitement à l'aise à l'intérieur de ce pourtour compliqué et informe, arbitraire et conventionnel, la <placeName ref="#zbz-l.705">Suisse</placeName> l'ignore. La conception du « réduit national », qui commanda la défense du pays pendant la dernière guerre, est caractéristique. <placeName ref="#zbz-l.521">La Suisse</placeName> n'est pas essentiellement un territoire. Il faut dire, certes, que tous les autres pays, dans notre monde scientifique et industriel, sont de moins en moins des territoires. Mais sur ce point la <placeName ref="#zbz-l.705">Suisse</placeName> les a précédés : elle ne l'a jamais été. Un territoire, c'est une donnée, un donné, un cadeau, une réalité de nature, de destin ou de Dieu.
+        </p>
+        <p facs="#facs_1_r_7">
+          <placeName ref="#zbz-l.521">La Suisse</placeName> n'a pas été donnée.
+        </p>
+        <p facs="#facs_1_r_8">
+          Elle a été voulue. Elle est une réalité politique. Elle n'est rien d'autre que son histoire. Elle se mesure non en surface, mais en durée. Son être, elle le cherche et le trouve dans le récit des problèmes, des efforts, des exploits qui l'ont faite. Ses traditions, c'est un tissu de solutions inventées.
+        </p>
+        <p facs="#facs_1_r_9">
+          Mais alors les montagnes, les vallées, les glaciers sublimes, tout ce décor incomparable? Certes, si la <placeName ref="#zbz-l.705">Suisse</placeName> n'a pas été voulue, elle ne s'est pas faite hors de toutes données géographiques.
+        </p>
+        <p facs="#facs_1_r_10">
+          35<lb facs="#facs_1_l_10_1" n="N001" /><placeName ref="#zbz-l.672">LA SUISSE</placeName> ET <placeName ref="#zbz-l.29">L'EUROPE</placeName>
+        </p>
+        <p facs="#facs_1_r_11">
+          Il y avait cette situation, ces distances de la mer, ces terres étroites encombrées de roche et de glace, ces champs difficiles sur des pentes raides, ces fleuves divergents, ces lacs. Il y avait le tohu-bohu des <placeName ref="#zbz-l.568">Alpes</placeName>, où les troupeaux s'accrochaient aux pâturages, les longs plis du <placeName ref="#zbz-l.117">Jura</placeName>, propices aux travaux de patience, et entre les deux, le Plateau, ouvert, vulnérable, perméable aux armées, mais aussi aux coutumes et aux changements du dehors.
+        </p>
+        <p facs="#facs_1_r_12">
+          Il y avait aussi, tout autour, ces nations périodiquement ennemies, rassurées dans l'immédiat par un peuple dont elles n'avaient rien à craindre et qui gardait les cols contre toutes, donnant à chacune le temps, en cas de danger, de se lever et de saisir ses armes.
+        </p>
+        <p facs="#facs_1_r_13">
+          Il y avait encore bien d'autres « données de fait », comme par exemple, à l'intérieur, ces peuples divers au creux de vallées longtemps isolées du reste du monde et même entre elles, divers par les dialectes et même par les langues, par les coutumes, les croyances, les goûts.
+        </p>
+        <p facs="#facs_1_r_14">
+          Il est de tradition, en <placeName ref="#zbz-l.705">Suisse</placeName>, d'« expliquer » le pays par ces données, comme si elles l'avaient fait ce qu'il est. Certes, eussent-elles été différentes, le pays eût été autre, ou n'eût pas été du tout. Mais rien, dans ces données, n'était capable d'engendrer un Etat fédéral durable. <placeName ref="#zbz-l.521">La Suisse</placeName> n'a été « un produit » ni de la configuration naturelle, ni de la diversité de ses petits peuples, ni des rivalités de ses voisins. Il a fallu la vouloir. Au contraire, elle proclame sous le ciel que la volonté politique est possible, qu'elle peut créer un organisme viable et le faire vivre à travers les siècles, faisant de petitesse et de faiblesse vertu, de diversité ciment, de fragilité durée.
+        </p>
+        <p facs="#facs_1_r_15">
+          Fruit d'un vouloir délibéré contre des données de fait dont aucune n'imposait son existence, elle a dû être pour elle-même l'objet d'une vigilance et de soins incessants. Et son paradoxe essentiel, c'est qu'elle s'est ainsi trouvée asservie, plus peut-être que d'autres pays, à un souci primordial de conservation, rétablissant le règne de ces mêmes données de fait que bravaient sa création et sa durée. N'étant pas un produit naturel, elle gardait la précarité et le prix de toute œuvre volontaire. Fragile et contestable, il lui fallait sans cesse se maintenir et se justifier. Elle s'identifiait dans ses chants patriotiques aux rochers de ses montagnes, mais rien ne lui faisait plus défaut que leur pérennité et leur évidence.
+        </p>
+        <p>
+          Se maintenir en se justifiant, se justifier en se maintenant. Se justifier, pour un être créé volontairement, c'est d'une part se réclamer de principes et de valeurs permanents, d'autre part s'affirmer indispensable aux autres. C'est aussi, à force de durer, conquérir un peu de cette légitimité que les autres ont trouvée toute offerte dans leur homogénéité relative à l'intérieur d'un territoire bien net, délimité par des frontières naturelles. C'est, au nom de son être, revendiquer le droit de persévérer dans l'être.
+        </p>
+        <p>
+          Il est difficile, avec de telles prémisses, d'être souple au fil du temps et ouvert aux suggestions de l'histoire. Ce qui accapare l'attention, c'est la nécessité où l'on est de se réadapter sans cesse aux changements qui surviennent, sans perdre en route, cependant, les éléments de justification permanents. C'est difficile, en particulier, lorsque les chan-
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          36<lb facs="#facs_2_l_1_1" n="N001" /><persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_2_r_2">
+          gements survenus alentour altèrent les termes de la justification permanente. Par exemple, si les nations voisines cessent d'être des adversaires virtuels dans un conflit futur, si le front des conflits possibles se déplace, si la <placeName ref="#zbz-l.705">Suisse</placeName>, même en restant utile, n'a plus de raison pour se proclamer indispensable.
+        </p>
+        <p facs="#facs_2_r_3">
+          Mais c'est surtout difficile s'il ne suffit plus de durer et de s'adapter à des données changeantes, s'il devient nécessaire d'inventer et de créer volontairement du nouveau, à travers des données et en partie contre elles – s'il faut donc refaire un acte politique libre et volontaire, analogue à celui qui a donné son existence au pays.
+        </p>
+        <p facs="#facs_2_r_4">
+          Le terme de « politique » n'a pas bonne presse en <placeName ref="#zbz-l.705">Suisse</placeName>. Avec des variations de degré selon les régions linguistiques et selon qu'il s'agit de populations rurales ou urbaines, il a néanmoins partout un relent d'intrigue, de paroles creuses, d'agitation vaine, de dépenses stériles. La politique est chose encore plus mal vue que la philosophie, ce qui n'est pas peu dire. Les gens sérieux s'occupent d'économie, d'aménagements locaux, et, comme ils ne sont pas matérialistes et qu'ils ont des besoins spirituels, ils s'occupent aussi de religion. Mais pas de politique. L'idéal serait que les sept conseillers fédéraux fussent des économistes et des pasteurs, à la rigueur des pédagogues, mais des hommes politiques jamais.
+        </p>
+        <p facs="#facs_2_r_5">
+          Et pourtant, comme je l'ai dit, la nature profonde du pays est politique. Il s'agit d'une création volontaire, réalisée délibérément sur la base d'un contrat choisi. Le niveau politique, c'est celui où les options ultimes s'incarnent dans la réalité sociale, celui où l'esprit intervient dans le donné économique. C'est peut-être le plus difficile, celui où les responsabilités sont les plus lourdes, car les pensées y ont leurs conséquences concrètes.
+        </p>
+        <p facs="#facs_2_r_6">
+          On a dit souvent – et en partie abusivement – qu'une <placeName ref="#zbz-l.29">Europe</placeName> unie serait fédérée sur le modèle de la <placeName ref="#zbz-l.705">Suisse</placeName>, que la <placeName ref="#zbz-l.705">Suisse</placeName> avait plus de raisons que tout autre pays d'adhérer sans réserve à l'entreprise d'unification européenne puisqu'elle se reconnaîtrait sans peine, simplement agrandie, dans les structures du nouvel <orgName ref="#zbz-o.754">État</orgName> continental. Il y a sans doute là-dedans du vrai et du faux. Mais il y aurait nécessairement, me semble-t-il, entre la <placeName ref="#zbz-l.705">Suisse</placeName> et une <placeName ref="#zbz-l.29">Europe</placeName> unie, une parenté beaucoup plus profonde encore que celle d'une structure fédérale : l'<placeName ref="#zbz-l.29">Europe</placeName>, comme la <placeName ref="#zbz-l.705">Suisse</placeName>, si elle se fait un jour, sera une œuvre politique, humaine, le fruit d'un effort délibéré, d'une option consciente, et non une donnée allant de soi, imposée par l'histoire ou la géographie. Petit cap de l'<placeName ref="#zbz-l.28">Asie</placeName>, a-t-on dit. Petit cap informe, aux frontières indécises, et il faudra bien aussi y fonder l'unité sur la diversité et la fierté sur la petitesse.
+        </p>
+        <p facs="#facs_2_r_7">
+          On a essayé, pour l'<placeName ref="#zbz-l.29">Europe</placeName> comme pour la <placeName ref="#zbz-l.705">Suisse</placeName>, de montrer qu'elles s'imposaient à tout regard lucide posé sur une carte ou sur une perspective historique. Je crois qu'elles ne « s'imposent » ni l'une ni l'autre. Mais pourquoi préférer ce qui s'impose à ce qui, pour être, doit avoir été librement voulu ?
+        </p>
+        <p facs="#facs_2_r_8">
+          Je me demande d'où vient aujourd'hui le discrédit général des créations volontaires. Qu'il s'agisse d'un plan de recherche scientifique, d'un système d'approvisionnement, d'un programme d'aide à un pays en développement, d'une méthode pédagogique, de
+        </p>
+        <p facs="#facs_2_r_9">
+          37<lb facs="#facs_2_l_9_1" n="N001" /><placeName ref="#zbz-l.672">LA SUISSE</placeName> ET <placeName ref="#zbz-l.29">L'EUROPE</placeName>
+        </p>
+        <p facs="#facs_2_r_10">
+          la conception d'un immeuble, l'idéal semble être d'en constater la structure pré-écrite dans les faits eux-mêmes, prescrite par eux, ou, selon les cas, par des machines où les faits auraient été préalablement enregistrés, classés, évalués, comparés. Il n'est pas jusqu'à l'œuvre d'art qui ne se trouve discréditée par n'importe quelle intention de son créateur : il faut qu'elle soit née par le seul jaillissement de la couleur hors des tubes, ou par la seule explosion de l'inconscient, ou encore par de savantes, mais aveugles recherches commandées par les rapports mêmes des séries et des nombres. D'où vient, en ce siècle où l'homme fait rendre l'âme à son profit à la nature entière, ce besoin en lui de se nier, de s'effacer, de se démettre, face à cette nature soumise et dénaturée, au point d'avoir en tout horreur de dire : « Je l'ai fait exprès » ?
+        </p>
+        <p facs="#facs_2_r_11">
+          <placeName ref="#zbz-l.521">La Suisse</placeName> a été faite exprès. <placeName ref="#zbz-l.29">L'Europe</placeName>, si elle se fait, aura été faite exprès. Ne mérite, à proprement parler, d'être dite « politique » qu'une réalité « faite exprès ». Et même, à proprement parler, cela seul mérite d'être dit « historique ». Car ce qui se constate dans les faits, ou même ce que les faits à eux seuls annoncent, et que certaines machines permettent de prédire, ce n'est encore et toujours que la nature et sa nécessité.
+        </p>
+        <p facs="#facs_2_r_12">
+          Ce qui est fait « exprès » garde toujours en soi une précarité spécifique. Ayant été faite exprès, la <placeName ref="#zbz-l.705">Suisse</placeName> a, plus qu'un autre pays, besoin de sollicitude et de vigilance. C'est en bonne partie sa précarité qui explique et justifie sa neutralité, la neutralité étant par excellence un statut politique, et non naturel.
+        </p>
+        <p facs="#facs_2_r_13">
+          Seulement la neutralité, comme bien d'autres particularités écrites ou non écrites de la <placeName ref="#zbz-l.705">Suisse</placeName>, était encore naguère une mesure de sauvegarde statique. Elle date d'un temps où les réalités politiques, pour durer, pour « persister dans l'être », devaient avant tout écarter ou prévenir les menaces d'anéantissement ou de désagrégation pouvant surgir de l'extérieur ou de l'intérieur. Essentiellement politique, mesurant son être non en espace, mais en durée, le pays s'installa au sein des siècles, cherchant à rester identique à lui-même et ne subissant que malgré lui les transformations de l'histoire.
+        </p>
+        <p facs="#facs_2_r_14">
+          Or les temps ont changé. Ce qui veut survivre doit désormais trouver en soi la source d'une re-création de soi. Rien de narcissiste là-dedans, au contraire : c'est le devenir du monde qui exige partout une nouvelle réponse, une nouvelle présence. <placeName ref="#zbz-l.521">La Suisse</placeName> s'en est bien aperçue : attachée quasi religieusement à sa neutralité, elle a entrepris de la sauver en la réinventant, sous la forme d'une collaboration multipliée partout où « la politique », à la fois dangereuse et méprisée, ne s'en mêle pas trop manifestement.
+        </p>
+        <p facs="#facs_2_r_15">
+          Mais l'<placeName ref="#zbz-l.29">Europe</placeName>, je l'ai dit, est elle aussi une réalité politique, et celle qui essaye aujourd'hui de se constituer l'est doublement. Elle se fait « exprès », et chacune des étapes de sa création porte la marque pathétique des efforts volontaires, tenaces, sans cesse menacés d'échec, sans lesquels il n'y aurait pas d'histoire humaine, mais seulement une histoire naturelle. Elle est donc précaire et les faits ne l'imposent pas. Seules l'imposent des fins, à la manière dont des fins s'imposent, c'est-à-dire en entraînant l'adhésion de notre liberté.
+        </p>
+        <p facs="#facs_2_r_16">
+          Ces fins, il est difficile de les rappeler, tant certaines d'entre elles sont banales – du moins au niveau des mots et de la propagande : création d'un sujet politique proportionné aux
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          38 <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_3_r_2">
+          <orgName ref="#zbz-o.617">DER SCHWEIZERISCHE GEWERKSCHAFTSBUND</orgName> NACH DEM ERSTEN WELTKRIEG 39
+        </p>
+        <p facs="#facs_3_r_3">
+          grandes puissances continentales d'aujourd'hui, à travers lequel les peuples d'<placeName ref="#zbz-l.29">Europe</placeName> pourraient contribuer à construire l'ordre universel de demain; création d'un ensemble économique proportionné aux investissements industriels, d'installations pour la recherche, de budgets pour les savants, de formation des cadres, d'apprentissage pour tous; création d'un climat éthique où serait refusée l'uniformisation aussi bien par la publicité des affaires géantes que par le despotisme du parti unique et de la dictature, fût-elle collégiale, et où s'épanouirait le multiple trésor de la diversité et des divergences humaines; création d'une prospérité mise au service du développement de chacun et de tous, par la diffusion simultanée de la culture et des responsabilités.
+        </p>
+        <p facs="#facs_3_r_4">
+          Propagande? Non, car ce ne sont pas des promesses. Il n'est pas sûr que l'<placeName ref="#zbz-l.29">Europe</placeName> se fera. Si elle se fait, il n'est pas sûr qu'elle sera fidèle à ces fins. Si elle l'est, il n'est pas sûr qu'elle survivra. Et si elle survit, il n'est pas sûr que l'homme, que les hommes concrets de demain sauront servir ces mêmes fins et les nourrir de leur substance, de leur temps et de leur peine.
+        </p>
+        <p facs="#facs_3_r_5">
+          Mais ce sont des fins qu'on peut vouloir servir, et dont on peut penser que la <placeName ref="#zbz-l.705">Suisse</placeName>, cet être politique, les servirait historiquement en contribuant à créer cet autre être politique, aussi précaire qu'elle, aussi dépendant du vouloir des hommes, que serait une véritable <placeName ref="#zbz-l.29">Europe</placeName> unie.
+        </p>
+        <p facs="#facs_3_r_6">
+          <orgName ref="#zbz-o.617">Der Schweizerische Gewerkschaftsbund</orgName> nach dem ersten Weltkrieg
+        </p>
+        <p facs="#facs_3_r_7">
+          von <persName ref="#zbz-p.1808">Robert Bratschi</persName>
+        </p>
+        <p facs="#facs_3_r_8">
+          Der erste Weltkrieg hatte den Abschluß einer Epoche der Weltgeschichte zur Folge. Er hat ein für <placeName ref="#zbz-l.14">Europa</placeName> wenig günstiges neues Kapitel aufgeschlagen. Er ließ nicht nur besiegte Völker zurück; es gab auch einen geschlagenen Erdteil. Dieser Erdteil heißt <placeName ref="#zbz-l.14">Europa</placeName>. Es hat als Folge des Krieges schließlich seine Vorherrschaft eingebüßt. Es ging mehr verloren; der «weiße Mann» hat vor den farbigen Völkern «sein Gesicht» verloren.
+        </p>
+        <p facs="#facs_3_r_9">
+          Im wesentlichen handelte es sich 1914/18 doch um einen europäischen Krieg. Wohl gab es weit in der Welt herum Nebenkriegsschauplätze; wohl waren dabei auch die <persName ref="#zbz-p.830">Europäer</persName> beteiligt, die sich überall bekämpften, wo sie sich begegneten; wohl haben die <persName ref="#zbz-p.1849">Amerikaner</persName> den Krieg schließlich entschieden: der Hauptkriegsschauplatz war aber doch <placeName ref="#zbz-l.14">Europa</placeName>. Die europäischen Völker haben sich zerfleischt.
+        </p>
+        <p facs="#facs_3_r_10">
+          Die Blüte der europäischen Völker wurde dahingerafft; die Staaten <placeName ref="#zbz-l.14">Europas</placeName> haben ihre Wirtschaft zerrüttet. Die andern waren doch mehr die Zuschauer, soweit sie nicht von ihren Kolonialherren zur europäischen Schlachtbank geführt wurden, um ihnen hier vor Augen zu führen, von wem sie regiert wurden.
+        </p>
+        <p>
+          In <placeName ref="#zbz-l.14">Europa</placeName> selbst gab es wohl «Sieger» und «Besiegte». In Wirklichkeit waren alle geschlagen. Es gab aber auch tiefschneidende Änderungen in der ganzen politischen, wirtschaftlichen und sozialen Struktur des Erdteils. Grenzen wurden verschoben, Regierungssysteme wurden gestürzt, ganze Staaten verschwanden von der politischen Karte und wurden zerstückelt. Es zeigte sich schon nach wenigen Jahren, daß das angebliche Ziel, nämlich ein neues Leben in Freiheit und harmonischer demokratischer Entwicklung der Völker, nicht erreicht worden war.
+        </p>
+        <p>
+          Von besonderer Bedeutung war, daß die zaristische Diktatur in <placeName ref="#zbz-l.18">Rußland</placeName> einem politischen System Platz machte, das weder mit einer bürgerlichen <bibl ref="#zbz-w.478">Demokratie</bibl> noch mit einem freien sozialistischen Staat etwas zu tun hatte. Der Umsturz in <placeName ref="#zbz-l.18">Rußland</placeName> erweckte aber in der Welt der Arbeiter <placeName ref="#zbz-l.14">Europas</placeName> doch vielfach die Hoffnung, das Verschwinden der großen reaktionären Macht im <placeName ref="#zbz-l.13">Osten</placeName> werde die Entwicklung in ganz <placeName ref="#zbz-l.14">Europa</placeName> im Sinne der Freiheit, des Fortschritts und der sozialen Gerechtigkeit beeinflussen.
+        </p>
+        <p>
+          Unser Land vom Kriege ferngehalten zu haben, war eine hoch anzurechnende politische Leistung unserer Behörden. Die großen Geistesströmungen und die entsprechenden Umwälzungen in der Welt sind aber nie ohne Einfluß auf unser Volk geblie-
+        </p>
+      </div>
+      </body></text>
+</TEI>

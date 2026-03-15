@@ -14,7 +14,7 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 
-from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, TEI_FINAL_DIR, DOC_METADATA_PATH, ENTITIES_DIR
+from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, TEI_FINAL_DIR, TEI_CURATED_DIR, DOC_METADATA_PATH, ENTITIES_DIR
 from scripts.utils import load_json
 
 
@@ -118,6 +118,17 @@ def build_catalog():
         except Exception:
             pass
 
+    # Kurations-Status vorladen (aus tei_curated/ Metadaten)
+    curation_status = {}
+    if TEI_CURATED_DIR.exists():
+        for meta_file in TEI_CURATED_DIR.glob("*/*_curation.json"):
+            try:
+                meta = json.loads(meta_file.read_text(encoding="utf-8"))
+                did = meta.get("doc_id", meta_file.parent.name)
+                curation_status[did] = meta.get("status", "uncurated")
+            except (json.JSONDecodeError, IOError):
+                pass
+
     # Dokument-Eintraege bauen
     entries = []
     for doc_id, doc in sorted(docs.items(), key=lambda x: int(x[0])):
@@ -136,6 +147,7 @@ def build_catalog():
             "screening": screening_status.get(doc_id, {}).get("status"),
             "screening_reviewer": screening_status.get(doc_id, {}).get("reviewer"),
             "screening_date": screening_status.get(doc_id, {}).get("date"),
+            "curation": curation_status.get(doc_id, "uncurated"),
             "demo": doc_id in FEATURED_DOCS,
         }
         entries.append(entry)
@@ -151,9 +163,12 @@ def build_catalog():
         form_counts[pf] = form_counts.get(pf, 0) + 1
 
     screening_counts = {}
+    curation_counts = {}
     for e in entries:
         s = e.get("screening") or "NOT_SCREENED"
         screening_counts[s] = screening_counts.get(s, 0) + 1
+        c = e.get("curation") or "uncurated"
+        curation_counts[c] = curation_counts.get(c, 0) + 1
 
     catalog = {
         "generated": datetime.now().isoformat(timespec="seconds"),
@@ -174,6 +189,7 @@ def build_catalog():
             "types": type_counts,
             "forms": form_counts,
             "screening": screening_counts,
+            "curation": curation_counts,
         },
         "labels": {
             "languages": LANG_LABELS,
@@ -301,6 +317,66 @@ def export_entity_register():
         return 0
 
 
+def build_search_index():
+    """Extrahiert Klartext aus allen TEI-Bodies fuer Volltext-Suche."""
+    from xml.etree import ElementTree as ET
+
+    if not TEI_FINAL_DIR.exists():
+        print("  Search Index: tei_final/ nicht gefunden")
+        return 0
+
+    ns = {"tei": "http://www.tei-c.org/ns/1.0"}
+    entries = []
+
+    for tei_file in sorted(TEI_FINAL_DIR.glob("*_final.xml")):
+        doc_id = tei_file.stem.replace("_final", "")
+        try:
+            tree = ET.parse(tei_file)
+            root = tree.getroot()
+
+            # Titel
+            title_el = root.find(".//tei:titleStmt/tei:title", ns)
+            title = title_el.text.strip() if title_el is not None and title_el.text else ""
+
+            # Body-Text
+            body = root.find(".//tei:body", ns)
+            if body is None:
+                continue
+            text_parts = []
+            for t in body.itertext():
+                t = t.strip()
+                if t:
+                    text_parts.append(t)
+            full_text = " ".join(text_parts)[:2000]
+
+            # Entity-Namen
+            entity_names = set()
+            for tag in ("tei:persName", "tei:orgName", "tei:placeName"):
+                for el in body.iter(tag.replace("tei:", f"{{{ns['tei']}}}")):
+                    name = "".join(el.itertext()).strip()
+                    if name and len(name) > 1:
+                        entity_names.add(name)
+
+            entries.append({
+                "id": doc_id,
+                "title": title,
+                "text": full_text,
+                "entities": sorted(entity_names)[:50],
+            })
+        except Exception:
+            continue
+
+    output_path = DOCS_DIR / "data" / "search_index.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(entries, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    size_kb = output_path.stat().st_size // 1024
+    print(f"  Search Index: {len(entries)} Docs ({size_kb} KB) -> {output_path}")
+    return len(entries)
+
+
 def main():
     print("Edition-Daten generieren...")
 
@@ -319,7 +395,10 @@ def main():
     # 4. Entity Register exportieren (mit Cross-Doc-Referenzen)
     register_count = export_entity_register()
 
-    # 5. Katalog schreiben
+    # 5. Volltext-Suchindex bauen
+    search_count = build_search_index()
+
+    # 6. Katalog schreiben
     output_path = DOCS_DIR / "data" / "catalog.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(

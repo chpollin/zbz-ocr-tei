@@ -1,0 +1,45 @@
+{
+  "doc_id": "890",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 7,
+  "language": "deu",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p004"],
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V1",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 23p 22o 18l 24w = 87"
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1: Metadaten-Deckblatt (SLZ 115/1970/51-52), Regionen korrekt"
+    },
+    {
+      "severity": "info",
+      "code": "L2",
+      "msg": "Overlay S.4: Zweispaltiges Layout, Uebergang Hersch-Text plus Redaktions-Kolumne sauber getrennt"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Text koharent, deutsch mit franzoesischem Resume am Ende. Demokratisierung der Schule, Pestalozzifeier Bern"
+    },
+    {
+      "severity": "minor",
+      "code": "E1",
+      "msg": "Systematische bibl-refs auf Alltagswoerter (zbz-w.705 Zeit, zbz-w.52 ich muss, zbz-w.55 Dasein) -- projektweites Muster"
+    }
+  ]
+}

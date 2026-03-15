@@ -1,0 +1,32 @@
+{
+  "doc_id": "160",
+  "reviewer": "quality-screening-t3",
+  "date": "2026-03-15",
+  "tier": 3,
+  "pages": 10,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Homme' (2x, p.4+5) tagged as persName ref=zbz-p.926 -- generic noun 'l'Homme' in table of contents, not a person entity"
+    },
+    {
+      "severity": "warning",
+      "code": "E1",
+      "msg": "'Auguste' (1x, p.4) tagged as persName ref=zbz-p.1818 -- incomplete name, context is 'Auguste Forel' (full name not tagged as unit)"
+    },
+    {
+      "severity": "info",
+      "code": "S1",
+      "msg": "S.1-6 Inhaltsverzeichnis Suisse Contemporaine 1949, S.7-10 Hersch-Essay 'L'Epreuve de l'Humanisme aujourd'hui'"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 119p 10o 21l 10w = 160"
+    }
+  ]
+}

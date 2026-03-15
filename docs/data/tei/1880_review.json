@@ -1,0 +1,40 @@
+{
+  "doc_id": "1880",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 6,
+  "language": "fra",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p004"],
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V1",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 5p 5o 23l 2w = 35"
+    },
+    {
+      "severity": "warning",
+      "code": "E3",
+      "msg": "S.3 Z.167: persName 'Pierre' (zbz-p.158) in 'avenue Pierre Odier' -- Strassenname, nicht Personenreferenz"
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Kein Overlay verfuegbar. Cahiers medico-sociaux Format mit ausfuehrlicher Redaktionsliste S.2. Zeitschriften-Metadaten korrekt strukturiert"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Reflexions sur la medicalisation de la vie: Kohaerenter philosophischer Beitrag. Lateinisches Zitat ('Non propter vitam...') korrekt integriert. Dostoievski-Referenz als Schlusssatz. Sprachlich einwandfrei"
+    }
+  ]
+}

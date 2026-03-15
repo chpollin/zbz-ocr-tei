@@ -1,0 +1,55 @@
+{
+  "doc_id": "2140",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        5
+      ],
+      "notes": "7pp Konferenzband IIP Philosophie et Technique. Schreibmaschinen-Satz."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "Doppel-Escape auf S.1: berne &amp;amp; paris statt berne & paris."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltig. Korrekt segmentiert."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": [
+        "W9: 5/17 Entity-Tags ohne ref"
+      ],
+      "notes": "VALID, aber 5 Entity-Tags ohne ref."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "fail",
+      "counts": {
+        "persName": 12,
+        "orgName": 4,
+        "placeName": 1,
+        "bibl": 4
+      },
+      "notes": "STRUKTURFEHLER: 5x sp/speaker/persName fuer Nicht-Personen (These I, Inversement, These II, En particulier, These III). div type=interview ist falsch."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Hersch-Thesen zur Technik. Text inhaltlich korrekt, sp/speaker-Struktur verfaelscht Textgattung."
+    }
+  },
+  "findings": [
+    "KRITISCH: 5x sp/speaker mit persName fuer Nicht-Personen",
+    "div type=interview falsch -- sind philosophische Thesen",
+    "Doppel-Escape &amp;amp; auf S.1",
+    "W9: 5 Entity-Tags ohne ref"
+  ],
+  "overall_notes": "sp/speaker-Fehlstruktur muss korrigiert werden. Thesen sollten mit head/p kodiert werden."
+}

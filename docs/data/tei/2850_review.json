@@ -1,0 +1,49 @@
+{
+  "doc_id": "2850",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [],
+      "notes": "Kein Overlay. 3 Seiten philosophischer Essay."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesisch sauber. Philosophisches Vokabular korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltig, klare Absatzstruktur."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [
+        "W6"
+      ],
+      "notes": "VALID. W6 (keine lb) bekanntes Muster. div ohne type."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 3,
+        "orgName": 0,
+        "placeName": 0,
+        "bibl": 0
+      },
+      "notes": "Hersch, Christoff, Kant korrekt. Fuer philosophischen Essay angemessen."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerenter Essay ethische Ambiguitaet der Zeit. Vollstaendig."
+    }
+  },
+  "findings": [
+    "div ohne type-Attribut"
+  ],
+  "overall_notes": "Exzellenter philosophischer Essay. Vollstaendig, koharent, fehlerfrei."
+}

@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">D'OU LA SCIENCE TIRE-T-ELLE SON SENS?</title>
+        <author>J. Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2020</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>D'OU LA SCIENCE TIRE-T-ELLE SON SENS?</title>
+            <author>J. Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screen-manual" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Overlay S.1: Einspaltig, Textbloecke korrekt, Seitenzahl 81 am Fuss; Overlay S.4: Einspaltig, Regionen korrekt abgegrenzt; Validator-Warning: Keine lb-Elemente im body (6 Seiten) -- typisch fuer einspaltige Dokumente ohne Zeilenumbruch-Markup (+4 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="919" lry="1196">
+      <zone xml:id="facs_1_r_1" ulx="247" uly="88" lrx="655" lry="114" />
+      <zone xml:id="facs_1_r_2" ulx="109" uly="151" lrx="794" lry="366" />
+      <zone xml:id="facs_1_r_3" ulx="111" uly="372" lrx="799" lry="559" />
+      <zone xml:id="facs_1_r_4" ulx="114" uly="569" lrx="797" lry="683" />
+      <zone xml:id="facs_1_r_5" ulx="112" uly="696" lrx="797" lry="836" />
+      <zone xml:id="facs_1_r_6" ulx="111" uly="846" lrx="798" lry="1011" />
+      <zone xml:id="facs_1_r_7" ulx="113" uly="1021" lrx="799" lry="1070" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="919" lry="1196">
+      <zone xml:id="facs_2_r_1" ulx="141" uly="52" lrx="825" lry="123" />
+      <zone xml:id="facs_2_r_2" ulx="142" uly="166" lrx="828" lry="261" />
+      <zone xml:id="facs_2_r_3" ulx="141" uly="270" lrx="829" lry="317" />
+      <zone xml:id="facs_2_r_4" ulx="140" uly="330" lrx="827" lry="378" />
+      <zone xml:id="facs_2_r_5" ulx="140" uly="389" lrx="828" lry="437" />
+      <zone xml:id="facs_2_r_6" ulx="141" uly="446" lrx="829" lry="515" />
+      <zone xml:id="facs_2_r_7" ulx="138" uly="529" lrx="829" lry="713" />
+      <zone xml:id="facs_2_r_8" ulx="140" uly="733" lrx="828" lry="802" />
+      <zone xml:id="facs_2_r_9" ulx="144" uly="812" lrx="830" lry="863" />
+      <zone xml:id="facs_2_r_10" ulx="143" uly="857" lrx="830" lry="931" />
+      <zone xml:id="facs_2_r_11" ulx="144" uly="930" lrx="829" lry="1021" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="919" lry="1196">
+      <zone xml:id="facs_3_r_1" ulx="115" uly="52" lrx="798" lry="103" />
+      <zone xml:id="facs_3_r_2" ulx="114" uly="109" lrx="799" lry="230" />
+      <zone xml:id="facs_3_r_3" ulx="115" uly="238" lrx="800" lry="495" />
+      <zone xml:id="facs_3_r_4" ulx="115" uly="540" lrx="801" lry="704" />
+      <zone xml:id="facs_3_r_5" ulx="117" uly="736" lrx="802" lry="947" />
+      <zone xml:id="facs_3_r_6" ulx="116" uly="980" lrx="800" lry="1078" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="919" lry="1196">
+      <zone xml:id="facs_4_r_1" ulx="140" uly="57" lrx="826" lry="130" />
+      <zone xml:id="facs_4_r_2" ulx="137" uly="137" lrx="826" lry="256" />
+      <zone xml:id="facs_4_r_3" ulx="139" uly="264" lrx="828" lry="480" />
+      <zone xml:id="facs_4_r_4" ulx="138" uly="490" lrx="731" lry="537" />
+      <zone xml:id="facs_4_r_5" ulx="138" uly="550" lrx="827" lry="666" />
+      <zone xml:id="facs_4_r_6" ulx="137" uly="676" lrx="828" lry="789" />
+      <zone xml:id="facs_4_r_7" ulx="138" uly="835" lrx="828" lry="1070" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="919" lry="1196">
+      <zone xml:id="facs_5_r_1" ulx="118" uly="60" lrx="802" lry="155" />
+      <zone xml:id="facs_5_r_2" ulx="119" uly="166" lrx="802" lry="281" />
+      <zone xml:id="facs_5_r_3" ulx="118" uly="326" lrx="802" lry="584" />
+      <zone xml:id="facs_5_r_4" ulx="118" uly="629" lrx="802" lry="739" />
+      <zone xml:id="facs_5_r_5" ulx="116" uly="753" lrx="803" lry="846" />
+      <zone xml:id="facs_5_r_6" ulx="117" uly="856" lrx="802" lry="949" />
+      <zone xml:id="facs_5_r_7" ulx="158" uly="963" lrx="487" lry="987" />
+      <zone xml:id="facs_5_r_8" ulx="119" uly="999" lrx="803" lry="1070" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="919" lry="1196">
+      <zone xml:id="facs_6_r_1" ulx="142" uly="66" lrx="830" lry="187" />
+      <zone xml:id="facs_6_r_2" ulx="143" uly="229" lrx="830" lry="372" />
+      <zone xml:id="facs_6_r_3" ulx="439" uly="485" lrx="538" lry="506" />
+      <zone xml:id="facs_6_r_4" ulx="146" uly="529" lrx="831" lry="578" />
+      <zone xml:id="facs_6_r_5" ulx="183" uly="586" lrx="658" lry="614" />
+      <zone xml:id="facs_6_r_6" ulx="144" uly="619" lrx="831" lry="673" />
+      <zone xml:id="facs_6_r_7" ulx="144" uly="676" lrx="834" lry="751" />
+      <zone xml:id="facs_6_r_8" ulx="145" uly="761" lrx="834" lry="831" />
+      <zone xml:id="facs_6_r_9" ulx="146" uly="841" lrx="837" lry="910" />
+      <zone xml:id="facs_6_r_10" ulx="147" uly="924" lrx="832" lry="1017" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <persName ref="#zbz-p.2">J. Hersch</persName> (<placeName ref="#zbz-l.48">Genf</placeName>)
+        </head>
+        <p facs="#facs_1_r_2">
+          D'OU LA SCIENCE TIRE-T-ELLE SON SENS?
+        </p>
+        <p facs="#facs_1_r_3">
+          Dans une de ses conference, <persName ref="#zbz-p.792">Carl-Friedrich von Weizäcker</persName> a dit: "<bibl ref="#zbz-w.85">La philosophie</bibl> pose les questions dont l'absence a conditionné le succès du processus scientifique. C'est dire que la science doit son succès, entre autres, au fait d'avoir renoncé à poser certaines questions". ("Die <bibl ref="#zbz-w.1">Philosophie</bibl> stellt diejenigen Fragen, die nicht gestellt zu haben die Erfolgsbedingung des wissenschaftlichen Verfahrens war. Damit ist also behauptet, dass die Wissenschaft ihren Erfolg unter anderem dem Verzicht auf das Stellen gewisser Fragen verdankt.") Il pensait à des questions concernant "la nature", "l'escape", "le temps", "l'objet", etc. Je me demande si celle du "sens" de la science n'en est pas une de plus.
+        </p>
+        <p facs="#facs_1_r_4">
+          Réfléchissons d'abord à la notion de sens. La double portée de ce mot en français me paraît éclairante: le mot "sens" indique tantôt une direction, tantôt une signification. Dans les deux cas le terme correspond à une flèche, à un vecteur orienté. Il ne peut y avoir "sens" que là où il y a un manque, et donc la visée de quelque chose qui n'est pas. Il n'y a "sens" que dans une situation de désir actif, de nostalgie, où l'objet de la visée est en quelque sorte "juxtaposé" à la réalité donnée, où il n'est pas. C'est dire qu'il n'y a de "sens" que pour des hommes, que dans la condition humaine.
+        </p>
+        <p facs="#facs_1_r_5">
+          Ce qui est plein au point de se suffire à soi-même n'a que faire du sens et n'a pas à en avoir un. La source vive du sens ne peut être ni une plénitude, ni un sens donné. Il convient ici de penser à la fonction de la réminiscence platonicienne: c'est elle qui permet le sens, — qu'exclurait au contraire la contemplation actuelle des Idées. —
+        </p>
+        <p facs="#facs_1_r_6">
+          Maintenant, qu'est-ce que la science, non en tant que somme d'un savoir acquis, mais en tant qu'activité de recherche? — Cette activité vise quelque chose qui n'est pas possédé, qui manque à l'esprit. Elle est portée par cette visée, qui lui donne son sens. Et selon la nature de sa visée, selon son objet, selon ses critères, elle développe, à travers des types de recherche divers, des langages multiples, le plus souvent irréductibles les uns aux autres.
+        </p>
+        <p facs="#facs_1_r_7">
+          La science a joui d'un prestige souverain. Elle a inspiré pendant longtemps un respect superstitieux. Aujourd'hui on doute d'elle et on la considère avec suspicion. Il semble bien que dans un cas comme dans l'autre elle n'ait pas su acquérir une suffisante connaissance d'elle-même, de ses conditions, de ses pouvoirs et de ses limites, ni par conséquent communiquer à l'extérieur, "aux autres", une juste appréciation de ce qu'elle est, de ce qu'elle fait, et de ce qu'elle signifie.
+        </p>
+        <p>
+          Telle reste aujourd'hui la tâche essentielle. De grands savants, au cours des dernières décennies, ont déjà apporté à cette connaissance de la science par elle-
+        </p>
+        <p>
+          81
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          même et à cette communication indispensable une contribution essentielle. Bien plus essentielle, à ce qu'il me semble, que celle des philosophes, dont le rôle serait surtout d'interroger les savants, de les harceler de questions. —
+        </p>
+        <p facs="#facs_2_r_2">
+          La science étant une activité créatrice de langages, c'est-à-dire d' "instruments du sens", nous nous trouvons devant une double problématique du sens : celle du sens de l'activité scientifique, celle du sens commun de ses langages.
+        </p>
+        <p facs="#facs_2_r_3">
+          Les deux problèmes sont distincts, et pourtant ils ne sont pas indépendants.
+        </p>
+        <p facs="#facs_2_r_4">
+          Le sens de l'activité suppose un sujet libre, nécessairement fini et conscient de sa finitude, voué à une recherche sans fin.
+        </p>
+        <p facs="#facs_2_r_5">
+          Le sens des langages suppose un objet donné, par rapport à quoi les langages signifient.
+        </p>
+        <p facs="#facs_2_r_6">
+          Or il semble parfois que le sujet libre et l'objet donné souffrent aujourd'hui d'une sorte de faiblesse, d'anémie d'être, comme s'il était possible, à la limite, de leur dénier à tous deux leur réalité.
+        </p>
+        <p facs="#facs_2_r_7">
+          En philosophie comme en science, certains théoriciens recourent à ce que j'aimerais appeler un "processionnisme moniste", où se déroule une succession homogène et inarticulée. "Je" ne parle plus, mais "ça" parle (le langage parle tout seul). Il n'y a plus non plus de "réel", désormais aboli par l'intervention de l'observateur dans l'observé et de la théorie dans la constitution des données sensibles. Il n'y a plus qu'un magma, malléable, nihiliste, à propos duquel la vérité perd tout sens — faute d'une liberté capable de préférer le vrai, faute aussi d'un donné capable de résister à une interprétation erronée. —
+        </p>
+        <p facs="#facs_2_r_8">
+          Si nous nous interrogeons sur le sens de l'activité scientifique, nous pouvons distinguer trois niveaux concentriques, dont le premier est périphérique et le troisième tout-à-fait central :
+        </p>
+        <p facs="#facs_2_r_9">
+          a) l'activité trouve son sens dans la visée d'une application technique (par ex. utilisation de l'énergie, nouvelle thérapeutique, etc) ;
+        </p>
+        <p facs="#facs_2_r_10">
+          b) l'activité trouve son sens dans la visée d'un résultat théorique (découverte de faits inconnus, interprétation permettant une plus large synthèse, quête d'hypothèses nouvelles, etc) ;
+        </p>
+        <p facs="#facs_2_r_11">
+          c) l'activité trouve son sens en elle-même, lorsque la pensée, dans l'acte de la recherche, vit la certitude d'accomplir par cette recherche sa destination essentielle, — comme le peintre dans l'acte de peindre ou l'écrivain dans l'acte d'écrire.
+        </p>
+        <p>
+          82
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Au premier niveau (a), le chercheur a en vue un "avantage" à procurer aux hommes, un facteur de "progrès".
+        </p>
+        <p facs="#facs_3_r_2">
+          Au second niveau (b), il s'efforce de pénétrer plus profondément ou plus adéquatement dans les secrets de la "nature", d'en mieux saisir les processus et l'unité, ou, comme disait <persName ref="#zbz-p.759">Oppenheimer</persName>, de „déchiffrer la beauté du monde". <persName ref="#zbz-p.792">C.-F. von Weizäcker</persName> fait intervenir ici "une affectivité de la raison" ("Affekte der <bibl ref="#zbz-w.68">Vernunft</bibl>"). On pourrait aussi parler de "raison existentielle".
+        </p>
+        <p facs="#facs_3_r_3">
+          Au troisième niveau (c), le chercheur se donne tout entier à une occupation à la fois mystérieusement inventive — et soumise à l'arbitrage du donné expérimental. 'Le terme de "mystère" ici ne désigne rien de vague, il ne contredit ni ne ne celui de "science". Au contraire, il l'accompagne comme son ombre, ou peut-être même comme sa lumière, et aucune tentative de "réduction scientifique" du chercheur à son cerveau, ou à des mécanismes psychologiques ou sociaux, ne saurait l'éliminer. En effet: il est impossible d'étudier la recherche, ou la pensée qui cherche, sans en faire des objets de pensée, et donc sans les considérer "à l'envers". Il reste donc toujours ce mystère fondamental: que la science puisse se faire en tant que science; et l'expérience "à l'endroit" de cette science en train de se faire reste irréductible. —
+        </p>
+        <p facs="#facs_3_r_4">
+          Quant au sens des langages engendrés par l'activité scientifique, il est constamment double. D'une part, chacun de ces langages doit "correspondre" (et je ne peux que laisser en suspens la portée exacte de ce terme) à des processus partiels empiriquement constatés. Il prend appui sur un "réel" observé, il atteint "ce qui est". D'autre part, chacun de ces langages vise une cohérence d'ensemble, considérée comme déjà réelle ou anticipée, qui fait de lui, et de tous réunis au sein de la science, un symbole, ou une métaphore, de l'unité de l'être.
+        </p>
+        <note place="foot" n="1" xml:id="fn3-1" facs="#facs_3_r_5">
+          Pourtant, malgré tout ce qu'on a pu en dire, nous n'arrivons pas à saisir la nature de ce que nous appelons "comprendre". Dans le chapitre de son livre "<bibl ref="#zbz-w.21">La Partie et le Tout</bibl>", <persName ref="#zbz-p.33">Heisenberg</persName> rapporte plusieurs entretiens qu'il eut avec <persName ref="#zbz-p.793">Pauli</persName> et <persName ref="#zbz-p.794">Nils Bohr</persName> sur le sens de "comprendre". A un moment donné, il demanda à <persName ref="#zbz-p.794">Nils Bohr</persName>: "Si la structure interne des atomes est aussi peu accessible à une description visuelle que vous le dites, et si au fond nous ne possédons même pas de langage qui nous permette de discuter de cette structure, y a-t-il un espoir que nous comprenions jamais quelque chose aux atomes?" Bohr hésita un instant, puis dit: "Tout de même, oui. Mais c'est seulement ce jour-là que nous comprendrons ce que signifie le mot "comprendre". —
+        </note>
+        <p facs="#facs_3_r_6">
+          Le langage scientifique, comme tout langage, n'a de sens que s'il se veut vrai. <persName ref="#zbz-p.6">Kant</persName> avait déjà vu que le crime le plus grave du mensonge, c'est qu'il détruit les conditions du sens du langage. Il ne peut donc y avoir de langage que pour un sujet capable de préférer le vrai au faux, et donc: pour un sujet libre.
+        </p>
+        <p>
+          83
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Même si la science s'efforce d'exclure l'intervention de la liberté dans les cohérences instituées par l'un de ses langages, elle ne peut nier la liberté sans rendre inconcevables ses langages eux-mêmes, et donc sa propre réalité.
+        </p>
+        <p facs="#facs_4_r_2">
+          Or le vrai implique l'adéquation du langage à ce qu'il n'est pas: le réel, l'être. Même le langage des mathématiques pures implique une cohérence préalable à son expression. Aucune science ne se suffit à elle-même, et pas davantage l'ensemble des sciences: elles doivent, comme <persName ref="#zbz-p.795">Antée</persName>, "toucher" le réel pour vivre, pour avoir sens et réalité.
+        </p>
+        <p facs="#facs_4_r_3">
+          Il n'y a ni unité des sciences, ni totalité en science. Ce que nous appelons "l'univers" n'est jamais qu'anticipation ou réminiscence, — "une <bibl ref="#zbz-w.67">Idée</bibl>" au sens kantien. Dans chaque science, critères, méthodes et concepts, malgré quelques passerelles, restent irréductibles à ceux d'une autre science. Restent ainsi irréductibles l'un à l'autre des langages utilisant le concept de "cause", ou celui de "modèle", ou celui de structure, ou celui de „traduction mathématique“, ou encore des métaphores interprétatives comme celui qui, en biologie moléculaire, parle d"alphabet", de "code", de "déchiffrage", etc., — métaphores dont le sens risque d'être équivogue ou même trompeur.
+        </p>
+        <p facs="#facs_4_r_4">
+          Ce divers langages ont en commun une visée subjective d'unité, — mais où faut-il chercher leur unité objective ?
+        </p>
+        <p facs="#facs_4_r_5">
+          On en reste inévitablement à des cohérences fragmentaires, devant lesquelles s'ouvrent des perspectives infinies, mais qui restent plurielles, flottantes, excluant jusqu'à l'espoir d'un "bloc" d'unité. Les langages de la science spécifient des aspects discontinus de l'être. "Le vrai" de chacun d'eux, c'est son adéquation à tel aspect, à telle époque, — à tel aspect de ce qui est.
+        </p>
+        <p facs="#facs_4_r_6">
+          Pourquoi ai-je dit: "à telle époque"? Parce que, contrairement aux préjugés tenaces de ceux qui veulent séparer complètement les disciplines scientifiques des "humanités", la recherche scientifique est bien, elle aussi, un processus humain, culturel, historique. Il y a une historicité de la science, comme il y a une historicité de toutes les activités humaines.
+        </p>
+        <p facs="#facs_4_r_7">
+          On entend parfois, de nos jours, des savants appartenant à des disciplines diverses affirmer que la science n'a rien à faire avec la réalité, ou avec la vérité, ou avec l'être. La science ne serait, selon eux, qu'un langage qui réussit, c'est-à-dire qui permet l'application technique et la prévision. Ce langage ne correspondrait pas à des processus réels, — ou même: il faudrait reconnaître que pour la science il n'y a pas de processus réels. La recherche se réduirait à de simples filets hypothétiques, lancés pragmatiquement, jugés par leur succès. Il y aurait une sorte de profilération des langages, échafaudages et dérivations, analogues à ces herméneutiques d'herméneutiques d'herméneutiques, qu'aucun texte initial, selon certains critiques, ne contraint ni ne justifie. Ou bien encore,
+        </p>
+        <p>
+          84
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          analogues à ces récits historiques sans cesse possible de remanier selon les nécessités du moment, parce que le passé qu'ils concernent est considéré comme totalement aboli et n'ayant désormais pas d'autre réalité que ces récits eux-mêmes, devenus constitutifs de l'histoire.
+        </p>
+        <p facs="#facs_5_r_2">
+          Telle est l'hybris de notre temps: pour radicaliser le pouvoir du décret humain on va jusqu'à déréaliser le texte à interpréter, les faits naturels à connaître, le passé à raconter. Un idéalisme radical prive le donné objectif de sa résistance et lui confère une malléabilité universelle, noyant ainsi chaque langage dans l'arbitraire et le non-sens. —
+        </p>
+        <p facs="#facs_5_r_3">
+          On entend dire, d'autre part, que la science, à travers la technique qui dérive d'elle, est capable de maîtriser toute la réalité, toutes les réalités: physique, biologique, sociale, psychologique, morale. Affaire de temps et de progrès. Tout est réductible au langage scientifique et technique, et tout peut donc être manipulé et soumis à la volonté humaine. Grâce à la science, l'homme créera un autre monde, une autre vie, un homme nouveau, une nouvelle société, une réalité inédite. — Cette ambition inspire d'ailleurs l'évolution de l'art contemporain, qui, par-delà le dogmatisme de sa phase non-figurative, substitue maintenant aux objets habituels des objets "artificiels" au deuxième degré, qui sont "plus objets" que les autres. Une telle démiurgie ne laisse subsister ni résistances, ni limites. Le "Tout est permis" se double d'un "Tout est possible". —
+        </p>
+        <p facs="#facs_5_r_4">
+          Les deux perspectives dont nous venons de parler — celle de la déréalisation sombrant dans le non-sens et celle de la toute-puissance réalisatrice — ont en commun leur caractère totalisateur, grâce auquel un décret humain, à la fois théorique et pratique, abolit le réel donné, l'être en tant que l'autre du moi et qui résiste au moi.
+        </p>
+        <p facs="#facs_5_r_5">
+          Il en résulte une situation d'arbitraire nihiliste à l'état pur. Le sens disparaît, en même temps que le vrai, faute de référence à l'être réel. La science, à laquelle on se réfère encore, devenue virtuellement totale ou toute-puissante, n'a plus de sens.
+        </p>
+        <p facs="#facs_5_r_6">
+          Il y a pire: cette science toute-puissante, totale, prétend soumettre à sa domination le processus même qui l'engendre. Elle tente de l'objectiver, de l'expliciter en langage scientifique — à la limite en langage de l'informatique —, et de le reconstruire "meilleur".
+        </p>
+        <p facs="#facs_5_r_7">
+          Meilleur? Pour qui? Dans quel sens?
+        </p>
+        <p facs="#facs_5_r_8">
+          Le chercheur moderne a pris conscience, dans main domaine, de l'altération produite par sa recherche dans ce qu'il veut connaître. On recourt dès lors à cette prise de conscience elle-même pour affaiblir encore le recours au réel,
+        </p>
+        <p>
+          85
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          pour désagréger davantage ce qu'on appelait naguère "des faits" ou "des phénomènes". Mais c'est là une démarche perverse : le chercheur authentique, qui tient compte de l'intervention de sa subjectivité dans l'objectivité, ne lève nullement, de ce fait, son rapport au réel, au contraire : il le confirme et l'affine, par l'exigence d'une objectivité plus pur. —
+        </p>
+        <p facs="#facs_6_r_2">
+          La science, comme aussi la technique qu'elle engendre, ne conservent leur sens que partielles et fragmentaires. Cohérences flottantes, elles se rapportent, à travers les aspects discontinus du réel, à l'être, tel que peut le viser un sujet chercheur libre, capable de préférer le vrai. Un sujet libre dans les limites de sa finitude, et qui consent à sa finitude, — comme aussi au "pas à pas" de la recherche, vers l'horizon d'une totalité refusée à jamais.
+        </p>
+        <p facs="#facs_6_r_3">
+          Résumé
+        </p>
+        <p facs="#facs_6_r_4">
+          Pour qu'il y ait sens, il faut qu'il y ait manque, visée, désir. Il n'y a sens que pour un être conscient de sa finitude.
+        </p>
+        <p facs="#facs_6_r_5">
+          <hi rendition="#i">La science</hi> développe des langages, "instruments de sens".
+        </p>
+        <p facs="#facs_6_r_6">
+          Notre question comporte ainsi <hi rendition="#i">une double problématique</hi> : celle du sens de l'activité de recherche scientifique, celle du sens des langages des sciences.
+        </p>
+        <p facs="#facs_6_r_7">
+          <hi rendition="#i">L'activité de recherche</hi> n'a pas le même sens selon qu'elle tend à une application technique, ou à un résultat théorique, ou qu'elle est pratiquée pour l'expérience vécue de "chercher" (comme de peindre, de composer, d'écrire).
+        </p>
+        <p facs="#facs_6_r_8">
+          <hi rendition="#i">Le sens des langages</hi> réside dans leur "correspondance" à des processus empiriques ou à des opérations rationnelles. "Correspondance" mystérieuse (cf. <persName ref="#zbz-p.33">Heisenberg</persName>).
+        </p>
+        <p facs="#facs_6_r_9">
+          Selon certains savants, la science n'a aucun rapport à la réalité, ou la vérité, ou l'être. Ses langages doivent seulement "réussir". D'autres prétendent maîtriser et refaire toute la réalité.
+        </p>
+        <p facs="#facs_6_r_10">
+          Dans les deux cas, on est conduit à <hi rendition="#i">une situation d'arbitraire nihiliste pur</hi>, du fait d'une totalisation inhumaine. Science et technique n'ont un sens que partielles, flottantes, — visant une vérité qu'elles impliquent sans la posséder. Leur sens est fonction de la finitude de l'homme.
+        </p>
+        <p>
+          86
+        </p>
+      </div>
+      </body></text>
+</TEI>

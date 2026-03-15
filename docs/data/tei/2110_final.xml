@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Medicina Generalis Helvetica</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2110</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Medicina Generalis Helvetica</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1984</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:ok L5:n/a L6:warning L7:ok). OCR-Fehler Titelseite: SCINA statt MEDICINA, CSMC SCAM statt SSMG SGAM; persName Mensch false positive; Seitenzahlen 14-17 als eigene Absaetze</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1084" lry="1654">
+      <zone xml:id="facs_1_r_1" ulx="153" uly="230" lrx="1006" lry="411" />
+      <zone xml:id="facs_1_r_2" ulx="201" uly="672" lrx="435" lry="707" />
+      <zone xml:id="facs_1_r_3" ulx="660" uly="674" lrx="940" lry="705" />
+      <zone xml:id="facs_1_r_4" ulx="200" uly="772" lrx="416" lry="818" />
+      <zone xml:id="facs_1_r_5" ulx="663" uly="772" lrx="875" lry="818" />
+      <zone xml:id="facs_1_r_6" ulx="698" uly="852" lrx="996" lry="900" />
+      <zone xml:id="facs_1_r_7" ulx="235" uly="853" lrx="579" lry="967" />
+      <zone xml:id="facs_1_r_8" ulx="697" uly="1035" lrx="1036" lry="1109" />
+      <zone xml:id="facs_1_r_9" ulx="236" uly="1036" lrx="579" lry="1131" />
+      <zone xml:id="facs_1_r_10" ulx="241" uly="1196" lrx="583" lry="1284" />
+      <zone xml:id="facs_1_r_11" ulx="698" uly="1198" lrx="1036" lry="1264" />
+      <zone xml:id="facs_1_r_12" ulx="704" uly="1354" lrx="956" lry="1401" />
+      <zone xml:id="facs_1_r_13" ulx="243" uly="1354" lrx="492" lry="1422" />
+      <zone xml:id="facs_1_r_14" ulx="705" uly="1490" lrx="910" lry="1538" />
+      <zone xml:id="facs_1_r_15" ulx="247" uly="1490" lrx="475" lry="1536" />
+      <zone xml:id="facs_1_r_16" ulx="248" uly="1603" lrx="582" lry="1632" />
+      <zone xml:id="facs_1_r_17" ulx="707" uly="1603" lrx="1041" lry="1647" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1119" lry="1650">
+      <zone xml:id="facs_2_r_1" ulx="9" uly="66" lrx="1077" lry="133" />
+      <zone xml:id="facs_2_r_2" ulx="17" uly="223" lrx="189" lry="247" />
+      <zone xml:id="facs_2_r_3" ulx="575" uly="225" lrx="1085" lry="322" />
+      <zone xml:id="facs_2_r_4" ulx="18" uly="243" lrx="529" lry="339" />
+      <zone xml:id="facs_2_r_5" ulx="16" uly="429" lrx="280" lry="468" />
+      <zone xml:id="facs_2_r_6" ulx="578" uly="432" lrx="876" lry="466" />
+      <zone xml:id="facs_2_r_7" ulx="21" uly="499" lrx="237" lry="524" />
+      <zone xml:id="facs_2_r_8" ulx="579" uly="502" lrx="876" lry="551" />
+      <zone xml:id="facs_2_r_9" ulx="21" uly="541" lrx="301" lry="592" />
+      <zone xml:id="facs_2_r_10" ulx="579" uly="564" lrx="989" lry="615" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1119" lry="1650">
+      <zone xml:id="facs_3_r_1" ulx="44" uly="77" lrx="458" lry="151" />
+      <zone xml:id="facs_3_r_2" ulx="596" uly="122" lrx="1102" lry="326" />
+      <zone xml:id="facs_3_r_3" ulx="42" uly="180" lrx="549" lry="228" />
+      <zone xml:id="facs_3_r_4" ulx="44" uly="236" lrx="251" lry="257" />
+      <zone xml:id="facs_3_r_5" ulx="41" uly="278" lrx="548" lry="394" />
+      <zone xml:id="facs_3_r_6" ulx="596" uly="323" lrx="1103" lry="479" />
+      <zone xml:id="facs_3_r_7" ulx="42" uly="384" lrx="545" lry="434" />
+      <zone xml:id="facs_3_r_8" ulx="43" uly="430" lrx="547" lry="481" />
+      <zone xml:id="facs_3_r_9" ulx="45" uly="475" lrx="548" lry="524" />
+      <zone xml:id="facs_3_r_10" ulx="591" uly="482" lrx="1101" lry="775" />
+      <zone xml:id="facs_3_r_11" ulx="41" uly="518" lrx="547" lry="592" />
+      <zone xml:id="facs_3_r_12" ulx="43" uly="584" lrx="548" lry="654" />
+      <zone xml:id="facs_3_r_13" ulx="43" uly="651" lrx="547" lry="742" />
+      <zone xml:id="facs_3_r_14" ulx="43" uly="738" lrx="545" lry="784" />
+      <zone xml:id="facs_3_r_15" ulx="593" uly="773" lrx="1097" lry="929" />
+      <zone xml:id="facs_3_r_16" ulx="43" uly="781" lrx="547" lry="918" />
+      <zone xml:id="facs_3_r_17" ulx="41" uly="914" lrx="544" lry="962" />
+      <zone xml:id="facs_3_r_18" ulx="592" uly="928" lrx="1097" lry="996" />
+      <zone xml:id="facs_3_r_19" ulx="590" uly="991" lrx="1100" lry="1285" />
+      <zone xml:id="facs_3_r_20" ulx="40" uly="1014" lrx="544" lry="1166" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1119" lry="1650">
+      <zone xml:id="facs_4_r_1" ulx="11" uly="79" lrx="527" lry="237" />
+      <zone xml:id="facs_4_r_2" ulx="576" uly="176" lrx="1083" lry="226" />
+      <zone xml:id="facs_4_r_3" ulx="575" uly="229" lrx="1079" lry="277" />
+      <zone xml:id="facs_4_r_4" ulx="16" uly="234" lrx="530" lry="460" />
+      <zone xml:id="facs_4_r_5" ulx="576" uly="280" lrx="1086" lry="414" />
+      <zone xml:id="facs_4_r_6" ulx="580" uly="415" lrx="1089" lry="621" />
+      <zone xml:id="facs_4_r_7" ulx="22" uly="461" lrx="532" lry="600" />
+      <zone xml:id="facs_4_r_8" ulx="24" uly="595" lrx="535" lry="953" />
+      <zone xml:id="facs_4_r_9" ulx="581" uly="621" lrx="1091" lry="847" />
+      <zone xml:id="facs_4_r_10" ulx="585" uly="849" lrx="1097" lry="1556" />
+      <zone xml:id="facs_4_r_11" ulx="29" uly="948" lrx="539" lry="1087" />
+      <zone xml:id="facs_4_r_12" ulx="32" uly="1083" lrx="542" lry="1260" />
+      <zone xml:id="facs_4_r_13" ulx="38" uly="1260" lrx="544" lry="1420" />
+      <zone xml:id="facs_4_r_14" ulx="44" uly="1421" lrx="550" lry="1557" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1119" lry="1650">
+      <zone xml:id="facs_5_r_1" ulx="32" uly="73" lrx="541" lry="366" />
+      <zone xml:id="facs_5_r_2" ulx="33" uly="362" lrx="539" lry="499" />
+      <zone xml:id="facs_5_r_3" ulx="33" uly="362" lrx="539" lry="499" />
+      <zone xml:id="facs_5_r_4" ulx="587" uly="364" lrx="1094" lry="653" />
+      <zone xml:id="facs_5_r_5" ulx="587" uly="364" lrx="1094" lry="653" />
+      <zone xml:id="facs_5_r_6" ulx="32" uly="494" lrx="540" lry="1159" />
+      <zone xml:id="facs_5_r_7" ulx="586" uly="655" lrx="1091" lry="745" />
+      <zone xml:id="facs_5_r_8" ulx="586" uly="655" lrx="1091" lry="745" />
+      <zone xml:id="facs_5_r_9" ulx="584" uly="744" lrx="1091" lry="1009" />
+      <zone xml:id="facs_5_r_10" ulx="584" uly="744" lrx="1091" lry="1009" />
+      <zone xml:id="facs_5_r_11" ulx="583" uly="1010" lrx="1091" lry="1082" />
+      <zone xml:id="facs_5_r_12" ulx="582" uly="1077" lrx="1092" lry="1255" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1119" lry="1650">
+      <zone xml:id="facs_6_r_1" ulx="16" uly="81" lrx="531" lry="125" />
+      <zone xml:id="facs_6_r_2" ulx="576" uly="87" lrx="1086" lry="443" />
+      <zone xml:id="facs_6_r_3" ulx="18" uly="133" lrx="531" lry="207" />
+      <zone xml:id="facs_6_r_4" ulx="19" uly="206" lrx="534" lry="567" />
+      <zone xml:id="facs_6_r_5" ulx="581" uly="437" lrx="1088" lry="578" />
+      <zone xml:id="facs_6_r_6" ulx="27" uly="570" lrx="539" lry="865" />
+      <zone xml:id="facs_6_r_7" ulx="582" uly="572" lrx="1090" lry="864" />
+      <zone xml:id="facs_6_r_8" ulx="514" uly="901" lrx="625" lry="924" />
+      <zone xml:id="facs_6_r_9" ulx="586" uly="986" lrx="913" lry="1028" />
+      <zone xml:id="facs_6_r_10" ulx="29" uly="986" lrx="377" lry="1021" />
+      <zone xml:id="facs_6_r_11" ulx="587" uly="1021" lrx="1092" lry="1162" />
+      <zone xml:id="facs_6_r_12" ulx="590" uly="1192" lrx="747" lry="1226" />
+      <zone xml:id="facs_6_r_13" ulx="37" uly="1195" lrx="340" lry="1225" />
+      <zone xml:id="facs_6_r_14" ulx="38" uly="1224" lrx="545" lry="1297" />
+      <zone xml:id="facs_6_r_15" ulx="591" uly="1226" lrx="1092" lry="1251" />
+      <zone xml:id="facs_6_r_16" ulx="590" uly="1246" lrx="1092" lry="1404" />
+      <zone xml:id="facs_6_r_17" ulx="40" uly="1293" lrx="547" lry="1451" />
+      <zone xml:id="facs_6_r_18" ulx="593" uly="1402" lrx="1093" lry="1471" />
+      <zone xml:id="facs_6_r_19" ulx="43" uly="1466" lrx="551" lry="1559" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          1/8
+        </head>
+        <p facs="#facs_1_r_2">
+          CSMC SCAM
+        </p>
+        <p facs="#facs_1_r_3">
+          SCINA GENERALIS HELVETICA
+        </p>
+        <p facs="#facs_1_r_4">
+          Aus dem Inhalt:
+        </p>
+        <p facs="#facs_1_r_5">
+          Jahreskongress <bibl ref="#zbz-w.327">1984</bibl> in <placeName ref="#zbz-l.48">Genf</placeName>
+        </p>
+        <p facs="#facs_1_r_6">
+          - Begrüssungsansprache des <placeName ref="#zbz-l.5">Genfer</placeName> Regierungsrates (Sanitätsdepartement)<lb facs="#facs_1_l_6_1" n="N001" />Herrn <persName ref="#zbz-p.834">Jacques Vernet</persName><lb facs="#facs_1_l_6_2" n="N002" />(Zusammenfassung)
+        </p>
+        <p facs="#facs_1_r_7">
+          - Der Arzt für allgemeine Medizin und seine Kranken am Ende des Lebens.<lb facs="#facs_1_l_7_1" n="N001" />(Zusammenfassung)<lb facs="#facs_1_l_7_2" n="N002" />Dr. med. Guy Patry
+        </p>
+        <p facs="#facs_1_r_8">
+          - Das Anhören der Kranken am Ende des Lebens und Palliativtherapie.<lb facs="#facs_1_l_8_1" n="N001" />(Zusammenfassung)<lb facs="#facs_1_l_8_2" n="N002" />Pfarrer Claude Reverdin
+        </p>
+        <p facs="#facs_1_r_9">
+          - Was heisst alt werden?<lb facs="#facs_1_l_9_1" n="N001" />(Zusammenfassung)<lb facs="#facs_1_l_9_2" n="N002" />Frau Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_1_r_10">
+          - Bericht des Präsidenten<lb facs="#facs_1_l_10_1" n="N001" />Dr. med. G. Simona
+        </p>
+        <p facs="#facs_1_r_11">
+          - Jahresberichte der Arbeitsgruppen
+        </p>
+        <p facs="#facs_1_r_12">
+          Extrait du contenu:
+        </p>
+        <p facs="#facs_1_r_13">
+          Congrès annuel <bibl ref="#zbz-w.327">1984</bibl> à <placeName ref="#zbz-l.5">Genève</placeName>
+        </p>
+        <p facs="#facs_1_r_14">
+          - Allocution du Conseiller d'Etat, Monsieur <persName ref="#zbz-p.834">Jacques Vernet</persName>
+        </p>
+        <p facs="#facs_1_r_15">
+          - Le généraliste et les malades en fin de vie.<lb facs="#facs_1_l_15_1" n="N001" />Dr Guy Patry
+        </p>
+        <p facs="#facs_1_r_16">
+          - Ecoute des malades en fin de vie et soins palliatifs<lb facs="#facs_1_l_16_1" n="N001" />Pasteur Claude Reverdin
+        </p>
+        <p facs="#facs_1_r_17">
+          - <bibl ref="#zbz-w.369">Qu'est-ce que vieillir?</bibl><lb facs="#facs_1_l_17_1" n="N001" />Mme Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          - Rapport du Président<lb facs="#facs_1_l_18_1" n="N001" />Dr G. Simona
+        </p>
+        <p>
+          - Rapports annuels des groupes de travail
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          MEDICINA GENERALIS HELVETICA
+        </p>
+        <p facs="#facs_2_r_2">
+          Zeitschrift der Schweizerischen Gesellschaft für Allgemeinmedizin
+        </p>
+        <p facs="#facs_2_r_3">
+          Erscheinungsweise:<lb facs="#facs_2_l_3_1" n="N001" />vierteljährlich - März/Juni/September/Dezember <bibl ref="#zbz-w.327">1984</bibl><lb facs="#facs_2_l_3_2" n="N002" />Redaktionskomitee: Dr. med. G. Simona, Magliaso; Dr. med. R. Böni, Kleindietwil; Dr. med. R.L. Meyer, Möhlin; Dr. med. G. Patry, <placeName ref="#zbz-l.48">Genf</placeName>
+        </p>
+        <p facs="#facs_2_r_4">
+          Inhaltsverzeichnis
+        </p>
+        <p facs="#facs_2_r_5">
+          |  Bericht des Präsidenten | 17  |<lb facs="#facs_2_l_5_1" n="N001" />| --- | --- |<lb facs="#facs_2_l_5_2" n="N002" />|  Jahresbericht 1983/<bibl ref="#zbz-w.327">1984</bibl><lb facs="#facs_2_l_5_3" n="N003" />der Arbeitsgruppe Ausbildung | 22  |<lb facs="#facs_2_l_5_4" n="N004" />|  Jahresbericht 1983/84<lb facs="#facs_2_l_5_5" n="N005" />der Arbeitsgruppe Weiterbildung | 23  |<lb facs="#facs_2_l_5_6" n="N006" />|  Jahresbericht 1983/84<lb facs="#facs_2_l_5_7" n="N007" />der Fortbildungsgruppe | 23  |<lb facs="#facs_2_l_5_8" n="N008" />|  Jahresbericht 1983/84<lb facs="#facs_2_l_5_9" n="N009" />der Arbeitsgruppe Forschung | 25  |<lb facs="#facs_2_l_5_10" n="N010" />|  Jahresbericht 1983/84<lb facs="#facs_2_l_5_11" n="N011" />der Arbeitsgruppe Literatur und Dokumentation | 28  |<lb facs="#facs_2_l_5_12" n="N012" />|  Bericht der Gruppe internationale Kontakte über das Jahr 1983/84 | 29  |<lb facs="#facs_2_l_5_13" n="N013" />|  Herbstkongress <bibl ref="#zbz-w.327">1984</bibl> in <placeName ref="#zbz-l.321">Klagenfurt</placeName> | 29  |<lb facs="#facs_2_l_5_14" n="N014" />|  Laudatio für Walter Irniger | 30  |<lb facs="#facs_2_l_5_15" n="N015" />|  Wissenschaftliche Arbeiten in der Allgemeinpraxis | 32  |<lb facs="#facs_2_l_5_16" n="N016" />|  Sterben zuhause | 32  |
+        </p>
+        <p facs="#facs_2_r_6">
+          Bulletin de la <orgName ref="#zbz-o.575">Société</orgName> <placeName ref="#zbz-l.705">Suisse</placeName> de Médecine générale
+        </p>
+        <p facs="#facs_2_r_7">
+          Revue trimestrelle:<lb facs="#facs_2_l_7_1" n="N001" />Mars/Juin/Septembre/Décembre <bibl ref="#zbz-w.327">1984</bibl><lb facs="#facs_2_l_7_2" n="N002" />Rédaction: Dr G. Simona, Magliaso; Dr R. Böni, Kleindietwil; Dr R.L. Meyer, Möhlin; Dr G. Patry, <placeName ref="#zbz-l.5">Genève</placeName>
+        </p>
+        <p facs="#facs_2_r_8">
+          Table des matières
+        </p>
+        <p facs="#facs_2_r_9">
+          |  Allocution du Conseiller d'Etat<lb facs="#facs_2_l_9_1" n="N001" />M. <persName ref="#zbz-p.834">Jacques Vernet</persName> | 3  |<lb facs="#facs_2_l_9_2" n="N002" />| --- | --- |<lb facs="#facs_2_l_9_3" n="N003" />|  Dr Guy Patry:<lb facs="#facs_2_l_9_4" n="N004" />Le généraliste et les malades en fin de vie | 4  |<lb facs="#facs_2_l_9_5" n="N005" />|  Pasteur Cl. Reverdin:<lb facs="#facs_2_l_9_6" n="N006" />Ecoute des malades en fin de vie<lb facs="#facs_2_l_9_7" n="N007" />et soins palliatifs | 8  |<lb facs="#facs_2_l_9_8" n="N008" />|  Mme Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>:<lb facs="#facs_2_l_9_9" n="N009" /><bibl ref="#zbz-w.369">Qu'est-ce que vieillir?</bibl> | 14  |<lb facs="#facs_2_l_9_10" n="N010" />|  Rapport du Président<lb facs="#facs_2_l_9_11" n="N011" />à l'Assemblée Générale ordinaire de la<lb facs="#facs_2_l_9_12" n="N012" /><orgName ref="#zbz-o.335">Société Suisse de Médecine Générale</orgName><lb facs="#facs_2_l_9_13" n="N013" />du 23 septembre <bibl ref="#zbz-w.327">1984</bibl> à <placeName ref="#zbz-l.5">Genève</placeName> | 17  |<lb facs="#facs_2_l_9_14" n="N014" />|  Groupe de travail pour la formation<lb facs="#facs_2_l_9_15" n="N015" />postgraduée - Rapport annuel <bibl ref="#zbz-w.327">1984</bibl> | 22  |<lb facs="#facs_2_l_9_16" n="N016" />|  Rapport annuel 1983/84 du groupe Formation<lb facs="#facs_2_l_9_17" n="N017" />Médicale Continue de la SSMG | 23  |<lb facs="#facs_2_l_9_18" n="N018" />|  Groupe «recherches»<lb facs="#facs_2_l_9_19" n="N019" />Compte-rendu annuel 1983/84 | 25  |<lb facs="#facs_2_l_9_20" n="N020" />|  Rapport annuel du groupe de travail<lb facs="#facs_2_l_9_21" n="N021" />«Littérature et documentation», établi pour<lb facs="#facs_2_l_9_22" n="N022" />l'assemblée annuelle de la SSMG à <placeName ref="#zbz-l.5">Genève</placeName><lb facs="#facs_2_l_9_23" n="N023" />le 23 septembre <bibl ref="#zbz-w.327">1984</bibl> | 28  |<lb facs="#facs_2_l_9_24" n="N024" />|  Congrès d'automne à <placeName ref="#zbz-l.321">Klagenfurt</placeName> | 29  |<lb facs="#facs_2_l_9_25" n="N025" />|  Mourir à domicile | 32  |
+        </p>
+        <p facs="#facs_2_r_10">
+          SSMG<lb facs="#facs_2_l_10_1" n="N001" />SGM<lb facs="#facs_2_l_10_2" n="N002" />Redaktion: E. Haase— Helvetierstrasse 24 - 4106 <placeName ref="#zbz-l.406">Therwil</placeName> - Tel. 061/73 32 36<lb facs="#facs_2_l_10_3" n="N003" />Inserate:<lb facs="#facs_2_l_10_4" n="N004" />Inter Annonces SA - av. Bellefontaine 2 - 1003 <placeName ref="#zbz-l.19">Lausanne</placeName> - Tel. 021/20 32 51
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          14
+        </p>
+        <p facs="#facs_3_r_2">
+          Mme Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>: <bibl ref="#zbz-w.369">Qu'est-ce que vieillir?</bibl>
+        </p>
+        <p facs="#facs_3_r_3">
+          Zusammenfassung des Vortrages von Frau Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>:
+        </p>
+        <p facs="#facs_3_r_4">
+          Was heisst alt werden?
+        </p>
+        <p facs="#facs_3_r_5">
+          Die Rednerin definiert zuerst das Altwerden: Es beginnt nicht an der Pforte des Todes, sondern beim Spüren des Alterns. Man muss das Unumgängliche zu ertragen und zu zähmen lernen und sich nicht dagegen zu wehren; dies ist ein Lehrauftrag für die Aerzte.
+        </p>
+        <p facs="#facs_3_r_6">
+          Altern heisst immer mehr Jahre gelebt zu haben, die man nicht mehr hat.
+        </p>
+        <p facs="#facs_3_r_7">
+          Anschliessend erläutert die Vortragende 6 Bedeutungen von «jung bleiben» und «alt werden».
+        </p>
+        <p facs="#facs_3_r_8">
+          1. Der junge <persName ref="#zbz-p.1251">Mensch</persName> lebt nicht mit dem Tod, der Betagte lebt ständig mit ihm.<lb facs="#facs_3_l_8_1" n="N001" />2. Der Jugendliche hat einen perfekt funktionierenden Körper, den er vergisst, während für den Betagten der Körper ein stets bedrohtes Instrument ist.<lb facs="#facs_3_l_8_2" n="N002" />3. Der Jugendliche ist nachgiebig, denn er hat eine Menge Möglichkeiten; der Betagte wird starr und dadurch eine Karikatur dessen, was er gewesen ist.<lb facs="#facs_3_l_8_3" n="N003" />4. Beim jungen Menschen ist der affektive Egoismus beweglich und wechselnd, beim alten Menschen droht der affektive Egoismus tyrannisch und eine Plage zu werden, wegen der ihn bedrückenden Bedrohung.<lb facs="#facs_3_l_8_4" n="N004" />5. Alt werden bedeutet, viele seiner Nächsten sterben zu sehen und einsam zu werden.<lb facs="#facs_3_l_8_5" n="N005" />6. Alt sein heisst, lange gelebt zu haben; wenn man in der Fülle gelebt hat, wird das Sterben leicht, nicht weil das Leben mühsam ist, sondern weil es so reich und schön war. Darum ist es nötig, dass die Jugend solchen Betagten begegnet, die ihnen zeigen, was ihnen noch versprochen ist und nicht nur, was ihnen versagt ist.
+        </p>
+        <p facs="#facs_3_r_9">
+          Abschliessend lehrt uns Frau Prof. <persName ref="#zbz-p.2">Hersch</persName>, dass das Lernen, zu leben, die beste Vorbereitung zum Altern ist.
+        </p>
+        <p facs="#facs_3_r_10">
+          Je voudrais d'abord remercier les organisateurs de ce Congrès d'avoir bien voulu m'inviter. Je suis toujours surprise qu'on me demande à moi, qui suis incompétente, de parler à des gens compétents. Mais je suis contente tout de même parce qu'aujourd'hui je parle de quelque chose que je connais. <bibl ref="#zbz-w.369">Qu'est-ce que vieillir?</bibl>
+        </p>
+        <p facs="#facs_3_r_11">
+          Je ne vous parlerai pas de mourants. Je ne vous parlerai pas d'euthanasie passive et active, je me suis déjà exprimée d'ailleurs sur ce sujet. Je voudrais vraiment prendre les aspects de «vieillir» tels qu'ils sont vécus, non pas à la veille de la mort, mais à partir d'un certain âge où l'on commence à sentir et à vivre ce processus. Pourquoi j'en parle devant une réunion de médecins? C'est que je pense que l'époque où nous vivons, et la société dans laquelle nous vivons, est, à certains égards, pathogène: elle incite les gens à ne pas supporter l'inévitable.
+        </p>
+        <p facs="#facs_3_r_12">
+          Il est très important d'apprendre à supporter l'inévitable. Il est très important d'apprivoiser l'inévitable. Et pour apprivoiser l'inévitable il ne faut pas se débattre contre lui. Cela ne sert à rien.
+        </p>
+        <p facs="#facs_3_r_13">
+          Les médecins, et tous les exposés que nous avons entendus le prouvent, sont aussi des pédagogues à l'égard de leurs malades. Ils ont la charge d'éduquer leurs malades.
+        </p>
+        <p facs="#facs_3_r_14">
+          D'une certaine manière, ils le font tous, ne fût-ce que pour survivre. Par exemple, ils enseignent peu à peu à leurs malades de ne pas leur téléphoner à deux heures du matin parce qu'ils ont perdu une épingle double, et qu'ils sont persuadés que leur enfant l'a avalée, et autre chose de ce genre. Eh bien, je pense qu'ils doivent aussi être des pédagogues à l'égard de leurs patients pour leur enseigner peu à peu à supporter l'inévitable et à l'apprivoiser.
+        </p>
+        <p facs="#facs_3_r_15">
+          Je ne prêche pas la résignation, l'abdication, la fin de la recherche, le non-usage des armes dont on dispose contre la souffrance ou contre la mort, mais je pense que supporter l'inévitable c'est un côté, un aspect de la vie, une attitude qu'il ne faut pas laisser se perdre sous peine de déséquilibre très, très profond et extrêmement douloureux.
+        </p>
+        <p facs="#facs_3_r_16">
+          Le thème «<bibl ref="#zbz-w.369">Qu'est-ce que vieillir?</bibl>» est évidemment plutôt mélancolique. Je me souviens que lorsqu'on avait fêté les soixante ans de mon père, que j'ai copieusement dépassés maintenant, on l'avait félicité d'avoir atteint heureusement cet anniversaire, et mon père avait dit: «Vous me félicitez d'avoir soixante ans, mais, vous savez, ce sont soixante ans que je n'ai plus». Et c'est évident. Vieillir c'est avoir de plus en plus d'années qu'on n'a plus. Et dans ce sens c'est un thème mélancolique. Mais je voudrais, d'abord, avant de passer aux choses tristes, ici, comme dans d'autres occasions, rappeler, avec gratitude, les énormes progrès accomplis.
+        </p>
+        <p facs="#facs_3_r_17">
+          Il y a évidemment, aujourd'hui, beaucoup plus de vieux que naguère ou autrefois, et c'est un des éléments du réquisitoire qu'on élève contre notre civilisation. Qu'il y ait tellement de vieux relativement au nombre de jeunes. Mais s'il y a tellement de vieux c'est aussi parce qu'on vit deux fois plus longtemps qu'on ne vivait il y a peu.
+        </p>
+        <p facs="#facs_3_r_18">
+          Et je pense tout particulièrement aux femmes qui, après un nombre incroyable de couches, finissaient par mourir dans l'une d'elles.
+        </p>
+        <p facs="#facs_3_r_19">
+          Sur ce point en tout cas, il faut rendre grâce à ceux dont les efforts conjoints ont élevé le niveau de vie; amélioré les conditions matérielles de l'existence; permis une amélioration extraordinaire de la nourriture. Autrefois la gourmandise était un péché capital; personne n'aurait plus l'idée de faire, aujourd'hui, de la gourmandise un péché capital, tout simplement parce que nous sommes si bien nourris. À cause de la médecine, à cause de vous tous et de ceux qui vous ont précédés; à cause de l'hygiène dans laquelle nous vivons, non seulement on vit deux fois plus longtemps, mais on vieillit beaucoup plus tard. C'est extraordinairement frappant.
+        </p>
+        <p facs="#facs_3_r_20">
+          Les femmes vieillissent le plus souvent plus tôt que les hommes, physiquement. Mais aujourd'hui on voit des femmes qui ont eu parfois plusieurs enfants, avoir l'air d'être la soeur de leurs filles. Pensez, par exemple, que le Misanthrope de <persName ref="#zbz-p.835">Molière</persName> n'avait pas quarante ans et qu'il est présenté comme un vieux barbon qui se permet de vouloir épouser une jeunesse. Et comparez cela aux hommes d'aujourd'hui, de soixante, de soixante-dix ou quatre-vingt ans... | Je me souviens d'une séance de la <orgName ref="#zbz-o.334">Société des Ecrivains Suisses</orgName> où un ancien président, après deux jours de réunion qui s'étaient très bien passés — il était de très bonne humeur et très con
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          15
+        </p>
+        <p facs="#facs_4_r_2">
+          tent — eh bien, il disait dans le train, « C’était excellent, c’était épatant; la seule chose qui est dommage c’est qu’on n’ait pas dansé ». Il n’avait pas loin de quatre-vingts ans. Et ça n’était absolument pas ridicule]. On a donc fait d’énormes progrès: on reste jeune plus longtemps et sans intervention de <persName ref="#zbz-p.836">Méphisto</persName>, il faut dire merci à tous ceux à qui on le doit.
+        </p>
+        <p facs="#facs_4_r_3">
+          Non seulement pour soi mais pour ceux qu’on aime: garder plus longtemps ceux qu’on aime ce n’est pas une bagatelle. Je rappelle cela parce que je crois que l’essentiel, aujourd’hui, c’est de rappeler les choses qui vont à contre-courant. Notre société dite matérialiste est une société dans laquelle de nombreux êtres humains ont sacrifié la plus grande partie de leur temps de vie pour faire des recherches difficiles, obstinées, dévouées qui ont abouti aux résultats dont nous sommes aujourd’hui les bénéficiaires.
+        </p>
+        <p facs="#facs_4_r_4">
+          Maintenant, qu’est-ce que « rester jeune » et qu’est-ce que « vieillir »? Je voudrais énumérer quelques sens, quelques aspects de cette différence. Cette énumération n’est pas dans un ordre déterminé, elle n’est ni exhaustive, ni systématique, pardonnez moi; ce sont les aspects qui me sont venus à l’esprit.
+        </p>
+        <p facs="#facs_4_r_5">
+          Premier sens. Le jeune. Il est plongé en plein dans la vie. Même s’il pense à la mort il l’oublie très souvent. Il ne vit pas avec elle. Même s’il a le sentiment qu’elle lui est proche, qu’il mourrait facilement, ce qui est quelquefois le cas, il l’oublie. Même les jeunes — je viens de voir quelques cas de ce genre — qui finissent par faire des tentatives de suicides ou même des suicides réels, ils sont au moment « d’avant », quelquefois, gais et en pleine vie. Quand on vieillit on se rapproche, chaque jour, un peu plus de la mort. On vit, en quelque sorte, même quand on est bonne santé, en présence de la mort et sous l’ombre de la mort. Lorsqu’on entend les speakers de la radio, par exemple, ou de la télévision annoncer ce qu’il se passera pour tel ou tel projet en l’an 2000, en l’an 2010, en l’an 2200, etc., etc., on sait immédiatement « nous ne serons plus là ».
+        </p>
+        <p facs="#facs_4_r_6">
+          Voilà une première différence que je crois très profonde. Il y a des façons diverses de la vivre. Tous les êtres humains ne vivent pas de la même façon. Les vieux, quelquefois, parce qu’ils vont à la rencontre de la mort, parce qu’ils sont dans l’ombre de la mort, se cramponnent à tout ce qui appartient à la vie.
+        </p>
+        <p facs="#facs_4_r_7">
+          D’autres, au contraire, qui, se détachent de ce fait de ce qui est dans la vie, et ils ont le sentiment « ce n’est plus tellement important, après tout, comment ceci ou cela tourne; me tient bien à cœur, mais, après tout, à l’ombre de la mort, cela perd son importance ». Et je pense que les deux attitudes, celle du cramponnement et celle du détachement, ne sont satisfaisantes ni l’une, ni l’autre.
+        </p>
+        <p facs="#facs_4_r_8">
+          La difficulté, pour les vieux, c’est d’apprendre à trouver le « juste poids » à donner aux choses de la vie. Si l’on se détache trop, on vit une vie morte. Si l’on cesse d’être vulnérable, à force d’être détaché, on vit une vie morte. Si, au contraire, on se cramponne, de telle sorte que l’horizon est bouché, on n’a plus la distance humaine, noble, qui permet le jeu de la liberté.
+        </p>
+        <p facs="#facs_4_r_9">
+          Il y a donc, dans la position à trouver, un équilibre difficile, un « juste poids » à établir. Ce « juste poids » n’est pas une notion objective. Le médecin ne peut pas l’enseigner. Ni même le pasteur, je pense. Cela ne s’enseigne pas. Mais cela dépend très profondément du sens qu’on a de la vie, du sens qu’a eu, ou bien du sens que n’a pas eu la vie qu’on a vécu, et, par conséquent, du rapport qui nous reste de cette vie qu’on a vécue et qu’on vit encore, du rapport contradictoire qu’on a avec le temps.
+        </p>
+        <p facs="#facs_4_r_10">
+          Nous sommes plongés dans le temps et il nous submerge. Nous ne connaissons rien qui ne soit temporel.
+        </p>
+        <p facs="#facs_4_r_11">
+          Nous prononçons le mot « éternel », mais nous ne savons pas au monde ce que cela peut bien signifier.
+        </p>
+        <p facs="#facs_4_r_12">
+          Nous n’en avons pas la moindre vision. Et alors, selon le rapport que nous avons au temps, selon l’importance que nous accordons à la durée; cette durée qui, justement, quand on se rapproche de la mort, nous manque, cela donne une importance énorme ou, au contraire, réduite, au fait de vieillir.
+        </p>
+        <p facs="#facs_4_r_13">
+          Ici, il y a une expérience qui est extrêmement importante, je dirais même décisive: c’est celle qui selon <bibl ref="#zbz-w.529">Kierkegaard</bibl>, par exemple, est celle de « l’instant ». L’image de « l’éternel », si on veut en chercher une dans notre expérience complètement temporelle, ce n’est pas une longue, longue durée. Et il ne me paraît pas plein de sens de s’imaginer que, par exemple, la résurrection chrétienne comme signifiant « je meurs le lundi, je serai quelque part ailleurs le mardi et le mercredi ».
+        </p>
+        <p facs="#facs_4_r_14">
+          Ce n’est pas de l’ordre de la durée. C’est de l’ordre de « l’instant ». L’instant qui crève le temps; « l’instant » qui est « éternel » parce que, d’une certaine manière, il ne coule pas. Il n’y a pas de terme pour dire cela; mais, selon qu’on considère que ce qui est temporel — c’est à dire ce qui dure — est ultime, ou bien qu’il n’est pas ultime, mais qu’il y a une « dimension », entre guillemets, tout à fait mystérieuse (mais qui a un sens pour nous) qui le traverse, alors l’attitude envers la mort et, par conséquent, envers le fait de vieillir, est différente.
+        </p>
+        <p>
+          Deuxième sens. Pour le jeune, son corps est un instrument tellement parfait — s’il s’agit d’un jeune en bonne santé — et un instrument qui va tellement sans dire, que, la plupart du temps, il l’oublie. Ou alors il lui demande du plaisir. Il lui demande du plaisir ou il l’oublie. Pour le vieux, pour celui qui vieillit, dans la mesure où il vieillit, son corps devient un instrument — s’il n’est pas encore douloureux — qui est déjà « menacé ». Et il vit cette « menace » dans la présence de son corps. C’est pourquoi je crois que les gens âgés sont plus lourdement incarnés, dans leur corps, que ne le sont les jeunes. Les jeunes ont une espèce d’incarnation légère, joueuse, ponctuelle. Tandis que chez les gens plus âgés, au fur et à mesure qu’on vieillit, le corps et ses maux prennent une place prépondérante. Et aussi, le lien entre le « moi » et le corps, contrairement à ce qu’on se représente d’ordinaire, est plus étroit chez les gens plus âgés. Parce que le corps, étant « menacé », entraîne une « menace » de dépendance ou une actualité de dépendance, dont on nous a déjà parlé à maintes reprises aujourd’hui. Cette « menace », ou cette réalité de dépendance, implique une angoisse. Parce qu’il n’y a pas moyen de lui échapper. Il arrive qu’en vieillissant, devant certaines expériences — de très longs séjours en clinique, dans les hôpitaux ou grabataires, ou autres — on se dit « en tout cas, moi jamais; moi je ne me laisserai pas soigner, moi je me laisserai mourir; j’ignorerai mon corps jusqu’à ce qu’il ait raison de moi ». C’est une déclaration très orgueilleuse, qui prétend échapper à la condition humaine, c’est une déclaration impossible à suivre. Ou s’aperçoit bientôt du fait qu’il n’y a pas moyen d’imposer ce « non-souci » du corps, au fur et à mesure qu’on vieillit.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          16
+        </p>
+        <p facs="#facs_5_r_2">
+          C'est pourquoi lorsqu'on vieillit, on vit son lien avec son corps qui est un noeud de la condition humaine impossible à défaire; on le vit d'une façon absolument immédiate, il s'impose et on n'y échappe pas. Ici encore, comme dans le sens précédent, beaucoup dépend de l'attitude que, dans sa propre liberté, on prend à l'égard de ce noeud impossible à défaire. Certains se révoltent, certains se résignent, et je pense qu'ici encore, ni la révolte, ni la résignation, ne sont des attitudes adéquates. Il y a un point, difficile à trouver et à maintenir, où on fait raisonnablement ce qui doit être fait sans se laisser réduire en esclavage, sans se laisser dévorer, sans se laisser annuler, dans sa relative liberté d'esprit.
+        </p>
+        <p facs="#facs_5_r_3">
+          Troisième sens. Le jeune est souple. Il est souple parce qu'il vit dans une foule de «possibles». Un «possible» chasse l'autre. Et si un «possible» n'est plus possible, il y a trente-six autres «possibles» qui sont là autour. Même s'il est dans la pire situation il y a toujours des «possibles».
+        </p>
+        <p facs="#facs_5_r_4">
+          Chez les vieux, il se produit souvent ce que j'appellerai un «raidissement». Même chez les meilleurs. Et quelquefois ce qui se «raidit» ainsi est ce qu'il y a eu de meilleur pendant la vie où on n'était pas vieux. C'est très curieux. Il y a quelque chose de profondément injuste; comme si chacun devenait progressivement, ou en tout cas, était menacé de devenir, la caricature de ce qu'il a été. Quelqu'un qui a toujours été très aimable, très souriant, très disponible pour les autres pousse cette qualité à un degré qui devient insupportable. Elle devient comme une espèce de tic altruiste. Ce ne sont pas seulement les artères qui durcissent et qui se raidissent. L'expressivité; un visage mobile devient peu à peu comme une ride, comme une grimace fixée; des rides permanentes s'installent. Des traits de caractère qui étaient légers et changeants s'accusent et se creusent. Certains qui ont été très généreux toute leur vie soulignent maintenant cette générosité au point qu'il est désagréable d'en bénéficier. Certains, qui ont eu des tendances à l'avarice, deviennent des maniaques de l'avarice. Il se produit — c'est une mise en garde aussi — une sorte de dépendance et d'esclavage intérieurs à l'égard d'un soi-même, qui n'a jamais été connu auparavant et qui, maintenant vous tyrannise. Même si on représente un type idéal, cela devient la tyrannie du type idéal. Si je parle de cela, c'est qu'on a un peu trop tendance à considérer les vieux comme des victimes, uniquement. Ils ne sont pas que des victimes, ils sont aussi des tyrans et tous les vieux sont menacés de devenir des tyrans. J'ai le droit de le dire à mon âge.
+        </p>
+        <p facs="#facs_5_r_5">
+          Quatrième sens. Au niveau de l'affectivité. Là, tout dépend, aussi, bien sûr, des sens précédents que je viens d'énumérer. Mais, chez le jeune, l'égocentrisme affectif — remarquez, tous les êtres humains sont égocentriques; il ne faut pas se faire d'illusions là-dessus, et ceux qui croient qu'ils ne sont absolument pas égocentriques sont très indulgents envers eux-mêmes — mais, chez le jeune, l'égocentrisme affectif est mobile et changeant. Il change d'objet; il n'est pas rigide. Chez le vieux, ou bien il est vraiment dépassé à l'approche de la mort et d'une vraie prise de distance — et alors, on peut assister à une espèce d'indifférence générale, d'atonie qui fait que ce vieux n'est plus un vivant parmi les autres, parce qu'il ne communique plus avec personne — ou alors, l'égocentrisme risque de devenir tyrannique et obsessionnel parce que l'énorme
+        </p>
+        <p facs="#facs_5_r_6">
+          «menace» qui pèse sur lui, lui paraît telle qu'il ne comprend pas que tout autour de lui ne soit pas subordonné à elle, par les autres aussi. C'est pourquoi nous avons tous remarqué que, souvent, plus on fait de choses pour une personne âgée et moins elle est satisfaite parce que plus elle en veut, (et elle en veut à cause de cette «menace»). Elle voudrait que cette «imminence», en quelque sorte, soit partagée par tout le monde; pour elle, cela prime tout et elle veut que cela prime tout aussi chez tous les autres. D'autant plus, qu'avant la mort il vient encore cette «menace» des maux, des souffrances, des menaces d'infirmité et de solitude.
+        </p>
+        <p facs="#facs_5_r_7">
+          Cinquième sens. Être vieux, et, pour moi, c'est ce qu'il y a de plus profond dans le fait de «devenir vieux», c'est avoir vu beaucoup mourir parmi ses proches et les êtres qui vous sont chers. Peu à peu la solitude se constitue; non pas tant parce que les gens vous ont abandonné, mais parce que les proches sont morts. Et au fur et à mesure qu'on devient plus âgé, on vit dans un monde qui est de moins en moins «votre» monde. Il arrive alors qu'on dit qu'on a plus d'êtres chers «de l'autre côté». «De l'autre côté», entre guillemets, whatever it means. Sans donner à cela de sens précis, mais enfin «ailleurs», «de l'autre côté», pas «ici», en tout cas, il y a ceux qu'on a aimés.
+        </p>
+        <p facs="#facs_5_r_8">
+          Sous cet angle, la mort paraît de plus en plus naturelle, et même bienvenue. Ce qui fait encore peur, c'est «l'avant» de la mort. De nouveau: la solitude, la dépendance, la douleur, etc.
+        </p>
+        <p facs="#facs_5_r_9">
+          Sixième sens. Être vieux, je fais maintenant un effet de contraste, être vieux c'est avoir vécu. Et c'est même avoir longtemps vécu. C'est à dire, avoir beaucoup vu la splendeur de cette terre et la richesse terrible — mais richesse tout de même — de la condition humaine. C'est avoir aimé des êtres. C'est avoir rencontré les trésors qui nous ont été légués sous tant de formes diverses par le passé et le présent. C'est avoir assumé des tâches et les avoir remplies, parfois. C'est avoir assumé des risques, avoir vécu des échecs. C'est avoir expérimenté les réussites et les échecs de notre propre liberté.
+        </p>
+        <p facs="#facs_5_r_10">
+          On éprouve alors une immense gratitude. Tant de printemps, et tant d'automne, tant de neige, et tant de chaleurs d'été; tout cela. Merci.
+        </p>
+        <p facs="#facs_5_r_11">
+          Quand cette plénitude a été vécue, il devient facile de mourir. Non pas parce que la vie est si pénible, mais parce qu'elle a été si riche, si belle. Parce que, nécessairement, le bonheur, les souffrances de la vie aussi font partie de cette plénitude qui rend la mort plus facile. En français, on dit «je suis content d'être au monde et d'y voir clair». Le vieux peut dire «je suis content d'avoir été au monde et d'y avoir vu clair».
+        </p>
+        <p facs="#facs_5_r_12">
+          Cela ne veut pas dire qu'on puisse voir la lumière du jour, comme disaient les <persName ref="#zbz-p.54">Grecs</persName>, à tout jamais, dans la durée. Sous cet angle, la vieillesse, le vieillissement peut être quelque chose de rayonnant et quelque chose de proche des jeunes, parce que ces vieilles personnes-là, devant les jeunes, incarnent tout ce qui leur est promis et non tout ce qui leur est refusé. Tout ce qui leur est promis. Jamais encore, peut-être, les jeunes n'ont eu autant besoin de rencontrer ce genre de personnes vieillissantes. Parce qu'on leur rebat les oreilles depuis la petite enfance de l'horreur et de la non-valeur du monde dans lequel ils se trouvent. C'est là une des causes des innombrables suicides ou tenta
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          17
+        </p>
+        <p facs="#facs_6_r_2">
+          tives de suicide des jeunes, auxquels on assiste aujourd'hui.
+        </p>
+        <p facs="#facs_6_r_3">
+          Là, ceux qui vieillissent ont véritablement une mission à remplir et les médecins ont eux-même la mission de la susciter chez leurs patients vieillissants.
+        </p>
+        <p facs="#facs_6_r_4">
+          Ce qu'est vieillir dépend, dans une certaine mesure, de ce que chacun de nous décide d'être dans sa liberté. Il y a une fatalité de la mort, il y a une fatalité de la maladie, il y a une fatalité du vieillissement, et personne ne sait comment il supportera tout cela. Mais, dans une certaine mesure, et qui est, peut-être, plus grande qu'on ne croit, notre vieillesse et notre mort dépendent, tout de même, encore de chacun de nous, tant que nous avons un souffle de conscience. On forge, sans doute, sa vieillesse toute sa vie. On la forge dès le début. Sur tous les plans de sa vie. Seulement c'est une dialectique très difficile. Les anciens disaient que « vivre, c'était se préparer à mourir ». Il faut bien les comprendre; ils ne voulaient certainement pas dire qu'il fallait se mettre dans un coin et méditer la mort. Ce ne serait pas du tout « se préparer à mourir ».
+        </p>
+        <p facs="#facs_6_r_5">
+          Qu'est-ce que cela signifie, « se préparer »? Il y a une dialectique difficile, là comme pour toutes les questions décisives dans la condition humaine, entre ce qui « se prépare », ce qui se fait volontairement, et, d'autre part, ce qui se vit directement, comme destin ou comme passion. Il ne faudrait pas que, par mesure de prudence, lorsqu'un nouveau-né vient au monde, on commence par lui acheter un petit appartement dans une maison de retraite, et que, désormais, la sagesse qui lui est enseignée par son entourage et ses médecins, ce soit de « se préparer » à la vieillesse. Certainement pas. « Apprendre à vieillir » est absurde, si cet apprentissage ne coïncide pas exactement avec
+        </p>
+        <p facs="#facs_6_r_6">
+          « apprendre à vivre ». Il y a quelque temps, on m'a demandé de parler de la retraite; c'était une série de conférences consacrées à la retraite — à la « préparation » à la retraite — s'adressant à des gens relativement jeunes (la quarantaine, quarante-cinq ans), et j'avais donné à ma conférence le titre « Se préparer à la retraite sans y penser ». Je crois que la formule est juste, encore, pour la vieillesse. Elle est juste parce qu'on s'y « prépare » par la richesse qu'on amoncelle dans sa propre personne au fil de sa vie. Il s'agit d'accumuler en soi suffisamment de ressources, suffisamment de dons; d'arriver à cultiver tout ce qui peut encore être, tout ce qui peut encore être accompli. Et cela depuis le début. Non pas « en vue » de la vieillesse, mais, selon ce qu'on aura ainsi accompli, la retraite, la vieillesse, la mort auront telle physionomie ou telle autre.
+        </p>
+        <p facs="#facs_6_r_7">
+          On s'y prépare par cette acquisition, par cet assouplissement intérieur soutenu, par les exercices, en somme, de résistance et de consentement, apprendre à supporter, sans devenir passif, apprendre à supporter, c'est à dire rester élastique; éviter le durcissement de la grimace dont j'ai parlé.
+        </p>
+        <p facs="#facs_6_r_8">
+          C'est « se préparer » à la vieillesse. Et je crois que le plus important — je rejoins, ici, ce que je disais tout à l'heure du « temps » — c'est se situer dans la condition temporelle, en regardant vers son passé, pour ne pas l'oublier et le garder présent dans sa richesse; dans ses joies, dans ses triomphes, dans ses culpabilités; dans tout ce qu'il a été et à quoi nous ne pouvons plus rien changer. Mais avec le futur encore là, puisque nous sommes là, avec ses possibilités, et tout ce qui dépend encore de nous. Et le présent, où cela se décide et où il y a, peut-être, la chance d'un « temps éternel ». De cette manière, on vit dans sa condition temporelle, mais pas dans sa condition temporelle seulement.
+        </p>
+        <p facs="#facs_6_r_9">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p facs="#facs_6_r_10">
+          Bericht des Präsidenten
+        </p>
+        <p facs="#facs_6_r_11">
+          Liebe Kolleginnen und Kollegen,
+        </p>
+        <p facs="#facs_6_r_12">
+          Anlässlich der letzten Generalversammlung vom 11.9.83 in <placeName ref="#zbz-l.183">Lugano</placeName> wurde ich für eine weitere 2-jährige Amtsdauer wiedergewählt.
+        </p>
+        <p facs="#facs_6_r_13">
+          Ich habe die Bitte der Vorstandsmitglieder, mich für diese <bibl ref="#zbz-w.705">Zeit</bibl> zur Verfügung zu stellen, angenommen, in der Meinung und Hoffnung, dass dieser Entschluss einen positiven Beitrag zur Konsolidierung der Struktur unserer Gesellschaft darstellen würde. Ich habe auch die Absicht, einen aktiven, motivierten Nachfolger zu finden und ihn auf die Übernahme des Präsidiums rechtzeitig vorzubereiten.
+        </p>
+        <p facs="#facs_6_r_14">
+          Da die nächste Generalversammlung bereits im nächsten Monat Mai stattfinden wird, werde ich mich umständecollibler vorzeitig zurückziehen können, um meine <bibl ref="#zbz-w.705">Zeit</bibl> und meine Kräfte anderen Aufgaben zu widmen.
+        </p>
+        <p facs="#facs_6_r_15">
+          Rapport du Président à l'Assemblée Générale ordinaire de la <orgName ref="#zbz-o.335">Société Suisse de Médecine Générale</orgName> du 23 septembre <bibl ref="#zbz-w.327">1984</bibl> à <placeName ref="#zbz-l.5">Genève</placeName>
+        </p>
+        <p facs="#facs_6_r_16">
+          Chers collègues,
+        </p>
+        <p facs="#facs_6_r_17">
+          À l'occasion de la dernière Assemblée Générale du 11.9.83 à <placeName ref="#zbz-l.183">Lugano</placeName> j'ai été réélu à la présidence de notre société pour la durée de deux ans supplémentaires. J'ai accepté la demande des membres du Comité de me mettre encore à disposition pour ce temps là, dans l'idée et l'espoir que cette décision contribuerait d'une façon positive à consolider la structure de notre <orgName ref="#zbz-o.575">Société</orgName>.
+        </p>
+        <p facs="#facs_6_r_18">
+          J'ai aussi l'intention de trouver un successeur actif et motivé et de le préparer suffisamment à assumer la présidence.
+        </p>
+        <p facs="#facs_6_r_19">
+          Comme la prochaine Assemblée Générale aura lieu déjà au mois de mai 1985 je pourrai me retirer un peu plus tôt, pour dédier mon temps et mes forces à d'autres tâches.
+        </p>
+      </div>
+      </body></text>
+</TEI>

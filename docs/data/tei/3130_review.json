@@ -1,0 +1,27 @@
+{
+  "doc_id": "3130",
+  "reviewer": "quality-screening-t2",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 7,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "T2",
+      "msg": "Minor OCR residuals: 'deposssive' (2x), 'deposssiff', 'prualisme', 'recette' (should be 'recettes')"
+    },
+    {
+      "severity": "info",
+      "code": "S4",
+      "msg": "Facs zone facs_7_r_4 has extreme coords (ulx=1662, lrx=5494) on a 723px-wide page -- layout artifact"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 14p 7o 3l 8w = 32"
+    }
+  ]
+}

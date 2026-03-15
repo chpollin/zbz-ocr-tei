@@ -1,0 +1,40 @@
+{
+  "doc_id": "100",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 4],
+      "notes": "S.1 Overlay zeigt saubere Zonenerkennung mit Titel, Absaetzen, Seitenzahl. S.4 Overlay zeigt korrekte Absatzstruktur mit Asterisken-Trennern."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text sauber. Philosophische Fachbegriffe (existence, transcendance) korrekt. Accents durchgaengig richtig."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "7 Seiten, einspaltig. Titelseite + 6 Textseiten. Seitenzahlen 56-61 korrekt in running headers. Asterisken-Trenner als eigene p-Elemente."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": ["W10"],
+      "notes": "VALID, 0 Fehler. W10 ignoriert (Philosophie-Text, nur persName bei Jaspers-Thema erwartet)."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 16, "orgName": 0, "placeName": 0, "bibl": 1},
+      "notes": "Jaspers (GND:118557106) durchgaengig korrekt referenziert. Platon (GND:118594893) 1x. Jeanne Hersch (GND:118815679) am Schluss. Philosophie-Kontext erklaert Fehlen von orgName/placeName."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Geschlossener philosophischer Essay ueber Jaspers' Existenzphilosophie. Franzoesisch. Logischer Textfluss, saubere Seitenumbrueche."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Vorbildliche Edition. Jaspers-Essay von Jeanne Hersch, franzoesisch. Saubere Struktur, korrekte GND-Referenzen."
+}

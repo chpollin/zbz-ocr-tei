@@ -1,0 +1,643 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">L'Humaniste</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1870</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>L'Humaniste</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1982</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:warning). Titel 'L'Humaniste' bezeichnet die Zeitung, nicht den einzelnen Artikel von Hersch; Seite enthaelt mehrere Artikel verschiedener Autoren in einem div; W9: 22 Entity-Tags ohne ref -- NER-Nachverarbeitung ausstehend</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1308" lry="1886">
+      <zone xml:id="facs_1_r_1" ulx="61" uly="479" lrx="645" lry="646" />
+      <zone xml:id="facs_1_r_2" ulx="689" uly="513" lrx="862" lry="555" />
+      <zone xml:id="facs_1_r_3" ulx="682" uly="568" lrx="1210" lry="632" />
+      <zone xml:id="facs_1_r_4" ulx="684" uly="628" lrx="1210" lry="687" />
+      <zone xml:id="facs_1_r_5" ulx="65" uly="653" lrx="275" lry="707" />
+      <zone xml:id="facs_1_r_6" ulx="360" uly="654" lrx="642" lry="974" />
+      <zone xml:id="facs_1_r_7" ulx="684" uly="687" lrx="1211" lry="770" />
+      <zone xml:id="facs_1_r_8" ulx="62" uly="718" lrx="345" lry="923" />
+      <zone xml:id="facs_1_r_9" ulx="687" uly="862" lrx="1209" lry="904" />
+      <zone xml:id="facs_1_r_10" ulx="684" uly="901" lrx="1211" lry="981" />
+      <zone xml:id="facs_1_r_11" ulx="59" uly="919" lrx="343" lry="1000" />
+      <zone xml:id="facs_1_r_12" ulx="686" uly="978" lrx="1211" lry="1057" />
+      <zone xml:id="facs_1_r_13" ulx="382" uly="1044" lrx="476" lry="1070" />
+      <zone xml:id="facs_1_r_14" ulx="686" uly="1055" lrx="1211" lry="1120" />
+      <zone xml:id="facs_1_r_15" ulx="382" uly="1067" lrx="620" lry="1106" />
+      <zone xml:id="facs_1_r_16" ulx="92" uly="1113" lrx="172" lry="1135" />
+      <zone xml:id="facs_1_r_17" ulx="705" uly="1115" lrx="1212" lry="1140" />
+      <zone xml:id="facs_1_r_18" ulx="94" uly="1135" lrx="191" lry="1157" />
+      <zone xml:id="facs_1_r_19" ulx="381" uly="1147" lrx="437" lry="1168" />
+      <zone xml:id="facs_1_r_20" ulx="687" uly="1155" lrx="1213" lry="1215" />
+      <zone xml:id="facs_1_r_21" ulx="381" uly="1168" lrx="616" lry="1208" />
+      <zone xml:id="facs_1_r_22" ulx="92" uly="1173" lrx="256" lry="1194" />
+      <zone xml:id="facs_1_r_23" ulx="92" uly="1196" lrx="333" lry="1234" />
+      <zone xml:id="facs_1_r_24" ulx="684" uly="1214" lrx="1212" lry="1297" />
+      <zone xml:id="facs_1_r_25" ulx="380" uly="1275" lrx="618" lry="1312" />
+      <zone xml:id="facs_1_r_26" ulx="94" uly="1293" lrx="195" lry="1312" />
+      <zone xml:id="facs_1_r_27" ulx="1100" uly="1306" lrx="1193" lry="1325" />
+      <zone xml:id="facs_1_r_28" ulx="382" uly="1309" lrx="618" lry="1349" />
+      <zone xml:id="facs_1_r_29" ulx="95" uly="1310" lrx="333" lry="1367" />
+      <zone xml:id="facs_1_r_30" ulx="660" uly="1361" lrx="1138" lry="1464" />
+      <zone xml:id="facs_1_r_31" ulx="145" uly="1378" lrx="223" lry="1399" />
+      <zone xml:id="facs_1_r_32" ulx="382" uly="1392" lrx="454" lry="1417" />
+      <zone xml:id="facs_1_r_33" ulx="95" uly="1406" lrx="334" lry="1429" />
+      <zone xml:id="facs_1_r_34" ulx="598" uly="1417" lrx="621" lry="1436" />
+      <zone xml:id="facs_1_r_35" ulx="963" uly="1470" lrx="1241" lry="1523" />
+      <zone xml:id="facs_1_r_36" ulx="665" uly="1475" lrx="872" lry="1535" />
+      <zone xml:id="facs_1_r_37" ulx="384" uly="1497" lrx="467" lry="1520" />
+      <zone xml:id="facs_1_r_38" ulx="94" uly="1500" lrx="179" lry="1521" />
+      <zone xml:id="facs_1_r_39" ulx="382" uly="1518" lrx="621" lry="1571" />
+      <zone xml:id="facs_1_r_40" ulx="92" uly="1523" lrx="335" lry="1671" />
+      <zone xml:id="facs_1_r_41" ulx="664" uly="1536" lrx="944" lry="1660" />
+      <zone xml:id="facs_1_r_42" ulx="985" uly="1569" lrx="1036" lry="1586" />
+      <zone xml:id="facs_1_r_43" ulx="986" uly="1584" lrx="1107" lry="1604" />
+      <zone xml:id="facs_1_r_44" ulx="1103" uly="1598" lrx="1226" lry="1619" />
+      <zone xml:id="facs_1_r_45" ulx="380" uly="1610" lrx="585" lry="1640" />
+      <zone xml:id="facs_1_r_46" ulx="987" uly="1615" lrx="1157" lry="1633" />
+      <zone xml:id="facs_1_r_47" ulx="1102" uly="1629" lrx="1225" lry="1652" />
+      <zone xml:id="facs_1_r_48" ulx="379" uly="1634" lrx="620" lry="1710" />
+      <zone xml:id="facs_1_r_49" ulx="987" uly="1645" lrx="1112" lry="1663" />
+      <zone xml:id="facs_1_r_50" ulx="664" uly="1660" lrx="943" lry="1767" />
+      <zone xml:id="facs_1_r_51" ulx="1111" uly="1661" lrx="1224" lry="1680" />
+      <zone xml:id="facs_1_r_52" ulx="987" uly="1676" lrx="1140" lry="1695" />
+      <zone xml:id="facs_1_r_53" ulx="1082" uly="1693" lrx="1224" lry="1710" />
+      <zone xml:id="facs_1_r_54" ulx="985" uly="1705" lrx="1065" lry="1728" />
+      <zone xml:id="facs_1_r_55" ulx="378" uly="1709" lrx="621" lry="1773" />
+      <zone xml:id="facs_1_r_56" ulx="983" uly="1719" lrx="1224" lry="1790" />
+      <zone xml:id="facs_1_r_57" ulx="90" uly="1725" lrx="333" lry="1771" />
+      <zone xml:id="facs_1_r_58" ulx="663" uly="1764" lrx="942" lry="1803" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1308" lry="1886">
+      <zone xml:id="facs_2_r_1" ulx="68" uly="110" lrx="1059" lry="213" />
+      <zone xml:id="facs_2_r_2" ulx="662" uly="233" lrx="954" lry="549" />
+      <zone xml:id="facs_2_r_3" ulx="367" uly="234" lrx="648" lry="310" />
+      <zone xml:id="facs_2_r_4" ulx="67" uly="236" lrx="323" lry="287" />
+      <zone xml:id="facs_2_r_5" ulx="68" uly="297" lrx="350" lry="883" />
+      <zone xml:id="facs_2_r_6" ulx="366" uly="308" lrx="649" lry="513" />
+      <zone xml:id="facs_2_r_7" ulx="367" uly="510" lrx="650" lry="827" />
+      <zone xml:id="facs_2_r_8" ulx="668" uly="544" lrx="954" lry="792" />
+      <zone xml:id="facs_2_r_9" ulx="1010" uly="767" lrx="1248" lry="790" />
+      <zone xml:id="facs_2_r_10" ulx="927" uly="824" lrx="1253" lry="867" />
+      <zone xml:id="facs_2_r_11" ulx="366" uly="842" lrx="651" lry="1338" />
+      <zone xml:id="facs_2_r_12" ulx="669" uly="870" lrx="956" lry="966" />
+      <zone xml:id="facs_2_r_13" ulx="68" uly="880" lrx="351" lry="1121" />
+      <zone xml:id="facs_2_r_14" ulx="668" uly="963" lrx="954" lry="1228" />
+      <zone xml:id="facs_2_r_15" ulx="68" uly="1120" lrx="347" lry="1195" />
+      <zone xml:id="facs_2_r_16" ulx="970" uly="1156" lrx="1210" lry="1202" />
+      <zone xml:id="facs_2_r_17" ulx="68" uly="1192" lrx="350" lry="1465" />
+      <zone xml:id="facs_2_r_18" ulx="967" uly="1203" lrx="1251" lry="1524" />
+      <zone xml:id="facs_2_r_19" ulx="665" uly="1222" lrx="949" lry="1465" />
+      <zone xml:id="facs_2_r_20" ulx="365" uly="1336" lrx="649" lry="1784" />
+      <zone xml:id="facs_2_r_21" ulx="69" uly="1464" lrx="349" lry="1524" />
+      <zone xml:id="facs_2_r_22" ulx="665" uly="1471" lrx="938" lry="1538" />
+      <zone xml:id="facs_2_r_23" ulx="967" uly="1525" lrx="1254" lry="1790" />
+      <zone xml:id="facs_2_r_24" ulx="664" uly="1537" lrx="949" lry="1791" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1308" lry="1886">
+      <zone xml:id="facs_3_r_1" ulx="51" uly="142" lrx="340" lry="380" />
+      <zone xml:id="facs_3_r_2" ulx="954" uly="145" lrx="1234" lry="319" />
+      <zone xml:id="facs_3_r_3" ulx="357" uly="147" lrx="586" lry="178" />
+      <zone xml:id="facs_3_r_4" ulx="358" uly="190" lrx="903" lry="237" />
+      <zone xml:id="facs_3_r_5" ulx="357" uly="243" lrx="859" lry="304" />
+      <zone xml:id="facs_3_r_6" ulx="954" uly="322" lrx="1235" lry="455" />
+      <zone xml:id="facs_3_r_7" ulx="360" uly="326" lrx="939" lry="387" />
+      <zone xml:id="facs_3_r_8" ulx="53" uly="379" lrx="337" lry="518" />
+      <zone xml:id="facs_3_r_9" ulx="655" uly="404" lrx="939" lry="690" />
+      <zone xml:id="facs_3_r_10" ulx="357" uly="405" lrx="636" lry="445" />
+      <zone xml:id="facs_3_r_11" ulx="356" uly="442" lrx="636" lry="704" />
+      <zone xml:id="facs_3_r_12" ulx="954" uly="452" lrx="1237" lry="655" />
+      <zone xml:id="facs_3_r_13" ulx="58" uly="515" lrx="341" lry="670" />
+      <zone xml:id="facs_3_r_14" ulx="957" uly="658" lrx="1238" lry="882" />
+      <zone xml:id="facs_3_r_15" ulx="57" uly="669" lrx="337" lry="808" />
+      <zone xml:id="facs_3_r_16" ulx="660" uly="691" lrx="939" lry="751" />
+      <zone xml:id="facs_3_r_17" ulx="360" uly="710" lrx="640" lry="806" />
+      <zone xml:id="facs_3_r_18" ulx="658" uly="747" lrx="941" lry="847" />
+      <zone xml:id="facs_3_r_19" ulx="362" uly="802" lrx="639" lry="844" />
+      <zone xml:id="facs_3_r_20" ulx="59" uly="804" lrx="340" lry="847" />
+      <zone xml:id="facs_3_r_21" ulx="62" uly="872" lrx="648" lry="917" />
+      <zone xml:id="facs_3_r_22" ulx="957" uly="879" lrx="1241" lry="1212" />
+      <zone xml:id="facs_3_r_23" ulx="358" uly="917" lrx="645" lry="1234" />
+      <zone xml:id="facs_3_r_24" ulx="60" uly="919" lrx="342" lry="957" />
+      <zone xml:id="facs_3_r_25" ulx="60" uly="957" lrx="346" lry="1166" />
+      <zone xml:id="facs_3_r_26" ulx="62" uly="1166" lrx="346" lry="1262" />
+      <zone xml:id="facs_3_r_27" ulx="963" uly="1212" lrx="1246" lry="1437" />
+      <zone xml:id="facs_3_r_28" ulx="364" uly="1237" lrx="629" lry="1284" />
+      <zone xml:id="facs_3_r_29" ulx="62" uly="1262" lrx="349" lry="1515" />
+      <zone xml:id="facs_3_r_30" ulx="364" uly="1282" lrx="646" lry="1837" />
+      <zone xml:id="facs_3_r_31" ulx="665" uly="1283" lrx="905" lry="1348" />
+      <zone xml:id="facs_3_r_32" ulx="663" uly="1350" lrx="947" lry="1656" />
+      <zone xml:id="facs_3_r_33" ulx="965" uly="1436" lrx="1248" lry="1810" />
+      <zone xml:id="facs_3_r_34" ulx="61" uly="1514" lrx="349" lry="1843" />
+      <zone xml:id="facs_3_r_35" ulx="664" uly="1650" lrx="947" lry="1803" />
+      <zone xml:id="facs_3_r_36" ulx="806" uly="1794" lrx="932" lry="1813" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div type="interview">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          JOURNAL D'HUMANISTE<lb facs="#facs_1_l_1_1" n="N001" />REDACTION ET ADMINISTRATION<lb facs="#facs_1_l_1_2" n="N002" />CASE POSTALE 371<lb facs="#facs_1_l_1_3" n="N003" />1211 <placeName ref="#zbz-l.5">GENEVE</placeName> 3 RIVE<lb facs="#facs_1_l_1_4" n="N004" />CCP 12-10643 <placeName ref="#zbz-l.5">GENEVE</placeName><lb facs="#facs_1_l_1_5" n="N005" />parait 6 fois par an<lb facs="#facs_1_l_1_6" n="N006" />N° 2<lb facs="#facs_1_l_1_7" n="N007" />FEVRIER-MARS 1982
+        </head>
+        <p facs="#facs_1_r_2">
+          Les racines spirituelles de la civilisation scientifique et technique
+        </p>
+        <p facs="#facs_1_r_3">
+          par le professeur <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <sp>
+          <speaker><persName>Il est un cliché dont se repaissent les parleurs de notre temps</persName></speaker>
+          <p facs="#facs_1_r_4">
+            Il est un cliché dont se repaissent les parleurs de notre temps: le matérialisme de l'<placeName ref="#zbz-l.27">Occident</placeName>, et tout particulièrement celui de sa technique, comme aussi de la science qui en a permis le prodigieux essor. Parler de matérialisme; dirait-on, c'est aussitôt se poser en spirituel; un substitut efficace et pratique de l'oraison.
+          </p>
+        </sp>
+        <p facs="#facs_1_r_5">
+          Ce mépris généralisé de notre civilisation pour elle-même découle d'une vision étonnamment limitée et déformée, selon laquelle la technique et même la science ne trouvent leur origine que dans la soif de profit et de consommation, leur destination et leur accomplissement que dans les objets produits par l'industrie. Encore ne retient-on, parmi ces objets, que les plus superflus ou les plus nocifs, ceux qu'on ferait aussi bien — ou qu'on ferait mieux — de ne pas produire du tout. On juge dès lors que les travailleurs perdent leur vie à les produire et les consommateurs à les consommer. Et comme patrons et ouvriers, par le travail et le profit, ne peuvent finalement
+        </p>
+        <p facs="#facs_1_r_6">
+          Suite en page 2
+        </p>
+        <p facs="#facs_1_r_7">
+          SURINAINE
+        </p>
+        <p facs="#facs_1_r_8">
+          Editorial
+        </p>
+        <p facs="#facs_1_r_9">
+          Réactions p. 1.
+        </p>
+        <p facs="#facs_1_r_10">
+          <orgName ref="#zbz-o.283">Sciences</orgName> Humaines
+        </p>
+        <p facs="#facs_1_r_11">
+          Les racines spirituelles de la civilisation scientifique et technique p. 1.<lb facs="#facs_1_l_11_1" n="N001" />par le Professeur <persName ref="#zbz-p.2">Jeanne Hersch</persName>.
+        </p>
+        <p facs="#facs_1_r_12">
+          Humanisme
+        </p>
+        <p facs="#facs_1_r_13">
+          A propos d'humanisme... la notion de l'homme chez <persName ref="#zbz-p.710">Michel Henry</persName> p. 2.<lb facs="#facs_1_l_13_1" n="N001" />par <persName ref="#zbz-p.711">Gabrielle Dufour-Kowalska</persName>, docteur en philosophie.
+        </p>
+        <sp>
+          <speaker><persName>Al-Kindi</persName></speaker>
+          <p facs="#facs_1_r_14">
+            <persName ref="#zbz-p.712">Al-Kindi</persName>: un grand humaniste de l'Islam p. 12.<lb facs="#facs_1_l_14_1" n="N001" />par <persName ref="#zbz-p.713">Abderraham Tlili</persName>, doctorant en technologie.
+          </p>
+        </sp>
+        <p facs="#facs_1_r_15">
+          Economie
+        </p>
+        <p facs="#facs_1_r_16">
+          Anciens et nouveaux ordres économiques: p. 9.<lb facs="#facs_1_l_16_1" n="N001" />le paradoxe de la prospérité<lb facs="#facs_1_l_16_2" n="N002" />par <persName ref="#zbz-p.714">Stef. J.-M. Chr. de Jong</persName>,<lb facs="#facs_1_l_16_3" n="N003" />doctorant en économie internationale, IUHEL;<lb facs="#facs_1_l_16_4" n="N004" />assistant en économie, IUEE;<lb facs="#facs_1_l_16_5" n="N005" />professeur, économie internationale, ACS.
+        </p>
+        <p facs="#facs_1_r_17">
+          entretien avec...<lb facs="#facs_1_l_17_1" n="N001" />Monsieur <persName ref="#zbz-p.715">Lucien Aeschimann</persName>, agent général de la <orgName ref="#zbz-o.286">Pax, Société suisse d'assurance sur la vie</orgName>.
+        </p>
+        <p facs="#facs_1_r_18">
+          p. 3.
+        </p>
+        <p facs="#facs_1_r_19">
+          Littérature
+        </p>
+        <p facs="#facs_1_r_20">
+          Notes pour l'étude d'<persName ref="#zbz-p.716">Arthur Koestler</persName> p. 1.<lb facs="#facs_1_l_20_1" n="N001" />par un correspondant: <persName ref="#zbz-p.717">Olivier Dard</persName>.
+        </p>
+        <p facs="#facs_1_r_21">
+          Poésie
+        </p>
+        <p facs="#facs_1_r_22">
+          Un poète — une association p. 12.<lb facs="#facs_1_l_22_1" n="N001" />par <persName ref="#zbz-p.718">Marc Clouet</persName>, président de l'<orgName ref="#zbz-o.287">Association René-Louis Duchaud</orgName>.
+        </p>
+        <p facs="#facs_1_r_23">
+          Dossier
+        </p>
+        <p facs="#facs_1_r_24">
+          Comment peut-on être européen?<lb facs="#facs_1_l_24_1" n="N001" />La réponse de <persName ref="#zbz-p.720">Coudenhove-Kalergi</persName>. p. 6.<lb facs="#facs_1_l_24_2" n="N002" />par <persName ref="#zbz-p.721">Marco Pons</persName>, assistant à la <orgName ref="#zbz-o.288">Faculté de droit</orgName>.
+        </p>
+        <p facs="#facs_1_r_25">
+          Histoire
+        </p>
+        <p facs="#facs_1_r_26">
+          La Révolution genevoise de 1782 p. 5.<lb facs="#facs_1_l_26_1" n="N001" />par <persName ref="#zbz-p.722">Patrice H. Delpin</persName>, étudiant à la <orgName ref="#zbz-o.14">Faculté des lettres</orgName>.
+        </p>
+        <p facs="#facs_1_r_27">
+          Médecine
+        </p>
+        <p facs="#facs_1_r_28">
+          La contribution de la civilisation arabe à la médecine p. 8.<lb facs="#facs_1_l_28_1" n="N001" />par <persName ref="#zbz-p.723">Mina Buchs</persName>, docteur en biologie, chargée d'enseignement à la <orgName ref="#zbz-o.14">Faculté des lettres</orgName>.
+        </p>
+        <p facs="#facs_1_r_29">
+          Sémiologie - Esthétique
+        </p>
+        <p facs="#facs_1_r_30">
+          Incompétence de l'approche sémiologique post-saussurienne pour une définition du phénomène esthétique p. 4.<lb facs="#facs_1_l_30_1" n="N001" />par <persName ref="#zbz-p.724">Samuel Fischer</persName>, licencié ès lettres et ès sciences; diplômé d'archéologie, d'anthropologie et d'histoire des religions; docteur en archéologie préhistorique.
+        </p>
+        <p facs="#facs_1_r_31">
+          Editorial
+        </p>
+        <p facs="#facs_1_r_32">
+          Il est de coutume, dans le numéro deux de toute publication, de faire un bilan des réactions enregistrées après la parution du premier numéro.
+        </p>
+        <p facs="#facs_1_r_33">
+          Nous ne faillirons pas à cette tradition en rendant compte des échos favorables que la presse à données de l'Humaniste.
+        </p>
+        <p facs="#facs_1_r_34">
+          De nombreux auditeurs de l'émission «Portes ouvertes sur l'<orgName ref="#zbz-o.32">Université</orgName>» présentée par <persName ref="#zbz-p.725">Jacques Zanetta</persName> avec la collaboration de la rédaction de l'Humaniste nous ont écrit afin de recevoir des exemplaires du numéro un et de nous témoigner leur intérêt.
+        </p>
+        <p facs="#facs_1_r_35">
+          Des réactions positives ont également été enregistrées au sein de l'université et les très nombreux articles reçus nous ont contraint à faire passer de huit à douze le nombre de pages de ce numéro deux.
+        </p>
+        <p facs="#facs_1_r_36">
+          Il nous semble toutefois nécessaire de redéfinir encore une fois ce que nous entendons par humanisme.
+        </p>
+        <p facs="#facs_1_r_37">
+          L'humanisme ne s'achève pas à la <bibl ref="#zbz-w.81">Renaissance</bibl> mais, adapté à notre époque, il peut se traduire par un effort d'ouverture à tous les domaines du savoir, c'est-à-dire par un effort d'interdisciplinarité.
+        </p>
+        <p facs="#facs_1_r_38">
+          Cela signifie également que l'<orgName ref="#zbz-o.32">Université</orgName> n'est nullement un espace clos mais qu'elle doit aller à la rencontre du monde extérieur dont elle forme d'ailleurs les futurs cadres.
+        </p>
+        <p facs="#facs_1_r_39">
+          C'est dans cet esprit que notre rubrique économique se verra à l'avenir enrichie par des articles et interviews de chefs d'entreprises.
+        </p>
+        <p facs="#facs_1_r_40">
+          Nous souhaitons ainsi contribuer à l'intégration des universitaires dans le monde du travail.
+        </p>
+        <p facs="#facs_1_r_41">
+          Il nous reste encore à rencontrer des collaborateurs prêts à rendre compte de la vie culturelle et artistique genevoise.
+        </p>
+        <p facs="#facs_1_r_42">
+          Nous espérons de la sorte pouvoir remplir au mieux la mission que nous nous sommes données et nous vous fixons d'ores et déjà rendez-vous pour notre troisième parution.
+        </p>
+        <p facs="#facs_1_r_43">
+          Rédaction
+        </p>
+        <p facs="#facs_1_r_44">
+          «Notes pour l'étude d'<persName ref="#zbz-p.716">Arthur Koestler</persName>»
+        </p>
+        <p facs="#facs_1_r_45">
+          Par <persName ref="#zbz-p.717">Olivier Dard</persName>
+        </p>
+        <p facs="#facs_1_r_46">
+          Biographie
+        </p>
+        <p facs="#facs_1_r_47">
+          Né en 1905 à <placeName ref="#zbz-l.152">Budapest</placeName>, <persName ref="#zbz-p.716">Arthur Koestler</persName> poursuit des études scientifiques à <placeName ref="#zbz-l.297">Vienne</placeName> et fait ses débuts de journaliste en <placeName ref="#zbz-l.26">Allemagne</placeName>, comme correspondant puis rédacteur scientifique de la presse du groupe Velstein.
+        </p>
+        <p facs="#facs_1_r_48">
+          Dès 1930, il écrit des articles sur les voyages interplanétaires et la fission de l'atome. Ces premiers articles sont à l'origine d'un roman de science-fiction, «<bibl ref="#zbz-w.304">Le Bar du Crépuscule</bibl>», (1945).
+        </p>
+        <p facs="#facs_1_r_49">
+          Comme journaliste, il se rend en <placeName ref="#zbz-l.2">France</placeName>, en <placeName ref="#zbz-l.33">Palestine</placeName> et en <placeName ref="#zbz-l.111">Russie</placeName>:
+        </p>
+        <p facs="#facs_1_r_50">
+          il est alors un intellectuel promarxiste. En 1934, il est trésorier honoraire de l'Institut pour l'Etude
+        </p>
+        <p facs="#facs_1_r_51">
+          Suite en pages 10 et 11
+        </p>
+        <p facs="#facs_1_r_52">
+          Editeur
+        </p>
+        <sp>
+          <speaker><persName>Directeur général</persName></speaker>
+          <p facs="#facs_1_r_53">
+            Directeur général:<lb facs="#facs_1_l_53_1" n="N001" /><persName ref="#zbz-p.726">Christian Schärer</persName>
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>Directeur de la rédaction</persName></speaker>
+          <p facs="#facs_1_r_54">
+            Directeur de la rédaction:<lb facs="#facs_1_l_54_1" n="N001" /><persName ref="#zbz-p.727">Jacqueline Henry</persName>
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>Rédacteur en chef</persName></speaker>
+          <p facs="#facs_1_r_55">
+            Rédacteur en chef:<lb facs="#facs_1_l_55_1" n="N001" /><persName ref="#zbz-p.31">Philippe Monod</persName>
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>Rédacteur responsable</persName></speaker>
+          <p facs="#facs_1_r_56">
+            Rédacteur responsable:<lb facs="#facs_1_l_56_1" n="N001" /><persName ref="#zbz-p.728">Jésus Martin-Garcia</persName>
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>Impression</persName></speaker>
+          <p facs="#facs_1_r_57">
+            Impression:<lb facs="#facs_1_l_57_1" n="N001" />Imprimerie du<lb facs="#facs_1_l_57_2" n="N002" /><bibl ref="#zbz-w.518">Journal de Genève</bibl><lb facs="#facs_1_l_57_3" n="N003" />Rue Général-Dufour 20
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>Tirage</persName></speaker>
+          <p facs="#facs_1_r_58">
+            Tirage: 5000 exemplaires
+          </p>
+        </sp>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          2
+        </p>
+        <p facs="#facs_2_r_2">
+          A propos d'humanisme... la notion de l'homme chez <persName ref="#zbz-p.710">Michel Henry</persName>
+        </p>
+        <p facs="#facs_2_r_3">
+          par <persName ref="#zbz-p.711">Gabrielle Dufour-Kowalska</persName>
+        </p>
+        <p facs="#facs_2_r_4">
+          «Humanisme» est un mot ambigu, on ne sait pas toujours ce qu'il dissimule, il est mouvant et variable et flotte au gré des vagues de l'histoire. Si des héros de <hi rendition="#i"><bibl ref="#zbz-w.305">La Montagne magique</bibl></hi> de <persName ref="#zbz-p.729">Th. Mann</persName>, l'<placeName ref="#zbz-l.243">Italien</placeName> Settembrini, incarne l'idéal humaniste du début du siècle, il proclame sa foi inébranlable dans le progrès auquel l'humaniste du XVe siècle ne croyait pas encore et dont les Anciens n'avaient aucune idée. Pour les chrétiens la figure de l'homme exaltée par les humanistes de toute espèce n'est jamais qu'un pâle reflet de cet être «déformé», la «face humaine de Dieu», dit <persName ref="#zbz-p.730">Grégoire de Nysse</persName>, que la théologie mystique contemple en chacun de nous. Quant à notre temps, qui multiplie les revendications d'humanisme, il se signale en même temps, chez les plus grands de nos philosophes, par une lacune remarquable : l'absence d'une définition à la fois essentielle et positive, on aimerait dire substantielle, de notre humaniste nature.
+        </p>
+        <p facs="#facs_2_r_5">
+          Sans doute est-ce cette lacune qui a inspiré à l'un des rares métaphysiciens systématiques de notre temps, <persName ref="#zbz-p.710">Michel Henry</persName>, l'entreprise radicale qu'il a menée à bien, de <hi rendition="#i"><bibl ref="#zbz-w.306">L'Essence de la Manifestation</bibl> à <persName ref="#zbz-p.14">Marx</persName></hi>, et qui l'a conduit à élaborer une véritable ontologie de la réalité humaine. C'est la condition nécessaire si l'on prétend fonder quelque chose comme un «humanisme».
+        </p>
+        <sp>
+          <speaker><persName>Les grands principes rappelés par M. Henry sont simples et se laissent résumer en deux affirmations</persName></speaker>
+          <p facs="#facs_2_r_6">
+            Les grands principes rappelés par <persName ref="#zbz-p.710">M. Henry</persName> sont simples et se laissent résumer en deux affirmations :
+          </p>
+        </sp>
+        <p facs="#facs_2_r_7">
+          L'affirmation première est celle de la primauté absolue de la réalité humaine comme telle, en tant qu'elle est, par rapport à la pensée et à ses formes. La vie humaine, qui est une vie intérieure, possède une consistance propre, indépendamment des formes qu'elle se donne dans la culture et les sciences. L'homme n'est pas seulement le «berger de l'être», il n'en possède pas seulement le secret, il porte en lui la substance même.
+        </p>
+        <p facs="#facs_2_r_8">
+          L'affirmation seconde est corollaire. Toutes les manifestations de l'esprit sont un reflet
+        </p>
+        <p facs="#facs_2_r_9">
+          Pour tous vos imprimés
+        </p>
+        <p facs="#facs_2_r_10">
+          <orgName ref="#zbz-o.678">JOURNAL DE GENEVE</orgName>
+        </p>
+        <p facs="#facs_2_r_11">
+          2 imprimeries
+        </p>
+        <p facs="#facs_2_r_12">
+          2 adresses
+        </p>
+        <p facs="#facs_2_r_13">
+          Rue François-Dussaud, 20
+        </p>
+        <p facs="#facs_2_r_14">
+          Rue Général-Dufour, 5-7
+        </p>
+        <p facs="#facs_2_r_15">
+          de cette réalité originaire, des expressions de la vie et lui sont rigoureusement subordonnées.
+        </p>
+        <p facs="#facs_2_r_16">
+          Il s'ensuit que la science et la culture sont des phénomènes essentiellement articulés : elles ne forment pas un édifice autonome, un monde auto-suffisant, mais elles impliquent une référence à un autre «monde», qui échappe à l'objectivité et qui pourtant constitue l'horizon inéflable et la condition même de celle-ci.
+        </p>
+        <p facs="#facs_2_r_17">
+          C'est là un principe universel dont on devine qu'il est de nature à bouleverser notre concept de la science et à renouveler singulièrement les questions théoriques, méthodologiques et pratiques qu'elle pose. Car c'est bien à un retournement radical qu'on nous invite lorsqu'on nous propose d'orienter le savoir, non plus seulement vers le concept, l'idée et le phénomène, mais vers la réalité intérieure qu'ils dissimulent, transcendante aux phénomènes, rebelle aux concepts, et dont la vie humaine est la forme parfaite.
+        </p>
+        <p facs="#facs_2_r_18">
+          On ne peut que laisser entrevoir ici les conséquences capitales pour chacune des différentes sciences en particulier, de cette nouvelle finalité qui lui est conférée désormais et que le philosophe appelle sa «théologie vitale». Elle suppose un retour au sens propre de «phénomène» qui ne signifie plus l'essence mais l'apparence. Chaque science, pour tel ou tel phénomène, doit le découvrir et le déterminer comme tel, comme une manifestation multiforme de la nature ou de la vie traçant en quelque sorte ses propres symboles dans les structures visibles du monde. <persName ref="#zbz-p.52">S. Weil</persName> demandait à la science moderne qu'elle retrouvât le regard des Anciens et cette vertu contemplative de l'intelligence capable de percevoir à travers l'ordre et les lois de l'univers, une harmonie qui ne vient pas d'elle.
+        </p>
+        <p facs="#facs_2_r_19">
+          La science n'est pas à elle-même sa propre lumière. Le principe de sa rationalité ne réside pas dans la pensée (ni dans l'action). Il appartient à une réalité plus originaire, qui n'est pas seulement, comme le croyait <persName ref="#zbz-p.5">Heidegger</persName>, « l'être » oublié des métaphysiciens, mais cette passion d'être qu'il avait entrevue dans la vie de la conscience humaine et qui en constitue le fond, la nature même, la définition spécifique. L'homme est le seul vivant chez qui la vie ne veut pas seulement dire exister, vivre, mais éprouver sa vie, et qui ne peut échapper un instant à la souffrance et à la joie d'exister. Il n'y a pas d'autre essence humaine, pas d'autre principe du savoir, pas d'autre fondement de l'humanisme.
+        </p>
+        <p facs="#facs_2_r_20">
+          L'humanisme qui se borne à en appeler aux progrès de la raison est un humanisme abstrait, idéal et finalement utopique. Il oublie la vraie source créatrice de l'esprit, l'Eros secret qui le meut et qui l'inspire en toutes ses œuvres, et que <persName ref="#zbz-p.710">M. Henry</persName> appelle le «Logos de la vie». C'est parce que la vie est rationnelle en elle-même, que ses différents modes d'être et de connaître peuvent le devenir aussi, et notamment ce mode de connaissance apparemment neutre et plégagée de la vie qu'est la science.
+        </p>
+        <p facs="#facs_2_r_21">
+          Il y a ici matière à réflexion pour les savants qui méditent sur leur tâche, en particulier sur leur tâche pédagogique, en tant que dispensateurs du savoir. La valeur universelle, en principe, des connaissances dispensées dans les Universités ne repose pas seulement sur la rigueur et l'objectivité du discours scientifique. Elle a pour condition cette référence à la réalité que n'importe quel
+        </p>
+        <p facs="#facs_2_r_22">
+          langage formel porte en lui et à laquelle toute théorie doit se soumettre dans l'élaboration de ses concepts pour les rendre plus que valides, plus qu'adéquats à leur objet, pour les rendre vrais, c'est-à-dire transparents à l'être qui s'annonce en toute forme objective. C'est là le but, le telos commun aux différentes sciences et le principe de leur unification. Seule en effet une telle perspective ontologique permettrait aujourd'hui de surmonter l'extrême fragmentation et par conséquent l'extrême abstraction de la science qui est la nôtre. Perspective qui nous reconduit vers nous-mêmes, car la substance de l'être repose en nous ; ce que recherchent et visent obscurément les sciences repose à l'intérieur de l'homme, microthéos et microcosmos, comme l'enseignaient les savants humanistes d'autrefois.
+        </p>
+        <p facs="#facs_2_r_23">
+          <persName ref="#zbz-p.711">Gabrielle Dufour-Kowalska</persName>
+        </p>
+        <p facs="#facs_2_r_24">
+          Les racines spirituelles
+        </p>
+        <p>
+          être que des consommateurs, le cycle entier sombre dans un non-sens bien plus insupportable par son absurdité que la plus cruelle exploitation d'autrefois.
+        </p>
+        <p>
+          En même temps, et souvent chez les mêmes contempteurs, on constate une profonde mauvaise conscience engendrée par la supériorité de leur niveau de vie, comparé à celui des continents sous-développés, un besoin frénétique de répandre sur tous les bienfaits tant décriés de la science et de la technique, une virulente indignation face aux sacrifices insuffisants consentis dans ce but par «les autres» et par les États.
+        </p>
+        <p>
+          Une telle attitude de l'<placeName ref="#zbz-l.27">Occident</placeName> est évidemment schizophrénique. Elle le rend incapable de poser les problèmes réels, de faire les choix qu'imposent parfois des valeurs en conflit, de donner au développement qu'il propose au reste de la terre son sens en termes de <bibl ref="#zbz-w.286">Droits de l'homme</bibl>, comme aussi de reconnaître et d'affronter les limitations imposées par la condition humaine et la nature.
+        </p>
+        <p>
+          Il est primordial de réconcilier l'<placeName ref="#zbz-l.27">Occident</placeName> avec lui-même
+        </p>
+        <p>
+          C'est pourquoi (mais il y aurait encore bien d'autres raisons) il me paraît primordial de réconcilier l'<placeName ref="#zbz-l.27">Occident</placeName> avec lui-même, avec sa civilisation et avec la science et la technique qui l'ont façonnée de manière décisive. Or cette réconciliation ne pourra s'accomplir que si nous apprenons peu à peu à comprendre ce que c'est que science, ce que c'est que technique, ce que c'est qu'industrie, dans leur processus de
+        </p>
+        <p>
+          création, et non dans leurs produits inertes. Il s'agit d'assimiler culturellement les processus vécus de la recherche, de l'invention et de la production. Sinon, nous restons étrangers à la civilisation où nous vivons et dont nous profitons, comme les illettrés familiarisés avec une imprimerie, comme un auditeur venu se mettre au chaud dans la salle où se donne une conférence dans une langue qu'il ne comprend pas.
+        </p>
+        <p>
+          L'effort à accomplir est considérable
+        </p>
+        <p>
+          L'effort à accomplir est considérable parce que ce qu'il s'agit de saisir par des chemins difficiles est finalement trop élémentaire, trop immédiat, un vécu trop simple qui se dérobe devant les techniques intellectuelles apprises. La tentation constante, c'est de chercher refuge dans l'apprentissage compliqué, mais méthodiquement accessible, de la science déjà faite, des lois et des théories déjà énoncées et vérifiées, des mécanismes déjà en place et des objets déjà offerts, avec leur modes d'emploi, à la convoitise des acheteurs.
+        </p>
+        <p>
+          Heureusement, il existe quelques livres — peu nombreux et d'autant plus précieux — où de grands savants, avec la simplicité qui les caractérise, ont essayé de nous parler de la manière dont ils ont vécu la recherche. Comment se rompt, pour le savant, la continuité trop familière, habituelle, apprivoisée, du monde qui l'entoure ? Comment naît la question ? De quel manque, de quelle insatisfaction, de quel étonnement ? Et ce manque lui-
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          C.S. Monsieur <persName ref="#zbz-p.715">Aeschimann</persName>, je tiens tout d'abord à vous remercier d'accorder à l'Humaniste cet entretien. Nous allons y aborder diverses questions ayant trait aux relations entre le monde professionnel et l'université. Mais dites-moi tout d'abord, quelle a été votre réaction après que notre journal vous ait demandé ce rendez-vous.
+        </p>
+        <sp>
+          <speaker><persName>L. Aeschimann</persName></speaker>
+          <p facs="#facs_3_r_2">
+            L. <persName ref="#zbz-p.715">Aeschimann</persName>: Un certain intérêt, car, en tant qu'ancien universitaire, je suis toujours désireux de suivre ce qui se passe à l'université, bien que le manque de temps m'en empêche souvent.
+          </p>
+        </sp>
+        <p facs="#facs_3_r_3">
+          C.S.: Pour entrer dans le vif du sujet, je vous demanderai tout d'abord de me dire ce que vous attendez d'un universitaire. Attendez-vous de sa part qu'il soit bardé de diplômes, licences et autres certificats de hautes écoles?
+        </p>
+        <p facs="#facs_3_r_4">
+          L. <persName ref="#zbz-p.715">Aeschimann</persName>: La question est complexe. Ce qui importe, c'est que la personne extérieure, ce qu'elle exprime d'elle-même. Le meilleur diplômé, s'il est replié sur lui-même, ne nous sera d'annexité utilité.
+        </p>
+        <sp>
+          <speaker><persName>C.S.</persName></speaker>
+          <p facs="#facs_3_r_5">
+            C.S.: Mais vous-même, vous avez obtenu deux licences.
+          </p>
+        </sp>
+        <p facs="#facs_3_r_6">
+          Entretien avec...
+        </p>
+        <p facs="#facs_3_r_7">
+          M. <persName ref="#zbz-p.715">Lucien Aeschimann</persName>
+        </p>
+        <p facs="#facs_3_r_8">
+          Licencié ès sciences sociales et ès sciences politiques, agent général de la <orgName ref="#zbz-o.286">PAX</orgName>, <orgName ref="#zbz-o.575">Société</orgName> suisse d'assurances sur la vie
+        </p>
+        <p facs="#facs_3_r_9">
+          Cet entretien s'est déroulé dans le cadre des relations que tient à établir l'Humaniste avec la cité et plus particulièrement avec le monde économique et politique (réd.)
+        </p>
+        <sp>
+          <speaker />
+          <p facs="#facs_3_r_10">
+            après de solides études commerciales... Alors?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>L. Aeschimann</persName></speaker>
+          <p facs="#facs_3_r_11">
+            L. <persName ref="#zbz-p.715">Aeschimann</persName>: Oui, car si l'on a des intérêts multiples, c'est avant de s'engager dans la vie professionnelle qu'il faut y répondre. Et lorsque l'on est sur la lancée des études, autant saisir cette chance d'élargir son horizon. Mais je persiste à penser que plusieurs licences ou diplômes constituent un élément positif sans être pour autant indispensable. Le plus important reste tout de même d'être ouvert au monde.
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>C.S.</persName></speaker>
+          <p facs="#facs_3_r_12">
+            C.S.: Dans ce sens, une expérience professionnelle parallèle aux études constituerait le meilleur garant d'une réussite professionnelle?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>L. Aeschimann</persName></speaker>
+          <p facs="#facs_3_r_13">
+            L. <persName ref="#zbz-p.715">Aeschimann</persName>: Il est certain qu'un candidat pouvant faire
+          </p>
+        </sp>
+        <p facs="#facs_3_r_14">
+          état d'expériences professionnelles aura davantage de chances qu'un autre. Le mieux restant évidemment de posséder expérience et diplômes! À mon sens, l'universitaire le plus apte à servir la société correspondant assez bien à votre définition de l'humaniste: il devrait rayonner, être ouvert, être disponible, et c'est l'un des rôles de l'université que de former des gens ayant un large horizon et étant ouverts sur le monde extérieur.
+        </p>
+        <sp>
+          <speaker><persName>C.S.</persName></speaker>
+          <p facs="#facs_3_r_15">
+            C.S.: <bibl ref="#zbz-w.595">Esprit</bibl> ouvert et culture me semblent indissociables, qu'en est-il à votre avis?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>L. Aeschimann</persName></speaker>
+          <p facs="#facs_3_r_16">
+            L. <persName ref="#zbz-p.715">Aeschimann</persName>: En effet, une solide base culturelle me semble indispensable de nos jours. Une licence ès <bibl ref="#zbz-w.187">Lettres</bibl> peut d'ailleurs répondre à ce besoin
+          </p>
+        </sp>
+        <p facs="#facs_3_r_17">
+          et je suis de plus persuadé que l'une des meilleures façons d'aider nos contemporains est de bien comprendre le monde passé. Cette importance de nos racines culturelles ne peut être assez soulignée, surtout dans un monde troublé et désemparé qui ne sait où se tourner.
+        </p>
+        <sp>
+          <speaker><persName>C.S.</persName></speaker>
+          <p facs="#facs_3_r_18">
+            C.S.: En fait, à vous entendre, on peut imaginer que la formation de l'université doit également passer par un engagement personnel qui le porte à être curieux, à s'intéresser à la société dans laquelle il vit.
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>L. Aeschimann</persName></speaker>
+          <p facs="#facs_3_r_19">
+            L. <persName ref="#zbz-p.715">Aeschimann</persName>: Oui, mais pour réussir dans les affaires, il ne faut pas forcément militer dans trente-six sociétés, être inscrit dans un parti, etc. De même, il ne faut pas être accaparé par ses activités professionnelles. Il n'en reste pas moins qu'il est indispensable d'être assez proche de divers comités et associations.
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>C.S.</persName></speaker>
+          <p facs="#facs_3_r_20">
+            C.S.: Permettez-moi maintenant de vous poser une question naïve. À l'université, une commission de l'emploi, entre autres recommandations, conseille aux universitaires en quête de travail de prêter attention à leur aspect extérieur. <placeName ref="#zbz-l.13">Est</placeName>-ce à dire que le port de la cravate reste intimement lié à la condition « d'homme d'affaires »?
+          </p>
+        </sp>
+        <p facs="#facs_3_r_21">
+          L. <persName ref="#zbz-p.715">Aeschimann</persName>: Je pense que lorsque l'on travaille dans un groupe, dans une société, il faut penser aux réactions des autres, de ceux qui doivent nous accepter. S'il est certain que dans des entreprises traditionnelles un maintien conventionnel est préférable, dans l'industrie, les compétences passent avant les apparences. Il est toutefois clair que l'habillement correspond presque toujours au caractère de la personne, et dans ce sens, il constitue un élément important lors de l'embauche de personnel.
+        </p>
+        <sp>
+          <speaker><persName>C.S.</persName></speaker>
+          <p facs="#facs_3_r_22">
+            C.S.: Vous avez souligné jusqu'ici l'importance pour l'universitaire d'être ouvert, d'être cultivé, de s'intéresser à la société et d'avoir une certaine souplesse plutôt que de ne compter que sur ses seuls titres. Il ne serait peut-être pas inutile de rapprocher cette question du fameux débat qui oppose « spécialistes » à « généralistes »?
+          </p>
+        </sp>
+        <sp>
+          <speaker><persName>L. Aeschimann</persName></speaker>
+          <p facs="#facs_3_r_23">
+            L. <persName ref="#zbz-p.715">Aeschimann</persName>: En effet, tout dépend de la fonction. Le diplôme universitaire sera par exemple jugé indispensable lorsqu'une entreprise recherchera un cadre, c'est-à-dire un homme traitant d'égal à égal avec d'autres entreprises ou avec des clients. De toute façon, même un « manager », un « meneur d'hommes », entraînera mieux son équipe s'il a une connaissance approfondie du monde. Et pour moi, cette connaissance ne s'acquiert en principe qu'en cours d'études, elles-mêmes approfondies. Je dirai encore que le meilleur employeur est celui qui connaît et qui peut faire le travail qu'il
+          </p>
+        </sp>
+        <p facs="#facs_3_r_24">
+          de la civilisation scientifique et technique
+        </p>
+        <sp>
+          <speaker />
+          <p facs="#facs_3_r_25">
+            même, à quel besoin correspond-il?
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p facs="#facs_3_r_26">
+            Quand le savant cherche « une réponse » ou « une solution », quels critères applique-t-il? Quelle est, en profondeur, son exigence? Quelle est l'espérance aussi, qui sous-tend sa recherche, quelle est son attente à l'égard de la cohérence encore cachée qu'il veut rendre manifeste et dont il implique, en anticipant, l'existence?
+          </p>
+        </sp>
+        <sp>
+          <speaker />
+          <p facs="#facs_3_r_27">
+            A quoi correspond (dans l'esprit? dans la nature? dans l'être?) la cohérence comme telle? Et l'unité? Et la simplicité? Et l'évidence?
+          </p>
+        </sp>
+        <p facs="#facs_3_r_28">
+          Il y a comme un symbolisme dans l'élaboration même des langages symboliques dont la science se sert. De quel ordre est-il? A quoi tent-il? Varie-t-il, au fil de l'histoire des sciences, en même temps que leurs langages symboliques — ou représente-t-il au contraire une constante, sous-tendue aux changements historiques eux-mêmes, qui trouvent qu'elle leur justification et leur sens?
+        </p>
+        <sp>
+          <speaker />
+          <p facs="#facs_3_r_29">
+            On pourrait multiplier les questions. Le seul fait qu'elles se posent même quand on les ignore, ou simplement qu'on puisse les poser, semble indiquer que les sciences, avec la multiplicité et la spécificité rigoureuse de leurs méthodes, sont entées — comme la pensée philosophique, la littérature, la poésie, la musique, les arts — sur le devenir historique d'une condition humaine qui, à travers ses constantes, ne cesse de s'inventer, mais qui, à travers son invention, ne cesse de se rapporter à la constante de l'être.
+          </p>
+        </sp>
+        <p facs="#facs_3_r_30">
+          Je pense que seuls des savants entraînés aux disciplines scientifiques les plus exigentes pourraient tenter de répondre aux questions ci-dessus, ou d'en poser d'autres. Ils élaboreront ainsi, pour eux-mêmes, pour les autres, pour l'époque entière, les expériences intellectuelles permettant de saisir les racines et les fins culturelles des sciences, de les réinsérer dans l'histoire de la culture occidentale, et de leur rendre pour tous leur signification vécue, leur exigence morale, leur beauté et leur humilité.
+        </p>
+        <p facs="#facs_3_r_31">
+          La technique a commencé avec le premier outil
+        </p>
+        <p facs="#facs_3_r_32">
+          Une réflexion analogue devrait être poursuivie et approfondie concernant l'histoire et le prodigieux essor de la technique. La technique a commencé avec le premier outil, la première arme, la première roue. Ici encore, quelle insatisfaction, quelle urgence, quel rêve, quelle nostalgie a mis en branle l'imagination? Quelles sont les implications de cette visée-de-ce-qui-s'est-pas-encore, manifeste dans l'outil le plus simple? Comment situer la recherche technique entre le vouloir-vivre immédiat et la perspective de la mort? Comment s'organisent en elle soumission à l'ordre déterministe donné de la nature et invention de possibilités futures? Comment se sont conjuguées, au cours de son histoire, l'action inventive solitaire et la division efficace du travail? Quelles sont les relations, nécessaires ou déformées, entre les exigences quantitatives de la production et les structures sociales à l'intérieur desquelles
+        </p>
+        <p facs="#facs_3_r_33">
+          vivent et travaillent les personnes? Y a-t-il un sens humain dans l'interdépendance des hommes, multipliée et dramatisée par la technique, et par la une possibilité de déchiffrer la technique elle-même en termes de solidarité et d'élaboration culturelle? Peut-être découvrira-t-on que la technique, loin de représenter « le matérialisme » de la civilisation occidentale, manifeste la puissance incarnative d'un esprit, capable de plier, en lui obéissant, le déterminisme de la nature à ses propres finalités, et donc, par la réduction de la peine nécessaire à la survie, à sa propre libération.
+        </p>
+        <sp>
+          <speaker><persName>Les rapports humains</persName></speaker>
+          <p facs="#facs_3_r_34">
+            Les rapports humains: reflet des institutions et des mœurs
+          </p>
+        </sp>
+        <p facs="#facs_3_r_35">
+          Il resterait à examiner, sans aucune intention apologétique ou rhétorique, de quelle manière les rapports humains correspondant à tel ou tel stade de l'évolution technique se sont exprimés dans les institutions et les mœurs — comment les rapports de force, correspondant au règne du plus fort dans la nature, se sont entrecroisés, au fil de l'histoire, avec les exigences de libération, celles des <bibl ref="#zbz-w.286">Droits de l'homme</bibl>, agissant dans l'histoire bien avant leur mise en forme juridique et morale.
+        </p>
+        <p facs="#facs_3_r_36">
+          Une telle étude, je crois, livreait aux <persName ref="#zbz-p.436">Européens</persName> un sens plus juste de leur identité et leur permettrait de se réconcilier avec eux-mêmes, avec leur passé et leur avenir — ce qui leur rendrait un présent, pour la décision et l'action.
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          (Les sous-titres sont de la rédaction)
+        </p>
+        <p>
+          Suite en page 10
+        </p>
+      </div>
+      </body></text>
+</TEI>

@@ -1,0 +1,43 @@
+{
+  "doc_id": "3180",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 53,
+  "lang": "deu",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: Mensch - Welt Widerspruch, Hersch/Pieper/Zimmerli, deu"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 1 Warning (W9: 43/363 ohne ref)"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "5 Fussnoten"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 333p 7o 23l 108w = 471"
+    },
+    {
+      "severity": "info",
+      "code": "S3",
+      "msg": "sp/speaker-Struktur fuer Podiumsdiskussion, Publikumsfragen markiert"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Philosophisches Gespraech Hersch/Pieper/Zimmerli ueber Widerspruch, Freiheit, Luege"
+    }
+  ]
+}

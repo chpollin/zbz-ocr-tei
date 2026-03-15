@@ -17,6 +17,8 @@
         sortAsc: true,
         searchIndex: null,
         searchQuery: '',
+        fullTextIndex: null,
+        searchSnippets: {},
         curationStatuses: {},
         serverAvailable: false
     };
@@ -25,26 +27,63 @@
         types: [],
         langs: [],
         forms: [],
+        screening: [],
         dateFrom: '',
         dateTo: ''
     };
 
+    // Screening/Curation labels from shared module
+    const SCREENING_LABELS = E.SCREENING_LABELS;
+    const SCREENING_CLASSES = E.SCREENING_CLASSES;
+
     // --- Init ---
     function init() {
-        E.loadCatalog().then((catalog) => {
+        Promise.all([E.loadCatalog(), E.loadSearchIndex()]).then((results) => {
+            const catalog = results[0];
+            const searchData = results[1];
             if (!catalog) return;
             state.catalog = catalog;
             state.documents = catalog.documents || [];
             state.filtered = state.documents.slice();
 
+            // Full-text index
+            if (searchData && searchData.length) {
+                state.fullTextIndex = E.createFullTextSearchIndex(searchData);
+                state._searchData = searchData;
+            }
+
             initSearchIndex();
             renderFilters();
             bindEvents();
+            readUrlFilters();
             applyFilters();
             _checkCurationServer();
 
-            ZBZ.log('Catalog', `${state.documents.length} Docs | MiniSearch: ${state.searchIndex ? 'aktiv' : 'aus'}`);
+            ZBZ.log('Catalog', `${state.documents.length} Docs | Meta-Search: ${state.searchIndex ? 'aktiv' : 'aus'} | Volltext: ${state.fullTextIndex ? 'aktiv' : 'aus'}`);
         });
+    }
+
+    // --- URL Parameter Pre-filtering ---
+    function readUrlFilters() {
+        const q = E.getParam('q');
+        if (q) {
+            state.searchQuery = q;
+            const searchInput = E.$('#catalog-search');
+            if (searchInput) searchInput.value = q;
+        }
+        ['type', 'lang', 'form', 'screening'].forEach((param) => {
+            const val = E.getParam(param);
+            if (val) {
+                const cb = E.$(`input[name="${param}"][value="${val}"]`);
+                if (cb) cb.checked = true;
+            }
+        });
+        const view = E.getParam('view');
+        if (view && (view === 'table' || view === 'cards' || view === 'gallery')) {
+            state.view = view;
+            E.$$('.ed-view-btn').forEach((b) => { b.classList.toggle('active', b.getAttribute('data-view') === view); });
+        }
+        updateFilterState();
     }
 
     // --- MiniSearch ---
@@ -100,6 +139,12 @@
         if (formContainer) {
             const forms = catalog.corpus && catalog.corpus.forms ? catalog.corpus.forms : {};
             renderCheckboxGroup(formContainer, forms, 'form', E.PUB_FORM_LABELS);
+        }
+
+        // Screening
+        const screenContainer = E.$('#filter-screening');
+        if (screenContainer && catalog.corpus && catalog.corpus.screening) {
+            renderCheckboxGroup(screenContainer, catalog.corpus.screening, 'screening', SCREENING_LABELS);
         }
     }
 
@@ -184,6 +229,7 @@
         filters.types = getCheckedValues('type');
         filters.langs = getCheckedValues('lang');
         filters.forms = getCheckedValues('form');
+        filters.screening = getCheckedValues('screening');
     }
 
     function getCheckedValues(name) {
@@ -192,16 +238,34 @@
 
     function applyFilters() {
         let docs = state.documents;
+        state.searchSnippets = {};
 
-        // Search
-        if (state.searchQuery && state.searchIndex) {
-            const results = state.searchIndex.search(state.searchQuery);
-            const ids = {};
-            results.forEach((r) => { ids[r.id] = true; });
-            docs = docs.filter((d) => ids[d.id]);
-        } else if (state.searchQuery) {
+        // Search: merge metadata + full-text results
+        if (state.searchQuery) {
+            const metaIds = {};
+            const fullIds = {};
+
+            // Metadata search
+            if (state.searchIndex) {
+                state.searchIndex.search(state.searchQuery).forEach((r) => { metaIds[r.id] = true; });
+            }
+            // Full-text search (with snippets)
+            if (state.fullTextIndex) {
+                const textMap = {};
+                if (state._searchData) {
+                    state._searchData.forEach((d) => { textMap[d.id] = d.text || ''; });
+                }
+                state.fullTextIndex.search(state.searchQuery, { limit: 100 }).forEach((r) => {
+                    fullIds[r.id] = true;
+                    if (textMap[r.id]) {
+                        state.searchSnippets[r.id] = E.extractSnippet(textMap[r.id], state.searchQuery);
+                    }
+                });
+            }
+            // Fallback: simple string match
             const q = state.searchQuery.toLowerCase();
             docs = docs.filter((d) => {
+                if (metaIds[d.id] || fullIds[d.id]) return true;
                 return (d.title && d.title.toLowerCase().indexOf(q) > -1) ||
                        (d.author && d.author.toLowerCase().indexOf(q) > -1) ||
                        (d.id.indexOf(q) > -1) ||
@@ -224,6 +288,14 @@
             docs = docs.filter((d) => filters.forms.indexOf(d.pub_form) > -1);
         }
 
+        // Screening filter
+        if (filters.screening.length) {
+            docs = docs.filter((d) => {
+                const s = d.screening || 'NOT_SCREENED';
+                return filters.screening.indexOf(s) > -1;
+            });
+        }
+
         // Date range
         if (filters.dateFrom) {
             docs = docs.filter((d) => d.date && d.date >= filters.dateFrom);
@@ -242,20 +314,39 @@
         });
 
         state.filtered = docs;
+        syncUrlState();
         renderResults();
+    }
+
+    function syncUrlState() {
+        const params = {};
+        if (state.searchQuery) params.q = state.searchQuery;
+        if (filters.types.length === 1) params.type = filters.types[0];
+        if (filters.langs.length === 1) params.lang = filters.langs[0];
+        if (filters.forms.length === 1) params.form = filters.forms[0];
+        if (filters.screening.length === 1) params.screening = filters.screening[0];
+        if (state.view !== 'table') params.view = state.view;
+        E.setParams(params);
     }
 
     function getSortValue(doc, key) {
         if (key === 'id') return parseInt(doc.id, 10);
         if (key === 'pages') return doc.page_count || 0;
+        if (key === 'screening') return doc.screening || 'Z_NONE';
         const v = doc[key];
         return v ? String(v).toLowerCase() : '';
+    }
+
+    function _screeningBadgeHtml(doc) {
+        return ' ' + E.screeningBadgeHtml(doc.screening);
     }
 
     // --- Rendering ---
     function renderResults() {
         updateResultCount();
-        if (state.view === 'cards') {
+        if (state.view === 'gallery') {
+            renderGallery();
+        } else if (state.view === 'cards') {
             renderCards();
         } else {
             renderTable();
@@ -280,7 +371,8 @@
             { key: 'date', label: 'Datum' },
             { key: 'type', label: 'Typ' },
             { key: 'lang', label: 'Sprache' },
-            { key: 'pages', label: 'Seiten' }
+            { key: 'pages', label: 'Seiten' },
+            { key: 'screening', label: 'Screening' }
         ];
         let html = '<div class="ed-table-wrap"><table class="ed-table">';
         html += '<thead><tr>';
@@ -297,12 +389,15 @@
             if (d.demo) html += ' <span class="ed-badge ed-badge-demo">Demo</span>';
             html += _curationBadgeHtml(d.id);
             html += '</td>';
-            html += `<td class="td-title">${E.esc(d.title || '-')}</td>`;
+            html += `<td class="td-title">${E.esc(d.title || '-')}`;
+            if (state.searchSnippets[d.id]) html += `<div class="ed-search-snippet">${state.searchSnippets[d.id]}</div>`;
+            html += '</td>';
             html += `<td>${E.esc(d.author || '-')}</td>`;
             html += `<td>${E.esc(d.date || '-')}</td>`;
             html += `<td><span class="ed-badge ed-badge-type">${E.esc(d.type)}</span></td>`;
             html += `<td>${E.esc(d.lang)}</td>`;
             html += `<td>${d.page_count || '-'}</td>`;
+            html += `<td>${_screeningBadgeHtml(d)}</td>`;
             html += '</tr>';
         });
 
@@ -341,6 +436,26 @@
         let html = '<div class="ed-catalog-cards">';
         state.filtered.forEach((d) => {
             html += E.buildCardHtml(d, { showPages: true });
+        });
+        html += '</div>';
+        container.innerHTML = html;
+    }
+
+    function renderGallery() {
+        const container = E.$('#catalog-results');
+        if (!container) return;
+
+        let html = '<div class="ed-catalog-gallery">';
+        state.filtered.forEach((d) => {
+            const imgSrc = E.imagePath(d.id, 1);
+            const title = d.title || 'Dokument ' + d.id;
+            const placeholder = `<div class="ed-gallery-item-placeholder">Dok. ${E.esc(d.id)}</div>`;
+            html += `<a href="reader.html?doc=${E.esc(d.id)}" class="ed-gallery-item">`;
+            html += `<img src="${imgSrc}" alt="${E.esc(title)}" loading="lazy" onerror="this.outerHTML='${placeholder.replace(/'/g, "\\'")}'">`;
+            html += '<div class="ed-gallery-item-overlay">';
+            html += `<div class="ed-gallery-item-title">${E.esc(title)}</div>`;
+            html += `<div class="ed-gallery-item-meta">${E.esc(d.id)} &middot; ${d.page_count || '?'} S.${_screeningBadgeHtml(d)}</div>`;
+            html += '</div></a>';
         });
         html += '</div>';
         container.innerHTML = html;
@@ -413,9 +528,7 @@
     function _curationBadgeHtml(docId) {
         const status = state.curationStatuses[docId];
         if (!status) return '';
-        const labels = { draft: 'Entwurf', in_review: 'Pruefung', approved: 'Freigegeben' };
-        const classes = { draft: 'ed-badge-curation-draft', in_review: 'ed-badge-curation-review', approved: 'ed-badge-curation-approved' };
-        return ` <span class="ed-badge ${classes[status] || ''}">${E.esc(labels[status] || status)}</span>`;
+        return ' ' + E.curationBadgeHtml(status);
     }
 
     // --- Auto-init ---

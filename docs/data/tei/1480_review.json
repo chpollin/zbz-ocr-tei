@@ -1,0 +1,52 @@
+{
+  "doc_id": "1480",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        2
+      ],
+      "notes": "S.1 e-periodica Metadaten, S.2 Artikelseite Revue suisse des infirmieres. Overlay zeigt mehrspaltige Erkennung."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Gute OCR-Qualitaet. Hersch-Appell und Unterzeichnerliste klar lesbar. Buchbesprechungen auf deutsch korrekt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "3-Spalten-Layout auf S.2 korrekt aufgeloest. Hersch-Text, Unterzeichnerliste, Buchbesprechungen sauber getrennt."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "Valide. type=review passend. Titel Journee des malades 1977 korrekt. Sprache fra+deu. Datum 1977."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 15,
+        "orgName": 10,
+        "placeName": 0,
+        "bibl": 0
+      },
+      "notes": "Hersch (GND:118815679) korrekt. 12 Unterzeichner mit GND:unknown aber plausibel."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Kohaerenter Hersch-Appell mit philosophischer Reflexion. listBibl logisch."
+    }
+  },
+  "findings": [
+    "Sauberer Hersch-Text mit klarer Botschaft",
+    "Unterzeichnerliste von 12 Personen korrekt erfasst",
+    "type=review korrekter div-Typ"
+  ],
+  "overall_notes": "Revue suisse des infirmieres 2/1977. Hersch-Appell zur Journee des malades 1977. Sehr gute Qualitaet."
+}

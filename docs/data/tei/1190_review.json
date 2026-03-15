@@ -1,0 +1,52 @@
+{
+  "doc_id": "1190",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        2
+      ],
+      "notes": "Doppelseite Journal de Geneve, 16 Jan 1975. Overlay zeigt korrekte mehrspaltige Zonenerkennung."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "S.1 Ende: repetitive OCR-Halluzination in r_7. S.2 insgesamt gute Qualitaet. Nachruf auf Helene Naef gut lesbar."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Komplexes Zeitungslayout korrekt segmentiert. Nachruf, Caritas, UCJG, Avis mortuaires als separate Abschnitte."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": [],
+      "notes": "Valide. Titel JOURNAL DE GENEVE statt des Hersch-Artikels (Nachruf Helene Naef). Generischer Zeitungstitel."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 2,
+        "orgName": 8,
+        "placeName": 0,
+        "bibl": 1
+      },
+      "notes": "Jeanne Hersch (GND:118815679) korrekt. Karl Jaspers (GND:118557106) korrekt. Washington/Moscou als orgName."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Titel-Mismatch: JOURNAL DE GENEVE statt spezifischem Artikeltitel. Der Hersch-Inhalt ist der Nachruf auf Helene Naef."
+    }
+  },
+  "findings": [
+    "Titel JOURNAL DE GENEVE statt spezifischem Artikeltitel -- Hersch-Beitrag ist Nachruf auf Helene Naef",
+    "OCR-Halluzination am Ende von S.1",
+    "Komplexe Zeitung mit mehreren unabhaengigen Artikeln"
+  ],
+  "overall_notes": "Journal de Geneve 16.1.1975, Doppelseite. Hersch-Relevanz: Nachruf auf Helene Naef (Jaspers-Uebersetzerin). Gesamtstruktur gut, OCR meist lesbar."
+}

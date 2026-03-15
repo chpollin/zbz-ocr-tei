@@ -1,0 +1,38 @@
+{
+  "doc_id": "1250",
+  "reviewer": "quality-screener-t2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 6,
+  "lang": "fra",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p003"],
+  "findings": [
+    {
+      "severity": "info",
+      "category": "metadata",
+      "msg": "Titel L'AVORTEMENT korrekt. Autorin Jeanne Hersch. Datum 1975. Sprache fra korrekt. sourceDesc als bibl (nicht biblStruct)."
+    },
+    {
+      "severity": "info",
+      "category": "structure",
+      "msg": "6 Seiten. S.1 Titelblatt (Konferenz: Colloque interdisciplinaire, Geneve 29-30 Nov 1974). S.2 Inhaltsverzeichnis mit detaillierter div-Struktur. S.4 (n=67) Beginn von Herschs Beitrag. div type=conference, type=bibliography korrekt."
+    },
+    {
+      "severity": "info",
+      "category": "entities",
+      "msg": "Hersch (GND:118815679). Zahlreiche Konferenzteilnehmer als persName (Morand, Heer, Graven, Geisendorf, Kellerhals, Pasini, Rumpf, Cottier, Morel, Simone Veil). orgName fuer Fakultaeten und Universitaet Genf. placeName fuer Geneve."
+    },
+    {
+      "severity": "info",
+      "category": "text_quality",
+      "msg": "Franzoesischer Text zur Abtreibungsdebatte koharent und vollstaendig. Argumentation von Hersch (Freiheit der Frau, sensibilite sociale) sprachlich korrekt."
+    },
+    {
+      "severity": "info",
+      "category": "layout",
+      "msg": "p003-Overlay: Inhaltsverzeichnis-Seite mit Schluss und Annexen, Zonen korrekt erfasst. figure-Element fuer Logo auf S.1."
+    }
+  ]
+}

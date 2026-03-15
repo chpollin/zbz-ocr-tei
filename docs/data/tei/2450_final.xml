@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Angst</title>
+        <author>Hans Jürgen Schultz</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2450</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>Angst</title>
+            <author>Hans Jürgen Schultz</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1987</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). No issues found</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="695" lry="1165">
+      <zone xml:id="facs_1_r_1" ulx="142" uly="79" lrx="551" lry="122" />
+      <zone xml:id="facs_1_r_2" ulx="111" uly="142" lrx="582" lry="290" />
+      <zone xml:id="facs_1_r_3" ulx="25" uly="302" lrx="207" lry="323" />
+      <zone xml:id="facs_1_r_4" ulx="25" uly="364" lrx="344" lry="417" />
+      <zone xml:id="facs_1_r_5" ulx="25" uly="454" lrx="143" lry="506" />
+      <zone xml:id="facs_1_r_6" ulx="25" uly="538" lrx="189" lry="591" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="695" lry="1165">
+      <zone xml:id="facs_2_r_1" ulx="79" uly="76" lrx="239" lry="98" />
+      <zone xml:id="facs_2_r_2" ulx="79" uly="96" lrx="451" lry="120" />
+      <zone xml:id="facs_2_r_3" ulx="78" uly="116" lrx="301" lry="138" />
+      <zone xml:id="facs_2_r_4" ulx="79" uly="135" lrx="400" lry="160" />
+      <zone xml:id="facs_2_r_5" ulx="79" uly="156" lrx="335" lry="181" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_3_r_1" ulx="247" uly="85" lrx="449" lry="117" />
+      <zone xml:id="facs_3_r_2" ulx="163" uly="147" lrx="531" lry="182" />
+      <zone xml:id="facs_3_r_3" ulx="99" uly="736" lrx="657" lry="1049" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_4_r_1" ulx="48" uly="80" lrx="609" lry="412" />
+      <zone xml:id="facs_4_r_2" ulx="46" uly="412" lrx="610" lry="616" />
+      <zone xml:id="facs_4_r_3" ulx="45" uly="615" lrx="609" lry="724" />
+      <zone xml:id="facs_4_r_4" ulx="45" uly="718" lrx="609" lry="978" />
+      <zone xml:id="facs_4_r_5" ulx="48" uly="974" lrx="609" lry="1049" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_5_r_1" ulx="98" uly="81" lrx="665" lry="436" />
+      <zone xml:id="facs_5_r_2" ulx="99" uly="437" lrx="665" lry="819" />
+      <zone xml:id="facs_5_r_3" ulx="100" uly="818" lrx="664" lry="1052" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_6_r_1" ulx="46" uly="76" lrx="609" lry="161" />
+      <zone xml:id="facs_6_r_2" ulx="47" uly="152" lrx="610" lry="406" />
+      <zone xml:id="facs_6_r_3" ulx="46" uly="406" lrx="609" lry="535" />
+      <zone xml:id="facs_6_r_4" ulx="46" uly="536" lrx="609" lry="717" />
+      <zone xml:id="facs_6_r_5" ulx="47" uly="714" lrx="609" lry="839" />
+      <zone xml:id="facs_6_r_6" ulx="45" uly="842" lrx="609" lry="1050" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_7_r_1" ulx="94" uly="77" lrx="658" lry="125" />
+      <zone xml:id="facs_7_r_2" ulx="95" uly="125" lrx="659" lry="304" />
+      <zone xml:id="facs_7_r_3" ulx="95" uly="306" lrx="660" lry="432" />
+      <zone xml:id="facs_7_r_4" ulx="94" uly="432" lrx="659" lry="687" />
+      <zone xml:id="facs_7_r_5" ulx="94" uly="689" lrx="659" lry="869" />
+      <zone xml:id="facs_7_r_6" ulx="94" uly="867" lrx="659" lry="972" />
+      <zone xml:id="facs_7_r_7" ulx="95" uly="967" lrx="659" lry="1049" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_8_r_1" ulx="55" uly="72" lrx="619" lry="204" />
+      <zone xml:id="facs_8_r_2" ulx="55" uly="201" lrx="619" lry="383" />
+      <zone xml:id="facs_8_r_3" ulx="55" uly="380" lrx="618" lry="688" />
+      <zone xml:id="facs_8_r_4" ulx="56" uly="684" lrx="618" lry="760" />
+      <zone xml:id="facs_8_r_5" ulx="54" uly="762" lrx="618" lry="918" />
+      <zone xml:id="facs_8_r_6" ulx="54" uly="915" lrx="617" lry="1045" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_9_r_1" ulx="89" uly="76" lrx="653" lry="125" />
+      <zone xml:id="facs_9_r_2" ulx="88" uly="125" lrx="653" lry="457" />
+      <zone xml:id="facs_9_r_3" ulx="89" uly="457" lrx="654" lry="740" />
+      <zone xml:id="facs_9_r_4" ulx="89" uly="740" lrx="653" lry="992" />
+      <zone xml:id="facs_9_r_5" ulx="90" uly="995" lrx="653" lry="1047" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_10_r_1" ulx="56" uly="76" lrx="620" lry="251" />
+      <zone xml:id="facs_10_r_2" ulx="54" uly="253" lrx="619" lry="638" />
+      <zone xml:id="facs_10_r_3" ulx="55" uly="633" lrx="619" lry="760" />
+      <zone xml:id="facs_10_r_4" ulx="54" uly="763" lrx="618" lry="1045" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="696" lry="1165">
+      <zone xml:id="facs_11_r_1" ulx="87" uly="80" lrx="653" lry="408" />
+      <zone xml:id="facs_11_r_2" ulx="88" uly="410" lrx="653" lry="561" />
+      <zone xml:id="facs_11_r_3" ulx="87" uly="565" lrx="653" lry="740" />
+      <zone xml:id="facs_11_r_4" ulx="88" uly="742" lrx="652" lry="847" />
+      <zone xml:id="facs_11_r_5" ulx="87" uly="843" lrx="651" lry="925" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          GGN 8101
+        </head>
+        <p facs="#facs_1_r_2">
+          <persName ref="#zbz-p.103">Hans Jürgen Schultz</persName> (Hrsg.)
+        </p>
+        <p facs="#facs_1_r_3">
+          ANGST
+        </p>
+        <p facs="#facs_1_r_4">
+          <orgName ref="#zbz-o.47">Kreuz Verlag</orgName>
+        </p>
+        <p facs="#facs_1_r_5">
+          K 87-32400-1
+        </p>
+        <p facs="#facs_1_r_6">
+          10.10-1
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Bildquellennachweis:<lb facs="#facs_2_l_1_1" n="N001" />- Seite 8: <orgName ref="#zbz-o.49">Südd. Rundfunk</orgName>, Fotograf: Hugo Jehle<lb facs="#facs_2_l_1_2" n="N002" />- Seite 34: Foto-Bucher, <placeName ref="#zbz-l.6">Bern</placeName><lb facs="#facs_2_l_1_3" n="N003" />- Seite 46: Photo-Quick Wallenberg, <placeName ref="#zbz-l.16">Berlin</placeName><lb facs="#facs_2_l_1_4" n="N004" />- Seite 102: Mara Eggert, <placeName ref="#zbz-l.23">Frankfurt</placeName><lb facs="#facs_2_l_1_5" n="N005" />- Seite 156: H. Erckenbrecht/W. <persName ref="#zbz-p.1795">Jacobs</persName>, <placeName ref="#zbz-l.23">Frankfurt</placeName><lb facs="#facs_2_l_1_6" n="N006" />- Seite 172: Foto-Kemmer, Kreßbronn<lb facs="#facs_2_l_1_7" n="N007" />- Seite 222: <persName ref="#zbz-p.1293">Isolde</persName> Ohlbaum, <placeName ref="#zbz-l.22">München</placeName><lb facs="#facs_2_l_1_8" n="N008" />- Seite 236: Klaus-Jörg Tuchel, Solingen<lb facs="#facs_2_l_1_9" n="N009" />- Seite 248: Rita Strothjohann, <placeName ref="#zbz-l.22">München</placeName><lb facs="#facs_2_l_1_10" n="N010" />- Seite 262: Doris Demant, <placeName ref="#zbz-l.424">Baden-Baden</placeName><lb facs="#facs_2_l_1_11" n="N011" />- Seite 312: <persName ref="#zbz-p.1051">Peter Friedli</persName>, <placeName ref="#zbz-l.6">Bern</placeName>
+        </p>
+        <p facs="#facs_2_r_2">
+          Diesem Buch liegt eine Vortragsreihe des <orgName ref="#zbz-o.49">Süddeutschen Rundfunks</orgName> zugrunde.
+        </p>
+        <p facs="#facs_2_r_3">
+          CIP-Kurztitelaufnahme der <orgName ref="#zbz-o.48">Deutschen Bibliothek</orgName>
+        </p>
+        <p facs="#facs_2_r_4">
+          <bibl ref="#zbz-w.451">Angst</bibl>/<persName ref="#zbz-p.103">Hans Jürgen Schultz</persName> (Hrsg.) – 1. Aufl.,<lb facs="#facs_2_l_4_1" n="N001" />(1.–8. Tsd.). – <placeName ref="#zbz-l.46">Stuttgart</placeName>: Kreuz-Verlag, 1987.<lb facs="#facs_2_l_4_2" n="N002" />ISBN 3-7831-0873-X<lb facs="#facs_2_l_4_3" n="N003" />NE: <persName ref="#zbz-p.103">Schultz, Hans Jürgen</persName> [Hrsg.]
+        </p>
+        <p facs="#facs_2_r_5">
+          1. Auflage (1.–8. Tausend)<lb facs="#facs_2_l_5_1" n="N001" />© <orgName ref="#zbz-o.47">Kreuz Verlag Stuttgart</orgName> 1987<lb facs="#facs_2_l_5_2" n="N002" />Umschlaggestaltung: HF Ottmann<lb facs="#facs_2_l_5_3" n="N003" />Umschlagmotiv: Grafik »Il destino« (Schicksal)<lb facs="#facs_2_l_5_4" n="N004" />von G. Giuggioli (Arta, <placeName ref="#zbz-l.45">Zürich</placeName>)<lb facs="#facs_2_l_5_5" n="N005" />Gesamtherstellung: Ebner <placeName ref="#zbz-l.613">Ulm</placeName><lb facs="#facs_2_l_5_6" n="N006" />ISBN 3 7831 0873 X
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          312
+        </p>
+        <p facs="#facs_3_r_2">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_3">
+          Die <bibl ref="#zbz-w.451">Angst</bibl> und der Tod
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>, geboren 1910 in <placeName ref="#zbz-l.48">Genf</placeName>. 1956 bis 1977 Professorin für <bibl ref="#zbz-w.1">Philosophie</bibl> an der <orgName ref="#zbz-o.6">Universität Genf</orgName>. Schülerin und Übersetzerin von <persName ref="#zbz-p.1">Karl Jaspers</persName>. 1966 bis 1968 Vorsteherin der Abteilung <bibl ref="#zbz-w.1">Philosophie</bibl> der <orgName ref="#zbz-o.51">UNESCO</orgName>. 1970 bis 1972 Vertreterin der <placeName ref="#zbz-l.10">Schweiz</placeName> im Exekutivrat der <orgName ref="#zbz-o.51">UNESCO</orgName>, Teilnahme an mehreren Generalkonferenzen. Mitglied der <orgName ref="#zbz-o.344">Nationalen Schweizerischen UNESCO-Kommission</orgName>. Mitglied der <orgName ref="#zbz-o.19">Sozialdemokratischen Partei der Schweiz</orgName> sowie verschiedener europäischer föderalistischer Organisationen. Herbst 1985: Chef der <orgName ref="#zbz-o.760">Schweizer</orgName> Delegation am KSZE-Kulturforum in <placeName ref="#zbz-l.152">Budapest</placeName>. 1970 <persName ref="#zbz-p.156">Ida</persName>-Somazzi-Preis; 1972 Dr. h. c. der Theologischen Fakultät der <orgName ref="#zbz-o.45">Universität Basel</orgName>; 1973 Preis für Freiheit und Menschenrechte, der erstmals verliehen wurde. 1979 Montaigne-Preis der Stiftung F.V.S. <placeName ref="#zbz-l.218">Hamburg</placeName>; 1980 Max-<persName ref="#zbz-p.1067">Schmidheiny</persName>-Preis; 1985 Max-Petitpierre-Preis; 1987 Albert-<persName ref="#zbz-p.55">Einstein</persName>-Medaille. Sie veröffentlichte zahlreiche Schriften über <bibl ref="#zbz-w.1">Philosophie</bibl> und Gegenwartsfragen: <bibl ref="#zbz-w.422">Das philosophische Staunen</bibl>, 1981; <bibl ref="#zbz-w.22">Schwierige Freiheit</bibl>, 1986.
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Es ist schwierig, wenn nicht unmöglich, unseren eigenen Tod zu denken, um dann zu wissen, was wir von ihm halten und welche Gefühle er in uns weckt. Zunächst hüllt er sich in allem ein, was in ihm noch dem Leben angehört. Krankheit, Grauen vor dem endgültigen, unvorstellbaren Ausgang, körperliche Schmerzen, Ersticken oder <bibl ref="#zbz-w.451">Angst</bibl> vor dem Ersticken, Übelkeit, das alles droht uns nur, während wir noch am Leben sind. Eine unerträgliche <bibl ref="#zbz-w.371">Trennung</bibl>, die <bibl ref="#zbz-w.451">Angst</bibl> um die Hinterbliebenen, für die man nicht mehr dasein wird, ein für immer unfertiges Werk, das sind Sorgen des noch Lebenden. Der Abschied von der Sonne, vom Licht, von den Schönheiten und Geheimnissen der Welt, von all dem reißt sich nur der noch Lebende los. Mit dem Tod ist das alles zu Ende.
+        </p>
+        <p facs="#facs_4_r_2">
+          Nur denjenigen Tod dürfen wir erleben, der den trifft, den wir lieben. Als Lebende begleiten wir den Geliebten bis zur Schwelle seines Todes – nicht weiter. Sein Tod kann unser Wesen wie ein Schwert entzweien – auch dann wird die Wunde von einem Lebenden erlitten. Die, die glauben, weiter eingedrungen zu sein und davon erzählen zu können, haben in Wirklichkeit nur das <orgName ref="#zbz-o.33">Reich</orgName> der Lebenden erweitert. Verlassen haben sie es nicht.
+        </p>
+        <p facs="#facs_4_r_3">
+          Um sich dem Tode zu nähern, verfügen die Menschen über keine »negative« Sprache im Sinne der negativen Theologie, als sie versuchte, <persName ref="#zbz-p.50">Gott</persName> näher zu kommen. Wenn es um den Tod geht, wird selbst das Schweigen stumm.
+        </p>
+        <p facs="#facs_4_r_4">
+          Der Tod ist jedoch von unseren Gedanken, von unseren Werken, von unserem Alltag nie weit entfernt. Vorausgesetzt, daß man sich ihn nicht als ein zeitliches Leben vorstellt, das sich nach dem Absterben des Körpers fortsetzen würde, kommt ihm eine einzigartige Gegenwart und Wirksamkeit zu. Durch den Tod wird aus einer verstandesmäßigen Einsicht eine Gewißheit; er verwandelt das Gelb einer Blume in Gold; ein Unterschlupf wird zum Heim; Wollust zur Hingabe. Vor allem aber verwandelt er – unsichtbar, unbemerkt – den vorüberziehenden Augenblick in eine einmalige Miniatur von Ewigkeit.
+        </p>
+        <p facs="#facs_4_r_5">
+          <bibl ref="#zbz-w.657">Der Mensch</bibl> wird sterblich geboren, und er weiß es. Er hat es von jeher gewußt, seit der Urzeit, seitdem er entdeckte, daß er unter den Lebewesen das entwaffnetste war. Er besaß weder
+        </p>
+        <p>
+          313
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          Reißzähne noch Krallen. Keinen schützenden Panzer, nicht einmal ein Fell. Mit anderen Arten verglichen, war seine Flucht langsam, durch Gebüsch, Dornen, Schlamm allzuleicht behindert. Seine Jungen waren verletzlicher als alle anderen, sie verlangten zum Überleben Jahre der Fürsorge und Wachsamkeit. Der Tod lauerte ihm überall auf. Er nutzte gegen ihn alle seine Möglichkeiten, alle ihm in der Umgebung zur Verfügung stehenden Mittel. In erster Linie lernte er, vor einer Gefahr zu erstarren, sich unbeweglich zu verhalten, was ihm <bibl ref="#zbz-w.705">Zeit</bibl> zur Vorstellung und Überlegung gab. Vom Tod jedoch wußte er noch immer nur dies: Er lauerte ihm auf und würde ihn einholen. Was er auch tat, was er auch erfand, war sinnvoll; denn alles hatte das unmittelbare Überleben zum Zweck.
+        </p>
+        <p facs="#facs_5_r_2">
+          Mit jener Welt verglichen, ist diejenige, in der wir leben, seltsam. <bibl ref="#zbz-w.657">Der Mensch</bibl> ist immer noch sterblich, und auf eine bestimmte Weise weiß er es. Aber auf eine andere Weise weiß er es nicht mehr. Als die dringendsten körperlichen Bedürfnisse sich vergessen ließen, da sie nach und nach befriedigt waren, ist der Tod in die Ferne gerückt. Jedoch hat sich der auf diese Art distanzierte Tod der Rede bemächtigt. Er beherrscht die Gedanken über die Zukunft. Was die Menschen zum Überleben erfunden haben, scheint sie nun der Zerstörung preiszugeben. Ihnen droht nichts mehr außer sie selbst, ihre eigene schöpferische Arbeit, ihre Werke und neuen Machtmittel, die, nach der nunmehr üblichen Rede, die ganze Erde vergiften, sie unbewohnbar machen, sie schließlich zerstören werden mit all dem, was sie trägt, durch Kernenergie und Radioaktivität.
+        </p>
+        <p facs="#facs_5_r_3">
+          Dieser Rede zufolge handelt es sich nicht mehr um den Tod von früher, der eigens für mich kommen wird oder der auf das mir Liebste lauert. Es handelt sich um einen anonymen – hyperbolischen und allgemeinen – Tod. Er erwartet mich nicht mehr an einer Ecke meiner erlebten <bibl ref="#zbz-w.705">Zeit</bibl>, sondern anhand einer eintönigen, wiederholungsreichen Rede, in einem abstrakten Augenblick. Eine Rede, die in erster Linie die <bibl ref="#zbz-w.451">Angst</bibl> derer fördert, die noch nicht die Gewohnheit erworben haben zu leben, ihre Toten zu begraben und weiterzuleben:
+        </p>
+        <p>
+          314
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          die Jungen, die sie dazu verführt, in Drogen oder Selbstmord zu fliehen – mangels einer Zukunft, mangels des Möglichen, mangels des Sinnes.
+        </p>
+        <p facs="#facs_6_r_2">
+          Wenn das Leben zum höchsten Wert wird, wenn es nichts mehr jenseits der <bibl ref="#zbz-w.705">Zeit</bibl> gibt, in der es sich entfaltet, dann triumphiert der Tod. Nicht mein Tod. Nicht mein Tod, der mir vielleicht noch eine Gelegenheit zur Bewährung geben würde, auch nicht derjenige eines geliebten Wesens, sondern ein ganz allgemeiner Tod, der genauso undenkbar wäre wie das Nichts. Der Tod jeglicher Hoffnung. Denn alles ist sterblich. Auch ohne Atomwaffen, auch ohne Umweltverschmutzung wird eines Tages, durch Kälte oder Hitze, das Leben auf unserem Planeten auslöschen.
+        </p>
+        <p facs="#facs_6_r_3">
+          Aber ich nicht, nicht ich. Weder ich noch meine Lieben. Sie, ich, wir werden trotz des Todes weiterleben, nach dem Tod, ohne den Tod. Irgendwo, an einem unbekannten Ort, mit einer ungekannten <bibl ref="#zbz-w.705">Zeit</bibl>, werden wir ein Leben fortsetzen, das für uns unvorstellbar ist, das nicht mehr Ziel sein wird, sondern Fülle.
+        </p>
+        <p facs="#facs_6_r_4">
+          Ist hier tatsächlich das Futurum angezeigt? Was wäre eigentlich ein Futurum in jener <bibl ref="#zbz-w.705">Zeit</bibl> der Fülle, aus der der Tod sich zurückgezogen hätte? Was würden dann ein »Vorher« und ein »Nachher« bedeuten? Diese unbekannte <bibl ref="#zbz-w.705">Zeit</bibl> ist für uns keine <bibl ref="#zbz-w.705">Zeit</bibl> mehr. Mangels des Todes gibt es keine <bibl ref="#zbz-w.705">Zeit</bibl> mehr. Wir ersticken in der <bibl ref="#zbz-w.451">Angst</bibl> eines zeitlosen, endlosen Lebens. Keine Vergangenheit mehr. Keine Zukunft.
+        </p>
+        <p facs="#facs_6_r_5">
+          Noch unerträglicher: keine Gegenwart mehr. Ohne den Tod würde der jetzige Augenblick zu irgendeinem. Jede Einmaligkeit wäre ihm fremd. Für uns, die wir heute als Zeitliche und Sterbliche leben, entstünde dann eine grenzenlose Sehnsucht nach dem Nichts: Nur sterben können!
+        </p>
+        <p facs="#facs_6_r_6">
+          Wir könnten weder atmen noch denken ohne die <bibl ref="#zbz-w.705">Zeit</bibl>. Und doch können wir sie weder denken noch uns vorstellen, noch in ihr leben, ohne sie zu transzendieren. Sie scheint manchmal sogar nur in eben diesem Zustand allgegenwärtig zu sein, um transzendiert zu werden. Schon <bibl ref="#zbz-w.153">Augustin</bibl> sagte, als er unter den noch unberührten Problemen, die ihm die <bibl ref="#zbz-w.705">Zeit</bibl> stellte, seinen Weg suchte und <persName ref="#zbz-p.50">Gott</persName> um Erhellung bat: »Die Vergangenheit ist nicht mehr, die Zukunft ist noch nicht, die Gegen
+        </p>
+        <p>
+          315
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          wart ist nur eine Grenze zwischen diesen beiden Nichts – also gibt es keine <bibl ref="#zbz-w.705">Zeit</bibl>? – Und doch . . . «
+        </p>
+        <p facs="#facs_7_r_2">
+          Es ist unmöglich, die <bibl ref="#zbz-w.705">Zeit</bibl> zu denken, ohne sie zu transzendieren, ohne sich auf eine undenkbare Ewigkeit zu beziehen. Es ist unmöglich, die <bibl ref="#zbz-w.705">Zeit</bibl> wirklich zu erleben, ohne sich abzustützen auf das, was der <bibl ref="#zbz-w.705">Zeit</bibl> ein Ende setzt: unser Tod. Mein Tod. Es gibt keine in ihrer Einmaligkeit echt erlebte Gegenwart ohne Bezug auf meinen Tod als das Ende meiner <bibl ref="#zbz-w.705">Zeit</bibl>.
+        </p>
+        <p facs="#facs_7_r_3">
+          Der jetzige Augenblick. Der Augenblick meines Todes. Der Augenblick der Ewigkeit. Ein auseinandergerissenes Dreieck, das mir keine Ruhe läßt. Ein bißchen gespenstische Dauer versucht, sich daran zu knüpfen, ohne daß es mir möglich wird, in ihr zu sein.
+        </p>
+        <p facs="#facs_7_r_4">
+          Ich habe das Ersticken geahnt. Doch gerade dann entdeckte ich meinen Irrtum. Sich ans Leben klammern, als wäre es das höchste Gut, das bedeutet den Tod der Hoffnung, da alles sterblich ist. Oder dann bliebe nichts anderes übrig, als sich in ein »zukünftiges Leben« zu flüchten, in dem Sinn, daß die <bibl ref="#zbz-w.705">Zeit</bibl> jenseits des Todes fortgesetzt würde, woanders; in dem Sinn, daß, an einem Dienstag sterbend, ich mich am Mittwoch noch irgendwo befinden würde, lebend nach dem Tod. »Nach dem Tod« aber gäbe es für mich keine <bibl ref="#zbz-w.705">Zeit</bibl> mehr. Was bedeutet also »nach dem Tod«, wenn es doch keine <bibl ref="#zbz-w.705">Zeit</bibl> mehr gibt?
+        </p>
+        <p facs="#facs_7_r_5">
+          Die <bibl ref="#zbz-w.451">Angst</bibl> bekommt ein anderes Gesicht. Sie ist nicht mehr die <bibl ref="#zbz-w.451">Angst</bibl> vor dem Tod, sondern die <bibl ref="#zbz-w.451">Angst</bibl>, in einem Leben gefangen zu sein, das ohne Ende wäre. Dieses »ohne Ende« ist erstickender als das »<bibl ref="#zbz-w.384">Never more</bibl>«. Ein Ohne-Ende, in dem sich das Leben endlos erschöpfen würde in einer gegenwartslosen, vergangenheitslosen, zukunftslosen <bibl ref="#zbz-w.705">Zeit</bibl>. In einer <bibl ref="#zbz-w.705">Zeit</bibl>, die nicht mehr verginge.
+        </p>
+        <p facs="#facs_7_r_6">
+          Eine für mich unvorstellbare <bibl ref="#zbz-w.705">Zeit</bibl>. Um die <bibl ref="#zbz-w.705">Zeit</bibl> zu denken, muß ich sie transzendieren. Denn ohne den Tod gäbe es keine echte Gegenwart, die die Vergangenheit von der Zukunft, die Zukunft von der Vergangenheit trennen könnte.
+        </p>
+        <p facs="#facs_7_r_7">
+          Dann bleibt, um die Todesangst zu besiegen, nur eine Möglichkeit: sich der Gegenwart des Todes zu stellen. Ich denke an eine Stute, die ich in früheren Zeiten gepflegt habe. Sie hatte
+        </p>
+        <p>
+          316
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          sich, gegen einen Zaun stürzend, die Nüstern aufgerissen; die Wunde klaffte so tief, daß ich sie mir nicht ansehen konnte. Da nahm ich den Kopf des Pferdes zwischen meine Hände und schaute mir die Wunde aus nächster Nähe in allen Einzelheiten an. Jetzt erst wurde ich fähig zu tun, was getan werden mußte.
+        </p>
+        <p facs="#facs_8_r_2">
+          Uns den Tod so gegenwärtig zu machen, wie er es zuläßt. Obgleich wir weder den Tag noch die Stunde kennen, uns der Gewißheit des Todes bewußt zu werden. Ihn frei zu lassen, damit er alle seine Wirkungen über die <bibl ref="#zbz-w.705">Zeit</bibl> breitet, in der wir jetzt leben – in erster Linie über den jetzigen Augenblick, der es ihm verdankt, einzigartig zu sein, Vergangenheit und Zukunft entgegensetzend und trennend.
+        </p>
+        <p facs="#facs_8_r_3">
+          Der Tod des Nächsten. Er war für mich der Nächste. Seine Hand, sein Blick, seine Stimme, sein Atem. Er ist nicht mehr. Ich bin bis zum Kirchhof einem unwahrscheinlichen Sarg gefolgt und habe ihn, von Seilen gehalten, in die feuchte Tiefe hinabgleiten sehen. Schon fielen die Erdschollen auf den Sargdeckel. Und ich gehe nach Hause. In diese seltsame Stille – nein, ich werde nicht erwarten, daß er die Tür aufmacht und plötzlich dasteht. Ich werde keinen Teller für ihn auflegen. Ich werde nicht in den Schubladen nach alten Photographien suchen in der Hoffnung, sein Gesicht wieder zusammenzusetzen. Ich werde versuchen, in der Nacht nicht nach ihm zu rufen. Ich lasse ihn ziehen. Ich vertraue ihn seiner Ewigkeit an.
+        </p>
+        <p facs="#facs_8_r_4">
+          Und ich danke dafür, daß mir die einzige Gewißheit gegeben ist: Auch ich werde sterben. Diese <bibl ref="#zbz-w.705">Zeit</bibl>, in der ich lebe, ist nicht das letzte Wort der <bibl ref="#zbz-w.705">Zeit</bibl>.
+        </p>
+        <p facs="#facs_8_r_5">
+          Ein Trost ist es nicht, wie es – scheinbar – ein in derselben <bibl ref="#zbz-w.705">Zeit</bibl> fortgesetztes Leben sein könnte. Nein, es ist kein Trost, und kein Schmerz wird dadurch gemildert, keine Sehnsucht gestillt. Aber ein Schimmer zeichnet sich ab. Nur eben ein Schimmer, eine Spur von Offenbarung. Gerade nur eine Undurchsichtigkeit, die etwas nachgibt.
+        </p>
+        <p facs="#facs_8_r_6">
+          Wenn die <bibl ref="#zbz-w.705">Zeit</bibl>, in der ich lebe, nicht mehr das letzte Wort der <bibl ref="#zbz-w.705">Zeit</bibl> ist, hören Tod und <bibl ref="#zbz-w.451">Angst</bibl> auf, die Lebensfreude zu zerstören. Tod und <bibl ref="#zbz-w.451">Angst</bibl> transportieren eher die Lebensfreude und umhüllen sie geheimnisvoll; sie versetzen sie in die Ferne und schenken ihr Leichtigkeit, so daß Tod und Freude
+        </p>
+        <p>
+          317
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          sich gegenseitig nicht mehr ausschließen. Das ist das <orgName ref="#zbz-o.33">Reich</orgName> der Musik.
+        </p>
+        <p facs="#facs_9_r_2">
+          <bibl ref="#zbz-w.705">Die Zeit</bibl>, in der ich lebe, ist nicht das letzte Wort der <bibl ref="#zbz-w.705">Zeit</bibl>, kann es nicht sein. <bibl ref="#zbz-w.705">Die Zeit</bibl> hat eine solche Macht, übt einen so totalen, universellen Griff über uns aus, daß wir unfähig sind, uns irgend etwas auszudenken oder vorzustellen, was ihr nicht unterworfen wäre. Aber es gibt eine Lücke: Wir können außerhalb der <bibl ref="#zbz-w.705">Zeit</bibl> nichts erleben, nichts denken, nichts – aber sie selbst kann nicht das sein, was sie uns zu sein scheint. Wir haben es ja gesehen: <bibl ref="#zbz-w.153">Augustin</bibl> hat schon gezeigt, wie unsere Vorstellung der <bibl ref="#zbz-w.705">Zeit</bibl>, in der wir leben, ins Nichts des Undenkbaren zusammenbricht. Übrigens, sobald wir versuchen, die <bibl ref="#zbz-w.705">Zeit</bibl>, in der wir leben, auf die Kontinuität einer gedächtnis- und erwartungslosen Natur anzuwenden, verstehen wir nichts mehr.
+        </p>
+        <p facs="#facs_9_r_3">
+          <bibl ref="#zbz-w.705">Die Zeit</bibl> des Physikers ist nicht die <bibl ref="#zbz-w.705">Zeit</bibl>, in der wir leben: Für ihn spielen die beiden Perspektiven von Vergangenheit und Zukunft, die der jetzige Augenblick trennt und verbindet, keine <placeName ref="#zbz-l.565">Rolle</placeName>, sondern nur die eindimensionalen Abstände zwischen einem Vorher und einem Nachher. Er kennt höchstens die Gegenwart des beobachtenden Physikers, die das Moment einer Handlung ist in einer erlebten <bibl ref="#zbz-w.705">Zeit</bibl>. Aber die drei Perspektiven der <bibl ref="#zbz-w.705">Zeit</bibl>, die vom Menschen erlebt werden, der um seinen Tod weiß, sind ganz anderer Natur. Sie enthüllen schon selbst die Tatsache, daß die <bibl ref="#zbz-w.705">Zeit</bibl> das letzte Wort der <bibl ref="#zbz-w.705">Zeit</bibl> nicht sein kann.
+        </p>
+        <p facs="#facs_9_r_4">
+          <bibl ref="#zbz-w.153">Augustin</bibl> bezeichnete die Vergangenheit als das, »was nicht mehr ist«, und dies scheint uns zunächst selbstverständlich. Und doch erlebt niemand die <bibl ref="#zbz-w.705">Zeit</bibl>, indem er die Vergangenheit auf ein Nichts reduziert. Niemand. Im Gegenteil: Nur in der Vergangenheit gibt es »etwas, was ist«, gibt es »endgültiges Sein«, Sein, das endgültig so ist, wie es gewesen ist. An dem man nichts mehr ändern kann. Die Vergangenheit ist nunmehr so, wie sie gewesen ist, und tatsächlich zweifelt niemand daran. Was wäre sonst »die historische Wahrheit«, um die sich die Historiker so sehr bemühen?
+        </p>
+        <p facs="#facs_9_r_5">
+          Wenn die Vergangenheit ins Nichts sinken und zu Nichts werden würde, könnte man dank der Nachgiebigkeit des Nichts
+        </p>
+        <p>
+          318
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          sie nach Belieben neu erdenken. Meistens sucht man eine Ausflucht in der Erinnerung. Man sagt: Die Vergangenheit existiert noch in der Erinnerung; sie bleibt im Gedächtnis, und erst mit diesem zerfällt sie ins Nichts; Denkmäler, Gottesdienste, Zeremonien erfüllen eine Funktion des Kampfes gegen das Nichts. Deswegen stellt sich uns in der Erinnerung eine Aufgabe der Treue.
+        </p>
+        <p facs="#facs_10_r_2">
+          Und das stimmt auch auf der Ebene der <bibl ref="#zbz-w.705">Zeit</bibl>, in der wir bis zu unserem eigenen Tod fortdauern. Die Vergangenheit aber ist noch auf eine andere Weise – unwiderruflich, unantastbar. Die Vergangenheit ist. So wie sie gewesen ist. Unverändert durch Vergessen, Verschönern der Erinnerungen oder zerrüttende Umwälzungen der Geschichte. Man hat überall und in allen Sprachen gesagt und geschrieben, daß <persName ref="#zbz-p.788">Brutus</persName> <persName ref="#zbz-p.1085">Cäsar</persName> getötet hat, und man wird es wohl auch weiterhin sagen und schreiben, solange es Menschen gibt. Nehmen wir aber einen Augenblick lang an, daß es falsch war, daß ein anderer ihm den tödlichen Schlag versetzt hat; dann wird die Aussage »<persName ref="#zbz-p.788">Brutus</persName> hat <persName ref="#zbz-p.1085">Cäsar</persName> getötet« eine Lüge und ein Irrtum bleiben für immer, bis ans Ende der Zeiten, bis ins Ende der Zeiten hinein. Und es gibt nichts, was je den letzten Atemzug eines jüdischen Kindes auslöschen könnte, das nach Luft rang, als das Gas hochkam.
+        </p>
+        <p facs="#facs_10_r_3">
+          Die Vergangenheit ist der einzige Reichtum und die einzige Hölle, die uns für immer gegeben ist, eine unwiderrufliche Gabe, weil sie nicht mehr in der <bibl ref="#zbz-w.705">Zeit</bibl> ist. Jenseits der Erinnerung. Außerhalb unserer Reichweite. In der Wahrheit des Seins.
+        </p>
+        <p facs="#facs_10_r_4">
+          Was noch in unserer Reichweite liegt, was noch von uns abhängt – selbst wenn die Vergangenheit eine Menge Wahrscheinlichkeiten mitbestimmt –, das ist die Zukunft. Sie bietet sich unserer Freiheit an und gestattet ihr, der <bibl ref="#zbz-w.451">Angst</bibl> des Unveränderlichen und des Unvermeidlichen zu entfliehen und auf Verantwortung Anspruch zu erheben. Gerade weil die Vergangenheit eine Zukunft gewesen ist, lastet sie noch auf unserem Gewissen. Und weil in unserer Todesstunde unsere Zukunft schon erschöpft sein wird, ergreift uns die <bibl ref="#zbz-w.451">Angst</bibl>. Aus Mangel an Möglichem erstickt unsere Freiheit, wenn sie daran ist, ins Sein der Vergangenheit zu sinken.
+        </p>
+        <p>
+          319
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          Wenn die Zukunft des Lebenden von ihm trotz der Bestimmungen des Vergangenen noch abhängt, so hat er es dem jetzigen Augenblick zu verdanken. Er allein verschafft uns eine Verabredung mit der Welt, so daß wir darin handeln können. Er allein, indem er sich durch etwas Vergangenheit verdichtet und gleichzeitig mit einem Stück möglicher Zukunft erweitert, er allein ermöglicht es uns, etwas zu verwirklichen, eine Melodie zu singen, eine Tat zu vollbringen, in der Welt gegenwärtig zu sein. Er allein erlaubt uns zu glauben, daß »wir <bibl ref="#zbz-w.705">Zeit</bibl> haben« – während die <bibl ref="#zbz-w.705">Zeit</bibl> doch flieht, weg von derjenigen, die noch nicht ist, zu der, die nicht mehr ist, indem sie uns diese kaum erblickte Welt entreißt, diese Welt – kaum ein Punkt –, die alle unsere Freuden und Leiden enthält.
+        </p>
+        <p facs="#facs_11_r_2">
+          Nein. Unser Jetzt ist kein Punkt. Es vergeht nicht. Es ist, als würden wir es mit uns nehmen, als würde es Vergangenheit und Zukunft in sich aufnehmen und aufheben, als wäre es, ohne <bibl ref="#zbz-w.705">Zeit</bibl> zu sein, die ewige Quelle der <bibl ref="#zbz-w.705">Zeit</bibl>, in der es uns möglich ist, ohne zu verstehen, die Dauer unseres Lebens zu erleben im Wissen um unseren Tod.
+        </p>
+        <p facs="#facs_11_r_3">
+          Eine Miniatur von Ewigkeit, die uns die Möglichkeit gibt, zu handeln und als freie Wesen zu leben und jene vollkommene Unvollkommenheit des Menschseins zu bewundern, jene durchsichtige Dunkelheit zwischen Leben und Tod, zwischen dem, was vergeht, und dem, was nicht vergeht, zwischen Sein und Nichtsein, ohne die es kein menschliches, für unser Leben verantwortliches und um seinen Tod wissendes Wesen gäbe.
+        </p>
+        <p facs="#facs_11_r_4">
+          Dabei verschwinden weder <bibl ref="#zbz-w.451">Angst</bibl> noch Schmerz. Aber wir müssen lernen, sie hinzunehmen, wenigstens für uns selbst – vielleicht sie zu erleichtern und zu verstehen lernen, indem wir uns bewußt darin üben, uns von jeglichem Besitz zu trennen.
+        </p>
+        <p facs="#facs_11_r_5">
+          Man frage mich, wie so oft, nicht, warum ich den Namen <persName ref="#zbz-p.50">Gottes</persName> nicht genannt habe. Sein Name soll nicht mit solch tappenden Versuchen in Verbindung gebracht werden.
+        </p>
+        <p>
+          320
+        </p>
+      </div>
+      </body></text>
+</TEI>

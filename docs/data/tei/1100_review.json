@@ -1,0 +1,54 @@
+{
+  "doc_id": "1100",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1
+      ],
+      "notes": "Journal de Geneve, 2. August 1974. 1 Seite."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "SCHWERE OCR-PROBLEME. Massive Wiederholungsschleifen: 'de la situation sociale' ~25x, 'de nos echelons' ~20x, 'de l'URSS' ~20x. Textduplikate vorhanden."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "42 Zonen auf einer Seite -- stark fragmentiert. 4+ Artikel."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID laut Validator, aber strukturell mangelhaft."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 8,
+        "orgName": 5,
+        "placeName": 0,
+        "bibl": 0
+      },
+      "notes": "Alle refs 'GND:unknown' ausser Hersch (GND:118815679)."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "KRITISCH: Hersch-Menschenrechtsartikel durch massive Schleifen unbrauchbar. Titel 'JOURNAL DE GENEVE' statt Artikeltitel. 3 Autoren im Header. Duplikate."
+    }
+  },
+  "findings": [
+    "KRITISCH: Hersch-Beitrag hat massive OCR-Wiederholungsschleifen.",
+    "KRITISCH: Textduplikate -- Washington-Abschnitt und URSS-Passage wiederholt.",
+    "KRITISCH: Titel ist 'JOURNAL DE GENEVE' statt Artikeltitel.",
+    "3 Autoren im teiHeader -- Zeitungsseite, nicht Einzelartikel.",
+    "42 Zonen -- extreme Layout-Fragmentierung.",
+    "Alle Entity-Refs ausser Hersch sind 'GND:unknown'."
+  ],
+  "overall_notes": "Grundlegende Ueberarbeitung noetig. Hersch-Artikel durch OCR-Halluzinationen unbrauchbar. Gleiche Problematik wie Doc 1090 (Journal de Geneve, Folgeausgabe)."
+}

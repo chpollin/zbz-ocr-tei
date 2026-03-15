@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Perspektiven und Ausblicke</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">220</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Perspektiven und Ausblicke</title>
+          <author>Jeanne Hersch</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:ok L5:n/a L6:warning L7:ok). L6: 12+ falsche persName-Tags (Mensch 10x, Philosoph 1x, Wahl 1x sind Appellativa); L6: Weber-Referenz zbz-p.345 vermutlich falsche ID (sollte zbz-p.883 fuer Alfred Weber sein); L6: Einige bibl-Tags fragwuerdig (Philosophie, Weltanschauung, Demokratie, Zeit als Werktitel getaggt) (+1 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="848" lry="694">
+      <zone xml:id="facs_1_r_1" ulx="699" uly="205" lrx="750" lry="222" />
+      <zone xml:id="facs_1_r_2" ulx="448" uly="308" lrx="759" lry="600" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="877" lry="722">
+      <zone xml:id="facs_2_r_1" ulx="96" uly="98" lrx="429" lry="418" />
+      <zone xml:id="facs_2_r_2" ulx="464" uly="117" lrx="787" lry="413" />
+      <zone xml:id="facs_2_r_3" ulx="472" uly="398" lrx="788" lry="530" />
+      <zone xml:id="facs_2_r_4" ulx="94" uly="420" lrx="417" lry="604" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="886" lry="702">
+      <zone xml:id="facs_3_r_1" ulx="109" uly="77" lrx="430" lry="217" />
+      <zone xml:id="facs_3_r_2" ulx="469" uly="82" lrx="789" lry="197" />
+      <zone xml:id="facs_3_r_3" ulx="476" uly="202" lrx="803" lry="587" />
+      <zone xml:id="facs_3_r_4" ulx="109" uly="215" lrx="430" lry="556" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="883" lry="726">
+      <zone xml:id="facs_4_r_1" ulx="92" uly="93" lrx="413" lry="314" />
+      <zone xml:id="facs_4_r_2" ulx="447" uly="170" lrx="780" lry="470" />
+      <zone xml:id="facs_4_r_3" ulx="466" uly="457" lrx="789" lry="609" />
+      <zone xml:id="facs_4_r_4" ulx="99" uly="564" lrx="409" lry="603" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="876" lry="723">
+      <zone xml:id="facs_5_r_1" ulx="4478" uly="862" lrx="7720" lry="2566" />
+      <zone xml:id="facs_5_r_2" ulx="986" uly="927" lrx="4156" lry="1313" />
+      <zone xml:id="facs_5_r_3" ulx="993" uly="1233" lrx="4177" lry="3197" />
+      <zone xml:id="facs_5_r_4" ulx="1022" uly="3216" lrx="4177" lry="5652" />
+      <zone xml:id="facs_5_r_5" ulx="4642" uly="4046" lrx="7839" lry="6028" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="882" lry="698">
+      <zone xml:id="facs_6_r_1" ulx="113" uly="74" lrx="435" lry="183" />
+      <zone xml:id="facs_6_r_2" ulx="568" uly="128" lrx="765" lry="433" />
+      <zone xml:id="facs_6_r_3" ulx="510" uly="162" lrx="549" lry="172" />
+      <zone xml:id="facs_6_r_4" ulx="469" uly="188" lrx="503" lry="202" />
+      <zone xml:id="facs_6_r_5" ulx="475" uly="291" lrx="547" lry="304" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </head>
+        <p facs="#facs_1_r_2">
+          Dr. phil., Privatdozentin für systematische <bibl ref="#zbz-w.1">Philosophie</bibl> an der <orgName ref="#zbz-o.6">Universität Genf</orgName>
+        </p>
+        <p>
+          <bibl ref="#zbz-w.374">Perspektiven und Ausblicke</bibl>
+        </p>
+        <p>
+          In den vorhergehenden fünf Vorträgen haben Denker verschiedener <bibl ref="#zbz-w.38">Weltanschauung</bibl> zu der von <persName ref="#zbz-p.883">Alfred Weber</persName> geschilderten Drohung des <bibl ref="#zbz-w.375">Vierten Menschen</bibl> Stellung genommen. Nach <persName ref="#zbz-p.883">Alfred Weber</persName> steht der Typus <persName ref="#zbz-p.1251">Mensch</persName>, der bis jetzt in der eigentlichen Geschichte waltete, in der Gefahr, zu verschwinden, zugunsten eines innerlich desintegrierten, freiheits- und transzendenzlosen Wesens, das im ungeheuren mechanischen Apparat der modernen Welt nur noch als «Funktionär» weiterlebt. Alle bisherigen Redner weigerten sich – wie <persName ref="#zbz-p.883">Alfred Weber</persName> selbst –, diese Entwicklung als die einzig mögliche zu betrachten. Sie waren auch einig in der Beurteilung, Webers Bedingungen der Rettung seien noch nicht genügend klar umschrieben.
+        </p>
+        <p>
+          Professor <persName ref="#zbz-p.884">Röpke</persName> sah in Webers Numerierung selbst ein Verfallen in die Relativität des <bibl ref="#zbz-w.375">Vierten Menschen</bibl> und behauptete, dass man den Glauben aufrechterhalten müsse an den einen absoluten Menschen und an dessen absolute Werte. Auf andere Art und Weise verlangten auch meine anderen Kollegen den in ihrer Auffassung unentbehrlichen
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          72
+        </p>
+        <p facs="#facs_2_r_2">
+          Bezug auf eine transzendente Grundlage. Professor <persName ref="#zbz-p.885">Utz</persName> behauptete, Freiheit sei ein moralischer Wert und könne als solcher nicht ohne eine religiöse Wurzel bestehen, die für ihn persönlich die christliche ist. Herr <persName ref="#zbz-p.886">Gebser</persName> forderte uns auf, die Persönlichkeit durch das geistige Ergreifen des Ganzen zu überwinden. Professor <persName ref="#zbz-p.887">Bürgi</persName>, der mit grosser Gerechtigkeit sich bemühte, die menschlichen Vorteile des modernen Rechts hervorzuheben, wies aber auch auf die Gefahr hin, das Recht auf seine Nützlichkeit zu beschränken und es seines transzendenten Grundes zu berauben. Nur Professor <persName ref="#zbz-p.888">Gitermann</persName> begnügte sich damit, referierend und andeutend zwei Bemerkungen gegen die Webersche Auffassung zu machen: da nun die <persName ref="#zbz-p.89">Wahl</persName> nicht mehr zwischen Liberalismus und Dirigismus sei, sondern zwischen freiheitlich gelenkter oder despotisch gelenkter Wirtschaft, habe der demokratische Sozialismus eine <placeName ref="#zbz-l.565">Rolle</placeName> zu spielen, die <persName ref="#zbz-p.345">Weber</persName> nur ganz ungenügend und flüchtig erwähnt; und zweitens sei der Vierte <persName ref="#zbz-p.1251">Mensch</persName> eben auch dem Wandel der Geschichte unterworfen, werde sich also auf eine von uns nicht vorauszuahnende Weise weiter ändern.
+        </p>
+        <p facs="#facs_2_r_3">
+          Gerade hier möchte ich eine Frage anknüpfen, die das Verhältnis des <bibl ref="#zbz-w.375">Vierten Menschen</bibl> zur Geschichte betrifft. Ist er der <persName ref="#zbz-p.1251">Mensch</persName> von morgen, in einer in die Zukunft fortschreitenden Geschichte, und sind dann die Aussagen Webers prophetisch warnend gemeint? Ist er, wie <persName ref="#zbz-p.888">Gitermann</persName> ihn in der Weberschen Auffassung deutet, ein endgültiger Typ des Menschseins, der der Geschichte ein Ende setzt, und handelt es sich in dem Fall um eine apokalyptische Vorstellung? Oder hat vielleicht <persName ref="#zbz-p.345">Weber</persName> in diesem <bibl ref="#zbz-w.375">Vierten Menschen</bibl> – wenn er auch etwas anderes im Auge hatte – eine gar nicht zukünftige, sondern ewige Bedrohung verkörpert, die auf dem Menschen als Menschen lastet, was dann einen eher philosophischen als geschichtlichen Sinn hätte? – Die zweite Hypothese, die apokalyptische Sicht, würde von seiten Webers eine Flucht bedeuten außerhalb der wirklichen menschlichen Situation – denn der <persName ref="#zbz-p.1251">Mensch</persName> ist und bleibt in der Geschichte, und die ganze Geschichte wäre keine mehr, wenn sie apokalyptisch ein Ende nehmen könnte. Die erste Hypothese ergibt keinen greifbaren Sinn: wenn der Vierte <persName ref="#zbz-p.1251">Mensch</persName> keine Freiheit hat, hat er auch keine Geschichte mehr – er ist eben kein <persName ref="#zbz-p.1251">Mensch</persName>. Nur die dritte Hypothese also kann als gültig anerkannt werden. <bibl ref="#zbz-w.657">Der Mensch</bibl> ist immer, durch seine ganze Geschichte hindurch, bedroht, sein Menschsein, also seine Freiheit und die damit zusammenhängenden Möglichkeiten, Gefahren und Unmöglichkeiten zu verlieren, um nur noch in der Welt so vorhanden zu sein, wie er eben von Natur aus ist. Und es ist seine immerwährende Aufgabe, durch die Jahrhunderte und Jahrtausende, dieses ihm selbst oft so mühselige Menschsein, diese seine so schwer erträgliche Freiheit gegen das einfache Vorhandensein zu retten. Der Vierte <persName ref="#zbz-p.1251">Mensch</persName> ist also das ewige Gespenst des entmenschlichten Menschen, er ist der Nichtmensch.
+        </p>
+        <p facs="#facs_2_r_4">
+          Es ist aber eine Frage des Glaubens, und nicht der Feststellung, ob dieser Vierte <persName ref="#zbz-p.1251">Mensch</persName> als solcher wirklich werden kann. Ich glaube es nicht. Denn wo der <persName ref="#zbz-p.1251">Mensch</persName> aufhört, er selbst zu sein, übt er eben Verrat – was mit seiner Schuld gleichzeitig seine Verantwortung und seine Freiheit wieder bestätigt. Für einen wirklichen – und nicht mythischen – <bibl ref="#zbz-w.375">Vierten Menschen</bibl> gäbe es nur noch eine uns unvorstellbare tierische Unschuld.
+        </p>
+        <p>
+          Begnügt sich der <persName ref="#zbz-p.1251">Mensch</persName> nicht mit einem unmenschlichen Vorhandensein, dann schafft er sich selbst als freies Subjekt, indem er von der ihm geschenkten Freiheit Gebrauch macht. Er schafft sich aber nicht, indem er sich (und seine Freiheit) als Gegenstand seines Tuns wählt, sondern im Gegenteil, indem er auf die Umwelt hin, auf den anderen
+        </p>
+        <p>
+          73
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Menschen und auf die ihnen gemeinsame Umwelt wirkt. Die absoluten Werte, die absoluten Ideen, von denen so oft in den früheren Vorträgen die Rede gewesen ist, sind keine Glaubensinhalte, die mit den Lippen genannt werden sollen, sondern Forderungen an den Menschen, die erst dann die ihnen zugehörige Wirklichkeit gewinnen, wenn sie sein freies Handeln lenken. Sie verlangen, obschon sie immer transzendent bleiben, ohne Ende in die Wirklichkeit hinein verkörpert zu werden.
+        </p>
+        <p facs="#facs_3_r_2">
+          Daher ist es gar nicht so leicht, wie man es oft glaubt, Materialismus und Spiritualismus, materielle und geistige Probleme voneinander zu unterscheiden oder gar einander entgegenzustellen. Wenn jemand auf irgendeine Weise für den menschlichen Körper arbeitet, für dessen Nahrung und Heilung, kann er dadurch der geistigen Ehrfurcht, die er vor der freien menschlichen Seele empfindet, gerade die angemessenste Verwirklichung geben. Und wenn ein unterernährter oder kranker Körper ernährt oder geheilt wird, wird eine menschliche Seele für die ihr angemessenen Pflichten befreit. Könige oder grosse Persönlichkeiten, wie einer der Vortragenden sagte, verschwinden, bei denen doch der <bibl ref="#zbz-w.15">Geist</bibl> ein sichtbares Gesicht hatte, und sie werden von der anonymen <bibl ref="#zbz-w.478">Demokratie</bibl> ersetzt. Aber <bibl ref="#zbz-w.478">Demokratie</bibl> ist nur für einen schwachen, lieblosen Blick anonym; in Wirklichkeit entblösst sie sich der Grossartigkeit einiger zugunsten der menschlichen Möglichkeiten zahlloser Menschen. Unter dem Glanz jener Könige und jener grossen Persönlichkeiten gingen vielleicht eben zahllose Möglichkeiten des freien Menschseins verloren, vielleicht waren damals viele, viele Geschöpfe der unsichtbaren, schweigenden Masse zu einem an den <bibl ref="#zbz-w.375">Vierten Menschen</bibl> erinnernden Schicksal verurteilt.
+        </p>
+        <p facs="#facs_3_r_3">
+          Nun ist eben unsere <bibl ref="#zbz-w.705">Zeit</bibl> eine strenge <bibl ref="#zbz-w.705">Zeit</bibl>, weil jetzt die Idee des Menschen und der Wert Freiheit es verlangen, tief, ganz tief in die breite Masse der zahllosen Menschen hinein verkörpert zu werden. Nachdem man durch die Jahrhunderte hindurch den absoluten Wert der einzelnen menschlichen Seele behauptet hat, verlangt nun diese Behauptung, nach menschlichem Gesetz, in die Wirklichkeit der sozialen, politischen und ökonomischen Welt, in Fleisch und Blut verkörpert zu werden, um ihre Echtheit zu beweisen.
+        </p>
+        <p facs="#facs_3_r_4">
+          Je tiefer der <bibl ref="#zbz-w.15">Geist</bibl> in die Materie zu greifen versucht, desto grösser werden natürlich dabei für ihn die Gefahren des Vergessens, des Verbiegens. Seine Reinheit wird bedroht. Seine Absicht, die Materie zu formen, um der Freiheit neue Möglichkeiten zu öffnen, könnte unterwegs leicht verlorengehen. Machtmittel bieten sich an – Machtmittel, um Freiheit zu ermöglichen! Machtmittel müssen sogar gebraucht werden, wenn Machtmittel anderseits dazu dienen, die Freiheit zu ersticken. Und in den grossen, zum <bibl ref="#zbz-w.376">Dritten Menschen</bibl> noch kaum erwachten Massen wollen viele zunächst diese Freiheit gar nicht. Es ist, als ginge jemand ganz tief unter der Erde – je tiefer er eindringt, desto grösser die Gefahr des Erstickens. Es war eine so schöne, sichere Freiheit, dort, in der hohen Luft der schönen Bilder, Klänge und Worte! Nun aber hat man mit dem Körperlichen zu tun. Magere, sterbende Körper der nicht entwickelten Länder, blasse Körper der Armenviertel der Großstädte, müde Körper der Arbeiter. Nun hat man auch mit Stoffen zu tun, Kohle und Eisen, Korn und Kaffee. Und mit Zahlen, Statistiken, Schreibmaschinen, Bürokratie… Die Freiheit muss nun durch all das hindurch, oder sie ist nichts. Sie muss das alles durchdringen, um es in den Dienst der Freiheit aller zu stellen. Und es ist schwer, es droht, sie selbst in der überschweren materiellen Wirklichkeit zu begraben, denn zunächst fängt diese Befreiung mit Regelung und Mechanisierung an.
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          War aber dieses Materielle vorher gar nicht da? Glänzten in den 3000 Jahren der Herrlichkeit des humanen <bibl ref="#zbz-w.376">Dritten Menschen</bibl> nur reine Seelen im Lichte der Freiheit? – Jener Dritte <persName ref="#zbz-p.1251">Mensch</persName> besass meistens die Fähigkeit, die geknechteten Massen einfach nicht zu sehen. Es war keine Heuchelei: diese Massen gehörten wirklich so sehr zu der Weltordnung, dass man sie gar nicht bemerkte. Vielleicht merkten sie selbst kaum, was sie waren und wie sie lebten – jedenfalls wissen wir es nicht, denn sie haben, mit seltenen Ausnahmen, die Jahrhunderte hindurch geschwiegen – wie in einem Schlaf. Aber nun sehen sie sich selbst, und sie werden von allen gesehen und gehört. Und somit wird ihre Freiheit die Bedingung jeder Freiheit; denn keine Freiheit begnügt sich mit sich selbst.
+        </p>
+        <p facs="#facs_4_r_2">
+          Es ist also nicht richtig, wenn man versucht, sich den heutigen Aufgaben des freien <bibl ref="#zbz-w.376">Dritten Menschen</bibl> dadurch zu entziehen, dass man behauptet, seine Prinzipien hätten alle ihre Früchte schon getragen, und man müsse nun alles ganz anders, aus anderen Quellen wieder anfangen. Der Dritte <persName ref="#zbz-p.1251">Mensch</persName> hat sich nicht erfüllt. Er kann sich als freier <persName ref="#zbz-p.1251">Mensch</persName> niemals erfüllen: Freiheit ist ein endloser Weg. Aber jetzt steht der Dritte <persName ref="#zbz-p.1251">Mensch</persName> vor einer konkreten Welt, in der lebende Mitmenschen konkrete Güter und Sicherungen brauchen, um im Körper weniger befangen zu sein, um zur möglichen Freiheit zu kommen. Freilich kann der Dritte <persName ref="#zbz-p.1251">Mensch</persName> seinem Nächsten die Freiheit selbst nicht geben, aber deren Möglichkeit wohl. Auf diese Möglichkeit kommt es an. Und der Dritte <persName ref="#zbz-p.1251">Mensch</persName> von heute, mit seinen offenen, sehenden Augen, setzt seine eigene Freiheit aufs Spiel wegen der möglichen Freiheit der anderen, denn er weiß, dass er nicht allein frei sein kann.
+        </p>
+        <p facs="#facs_4_r_3">
+          So ist diese jetzige Pflicht der Verkörperung der möglichen Freiheit für alle die große Probe der Ehrlichkeit geworden, mit der durch die Jahrtausende die geistige
+        </p>
+        <p facs="#facs_4_r_4">
+          Parole des <bibl ref="#zbz-w.376">Dritten Menschen</bibl> ausgesprochen wurde. Der Dritte <persName ref="#zbz-p.1251">Mensch</persName> befindet sich vor der grössten Gefahr und vor dem äussersten Aufruf, und entweichen kann und darf er nicht: der Weg führt durch das schwere Massenhafte zur Freiheit – oder nirgendswohin.
+        </p>
+        <p>
+          Nun ist aber, <persName ref="#zbz-p.50">Gott</persName> sei Dank, die Frage an den <bibl ref="#zbz-w.376">Dritten Menschen</bibl> in Wirklichkeit nicht so abstrakt gestellt, sondern in der konkreten Fülle des alltäglichen, vielschichtigen Lebens. Dieses Leben wirkt ständig gegen die Gefahr, in der schweren Regelung des Materiellen dem <bibl ref="#zbz-w.375">Vierten Menschen</bibl> – also dem Unmenschen – zu verfallen, weil jeder darin so vieles zu lieben hat. Von den geliebten Gesichtern, die den Raum oder die Erinnerung bevölkern, ist jedes einzig und unerschöpflich und hat mit der Welt des <bibl ref="#zbz-w.375">Vierten Menschen</bibl> nichts zu tun. Noch mehr – die Maschine, diese Herrschergestalt jener Welt, ist meistens nur in den Theorien der Intellektuellen so abstrakt und tot. Wer sich ihrer bedient, hat oft zu ihr ein lebendiges Verhältnis, ein Gefühl der Hand, der Finger für ihren Rhythmus, ihre Gestalt, ihren Stoff, ihre Kälte. Am Himmel gleiten immer unerwartete Wolken. Die Welt, die unsere Sinne füllt, kämpft ständig in uns gegen den fremden <bibl ref="#zbz-w.375">Vierten Menschen</bibl>, kämpft für das Eigengefühl und die Freiheit. Und genau so sehr auch die Kunstwerke.
+        </p>
+        <p>
+          Gerade aber weil Liebe, Natur, Kunst den heutigen Menschen helfen können, Menschen – und nicht Unmenschen – zu werden, ist es wieder eine Probe für die Echtheit der Bindung der geistig führenden Menschen an absolute menschliche Werte, ob sie alles, aber auch alles tun, damit diese Hilfe den Massen nicht verlorengeht. Man muss ihnen <bibl ref="#zbz-w.705">Zeit</bibl> lassen, Liebe, Alltag, Natur, Kunstwerke zu geniessen und ihnen diesen Genuss durch entsprechende Bildung ermöglichen und erleichtern. Tut man es nicht, so beweist man damit, dass man an jenen Werten nicht oder wenigstens
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          nicht genügend hängt und dass sie mehr oder weniger als Vorwand gebraucht und genannt werden.
+        </p>
+        <p facs="#facs_5_r_2">
+          Die grösste Schwierigkeit nun der jetzigen <bibl ref="#zbz-w.705">Zeit</bibl> auf philosophischem und zugleich politischem Gebiet ist, dass jene absoluten Werte des Menschen keineswegs gleichzeitig bestimmt und allgemeingültig ausgesprochen werden können. Wir wissen, dass die Freiheit eine absolute Bindung an etwas Transzendentes verlangt und dass die Fähigkeit zu dieser Bindung im Menschen geschützt oder geweckt werden muss. Was aber dieses Transzendente sei, können wir nicht für alle gemeinsam bestimmen. Diejenigen, die glauben es zu wissen, müssen sich doch vor der Tatsache beugen, dass es Andersdenkende gibt. Zwang wäre gegen die Freiheit, also sinnlos. Beweise gibt es im Absoluten nicht.
+        </p>
+        <p facs="#facs_5_r_3">
+          In anderen, leichteren Zeiten konnte man einen kleinen Einsatz von den Menschen verlangen, für einen festen, anscheinend objektiv bestehenden Glauben. Ein Herrscher oder eine <orgName ref="#zbz-o.71">Kirche</orgName>, ein bestimmtes religiöses Bekenntnis sollen verteidigt werden. Man wusste ohne Zweifel, was recht und was unrecht war. Man konnte sich auf Autorität verlassen, und meistens genügte es, zu gehorchen. Und dieses Gehorchen selbst war meistens von der gemeinsamen, leidenschaftlichen Ehrfurcht getragen, die dem bedrohten Herrscher, der bedrohten Institution, den bedrohten Glaubensgehalten galten. Die sogenannten absoluten Werte waren in der wirklichen inneren Erfahrung der Menschen mit Gestalten, Formen, Sitten verbunden, die vor allem nicht nur gewollt, sondern geliebt waren. Wer aus persönlicher Freiheit in jener Welt der Gemeinschaft nicht mehr leben konnte, fand kaum einen Platz auf der Erde.
+        </p>
+        <p facs="#facs_5_r_4">
+          Heute gibt es diese sozial gemeinsamen Gegenstände der Anbetung nicht mehr. Das Absolute, der Bezug auf eine transzendente Ebene, wo geglaubt, aber nicht gewusst
+        </p>
+        <p facs="#facs_5_r_5">
+          wird, ist damit keineswegs preisgegeben. Aber dieses Absolute hat keinen eindeutigen Inhalt, sein Wesenszug ist es, immer jenseits von unserem Griff zu sein; es wird von niemandem besessen, obschon es auf jeden einen Anspruch erhebt. Die transzendente Grundlage also jedes menschlichen Wandelns und Denkens wird bei jedem Menschen verschieden. Gemeinsam nur bleibt der Sprung, den jeder vollzieht, wenn er sich bedingungslos entschliesst, einer möglichen Form der Transzendenz zu dienen, die für ihn einzig wahr ist und doch für die anderen nicht zwingend.
+        </p>
+        <p>
+          Jetzt sind wir so weit, dass bei uns oft der ganze Einsatz, manchmal auf Leben und Tod, verlangt wird, nicht für die Verteidigung eines bestimmten Glaubens, einer besonderen Hoffnung, sondern eines leeren Raumes, das heisst der reinen Möglichkeit einer absoluten Bindung an etwas, was nicht für alle gemeinsam bestimmbar ist. Dieser leere Raum ist wie der Lebensraum der Freiheit, gerade indem er auf der sozialen, politischen Ebene inhaltlos bleibt. So wird für jeden die reine Möglichkeit einer absoluten Bindung bewahrt, und das ist eigentlich der Sinn der <bibl ref="#zbz-w.478">Demokratie</bibl>.
+        </p>
+        <p>
+          Es ist falsch, zu sagen, die <bibl ref="#zbz-w.478">Demokratie</bibl> enthalte nicht mehr Freiheit als jede andere politische Regierungsform, denn die Freiheit sei eine rein innere, von jeder Politik unabhängige Einstellung. Es ist auch falsch, zu sagen, die <bibl ref="#zbz-w.478">Demokratie</bibl> sei die Freiheit selbst. In Wirklichkeit ist sie nur die Form der möglichen Freiheit für jeden Menschen, eine Form, die an sich leer bleibt und erst durch das konkrete Glauben und Entscheiden der Einzelnen einen lebendigen, konkreten Inhalt bekommt. Vom Einzelnen also hängt es endlich ab, ob die <bibl ref="#zbz-w.478">Demokratie</bibl>, in der er lebt, ihren Sinn und ihre Fülle gewinnt – oder ob sie umsonst die Möglichkeit der Freiheit für ihn rettet. Daher kann niemand, der in einer <bibl ref="#zbz-w.478">Demokratie</bibl> lebt, gültig sagen, diese sei sinnlos, denn gerade er soll ihr ihren vollen Sinn geben.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          80<lb facs="#facs_6_l_1_1" n="N001" />81
+        </p>
+        <p facs="#facs_6_r_2">
+          Der Dritte <persName ref="#zbz-p.1251">Mensch</persName> erwartet noch viel zu oft, dass die Werte, auf die er sich stützt, sich in der Gegenständlichkeit der so oder so gestalteten Welt von selbst befestigen, so dass er dafür keine Verantwortung mehr trägt. Das ist aber eine Haltung, die schon an den <bibl ref="#zbz-w.375">Vierten Menschen</bibl> erinnert, denn objektiv feste Werte schliessen die Freiheit letzten Endes aus.
+        </p>
+        <p facs="#facs_6_r_3">
+          Fassen wir also zusammen: <bibl ref="#zbz-w.657">Der Mensch</bibl> hat heute die schwere Probe zu bestehen, mit ganzem Einsatz die Möglichkeit der Freiheit zu bewahren, zu verbreiten und zu vertiefen, so dass sie sich allen Menschen fordernd anbietet. Der Dritte <persName ref="#zbz-p.1251">Mensch</persName>, jenes frühere Mitglied einer dünnen, hochgezüchteten humanen Schicht, muss jetzt die Echtheit seiner Werte und seiner Transzendenz dadurch beweisen, dass er nun einfach der <persName ref="#zbz-p.1251">Mensch</persName>, jeder <persName ref="#zbz-p.1251">Mensch</persName> zu werden versucht.
+        </p>
+        <p facs="#facs_6_r_4">
+          Biographische <bibl ref="#zbz-w.406">Notizen</bibl>
+        </p>
+        <p facs="#facs_6_r_5">
+          <persName ref="#zbz-p.889">Brinkmann, Carl</persName> Professor der Volkswirtschaft an der <orgName ref="#zbz-o.345">Universität Tübingen</orgName>. Geb. 1885<lb facs="#facs_6_l_5_1" n="N001" /><persName ref="#zbz-p.890">Guardini, Romano</persName> katholischer Theologe, Religionsphilosoph. Geb. 1885<lb facs="#facs_6_l_5_2" n="N002" /><persName ref="#zbz-p.891">Hesiod</persName> griechischer Dichter, 8.-7. Jh. v. Chr.<lb facs="#facs_6_l_5_3" n="N003" /><persName ref="#zbz-p.892">Jeans, James</persName> englischer Mathematiker und Astronom. Geb. 1877<lb facs="#facs_6_l_5_4" n="N004" /><persName ref="#zbz-p.893">Kerényi, Karl</persName> ungarischer Universitätsprofessor der klassischen Philologie und Mythologie. Geb. 1897<lb facs="#facs_6_l_5_5" n="N005" /><persName ref="#zbz-p.716">Koestler, Arthur</persName> gehört als Autor zahlreicher zeitkritischer Romane zu den bekanntesten Schriftstellern der Gegenwart. Geb. 1905<lb facs="#facs_6_l_5_6" n="N006" /><persName ref="#zbz-p.894">Mannheim, Karl</persName> Sozialphilosoph und Professor an der <orgName ref="#zbz-o.346">Londoner Wirtschaftshochschule</orgName>. Geb. 1879, gest. 1947<lb facs="#facs_6_l_5_7" n="N007" /><persName ref="#zbz-p.88">Marcel, Gabriel</persName> französischer katholischer <persName ref="#zbz-p.1360">Philosoph</persName> und Schriftsteller. Geb. 1889<lb facs="#facs_6_l_5_8" n="N008" /><persName ref="#zbz-p.895">Perikles</persName> athenischer Staatsmann. Geb. um 490, gest. 429 v. Chr.<lb facs="#facs_6_l_5_9" n="N009" /><persName ref="#zbz-p.554">Rousseau, Jean-Jacques</persName> <placeName ref="#zbz-l.5">Genfer</placeName> <persName ref="#zbz-p.1360">Philosoph</persName> und Kulturkritiker. Geb. 1712, gest. 1778<lb facs="#facs_6_l_5_10" n="N010" /><persName ref="#zbz-p.477">Russell, Bertrand</persName> englischer Soziologe, Mathematiker und <persName ref="#zbz-p.1360">Philosoph</persName>. Geb. 1872<lb facs="#facs_6_l_5_11" n="N011" /><persName ref="#zbz-p.185">Sophokles</persName> griechischer Tragödiendichter. Geb. 497/6, gest. 406 v. Chr.<lb facs="#facs_6_l_5_12" n="N012" /><persName ref="#zbz-p.896">Terenz</persName> römischer Tragödiendichter. Geb. um 190, gest. 159 v. Chr.<lb facs="#facs_6_l_5_13" n="N013" /><persName ref="#zbz-p.897">Toynbee, Arnold J.</persName> englischer Historiker. Geb. 1889<lb facs="#facs_6_l_5_14" n="N014" /><persName ref="#zbz-p.525">Voltaire</persName>, François <persName ref="#zbz-p.858">Marie</persName> Arouet genannt französischer Schriftsteller, <persName ref="#zbz-p.1360">Philosoph</persName> und Historiker. Geb. 1694, gest. 1778<lb facs="#facs_6_l_5_15" n="N015" /><persName ref="#zbz-p.898">Whitehead, Alfred North</persName> englischer <persName ref="#zbz-p.1360">Philosoph</persName> und Mathematiker. Geb. 1861, gest. 1947
+        </p>
+      </div>
+      </body></text>
+</TEI>

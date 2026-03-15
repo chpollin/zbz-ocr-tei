@@ -1,0 +1,43 @@
+{
+  "doc_id": "2400",
+  "reviewer": "quality-screener-t4",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 4,
+  "pages": 56,
+  "lang": "deu",
+  "errors": 0,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "H0",
+      "msg": "Header: Sicherheit und Risiko: ein Gespraech, Johannes Anderegg, deu, 1987"
+    },
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 1 Warning (W9: 74/266 ohne ref)"
+    },
+    {
+      "severity": "info",
+      "code": "S5",
+      "msg": "1 Fussnote"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 202p 16o 48l 52w = 318"
+    },
+    {
+      "severity": "info",
+      "code": "S3",
+      "msg": "sp/speaker-Struktur, 1x Druck als speaker misklassifiziert (Impressum)"
+    },
+    {
+      "severity": "info",
+      "code": "K0",
+      "msg": "Kohaerenz: Podiumsgespraech Hersch/Muheim/Schmidheiny/Anderegg, ^{}[] auf Leerseite"
+    }
+  ]
+}

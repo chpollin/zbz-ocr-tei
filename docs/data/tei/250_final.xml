@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">L'Œuvre du vingtième siècle</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">250</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>L'Œuvre du vingtième siècle</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1952</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screening-agent" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Overlay S.1/6/11: Layout-Regionen korrekt, single-column Fliesstext; OCR-Text kohaerenter franzoesischer Feuilleton-Bericht ueber Festival des Arts 1952; Facsimile-Anomalie: Zonen auf S.5/6/7/8 mit Koordinaten weit ueber Surface-Grenzen (z.B. facs_5_r_1 ulx=1365 bei surface lrx=1241). Kein Einfluss auf Text, aber Layout-Metadaten fehlerhaft (+3 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_1_r_1" ulx="129" uly="612" lrx="319" lry="640" />
+      <zone xml:id="facs_1_r_2" ulx="130" uly="688" lrx="494" lry="718" />
+      <zone xml:id="facs_1_r_3" ulx="129" uly="762" lrx="229" lry="794" />
+      <zone xml:id="facs_1_r_4" ulx="128" uly="804" lrx="1052" lry="835" />
+      <zone xml:id="facs_1_r_5" ulx="356" uly="894" lrx="864" lry="920" />
+      <zone xml:id="facs_1_r_6" ulx="130" uly="897" lrx="230" lry="925" />
+      <zone xml:id="facs_1_r_7" ulx="131" uly="922" lrx="234" lry="944" />
+      <zone xml:id="facs_1_r_8" ulx="129" uly="946" lrx="182" lry="968" />
+      <zone xml:id="facs_1_r_9" ulx="356" uly="946" lrx="408" lry="968" />
+      <zone xml:id="facs_1_r_10" ulx="128" uly="968" lrx="220" lry="996" />
+      <zone xml:id="facs_1_r_11" ulx="356" uly="993" lrx="508" lry="1018" />
+      <zone xml:id="facs_1_r_12" ulx="129" uly="993" lrx="342" lry="1016" />
+      <zone xml:id="facs_1_r_13" ulx="129" uly="1016" lrx="294" lry="1041" />
+      <zone xml:id="facs_1_r_14" ulx="355" uly="1019" lrx="568" lry="1043" />
+      <zone xml:id="facs_1_r_15" ulx="129" uly="1040" lrx="200" lry="1064" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_2_r_1" ulx="80" uly="704" lrx="694" lry="754" />
+      <zone xml:id="facs_2_r_2" ulx="82" uly="832" lrx="692" lry="1111" />
+      <zone xml:id="facs_2_r_3" ulx="82" uly="1114" lrx="691" lry="1624" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_3_r_1" ulx="119" uly="634" lrx="728" lry="1339" />
+      <zone xml:id="facs_3_r_2" ulx="116" uly="1422" lrx="723" lry="1544" />
+      <zone xml:id="facs_3_r_3" ulx="117" uly="1533" lrx="723" lry="1616" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_4_r_1" ulx="93" uly="643" lrx="698" lry="699" />
+      <zone xml:id="facs_4_r_2" ulx="91" uly="709" lrx="699" lry="962" />
+      <zone xml:id="facs_4_r_3" ulx="93" uly="974" lrx="701" lry="1308" />
+      <zone xml:id="facs_4_r_4" ulx="93" uly="1310" lrx="702" lry="1621" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_5_r_1" ulx="1365" uly="6419" lrx="7408" lry="6980" />
+      <zone xml:id="facs_5_r_2" ulx="1327" uly="7016" lrx="7408" lry="11751" />
+      <zone xml:id="facs_5_r_3" ulx="1303" uly="11874" lrx="7396" lry="16189" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_6_r_1" ulx="87" uly="643" lrx="694" lry="845" />
+      <zone xml:id="facs_6_r_2" ulx="88" uly="840" lrx="696" lry="1251" />
+      <zone xml:id="facs_6_r_3" ulx="87" uly="1245" lrx="696" lry="1630" />
+      <zone xml:id="facs_6_r_4" ulx="2432" uly="5998" lrx="5348" lry="6174" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_7_r_1" ulx="1389" uly="6419" lrx="7408" lry="7226" />
+      <zone xml:id="facs_7_r_2" ulx="1327" uly="7296" lrx="7396" lry="11067" />
+      <zone xml:id="facs_7_r_3" ulx="1327" uly="11330" lrx="7396" lry="13628" />
+      <zone xml:id="facs_7_r_4" ulx="1340" uly="13646" lrx="7421" lry="16242" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_8_r_1" ulx="862" uly="6342" lrx="6923" lry="9656" />
+      <zone xml:id="facs_8_r_2" ulx="896" uly="9717" lrx="6952" lry="13400" />
+      <zone xml:id="facs_8_r_3" ulx="896" uly="13756" lrx="6952" lry="15282" />
+      <zone xml:id="facs_8_r_4" ulx="890" uly="15442" lrx="6946" lry="16212" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_9_r_1" ulx="138" uly="636" lrx="740" lry="1006" />
+      <zone xml:id="facs_9_r_2" ulx="138" uly="1016" lrx="740" lry="1614" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_10_r_1" ulx="86" uly="662" lrx="691" lry="742" />
+      <zone xml:id="facs_10_r_2" ulx="82" uly="741" lrx="693" lry="1347" />
+      <zone xml:id="facs_10_r_3" ulx="83" uly="1376" lrx="691" lry="1551" />
+      <zone xml:id="facs_10_r_4" ulx="82" uly="1558" lrx="688" lry="1616" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_11_r_1" ulx="142" uly="638" lrx="738" lry="1038" />
+      <zone xml:id="facs_11_r_2" ulx="515" uly="1062" lrx="692" lry="1089" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          ZB <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>
+        </p>
+        <p facs="#facs_1_r_2">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> | Zähringerplatz 6 | CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>, Dienstkonto<lb facs="#facs_1_l_3_1" n="N001" />Digitalisierungsprojekte<lb facs="#facs_1_l_3_2" n="N002" />Zähringerplatz 6<lb facs="#facs_1_l_3_3" n="N003" />8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_4">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName><lb facs="#facs_1_l_4_1" n="N001" /><orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_4_2" n="N002" />Fernleihe / Document Delivery<lb facs="#facs_1_l_4_3" n="N003" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_4_4" n="N004" />Zähringerplatz 6<lb facs="#facs_1_l_4_5" n="N005" />CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_1_l_4_6" n="N006" />Tel. +41 44 268 31 00<lb facs="#facs_1_l_4_7" n="N007" />Web www.zb.uzh.ch<lb facs="#facs_1_l_4_8" n="N008" />www.ub.uzh.ch
+        </p>
+        <p facs="#facs_1_r_5">
+          <placeName ref="#zbz-l.45">Zürich</placeName>, 09.05.2025
+        </p>
+        <p facs="#facs_1_r_6">
+          Kopienbestellung ZBZ-ME-250430-10
+        </p>
+        <p facs="#facs_1_r_7">
+          Guten Tag
+        </p>
+        <p facs="#facs_1_r_8">
+          Vielen Dank für Ihre Bestellung vom 30.04.2025. Die gewünschten Kopien finden Sie in der Beilage.
+        </p>
+        <p facs="#facs_1_r_9">
+          Haupttitel: <bibl ref="#zbz-w.440">Monde Nouveau</bibl> Paru : revue mensuelle internationale<lb facs="#facs_1_l_9_1" n="N001" />Band/Heft:<lb facs="#facs_1_l_9_2" n="N002" />Jahr: 1952<lb facs="#facs_1_l_9_3" n="N003" />Signatur:<lb facs="#facs_1_l_9_4" n="N004" />Verfasser des Artikels: <persName ref="#zbz-p.2">Hersch, Jeanne</persName><lb facs="#facs_1_l_9_5" n="N005" />Titel des Artikels: <bibl ref="#zbz-w.454">L'oeuvre du XX siècle</bibl><lb facs="#facs_1_l_9_6" n="N006" />Seiten: 79-88<lb facs="#facs_1_l_9_7" n="N007" />Bemerkung: bitte nicht verrechnen, dienstlich, für Herschprojekt https://swisscovery.slsp.ch/permalink/41SLSP_UZB/bmqo95/alma991141909149705501
+        </p>
+        <p facs="#facs_1_r_10">
+          Mit der Bestellung haben Sie zudem die Urheberrechtsbestimmungen akzeptiert.
+        </p>
+        <p facs="#facs_1_r_11">
+          Sind die Kopien fehlerhaft? Es tut uns leid, dass etwas nicht nach Wunsch funktioniert hat. Bitte geben Sie uns via fernleihe@zb.uzh.ch eine Rückmeldung.
+        </p>
+        <p facs="#facs_1_r_12">
+          Für die Kosten ( ) erhalten Sie innert den nächsten 6-8 Wochen eine Rechnung per E-Mail. Für UZH-Angehörige gelten Sonderkonditionen.
+        </p>
+        <p facs="#facs_1_r_13">
+          Wir wünschen Ihnen einen schönen Tag.
+        </p>
+        <p facs="#facs_1_r_14">
+          Freundliche Grüsse<lb facs="#facs_1_l_14_1" n="N001" />Fernleihe / Dokumentlieferdienst
+        </p>
+        <p facs="#facs_1_r_15">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName> &amp; <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_15_1" n="N001" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_15_2" n="N002" />www.ub.uzh.ch<lb facs="#facs_1_l_15_3" n="N003" />www.zb.uzh.ch
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          L'ŒUVRE DU VINGTIÈME SIÈCLE
+        </p>
+        <p facs="#facs_2_r_2">
+          Le festival des Arts, patronné par le Congrès pour la Liberté de la Culture, s'est déroulé à <placeName ref="#zbz-l.1">Paris</placeName>, pendant tout le mois de mai. Il avait, dans l'esprit des organisateurs, la portée d'un manifeste. Il s'agissait d'interrompre, pendant un certain temps, la polémique du monde occidental, qui se veut patrie de la liberté créatrice, contre le monde de l'<placeName ref="#zbz-l.199">Est européen</placeName>, considéré comme strictement asservi à une orthodoxie d'<orgName ref="#zbz-o.754">État</orgName>, et de remplacer attaques, critiques, dénonciations, par les arguments positifs les plus puissants qui soient : les œuvres témoignant par leur présence même de la vitalité d'une culture et d'une foi au cours du dernier demi-siècle.
+        </p>
+        <p facs="#facs_2_r_3">
+          Pour quiconque a senti tomber à maintes reprises, comme des coups sur une plaie sans cesse ouverte, l'accusation de décadence et de pourriture sur l'un des objets de sa plus vigilante tendresse, le seul projet du festival promettait enfin un réconfort. D'emblée aussi, cette initiative soulevait des problèmes inépuisablement complexes et mêlés, mettant une nouvelle fois en alerte notre étrange « conscience occidentale » d'aujourd'hui : cette mauvaise conscience orgueilleuse, susceptible, scindée, prompte à l'attaque et au mépris, encore plus prompte à se condamner, parfois jusqu'au dégoût d'elle-même et à la bassesse. Par exemple, nous sommes-nous demandé, des œuvres d'art sont-elles comme telles des arguments décents ? A-t-on le droit de se servir d'elles quand on cherche à affirmer le droit à la vie de tout un régime social — idéologique, politique, économique ? Ne les fera-t-on pas mentir en leur imposant, pour ainsi dire, une alliance de fait avec ce régime tout entier, tel qu'il existe sur tous les plans, sans distinction ni restriction ? Mais, d'une façon plus générale, est-il légitime d'invoquer la fécondité des arts lorsqu'on sent menacé le régime social dans lequel on vit ?
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_3_r_2">
+          Une civilisation qui produisit l'hitlérisme, avec la complicité de beaucoup et la passivité de tous, qui tolère avec cette même complicité et cette même passivité la misère, l'injustice, l'asservissement, peut-elle sans inconscience ridicule ou sans sadisme opposer le bouclier de ses arts à la propagande adverse — même si l'adversaire la distance de loin en fait de misère, d'injustice, d'asservissement ? D'autre part, pour mettre en relief par la présence des œuvres la force créatrice, en <placeName ref="#zbz-l.27">Occident</placeName>, de l'esprit resté libre, il fallait montrer des courants aussi divers que possible. Comment choisir, dès lors, parmi les œuvres sans choisir aussi entre les valeurs diverses et souvent contradictoires dont elles se réclament. Ou sinon, comment éviter de produire l'impression d'un chaos, d'une anarchie où rien de clair n'indique la voie féconde de l'avenir ? Avait-on un recul suffisant pour justifier le choix inévitable par le seul critère de la valeur d'art — à supposer que ce critère même restât incontesté ?
+        </p>
+        <p facs="#facs_3_r_3">
+          Enfin, l'art occidental contemporain jugé valable par le milieu même de ses créateurs étant dans une large mesure très éloigné du sentiment populaire, le festival se trouvait d'emblée condamné — même hors de toutes les contingences matérielles qui imposèrent, pour les spectacles et les concerts, des tarifs extrêmement élevés — à un public restreint, éclairé ou snob. Pouvait-on dès lors éviter que le festival ne devînt une manifestation de classe ? Il risquait de se retourner dangereusement contre la volonté des organisateurs et de confirmer avec éclat aux yeux de tous la thèse de l'adversaire selon laquelle l'artiste, en <placeName ref="#zbz-l.27">Occident</placeName>, se trouve mortellement séparé des sources vives populaires, alors que le peuple, maintenu en état d'aliénation par l'exploitation capitaliste, n'a aucun accès (ni réceptif, ni créateur) à la culture.
+        </p>
+        <p>
+          On le voit : le festival de <placeName ref="#zbz-l.1">Paris</placeName> avait ce premier et précieux mérite, dans un monde qui veut connaître franchement ses propres vices, de faire apparaître dans toute sa précarité la situation des arts au sein du monde occidental.
+        </p>
+        <p>
+          Je laisse ouvertes les questions posées ci-dessus. A chacun d'y réfléchir et d'apprécier, par lui-même, s'il a suivi les manifestations de mai, ou par les quelques échos qui suivent,
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          L'ŒUVRE DU VINGTIÈME SIÈCLE
+        </p>
+        <p facs="#facs_4_r_2">
+          quelle fut la valeur de la réponse implicitement donnée par le festival dans son ensemble.
+        </p>
+        <p facs="#facs_4_r_3">
+          Une remarque d'abord : une partie de la presse parisienne (aussi bien des journaux « de gauche » que d'autres, conservateurs à outrance) ont présenté le festival comme une machine de guerre américaine, prétendant que n'avaient été conviés aux conférences et aux entretiens que des personnalités d'« extrême droite », voire fascistes. On a été jusqu'à faire dire à certains orateurs, sous l'apparence d'une citation littérale, le contraire de ce qu'ils avaient dit en réalité, de préférence lorsque ce « contraire » était ridicule ou odieux, ou bien ridicule et odieux à la fois.
+        </p>
+        <p facs="#facs_4_r_4">
+          Ces calomnies doivent être démenties. La plupart de ceux qui prirent la parole étaient des démocrates de gauche. La plupart dénoncèrent les vices du régime occidental, ces vices altérèrent en fait la liberté qui est aujourd'hui son drapeau. Plusieurs mirent en garde contre les dangers fascistes qui menacent aujourd'hui en plusieurs points du globe et que la pression communiste risque trop, parfois, de faire oublier. A maintes reprises, on réaffirma la nécessité de comprendre mieux le véritable sens du régime communiste, d'une part pour le mieux combattre, mais de l'autre aussi afin de sauvegarder, au-delà de la division politique ou idéologique, l'unité plus profonde des aspirations humaines et la possibilité d'un dialogue universel.
+        </p>
+        <p>
+          S'il y eut quelque chose à reprocher à ceux qui prirent la parole dans les deux conférences publiques ou dans les entretiens, c'est que trop souvent ils se montrèrent incapables de s'insérer dans l'ensemble de la séance, d'atteindre à la concision et à la netteté que de telles circonstances exigent. La diversité est bonne, mais elle ne doit pas rester désorganisée, éparse ; il faut que l'auditeur saisisse avec précision le point où les divergences s'affrontent, afin d'appliquer là sa propre réflexion. Trop souvent la succession lâche, non centrée, des monologues fut ressentie comme illustrant non pas la vraie liberté qui devrait être celle de l'<placeName ref="#zbz-l.27">Occident</placeName>, mais une certaine négligence molle, tolérante non par respect de la
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          82
+        </p>
+        <p facs="#facs_5_r_2">
+          <bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_5_r_3">
+          vérité, mais par manque de rigueur qui finit par être une non-pensée, un simple empâtement de toute exigence.
+        </p>
+        <p>
+          Et puisque je suis en train de parler de la partie dite « littéraire », du festival (qui n'a certes pas été, malgré l'importance que certains lui donnaient, ce qu'il y a eu de mieux), on me permettra d'exprimer un regret. Pendant un mois, on avait réuni à <placeName ref="#zbz-l.1">Paris</placeName> des penseurs, des écrivains et des artistes éminents de tous les pays libres d'<placeName ref="#zbz-l.29">Europe</placeName> et d'<placeName ref="#zbz-l.411">Amérique</placeName>, ou exilés des pays asservis. On aurait pu, me semble-t-il, tirer bien davantage de cette rencontre. Au lieu de les faire parler anarchiquement l'un après l'autre, on aurait pu organiser des groupes de discussion restreints sur un problème bien plus limité que les grands thèmes « Isolement et communication », « Révolte et communisme », « Diversité et universalité ». On aurait pu aussi faire partir les entretiens publics d'une expérience commune aux orateurs et aux auditeurs, par exemple l'un des spectacles du festival ou un film particulièrement riche et chargé, sur de nombreux plans, de significations actuelles, comme <hi rendition="#i"><bibl ref="#zbz-w.455">Jeux interdits</bibl></hi> de <persName ref="#zbz-p.1091">René Clément</persName> — ce qui aurait permis à une discussion de s'engager immédiatement.
+        </p>
+        <p>
+          Mais passons aux arts. Le festival fut avant tout — peut être parce que l'organisateur principal, <persName ref="#zbz-p.1092">Nicolas Nabokov</persName>, est compositeur — une fête de la musique. Je n'ai pas pu tout entendre (le programme était beaucoup trop riche pour mes capacités d'absorption) — la musique de chambre en particulier, où l'on joua des œuvres de jeunes compositeurs contemporains, m'a échappé complètement. Inutile d'énumérer les programmes de musique symphonique, des concerts ou des ballets. Le premier concert, donné à l'église <placeName ref="#zbz-l.427">Saint-Roch</placeName>, était dédié à la mémoire des victimes des régimes totalitaires. On joua du <persName ref="#zbz-p.777">Bach</persName>, puis du <persName ref="#zbz-p.1093">Poulenc</persName>. C'est à travers ce contraste que j'ai éprouvé une impression qui ne cessa de se préciser par la suite : la musique moderne (comme sans doute l'art moderne dans son ensemble) porte la trace d'une blessure nouvelle, qui paraît s'être ajoutée à celle, permanente, de la condition d'homme conscient. <persName ref="#zbz-p.777">Bach</persName>, jusque dans l'expression de la douleur, construit son œuvre avec une harmonie qui est
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          L'ŒUVRE DU VINGTIÈME SIÈCLE
+        </p>
+        <p facs="#facs_6_r_2">
+          83
+        </p>
+        <p facs="#facs_6_r_3">
+          celle-là même de l'univers ; il ne s'isole pas de cette dernière, il la confirme. Combien plus solitaire, bannie hors de l'ordre, condamnée au risque de créer le sien propre, est la musique contemporaine ! Comme si tel avait été le destin de l'homme : renouveler lui-même contre lui-même le geste de Dieu le chassant du <placeName ref="#zbz-l.455">Paradis terrestre</placeName>, aggraver sa séparation, approfondir encore sa distance de Dieu, se faire entendre de plus loin...
+        </p>
+        <p facs="#facs_6_r_4">
+          Mais peut-être les peintres ont-ils eu tort de représenter <persName ref="#zbz-p.390">Adam</persName> et <persName ref="#zbz-p.168">Eve</persName> chassés du <placeName ref="#zbz-l.302">Paradis</placeName> dans des attitudes désespérées. Ce monde humain tout neuf ouvrant tous ses possibles à leur exploration, sans doute commença-t-il par les émerveiller. Plus tard seulement apparut l'exil, ses lois dures, sa douleur. Les musiciens modernes aussi, au début de leur arrachement, jubilent devant les possibilités jaillies de leur audace. Ce sont les inventions de <persName ref="#zbz-p.1022">Stravinski</persName>, ces harmonies grattées, hachées, arrachées aux cordes d'or innombrables. C'est <persName ref="#zbz-p.1094">Ravel</persName>. C'est la richesse de <persName ref="#zbz-p.936">Bela Bartok</persName>, auquel on consacra en entier un concert qui fut un triomphe. Ce sont <persName ref="#zbz-p.269">Honegger</persName>, <persName ref="#zbz-p.963">Hindemith</persName>, <persName ref="#zbz-p.945">Martin</persName>, joués par l'orchestre romand que dirigeait <persName ref="#zbz-p.933">Ansermet</persName>. Chez tous cependant, on trouve bientôt, sous la diversité luxueuse des ressources, cette blessure caractéristique de l'art moderne, cette solitude excessive hors du cosmos qui a l'air d'exiger un autre cosmos — impossible.
+        </p>
+        <p>
+          <persName ref="#zbz-p.1022">Stravinski</persName> dirigea lui-même deux concerts, dont l'un était consacré en entier à sa musique. Je l'ai vu diriger la répétition générale. La plupart des chefs paraissent modeler de la main les surfaces sonores, ils donnent aux œuvres un pourtour plastique. D'autres semblent mimer le mouvement intérieur qui structure le morceau. Mais <persName ref="#zbz-p.1022">Stravinski</persName>, avec une énergie extraordinaire, jette les sons dans l'espace. On dirait que seul le jaillissement, la naissance compte. La main, fermée, ouverte, fermée, provoque des éclatements précis. Mais la main, c'est le truchement, l'aboutissement visible, non la source de cette force. Celle-ci traverse et durcit le buste entier, elle vient, dirait-on, de ce dos voûté. Aucune routine nulle part, pas de mécanisme monté, pas de mise en conserve. Quelques remarques faites à l'orchestre, entre deux exercices répétés, cernant de façon étroite un passage encore peu satis-
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          84
+        </p>
+        <p facs="#facs_7_r_2">
+          <bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_7_r_3">
+          faisant, tendaient à obtenir une impression plus forte par une modération de l'accent. Car la main s'ouvre, mais constamment elle se referme. Elle ne lâche rien et ne se lâche jamais.
+        </p>
+        <p facs="#facs_7_r_4">
+          Deux opéras (outre l'<bibl ref="#zbz-w.456">Œdipe-Roi</bibl> de <persName ref="#zbz-p.1022">Stravinski</persName> avec les fantastiques tableaux vivants de <persName ref="#zbz-p.451">Cocteau</persName>) furent joués au <placeName ref="#zbz-l.428">Théâtre des Champs-Elysées</placeName> : <bibl ref="#zbz-w.457">Wozzeck</bibl>, d'<persName ref="#zbz-p.1095">A. Berg</persName> et <bibl ref="#zbz-w.458">Billy Budd</bibl>, de <persName ref="#zbz-p.1023">Benjamin Britten</persName>. <bibl ref="#zbz-w.457">Wozzeck</bibl>, donné au début du festival par d'excellents chanteurs et dans une mise en scène qu'on n'aurait pu rêver meilleure, reste peut être le clou de tout ce somptueux mois de mai. Nulle part, la blessure moderne dont j'ai parlé n'apparaît mieux que dans cette musique étrange, complètement réinventée pour l'expression d'un malheur sans limite accablant un être anonyme, quelconque — c'est-à-dire : pour l'expression d'un malheur qui ne s'exprime pas lui-même (même pas lorsqu'il paraît tenter de le taire), qui devient à peine un fait de conscience, noyé qu'il est dans un océan de résignation, de soumission à ces engrenages qui sont, pour les pauvres gens, la forme moderne de la fatalité.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.457">Wozzeck</bibl> reste pour chacun des spectateurs, je pense, inoubliable, comme un malheur personnel dont la plainte ne cesse pas. L'enfant à qui on annonce la mort de sa mère se remet, après un instant, à jouer avec son cheval de bois. Il ne comprend pas, l'obscur malheur continue. Quelque part, au cœur du monde, quelque chose pleure sans fin, dans le silence qui suit le « hop-là » de l'enfant, après lequel l'orchestre se tait. Nous sommes loin des fanfares finales de naguère ; et l'homme paraît humilier par sa sobriété.
+        </p>
+        <p>
+          Quant à <bibl ref="#zbz-w.458">Billy Budd</bibl>, nous n'avons été que quelques-uns à l'aimer. <persName ref="#zbz-p.1023">Britten</persName> était pourtant lui-même au pupitre et cette participation d'un illustre compositeur étranger pouvait faire prévoir les ovations de rigueur en de telles circonstances. Mais l'œuvre tomba dans un froid silence où se perdirent quelques applaudissements frileux et des coups de sifflet. On resta bien au-dessous de la politesse. Chacun est libre, certes, d'aimer ou de ne pas aimer une œuvre. Et il est vrai que <bibl ref="#zbz-w.458">Billy Budd</bibl> dure de 9 heures du soir à près d'une heure du matin. Mais à ce qu'il m'a semblé, sa réputation était faite
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          L'ŒUVRE DU VINGTIÈME SIÈCLE
+        </p>
+        <p facs="#facs_8_r_2">
+          85
+        </p>
+        <p facs="#facs_8_r_3">
+          d'avance. A 9 heures un quart, déjà, on murmurait que c'était long. Au premier entracte, dès jeunes gens très compétents déclaraient la musique « bien faite, mais n'apportant rien de nouveau ». Je n'ai pas de compétence en musique, je parle simplement comme auditrice. Mais j'ai peine à croire que l'hostilité décidée du public contre <bibl ref="#zbz-w.458">Billy Budd</bibl> ait été spontanée — et cette impression de réaction pré-déterminée me fait douter, par extension, des applaudissements délirants qui saluèrent telle autre musique, apparemment peu faite pour charmer un parterre rempli de somptueuses toilettes du soir. Il y a eu malgré tout quelque chose de factice dans ces triomphes de l'art moderne, — quelque chose de factice qui allait jusqu'à répandre le malaise d'un insaisissable mensonge.
+        </p>
+        <p facs="#facs_8_r_4">
+          Pour en revenir à <bibl ref="#zbz-w.458">Billy Budd</bibl>, j'y ai retrouvé ce climat si particulier de <persName ref="#zbz-p.1023">Britten</persName>, qui m'avait saisie quand j'ai entendu sa musique pour la première fois et d'où me venait l'écho d'un lieu, inconnu l'instant précédent, et pourtant familier depuis toujours. Des feuillages, des bruissements, nets, mais sans limites, une façon d'admettre l'infini, non par le mystère ou l'enveloppement, mais par une sorte de limpidité où rien ne s'efface. Et après tous ces concerts où les sons étaient durcis par mille formes de staccato, voici que se déroulait un chant. Un vaste chant liait la mer, la joie, la fraternité, la servitude, la haine et la mort. Mais pourquoi donc cette hostilité du public ? Parce que le snobisme désormais interdit le chant — ou parce que les raffinements de l'art abstrait et de la musique pure excluent le thème d'un navire de guerre, camp de concentration flottant où gronde la révolte sous la dormante et séculaire résignation ?
+        </p>
+        <p>
+          J'allais oublier le dernier opéra, venu d'<placeName ref="#zbz-l.411">Amérique</placeName>, <bibl ref="#zbz-w.459">Quatre Saints en trois actes</bibl>, de <persName ref="#zbz-p.1096">Virgil Thomson</persName>, sur un livret de <persName ref="#zbz-p.1097">Gertrud Stein</persName>, mais j'aurais peut-être mieux fait de l'oublier. Décidément, la pauvreté musicale et poétique, même soulignée avec humour, ne devient pour autant ni candeur, ni naturel, ni rien.
+        </p>
+        <p>
+          Je parlerai peu des ballets, sinon pour exprimer mon regret de la place prépondérante qu'ils prirent dans l'ensemble du festival. Il y eut, certes, de belles choses, et le corps de
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          86<lb facs="#facs_9_l_1_1" n="N001" /><bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_9_r_2">
+          ballet de <placeName ref="#zbz-l.52">New-York</placeName> dispose d'étoiles dont la technique est d'une sûreté et d'une diversité éblouissantes. Mais j'oserai dire, malgré les dithyrambes des critiques, que cet instrument parfait n'a pas pris vie pour moi. Je ne crois pas à <persName ref="#zbz-p.1098">Balanchine</persName>, à sa faculté d'invention. Sa chorégraphie me paraît juxtaposer les éléments classiques stéréotypés et les innovations arbitraires, souvent inutilement tortueuses et compliquées. La refonte vive fait défaut. Je veux bien qu'on admire l'audace, mais elle n'est pas une fin en soi. Le ballet d'<bibl ref="#zbz-w.460">Orphée</bibl> sur la merveilleuse musique perlée de <persName ref="#zbz-p.1022">Stravinski</persName> donnait sans cesse envie de fermer les yeux. Quant à celui de <bibl ref="#zbz-w.461">La Cage</bibl>, sur lequel certains critiques brodèrent avec une sorte d'ivresse (ce n'était pas un ballet de <persName ref="#zbz-p.1098">Balanchine</persName>), j'ai bien vu que la danse en était terriblement difficile, mais cela ne m'empêche pas de le trouver en tous points affreux.
+        </p>
+        <p>
+          L'exposition de peinture du festival avait été organisée par <persName ref="#zbz-p.1099">Sweeney</persName>. Historiquement, pour qui voulait faire le point du demi-siècle, elle était extrêmement intéressante. Les tentatives les plus divergentes y ont trouvé leur place — quoique pas toujours par les œuvres les meilleures. Elle me laisse cependant une certaine angoisse et une grande insatisfaction, pour deux raisons surtout. D'abord, l'art non figuratif, avec ses constructions abstraites, non content d'y avoir sa place, y faisait figure de vainqueur exclusif et intolérant. Il a cristallisé autour de lui un dogmatisme nouveau, qui s'est fait fortement sentir aussi dans les Entretiens. On affirmait volontiers que la libération par l'abstrait était le grand événement, la grande conquête du siècle, et un critique alla jusqu'à dire que la splendide exposition de natures mortes de <placeName ref="#zbz-l.1">Paris</placeName>, malgré la perfection des œuvres, lui donnait une impression de mesquinerie, alors qu'en atteignant les toiles de <persName ref="#zbz-p.1100">Braque</persName> et de <persName ref="#zbz-p.1101">Picasso</persName>, il se sentait enfin libéré. Lourde libération. Je pensais aux peintres restés amoureux des visages humains, des paysages, des bêtes. Je pensais à mon ami, le graveur-animalier <persName ref="#zbz-p.258">Robert Hainard</persName>, tragiquement épris d'une nature sauvage que la civilisation lui ronge un peu plus chaque jour — ses nuits de lune dans les forêts, ses aubes dans les marécages, à l'affût de la sauvage innocence animale, comme d'un reste de présence divine. S'il faut permettre toutes les tentatives de
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          L'ŒUVRE DU VINGTIÈME SIÈCLE
+        </p>
+        <p facs="#facs_10_r_2">
+          l'art et toutes ses constructions imaginaires, le snobisme doit-il condamner à mort cet autre art qui continue à s'inventer dans l'amour du réel et qui veut, comme quelqu'un l'a rappelé d'après <persName ref="#zbz-p.250">Cézanne</persName>, « avoir raison sur nature ».
+        </p>
+        <p facs="#facs_10_r_3">
+          Et ensuite, il y avait là des toiles de <persName ref="#zbz-p.1102">Mondrian</persName>, dont un jeune critique américain disait que pour l'une d'elles, il donnerait l'exposition tout entière. Eh bien, je le dis tout net : je n'y crois pas. Je mets même une telle conviction à n'y pas croire que la présence solennelle de ces toiles me fait douter de la sincérité du choix de toutes les autres. Un carré uni posé de travers dans un autre carré uni d'un ton voisin ne constitue pas une toile, même si le rapport ascétique de ces deux formes et de ces deux tons a des finesses qui m'échappent. Voici pourquoi il s'agit là dans le meilleur des cas, d'une conception, d'une idée toute formée dans l'esprit et qui ne doit rien à l'exécution. On peut reproduire ce même rapport à l'infini. Entre le pinceau et la toile, en ce lieu de lutte créatrice, ne se produit ni lutte, ni création. Cela ne peut pas être de l'art. D'autres toiles abstraites existent réellement. Mais même alors naît l'angoisse pour l'avenir : contre quoi l'artiste lutte-t-il, sur quel obstacle, sur quelle difficulté s'appuie-t-il, de tout l'effort de son métier, pour progresser, faire un bond en avant ? Quelles sont les possibilités de progrès dans un art qui tourne le défi résistant du réel ? Que sera-ce demain qu' « apprendre à peindre » ? Et alors la joie que donnaient de vraies peintures : de <persName ref="#zbz-p.411">Van Gogh</persName> (l'Arlésienne), de <persName ref="#zbz-p.1101">Picasso</persName> (<bibl ref="#zbz-w.463">la Repasseuse</bibl>) de <persName ref="#zbz-p.1103">Modigliani</persName> (<bibl ref="#zbz-w.464">Femme du peuple</bibl>), se mêlait de crainte et presque de remords.
+        </p>
+        <p facs="#facs_10_r_4">
+          En somme, une riche aventure, ce mai parisien, une vue d'ensemble, une possibilité unique de recul et de comparaison. Quand on s'interroge, on se dit : en tout cas, l'art moderne n'est ni mort, ni mourant. Mais en même temps sa richesse même paraît en quelque sorte l'enliser. On ne lui voit pas d'avenir, sinon dans des réactions profondes et un retour décidé à la réalité commune.
+        </p>
+        <p>
+          Mais le peuple dans tout cela, ce peuple qui demain fera notre art — ou alors il n'y aura plus d'art — quelle était sa
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          88
+        </p>
+        <p facs="#facs_11_r_2">
+          <bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p>
+          place, son rôle, dans le festival ? Disons-le : rôle nul, place nulle. Les nécessités financières, conjuguées avec celles du goût, l'excluaient. Le festival a été une sorte de bilan — un bilan où le brillant, la mode et le monde jouaient sans doute un rôle anachronique, mais peut-être inévitable. Comme tout bilan, il concernait le passé. Il aurait peut-être fallu, parallèlement, faire une place à ce qui monte, aux artistes non encore consacrés, au peuple encore en attente, préparant ainsi la transition, l'arche de <persName ref="#zbz-p.1176">Noé</persName> qui transmettra l'art passé dans le monde de demain. Le cinéma, cet art qui envahit les continents dans toute leur épaisseur géographique et sociale, aurait mérité autre chose que quelques traits aristocratiquement décochés aux « mass communications ». Ce qui manquait au festival, c'est demain.
+        </p>
+        <p>
+          Mais je ne crois pas qu'il manque au monde occidental, dont les forces vives sont ailleurs.
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>.
+        </p>
+      </div>
+      </body></text>
+</TEI>

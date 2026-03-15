@@ -1,0 +1,44 @@
+{
+  "doc_id": "1980",
+  "reviewer": "quality-screen-manual",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 4,
+  "status": "APPROVED",
+  "pages_inspected": [1, 3],
+  "validator": "VALID (0 errors, 0 warnings)",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1: Titelseite SAMS-INFORMATIONEN, Regionen korrekt, untere Haelfte leer"
+    },
+    {
+      "severity": "info",
+      "code": "L3",
+      "msg": "Overlay S.3: Zweispaltig, dichte Textbloecke, Regionen korrekt abgegrenzt"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Sprache fra/deu deklariert, Text durchgehend franzoesisch -- korrekt"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 2p 1o 7l 1w = 11, Suisse/Europe/Occident/Paradis als Orte plausibel"
+    },
+    {
+      "severity": "info",
+      "code": "E2",
+      "msg": "Paradis als placeName ref zbz-l.302 -- ungewoehnlich aber als symbolischer Ort vertretbar"
+    },
+    {
+      "severity": "info",
+      "code": "K1",
+      "msg": "Kohaerenz: Vortrag ueber Wehrdienstverweigerung, Zivildienst, Pazifismus, in sich geschlossen"
+    }
+  ]
+}

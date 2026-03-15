@@ -1,0 +1,50 @@
+{
+  "doc_id": "1000",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 4,
+  "language": "fra",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p003"],
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V1",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings, 3 Fussnoten"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 21p 5o 0l 0w = 26 (GND-Referenzen statt zbz-Prefixe -- Konferenzkontext)"
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1: E-Periodica-Metadaten (Educateur 109/1973/39), korrekt"
+    },
+    {
+      "severity": "info",
+      "code": "L2",
+      "msg": "Overlay S.3: Dreispaltiges Zeitschriftenlayout, Hersch-Vortrag ab Mitte -- komplexe Zonierung akzeptabel"
+    },
+    {
+      "severity": "warning",
+      "code": "S2",
+      "msg": "Konferenz-Kompilation: S.2-3 enthaelt Beitraege mehrerer Redner (Bandelier, Oury), Herschs Vortrag beginnt erst ab S.3 Mitte"
+    },
+    {
+      "severity": "warning",
+      "code": "S3",
+      "msg": "S.4 enthaelt neben Hersch auch Illich-Vortrag von Etienne Verne -- div-Strukturierung vorhanden, aber editorische Abgrenzung pruefenswert"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Herschs Vortrag 'L'ecole, lieu de rencontre de memoire et d'invention' inhaltlich koharent, gute div-Gliederung nach Themenabschnitten"
+    }
+  ]
+}

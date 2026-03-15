@@ -1,0 +1,236 @@
+{
+  "batch": "tier4_monographien_20p+",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "docs_reviewed": 12,
+  "pages_sample": "S1 + 1/3 + 2/3",
+  "summary": {
+    "all_valid": true,
+    "approved": 12,
+    "needs_review": 0,
+    "total_schema_errors": 0,
+    "total_projekt_errors": 0,
+    "total_warnings": 3
+  },
+  "reviews": [
+    {
+      "doc_id": "20",
+      "status": "APPROVED",
+      "title": "L'ILLUSION PHILOSOPHIQUE",
+      "author": "JEANNE HERSCH",
+      "lang": "fra",
+      "date": "1936",
+      "pages": 208,
+      "pages_inspected": ["p1", "p70", "p139"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: Titel, Autor, Datum 1936, Sprache fra"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.1: Titelseite 'L'Illusion Philosophique' korrekt erkannt"},
+        {"severity": "info", "code": "T1", "msg": "Text kohaerenter philosophischer Traktat, Kapitelstruktur erhalten. Letzte Seiten: Verlagswerbung Librairie Felix Alcan"},
+        {"severity": "info", "code": "E1", "msg": "Entities plausibel: Descartes, Kant, Jaspers, Platon, Sartre u.a. reichhaltig getaggt"},
+        {"severity": "info", "code": "D1", "msg": "div-Struktur: Kapiteleinteilung vorhanden, Text vollstaendig bis Verlagsanhang"}
+      ]
+    },
+    {
+      "doc_id": "40",
+      "status": "APPROVED",
+      "title": "Temps alternes",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1942",
+      "pages": 156,
+      "pages_inspected": ["p1", "p52", "p104"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: Titel, Autor, Datum 1942, Sprache fra"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.1: Titelseite 'Temps Alternes' mit Barcode-Overlay korrekt"},
+        {"severity": "info", "code": "T1", "msg": "Roman, literarischer Fliesstext. Erzaehlung mit langen Absaetzen. Kolophon am Ende: MCMXLII, Presses Albert Kundig Geneve"},
+        {"severity": "info", "code": "E1", "msg": "Entities: Personennamen (Marc, Pierre) und Orte plausibel"},
+        {"severity": "info", "code": "D1", "msg": "Text vollstaendig bis Kolophon S.155"}
+      ]
+    },
+    {
+      "doc_id": "110",
+      "status": "APPROVED",
+      "title": "L'ETRE ET LA FORME",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1946",
+      "pages": 252,
+      "pages_inspected": ["p1", "p84", "p168"],
+      "validator": "VALID (0/0/W1: leeres div type=text)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: Titel, Autor, Datum 1946, Sprache fra"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.1: These-Titelseite 'L'Etre et la Forme' Universite de Geneve korrekt"},
+        {"severity": "info", "code": "T1", "msg": "Doktorarbeit, philosophischer Text mit Fussnoten. Inhaltsverzeichnis am Ende korrekt. Kolophon: 8 Juni 1946 La Chaux-de-Fonds"},
+        {"severity": "info", "code": "W1", "msg": "1 Warning: leeres div -- vermutlich Leerseite, unbedenklich"},
+        {"severity": "info", "code": "E1", "msg": "Entities: Platon, Descartes, Kant, Bergson, Sartre, Grandjean u.a. korrekt getaggt"},
+        {"severity": "info", "code": "D1", "msg": "div-Struktur mit Kapitel-Unterteilung, Table des Matieres am Ende"}
+      ]
+    },
+    {
+      "doc_id": "140",
+      "status": "APPROVED",
+      "title": "Le choix, le monde, l'existence",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1947",
+      "pages": 42,
+      "pages_inspected": ["p1", "p14", "p28"],
+      "validator": "VALID (0/0/W1: 7 top-level divs mit n=1)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: biblStruct bookSection, Datum 1947, Sprache fra"},
+        {"severity": "info", "code": "T1", "msg": "Protokoll einer philosophischen Diskussion (Bulletin Societe francaise de Philosophie). Dialog-Struktur mit sp/speaker-Elementen, Hersch und diverse Assistenten"},
+        {"severity": "info", "code": "W1", "msg": "1 Warning: 7 top-level divs n=1 -- div-Merge nicht gegriffen, aber Inhalt korrekt"},
+        {"severity": "info", "code": "E1", "msg": "Entities plausibel: Hersch, diverse Diskutanten. Letzte Seite: Schluss des Diskussionsprotokolls"},
+        {"severity": "info", "code": "D1", "msg": "Text vollstaendig, endet mit letztem Diskussionsbeitrag S.42 (=p123 im Original)"}
+      ]
+    },
+    {
+      "doc_id": "330",
+      "status": "APPROVED",
+      "title": "Ideologies ET REALITE",
+      "author": "JEANNE HERSCH",
+      "lang": "fra",
+      "date": null,
+      "pages": 318,
+      "pages_inspected": ["p5", "p106", "p212"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header: Titel und Autor korrekt, Sprache fra. KEIN Datum im Header (sourceDesc/bibl ohne date). Intern: Plon 1956 auf Kolophon-Seite"},
+        {"severity": "warning", "code": "H2", "msg": "date-Element fehlt im teiHeader. Kolophon S.314 nennt 1956"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.5: Titelseite 'Ideologies et Realite' mit Inhaltsverzeichnis korrekt"},
+        {"severity": "info", "code": "T1", "msg": "Umfangreicher politisch-philosophischer Essay. Kapitelstruktur erhalten, Fussnoten korrekt, Klappentext am Ende"},
+        {"severity": "info", "code": "T2", "msg": "S.318 (letzte Seite): OCR-Artefakt 'them, and they are not' x7 -- Bibliotheksrueckseite/Scan-Artefakt, kein Inhaltsverlust"},
+        {"severity": "info", "code": "E1", "msg": "Entity-FP: 16x placeName zbz-l.13 auf 'Est' (franz. 'Est-ce que') -- bekanntes Pattern, kein NEEDS_REVIEW-Grund"},
+        {"severity": "info", "code": "E2", "msg": "Entities: Marx, Engels, Sartre, Jaspers, Platon u.a. korrekt. Orte: Sussex, Francfort, Hambourg, Europe plausibel"}
+      ]
+    },
+    {
+      "doc_id": "510",
+      "status": "APPROVED",
+      "title": "Bulletin de la Societe francaise de Philosophie",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1961",
+      "pages": 42,
+      "pages_inspected": ["p1", "p14", "p28"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: biblStruct journalArticle, Datum 1961, Sprache fra"},
+        {"severity": "info", "code": "T1", "msg": "Sitzungsprotokoll Societe francaise de Philosophie. Vortrag und anschliessende Diskussion ueber Zeitdimensionen. Briefe (Birault, General Metz, Edgar Wolff) am Ende"},
+        {"severity": "info", "code": "E1", "msg": "Entities: Bergson, Kant, Einstein, Koyre, Hersch korrekt. Werktitel (Duree et Simultaneite) getaggt"},
+        {"severity": "info", "code": "D1", "msg": "Text vollstaendig bis S.42 (=p158 im Original), letzter Brief Wolff"}
+      ]
+    },
+    {
+      "doc_id": "530",
+      "status": "APPROVED",
+      "title": "La Suisse dans l'Europe actuelle",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1961",
+      "pages": 25,
+      "pages_inspected": ["p1", "p9", "p17"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: biblStruct bookSection, Datum 1961, Sprache fra"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.2: Titelseite 'L'Europe au-dela de l'Economie' mit Brugmans/Luethy/Hersch korrekt"},
+        {"severity": "info", "code": "T1", "msg": "Kongressvortrag (Union Europeenne Lausanne 1960). Thema: Schweiz und Europa-Foederation, Rolle der Neutralitaet, Sprachenpolitik"},
+        {"severity": "info", "code": "E1", "msg": "Entities: Jaspers, Khrouchtchev, Orte (Allemagne, Europe, Berlin, Algerie, Suisse) plausibel"},
+        {"severity": "info", "code": "D1", "msg": "Text vollstaendig, Schluss: 'IMPRIME EN SUISSE'"}
+      ]
+    },
+    {
+      "doc_id": "540",
+      "status": "APPROVED",
+      "title": "Nature, limite et conditions de la connaissance historique",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1961",
+      "pages": 33,
+      "pages_inspected": ["p2", "p11", "p22"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: biblStruct journalArticle, Datum 1961, Sprache fra"},
+        {"severity": "info", "code": "T1", "msg": "Vortrag mit anschliessender Diskussion (Symposium zur historischen Erkenntnis). Sprecher: Hersch, Rotenstreich, Moreau, Passmore, Mercier, Russell"},
+        {"severity": "info", "code": "E1", "msg": "Entities: Hersch, Rotenstreich, Moreau, Passmore, Mercier, Russell korrekt getaggt"},
+        {"severity": "info", "code": "D1", "msg": "Text vollstaendig bis S.33 (=p261), Fussnote am Ende"}
+      ]
+    },
+    {
+      "doc_id": "550",
+      "status": "APPROVED",
+      "title": "L'aspect philosophique du probleme des rapports entre l'etat des structures sociales et la democratie economique",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1961",
+      "pages": 23,
+      "pages_inspected": ["p1", "p8", "p15"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: biblStruct journalArticle, Datum 1961, Sprache fra"},
+        {"severity": "info", "code": "T1", "msg": "Philosophischer Beitrag zu Sozialstruktur und oekonomischer Demokratie. Diskussion mit Janne, Touraine u.a."},
+        {"severity": "info", "code": "E1", "msg": "Entities: Hersch, Janne, Touraine plausibel"},
+        {"severity": "info", "code": "D1", "msg": "Text vollstaendig bis S.23 (=p82), Schluss der Diskussion"}
+      ]
+    },
+    {
+      "doc_id": "680",
+      "status": "APPROVED",
+      "title": "La tradition selon Karl Jaspers repond-elle aux besoins de notre temps?",
+      "author": "Jeanne Hersch",
+      "lang": "fra",
+      "date": "1964",
+      "pages": 21,
+      "pages_inspected": ["p2", "p9", "p15"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: biblStruct journalArticle, Datum 1964, Sprache fra. E-Periodica-Metadaten-Seite als S.1"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.1: E-Periodica-Lieferschein (Studia Philosophica 24/1964) korrekt transkribiert"},
+        {"severity": "info", "code": "T1", "msg": "Essay ueber Jaspers' Traditionsverstaendnis. Totalitarismus-Kritik, Offenheit vs. Fermeture, Tradition und Freiheit"},
+        {"severity": "info", "code": "E1", "msg": "Entities: Jaspers (Hauptthema, haeufig), Socrate, Bergson, Eglises plausibel"},
+        {"severity": "info", "code": "D1", "msg": "Text vollstaendig bis S.21 (=p137), Fussnote zum Schluss"}
+      ]
+    },
+    {
+      "doc_id": "780",
+      "status": "APPROVED",
+      "title": "Entretiens sur LE TEMPS",
+      "author": "Jeanne Hersch et Rene Poirier",
+      "lang": "fra",
+      "date": "1967",
+      "pages": 24,
+      "pages_inspected": ["p1", "p8", "p16"],
+      "validator": "VALID (0/0/W1: 2/156 Entity-Tags ohne ref)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: Titel, zwei Autoren (Hersch et Poirier), Datum 1967, Sprache fra"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.6: Textseite 'Les Dimensions du Temps' korrekt, Layout sauber"},
+        {"severity": "info", "code": "T1", "msg": "Vortrag ueber Zeitdimensionen mit anschliessender philosophischer Diskussion. Sprecher: Hersch, Poirier, Gabriel Marcel, Marina Scriabine"},
+        {"severity": "info", "code": "W1", "msg": "2 Entity-Tags ohne ref -- NER-Injection ausstehend, minimale Luecke"},
+        {"severity": "info", "code": "E1", "msg": "Entities: Hersch, Poirier, Gabriel Marcel, Scriabine, Bergson, Proust plausibel"},
+        {"severity": "info", "code": "D1", "msg": "Dialog-Struktur (sp/speaker), Text vollstaendig bis Schluss der Diskussion"}
+      ]
+    },
+    {
+      "doc_id": "810",
+      "status": "APPROVED",
+      "title": "Freiheit als Stoerfaktor in einer programmierten Gesellschaft",
+      "author": "Jeanne Hersch",
+      "lang": "deu",
+      "date": "1968",
+      "pages": 64,
+      "pages_inspected": ["p1", "p21", "p43"],
+      "validator": "VALID (0/0/0)",
+      "findings": [
+        {"severity": "info", "code": "H1", "msg": "Header korrekt: Titel, Autor, Datum 1968, Sprache deu (einziges deutsches Dokument im Batch)"},
+        {"severity": "info", "code": "L1", "msg": "Overlay S.7: Zweispalten-Layout (Bergedorfer Gespraechskreis), Regionen korrekt segmentiert"},
+        {"severity": "info", "code": "T1", "msg": "Bergedorfer Gespraechskreis-Protokoll Nr. 28. Referat Hersch + Diskussion mit vielen Teilnehmern (Fried, von Weizsaecker, Koerber, Litten, Menke-Glueckert u.a.)"},
+        {"severity": "warning", "code": "T3", "msg": "Zweispalten-Layout (Bergedorfer Gespraechskreis): Spaltenreihenfolge bei Stichproben korrekt, aber Risiko bei 64 Seiten. Kein nachgewiesener Fehler"},
+        {"severity": "warning", "code": "E3", "msg": "Entity-FP: persName ref zbz-p.1407 auf 'Herzen' in 'im Herzen des Prozesses' -- deutsches Substantiv als Personenname (Alexander Herzen) fehlgetaggt. Bekanntes Pattern"},
+        {"severity": "warning", "code": "E3", "msg": "Entity-FP: persName ref zbz-p.1251 auf 'Mensch' in 'Der einzelne Mensch' -- deutsches Substantiv als Personenname fehlgetaggt"},
+        {"severity": "info", "code": "D1", "msg": "Letzte Seiten: Arbeitskreis-Auflistung (Sozialpolitik, Erziehung, Teilnehmer), Bibliotheksstempel UB Basel. Inhalt vollstaendig"}
+      ]
+    }
+  ]
+}

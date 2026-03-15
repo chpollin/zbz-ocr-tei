@@ -1,0 +1,45 @@
+{
+  "doc_id": "1850",
+  "reviewer": "quality-screener-manual",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 8,
+  "language": "fra",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p005"],
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V1",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings, 1 Fussnote"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 21p 17o 22l 5w = 65"
+    },
+    {
+      "severity": "warning",
+      "code": "E2",
+      "msg": "S.3 Z.177: 'Jean Baechler' -- nur 'Jean' (zbz-p.160) annotiert, Nachname fehlt im Tag"
+    },
+    {
+      "severity": "warning",
+      "code": "E3",
+      "msg": "S.2 Z.152: persName 'Italiens' (zbz-p.1701) in 'boulevard des Italiens' -- Strassenname, kein Personenname"
+    },
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Kein Overlay verfuegbar. CADMOS-Zeitschrift Cover + Inhaltsverzeichnis + Artikel. Bibliographische Metadaten (Abonnements, Redaktion) korrekt als <p> strukturiert"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Philosophischer Essay 'Prejuges, postulats, valeurs' (5 Kapitel I-V). Kohaerenter franzoesischer Text, argumentativ dicht, sprachlich einwandfrei. Schlusszeile 'JEANNE HERSCH' als Autorenzeile korrekt"
+    }
+  ]
+}

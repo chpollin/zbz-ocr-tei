@@ -1,0 +1,45 @@
+{
+  "doc_id": "730",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 6, 11],
+      "notes": "Overlay p001 vorhanden, Zonen korrekt auf Titelblatt. S.6 und S.11 Textseiten mit sauberer Zonenabdeckung. S.12 leer (Rueckseite)."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Dt. Redetext (Festrede Luisenschule Essen 1966) gut erfasst. Regieanweisungen wie '(Heiterkeit und Beifall)' korrekt als Fliesstext integriert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "12 Seiten. S.1 Titelseite, S.2 Bibliotheksstempel, S.3-11 Redetext, S.12 Impressum. Fussnoten auf S.8 und S.11 korrekt als <note> codiert."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. sourceDesc/bibl-Struktur, Sprache deu. div type='speech' passend fuer Festrede."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 3,
+        "orgName": 10,
+        "placeName": 6,
+        "bibl": 10
+      },
+      "notes": "Angemessene Entity-Dichte fuer Redetext. Luisenschule, Unesco, Universitaet Genf korrekt getaggt. Jacobs und Nieswandt in Fussnoten referenziert. placeName Rolle (zbz-l.565, 3x) ist bekanntes False-Positive."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vollstaendige Festrede 'Die Frau heute' mit Einleitung, Hauptteil und Dank. Regieanweisungen belegen muendlichen Vortrag. Text koharent und abgeschlossen."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Saubere Edition einer Festrede. Fussnoten, Regieanweisungen und Titelblatt korrekt erfasst."
+}

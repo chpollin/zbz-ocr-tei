@@ -96,9 +96,8 @@
         { href: 'index.html', label: 'Start' },
         { href: 'catalog.html', label: 'Katalog' },
         { href: 'register.html', label: 'Register' },
-        { href: 'reader.html', label: 'Leseansicht' },
         { href: 'about.html', label: 'Projekt' },
-        { href: 'infrastruktur/index.html', label: 'Epist. Infrastruktur' }
+        { href: 'infrastruktur/index.html', label: 'Promptotyping-Artefakte' }
     ];
     const ICON_HAMBURGER = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
 
@@ -141,7 +140,7 @@
             `<a href="${p}index.html">Startseite</a>` +
             `<a href="${p}catalog.html">Katalog</a>` +
             `<a href="${p}about.html">Projekt</a>` +
-            `<a href="${p}infrastruktur/index.html">Epist. Infrastruktur</a>` +
+            `<a href="${p}infrastruktur/index.html">Promptotyping-Artefakte</a>` +
             `</div>` +
             `<p>Zentralbibliothek Zuerich &middot; DHCraft &middot; 2026</p>`;
     }
@@ -199,17 +198,180 @@
             });
     }
 
+    // --- Full-Text Search Index ---
+    let _searchIndexCache = null;
+
+    function loadSearchIndex() {
+        if (_searchIndexCache) return Promise.resolve(_searchIndexCache);
+        return fetch('data/search_index.json')
+            .then((r) => r.json())
+            .then((data) => {
+                _searchIndexCache = data;
+                _log('SearchIndex', `${data.length} Dokumente geladen`);
+                return data;
+            })
+            .catch(() => {
+                _log('SearchIndex', 'nicht verfuegbar');
+                _searchIndexCache = [];
+                return [];
+            });
+    }
+
+    function createFullTextSearchIndex(docs) {
+        if (typeof MiniSearch === 'undefined' || !docs || !docs.length) return null;
+        try {
+            const idx = new MiniSearch({
+                fields: ['title', 'text', 'entitiesStr'],
+                storeFields: ['id', 'title', 'text'],
+                searchOptions: {
+                    boost: { title: 5, entitiesStr: 2, text: 1 },
+                    fuzzy: 0.2,
+                    prefix: true
+                }
+            });
+            idx.addAll(docs.map((d) => ({
+                id: d.id,
+                title: d.title || '',
+                text: d.text || '',
+                entitiesStr: (d.entities || []).join(' ')
+            })));
+            return idx;
+        } catch (e) {
+            console.warn('Full-text search index failed:', e);
+            return null;
+        }
+    }
+
+    function extractSnippet(text, query, contextChars) {
+        if (!text || !query) return '';
+        contextChars = contextChars || 120;
+        const lower = text.toLowerCase();
+        const qLower = query.toLowerCase().split(/\s+/)[0]; // first word
+        const pos = lower.indexOf(qLower);
+        if (pos === -1) return text.substring(0, contextChars * 2) + '...';
+        const start = Math.max(0, pos - contextChars);
+        const end = Math.min(text.length, pos + qLower.length + contextChars);
+        let snippet = (start > 0 ? '...' : '') + text.substring(start, end) + (end < text.length ? '...' : '');
+        // Wrap match in <mark>
+        const escaped = qLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        snippet = snippet.replace(new RegExp('(' + escaped + ')', 'gi'), '<mark>$1</mark>');
+        return snippet;
+    }
+
     // --- Image/TEI Paths ---
     function imagePath(docId, page) {
         return `images/${docId}/${docId}_p${padPage(page)}.png`;
     }
 
-    function fetchTei(docId, page) {
+    // --- Full-document TEI cache (avoids re-fetch on page navigation) ---
+    const _fullTeiCache = {};
+
+    function fetchFullTei(docId) {
+        if (_fullTeiCache[docId]) return Promise.resolve(_fullTeiCache[docId]);
         const paths = [
-            `data/examples/${docId}/${docId}_p${page}.xml`,
-            `../output/tei/${docId}_p${page}.xml`
+            `data/tei/${docId}_final.xml`,
+            `data/examples/${docId}/${docId}_final.xml`,
+            `../output/tei_final/${docId}_final.xml`
         ];
-        return _fetchFirstOk(paths);
+        return _fetchFirstOk(paths).then((xml) => {
+            if (xml) _fullTeiCache[docId] = xml;
+            return xml;
+        });
+    }
+
+    function extractPageFromFull(xml, page) {
+        if (!xml) return null;
+        const clean = xml.replace(/\s+xmlns\s*=\s*"[^"]*"/g, '');
+        const doc = new DOMParser().parseFromString(clean, 'text/xml');
+        if (doc.querySelector('parsererror')) return null;
+
+        const body = doc.querySelector('body');
+        if (!body) return null;
+
+        const pbs = Array.prototype.slice.call(body.querySelectorAll('pb'));
+        if (!pbs.length) {
+            return page === 1 ? new XMLSerializer().serializeToString(body) : null;
+        }
+
+        // Find the <pb> for the target page
+        let startPb = null;
+        let startIdx = -1;
+        for (let i = 0; i < pbs.length; i++) {
+            const n = parseInt(pbs[i].getAttribute('n'), 10);
+            if (n === page) {
+                startPb = pbs[i];
+                startIdx = i;
+                break;
+            }
+        }
+        if (!startPb) return null;
+
+        const endPb = startIdx + 1 < pbs.length ? pbs[startIdx + 1] : null;
+
+        // Collect nodes between startPb and endPb (walk siblings)
+        const frag = doc.createDocumentFragment();
+        // We need to walk through the DOM tree collecting content for this page.
+        // Strategy: serialize body, find text between <pb n="page"> and next <pb>.
+        const bodyStr = new XMLSerializer().serializeToString(body);
+        const pbRegex = /<pb\s[^>]*n="(\d+)"[^>]*\/>/g;
+        const pbPositions = [];
+        let match;
+        while ((match = pbRegex.exec(bodyStr)) !== null) {
+            pbPositions.push({ n: parseInt(match[1], 10), start: match.index, end: match.index + match[0].length });
+        }
+
+        let targetStart = -1;
+        let targetEnd = bodyStr.length;
+        for (let i = 0; i < pbPositions.length; i++) {
+            if (pbPositions[i].n === page) {
+                targetStart = pbPositions[i].start;
+                if (i + 1 < pbPositions.length) {
+                    targetEnd = pbPositions[i + 1].start;
+                } else {
+                    // Until </body>
+                    const bodyClose = bodyStr.lastIndexOf('</body>');
+                    if (bodyClose > targetStart) targetEnd = bodyClose;
+                }
+                break;
+            }
+        }
+
+        if (targetStart === -1) return null;
+        return bodyStr.substring(targetStart, targetEnd);
+    }
+
+    function extractRevisionDesc(xml) {
+        if (!xml) return null;
+        const clean = xml.replace(/\s+xmlns\s*=\s*"[^"]*"/g, '');
+        const doc = new DOMParser().parseFromString(clean, 'text/xml');
+        if (doc.querySelector('parsererror')) return null;
+
+        const revDesc = doc.querySelector('revisionDesc');
+        if (!revDesc) return null;
+
+        const changes = Array.prototype.slice.call(revDesc.querySelectorAll('change'));
+        return changes.map((ch) => ({
+            when: ch.getAttribute('when') || '',
+            who: ch.getAttribute('who') || '',
+            status: ch.getAttribute('status') || '',
+            text: (ch.textContent || '').trim()
+        }));
+    }
+
+    function fetchTei(docId, page) {
+        // Strategy: full document first (cached), extract page; fallback to old page-level
+        return fetchFullTei(docId).then((fullXml) => {
+            if (fullXml) {
+                const pageXml = extractPageFromFull(fullXml, page);
+                if (pageXml) return pageXml;
+            }
+            // Fallback: old page-level paths
+            const paths = [
+                `data/examples/${docId}/${docId}_p${page}.xml`,
+                `../output/tei/${docId}_p${page}.xml`
+            ];
+            return _fetchFirstOk(paths);
+        });
     }
 
     function _fetchFirstOk(urls) {
@@ -251,6 +413,7 @@
         if (doc.lang) html += ` <span class="ed-badge ed-badge-lang">${esc(doc.lang)}</span>`;
         if (doc.entity_count) html += ` <span class="ed-badge ed-badge-ner" title="${doc.entity_count} Entitaeten">${doc.entity_count} Ent.</span>`;
         if (doc.demo) html += ' <span class="ed-badge ed-badge-demo">Demo</span>';
+        if (doc.screening) html += ' ' + screeningBadgeHtml(doc.screening);
         html += '</div></a>';
         return html;
     }
@@ -274,6 +437,48 @@
         'brochure': 'Broschure', 'interview': 'Interview',
         'anthology': 'Anthologie', 'other': 'Sonstige'
     };
+
+    // --- Screening + Curation Labels (Single Source of Truth) ---
+    const SCREENING_LABELS = {
+        'APPROVED': 'LLM genehmigt',
+        'APPROVED_WITH_NOTES': 'Mit Anmerkungen',
+        'NEEDS_REVIEW': 'Pruefung noetig',
+        'NOT_SCREENED': 'Nicht gescreent'
+    };
+    const SCREENING_CLASSES = {
+        'APPROVED': 'ed-badge-screening-approved',
+        'APPROVED_WITH_NOTES': 'ed-badge-screening-notes',
+        'NEEDS_REVIEW': 'ed-badge-screening-review',
+        'NOT_SCREENED': 'ed-badge-screening-none'
+    };
+    const CURATION_LABELS = {
+        'uncurated': 'Nicht kuratiert',
+        'draft': 'Entwurf',
+        'in_progress': 'In Bearbeitung',
+        'in_review': 'In Pruefung',
+        'editor_approved': 'Editor freigegeben'
+    };
+    const CURATION_CLASSES = {
+        'uncurated': 'ed-badge-curation-uncurated',
+        'draft': 'ed-badge-curation-draft',
+        'in_progress': 'ed-badge-curation-progress',
+        'in_review': 'ed-badge-curation-review',
+        'editor_approved': 'ed-badge-curation-approved'
+    };
+
+    function screeningBadgeHtml(status) {
+        if (!status) return '';
+        const label = SCREENING_LABELS[status] || status;
+        const cls = SCREENING_CLASSES[status] || 'ed-badge-screening-none';
+        return `<span class="ed-badge ${cls}">${esc(label)}</span>`;
+    }
+
+    function curationBadgeHtml(status) {
+        if (!status || status === 'pipeline') return '';
+        const label = CURATION_LABELS[status] || status;
+        const cls = CURATION_CLASSES[status] || 'ed-badge-curation-uncurated';
+        return `<span class="ed-badge ${cls}">${esc(label)}</span>`;
+    }
 
     // --- Init ---
     function init() {
@@ -303,8 +508,14 @@
         highlightXml: highlightXml,
         padPage: padPage,
         loadCatalog: loadCatalog,
+        loadSearchIndex: loadSearchIndex,
+        createFullTextSearchIndex: createFullTextSearchIndex,
+        extractSnippet: extractSnippet,
         imagePath: imagePath,
         fetchTei: fetchTei,
+        fetchFullTei: fetchFullTei,
+        extractPageFromFull: extractPageFromFull,
+        extractRevisionDesc: extractRevisionDesc,
         loadEntityIndex: loadEntityIndex,
         loadEntityRegister: loadEntityRegister,
         lookupEntity: lookupEntity,
@@ -312,6 +523,12 @@
         buildCardHtml: buildCardHtml,
         LANG_LABELS: LANG_LABELS,
         TYPE_LABELS: TYPE_LABELS,
-        PUB_FORM_LABELS: PUB_FORM_LABELS
+        PUB_FORM_LABELS: PUB_FORM_LABELS,
+        SCREENING_LABELS: SCREENING_LABELS,
+        SCREENING_CLASSES: SCREENING_CLASSES,
+        CURATION_LABELS: CURATION_LABELS,
+        CURATION_CLASSES: CURATION_CLASSES,
+        screeningBadgeHtml: screeningBadgeHtml,
+        curationBadgeHtml: curationBadgeHtml
     };
 })();

@@ -1,0 +1,43 @@
+{
+  "doc_id": "1280",
+  "reviewer": "quality-screener-t2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 2,
+  "pages": 6,
+  "lang": "fra",
+  "validator": "VALID (0 errors, 0 warnings)",
+  "pages_inspected": ["p001", "p004"],
+  "findings": [
+    {
+      "severity": "info",
+      "category": "metadata",
+      "msg": "Titel 'L'homme et la nature sous l'emprise de la chimie' korrekt. biblStruct journalArticle, CHIMIA Vol. 30 (1976). Autorin Jeanne Hersch. Sprache fra korrekt."
+    },
+    {
+      "severity": "info",
+      "category": "structure",
+      "msg": "6 Seiten. S.1 CHIMIA-Impressum mit Redaktionsteam. S.2 Beginn Hersch-Text (Dreispaltenlayout). S.3-5 Haupttext. S.6 Schluss. Div-Struktur mit heads. Dreispaltiges Zeitschriften-Layout als lineare Absatzfolge korrekt umgesetzt."
+    },
+    {
+      "severity": "info",
+      "category": "entities",
+      "msg": "S.1: persName fuer Redaktionskomitee (alle GND:unknown). orgName: BAG Brunner Verlag AG, Schweizerischer Chemiker-Verband. foreign-Tags fuer fra/eng im Impressum. S.2ff: Hersch (GND:118815679), WHO/OMS referenziert."
+    },
+    {
+      "severity": "info",
+      "category": "text_quality",
+      "msg": "Franzoesischer Essay ueber Chemie, Umwelt und Menschenwuerde koharent. Argumentation von Umweltschutz zu philosophischen Grundfragen (liberte, sante) vollstaendig."
+    },
+    {
+      "severity": "info",
+      "category": "layout",
+      "msg": "p001-Overlay: CHIMIA-Titelseite dreispaltig, Impressum-Zonen komplex aber korrekt. p004-Overlay: Zweispaltiges Layout, alle Textbloecke gruen erfasst."
+    },
+    {
+      "severity": "minor",
+      "category": "structure",
+      "msg": "Impressum-Seite (S.1) sehr detailreich mit vielen kleinen Zonen. Doppelte Zone facs_2_r_2/r_3 (identische Koordinaten) -- kosmetisch."
+    }
+  ]
+}

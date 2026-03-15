@@ -1,0 +1,51 @@
+{
+  "doc_id": "770",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "n/a",
+      "pages_inspected": [],
+      "notes": "Kein Overlay vorhanden (0 Overlays). Kann Scan-Qualitaet nicht visuell pruefen."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Layout-JSON Seite 1 hat leere text-Felder. TEI-Text sauber: franzoesischer Hersch-Essay und deutscher Bratschi-Text korrekt transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Doppelseiten-Layout (P1). Region-Typen korrekt."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": [],
+      "notes": "VALID, aber: Titel im Header ist '770' (Doc-ID statt Titel). sourceDesc verwendet bibl statt biblStruct. Kein biblStruct type-Attribut."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 7,
+        "orgName": 3,
+        "placeName": 54,
+        "bibl": 2
+      },
+      "notes": "Viele placeName (54) passend fuer geopolitischen Essay. 'La Suisse' inkonsistent referenziert (zbz-l.521, zbz-l.705, zbz-l.672). 'Europaeer', 'Amerikaner' als persName."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Hersch-Essay 'La Suisse et l'Europe' vollstaendig (fra). Dann FREMDER Text: 'Der Schweizerische Gewerkschaftsbund' von Robert Bratschi (deu) im selben div. Fehlende div-Trennung."
+    }
+  },
+  "findings": [
+    "Titel im Header ist '770' statt 'La Suisse et l'Europe'",
+    "sourceDesc verwendet bibl statt biblStruct",
+    "Fremder Text (Robert Bratschi) im selben div wie Hersch-Essay",
+    "Inkonsistente placeName-IDs fuer 'Suisse'",
+    "'Europaeer', 'Amerikaner' als persName"
+  ],
+  "overall_notes": "Anthology-Dokument mit Hersch-Essay 'La Suisse et l'Europe' und fremdem Bratschi-Text. Hersch-Teil koharent und vollstaendig. Titel-Problem im Header und fehlende div-Trennung."
+}

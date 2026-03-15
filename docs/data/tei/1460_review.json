@@ -1,0 +1,45 @@
+{
+  "doc_id": "1460",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [2, 4],
+      "notes": "Kein Overlay fuer S.1 (Titelblatt-Grafik). S.2 zweispaltig mit Kopfzeile, S.4 zweispaltig -- Zonen korrekt."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Deutsch korrekt, schweizerdeutsche Eigenheiten (grosse statt grosse). Laengerer Vortrag ohne sichtbare OCR-Fehler."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "7 Seiten, Titelblatt + 6 Textseiten. Zweispaltiges Layout korrekt aufgeloest. Zwischenueberschriften als head/div."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": ["W7"],
+      "notes": "VALID. W7 (graphic url=unknown) betrifft Titelblatt-Illustration -- akzeptabel, da kein Bild-URL verfuegbar. Vortragsstruktur sauber."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 4,
+        "orgName": 5,
+        "placeName": 1,
+        "bibl": 0
+      },
+      "notes": "Hersch (GND), Huguet, Besson, Konopka. Pro Infirmis, Weltgesundheitsorganisation als orgName. Gwatt als placeName. Franzoesischer Nachfolge-Artikel am Ende korrekt mit foreign."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Philosophischer Vortrag ueber Integration von Behinderten. Klare Argumentationsstruktur: objektive/subjektive Integration, widerspruchliche Beduerfnisse, Kompensation. Franzoesischer Anhang am Ende."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Vortrag bei Pro Infirmis. Sauber strukturiert mit Zwischenueberschriften. W7 (graphic url=unknown) ist akzeptabel fuer Illustration ohne digitale Quelle."
+}

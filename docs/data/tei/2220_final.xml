@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Schweizerische Ärztezeitung</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2220</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Schweizerische Ärztezeitung</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1985</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). Mehrere persName Mensch (zbz-p.1251) false positives; persName false positives: Christ, Philosophen, Gott; Hohe Entity-Dichte (192 total)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1199" lry="1761">
+      <zone xml:id="facs_1_r_1" ulx="10" uly="306" lrx="1179" lry="1054" />
+      <zone xml:id="facs_1_r_2" ulx="146" uly="1327" lrx="215" lry="1351" />
+      <zone xml:id="facs_1_r_3" ulx="121" uly="1353" lrx="183" lry="1376" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1232" lry="1754">
+      <zone xml:id="facs_2_r_1" ulx="721" uly="84" lrx="1026" lry="308" />
+      <zone xml:id="facs_2_r_2" ulx="142" uly="123" lrx="313" lry="167" />
+      <zone xml:id="facs_2_r_3" ulx="146" uly="195" lrx="412" lry="227" />
+      <zone xml:id="facs_2_r_4" ulx="146" uly="221" lrx="445" lry="374" />
+      <zone xml:id="facs_2_r_5" ulx="794" uly="349" lrx="888" lry="375" />
+      <zone xml:id="facs_2_r_6" ulx="148" uly="378" lrx="301" lry="394" />
+      <zone xml:id="facs_2_r_7" ulx="727" uly="380" lrx="1163" lry="423" />
+      <zone xml:id="facs_2_r_8" ulx="508" uly="386" lrx="683" lry="477" />
+      <zone xml:id="facs_2_r_9" ulx="148" uly="390" lrx="343" lry="406" />
+      <zone xml:id="facs_2_r_10" ulx="148" uly="405" lrx="166" lry="419" />
+      <zone xml:id="facs_2_r_11" ulx="148" uly="416" lrx="314" lry="433" />
+      <zone xml:id="facs_2_r_12" ulx="795" uly="421" lrx="1164" lry="659" />
+      <zone xml:id="facs_2_r_13" ulx="147" uly="428" lrx="291" lry="448" />
+      <zone xml:id="facs_2_r_14" ulx="148" uly="442" lrx="366" lry="462" />
+      <zone xml:id="facs_2_r_15" ulx="146" uly="478" lrx="446" lry="509" />
+      <zone xml:id="facs_2_r_16" ulx="149" uly="522" lrx="445" lry="541" />
+      <zone xml:id="facs_2_r_17" ulx="148" uly="614" lrx="367" lry="635" />
+      <zone xml:id="facs_2_r_18" ulx="147" uly="640" lrx="447" lry="826" />
+      <zone xml:id="facs_2_r_19" ulx="797" uly="671" lrx="1163" lry="708" />
+      <zone xml:id="facs_2_r_20" ulx="796" uly="707" lrx="1163" lry="832" />
+      <zone xml:id="facs_2_r_21" ulx="148" uly="841" lrx="392" lry="857" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1236" lry="1763">
+      <zone xml:id="facs_3_r_1" ulx="799" uly="122" lrx="1099" lry="250" />
+      <zone xml:id="facs_3_r_2" ulx="365" uly="360" lrx="731" lry="436" />
+      <zone xml:id="facs_3_r_3" ulx="794" uly="360" lrx="893" lry="378" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1238" lry="1757">
+      <zone xml:id="facs_4_r_1" ulx="67" uly="107" lrx="1079" lry="177" />
+      <zone xml:id="facs_4_r_2" ulx="71" uly="189" lrx="410" lry="217" />
+      <zone xml:id="facs_4_r_3" ulx="70" uly="232" lrx="713" lry="276" />
+      <zone xml:id="facs_4_r_4" ulx="72" uly="297" lrx="379" lry="324" />
+      <zone xml:id="facs_4_r_5" ulx="68" uly="433" lrx="579" lry="751" />
+      <zone xml:id="facs_4_r_6" ulx="590" uly="434" lrx="1105" lry="1607" />
+      <zone xml:id="facs_4_r_7" ulx="67" uly="781" lrx="579" lry="1233" />
+      <zone xml:id="facs_4_r_8" ulx="67" uly="1257" lrx="576" lry="1473" />
+      <zone xml:id="facs_4_r_9" ulx="67" uly="1535" lrx="573" lry="1602" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1234" lry="1747">
+      <zone xml:id="facs_5_r_1" ulx="148" uly="100" lrx="653" lry="161" />
+      <zone xml:id="facs_5_r_2" ulx="667" uly="103" lrx="1182" lry="1591" />
+      <zone xml:id="facs_5_r_3" ulx="145" uly="208" lrx="656" lry="1355" />
+      <zone xml:id="facs_5_r_4" ulx="144" uly="1352" lrx="652" lry="1594" />
+      <zone xml:id="facs_5_r_5" ulx="135" uly="1643" lrx="172" lry="1678" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1228" lry="1757">
+      <zone xml:id="facs_6_r_1" ulx="68" uly="115" lrx="578" lry="221" />
+      <zone xml:id="facs_6_r_2" ulx="68" uly="248" lrx="578" lry="807" />
+      <zone xml:id="facs_6_r_3" ulx="66" uly="833" lrx="577" lry="1283" />
+      <zone xml:id="facs_6_r_4" ulx="66" uly="1280" lrx="576" lry="1609" />
+      <zone xml:id="facs_6_r_5" ulx="592" uly="1471" lrx="1101" lry="1604" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1236" lry="1744">
+      <zone xml:id="facs_7_r_1" ulx="139" uly="106" lrx="653" lry="1297" />
+      <zone xml:id="facs_7_r_2" ulx="667" uly="106" lrx="1178" lry="637" />
+      <zone xml:id="facs_7_r_3" ulx="665" uly="689" lrx="1177" lry="1594" />
+      <zone xml:id="facs_7_r_4" ulx="140" uly="1325" lrx="650" lry="1592" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1232" lry="1757">
+      <zone xml:id="facs_8_r_1" ulx="72" uly="108" lrx="582" lry="169" />
+      <zone xml:id="facs_8_r_2" ulx="71" uly="189" lrx="582" lry="1393" />
+      <zone xml:id="facs_8_r_3" ulx="597" uly="1203" lrx="1106" lry="1387" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <placeName ref="#zbz-l.6">Bern</placeName>, 3. Juli 1985<lb facs="#facs_1_l_1_1" n="N001" />27/1985
+        </head>
+        <p facs="#facs_1_r_2">
+          Ärzte<lb facs="#facs_1_l_2_1" n="N001" />Médecins<lb facs="#facs_1_l_2_2" n="N002" />Médici
+        </p>
+        <p facs="#facs_1_r_3">
+          
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          Schweizerische Medizinische Interfakultätskommission<lb facs="#facs_1_l_5_1" n="N001" /><orgName ref="#zbz-o.457">Commission interfacultés médicale suisse</orgName><lb facs="#facs_1_l_5_2" n="N002" />Milieutherapie und Zwangsmassnahmen (5 Referate eines Symposiums in der <orgName ref="#zbz-o.352">Psychiatrischen Universitätsklinik Bern</orgName>)<lb facs="#facs_1_l_5_3" n="N003" />Herabsetzung des Unfallrisikos beim Fussballspiel
+        </p>
+        <p>
+          <bibl ref="#zbz-w.489">Schweizerische Ärztezeitung</bibl> <bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl> <bibl ref="#zbz-w.281">Bollettino dei medici svizzeri</bibl>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 66, 1985, Heft 27 3.7.85
+        </p>
+        <p facs="#facs_2_r_2">
+          Impressum
+        </p>
+        <p facs="#facs_2_r_3">
+          Verantwortlich für die Redaktion:<lb facs="#facs_2_l_3_1" n="N001" /><persName ref="#zbz-p.639">Carlo Grassi</persName>, Dr. med. h.c.<lb facs="#facs_2_l_3_2" n="N002" />Generalsekretariat der <placeName ref="#zbz-l.10">Schweiz</placeName>. Ärzteorganisation<lb facs="#facs_2_l_3_3" n="N003" />3000 <placeName ref="#zbz-l.6">Bern</placeName> 16, Elfenstr. 18, Tel. 031 435543<lb facs="#facs_2_l_3_4" n="N004" />Stellvertretung: Dr. iur. <persName ref="#zbz-p.907">Karl Appert</persName>,<lb facs="#facs_2_l_3_5" n="N005" /><orgName ref="#zbz-o.760">Schweizer</orgName> Ärzte-Information,<lb facs="#facs_2_l_3_6" n="N006" />8008 <placeName ref="#zbz-l.45">Zürich</placeName>, Seefeldstr. 198, Tel. 01 56 05 05<lb facs="#facs_2_l_3_7" n="N007" />Lic. iur <persName ref="#zbz-p.908">F.-X. Deschenaux</persName>,<lb facs="#facs_2_l_3_8" n="N008" />Service romand d'information médicale<lb facs="#facs_2_l_3_9" n="N009" />1010 <placeName ref="#zbz-l.19">Lausanne</placeName>, Case postale, rte d'Oron,<lb facs="#facs_2_l_3_10" n="N010" />tél. 021 321874<lb facs="#facs_2_l_3_11" n="N011" />Redaktionssekretariat: Frau <persName ref="#zbz-p.640">Charlotte Borer</persName><lb facs="#facs_2_l_3_12" n="N012" />3000 <placeName ref="#zbz-l.6">Bern</placeName> 16, Elfenstr. 18, Tel. 031 435543
+        </p>
+        <p facs="#facs_2_r_4">
+          Aufsichtskommission:<lb facs="#facs_2_l_4_1" n="N001" />Dr. <persName ref="#zbz-p.427">K. Zimmermann</persName>, 8008 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_2_l_4_2" n="N002" />Dr. <persName ref="#zbz-p.641">L. Fierz</persName>, 3000 <placeName ref="#zbz-l.6">Bern</placeName><lb facs="#facs_2_l_4_3" n="N003" />Dr. <persName ref="#zbz-p.909">A. Hunziker</persName>, 8001 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_2_l_4_4" n="N004" />Dr. <persName ref="#zbz-p.910">P. Oehrl</persName>, 1009 <placeName ref="#zbz-l.125">Pully</placeName><lb facs="#facs_2_l_4_5" n="N005" />Dr. <persName ref="#zbz-p.643">F. Schönenberger</persName>, 1700 <placeName ref="#zbz-l.65">Freiburg</placeName><lb facs="#facs_2_l_4_6" n="N006" />Dr. <persName ref="#zbz-p.644">A. Seiler</persName>, 3000 <placeName ref="#zbz-l.6">Bern</placeName>
+        </p>
+        <p facs="#facs_2_r_5">
+          Redaktionsschluss für Originalartikel und Bekanntmachungen: Montagvormittag, eine Woche vor Erscheinen.<lb facs="#facs_2_l_5_1" n="N001" />Namentlich gezeichnete Beiträge sind als Meinung des Verfassers zu verstehen.<lb facs="#facs_2_l_5_2" n="N002" />Sämtliche die «Ärztezeitung» betreffenden Korrespondenzen und Manuskripte sind ausschließlich an die Redaktion – nicht an den Verlag – zu richten.
+        </p>
+        <p facs="#facs_2_r_6">
+          Verlag, Anzeigenverwaltung und Abonnements:<lb facs="#facs_2_l_6_1" n="N001" /><orgName ref="#zbz-o.236">Hans Huber AG</orgName>, Länggassstrasse 76, Postfach, 3000 <placeName ref="#zbz-l.6">Bern</placeName> 9, Telefon 031 242533. – Erscheint wöchentlich. – Jahresabonnement <placeName ref="#zbz-l.10">Schweiz</placeName> Fr.110.-; Ausland sfr.174.- (inkl. Porto und Versandgebühren). Postscheckkonto 30-6675. Die Bezugsdauer verlängert sich jeweils um ein weiteres Jahr, wenn nicht bis zum 1. Oktober schriftlich gekündigt wird. – Interatenschluss: Geschäftsinserate 3 Wochen vor Erscheinen, Stelleninserate am Dienstag der vorangehenden Woche, 16 Uhr.<lb facs="#facs_2_l_6_2" n="N002" />In <placeName ref="#zbz-l.240">Belgien</placeName>, <placeName ref="#zbz-l.160">Dänemark</placeName>, <placeName ref="#zbz-l.241">Deutschland</placeName>, <placeName ref="#zbz-l.242">Finnland</placeName>, <placeName ref="#zbz-l.243">Italien</placeName>, <placeName ref="#zbz-l.244">Luxemburg</placeName>, <placeName ref="#zbz-l.245">Norwegen</placeName>, <placeName ref="#zbz-l.96">Portugal</placeName> und <placeName ref="#zbz-l.246">Schweden</placeName> kann die «Ärztezeitung» durch die Postämter bestellt werden.
+        </p>
+        <p facs="#facs_2_r_7">
+          Druck und Spedition: Büchler «Co.AG, »<bibl ref="#zbz-w.489">Schweizerische Ärztezeitung</bibl>«, 3084 <placeName ref="#zbz-l.247">Wabern</placeName>.
+        </p>
+        <p facs="#facs_2_r_8">
+          Responsable pour la rédaction:<lb facs="#facs_2_l_8_1" n="N001" /><persName ref="#zbz-p.639">Carlo Grassi</persName>, D° méd. h.c.<lb facs="#facs_2_l_8_2" n="N002" />Secrétariat général des institutions du corps médical suisse, Elfenstr. 18, 3000 <placeName ref="#zbz-l.6">Bern</placeName> 16<lb facs="#facs_2_l_8_3" n="N003" />Remplaçant: Dr. iur. <persName ref="#zbz-p.907">Karl Appert</persName>,<lb facs="#facs_2_l_8_4" n="N004" /><orgName ref="#zbz-o.760">Schweizer</orgName> Ärzte-Information,<lb facs="#facs_2_l_8_5" n="N005" />8008 <placeName ref="#zbz-l.45">Zürich</placeName>, Seefeldstr. 198, Tel. 01 56 05 05<lb facs="#facs_2_l_8_6" n="N006" />Lic. iur. <persName ref="#zbz-p.908">F.-X. Deschenaux</persName>,<lb facs="#facs_2_l_8_7" n="N007" />Service romand d'information médicale<lb facs="#facs_2_l_8_8" n="N008" />1010 <placeName ref="#zbz-l.19">Lausanne</placeName>, Case postale, rte d'Oron,<lb facs="#facs_2_l_8_9" n="N009" />tél. 021 321874<lb facs="#facs_2_l_8_10" n="N010" />Secrétariat de rédaction: Mme <persName ref="#zbz-p.640">Charlotte Borer</persName><lb facs="#facs_2_l_8_11" n="N011" />3000 <placeName ref="#zbz-l.6">Berne</placeName> 16, Elfenstrasse 18, tél. 031 435543
+        </p>
+        <p facs="#facs_2_r_9">
+          <orgName ref="#zbz-o.20">Commission</orgName> de surveillance:<lb facs="#facs_2_l_9_1" n="N001" />D° <persName ref="#zbz-p.427">K. Zimmermann</persName>, 8008 <placeName ref="#zbz-l.45">Zurich</placeName><lb facs="#facs_2_l_9_2" n="N002" />D° <persName ref="#zbz-p.641">L. Fierz</persName>, 3000 <placeName ref="#zbz-l.6">Berne</placeName><lb facs="#facs_2_l_9_3" n="N003" />D° <persName ref="#zbz-p.909">A. Hunziker</persName>, 8001 <placeName ref="#zbz-l.45">Zurich</placeName><lb facs="#facs_2_l_9_4" n="N004" />D° <persName ref="#zbz-p.910">P. Oehrl</persName>, 1009 <placeName ref="#zbz-l.125">Pully</placeName><lb facs="#facs_2_l_9_5" n="N005" />D° <persName ref="#zbz-p.643">F. Schönenberger</persName>, 1700 <placeName ref="#zbz-l.65">Fribourg</placeName><lb facs="#facs_2_l_9_6" n="N006" />D° <persName ref="#zbz-p.644">A. Seiler</persName>, 3000 <placeName ref="#zbz-l.6">Berne</placeName>
+        </p>
+        <p facs="#facs_2_r_10">
+          Dernier délai pour les articles originaux et les communications: le lundi matin de la semaine précédant celle de la parution.<lb facs="#facs_2_l_10_1" n="N001" />Les textes signés ne reflètent que l'opinion de l'auteur.<lb facs="#facs_2_l_10_2" n="N002" />Toute la correspondance relative au «<bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl>» de même que les manuscrits qui lui sont destinés doivent être adressés à la rédaction et non à l'éditeur.
+        </p>
+        <p facs="#facs_2_r_11">
+          Editions, régie des annonces et abonnements:<lb facs="#facs_2_l_11_1" n="N001" /><orgName ref="#zbz-o.237">Hans Huber SA</orgName>, Länggassstrasse 76, Case postale, 3000 <placeName ref="#zbz-l.6">Berne</placeName> 9, tél. 031 242533. – Paraît tous les huit jours. – Abonnement annuel <placeName ref="#zbz-l.705">Suisse</placeName> Fr.110.-; étranger Fr.a.174.- (incl. frais de ports et d'expédition). – Compte de chèques postaux 30-6675. La durée d'abonnement se renouvelle automatiquement chaque année si vous n'annulliez pas l'abonnement par écrit jusqu'au 1er octobre. Dernier délai pour la remise des annonces: commerciales, 3 semaines avant la parution; offres et demandes d'emploi, le mardi (16 h) de la semaine précédant la parution.<lb facs="#facs_2_l_11_2" n="N002" />On peut s'abonner directement par la poste dans les pays ci-après: <placeName ref="#zbz-l.26">Allemagne</placeName>, <placeName ref="#zbz-l.108">Belgique</placeName>, <placeName ref="#zbz-l.160">Danemark</placeName>, <placeName ref="#zbz-l.320">Finlande</placeName>, <placeName ref="#zbz-l.110">Italie</placeName>, <placeName ref="#zbz-l.549">Luxembourg</placeName>, <placeName ref="#zbz-l.148">Norvège</placeName>, <placeName ref="#zbz-l.96">Portugal</placeName> et <placeName ref="#zbz-l.80">Suède</placeName>.
+        </p>
+        <p facs="#facs_2_r_12">
+          Impression et expédition: Büchler «Cie SA, »<bibl ref="#zbz-w.833">Bulletin des médecins suisses</bibl>», 3084 <placeName ref="#zbz-l.247">Wabern</placeName>.
+        </p>
+        <p facs="#facs_2_r_13">
+          Inhalt<lb facs="#facs_2_l_13_1" n="N001" />Sommaire<lb facs="#facs_2_l_13_2" n="N002" />Sommario
+        </p>
+        <p facs="#facs_2_r_14">
+          1237 Spectrum
+        </p>
+        <p facs="#facs_2_r_15">
+          1139 Schweizerische Medizinische Interfakultätskommission<lb facs="#facs_2_l_15_1" n="N001" />Der Bericht über die Beratungen der Interfakultätskommission vom 25. Mai 1985 in <placeName ref="#zbz-l.6">Bern</placeName> fasst die bei diesem Anlass gehaltenen zwei Referate über den Stellenwert des Pharmaze-studiums in der Ausbildung der Medizinalpersonen und die wichtigsten Punkte der anschliessenden Diskussion zusammen. An der gleichen Sitzung orientierte der Präsident der <orgName ref="#zbz-o.454">FMH</orgName> über die Pläne zur Durchführung eines Pilotversuches einer «Gesundheitskasse» nach dem Vorbild der amerikanischen HMO. Auch diese Information wird in ihren wichtigsten Punkten zusammengefasst.
+        </p>
+        <p facs="#facs_2_r_16">
+          1240 <orgName ref="#zbz-o.20">Commission</orgName> Interfacultés Médicale <placeName ref="#zbz-l.705">Suisse</placeName> (CIMS)<lb facs="#facs_2_l_16_1" n="N001" />Réunie le 25 mai, la CIMS a entendu deux exposés au sujet de la place des études de pharmacie dans la formation à l'exercice d'une activité du domaine médical. On trouve résumés, ci-après, ces exposés et la discussion qui en est résultée. À la même séance, le président de la <orgName ref="#zbz-o.454">FMH</orgName> a donné une information sur l'essai pilote de «caisse de santé» (HMO).
+        </p>
+        <p facs="#facs_2_r_17">
+          1241 Milieutherapie und Zwangsmassnahmen<lb facs="#facs_2_l_17_1" n="N001" />Die Psychiatrische Universitätsklinik Waldau-<placeName ref="#zbz-l.6">Bern</placeName> lud Anfang November <bibl ref="#zbz-w.327">1984</bibl> zu einem aus dem In- und Ausland stark besuchten <bibl ref="#zbz-w.546">Symposium</bibl> unter dem Thema «Milieutherapie und Zwangsmassnahmen» nach <placeName ref="#zbz-l.6">Bern</placeName> ein. Die Referate wurden auf Band aufgenommen und ins reine geschrieben.<lb facs="#facs_2_l_17_2" n="N002" />Durch das nun seit einigen Jahren in Kraft stehende Gesetz über den fürsorgerischen Freiheitsentzug verdienen die gehaltenen Vorträge die besondere Aufmerksamkeit der Ärzte.<lb facs="#facs_2_l_17_3" n="N003" />In Absprache mit dem ärztlichen Direktor der «Waldau», Prof. Dr. med. <persName ref="#zbz-p.911">W. Böker</persName> – mit dem auch die Auswahl getroffen wurde –, veröffentlichen wir einige der besonders auch für die Ärzte informativen Texte:
+        </p>
+        <p facs="#facs_2_r_18">
+          1241 «Selbstsein zwischen Zwang und Freiheit»<lb facs="#facs_2_l_18_1" n="N001" />Frau Prof. <persName ref="#zbz-p.2">J. Hersch</persName>
+        </p>
+        <p facs="#facs_2_r_19">
+          1246 Kommunikation in der psychiatrischen Klinik – Wohltat oder Zwang?<lb facs="#facs_2_l_19_1" n="N001" />Prof. <persName ref="#zbz-p.911">W. Böker</persName>
+        </p>
+        <p facs="#facs_2_r_20">
+          1249 Zwangsbehandlung in der Psychiatrie: Medizinische und rechtliche Aspekte aus der Sicht der psychiatrischen Klinik<lb facs="#facs_2_l_20_1" n="N001" />Dr. <persName ref="#zbz-p.912">J.-P. Pauchard</persName>
+        </p>
+        <p facs="#facs_2_r_21">
+          1254 Wie erlebt der Patient unsere Zwangsmassnahmen – und wie erleben wir sie?<lb facs="#facs_2_l_21_1" n="N001" />Prof. <persName ref="#zbz-p.913">K. Ernst</persName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <placeName ref="#zbz-l.6">Bern</placeName>, 3. Juli 1985<lb facs="#facs_3_l_1_1" n="N001" />66. Jahrgang<lb facs="#facs_3_l_1_2" n="N002" />Erscheint jeden Mittwoch
+        </p>
+        <p facs="#facs_3_r_2">
+          |   | 1256 Zwangsmassnahmen in der Psychiatrie: medizinisch-ethische und rechtliche Aspekte aus der Sicht des Kantonsarztes Prof. H. E. <persName ref="#zbz-p.887">Bürgi</persName> | 1266 Todesfälle / Décès / Decessi Praxiseröffnungen / Nouveaux cabinets médicaux / Apertura di nuovi studi medici Ernennungen / Nominations / Nomine  |<lb facs="#facs_3_l_2_1" n="N001" />| --- | --- | --- |<lb facs="#facs_3_l_2_2" n="N002" />|   | 1258 Herabsetzung des Unfallrisikos beim Fussballspiel Dr. rer. pol. K. Wegmüller Die tragischen Vorkommnisse beim Cupfinal von <placeName ref="#zbz-l.342">Brüssel</placeName> sind noch immer traurige Gegenwart. Dem Artikel des Chefs der Abteilung Sport der <orgName ref="#zbz-o.353">Schweizerischen Beratungsstelle für Unfallverhütung</orgName> (BfU) kommt deshalb besondere Bedeutung zu. Vielleicht äussern sich auch Sportärzte zu diesem Thema. |   |<lb facs="#facs_3_l_2_3" n="N003" />|  Medizinische Fachgesellschaften Sociétés de médecine Società di specialisti | 1261 Schweizerische Gesellschaft für Pathologie/Fachausschuss der Pathologen <orgName ref="#zbz-o.454">FMH</orgName> Empfehlungen zur Neubeurteilung von histologischen und zytologischen Präparaten | Offizielle Bekanntmachungen Communications officielles Comunicazioni ufficiali  |<lb facs="#facs_3_l_2_4" n="N004" />|   | 1262 <orgName ref="#zbz-o.575">Société</orgName> suisse de pathologie / Groupement professionnel des pathologies <orgName ref="#zbz-o.454">FMH</orgName> Recommandations pour la réévaluation de diagnostics de préparations histologiques et cytologiques par plusieurs pathologies | 1267 Aufnahme von Mitgliedern Admission de membres  |<lb facs="#facs_3_l_2_5" n="N005" />|  Rechtswesen Questions juridiques Questioni giuridiche | 1263 Drogendelikt, Vermögenseinziehung und soziale Eingliederung Dr. iur. R. Bernhard Das <orgName ref="#zbz-o.354">Bundesgericht</orgName> hatte sich im Zusammenhang mit einem Drogendelikt auch mit der Frage auseinanderzusetzen, in welchem Umfange ein Drogendelinquent verpflichtet werden kann, den durch den Drogenverkauf erzielten Gewinn an die Staatskasse abzuliefern, und inwiefern allfällige Unterstützungspflichten des Verurteilten bei der Zumessung zu berücksichtigen seien. Dans une affaire d'infraction à la loi sur les stupéfiants, le <orgName ref="#zbz-o.355">Tribunal fédéral</orgName> a dû se prononcer sur l'obligation qui peut être faite au délinquant de restituer à l'Etat le bénéfice réalisé par la vente de drogues. | 1267 <orgName ref="#zbz-o.356">CHUV</orgName>: Exposé sur les relations entre l'hospitalisation publique et privée  |<lb facs="#facs_3_l_2_6" n="N006" />|   |  | 1267 Hypophysen-Sprechstunde <orgName ref="#zbz-o.357">Inselspital Bern</orgName>  |<lb facs="#facs_3_l_2_7" n="N007" />|   |  | 1267 <bibl ref="#zbz-w.546">Symposium</bibl>: Somatostatin in der gastroent. Therapie, <placeName ref="#zbz-l.9">Basel</placeName>  |<lb facs="#facs_3_l_2_8" n="N008" />|   |  | 1268 Fortbildung Privatklinik Obach  |<lb facs="#facs_3_l_2_9" n="N009" />|   |  | 1268 Bourses d'études fédérales  |<lb facs="#facs_3_l_2_10" n="N010" />|   |  | 1269 Cours VESKA de gestion hospitalière  |<lb facs="#facs_3_l_2_11" n="N011" />|   |  | 1270 Fachtagung: Leistungsdaten und Informatik  |<lb facs="#facs_3_l_2_12" n="N012" />|   |  | Kongresskalender Dates à retenir Date da ricordare  |<lb facs="#facs_3_l_2_13" n="N013" />|   |  | 1271 Heute mit unvollständigem Kalender  |<lb facs="#facs_3_l_2_14" n="N014" />|   |  | Stellenvermittlung Office de placement Ufficio di collocamento  |<lb facs="#facs_3_l_2_15" n="N015" />|   |  | 1276 Stellenvermittlungsanzeiger des Ärztesekretariates, Elfenstrasse 18, 3006 <placeName ref="#zbz-l.6">Bern</placeName>  |<lb facs="#facs_3_l_2_16" n="N016" />|  Die Meinung der Leser Le coin du lecteur La tribuna del lettore | 1264 Leser antworten: Der Persönlichkeitsschutz beim ärztlichen Handeln. Überlegungen eines Chefarztes zu einem Beitrag aus den in der «<bibl ref="#zbz-w.279">SÄZ</bibl>» publizierten Vortragstexten zum Thema «Arzt und Recht». |   |<lb facs="#facs_3_l_2_17" n="N017" />|  Bücher Bibliographie Bibliografia | 1265 Konflikte im Alltag / Interdisziplinäre Sozialmedizin, Sozialarbeit in der ambulanten Medizin / Die Gesteine und ihre Mineralien / Spätlegasthenie und funktionaler Analphabetismus / Arbeiten zur Theorie und Praxis der Rehabilitation in Medizin, <bibl ref="#zbz-w.66">Psychologie</bibl> und Sonderpädagogik, Früherkennung und Früherziehung behinderter Kinder. |   |
+        </p>
+        <p facs="#facs_3_r_3">
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 66, 1985, Heft 27 3.7.85
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Tagung Milieutherapie und Zwangsmassnahmen
+        </p>
+        <p facs="#facs_4_r_2">
+          PUK-<placeName ref="#zbz-l.6">Bern</placeName>, 9./10. November <bibl ref="#zbz-w.327">1984</bibl>
+        </p>
+        <p facs="#facs_4_r_3">
+          «Selbstsein zwischen Zwang und Freiheit»¹
+        </p>
+        <p facs="#facs_4_r_4">
+          Frau Prof. Dr. <persName ref="#zbz-p.2">J. Hersch</persName>, <placeName ref="#zbz-l.48">Genf</placeName>
+        </p>
+        <p facs="#facs_4_r_5">
+          Ich muss Ihnen zunächst sagen, wie sehr ich von der Lage, von der Situation und von dem Thema eingeschüchtert bin. Von der Lage, denn Sie alle – oder doch viele unter Ihnen, die Sie mit diesen Problemen alltäglich und ernst im Konkreten zu tun haben – werden wahrscheinlich sagen, wenn Sie mich hören: «Du hast schon reden.» Ich bin in der unanständigen Situation, von etwas zu sprechen, was ich selbst nicht zu ertragen habe, wovon ich selbst keine Erfahrung habe. Aber es ist Ihre Schuld, es ist die Schuld derer, die mich eingeladen haben. – Ich werde doch versuchen, mein Bestes zu tun.
+        </p>
+        <p facs="#facs_4_r_6">
+          Das Thema ist so ernst – und vielseitig ernst –, so schwer mit Konsequenzen beladen für die Psychiatrie bei uns und für die Psychiatrie drüben, wo man aus politischen Gründen psychiatrisch behandelt wird. Für die Merkmale dessen, was anständig oder was unanständig ist, was ethisch ist oder was eine geistige Vergewaltigung bedeutet. Das Thema ist so schwer mit all dem beladen, dass ich kaum den Mut habe, darüber zu sprechen. Dies um so mehr, als die Dinge – als ich über diesen Vortrag nachdachte – in meinem Kopf nicht klarer, sondern immer komplizierter und dunkler wurden. Ich möchte wirklich nicht, dass das Resultat meiner Rede eine Art Resignation zu der Undeutlichkeit des Menschseins wäre, sondern im Gegenteil die Notwendigkeit, klar und klarer gegen dieses Verwickelte und Unlösbare zu kämpfen, darstellt.
+        </p>
+        <p facs="#facs_4_r_7">
+          Also bitte, was ich auch sage, resignieren Sie nicht. Selbstsein: ich glaube, wenn man von Selbstsein redet, so redet man von dem Menschen. Man redet von dem Menschen in seinem Menschsein. Selbstsein ist wie eine Verdoppelung des Seins. Es muss zuerst sein, aber ausserdem ist es ein Sein, das sagt: «Ich bin.» Es handelt sich also um den Menschen in seinem Menschsein. Und wenn man sagt: «Ich bin»,
+        </p>
+        <p facs="#facs_4_r_8">
+          so ist es bei den Menschen nie eine reine Feststellung. Ich stelle nicht fest, dass es meinen Körper in diesem Saal gibt. Da kann ich ein bestimmtes Tier feststellen, aber nicht jemanden, der sagen kann: «Ich bin.» Das ist keine Feststellung, es ist auch eine Feststellung, aber nicht nur eine Feststellung, das ist schon eine Tat, eine Handlung. Im Moment, wo ich sage: «Ich bin», nehme ich es auf mich, zu sein, nehme ich es auf mich, jemand zu sein, der sagen kann: «Ich bin.» Dies bedeutet also, dass ich es auf mich nehme, nicht nur mein tatsächliches Gegenwärtigsein, sondern die Tatsache, dass ich hier bin als «ich», das heisst, dass ich handeln kann und entscheiden kann und dass ich im Grunde gar nicht «nicht handeln nicht kann» und «nicht entscheiden nicht kann». Denn wenn ich nicht entscheide und nicht handle, wenn ich zum Beispiel gegen etwas Unannehmbares nicht protestiere oder wenn ich etwas Unentbehrliches nicht tue, so ist es dabei eine Tat. Ich nehme also die Verantwortung auf mich, und im selben Augenblick, wo ich so sage: «Ich bin», so ist es nicht nur «sein», sondern «bin», das heisst eine Präsenz. Das bedeutet, ich bin hier jetzt gegenwärtig. Es gibt ein Jetzt in dieser Äußerung «Ich bin». Und sogleich, wenn ich «jetzt» sage, zerreiße ich die <bibl ref="#zbz-w.705">Zeit</bibl> in ihre drei Dimensionen. Im Moment, wo ich sage, «Ich bin», bedeutet es, dass es eine Vergangenheit gegeben hat, die so ist, wie sie eben gewesen ist und an der ich nur noch einige Deutungen ändern kann, aber nicht das Tatsächliche, und dass ich durch diese Gegenwart, durch dieses Jetzt, diese Vergangenheit von meiner Zukunft drastisch trenne, denn von der Zukunft weiß ich noch nicht, was sie sein wird, es hängt noch von mir – die ich hier jetzt bin – ab. Und dies geschieht alles in einem, das ist eine einzige, selbe Handlung: «Ich bin», jetzt, und sogleich – das ist noch nicht alles – sogleich, da sich die <bibl ref="#zbz-w.705">Zeit</bibl> so zerrissen hat, entsteht das Bewusstsein der Bedrohungen. Ich bin – ich werde nicht immer sein – ich werde sterben. Ich bin in der <bibl ref="#zbz-w.705">Zeit</bibl>, ich bin endlich. Das bedeutet die Gegenwart eines verantwortlichen, freien – möglichst freien – Bewusstseins. Diese Entstehung klingt ein bisschen magisch, wenn man sie so schil-
+        </p>
+        <note place="foot" n="1" xml:id="fn4-1" facs="#facs_4_r_9">
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 66, 1985, Heft 27 3.7.85
+        </note>
+        <p>
+          ¹ Referat, gehalten an der Tagung «Milieutherapie und Zwangsmassnahmen» vom 9./10. November <bibl ref="#zbz-w.327">1984</bibl> in der <orgName ref="#zbz-o.352">Psychiatrischen Universitätsklinik Bern</orgName>.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          dert, es ist, als wäre es ein magischer Stock – une baguette magique – und damit entsteht all das.
+        </p>
+        <p facs="#facs_5_r_2">
+          Wir haben so eine Art Vorstellung von unserer Freiheit, die ein bisschen so klingt. Viele Leute stellen sich vor, dass wir so geboren werden: Im Moment der Geburt kann das kleine Kind nicht sprechen, aber obgleich es nicht sprechen kann, sagt es irgendwie: «Ich bin.» Das stimmt nicht. Das kleine Kind sagt nicht: «Ich bin.» Ich meine damit, dass wir nicht mit freiem, verantwortlichem Bewusstsein geboren werden. Das ist nicht gegeben, wie etwas, das man feststellen kann. Natürlich sagte <persName ref="#zbz-p.554">Rousseau</persName>, dass alle Menschen frei geboren werden, aber er hat das nicht so gemeint. Er meinte, jeder <persName ref="#zbz-p.1251">Mensch</persName> hat die Möglichkeit, in der Geburt ein freies Ich zu werden. Aber er ist es noch nicht, es ist nur eine Möglichkeit. Das bedeutet also, dass dieses «Ich bin» eine Geschichte hat, eine Lebensgeschichte und eine menschliche Geschichte, eine «Werdengeschichte», und das bedeutet, dass es nicht nur so plötzlich die <bibl ref="#zbz-w.705">Zeit</bibl> zerreist mit diesen Dimensionen, sondern dass es die Dialektik der <bibl ref="#zbz-w.705">Zeit</bibl> selbst in sich trägt, das heißt den Zwang der Vergangenheit, die Unbestimmtheit der Zukunft und die Entschiedenheit der Gegenwart. Und das alles ist nicht wie eine Tatsache gegeben, sondern es muss erworben werden. Deswegen finde ich es immer so eigentlich dumm, wenn man die Erziehung heutzutage rechtfertigen muss, weil sie angeklagt wird, dass sie die freien Menschen manipulieren, statt sie so frei zu lassen, wie sie eben von Natur aus sind. Sie sind es gar nicht von Natur aus. Wenn sie nicht erzogen werden, wenn sie nicht Substanz gewinnen durch Erziehung, durch Übung, durch Aneignung usw. werden sie gar nicht sein, sie werden vielleicht «Ich bin» sagen, aber dieses «Ich bin» wird vollkommen leer sein. Um gegenwärtig in dem «Ich bin» zu sein, muss man eben «sein». Was bedeutet hier «sein»? Wie ich schon sagte, ist es nicht die Feststellung einer Tatsache, sondern das ist die Gegenwart einer tätigen Substanz, die gemischt von aussen und von innen angeeignet, ausgearbeitet, geschöpft wurde. Man schafft sich, nicht ganz, man schafft sich von der Möglichkeit, sich zu schaffen. Was von der Geburt her kommt, ist die Möglichkeit dazu.
+        </p>
+        <p facs="#facs_5_r_3">
+          Sie sehen, warum das alles mehr, immer mehr kompliziert erscheint. Weil man nicht auf einer Seite die Freiheit hat, die man schonen soll, die man nicht beleidigen soll, die man nicht zwingen soll, und auf der andern Seite die Einflüsse, die Manipulationen, die Verordnungen, die Zwangsmassnahmen usw. Der ganze Prozess in der Erarbeitung des Selbstseins ist im Menschen ein geknoteter Prozess von beidem. Es gibt keine Freiheit, wenn es nicht mit
+        </p>
+        <p facs="#facs_5_r_4">
+          Zwangswirklichkeiten zu tun hat. Es wäre eine unwirkliche Freiheit, aber Zwangsmassnahmen erzeugen selbstverständlich keine Freiheit. Also ist es von Anfang an nicht nur, weil die Menschen krank werden, nicht nur, weil die Menschen schwach sind oder unethisch oder so etwas, sondern in der Gegebenheit des Menschseins selbst liegen schon alle diese Gegebenheiten. Der Erzieher hat gleich mit diesen Grundgegebenheiten zu tun. Was er will, wenn er ein Erzieher ist – es gibt doch ziemlich viele Leute, die erziehen und die dabei wirklich Erzieher sind, nicht alle, aber das gibt’s –, ist, dass sein Schüler frei wird, frei und verantwortlich und womöglich freier und verantwortlicher, als er selbst geworden ist. Das ist es, was er will; aber um dazu zu kommen, um das nicht technisch hervorzubringen – das gibt es nicht, das ist nicht machbar –, sondern um es zu begünstigen, muss er bestimmte Zwänge brauchen, äussere Zwänge. Das ist kein Zufall, das ist nicht so, weil er autoritär ist, das ist nicht so, weil er irrt, sondern weil dies eine Notwendigkeit ist, etwas Gegebenes in sich hinein zu nehmen, um darauf eine menschliche Substanz zu machen. Das liegt in der «condition humaine», in dem Menschsein selbst. Weil der <persName ref="#zbz-p.1251">Mensch</persName> in der <bibl ref="#zbz-w.705">Zeit</bibl> ist, weil der <persName ref="#zbz-p.1251">Mensch</persName> geschichtlich ist, weil der <persName ref="#zbz-p.1251">Mensch</persName> einen Körper hat, weil der <persName ref="#zbz-p.1251">Mensch</persName> in einer Gesellschaft lebt, weil er in der <bibl ref="#zbz-w.705">Zeit</bibl> ist und weiß, dass er sterben wird, weil der <persName ref="#zbz-p.1251">Mensch</persName> endlich ist. Und daran kann kein Erzieher, kein Arzt etwas ändern. Die Schwierigkeit ist die, wenn man eine absolute Freiheit will, die das alles abschafft oder leugnet, dann kommt man eben nicht zu Freiheit. Wenn man sich allen diesen Gegebenheiten unterwirft, dann kommt man auch nicht zu Freiheit. Es gibt also keine dogmatische Lehre, weder für den Unterricht noch für das Leben unter uns, unter Menschen, noch glaube ich für die ärztliche Behandlung. Das kann es wegen der Verwirklichung von all dem nicht geben. Die Freiheit ist keine Freiheit, wenn sie nur geträumt wird. Man kann sich als freien, sogar als absolut freien Menschen träumen. Ich glaube, das ist eine der Gestalten der Geisteskrankheiten, dass man sich absolut frei erträumt. Aber diese absolute Freiheit ist eine solche, die nirgends einem Widerstand begegnet, denn sie hat nichts mit der Wirklichkeit zu tun. Und wenn sie sich selbst erträumt, kann sie alles andere auch erträumen. Was man erträumt, kann man unterwegs immer wieder ändern, es ist – wie man im <placeName ref="#zbz-l.2">Französischen</placeName> sagt – malléable. Wenn Sie eine Statue erträumen, so sind Sie ein Bildhauer. Sie können sehr wohl eine Statue erträumen, die auf einer Seite so und auf der andern Seite anders aussieht, beides passt materiell nicht zusammen, aber Sie können es erträumen. Wenn Sie dann die Statue wirklich aus Stein vor sich
+        </p>
+        <p facs="#facs_5_r_5">
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 66, 1985, Heft 27 3.7.85
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          haben, dann ist sie eben, wie sie ist, ihre Form, wie sie vorne ist, hat ihre Konsequenzen hinten. Sie können es nicht wechseln, Sie haben nicht diese «malleabilité» des Traumes.
+        </p>
+        <p facs="#facs_6_r_2">
+          Freiheit ist nur Freiheit für das Selbstsein, wenn sie es mit der Wirklichkeit zu tun hat, mit dem hartnäckigen Widerstand der Wirklichkeit, mit der Ausschiesslichkeit der Dinge, die so sind und nicht anders. Wie oft haben wir im alltäglichen Leben das Gefühl, wir könnten so gut zusammenleben, so freundlich, es wäre so leicht, wenn nur dies oder jenes anders wäre, dieser <persName ref="#zbz-p.1251">Mensch</persName>, diese Frau, nur eine Kleinigkeit – und das geschieht nicht. Denn wir haben es mit wirklichen Menschen zu tun, mit der Wirklichkeit, und diese muss erkannt werden, so wie sie ist. Sonst gibt es keine Freiheit, denn die Freiheit kommt hinein in diese Wirklichkeit, oder sie existiert nicht. Sie dringt in diese Wirklichkeit, sie muss also wissen, wohin sie kommt und was sie ändert. Das bedeutet, dass die Freiheit den Determinismus und den Zwang des Äussern unbedingt braucht, ohne dies gibt es keine Freiheit im Menschsein. Wenn die Freiheit allein herrscht, wenn wir das Gefühl haben, dass wir irgend etwas in unserer Freiheit können, so ist das eine verlorene Freiheit.
+        </p>
+        <p facs="#facs_6_r_3">
+          Wie viele Leute unter unseren Zeitgenossen erträumen zum Beispiel heutzutage, dass man alles wieder von vorne anfangen kann, als gäbe es nichts Gegebenes: einen neuen Menschen, eine neue Gesellschaft, eine neue Welt. Dies ist eine so verlorene Freiheit, dass sie fast den Arzt braucht, damit er diese Freiheit mit den Zwängen wieder versöhnt, die für sie unentbehrlich sind. Also Anerkennung der Nicht-Freiheit, Anerkennung der Zwänge, Anerkennung der Gegebenheit. Aber: <bibl ref="#zbz-w.52">ich muss</bibl> sogleich das Gegenteil sagen. Wenn das so anerkannt wird, dass die Freiheit resigniert, dass die Freiheit sagt: Dann kann ich nichts dafür, wenn sie sich unterwirft, so ist sie auch verloren. Im Grunde gibt es da noch einen Rest von Freiheit, einen ganz letzten Rest, der darin besteht, dass man verzweifelt. Aber sie ist verloren.
+        </p>
+        <p facs="#facs_6_r_4">
+          Das Problem ist also nicht ein zufälliges Problem, und nicht ein lokales. Es ist ein Problem, das wirklich in den Wurzeln des freien Selbstseins steckt. Das Problem wird natürlich noch viel schwieriger, wenn man es mit inneren Zwängen zu tun hat. Bis jetzt habe ich von der Wirklichkeit sozusagen gesprochen, als wäre sie draussen. Aber die Freiheit kommt aus der geschichtlichen Tiefe des Subjekts, und aus dieser bindet sich die Freiheit an etwas, was sie unbedingt will. Dieses Wort «unbedingt» in diesem Kontext – wo ich nur von Zwängen und Zwang gesprochen habe – klingt seltsam. Aber das ist
+        </p>
+        <p facs="#facs_6_r_5">
+          gerade die Bedingung, dass es beides gibt. Diese Freiheit, die aus der Tiefe der Geschichtlichkeit des Subjektes herkommt, bindet sich an etwas Unbedingtes. An etwas so Unbedingtes, dass wir grosse Beispiele in der Literatur haben, zum Beispiel, dass jeder von uns in einem bestimmten Ausmass, das mit den verschiedenen Menschen wechselt, erfährt, dass wir – wenn wir wirklich aus dem Sinn für etwas Unbedingtes entscheiden, also wirklich im radikalen Sinn – Freiheit zu erleben glauben. Dann haben wir das Gefühl – und das ist das einzige Merkmal, kann man sagen –, wir hätten nicht anders handeln können, während meistens Freiheit zusammen mit <persName ref="#zbz-p.89">Wahl</persName> geht: Ich habe die <persName ref="#zbz-p.89">Wahl</persName>, ich kann wählen, entscheiden. Das bedeutet: Dies nehmen und das lassen. Das stimmt für den gewöhnlichen Gebrauch der Freiheit. Aber da, wo es wirklich um das Wesentliche geht, da ist das Merkmal der Freiheit, dass man die <persName ref="#zbz-p.89">Wahl</persName> nicht hatte, nicht von aussen, sondern vom Unbedingten her. Das ist der grosse Unterschied – und eine radikale Ähnlichkeit auch in einem bestimmten Sinn – zwischen, sagen wir figuratif, dem <orgName ref="#zbz-o.33">Reich</orgName> der Freiheit und dem <orgName ref="#zbz-o.33">Reich</orgName> des Determinismus. Im <orgName ref="#zbz-o.33">Reich</orgName> des Determinismus, das, was wir objektiv studieren, was die Wissenschaft kennt, da geschehen die Dinge so, wie sie geschehen, weil sie nicht anders können, wegen der physischen und chemischen Gesetze usw. Aber wenn wir diese Erfahrung der Freiheit machen, von der ich eben sprach, gibt es auch keine <persName ref="#zbz-p.89">Wahl</persName>, keine Möglichkeit einer anderen Entscheidung. Es klingt wie Determinismus. Aber es ist gerade radikal anders, weil das nicht von aussen, aus einem Zwang von aussen geschieht, sondern weil die letzte Treue der Freiheit zu sich selbst, zu ihrer Unbedingtheit, so ist, dass sie keine <persName ref="#zbz-p.89">Wahl</persName> mehr zulässt. Und das ist sehr unangenehm für Leute, die so theoretisch sprechen wie ich. Das gibt einen Charakter des Geschwatzes zu dem, was ich sage. Denn wenn ich so spreche, sage ich natürlich auch, dass es keine objektive Kriterien und nicht einmal subjektive Kriterien geben kann, um zu entscheiden, ob man einfach von etwas geschoben wird durch Determinismus, äusseren oder psychologischen Determinismus, oder ob man aus der letzten unbedingten Freiheit handelt. Man hat in beiden Fällen keine <persName ref="#zbz-p.89">Wahl</persName> – die <persName ref="#zbz-p.89">Wahl</persName> wäre ein Kriterium. Wenn man keine <persName ref="#zbz-p.89">Wahl</persName> mehr hat, dann ist man krank, dann muss man zum <persName ref="#zbz-p.410">Psychiater</persName> laufen. Aber es stimmt nicht, man hat keine <persName ref="#zbz-p.89">Wahl</persName>.
+        </p>
+        <p>
+          Ich will einige Beispiele erwähnen. Denken Sie an die grossen Tragödien, zum Beispiel an «<bibl ref="#zbz-w.838">Antigone</bibl>» von <persName ref="#zbz-p.185">Sophokles</persName> und an «<persName ref="#zbz-p.915">Phädra</persName>» von <persName ref="#zbz-p.186">Racine</persName>. <bibl ref="#zbz-w.838">Antigone</bibl> diskutiert mit ihrer Schwester Ismede über ihr Verhalten zur Leiche ihres Bruders. Die Schwester
+        </p>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 66, 1985, Heft 27 3.7.85
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          denkt sehr rational, und wenn man ihr zuhört, hat man das Gefühl, dass sie ein freier <persName ref="#zbz-p.1251">Mensch</persName> ist, vernünftig und frei. Sie hat die <persName ref="#zbz-p.89">Wahl</persName>, und sie entscheidet für das, was am wenigsten schädlich sein wird. Also im Determinismus, mit Überlegen der Wahrscheinlichkeit usw., während <bibl ref="#zbz-w.838">Antigone</bibl> nur sagt: «Ich gehorche den Gesetzen der Götter.» Ich gehorche den Gesetzen der Götter, was meint sie damit? Sie meint damit: «Du kannst schön reden, ich höre dir nicht zu», und das ist eigentlich ein Zeichen von Krankheit, wenn man nicht fähig ist zuzuhören. Ich höre dir nicht zu, denn ich weiß ganz genau, fundamental und unbedingt, was ich zu tun habe, und das muss getan werden um jeden Preis. Ist <bibl ref="#zbz-w.838">Antigone</bibl> krank? Muss man bei ihr irgendwelche Zwangsmassnahmen anwenden? Dann <persName ref="#zbz-p.915">Phädra</persName>: <persName ref="#zbz-p.915">Phädra</persName> liebt <persName ref="#zbz-p.916">Hypolyt</persName>, ihren Schwiegersohn. Und <persName ref="#zbz-p.916">Hypolyt</persName> liebt jemanden anderen. Ich kann mich erinnern: Einmal in der Schule in meiner Jugend, da habe ich «<bibl ref="#zbz-w.842">Phèdre</bibl>» mit den Schülern gelesen. Und ein Schüler hat den Finger erhoben und gesagt: «Wissen Sie, ich verstehe das nicht. Du moment qu'elle voit qu'avec <persName ref="#zbz-p.916">Hypolytte</persName> ça ne peut rien donner, pourquoi est-ce qu'elle l'aime?» Also, da sie sieht, dass es mit <persName ref="#zbz-p.916">Hypolyt</persName> zu nichts führt, warum liebt sie ihn? Das war so einfach. Ja, warum liebt sie ihn? Weil sie ihn eben liebt. Das ist ein anderer Fall als jener von <bibl ref="#zbz-w.838">Antigone</bibl>, aber hier kann man sich wieder fragen: Ist diese Liebe, diese Leidenschaft <bibl ref="#zbz-w.842">Phèdre</bibl> selbst, oder ist es wie ein Parasit auf der Freiheit von <persName ref="#zbz-p.915">Phädra</persName>, der sie dazu zwingt, alles zu tun, was sie in der Tragödie tut, sich selbst zu verraten usw. Wo ist da die Freiheit? Soll man also <persName ref="#zbz-p.915">Phädra</persName> psychoanalysieren, um ihr ihre Freiheit zurückzugeben? Sie sehen die Zweideutigkeit der Sache. Die Zweideutigkeit der Sache ist ganz gefährlich. Denn wenn man vernünftig und mittelmäßig sagen würde, diese absolute Liebe – und das ist nicht dasselbe, nicht wahr, ich sage nicht, dass das dasselbe ist, ich habe absichtlich zwei verschiedene Fälle gegeben, eine Leidenschaft und eine ethische Verpflichtung bei <bibl ref="#zbz-w.838">Antigone</bibl> –, diese Absolutheit der Bindung, die das Subjekt dann verwirklicht, ohne <persName ref="#zbz-p.89">Wahl</persName>, ist das eine Krankheit, oder ist das gerade der höchste Punkt der Freiheit?
+        </p>
+        <p facs="#facs_7_r_2">
+          Ich glaube, dass es eine Ebene gibt – <persName ref="#zbz-p.50">Gott</persName> sei Dank –, wo wir alltäglich vernünftig leben können, und da hat man die <persName ref="#zbz-p.89">Wahl</persName>, aber wenn man überhaupt die Ebene der absoluten Verpflichtung, der absoluten Entscheidung, ohne <persName ref="#zbz-p.89">Wahl</persName>, einfach verwerfen würde, dann würde auch die mittelmäßige Freiheit ihren Nerv und ihren Sinn verlieren. Man muss sehr bescheiden sein in der Berufung auf die absolute Freiheit. Und ich glaube, dass Leute, die sich rechtfertigen dadurch, dass sie absolut handeln, meistens
+        </p>
+        <p facs="#facs_7_r_3">
+          unecht sind. Denn die echten absoluten Entscheidungen sind meistens von der Art, dass der Betreffende versucht, es menschlich bescheiden zu rechtfertigen. Er weiß, dass es nicht bis zum letzten geht, aber er tut es auf vernünftige, mittelmäßige Weise, denn es gibt eine Scheu, sich auf das Absolute zu berufen. Und das ist ein Zeichen der Echtheit. Während umgekehrt Leute, die unecht auf die andern nicht hören oder nicht vernünftig sind oder krank, sich dann sehr gerne auf Absolutes berufen und sich damit schmücken, um nicht die Anstrengung der <bibl ref="#zbz-w.68">Vernunft</bibl> durchzumachen, wo man zu erklären und zu rechtfertigen braucht. Also scheine ich wieder Widerspruchvolles zu sagen. Ich sage einerseits, wie gefährlich die absolute Ebene der Freiheit ohne <persName ref="#zbz-p.89">Wahl</persName> ist, aber ich sage gleichzeitig, dass sie unentbehrlich ist, damit die Freiheit überhaupt ihre Spezifität der Unbedingtheit hat, auch auf den anderen Ebenen. Aber rechtfertigen soll man sich damit nicht.
+        </p>
+        <p facs="#facs_7_r_4">
+          Sehen Sie, wie verwickelt das ist, dass man das so schwer objektiv festnageln kann. Nun leben wir in dieser schrecklichen <bibl ref="#zbz-w.705">Zeit</bibl>, wo man manche Leute für geisteskrank hält und psychiatrisch behandelt wegen ihrer Einstellungen, ihrer Meinungen, politischen, religiösen, sozialen, menschlichen usw. Man ist doch so weit gegangen in dieser Richtung, dass man in der sowjetischen Psychiatrie von Schizophrenie ohne Symptome spricht. Schizophrenie ohne Symptome. Sie könnten sagen, dass sich das vielleicht einigermassen gerechtfertigt habe, da man Entscheidungen ohne Rechtfertigung hat, ohne <persName ref="#zbz-p.89">Wahl</persName>. Aber ich glaube, dass man sich gegen diese Verbrechen nur wehren kann, wenn man wirklich tief in die Schwierigkeiten hineingedrungen ist. Man kann es nicht naiv erreichen. Man muss wirklich die Schwierigkeiten durchgebohrt haben, um klar genug zu sehen und um angreifen zu können und sagen, welche Kriterien nach Möglichkeit hergestellt werden können mit einem Maximum von Klarheit, mit einem Maximum von Objektivität, obgleich man weiß, dass sie nicht die letzten sein können. Auf alle Fälle kann die Rechtfertigung niemals sozial oder in Meinung oder Einstimmigkeit mit der übrigen Welt stecken, sondern sie kann nur innerhalb des Subjektes sein. Also, seine persönliche Koherenz, seine geistige Struktur, seine Art der Geschmeidigkeit und der Verpflichtung, seine persönliche Art. Ich glaube, dass <persName ref="#zbz-p.410">Psychiater</persName> – nachdem, was ich erfahren habe, wenn sie gute <persName ref="#zbz-p.410">Psychiater</persName> sind – das wirklich irgendwie feststellen können. Aber ich finde, für die übrige Welt ist es noch lange nicht objektiv genug. Es kann nicht ganz objektiv werden, aber man muss sich grosse Mühe geben, mehr
+        </p>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 66, 1985, Heft 27 3.7.85
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          Objektivität in dieser Richtung zu erreichen, mindestens innerhalb des psychiatrischen Berufs.
+        </p>
+        <p facs="#facs_8_r_2">
+          Nun habe ich alles verwickelt und sage trotzdem: Die Merkmale sind da und die müssen festgelegt und vertieft werden. Behandlung, psychiatrische Behandlung kann nur natürlich, nicht im Dienste einer Gesellschaft, sondern nur im Dienste der möglichen Freiheit des Patienten sein, unter einer Beschränkung selbstverständlich, dass das nicht andere Menschen bedroht. Und da ist die Grenze. Da ist wieder eine faktische Grenze, da sind die Grenzen, von denen ich am Anfang sprach, wir sind eben nicht in der absoluten, reinen Freiheit. Das gibt es nicht. Wenn Bedrohungen da sind für andere, besonders für Kinder usw., dann geht es nicht. Und wenn man sagt, der Patient muss einverstanden sein, dann finde ich ganz klar, dass, wenn der Patient die Fähigkeit hat, einverstanden zu sein, die Behandlung natürlich gerechtfertigt ist. Aber sie hat weniger Berechtigung, als wenn er unfähig ist, denn dann ist er viel kränker. Da, wo er am meisten krank ist, kann er doch gar nicht »ja« sagen. Denn er ist eben nicht mehr frei. Wenn es darum geht, jemanden zu behandeln, damit er nach Möglichkeit wieder die Freiheit erwirbt, dann kann man sich natürlich nicht auf diese Zusage verlassen. Das sind also schreckliche Probleme. Ich finde, die <persName ref="#zbz-p.410">Psychiater</persName> haben einen schrecklichen Beruf. Aber das müssen sie eben, weil sie ihn gewählt haben, auf sich nehmen. Was mich erstaunt, ist, dass manche trotz aller Schwierigkeiten, trotz aller Unlösbarkeit im Grunde allein entscheiden wollen. Dieses Alleinentscheiden-Wollen verstehe ich nicht. Mir scheint, ich möchte nach Möglichkeit in solchen Fällen nie allein entscheiden, sondern mit einem oder zwei Kollegen. Denn es ist zu schwierig, als dass man es für sich selbst nimmt, genau wie mit den anderen Fortschritten der Medizin und allen Problemen, die sich heute stellen. Ich kann mir nicht einen Menschen, einen ernsthaften Menschen vorstellen, der den Anspruch erhebt, allein – seul après Dieu – über diese Sachen zu entscheiden. Aber auf der andern Seite möchte ich doch an das französische Proverbe erinnern, das sagt: «Qui veut faire l'ange fait la bête.» Es gibt in unserer <bibl ref="#zbz-w.705">Zeit</bibl> eine Tendenz zur Engelhaftigkeit. Et qui veut faire l'ange fait la bête. Diejenigen, die keine Zwangsmassnahmen
+        </p>
+        <p facs="#facs_8_r_3">
+          wollen, die die absolute Freiheit beanspruchen und keine Begrenzung annehmen, die reden, als wären wir im Absoluten, hier und jetzt, in der <bibl ref="#zbz-w.705">Zeit</bibl>, die – glaube ich – haben nicht genügend Sinn für Freiheit. Und das möchte ich jetzt auch betonen. Wir sollten nach Möglichkeit genaue und objektive Kriterien finden. Aber die genügen nicht. Jenseits dieser Kriterien gibt es etwas anderes, das, was wir bei <bibl ref="#zbz-w.838">Antigone</bibl>, das, was wir bei <bibl ref="#zbz-w.842">Phèdre</bibl>, das, was wir sonst bei Menschen finden. Und da kann sich der <persName ref="#zbz-p.410">Psychiater</persName> nur auf eines verlassen – wie wir alle übrigens, wir Erzieher – auf unseren eigenen Sinn für Freiheit. Ich glaube, dass <persName ref="#zbz-p.410">Psychiater</persName> die Freiheit leugnen, nicht hier, sondern wirklich, denn es gibt Leute, viele Leute, die Freiheit theoretisch mit dem Mund leugnen und die einen tiefen Sinn für Freiheit im alltäglichen Leben haben und umgekehrt. Es gibt solche, die von der Freiheit reden und keinen Sinn für Freiheit haben. Da gibt es grosse Unterschiede zwischen der Welt der Worte und der Welt des Erlebten. Aber ich glaube, dass, je schärfer der Sinn, der persönliche Sinn für Freiheit auf allen ihren Ebenen, desto klarer sieht der <persName ref="#zbz-p.1251">Mensch</persName> die unvermeidlichen und zum Teil unentbehrlichen Zwänge. Er nimmt sie an, um sie zu beherrschen, nicht um sie abzuschaffen. Je schärfer der Sinn für Freiheit, desto delikater der Sinn für die Zwänge und umgekehrt. Diejenigen, die glauben, die Zwänge leugnen oder ignorieren zu können, sind meistens Leute, die eine falsche Vorstellung von der Freiheit haben und weniger echten Sinn für sie. Worin besteht diese Falschheit? Sie besteht darin, dass man sich die Freiheit wie eine Tatsache vorstellt. Etwas Tatsächliches. Und wenn man diese Vorstellung hat, dann kann man natürlich nicht mehr verstehen, was diese Polarität von Freiheit und gegebenen Zwängen ist. Also geht es darum, dass diejenigen, die mit der Freiheit der Menschen zu tun haben, ihren eigenen Sinn für Freiheit wirklich pflegen, vertiefen, raffinieren und verdeutlichen.
+        </p>
+        <p>
+          Das ist wesentlich und vielleicht ist das einer der Gründe, weshalb ich glaube, dass, je mehr Probleme, schreckliche Probleme, sich dem Ärztekörper stellen, desto mehr sie im Grunde eigentlich auch etwas <bibl ref="#zbz-w.1">Philosophie</bibl> studieren sollten. Ich mache keine Propaganda für mein Fach, aber ich glaube, dass es wirklich bei sehr vielen Problemen hilfreich wäre.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.282">Schweizerische Ärztezeitung / Bulletin des médecins suisses</bibl> Band 66, 1985, Heft 27 3.7.85
+        </p>
+      </div>
+      </body></text>
+</TEI>

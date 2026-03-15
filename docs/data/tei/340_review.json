@@ -1,0 +1,47 @@
+{
+  "doc_id": "340",
+  "reviewer": "quality-screening-agent",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "tier": 3,
+  "pages": 20,
+  "errors": 0,
+  "warnings": 2,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1/10/20: Layout korrekt erkannt. Zweispaltig (S.4-6, 12-20), Bildseiten (S.7-10)"
+    },
+    {
+      "severity": "info",
+      "code": "L2",
+      "msg": "OCR-Text hochkohaerenter Reportage-Essay ueber Poznan-Prozesse 1956"
+    },
+    {
+      "severity": "warning",
+      "code": "L3",
+      "msg": "Facsimile-Anomalie: Zonen auf S.11/12/17/19 mit Koordinaten weit ueber Surface-Grenzen (z.B. facs_11_r_3 ulx=4848 bei surface lrx=1054). Bekanntes Pipeline-Muster bei 2-Spaltern"
+    },
+    {
+      "severity": "warning",
+      "code": "S2",
+      "msg": "S.9: OCR-Artefakt auf reiner Bildseite (Tabellen-Pipe-Zeichen '|   |   |   |'). S.8: leere Absaetze auf Fotoseite. Bildseiten S.7-10 korrekt als figure/leer behandelt"
+    },
+    {
+      "severity": "info",
+      "code": "L4",
+      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 44p 27o 67l 8w = 146. Dichte Annotation: Poznan, Polen, Ungarn, Gomulka, Piasecki, Wyszynski, Pax, U.R.S.S."
+    },
+    {
+      "severity": "info",
+      "code": "L7",
+      "msg": "Gesamtkohaerenz: Vollstaendiger Artikel Hersch 1956, Preuves. Reportage mit Zwischentiteln, durchgehend S.3-20"
+    }
+  ]
+}

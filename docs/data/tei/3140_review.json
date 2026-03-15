@@ -1,0 +1,52 @@
+{
+  "doc_id": "3140",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "NEEDS_REVIEW",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 2],
+      "notes": "2 Zeitungsseiten mit Fotos. Overlays zeigen komplexes aber korrekt erkanntes Layout."
+    },
+    "L2_ocr": {
+      "score": "warning",
+      "notes": "Schwere OCR-Degradation, besonders ab Mitte S1 und auf S2. S1 Hersch-Abschnitt: 'chereregions' statt 'chretiens', 'laudonnie', 'forcissant', 'shouie' statt 'temoin', 'onerent'. S2: noch schlimmer -- 'apurantes', ganze Absaetze unverstaendlich."
+    },
+    "L3_layout": {
+      "score": "warning",
+      "notes": "Komplexes Zeitungslayout mit 36 Zonen auf S2. Inhaltsduplizierung: Der Abschnitt 'Un deuxieme foyer d'opposition' mit Henri Lefebvre erscheint identisch zweimal (Zonen r_11/r_12 und r_14/r_15). Lesereihenfolge bei verschraenkten Spalten teils unklar."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": ["W6"],
+      "notes": "VALID. W6 (keine lb) ist bekanntes Muster (ignorieren). ABER: div hat kein type-Attribut. Titel 'Cooperation' ist der Zeitungsname, nicht der Artikeltitel. Hersch-Artikel heisst 'Signaux et feux-croises aux Rencontres internationales de Geneve'."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "warning",
+      "counts": {
+        "persName": 17,
+        "orgName": 7,
+        "placeName": 19,
+        "bibl": 0
+      },
+      "notes": "Viele Entities, aber Qualitaet leidet unter OCR-Fehlern. 'Karl Berth' statt 'Karl Barth' (mehrfach), 'Jaupres' statt 'Jaspers', 'Karl Berh' als weitere Variante. 'Americains' und 'Anglais' als persName getaggt -- das sind Ethnonyme, keine Personennamen. Plausibel: Marcel Raymond, Jeanne Hersch, Henri Lefebvre, Marx."
+    },
+    "L7_coherence": {
+      "score": "warning",
+      "notes": "Dokument enthaelt eine komplette Zeitungsausgabe (Cooperation, 17.9.1949). Mehrere Artikel: Hersch ueber Rencontres internationales, Edmond Prival ueber China, Kooperativen-Nachrichten. Hersch-Text beginnt auf S1 und setzt sich auf S2 fort, aber OCR-Qualitaet macht weite Teile unlesbar. Inhalt dupliziert. Datum 1949 und Basel korrekt."
+    }
+  },
+  "findings": [
+    "SCHWER: Massive OCR-Degradation -- grosse Teile beider Seiten unlesbar, besonders ab Mitte S1",
+    "SCHWER: Inhaltsduplizierung: 'Un deuxieme foyer d'opposition'-Abschnitt erscheint zweimal identisch",
+    "MITTEL: div ohne type-Attribut",
+    "MITTEL: Titel im Header ist Zeitungsname 'Cooperation', nicht Artikeltitel",
+    "MITTEL: 'Karl Barth' systematisch als 'Karl Berth'/'Karl Berh' fehlerkannt",
+    "LEICHT: 'Americains'/'Anglais' als persName statt als Ethnonyme"
+  ],
+  "overall_notes": "Komplexe Zeitungsseite von 1949 mit schweren OCR-Problemen. Der Hersch-Text ueber die Rencontres internationales de Geneve ist in grossen Teilen unlesbar. Inhaltsduplizierung vorhanden. OCR-Nachbearbeitung und manuelle Textrekonstruktion notwendig."
+}

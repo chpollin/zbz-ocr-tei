@@ -1,0 +1,564 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">FORATOM VIII : Nuclear Energy - Europe and the World</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1860</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>FORATOM VIII : Nuclear Energy - Europe and the World</title>
+          <author>Jeanne Hersch</author>
+          <date>1982</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+        <language ident="eng" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). No issues found</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_1_r_1" ulx="160" uly="328" lrx="581" lry="353" />
+      <zone xml:id="facs_1_r_2" ulx="158" uly="365" lrx="484" lry="450" />
+      <zone xml:id="facs_1_r_3" ulx="157" uly="626" lrx="337" lry="652" />
+      <zone xml:id="facs_1_r_4" ulx="157" uly="698" lrx="500" lry="726" />
+      <zone xml:id="facs_1_r_5" ulx="158" uly="768" lrx="251" lry="798" />
+      <zone xml:id="facs_1_r_6" ulx="157" uly="806" lrx="1030" lry="839" />
+      <zone xml:id="facs_1_r_7" ulx="371" uly="890" lrx="1022" lry="912" />
+      <zone xml:id="facs_1_r_8" ulx="158" uly="896" lrx="252" lry="922" />
+      <zone xml:id="facs_1_r_9" ulx="158" uly="919" lrx="256" lry="941" />
+      <zone xml:id="facs_1_r_10" ulx="156" uly="942" lrx="420" lry="964" />
+      <zone xml:id="facs_1_r_11" ulx="156" uly="963" lrx="243" lry="991" />
+      <zone xml:id="facs_1_r_12" ulx="158" uly="987" lrx="514" lry="1011" />
+      <zone xml:id="facs_1_r_13" ulx="156" uly="1009" lrx="784" lry="1037" />
+      <zone xml:id="facs_1_r_14" ulx="156" uly="1031" lrx="427" lry="1053" />
+      <zone xml:id="facs_1_r_15" ulx="157" uly="1051" lrx="907" lry="1082" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1754">
+      <graphic url="2.png" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_3_r_1" ulx="486" uly="228" lrx="676" lry="246" />
+      <zone xml:id="facs_3_r_2" ulx="425" uly="266" lrx="701" lry="284" />
+      <zone xml:id="facs_3_r_3" ulx="329" uly="327" lrx="818" lry="401" />
+      <zone xml:id="facs_3_r_4" ulx="125" uly="492" lrx="426" lry="517" />
+      <zone xml:id="facs_3_r_5" ulx="221" uly="569" lrx="418" lry="591" />
+      <zone xml:id="facs_3_r_6" ulx="220" uly="621" lrx="982" lry="671" />
+      <zone xml:id="facs_3_r_7" ulx="220" uly="722" lrx="405" lry="742" />
+      <zone xml:id="facs_3_r_8" ulx="219" uly="770" lrx="1043" lry="848" />
+      <zone xml:id="facs_3_r_9" ulx="218" uly="860" lrx="1018" lry="957" />
+      <zone xml:id="facs_3_r_10" ulx="218" uly="972" lrx="1038" lry="1049" />
+      <zone xml:id="facs_3_r_11" ulx="218" uly="1063" lrx="1051" lry="1135" />
+      <zone xml:id="facs_3_r_12" ulx="220" uly="1178" lrx="367" lry="1198" />
+      <zone xml:id="facs_3_r_13" ulx="217" uly="1227" lrx="1041" lry="1329" />
+      <zone xml:id="facs_3_r_14" ulx="217" uly="1342" lrx="1037" lry="1394" />
+      <zone xml:id="facs_3_r_15" ulx="217" uly="1406" lrx="980" lry="1481" />
+      <zone xml:id="facs_3_r_16" ulx="217" uly="1495" lrx="991" lry="1547" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_4_r_1" ulx="212" uly="157" lrx="926" lry="206" />
+      <zone xml:id="facs_4_r_2" ulx="214" uly="259" lrx="361" lry="282" />
+      <zone xml:id="facs_4_r_3" ulx="213" uly="309" lrx="959" lry="387" />
+      <zone xml:id="facs_4_r_4" ulx="210" uly="399" lrx="1019" lry="472" />
+      <zone xml:id="facs_4_r_5" ulx="212" uly="488" lrx="973" lry="539" />
+      <zone xml:id="facs_4_r_6" ulx="211" uly="550" lrx="1006" lry="628" />
+      <zone xml:id="facs_4_r_7" ulx="212" uly="641" lrx="1065" lry="716" />
+      <zone xml:id="facs_4_r_8" ulx="212" uly="728" lrx="1051" lry="801" />
+      <zone xml:id="facs_4_r_9" ulx="210" uly="818" lrx="1039" lry="893" />
+      <zone xml:id="facs_4_r_10" ulx="212" uly="947" lrx="358" lry="968" />
+      <zone xml:id="facs_4_r_11" ulx="212" uly="995" lrx="1032" lry="1068" />
+      <zone xml:id="facs_4_r_12" ulx="211" uly="1086" lrx="1076" lry="1161" />
+      <zone xml:id="facs_4_r_13" ulx="212" uly="1173" lrx="1044" lry="1251" />
+      <zone xml:id="facs_4_r_14" ulx="212" uly="1260" lrx="1009" lry="1364" />
+      <zone xml:id="facs_4_r_15" ulx="214" uly="1416" lrx="361" lry="1440" />
+      <zone xml:id="facs_4_r_16" ulx="213" uly="1464" lrx="1019" lry="1542" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_5_r_1" ulx="167" uly="119" lrx="258" lry="142" />
+      <zone xml:id="facs_5_r_2" ulx="167" uly="183" lrx="1020" lry="285" />
+      <zone xml:id="facs_5_r_3" ulx="166" uly="298" lrx="1044" lry="401" />
+      <zone xml:id="facs_5_r_4" ulx="165" uly="412" lrx="985" lry="536" />
+      <zone xml:id="facs_5_r_5" ulx="164" uly="552" lrx="996" lry="627" />
+      <zone xml:id="facs_5_r_6" ulx="164" uly="640" lrx="1075" lry="691" />
+      <zone xml:id="facs_5_r_7" ulx="165" uly="744" lrx="313" lry="765" />
+      <zone xml:id="facs_5_r_8" ulx="163" uly="794" lrx="958" lry="870" />
+      <zone xml:id="facs_5_r_9" ulx="163" uly="883" lrx="970" lry="957" />
+      <zone xml:id="facs_5_r_10" ulx="162" uly="970" lrx="1017" lry="1047" />
+      <zone xml:id="facs_5_r_11" ulx="162" uly="1058" lrx="994" lry="1132" />
+      <zone xml:id="facs_5_r_12" ulx="162" uly="1147" lrx="956" lry="1224" />
+      <zone xml:id="facs_5_r_13" ulx="162" uly="1236" lrx="993" lry="1288" />
+      <zone xml:id="facs_5_r_14" ulx="164" uly="1385" lrx="972" lry="1436" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_6_r_1" ulx="243" uly="213" lrx="940" lry="239" />
+      <zone xml:id="facs_6_r_2" ulx="343" uly="250" lrx="837" lry="310" />
+      <zone xml:id="facs_6_r_3" ulx="428" uly="363" lrx="745" lry="420" />
+      <zone xml:id="facs_6_r_4" ulx="155" uly="486" lrx="1027" lry="802" />
+      <zone xml:id="facs_6_r_5" ulx="157" uly="828" lrx="1032" lry="981" />
+      <zone xml:id="facs_6_r_6" ulx="156" uly="1017" lrx="1033" lry="1337" />
+      <zone xml:id="facs_6_r_7" ulx="157" uly="1374" lrx="993" lry="1487" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_7_r_1" ulx="117" uly="262" lrx="969" lry="538" />
+      <zone xml:id="facs_7_r_2" ulx="119" uly="578" lrx="962" lry="772" />
+      <zone xml:id="facs_7_r_3" ulx="116" uly="889" lrx="974" lry="1084" />
+      <zone xml:id="facs_7_r_4" ulx="116" uly="1123" lrx="974" lry="1397" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_8_r_1" ulx="161" uly="244" lrx="1022" lry="561" />
+      <zone xml:id="facs_8_r_2" ulx="158" uly="669" lrx="1055" lry="1438" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_9_r_1" ulx="108" uly="250" lrx="977" lry="733" />
+      <zone xml:id="facs_9_r_2" ulx="102" uly="839" lrx="930" lry="1277" />
+      <zone xml:id="facs_9_r_3" ulx="102" uly="1314" lrx="943" lry="1473" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_10_r_1" ulx="157" uly="227" lrx="986" lry="627" />
+      <zone xml:id="facs_10_r_2" ulx="157" uly="664" lrx="1065" lry="860" />
+      <zone xml:id="facs_10_r_3" ulx="157" uly="895" lrx="1015" lry="1174" />
+      <zone xml:id="facs_10_r_4" ulx="157" uly="1212" lrx="1008" lry="1530" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_11_r_1" ulx="117" uly="253" lrx="586" lry="284" />
+      <zone xml:id="facs_11_r_2" ulx="112" uly="389" lrx="929" lry="543" />
+      <zone xml:id="facs_11_r_3" ulx="114" uly="579" lrx="934" lry="694" />
+      <zone xml:id="facs_11_r_4" ulx="110" uly="727" lrx="956" lry="881" />
+      <zone xml:id="facs_11_r_5" ulx="111" uly="921" lrx="966" lry="1113" />
+      <zone xml:id="facs_11_r_6" ulx="109" uly="1152" lrx="874" lry="1263" />
+      <zone xml:id="facs_11_r_7" ulx="108" uly="1372" lrx="925" lry="1490" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="1241" lry="1753">
+      <zone xml:id="facs_12_r_1" ulx="138" uly="230" lrx="1010" lry="670" />
+      <zone xml:id="facs_12_r_2" ulx="138" uly="764" lrx="822" lry="872" />
+      <zone xml:id="facs_12_r_3" ulx="139" uly="901" lrx="1035" lry="1138" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_13_r_1" ulx="118" uly="308" lrx="933" lry="830" />
+      <zone xml:id="facs_13_r_2" ulx="119" uly="616" lrx="966" lry="689" />
+      <zone xml:id="facs_13_r_3" ulx="119" uly="726" lrx="811" lry="755" />
+      <zone xml:id="facs_13_r_4" ulx="119" uly="766" lrx="958" lry="839" />
+      <zone xml:id="facs_13_r_5" ulx="116" uly="876" lrx="967" lry="1029" />
+      <zone xml:id="facs_13_r_6" ulx="114" uly="1054" lrx="990" lry="1496" />
+    </surface>
+    <surface xml:id="facs_14" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_14_r_1" ulx="129" uly="229" lrx="890" lry="298" />
+      <zone xml:id="facs_14_r_2" ulx="127" uly="337" lrx="935" lry="572" />
+      <zone xml:id="facs_14_r_3" ulx="125" uly="676" lrx="1000" lry="1160" />
+      <zone xml:id="facs_14_r_4" ulx="126" uly="1196" lrx="954" lry="1396" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="conference">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          ZB <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>
+        </head>
+        <p facs="#facs_1_r_2">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> | Zähringerplatz 6 | CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>, Dienstkonto<lb facs="#facs_1_l_3_1" n="N001" />Digitalisierungsprojekte<lb facs="#facs_1_l_3_2" n="N002" />Zähringerplatz 6<lb facs="#facs_1_l_3_3" n="N003" />8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_4">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName><lb facs="#facs_1_l_4_1" n="N001" /><orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_4_2" n="N002" />Fernleihe / Document Delivery<lb facs="#facs_1_l_4_3" n="N003" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_4_4" n="N004" />Zähringerplatz 6<lb facs="#facs_1_l_4_5" n="N005" />CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_1_l_4_6" n="N006" />Tel. +41 44 268 31 00<lb facs="#facs_1_l_4_7" n="N007" />Web www.zb.uzh.ch<lb facs="#facs_1_l_4_8" n="N008" />www.ub.uzh.ch
+        </p>
+        <p facs="#facs_1_r_5">
+          <placeName ref="#zbz-l.45">Zürich</placeName>, 15.08.2025
+        </p>
+        <p facs="#facs_1_r_6">
+          Kopienbestellung ZBZ-ME-250811-07
+        </p>
+        <p facs="#facs_1_r_7">
+          Guten Tag
+        </p>
+        <p facs="#facs_1_r_8">
+          Vielen Dank für Ihre Bestellung vom 11.08.2025. Die gewünschten Kopien finden Sie in der Beilage.
+        </p>
+        <p facs="#facs_1_r_9">
+          Haupttitel: <bibl ref="#zbz-w.302">FORATOM VIII : Nuclear Energy - Europe and the World</bibl> <placeName ref="#zbz-l.19">Lausanne</placeName>, <placeName ref="#zbz-l.10">Switzerland</placeName> : Palais de Beaulieu 20-24 Jun 82<lb facs="#facs_1_l_9_1" n="N001" />Band/Heft:<lb facs="#facs_1_l_9_2" n="N002" />Jahr: 1982<lb facs="#facs_1_l_9_3" n="N003" />Signatur:<lb facs="#facs_1_l_9_4" n="N004" />Verfasser des Artikels: <persName ref="#zbz-p.2">Hersch, Jeanne</persName><lb facs="#facs_1_l_9_5" n="N005" />Titel des Artikels: <bibl ref="#zbz-w.303">«L'opinion publique face à l'industrie nucléaire»</bibl><lb facs="#facs_1_l_9_6" n="N006" />Seiten: S. 1-9<lb facs="#facs_1_l_9_7" n="N007" />Bemerkung: dienstlicher Gebrauch (<persName ref="#zbz-p.2">Hersch</persName>-Projekt) bitte nicht verrechnen
+        </p>
+        <p facs="#facs_1_r_10">
+          Mit der Bestellung haben Sie zudem die Urheberrechtsbestimmungen akzeptiert.
+        </p>
+        <p facs="#facs_1_r_11">
+          Sind die Kopien fehlerhaft? Es tut uns leid, dass etwas nicht nach Wunsch funktioniert hat. Bitte geben Sie uns via fernleihe@zb.uzh.ch eine Rückmeldung.
+        </p>
+        <p facs="#facs_1_r_12">
+          Für die Kosten (CHF 8.00) erhalten Sie innert den nächsten 6-8 Wochen eine Rechnung per E-Mail. Für UZH-Angehörige gelten Sonderkonditionen.
+        </p>
+        <p facs="#facs_1_r_13">
+          Wir wünschen Ihnen einen schönen Tag.
+        </p>
+        <p facs="#facs_1_r_14">
+          Freundliche Grüsse<lb facs="#facs_1_l_14_1" n="N001" />Fernleihe / Dokumentlieferdienst
+        </p>
+        <p facs="#facs_1_r_15">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName> &amp;amp; <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_15_1" n="N001" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_15_2" n="N002" />www.ub.uzh.ch<lb facs="#facs_1_l_15_3" n="N003" />www.zb.uzh.ch
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p>
+          ^{}[]
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          FORATOM VIII
+        </p>
+        <p facs="#facs_3_r_2">
+          NUCLEAR ENERGY-<lb facs="#facs_3_l_2_1" n="N001" /><placeName ref="#zbz-l.29">EUROPE</placeName> AND THE WORLD
+        </p>
+        <p facs="#facs_3_r_3">
+          8th Foratom Congress<lb facs="#facs_3_l_3_1" n="N001" />June 20-24, 1982<lb facs="#facs_3_l_3_2" n="N002" />Palais de Beaulieu, <placeName ref="#zbz-l.19">Lausanne</placeName>, <placeName ref="#zbz-l.10">Switzerland</placeName>
+        </p>
+        <p facs="#facs_3_r_4">
+          ---
+        </p>
+        <p facs="#facs_3_r_5">
+          List of Papers presented:
+        </p>
+        <p facs="#facs_3_r_6">
+          OPENING CEREMONY
+        </p>
+        <p facs="#facs_3_r_7">
+          Opening address by Federal Councillor <persName ref="#zbz-p.674">Leon SCHLUMPF</persName>, Minister of Energy, <placeName ref="#zbz-l.10">Switzerland</placeName>.
+        </p>
+        <p facs="#facs_3_r_8">
+          OPENING SESSION
+        </p>
+        <p facs="#facs_3_r_9">
+          Energy Challenge and International Economic Evolution in the Eighties by speaker <persName ref="#zbz-p.675">Raymond BARRE</persName>, ancien Premier Ministre du <orgName ref="#zbz-o.20">Gouvernement</orgName> <persName ref="#zbz-p.630">Français</persName>, Prof. d'<orgName ref="#zbz-o.32">Université</orgName>, <placeName ref="#zbz-l.1">Paris</placeName> (<placeName ref="#zbz-l.2">France</placeName>)
+        </p>
+        <p facs="#facs_3_r_10">
+          The Environmental Aspects of Nuclear Energy within the Framework of the Environmental Problems of Other Energy Sources by speaker <persName ref="#zbz-p.676">John DUNSTER</persName>, CB, Deputy Director General, Health and Safety Executive, <placeName ref="#zbz-l.263">London</placeName> (GB)
+        </p>
+        <p facs="#facs_3_r_11">
+          Public Opinion and Nuclear Energy: Psychological, Ideological, Social and Politic Problems by speaker <persName ref="#zbz-p.2">Jeanne HERSCH</persName>, professeur honoraire de philosophie à l'<orgName ref="#zbz-o.6">Université de Genève</orgName> (<placeName ref="#zbz-l.10">Switzerland</placeName>)
+        </p>
+        <p facs="#facs_3_r_12">
+          Energy and the Third World by speaker Dr. <persName ref="#zbz-p.677">Hoachim GRAWE</persName>, Director General, Head of Department, Federal Ministry for Economic Cooperation <placeName ref="#zbz-l.62">Bonn</placeName>
+        </p>
+        <p facs="#facs_3_r_13">
+          2nd SESSION
+        </p>
+        <p facs="#facs_3_r_14">
+          Light Water Nuclear <bibl ref="#zbz-w.252">Power</bibl> Reactors Throughout the World: State of the Art and Experience by speaker <persName ref="#zbz-p.678">Jean-Claude LENY</persName>, Directeur Général de Framatome, <placeName ref="#zbz-l.1">Paris</placeName> (<placeName ref="#zbz-l.2">France</placeName>) (a paper prepared jointly with <persName ref="#zbz-p.679">Remy CARLE</persName>, Directeur de l'Equipement d'Electricité de <placeName ref="#zbz-l.2">France</placeName>, <placeName ref="#zbz-l.1">Paris</placeName>)
+        </p>
+        <p facs="#facs_3_r_15">
+          Heavy-water Reactors by speaker <persName ref="#zbz-p.680">Ulrich FISCHER</persName>, Senior Project Leader Heavy-water Reactors, <orgName ref="#zbz-o.279">Kraftwerk Union AG</orgName>, <placeName ref="#zbz-l.264">Erlangen</placeName> (<placeName ref="#zbz-l.289">FRG</placeName>)
+        </p>
+        <p facs="#facs_3_r_16">
+          Gas Cooled Reactors - a Review by speaker Dr. <persName ref="#zbz-p.681">Norman L. FRANKLIN</persName>, Managing Director, National Nuclear Corporation Ltd., <placeName ref="#zbz-l.265">Knutsford</placeName>, Cheshire (GB)
+        </p>
+        <p>
+          Fast Breeder Reactors, the Energy Goal for the '90s by speaker Dr. Ing. <persName ref="#zbz-p.682">Bruno MUSSO</persName>, Secretary General, Ansaldo Group, <placeName ref="#zbz-l.266">Genoa</placeName> (<placeName ref="#zbz-l.110">Italy</placeName>)
+        </p>
+        <p>
+          ---
+        </p>
+        <p>
+          UNIVERSITÄTSBIBLIOTHEK<lb facs="#facs_3_l_19_1" n="N001" />HANNOVER<lb facs="#facs_3_l_19_2" n="N002" />TECHNISCHE<lb facs="#facs_3_l_19_3" n="N003" />INFORMATIONSBIBLIOTHEK
+        </p>
+        <p>
+          ... ... con't
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Page 2.
+        </p>
+        <p facs="#facs_4_r_2">
+          Small Reactors by speaker <persName ref="#zbz-p.683">Tor PEDERSEN</persName>, Technical Department, <orgName ref="#zbz-o.259">Aktiebolaget ASEA-ATOM</orgName>, <placeName ref="#zbz-l.267">Västeras</placeName> (<placeName ref="#zbz-l.246">Sweden</placeName>)
+        </p>
+        <p facs="#facs_4_r_3">
+          3rd SESSION
+        </p>
+        <p facs="#facs_4_r_4">
+          Is it Possible to Ensure a Stable and Secure Uranium Supply for <placeName ref="#zbz-l.12">Western Europe</placeName>? by speaker Dr. <persName ref="#zbz-p.684">Pierre GOLDSCHMIDT</persName>, Head of Fuel Supply Department, <orgName ref="#zbz-o.260">SYNATOM SA</orgName>, <placeName ref="#zbz-l.41">Brussels</placeName> (<placeName ref="#zbz-l.240">Belgium</placeName>)
+        </p>
+        <p facs="#facs_4_r_5">
+          The World Uranium Market from the Supplier's Viewpoint by speaker <persName ref="#zbz-p.685">George R. ALBINO</persName>, Chairman and President, <orgName ref="#zbz-o.261">Rio Algom Limited</orgName>, <placeName ref="#zbz-l.268">Toronto</placeName> (Ont., <placeName ref="#zbz-l.269">Canada</placeName>)
+        </p>
+        <p facs="#facs_4_r_6">
+          <orgName ref="#zbz-o.262">EURODIF</orgName>/COREDIF: Present et Futur by speaker <persName ref="#zbz-p.686">Jean-Pierre ROUGEAU</persName>, directeur commercial d, <orgName ref="#zbz-o.262">EURODIF</orgName>, <placeName ref="#zbz-l.270">Bagneux</placeName> (<placeName ref="#zbz-l.2">France</placeName>)
+        </p>
+        <p facs="#facs_4_r_7">
+          <orgName ref="#zbz-o.263">URENCO</orgName>/<orgName ref="#zbz-o.264">CENTEC</orgName>: A Successful Enterprise in International Cooperation by speaker Dr. <persName ref="#zbz-p.687">Johan Ph. van HASSELT</persName>, Managing Director, <orgName ref="#zbz-o.265">Ultra-Centrifuge Nederland N.V.</orgName>, <placeName ref="#zbz-l.271">Almelo</placeName> (<placeName ref="#zbz-l.272">Netherlands</placeName>)
+        </p>
+        <p facs="#facs_4_r_8">
+          UF6 Production and Fuel Fabrication by speaker <persName ref="#zbz-p.688">Coningsby ALLDAY</persName>, CBE, B.Sc., C.Eng., F.I. Chem.E., Managing Director, <orgName ref="#zbz-o.266">BNFL</orgName>, <placeName ref="#zbz-l.273">Risley</placeName>, <placeName ref="#zbz-l.274">Warrington</placeName> (GB)
+        </p>
+        <p facs="#facs_4_r_9">
+          Reprocessing: Present Status and Prospects by speaker <persName ref="#zbz-p.689">Claude AYCOBERRY</persName>, Director of the Reprocessing Division, <orgName ref="#zbz-o.267">COGEMA</orgName>, <placeName ref="#zbz-l.276">Vélizy Villacoublay</placeName> (<placeName ref="#zbz-l.2">France</placeName>)
+        </p>
+        <p facs="#facs_4_r_10">
+          Disposal: Options, Choices and Regulations by speaker <persName ref="#zbz-p.690">Rudolf ROMETSCH</persName>, Dr. phil. II, President, National Coop. for the Storage of Radioactive Waste, <placeName ref="#zbz-l.277">Baden</placeName> (CH)
+        </p>
+        <p facs="#facs_4_r_11">
+          4th SESSION
+        </p>
+        <p facs="#facs_4_r_12">
+          Nuclear <bibl ref="#zbz-w.252">Power</bibl>: A Countdown for Realism? by speaker Dr. <persName ref="#zbz-p.691">Adnan MUSTAFA</persName>, Asst. Secretary General, <orgName ref="#zbz-o.268">Organization of Arab Petroleum Exporting Countries</orgName>, <placeName ref="#zbz-l.278">Kuwait</placeName>.
+        </p>
+        <p facs="#facs_4_r_13">
+          Introduction of Nuclear <bibl ref="#zbz-w.252">Power</bibl> in Semi-industrialized Countries by speaker <persName ref="#zbz-p.692">Juan ELBENSCHUTZ</persName>, Engineer, Coordinator of the Internal Committee for Planning and Management, <orgName ref="#zbz-o.269">Comision Federal de Electricidad</orgName>, <placeName ref="#zbz-l.176">Mexico</placeName>
+        </p>
+        <p facs="#facs_4_r_14">
+          An Outline of Korea's Nuclear <bibl ref="#zbz-w.252">Power</bibl> Program by speaker <persName ref="#zbz-p.693">Nack Chung SUNG</persName>, Chairman of the Board and President, <orgName ref="#zbz-o.270">Korea Electric Power Corporation</orgName>, <placeName ref="#zbz-l.280">Seoul</placeName> (<placeName ref="#zbz-l.281">Rep. of Korea</placeName>)
+        </p>
+        <p facs="#facs_4_r_15">
+          The Indian Nuclear <bibl ref="#zbz-w.252">Power</bibl> Program - an Exercise in Self-sufficiency Author: Dr. <persName ref="#zbz-p.694">Homi N. SETHNA</persName>, Chairman, <orgName ref="#zbz-o.271">Atomic Energy Commission</orgName>, Government of <placeName ref="#zbz-l.282">India</placeName>, <placeName ref="#zbz-l.283">Bombay</placeName> (Dr. Sethna's paper was read by Mr. <persName ref="#zbz-p.695">S.M. Sundaram</persName>, <orgName ref="#zbz-o.272">BARC</orgName>, <placeName ref="#zbz-l.284">Trombay</placeName> (<placeName ref="#zbz-l.282">India</placeName>)
+        </p>
+        <p facs="#facs_4_r_16">
+          5th SESSION
+        </p>
+        <p>
+          Non-proliferation of Nuclear Weapons and International Safeguards by speaker Prof. Dr. <persName ref="#zbz-p.696">Hans GRUMM</persName>, Dept. Director General, Dept. of Safeguards, <orgName ref="#zbz-o.273">International Atomic Energy Agency</orgName>, <placeName ref="#zbz-l.11">Vienna</placeName>
+        </p>
+        <p>
+          ... con't
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          Page 3.
+        </p>
+        <p facs="#facs_5_r_2">
+          The US Non-proliferation Policy by speaker <persName ref="#zbz-p.697">Harry R. MARSHALL, Jr.</persName>, Principal Deputy Assistant Secretary, Bureau of Oceans and International Environmental and Scientific Affairs, <orgName ref="#zbz-o.275">US Department of State</orgName>, <placeName ref="#zbz-l.147">Washington</placeName> (<placeName ref="#zbz-l.285">USA</placeName>)
+        </p>
+        <p facs="#facs_5_r_3">
+          Non-proliferation from the Viewpoint of a European Non-weapon Country by speaker <persName ref="#zbz-p.698">Agustin ALONSO</persName>, Prof., Nuclear Technology <orgName ref="#zbz-o.276">Politechnical University Madrid</orgName>, Director Adj. to Director General, <orgName ref="#zbz-o.277">Junta de Energia Nuclear</orgName>, <placeName ref="#zbz-l.144">Madrid</placeName> (<placeName ref="#zbz-l.286">Spain</placeName>)
+        </p>
+        <p facs="#facs_5_r_4">
+          How <placeName ref="#zbz-l.288">Argentina</placeName> Looks at Non-proliferation Author <persName ref="#zbz-p.699">Carlos Castro MADERO</persName>, Vice-Adm., Ph D. in Physics, Chairman of the <orgName ref="#zbz-o.278">National Atomic Energy Commission of Argentina</orgName>, <placeName ref="#zbz-l.287">Buenos Aires</placeName> (<placeName ref="#zbz-l.288">Argentina</placeName>) (Mr. Madero's paper was read by Dr. <persName ref="#zbz-p.700">Antonio Carrea</persName>, Nuclear Attaché to <placeName ref="#zbz-l.288">Argentina</placeName>'s permanent mission in <placeName ref="#zbz-l.11">Vienna</placeName>)
+        </p>
+        <p facs="#facs_5_r_5">
+          The Nuclear <bibl ref="#zbz-w.252">Power</bibl> Industry in a Changing World Market by speaker <persName ref="#zbz-p.701">Klaus BARTHELT</persName>, President and Chief Executive of the Managing Board of <orgName ref="#zbz-o.279">Kraftwerk Union AG</orgName>, <placeName ref="#zbz-l.264">Erlangen</placeName> (<placeName ref="#zbz-l.289">FRG</placeName>)
+        </p>
+        <p facs="#facs_5_r_6">
+          Remarques Introductives by Panalist <persName ref="#zbz-p.702">André PETIT</persName>, Dep. Director Intern.Affairs <orgName ref="#zbz-o.280">Commissariat à l'Energie Atomique</orgName>, <placeName ref="#zbz-l.1">Paris</placeName> (<placeName ref="#zbz-l.2">France</placeName>)
+        </p>
+        <p facs="#facs_5_r_7">
+          6th SESSION
+        </p>
+        <p facs="#facs_5_r_8">
+          International Cooperation within the Framework of the <orgName ref="#zbz-o.273">International Atomic Energy Agency</orgName> by speaker <persName ref="#zbz-p.703">Christopher HERZIG</persName>, Director, Div. of External Relations, <orgName ref="#zbz-o.273">Internat. Atomic Energy Agency</orgName>, <placeName ref="#zbz-l.11">Vienna</placeName>
+        </p>
+        <p facs="#facs_5_r_9">
+          Cooperation between <placeName ref="#zbz-l.290">Finland</placeName> and the <placeName ref="#zbz-l.291">U.S.S.R.</placeName> in the Field of Nuclear Engineering by speaker <persName ref="#zbz-p.704">Perttu SIMOLA</persName>, M.Sc. (Eng.) Project Manager <orgName ref="#zbz-o.281">Imatran Voima Oy</orgName>, <placeName ref="#zbz-l.143">Helsinki</placeName> (<placeName ref="#zbz-l.290">Finland</placeName>)
+        </p>
+        <p facs="#facs_5_r_10">
+          European Cooperation in the Field of Fast Breeder Reactors by speaker Dr. <persName ref="#zbz-p.705">Georges VENDRYES</persName>, directeur des applications industrielles nucléaires <orgName ref="#zbz-o.280">Commissariat à l'Energie Atomique</orgName>, <placeName ref="#zbz-l.1">Paris</placeName> (<placeName ref="#zbz-l.2">France</placeName>)
+        </p>
+        <p facs="#facs_5_r_11">
+          Nuclear Cooperation between <placeName ref="#zbz-l.292">Brazil</placeName> and the <placeName ref="#zbz-l.289">Federal Republic of Germany</placeName> by Author <persName ref="#zbz-p.706">Carlos SYLLUS Pinto</persName>, Director, <orgName ref="#zbz-o.282">NUCLEN</orgName>, <placeName ref="#zbz-l.293">Rio de Janeiro</placeName> (<placeName ref="#zbz-l.292">Brazil</placeName>)
+        </p>
+        <p facs="#facs_5_r_12">
+          The Yugoslav Nuclear Energy Program - A Challenge for the World's Nuclear Suppliers by speaker Prof. <persName ref="#zbz-p.707">Naim AFGAN</persName>, Scientific Adviser, <orgName ref="#zbz-o.283">Nuclear Sciences Institute Boris Kidric-Vinca</orgName>, <placeName ref="#zbz-l.294">Beograd</placeName> (<placeName ref="#zbz-l.295">Yugoslavia</placeName>)
+        </p>
+        <p facs="#facs_5_r_13">
+          Introductory Statement by Panalist <persName ref="#zbz-p.708">Lars. Inge HELANDER</persName>, Manager Market Development, <orgName ref="#zbz-o.284">AB ASEA-ATOM</orgName>, <placeName ref="#zbz-l.267">Västeras</placeName> (<placeName ref="#zbz-l.246">Sweden</placeName>)
+        </p>
+        <p facs="#facs_5_r_14">
+          CONFERENCE REVIEW by Dr. <persName ref="#zbz-p.709">Walter MARSHALL</persName>, Chairman, <orgName ref="#zbz-o.285">United Kingdom Atomic Energy Authority</orgName>, <placeName ref="#zbz-l.263">London</placeName> (GB)
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+        <p facs="#facs_6_r_2">
+          L'OPINION PUBLIQUE FACE A L'ENERGIE NUCLEAIRE :<lb facs="#facs_6_l_2_1" n="N001" />problèmes psychologiques, idéologiques,<lb facs="#facs_6_l_2_2" n="N002" />sociaux et politiques
+        </p>
+        <p facs="#facs_6_r_3">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <placeName ref="#zbz-l.5">Genève</placeName><lb facs="#facs_6_l_3_1" n="N001" />professeur de philosophie
+        </p>
+        <p facs="#facs_6_r_4">
+          Les hommes, de tout temps, ont eu à la fois envie et peur du nouveau. Envie parce qu'ils sont par nature mécontents de ce qui est, nostalgiques d'une plénitude intemporelle, d'un paradis perdu où leurs désirs les plus contradictoires seraient à la fois satisfaits. Peur parce qu'ils se sentent mortels et vulnérables, toujours menacés par quelque chose qui pourrait être pire que ce qui est. La formidable puissance de l'énergie nucléaire élève l'espoir et la terreur à la énième puissance. Et, bien sûr, la terreur incomparablement plus que l'espoir.
+        </p>
+        <p facs="#facs_6_r_5">
+          L'histoire a fait que l'énergie nucléaire se trouve, dans la conscience collective contemporaine, à l'intersection et comme au lieu géométrique d'une série de faits et de mythes hétérogènes, de dimension planétaire, autour desquels se construisent des idéologies virulentes.
+        </p>
+        <p facs="#facs_6_r_6">
+          D'abord, évidemment, <placeName ref="#zbz-l.7">Hiroshima</placeName>, la bombe atomique et tous les armements atomiques ultérieurs. La situation de guerre qui existait quand la première bombe fut lâchée, les années d'extermination massive et de ruines qui l'avaient précédée, les menaces d'une résistance prolongée parmi les îles japonaises et l'urgence de parvenir à une paix générale, se sont effacées des esprits. Il ne reste que l'insoutenable souvenir d'une ville détruite, de morts innombrables, de survivants lentement consumés par les radiations.
+        </p>
+        <p facs="#facs_6_r_7">
+          On aura beau répéter que l'énergie nucléaire pacifique n'a aucun rapport avec la bombe atomique ni avec aucune des armes qui en sont dérivées. Pour les peuples, le péché originel de l'atome ne saurait
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          2
+        </p>
+        <p facs="#facs_7_r_2">
+          s'effacer. Les ruines et les plaies d'<placeName ref="#zbz-l.7">Hiroshima</placeName> persistent à l'arrière-plan. Et cela d'autant plus que, même lorsque "les lafques" parlent d'atome ou de noyau, ils ne savent pas vraiment ce qu'ils disent, tellement l'univers de la science contemporaine reste pour eux obscur et indéchiffrable. Reste seulement un contexte de violence extrême, à la fois mortelle et sacrilège, violant l'ordre du monde et le secret le plus intime de la matière.
+        </p>
+        <p facs="#facs_7_r_3">
+          Je reste convaincue que si on les consultait, la majorité des hommes, en <placeName ref="#zbz-l.27">Occident</placeName>, seraient heureux et soulagés si tout le chapitre de la science concernant l'énergie atomique pouvait, soudain et définitivement, sombrer dans l'oubli, afin qu'ils puissent, eux, échapper ainsi à l'apocalypse d'une guerre totale et à la fin du monde.
+        </p>
+        <p facs="#facs_7_r_4">
+          Mais ce n'est pas là une explication suffisante. Comme toute passion collective, la passion anti-atomique ne se nourrit pas de raisons ou d'associations cohérentes sur un seul plan. Elle s'alimente aussi aux principaux thèmes idéologiques auxquels l'<placeName ref="#zbz-l.27">Occident</placeName> recourt aujourd'hui pour nourrir sa mauvaise conscience.
+        </p>
+        <p>
+          Ainsi, du fait de leurs dimensions et de leur coût, les centrales atomiques vont rejoindre tout naturellement le Grand Capital et les Marchands de Canon d'autrefois. Comme si le Grand Capital était encore, en matière nucléaire, totalement indépendant du gouvernement et de l'opinion publique. Comme si la <placeName ref="#zbz-l.55">Russie soviétique</placeName> s'était abstenue de développer son propre réseau de centrales atomiques. Comme si les Marchands de Canon et leurs familles étaient eux-mêmes à l'abri de la fin du monde.
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          3
+        </p>
+        <p facs="#facs_8_r_2">
+          Sur un autre plan, l'énergie atomique, pense-t-on, ne fera qu'accentuer encore l'écart inacceptable entre les pays développés, capables de se la procurer par leurs propres efforts, et les pays pauvres, privés aussi bien de la technologie nécessaire à sa production que des ressources permettant d'acquérir les installations nécessaires à l'étranger. Comme si une pénurie énergétique chez les pays développés pouvait être favorable à une collaboration nord-sud et à la mise en place d'un nouvel ordre économique.
+        </p>
+        <p>
+          ---
+        </p>
+        <p>
+          Sur un autre plan encore, l'énergie atomique est considérée à la fois comme l'emblème et le couronnement de la toute-puissante - et toute-honnie - technologie, - elle qui a, dans notre civilisation, transformé les conditions et la durée de la vie, ouvert au grand nombre des possibilités dont nul n'aurait jamais rêvé, remplacé par des machines la peine physique indigne d'êtres humains, mis la culture, sous toutes ses formes, à la portée de tous. Or les <persName ref="#zbz-p.2100">Occidentaux</persName> de notre temps répètent à l'envi que la civilisation industrielle n'a aucune justification, qu'elle ne tend qu'au profit, qu'elle n'est que "matérialiste", qu'elle pollue l'univers, détruit la nature et prive la vie de son sens. Il semble que pour eux une certaine pénurie d'énergie pourrait être bénéfique dans la mesure où elle aurait pour conséquence, justement, de freiner le progrès technique, ou même - qui sait ? - de provoquer une régression. Comme si une vie humaine avait plus de sens lorsque, pressée par les besoins vitaux immédiats, elle ne dispose pas des loisirs permettant de s'interroger sur son sens. Comme si, pour résoudre les nouveaux problèmes que n'importe quel progrès ne manque pas de poser, et notamment ceux de la pollution, on n'était pas obligé de recourir à nouveau à la science et à la technologie.
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          4
+        </p>
+        <p facs="#facs_9_r_2">
+          Enfin, une certaine opinion publique croit - ou essaye de faire croire - que l'énergie atomique aurait partie liée avec un régime de dictature et constituerait par son existence même une menace pour la démocratie. L'argumentation est double. D'une part, on affirme que la dimension de l'installation énergétique met à la disposition de l'<orgName ref="#zbz-o.754">État</orgName> un moyen de pression exclusif et absolu. D'autre part, on avance que les mesures de sécurité indispensables au bon fonctionnement de toute centrale atomique entraîneraient fatalement la mise en place d'un système de surveillance et d'espionnage mortel pour les libertés démocratiques. Il me semble qu'il s'agit là de risques réels, mais non de fatalité. Il faudrait, pour y faire face - comme à bien d'autres risques que la démocratie est obligée d'affronter - une vigilance constante.
+        </p>
+        <p facs="#facs_9_r_3">
+          Mais ne perdons pas de vue la situation réelle où nous nous trouvons actuellement. Ce n'est pas par plaisir qu'on s'est mis, en <placeName ref="#zbz-l.29">Europe</placeName>, avec un retard important sur les <placeName ref="#zbz-l.285">USA</placeName> et l'<placeName ref="#zbz-l.59">URSS</placeName>, à construire des centrales nucléaires, contre les vents et les marées d'une opinion publique alarmiste. Tout le monde sait qu'on s'y est mis contraint et forcé par la perspective d'un manque d'énergie à bref délai, soit que les ressources pétrolières s'épuisent, soit que les pays propriétaires élèvent leurs prix au-delà du supportable, soit qu'ils mettent à la livraison de leur pétrole des conditions politiques contraires à l'indépendance des pays occidentaux, - soit encore que ces trois facteurs prohibitifs se mettent à jouer simultanément.
+        </p>
+        <p>
+          Comment l'opinion publique réagit-elle, face à ces menaces ? - D'abord, elle s'efforce d'en nier la réalité ou même la probabilité. Ensuite, elle recourt à un mythe, assez répandu aujourd'hui pour se prétendre réaliste, - un mythe que j'appellerai "passéiste-futuriste" :
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          il consiste à fondre, au sein d'une seule réalité supposée, deux nostalgies. L'une a pour visée une situation du passé, l'autre une situation à venir, bénéficiant d'un progrès scientifique que l'on suppose, par anticipation, acquis. La première préconise un retour en arrière, au village agricole et artisanal d'autrefois, consommant peu d'énergie pour produire, peu aussi pour la lumière et le chauffage, puisqu'on y vivrait au rythme du soleil, ce qui permettrait des économies d'énergie considérables.
+        </p>
+        <p facs="#facs_10_r_2">
+          On pourrait ainsi supprimer, dans notre mode de vie, tant de choses superflues : voitures, voyages, etc.
+        </p>
+        <p facs="#facs_10_r_3">
+          A l'inverse, on réaliserait des économies d'énergie importantes grâce à des progrès technologiques : nouvelle manière de construire les maisons, nouveaux matériaux, nouveaux moyens d'étanchéité, et ainsi de suite. On rejoint ici, du même coup, le mythe "anti-matérialiste" de la "vie simple" et du "retour à la nature".
+        </p>
+        <p facs="#facs_10_r_4">
+          Mais on va plus loin. On anticipe comme certaine la possibilité de recourir à des sources d'énergie "naturelles" inépuisables, n'entraînant nulle pollution : soleil, vent, marées. On respire un peu, ici, l'aisance ensoleillée des contes de fées de notre enfance. On revient à la nature, et c'est ce retour même qui va nous livrer la clé du problème. A la fin il n'y aura rien à sacrifier et tout sera possible — sans risques.
+        </p>
+        <p>
+          Personne ne peut renoncer à de tels rêves, et notre civilisation a mainte fois surpassé notre attente. Mais force est de constater que ce n'est pas pour aujourd'hui, ni pour demain. En attendant, il faut vivre, il faut de l'énergie. Personne ne veut interrompre ou ralentir les recherches concernant les sources d'énergie "naturelles", inépuisables, non polluantes et sans risques. Tout le monde est d'accord pour construire le moins possible de centrales nucléaires, et pour les utiliser le moins longtemps possible.
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          Mais en attendant, il faut de l'énergie
+        </p>
+        <p facs="#facs_11_r_2">
+          On nous dit que les centrales atomiques comportent des risques Cela est vrai et personne ne le nie Mais ici, les adversaires de l'énergie atomique rejoignent un autre mythe contemporain : celui de l'élimination de tout risque, à 100 %, celui d'une sécurité totale.
+        </p>
+        <p facs="#facs_11_r_3">
+          Je crois que la propagation de ce mythe - qui découle de la sécurité croissante dont est entourée, quoi qu'on en dise, la vie de l'homme contemporain - nous met en danger mortel.
+        </p>
+        <p facs="#facs_11_r_4">
+          Tant de facteurs interviennent dans chacune des opérations des êtres humains que s'ils n'acceptaient d'agir, même de façon répétitive et en éliminant toute nouveauté, que lorsqu'ils n'affrontent aucun risque, il ne leur resterait qu'à se laisser mourir.
+        </p>
+        <p facs="#facs_11_r_5">
+          Il semble parfois qu'ils en prennent le chemin. Le lait en poudre empoisonne les bébés, mais le lait maternel, a-t-on découvert, les empoisonne désormais aussi. Les amandes, produit naturel pourtant, sont cancérigènes. Et ne parlons pas de l'eau, de l'air, des poissons, des veaux, du sol.
+        </p>
+        <p facs="#facs_11_r_6">
+          Le <persName ref="#zbz-p.732">poète latin</persName> recommandait de ne pas perdre, pour vivre, les raisons de vivre. Nous sommes en voie de faire mieux : pour vivre, de nous laisser mourir.
+        </p>
+        <p facs="#facs_11_r_7">
+          Avec cela, nous vivons deux fois plus longtemps que naguère, nous vieillissons bien plus tard, nous souffrons physiquement beaucoup moins. Nous le devons en bonne partie aux progrès de la médecine.
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          7
+        </p>
+        <p facs="#facs_12_r_2">
+          Mais aucun de ces progrès n'a été possible sans risque. Le chercheur médecin qui est sur la piste d'un nouveau remède, d'une nouvelle thérapie, d'une nouvelle technique opératoire, a beau tester son hypothèse avec la conscience la plus exigente, il a beau avoir expérimenté sa méthode sur des animaux toujours plus proches de l'homme, - le moment viendra nécessairement où il l'appliquera pour la première fois sur un être humain. Il n'est pas de progrès humain qui ne passe par le risque. C'est là un trait essentiel à notre condition. Le refuser, c'est refuser - vainement d'ailleurs - d'être un homme, c'est-à-dire un être mortel, et qui se sait mortel, et qui, malgré cela ou grâce à cela, ne cesse de "s'efforcer".
+        </p>
+        <p facs="#facs_12_r_3">
+          Le risque, pour l'homme, est donc, universellement, au cœur de toute sécurité. Il est déjà dans le feu qu'on allume pour se protéger des fauves.
+        </p>
+        <p>
+          Qu'y a-t-il donc, dans l'énergie nucléaire, dans les centrales électriques, de radicalement nouveau par rapport à ce risque universellement présent et universellement affronté ? Ou est-ce seulement l'attitude des hommes qui a changé, parce que, trompés par le niveau de sécurité générale atteint dans nos civilisations développées, ils se refusent à admettre un risque, quel qu'il soit ?
+        </p>
+        <p>
+          Non, il faut le reconnaître : il y a bien, dans l'énergie nucléaire telle que nous la connaissons aujourd'hui, un risque réel qui est sans précédent. D'abord, ce risque est ressenti comme proportionnel à la puissance de cette énergie ; c'est dire que même si la probabilité de la catastrophe est extrêmement petite, la dimension de la menace qu'elle comporte ne ressemble à aucune autre, et la différence de degré est ici tellement grande qu'elle est vécue comme une différence de nature. Ensuite - et c'est cela qui me paraît ici la
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          8
+        </p>
+        <p facs="#facs_13_r_2">
+          vraie nouveauté, vécue comme quasi inacceptable, du risque -, il y a le fait que dans l'état actuel de nos connaissances nous ne savons pas si, ni quand, nous pourrons trouver une solution sûre quant aux radiations des déchets radio-actifs. L'idée de ces radiations, qui semblent, à vues humaines, continuer à perte de vue, reste, pour une grande partie de l'opinion publique, intolérable.
+        </p>
+        <p facs="#facs_13_r_3">
+          Il faudra donc chercher encore des solutions véritables à l'échelle des perspectives finies qui sont - et doivent être - celles des hommes.
+        </p>
+        <p facs="#facs_13_r_4">
+          L'opinion publique hostile à l'énergie nucléaire dira donc :
+        </p>
+        <p facs="#facs_13_r_5">
+          - Attendons que ces recherches aient abouti ; d'ici là, pas de centrales atomiques !
+        </p>
+        <p facs="#facs_13_r_6">
+          A cela on peut - on doit répondre deux choses. La première, c'est que la plupart des solutions humaines ont été trouvées chemin faisant, au milieu de risques affrontés avec un maximum de prudence, mais jamais éliminés totalement au préalable.
+        </p>
+        <p>
+          La seconde réponse, c'est une question, qu'on se refuse le plus souvent à poser dans sa radicalité. On s'interroge inlassablement sur les risques que font courir les centrales atomiques, les sur-générateurs, etc. Mais il faut aussi poser l'autre question : quels risques courons-nous si nous ne construisons pas de centrales et si l'énergie vient à nous manquer ? On imagine paresseusement des maisons moins chauffées, des bains moins chauds, quelques menues privations. Mais l'énergie est le sang même de notre monde industriel. Si elle manque, les ascenseurs des gratte-ciel ne seront pas seuls à s'arrêter : ce sera toute la vie, tout le travail, tous les échanges, et très vite la pénurie et les menaces mortelles. Si tout s'arrête, les besoins
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      <pb facs="#facs_14" n="14" />
+        <p facs="#facs_14_r_1">
+          vitaux seront si forts qu'on se trouvera dans le tourbillon d'une guerre civile inimaginable, de tous contre tous.
+        </p>
+        <p facs="#facs_14_r_2">
+          Ou alors, un ou deux pays disposeront encore d'un reste d'énergie, et il faudra accepter n'importe quelles conditions pour en obtenir. L'asservissement le plus total, sans guerre. Les survivants ne seront plus des hommes. Car être des hommes, c'est s'efforcer de prévenir, d'aussi loin que possible, les situations où il ne reste plus d'autre choix qu'entre la mort et la liberté.
+        </p>
+        <p facs="#facs_14_r_3">
+          Ces risques, sur l'autre plateau de la balance, n'annulent pas ceux des déchets durablement radio-actifs. Mais il semble bien que le recours à l'énergie nucléaire des centrales atomiques reste, au moins pour le moment, une solution provisoirement nécessaire, tant que les autres sources d'énergie ne sont pas à l'échelle des besoins prévisibles. Elles doivent toutes, néanmoins, être développées au maximum, et les recherches, dans ce domaine comme dans celui des économies, doivent se poursuivre. En attendant, et pour faire face aux exigences prévisibles, il faut recourir à l'énergie nucléaire, avec le maximum de précautions, en construisant le moins possible de centrales, et en poursuivant les recherches tendant à résoudre, de façon définitive et sûre, le problème des radiations des déchets.
+        </p>
+        <p facs="#facs_14_r_4">
+          Telle est la situation présente. Il ne s'agit d'aucun choix définitif. Il se situe dans un moment concret, particulier, de notre histoire. Il s'efforce - sans sécurité absolue - de donner le maximum de chances à la fois à notre vie et à notre liberté. Il est à l'échelle des hommes. Et il exige la poursuite de la recherche et des efforts.
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Universität Zürich</orgName> (SLS02X00013)
+        </p>
+      </div>
+      </body></text>
+</TEI>

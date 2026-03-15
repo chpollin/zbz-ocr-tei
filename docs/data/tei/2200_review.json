@@ -1,0 +1,45 @@
+{
+  "doc_id": "2200",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1],
+      "notes": "2-Seiten-Dokument. Overlay zeigt sauberes Zweispalten-Zeitschriftenlayout."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text fehlerfrei erkannt."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Zweispalten-Layout korrekt, Lesefluss plausibel."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "Valide, 0 Warnungen. Saubere Struktur mit head-Element."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 6,
+        "orgName": 4,
+        "placeName": 0,
+        "bibl": 11
+      },
+      "notes": "Hersch, Kollataj korrekt. UNESCO, J.C. Lattes korrekt. 11 bibl-Referenzen passend fuer Text ueber Menschenrechts-Anthologie."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Titel, Autor, Sprache, Datum korrekt. Vollstaendiger Essay ueber Entstehung der UNESCO-Anthologie. Koherent."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Sehr sauberes Dokument. Hersch erklaert die Entstehung ihrer UNESCO-Anthologie. Keine Probleme."
+}

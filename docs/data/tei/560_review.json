@@ -1,0 +1,25 @@
+{
+  "doc_id": "560",
+  "reviewer": "quality-screener",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "V0",
+      "msg": "Validator: VALID, 0 Fehler, 1 Warning (W6 keine lb)"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 16p 4o 1l 2w = 23"
+    },
+    {
+      "severity": "info",
+      "code": "QS",
+      "msg": "Tier 2 Screener: 4 Seiten, fra. Buchrezension Christoff. Overlay S.1+S.2 pruefen: Zonen korrekt. Keine lb-Elemente (W6) akzeptabel fuer Fliesstext-Rezension. Entities korrekt (Christoff, Sartre, Merleau-Ponty, Kant, Jaspers). Kohaerenter philosophischer Text."
+    }
+  ]
+}

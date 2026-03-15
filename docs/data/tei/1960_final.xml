@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Probleme der kleineren Industrieunternehmen in einer veränderten Welt</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1960</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Probleme der kleineren Industrieunternehmen in einer veränderten Welt</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1982</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screen-manual" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Overlay S.1: Bestellschein korrekt, beide Engines deckungsgleich; Overlay S.4: Dreispalten-Layout (Zeitschrift), Regionen korrekt abgegrenzt; S.3 enthaelt Werbe-Anzeigen (Dolwasi, Layher Gerueste) -- korrekt als Beiwerk transkribiert (+4 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1267" lry="1738">
+      <zone xml:id="facs_1_r_1" ulx="115" uly="168" lrx="394" lry="314" />
+      <zone xml:id="facs_1_r_2" ulx="402" uly="364" lrx="585" lry="401" />
+      <zone xml:id="facs_1_r_3" ulx="433" uly="453" lrx="964" lry="493" />
+      <zone xml:id="facs_1_r_4" ulx="115" uly="578" lrx="177" lry="599" />
+      <zone xml:id="facs_1_r_5" ulx="375" uly="578" lrx="509" lry="599" />
+      <zone xml:id="facs_1_r_6" ulx="115" uly="630" lrx="276" lry="651" />
+      <zone xml:id="facs_1_r_7" ulx="375" uly="630" lrx="591" lry="651" />
+      <zone xml:id="facs_1_r_8" ulx="115" uly="660" lrx="257" lry="681" />
+      <zone xml:id="facs_1_r_9" ulx="375" uly="660" lrx="586" lry="681" />
+      <zone xml:id="facs_1_r_10" ulx="115" uly="689" lrx="214" lry="710" />
+      <zone xml:id="facs_1_r_11" ulx="375" uly="689" lrx="525" lry="710" />
+      <zone xml:id="facs_1_r_12" ulx="375" uly="792" lrx="633" lry="829" />
+      <zone xml:id="facs_1_r_13" ulx="115" uly="794" lrx="280" lry="827" />
+      <zone xml:id="facs_1_r_14" ulx="115" uly="891" lrx="224" lry="912" />
+      <zone xml:id="facs_1_r_15" ulx="375" uly="891" lrx="1182" lry="935" />
+      <zone xml:id="facs_1_r_16" ulx="115" uly="950" lrx="181" lry="971" />
+      <zone xml:id="facs_1_r_17" ulx="375" uly="950" lrx="480" lry="971" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1710">
+      <zone xml:id="facs_2_r_1" ulx="499" uly="1160" lrx="10820" lry="1780" />
+      <zone xml:id="facs_2_r_2" ulx="443" uly="2049" lrx="9946" lry="4199" />
+      <zone xml:id="facs_2_r_3" ulx="517" uly="4502" lrx="8262" lry="4829" />
+      <zone xml:id="facs_2_r_4" ulx="8077" uly="5872" lrx="11700" lry="14592" />
+      <zone xml:id="facs_2_r_5" ulx="493" uly="5880" lrx="7912" lry="9389" />
+      <zone xml:id="facs_2_r_6" ulx="527" uly="9889" lrx="7713" lry="10322" />
+      <zone xml:id="facs_2_r_7" ulx="8086" uly="14543" lrx="11696" lry="16340" />
+      <zone xml:id="facs_2_r_8" ulx="552" uly="15640" lrx="7899" lry="16340" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1225" lry="1710">
+      <zone xml:id="facs_3_r_1" ulx="82" uly="133" lrx="325" lry="182" />
+      <zone xml:id="facs_3_r_2" ulx="619" uly="133" lrx="852" lry="176" />
+      <zone xml:id="facs_3_r_3" ulx="894" uly="133" lrx="1146" lry="172" />
+      <zone xml:id="facs_3_r_4" ulx="895" uly="172" lrx="1085" lry="193" />
+      <zone xml:id="facs_3_r_5" ulx="619" uly="179" lrx="885" lry="234" />
+      <zone xml:id="facs_3_r_6" ulx="895" uly="193" lrx="1164" lry="222" />
+      <zone xml:id="facs_3_r_7" ulx="895" uly="227" lrx="1085" lry="242" />
+      <zone xml:id="facs_3_r_8" ulx="619" uly="235" lrx="875" lry="275" />
+      <zone xml:id="facs_3_r_9" ulx="82" uly="282" lrx="597" lry="405" />
+      <zone xml:id="facs_3_r_10" ulx="943" uly="355" lrx="1131" lry="398" />
+      <zone xml:id="facs_3_r_11" ulx="944" uly="405" lrx="1131" lry="456" />
+      <zone xml:id="facs_3_r_12" ulx="82" uly="422" lrx="537" lry="456" />
+      <zone xml:id="facs_3_r_13" ulx="122" uly="571" lrx="1091" lry="689" />
+      <zone xml:id="facs_3_r_14" ulx="71" uly="810" lrx="177" lry="825" />
+      <zone xml:id="facs_3_r_15" ulx="798" uly="810" lrx="937" lry="825" />
+      <zone xml:id="facs_3_r_16" ulx="71" uly="825" lrx="247" lry="856" />
+      <zone xml:id="facs_3_r_17" ulx="797" uly="827" lrx="975" lry="856" />
+      <zone xml:id="facs_3_r_18" ulx="71" uly="860" lrx="176" lry="877" />
+      <zone xml:id="facs_3_r_19" ulx="798" uly="860" lrx="901" lry="877" />
+      <zone xml:id="facs_3_r_20" ulx="71" uly="877" lrx="251" lry="904" />
+      <zone xml:id="facs_3_r_21" ulx="798" uly="877" lrx="972" lry="904" />
+      <zone xml:id="facs_3_r_22" ulx="71" uly="906" lrx="176" lry="921" />
+      <zone xml:id="facs_3_r_23" ulx="798" uly="906" lrx="977" lry="921" />
+      <zone xml:id="facs_3_r_24" ulx="71" uly="919" lrx="246" lry="949" />
+      <zone xml:id="facs_3_r_25" ulx="798" uly="919" lrx="966" lry="949" />
+      <zone xml:id="facs_3_r_26" ulx="295" uly="1224" lrx="507" lry="1243" />
+      <zone xml:id="facs_3_r_27" ulx="779" uly="1224" lrx="922" lry="1243" />
+      <zone xml:id="facs_3_r_28" ulx="295" uly="1255" lrx="547" lry="1277" />
+      <zone xml:id="facs_3_r_29" ulx="779" uly="1256" lrx="1111" lry="1277" />
+      <zone xml:id="facs_3_r_30" ulx="295" uly="1284" lrx="590" lry="1299" />
+      <zone xml:id="facs_3_r_31" ulx="779" uly="1284" lrx="1017" lry="1299" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1710">
+      <zone xml:id="facs_4_r_1" ulx="60" uly="119" lrx="413" lry="208" />
+      <zone xml:id="facs_4_r_2" ulx="58" uly="207" lrx="414" lry="405" />
+      <zone xml:id="facs_4_r_3" ulx="811" uly="229" lrx="1174" lry="1501" />
+      <zone xml:id="facs_4_r_4" ulx="54" uly="404" lrx="414" lry="1496" />
+      <zone xml:id="facs_4_r_5" ulx="432" uly="938" lrx="794" lry="1634" />
+      <zone xml:id="facs_4_r_6" ulx="54" uly="1495" lrx="413" lry="1632" />
+      <zone xml:id="facs_4_r_7" ulx="812" uly="1496" lrx="1173" lry="1636" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1209" lry="1709">
+      <zone xml:id="facs_5_r_1" ulx="262" uly="155" lrx="864" lry="644" />
+      <zone xml:id="facs_5_r_2" ulx="262" uly="772" lrx="655" lry="929" />
+      <zone xml:id="facs_5_r_3" ulx="262" uly="967" lrx="614" lry="992" />
+      <zone xml:id="facs_5_r_4" ulx="262" uly="1083" lrx="505" lry="1167" />
+      <zone xml:id="facs_5_r_5" ulx="436" uly="1283" lrx="975" lry="1302" />
+      <zone xml:id="facs_5_r_6" ulx="436" uly="1329" lrx="1176" lry="1377" />
+      <zone xml:id="facs_5_r_7" ulx="436" uly="1399" lrx="1176" lry="1440" />
+      <zone xml:id="facs_5_r_8" ulx="436" uly="1456" lrx="1175" lry="1493" />
+      <zone xml:id="facs_5_r_9" ulx="845" uly="1532" lrx="1148" lry="1608" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1709">
+      <zone xml:id="facs_6_r_1" ulx="819" uly="118" lrx="1180" lry="1032" />
+      <zone xml:id="facs_6_r_2" ulx="72" uly="121" lrx="425" lry="302" />
+      <zone xml:id="facs_6_r_3" ulx="444" uly="122" lrx="803" lry="651" />
+      <zone xml:id="facs_6_r_4" ulx="66" uly="299" lrx="424" lry="945" />
+      <zone xml:id="facs_6_r_5" ulx="442" uly="653" lrx="802" lry="1296" />
+      <zone xml:id="facs_6_r_6" ulx="65" uly="963" lrx="422" lry="1033" />
+      <zone xml:id="facs_6_r_7" ulx="63" uly="1030" lrx="422" lry="1346" />
+      <zone xml:id="facs_6_r_8" ulx="819" uly="1052" lrx="1179" lry="1699" />
+      <zone xml:id="facs_6_r_9" ulx="441" uly="1296" lrx="801" lry="1611" />
+      <zone xml:id="facs_6_r_10" ulx="60" uly="1340" lrx="420" lry="1545" />
+      <zone xml:id="facs_6_r_11" ulx="60" uly="1543" lrx="420" lry="1635" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1209" lry="1708">
+      <zone xml:id="facs_7_r_1" ulx="806" uly="317" lrx="1180" lry="849" />
+      <zone xml:id="facs_7_r_2" ulx="54" uly="514" lrx="794" lry="630" />
+      <zone xml:id="facs_7_r_3" ulx="54" uly="646" lrx="412" lry="695" />
+      <zone xml:id="facs_7_r_4" ulx="49" uly="691" lrx="414" lry="1269" />
+      <zone xml:id="facs_7_r_5" ulx="807" uly="848" lrx="1180" lry="1480" />
+      <zone xml:id="facs_7_r_6" ulx="430" uly="1024" lrx="799" lry="1659" />
+      <zone xml:id="facs_7_r_7" ulx="430" uly="1024" lrx="799" lry="1659" />
+      <zone xml:id="facs_7_r_8" ulx="49" uly="1270" lrx="415" lry="1476" />
+      <zone xml:id="facs_7_r_9" ulx="817" uly="1474" lrx="1178" lry="1655" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          Elektronischer Dokumentenlieferdienst<lb facs="#facs_1_l_1_1" n="N001" />UB Wirtschaft - SWA<lb facs="#facs_1_l_1_2" n="N002" />Postfach<lb facs="#facs_1_l_1_3" n="N003" />CH-4003 <placeName ref="#zbz-l.9">Basel</placeName><lb facs="#facs_1_l_1_4" n="N004" />kopien-ubw-swa@unibas.ch
+        </p>
+        <p facs="#facs_1_r_2">
+          
+        </p>
+        <p facs="#facs_1_r_3">
+          BA-ZBZ-ZBZ-ME-250826-10
+        </p>
+        <p facs="#facs_1_r_4">
+          Name<lb facs="#facs_1_l_4_1" n="N001" />BASEL_ZBZ
+        </p>
+        <p facs="#facs_1_r_5">
+          E-Mail-Adresse<lb facs="#facs_1_l_5_1" n="N001" />fernleihe@zb.uzh.ch
+        </p>
+        <p facs="#facs_1_r_6">
+          Bestelldatum<lb facs="#facs_1_l_6_1" n="N001" />2025-08-27 10:32:43
+        </p>
+        <p facs="#facs_1_r_7">
+          Lieferart<lb facs="#facs_1_l_7_1" n="N001" />MYBIB_EDOC
+        </p>
+        <p facs="#facs_1_r_8">
+          Signatur<lb facs="#facs_1_l_8_1" n="N001" />UBW Zq 1539
+        </p>
+        <p facs="#facs_1_r_9">
+          Zeitschrift<lb facs="#facs_1_l_9_1" n="N001" />Swiss Chem Schweizerische Zeitschrift für die chemische Industrie = revue suisse pour l'industrie chimique = rivista svizzera per l'industria chimica
+        </p>
+        <p facs="#facs_1_r_10">
+          ISSN<lb facs="#facs_1_l_10_1" n="N001" />0251-1703
+        </p>
+        <p facs="#facs_1_r_11">
+          Band/Heft<lb facs="#facs_1_l_11_1" n="N001" />7/8
+        </p>
+        <p facs="#facs_1_r_12">
+          Jahr<lb facs="#facs_1_l_12_1" n="N001" />1979
+        </p>
+        <p facs="#facs_1_r_13">
+          Autor des Artikels<lb facs="#facs_1_l_13_1" n="N001" /><persName ref="#zbz-p.2">Hersch, Jeanne</persName>
+        </p>
+        <p facs="#facs_1_r_14">
+          Titel des Artikels<lb facs="#facs_1_l_14_1" n="N001" />«<bibl ref="#zbz-w.328">Probleme der kleineren Industrieunternehmen in einer veränderten Welt</bibl>»
+        </p>
+        <p facs="#facs_1_r_15">
+          Seiten<lb facs="#facs_1_l_15_1" n="N001" />S. 23–28
+        </p>
+        <p facs="#facs_1_r_16">
+          Informationen
+        </p>
+        <p facs="#facs_1_r_17">
+          Vermerk Bibliothek
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <orgName ref="#zbz-o.308">Lack- und Farbenindustrie/VSLF</orgName>
+        </p>
+        <p facs="#facs_2_r_2">
+          75 Jahre <orgName ref="#zbz-o.301">Verband Schweizerischer Lack- und Farbenfabrikanten (VSLF)</orgName>, Jubiläumsgeneralversammlung, <placeName ref="#zbz-l.3">Montreux</placeName>, 14./15. Mai 1982
+        </p>
+        <p facs="#facs_2_r_3">
+          <bibl ref="#zbz-w.328">Probleme der kleineren Industrieunternehmen in einer veränderten Welt</bibl>
+        </p>
+        <p facs="#facs_2_r_4">
+          Frau Professor Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName>, Avenue <persName ref="#zbz-p.158">Pierre</persName> Odier 14, 1208 <placeName ref="#zbz-l.48">Genf</placeName>
+        </p>
+        <p facs="#facs_2_r_5">
+          Dem <orgName ref="#zbz-o.301">Verband Schweizerischer Lack- und Farbenfabrikanten (VSLF)</orgName> war es gelungen, für seine Jubiläumsgeneralversammlung vom 14. Mai 1982 in <placeName ref="#zbz-l.3">Montreux</placeName> Frau Professor <persName ref="#zbz-p.2">Jeanne Hersch</persName> für die Festansprache zu verpflichten. In packender Weise und in freier Rede verstand sie es, dem Auditorium einige faszinierende Gedanken zu den Problemen darzulegen, mit denen sich insbesondere kleinere Industrieunternehmen derzeit beschäftigen. Die Referentin sprach vor einem ungewöhnlich interessierten Publikum, ist doch die schweizerische Lack- und Farbenindustrie eine typische Branche der Klein- und Mittelbetriebe. Die durchschnittliche Betriebsgröße beträgt nach der Industriestatistik 1979 nur 39 Beschäftigte. Das in <placeName ref="#zbz-l.3">Montreux</placeName> aufgezeichnete Referat kann <orgName ref="#zbz-o.302">SWISS CHEM</orgName> hier im vollen Wortlaut wiedergeben*.
+        </p>
+        <note place="foot" n="1" xml:id="fn2-1" facs="#facs_2_r_6">
+          (Frau <orgName ref="#zbz-o.302">SWISS CHEM</orgName>)
+        </note>
+        <p facs="#facs_2_r_7">
+          Frau Professor <persName ref="#zbz-p.2">Jeanne Hersch</persName> (<placeName ref="#zbz-l.48">Genf</placeName>) bei Ihrer Festansprache am Jubiläum «75 Jahre <orgName ref="#zbz-o.301">Verband Schweizerischer Lack- und Farbenfabrikanten (VSLF)</orgName>» am 14. Mai 1982 in <placeName ref="#zbz-l.3">Montreux</placeName>: «<bibl ref="#zbz-w.328">Probleme der kleineren Industrieunternehmen in einer veränderten Welt</bibl>».
+        </p>
+        <figure facs="#facs_2_r_8">
+          <head>Dass ich hier heute zu Ihnen spreche, ist bestimmt für mich eine Ehre, aber bestimmt ein Irrtum von Herrn Dr. <persName ref="#zbz-p.762">Straub</persName>, dem Direktor Ihres <orgName ref="#zbz-o.301">Verbandes der Schweizerischen Lack- und Farbenindustrie (VSLF)</orgName>, und der einzige Fehler, den er im Zusammenhang mit dieser Jubiläumsgeneralversammlung begangen hat. Es ist bestimmt ein Irrtum, denn wenn jemand von Farbenproduzieren, von Unternehmen überhaupt und von Gross-, Klein- und mittelgrossen Unternehmen wirklich nichts versteht, dann bin ich es. Aber Herr <persName ref="#zbz-p.762">Straub</persName> hat mir Unterlagen übergeben, und <bibl ref="#zbz-w.52">ich muss</bibl> sagen, diese Unterlagen haben mich fasziniert, denn ich wusste nichts von Ihrem Verband und habe plötzlich gesehen, dass es da einen Verein gibt, der 75 Jahre gelebt hat, in dem man sich 75 Jahre lang Mühe gegeben hat, in einem kleinen Bereich der schweizerischen Produktion, Erfindungsgeist, Aufmerksamkeit und dergleichen aufzuwenden. Ich habe erfahren, wie viele Probleme sich mit der Farbenproduktion stellen, von denen ich keine Ahnung hatte, und wie viele verschiedene Fragen in Betracht gezogen werden müssen, wie gelehrt man eigentlich sein muss, um dies alles anständig auszuführen. Dabei kam mir der Gedanke, dass es doch ein wunderbares Gewebe ist – dieses Gewebe unserer Welt in einem kleinen Land, wie das unsere – da es Menschen gibt, die so treu 75 Jahre lang einen Verein in dieser Richtung aufrechterhalten, und zwar einen Verein, der derart viel Wissen und Aufmerksamkeit voraussetzt. Heute habe ich einen Teil Ihrer Sitzung miterlebt. Ich muss sagen, ich bin noch nie einem so einstimmigen Verein begegnet.</head>
+        </figure>
+        <p>
+          Ich glaube, wir werden die Arbeit zwischen Ihnen und mir vernünftig verteilen, nämlich folgendermassen: Ich werde Ihnen Allgemeinheiten sagen, und Sie werden sie, indem Sie mir zuhören, geistig auf Ihre Tätigkeit konkret übersetzen. Dann wird es richtig herauskommen, denn beides kann ich nicht tun.
+        </p>
+        <p>
+          <orgName ref="#zbz-o.302">SWISS CHEM</orgName> 4 (1982) Nr. 7-8
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Interesse an der Zusammenarbeit mit ausländischen Firmen.
+        </p>
+        <p facs="#facs_3_r_2">
+          DOWASIB
+        </p>
+        <p facs="#facs_3_r_3">
+          Das atmende, kalkmatte Anstrichsystem für Neubauten und Renovationen
+        </p>
+        <p facs="#facs_3_r_4">
+          Jedes Bauwerk muss geschützt werden. Mit dem Dolwasi-Anstrichsystem auf Siliconharz-Emulsionsbasis.
+        </p>
+        <p facs="#facs_3_r_5">
+          Die überzeugenden Dolwasi-Vorteile:<lb facs="#facs_3_l_5_1" n="N001" />- lässt Mauerwerk atmen und ist bis zu 95% wasserdampfdurchlässig<lb facs="#facs_3_l_5_2" n="N002" />- verhindert das Eindringen von Meteorwasser
+        </p>
+        <p facs="#facs_3_r_6">
+          trockenporöser Charakter mit kalkmattem Flair<lb facs="#facs_3_l_6_1" n="N001" />- alkali- und wetterbeständig<lb facs="#facs_3_l_6_2" n="N002" />- beständig gegen Industrie- und Autoabgase<lb facs="#facs_3_l_6_3" n="N003" />- einfache Verarbeitung
+        </p>
+        <p facs="#facs_3_r_7">
+          
+        </p>
+        <p facs="#facs_3_r_8">
+          
+        </p>
+        <p facs="#facs_3_r_9">
+          <orgName ref="#zbz-o.303">Dold AG</orgName>
+        </p>
+        <p facs="#facs_3_r_10">
+          Lack- und Farbenfabrik CH-8304 <placeName ref="#zbz-l.309">Wallisellen</placeName> 01/830 20 22
+        </p>
+        <p facs="#facs_3_r_11">
+          Layher Fahr- und Montagegerüste Aluminium-Gerüste zum Geldverdienen
+        </p>
+        <p facs="#facs_3_r_12">
+          ① ZifaGerüst 75<lb facs="#facs_3_l_12_1" n="N001" />Grundfläche 0,75 x 1,80 m, Arbeitshöhen bis 4,30 m.
+        </p>
+        <p facs="#facs_3_r_13">
+          ② UniRollgerüst 75<lb facs="#facs_3_l_13_1" n="N001" />Grundfläche 0,75 x 2,85 m, Arbeitshöhen bis 12,45 m.
+        </p>
+        <p facs="#facs_3_r_14">
+          ③ UniRollgerüst 150<lb facs="#facs_3_l_14_1" n="N001" />Grundfläche 1,45 x 2,85 m, Arbeitshöhen bis 14,45 m.
+        </p>
+        <p facs="#facs_3_r_15">
+          
+        </p>
+        <p facs="#facs_3_r_16">
+          
+        </p>
+        <p facs="#facs_3_r_17">
+          
+        </p>
+        <p facs="#facs_3_r_18">
+          
+        </p>
+        <p facs="#facs_3_r_19">
+          ④ TreppenZifaGerüst<lb facs="#facs_3_l_19_1" n="N001" />Grundfläche 1,40 x 1,90 m, Arbeitshöhen bis 13,95 m.
+        </p>
+        <p facs="#facs_3_r_20">
+          ⑤ StaroRollbock<lb facs="#facs_3_l_20_1" n="N001" />Grundfläche 1,90 x 1,90 m, Arbeitshöhen bis 3,85 m.
+        </p>
+        <p facs="#facs_3_r_21">
+          ⑥ KlaxSteckrahmenGerüst<lb facs="#facs_3_l_21_1" n="N001" />Grundflächen 2 x 3 m und 3 x 3 m, Arbeitshöhen bis 15,25 m.
+        </p>
+        <p facs="#facs_3_r_22">
+          
+        </p>
+        <p facs="#facs_3_r_23">
+          
+        </p>
+        <p facs="#facs_3_r_24">
+          
+        </p>
+        <p facs="#facs_3_r_25">
+          Verkauf, Lager, Vermietung:<lb facs="#facs_3_l_25_1" n="N001" />Petitpierre &amp;amp; Grisel S. A.<lb facs="#facs_3_l_25_2" n="N002" />Avenue de la Gare 49, 2002 <placeName ref="#zbz-l.40">Neuchâtel</placeName><lb facs="#facs_3_l_25_3" n="N003" />Tel. 038/25 65 41
+        </p>
+        <p facs="#facs_3_r_26">
+          Verkauf und Lager:<lb facs="#facs_3_l_26_1" n="N001" /><orgName ref="#zbz-o.304">Petitpierre + Grisel S. A.</orgName>, <persName ref="#zbz-p.763">E. Manz</persName><lb facs="#facs_3_l_26_2" n="N002" />Postfach 718, 8401 <placeName ref="#zbz-l.169">Winterthur</placeName><lb facs="#facs_3_l_26_3" n="N003" />Tel. 052/29 30 40
+        </p>
+        <p facs="#facs_3_r_27">
+          
+        </p>
+        <p facs="#facs_3_r_28">
+          
+        </p>
+        <p facs="#facs_3_r_29">
+          
+        </p>
+        <p facs="#facs_3_r_30">
+          <orgName ref="#zbz-o.305">Walter Mäder AG</orgName> Lack-, Farben-, Kunstharzfabrik 8956 <placeName ref="#zbz-l.310">Killwangen</placeName> Telefon 056 71 13 13
+        </p>
+        <p facs="#facs_3_r_31">
+          <orgName ref="#zbz-o.302">SWISS CHEM</orgName> 4 (1982) Nr. 7-8
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          <orgName ref="#zbz-o.308">Lack- und Farbenindustrie/VSLF</orgName>
+        </p>
+        <p facs="#facs_4_r_2">
+          Zunächst möchte ich meinen Vortragstitel vorstellen: «Einige Probleme von industriellen Kleinunternehmen in einer sich verändernden Welt.»
+        </p>
+        <p facs="#facs_4_r_3">
+          Sprechen wir zuerst von dieser sich verändernden Welt. Wenn man überlegt, was sich in diesen 75 Jahren ereignet hat, so ist es kaum vorstellbar. Soundso viele Menschen haben ihr Vaterland verloren. Kriege haben stattgefunden, massenhaft sind Menschen gestorben. Hier geht etwas weiter vor sich, aber die Welt hat sich verändert.
+        </p>
+        <p facs="#facs_4_r_4">
+          Über dieses Wort «sich verändern» möchte ich ein klein wenig nachdenken. Veränderung ist ein nicht nur sehr zweideutiges, sondern sogar vieldeutiges Wort. Sie wissen, dass die beiden letzten Präsidenten der französischen Republik, Giscard d’Estaing und <persName ref="#zbz-p.38">François Mitterrand</persName>, ihre erfolgreiche Wahlkampagne mit diesem Slogan der «Veränderung» geführt haben. Veränderung ist heute ein magisches Wort geworden. Aber obwohl die Veränderung einerseits den erfolgreichen Abschluss von Wahlkampagnen gestattet, so wird dieser Begriff andererseits auch in unseren Medien beispielsweise alltäglich dazu gebraucht, um Ihnen eine schlimmere und zunehmend schlimmere und tödlich gefährdete Welt darzustellen. Die Veränderung geht offenbar in beide Richtungen. Einerseits wird es als ein ganz entschieden wertbeladenes Wort und andererseits als ein sehr bedrohliches verwendet. Ich glaube, beides ist an sich falsch. Weltveränderung bedeutet weder einen Zugang zum Paradies noch einen Zugang zur Hölle oder zum Tod. Dieses Ganzheitsdenken halte ich für eine der Krankheiten unserer <bibl ref="#zbz-w.705">Zeit</bibl>. Sie wissen doch, alle eidgenössischen Kommissionen sind global, alles ist «global» oder «total». Aber wenn Sie in Ihren Betrieben arbeiten, haben Sie wahrscheinlich einen ganz klaren Sinn dafür, dass eben keine Realität «total» ist, sondern immer nur ein Teil von einem Ganzen. Eine Veränderung verläuft nicht immer zum Guten – auch nicht politisch. Das <persName ref="#zbz-p.64">Hitler</persName>-Regime war auch eine Veränderung. Veränderung bedeutet an sich weder Veränderung zum Guten noch zum Schlechten. Es ist also immer fraglich. Im Grunde ist Veränderung kein Wertwort, sondern lediglich eines, das dazu dienen sollte, einen Unterschied festzustellen. Es wäre also weise, wieder zu dem guten, gesunden Menschenverstand zurückzukommen, der absolut nicht mit totalen Perspektiven arbeitet, sondern sich gerade damit begnügt, teilweise Vorteile, teilweise Nachteile zu vergleichen und sich danach zu entscheiden.
+        </p>
+        <p facs="#facs_4_r_5">
+          Aber was mir wesentlich zu sein scheint in dieser sich praktisch wirklich sehr schnell verändernden Welt, das ist, uns zunächst einmal mit der Wirklichkeit dieser Welt zu versöhnen. Ich halte es für eine tiefe Krankheit unseres Denkens und Fühlens, dass wir
+        </p>
+        <p facs="#facs_4_r_6">
+          - obleich wir in einer Zivilisation leben, die von der Wissenschaft und von der Technologie stammt, die von der Wissenschaft und von der Technologie gestaltet worden ist und wir alle Ergebnisse dieser Wissenschaft und Technologie brauchen – beide so verdammen und hassen und darauf spucken, wie es jetzt tagtäglich getan wird. Statt von dieser «materialistischen Gesellschaft» mit solcher Verachtung zu sprechen, wäre es besser, dass sich jeder auf seine Weise bemüht, nicht so materialistisch zu sein; denn materialistisch sind nicht Wissenschaft und Technik, sondern viele Menschen. Wir sollten die Schuld nicht von uns auf unsere Zivilisation abschieben. Im Gegenteil, wir sollten versuchen zu verstehen, was das ist, eine sich entwickelnde Wissenschaft, was das ist, eine sich entwickelnde Technologie. Im Grunde verstehen wir alle, ich inbegriffen, sehr wenig davon. Was wir kennen ist nur eine Anzahl Rezepte, die wir gelernt haben. Wir können manches brauchen. Wir kennen auch manche physikalische Gesetze, die wir in der Schule auswendig lernen. Aber wie sich die Forschung konkret entwickelt, wie sie von den Forschern erlebt wird, mit welcher Mühe und Begeisterung diese Fortschritte vor sich gegangen sind und unter welchen Opfern, das wissen wir nicht oder wir wollen es nicht wissen. Ich glaube, wir sollten jetzt wieder ein Gespür dafür bekommen, damit wir für jene Dinge, die wir von der Wissenschaft und der Technologie erhalten haben, dankbar werden. Was gar nicht bedeutet, dass wir blind alles tun, was möglich geworden ist.
+        </p>
+        <p facs="#facs_4_r_7">
+          Man spricht immer vom kritischen Sinn, aber ich beobachte, seitdem man so viel von ihm spricht, ist er fast verschwunden. Indem man ein Wort wiederholt, tritt seine Verwirklichung noch längst nicht ein. Im Gegenteil – in meiner langjährigen Erfahrung habe ich es oftmals erlebt – wenn der Name irgendeiner Sache sehr oft ausgesprochen wird, dann ist die Sache selbst nicht mehr da. Sie haben vielleicht bemerkt, dass viele Strassen Lindenstrasse heissen, obwohl kein einziger Baum wächst. Der Name steht anstelle der Sache. Und so ist es, mehr oder weniger, mit dem kritischen Sinn. Wir sollten eigentlich bewundern und schätzen, was in den letzten 50 Jahren durch Wissenschaft und Technologie geschaffen worden ist, so dass mehr Menschen weniger arbeiten, mehr Menschen sich eine interessantere Arbeit leisten können, mehr Menschen neben ihrer Arbeitszeit zu vielerlei kulturellen Dingen Zugang haben, den sie früher nicht hatten, dass mehr Menschen von ihrer physischen Arbeit weniger müde werden, weil die physisch ermüdendsten Tätigkeiten von Maschinen ausgeführt werden. Wir müssen es schätzen lernen, dass wir etwas mehr Sicherheit genießen gegen Krankheit, im Alter usw., was uns nicht verantwortungslos macht, wie manche sagen, sondern uns erlaubt, verantwortungsvoll zu werden für andere Dinge als unsere eigene Krankheit oder unser eigenes Alter. Das alles sind menschliche Möglichkeiten, die sich dank dieser Veränderung eröffnet haben.
+        </p>
+        <p>
+          Warum also ist man so versucht, diese Zivilisation zu verachten? Ich glaube, es kommt einfach daher, dass in den Städten die unvermeidliche Arbeit meist gar nicht mehr gesehen wird – dies ist ganz besonders für die jungen Leute wahr. Sie wissen natürlich, dass es die Arbeit gibt, aber sie sehen sie nicht. Und so haben sie das Gefühl, dass es einfach Geschäfte gibt, in denen allerlei angeboten wird, was zu verkaufen und zu kaufen ist. Aber dass man die Dinge vorher herstellen musste, sie also menschliche Mühe, menschliche <bibl ref="#zbz-w.705">Zeit</bibl> – die immer begrenzt ist –, menschliche Aufmerksamkeit und menschliche Sorge verlangen, daran denkt niemand oder fast niemand. Wenn man sich vorstellen würde, was es an Arbeitseinsatz gekostet hat, würde man vielleicht, wenn man auf einer Strasse fährt, einen Gedanken der Dankbarkeit haben für jene, die die Strasse gebaut haben. Und man würde vielleicht diese Mühe der Menschen in der technischen Wirklichkeit wieder «lesen». Sie ist für uns irgendwie unlesbar geworden. Ein Glas ist eine kristallisierte, menschliche Arbeit, auch wenn es nicht aus Kristall ist. Diese menschliche Arbeit und menschliche Mühe sind für uns irgendwie unsichtbar geworden. Ich glaube, dass es sehr, sehr wesentlich ist, dass zum Beispiel in Ihren Betrieben die Mitarbeiter die Gelegenheit bekommen, ihre Arbeit und überhaupt jene des Betriebes ihren Kindern zu zeigen, damit die Kinder sich eine Vorstellung von dem bilden können, was der Vater oder die Mutter, den ganzen Tag tut; sie sollen es sehen und es ein klein bisschen indirekt erfahren. Wenn man die kleinen Kinder in dieser Richtung erzieht, dann werden sie verstehen, dass sie nicht in einem Paradies leben können, wo sie jeden Augenblick ein Recht haben, das zu tun, was ihnen Spass macht, und das zu besitzen, was sie gerade besitzen möchten; sie werden viel mehr erkennen, dass alles davon abhängt, was für eine Arbeit vorher geleistet worden ist. Erst dann werden sie verstehen, dass sie sich weder im Paradies noch in der Hölle befinden, dass sie nicht, wie sie jetzt oftmals glauben, in der Hölle sind, während sie einen Anspruch auf das Paradies haben – weder in der Hölle noch im Paradies, sondern in der Geschichte. Sie kommen in eine Geschichte hinein, die eine lange <bibl ref="#zbz-w.705">Zeit</bibl> hinter sich hat, während der man alle diese Möglichkeiten, die jetzt genossen werden, erfunden und geschaffen hat.
+        </p>
+        <p>
+          Man wirft mir manchmal vor, ich hätte eine idealisierte Sicht dieser Welt, ich sähe nicht, wie schlimm sie sei, welche Probleme sie noch stelle und welche Übel uns drohten. Natürlich sehe ich es wohl, aber das alles ist nun Gegenwartsaufgabe und Zukunftsper
+        </p>
+        <p>
+          <orgName ref="#zbz-o.302">SWISS CHEM</orgName> 4 (1982) Nr. 7-8
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          26<lb facs="#facs_5_l_1_1" n="N001" /><orgName ref="#zbz-o.302">SWISS CHEM</orgName> 4 (1982) Nr. 7.8
+        </p>
+        <p facs="#facs_5_r_2">
+          Das kann man
+        </p>
+        <p facs="#facs_5_r_3">
+          nur kräftig
+        </p>
+        <p facs="#facs_5_r_4">
+          unterstreichen:
+        </p>
+        <p facs="#facs_5_r_5">
+          Die Qualität der FEYCO-Produkte.<lb facs="#facs_5_l_5_1" n="N001" />Die langjährige Erfahrung und das<lb facs="#facs_5_l_5_2" n="N002" />Know-how der FEYCO-Fachleute.<lb facs="#facs_5_l_5_3" n="N003" />Das breite und praxisgerechte Lack-<lb facs="#facs_5_l_5_4" n="N004" />Sortiment für jeden Anwendungs<lb facs="#facs_5_l_5_5" n="N005" break="no" />bereich: Industrielacke, Holzlacke,<lb facs="#facs_5_l_5_6" n="N006" />Anstrichstoffe für den Korrosionsschutz<lb facs="#facs_5_l_5_7" n="N007" />und den Baumaler.
+        </p>
+        <p facs="#facs_5_r_6">
+          FEYCO ist bei Lack eben auf «zack».
+        </p>
+        <p facs="#facs_5_r_7">
+          FEYCO
+        </p>
+        <p facs="#facs_5_r_8">
+          <orgName ref="#zbz-o.306">Georg Fey + Co. AG</orgName><lb facs="#facs_5_l_8_1" n="N001" />Lackfabrik<lb facs="#facs_5_l_8_2" n="N002" />CH-9430 <placeName ref="#zbz-l.311">St. Margrethen</placeName><lb facs="#facs_5_l_8_3" n="N003" />Tel. 071/71 1466
+        </p>
+        <p facs="#facs_5_r_9">
+          
+        </p>
+        <p>
+          Lösungsmittel-Rückgewinnung = Ihr Gewinn
+        </p>
+        <p>
+          Ob Ihr Anfall bei 500 kg/Jahr oder hinauf bis zu 500 Tonnen/Jahr liegt, in jedem Fall können wir Ihnen eine optimale Anlage in bezug auf Wirtschaftlichkeit, Amortisationszeit und Betriebssicherheit anbieten.
+        </p>
+        <p>
+          z.B.: SR-100 der ideale Lösungsmittel-Aufbereiter für einen mittleren Anfall an verschmutzten Lösungsmitteln
+        </p>
+        <p>
+          Nehmen Sie Kontakt mit uns auf, wir sagen Ihnen wie Sie den Lösungsmittelverbrauch in den Griff bekommen. Unverbindliche Vorführung oder Probedestillation verlangen.
+        </p>
+        <p>
+          <orgName ref="#zbz-o.307">POSITECH AG</orgName>
+        </p>
+        <p>
+          Technische Produkte, Industriebedarf<lb facs="#facs_5_l_15_1" n="N001" />Sonnhalde 297<lb facs="#facs_5_l_15_2" n="N002" />5705 <placeName ref="#zbz-l.312">HALLWIL</placeName><lb facs="#facs_5_l_15_3" n="N003" />Telefon 064-54 32-71
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          <orgName ref="#zbz-o.308">Lack- und Farbenindustrie/VSLF</orgName>
+        </p>
+        <p facs="#facs_6_r_2">
+          spektive. Jede Eroberung, jede Besserung bringt dem Menschsein neue Probleme mit sich, neue Schwierigkeiten. Zum Beispiel: Jetzt leben wir Menschen zweimal länger, was aber all die Probleme des hohen Alters für die Familien entstehen lässt. So entstehen neue Probleme und Aufgaben, und die Geschichte geht weiter.
+        </p>
+        <p facs="#facs_6_r_3">
+          Menschen können auf die Geschichte nur im «Jetzt», nur in der Gegenwart wirken, denn da und nur da haben sie eine Verabredung mit der Wirklichkeit. Nur aus dieser Gegenwart können sie etwas für die Zukunft erreichen oder sie können sich darauf vorbereiten, eine Kompetenz zu erwerben, die es ihnen erlauben wird, die neuen Probleme zu lösen, die neuen Übel zu lindern, die neuen Lösungen zu finden. Ich glaube, das ist etwas ganz Grundlegendes in jeder Arbeit. Deswegen hoffe ich, dass Sie, indem Sie mich anhören, das auf Ihre eigene Arbeit und Ihre eigenen Betriebe übersetzen.
+        </p>
+        <p facs="#facs_6_r_4">
+          Aber es gibt noch eine andere Frage, die ganz entscheidend ist, wie mir scheint. Alle beklagen sich darüber, dass man den Sinn verloren hat – so wie ich heute meine <bibl ref="#zbz-w.406">Notizen</bibl> verloren habe, so hat alle Welt den Sinn verloren, als wäre der Sinn ein Gegenstand. Und dann werden die Menschen böse, weil man ihnen den Sinn nicht wiedergeben kann. Der Sinn ist kein Gegenstand, er ist nicht käuflich. Sinn kann man nicht fabrizieren. Sinnfindung oder Sinngebung hängt von jedem selbst ab. Es ist sehr seltsam, dass dieselben Kritiker, die sich über die Konsumgesellschaft beklagen, den Anspruch erheben, der Sinn solle auch ein Konsumgut sein. Das ist er eben nicht.
+        </p>
+        <p facs="#facs_6_r_5">
+          Was ist der Sinn? Der Sinn ist der Zweck dessen, was man tut. Es ist die Zweckhaftigkeit, die Sinn ist.
+        </p>
+        <p facs="#facs_6_r_6">
+          Wir müssen somit darüber nachdenken: Welchen Sinn, also welchen Zweck, hat meine Arbeit? Welchem Zweck dient mein Betrieb? Sie werden vielleicht sagen: «Der Zweck ist ganz klar, <bibl ref="#zbz-w.52">ich muss</bibl> mein Unternehmen erhalten, das bedeutet: <bibl ref="#zbz-w.52">ich muss</bibl> einen vernünftigen Profit darauf ziehen, damit es weiter funktionieren kann. Und diese Aufgabe ist schwierig genug. Ich brauche mir nicht den Kopf darüber hinaus zu zerbrechen.» So ist es aber nicht mehr. Diese Antwort genügt nicht mehr. Wenn mir uns weiter mit ihr zufrieden geben, dann werden die Jungen wütender und wütender.
+        </p>
+        <p facs="#facs_6_r_7">
+          Die Jungen müssen verstehen, dass der Sinn, nach dem sie fragen, von ihnen abhängt, von ihnen selbst: sie selbst müssen den Sinn finden. Aber sie können ihn nicht finden, wenn die Erwachsenen, die sie vor sich haben – ihr Vater, ihre Mutter, ihre Lehrer –, im Alltag von keinem erlebten Sinn zeugen oder nur von jenem unmittelbaren Sinn, von dem ich eben sprach.
+        </p>
+        <p facs="#facs_6_r_8">
+          Welchen Sinn hat unsere Zivilisation schliesslich? Warum müssen wir mehr Farben haben, verschiedenere Farben, bessere Farben? Warum muss sich das entwickeln?
+        </p>
+        <p facs="#facs_6_r_9">
+          Warum? Warum muss sich die Technik entwickeln? Warum ist es besser, wenn man etwas nicht jedes Jahr wieder malen muss? Warum? Weil man damit menschliche <bibl ref="#zbz-w.705">Zeit</bibl> spart. Weil man damit die Dinge «dauern» lässt. Weil man also damit freiere <bibl ref="#zbz-w.705">Zeit</bibl> für mehr Menschen schafft. Das hat einen Sinn. Das bedeutet dann, dass mehr Menschen mehr Möglichkeiten haben, dass mehr Produkte mit weniger Arbeit erzeugt werden, dass jedermann also weniger <bibl ref="#zbz-w.705">Zeit</bibl> braucht, um sich diese Gegenstände zu beschaffen. Das bedeutet keineswegs, dass der Zweck ist, immer mehr davon zu kaufen, weil man es kann, sondern im Gegenteil: man wird lernen, das zu kaufen, was man braucht.
+        </p>
+        <p facs="#facs_6_r_10">
+          Dann werden mehr Menschen zu dem kommen, was man weder kaufen noch verkaufen kann, was etwas mehr mit dem Menschsein zu tun hat, mit Denken, mit Kennen, mit Entdecken, mit Verstehen – alles, was mit freier Entscheidung zu tun hat.
+        </p>
+        <p facs="#facs_6_r_11">
+          Im Grunde ist ja der <persName ref="#zbz-p.1251">Mensch</persName> ein wunderbares, ganz einziges Wesen, das fähig ist, ein Zeuge der Natur zu sein, und das festzustellen vermag, dass sie schön ist. Er ist in der Lage, in der Welt bewusst einen verantwortlichen Entschluss zu fassen. Und dazu braucht er Ausbildung und für Ausbildung braucht er <bibl ref="#zbz-w.705">Zeit</bibl>. Darum ist es besser, wenn mehr Leute mehr <bibl ref="#zbz-w.705">Zeit</bibl> für Ausbildung haben, statt ihre ganze <bibl ref="#zbz-w.705">Zeit</bibl> dafür aufzuwenden, mühsam das zu produzieren, was andere dank ihrer eigenen Arbeit mühsam kaufen werden. Man kann diesen Kreis des Produzierens, des Kaufens und des Verkaufens etwas begrenzen, damit ein wenig mehr Freiheit da ist für das eigentlich Menschliche. Ich sage nicht, dass jener Kreis nicht menschlich ist – er ist natürlich menschlich. Es gehört zum Menschen zu arbeiten, um zu leben: Wir haben ja einen Körper und eine Seele und beide haben Bedürfnisse. Aber wenn wir ein klein bisschen mehr Freiheit haben, um bewusster zu werden, klarer zu wissen, genauer zu verstehen, um mehr zu verstehen, um ein weiteres Bild von der Erde und von der Vergangenheit und von der möglichen Zukunft zu haben, dann ist das menschlich ein Gewinn, ein Gewinn für unsere Freiheit.
+        </p>
+        <p>
+          Wenn ich sage «für unsere Freiheit», dann werden Sie sagen: «Sehen Sie, damit sagen Sie, was der Sinn ist.» Ich glaube, es ist nur ein Schein. Ich sage Freiheit, aber Freiheit ist doch nichts Festes im Inhalt. Was jeder damit macht, hängt von jedem ab. Und deswegen habe ich mich entschieden, nicht zu sagen: Der Sinn, das ist das. Ich sage höchstens: Der Sinn, das ist: mehr Möglichkeiten für die Freiheit. Und das möchte ich behaupten. Der Sinn ist: mehr Möglichkeiten für die Freiheit, für die eigene, für die der anderen, für die von mehr und mehr Menschen. Das ist ein zweiter Punkt, der mir wesentlich zu sein scheint.
+        </p>
+        <p>
+          Jetzt ein dritter Punkt für die Ausbildung. Hier möchte ich wirklich an Sie appellieren, denn ich bin sicher, dass gerade Sie etwas dafür tun können. Heutzutage leben die Leute, die älteren und die jungen, meistens in einem richtigen Aberglauben an die <orgName ref="#zbz-o.46">Universität</orgName>. Jeder muss auf die <orgName ref="#zbz-o.46">Universität</orgName>. Wenn man nicht die <orgName ref="#zbz-o.46">Universität</orgName> besucht hat, dann ist man sozusagen verurteilt, nie ganz ein gegenwärtiger <persName ref="#zbz-p.1251">Mensch</persName> zu werden. Das ist reiner Aberglaube. Man kann ein Universitätsstudium durchlaufen und trotzdem kein «ganzer» <persName ref="#zbz-p.1251">Mensch</persName> werden; und man braucht nicht die <orgName ref="#zbz-o.46">Universität</orgName> zu absolvieren, um doch ein «ganzer» <persName ref="#zbz-p.1251">Mensch</persName> zu werden. Warum hat es diesen Anschein? Ich glaube es kommt daher, weil sich unsere Gesellschaft nicht genug Sorgen um die Ausbildung der jungen Lehrlinge gemacht hat, die die <orgName ref="#zbz-o.46">Universität</orgName> nicht besuchen. Ich glaube, dass diese Lehrlinge im grossen und ganzen so ausgebildet werden, dass sie eine gute Kompetenz für die Arbeit, die sie in ihrem Beruf ausführen werden, erhalten, und man gibt ihnen dazu ein klein bisschen, wie gezuckert, allgemeine Bildung. Das ist nicht schlimm, aber das ist nicht genug, in einer <bibl ref="#zbz-w.705">Zeit</bibl>, wie die unsere. Das ist nicht genug, und jene allgemeine Bildung bleibt meistens vollkommen von der Erwerbung der Kompetenz getrennt. Das hat zur Folge, dass diese Menschen später ihre Arbeitszeit von ihrer Freizeit völlig trennen. Es ist ein wenig schizophren. Bis fünf Minuten vor sechs bin ich der arbeitende <persName ref="#zbz-p.1251">Mensch</persName> und um sechs bin ich ein ganz anderer <persName ref="#zbz-p.1251">Mensch</persName> in der Freizeit. Als ob das eigentliche Leben nur in der Freizeit, nie in der Arbeit, sei. Ich halte diese Einstellung für sehr ungesund und unserer veränderten Welt nicht angepasst.
+        </p>
+        <p>
+          Ich glaube also, man sollte versuchen, viel Einbildungskraft einzusetzen, um für die Lehrlinge eine Bildung zu erfinden, die es noch nicht gibt, die sich aber rings um die Kompetenz der Arbeit verbreitet, die nicht getrennt vom Beruf ist, sondern die mit ihm zusammengehört. Ich werde Ihnen ein Beispiel geben. Denken Sie an die Holzberufe. Es gibt eine ganze Reihe von Holzberufen. Um das Holz herum kann man die gesamte Geschichte der Erde und der Pflanzen und der Bäume lernen. Man kann die ganze Geschichte der Künste und der menschlichen Formen, die dem Holz gegeben wurden – also Zivilisationsgeschichte –, man kann die Eigenschaften des Holzes und die Chemie studieren, die an diese Eigenschaften gekoppelt ist. Man kann die Probleme des Transportes und der Ökonomie des Holzes studieren, so dass man sowohl in der Vergangenheit wie in der Gegenwart wie in der ständigen Naturwissenschaft an Horizont und Tiefe gewinnen kann, damit derjenige, der mit Holz arbeitet, nicht eingeengt seine Arbeit ausführen, sondern diese Arbeit selbst in einem Ganzen, in einer Erweiterung, in der Tiefe und in einer Geschichte
+        </p>
+        <p>
+          <orgName ref="#zbz-o.302">SWISS CHEM</orgName> 4 (1982) Nr. 7-8
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          <orgName ref="#zbz-o.308">Lack- und Farbenindustrie/VSLF</orgName>
+        </p>
+        <figure facs="#facs_7_r_2">
+          <head>(Foto <orgName ref="#zbz-o.302">SWISS CHEM</orgName>)</head>
+        </figure>
+        <p facs="#facs_7_r_3">
+          Als symbolischen Dank für den mit ihrem stark beachteten Referat geleisteten Beitrag zur Jubiläumsgeneralversammlung des Verbandes Schweizerischer Lack- und Farbenfabrikanten (<orgName ref="#zbz-o.301">VSLF</orgName>) durfte Frau Professor <persName ref="#zbz-p.2">Hersch</persName> einen bunten Strauss von Blumen aus der Hand des Verbandspräsidenten, <persName ref="#zbz-p.764">Alex Rhyner</persName> (links), entgegennehmen. Rechts Dr. <persName ref="#zbz-p.765">E. Straub</persName>, Direktor des <orgName ref="#zbz-o.301">VSLF</orgName> und (sitzend) Dr. <persName ref="#zbz-p.766">A. Schoch</persName>, Mitglied des Vorstands des <orgName ref="#zbz-o.301">VSLF</orgName>.
+        </p>
+        <p facs="#facs_7_r_4">
+          erlebt. Ich glaube, das lässt eine völlig andere Beziehung zur Arbeit entstehen.
+        </p>
+        <p facs="#facs_7_r_5">
+          Als ich die Unterlagen von Herrn <persName ref="#zbz-p.762">Straub</persName> gelesen hatte, habe ich überlegt, da die Farben und Lacke so viele Probleme stellen, so ist es genauso möglich, mit Farben in dieser Richtung vorzugehen wie mit Holz. Man kann das wahrscheinlich in allen Gebieten tun. Das Unangenehme dabei ist, dass Einbildungskraft wieder ein Schlagwort ist, aber sehr viel Einbildungskraft sieht man faktisch nicht. Es gibt sie wenig, deswegen begnügt man sich mit dem, was es gibt – und die <orgName ref="#zbz-o.46">Universität</orgName> gibt es leider <persName ref="#zbz-p.50">Gottes</persName>, während es diese anderen Ausbildungsformen und Strukturen noch nicht gibt; sie muss man erst noch verwirklichen. Aber warum nicht? Die <orgName ref="#zbz-o.46">Universität</orgName> hat man doch auch einmal erschaffen; sie war nicht immer da. Man kann das tun. Ich halte das für ganz wesentlich, auch für die Farben. Man kann sehr weit mit den Farben kommen. Es gibt die <bibl ref="#zbz-w.66">Psychologie</bibl> der Farben, die Beeinflussung der Arbeit und der Haltung durch die Farben, die Dichtung, die Malerei usw. Es ist nahezu endlos möglich, den Bereich der Farben zu erweitern und zu vertiefen.
+        </p>
+        <p facs="#facs_7_r_6">
+          So könnte man eine bestimmte Einheit des menschlichen Lebens wiederherstellen, damit der <persName ref="#zbz-p.1251">Mensch</persName> in seiner Arbeit ein denkender <persName ref="#zbz-p.1251">Mensch</persName> ist und außerhalb der Arbeit ein noch an seine Arbeit denkender <persName ref="#zbz-p.1251">Mensch</persName> sein kann, und nicht angeekelt sagt: «Jetzt ist’s fertig, ich will nichts mehr davon wissen!» Hinzu kommen natürlich psychologische Elemente.
+        </p>
+        <p facs="#facs_7_r_7">
+          Was die Menschen in der modernen Welt entbehren, ist etwas, was sie vielleicht bei Ihnen weniger vermissen als sonstwo, weil Sie sich gerade aus Kleinunternehmen oder mittelgrossen Unternehmen zusammensetzen. Ich glaube, es ist ein Grundbedürfnis jedes Menschen, als er selbst erkannt und anerkannt zu werden. Es ist furchtbar
+        </p>
+        <p facs="#facs_7_r_8">
+          schmerzlich für einen Menschen, das Gefühl zu haben, was er tut, könnte jeder andere genauso ausführen wie er selbst. Das ist das Schlimmste. Er muss das Gefühl haben, dass er von irgendeinem Standpunkt aus, in irgendeiner Hinsicht etwas vollbringt, was die anderen schwer nachvollziehen würden, wobei ihm ein bestimmter Fleiss, eine gewisse Fähigkeit, ein spezifischer Rhythmus, eine besondere Feinfühligkeit der Finger oder irgend etwas anderes eigen ist. Ich glaube, das ist für den Menschen wirklich fast unentbehrlich. Diese Differenzierung der Qualitäten und der Kompetenzen sollte man da, wo sie möglich ist, weil es um kleine Betriebe geht, mit grosser Sorgfalt pflegen.
+        </p>
+        <p facs="#facs_7_r_9">
+          Hinzu kommt, dass die Arbeitszeit nicht im scharfen Widerspruch mit seinem sonstigen Leben stehen darf, wenn sich der <persName ref="#zbz-p.1251">Mensch</persName> in seiner Berufstätigkeit menschlich fühlen soll. Ich kann mir denken, dass für eine Frau, die während ihrer Arbeit beispielsweise nur an ihr Kind denkt, das jetzt gerade mit dem Schlüssel in die leere Wohnung kommt und dort von niemandem erwartet wird, die Arbeit schon etwas feindseliges ist, auch wenn sie unbedingt beruflich tätig sein will. Es ist daher enorm wichtig, nach Möglichkeit die Arbeitszeit so zu gestalten, dass die gewünschte Lebensführung der Männer und der Frauen, und hauptsächlich der Frauen, ermöglicht wird. Ich will nicht lange davon sprechen, aber ich will doch noch etwas dazu bemerken. Ich halte es für ein grosses Unglück, dass heutzutage mehr und mehr Kinder früh morgens in die Krippe kommen und erst am Ende des Nachmittags abgeholt werden. Die Kinder brauchen die Eltern und besonders die Mutter in ihren ersten Lebensjahren. Jeder Betrieb hat die Pflicht, nach Möglichkeit der Mutter langen Urlaub zu ermöglichen, bei dem die Frau trotzdem noch Kontakt zu ihrem Beruf hat, so dass sie fähig ist, später wieder einzusteigen. Aber sie darf nicht nur ein paar Wochen, sondern jahrelang für ihre Kinder da sein, denn wenn man mutige Junge haben will, dann müssen sie zuerst die Sicherheit haben, dass ihre Mutter da ist. Dieses Schutzgefühl am Anfang des Lebens ist für die spätere Freiheit unentbehrlich.
+        </p>
+        <p>
+          Jetzt komme ich zu einem letzten Kreis von Fragen, dem der Ökologie. Sie haben natürlich alle sehr viel mit Ökologie in Ihren Betrieben zu tun, daran zweifle ich nicht. Es ist vollkommen richtig, dass man heutzutage endlich ökologische Sorgen hat, aber man muss zwei Dinge feststellen. Einerseits, wird die Lösung der ökologischen Probleme durch die Konkurrenz nicht erleichtert. Im Gegenteil, hier haben Sie gerade ein Field der zeitgenössischen Ökonomie, bei dem die Antwort «Konkurrenz» nicht gültig ist, denn gerade ihretwegen kann eine Firma nicht die Massnahmen treffen, die ökologisch notwendig wären, wenn die anderen sie nicht auch treffen. Sonst ist sie nicht mehr konkurrenzfähig. Ich nehme an, dass ein Verein wie der Ihre wahrscheinlich gerade dafür nützlich sein kann und ermöglicht, sich zu verständigen, um auf diese Weise manche ökologische Massnahme zu treffen, der Konkurrenz zum Trotz. Hier können vermutlich Vereine wie der Ihrige eine wesentliche <placeName ref="#zbz-l.565">Rolle</placeName> spielen.
+        </p>
+        <p>
+          Aber das genügt nicht, es kommt noch etwas dazu. Ich glaube auch, dass wir an einem Punkt der Entwicklung angelangt sind, an dem man nicht alles tun muss, was man tun kann. Seit dem 16. Jahrhundert hat man eigentlich so gelebt, dass man ins Grenzenlose hinausging, und alles, was nur möglich wurde, sollte getan werden. Jetzt leben wir in einer <bibl ref="#zbz-w.705">Zeit</bibl>, in der der Begriff der Grenze in vielen Bereichen nicht mehr zu vermeiden ist. Ich glaube, irgendwo muss man sich jetzt begrenzen. Absichtlich und mit guten Gründen muss man entscheiden – bis da, ja – weiter, nein. Der Verhaltenskodex von früher, nur der freie Markt solle darüber entscheiden, ob das recht ist oder nicht, genügt nicht mehr. Der freie Markt ist nötig, aber er allein antwortet auch die Notwendigkeiten der Stunde nicht mehr. Ich glaube, wenn man diese Pflichten erfüllen würde, dann hätte man ziemlich schnell die Jungen mit der Wirtschaft wieder versöhnt und man würde dadurch eine weit günstigere und glücklichere Welt mit mehr Zukunft schaffen. Wir besitzen bereits eine Ökonomie, die keine reine Marktwirtschaft ist, wir haben eine «mixed Ökonomie». Ich glaube, das ist nötig.
+        </p>
+        <p>
+          Wir müssen auf die Zwecke achten, ohne auf das Paradies zu hoffen. Wir müssen die Probleme, die jetzt neu entstehen, natürlich allmählich lösen, aber es werden immer neue Probleme auftauchen. Wir werden immer neue Pflichten haben, und dafür, <persName ref="#zbz-p.50">Gott</persName> sei Dank, gibt es auch eine neue Generation.
+        </p>
+        <p>
+          <orgName ref="#zbz-o.302">SWISS CHEM</orgName> 4 (1982) Nr. 7.8
+        </p>
+      </div>
+      </body></text>
+</TEI>

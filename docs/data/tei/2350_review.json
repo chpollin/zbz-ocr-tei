@@ -1,0 +1,52 @@
+{
+  "doc_id": "2350",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED_WITH_NOTES",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [2, 4],
+      "notes": "7 Seiten Buchformat, Doppelseitenscans. Overlays S.2 und S.4 zeigen korrekte Regionserkennung auf beiden Buchseiten."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Langer deutscher philosophischer Text. Fachbegriffe (Dasein, Bewusstsein ueberhaupt, Geist, Existenz, Transzendenz) korrekt. Lateinische Einschlaege sauber."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltiger Lauftext. Fussnoten auf S.1 korrekt als note place=foot. Seitenzahlen (46-59) als p-Elemente."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings. 7 surfaces. sourceDesc mit bibl statt biblStruct -- weniger strukturiert, aber valide."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 30,
+        "orgName": 1,
+        "placeName": 2,
+        "bibl": 25
+      },
+      "notes": "Jaspers dominant (>20x). Kant, Hegel, Heidegger, Popper, Barth, Galilei, Giordano Bruno, Aron korrekt. False-Positives: Mensch (zbz-p.1251), Philosophen (zbz-p.1360), Christen (zbz-p.58), Rolle (zbz-l.565), Zeit (zbz-w.705), Philosophie (zbz-w.1)."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vortrag Existenz in der empirischen Wirklichkeit. Ab S.7 Folgetext von Raymond Aron -- gehoert zur Buchstruktur. Sprache deu korrekt."
+    }
+  },
+  "findings": [
+    "persName ref=zbz-p.1251 fuer Mensch (vielfach) -- systematisches False-Positive.",
+    "persName ref=zbz-p.1360 fuer Philosophen/Philosoph -- Gattungsbegriff als persName.",
+    "bibl ref=zbz-w.705 fuer Zeit (vielfach) -- Grundbegriff als Werkref.",
+    "bibl ref=zbz-w.1 fuer Philosophie (vielfach) -- Fachbegriff als Werkref.",
+    "placeName ref=zbz-l.565 fuer Rolle -- deutsches Substantiv, nicht der Ort.",
+    "Ab S.7: Folgebeitrag von Raymond Aron im selben div -- Buchkontext."
+  ],
+  "overall_notes": "Umfangreiche TEI-Edition. Zahlreiche systematische False-Positive-Annotationen. Inhaltlich kohaerenter Jaspers-Vortrag."
+}

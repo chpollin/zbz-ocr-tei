@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">L'Europe - continent de l'incarnation, créatrice d'histoire</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2910</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>L'Europe - continent de l'incarnation, créatrice d'histoire</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:warning L5:n/a L6:ok L7:ok). S.2 defekt: Tabellenartefakt statt Inhalt (Bild oder Verlagsinformation?); S.1-3 Paratexte (Vorwort Inderkum, Bild, Titelseite) im body statt front</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="953" lry="1379">
+      <zone xml:id="facs_1_r_1" ulx="213" uly="107" lrx="749" lry="147" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="954" lry="1379">
+      <graphic url="2.png" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="953" lry="1379">
+      <zone xml:id="facs_3_r_1" ulx="394" uly="52" lrx="543" lry="71" />
+      <zone xml:id="facs_3_r_2" ulx="98" uly="107" lrx="836" lry="190" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="954" lry="1379">
+      <zone xml:id="facs_4_r_1" ulx="58" uly="91" lrx="461" lry="331" />
+      <zone xml:id="facs_4_r_2" ulx="482" uly="94" lrx="885" lry="333" />
+      <zone xml:id="facs_4_r_3" ulx="601" uly="325" lrx="884" lry="586" />
+      <zone xml:id="facs_4_r_4" ulx="2451" uly="427" lrx="7078" lry="620" />
+      <zone xml:id="facs_4_r_5" ulx="59" uly="580" lrx="461" lry="681" />
+      <zone xml:id="facs_4_r_6" ulx="483" uly="593" lrx="885" lry="848" />
+      <zone xml:id="facs_4_r_7" ulx="57" uly="674" lrx="461" lry="953" />
+      <zone xml:id="facs_4_r_8" ulx="483" uly="883" lrx="885" lry="1276" />
+      <zone xml:id="facs_4_r_9" ulx="60" uly="952" lrx="461" lry="1051" />
+      <zone xml:id="facs_4_r_10" ulx="60" uly="1045" lrx="461" lry="1276" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="953" lry="1379">
+      <zone xml:id="facs_5_r_1" ulx="487" uly="110" lrx="891" lry="186" />
+      <zone xml:id="facs_5_r_2" ulx="66" uly="111" lrx="468" lry="621" />
+      <zone xml:id="facs_5_r_3" ulx="490" uly="196" lrx="822" lry="247" />
+      <zone xml:id="facs_5_r_4" ulx="490" uly="250" lrx="891" lry="657" />
+      <zone xml:id="facs_5_r_5" ulx="66" uly="600" lrx="467" lry="784" />
+      <zone xml:id="facs_5_r_6" ulx="486" uly="670" lrx="890" lry="1253" />
+      <zone xml:id="facs_5_r_7" ulx="65" uly="784" lrx="466" lry="951" />
+      <zone xml:id="facs_5_r_8" ulx="64" uly="945" lrx="466" lry="1310" />
+      <zone xml:id="facs_5_r_9" ulx="488" uly="1249" lrx="887" lry="1299" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="954" lry="1379">
+      <zone xml:id="facs_6_r_1" ulx="55" uly="97" lrx="459" lry="288" />
+      <zone xml:id="facs_6_r_2" ulx="481" uly="120" lrx="882" lry="146" />
+      <zone xml:id="facs_6_r_3" ulx="479" uly="190" lrx="882" lry="337" />
+      <zone xml:id="facs_6_r_4" ulx="57" uly="280" lrx="458" lry="334" />
+      <zone xml:id="facs_6_r_5" ulx="599" uly="325" lrx="882" lry="591" />
+      <zone xml:id="facs_6_r_6" ulx="479" uly="654" lrx="882" lry="1286" />
+      <zone xml:id="facs_6_r_7" ulx="55" uly="673" lrx="458" lry="1188" />
+      <zone xml:id="facs_6_r_8" ulx="56" uly="1185" lrx="457" lry="1285" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="953" lry="1379">
+      <zone xml:id="facs_7_r_1" ulx="65" uly="108" lrx="466" lry="277" />
+      <zone xml:id="facs_7_r_2" ulx="65" uly="271" lrx="466" lry="346" />
+      <zone xml:id="facs_7_r_3" ulx="2573" uly="592" lrx="6966" lry="786" />
+      <zone xml:id="facs_7_r_4" ulx="63" uly="597" lrx="466" lry="834" />
+      <zone xml:id="facs_7_r_5" ulx="488" uly="782" lrx="887" lry="941" />
+      <zone xml:id="facs_7_r_6" ulx="63" uly="823" lrx="464" lry="1134" />
+      <zone xml:id="facs_7_r_7" ulx="485" uly="943" lrx="888" lry="1292" />
+      <zone xml:id="facs_7_r_8" ulx="64" uly="1129" lrx="464" lry="1291" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="954" lry="1379">
+      <zone xml:id="facs_8_r_1" ulx="81" uly="98" lrx="483" lry="339" />
+      <zone xml:id="facs_8_r_2" ulx="506" uly="286" lrx="907" lry="338" />
+      <zone xml:id="facs_8_r_3" ulx="624" uly="332" lrx="907" lry="594" />
+      <zone xml:id="facs_8_r_4" ulx="82" uly="333" lrx="362" lry="407" />
+      <zone xml:id="facs_8_r_5" ulx="80" uly="404" lrx="365" lry="595" />
+      <zone xml:id="facs_8_r_6" ulx="268" uly="499" lrx="685" lry="529" />
+      <zone xml:id="facs_8_r_7" ulx="80" uly="587" lrx="483" lry="964" />
+      <zone xml:id="facs_8_r_8" ulx="504" uly="658" lrx="906" lry="890" />
+      <zone xml:id="facs_8_r_9" ulx="504" uly="888" lrx="906" lry="966" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <persName ref="#zbz-p.1277">Hansheiri Inderkum</persName>
+        </head>
+        <p>
+          Vorwort des Herausgebers
+        </p>
+        <p>
+          
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p>
+          |    |   |   |<lb facs="#facs_2_l_1_1" n="N001" />| --- | --- | --- |
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_2">
+          <placeName ref="#zbz-l.29">L'Europe</placeName> – continent de l'incarnation, créatrice d'histoire
+        </p>
+        <p>
+          
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Continent de l'incarnation, créatrice d'histoire
+        </p>
+        <p facs="#facs_4_r_2">
+          Considérant les caractéristiques si particulières de l'histoire européenne, j'ai tenté de saisir ce qu'il pouvait y avoir de singulier et de puissant dans l'attitude centrale de l'homme européen face au monde qui l'entoure. Il me fallait trouver quelque chose d'assez simple et d'assez général pour convenir à un très grand nombre d'hommes appartenant à des époques et à des cultures différentes, et d'assez simple et fort pour
+        </p>
+        <p facs="#facs_4_r_3">
+          manifester une racine existentielle de leur comportement. Après bien des tatonnements, il m'est apparu qu'il s'agissait d'un va-et-vient constant du donné au désir et du désir au donné, mais d'un va-et-vient actif et incarnatif, actionné par l'insatisfaction critique et l'imagination du possible, et cela sans fin. Si les hommes qui ont peuplé l'<placeName ref="#zbz-l.29">Europe</placeName> s'étaient satisfaits des modes de vie qui y étaient d'emblée possibles, l'<placeName ref="#zbz-l.29">Europe</placeName> ne serait jamais devenue l'<placeName ref="#zbz-l.29">Europe</placeName>.
+        </p>
+        <p facs="#facs_4_r_4">
+          Il semble bien que, très tôt, ils ne se sont pas contentés de vivre leur vie, ils se sont mis à la raconter, et donc aussi à la concevoir différente. Ce qui rendait possible de poser des questions, de donner des réponses, de juger, d'expliquer et d'imaginer. Ceux qui peuplèrent l'<placeName ref="#zbz-l.29">Europe</placeName> semblent avoir été moins disposés que d'autres à accepter au long des siècles les choses telles qu'elles étaient : ils les ont observées et ont projeté sur elles une réalité différente. Ce qui n'allait nullement de soi.
+        </p>
+        <p facs="#facs_4_r_5">
+          A vrai dire, le trait essentiel que je viens d'esquisser n'est pas spécifique des <persName ref="#zbz-p.436">Européens</persName> ; il caractérise la condition humaine de façon générale.
+        </p>
+        <p facs="#facs_4_r_6">
+          Il me paraît pourtant évident qu'en <placeName ref="#zbz-l.29">Europe</placeName>, depuis les débuts de son histoire, le « va-et-vient » dont il est ici question a pris une intensité et une efficacité exceptionnelles, qu'on ne retrouve pas dans les autres continents, jusqu'au moment où ce « va-et-vient » s'est trouvé lui-même « contaminé » par le tempo de devenir européen — qui n'a fait que s'accélérer au cours des siècles.
+        </p>
+        <p facs="#facs_4_r_7">
+          Je ne sais pas trop comment expliquer l'intensité de ce « va-et-vient ». L'un des facteurs, au départ, a peut-être été que les populations venues en <placeName ref="#zbz-l.29">Europe</placeName> du dehors et se répandant dans ses diverses régions, en quittant par exemple la <placeName ref="#zbz-l.469">Mésopotamie</placeName> et les zones irriguées par les grands fleuves, n'étaient à proprement parler ni des nomades, ni des sédentaires, mais à la recherche de régions où s'installer de façon stable.
+        </p>
+        <p facs="#facs_4_r_8">
+          Les nomades, tout en changeant de lieux, mènent une existence répétitive ; les sédentaires installés, aussi. Mais ceux qui progressent vers une meilleure patrie se trouvent d'emblée pris dans un projet, une histoire, une insatisfaction demandant des efforts. Il est significatif que les traces des premiers peuplements européens et des invasions qui suivirent révèlent très tôt, partout, la construction de villages.
+        </p>
+        <p facs="#facs_4_r_9">
+          L'intensité du « va-et-vient » se lit tout au long de l'histoire de l'<placeName ref="#zbz-l.29">Europe</placeName>, à des degrés divers selon les époques et selon les régions, et elle n'a fait que s'accélérer avec les progrès de la civilisation. Mais cette accélération n'a pas été gratuite. Intervenir dans l'histoire avec des projets nouveaux, changer d'habitat et de manière de vivre ne va guère sans conflits, aussi bien d'intérêts que de projets.
+        </p>
+        <p facs="#facs_4_r_10">
+          On s'engage dans la multiplicité des possibles futurs, au lieu d'obéir ensemble aux données du passé. Telle est probablement la raison essentielle et permanente pour laquelle, comme on l'a souvent souligné, l'histoire de l'<placeName ref="#zbz-l.29">Europe</placeName> a été, plus que celle d'autres continents, tourmentée par des guerres et des conflits de tout genre. Il est à mon avis trop facile et superficiel d'attribuer ce record à une « nature » particulièrement belliqueuse des peuples européens, que ce soit pour les accabler, ou par goût du <hi rendition="#i">mea culpa</hi> des <persName ref="#zbz-p.436">Européens</persName> eux-mêmes. C'est, je pense, qu'ils ont été plus intensément que d'autres aux prises avec « la condition historique », avec « l'historicité », qui caractérise l'être humain.
+        </p>
+        <p>
+          
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          Continent de l'incarnation, créatrice d'histoire
+        </p>
+        <p facs="#facs_5_r_2">
+          A cela vient s'ajouter un autre trait, qui se vérifie, me semble-t-il, tout le long de l'histoire de l'<placeName ref="#zbz-l.29">Europe</placeName>: les habitants de ce continent ont toujours lié théorie et pratique, pratique et théorie. Lorsqu'ils ont imaginé la solution d'une difficulté, ils ont toujours cherché à la mettre à l'épreuve des faits et des choses. Lorsqu'ils ont découvert une nouvelle possibilité technique, ils ont aussitôt cherché à en imaginer toutes les implications possibles au niveau des conceptions et des théories. Ce qui signifie que chacun de leurs progrès, dans quelque domaine que ce soit, ne s'est pas développé isolément, mais qu'il a eu des répercussions dans toutes les dimensions de leur existence – aussi bien dans leur manière d'organiser leur vie sociale que dans les catégories qui leur servaient à penser leur condition, leur vie, leur mort, leur divinité. C'est pourquoi aucun aspect de leur civilisation n'a jamais échappé à l'emprise de l'histoire. Et aucun changement historique important ne s'est produit sans laisser des traces sur tous les aspects de leur civilisation.
+        </p>
+        <p facs="#facs_5_r_3">
+          L'intensité de l'histoire en <placeName ref="#zbz-l.29">Europe</placeName>, l'interdépendance de tous les éléments qu'elle implique et met en jeu explique sans doute que l'activité des hommes, au cours des siècles, s'y soit développée d'une façon si diversifiée qu'on peut à peine comparer ce qu'elle a été ici et ce qu'elle a été ailleurs.
+        </p>
+        <p facs="#facs_5_r_4">
+          Le contraste me paraît particulièrement impressionnant si l'on considère des aspects de la civilisation européenne spécifiquement humains, qui n'existent à aucun degré chez aucune espèce animale, et qui n'auraient aucun sens concevable dans une société d'anges, si une société d'anges existait. Ce que je veux dire par là, c'est que l'Europeen a, pour le meilleur et pour le pire, tiré les conséquences les plus radicales de sa condition d'être humain temporel, doté d'un corps mortel (il n'est donc pas un ange) et d'une conscience libre, située au présent, soumise aux données du passé, et co-responsable de ce que va être l'avenir.
+        </p>
+        <p facs="#facs_5_r_5">
+          Parmi ces aspects spécifiquement humains, il y a d'abord et avant tout l'histoire, dont j'ai parlé déjà; et j'y reviendrai encore.
+        </p>
+        <p facs="#facs_5_r_6">
+          En <placeName ref="#zbz-l.29">Europe</placeName>, l'intensité de l'histoire aggrave les conflits.
+        </p>
+        <p facs="#facs_5_r_7">
+          C'est pourquoi sans doute l'<placeName ref="#zbz-l.29">Europe</placeName> a donné, au cours des siècles, une telle importance au Droit. Le droit existe, certes, sous une forme ou une autre, partout où il y a des hommes, et il est remarquable, par exemple, que même chez des peuples peu développés, chacun considère comme un droit imprescriptible d'avoir accès à un juge et d'obtenir de lui un jugement. Mais les peuples d'<placeName ref="#zbz-l.29">Europe</placeName>, eux, se sont attachés à établir un Droit précis et différencié, comportant garanties et recours, et des mesures préventives contre des abus possibles, etc, qui le distinguent, je crois, de ce qui a existé ailleurs.
+        </p>
+        <p facs="#facs_5_r_8">
+          [Actuellement, à travers les <bibl ref="#zbz-w.285">Droits de l'Homme</bibl>, le projet juridique s'est universel. Mais il est encore bien loin d'un minimum de perfection. Certains progrès ont été accomplis, par exemple, par l'introduction du droit et même du devoir d'ingérence lorsqu'il s'agit de faire respecter les <bibl ref="#zbz-w.285">Droits de l'Homme</bibl>. Mais une double évolution s'est produite, qui n'est pas sans danger. En observant à juste titre que les <bibl ref="#zbz-w.285">Droits de l'Homme</bibl> théoriquement reconnus ne peuvent se concrétiser quand les besoins vitaux ne sont pas satisfaits et que les jeunes ne disposent pas de l'éducation indispensable, on s'est dit qu'il fallait compléter l'énumération des droits fondamentaux par celle d'un minimum de droits sociaux et économiques. À juste titre. Seulement, la possibilité du respect de ces droits dépend nécessairement du niveau social et économique atteint par le pays concerné. Si bien qu'on en vient à énumérer des droits dont l'exigibilité se trouve souvent être nulle. Ce qui affaiblit l'exigibilité des <bibl ref="#zbz-w.285">Droits de l'Homme</bibl> en général.]
+        </p>
+        <p facs="#facs_5_r_9">
+          C'est certainement l'importance et la fréquence des conflits (dérivés de l'intensité
+        </p>
+        <p>
+          
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          Continent de l'incarnation, créatrice d'histoire
+        </p>
+        <p facs="#facs_6_r_2">
+          historique) qui a stimulé en <placeName ref="#zbz-l.29">Europe</placeName> le sens critique, fortifié la tendance à le retourner contre soi et contre le droit lui-même, obligeant les juristes à prendre conscience des nécessités d'un strict formalisme juridique pour résister aux tentations opportunistes et assurer une application aussi constante que possible des lois.
+        </p>
+        <p facs="#facs_6_r_3">
+          L'intensité historique de l'<placeName ref="#zbz-l.29">Europe</placeName> apparaît tout particulièrement dans l'extrême diversité des arts, selon les cultures et les époques. C'est peut-être dans l'architecture qu'on peut lire avec le plus d'évidence le va-et-vient européen entre le donné et l'imaginaire; il n'est sans doute pas une conquête technique, dans ce domaine, qui n'ait contribué à épanouir un style nouveau; et réciproquement, il n'est sans doute pas une inflexion de la sensibilité, du goût, du sens religieux, qui n'ait découvert l'artifice technique lui permettant de renouveler les formes du bois ou de la pierre.
+        </p>
+        <p facs="#facs_6_r_4">
+          Mais cela est vrai surtout de la musique. La musique existe partout où il y a des hommes. Partout des chants ou des bruitages accompagnent les rythmes des travaux, semailles ou moissons, ou les cérémonies religieuses, civiles ou militaires. Seulement il faut bien reconnaître qu'on ne trouve nulle part autour de cette boule ronde, une diversité historique tant soit peu comparable à celle de la <placeName ref="#zbz-l.29">musique européenne</placeName> – à tel point que la musique d'une époque plus récente semble empêcher les compositeurs de se reporter à la précédente, comme s'il y avait en elle une sorte d'exigence d'actualité, même pour ceux qui restent profondément attachés aux œuvres du passé. Peut-être la musique, plus immédiatement liée à la profondeur immédiate du présent et à la structure du temps historiquement vécu, peut-elle nous révéler, mieux que d'autres arts, «le lieu temporel et historique» de la création, son hic et nunc.
+        </p>
+        <p facs="#facs_6_r_5">
+          Il est banal de rappeler que ce ne sont pas les autres continents qui ont découvert l'<placeName ref="#zbz-l.29">Europe</placeName>, mais l'<placeName ref="#zbz-l.29">Europe</placeName> qui est partie les découvrir – parfois sans même savoir au
+        </p>
+        <p facs="#facs_6_r_6">
+          
+        </p>
+        <p facs="#facs_6_r_7">
+          juste ce qu'elle allait chercher. J'y vois encore un effet de cette ardeur à s'affirmer dans l'histoire, à marquer et façonner le donné à l'aide de l'imaginaire.
+        </p>
+        <p facs="#facs_6_r_8">
+          J'ai gardé pour la fin un thème de «l'incarnation créatrice» de l'<placeName ref="#zbz-l.29">Europe</placeName> dont l'importance, pour l'histoire et le destin de l'humanité entière, l'emporte sans doute sur tout autre: je veux parler des sciences de la nature et des techniques qui en dérivent. <orgName ref="#zbz-o.283">Sciences</orgName> et techniques appartiennent à la terre entière. Aucun peuple, aucun continent ne peut désormais les refuser, sous peine d'une misère conduisant à la mort. Que ce soit, ici encore, pour le meilleur ou pour le pire, tel est désormais le destin de tous les hommes; et qu'ils le veuillent ou non, les exigences et les conditions de la recherche scientifique et de l'invention technique font d'eux, d'une certaine manière, des <persName ref="#zbz-p.436">Européens</persName>.
+        </p>
+        <p>
+          <persName ref="#zbz-p.1932">Les Européens</persName> n'ont été ni les premiers, ni les seuls, au cours de l'histoire, à pousser assez loin les jeux des mathématiques, l'étude des régularités observées dans les phénomènes naturels et les mouvements des astres, à perfectionner instruments et techniques de mesure. Et partout où il y a eu des hommes, ceux-ci ont laissé des traces d'outils fabriqués de leurs mains, destinés à faciliter le travail, les transports, à améliorer l'habitat, etc. Il n'en reste pas moins que c'est en <placeName ref="#zbz-l.29">Europe</placeName> qu'à une époque déterminée se sont trouvés réunis les très nombreux facteurs qui allaient permettre l'éclosion des sciences et des techniques, modifiant les conditions élémentaires de la survie et permettant dès lors d'engendrer une nouvelle civilisation. Certes, le prix à payer, par les masses de travailleurs, européens et coloniaux, a été énorme. Mais il en est résulté, à travers de terribles luttes, des avantages qui sont retombés sur l'ensemble des populations européennes, corrigeant ainsi, pour le plus grand nombre, les conditions de la vie et de la liberté. Cette transformation a été tellement éclatante qu'il n'existe plus nulle part, dans les autres con
+        </p>
+        <p>
+          86
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          Continent de l'incarnation, créatrice d'histoire
+        </p>
+        <p facs="#facs_7_r_2">
+          tinents, de peuple qui consente aujourd'hui à en être privé. D'où, maintenant, pour l'<placeName ref="#zbz-l.12">Ouest</placeName> développé, une nouvelle tâche « incarnative », impérieuse et inéluctable : celle de contribuer d'urgence au développement scientifique et technique des régions pauvres de la planète.
+        </p>
+        <p facs="#facs_7_r_3">
+          Je pense que les <persName ref="#zbz-p.436">Européens</persName> ne se sont pas posé assez sérieusement une question qui leur aurait peut-être permis de saisir pourquoi, malgré bien des amorces constatées ailleurs, c'est chez eux que le grand développement s'est produit. Ma réponse se rattache au thème central du présent travail. La recherche scientifique est née, je crois, du même « va-et-vient » particulièrement intense dont nous avons parlé jusqu'ici, entre « le donné » et « le cherché ».
+        </p>
+        <p facs="#facs_7_r_4">
+          Un va-et-vient entre la constatation étonnée de ce qui se passe dans la nature, et le besoin d'en établir la relation rigoureuse et permanente ; d'où : invention de l'hypothèse, par laquelle la pensée répond à l'incitation de l'événement, puis retour au donné qui va juger l'hypothèse, et ainsi de suite. On voit alors naître aussi le besoin d'appareils, permettant de poser au donné des questions de plus en plus précises.
+        </p>
+        <p facs="#facs_7_r_5">
+          La recherche scientifique et l'invention technique ont été – et sont encore – une prodigieuse aventure, vécue d'abord par l'<placeName ref="#zbz-l.29">Europe</placeName>, puis par l'<placeName ref="#zbz-l.411">Amérique</placeName>, et qui est en train de devenir une entreprise généralement humaine. On peut seulement déplorer qu'aujourd'hui tant d'<persName ref="#zbz-p.436">Européens</persName> s'acharnent à la dénigrer en la rendant responsable de tous leurs maux, – au lieu de s'efforcer d'en saisir eux-mêmes le sens et les effets libérateurs, et de les faire comprendre à tous les peuples qui s'efforcent aujourd'hui d'y prendre part.
+        </p>
+        <p facs="#facs_7_r_6">
+          Il ne s'agit nullement pour moi d'idéaliser l'<placeName ref="#zbz-l.29">Europe</placeName>, comme si elle était la source de tous les biens pour les autres continents. J'ai voulu ici seulement mettre en lumière une de ses caractéristiques à mes yeux centrale : le « va-et-vient » inlassable, intense et rigoureux, entre ce qui est donné aux hommes
+        </p>
+        <p facs="#facs_7_r_7">
+          par le monde qui les entoure et leur besoin profond de s'affirmer dans ce monde en lui imposant la marque de leur liberté. Autrement dit : je crois que tous les hommes sont destinés à être des sujets d'histoire, mais aussi que, nulle part comme en <placeName ref="#zbz-l.29">Europe</placeName>, cette destination ne s'est si fortement affirmée, tout au long de l'histoire.
+        </p>
+        <p facs="#facs_7_r_8">
+          L'histoire non plus, il ne faut pas l'idéaliser. L'histoire des hommes n'est pas le merveilleux récit de leurs efforts et de leurs scrifices – bien qu'elle soit cela aussi. L'histoire européenne est jalonnée d'énormes crimes, de forfaits dont aucune espèce animale, semble-t-il, ne s'est rendue coupable, et l'accumulation des souffrances qui en est résultée dépasse ce que l'imagination peut supporter. Mais ce que j'essaye de dire – et de croire – c'est que ces crimes et ces malheurs ont été les effets d'une présence historique particulièrement intense des <persName ref="#zbz-p.436">Européens</persName>, de leur vocation de sujets libres, engagés dans une recherche du vrai – et trop souvent incapables de saisir le caractère relatif et partiel de ce que leur temps leur permet de comprendre.
+        </p>
+        <p>
+          Tels qu'ils ont vécu au cours des millénaires, ils ont beaucoup apporté au reste du monde, et n'ont cessé de se réjouir de son népuisable diversité. En bien et en mal, ils ont stimulé partout le sens de ce que cela veut dire : être un homme, présent à l'histoire.
+        </p>
+        <p>
+          Je voudrais ajouter quelques mots concernant l'avenir, non seulement de l'<placeName ref="#zbz-l.29">Europe</placeName>, mais de l'humanité. Deux tâches semblent s'être aujourd'hui imposées à la conscience de nos contemporains, au point que les discours à leur sujet finissent par lasser ou éclipser le reste. C'est, d'une part, l'urgence qu'il y a de réduire l'écart des ressources et des niveaux de vie entre les peuples du nord et ceux du sud. C'est, d'autre part, l'urgence qu'il y a de prendre soin de notre planète elle-même, d'user avec mesure de ses ressources non-renouvelables, notamment de celles qui sont sources d'énergie, comme aussi de limiter l'accumulation de
+        </p>
+        <p>
+          87
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          Continent de l'incarnation, créatrice d'histoire
+        </p>
+        <p facs="#facs_8_r_2">
+          nos déchets et de réduire la pollution de l'eau et de l'air. Il y a malheureusement, outre la difficulté des deux urgences, une certaine contradiction entre elles: si le niveau des peuples du Tiers-monde se rapproche du nôtre, leur taux de natalité finira par baisser, certes, mais trop tard pour éviter l'accroissement de leur population, ce qui, en fonction des progrès réalisés, promet d'énormes dégâts écologiques. Mais,
+        </p>
+        <p facs="#facs_8_r_3">
+          même contradictoires, les deux tâches continuent à s'imposer.
+        </p>
+        <p facs="#facs_8_r_4">
+          Il y a encore un autre aspect des choses, dont on ne parle guère, et qui me paraît exiger réflexion. Le système économique dirigiste et totalitaire qui a régné pendant soixante-dix ans à <placeName ref="#zbz-l.29">l'est de l'Europe</placeName> s'est effondré dans l'impuissance et le chaos. Cela ne signifie pas, me semble-t-il, que désormais ne vaille que la formule «laissez faire, laissez passer». Les énormes progrès accomplis par les sciences et les techniques ont entraîné un fantastique accroissement des pouvoirs des hommes. Ces pouvoirs sont, dans tous les domaines, si considérables qu'il me paraît impossible de les laisser déprendre des seuls mécanismes de la concurrence, comme si celle-ci était une sorte de Jugement de Dieu. Le libre marché paraît, certes, nécessaire, mais non pas suffisant, surtout lorsqu'il est faussé par la publicité. Il faudra bien qu'un jour les entreprises prennent elles-mêmes les initiatives permettant un accord entre elles pour
+        </p>
+        <p facs="#facs_8_r_5">
+          
+        </p>
+        <p facs="#facs_8_r_6">
+          orienter le travail des hommes vers ce qui les aide à se libérer encore davantage des contraintes vitales et à disposer de plus de temps et de moyens, afin d'être plus intensément des êtres vraiment humains, responsables, ayant des finalités délibérément choisies. <persName ref="#zbz-p.1278">Jacques Delors</persName> parle de «libéralisme corrigé».
+        </p>
+        <p facs="#facs_8_r_7">
+          Il y a autre chose. Le monde économique n'est pas le seul à avoir en quelque sorte échappé à l'orientation volontaire des hommes. Il y a encore les sciences elles-mêmes, avec les techniques qui en dérivent, qui, progressant à pas de géant, ne savent plus bien ce qu'elles sont, ni quel est leur sens. Il me paraît urgent de retrouver le sens humain, et donc culturel, de la recherche scientifique et technique. Celle-ci ne se réduit pas à ses résultats, un ensemble de lois à apprendre et à appliquer.
+        </p>
+        <p facs="#facs_8_r_8">
+          Elle implique l'homme entier, sa curiosité, sa passion du vrai, son besoin de temps libre, de compréhension et de création. Elle est une branche de sa culture; et les langages des diverses sciences sont eux aussi des langues culturelles. On le découvre en se détournant un moment des résultats de la recherche pour retrouver l'origine et les chemins qui y ont conduit, à travers l'histoire.
+        </p>
+        <p facs="#facs_8_r_9">
+          Ce qui nous ramène à l'historicité intense, pour le meilleur et pour le pire, qui caractérise le devenir de l'<placeName ref="#zbz-l.29">Europe</placeName>.
+        </p>
+        <p>
+          88
+        </p>
+      </div>
+      </body></text>
+</TEI>

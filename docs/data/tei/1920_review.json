@@ -1,0 +1,40 @@
+{
+  "doc_id": "1920",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [1, 5],
+      "notes": "Titelseite mit Raymond Aron als Preistraeger. Kein Overlay S.1 (nur Gemini). Text ab S.2 sauber."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Fliesstext der Laudatio von Hersch fuer Aron sehr gut transkribiert."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "10 Seiten. Einfaches einspaltiges Layout. Facs-Zonen konsistent."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Fehler, 0 Warnings. langUsage fra+deu. Sauberer teiHeader."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {"persName": 31, "orgName": 12, "placeName": 21, "bibl": 11},
+      "notes": "Aron, Hersch, Sartre, Kant, Marx, Max Weber korrekt. Werkverweise als bibl."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Laudatio von Hersch fuer Aron, Stiftung fuer Freiheit und Menschenrechte 1981. Kohaerenter franzoesischer Text."
+    }
+  },
+  "findings": [],
+  "overall_notes": "Hochwertige Edition einer Laudatio. Reiche Entitaetsannotation."
+}

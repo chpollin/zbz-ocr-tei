@@ -1,0 +1,48 @@
+{
+  "doc_id": "2380",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [2, 5],
+      "notes": "8 Seiten. S.1 Buchtitel (Colloque Karl Jaspers, Nancy 1986). Overlay S.2 und S.5 zeigen saubere einspalt. Zonenerkennung."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Langer franzoesischer philosophischer Text. Akzente durchgehend korrekt. Jaspers-Fachbegriffe und eingebettete deutsche Zitate sauber erfasst."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Einspaltiges Buchlayout. Kolumnentitel als p-Elemente. Langes Jaspers-Zitat auf S.7 korrekt als zusammenhaengender Absatz."
+    },
+    "L4_tei": {
+      "score": "ok",
+      "validator_warnings": [],
+      "notes": "VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings. 8 surfaces. Zone-Koordinaten auf facs_4 extrem gross (bis 13149) -- Artefakt."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 10,
+        "orgName": 3,
+        "placeName": 0,
+        "bibl": 7
+      },
+      "notes": "Jaspers dominant und korrekt. Platon, Kant, Hersch annotiert. OrgNames: Universite de Nancy II, Presses Universitaires de Nancy, Universite de Geneve. Bibl: Philosophie III, De la verite, Raison et Existence."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Vollstaendiger Kongressbeitrag L ecriture chiffree fonction de l historicite. Dichter philosophischer Text ueber Jaspers Chiffre-Lehre. Sprache fra korrekt."
+    }
+  },
+  "findings": [
+    "Zone-Koordinaten auf facs_4 extrem gross (uly bis 13149) -- Artefakt, kein Textinhalt betroffen.",
+    "persName ref=zbz-p.926 fuer Homme auf S.1 -- Teil des Buchtitels, Gattungsbegriff."
+  ],
+  "overall_notes": "Hochwertige TEI-Edition eines franzoesischen Kongressbeitrags. Wenige Auffaelligkeiten."
+}

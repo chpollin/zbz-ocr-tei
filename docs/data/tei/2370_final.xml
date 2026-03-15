@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">L'armée, le sol et la liberté</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2370</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>L'armée, le sol et la liberté</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1986</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:ok L5:n/a L6:ok L7:ok). Kolumnentitel OCR-Fehler: DECISION DE CAMPAGNE (S.4), DIPLOME DE COMPAGNE (S.6) statt DIVISION DE CAMPAGNE.; Suisse hat zwei verschiedene Referenzen: zbz-l.521 und zbz-l.705 -- Inkonsistenz.; S.2: 101 8561 als separater Absatz -- Bibliotheksnotiz/Signatur.</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="863" lry="1193">
+      <zone xml:id="facs_2_r_1" ulx="144" uly="221" lrx="738" lry="400" />
+      <zone xml:id="facs_2_r_2" ulx="311" uly="852" lrx="588" lry="1004" />
+      <zone xml:id="facs_2_r_3" ulx="313" uly="1050" lrx="587" lry="1083" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="863" lry="1247">
+      <zone xml:id="facs_3_r_1" ulx="198" uly="184" lrx="658" lry="236" />
+      <zone xml:id="facs_3_r_2" ulx="341" uly="250" lrx="513" lry="309" />
+      <zone xml:id="facs_3_r_3" ulx="78" uly="379" lrx="783" lry="478" />
+      <zone xml:id="facs_3_r_4" ulx="78" uly="478" lrx="784" lry="625" />
+      <zone xml:id="facs_3_r_5" ulx="78" uly="623" lrx="784" lry="730" />
+      <zone xml:id="facs_3_r_6" ulx="83" uly="923" lrx="790" lry="1080" />
+      <zone xml:id="facs_3_r_7" ulx="83" uly="1073" lrx="788" lry="1128" />
+      <zone xml:id="facs_3_r_8" ulx="85" uly="1118" lrx="789" lry="1175" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="812" lry="1241">
+      <zone xml:id="facs_4_r_1" ulx="64" uly="174" lrx="773" lry="375" />
+      <zone xml:id="facs_4_r_2" ulx="297" uly="492" lrx="544" lry="518" />
+      <zone xml:id="facs_4_r_3" ulx="67" uly="541" lrx="774" lry="640" />
+      <zone xml:id="facs_4_r_4" ulx="66" uly="641" lrx="775" lry="793" />
+      <zone xml:id="facs_4_r_5" ulx="70" uly="784" lrx="776" lry="984" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="811" lry="1241">
+      <zone xml:id="facs_5_r_1" ulx="49" uly="187" lrx="753" lry="295" />
+      <zone xml:id="facs_5_r_2" ulx="45" uly="288" lrx="750" lry="393" />
+      <zone xml:id="facs_5_r_3" ulx="49" uly="382" lrx="753" lry="608" />
+      <zone xml:id="facs_5_r_4" ulx="49" uly="606" lrx="754" lry="759" />
+      <zone xml:id="facs_5_r_5" ulx="50" uly="754" lrx="754" lry="854" />
+      <zone xml:id="facs_5_r_6" ulx="51" uly="878" lrx="755" lry="956" />
+      <zone xml:id="facs_5_r_7" ulx="55" uly="1074" lrx="759" lry="1180" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="812" lry="1241">
+      <zone xml:id="facs_6_r_1" ulx="65" uly="181" lrx="775" lry="355" />
+      <zone xml:id="facs_6_r_2" ulx="66" uly="355" lrx="772" lry="526" />
+      <zone xml:id="facs_6_r_3" ulx="65" uly="527" lrx="772" lry="700" />
+      <zone xml:id="facs_6_r_4" ulx="69" uly="698" lrx="775" lry="897" />
+      <zone xml:id="facs_6_r_5" ulx="69" uly="895" lrx="776" lry="999" />
+      <zone xml:id="facs_6_r_6" ulx="68" uly="1090" lrx="776" lry="1169" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="811" lry="1241">
+      <zone xml:id="facs_7_r_1" ulx="55" uly="196" lrx="752" lry="342" />
+      <zone xml:id="facs_7_r_2" ulx="366" uly="547" lrx="445" lry="611" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_2" n="2" />
+        <head facs="#facs_2_r_1">
+          LA DEUXIÈME DIVISION
+        </head>
+        <p facs="#facs_2_r_2">
+          STIFTUNG<lb facs="#facs_2_l_2_1" n="N001" />MILITÄR-BIBLIOTHEK<lb facs="#facs_2_l_2_2" n="N002" /><placeName ref="#zbz-l.9">BASEL</placeName>
+        </p>
+        <p facs="#facs_2_r_3">
+          
+        </p>
+        <p>
+          RACINES<lb facs="#facs_2_l_4_1" n="N001" />ET<lb facs="#facs_2_l_4_2" n="N002" />CONTINUITÉ
+        </p>
+        <p>
+          1803 – 1961 – 1986
+        </p>
+        <p>
+          101 8561
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          DIVISION DE CAMPAGNE
+        </p>
+        <p facs="#facs_3_r_2">
+          L'armée, le sol et la liberté
+        </p>
+        <p facs="#facs_3_r_3">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_3_l_3_1" n="N001" />Philosophe
+        </p>
+        <p facs="#facs_3_r_4">
+          Même si <persName ref="#zbz-p.1059">Guillaume Tell</persName> est une figure de légende, il a eu une efficacité historique réelle: au cœur du sens de notre pays, au point de départ de son histoire il y a son refus (intérieur) d'obéissance à la force (extérieure). Et c'est le refus d'un homme seul.
+        </p>
+        <p facs="#facs_3_r_5">
+          <placeName ref="#zbz-l.521">La Suisse</placeName> me paraît faite pour que ce refus soit possible. Pour qu'un comportement ou un dogme uniforme ne puisse pas être imposé par la contrainte. Il serait médiocre de penser que les citoyens de ce pays, étant différents les uns des autres, se sont vus contraints à la tolérance. Bien plutôt: ils ont voulu pour la liberté la pluralité des possibles, et c'est pourquoi ils sont restés divers.
+        </p>
+        <p facs="#facs_3_r_6">
+          Défendre la démocratie, c'est défendre l'espace des possibles où s'accomplira le choix – substantiel – de chaque citoyen, et c'est rejeter de ce fait tout dogmatisme exclusif. D'où la force souple de la démocratie, mais aussi sa faiblesse et son vide quand les citoyens deviennent indifférents.
+        </p>
+        <p facs="#facs_3_r_7">
+          Quelqu'un m'a demandé un jour: si la <placeName ref="#zbz-l.705">Suisse</placeName> cessait d'être une démocratie, l'aimeriez-vous encore? Ma réponse: une <placeName ref="#zbz-l.705">Suisse</placeName> non démocratique ne serait plus la <placeName ref="#zbz-l.705">Suisse</placeName>. Ses glaciers seraient encore des glaciers; mais ils n'offriraient qu'un spectacle.
+        </p>
+        <p facs="#facs_3_r_8">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          L'être humain, comme disait <persName ref="#zbz-p.173">Rimbaud</persName>, est «une âme et un corps», et c'est dans le et que se situe sa liberté. La liberté incarne une volonté de l'âme. Si l'âme agit seule, sans rien incarner, cela ne tire pas à conséquence parce qu'elle ne produit aucun résultat et n'affronte aucune suite. Si le corps agit seul, il fonctionne selon les lois de la nature physique, où la force règne seule.
+        </p>
+        <p>
+          De même, la liberté n'est rien à l'état de pure idée. Elle doit s'incarner, prendre corps.
+        </p>
+        <p>
+          «Le corps» de la liberté démocratique, ce sont les institutions, politiques, syndicales, sociales, culturelles, à travers lesquelles elle s'inscrit dans les
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          DÉCISION DE CAMPAGNE
+        </p>
+        <p facs="#facs_4_r_2">
+          faits, dans les situations historiques concrètes. C'est la terre sur l'étendue de laquelle elle assume de faire respecter la liberté de chaque personne, comme aussi le droit à l'asile de chaque réfugié. Ce sont les ressources qui assurent à chaque personne une marge de sécurité par une mise à distance des besoins vitaux urgents, ménageant ainsi le répit nécessaire à la réflexion, à la culture, aux choix. C'est aussi l'armée, chargée de défendre contre toute attaque ou toute menace extérieure le corps entier de la liberté.
+        </p>
+        <p facs="#facs_4_r_3">
+          Paradoxes de l'armée
+        </p>
+        <p facs="#facs_4_r_4">
+          L'armée organise les citoyens en un instrument défensif efficace, doté d'armements suffisants, hiérarchisé et soumis par la loi au pouvoir démocratiquement élu, servant à assurer la sécurité du territoire, c'est-à-dire le libre exercice des libertés sur toute l'étendue de celui-ci.
+        </p>
+        <p facs="#facs_4_r_5">
+          Quelle que soit d'ailleurs la valeur morale de ses membres et de sa finalité, l'armée représente donc une force matérielle. Elle participe ainsi du règne de la nature, qui est celui du plus fort, que ce soit dans l'affrontement effectif, ou seulement, au stade antérieur de la lutte animale, au stade de la menace et de l'intimidation, quand les adversaires (ou rivaux) se mesurent du regard.
+        </p>
+        <p>
+          Dans la guerre, l'armée tue. Dans la paix, elle préserve la paix par la menace de mort. Et contrairement à ce que certains s'efforcent d'imaginer, elle menace de mort effective. Elle n'est nullement rhétorique, – ou alors elle perd sa crédibilité et ne sert plus à rien. L'armée la plus exclusivement défensive, la plus résolument pacifique, cesse d'être une armée si elle n'est pas prête, en cas de besoin – c'est-à-dire si des enjeux capitaux sont engagés et surtout si la liberté elle-même est en cause – à donner la mort et à la subir.
+        </p>
+        <p>
+          Or, plus les hommes qui composent l'armée sont civilisés, plus ils sont attachés aux droits de toute personne humaine et aux libertés démocratiques qu'ils ont à défendre, et plus ils répugnent à tuer et à se préparer à semer la mort. A des hommes de cette sorte les rites de la discipline ne peuvent s'imposer que par leur sens et leur finalité. C'est ainsi seulement, à travers des habitudes dont ils comprennent la raison d'être, que des hommes libres, respectueux des libertés d'autrui, peuvent devenir des
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          DIVISION DE CAMPAGNE
+        </p>
+        <p facs="#facs_5_r_2">
+          soldats capables, en cas de nécessité, de faire ce que la guerre exige d'eux. Tel est le paradoxe central de l'armée. Une horde d'esclaves violents peut toujours se jeter spontanément dans le combat. Une troupe d'hommes libres, non. Il y faut des habitudes acceptées.
+        </p>
+        <p facs="#facs_5_r_3">
+          C'est pourquoi toute armée civilisée comporte une sévère hiérarchie. Seulement, celle-ci cesse d'être civilisée et retombe au niveau de la nature sauvage lorsque, au lieu d'être de nature symbolique, elle se réduit à un rapport de force.
+        </p>
+        <p facs="#facs_5_r_4">
+          Elle se réduit à un rapport de force lorsque le supérieur hiérarchique situe son pouvoir dans sa propre personne et que, perdant la conscience du symbole qu'il incarne, il se trompe sur le sens du respect dû à ce symbole. Un officier digne de son grade me paraît voué à l'humilité : il sait qu'il n'est jamais à la hauteur d'un symbole. S'il s'enorgueillit au contraire, s'il use de son pouvoir pour imposer, sous couvert de symbole, sa volonté par la force, c'est que la vraie nature de l'armée lui échappe. Il en compromet la vertu symbolique dans la mesure où, alors qu'il en est le dépositaire, il la réduit à une contrainte à l'état brut.
+        </p>
+        <p facs="#facs_5_r_5">
+          Mais ne sommes-nous pas en pleine contradiction ? J'ai situé l'origine de notre pays, tout à l'heure, dans l'acte de désobéissance légendaire d'un homme seul. Et voici que l'obéissance, dans l'armée qui défend ce pays, devient la substance même de sa nature symbolique. Faut-il dire alors que le devoir d'obéissance dans l'armée se fonde sur une finalité inverse : préserver, sur le sol de la patrie, un droit original au refus d'obéissance ?
+        </p>
+        <p facs="#facs_5_r_6">
+          Cela n'est pas simple, mais il me semble qu'il en est bien ainsi. C'est pourquoi l'objection de conscience, qui a en <placeName ref="#zbz-l.705">Suisse</placeName> moins de raison d'être qu'ailleurs, y pose aussi un problème plus crucial qu'ailleurs : elle se situe au cœur de la raison d'être de l'armée.
+        </p>
+        <p facs="#facs_5_r_7">
+          Mais peut-être faut-il aller plus loin et dire qu'il se situe au cœur du paradoxe constitutif de la condition des hommes et de leur histoire. Les <bibl ref="#zbz-w.286">Droits de l'homme</bibl>, lorsqu'ils sont menacés ou violés, exigent d'être défendus ou rétablis par la force.
+        </p>
+        <p>
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          L'expression « le sol de la patrie » a perdu une grande partie de sa puissance affective depuis que notre civilisation et notre manière de vivre ont passé de l'époque agraire à l'époque urbaine. En ville, « le sol » n'a rien de nourricier. Ce n'est pas de lui que les familles tirent leur subsistance. Il est
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          DIPLOME DE COMPAGNE
+        </p>
+        <p facs="#facs_6_r_2">
+          d'autant moins ressenti comme « sacré» que la bienheureuse expérience des migrations massives, au moment des vacances, est liée au franchissement d'innombrables frontières et de rapides foulées sur des « sols » aussi lointains que possible. Lors de la dernière guerre, la défense conçue comme « défense du réduit » a bien montré, affectivement et stratégiquement, que ce qu'on était résolu à « tenir » coûte que coûte n'était plus essentiellement « le sol ».
+        </p>
+        <p facs="#facs_6_r_3">
+          Et pourtant : nous considérons encore – et j'espère que nous considérerons toujours – que notre patrie est « une terre d'asile ». Non un pays, mais une terre. Cela confirme qu'en dehors de toute matrice nourricière, « le sol de la patrie » reste un lieu, une étendue concrète, sur laquelle s'étend, jusqu'à ses frontières, un droit : le droit de toute personne humaine à être libre, et donc protégée, défendue, contre ceux qui le violent.
+        </p>
+        <p facs="#facs_6_r_4">
+          Par le détour des <bibl ref="#zbz-w.286">Droits de l'homme</bibl>, « le sol de la patrie » retrouve une nouvelle force, mais celle-ci dépend de nos décisions, de notre volonté. Chaque fois qu'un Droit de l'homme est violé sur ce sol, la défense qui lui est assurée par l'armée s'anémie en sens, en substance, en légitimité, en même temps que s'affaiblit la symbolique qui donne à la hiérarchie sa juste efficacité. Telle est la situation inévitable, dans un pays et pour une armée dont la force est vouée à défendre la liberté.
+        </p>
+        <p facs="#facs_6_r_5">
+          Il ne faut pas faire l'ange. Les <bibl ref="#zbz-w.286">Droits de l'homme</bibl> sont à la fois si absolument exigeants et si contraires au fonctionnement naturel de la force qu'ils ne sont pour ainsi dire jamais intégralement mis en œuvre. Le droit d'asile n'est jamais, et ne peut jamais être, illimité, surtout dans un pays aussi petit que le nôtre. C'est pourtant ce droit qui en légitime le plus lumineusement l'indépendance, comme aussi la force qui la défend ; et par conséquent, en lui donnant la plus grande extension possible, on renforce l'armée et on en nourrit le sens.
+        </p>
+        <p facs="#facs_6_r_6">
+          Il est en revanche difficile de comprendre ceux qui réclament l'extension du droit d'asile sur une terre qu'ils refusent de défendre. Comment offrir à des réfugiés poursuivis un abri dans sa propre maison, si on est décidé à les livrer sans coup férir à leurs poursuivants ?
+        </p>
+        <p>
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          C'est un grand privilège d'être citoyen d'un pays dont l'armée n'a, de toute évidence, qu'une fonction défensive. C'en est un autre que cette armée soit une armée de milice, et qu'elle ait réussi à devenir un instru
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          DIVISION DE CAMPAGNE
+        </p>
+        <p facs="#facs_7_r_2">
+          ment défensif moderne tout en le restant. C'en est un troisième que les délicats équilibres fédéralistes puissent en elle persister sans l'affaiblir. Pourtant, elle n'est pas encore assez ressentie comme étant l'armée de tous, chargée de la défense des libertés de tous et de chacun, jusque dans les contraintes de sa discipline. Peut-être la Défense générale aidera-t-elle à atteindre ce résultat.
+        </p>
+        <p>
+          <hi rendition="#i"> </hi> *<lb facs="#facs_7_l_3_1" n="N001" /><hi rendition="#i"> </hi> *<lb facs="#facs_7_l_3_2" n="N002" />*
+        </p>
+      </div>
+      </body></text>
+</TEI>

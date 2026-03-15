@@ -1,0 +1,54 @@
+{
+  "doc_id": "2180",
+  "reviewer": "agent-screening-v2",
+  "date": "2026-03-15",
+  "status": "APPROVED",
+  "layers": {
+    "L1_scan": {
+      "score": "ok",
+      "pages_inspected": [
+        1,
+        3
+      ],
+      "notes": "4pp Konferenzbeitrag. Gute Scan-Qualitaet."
+    },
+    "L2_ocr": {
+      "score": "ok",
+      "notes": "Franzoesischer Text korrekt. telenomine statt teleonomie moeglicherweise OCR-Fehler."
+    },
+    "L3_layout": {
+      "score": "ok",
+      "notes": "Zweispaltige Buchseiten korrekt segmentiert."
+    },
+    "L4_tei": {
+      "score": "warning",
+      "validator_warnings": [
+        "W10: 12 persName aber 0 orgName und 0 placeName"
+      ],
+      "notes": "VALID. Fehlende orgName/placeName inhaltlich begruendet."
+    },
+    "L5_reference": {
+      "score": "n/a"
+    },
+    "L6_entities": {
+      "score": "ok",
+      "counts": {
+        "persName": 12,
+        "orgName": 0,
+        "placeName": 0,
+        "bibl": 6
+      },
+      "notes": "Hersch, Zahler, Kant, Monod, Popper, Jaspers korrekt. Fehlende org/place durch abstrakten Textcharakter erklaerbar."
+    },
+    "L7_coherence": {
+      "score": "ok",
+      "notes": "Y a-t-il un plan d ensemble de la nature -- kohaerente philosophische Reflexion."
+    }
+  },
+  "findings": [
+    "W10 (fehlende orgName/placeName) ist inhaltlich begruendet",
+    "telenomine statt teleonomie moeglicherweise OCR-Fehler",
+    "Seitenzahlen 257-263 als eigene Absaetze"
+  ],
+  "overall_notes": "Saubere Edition. Validator-Warning W10 ist false positive fuer diesen Texttyp."
+}

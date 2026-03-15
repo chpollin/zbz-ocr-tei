@@ -1,0 +1,472 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Die Musik im Leben der Nichtmusiker</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2320</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Die Musik im Leben der Nichtmusiker</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1986</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:ok L5:n/a L6:ok L7:ok). persName ref=zbz-p.89 fuer Wahl (2x) -- False-Positive, Wahl ist deutsches Substantiv (Freiheit der Wahl).; persName ref=zbz-p.1251 fuer Mensch (2x) -- False-Positive, Gattungsbegriff.; Inhaltsverzeichnis (S.2) extrem granular segmentiert mit >60 einzelnen p-Elementen.</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="920" lry="1355">
+      <zone xml:id="facs_1_r_1" ulx="648" uly="620" lrx="764" lry="640" />
+      <zone xml:id="facs_1_r_2" ulx="142" uly="724" lrx="221" lry="746" />
+      <zone xml:id="facs_1_r_3" ulx="536" uly="1204" lrx="602" lry="1223" />
+      <zone xml:id="facs_1_r_4" ulx="141" uly="1223" lrx="242" lry="1242" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="920" lry="1355">
+      <zone xml:id="facs_2_r_1" ulx="32" uly="9" lrx="879" lry="186" />
+      <zone xml:id="facs_2_r_2" ulx="79" uly="225" lrx="202" lry="248" />
+      <zone xml:id="facs_2_r_3" ulx="449" uly="230" lrx="746" lry="257" />
+      <zone xml:id="facs_2_r_4" ulx="76" uly="250" lrx="323" lry="320" />
+      <zone xml:id="facs_2_r_5" ulx="452" uly="298" lrx="763" lry="336" />
+      <zone xml:id="facs_2_r_6" ulx="454" uly="340" lrx="781" lry="379" />
+      <zone xml:id="facs_2_r_7" ulx="453" uly="381" lrx="650" lry="423" />
+      <zone xml:id="facs_2_r_8" ulx="454" uly="422" lrx="764" lry="477" />
+      <zone xml:id="facs_2_r_9" ulx="454" uly="480" lrx="707" lry="522" />
+      <zone xml:id="facs_2_r_10" ulx="457" uly="522" lrx="779" lry="563" />
+      <zone xml:id="facs_2_r_11" ulx="454" uly="560" lrx="845" lry="606" />
+      <zone xml:id="facs_2_r_12" ulx="458" uly="604" lrx="796" lry="646" />
+      <zone xml:id="facs_2_r_13" ulx="457" uly="646" lrx="804" lry="700" />
+      <zone xml:id="facs_2_r_14" ulx="456" uly="702" lrx="759" lry="746" />
+      <zone xml:id="facs_2_r_15" ulx="458" uly="743" lrx="721" lry="776" />
+      <zone xml:id="facs_2_r_16" ulx="458" uly="780" lrx="610" lry="798" />
+      <zone xml:id="facs_2_r_17" ulx="456" uly="798" lrx="738" lry="822" />
+      <zone xml:id="facs_2_r_18" ulx="457" uly="817" lrx="796" lry="859" />
+      <zone xml:id="facs_2_r_19" ulx="458" uly="857" lrx="680" lry="876" />
+      <zone xml:id="facs_2_r_20" ulx="458" uly="879" lrx="563" lry="896" />
+      <zone xml:id="facs_2_r_21" ulx="458" uly="900" lrx="615" lry="920" />
+      <zone xml:id="facs_2_r_22" ulx="458" uly="921" lrx="635" lry="937" />
+      <zone xml:id="facs_2_r_23" ulx="460" uly="941" lrx="526" lry="956" />
+      <zone xml:id="facs_2_r_24" ulx="459" uly="961" lrx="690" lry="998" />
+      <zone xml:id="facs_2_r_25" ulx="460" uly="999" lrx="824" lry="1017" />
+      <zone xml:id="facs_2_r_26" ulx="459" uly="1019" lrx="764" lry="1057" />
+      <zone xml:id="facs_2_r_27" ulx="458" uly="1053" lrx="724" lry="1092" />
+      <zone xml:id="facs_2_r_28" ulx="460" uly="1148" lrx="792" lry="1236" />
+      <zone xml:id="facs_2_r_29" ulx="461" uly="1235" lrx="615" lry="1257" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="920" lry="1355">
+      <zone xml:id="facs_3_r_1" ulx="186" uly="89" lrx="748" lry="196" />
+      <zone xml:id="facs_3_r_2" ulx="110" uly="353" lrx="878" lry="450" />
+      <zone xml:id="facs_3_r_3" ulx="474" uly="554" lrx="878" lry="798" />
+      <zone xml:id="facs_3_r_4" ulx="47" uly="558" lrx="455" lry="1044" />
+      <zone xml:id="facs_3_r_5" ulx="474" uly="793" lrx="882" lry="1281" />
+      <zone xml:id="facs_3_r_6" ulx="47" uly="1040" lrx="455" lry="1285" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="920" lry="1355">
+      <zone xml:id="facs_4_r_1" ulx="474" uly="37" lrx="880" lry="104" />
+      <zone xml:id="facs_4_r_2" ulx="46" uly="38" lrx="458" lry="440" />
+      <zone xml:id="facs_4_r_3" ulx="475" uly="103" lrx="885" lry="509" />
+      <zone xml:id="facs_4_r_4" ulx="48" uly="435" lrx="459" lry="726" />
+      <zone xml:id="facs_4_r_5" ulx="477" uly="501" lrx="885" lry="728" />
+      <zone xml:id="facs_4_r_6" ulx="859" uly="1298" lrx="891" lry="1327" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <figure facs="#facs_1_r_1">
+          <head>SMPI</head>
+        </figure>
+        <figure facs="#facs_1_r_2">
+          <head><bibl ref="#zbz-w.394">Schweizer musikpädagogische Blätter</bibl></head>
+        </figure>
+        <figure facs="#facs_1_r_3">
+          <head>SSPN</head>
+        </figure>
+        <figure facs="#facs_1_r_4">
+          <head><bibl ref="#zbz-w.395">Cahiers suisses de pédagogie musicale</bibl></head>
+        </figure>
+        <p>
+          74. Jahrgang/74ᵉ année
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          September/Septembre 1986
+        </p>
+        <p>
+          3
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          SMPD
+        </p>
+        <p facs="#facs_2_r_2">
+          <bibl ref="#zbz-w.394">Schweizer musikpädagogische Blätter</bibl>
+        </p>
+        <p facs="#facs_2_r_3">
+          SSPN
+        </p>
+        <p facs="#facs_2_r_4">
+          <bibl ref="#zbz-w.395">Cahiers suisses de pédagogie musicale</bibl>
+        </p>
+        <p facs="#facs_2_r_5">
+          Nr./No 3 1986
+        </p>
+        <p facs="#facs_2_r_6">
+          74. Jahrgang/74ᵉ année
+        </p>
+        <p facs="#facs_2_r_7">
+          erscheinen vierteljährlich/
+        </p>
+        <p facs="#facs_2_r_8">
+          paraissent tous les trois mois
+        </p>
+        <p facs="#facs_2_r_9">
+          Herausgegeben vom Schweizerischen
+        </p>
+        <p facs="#facs_2_r_10">
+          Musikpädagogischen Verband/Publiés par
+        </p>
+        <p facs="#facs_2_r_11">
+          la <orgName ref="#zbz-o.374">Société suisse de pédagogie musicale</orgName>
+        </p>
+        <p facs="#facs_2_r_12">
+          Redaktion: Dr. Bernhard Billeter,
+        </p>
+        <p facs="#facs_2_r_13">
+          Schäracher 14, 8053 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_2_r_14">
+          Assistenz: Dr. Dorette Hug
+        </p>
+        <p facs="#facs_2_r_15">
+          Rédaction romande: <persName ref="#zbz-p.950">A. Louis Burkhalter</persName>,
+        </p>
+        <p facs="#facs_2_r_16">
+          12, chemin de Pomey, 1800 <placeName ref="#zbz-l.358">Vevey</placeName>
+        </p>
+        <p facs="#facs_2_r_17">
+          Musikpädagogische Arbeitsblätter/Fiches
+        </p>
+        <p facs="#facs_2_r_18">
+          pédagogiques: Redaktion/Rédaction:
+        </p>
+        <p facs="#facs_2_r_19">
+          V. Ragni, Chemin de la Birse, 2822 <placeName ref="#zbz-l.359">Courroux</placeName>
+        </p>
+        <p facs="#facs_2_r_20">
+          Redaktionskommission/
+        </p>
+        <p facs="#facs_2_r_21">
+          <orgName ref="#zbz-o.20">Commission</orgName> de rédaction:
+        </p>
+        <p facs="#facs_2_r_22">
+          Josef Roman <persName ref="#zbz-p.1297">Widmer</persName>, Dr. Peter Benary,
+        </p>
+        <p facs="#facs_2_r_23">
+          <persName ref="#zbz-p.954">Claire Buenzod</persName> und Dr. Max Favre
+        </p>
+        <p facs="#facs_2_r_24">
+          Verlag und Inseratenannahme/
+        </p>
+        <p facs="#facs_2_r_25">
+          Edition et réception des annonces:
+        </p>
+        <p facs="#facs_2_r_26">
+          Verbandsverwaltung SMPV/
+        </p>
+        <p facs="#facs_2_r_27">
+          Administration SSPM,
+        </p>
+        <p facs="#facs_2_r_28">
+          Hanna Brandenberger, Forchstr. 376,
+        </p>
+        <p facs="#facs_2_r_29">
+          8008 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p>
+          Redaktionsschluss: 1. Februar, 1. Mai,
+        </p>
+        <p>
+          1. August, 1. November/
+        </p>
+        <p>
+          Délais d'envois des articles: 1er février,
+        </p>
+        <p>
+          1er mai, 1er août, 1er novembre
+        </p>
+        <p>
+          Inseratenannahmeschluss: 10. Februar, 10. Mai,
+        </p>
+        <p>
+          10. August, 10. November/
+        </p>
+        <p>
+          Délais d'envoi des annonces: 10 février, 10 mai,
+        </p>
+        <p>
+          10 août, 10 novembre
+        </p>
+        <p>
+          Jahresabonnement Fr. 27.-,
+        </p>
+        <p>
+          Einzelnummer Fr. 8.-
+        </p>
+        <p>
+          Abonnement annuel Fr. 27.-,
+        </p>
+        <p>
+          chaque numéro Fr. 8.-
+        </p>
+        <p>
+          Inseratenpreise/Tarif des annonces:
+        </p>
+        <p>
+          1 Seite/page Fr. 540.-
+        </p>
+        <p>
+          ½ Seite/page Fr. 300.-
+        </p>
+        <p>
+          ¼ Seite/page Fr. 180.-
+        </p>
+        <p>
+          ⅛ Seite/page Fr. 100.-
+        </p>
+        <p>
+          ⅛ Seite/page Fr. 70.-
+        </p>
+        <p>
+          Umschlag 25% Zuschlag/
+        </p>
+        <p>
+          Couverture 25% de supplément
+        </p>
+        <p>
+          Druck/Imprimerie:
+        </p>
+        <p>
+          Fotorotar AG, <placeName ref="#zbz-l.360">Egg</placeName>/<placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p>
+          Inhalt/Table des matières
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>:
+        </p>
+        <p>
+          <bibl ref="#zbz-w.396">Die Musik im Leben der Nichtmusiker</bibl> 114
+        </p>
+        <p>
+          <persName ref="#zbz-p.944">Armin Schibler</persName>:
+        </p>
+        <p>
+          Gedanken zum Œuvre von <persName ref="#zbz-p.945">Frank Martin</persName> 116
+        </p>
+        <p>
+          <persName ref="#zbz-p.946">Dorothea Baumann</persName>:
+        </p>
+        <p>
+          <persName ref="#zbz-p.947">Georg Friedrich Händel</persName> 119
+        </p>
+        <p>
+          <persName ref="#zbz-p.948">Daniel Spiegelberg</persName>:
+        </p>
+        <p>
+          De l'interprétation de <persName ref="#zbz-p.777">J. S. Bach</persName> sur le
+        </p>
+        <p>
+          piano de concert actuel 134
+        </p>
+        <p>
+          <persName ref="#zbz-p.949">Tatiana Nicolaeva</persName>:
+        </p>
+        <p>
+          L'opinion de quelques pianistes 138
+        </p>
+        <p>
+          <persName ref="#zbz-p.950">A. Louis Burkhalter</persName>:
+        </p>
+        <p>
+          Comment ils interprètent <persName ref="#zbz-p.777">Bach</persName> au piano 139
+        </p>
+        <p>
+          <persName ref="#zbz-p.951">Dimitry Markevitch</persName>:
+        </p>
+        <p>
+          L'authenticité en musique est-elle un mythe? 140
+        </p>
+        <p>
+          <persName ref="#zbz-p.952">Wulf Konold</persName>:
+        </p>
+        <p>
+          Die Streichquartette von <persName ref="#zbz-p.953">Othmar Schoeck</persName> 151
+        </p>
+        <p>
+          <persName ref="#zbz-p.954">Claire Buenzod</persName>:
+        </p>
+        <p>
+          La musique dans les nouveaux programmes
+        </p>
+        <p>
+          de l'école vaudoise 157
+        </p>
+        <p>
+          <persName ref="#zbz-p.955">Rita Wolfensberger</persName>: Musikerziehung in der
+        </p>
+        <p>
+          Erwachsenenbildung. D-A-CH-Tagung 160
+        </p>
+        <p>
+          B. B.: Schulversuche mit erweitertem
+        </p>
+        <p>
+          Musikunterricht 161
+        </p>
+        <p>
+          10 Jahre Musica Riva 162
+        </p>
+        <p>
+          Gründung des <orgName ref="#zbz-o.760">Schweizer</orgName> Musikinstituts 163
+        </p>
+        <p>
+          Gesucht: ein neuer würdiger Aufstellungsort für
+        </p>
+        <p>
+          die Tonhalle-Orgel in <placeName ref="#zbz-l.45">Zürich</placeName> 163
+        </p>
+        <p>
+          Musiknoten/Editions musicales 163
+        </p>
+        <p>
+          Bücher/Livres 170
+        </p>
+        <p>
+          Schallplatten/Disques 176
+        </p>
+        <p>
+          Diskussion/Points de vue 179
+        </p>
+        <p>
+          Autoren: 180
+        </p>
+        <p>
+          Musikpädagogische Arbeitsblätter/
+        </p>
+        <p>
+          Fiches pédagogiques 143–149
+        </p>
+        <p>
+          Nächste Nummer/Prochain numéro: Die andere Musik
+        </p>
+        <p>
+          <persName ref="#zbz-p.956">Pierre Sarbach</persName>:
+        </p>
+        <p>
+          Zum 150. Geburtstag von <persName ref="#zbz-p.957">Theodor Fröhlich</persName> Nr. 1/1987
+        </p>
+        <p>
+          <persName ref="#zbz-p.958">Isabelle Rumley</persName>: <persName ref="#zbz-p.959">Liszt</persName>, précurseur du
+        </p>
+        <p>
+          cinéma sonore? No 1/1987
+        </p>
+        <p>
+          Titelbild/Frontispice:
+        </p>
+        <p>
+          <persName ref="#zbz-p.953">Othmar Schoeck</persName> von <persName ref="#zbz-p.960">Hans Münch</persName>, 1956
+        </p>
+        <p>
+          Mit freundlicher Erlaubnis des Atlantis
+        </p>
+        <p>
+          Musikbuchverlags dem Buch von <persName ref="#zbz-p.961">Werner Vogel</persName>
+        </p>
+        <p>
+          über <persName ref="#zbz-p.953">Othmar Schoeck</persName> (1976) entnommen.
+        </p>
+        <p>
+          Cartoon: <persName ref="#zbz-p.962">Curt Goetz</persName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_2">
+          <bibl ref="#zbz-w.396">Die Musik im Leben der Nichtmusiker</bibl>
+        </p>
+        <p facs="#facs_3_r_3">
+          An der diesjährigen D-A-CH-Tagung in <placeName ref="#zbz-l.361">Blonay</placeName> über dem <placeName ref="#zbz-l.362">Genfersee</placeName> hielt die <placeName ref="#zbz-l.5">Genfer</placeName> Philosophin <persName ref="#zbz-p.2">Jeanne Hersch</persName> das Eröffnungsreferat in der <orgName ref="#zbz-o.71">Kirche</orgName> <placeName ref="#zbz-l.363">St-Légier</placeName>, in deren Friedhof <persName ref="#zbz-p.963">Paul Hindemith</persName> begraben liegt. Kein Tonband hielt die einmalige freie Rede fest. So sei es versucht, sie aus Stichworten knapp nachzuzeichnen.
+        </p>
+        <p facs="#facs_3_r_4">
+          B.B.
+        </p>
+        <p facs="#facs_3_r_5">
+          Als Musiklehrer scheinen Sie mir besonders mitleidwürdig: von Natur aus sensibel, müssen Sie sich alle Unvollkommenheiten Ihrer Schüler anhören. Wenn Sie Erwachsene unterrichten, so steht ein Ziel ganz sicher nicht im Mittelpunkt: eine Konzertlaufbahn. Sicher erstreben Ihre Schüler und Sie mit Ihnen Fortschritte in ihrem Fach. Aber der Lehrer hat noch ein anderes Ziel, möchte im Schüler noch etwas erreichen: nämlich besser zu hören. Nicht anders verhält es sich bei Erwachsenen, die Malkurse besuchen: Sie lernen malen, um Bilder besser anzuschauen. Sie malen zum Beispiel Bäume auf sehr verschiedene Weise und vergleichen diese dann mit Bildern von Bäumen, die irgendwann im Laufe der Kunstgeschichte gemalt worden sind. Das Zuhören setzt eine Haltung voraus: nämlich nicht vorher zu wissen meinen, was der andere sagen will. Es ist eine Haltung der Geduld, der Wachheit und des Schweigens. Beim Musikhören verhält es sich gleich.
+        </p>
+        <p facs="#facs_3_r_6">
+          Für wen ist die Musik da: für die Musiker oder für die Nichtmusiker? Ich meine: für die Nichtmusiker, die Zuhörenden. Verteidige ich damit die Passivität? Überlegen wir uns zuerst den Gegensatz aktiv – passiv. Es gibt Leute, die beim Sprechen passiv sind, die Lärm machen, ja einen Krawall, aber dabei in der Passivität verharren. Anderseits gibt es eine aktive Empfänglichkeit. Bei ausübenden Musikern können wir diesen Unterschied wahrnehmen. Es gibt Musiker, die im Moment des Spielens aktiv sind, und andere, die sich vorher einmal eine Interpretation festgelegt haben, aber im Moment des Spielens passiv bleiben. Sie setzen sich nicht der Gefahr aus, dem Wagnis des Gelingens oder Misslingens, dem Abenteuer, sich dabei allenfalls zu ändern. Das ist ja der grosse Mangel der Schallplatte: Auf ihr gibt es keine «Todesgefahr». Beim Schallplattenhören entwickelt sich eine besondere Art des Zuhörens, die die Einmaligkeit des Ereignisses der Musik nicht mehr achtet.
+        </p>
+        <p>
+          Was meine ich unter aktiver Empfänglichkeit? Es geschieht etwas im Selbst, das mit Freiheit zu tun hat, und zwar Freiheit trotz dem Zwang, hier zu sitzen, sich ruhig zu verhalten und sich etwas Bestimmtes anzuhören. Beim Musikhören ereignet sich das Erleben der grössten Freiheit. Es ist nicht die Freiheit der <persName ref="#zbz-p.89">Wahl</persName>, sondern eine Art Freiheit der Vervielfältigung. Es ist ein Atmen mit dem Spiel, eine Weise, sich loszulassen, die an die Stelle des Eigenen tritt. Darin liegt nur ein scheinbarer Widerspruch: Die Freiheit, die ich meine, ist nicht eine Freiheit der <persName ref="#zbz-p.89">Wahl</persName>, nicht Willkür, sondern sie trägt in sich den Charakter der Notwendigkeit. Wenn einer nachher sagt: «Ich konnte nicht anders», dann ist er frei gewesen. Nun ist Musik ja nie vollständig voraussehbar – wäre sie es, so wäre sie langweilig. Aber sobald sie erklungen ist, ist sie notwendig und trägt in sich eine Gesetzmäßigkeit. Im Leben erlebt man das nur selten, in der Musik aber immer wieder.
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Musik entwickelt sich in der <bibl ref="#zbz-w.705">Zeit</bibl>. Aber die <bibl ref="#zbz-w.705">Zeit</bibl> der Musik ist nicht dieselbe wie vor und nach dem Konzert. Auch in der Malerei ist der Raum ein anderer als der Raum der Natur: es ist ein gebundener, beschränkter Raum und deshalb ein freier. <persName ref="#zbz-p.1">Karl Jaspers</persName> sagt, die Musik liege «quer zur <bibl ref="#zbz-w.705">Zeit</bibl>», sie sei eine zeitlose <bibl ref="#zbz-w.705">Zeit</bibl>, eine <bibl ref="#zbz-w.705">Zeit</bibl>, die nicht vergeht. Denn jede Gegenwart der Musik enthält in sich, was vorher gespielt wurde und was noch kommen wird. Erziehung zur Musik vermittelt diese Erfahrung. Dabei handelt es sich nicht nur um das Gedächtnis: Man könnte ja das Gespielte nicht alles wiederholen. Das trifft vor allem beim Nichtmusiker zu. Aber auch der Musiker soll beim Musikhören nicht nur sein klares Gedächtnis einsetzen, weil das Erleben über das Verstandesmässige hinausgeht.
+        </p>
+        <p facs="#facs_4_r_2">
+          Musik ereignet sich zwar in der <bibl ref="#zbz-w.705">Zeit</bibl> und muss deshalb einen Anfang und ein Ende haben; aber das stört eher. Wichtiger ist die Gegenwart. Und zwar ist es in der Musik nicht eine punktuelle Gegenwart zwischen Vergangenheit und Zukunft, sondern gleichsam ein «dicker», ein breiter Augenblick, ein Augenblick von unbestimmter Dauer, man könnte sagen: eine Miniatur der Ewigkeit. Ewigkeit ist ja nicht als eine sehr, sehr lange Dauer zu bestimmen, sie ist keine ausgestreckte Zeitlichkeit, sondern sie ist diese Art Augenblick, der in sich alles Vorherige und Nachherige enthält.
+        </p>
+        <p facs="#facs_4_r_3">
+          Wir erleben in der Musik die Miniatur der Ewigkeit. Und so wirkt die Musik lösend, sie bewirkt eine Katharsis.
+        </p>
+        <p facs="#facs_4_r_4">
+          Inhalt eines grossen Bezirkes der Musik ist das Leiden. Warum gehen wir aber dann hin, Musik zu hören, auch wenn wir im Leben schon genug zu erdulden haben? Weil die Musik das Leiden auflöst in der Katharsis. Und hier zeigt sich wieder die Identität von Freiheit und Notwendigkeit. Die Musik erzieht dazu, mehr menschlich zu sein. Die Musik hat wie der <persName ref="#zbz-p.1251">Mensch</persName> eine Seele und einen Körper. Wichtig ist weder das eine noch das andere allein, sondern das Wörtchen und, das beides zusammenbindet. Das ermöglicht der Musik, den Menschen zu sich selbst zu führen. Es gibt allerdings auch eine Musik, die Flucht vor sich selbst ermöglicht. Wir sind täglich solcher Musik ausgesetzt. Das ist eine eigentliche Verkehrung der Musik, von der wir hier nicht sprechen mögen.
+        </p>
+        <p facs="#facs_4_r_5">
+          Alle Widersprüche des Menschen finden sich wieder in seiner Musik. Wie jeder <persName ref="#zbz-p.1251">Mensch</persName> seiner Herkunft verpflichtet und in ihr verwurzelt ist, so kann einerseits von einer Heimat der Musik gesprochen werden. Aber dass andererseits der <persName ref="#zbz-p.1251">Mensch</persName> zutiefst heimatlos ist auf seinem Weg von der Geburt bis zum Tod, das finden wir wieder und erleben wir in seiner Musik. So könnten wir am Schluss auch von der Heimatlosigkeit der Musik sprechen.
+        </p>
+        <p facs="#facs_4_r_6">
+          115
+        </p>
+      </div>
+      </body></text>
+</TEI>

@@ -1,0 +1,49 @@
+{
+  "doc_id": "1990",
+  "reviewer": "quality-screen-manual",
+  "date": "2026-03-15",
+  "tier": 2,
+  "pages": 6,
+  "status": "NEEDS_REVIEW",
+  "pages_inspected": [1, 4],
+  "validator": "VALID (0 errors, 0 warnings)",
+  "errors": 1,
+  "warnings": 1,
+  "findings": [
+    {
+      "severity": "info",
+      "code": "L1",
+      "msg": "Overlay S.1: Zeitschriften-Cover Labor+Sprechstunde, korrekt erfasst"
+    },
+    {
+      "severity": "info",
+      "code": "L4",
+      "msg": "Overlay S.4: Zweispalten-Layout, Regionen korrekt"
+    },
+    {
+      "severity": "error",
+      "code": "E3",
+      "msg": "S.2 Impressum: 'Jeanne Sommerhalder' zweimal als persName ref=zbz-p.2 (Jeanne Hersch) getaggt -- falsch, das ist eine andere Person"
+    },
+    {
+      "severity": "warning",
+      "code": "S4",
+      "msg": "S.2: Extrem fragmentiertes Layout (52 Zonen auf einer Seite), Inhaltsverzeichnis + Impressum + Werbung als Einzelzeilen"
+    },
+    {
+      "severity": "info",
+      "code": "T1",
+      "msg": "Sprache deu korrekt, Hersch-Artikel beginnt erst auf spaeteren Seiten"
+    },
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 21p 15o 14l 29w = 79, hohe Dichte fuer Zeitschriftenausgabe"
+    },
+    {
+      "severity": "info",
+      "code": "K1",
+      "msg": "Kohaerenz: Artikel ueber Krankheit/Sport/Gesundheit, lesbar und koharent"
+    }
+  ]
+}
