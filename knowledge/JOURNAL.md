@@ -102,15 +102,47 @@ Seiten ohne Layout-Zones bekamen `<pb>` aber keine `<surface>`. Fix: Leere surfa
 **L10: Interne IDs (zbz-p/o/l/w.N) als primaere Referenz im TEI.**
 Entity-Tags bekommen sofort die interne ID als ref-Attribut. Von dort linkt der Entity Index weiter auf Wikidata/GND. Kein Entity bleibt ohne ID wenn es im Index steht.
 
+143. head-nach-Content Fix + fehlende div-types:
+   - Nach div-Merge koennen Seiten-Headers (`<head>`) mitten im div stehen (TEI verbietet das)
+   - Fix C in `_fix_post_assembly_schema()`: head nach Content wird zu `<p>` konvertiert
+   - `head` zu `block_tags` in `_fix_orphaned_body_children()` hinzugefuegt
+   - `VALID_DIV_TYPES` um speech, conference, letter, preface ergaenzt
+   - Learning L11: div-Merge erzeugt Folgeproblem mit verwaisten heads
+
+144. `--reassemble` Flag in tei_unified.py:
+   - Nur Step 1+3 neu (mit allen Fixes), Step 2 aus Cache (kein Gemini-Call)
+   - Ermoeglicht kostenlose Re-Assembly aller Docs nach Pipeline-Aenderungen
+
+145. Production Run + Reassembly abgeschlossen:
+   - Phase B: 185 fehlende Docs erzeugt (285/285 komplett, 4.108 Seiten, ~2h, ~$11 Gemini)
+   - Reassembly: Alle 285 Docs mit `--reassemble --ner` re-assembled
+   - Ergebnis: **284/285 VALID** (99.6%), 1 Doc mit R5 (type="sub-section")
+
+146. Arbeitsbericht (`Arbeitsbericht.md`) neu geschrieben:
+   - Fokus auf Ergebnisse statt Pipeline-Interna
+   - Strategische Behauptungen und Architekturentscheidungen entfernt
+   - Section 8 "Was die ZBZ als Naechstes tun kann" mit konkreten Handlungen
+   - TEI-Elementnamen zurueck (Fachsprache der Edition, nicht Implementierungsdetail)
+
+147. Promptotyping-Werkzeuge eingerichtet:
+   - `Promptotyping-Tools.md`: Methodische Einbettung, ausfuehrliche Beschreibung
+   - `CLAUDE-COMMANDS.md`: Operative Werkzeuge fuer den Promptotyping-Zyklus
+   - `CLAUDE.md` aktualisiert: Verweist auf CLAUDE-COMMANDS.md
+
 ### Geaenderte Dateien
 - scripts/tei/tei_mapping_prompt.py (_load_entity_entries() mit Typ+ID, Stopwort-Filter, Prompt typgruppiert)
 - scripts/tei/tei_generator.py (annotate_entities() typkorrekt mit ref)
 - scripts/tei/tei_step2.py (reannotate_entities() typkorrekt mit ref)
-- scripts/tei/tei_step3.py (Sprach-Mapping, facsimile/pb Fix, div-Merge, Genre-type)
-- scripts/tei/tei_validator.py (Refactoring, W1-W11, Referenz-Vergleich)
-- scripts/tei/tei_unified.py (Validation Default, HTML-Report, Genre in Metadata)
+- scripts/tei/tei_step3.py (Sprach-Mapping, facsimile/pb Fix, div-Merge, Genre-type, head-to-p Fix)
+- scripts/tei/tei_validator.py (Refactoring, W1-W11, Referenz-Vergleich, compare-ref)
+- scripts/tei/tei_unified.py (Validation Default, HTML-Report, Genre in Metadata, --reassemble)
+- scripts/config.py (VALID_DIV_TYPES erweitert)
 - scripts/server/curation_server.py (2 neue Validation-Endpoints, register.html)
 - README.md (Pipeline-Diagramm, Curation-Abschnitt, Validation-CLI)
+- Arbeitsbericht.md (komplett neu geschrieben)
+- Promptotyping-Tools.md (neu)
+- CLAUDE-COMMANDS.md (neu)
+- CLAUDE.md (Commands-Verweis aktualisiert)
 - knowledge/ (PLAN, PIPELINE, CURATION, DECISIONS, PROJEKT aktualisiert)
 
 ---

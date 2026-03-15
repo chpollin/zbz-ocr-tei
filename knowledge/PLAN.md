@@ -99,7 +99,7 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [x] LINE breaks (`<lb/>`) from OCR line structure (in unified Step 1)
 - [x] Special document types via genre-conditional mapping table (10 genres)
 - [x] **Qualitaetsfixes** (E32): Entity Re-Annotation, Prompt-Tuning, Interview-Speaker-Erkennung
-- [ ] Unified TEI production run -- **100/286 done** (restliche 185 Docs, ~$55 Gemini)
+- [x] Unified TEI production run -- **285/285 done** (284 schema-valide, 1 mit R5 type="sub-section")
 - [x] NER Entity Integration: 49/286 Docs mit Entity-Markup (`output/tei_ner/`)
 - [ ] Re-Injection nach Unified-TEI-Completion fuer alle 286 Docs
 

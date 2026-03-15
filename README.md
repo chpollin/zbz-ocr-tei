@@ -23,9 +23,9 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XM
 | Layout QA/Detect | Gemini Flash Lite | Done |
 | PAGE-XML + METS | Rule-based generator | Done |
 | NER extraction | Gemini Flash Lite (6 entity types) | Done |
-| Entity Index + Wikidata/GND linking | Wikidata API + TEI-XML indices | In progress |
-| TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | In progress |
-| TEI NER injection | Rule-based annotation | In progress |
+| Entity Index + Wikidata/GND linking | Wikidata API + TEI-XML indices | Done (24% linked) |
+| TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
+| TEI NER injection | Rule-based annotation + Entity Index | Done (285/285) |
 | **Curation (Human-in-the-Loop)** | **Browser WYSIWYG + FastAPI server** | **Done** |
 | Review + Publication | Status workflow + publish to GitHub Pages | Done |
 | Evaluation + Dashboard | CER/WER + interactive QA UI | Done |

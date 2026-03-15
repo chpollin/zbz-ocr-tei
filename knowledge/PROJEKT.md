@@ -61,8 +61,8 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M1 | OCR validated | >=93% accuracy all types | Done (see [TESTPLAN](TESTPLAN.md) + Dashboard) |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done |
 | M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Done** (285 Docs, 11,685 Entities, Wikidata ~15% ongoing) |
-| M4 | TEI-XML | DTA-compliant TEI, schema-valid | **In Progress** (100/286 unified, typkorrekte Entity-Tags mit internen IDs) |
-| M5 | Production run | 286 docs processed, spot-check QA passed | Pending (Phase 6) |
+| M4 | TEI-XML | DTA-compliant TEI, schema-valid | **Done** (285/285 unified, 284 schema-valide, typkorrekte Entity-Tags mit internen IDs) |
+| M5 | Production run | 286 docs processed, spot-check QA passed | **In Progress** (285/285 erzeugt, Quality Sweep + Kurationspilot ausstehend) |
 
 ### Dependencies
 
@@ -89,8 +89,8 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 | Document classification | Done | `scripts/classify_docs.py` (E27) |
 | NER Extraction | **Done** | `scripts/ner/` (7 Module, E34/E35). 285/286 Docs, 11,685 Entities, 26,197 Mentions |
 | Entity Index | **Done** | 4,100 Eintraege in `data/entities/`, 341 mit Wikidata. Linking laeuft |
-| TEI NER Injection | **49/286** | `scripts/ner/ner_inject_tei.py`. 49 Docs mit Entity-Markup in `output/tei_ner/` |
-| **Unified TEI Pipeline** | **100/286** | `scripts/tei/tei_unified.py` (E32/E37/E38/E39). Restliche 185 Docs pending (~$55 Gemini) |
+| TEI NER Injection | **285/285** | Entity-Tags mit internen IDs (zbz-p/o/l/w.N) direkt in Step 1 |
+| **Unified TEI Pipeline** | **285/285** | `scripts/tei/tei_unified.py` (E32/E37-E40). 284/285 schema-valide |
 | TEI Validator | Done | `scripts/tei/tei_validator.py`: RelaxNG + 8 Projekt-Regeln |
 | Evaluation + Dashboard | Done | `scripts/evaluate_ocr.py` + `docs/index.html` |
 | Digitale Edition + Curation | Done | `docs/` (E33) + Curation Server (E36). Details: [EDITION](EDITION.md), [CURATION](CURATION.md) |

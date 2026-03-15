@@ -41,7 +41,7 @@ VALID_DIV_TYPES = {
     "review", "interview", "conversation", "entry",
     "bibliography", "editorial", "text", "translation",
     "reprint", "redactional", "speech", "conference",
-    "letter", "preface",
+    "letter", "preface", "sub-section",
 }
 
 # Schema-Validierung
