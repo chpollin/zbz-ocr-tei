@@ -13,25 +13,52 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 def _load_entity_names() -> list[str]:
-    """Laedt Entity-Namen aus dem Entity Index (Personen + Organisationen)."""
+    """Laedt Entity-Namen aus dem Entity Index (alle Typen). Legacy-API."""
+    return list(_load_entity_entries().keys())
+
+
+# Typ -> TEI-Tag Mapping (gleich wie ENTITY_TEI_MAP in ner_inject_tei.py)
+_TYPE_TO_TAG = {
+    "person": "persName",
+    "organization": "orgName",
+    "place": "placeName",
+    "work": "bibl",
+    "event": "name",
+}
+
+
+def _load_entity_entries() -> dict[str, tuple[str, str]]:
+    """Laedt Entity-Namen mit TEI-Tag und interner ID aus dem Index.
+
+    Returns:
+        {name: (tei_tag, xml_id)} z.B.
+        {"Karl Jaspers": ("persName", "zbz-p.1"),
+         "Genf": ("placeName", "zbz-l.42"),
+         "UNO": ("orgName", "zbz-o.15")}
+    """
     try:
         from scripts.ner.entity_index import EntityIndex
         index = EntityIndex()
         index.load_all()
-        names = set()
+        entries = {}
         for entry in index.entries.values():
-            if entry.entity_type in ("person", "organization"):
-                names.add(entry.main_name)
-                for v in entry.variants:
-                    if len(v) > 3:
-                        names.add(v)
-        return sorted(names)
+            tei_tag = _TYPE_TO_TAG.get(entry.entity_type, "name")
+            xml_id = entry.xml_id
+            # Hauptname
+            if entry.main_name and len(entry.main_name) > 2:
+                entries[entry.main_name] = (tei_tag, xml_id)
+            # Varianten (nur >3 Zeichen, Kurzformen vermeiden)
+            for v in entry.variants:
+                if len(v) > 3 and v not in entries:
+                    entries[v] = (tei_tag, xml_id)
+        return entries
     except Exception:
-        return [
-            "Karl Jaspers", "Jaspers", "Jeanne Hersch", "Hersch",
-            "Bergson", "Kierkegaard", "Heidegger", "Kant",
-            "Platon", "Sartre", "Hannah Arendt",
-        ]
+        return {
+            "Karl Jaspers": ("persName", "zbz-p.1"),
+            "Jaspers": ("persName", "zbz-p.1"),
+            "Jeanne Hersch": ("persName", "zbz-p.2"),
+            "Hersch": ("persName", "zbz-p.2"),
+        }
 
 
 # ---------------------------------------------------------------------------
@@ -261,21 +288,43 @@ GENRE-SPECIFIC RULES (Editorial):
 # ---------------------------------------------------------------------------
 
 def build_known_entities_block() -> str:
-    """Formatiert die bekannten Entitaeten als Prompt-Block.
+    """Formatiert die bekannten Entitaeten als Prompt-Block, nach Typ gruppiert.
 
-    Nur Namenserkennung -- keine Authority-IDs im Prompt.
-    IDs werden spaeter durch ner_inject_tei aus dem Entity Index gesetzt.
+    Jeder Name hat den korrekten TEI-Tag-Typ und eine interne ID als ref.
     """
-    lines = ["KNOWN ENTITIES (tag these names with <persName> when encountered):"]
-    # Dedupliziere: gleiche Personen gruppieren (laengere Namen zuerst)
-    seen = set()
-    for name in sorted(_load_entity_names(), key=len, reverse=True):
-        if name not in seen:
-            lines.append(f"  {name}")
-            seen.add(name)
+    entries = _load_entity_entries()
 
-    lines.append("  Tag persons with <persName>Name</persName> (no ref attribute).")
-    lines.append("  Tag organizations with <orgName>Name</orgName> (no ref attribute).")
+    # Nach Typ gruppieren
+    by_type = {}
+    for name, (tei_tag, xml_id) in entries.items():
+        by_type.setdefault(tei_tag, []).append(name)
+
+    type_labels = {
+        "persName": "PERSONS",
+        "orgName": "ORGANIZATIONS",
+        "placeName": "PLACES",
+        "bibl": "WORKS",
+    }
+
+    lines = ["KNOWN ENTITIES (tag with the correct element type):"]
+    for tei_tag in ("persName", "orgName", "placeName", "bibl"):
+        names = by_type.get(tei_tag, [])
+        if not names:
+            continue
+        label = type_labels.get(tei_tag, tei_tag)
+        # Laengere Namen zuerst, max 150 pro Typ
+        sorted_names = sorted(set(names), key=len, reverse=True)[:150]
+        lines.append(f"  {label} -> <{tei_tag}>:")
+        for name in sorted_names:
+            lines.append(f"    {name}")
+
+    lines.append("")
+    lines.append("  Rules:")
+    lines.append("  - Tag persons with <persName>Name</persName>")
+    lines.append("  - Tag organizations with <orgName>Name</orgName>")
+    lines.append("  - Tag places with <placeName>Name</placeName>")
+    lines.append("  - Tag works/publications with <bibl>Title</bibl>")
+    lines.append("  - Do NOT add ref attributes (added later by NER pipeline)")
     return "\n".join(lines)
 
 

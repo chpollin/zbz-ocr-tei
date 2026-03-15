@@ -59,22 +59,24 @@ def md_to_tei_inline(text: str) -> str:
 
 
 def annotate_entities(text: str) -> str:
-    """Ersetzt bekannte Entitaeten durch TEI-persName-Tags.
+    """Ersetzt bekannte Entitaeten durch typkorrekte TEI-Tags mit interner ID.
 
-    Taggt nur Namen (ohne ref-Attribut). Authority-IDs (GND/Wikidata)
-    werden spaeter durch ner_inject_tei aus dem Entity Index gesetzt.
+    Nutzt den Entity Index fuer korrekten Tag-Typ (persName/orgName/placeName/bibl)
+    und setzt ref-Attribut mit interner ID (#zbz-p.N, #zbz-o.N, #zbz-l.N, #zbz-w.N).
     Laengere Namen zuerst, damit "Karl Jaspers" vor "Jaspers" matched.
     Verhindert verschachtelte Tags durch Placeholder-Technik.
     """
-    from scripts.tei.tei_mapping_prompt import _load_entity_names
-    sorted_names = sorted(_load_entity_names(), key=len, reverse=True)
+    from scripts.tei.tei_mapping_prompt import _load_entity_entries
+    entries = _load_entity_entries()
+    sorted_names = sorted(entries.keys(), key=len, reverse=True)
 
     # Phase 1: Ersetze durch Placeholder (damit kuerzere Matches nicht
     # innerhalb von bereits ersetzten laengeren Matches greifen)
     placeholders = {}
     counter = 0
     for name in sorted_names:
-        tag = f'<persName>{name}</persName>'
+        tei_tag, xml_id = entries[name]
+        tag = f'<{tei_tag} ref="#{xml_id}">{name}</{tei_tag}>'
         placeholder = f"\x00ENTITY{counter}\x00"
         placeholders[placeholder] = tag
         counter += 1

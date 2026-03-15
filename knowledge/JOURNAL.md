@@ -36,21 +36,38 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
    - Batch-Run erzeugt automatisch HTML+JSON Validierungsbericht
    - Curation Server: 2 neue Endpoints (`/api/validation/summary`, `/api/validation/{doc_id}`)
 
-138. TEI-Erzeugung verbessert basierend auf Validierungs-Erkenntnissen (`scripts/tei/tei_step3.py`):
+138. Entity-Tagging grundlegend korrigiert -- typkorrekte Tags mit internen IDs:
+   - `_load_entity_entries()` in `tei_mapping_prompt.py`: Laedt Entity-Namen mit Typ und ID aus dem Index
+     statt nur eine Namensliste. Alle Entity-Typen (person, org, place, work), nicht nur person+org
+   - `annotate_entities()` in `tei_generator.py`: Taggt jetzt typkorrekt mit interner ID als ref:
+     `<placeName ref="#zbz-l.705">Suisse</placeName>` statt `<persName>Suisse</persName>`
+   - `reannotate_entities()` in `tei_step2.py`: Gleicher Fix fuer Step 2, erkennt auch placeName/bibl-Tags
+   - `build_known_entities_block()` in `tei_mapping_prompt.py`: Gemini-Prompt zeigt Entities nach Typ
+     gruppiert (PERSONS/ORGANIZATIONS/PLACES/WORKS) statt alle als persName
+   - Validator W10: Warnt wenn nur persName ohne orgName/placeName vorhanden
+   - Verifizierung Doc 1560: "Suisse" jetzt placeName (14x), "SGG" orgName (3x), "Jeanne Hersch"
+     persName mit ref="#zbz-p.2" (6x). 0 Errors, 0 Warnings
+
+139. TEI-Erzeugung verbessert basierend auf Validierungs-Erkenntnissen (`scripts/tei/tei_step3.py`):
    - Sprach-Mapping gefixt: Mehrsprachige Codes ("fra/deu", "fra/deu/ita") werden korrekt geparsed,
      alle Sprachen einzeln in `<langUsage>` eingetragen (vorher: alles zu "und" gefallen)
    - facsimile/pb Mismatch gefixt: Leere `<surface>` mit `<graphic>` Platzhalter fuer Seiten
      ohne Layout-Zones, damit pb- und surface-Anzahl synchron bleiben
    - Neuer `_parse_languages()` mit umfassendem Mapping (2-Letter, 3-Letter, Gross/Klein)
 
+140. 25-Doc Production Test (Docs 1520-1770): 25/25 VALID, 341 Seiten, 750s. Keine Schema-Errors.
+
 ### Geaenderte Dateien
-- scripts/tei/tei_validator.py (Refactoring: 2-Ebenen, neue Checks, 1x Parse)
+- scripts/tei/tei_mapping_prompt.py (_load_entity_entries() mit Typ+ID, Prompt typgruppiert)
+- scripts/tei/tei_generator.py (annotate_entities() typkorrekt mit ref)
+- scripts/tei/tei_step2.py (reannotate_entities() typkorrekt mit ref)
 - scripts/tei/tei_step3.py (Sprach-Mapping + facsimile/pb Fix)
+- scripts/tei/tei_validator.py (Refactoring + W10 Entity-Typ-Balance)
 - scripts/tei/tei_unified.py (Validation Default, HTML-Report nach Batch)
 - scripts/server/curation_server.py (2 neue Validation-Endpoints, register.html)
 - README.md (Pipeline-Diagramm, Curation-Abschnitt, Validation-CLI)
 - knowledge/PLAN.md (Data Flow mit Validation + Curation + Publish)
-- knowledge/PIPELINE.md (Validation-Regeln R1-R7 + W1-W8)
+- knowledge/PIPELINE.md (Validation-Regeln R1-R7 + W1-W10)
 - knowledge/CURATION.md (neue API-Endpoints)
 
 ---

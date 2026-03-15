@@ -58,28 +58,30 @@ def reannotate_entities(xml_text: str) -> str:
     """Tag-aware Entity Re-Annotation: taggt fehlende bekannte Entities.
 
     Findet Entitaetsnamen im Text die NICHT bereits innerhalb eines
-    <persName>/<orgName>-Tags stehen und fuegt Tags hinzu.
-    Ohne ref-Attribut -- Authority-IDs kommen aus dem Entity Index.
+    Entity-Tags stehen und fuegt typkorrekte Tags mit interner ID hinzu.
     Laengere Namen zuerst (wie annotate_entities).
     """
-    from scripts.tei.tei_mapping_prompt import _load_entity_names
-    sorted_names = sorted(_load_entity_names(), key=len, reverse=True)
+    from scripts.tei.tei_mapping_prompt import _load_entity_entries
+    entries = _load_entity_entries()
+    sorted_names = sorted(entries.keys(), key=len, reverse=True)
+
+    # Regex fuer bestehende Entity-Tags (persName, orgName, placeName, bibl)
+    entity_tag_re = re.compile(
+        r'(<(?:persName|orgName|placeName|bibl)[^>]*>.*?</(?:persName|orgName|placeName|bibl)>)',
+        flags=re.DOTALL,
+    )
 
     for name in sorted_names:
-        tag = f'<persName>{name}</persName>'
-        # Regex: name muss an Wortgrenzen stehen UND darf nicht
-        # bereits innerhalb eines <persName>...</persName> sein.
-        # Strategie: Split an bestehenden persName/orgName-Tags,
-        # annotiere nur in den Zwischenraeumen.
-        parts = re.split(r'(<(?:persName|orgName)[^>]*>.*?</(?:persName|orgName)>)',
-                         xml_text, flags=re.DOTALL)
+        tei_tag, xml_id = entries[name]
+        tag = f'<{tei_tag} ref="#{xml_id}">{name}</{tei_tag}>'
+        # Split an bestehenden Entity-Tags, annotiere nur in Zwischenraeumen
+        parts = entity_tag_re.split(xml_text)
         new_parts = []
         for i, part in enumerate(parts):
             if i % 2 == 0:
                 # Text ausserhalb bestehender Entity-Tags -> annotieren
                 pattern = r'(?<!\w)' + re.escape(name) + r'(?!\w)'
                 part = re.sub(pattern, tag, part)
-            # else: bestehender Tag -> unveraendert lassen
             new_parts.append(part)
         xml_text = "".join(new_parts)
 
