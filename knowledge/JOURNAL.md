@@ -70,18 +70,48 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
    - Ergebnis: CER 0.4%-63.7% (Median ~12%), div-Struktur nach Merge korrekt
    - Validator W11: Warnt bei zu vielen top-level divs mit gleichem n
 
+### Learnings (Session 26)
+
+**L1: Validierung muss False Positives minimieren.**
+Erste Version hatte 49/50 Docs mit Warnings -- praktisch nutzlos. Nach Entfernung von R10 (Truncation, 50% FP), R13 (Seitennummern, 60% FP) und R8 (redundant mit RelaxNG): 15/50. Jede Warning muss actionable sein.
+
+**L2: Entity-Typ-Information darf nicht verloren gehen.**
+`annotate_entities()` lud nur Namen aus dem Index, nicht den entity_type. Alles wurde als `<persName>` getaggt -- auch Orte und Organisationen. Root Cause: `_load_entity_names()` gab `set[str]` zurueck statt `dict[str, (tag, id)]`. Fix: `_load_entity_entries()` mit Typ+ID.
+
+**L3: Stopwort-Filter ist essentiell fuer Entity-Matching.**
+Der Entity Index enthaelt generische Begriffe (Dieu, Monde, Terre, suisse) die als Entities erkannt wurden. Ohne Filter erzeugen sie massenweise False Positives. Stopwort-Liste + Regel "kleingeschriebene Einzelwoerter ausschliessen" reduziert 6658 auf 6592 Eintraege.
+
+**L4: Seiten-Fragmente muessen zu Dokument-Struktur gemergt werden.**
+Pipeline erzeugte pro Seite einen `<div n="1">`. ZBZ-Referenz hat immer genau 1 top-level div. Der div-Merge ist ein deterministischer Post-Assembly-Fix (kostenlos, kein API-Call). Aufeinanderfolgende divs mit gleichem n werden zusammengefuegt.
+
+**L5: Step-2-Cache invalidieren bei Pipeline-Aenderungen.**
+`--force` regeneriert Step 1+3, aber Step 2 kommt aus Cache (`_refined.xml`). Bei Aenderungen am Prompt, Scaffold oder Entity-Tagging muessen die cached `_refined.xml` geloescht werden. Sonst greifen Fixes nicht (W6/W10-Artefakte).
+
+**L6: Gemini-NER hat ~5-10% False Positives.**
+"Redacteur en chef", "Tirage", generische Begriffe werden als Entities getaggt. Inhaerent bei LLM-NER. Loesung: Curation Editor (Human-in-the-Loop), nicht Code-Fix.
+
+**L7: Referenz-Vergleich liefert objektive Metriken.**
+11 Docs mit ZBZ-Referenz-TEI ermoeglicht CER, Strukturvergleich und Entity-Recall. Zeigt: CER 0.4%-63.7% (Streuung!), p-Count systematisch hoeher (feinere Layout-Granularitaet), div-Struktur nach Merge korrekt.
+
+**L8: Mehrsprachige Docs brauchen korrekte Language-Codes.**
+"fra/deu" wurde zu "und" weil der Parser nur 3-Buchstaben-Codes akzeptierte. Fix: `_parse_languages()` splittet auf `/`, mappt 2- und 3-Letter-Codes, erzeugt separate `<language>` Elemente. Betrifft ~40 Docs im Gesamtkorpus.
+
+**L9: facsimile und pb muessen synchron sein.**
+Seiten ohne Layout-Zones bekamen `<pb>` aber keine `<surface>`. Fix: Leere surfaces mit graphic-Platzhalter. Betraf 6 Docs.
+
+**L10: Interne IDs (zbz-p/o/l/w.N) als primaere Referenz im TEI.**
+Entity-Tags bekommen sofort die interne ID als ref-Attribut. Von dort linkt der Entity Index weiter auf Wikidata/GND. Kein Entity bleibt ohne ID wenn es im Index steht.
+
 ### Geaenderte Dateien
-- scripts/tei/tei_mapping_prompt.py (_load_entity_entries() mit Typ+ID, Prompt typgruppiert)
+- scripts/tei/tei_mapping_prompt.py (_load_entity_entries() mit Typ+ID, Stopwort-Filter, Prompt typgruppiert)
 - scripts/tei/tei_generator.py (annotate_entities() typkorrekt mit ref)
 - scripts/tei/tei_step2.py (reannotate_entities() typkorrekt mit ref)
-- scripts/tei/tei_step3.py (Sprach-Mapping + facsimile/pb Fix)
-- scripts/tei/tei_validator.py (Refactoring + W10 Entity-Typ-Balance)
-- scripts/tei/tei_unified.py (Validation Default, HTML-Report nach Batch)
+- scripts/tei/tei_step3.py (Sprach-Mapping, facsimile/pb Fix, div-Merge, Genre-type)
+- scripts/tei/tei_validator.py (Refactoring, W1-W11, Referenz-Vergleich)
+- scripts/tei/tei_unified.py (Validation Default, HTML-Report, Genre in Metadata)
 - scripts/server/curation_server.py (2 neue Validation-Endpoints, register.html)
 - README.md (Pipeline-Diagramm, Curation-Abschnitt, Validation-CLI)
-- knowledge/PLAN.md (Data Flow mit Validation + Curation + Publish)
-- knowledge/PIPELINE.md (Validation-Regeln R1-R7 + W1-W10)
-- knowledge/CURATION.md (neue API-Endpoints)
+- knowledge/ (PLAN, PIPELINE, CURATION, DECISIONS, PROJEKT aktualisiert)
 
 ---
 
