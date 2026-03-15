@@ -124,7 +124,42 @@ python -m scripts.tei.tei_validator --all --report
 python -m scripts.tei.tei_validator --all --html-report
 ```
 
-## 7. Visuelle Artefakte fuer den Expert in the Loop
+## 7. Agent-Based Quality Screening (Pre-Curation)
+
+Agentengestuetztes Screening aller TEI-Dokumente durch ein 7-Schichten-Protokoll.
+Kein einzelner CLI-Befehl, sondern ein orchestrierter Agent-Prozess.
+
+```bash
+# Vorbereitung: Batch-Manifest erzeugen (4 Tiers nach Seitenzahl)
+python -m scripts.tei.tei_screening_prep
+
+# Agent-Prompt fuer einen Batch generieren
+python -m scripts.tei.screening_prompt --batch {N}
+
+# revisionDesc mit Screening-Status in alle finalen TEIs injizieren
+python -m scripts.tei.tei_add_revision --all
+
+# Automatischer Pre-Check (Header, Struktur, Entity-Zaehlung)
+python -m scripts.tei.tei_quality_pass --all
+```
+
+**Schichten des Protokolls:**
+1. Scan-Qualitaet (visuell: Layout-Overlay pruefen)
+2. OCR-Treue (Layout-JSON-Text gegen TEI vergleichen)
+3. Layout-Korrektheit (Regionen, Reihenfolge, Typen)
+4. TEI-Struktur (Validator: RelaxNG + Projektregeln)
+5. Referenz-Vergleich (wo ZBZ-Referenz-TEI vorliegt)
+6. Entity-Plausibilitaet (Typen, Konflikte, Verteilung)
+7. Gesamtkohaerenz (liest sich das als Edition?)
+
+**Output:** `output/tei_final/{DOC_ID}_review.json` (Befund pro Dokument),
+`output/tei_final/{DOC_ID}_final.xml` (TEI mit revisionDesc im Header).
+
+**Ergebnis (285/285 Docs):** 210 APPROVED (74%), 43 WITH_NOTES (15%), 32 NEEDS_REVIEW (11%).
+
+**Positionierung:** Pre-Curation Triage — sortiert, wo menschliche Aufmerksamkeit noetig ist. Kein Ersatz fuer fachliche Kuration.
+
+## 8. Visuelle Artefakte fuer den Expert in the Loop
 
 Ausgaben, die nicht maschinell, sondern durch menschliche Inspektion bewertet werden.
 

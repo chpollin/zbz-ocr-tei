@@ -84,17 +84,24 @@ dem Arbeitszyklus (Command).
 ```bash
 python -m scripts.tei.tei_validator --doc {DOC_ID}                      # Schicht 4
 python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}        # Schicht 5
+python -m scripts.tei.tei_screening_prep                                # Batch-Manifest erzeugen
+python -m scripts.tei.tei_add_revision --all                            # revisionDesc in alle TEIs
+python -m scripts.tei.tei_quality_pass --all                            # Automatischer Pre-Check
+python -m scripts.tei.screening_prompt --batch {N}                      # Agent-Prompt generieren
 # Schicht 1-3, 6-7: Visuelle Pruefung durch Agent (Scan + TEI lesen)
 ```
 
 **Output:**
 ```
+output/tei_final/{DOC_ID}_final.xml       # Finales TEI mit revisionDesc
 output/tei_final/{DOC_ID}_review.json     # Befund pro Dokument
-output/tei_final/sweep_summary.json       # Systematische Muster
+output/tei_final/screening_manifest.json  # Batch-Zuweisungen (4 Tiers)
 ```
 
+**Ergebnis (285/285):** 210 APPROVED (74%), 43 WITH_NOTES (15%), 32 NEEDS_REVIEW (11%).
+
 **Additivitaet:** `output/tei_unified/` bleibt unveraendert.
-Finale TEIs werden nach `output/tei_final/` kopiert.
+Finale TEIs mit `<revisionDesc>` liegen in `output/tei_final/`.
 
 ## Visuelle Artefakte
 

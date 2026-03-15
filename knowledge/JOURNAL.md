@@ -80,6 +80,15 @@ Erste Anwendung der Promptotyping-Methodik als operativen Quality-Screening-Proz
 
 ### Entscheidungen
 - E41: Agent-Based Quality Screening als Pre-Curation Workflow definiert
+- E42: revisionDesc als Screening-Status im TEI-Header
+- E43: output/tei_final/ als Single Source of Truth fuer die Edition
+- E44: Entity-Stopwort-Erweiterung noetig (Mensch, Est, Gott, Rolle, Wahl etc.)
+
+### Neue Muster (P7-P10)
+- P7: Gattungsbegriffe im Entity-Index (Mensch, Est, Gott, Rolle, Wahl, Christ, Schweizer) erzeugen False Positives in ~30% der Docs
+- P8: Journal de Geneve / mehrspaltige Zeitungslayouts versagen systematisch (OCR-Halluzinationen, Textduplikation)
+- P9: Franzoesisches "Est-ce que" wird als placeName "Osten" gematcht
+- P10: Tier-2-Docs (4-8 Seiten, gut formatiert) haben 85%+ APPROVED-Rate vs. Tier-1 (1-3 Seiten) mit 40%
 
 ---
 
