@@ -7,8 +7,8 @@ LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbib
 Fully automated end-to-end pipeline for 286 documents (4,152 pages) from the estate of Jeanne Hersch:
 
 ```
-PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XML --> Curation --> Publication
-              (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basis)  (Editor)    (GitHub Pages)
+PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XML --> Quality Screening --> Curation --> Publication
+              (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basis)  (Agent-Based)    (Editor)    (GitHub Pages)
 ```
 
 ## Pipeline Components
@@ -26,6 +26,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XM
 | Entity Index + Wikidata/GND linking | Wikidata API + TEI-XML indices | Done (24% linked) |
 | TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
 | TEI NER injection | Rule-based annotation + Entity Index | Done (285/285) |
+| **Agent-Based Quality Screening** | **Claude Code (7-layer review)** | **Pilot (5 docs)** |
 | **Curation (Human-in-the-Loop)** | **Browser WYSIWYG + FastAPI server** | **Done** |
 | Review + Publication | Status workflow + publish to GitHub Pages | Done |
 | Evaluation + Dashboard | CER/WER + interactive QA UI | Done |

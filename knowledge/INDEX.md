@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-03-09
+updated: 2026-03-15
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -91,6 +91,7 @@ JOURNAL   <-- chronological, references all docs
 | Digitale Edition (E33) | Lese-Edition + Kurations-Editor in einem System. `docs/`, `ZBZ.Edition` Namespace | [EDITION](EDITION.md), [CURATION](CURATION.md) |
 | Curation Editor (E36) | Edit-Modus der Edition: WYSIWYG, Entity-Kuration, Review-Workflow, FastAPI Server | [CURATION](CURATION.md) |
 | NER Pipeline (E34) | Post-hoc NER via Gemini Flash Lite (6 types), TEI-XML Entity Index, Wikidata Reconciliation, TEI Injection | [PIPELINE](PIPELINE.md) |
+| Agent-Based Quality Screening (E41) | Agentengestuetztes Pre-Curation: 7-Schichten-Review (Scan, OCR, Layout, Struktur, Referenz, Entities, Kohaerenz). Output: Review-JSON + Sweep-Summary | [PLAN](PLAN.md) |
 
 ---
 
@@ -137,4 +138,4 @@ knowledge/
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-09*
+*Created: 2026-01-29 | Updated: 2026-03-15*

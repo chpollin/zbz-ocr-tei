@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-25
-updated: 2026-03-09
+updated: 2026-03-15
 tags: [zbz-ocr-tei, plan, implementation, phases]
 status: active
 ---
@@ -28,13 +28,13 @@ Phase 2 (PAGE-XML generator) --- DONE (286 docs, 4,091 pages)
 Phase 3 (NER + GND)  <-- can run parallel with Phase 2
     |
     v
-Phase 4 (TEI-XML extend with PAGE-XML + NER)
+Phase 4 (TEI-XML extend with PAGE-XML + NER) --- DONE (285/285, 284 schema-valide)
     |
     v
 Phase 5 (Evaluation + Dashboard extension)
     |
     v
-Phase 6 (Production: 286 Docs)
+Phase 6 (Production + Quality Screening)
 ```
 
 ---
@@ -99,9 +99,9 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [x] LINE breaks (`<lb/>`) from OCR line structure (in unified Step 1)
 - [x] Special document types via genre-conditional mapping table (10 genres)
 - [x] **Qualitaetsfixes** (E32): Entity Re-Annotation, Prompt-Tuning, Interview-Speaker-Erkennung
-- [x] Unified TEI production run -- **285/285 done** (284 schema-valide, 1 mit R5 type="sub-section")
+- [x] Unified TEI production run -- **285/285 done** (284/285 schema-valide nach Reassembly 2026-03-15)
 - [x] NER Entity Integration: 49/286 Docs mit Entity-Markup (`output/tei_ner/`)
-- [ ] Re-Injection nach Unified-TEI-Completion fuer alle 286 Docs
+- [x] Re-Injection nach Unified-TEI-Completion: 285/285 Docs mit Entity-Markup in Unified Step 1
 
 ## Phase 5 -- Extended Evaluation
 
@@ -114,6 +114,8 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [ ] Process all 286 PDFs through full pipeline
 - [ ] Spot-check QA: manually review 10 random documents
 - [ ] Final acceptance: Doc 2310 in oXygen -> no schema errors, entities linked
+- [x] Agent-Based Quality Screening Pilot: 5 Docs (290, 2310, 100, 1440, 1330), alle APPROVED_WITH_NOTES
+- [x] Reassembly mit allen Fixes: 284/285 VALID (2026-03-15)
 
 ---
 
@@ -132,6 +134,14 @@ Kein sequentieller Pipeline-Schritt, sondern Praesentations- und Kurationschicht
 - [x] Review-Workflow: Status-Badges, Publish-Endpoint
 - [x] TEI-Validierung: RelaxNG im Editor
 - [ ] Kurations-Durchlauf: Pilot-Docs (2310 etc.) vollstaendig kuratieren
+
+### Agent-Based Quality Screening (E41)
+
+Agentengestuetztes Pre-Curation-Verfahren: Claude Code prueft jedes Dokument durch 7 Schichten (Scan, OCR, Layout, Struktur, Referenz, Entities, Kohaerenz). Ergebnis: Review-JSON pro Dokument + Sweep-Summary mit systematischen Mustern.
+
+- [x] Pilot: 5 Docs (290, 2310, 100, 1440, 1330), 6 systematische Muster (P1-P6)
+- [ ] Rollout auf weitere Dokumente
+- [ ] Vergleich Agent-Befund vs. ZBZ-Fachexpertin (Kurationspilot)
 - [ ] Publish-Workflow mit ZBZ testen
 
 ---
@@ -198,4 +208,4 @@ Picture, Figure -> _skip
 
 ---
 
-Created: 2026-02-25 | Updated: 2026-03-09
+Created: 2026-02-25 | Updated: 2026-03-15

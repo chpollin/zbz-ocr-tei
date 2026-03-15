@@ -10,7 +10,7 @@ Stand: 15. Maerz 2026
 
 Aus 286 gescannten PDF-Dokumenten des Nachlasses Jeanne Hersch (ca. 4.150 Seiten) ist ein funktionsfaehiges System entstanden. Die Pipeline erzeugt standardkonforme TEI-XML-Dateien, erkennt und verlinkt Personen, Organisationen, Orte und Werke, und stellt die Ergebnisse in einer digitalen Edition mit integriertem Kurationswerkzeug bereit.
 
-285 von 286 Dokumenten wurden vollstaendig verarbeitet (ein Dokument fehlt im Ausgangsmaterial, siehe Abschnitt 2). Alle erzeugten TEI-Dateien sind gegen das TEI-All-Schema validiert. Die verbleibende Arbeit betrifft nicht die Erzeugung, sondern die Verfeinerung: Wikidata-Verlinkung vervollstaendigen und gemeinsam mit der ZBZ den Kurationsprozess erproben.
+285 von 286 Dokumenten wurden vollstaendig verarbeitet (ein Dokument fehlt im Ausgangsmaterial, siehe Abschnitt 2). 284 der erzeugten TEI-Dateien sind gegen das TEI-All-Schema validiert; ein Dokument hat einen nicht-blockierenden Strukturhinweis. Die verbleibende Arbeit betrifft nicht die Erzeugung, sondern die Verfeinerung: Wikidata-Verlinkung vervollstaendigen und gemeinsam mit der ZBZ den Kurationsprozess erproben.
 
 ---
 
@@ -47,11 +47,19 @@ Ueber den Gesamtkorpus wurden 11.685 eindeutige Entitaeten mit 26.197 Nennungen 
 
 Jede Entitaet erhaelt eine projekteigene ID (z.B. zbz-p.2 fuer Jeanne Hersch, zbz-l.705 fuer die Schweiz). Diese IDs bilden ein stabiles Verweissystem innerhalb der Edition und verlinken auf Wikidata und GND. Im TEI-Text wird der Typ der Entitaet durch das entsprechende TEI-Element unterschieden: `persName` fuer Personen, `orgName` fuer Organisationen, `placeName` fuer Orte und `bibl` fuer Werke. Aktuell sind 24% der Entitaeten mit Wikidata verknuepft; die Vervollstaendigung erfordert Rechenzeit, keine konzeptuelle Arbeit.
 
-### 3.5 Digitale Edition
+### 3.5 Qualitaetssicherung (Agent-Based Quality Screening)
+
+Zusaetzlich zur automatischen Schema-Validierung wurde ein agentengestuetztes Screening-Verfahren entwickelt und an fuenf Pilotdokumenten erprobt (Doc 290, 2310, 100, 1440, 1330 -- verschiedene Sprachen, Genres und Formate). Dabei wird jedes Dokument gegen den Originalscan geprueft: Scan-Qualitaet, OCR-Treue, Layout-Korrektheit, TEI-Struktur, Entitaeten und inhaltliche Kohaerenz. Das Ergebnis ist ein strukturierter Befund pro Dokument, der den menschlichen Kurator:innen die Arbeit erleichtert.
+
+Alle fuenf Pilotdokumente bestanden das Screening. Sechs systematische Muster wurden identifiziert, darunter: Doppelseiten-Scans (Buchformat) erzeugen technisch korrekte, aber optisch unerwartete Strukturen; bei abstrakten philosophischen Texten erkennt die Pipeline weniger Entitaeten als bei biographischen (inhaltlich erklaerbar, kein Fehler); und Gemini korrigiert im Erzeugungsprozess nebenbei OCR-Fehler (ein undokumentierter Qualitaetsgewinn).
+
+Dieses Screening ist als Vorpruefung fuer die menschliche Kuration konzipiert, nicht als Ersatz. Es reduziert die Menge an Dokumenten, die fachliche Aufmerksamkeit erfordern.
+
+### 3.6 Digitale Edition
 
 Eine oeffentliche Website zeigt alle 286 Dokumente in einem Katalog mit Filterung und Volltextsuche. Der Reader stellt Faksimile und TEI-Text nebeneinander dar, mit einer Sidebar fuer verlinkte Entitaeten.
 
-### 3.6 Kurationswerkzeug
+### 3.7 Kurationswerkzeug
 
 Ein Browser-basierter Editor erlaubt die Nachbearbeitung der KI-generierten Dokumente als letzten Schritt vor der Publikation. Editoren koennen Text korrigieren, die Dokumentstruktur aendern, Entitaeten bearbeiten und das Ergebnis validieren. Ein Review-Workflow steuert, welche Dokumente publiziert werden.
 
@@ -88,11 +96,12 @@ Alle Zwischenergebnisse werden gespeichert. Die Pipeline ueberspringt bereits ve
 | Bilderzeugung aus PDF | abgeschlossen | 286/286 Dokumente |
 | OCR-Texterkennung | abgeschlossen | 286/286 Dokumente, 4.117 Seiten |
 | Layout-Analyse | abgeschlossen | 286/286 Dokumente, 4.152 Seiten |
-| TEI-Erzeugung und Validierung | abgeschlossen | 285/285 Dokumente, schema-valide |
+| TEI-Erzeugung und Validierung | abgeschlossen | 285/285 Dokumente, 284 schema-valide |
 | Entitaetserkennung | abgeschlossen | 285/285 Dokumente, 11.685 Entitaeten |
 | Wikidata-Verlinkung | laufend | 2.803 von 11.685 Entitaeten (24%) |
 | Digitale Edition | funktionsfaehig | 286 Dokumente im Katalog |
 | Kurationswerkzeug | funktionsfaehig | bereit fuer Pilotbetrieb |
+| Quality Screening (Pre-Curation) | Pilot | 5 Dokumente geprueft, 6 systematische Muster identifiziert |
 | PAGE-XML-Export | abgeschlossen | 286/286 Dokumente, Transkribus-kompatibel |
 
 ---
@@ -120,3 +129,4 @@ Alle Zwischenergebnisse werden gespeichert. Die Pipeline ueberspringt bereits ve
 | 12.03. | Wikidata/GND-Integration |
 | 14.03. | Frontend-Konsolidierung |
 | 15.03. | TEI-Validierung, Dokumentstruktur-Korrektur, Produktionslauf 285/285 |
+| 15.03. | Agent-Based Quality Screening (Pilot, 5 Docs), Reassembly 284/285 VALID |

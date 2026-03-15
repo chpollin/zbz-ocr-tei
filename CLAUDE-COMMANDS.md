@@ -64,6 +64,38 @@ python -m scripts.tei.tei_validator --all --report                      # JSON-R
 python -m scripts.tei.tei_validator --all --html-report                 # HTML-Report
 ```
 
+## Quality Screening (Pre-Curation)
+
+Agent-Based Quality Screening: Claude Code prueft jedes Dokument durch
+7 Schichten. Das ist ein Agent-Prozess, kein einzelner CLI-Befehl.
+Der Agent verwendet die unten gelisteten Tools (Artifacts) gemaess
+dem Arbeitszyklus (Command).
+
+**Schichten:**
+1. Scan-Qualitaet (visuell: Layout-Overlay pruefen)
+2. OCR-Treue (TEI-Text gegen Scan vergleichen)
+3. Layout-Korrektheit (Regionen, Reihenfolge)
+4. TEI-Struktur (Validator)
+5. Referenz-Vergleich (wo ZBZ-Referenz vorliegt)
+6. Entity-Plausibilitaet (Typen, Konflikte)
+7. Gesamtkohaerenz (liest sich das als Edition?)
+
+**Tools (Artifacts, die der Agent aufruft):**
+```bash
+python -m scripts.tei.tei_validator --doc {DOC_ID}                      # Schicht 4
+python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}        # Schicht 5
+# Schicht 1-3, 6-7: Visuelle Pruefung durch Agent (Scan + TEI lesen)
+```
+
+**Output:**
+```
+output/tei_final/{DOC_ID}_review.json     # Befund pro Dokument
+output/tei_final/sweep_summary.json       # Systematische Muster
+```
+
+**Additivitaet:** `output/tei_unified/` bleibt unveraendert.
+Finale TEIs werden nach `output/tei_final/` kopiert.
+
 ## Visuelle Artefakte
 
 ```bash
@@ -81,6 +113,16 @@ python -m scripts.generate_dashboard_data                                # Dashb
 3. **Ausfuehrung** -- Tool aufrufen (bei API-Kosten: --dry-run zuerst)
 4. **Re-Validierung** -- Erneut validieren, Verbesserung bestaetigen
 5. **Eskalation** -- Bei neuem Fehlertyp: Skript vorschlagen, Expert entscheidet
+
+## Dreischichtung: Command / Artifact / Tool
+
+- **Command**: Die Entscheidungsregel ("nach jeder Korrektur validieren")
+- **Artifact**: Das materielle Werkzeug im Repo (`tei_validator.py`)
+- **Tool**: Der konkrete Aufruf (`python -m scripts.tei.tei_validator --doc 290`)
+
+Commands stehen in diesem Dokument (Arbeitszyklus oben).
+Artifacts stehen im Repo (Scripts, Indizes, Reports).
+Tools sind die CLI-Befehle in den Abschnitten oben.
 
 ## Konventionen
 

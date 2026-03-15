@@ -14,6 +14,60 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 27 (2026-03-15): Agent-Based Quality Screening (Pilot)
+
+### Kontext
+Erste Anwendung der Promptotyping-Methodik als operativen Quality-Screening-Prozess. 5 Pilot-Dokumente (290, 2310, 100, 1440, 1330) durch strukturiertes Review-Protokoll geprueft.
+
+### Ergebnisse
+
+**Reassembly-Run:** 284/285 VALID (vorheriger Report zeigte 71/285 — war veraltet, nicht re-run nach Session 26 Fixes). Dauer: ~2.5h, Kosten: $0.
+
+**Agent-Based Quality Screening (5 Docs):**
+- Methodik: Strukturiertes Review-Protokoll pro Dokument (Scan, OCR, Layout, TEI-Struktur, Referenz, Entities, Kohaerenz)
+- Alle 5 Docs: APPROVED_WITH_NOTES (schema-valide, inhaltlich korrekt)
+- 19 Learnings dokumentiert (L1-L19)
+- 6 systematische Muster identifiziert (P1-P6)
+
+**Systematische Muster:**
+- P1: Doppelseiten-Scans erzeugen W3 (kein Fix noetig, Buchformat)
+- P2: W10 False Positive bei abstrakten philosophischen Texten
+- P3: Seitenzahlen-Erkennung inkonsistent (Mix aus Original und relativ)
+- P4: Entity Typ-Konflikte Person/Werk (Kierkegaard, Nietzsche) — fixbar im Index
+- P5: JSTOR-Scans koennen mehrere Rezensionen pro Seite enthalten
+- P6: Gemini korrigiert OCR-Fehler im Step 2 (undokumentierter Qualitaetsgewinn)
+
+**Methodische Reflexion:**
+- Visuelle Verifikation ist der echte Mehrwert gegenueber rein automatischer Validierung
+- Methode eignet sich als Pre-Curation Screening, nicht als Ersatz fuer fachliche Kuration
+- Agents koennen Konsistenz und Schemata pruefen, aber nicht fachliche Richtigkeit garantieren
+- Naechster Schritt: ZBZ-Fachleute pruefen dieselben 5 Docs im Curation Editor
+
+### Technische Aenderungen
+- `output/tei_final/` Verzeichnis angelegt (5 finale TEIs + 5 Review-JSONs + Summary)
+- Validierungsreport aktualisiert: 284/285 VALID, 81 mit Warnings
+
+### Konzeptionelle Arbeit
+- **Agent-Based Quality Screening**: Agentengestuetzter Pre-Curation-Prozess mit strukturiertem Protokoll
+- Positionierung: Vorpruefung fuer menschliche Kurator:innen, nicht Ersatz
+- Output: Review-JSON pro Dokument + Sweep-Summary mit Mustern
+- **Dreischichtung Command/Artifact/Tool**: Konzeptionelle Klarstellung fuer Paper.md
+  - Command = Entscheidungsregel (wann was tun)
+  - Artifact = materielles Werkzeug im Repo (Script, Index, Report)
+  - Tool = konkreter Aufruf eines Artifacts durch den Agent
+- Paper.md erweitert: Dreischichtung in Begriffsklaerung, Quality Screening als empirisches Beispiel in Verifikationskaskade
+
+### Dokumentation
+- CLAUDE-COMMANDS.md: Quality Screening konkretisiert, Dreischichtung dokumentiert
+- Arbeitsbericht: §3.5 Quality Screening + §6 Produktionsstand ergaenzt
+- Knowledge-Dokumente: PLAN, PIPELINE, INDEX, PROJEKT, DECISIONS aktualisiert (Daten auf 2026-03-15)
+- README: Pipeline-Diagramm + Komponenten-Tabelle um Quality Screening erweitert
+
+### Entscheidungen
+- E41: Agent-Based Quality Screening als Pre-Curation Workflow definiert
+
+---
+
 ## 2026-03-15 | TEI Validation Quality Gate + Pipeline-Dokumentation (Session 26)
 
 135. Pipeline-Diagramm und Data Flow um Curation + Publication erweitert:

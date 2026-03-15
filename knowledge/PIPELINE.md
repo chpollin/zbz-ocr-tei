@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-03-09
+updated: 2026-03-15
 tags: [zbz-ocr-tei, pipeline, dataflow, ocr]
 status: active
 ---
@@ -74,6 +74,15 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 9. **facsimile/pb synchron halten:** Leere surfaces fuer Seiten ohne Layout-Zones.
 10. **Interne IDs (zbz-p/o/l/w.N) als primaere Referenz:** Entity-Tags bekommen sofort die ID als ref. Wikidata/GND Verlinkung ueber Entity Index.
 11. **Production-Run-Kommando:** `python -m scripts.tei.tei_unified --all --ner` (Cache) oder `--all --ner --force` (voll). Validation ist Default, HTML-Report automatisch.
+
+### Quality Learnings (Session 26-27)
+
+L1: Entity-Index hat Typ-Konflikte bei Namen die sowohl Person als auch Werk sind (Kierkegaard, Nietzsche). Person-Typ sollte Prioritaet haben.
+L2: Gemini korrigiert OCR-Fehler im Step-2 Refinement (z.B. cruelé→croulé). Undokumentierter Qualitaetsgewinn.
+L3: Generische Begriffe (La philosophie) werden faelschlich als Entity getaggt. Stopwort-Filter noetig.
+L4: Doppelseiten-Scans (Buchformat) erzeugen W3, sind aber kein Fehler.
+L5: JSTOR-Scans koennen mehrere Rezensionen pro Seite enthalten. Nicht automatisch loesbar.
+L6: Abstrakte philosophische Texte haben weniger Entities als biographische — inhaltlich erklaerbar, kein Fehler.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
