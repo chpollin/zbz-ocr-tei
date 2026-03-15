@@ -76,11 +76,16 @@ def process_document(
     doc_id: str,
     max_step: int = 3,
     force: bool = False,
+    reassemble: bool = False,
     dry_run: bool = False,
     validate: bool = False,
     ner: bool = False,
 ) -> dict:
     """Verarbeitet ein Dokument durch alle Pipeline-Schritte.
+
+    Args:
+        reassemble: Nur Step 1+3 neu (mit Fixes), Step 2 aus Cache.
+                    Kostenlos, kein Gemini-Call.
 
     Returns:
         Manifest-Dict mit Verarbeitungsstatistiken
@@ -135,7 +140,8 @@ def process_document(
         # Step 1: Enhanced Rule-Based TEI
         scaffold_path = doc_dir / f"{doc_id}_p{str(page).zfill(3)}_scaffold.xml"
 
-        if scaffold_path.exists() and not force:
+        force_step1 = force or reassemble
+        if scaffold_path.exists() and not force_step1:
             scaffold = scaffold_path.read_text(encoding="utf-8")
             facs_json_path = doc_dir / f"{doc_id}_p{str(page).zfill(3)}_facs.json"
             if facs_json_path.exists():
@@ -265,7 +271,9 @@ def main():
     parser.add_argument("--skip-validate", action="store_true",
                         help="Validierung ueberspringen (Default: aktiv)")
     parser.add_argument("--force", action="store_true",
-                        help="Gecachte Ergebnisse ueberschreiben")
+                        help="Alle Schritte neu (inkl. Gemini)")
+    parser.add_argument("--reassemble", action="store_true",
+                        help="Nur Step 1+3 neu (Fixes anwenden), Step 2 aus Cache (kostenlos)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Prompts anzeigen, keine API-Calls")
     parser.add_argument("--ner", action="store_true",
@@ -274,10 +282,13 @@ def main():
 
     validate = not args.skip_validate
 
+    reassemble = getattr(args, 'reassemble', False)
+
     print("=== Unified TEI Pipeline ===")
     print(f"  Step: 1-{args.step}"
           + (" + Validation" if validate else " (Validation OFF)")
-          + (" + NER" if args.ner else ""))
+          + (" + NER" if args.ner else "")
+          + (" [REASSEMBLE: Step 1+3 neu, Step 2 Cache]" if reassemble else ""))
 
     if args.doc:
         doc_ids = [args.doc]
@@ -300,6 +311,7 @@ def main():
                 doc_id,
                 max_step=args.step,
                 force=args.force,
+                reassemble=reassemble,
                 dry_run=args.dry_run,
                 validate=validate,
                 ner=args.ner,
