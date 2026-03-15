@@ -314,7 +314,7 @@
 
             html += `<tr class="ed-register-row${expanded ? ' expanded' : ''}" data-id="${E.esc(ent.id)}">
                 <td><span class="${dotClass}" title="${E.esc(TYPE_SINGULAR[ent.type] || ent.type)}"></span></td>
-                <td><strong>${E.esc(ent.name)}</strong>${varCount > 0 ? ` <span class="ed-text-muted">(${varCount})</span>` : ''}</td>
+                <td><strong>${E.esc(ent.name)}</strong>${varCount > 0 ? ` <span class="ed-text-muted">(${varCount})</span>` : ''}${ent.contexts && ent.contexts.length > 0 ? '<div class="ed-register-context-preview">' + E.esc(ent.contexts[0].length > 100 ? ent.contexts[0].substring(0, 97) + '...' : ent.contexts[0]) + '</div>' : ''}</td>
                 <td style="text-align:right">${ent.doc_count}</td>
                 <td style="text-align:right">${ent.mention_count}</td>
                 <td>${links}</td>

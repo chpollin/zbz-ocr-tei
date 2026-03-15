@@ -5,20 +5,20 @@
    ============================================================ */
 
 :root {
-    /* Background – slightly cooler than Edition (#faf8f5) */
-    --bg: #f5f5f7;
-    --bg-card: #ffffff;
-    --bg-subtle: #eeeff2;
-    --bg-muted: #e0e1e6;
+    /* Background – aligned with Hersch Edition palette */
+    --bg: #F5F0E8;
+    --bg-card: #FAFAF7;
+    --bg-subtle: #EDE6D8;
+    --bg-muted: #E5DFD4;
 
-    /* Borders – aligned with Edition */
-    --border: #d4d3d8;
-    --border-light: #e5e4e9;
+    /* Borders – aligned with Hersch Edition */
+    --border: rgba(44, 40, 37, 0.25);
+    --border-light: rgba(44, 40, 37, 0.12);
 
-    /* Text – same as Edition */
-    --text: #2c2c2c;
-    --text-secondary: #5a5a5a;
-    --text-muted: #8a8a8a;
+    /* Text – aligned with Hersch Edition */
+    --text: #2C2825;
+    --text-secondary: #5C554E;
+    --text-muted: #8A8279;
 
     /* Accent A – teal (Mistral OCR / Pipeline primary) */
     --accent-a: #0f766e;
@@ -60,9 +60,9 @@
     --space-xl: 2rem;
     --space-2xl: 3rem;
 
-    /* Typography – aligned with Edition (Inter + JetBrains Mono) */
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+    /* Typography – aligned with Hersch Edition (Jost + JetBrains Mono) */
+    --font-sans: 'Jost', 'Futura', 'Gill Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
     --fs-2xs: 0.6rem;
     --fs-xs: 0.7rem;
     --fs-sm: 0.8rem;

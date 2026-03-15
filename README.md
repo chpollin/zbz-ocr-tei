@@ -72,7 +72,7 @@ zbz-ocr-tei/
   docs/                   # Digital Edition + Pipeline Infrastructure (GitHub Pages)
     index.html            # Edition landing page
     catalog.html          # Document catalog
-    reader.html           # TEI reader with entity sidebar
+    reader.html           # TEI reader (faksimile + text, pan/zoom/rotate)
     about.html            # Project information
     infrastruktur/        # Pipeline QA tools (dashboard, viewer, benchmark)
     js/                   # ES6+ modules (edition, TEI, entities, shared)
@@ -153,6 +153,7 @@ The QA tools are under `docs/infrastruktur/`:
 | TEI rules | [knowledge/TEI-MAPPING.md](knowledge/TEI-MAPPING.md) |
 | OCR + Layout engines | [knowledge/ENGINES.md](knowledge/ENGINES.md) |
 | Digital edition | [knowledge/EDITION.md](knowledge/EDITION.md) |
+| Design system (Hersch) | [knowledge/DESIGN.md](knowledge/DESIGN.md) |
 | Curation Editor | [knowledge/CURATION.md](knowledge/CURATION.md) |
 | Work journal | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
 

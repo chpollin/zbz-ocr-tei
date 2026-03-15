@@ -387,7 +387,7 @@
             html += `<tr onclick="window.location.href='reader.html?doc=${E.esc(d.id)}'" tabindex="0">`;
             html += `<td class="td-id">${E.esc(d.id)}`;
             if (d.demo) html += ' <span class="ed-badge ed-badge-demo">Demo</span>';
-            html += _curationBadgeHtml(d.id);
+            html += _curationBadgeHtml(d);
             html += '</td>';
             html += `<td class="td-title">${E.esc(d.title || '-')}`;
             if (state.searchSnippets[d.id]) html += `<div class="ed-search-snippet">${state.searchSnippets[d.id]}</div>`;
@@ -527,9 +527,10 @@
         loadNext(0);
     }
 
-    function _curationBadgeHtml(docId) {
-        const status = state.curationStatuses[docId];
-        if (!status) return '';
+    function _curationBadgeHtml(doc) {
+        var docId = typeof doc === 'object' ? doc.id : doc;
+        var status = state.curationStatuses[docId] || (typeof doc === 'object' ? doc.curation : null);
+        if (!status || status === 'uncurated') return '';
         return ' ' + E.curationBadgeHtml(status);
     }
 

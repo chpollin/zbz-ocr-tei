@@ -139,8 +139,14 @@
             return;
         } else if (tag === 'foreign') {
             elem = document.createElement('span');
+            var lang = node.getAttribute('xml:lang') || '?';
             elem.className = 'ed-tei-foreign';
-            elem.title = `Sprache: ${node.getAttribute('xml:lang') || '?'}`;
+            elem.setAttribute('data-lang', lang);
+            elem.title = 'Sprache: ' + lang;
+            var langLbl = document.createElement('span');
+            langLbl.className = 'ed-lang-label';
+            langLbl.textContent = lang.toUpperCase();
+            elem.appendChild(langLbl);
         } else if (tag === 'sp') {
             elem = document.createElement('div');
             elem.className = 'ed-tei-sp';
@@ -162,7 +168,7 @@
         }
     }
 
-    // --- Entity Sidebar ---
+    // --- Entity Sidebar (used by infrastruktur/tei-viewer.js, not by edition reader) ---
     function renderEntitySidebar(container) {
         container.innerHTML = '';
 

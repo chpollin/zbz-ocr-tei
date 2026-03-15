@@ -8,7 +8,7 @@
 
     // --- Ensure ZBZ namespace + log ---
     window.ZBZ = window.ZBZ || {};
-    const _logStyles = 'color:#1e3a5f;font-weight:600';
+    const _logStyles = 'color:#2C2825;font-weight:600';
     function _log(mod, msg) { console.log(`%c[ZBZ:${mod}]%c ${msg}`, _logStyles, ''); }
     if (!ZBZ.log) ZBZ.log = _log;
 
@@ -417,6 +417,11 @@
         if (doc.entity_count) html += ` <span class="ed-badge ed-badge-ner" title="${doc.entity_count} Entitaeten">${doc.entity_count} Ent.</span>`;
         if (doc.demo) html += ' <span class="ed-badge ed-badge-demo">Demo</span>';
         if (doc.screening) html += ' ' + screeningBadgeHtml(doc.screening);
+        if (doc.curation && doc.curation !== 'uncurated') html += ' ' + curationBadgeHtml(doc.curation);
+        if (doc.desc) {
+            var descText = doc.desc.length > 120 ? doc.desc.substring(0, 117) + '...' : doc.desc;
+            html += '<p class="ed-card-desc">' + esc(descText) + '</p>';
+        }
         html += '</div></a>';
         return html;
     }

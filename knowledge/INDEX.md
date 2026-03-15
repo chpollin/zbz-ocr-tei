@@ -121,7 +121,8 @@ knowledge/
 +-- GND-STRATEGIE.md      # NER + Entity Linking
 +-- TESTPLAN.md           # Test phases, metrics, results
 +-- INFRASTRUKTUR.md      # Azure, Podman, GitLab, CI/CD
-+-- EDITION.md            # Digital edition (architecture, design system)
++-- EDITION.md            # Digital edition (architecture, data, pages)
++-- DESIGN.md             # Hersch Design System (tokens, Seuil, Etonnement, Dark Mode)
 +-- CURATION.md           # Curation editor (server, API, editing)
 +-- DECISIONS.md          # Decided + Open items (prioritized)
 +-- ZBZ-WORKFLOW.md       # ZBZ editorial workflow + integration points

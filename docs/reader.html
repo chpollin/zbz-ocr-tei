@@ -6,7 +6,7 @@
     <title>Leseansicht – Nachlass Jeanne Hersch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/edition.css">
 </head>
 <body class="edition-page">
@@ -22,7 +22,7 @@
             <div class="ed-reader-meta"></div>
         </div>
 
-        <!-- Toolbar -->
+        <!-- Toolbar: nur Seitennavigation + Faksimile-Steuerung + Edit -->
         <div class="ed-reader-toolbar">
             <div class="ed-page-nav">
                 <button class="ed-page-btn" id="page-prev" disabled aria-label="Vorherige Seite">&larr;</button>
@@ -31,36 +31,44 @@
             </div>
             <div class="ed-toolbar-sep"></div>
             <div class="ed-toolbar-group">
-                <button class="ed-toolbar-btn" id="font-toggle" title="Schriftart wechseln (Serif/Sans)">Aa</button>
-                <button class="ed-toolbar-btn" id="entity-toggle" title="Entitaeten anzeigen">Entitaeten</button>
-                <button class="ed-toolbar-btn" id="xml-toggle" title="XML-Ansicht">XML</button>
-                <button class="ed-toolbar-btn" id="edit-toggle" title="Bearbeitungsmodus" style="display:none">Bearbeiten</button>
+                <button class="ed-toolbar-btn" id="zoom-out" title="Verkleinern">&minus;</button>
+                <span class="ed-page-indicator" id="zoom-label">100%</span>
+                <button class="ed-toolbar-btn" id="zoom-in" title="Vergroessern">+</button>
+                <button class="ed-toolbar-btn ed-btn-sm" id="zoom-fit" title="An Breite anpassen">&#x2194;</button>
+                <button class="ed-toolbar-btn ed-btn-sm" id="zoom-reset" title="Zoom zuruecksetzen">1:1</button>
+                <button class="ed-toolbar-btn ed-btn-sm" id="rotate-btn" title="Bild drehen (90 Grad)">&#x21BB;</button>
+            </div>
+            <div class="ed-toolbar-sep"></div>
+            <div class="ed-toolbar-group">
+                <button class="ed-toolbar-btn ed-hidden" id="edit-toggle" title="Bearbeitungsmodus">Bearbeiten</button>
             </div>
             <div class="ed-toolbar-group ed-edit-only">
                 <button class="ed-toolbar-btn ed-btn-save" id="save-btn" title="Speichern (Ctrl+S)" disabled>Speichern</button>
                 <button class="ed-toolbar-btn" id="validate-btn" title="TEI validieren (RelaxNG)">Validieren</button>
                 <span class="ed-save-status" id="save-status"></span>
             </div>
-            <div class="ed-toolbar-sep"></div>
-            <div class="ed-toolbar-group">
-                <button class="ed-toolbar-btn" id="zoom-out" title="Verkleinern">-</button>
-                <span class="ed-page-indicator" id="zoom-label">100%</span>
-                <button class="ed-toolbar-btn" id="zoom-in" title="Vergroessern">+</button>
-                <button class="ed-toolbar-btn ed-btn-sm" id="zoom-reset" title="Zoom zuruecksetzen">1:1</button>
-            </div>
+        </div>
+
+        <!-- Curation Hint (shown when no server) -->
+        <div class="ed-reader-hint ed-hidden" id="curation-hint">
+            Leseansicht &mdash; Zum Bearbeiten: Edition lokal starten (localhost:8000)
         </div>
 
         <!-- Panels -->
         <div class="ed-reader-panels">
-            <div class="ed-panel-faksimile">
+            <div class="ed-panel-faksimile" id="faks-panel">
                 <div class="ed-empty-state">Bild wird geladen...</div>
             </div>
             <div class="ed-panel-divider" title="Ziehen zum Anpassen"></div>
             <div class="ed-panel-text ed-tei-serif">
+                <!-- View toggle: Text / XML (inside text panel) -->
+                <div class="ed-text-view-toggle">
+                    <button class="ed-view-tab active" id="view-text" title="Leseansicht">Text</button>
+                    <button class="ed-view-tab" id="view-xml" title="XML-Quellansicht">XML</button>
+                </div>
                 <div class="ed-text-content">
                     <div class="ed-skeleton ed-skeleton-block" style="height:400px"></div>
                 </div>
-                <div class="ed-entity-sidebar" aria-label="Entitaeten-Leiste"></div>
             </div>
         </div>
     </main>

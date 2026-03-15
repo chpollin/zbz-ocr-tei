@@ -10,7 +10,7 @@ status: active
 
 Oeffentliche digitale Edition der Jeanne-Hersch-Korrespondenz fuer Forschende und Oeffentlichkeit. Statisch auf GitHub Pages, mit optionalem Kurations-Modus wenn der Server laeuft.
 
-**Dependencies:** [PIPELINE](PIPELINE.md) (TEI-XML als Input), [CURATION](CURATION.md) (Edit-Modus)
+**Dependencies:** [PIPELINE](PIPELINE.md) (TEI-XML als Input), [CURATION](CURATION.md) (Edit-Modus), [DESIGN](DESIGN.md) (Design-System)
 
 ---
 

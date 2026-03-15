@@ -1,26 +1,33 @@
 /**
  * ZBZ Edition – Reader Module
- * Faksimile + TEI side-by-side reader with page navigation,
- * zoom, font toggle, entity sidebar, XML view.
+ * Faksimile + TEI side-by-side reader with professional image viewer,
+ * page navigation, zoom, pan, rotation, text/xml toggle.
  * Namespace: ZBZ.EditionReader (ES6+, IIFE)
  */
 (function () {
     'use strict';
 
-    const E = ZBZ.Edition;
-    const T = ZBZ.EditionTei;
+    var E = ZBZ.Edition;
+    var T = ZBZ.EditionTei;
 
-    const state = {
+    var state = {
         docId: null,
         page: 1,
         totalPages: 0,
         zoom: 100,
-        serif: true,
-        entitiesVisible: false,
+        rotation: 0,
         xmlMode: false,
         editMode: false,
         docMeta: null,
-        splitRatio: 50
+        splitRatio: 50,
+        // Pan state
+        panX: 0,
+        panY: 0,
+        isPanning: false,
+        panStartX: 0,
+        panStartY: 0,
+        panStartPanX: 0,
+        panStartPanY: 0
     };
 
     // --- Init ---
@@ -33,14 +40,12 @@
             return;
         }
 
-        // Catalog + Entity Index parallel laden
-        Promise.all([E.loadCatalog(), E.loadEntityIndex()]).then((results) => {
-            const catalog = results[0];
+        Promise.all([E.loadCatalog(), E.loadEntityIndex()]).then(function (results) {
+            var catalog = results[0];
             if (!catalog) return;
 
-            // Find document in catalog
-            const docs = catalog.documents || [];
-            for (let i = 0; i < docs.length; i++) {
+            var docs = catalog.documents || [];
+            for (var i = 0; i < docs.length; i++) {
                 if (docs[i].id === state.docId) {
                     state.docMeta = docs[i];
                     break;
@@ -48,7 +53,7 @@
             }
 
             if (!state.docMeta) {
-                E.$('.ed-reader').innerHTML = `<div class="ed-empty-state">Dokument ${E.esc(state.docId)} nicht gefunden. <a href="catalog.html">Zum Katalog</a></div>`;
+                E.$('.ed-reader').innerHTML = '<div class="ed-empty-state">Dokument ' + E.esc(state.docId) + ' nicht gefunden. <a href="catalog.html">Zum Katalog</a></div>';
                 return;
             }
 
@@ -58,33 +63,39 @@
             renderHeader();
             bindToolbar();
             initDivider();
+            initFaksimileViewer();
             initEditor();
             showPage(state.page);
             loadRevisionDesc();
 
-            ZBZ.log('Reader', `Doc ${state.docId} | S.${state.page}/${state.totalPages} | Entities: ${state.docMeta.entity_count || 0}`);
+            ZBZ.log('Reader', 'Doc ' + state.docId + ' | S.' + state.page + '/' + state.totalPages);
         });
     }
 
     // --- Editor Init ---
     function initEditor() {
         if (typeof ZBZ.EditionEditor === 'undefined') return;
-        const Ed = ZBZ.EditionEditor;
-        Ed.checkServer((available) => {
-            const editBtn = E.$('#edit-toggle');
+        var Ed = ZBZ.EditionEditor;
+        Ed.checkServer(function (available) {
+            var editBtn = E.$('#edit-toggle');
             if (editBtn && available) {
-                editBtn.style.display = '';
+                editBtn.classList.remove('ed-hidden');
+            }
+            // Show curation hint when no server
+            var hint = E.$('#curation-hint');
+            if (hint && !available) {
+                hint.classList.remove('ed-hidden');
             }
         });
     }
 
     function toggleEditMode() {
-        const Ed = ZBZ.EditionEditor;
+        var Ed = ZBZ.EditionEditor;
         state.editMode = !state.editMode;
         Ed.state.active = state.editMode;
 
-        const reader = E.$('.ed-reader');
-        const editBtn = E.$('#edit-toggle');
+        var reader = E.$('.ed-reader');
+        var editBtn = E.$('#edit-toggle');
         if (reader) reader.classList.toggle('ed-edit-mode', state.editMode);
         if (editBtn) editBtn.classList.toggle('active', state.editMode);
 
@@ -97,65 +108,35 @@
 
     // --- Header ---
     function renderHeader() {
-        const m = state.docMeta;
-        const title = m.title || 'Dokument ' + m.id;
+        var m = state.docMeta;
+        var title = m.title || 'Dokument ' + m.id;
 
-        // Set document title
-        document.title = title + ' – Nachlass Jeanne Hersch';
+        document.title = title + ' \u2013 Nachlass Jeanne Hersch';
 
-        const headerEl = E.$('.ed-reader-title');
+        var headerEl = E.$('.ed-reader-title');
         if (headerEl) {
-            headerEl.innerHTML = '<a href="catalog.html" style="color:var(--ed-text-muted);margin-right:0.5em" title="Zurueck zum Katalog">&larr;</a>' + E.esc(title);
+            headerEl.innerHTML = '<a href="catalog.html" class="ed-back-link" title="Zurueck zum Katalog">\u2190</a>' + E.esc(title);
         }
 
-        const metaEl = E.$('.ed-reader-meta');
+        var metaEl = E.$('.ed-reader-meta');
         if (metaEl) {
-            const parts = [];
+            var parts = [];
             if (m.author) parts.push(E.esc(m.author));
             if (m.date) parts.push(E.esc(m.date));
             if (m.type && m.type !== '-') parts.push('<span class="ed-badge ed-badge-type">' + E.esc(E.TYPE_LABELS[m.type] || m.type) + '</span>');
             if (m.lang) parts.push('<span class="ed-badge ed-badge-lang">' + E.esc(m.lang) + '</span>');
             if (m.page_count) parts.push(m.page_count + ' Seiten');
-            if (m.demo) parts.push('<span class="ed-badge ed-badge-demo">Demo</span>');
-            if (m.screening) {
-                parts.push(E.screeningBadgeHtml(m.screening));
-            }
-            metaEl.innerHTML = parts.join(' &middot; ');
+            if (m.screening) parts.push(E.screeningBadgeHtml(m.screening));
+            if (m.curation && m.curation !== 'uncurated') parts.push(E.curationBadgeHtml(m.curation));
+            metaEl.innerHTML = parts.join(' \u00B7 ');
         }
-
-        // Load curation status badge (only when server available)
-        loadCurationStatus();
-    }
-
-    // --- Curation Status ---
-    function loadCurationStatus() {
-        const Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
-        if (!Ed || !Ed.state.serverAvailable) return;
-
-        fetch(window.location.origin + '/api/tei/' + state.docId + '/status')
-            .then((r) => r.ok ? r.json() : null)
-            .then((meta) => {
-                if (!meta || meta.status === 'pipeline') return;
-                renderCurationBadge(meta);
-            })
-            .catch(() => {});
-    }
-
-    function renderCurationBadge(meta) {
-        const metaEl = E.$('.ed-reader-meta');
-        if (!metaEl) return;
-        const badgeHtml = E.curationBadgeHtml(meta.status);
-        if (!badgeHtml) return;
-        const span = document.createElement('span');
-        span.innerHTML = ' ' + badgeHtml;
-        metaEl.appendChild(span);
     }
 
     // --- Revision History ---
     function loadRevisionDesc() {
-        E.fetchFullTei(state.docId).then((xml) => {
+        E.fetchFullTei(state.docId).then(function (xml) {
             if (!xml) return;
-            const changes = E.extractRevisionDesc(xml);
+            var changes = E.extractRevisionDesc(xml);
             if (changes && changes.length) {
                 renderRevisionPanel(changes);
             }
@@ -163,82 +144,76 @@
     }
 
     function renderRevisionPanel(changes) {
-        const toolbar = E.$('.ed-reader-toolbar');
+        var toolbar = E.$('.ed-reader-toolbar');
         if (!toolbar) return;
 
-        // Remove existing panel
-        const existing = E.$('.ed-revision-panel');
+        var existing = E.$('.ed-revision-panel');
         if (existing) existing.remove();
 
-        const panel = document.createElement('div');
+        var panel = document.createElement('div');
         panel.className = 'ed-revision-panel';
 
-        // Latest status for summary
-        const lastChange = changes[changes.length - 1];
-        const statusText = lastChange.status ? ` \u2014 ${lastChange.status}` : '';
+        var lastChange = changes[changes.length - 1];
+        var statusText = lastChange.status ? ' \u2014 ' + lastChange.status : '';
 
         panel.innerHTML =
-            `<button class="ed-revision-toggle" aria-expanded="false">` +
-            `<span>Revisionsgeschichte (${changes.length})${E.esc(statusText)}</span>` +
-            `<span class="ed-chevron">&#9660;</span></button>` +
-            `<div class="ed-revision-timeline"></div>`;
+            '<button class="ed-revision-toggle" aria-expanded="false">' +
+            '<span>Revisionsgeschichte (' + changes.length + ')' + E.esc(statusText) + '</span>' +
+            '<span class="ed-chevron">&#9660;</span></button>' +
+            '<div class="ed-revision-timeline"></div>';
 
-        const timeline = panel.querySelector('.ed-revision-timeline');
-        changes.forEach((ch) => {
-            const entry = document.createElement('div');
+        var timeline = panel.querySelector('.ed-revision-timeline');
+        changes.forEach(function (ch) {
+            var entry = document.createElement('div');
             entry.className = 'ed-revision-entry';
-            let statusHtml = '';
+            var statusHtml = '';
             if (ch.status) {
-                statusHtml = ` <span class="ed-revision-status" data-status="${E.esc(ch.status)}">${E.esc(ch.status)}</span>`;
+                statusHtml = ' <span class="ed-revision-status" data-status="' + E.esc(ch.status) + '">' + E.esc(ch.status) + '</span>';
             }
             entry.innerHTML =
-                `<span class="ed-revision-date">${E.esc(ch.when)}</span>` +
-                `<span class="ed-revision-who">${E.esc(ch.who)}</span>` +
-                `<span class="ed-revision-text">${E.esc(ch.text)}${statusHtml}</span>`;
+                '<span class="ed-revision-date">' + E.esc(ch.when) + '</span>' +
+                '<span class="ed-revision-who">' + E.esc(ch.who) + '</span>' +
+                '<span class="ed-revision-text">' + E.esc(ch.text) + statusHtml + '</span>';
             timeline.appendChild(entry);
         });
 
-        // Toggle
-        const toggle = panel.querySelector('.ed-revision-toggle');
-        toggle.addEventListener('click', () => {
-            const open = panel.classList.toggle('open');
+        var toggle = panel.querySelector('.ed-revision-toggle');
+        toggle.addEventListener('click', function () {
+            var open = panel.classList.toggle('open');
             toggle.setAttribute('aria-expanded', String(open));
         });
 
-        // Auto-expand for NEEDS_REVIEW
         if (lastChange.status === 'NEEDS_REVIEW') {
             panel.classList.add('open');
             toggle.setAttribute('aria-expanded', 'true');
         }
 
         toolbar.after(panel);
-
-        // Page thumbnails strip
         renderPageThumbs();
     }
 
     function renderPageThumbs() {
         if (!state.totalPages || state.totalPages <= 1) return;
-        const toolbar = E.$('.ed-reader-toolbar');
+        var toolbar = E.$('.ed-reader-toolbar');
         if (!toolbar) return;
 
-        // Remove existing
-        const existing = E.$('.ed-page-thumbs');
+        var existing = E.$('.ed-page-thumbs');
         if (existing) existing.remove();
 
-        const strip = document.createElement('div');
+        var strip = document.createElement('div');
         strip.className = 'ed-page-thumbs';
-        for (let i = 1; i <= state.totalPages; i++) {
-            const thumb = document.createElement('button');
+        for (var i = 1; i <= state.totalPages; i++) {
+            var thumb = document.createElement('button');
             thumb.className = 'ed-page-thumb' + (i === state.page ? ' active' : '');
             thumb.textContent = i;
-            thumb.title = `Seite ${i}`;
-            thumb.addEventListener('click', () => { showPage(i); });
+            thumb.title = 'Seite ' + i;
+            (function (pg) {
+                thumb.addEventListener('click', function () { showPage(pg); });
+            })(i);
             strip.appendChild(thumb);
         }
 
-        // Insert after revision panel if present, else after toolbar
-        const revPanel = E.$('.ed-revision-panel');
+        var revPanel = E.$('.ed-revision-panel');
         if (revPanel) {
             revPanel.after(strip);
         } else {
@@ -248,98 +223,76 @@
 
     // --- Toolbar ---
     function bindToolbar() {
-        const prevBtn = E.$('#page-prev');
-        const nextBtn = E.$('#page-next');
+        var prevBtn = E.$('#page-prev');
+        var nextBtn = E.$('#page-next');
 
-        if (prevBtn) { prevBtn.title = 'Vorherige Seite (Pfeiltaste links)'; prevBtn.addEventListener('click', () => { changePage(-1); }); }
-        if (nextBtn) { nextBtn.title = 'Naechste Seite (Pfeiltaste rechts)'; nextBtn.addEventListener('click', () => { changePage(1); }); }
+        if (prevBtn) prevBtn.addEventListener('click', function () { changePage(-1); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { changePage(1); });
 
-        // Font toggle
-        const fontBtn = E.$('#font-toggle');
-        if (fontBtn) {
-            fontBtn.addEventListener('click', () => {
-                state.serif = !state.serif;
-                const panel = E.$('.ed-panel-text');
-                if (panel) {
-                    panel.classList.toggle('ed-tei-serif', state.serif);
-                }
-                fontBtn.innerHTML = state.serif ? '<span style="font-family:serif">Aa</span>' : '<span style="font-family:sans-serif">Aa</span>';
-                fontBtn.title = state.serif ? 'Sans-Serif Schrift' : 'Serif Schrift';
-                fontBtn.classList.toggle('active', !state.serif);
+        // View toggle: Text / XML (inside text panel)
+        var textTab = E.$('#view-text');
+        var xmlTab = E.$('#view-xml');
+        if (textTab) {
+            textTab.addEventListener('click', function () {
+                if (!state.xmlMode) return;
+                state.xmlMode = false;
+                textTab.classList.add('active');
+                if (xmlTab) xmlTab.classList.remove('active');
+                showPage(state.page);
             });
         }
-
-        // Entity toggle
-        const entityBtn = E.$('#entity-toggle');
-        if (entityBtn) {
-            entityBtn.addEventListener('click', () => {
-                toggleEntities();
-            });
-        }
-
-        // Delegate entity-close click (avoids re-binding on every render)
-        const sidebar = E.$('.ed-entity-sidebar');
-        if (sidebar) {
-            sidebar.addEventListener('click', (e) => {
-                if (e.target.id === 'entity-close' || e.target.closest('#entity-close')) {
-                    toggleEntities();
-                }
-            });
-        }
-
-        // XML toggle
-        const xmlBtn = E.$('#xml-toggle');
-        if (xmlBtn) {
-            xmlBtn.addEventListener('click', () => {
-                state.xmlMode = !state.xmlMode;
-                xmlBtn.classList.toggle('active', state.xmlMode);
+        if (xmlTab) {
+            xmlTab.addEventListener('click', function () {
+                if (state.xmlMode) return;
+                state.xmlMode = true;
+                xmlTab.classList.add('active');
+                if (textTab) textTab.classList.remove('active');
                 showPage(state.page);
             });
         }
 
         // Zoom
-        const zoomInBtn = E.$('#zoom-in');
-        const zoomOutBtn = E.$('#zoom-out');
-        const zoomReset = E.$('#zoom-reset');
+        var zoomInBtn = E.$('#zoom-in');
+        var zoomOutBtn = E.$('#zoom-out');
+        var zoomReset = E.$('#zoom-reset');
+        var zoomFit = E.$('#zoom-fit');
+        var rotateBtn = E.$('#rotate-btn');
 
-        if (zoomInBtn) zoomInBtn.addEventListener('click', () => { setZoom(state.zoom + 25); });
-        if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => { setZoom(state.zoom - 25); });
-        if (zoomReset) zoomReset.addEventListener('click', () => { setZoom(100); });
+        if (zoomInBtn) zoomInBtn.addEventListener('click', function () { setZoom(state.zoom + 25); });
+        if (zoomOutBtn) zoomOutBtn.addEventListener('click', function () { setZoom(state.zoom - 25); });
+        if (zoomReset) zoomReset.addEventListener('click', function () { setZoom(100); resetPan(); });
+        if (zoomFit) zoomFit.addEventListener('click', function () { fitToWidth(); });
+        if (rotateBtn) rotateBtn.addEventListener('click', function () { rotate(); });
 
         // Edit toggle
-        const editBtn = E.$('#edit-toggle');
+        var editBtn = E.$('#edit-toggle');
         if (editBtn) {
-            editBtn.addEventListener('click', () => {
-                toggleEditMode();
-            });
+            editBtn.addEventListener('click', function () { toggleEditMode(); });
         }
 
         // Save button
-        const saveBtn = E.$('#save-btn');
+        var saveBtn = E.$('#save-btn');
         if (saveBtn) {
-            saveBtn.addEventListener('click', () => {
+            saveBtn.addEventListener('click', function () {
                 if (typeof ZBZ.EditionEditor !== 'undefined') {
-                    const container = E.$('.ed-text-content');
+                    var container = E.$('.ed-text-content');
                     ZBZ.EditionEditor.savePageXml(state.docId, state.page, container, state.xmlMode);
                 }
             });
         }
 
         // Validate button
-        const validateBtn = E.$('#validate-btn');
+        var validateBtn = E.$('#validate-btn');
         if (validateBtn) {
-            validateBtn.addEventListener('click', () => {
-                validateCurrentPage();
-            });
+            validateBtn.addEventListener('click', function () { validateCurrentPage(); });
         }
 
-        // Keyboard navigation + Ctrl+S
-        document.addEventListener('keydown', (e) => {
-            // Ctrl+S: Save
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 's' && state.editMode) {
                 e.preventDefault();
                 if (typeof ZBZ.EditionEditor !== 'undefined' && ZBZ.EditionEditor.state.dirty) {
-                    const container = E.$('.ed-text-content');
+                    var container = E.$('.ed-text-content');
                     ZBZ.EditionEditor.savePageXml(state.docId, state.page, container, state.xmlMode);
                 }
                 return;
@@ -350,8 +303,7 @@
             else if (e.key === 'ArrowRight') { e.preventDefault(); changePage(1); }
         });
 
-        // Unsaved changes warning
-        window.addEventListener('beforeunload', (e) => {
+        window.addEventListener('beforeunload', function (e) {
             if (typeof ZBZ.EditionEditor !== 'undefined' && ZBZ.EditionEditor.state.dirty) {
                 e.preventDefault();
                 e.returnValue = '';
@@ -359,22 +311,9 @@
         });
     }
 
-    function toggleEntities() {
-        state.entitiesVisible = !state.entitiesVisible;
-        const sidebar = E.$('.ed-entity-sidebar');
-        const entityBtn = E.$('#entity-toggle');
-        if (sidebar) {
-            sidebar.classList.toggle('active', state.entitiesVisible);
-            if (state.entitiesVisible) {
-                T.renderEntitySidebar(sidebar);
-            }
-        }
-        if (entityBtn) entityBtn.classList.toggle('active', state.entitiesVisible);
-    }
-
     // --- Page Navigation ---
     function changePage(delta) {
-        const newPage = state.page + delta;
+        var newPage = state.page + delta;
         if (newPage < 1 || newPage > state.totalPages) return;
         showPage(newPage);
     }
@@ -384,64 +323,142 @@
         E.setParams({ doc: state.docId, page: page });
         updatePageIndicator();
         updatePageThumbs();
+        resetPan();
         loadFaksimile();
         loadTei();
     }
 
     function updatePageThumbs() {
-        E.$$('.ed-page-thumb').forEach((t) => {
+        E.$$('.ed-page-thumb').forEach(function (t) {
             t.classList.toggle('active', parseInt(t.textContent, 10) === state.page);
         });
     }
 
     function updatePageIndicator() {
-        const indicator = E.$('#page-indicator');
-        if (indicator) {
-            indicator.textContent = state.page + ' / ' + state.totalPages;
-        }
+        var indicator = E.$('#page-indicator');
+        if (indicator) indicator.textContent = state.page + ' / ' + state.totalPages;
 
-        const prevBtn = E.$('#page-prev');
-        const nextBtn = E.$('#page-next');
+        var prevBtn = E.$('#page-prev');
+        var nextBtn = E.$('#page-next');
         if (prevBtn) prevBtn.disabled = state.page <= 1;
         if (nextBtn) nextBtn.disabled = state.page >= state.totalPages;
     }
 
-    // --- Faksimile ---
-    function loadFaksimile() {
-        const panel = E.$('.ed-panel-faksimile');
+    // --- Faksimile Viewer (Pan + Wheel Zoom + Rotation) ---
+    function initFaksimileViewer() {
+        var panel = E.$('#faks-panel');
         if (!panel) return;
 
-        const src = E.imagePath(state.docId, state.page);
-        const title = state.docMeta ? state.docMeta.title || '' : '';
-        const alt = E.esc(title) + ' – Seite ' + state.page;
+        // Mouse wheel zoom
+        panel.addEventListener('wheel', function (e) {
+            e.preventDefault();
+            var delta = e.deltaY > 0 ? -15 : 15;
+            setZoom(state.zoom + delta);
+        }, { passive: false });
 
-        panel.innerHTML = `<img src="${src}" alt="${alt}" style="width:${state.zoom}%;opacity:0;transition:opacity 0.3s ease">`;
+        // Pan with mouse drag
+        panel.addEventListener('mousedown', function (e) {
+            if (e.button !== 0) return;
+            var img = panel.querySelector('img');
+            if (!img) return;
+            e.preventDefault();
+            state.isPanning = true;
+            state.panStartX = e.clientX;
+            state.panStartY = e.clientY;
+            state.panStartPanX = state.panX;
+            state.panStartPanY = state.panY;
+            panel.style.cursor = 'grabbing';
+        });
 
-        const img = panel.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            if (!state.isPanning) return;
+            state.panX = state.panStartPanX + (e.clientX - state.panStartX);
+            state.panY = state.panStartPanY + (e.clientY - state.panStartY);
+            applyTransform();
+        });
+
+        document.addEventListener('mouseup', function () {
+            if (!state.isPanning) return;
+            state.isPanning = false;
+            var p = E.$('#faks-panel');
+            if (p) p.style.cursor = '';
+        });
+
+        // Double-click zoom
+        panel.addEventListener('dblclick', function () {
+            if (state.zoom >= 200) {
+                setZoom(100);
+                resetPan();
+            } else {
+                setZoom(200);
+            }
+        });
+    }
+
+    function applyTransform() {
+        var img = E.$('#faks-panel img');
+        if (!img) return;
+        img.style.transform = 'translate(' + state.panX + 'px, ' + state.panY + 'px) rotate(' + state.rotation + 'deg)';
+    }
+
+    function resetPan() {
+        state.panX = 0;
+        state.panY = 0;
+        applyTransform();
+    }
+
+    function rotate() {
+        state.rotation = (state.rotation + 90) % 360;
+        applyTransform();
+    }
+
+    function fitToWidth() {
+        var panel = E.$('#faks-panel');
+        var img = panel ? panel.querySelector('img') : null;
+        if (!img || !img.naturalWidth) return;
+        var panelW = panel.clientWidth - 32; // padding
+        var imgW = img.naturalWidth;
+        var fitZoom = Math.round((panelW / imgW) * 100);
+        setZoom(Math.max(25, Math.min(300, fitZoom)));
+        resetPan();
+    }
+
+    // --- Faksimile ---
+    function loadFaksimile() {
+        var panel = E.$('#faks-panel');
+        if (!panel) return;
+
+        var src = E.imagePath(state.docId, state.page);
+        var title = state.docMeta ? state.docMeta.title || '' : '';
+        var alt = E.esc(title) + ' \u2013 Seite ' + state.page;
+
+        panel.innerHTML = '<img src="' + src + '" alt="' + alt + '" style="width:' + state.zoom + '%;opacity:0;transition:opacity 0.3s ease;cursor:grab;transform-origin:center center">';
+
+        var img = panel.querySelector('img');
         if (img) {
-            img.addEventListener('load', () => {
+            img.addEventListener('load', function () {
                 img.style.opacity = '1';
+                applyTransform();
             });
-            img.addEventListener('error', () => {
-                panel.innerHTML = '<div class="ed-empty-state">Bild nicht verfuegbar<br><small style="color:var(--ed-text-muted)">Nur Demo-Dokumente haben Bilder auf GitHub Pages</small></div>';
+            img.addEventListener('error', function () {
+                panel.innerHTML = '<div class="ed-empty-state">Bild nicht verfuegbar<br><small class="ed-text-muted">Nur Demo-Dokumente haben Bilder auf GitHub Pages</small></div>';
             });
         }
     }
 
     // --- TEI ---
     function loadTei() {
-        const container = E.$('.ed-text-content');
+        var container = E.$('.ed-text-content');
         if (!container) return;
 
         container.innerHTML = '<div class="ed-skeleton ed-skeleton-block" style="height:400px"></div>';
 
-        const Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
+        var Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
 
-        // Try server first (curated priority), then static fallback
-        let teiPromise;
+        var teiPromise;
         if (Ed && Ed.state.serverAvailable) {
             teiPromise = Ed.fetchTeiFromServer(state.docId, state.page)
-                .then((data) => {
+                .then(function (data) {
                     if (data && data.xml) return data.xml;
                     return E.fetchTei(state.docId, state.page);
                 });
@@ -449,7 +466,7 @@
             teiPromise = E.fetchTei(state.docId, state.page);
         }
 
-        teiPromise.then((xml) => {
+        teiPromise.then(function (xml) {
             if (state.editMode && Ed) {
                 if (state.xmlMode) {
                     Ed.renderXmlEditable(xml, container);
@@ -462,28 +479,21 @@
             } else {
                 T.render(xml, container);
             }
-
-            // Update entity sidebar if visible
-            if (state.entitiesVisible) {
-                const sidebar = E.$('.ed-entity-sidebar');
-                if (sidebar) T.renderEntitySidebar(sidebar);
-            }
         });
     }
 
     // --- Validation ---
     function validateCurrentPage() {
-        const Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
+        var Ed = typeof ZBZ.EditionEditor !== 'undefined' ? ZBZ.EditionEditor : null;
         if (!Ed || !Ed.state.serverAvailable) {
             Ed.showToast('Server nicht erreichbar', 'error');
             return;
         }
 
-        // Get current XML from editor
-        const container = E.$('.ed-text-content');
-        let xml;
+        var container = E.$('.ed-text-content');
+        var xml;
         if (state.xmlMode) {
-            const textarea = container.querySelector('.ed-xml-editor');
+            var textarea = container.querySelector('.ed-xml-editor');
             xml = textarea ? textarea.value : null;
         } else {
             xml = Ed.serializeToXml(container);
@@ -496,8 +506,7 @@
 
         Ed.showToast('Validiere...', 'info');
 
-        // Wrap in minimal TEI document for RelaxNG validation
-        let fullXml = xml;
+        var fullXml = xml;
         if (xml.indexOf('<TEI') === -1) {
             fullXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
                 '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n' +
@@ -512,84 +521,43 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ xml: fullXml })
         })
-            .then((r) => r.json())
-            .then((result) => {
+            .then(function (r) { return r.json(); })
+            .then(function (result) {
                 if (result.valid) {
                     Ed.showToast('TEI ist valide (RelaxNG)', 'success');
-                    _showValidationPanel(null);
                 } else {
-                    const errCount = result.errors ? result.errors.length : 0;
+                    var errCount = result.errors ? result.errors.length : 0;
                     Ed.showToast(errCount + ' Validierungsfehler', 'error');
-                    _showValidationPanel(result.errors);
                 }
             })
-            .catch((err) => {
+            .catch(function (err) {
                 Ed.showToast('Validierung fehlgeschlagen: ' + (err.detail || err.message || ''), 'error');
             });
-    }
-
-    function _showValidationPanel(errors) {
-        // Remove existing panel
-        const existing = E.$('.ed-validation-panel');
-        if (existing) existing.remove();
-
-        if (!errors || errors.length === 0) return;
-
-        const panel = document.createElement('div');
-        panel.className = 'ed-validation-panel';
-        panel.innerHTML = '<div class="ed-validation-header">' +
-            '<strong>Validierungsfehler (' + errors.length + ')</strong>' +
-            '<button class="ed-validation-close" title="Schliessen">&times;</button>' +
-            '</div>';
-
-        const list = document.createElement('div');
-        list.className = 'ed-validation-list';
-        for (let i = 0; i < errors.length; i++) {
-            const err = errors[i];
-            const msg = typeof err === 'string' ? err : (err.message || JSON.stringify(err));
-            const item = document.createElement('div');
-            item.className = 'ed-validation-item';
-            item.textContent = msg;
-            list.appendChild(item);
-        }
-        panel.appendChild(list);
-
-        // Insert below toolbar
-        const toolbar = E.$('.ed-reader-toolbar');
-        if (toolbar && toolbar.parentNode) {
-            toolbar.parentNode.insertBefore(panel, toolbar.nextSibling);
-        } else {
-            document.body.appendChild(panel);
-        }
-
-        panel.querySelector('.ed-validation-close').addEventListener('click', () => {
-            panel.remove();
-        });
     }
 
     // --- Zoom ---
     function setZoom(z) {
         state.zoom = Math.max(25, Math.min(300, z));
-        const img = E.$('.ed-panel-faksimile img');
+        var img = E.$('#faks-panel img');
         if (img) img.style.width = state.zoom + '%';
 
-        const label = E.$('#zoom-label');
+        var label = E.$('#zoom-label');
         if (label) label.textContent = state.zoom + '%';
     }
 
     // --- Draggable Divider ---
     function initDivider() {
-        const divider = E.$('.ed-panel-divider');
-        const panels = E.$('.ed-reader-panels');
+        var divider = E.$('.ed-panel-divider');
+        var panels = E.$('.ed-reader-panels');
         if (!divider || !panels) return;
 
-        const leftPanel = E.$('.ed-panel-faksimile');
-        const rightPanel = E.$('.ed-panel-text');
+        var leftPanel = E.$('#faks-panel');
+        var rightPanel = E.$('.ed-panel-text');
         if (!leftPanel || !rightPanel) return;
 
-        let dragging = false;
+        var dragging = false;
 
-        divider.addEventListener('mousedown', (e) => {
+        divider.addEventListener('mousedown', function (e) {
             e.preventDefault();
             dragging = true;
             divider.classList.add('dragging');
@@ -597,10 +565,10 @@
             document.body.style.userSelect = 'none';
         });
 
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', function (e) {
             if (!dragging) return;
-            const rect = panels.getBoundingClientRect();
-            let pct = ((e.clientX - rect.left) / rect.width) * 100;
+            var rect = panels.getBoundingClientRect();
+            var pct = ((e.clientX - rect.left) / rect.width) * 100;
             pct = Math.max(15, Math.min(85, pct));
             state.splitRatio = pct;
             leftPanel.style.flex = '0 0 ' + pct + '%';
@@ -626,7 +594,6 @@
         init();
     }
 
-    // --- Public API ---
     ZBZ.EditionReader = {
         showPage: showPage,
         setZoom: setZoom

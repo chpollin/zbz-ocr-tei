@@ -14,6 +14,60 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 30 (2026-03-15): Hersch Design-System + UI-Redesign
+
+### Kontext
+Komplettes Redesign der digitalen Edition basierend auf der Jeanne Hersch Design Specification v1.1. Migration von Navy+Gold+Inter auf Anthrazit+Ziegelrot+EB Garamond+Jost.
+
+### Ergebnisse
+
+**Design-Token-Migration:**
+- Zweistufige CSS-Variable-Architektur: `--h-*` Hersch-Tokens + `--ed-*` Aliase
+- Farbpalette: Anthrazit #2C2825, Ziegelrot #8B3A3A, Preussischblau #2B4C7E, Olivgruen #6B7B5E
+- Typoskala: Kleine Terz (1.2 Ratio) statt lineare Stufen
+- EB Garamond (Body) + Jost (Headings) statt Inter + Source Serif
+- Helle Navigation und Hero (inspiriert von ZBZ-Website)
+
+**Landing Page Redesign:**
+- 3 kompakte Zonen statt 6 Sektionen
+- Kategorien als Chips statt grosse Kacheln
+- Screening als kompakte Chips + Progressbars
+- "Zuletzt bearbeitet" entfernt (Platzfresser)
+- Curation-Hinweis als Info-Box
+
+**Reader-Toolbar:**
+- Font-Toggle und Entity-Sidebar entfernt
+- XML/Text-Toggle aus Toolbar in Textbereich verschoben (Tab-Switch)
+- Faksimile-Viewer: Pan (Drag), Mausrad-Zoom, Rotation (90-Grad), Fit-to-Width, Doppelklick-Zoom
+
+**Neue Hersch-Komponenten (CSS):**
+- Seuil (Schwellenzonen), Divider-Seuil, Etonnement (4 Varianten), Polyphonie-Grid, Blockquote, Source-Label, Sprach-Indikatoren
+
+**UI-Verbesserungen:**
+- Dokumentbeschreibungen (`desc`) auf allen Karten sichtbar
+- Curation-Badge immer sichtbar (nicht nur mit Server)
+- Entity-Kontext-Preview im Register
+- Sprach-Labels fuer `<foreign>` Passagen im Reader
+- Fussnoten als Marginalien (CSS-only, responsive Fallback)
+
+**Refactoring:**
+- ~200 Zeilen tote CSS entfernt (Screening-Cards, Category-Tiles, Featured-Grid)
+- Doppelte `.ed-btn-sm` konsolidiert
+- 11 Inline-Styles durch CSS-Klassen ersetzt
+- 11x hardcoded `#fff` durch `var(--h-text-inverse)` ersetzt
+- Infrastruktur-Seiten (shared.css) auf Hersch-Palette angeglichen
+
+**Wissensdoku:**
+- `knowledge/DESIGN.md` neu: Design-System-Referenz
+- `knowledge/EDITION.md` um Design-Verweis ergaenzt
+- `knowledge/INDEX.md` aktualisiert
+
+### Offene Punkte (naechste Session)
+- Register-Redesign: Dropdown statt Tabs, separate Seiten pro Entity-Typ, Kartenansicht entfernen
+- Multi-Editor-Workflow dokumentieren
+
+---
+
 ## Session 29 (2026-03-15): NEEDS_REVIEW Nachbearbeitung (32 Docs -> 0)
 
 ### Kontext
