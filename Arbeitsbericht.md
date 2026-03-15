@@ -45,7 +45,7 @@ Die Pipeline erzeugt automatisch einen HTML-Qualitaetsbericht, der Schema-Fehler
 
 Ueber den Gesamtkorpus wurden 11.685 eindeutige Entitaeten mit 26.197 Nennungen identifiziert: Personen (37%), Orte (22%), Daten (15%), Organisationen (14%), Werke (11%) und Ereignisse (2%).
 
-Jede Entitaet erhaelt eine projekteigene ID (z.B. zbz-p.2 fuer Jeanne Hersch, zbz-l.705 fuer die Schweiz). Diese IDs bilden ein stabiles Verweissystem innerhalb der Edition und verlinken auf Wikidata und GND. Aktuell sind 24% der Entitaeten mit Wikidata verknuepft; die Vervollstaendigung erfordert Rechenzeit, keine konzeptuelle Arbeit.
+Jede Entitaet erhaelt eine projekteigene ID (z.B. zbz-p.2 fuer Jeanne Hersch, zbz-l.705 fuer die Schweiz). Diese IDs bilden ein stabiles Verweissystem innerhalb der Edition und verlinken auf Wikidata und GND. Im TEI-Text wird der Typ der Entitaet durch das entsprechende TEI-Element unterschieden: `persName` fuer Personen, `orgName` fuer Organisationen, `placeName` fuer Orte und `bibl` fuer Werke. Aktuell sind 24% der Entitaeten mit Wikidata verknuepft; die Vervollstaendigung erfordert Rechenzeit, keine konzeptuelle Arbeit.
 
 ### 3.5 Digitale Edition
 
