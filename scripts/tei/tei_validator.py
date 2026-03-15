@@ -165,20 +165,24 @@ def _check_project_rules(root) -> tuple[list[dict], list[dict]]:
                 "rule": "R6",
             })
 
-    # R7: Entity-Elemente muessen ref haben (persName, orgName, placeName)
-    for elem_name in ("persName", "orgName", "placeName"):
-        for elem in root.findall(f".//{{{TEI_NS}}}{elem_name}"):
-            if not elem.get("ref"):
-                text = (elem.text or "")[:30]
-                errors.append({
-                    "line": elem.sourceline or 0,
-                    "message": f'{elem_name} ohne ref: "{text}"',
-                    "rule": "R7",
-                })
-
     # -----------------------------------------------------------------------
     # WARNINGS -- informativ fuer Editoren
     # -----------------------------------------------------------------------
+
+    # W9: Entity-Elemente ohne ref (wird erst nach NER-Injection aufgeloest)
+    missing_refs = 0
+    total_entities = 0
+    for elem_name in ("persName", "orgName", "placeName"):
+        for elem in root.findall(f".//{{{TEI_NS}}}{elem_name}"):
+            total_entities += 1
+            if not elem.get("ref"):
+                missing_refs += 1
+    if missing_refs > 0:
+        warnings.append({
+            "line": 0,
+            "message": f'{missing_refs}/{total_entities} Entity-Tags ohne ref (NER-Injection ausstehend)',
+            "rule": "W9",
+        })
 
     # W1: Sprach-Code "und" (undetermined)
     for lang in root.findall(f".//{{{TEI_NS}}}language"):
@@ -427,6 +431,7 @@ def generate_html_report(summary: dict, output_path: Path) -> None:
         "W6": "Keine lb-Elemente",
         "W7": "graphic ohne url-Attribut",
         "W8": "Keine Entity-Tags bei substanziellem Text",
+        "W9": "Entity-Tags ohne ref (NER-Injection ausstehend)",
     }
 
     # Error-Frequency HTML
@@ -556,8 +561,8 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 </table>
 
 <footer>
-  <p>Errors: RelaxNG TEI-All + R1 (type=naegeli), R2 (teiHeader), R3 (body), R4 (div), R5 (div-types), R6 (note place), R7 (entity ref)</p>
-  <p>Warnings: W1 (Sprache), W2 (Header-Felder), W3 (facsimile/pb), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W8 (Entity-Coverage)</p>
+  <p>Errors: RelaxNG TEI-All + R1 (type=naegeli), R2 (teiHeader), R3 (body), R4 (div), R5 (div-types), R6 (note place)</p>
+  <p>Warnings: W1 (Sprache), W2 (Header-Felder), W3 (facsimile/pb), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W8 (Entity-Coverage), W9 (Entity-Refs)</p>
 </footer>
 
 </body>
