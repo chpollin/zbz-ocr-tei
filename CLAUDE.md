@@ -26,25 +26,12 @@ Entry point: `knowledge/INDEX.md` — Navigation, document matrix, dependencies,
 
 ## Commands
 
-Complete CLI reference: `knowledge/PIPELINE.md` §CLI Commands.
+Operative Werkzeuge fuer den Promptotyping-Zyklus: `CLAUDE-COMMANDS.md`
 
-```bash
-# Most common commands (no GPU)
-python -m scripts.tei.tei_unified --all           # Unified TEI Pipeline (Production)
-python -m scripts.tei.tei_validator --all --report # TEI Validation (RelaxNG)
-python scripts/evaluate_ocr.py --all              # Evaluation
-python -m scripts.generate_dashboard_data         # Dashboard data
+Die Commands beschreiben ausfuehrbare Operationen (Diagnose, Textschicht, Layout,
+TEI-Erzeugung, Entitaeten, Validierung), die im Zusammenspiel zwischen LLM und
+Critical Expert in the Loop orchestriert werden. Jede Operation erzeugt
+Qualitaetssignale, die den naechsten Schritt informieren.
 
-# NER Pipeline (Phase 3)
-python -m scripts.ner.ner_extract --doc 2310      # NER extraction (single doc)
-python -m scripts.ner.ner_extract --all           # NER extraction (all docs)
-python -m scripts.ner.entity_index --stats        # Entity Index statistics
-python -m scripts.ner.entity_index --merge-all    # Merge all stores into index
-python -m scripts.ner.wikidata_linker --doc 2310  # Wikidata reconciliation
-python -m scripts.ner.ner_inject_tei --doc 2310   # TEI entity injection
-python -m scripts.ner.ner_evaluate --summary       # NER corpus metrics
-python -m scripts.ner.ner_evaluate --doc 2310      # Single doc NER report
-
-# GPU required
-python -m scripts.run_layout_analysis             # Layout analysis (Docling)
-```
+Ausfuehrliche Methodik-Beschreibung: `Promptotyping-Tools.md`
+Vollstaendige CLI-Referenz: `knowledge/PIPELINE.md` §CLI Commands.
