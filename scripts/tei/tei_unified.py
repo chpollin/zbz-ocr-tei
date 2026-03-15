@@ -101,6 +101,7 @@ def process_document(
     desc = metadata.get("desc", "")
     pub_form = metadata.get("pub_form", "other")
     genre = lqa.infer_genre(desc, pub_form)
+    metadata["genre"] = genre
     doc_hints = lqa.build_doc_hints(doc_id)
 
     # Seiten entdecken

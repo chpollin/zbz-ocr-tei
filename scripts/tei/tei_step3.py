@@ -204,6 +204,10 @@ def assemble_document(
 
     result = "\n".join(lines)
 
+    # Post-Assembly Fix: Seiten-divs zu Dokument-divs mergen
+    genre = metadata.get("genre") or metadata.get("pub_form")
+    result = _merge_page_divs(result, genre)
+
     # Post-Assembly Fix: verwaiste <p>/<figure>/<note> direkt in <body>
     # (ausserhalb <div>) in <div type="text"> einwickeln
     result = _fix_orphaned_body_children(result)
@@ -212,6 +216,107 @@ def assemble_document(
     result = _fix_post_assembly_schema(result)
 
     return result
+
+
+# ---------------------------------------------------------------------------
+# Post-Assembly: div-Merge (Seiten -> Dokument)
+# ---------------------------------------------------------------------------
+
+# Genre -> div type Mapping
+_GENRE_TO_DIV_TYPE = {
+    "review": "review",
+    "interview": "interview",
+    "speech": "speech",
+    "conference": "conference",
+    "letter": "letter",
+    "editorial": "editorial",
+    "preface": "preface",
+    "debate": "conversation",
+}
+
+
+def _merge_page_divs(xml_text: str, genre: str = None) -> str:
+    """Mergt aufeinanderfolgende Seiten-divs mit gleichem n zu einem Dokument-div.
+
+    Step 1 erzeugt pro Seite ein <div n="1">. Dieses Post-Assembly-Fix
+    fuegt aufeinanderfolgende divs mit gleichem n-Attribut zusammen, sodass
+    ein Dokument typischerweise 1 top-level div hat (wie die ZBZ-Referenz-TEIs).
+
+    Divs mit unterschiedlichem type werden NICHT gemergt (z.B. type="text" +
+    type="interview" bleiben getrennt).
+    """
+    try:
+        ET.register_namespace("", TEI_NS)
+        root = ET.fromstring(xml_text)
+
+        body = root.find(f".//{{{TEI_NS}}}body")
+        if body is None:
+            return xml_text
+
+        children = list(body)
+        div_tag = f"{{{TEI_NS}}}div"
+
+        # Sammle Gruppen von aufeinanderfolgenden divs mit gleichem n + type
+        groups = []
+        current_group = []
+        for child in children:
+            if child.tag == div_tag:
+                child_n = child.get("n", "")
+                child_type = child.get("type", "")
+                if current_group:
+                    prev = current_group[-1]
+                    prev_n = prev.get("n", "")
+                    prev_type = prev.get("type", "")
+                    if child_n == prev_n and child_type == prev_type:
+                        current_group.append(child)
+                    else:
+                        groups.append(current_group)
+                        current_group = [child]
+                else:
+                    current_group.append(child)
+            else:
+                if current_group:
+                    groups.append(current_group)
+                    current_group = []
+                groups.append([child])
+        if current_group:
+            groups.append(current_group)
+
+        # Merge: Jede Gruppe von divs mit gleichem n/type -> ein div
+        body.clear()
+        body.text = "\n"
+        for group in groups:
+            if len(group) == 1:
+                body.append(group[0])
+            elif group[0].tag == div_tag:
+                # Merge: Alle Kinder der Folge-divs in den ersten div verschieben
+                target = group[0]
+                for source in group[1:]:
+                    # Alle Kinder (pb, p, head, note, ...) verschieben
+                    for child in list(source):
+                        target.append(child)
+                    # Tail-Text des source-div anhaengen
+                    if source.tail and source.tail.strip():
+                        last = list(target)[-1] if list(target) else None
+                        if last is not None:
+                            last.tail = (last.tail or "") + source.tail
+                body.append(target)
+            else:
+                for item in group:
+                    body.append(item)
+
+        # Genre-type auf den aeussersten div setzen (wenn noch kein type)
+        if genre:
+            div_type = _GENRE_TO_DIV_TYPE.get(genre)
+            if div_type:
+                top_divs = body.findall(div_tag)
+                for div in top_divs:
+                    if not div.get("type"):
+                        div.set("type", div_type)
+
+        return ET.tostring(root, encoding="unicode", xml_declaration=True)
+    except Exception:
+        return xml_text
 
 
 # ---------------------------------------------------------------------------

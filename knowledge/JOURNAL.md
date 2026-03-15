@@ -57,6 +57,19 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 140. 25-Doc Production Test (Docs 1520-1770): 25/25 VALID, 341 Seiten, 750s. Keine Schema-Errors.
 
+141. div-Merge: Seiten-divs zu Dokument-divs zusammengefuegt (`_merge_page_divs()` in tei_step3.py):
+   - Problem: Pipeline erzeugte pro Seite einen eigenen `<div n="1">`, ZBZ-Referenz hat immer genau 1
+   - Fix: Post-Assembly-Merge fuegt aufeinanderfolgende divs mit gleichem n zusammen
+   - Genre-basierter div-type wird automatisch gesetzt (review, interview, speech, etc.)
+   - Verifizierung Doc 100: 7 divs -> 1 div, strukturgleich mit Referenz
+
+142. Referenz-Vergleichs-Report implementiert (`--compare-ref` in tei_validator.py):
+   - Vergleicht 11 Pipeline-Docs mit ZBZ-Referenz-TEI
+   - Metriken: Text-CER, Strukturvergleich (div/p/pb/note), Entity-Recall/Precision
+   - HTML + JSON Report unter `output/tei_unified/reference_comparison.html`
+   - Ergebnis: CER 0.4%-63.7% (Median ~12%), div-Struktur nach Merge korrekt
+   - Validator W11: Warnt bei zu vielen top-level divs mit gleichem n
+
 ### Geaenderte Dateien
 - scripts/tei/tei_mapping_prompt.py (_load_entity_entries() mit Typ+ID, Prompt typgruppiert)
 - scripts/tei/tei_generator.py (annotate_entities() typkorrekt mit ref)
