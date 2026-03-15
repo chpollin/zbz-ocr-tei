@@ -33,11 +33,20 @@ _ENTITY_STOPWORDS = {
     # Alltagswoerter die zufaellig Entity-Namen sind
     "Dieu", "Monde", "Temps", "Terre", "Mars", "Nature", "Paix",
     "Fait", "Sens", "Force", "Droit", "Science", "Vie", "Mort",
+    # Deutsche Gattungsbegriffe die als persName/placeName matchen (P7/E44)
+    "Mensch", "Der Mensch", "Wahl", "Rolle", "Angst", "Geist",
+    "Ursprung", "Gott", "Christ", "Philosophie", "Demokratie",
+    "Philosophen", "Marxisten",
+    # Franzoesische Gattungsbegriffe (P9: Est-ce que)
+    "Est", "Homme",
     # Adjektiv-/Demonym-Formen (keine Entities)
     "suisse", "Suisses", "Suisses-romands", "Suisses-allemands",
     "femmes suisses", "citoyens suisses", "allemand",
+    "Schweizer", "Zuercher", "Zahler",
     # Generische Begriffe
     "Etat", "Staat", "State",
+    # Abstrakte Werktitel die zu generisch sind
+    "Zeit", "Gesamtschule",
 }
 
 

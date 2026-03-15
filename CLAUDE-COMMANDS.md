@@ -98,7 +98,8 @@ output/tei_final/{DOC_ID}_review.json     # Befund pro Dokument
 output/tei_final/screening_manifest.json  # Batch-Zuweisungen (4 Tiers)
 ```
 
-**Ergebnis (285/285):** 210 APPROVED (74%), 43 WITH_NOTES (15%), 32 NEEDS_REVIEW (11%).
+**Ergebnis (285/285):** 242 APPROVED (85%), 43 WITH_NOTES (15%), 0 NEEDS_REVIEW (0%).
+Nach Nachbearbeitung (E45-E47): Entity-Stopwoerter, Strukturfixes, OCR-Deduplizierung.
 
 **Additivitaet:** `output/tei_unified/` bleibt unveraendert.
 Finale TEIs mit `<revisionDesc>` liegen in `output/tei_final/`.

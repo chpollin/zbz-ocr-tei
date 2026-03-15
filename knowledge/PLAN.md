@@ -115,7 +115,8 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [ ] Spot-check QA: manually review 10 random documents
 - [ ] Final acceptance: Doc 2310 in oXygen -> no schema errors, entities linked
 - [x] Agent-Based Quality Screening Pilot: 5 Docs (290, 2310, 100, 1440, 1330), alle APPROVED_WITH_NOTES
-- [x] Reassembly mit allen Fixes: 284/285 VALID (2026-03-15)
+- [x] Reassembly mit allen Fixes: 285/285 VALID (2026-03-15)
+- [x] NEEDS_REVIEW Nachbearbeitung: 32 -> 0 Docs (Entity-Stopwoerter, Strukturfixes, OCR-Dedup)
 
 ---
 
@@ -143,7 +144,8 @@ Agentengestuetztes Pre-Curation-Verfahren: Claude Code prueft jedes Dokument dur
 - [x] Screening-Infrastruktur: tei_screening_prep.py (4 Tiers, 58 Batches), tei_add_revision.py, screening_prompt.py
 - [x] revisionDesc in alle 285 TEIs injiziert (E42)
 - [x] output/tei_final/ als Single Source of Truth (E43)
-- [ ] **Rollout: 285/285 Docs screenen** (laeuft, ~208/285 fertig)
+- [x] **Rollout: 285/285 Docs gescreent** (242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW)
+- [x] **Nachbearbeitung 32 NEEDS_REVIEW Docs** (E45-E47): Entity-Stopwoerter, Strukturfixes, OCR-Deduplizierung
 - [ ] Vergleich Agent-Befund vs. ZBZ-Fachexpertin (Kurationspilot)
 
 ### Frontend-TODOs (separate Session)

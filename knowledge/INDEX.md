@@ -92,6 +92,8 @@ JOURNAL   <-- chronological, references all docs
 | Curation Editor (E36) | Edit-Modus der Edition: WYSIWYG, Entity-Kuration, Review-Workflow, FastAPI Server | [CURATION](CURATION.md) |
 | NER Pipeline (E34) | Post-hoc NER via Gemini Flash Lite (6 types), TEI-XML Entity Index, Wikidata Reconciliation, TEI Injection | [PIPELINE](PIPELINE.md) |
 | Agent-Based Quality Screening (E41) | Agentengestuetztes Pre-Curation: 7-Schichten-Review (Scan, OCR, Layout, Struktur, Referenz, Entities, Kohaerenz). Output: Review-JSON + Sweep-Summary | [PLAN](PLAN.md) |
+| Entity-Stopwort-Erweiterung (E45) | 20 neue Stopwoerter gegen systematische False Positives (Mensch, Est, Homme, Zeit etc.) | [PIPELINE](PIPELINE.md) |
+| OCR-Deduplizierung (E46) | `scripts/ocr_dedup.py`: Deterministische Entfernung von Token-Loops, Barcode-Artefakten, Jahrzahl-Wiederholungen | [PIPELINE](PIPELINE.md) |
 
 ---
 

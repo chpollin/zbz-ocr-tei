@@ -62,7 +62,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done |
 | M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Done** (285 Docs, 11,685 Entities, Wikidata ~15% ongoing) |
 | M4 | TEI-XML | DTA-compliant TEI, schema-valid | **Done** (285/285 unified, 284 schema-valide, typkorrekte Entity-Tags mit internen IDs) |
-| M5 | Production run | 286 docs processed, spot-check QA passed | **In Progress** (285/285 erzeugt, Quality Sweep + Kurationspilot ausstehend) |
+| M5 | Production run | 286 docs processed, spot-check QA passed | **In Progress** (285/285 erzeugt + gescreent: 242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW. Kurationspilot ausstehend) |
 
 ### Dependencies
 
@@ -94,7 +94,8 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 | TEI Validator | Done | `scripts/tei/tei_validator.py`: RelaxNG + 8 Projekt-Regeln |
 | Evaluation + Dashboard | Done | `scripts/evaluate_ocr.py` + `docs/index.html` |
 | Digitale Edition + Curation | Done | `docs/` (E33) + Curation Server (E36). Details: [EDITION](EDITION.md), [CURATION](CURATION.md) |
-| **Agent-Based Quality Screening** | **Done** | 285/285 Docs gescreent. 210 APPROVED (74%), 43 WITH_NOTES (15%), 32 NEEDS_REVIEW (11%) |
+| **Agent-Based Quality Screening** | **Done** | 285/285 Docs gescreent + nachbearbeitet. 242 APPROVED (85%), 43 WITH_NOTES (15%), 0 NEEDS_REVIEW (0%) |
+| OCR Deduplizierung | Done | `scripts/ocr_dedup.py` (E46). 3 Docs bereinigt (900, 1100, 2630) |
 | Containerization | Pending | Dockerfile for Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
 

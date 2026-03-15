@@ -14,6 +14,60 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 29 (2026-03-15): NEEDS_REVIEW Nachbearbeitung (32 Docs -> 0)
+
+### Kontext
+32 Dokumente mit Status NEEDS_REVIEW aus dem Agent-Based Quality Screening systematisch nachbearbeitet. Drei Problemkategorien: Entity False Positives (15 Docs), Strukturprobleme (9 Docs), OCR-Halluzinationen (8 Docs).
+
+### Ergebnisse
+
+**Entity-Stopwoerter erweitert (E45):**
+- 20 neue Eintraege in `_ENTITY_STOPWORDS` (tei_mapping_prompt.py)
+- Deutsche Gattungsbegriffe: Mensch, Der Mensch, Wahl, Rolle, Angst, Geist, Ursprung, Gott, Christ, Philosophie, Demokratie, Philosophen, Marxisten
+- Franzoesische Falsch-Positive: Est (P9: Est-ce que), Homme (droits de l'Homme)
+- Demonymen: Schweizer, Zuercher, Zahler
+- Abstrakte Werktitel: Zeit, Gesamtschule
+- Reassembly aller 32 Docs: 32/32 VALID, $0 Kosten
+
+**Strukturfixes (5 Docs):**
+- Doc 2140: div type="interview" -> type="text", 5x sp/speaker -> p rendition="#b" (Thesen, keine Sprecher)
+- Doc 2150: Platzhalter-Titel "2150" -> "A la veille de mon premier voyage en Grece"
+- Doc 2530: Verwaistes head in div n="1" in div n="2" verschoben
+- Doc 2550: 2x head nach p -> p rendition="#b", leeres sp/speaker entfernt, Duplikat-Absatz entfernt
+- Doc 2660: div type="interview" -> type="text", 4x spuriose sp/speaker entfernt
+
+**OCR-Halluzinationen bereinigt (3 Docs):**
+- Neues Script: `scripts/ocr_dedup.py` -- Token-Repetitions-Loops, Einzel-Buchstaben-Loops, Barcode-Artefakte, Jahrzahl-Wiederholungen, URL-Artefakte
+- Doc 900: "les filles" 28x, "1969" 50x, "la sensibilite" 30x, J-Buchstaben-Loop (200x) entfernt
+- Doc 1100: "de l'URSS" 13x, "de la situation sociale" 25x entfernt
+- Doc 2630: 6 Barcode-Artefakte (KdSvoSsBtGcWIS...) + URL-Artefakt entfernt
+- Einschraenkung: Fehlender Originaltext nicht rekonstruierbar ohne Gemini OCR-Rerun
+
+**Neuer Gesamtstatus (285/285 Docs):**
+
+| Status | Vorher | Nachher |
+|--------|--------|---------|
+| APPROVED | 210 (74%) | 242 (85%) |
+| APPROVED_WITH_NOTES | 43 (15%) | 43 (15%) |
+| NEEDS_REVIEW | 32 (11%) | 0 (0%) |
+
+### Technische Aenderungen
+- `scripts/tei/tei_mapping_prompt.py`: _ENTITY_STOPWORDS erweitert (E45)
+- `scripts/ocr_dedup.py`: Neues Script zur OCR-Halluzinations-Bereinigung
+- 32 TEIs in output/tei_unified/ reassembliert
+- 5 TEIs strukturell gefixt (div-Typen, sp->head, Titel)
+- 3 OCR-Quelldateien in output/ocr_results/ bereinigt
+- Quality Pass: 285/285 Docs, 242 APPROVED + 43 WITH_NOTES
+- revisionDesc in allen 285 TEIs aktualisiert
+- catalog.json mit aktualisierten Screening-Status regeneriert
+
+### Entscheidungen
+- E45: Entity-Stopwort-Erweiterung durchgefuehrt (20 neue Eintraege)
+- E46: OCR-Deduplizierung als deterministische Nachbearbeitung (kein LLM noetig)
+- E47: div type="essay" ist kein valider DTA-Typ -> type="text" als generischer Ersatz
+
+---
+
 ## Session 28 (2026-03-15): Edition Frontend Refactoring
 
 ### Kontext
