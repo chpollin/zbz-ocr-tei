@@ -49,11 +49,9 @@ Jede Entitaet erhaelt eine projekteigene ID (z.B. zbz-p.2 fuer Jeanne Hersch, zb
 
 ### 3.5 Qualitaetssicherung (Agent-Based Quality Screening)
 
-Zusaetzlich zur automatischen Schema-Validierung wurde ein agentengestuetztes Screening-Verfahren entwickelt und an fuenf Pilotdokumenten erprobt (Doc 290, 2310, 100, 1440, 1330 -- verschiedene Sprachen, Genres und Formate). Dabei wird jedes Dokument gegen den Originalscan geprueft: Scan-Qualitaet, OCR-Treue, Layout-Korrektheit, TEI-Struktur, Entitaeten und inhaltliche Kohaerenz. Das Ergebnis ist ein strukturierter Befund pro Dokument, der den menschlichen Kurator:innen die Arbeit erleichtert.
+Zusaetzlich zur automatischen Schema-Validierung wurden alle 285 Dokumente durch ein agentengestuetztes Screening-Verfahren geprueft. Dabei wird jedes Dokument gegen den Originalscan geprueft: Scan-Qualitaet, OCR-Treue, Layout-Korrektheit, TEI-Struktur, Entitaeten und inhaltliche Kohaerenz. Das Ergebnis ist ein strukturierter Befund pro Dokument, der den menschlichen Kurator:innen die Arbeit erleichtert.
 
-Alle fuenf Pilotdokumente bestanden das Screening. Sechs systematische Muster wurden identifiziert, darunter: Doppelseiten-Scans (Buchformat) erzeugen technisch korrekte, aber optisch unerwartete Strukturen; bei abstrakten philosophischen Texten erkennt die Pipeline weniger Entitaeten als bei biographischen (inhaltlich erklaerbar, kein Fehler); und Gemini korrigiert im Erzeugungsprozess nebenbei OCR-Fehler (ein undokumentierter Qualitaetsgewinn).
-
-Dieses Screening ist als Vorpruefung fuer die menschliche Kuration konzipiert, nicht als Ersatz. Es reduziert die Menge an Dokumenten, die fachliche Aufmerksamkeit erfordern.
+Von 285 gescreenten Dokumenten sind 210 (74%) publikationsreif, 43 (15%) mit Hinweisen fuer Kurator:innen versehen und 32 (11%) benoetigen Nacharbeit. Die Hauptursachen fuer Nacharbeit sind mehrspaltige Zeitungslayouts, bei denen die OCR-Erkennung an ihre Grenzen stoesst, sowie Entity-False-Positives bei Gattungsbegriffen. Das Screening sortiert, wo menschliche Aufmerksamkeit noetig ist -- es ist als Vorpruefung fuer die menschliche Kuration konzipiert, nicht als Ersatz.
 
 ### 3.6 Digitale Edition
 
@@ -70,6 +68,8 @@ Ein Browser-basierter Editor erlaubt die Nachbearbeitung der KI-generierten Doku
 **Scan-Qualitaet bestimmt die Textgenauigkeit.** Die Streuung der Fehlerrate geht primaer auf unterschiedliche Vorlagenqualitaet zurueck. Schlechte Scans koennen nur begrenzt kompensiert werden.
 
 **Etwa 5 bis 10% der automatisch erkannten Entitaeten sind falsch.** Generische Begriffe werden gelegentlich als Entitaeten markiert. Diese Fehler werden ueber das Kurationswerkzeug korrigiert.
+
+**Mehrspaltige Zeitungslayouts sind fehleranfaellig.** Bei Dokumenten mit komplexem Zeitungslayout (mehrspaltig, Anzeigen, gemischte Artikel) treten gehaeuft OCR-Halluzinationen und Strukturprobleme auf. Diese Dokumente machen den Grossteil der 32 nacharbeitspflichtigen Faelle aus.
 
 **Die Wikidata-Verlinkung ist noch unvollstaendig.** 24% der Entitaeten sind verlinkt. Die Vervollstaendigung ist vorbereitet und erfordert Rechenzeit.
 
@@ -101,7 +101,7 @@ Alle Zwischenergebnisse werden gespeichert. Die Pipeline ueberspringt bereits ve
 | Wikidata-Verlinkung | laufend | 2.803 von 11.685 Entitaeten (24%) |
 | Digitale Edition | funktionsfaehig | 286 Dokumente im Katalog |
 | Kurationswerkzeug | funktionsfaehig | bereit fuer Pilotbetrieb |
-| Quality Screening (Pre-Curation) | Pilot | 5 Dokumente geprueft, 6 systematische Muster identifiziert |
+| Quality Screening | abgeschlossen | 285/285 Docs, 210 APPROVED, 43 WITH_NOTES, 32 NEEDS_REVIEW |
 | PAGE-XML-Export | abgeschlossen | 286/286 Dokumente, Transkribus-kompatibel |
 
 ---

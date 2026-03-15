@@ -140,8 +140,20 @@ Kein sequentieller Pipeline-Schritt, sondern Praesentations- und Kurationschicht
 Agentengestuetztes Pre-Curation-Verfahren: Claude Code prueft jedes Dokument durch 7 Schichten (Scan, OCR, Layout, Struktur, Referenz, Entities, Kohaerenz). Ergebnis: Review-JSON pro Dokument + Sweep-Summary mit systematischen Mustern.
 
 - [x] Pilot: 5 Docs (290, 2310, 100, 1440, 1330), 6 systematische Muster (P1-P6)
-- [ ] Rollout auf weitere Dokumente
+- [x] Screening-Infrastruktur: tei_screening_prep.py (4 Tiers, 58 Batches), tei_add_revision.py, screening_prompt.py
+- [x] revisionDesc in alle 285 TEIs injiziert (E42)
+- [x] output/tei_final/ als Single Source of Truth (E43)
+- [ ] **Rollout: 285/285 Docs screenen** (laeuft, ~208/285 fertig)
 - [ ] Vergleich Agent-Befund vs. ZBZ-Fachexpertin (Kurationspilot)
+
+### Frontend-TODOs (separate Session)
+
+- [ ] Datenquelle auf tei_final/ umstellen (Reader)
+- [ ] Screening-Badge im Katalog (APPROVED/WITH_NOTES/NEEDS_REVIEW/grau)
+- [ ] revisionDesc im Reader anzeigen (Bearbeitungshistorie)
+- [ ] Curation Editor: revisionDesc beim Speichern automatisch schreiben
+- [ ] docs/edition/ Duplikat klaeren (mergen oder loeschen)
+- [ ] Katalog-Filter nach Screening-Status
 - [ ] Publish-Workflow mit ZBZ testen
 
 ---

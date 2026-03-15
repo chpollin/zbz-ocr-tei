@@ -26,7 +26,7 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XM
 | Entity Index + Wikidata/GND linking | Wikidata API + TEI-XML indices | Done (24% linked) |
 | TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
 | TEI NER injection | Rule-based annotation + Entity Index | Done (285/285) |
-| **Agent-Based Quality Screening** | **Claude Code (7-layer review)** | **Pilot (5 docs)** |
+| **Agent-Based Quality Screening** | **Claude Code (7-layer review)** | **Done (285/285)** |
 | **Curation (Human-in-the-Loop)** | **Browser WYSIWYG + FastAPI server** | **Done** |
 | Review + Publication | Status workflow + publish to GitHub Pages | Done |
 | Evaluation + Dashboard | CER/WER + interactive QA UI | Done |

@@ -14,10 +14,7 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 
-from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, DOC_METADATA_PATH, ENTITIES_DIR
-
-# Finale TEIs aus dem Quality Screening (bevorzugt gegenueber TEI_DIR)
-TEI_FINAL_DIR = PROJECT_ROOT / "output" / "tei_final"
+from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, TEI_FINAL_DIR, DOC_METADATA_PATH, ENTITIES_DIR
 from scripts.utils import load_json
 
 
@@ -138,6 +135,7 @@ def build_catalog():
             "entity_count": entity_counts.get(doc_id, 0),
             "screening": screening_status.get(doc_id, {}).get("status"),
             "screening_reviewer": screening_status.get(doc_id, {}).get("reviewer"),
+            "screening_date": screening_status.get(doc_id, {}).get("date"),
             "demo": doc_id in FEATURED_DOCS,
         }
         entries.append(entry)
@@ -151,6 +149,11 @@ def build_catalog():
         type_counts[e["type"]] = type_counts.get(e["type"], 0) + 1
         pf = e["pub_form"] or "other"
         form_counts[pf] = form_counts.get(pf, 0) + 1
+
+    screening_counts = {}
+    for e in entries:
+        s = e.get("screening") or "NOT_SCREENED"
+        screening_counts[s] = screening_counts.get(s, 0) + 1
 
     catalog = {
         "generated": datetime.now().isoformat(timespec="seconds"),
@@ -170,6 +173,7 @@ def build_catalog():
             "languages": lang_counts,
             "types": type_counts,
             "forms": form_counts,
+            "screening": screening_counts,
         },
         "labels": {
             "languages": LANG_LABELS,

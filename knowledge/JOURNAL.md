@@ -64,6 +64,14 @@ Erste Anwendung der Promptotyping-Methodik als operativen Quality-Screening-Proz
 - **generate_edition_data.py**: Liest aus tei_final/, Katalog enthaelt screening-Status fuer Frontend-Badges
 - **Wikidata-Linking Batch-Run** gestartet (Hintergrund, 26% → Ziel >50%)
 
+**Finales Screening-Ergebnis (285/285 Docs):**
+- APPROVED: 210 (74%)
+- APPROVED_WITH_NOTES: 43 (15%)
+- NEEDS_REVIEW: 32 (11%)
+- 58 Batches in 4 Tiers, parallelisiert ueber ~40 Agent-Invocations
+- revisionDesc in alle 285 TEIs aktualisiert mit finalem Status
+- 32 NEEDS_REVIEW Docs: Hauptursachen OCR-Halluzinationen bei Zeitungslayouts (8), Entity-False-Positives (15), Strukturprobleme (9)
+
 ### Dokumentation
 - CLAUDE-COMMANDS.md: Quality Screening konkretisiert, Dreischichtung dokumentiert
 - Arbeitsbericht: §3.5 Quality Screening + §6 Produktionsstand ergaenzt
