@@ -766,6 +766,32 @@ These questions were flagged in the internal document and require clarification 
 
 ---
 
+## revisionDesc (Quality Screening Status)
+
+Jedes finale TEI in `output/tei_final/` enthaelt eine `<revisionDesc>` im teiHeader:
+
+```xml
+<revisionDesc>
+  <change when="2026-03-15" who="pipeline">
+    TEI generated (Unified Pipeline v1, Gemini + RelaxNG)
+  </change>
+  <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">
+    Agent-Based Quality Screening (L1:ok L2:ok ... L7:ok). Findings...
+  </change>
+</revisionDesc>
+```
+
+**Attribute:**
+- `when`: Datum der Aenderung
+- `who`: `pipeline` | `quality-pass-auto` | `agent-screening-v2`
+- `status`: `APPROVED` | `APPROVED_WITH_NOTES` | `NEEDS_REVIEW` | `NEEDS_REWORK`
+
+**Konvention:** `<revisionDesc>` steht direkt vor `</teiHeader>`. Der juengste `<change>`-Eintrag bestimmt den aktuellen Status. Die Edition zeigt den Status als Badge an.
+
+Script: `python -m scripts.tei.tei_add_revision --all`
+
+---
+
 ## References
 
 - [QUELLENANALYSE](QUELLENANALYSE.md) for corpus and document types
@@ -775,4 +801,4 @@ These questions were flagged in the internal document and require clarification 
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-02-27*
+*Created: 2026-01-29 | Updated: 2026-03-15*

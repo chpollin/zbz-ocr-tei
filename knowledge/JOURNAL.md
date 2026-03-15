@@ -14,10 +14,10 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
-## Session 27 (2026-03-15): Agent-Based Quality Screening (Pilot)
+## Session 27 (2026-03-15): Agent-Based Quality Screening + revisionDesc
 
 ### Kontext
-Erste Anwendung der Promptotyping-Methodik als operativen Quality-Screening-Prozess. 5 Pilot-Dokumente (290, 2310, 100, 1440, 1330) durch strukturiertes Review-Protokoll geprueft.
+Erste Anwendung der Promptotyping-Methodik als operativen Quality-Screening-Prozess. Infrastruktur fuer echtes 7-Schichten-Screening aufgebaut. revisionDesc als Versionierungs-Standard im TEI-Header etabliert.
 
 ### Ergebnisse
 
@@ -56,6 +56,13 @@ Erste Anwendung der Promptotyping-Methodik als operativen Quality-Screening-Proz
   - Artifact = materielles Werkzeug im Repo (Script, Index, Report)
   - Tool = konkreter Aufruf eines Artifacts durch den Agent
 - Paper.md erweitert: Dreischichtung in Begriffsklaerung, Quality Screening als empirisches Beispiel in Verifikationskaskade
+- **revisionDesc im TEI-Header** (E42): Jedes finale TEI hat Pipeline- und Screening-Status
+- **output/tei_final/ als Single Source of Truth** (E43): Edition liest nur gescreente TEIs
+- **Screening-Infrastruktur aufgebaut**: tei_screening_prep.py (Batch-Manifest, 4 Tiers, 58 Batches), tei_add_revision.py (revisionDesc-Injektion), tei_quality_pass.py (automatischer Check)
+- **Erster echter Screening-Batch (10 Docs)**: 3 APPROVED, 6 APPROVED_WITH_NOTES, 1 NEEDS_REVIEW (Doc 660: OCR-Halluzinationen)
+- **285/285 TEIs mit revisionDesc**: Status reist mit dem Dokument
+- **generate_edition_data.py**: Liest aus tei_final/, Katalog enthaelt screening-Status fuer Frontend-Badges
+- **Wikidata-Linking Batch-Run** gestartet (Hintergrund, 26% → Ziel >50%)
 
 ### Dokumentation
 - CLAUDE-COMMANDS.md: Quality Screening konkretisiert, Dreischichtung dokumentiert

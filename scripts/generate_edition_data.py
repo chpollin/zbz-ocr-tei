@@ -15,6 +15,9 @@ from datetime import datetime
 from pathlib import Path
 
 from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, DOC_METADATA_PATH, ENTITIES_DIR
+
+# Finale TEIs aus dem Quality Screening (bevorzugt gegenueber TEI_DIR)
+TEI_FINAL_DIR = PROJECT_ROOT / "output" / "tei_final"
 from scripts.utils import load_json
 
 
@@ -49,17 +52,30 @@ PUB_FORM_LABELS = {
 
 
 def copy_demo_tei_files():
-    """Kopiert fehlende TEI-XMLs fuer Demo-Docs nach docs/data/examples/."""
+    """Kopiert finale TEI-XMLs fuer Demo-Docs nach docs/data/examples/.
+
+    Bevorzugt tei_final/ (gescreente Dokumente mit revisionDesc).
+    Fallback auf TEI_DIR (alte rule-based TEIs) wenn tei_final nicht vorhanden.
+    """
     copied = 0
     for doc_id in FEATURED_DOCS:
         examples_dir = DOCS_DIR / "data" / "examples" / doc_id
         examples_dir.mkdir(parents=True, exist_ok=True)
 
-        for tei_file in sorted(TEI_DIR.glob(f"{doc_id}_p*.xml")):
-            target = examples_dir / tei_file.name
-            if not target.exists():
-                shutil.copy2(tei_file, target)
+        # Bevorzugt: Finale TEI aus Quality Screening
+        final_tei = TEI_FINAL_DIR / f"{doc_id}_final.xml"
+        if final_tei.exists():
+            target = examples_dir / f"{doc_id}_final.xml"
+            if not target.exists() or final_tei.stat().st_mtime > target.stat().st_mtime:
+                shutil.copy2(final_tei, target)
                 copied += 1
+        else:
+            # Fallback: Alte page-level TEIs
+            for tei_file in sorted(TEI_DIR.glob(f"{doc_id}_p*.xml")):
+                target = examples_dir / tei_file.name
+                if not target.exists():
+                    shutil.copy2(tei_file, target)
+                    copied += 1
 
     return copied
 
@@ -76,6 +92,21 @@ def build_catalog():
 
     docs = dashboard.get("documents", {})
     overview = dashboard.get("pipeline_summary", {})
+
+    # Screening-Status vorladen (aus Review-JSONs)
+    screening_status = {}
+    if TEI_FINAL_DIR.exists():
+        for review_file in TEI_FINAL_DIR.glob("*_review.json"):
+            try:
+                review = json.loads(review_file.read_text(encoding="utf-8"))
+                did = review.get("doc_id", review_file.stem.replace("_review", ""))
+                screening_status[did] = {
+                    "status": review.get("status", "UNKNOWN"),
+                    "reviewer": review.get("reviewer", "unknown"),
+                    "date": review.get("date", ""),
+                }
+            except (json.JSONDecodeError, IOError):
+                pass
 
     # Entity-Counts vorladen
     entity_counts = {}
@@ -105,6 +136,8 @@ def build_catalog():
             "page_count": doc.get("page_count", 0),
             "has_tei": doc.get("pipeline_status", {}).get("tei", False),
             "entity_count": entity_counts.get(doc_id, 0),
+            "screening": screening_status.get(doc_id, {}).get("status"),
+            "screening_reviewer": screening_status.get(doc_id, {}).get("reviewer"),
             "demo": doc_id in FEATURED_DOCS,
         }
         entries.append(entry)

@@ -24,14 +24,25 @@ Entry point: `knowledge/INDEX.md` — Navigation, document matrix, dependencies,
 - **Output**: JSON for data, HTML for reports
 - **Frontend**: ES6+ JavaScript (const/let, arrow functions, template literals, IIFE wrappers), `ZBZ.*` / `TeiViewer.*` namespaces
 
+## TEI-Datenfluss
+
+- `output/tei_unified/` — Pipeline-Output (generierte TEIs, nicht editieren)
+- `output/tei_final/` — Gescreente, finale TEIs mit `<revisionDesc>` im Header
+- Nur `tei_final/`-Dokumente werden in der Edition angezeigt
+- Jedes finale TEI hat eine `<revisionDesc>` mit Pipeline- und Screening-Status
+- Review-JSONs (`{DOC_ID}_review.json`) dokumentieren den Befund pro Dokument
+
 ## Commands
 
 Operative Werkzeuge fuer den Promptotyping-Zyklus: `CLAUDE-COMMANDS.md`
 
 Die Commands beschreiben ausfuehrbare Operationen (Diagnose, Textschicht, Layout,
-TEI-Erzeugung, Entitaeten, Validierung), die im Zusammenspiel zwischen LLM und
-Critical Expert in the Loop orchestriert werden. Jede Operation erzeugt
-Qualitaetssignale, die den naechsten Schritt informieren.
+TEI-Erzeugung, Entitaeten, Validierung, Quality Screening), die im Zusammenspiel
+zwischen LLM und Critical Expert in the Loop orchestriert werden. Jede Operation
+erzeugt Qualitaetssignale, die den naechsten Schritt informieren.
+
+Dreischichtung: Command (Entscheidungsregel) / Artifact (Werkzeug) / Tool (Aufruf).
+Details: `CLAUDE-COMMANDS.md` §Dreischichtung.
 
 Ausfuehrliche Methodik-Beschreibung: `Promptotyping-Tools.md`
 Vollstaendige CLI-Referenz: `knowledge/PIPELINE.md` §CLI Commands.
