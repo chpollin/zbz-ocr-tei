@@ -160,9 +160,21 @@ PDF-Scans (286 PDFs)
   |
   +---> tei_unified.py -----------> TEI-XML (Scaffold+Gemini+Validate)
   |
+  +---> ner_inject_tei.py -------> TEI-XML with Entity Markup
+  |
+  +---> tei_validator.py ---------> Validation Report (RelaxNG + R1-R14)
+  |     --all --html-report          output/tei_unified/validation_report.html
+  |
+  +---> Curation Editor ----------> Curated TEI (Human-in-the-Loop)
+  |     (localhost:8000)             data/tei_curated/ (Gold-Standard)
+  |     Text + Struktur +            Status: draft > in_review > approved
+  |     Entity-Kuration
+  |
   +---> evaluate_ocr.py ----------> CER + Structure + Entity Scores
   |
   +---> generate_edition_data.py -> docs/data/catalog.json
+  |
+  +---> Publish -----------------> docs/data/examples/ (GitHub Pages)
 ```
 
 Aktueller Status pro Stufe: siehe [PROJEKT](PROJEKT.md) §Component Status.

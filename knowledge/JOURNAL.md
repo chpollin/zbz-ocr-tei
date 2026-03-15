@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-14
+updated: 2026-03-15
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,39 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## 2026-03-15 | TEI Validation Quality Gate + Pipeline-Dokumentation (Session 26)
+
+135. Pipeline-Diagramm und Data Flow um Curation + Publication erweitert:
+   - README.md: Pipeline-Diagramm endet jetzt bei Curation -> Publication
+   - PLAN.md: Data Flow um Curation Editor + Publish-Schritt ergaenzt
+   - Curation Editor als finaler Human-in-the-Loop-Schritt positioniert
+
+136. TEI Validator refactored (`scripts/tei/tei_validator.py`):
+   - Klares 2-Ebenen-Modell: Errors (blockierend) + Warnings (informativ)
+   - Errors: RelaxNG TEI-All + R1-R7 (type, header, body, div, note, entity-ref)
+   - Warnings: W1 (Sprach-Code "und"), W2 (teiHeader title/author leer), W3 (facsimile/pb Mismatch), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W8 (Entity-Coverage)
+   - R8 entfernt (redundant mit RelaxNG), R10/R13 entfernt (>50% False Positives), R11 ersetzt durch W8
+   - R7 erweitert um placeName (war vorher nur persName/orgName)
+   - Performance: 1x parsen statt 3x (lxml Tree wiederverwendet)
+   - HTML-Report: `--html-report` erzeugt `validation_report.html`
+   - Ergebnis: 50/50 valid, 15/50 mit Warnings (vorher 49/50 -- fast alles False Positives)
+
+137. Pipeline-Integration:
+   - tei_unified.py: Validation jetzt Default (aktiv), `--skip-validate` zum Ueberspringen
+   - Batch-Run erzeugt automatisch HTML+JSON Validierungsbericht
+   - Curation Server: 2 neue Endpoints (`/api/validation/summary`, `/api/validation/{doc_id}`)
+
+### Geaenderte Dateien
+- scripts/tei/tei_validator.py (Refactoring: 2-Ebenen, neue Checks, 1x Parse)
+- scripts/tei/tei_unified.py (Validation Default, HTML-Report nach Batch)
+- scripts/server/curation_server.py (2 neue Validation-Endpoints, register.html)
+- README.md (Pipeline-Diagramm, Curation-Abschnitt, Validation-CLI)
+- knowledge/PLAN.md (Data Flow mit Validation + Curation + Publish)
+- knowledge/PIPELINE.md (Validation-Regeln R1-R7 + W1-W8)
+- knowledge/CURATION.md (neue API-Endpoints)
 
 ---
 

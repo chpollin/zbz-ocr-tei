@@ -476,6 +476,58 @@ def entity_index_search(q: str = "", limit: int = 10):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/api/validation/summary")
+def validation_summary():
+    """Liefert Validierungszusammenfassung aller TEI-Dokumente."""
+    try:
+        from scripts.tei.tei_validator import validate_all
+        summary = validate_all()
+        # Kompakte Antwort: nur Status pro Doc, nicht alle Details
+        per_doc_compact = {}
+        for doc_id, result in summary.get("per_doc", {}).items():
+            per_doc_compact[doc_id] = {
+                "valid": result["valid"],
+                "schema_errors": result.get("schema_errors", 0),
+                "project_errors": result.get("project_errors", 0),
+                "warning_count": result.get("warning_count", 0),
+                "warning_rules": [
+                    w.get("rule", "?")
+                    for w in result.get("warnings", [])
+                ],
+            }
+        return {
+            "total": summary["total"],
+            "valid": summary["valid"],
+            "invalid": summary["invalid"],
+            "with_warnings": summary.get("with_warnings", 0),
+            "per_doc": per_doc_compact,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/validation/{doc_id}")
+def validation_detail(doc_id: str):
+    """Liefert detaillierte Validierung fuer ein einzelnes Dokument."""
+    doc_id = _sanitize_doc_id(doc_id)
+    # Suche finale TEI in: curated > ner > unified
+    final_path = None
+    for base_dir in (TEI_CURATED_DIR, TEI_NER_DIR, TEI_UNIFIED_DIR):
+        candidate = base_dir / doc_id / f"{doc_id}_final.xml"
+        if candidate.exists():
+            final_path = candidate
+            break
+
+    if not final_path:
+        raise HTTPException(status_code=404, detail="Kein TEI gefunden")
+
+    try:
+        from scripts.tei.tei_validator import validate_tei_file
+        return validate_tei_file(final_path)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 # ---------------------------------------------------------------------------
 # Static File Serving (Edition Frontend)
 # ---------------------------------------------------------------------------
@@ -503,7 +555,7 @@ def serve_entity_utils():
 @app.get("/{page}.html")
 def serve_edition_page(page: str):
     from fastapi.responses import FileResponse
-    allowed = {"index", "catalog", "reader", "about"}
+    allowed = {"index", "catalog", "reader", "about", "register"}
     if page not in allowed:
         raise HTTPException(status_code=404)
     path = DOCS_DIR / f"{page}.html"

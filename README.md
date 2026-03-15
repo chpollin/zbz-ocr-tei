@@ -7,8 +7,8 @@ LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbib
 Fully automated end-to-end pipeline for 286 documents (4,152 pages) from the estate of Jeanne Hersch:
 
 ```
-PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XML
-              (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basisformat)
+PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XML --> Curation --> Publication
+              (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basis)  (Editor)    (GitHub Pages)
 ```
 
 ## Pipeline Components
@@ -26,8 +26,9 @@ PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XM
 | Entity Index + Wikidata/GND linking | Wikidata API + TEI-XML indices | In progress |
 | TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | In progress |
 | TEI NER injection | Rule-based annotation | In progress |
+| **Curation (Human-in-the-Loop)** | **Browser WYSIWYG + FastAPI server** | **Done** |
+| Review + Publication | Status workflow + publish to GitHub Pages | Done |
 | Evaluation + Dashboard | CER/WER + interactive QA UI | Done |
-| Curation Editor | Browser WYSIWYG + FastAPI server | Done |
 
 Current metrics and progress: see [Dashboard](https://dhcraft.github.io/zbz-ocr-tei/) or run locally (`docs/infrastruktur/index.html`). Detailed status: [PROJEKT.md](knowledge/PROJEKT.md).
 
@@ -35,9 +36,9 @@ Current metrics and progress: see [Dashboard](https://dhcraft.github.io/zbz-ocr-
 
 4 representative documents are available on [GitHub Pages](https://dhcraft.github.io/zbz-ocr-tei/) with full viewer functionality (facsimile, OCR text, layout overlay, entities). All results are AI-generated. Full data is only available locally.
 
-### Digital Edition + Curation
+### Digital Edition + Curation (Human-in-the-Loop)
 
-The edition (`docs/index.html`) provides a reading interface with catalog, reader, and entity sidebar. The integrated curation editor allows editors to correct text, structure, and entities directly in the browser. A local FastAPI server persists curated TEI.
+The final pipeline step: editors verify and correct AI-generated TEI in the browser. The curation editor supports text correction, structure editing, and entity curation (WYSIWYG + XML mode). A review workflow (draft > in_review > approved) ensures quality before publication. The edition (`docs/index.html`) provides the public reading interface with catalog, reader, and entity sidebar.
 
 ```bash
 python -m scripts.server.curation_server    # http://localhost:8000
@@ -108,6 +109,9 @@ python -m scripts.run_layout_analysis --doc 2310
 # Generate TEI-XML (no GPU, uses Gemini API)
 python -m scripts.tei.tei_unified --doc 2310
 
+# Validate all TEI (RelaxNG + project rules + quality warnings)
+python -m scripts.tei.tei_validator --all --html-report
+
 # Evaluation (no GPU)
 python scripts/evaluate_ocr.py --all
 
@@ -157,4 +161,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-03-14*
+*Last updated: 2026-03-15*

@@ -49,14 +49,16 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 5e | NER Evaluation | `scripts/ner/ner_evaluate.py` | Metrics (density, P/R/F1 vs GT) + HTML-Report | Done (output/ner_report.html) |
 | 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production |
 | 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **51/286, E32** |
-| 6c | TEI Validation (RelaxNG + project rules) | `scripts/tei/tei_validator.py` | Validation JSON | Production, E32 |
+| 6c | TEI Validation (RelaxNG + R1-R14) | `scripts/tei/tei_validator.py` | JSON + HTML Report | Production, E32 |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
 **Curation Layer (E36, post-pipeline):** Manuelle Kuration ueber Browser-Editor (`scripts/server/curation_server.py`, localhost:8000). Nicht Teil der automatischen Pipeline, sondern editoriale Schicht darueber. Kuratiertes TEI in `data/tei_curated/` (git-tracked, Gold-Standard). TEI-Prioritaet: kuratiert > NER > unified > examples. Features: WYSIWYG Text-Editing, Block-Toolbar, Entity-Tagging mit Autocomplete, RelaxNG-Validierung, Review-Workflow (draft > in_review > approved). Publish: freigegebene Docs werden nach `docs/data/examples/` kopiert. Details: [CURATION](CURATION.md).
 
 **Note on Stage 5 (E34/E35):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). 7 Module: `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker`, `ner_inject_tei`, `ner_evaluate`. Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). Production Run (285 Docs): 11,685 Entities, 26,197 Mentions, 4,100 Index-Eintraege, 341 mit Wikidata-QIDs. Typ-Verteilung: person 36.7%, place 22.3%, date 15.0%, org 13.6%, work 10.8%, event 1.6%. CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
-**Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
+**Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4, default active). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--skip-validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
+
+**Stage 6c Validation Rules:** Zwei Ebenen: Errors (blockierend, valid=false) und Warnings (informativ fuer Editoren). **Errors:** RelaxNG-Schema (TEI-All) + R1 (type="naegeli"), R2 (teiHeader), R3 (body), R4 (min 1 div), R5 (gueltige div-types), R6 (note place), R7 (persName/orgName/placeName mit ref). **Warnings:** W1 (Sprach-Code "und"), W2 (teiHeader title/author leer), W3 (facsimile/pb Mismatch), W4 (leere div), W5 (Text-Volumen <50 chars/Seite), W6 (keine lb-Elemente), W7 (graphic ohne url), W8 (keine Entity-Tags bei >500 Zeichen). HTML-Report: `--html-report` erzeugt `validation_report.html`.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 
@@ -344,14 +346,15 @@ python -m scripts.tei.tei_unified --doc 2310             # single document (4 st
 python -m scripts.tei.tei_unified --sample               # 3 pilot docs (2310, 2530, 1440)
 python -m scripts.tei.tei_unified --all                  # all 286 docs
 python -m scripts.tei.tei_unified --doc 2310 --step 1    # rule-based scaffold only (free)
-python -m scripts.tei.tei_unified --all --validate       # include RelaxNG validation
+python -m scripts.tei.tei_unified --skip-validate         # skip validation (default: active)
 python -m scripts.tei.tei_unified --force                # overwrite cached results
 python -m scripts.tei.tei_unified --dry-run              # show prompts, no API calls
 
 # TEI Validation (stage 6c, no API key needed)
 python -m scripts.tei.tei_validator --doc 2310           # validate single document
 python -m scripts.tei.tei_validator --all                # validate all unified TEI
-python -m scripts.tei.tei_validator --report             # save JSON validation report
+python -m scripts.tei.tei_validator --all --report       # save JSON validation report
+python -m scripts.tei.tei_validator --all --html-report  # generate HTML quality report
 
 # NER + Wikidata (stage 5, requires GEMINI_API_KEY for extraction)
 python -m scripts.ner.ner_extract --doc 2310            # single document

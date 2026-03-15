@@ -261,8 +261,8 @@ def main():
     parser.add_argument("--all", action="store_true", help="Alle Dokumente")
     parser.add_argument("--step", type=int, default=3, choices=[1, 2, 3],
                         help="Maximaler Step (1=nur Rule-Based, 2=+Gemini, 3=+Assembly)")
-    parser.add_argument("--validate", action="store_true",
-                        help="Step 4: RelaxNG-Validierung")
+    parser.add_argument("--skip-validate", action="store_true",
+                        help="Validierung ueberspringen (Default: aktiv)")
     parser.add_argument("--force", action="store_true",
                         help="Gecachte Ergebnisse ueberschreiben")
     parser.add_argument("--dry-run", action="store_true",
@@ -271,9 +271,11 @@ def main():
                         help="Step 5: NER Entity-Injection in TEI")
     args = parser.parse_args()
 
+    validate = not args.skip_validate
+
     print("=== Unified TEI Pipeline ===")
     print(f"  Step: 1-{args.step}"
-          + (" + Validation" if args.validate else "")
+          + (" + Validation" if validate else " (Validation OFF)")
           + (" + NER" if args.ner else ""))
 
     if args.doc:
@@ -298,7 +300,7 @@ def main():
                 max_step=args.step,
                 force=args.force,
                 dry_run=args.dry_run,
-                validate=args.validate,
+                validate=validate,
                 ner=args.ner,
             )
             results.append(manifest)
@@ -321,6 +323,26 @@ def main():
         print(f"  Gemini-Calls: {step2_pages}")
     print(f"  Dauer: {total_elapsed:.1f}s")
     print(f"  Output: {TEI_UNIFIED_DIR}")
+
+    # Nach Batch-Run: Validierungsbericht erzeugen
+    if validate and args.all:
+        try:
+            from scripts.tei.tei_validator import validate_all, generate_html_report
+            print("\n=== Validierungsbericht ===")
+            summary = validate_all(TEI_UNIFIED_DIR)
+            print(f"  Valid: {summary['valid']}/{summary['total']}"
+                  f" | Warnings: {summary['with_warnings']}")
+
+            html_path = TEI_UNIFIED_DIR / "validation_report.html"
+            generate_html_report(summary, html_path)
+
+            json_path = TEI_UNIFIED_DIR / "validation_report.json"
+            json_path.write_text(
+                json.dumps(summary, ensure_ascii=False, indent=2),
+                encoding="utf-8"
+            )
+        except Exception as e:
+            print(f"  Validierungsbericht fehlgeschlagen: {e}")
 
 
 if __name__ == "__main__":

@@ -61,6 +61,8 @@ Edition Reader (read-only)  <-->  Edit-Modus (Curation)
 | PUT | `/api/tei/{doc_id}/status` | Status aendern |
 | POST | `/api/wikidata/search` | Wikidata-Suche (CORS-Proxy) |
 | GET | `/api/entities/search?q=` | Lokalen Entity Index durchsuchen |
+| GET | `/api/validation/summary` | Validierungszusammenfassung aller Docs |
+| GET | `/api/validation/{doc_id}` | Detailvalidierung einzelnes Dokument |
 | POST | `/api/tei/{doc_id}/publish` | Kuratiertes TEI nach docs/examples publizieren |
 
 ## Frontend-Module
