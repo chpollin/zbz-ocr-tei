@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-03-09
-updated: 2026-03-09
+updated: 2026-03-15
 tags: [zbz-ocr-tei, edition, frontend, digital-edition]
 status: active
 ---
@@ -18,10 +18,10 @@ Oeffentliche digitale Edition der Jeanne-Hersch-Korrespondenz fuer Forschende un
 
 | Modus | Zugang | Funktion |
 |-------|--------|----------|
-| **Lesen** | `docs/` auf GitHub Pages | Katalog, Register, Reader (Faksimile + TEI), Entities, XML-Ansicht |
+| **Lesen** | `docs/` auf GitHub Pages | Katalog, Register, Reader (Faksimile + TEI), Entities, XML-Ansicht, Volltext-Suche |
 | **Kuratieren** | `localhost:8000` (FastAPI Server) | Alles wie Lesen + Text-Korrektur, Struktur-Editing, Entity-Kuration, Review-Workflow |
 
-Der Edit-Button erscheint automatisch wenn der Server laeuft (Health-Check). Details zum Kurations-Workflow: [CURATION.md](CURATION.md).
+Der Edit-Button erscheint automatisch wenn der Curation Server laeuft (Health-Check, nur auf localhost). Details zum Kurations-Workflow: [CURATION.md](CURATION.md).
 
 ---
 
@@ -29,23 +29,53 @@ Der Edit-Button erscheint automatisch wenn der Server laeuft (Health-Check). Det
 
 **Directory:** Edition: `docs/` | Infrastruktur: `docs/infrastruktur/`
 
-| Datei | Zweck | Zeilen |
-|-------|-------|--------|
-| `docs/index.html` | Landing: Hero, Featured Docs, Corpus Stats | ~102 |
-| `docs/catalog.html` | Katalog: facettierte Filter, Tabellen-/Kartenansicht, MiniSearch | ~82 |
-| `docs/register.html` | Entity-Register: Typ-Tabs, Suche, Filter, Detail-Expansion | ~78 |
-| `docs/reader.html` | Reader: Faksimile + TEI nebeneinander, Entities, XML-Ansicht | ~67 |
-| `docs/about.html` | About: Hersch-Biographie, Projekt, Pipeline, Technologie | ~138 |
-| `docs/css/edition.css` | Design System: `--ed-*` CSS Vars, 3 Breakpoints | ~1850 |
-| `docs/js/edition-shared.js` | Shared: Nav/Footer Slots, Katalog-Loader, Card Builder | ~320 |
-| `docs/js/edition-landing.js` | Landing: Metriken-Animation, Featured Docs, Corpus Stats | ~140 |
-| `docs/js/edition-catalog.js` | Katalog: MiniSearch (CDN), Filter, Sort, Rendering | ~354 |
-| `docs/js/edition-register.js` | Register: MiniSearch, Typ-Tabs, Filter, Table/Cards, Detail | ~380 |
-| `docs/js/edition-reader.js` | Reader: Seitennavigation, Zoom, Font-Toggle, Divider, Entity Sidebar | ~305 |
-| `docs/js/edition-tei.js` | TEI Renderer: rekursives Node-Rendering, Entity-Extraktion, XML-Ansicht | ~302 |
-| `docs/js/edition-editor.js` | Curation: WYSIWYG, DOM-zu-XML Serializer, Save (nur mit Server) | ~370 |
-| `docs/data/catalog.json` | Generierter Katalog (via `scripts/generate_edition_data.py`) | -- |
-| `docs/data/entity_register.json` | Generiertes Register mit Cross-Doc-Referenzen | -- |
+| Datei | Zweck |
+|-------|-------|
+| `docs/index.html` | Discovery Hub: Suchleiste, Screening-Fortschritt, Kategorien-Kacheln, zuletzt bearbeitet |
+| `docs/catalog.html` | Katalog: Tabellen-/Karten-/Galerie-Ansicht, Volltext-Suche, Screening-Filter, URL-Deep-Linking |
+| `docs/register.html` | Entity-Register: Typ-Tabs (4408 Entitaeten), Typ-Statistiken, Doc-Titel-Links |
+| `docs/reader.html` | Reader: Faksimile + TEI, Entity-Sidebar, RevisionDesc-Panel, Seiten-Thumbnails |
+| `docs/about.html` | Projektinformation, Pipeline-Visualisierung |
+
+### JavaScript-Module (ES6+, IIFE, `ZBZ.*` Namespaces)
+
+| Modul | Zweck |
+|-------|-------|
+| `edition-shared.js` | Kern: Nav, Daten-Loader, TEI-Fetch (Volldokument-Cache), Volltext-Suche, Badge-Konstanten |
+| `edition-landing.js` | Discovery Hub: Hero-Suche, Screening-Overview, Kategorien, zuletzt gescreent |
+| `edition-catalog.js` | Katalog: MiniSearch + Volltext, Filter, 3 Views (Tabelle/Karten/Galerie), URL-State-Sync |
+| `edition-register.js` | Register: Typ-Tabs, Suche, Resolution-Filter, Detail-Expansion mit Doc-Titeln |
+| `edition-reader.js` | Reader: Seitennavigation, Zoom, Font-Toggle, RevisionDesc-Timeline, Seiten-Thumbnails |
+| `edition-tei.js` | TEI Renderer: rekursives Node-Rendering, Entity-Extraktion, XML-Ansicht |
+| `edition-editor.js` | Curation: WYSIWYG, DOM-zu-XML Serializer, Save/Validate (nur mit Server) |
+| `entity-utils.js` | Entity-Resolution: ZBZ-ID/Wikidata/GND Lookup, Entity-Spans, Extraktion |
+
+### Daten (generiert via `scripts/generate_edition_data.py`)
+
+| Datei | Inhalt |
+|-------|--------|
+| `docs/data/catalog.json` | 286 Docs mit Screening- + Curation-Status, Corpus-Statistiken |
+| `docs/data/search_index.json` | Volltext-Index: 277 Docs, 688 KB (Body-Text + Entity-Namen) |
+| `docs/data/entity_index.json` | 4408 Entitaeten (schneller Lookup) |
+| `docs/data/entity_register.json` | Cross-Doc-Register mit Varianten, Doc-IDs, Kontexten |
+| `docs/data/tei/*.xml` | 285 finale TEI-Dokumente (fuer GitHub Pages) |
+| `docs/data/tei/*.json` | 285 Review-JSONs (Screening-Befunde) |
+| `docs/data/examples/` | 4 Demo-Docs mit Seiten-Bildern |
+
+---
+
+## Zwei-Stufen-Qualitaetsworkflow
+
+Screening (LLM) und Curation (Editor) sind getrennte Status:
+
+| Schicht | Akteur | Status-Werte | Badge-Farben |
+|---------|--------|-------------|--------------|
+| **Screening** | Agent (quality-pass-auto, agent-screening-v2) | APPROVED, APPROVED_WITH_NOTES, NEEDS_REVIEW | gruen, gelb, rot |
+| **Curation** | Mensch (Editor) | uncurated, draft, in_progress, in_review, editor_approved | grau, amber, blau, blau, dunkelgruen |
+
+Beide Status werden in `catalog.json` pro Dokument gefuehrt. Fortschrittsbalken auf der Startseite zeigen beide Schichten getrennt.
+
+Badge-Konstanten zentral in `edition-shared.js`: `SCREENING_LABELS`, `SCREENING_CLASSES`, `CURATION_LABELS`, `CURATION_CLASSES`, `screeningBadgeHtml()`, `curationBadgeHtml()`.
 
 ---
 
@@ -55,6 +85,18 @@ Der Edit-Button erscheint automatisch wenn der Server laeuft (Health-Check). Det
 - **Typographie:** Inter (UI), Source Serif 4 (Lesen), JetBrains Mono (Code/XML)
 - **Responsive:** 1200px (voll), 768px (kompakt), 480px (mobil)
 - **Namespace:** `ZBZ.Edition` (ES6+/IIFE, kein Build-Tool)
+- **CSS:** `--ed-*` Variablen, `.ed-*` Klassenpraefix
+
+---
+
+## TEI-Lade-Strategie
+
+`fetchFullTei(docId)` laedt das Volldokument und cached es. Seiten werden per `extractPageFromFull(xml, page)` via `<pb>`-Regex extrahiert mit automatischem Tag-Balancing.
+
+Pfad-Prioritaet:
+1. `data/tei/{id}_final.xml` (alle 285 Docs, GitHub Pages)
+2. `data/examples/{id}/{id}_final.xml` (Demo-Docs, Fallback)
+3. `../output/tei_final/{id}_final.xml` (Lokal-Fallback)
 
 ---
 
@@ -65,22 +107,34 @@ Der Edit-Button erscheint automatisch wenn der Server laeuft (Health-Check). Det
 | Edition in `docs/`, Dashboard in `docs/infrastruktur/` | Dashboard = internes QA-Tool; Edition = oeffentlich |
 | ES6+/IIFE, `ZBZ.Edition` Namespace | Konsistent mit Dashboard-Konvention, kein Build-Tool |
 | Nav/Footer JS Slot Pattern (`#ed-nav-slot`) | DRY: einmal in JS definiert, HTML hat leere Slots |
-| `buildCardHtml()` Shared Helper | DRY: Card-Rendering in Landing + Katalog |
-| `sanitizeDocId()` fuer URL-Params | Sicherheit: nur Ziffern erlaubt, verhindert Path Traversal |
-| MiniSearch via CDN (~22KB) | Client-seitige Volltextsuche, kein Server noetig |
-| TEI Renderer kopiert von `tei-viewer.js` | Lese-optimierte Version, keine Regression im Dashboard |
-| CSS-Klassen fuer TEI `<hi>` Renditions | Ersetzt Inline-Styles, wartbar via CSS |
-| 4 Demo-Docs (2310, 1000, 1330, 1540) | Gleich wie Dashboard-Demo, erweiterbar auf ganzes Korpus |
+| Badge-Konstanten zentral in `edition-shared.js` | Single Source of Truth, verhindert Label-Inkonsistenz |
+| Health-Check nur auf localhost | Vermeidet 404-Fehler in Konsole auf GitHub Pages |
+| MiniSearch via CDN (~22KB) | Client-seitige Volltext- + Metadatensuche, kein Server noetig |
+| Volldokument-Cache + pb-Extraktion | Vermeidet Re-Fetch bei Seitennavigation, 285 Docs je 50-200 KB |
+| Screening + Curation getrennt | LLM-Ergebnis unveraenderlich, Editor-Workflow unabhaengig |
+| 285 TEIs in `docs/data/tei/` (18 MB) | Alle Docs auf GitHub Pages lesbar, nicht nur 4 Demos |
 
 ---
 
 ## Daten-Generierung
 
 ```bash
-python -m scripts.generate_edition_data   # catalog.json + TEI XMLs kopieren
+python -m scripts.generate_edition_data
 ```
 
-Liest `docs/data/dashboard.json` + `data/doc_metadata.json`. Erzeugt `docs/data/catalog.json` (286 Docs, Corpus Stats, Featured-Liste). Kopiert TEI-XMLs der Demo-Docs nach `docs/data/examples/`.
+Erzeugt: `catalog.json` (286 Docs, Screening + Curation), `search_index.json` (277 Docs Volltext), `entity_index.json`, `entity_register.json`. Kopiert Demo-TEIs nach `docs/data/examples/`.
+
+---
+
+## Navigation
+
+| Label | Ziel | Kontext |
+|-------|------|---------|
+| Start | `index.html` | Discovery Hub |
+| Katalog | `catalog.html` | Dokument-Suche + Filter |
+| Register | `register.html` | Entity-Index |
+| Projekt | `about.html` | Projektinformation |
+| Promptotyping-Artefakte | `infrastruktur/index.html` | Pipeline-QA-Tools |
 
 ---
 
@@ -92,4 +146,4 @@ Liest `docs/data/dashboard.json` + `data/doc_metadata.json`. Erzeugt `docs/data/
 
 ---
 
-*Created: 2026-03-09 | Updated: 2026-03-09*
+*Created: 2026-03-09 | Updated: 2026-03-15*

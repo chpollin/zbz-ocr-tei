@@ -14,6 +14,46 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 28 (2026-03-15): Edition Frontend Refactoring
+
+### Kontext
+FRONTEND-BRIEFING.md umgesetzt. Edition von Demo-Praesentation zur Discovery-Plattform weiterentwickelt.
+
+### Ergebnisse
+
+**Datenschicht:**
+- TEI_FINAL_DIR in config.py zentralisiert
+- 285 finale TEIs + 285 Review-JSONs nach docs/data/tei/ kopiert (18 MB, GitHub Pages)
+- search_index.json: Volltext aus 277 TEI-Bodies (688 KB)
+- catalog.json: screening + curation Status getrennt, corpus.screening/curation Counts
+- Curation Server: tei_final in Prioritaetskette, /api/tei/{id}/full Endpoint, pb-Splitting, revisionDesc beim Save
+
+**Frontend-Features:**
+- Startseite: Discovery Hub mit Suchleiste (Volltext-Vorschlaege), Screening-Fortschritt (LLM + Editor getrennt), Kategorien-Kacheln, zuletzt bearbeitete Docs
+- Katalog: Galerie-View (Seite-1-Thumbnails), Volltext-Suche mit Snippet-Highlighting, URL-Deep-Linking (?q=, ?type=, ?screening=), URL-State-Sync
+- Reader: RevisionDesc-Panel (auto-expand bei NEEDS_REVIEW), Seiten-Thumbnails-Leiste, Screening-Badge im Header
+- Register: Doc-Titel in Cross-Links, Typ-Statistiken unter Tabs
+
+**Refactoring:**
+- Badge-Konstanten zentralisiert (SCREENING_LABELS/CLASSES + CURATION_LABELS/CLASSES + screeningBadgeHtml/curationBadgeHtml) -- 4 Duplikate eliminiert
+- 68 Zeilen verwaiste CSS entfernt (ed-stats-grid, ed-bar-*, ed-pills aus altem Landing)
+- Health-Check nur auf localhost (keine 404-Fehler auf GitHub Pages)
+- XML-Parse-Fehler bei Seitenextraktion behoben (Regex auf Original-XML + Tag-Balancing)
+- docs/edition/ (ES5-Duplikat) geloescht
+- Navigation: "Leseansicht" entfernt, "Promptotyping-Artefakte" statt "Epist. Infrastruktur"
+
+**Workflow-Design:**
+- Screening (LLM) + Curation (Editor) als getrennte Status (User-Entscheidung)
+- 5 Curation-States: uncurated -> draft -> in_progress -> in_review -> editor_approved
+- CSS fuer alle States, Fortschrittsbalken auf Startseite
+
+### Commits
+- `fb6fe67` Edition Frontend: Discovery Hub, Volltextsuche, Galerie, Screening+Curation Workflow
+- `7df4c41` Fix: XML-Parse-Fehler bei Seitenextraktion + Curation-Status + Nav-Cleanup
+- `df6be2d` Fix: Health-Check nur auf localhost
+
+---
+
 ## Session 27 (2026-03-15): Agent-Based Quality Screening + revisionDesc
 
 ### Kontext
