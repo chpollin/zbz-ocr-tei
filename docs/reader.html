@@ -12,56 +12,55 @@
 <body class="edition-page">
 
     <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
-
     <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
 
     <main id="main-content" class="ed-reader">
-        <!-- Header Bar -->
+        <!-- Compact Header: Title + Key Metadata -->
         <div class="ed-reader-header">
-            <h1 class="ed-reader-title">Lade...</h1>
-            <div class="ed-reader-meta"></div>
+            <div class="ed-reader-header-left">
+                <a href="catalog.html" class="ed-back-link" title="Zurueck zum Katalog">&larr;</a>
+                <h1 class="ed-reader-title">Lade...</h1>
+            </div>
+            <div class="ed-reader-meta" id="reader-meta"></div>
         </div>
 
-        <!-- Toolbar: nur Seitennavigation + Faksimile-Steuerung + Edit -->
-        <div class="ed-reader-toolbar">
-            <div class="ed-page-nav">
-                <button class="ed-page-btn" id="page-prev" disabled aria-label="Vorherige Seite">&larr;</button>
-                <span class="ed-page-indicator" id="page-indicator">1 / 1</span>
-                <button class="ed-page-btn" id="page-next" disabled aria-label="Naechste Seite">&rarr;</button>
-            </div>
-            <div class="ed-toolbar-sep"></div>
-            <div class="ed-toolbar-group">
-                <button class="ed-toolbar-btn" id="zoom-out" title="Verkleinern">&minus;</button>
-                <span class="ed-page-indicator" id="zoom-label">100%</span>
-                <button class="ed-toolbar-btn" id="zoom-in" title="Vergroessern">+</button>
-                <button class="ed-toolbar-btn ed-btn-sm" id="zoom-fit" title="An Breite anpassen">&#x2194;</button>
-                <button class="ed-toolbar-btn ed-btn-sm" id="zoom-reset" title="Zoom zuruecksetzen">1:1</button>
-                <button class="ed-toolbar-btn ed-btn-sm" id="rotate-btn" title="Bild drehen (90 Grad)">&#x21BB;</button>
-            </div>
-            <div class="ed-toolbar-sep"></div>
-            <div class="ed-toolbar-group">
-                <button class="ed-toolbar-btn ed-hidden" id="edit-toggle" title="Bearbeitungsmodus">Bearbeiten</button>
-            </div>
-            <div class="ed-toolbar-group ed-edit-only">
-                <button class="ed-toolbar-btn ed-btn-save" id="save-btn" title="Speichern (Ctrl+S)" disabled>Speichern</button>
-                <button class="ed-toolbar-btn" id="validate-btn" title="TEI validieren (RelaxNG)">Validieren</button>
-                <span class="ed-save-status" id="save-status"></span>
-            </div>
-        </div>
-
-        <!-- Curation Hint (shown when no server) -->
-        <div class="ed-reader-hint ed-hidden" id="curation-hint">
-            Leseansicht &mdash; Zum Bearbeiten: Edition lokal starten (localhost:8000)
+        <!-- Edit toolbar (only visible when server running) -->
+        <div class="ed-edit-toolbar ed-hidden" id="edit-toolbar">
+            <button class="ed-toolbar-btn" id="edit-toggle" title="Bearbeitungsmodus">Bearbeiten</button>
+            <button class="ed-toolbar-btn ed-btn-save ed-edit-only" id="save-btn" title="Speichern (Ctrl+S)" disabled>Speichern</button>
+            <button class="ed-toolbar-btn ed-edit-only" id="validate-btn" title="TEI validieren">Validieren</button>
+            <span class="ed-save-status ed-edit-only" id="save-status"></span>
         </div>
 
         <!-- Panels -->
         <div class="ed-reader-panels">
+            <!-- Faksimile Panel with integrated controls -->
             <div class="ed-panel-faksimile" id="faks-panel">
-                <div class="ed-empty-state">Bild wird geladen...</div>
+                <div class="ed-faks-viewport" id="faks-viewport">
+                    <div class="ed-empty-state">Bild wird geladen...</div>
+                </div>
+                <!-- Viewer controls overlay (bottom of faksimile panel) -->
+                <div class="ed-faks-controls">
+                    <div class="ed-faks-pages" id="page-thumbs"></div>
+                    <div class="ed-faks-toolbar">
+                        <button class="ed-faks-btn" id="page-prev" disabled title="Vorherige Seite">&larr;</button>
+                        <span class="ed-faks-indicator" id="page-indicator">1 / 1</span>
+                        <button class="ed-faks-btn" id="page-next" disabled title="Naechste Seite">&rarr;</button>
+                        <span class="ed-faks-sep"></span>
+                        <button class="ed-faks-btn" id="zoom-out" title="Verkleinern">&minus;</button>
+                        <span class="ed-faks-indicator" id="zoom-label">100%</span>
+                        <button class="ed-faks-btn" id="zoom-in" title="Vergroessern">+</button>
+                        <button class="ed-faks-btn" id="zoom-fit" title="An Breite anpassen">&#x2194;</button>
+                        <button class="ed-faks-btn" id="zoom-reset" title="Originalgroesse">1:1</button>
+                        <button class="ed-faks-btn" id="rotate-btn" title="Drehen">&#x21BB;</button>
+                    </div>
+                </div>
             </div>
+
             <div class="ed-panel-divider" title="Ziehen zum Anpassen"></div>
+
+            <!-- Text Panel -->
             <div class="ed-panel-text ed-tei-serif">
-                <!-- View toggle: Text / XML (inside text panel) -->
                 <div class="ed-text-view-toggle">
                     <button class="ed-view-tab active" id="view-text" title="Leseansicht">Text</button>
                     <button class="ed-view-tab" id="view-xml" title="XML-Quellansicht">XML</button>
