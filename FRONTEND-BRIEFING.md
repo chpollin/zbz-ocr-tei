@@ -11,7 +11,7 @@
 ### Was funktioniert
 - `docs/index.html` — Landing Page
 - `docs/catalog.html` — Katalog mit 286 Dokumenten
-- `docs/reader.html` — TEI-Reader mit Faksimile + Entity-Sidebar
+- `docs/reader.html` — TEI-Reader mit Faksimile-Viewer (Pan/Zoom/Rotate) + TEI-Text
 - `docs/about.html` — Projektinformation
 - 4 Demo-Docs (1000, 1330, 1540, 2310) in `docs/data/examples/` — nur diese funktionieren auf GitHub Pages
 - Lokal funktioniert alles ueber den Curation Server (`python -m scripts.server.curation_server`)

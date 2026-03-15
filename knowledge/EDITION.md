@@ -31,21 +31,21 @@ Der Edit-Button erscheint automatisch wenn der Curation Server laeuft (Health-Ch
 
 | Datei | Zweck |
 |-------|-------|
-| `docs/index.html` | Discovery Hub: Suchleiste, Screening-Fortschritt, Kategorien-Kacheln, zuletzt bearbeitet |
+| `docs/index.html` | Discovery Hub: Suchleiste, Korpus-Chips, Screening-Fortschritt, Projekt-Teaser |
 | `docs/catalog.html` | Katalog: Tabellen-/Karten-/Galerie-Ansicht, Volltext-Suche, Screening-Filter, URL-Deep-Linking |
-| `docs/register.html` | Entity-Register: Typ-Tabs (4408 Entitaeten), Typ-Statistiken, Doc-Titel-Links |
-| `docs/reader.html` | Reader: Faksimile + TEI, Entity-Sidebar, RevisionDesc-Panel, Seiten-Thumbnails |
-| `docs/about.html` | Projektinformation, Pipeline-Visualisierung |
+| `docs/register.html` | Entity-Register: Typ-Tabs (4408 Entitaeten), Kontext-Preview, Doc-Titel-Links |
+| `docs/reader.html` | Reader: Faksimile-Viewer (Pan/Zoom/Rotate) + TEI-Text, Text/XML-Toggle, Metadaten-Header |
+| `docs/about.html` | Projektinformation, Pipeline-Visualisierung, Divider-Seuils |
 
 ### JavaScript-Module (ES6+, IIFE, `ZBZ.*` Namespaces)
 
 | Modul | Zweck |
 |-------|-------|
 | `edition-shared.js` | Kern: Nav, Daten-Loader, TEI-Fetch (Volldokument-Cache), Volltext-Suche, Badge-Konstanten |
-| `edition-landing.js` | Discovery Hub: Hero-Suche, Screening-Overview, Kategorien, zuletzt gescreent |
+| `edition-landing.js` | Discovery Hub: Hero-Suche, Screening-Chips, Kategorie-Chips |
 | `edition-catalog.js` | Katalog: MiniSearch + Volltext, Filter, 3 Views (Tabelle/Karten/Galerie), URL-State-Sync |
 | `edition-register.js` | Register: Typ-Tabs, Suche, Resolution-Filter, Detail-Expansion mit Doc-Titeln |
-| `edition-reader.js` | Reader: Seitennavigation, Zoom, Font-Toggle, RevisionDesc-Timeline, Seiten-Thumbnails |
+| `edition-reader.js` | Reader: Integrierter Viewer (Pan/Zoom/Rotate/Fit), Text/XML-Toggle, Edit-Modus |
 | `edition-tei.js` | TEI Renderer: rekursives Node-Rendering, Entity-Extraktion, XML-Ansicht |
 | `edition-editor.js` | Curation: WYSIWYG, DOM-zu-XML Serializer, Save/Validate (nur mit Server) |
 | `entity-utils.js` | Entity-Resolution: ZBZ-ID/Wikidata/GND Lookup, Entity-Spans, Extraktion |
