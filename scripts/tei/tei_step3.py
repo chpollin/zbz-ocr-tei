@@ -16,6 +16,46 @@ from scripts.tei.tei_xml_utils import make_element, wrap_orphan_groups
 
 
 # ---------------------------------------------------------------------------
+# Language Parsing
+# ---------------------------------------------------------------------------
+
+# Mapping: diverse Formate aus doc_metadata.json -> ISO 639-3
+_LANG_MAP = {
+    "fr": "fra", "de": "deu", "en": "eng", "it": "ita", "es": "spa",
+    "la": "lat", "pt": "por",
+    "FR": "fra", "DE": "deu", "EN": "eng", "IT": "ita", "ES": "spa",
+    "fra": "fra", "deu": "deu", "eng": "eng", "ita": "ita", "spa": "spa",
+    "lat": "lat", "por": "por",
+}
+
+
+def _parse_languages(raw: str) -> list[str]:
+    """Parst Sprach-Codes aus doc_metadata.json.
+
+    Akzeptiert: "fra", "fra/deu", "fra/deu/ita", "FR", "DE/FR", "?", etc.
+    Returns: Liste von ISO 639-3 Codes, z.B. ["fra", "deu"].
+    """
+    if not raw or raw == "?":
+        return ["und"]
+
+    # Schon ein einzelner gueltiger 3-Buchstaben-Code?
+    if len(raw) == 3 and raw.isalpha() and raw.lower() in _LANG_MAP:
+        return [_LANG_MAP[raw.lower()]]
+
+    # Split auf / und einzeln mappen
+    parts = [p.strip() for p in raw.split("/") if p.strip()]
+    result = []
+    for part in parts:
+        mapped = _LANG_MAP.get(part)
+        if not mapped:
+            mapped = _LANG_MAP.get(part.lower())
+        if mapped and mapped not in result:
+            result.append(mapped)
+
+    return result if result else ["und"]
+
+
+# ---------------------------------------------------------------------------
 # teiHeader + facsimile
 # ---------------------------------------------------------------------------
 
@@ -27,10 +67,7 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     desc = xml_escape(metadata.get("desc") or "")
     pub_form = metadata.get("pub_form", "other")
 
-    lang = metadata.get("lang", "und")
-    if len(lang) != 3 or not lang.isalpha():
-        lang_map = {"FR": "fra", "DE": "deu", "DE/FR": "fra", "?": "und"}
-        lang = lang_map.get(lang, "und")
+    languages = _parse_languages(metadata.get("lang", "und"))
 
     lines = []
     lines.append("  <teiHeader>")
@@ -71,7 +108,8 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     lines.append("    </fileDesc>")
     lines.append("    <profileDesc>")
     lines.append("      <langUsage>")
-    lines.append(f'        <language ident="{lang}"/>')
+    for lang_code in languages:
+        lines.append(f'        <language ident="{lang_code}"/>')
     lines.append("      </langUsage>")
     lines.append("    </profileDesc>")
     lines.append("  </teiHeader>")
@@ -79,29 +117,50 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     return "\n".join(lines)
 
 
-def build_facsimile(page_facsimiles: dict[int, dict]) -> str:
-    """Erzeugt <facsimile> Element aus gesammelten Seitendaten."""
-    if not page_facsimiles:
+def build_facsimile(page_facsimiles: dict[int, dict], page_teis: dict[int, str] = None) -> str:
+    """Erzeugt <facsimile> Element aus gesammelten Seitendaten.
+
+    Erzeugt eine <surface> fuer jede Seite die im body vorkommt (via page_teis),
+    auch wenn keine Layout-Zones vorhanden sind. So stimmen pb- und surface-Anzahl ueberein.
+    """
+    # Alle Seiten die eine surface brauchen (aus body-pages oder facsimile-keys)
+    all_pages = set(page_facsimiles.keys())
+    if page_teis:
+        all_pages.update(page_teis.keys())
+
+    if not all_pages:
         return ""
 
     lines = ["  <facsimile>"]
-    for page_num in sorted(page_facsimiles.keys()):
-        facs = page_facsimiles[page_num]
-        if not facs or not facs.get("zones"):
-            continue
-        img_w = facs.get("image_width", 0)
-        img_h = facs.get("image_height", 0)
-        lines.append(
-            f'    <surface xml:id="facs_{page_num}" ulx="0" uly="0" '
-            f'lrx="{img_w}" lry="{img_h}">'
-        )
-        for z in facs["zones"]:
+    for page_num in sorted(all_pages):
+        facs = page_facsimiles.get(page_num)
+        img_w = facs.get("image_width", 0) if facs else 0
+        img_h = facs.get("image_height", 0) if facs else 0
+        zones = facs.get("zones", []) if facs else []
+
+        if zones:
             lines.append(
-                f'      <zone xml:id="{z["zone_id"]}" '
-                f'ulx="{z["ulx"]}" uly="{z["uly"]}" '
-                f'lrx="{z["lrx"]}" lry="{z["lry"]}"/>'
+                f'    <surface xml:id="facs_{page_num}" ulx="0" uly="0" '
+                f'lrx="{img_w}" lry="{img_h}">'
             )
-        lines.append("    </surface>")
+            for z in zones:
+                lines.append(
+                    f'      <zone xml:id="{z["zone_id"]}" '
+                    f'ulx="{z["ulx"]}" uly="{z["uly"]}" '
+                    f'lrx="{z["lrx"]}" lry="{z["lry"]}"/>'
+                )
+            lines.append("    </surface>")
+        else:
+            # Leere surface mit graphic-Platzhalter (surface braucht min. 1 Kind)
+            lines.append(
+                f'    <surface xml:id="facs_{page_num}" ulx="0" uly="0" '
+                f'lrx="{img_w}" lry="{img_h}">'
+            )
+            lines.append(
+                f'      <graphic url="{page_num}.png"/>'
+            )
+            lines.append("    </surface>")
+
     lines.append("  </facsimile>")
 
     return "\n".join(lines)
@@ -125,8 +184,8 @@ def assemble_document(
     # teiHeader
     lines.append(build_tei_header(doc_id, metadata))
 
-    # facsimile
-    facs = build_facsimile(page_facsimiles)
+    # facsimile (page_teis uebergeben fuer pb/surface-Synchronisation)
+    facs = build_facsimile(page_facsimiles, page_teis)
     if facs:
         lines.append(facs)
 

@@ -36,8 +36,16 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
    - Batch-Run erzeugt automatisch HTML+JSON Validierungsbericht
    - Curation Server: 2 neue Endpoints (`/api/validation/summary`, `/api/validation/{doc_id}`)
 
+138. TEI-Erzeugung verbessert basierend auf Validierungs-Erkenntnissen (`scripts/tei/tei_step3.py`):
+   - Sprach-Mapping gefixt: Mehrsprachige Codes ("fra/deu", "fra/deu/ita") werden korrekt geparsed,
+     alle Sprachen einzeln in `<langUsage>` eingetragen (vorher: alles zu "und" gefallen)
+   - facsimile/pb Mismatch gefixt: Leere `<surface>` mit `<graphic>` Platzhalter fuer Seiten
+     ohne Layout-Zones, damit pb- und surface-Anzahl synchron bleiben
+   - Neuer `_parse_languages()` mit umfassendem Mapping (2-Letter, 3-Letter, Gross/Klein)
+
 ### Geaenderte Dateien
 - scripts/tei/tei_validator.py (Refactoring: 2-Ebenen, neue Checks, 1x Parse)
+- scripts/tei/tei_step3.py (Sprach-Mapping + facsimile/pb Fix)
 - scripts/tei/tei_unified.py (Validation Default, HTML-Report nach Batch)
 - scripts/server/curation_server.py (2 neue Validation-Endpoints, register.html)
 - README.md (Pipeline-Diagramm, Curation-Abschnitt, Validation-CLI)
