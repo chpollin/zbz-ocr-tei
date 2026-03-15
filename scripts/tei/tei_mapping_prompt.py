@@ -27,8 +27,25 @@ _TYPE_TO_TAG = {
 }
 
 
+# Woerter die als Entity-Namen im Index stehen, aber zu generisch sind
+# und im normalen Text False Positives erzeugen wuerden.
+_ENTITY_STOPWORDS = {
+    # Alltagswoerter die zufaellig Entity-Namen sind
+    "Dieu", "Monde", "Temps", "Terre", "Mars", "Nature", "Paix",
+    "Fait", "Sens", "Force", "Droit", "Science", "Vie", "Mort",
+    # Adjektiv-/Demonym-Formen (keine Entities)
+    "suisse", "Suisses", "Suisses-romands", "Suisses-allemands",
+    "femmes suisses", "citoyens suisses", "allemand",
+    # Generische Begriffe
+    "Etat", "Staat", "State",
+}
+
+
 def _load_entity_entries() -> dict[str, tuple[str, str]]:
     """Laedt Entity-Namen mit TEI-Tag und interner ID aus dem Index.
+
+    Filtert: Stopwoerter, zu kurze Namen (<3 Zeichen), rein kleingeschriebene
+    Einzelwoerter (hohes False-Positive-Risiko).
 
     Returns:
         {name: (tei_tag, xml_id)} z.B.
@@ -45,11 +62,11 @@ def _load_entity_entries() -> dict[str, tuple[str, str]]:
             tei_tag = _TYPE_TO_TAG.get(entry.entity_type, "name")
             xml_id = entry.xml_id
             # Hauptname
-            if entry.main_name and len(entry.main_name) > 2:
+            if entry.main_name and _is_valid_entity_name(entry.main_name):
                 entries[entry.main_name] = (tei_tag, xml_id)
-            # Varianten (nur >3 Zeichen, Kurzformen vermeiden)
+            # Varianten
             for v in entry.variants:
-                if len(v) > 3 and v not in entries:
+                if _is_valid_entity_name(v) and v not in entries:
                     entries[v] = (tei_tag, xml_id)
         return entries
     except Exception:
@@ -59,6 +76,19 @@ def _load_entity_entries() -> dict[str, tuple[str, str]]:
             "Jeanne Hersch": ("persName", "zbz-p.2"),
             "Hersch": ("persName", "zbz-p.2"),
         }
+
+
+def _is_valid_entity_name(name: str) -> bool:
+    """Prueft ob ein Name sicher als Entity-Tag verwendet werden kann."""
+    if not name or len(name) < 3:
+        return False
+    if name in _ENTITY_STOPWORDS:
+        return False
+    # Rein kleingeschriebene Einzelwoerter sind zu riskant
+    # (z.B. "suisse", "allemand" matchen als Adjektive)
+    if " " not in name and name[0].islower():
+        return False
+    return True
 
 
 # ---------------------------------------------------------------------------
