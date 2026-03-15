@@ -83,6 +83,10 @@ L3: Generische Begriffe (La philosophie) werden faelschlich als Entity getaggt. 
 L4: Doppelseiten-Scans (Buchformat) erzeugen W3, sind aber kein Fehler.
 L5: JSTOR-Scans koennen mehrere Rezensionen pro Seite enthalten. Nicht automatisch loesbar.
 L6: Abstrakte philosophische Texte haben weniger Entities als biographische — inhaltlich erklaerbar, kein Fehler.
+L7: Multi-column newspaper layouts (Journal de Geneve, Cooperation, NZZ) systematically fail the pipeline. >40 zones cause OCR hallucinations, text duplication, and garbage. Affects ~3% of corpus. Fix: Manual cropping or specialized newspaper handler.
+L8: Entity stopword list needs expansion: Mensch, Est, Gott, Rolle, Wahl, Christ, Schweizer, Zuercher, Zahler, Europaeer cause false positives in ~30% of docs.
+L9: French "Est-ce que" pattern: "Est" consistently matched as placeName zbz-l.13. Needs language-aware entity filtering.
+L10: Short docs (1-3 pages, Tier 1) have lower quality (40% APPROVED) than medium docs (4-8 pages, 85%+ APPROVED). Short docs are often newspaper clips with complex layouts.
 
 Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks shift offset). Always match by content, not page number. Monographs (50-250 pages) need page-by-page comparison; global alignment fails above ~50 pages. Both layout versions preserved (_layout.json + _layout_gemini.json) -- in DH, provenance is as important as quality.
 

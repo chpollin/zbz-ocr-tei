@@ -94,7 +94,7 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 | TEI Validator | Done | `scripts/tei/tei_validator.py`: RelaxNG + 8 Projekt-Regeln |
 | Evaluation + Dashboard | Done | `scripts/evaluate_ocr.py` + `docs/index.html` |
 | Digitale Edition + Curation | Done | `docs/` (E33) + Curation Server (E36). Details: [EDITION](EDITION.md), [CURATION](CURATION.md) |
-| **Agent-Based Quality Screening** | **Pilot** | 5 Docs geprueft (E41), `output/tei_final/`. Pre-Curation Workflow |
+| **Agent-Based Quality Screening** | **In Progress** | 145/285 Docs gescreent. 100 APPROVED, 26 WITH_NOTES, 19 NEEDS_REVIEW (13%) |
 | Containerization | Pending | Dockerfile for Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
 
