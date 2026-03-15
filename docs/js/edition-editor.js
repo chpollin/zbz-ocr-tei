@@ -542,6 +542,11 @@
                 '<option value="note">Fussnote (note)</option>' +
                 '<option value="figure">Abbildung (figure)</option>' +
             '</select>' +
+            '<span class="ed-block-separator"></span>' +
+            '<button class="ed-block-btn ed-block-fmt" data-fmt="b" title="Fett (Ctrl+B)"><b>B</b></button>' +
+            '<button class="ed-block-btn ed-block-fmt" data-fmt="i" title="Kursiv (Ctrl+I)"><i>I</i></button>' +
+            '<button class="ed-block-btn ed-block-fmt" data-fmt="u" title="Unterstrichen (Ctrl+U)"><u>U</u></button>' +
+            '<span class="ed-block-separator"></span>' +
             '<button class="ed-block-btn" data-action="split" title="Block teilen (am Cursor)">Teilen</button>' +
             '<button class="ed-block-btn" data-action="merge" title="Mit vorherigem Block zusammenfuegen">Zusammenfuegen</button>' +
             '<button class="ed-block-btn ed-block-btn-danger" data-action="delete" title="Block loeschen">Loeschen</button>';
@@ -552,8 +557,19 @@
             if (activeBlock) _changeBlockType(activeBlock, sel.value);
         });
 
+        // Format buttons (B/I/U)
+        const fmtBtns = Array.prototype.slice.call(tb.querySelectorAll('.ed-block-fmt'));
+        fmtBtns.forEach((btn) => {
+            btn.addEventListener('mousedown', (e) => { e.preventDefault(); });
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                _toggleInlineFormat(btn.getAttribute('data-fmt'));
+            });
+        });
+
         // Action buttons
-        const btns = Array.prototype.slice.call(tb.querySelectorAll('.ed-block-btn'));
+        const btns = Array.prototype.slice.call(tb.querySelectorAll('.ed-block-btn:not(.ed-block-fmt)'));
         btns.forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -579,6 +595,25 @@
         const tag = block.getAttribute('data-tei-tag') || 'p';
         const sel = tb.querySelector('.ed-block-type-select');
         sel.value = tag;
+
+        // Sync format button active states
+        const fmtBtns = tb.querySelectorAll('.ed-block-fmt');
+        const curSel = window.getSelection();
+        const anchor = curSel && curSel.anchorNode ? curSel.anchorNode.parentElement : null;
+        fmtBtns.forEach((btn) => {
+            const fmt = btn.getAttribute('data-fmt');
+            let isActive = false;
+            let check = anchor;
+            while (check && check !== block) {
+                if (check.getAttribute && check.getAttribute('data-tei-tag') === 'hi' &&
+                    check.getAttribute('data-rendition') === '#' + fmt) {
+                    isActive = true;
+                    break;
+                }
+                check = check.parentNode;
+            }
+            btn.classList.toggle('ed-block-fmt-active', isActive);
+        });
 
         // Make visible first, then position (so offsetHeight is correct)
         tb.classList.add('ed-block-toolbar-visible');
@@ -696,6 +731,52 @@
         }
         block.parentNode.removeChild(block);
         _hideBlockToolbar();
+        markDirty();
+    }
+
+    // --- Inline Formatting (B / I / U) ---
+
+    function _toggleInlineFormat(fmt) {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
+
+        const range = sel.getRangeAt(0);
+        const text = range.toString().trim();
+        if (!text) return;
+
+        // Check if already inside a <hi> with same rendition — toggle off
+        let parentHi = range.startContainer.parentElement;
+        while (parentHi && parentHi !== document.body) {
+            if (parentHi.getAttribute('data-tei-tag') === 'hi' &&
+                parentHi.getAttribute('data-rendition') === '#' + fmt) {
+                const parent = parentHi.parentNode;
+                while (parentHi.firstChild) {
+                    parent.insertBefore(parentHi.firstChild, parentHi);
+                }
+                parent.removeChild(parentHi);
+                parent.normalize();
+                markDirty();
+                return;
+            }
+            parentHi = parentHi.parentNode;
+        }
+
+        // Wrap selection in <hi> span
+        const hiCls = { b: 'ed-tei-hi-bold', i: 'ed-tei-hi-italic', u: 'ed-tei-hi-underline' };
+        const span = document.createElement('span');
+        span.className = hiCls[fmt] || '';
+        span.setAttribute('data-tei-tag', 'hi');
+        span.setAttribute('data-rendition', '#' + fmt);
+
+        try {
+            range.surroundContents(span);
+        } catch (ex) {
+            const frag = range.extractContents();
+            span.appendChild(frag);
+            range.insertNode(span);
+        }
+
+        sel.removeAllRanges();
         markDirty();
     }
 
@@ -1032,13 +1113,13 @@
             .then((r) => r.ok ? r.json() : { results: [] })
             .then((data) => {
                 localResults = (data.results || []).map((r) => {
-                    const refParts = [];
-                    if (r.gnd) refParts.push(`GND:${r.gnd}`);
-                    if (r.wikidata) refParts.push(r.wikidata);
+                    const extRefs = [];
+                    if (r.gnd) extRefs.push(`GND:${r.gnd}`);
+                    if (r.wikidata) extRefs.push(r.wikidata);
                     return {
                         label: r.name || r.id,
-                        desc: (r.type ? r.type : '') + (refParts.length ? ` — ${refParts.join(', ')}` : ''),
-                        ref: refParts[0] || r.id,
+                        desc: r.id + (r.type ? ` (${r.type})` : '') + (extRefs.length ? ` — ${extRefs.join(', ')}` : ''),
+                        ref: `#${r.id}`,
                         source: 'index'
                     };
                 });
@@ -1174,6 +1255,7 @@
         renderXmlEditable: renderXmlEditable,
         serializeToXml: serializeToXml,
         savePageXml: savePageXml,
+        toggleInlineFormat: _toggleInlineFormat,
         markDirty: markDirty,
         clearDirty: clearDirty,
         showToast: showToast,

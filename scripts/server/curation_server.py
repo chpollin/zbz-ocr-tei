@@ -141,7 +141,7 @@ def _extract_page_from_final(final_path: Path, page: int) -> str:
             end = len(clean)
 
         page_content = clean[start:end]
-        return f'<div type="page">{page_content}</div>'
+        return f'<body>{page_content}</body>'
     except Exception:
         pass
     return None

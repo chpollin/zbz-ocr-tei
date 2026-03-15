@@ -2152,6 +2152,27 @@ img { max-width: 100%; height: auto; }
   border-color: var(--ed-error);
   color: var(--ed-error);
 }
+.ed-block-separator {
+  width: 1px;
+  height: 18px;
+  background: var(--ed-border);
+  margin: 0 2px;
+  align-self: center;
+}
+.ed-block-fmt {
+  min-width: 26px;
+  text-align: center;
+  padding: 3px 5px;
+}
+.ed-block-fmt:hover {
+  border-color: var(--h-preussischblau);
+  color: var(--h-preussischblau);
+}
+.ed-block-fmt-active {
+  background: var(--h-preussischblau);
+  color: var(--ed-text-inverse);
+  border-color: var(--h-preussischblau);
+}
 
 /* --- Entity Toolbar (Phase 3) --- */
 .ed-entity-toolbar {

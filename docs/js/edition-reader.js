@@ -190,6 +190,18 @@
                 }
                 return;
             }
+            // Inline formatting shortcuts (Ctrl+B/I/U) in edit mode
+            if ((e.ctrlKey || e.metaKey) && state.editMode && e.target.contentEditable === 'true') {
+                var fmt = null;
+                if (e.key === 'b') fmt = 'b';
+                else if (e.key === 'i') fmt = 'i';
+                else if (e.key === 'u') fmt = 'u';
+                if (fmt && typeof ZBZ.EditionEditor !== 'undefined') {
+                    e.preventDefault();
+                    ZBZ.EditionEditor.toggleInlineFormat(fmt);
+                    return;
+                }
+            }
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.contentEditable === 'true') return;
             if (e.key === 'ArrowLeft') { e.preventDefault(); changePage(-1); }
             else if (e.key === 'ArrowRight') { e.preventDefault(); changePage(1); }
