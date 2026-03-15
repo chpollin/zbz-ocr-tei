@@ -1,4 +1,4 @@
-# Promptotyping Commands und Promptotyping Artifacts
+# Promptotyping Commands, Artifacts und Tools
 
 ## Operative Schichten der Promptotyping-Methodik in der Implementation-Phase
 
@@ -156,11 +156,17 @@ Die Promptotyping-Methodik definiert ihre eigenen Erfolgskriterien und macht sic
 
 **Eskalationsrate pro Zyklus.** Der Anteil der Dokumente, die nach dem automatischen Zyklus noch fachliche Verifikation durch die Editionswissenschaftlerin erfordern. Wenn die Rückkopplungslogik funktioniert (der wachsende Entity Index, verbesserte Scripts, akkumulierte Erfahrungen), sollte diese Rate über die Dokumentchargen sinken. Ein stabiler oder steigender Trend würde darauf hindeuten, dass die epistemische Infrastruktur nicht wächst oder nicht genutzt wird.
 
-**Artifact-Landschaft.** Welche neuen Scripts, Indizes oder Kontextdokumente entstehen im Lauf des Projekts? Wie verändern sie den Zyklus? Im ZBZ-Projekt könnte das beispielsweise ein spezialisiertes Script für die Erkennung handschriftlicher Datumsangaben sein, das nach dem dritten Durchlauf als Antwort auf ein wiederkehrendes Fehlermuster entsteht. Die Dokumentation dieser Veränderungen belegt die These des wachsenden Repositorys.
+Erste Daten aus dem ZBZ-Projekt: Von 285 verarbeiteten Dokumenten sind 284 schema-valide (99,6%). Das Agent-Based Quality Screening der fünf Pilotdokumente ergab null Eskalationen an die Fachexpertin — alle fünf wurden als APPROVED_WITH_NOTES bewertet. Die sechs identifizierten systematischen Muster (Entity-Typ-Konflikte, Doppelseiten-Scans, JSTOR-Scope-Probleme) betreffen Pipeline-Verbesserungen, nicht fachliche Entscheidungen. Diese Zahlen sind ein Ausgangswert. Die entscheidende Messung folgt, wenn die Editionswissenschaftlerin der ZBZ dieselben fünf Dokumente prüft: Welche Probleme findet sie, die der Agent übersehen hat?
+
+**Artifact-Landschaft.** Welche neuen Scripts, Indizes oder Kontextdokumente entstehen im Lauf des Projekts? Wie verändern sie den Zyklus?
+
+Im ZBZ-Projekt lässt sich die Artifact-Landschaft über die Projektlaufzeit (29. Januar bis 15. März 2026) dokumentieren. Das Repository begann mit einem OCR-Script und einem Evaluations-Dashboard. Sieben Wochen später umfasst es 14 Knowledge-Dokumente, 7 NER-Module, einen TEI-Validator mit 8 Projektregeln und 11 Warnungen, einen Entity Index mit 4.100 Einträgen, einen Curation Editor und ein Agent-Based Quality Screening mit maschinenlesbaren Review-JSONs. Jedes dieser Artifacts entstand als Antwort auf ein konkretes Problem: Der Validator entstand, weil die ersten TEI-Dokumente Schema-Fehler hatten. Die Stopwort-Liste für Entities entstand, weil generische Begriffe ("Dieu", "suisse") als Entitäten markiert wurden. Das Quality Screening entstand, weil die automatische Validierung allein nicht ausreichte, um die inhaltliche Korrektheit zu beurteilen. Die Artifact-Landschaft wächst nicht additiv, sondern reaktiv auf Qualitätssignale.
 
 **Verteilung menschlicher Aufmerksamkeit.** Wofür wendet die Editionswissenschaftlerin der ZBZ tatsächlich ihre Zeit auf? Wenn die Verifikationskaskade funktioniert, sollte sich ihre Arbeit auf fachlich schwierige Fälle konzentrieren (mehrdeutige Namenszuordnungen, unlesbare Passagen, editorische Grundsatzentscheidungen), nicht auf Formatkorrekturen oder Schemavalidierung. Eine Verschiebung der Aufmerksamkeit von Routineaufgaben zu Expertinnenaufgaben über die Projektlaufzeit würde die These der asymmetrischen Amplifikation empirisch belegen.
 
-Diese drei Dimensionen liefern keine einzelne Kennzahl, sondern ein trianguliertes Bild. Gemeinsam zeigen sie, ob Promptotyping seinen eigenen Anspruch einlöst: dass die epistemische Infrastruktur wächst, dass diese Infrastruktur die Agentarbeit verbessert und dass menschliche Expertise dort eingesetzt wird, wo sie den größten Wertbeitrag leistet.
+Diese Dimension ist noch nicht messbar — sie erfordert den Kurationspilot mit der ZBZ. Die Review-JSONs aus dem Quality Screening liefern jedoch eine Baseline: Sie dokumentieren, welche Fragen der Agent nicht beantworten konnte und an die Fachexpertin weitergibt. Im Pilotdurchlauf waren das: die korrekte Zuordnung mehrdeutiger Entity-Namen (Kierkegaard als Person oder Werk?), die editorische Bewertung von Copyright-Zeilen im TEI und die Frage, ob JSTOR-Coverseiten Teil des edierten Texts sind. Diese Fragen sind genau die Art von Expertinnenaufgaben, auf die die Kaskade hinarbeitet.
+
+Diese drei Dimensionen liefern keine einzelne Kennzahl, sondern ein trianguliertes Bild. Gemeinsam zeigen sie, ob Promptotyping seinen eigenen Anspruch einlöst: dass die epistemische Infrastruktur wächst, dass diese Infrastruktur die Agentarbeit verbessert und dass menschliche Expertise dort eingesetzt wird, wo sie den größten Wertbeitrag leistet. Die ersten Daten aus dem ZBZ-Projekt sind konsistent mit diesen Thesen, aber noch nicht hinreichend: Die entscheidende Prüfung ist der Vergleich zwischen Agent-Befund und Fach-Befund im Kurationspilot.
 
 ---
 
