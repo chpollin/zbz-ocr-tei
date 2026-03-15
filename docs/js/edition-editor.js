@@ -21,15 +21,22 @@
 
     // --- Server Detection ---
     function checkServer(callback) {
+        // Only check on localhost — skip on GitHub Pages to avoid 404 noise
+        const host = window.location.hostname;
+        if (host !== 'localhost' && host !== '127.0.0.1') {
+            editorState.serverAvailable = false;
+            if (callback) callback(false);
+            return;
+        }
         fetch(API_BASE + '/health', { method: 'GET' })
             .then((r) => {
                 editorState.serverAvailable = r.ok;
-                if (ZBZ.log) ZBZ.log('Editor', r.ok ? `Server erreichbar (${API_BASE})` : 'Server nicht verfuegbar');
+                if (ZBZ.log) ZBZ.log('Editor', r.ok ? `Server erreichbar (${API_BASE})` : 'Kein Curation Server auf diesem Port');
                 if (callback) callback(r.ok);
             })
             .catch(() => {
                 editorState.serverAvailable = false;
-                if (ZBZ.log) ZBZ.log('Editor', 'Server nicht erreichbar (read-only Modus)');
+                if (ZBZ.log) ZBZ.log('Editor', 'Kein Curation Server (read-only Modus)');
                 if (callback) callback(false);
             });
     }

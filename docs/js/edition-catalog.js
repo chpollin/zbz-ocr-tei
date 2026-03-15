@@ -463,12 +463,14 @@
 
     // --- Curation Status (Phase 4) ---
     function _checkCurationServer() {
+        // Only check on localhost — skip on GitHub Pages to avoid 404 noise
+        const host = window.location.hostname;
+        if (host !== 'localhost' && host !== '127.0.0.1') return;
         const apiBase = window.location.origin + '/api';
         fetch(apiBase + '/health', { method: 'GET' })
             .then((r) => {
                 if (!r.ok) return;
                 state.serverAvailable = true;
-                // Load statuses for all visible docs (batched)
                 _loadCurationStatuses();
             })
             .catch(() => {});
