@@ -164,6 +164,8 @@
             `<a href="${p}about.html">Projekt</a>` +
             `<a href="${p}infrastruktur/index.html">Promptotyping-Artefakte</a>` +
             `</div>` +
+            `<p class="ed-footer-disclaimer">Experimentelle Promptotyping-Edition &mdash; KI-gestuetzte Texterzeugung in laufender Kuration. ` +
+            `<a href="${p}about.html#promptotyping">Methodik</a></p>` +
             `<p>Zentralbibliothek Zuerich &middot; DHCraft &middot; 2026</p>`;
     }
 
@@ -536,9 +538,30 @@
         return `<span class="ed-badge ${cls}">${esc(label)}</span>`;
     }
 
+    function renderDisclaimer() {
+        const nav = $('#ed-nav-slot');
+        if (!nav) return;
+        const isInfra = window.location.pathname.indexOf('/infrastruktur/') > -1;
+        const p = isInfra ? '../' : '';
+        const banner = document.createElement('div');
+        banner.className = 'ed-disclaimer-banner';
+        banner.setAttribute('role', 'status');
+        banner.innerHTML =
+            `<div class="ed-disclaimer-banner-inner">` +
+            `<span class="ed-disclaimer-badge">` +
+            `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a2 2 0 0 1 2 2v4a2 2 0 1 1-4 0V3a2 2 0 0 1 2-2zm-3.5 9.5A3.5 3.5 0 0 0 8 14a3.5 3.5 0 0 0 3.5-3.5V9H12v1.5a4.5 4.5 0 1 1-9 0V9h1.5v1.5z"/></svg>` +
+            `Experimentell</span>` +
+            `<span class="ed-disclaimer-text">` +
+            `Promptotyping-Edition — Alle Texte wurden KI-gestuetzt erzeugt und befinden sich in laufender Kuration. ` +
+            `<a href="${p}about.html#promptotyping">Zur Methodik</a>` +
+            `</span></div>`;
+        nav.insertAdjacentElement('afterend', banner);
+    }
+
     // --- Init ---
     function init() {
         renderNav();
+        renderDisclaimer();
         renderFooter();
         initNav();
         const page = window.location.pathname.split('/').pop() || 'index.html';

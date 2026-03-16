@@ -1847,6 +1847,63 @@ img { max-width: 100%; height: auto; }
   color: var(--ed-text-muted);
 }
 
+/* --- Disclaimer Banner (Promptotyping) --- */
+.ed-disclaimer-banner {
+  background: var(--h-bg-alt);
+  border-bottom: 1px solid var(--h-border);
+  padding: var(--ed-space-sm) var(--ed-space-lg);
+  text-align: center;
+  font-family: var(--ed-font-sans);
+  font-size: var(--ed-text-sm);
+  color: var(--h-text-secondary);
+  line-height: 1.5;
+  letter-spacing: var(--ed-tracking-wide);
+}
+.ed-disclaimer-banner-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ed-space-sm);
+  flex-wrap: wrap;
+}
+.ed-disclaimer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  background: var(--h-preussischblau);
+  color: var(--h-text-inverse);
+  font-size: var(--ed-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ed-tracking-caps);
+  padding: 0.15em 0.6em;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.ed-disclaimer-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+.ed-disclaimer-text {
+  color: var(--h-text-secondary);
+}
+.ed-disclaimer-text a {
+  color: var(--h-ziegelrot);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.ed-disclaimer-text a:hover {
+  color: var(--h-ziegelrot-light);
+}
+@media print {
+  .ed-disclaimer-banner { display: none !important; }
+}
+
 /* --- Footer --- */
 .ed-footer {
   background: #E5DFD4;
@@ -1859,6 +1916,11 @@ img { max-width: 100%; height: auto; }
 }
 .ed-footer a {
   color: var(--h-ziegelrot);
+}
+.ed-footer-disclaimer {
+  font-style: italic;
+  color: var(--h-text-muted);
+  margin-bottom: var(--ed-space-xs);
 }
 .ed-footer-links {
   display: flex;
