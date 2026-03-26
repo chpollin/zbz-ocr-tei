@@ -14,6 +14,35 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 32 (2026-03-26): End-to-End CER Benchmark (E51)
+
+### Kontext
+Erste systematische Messung der End-to-End-Textqualitaet: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus Ground Truth). Bisher wurde CER nur auf OCR-Stufe gemessen.
+
+### Ergebnisse
+- **Median CER 5.5%**, Mean 9.3% (24 von 25 Ground-Truth-Docs, 1 Mismatch)
+- Vergleichbar mit GPT-4o-Klasse (6.3%) laut Forschungsliteratur 2025/2026
+- Beste Docs bei 1.0-2.2% (State of the Art fuer historischen Druck)
+- Pipeline hilft 11/25 Docs (teilweise massiv), verschlechtert 4/25 (nur bei vorher schlechtem OCR)
+- Fruehere Annahme "Pipeline-Degradation als Hauptproblem" war falsch — korrigiert
+
+### Neue Dateien
+- `knowledge/CER-BENCHMARK.md` -- Benchmark-Ergebnisse + Forschungskontext + wiss. Quellen
+- `scripts/benchmark_cer.py` -- CLI fuer stratifizierte CER-Analyse (Typ/Sprache/Form)
+
+### Erweiterungen
+- `scripts/evaluate_ocr.py`: 4 neue Funktionen (extract_text_for_comparison, categorize_errors, evaluate_tei_vs_tei, compute_proxy_quality)
+- `scripts/generate_dashboard_data.py`: benchmark_tei Key in Dashboard-JSON
+- `knowledge/PLAN.md`: Sub-Projekt "CER-Verbesserung" mit 4-Phasen-Plan
+- `knowledge/DECISIONS.md`: E51 (Benchmark) + O18 Update (multimodale Korrektur)
+- `knowledge/INDEX.md`: CER-BENCHMARK in Document Matrix
+
+### Entscheidungen
+- E51: End-to-End CER Benchmark
+- Sub-Projekt CER-Verbesserung definiert (Phase 0-4, Ziel: Median < 3.5%)
+
+---
+
 ## Session 31 (2026-03-26): Neues Schema + Editionsrichtlinien einarbeiten
 
 ### Kontext

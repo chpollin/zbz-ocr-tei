@@ -105,9 +105,15 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 
 ## Phase 5 -- Extended Evaluation
 
-- [ ] evaluate_ocr.py new mode --mode tei: text CER + structural accuracy + entity scores
-- [ ] Dashboard extended with page_xml, entities, tei_xml stages
-- [ ] Zielwerte: Text CER <7%, Structural accuracy >80%, Entity P/R >80%/>70%
+- [x] **End-to-End CER Benchmark** (E51): `benchmark_cer.py` vergleicht Pipeline-TEI vs. Referenz-TEI
+- [x] Stratifizierte Analyse (Typ, Sprache, Publikationsform, Seitenumfang)
+- [x] Fehlermuster-Kategorisierung (7 Kategorien) in `evaluate_ocr.py`
+- [x] Proxy-Metriken fuer 260 Docs ohne Ground Truth
+- [x] Dashboard-Integration (`benchmark_tei` Key in dashboard.json)
+- [x] Forschungsvergleich dokumentiert: [CER-BENCHMARK](CER-BENCHMARK.md)
+- [ ] Seitenweises CER-Benchmarking (pro Seite statt pro Dokument)
+- [ ] Schema-Validierung x CER Kreuzanalyse
+- [ ] Zielwerte: Text CER <3.5% (Median), Structural accuracy >80%, Entity P/R >80%/>70%
 
 ## Phase 6 -- Production Run (286 docs)
 
@@ -157,6 +163,49 @@ Agentengestuetztes Pre-Curation-Verfahren: Claude Code prueft jedes Dokument dur
 - [ ] docs/edition/ Duplikat klaeren (mergen oder loeschen)
 - [ ] Katalog-Filter nach Screening-Status
 - [ ] Publish-Workflow mit ZBZ testen
+
+---
+
+## Sub-Projekt: CER-Verbesserung (ab E51)
+
+Systematische Verbesserung der OCR-Qualitaet durch iteratives Experimentieren und Benchmarken.
+
+**Baseline:** Median CER 5.5%, Mean 9.3% (24 Docs, Maerz 2026). Details: [CER-BENCHMARK](CER-BENCHMARK.md)
+**Ziel:** Median CER < 3.5%, keine Docs > 15%
+**Methode:** Isolierte Experimente, jedes gemessen mit `benchmark_cer.py`
+**Infrastruktur:** `scripts/benchmark_cer.py`, `scripts/evaluate_ocr.py` (Phasen A-F, Maerz 2026)
+
+### Phase 0: Diagnostik
+- [ ] Outlier-Diagnose: Pro Stufe CER messen fuer 6 Problemdocs (290, 1440, 1060, 30, 300, 1910)
+- [ ] Experiment-Framework: `scripts/experiment_runner.py` fuer reproduzierbares A/B-Testing
+
+### Phase 1: Low-Hanging Fruit
+- [ ] Baseline-Korrektur: Schaerfere Zeichennormalisierung (Interpunktion, Apostrophe) in Benchmark
+- [ ] Auto-Deduplizierung in Pipeline integrieren (ocr_dedup.py)
+- [ ] Sprachhinweise fuer Mistral OCR-Request
+
+### Phase 2: Gezielte Post-Korrektur
+- [ ] Multimodale Gemini-Korrektur (Variante B) als Default fuer Docs mit hoher CER
+- [ ] Gemini-Modell-Upgrade (flash-lite -> flash oder 2.5 Pro)
+- [ ] Sprachspezifische Korrektur-Prompts
+
+### Phase 3: Strukturelle Verbesserungen
+- [ ] Seitenweises CER-Benchmarking (pro-Seite statt pro-Dokument)
+- [ ] Quality-Gate zwischen Pipeline-Stufen
+- [ ] Schema-Validierung x CER Kreuzanalyse als Diagnostik
+
+### Phase 4: Fortgeschritten
+- [ ] Multimodale TEI-Generierung (Bild + OCR-Text -> TEI direkt)
+- [ ] Ground-Truth-Erweiterung (eng, ita, Typ C)
+
+### Erfolgsmetriken
+- Phase 1 Ziel: Median < 5.0%, Mean < 7.0%
+- Phase 2 Ziel: Median < 4.0%
+- Non-Regression: Kein gutes Doc (<3%) darf sich verschlechtern
+
+### Referenzen
+- Forschungskontext und Benchmark-Vergleich: [CER-BENCHMARK](CER-BENCHMARK.md)
+- Offener Punkt O18 in [DECISIONS](DECISIONS.md)
 
 ---
 

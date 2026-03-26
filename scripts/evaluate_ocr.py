@@ -6,12 +6,16 @@ Generiert visuellen HTML-Report mit Diff-Ansicht.
 
 import re
 import json
+import unicodedata
 from pathlib import Path
 from datetime import datetime
 from difflib import SequenceMatcher
 import xml.etree.ElementTree as ET
 
-from scripts.config import REFERENZ_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR, TESTPLAN
+from scripts.config import (
+    REFERENZ_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR, TESTPLAN,
+    TEI_FINAL_DIR,
+)
 from scripts.utils import get_phase_doc_ids
 
 
@@ -148,6 +152,73 @@ def normalize_text(text: str) -> str:
     return text
 
 
+def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False) -> str:
+    """Extrahiert Text aus TEI-XML fuer CER-Benchmarking.
+
+    Gegenueber extract_text_from_tei mit drei Korrekturen:
+    1. <choice>: Nur <corr> extrahieren (nicht sic+corr konkateniert)
+    2. <note place="foot">: Optional ausschliessen (Default: exkludiert)
+    3. Unicode NFC-Normalisierung fuer konsistenten Diakritika-Vergleich
+    """
+    with open(tei_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    try:
+        root = ET.fromstring(content)
+    except ET.ParseError:
+        text = re.sub(r'<[^>]+>', '', content)
+        return unicodedata.normalize('NFC', normalize_text(text))
+
+    # Namespace entfernen
+    for elem in root.iter():
+        if '}' in elem.tag:
+            elem.tag = elem.tag.split('}')[1]
+        for attr_key in list(elem.attrib.keys()):
+            if '}' in attr_key:
+                elem.attrib[attr_key.split('}')[1]] = elem.attrib.pop(attr_key)
+
+    body = root.find('.//body')
+    if body is None:
+        return ""
+
+    def get_text(elem):
+        """Rekursive Textextraktion. Tail wird vom PARENT gehandhabt."""
+        parts = []
+
+        # <choice>: Nur corr extrahieren, sic ignorieren
+        if elem.tag == 'choice':
+            corr = elem.find('corr')
+            target = corr if corr is not None else elem.find('sic')
+            if target is not None:
+                parts.append(get_text(target))
+            return ''.join(parts)
+
+        # <note place="foot"> optional exkludieren
+        if elem.tag == 'note' and elem.get('place') == 'foot' and not include_footnotes:
+            return ''
+
+        if elem.text:
+            parts.append(elem.text)
+
+        for child in elem:
+            if child.tag == 'lb':
+                if child.get('break') != 'no':
+                    parts.append(' ')
+            elif child.tag == 'pb':
+                parts.append('\n\n')
+            else:
+                parts.append(get_text(child))
+            # Tail: immer vom Parent gehandhabt
+            if child.tail:
+                parts.append(child.tail)
+
+        return ''.join(parts)
+
+    text = get_text(body)
+    text = normalize_text(text)
+    return unicodedata.normalize('NFC', text)
+
+
 def load_ocr_result(ocr_path: Path) -> str:
     """Laedt OCR-Ergebnis aus Markdown-Datei."""
     if not ocr_path.exists():
@@ -227,6 +298,106 @@ def find_differences(reference: str, hypothesis: str) -> list:
             })
 
     return differences
+
+
+def _has_diacritic_diff(ref: str, hyp: str) -> bool:
+    """Prueft ob sich ref und hyp nur in Diakritika/Akzenten unterscheiden."""
+    ref_base = unicodedata.normalize('NFD', ref)
+    hyp_base = unicodedata.normalize('NFD', hyp)
+    ref_stripped = ''.join(c for c in ref_base if unicodedata.category(c) != 'Mn')
+    hyp_stripped = ''.join(c for c in hyp_base if unicodedata.category(c) != 'Mn')
+    return ref_stripped == hyp_stripped and ref != hyp
+
+
+def _is_punctuation_only(text: str) -> bool:
+    """Prueft ob Text nur aus Interpunktion/Symbolen besteht."""
+    return all(
+        unicodedata.category(c).startswith(('P', 'S')) or c in ' \t'
+        for c in text
+    ) if text else False
+
+
+def _has_repeated_ngrams(text: str, n: int = 3, threshold: int = 3) -> bool:
+    """Erkennt wiederholte n-gramme (OCR-Halluzination)."""
+    if len(text) < n * threshold:
+        return False
+    ngrams = [text[i:i+n] for i in range(len(text) - n + 1)]
+    from collections import Counter
+    counts = Counter(ngrams)
+    return any(c >= threshold for c in counts.values())
+
+
+def categorize_errors(differences: list, ref_length: int) -> dict:
+    """Klassifiziert Fehler aus find_differences() in Kategorien.
+
+    Kategorien: diacritics, punctuation, hyphenation, whitespace,
+    ocr_artifact, layout, other.
+    Gibt pro Kategorie count, cer_contribution und examples zurueck.
+    """
+    categories = {
+        'diacritics': {'count': 0, 'char_distance': 0, 'examples': []},
+        'punctuation': {'count': 0, 'char_distance': 0, 'examples': []},
+        'hyphenation': {'count': 0, 'char_distance': 0, 'examples': []},
+        'whitespace': {'count': 0, 'char_distance': 0, 'examples': []},
+        'ocr_artifact': {'count': 0, 'char_distance': 0, 'examples': []},
+        'layout': {'count': 0, 'char_distance': 0, 'examples': []},
+        'other': {'count': 0, 'char_distance': 0, 'examples': []},
+    }
+
+    for diff in differences:
+        ref = diff.get('reference', '')
+        hyp = diff.get('hypothesis', '')
+        diff_type = diff.get('type', '')
+        edit_dist = max(len(ref), len(hyp))
+
+        # Klassifikation (erste zutreffende Regel gewinnt)
+        if ref.strip() == '' and hyp.strip() == '':
+            cat = 'whitespace'
+        elif ref.strip() == hyp.strip():
+            cat = 'whitespace'
+        elif _has_diacritic_diff(ref, hyp):
+            cat = 'diacritics'
+        elif _is_punctuation_only(ref) and _is_punctuation_only(hyp):
+            cat = 'punctuation'
+        elif _is_punctuation_only(ref) and hyp == '':
+            cat = 'punctuation'
+        elif ref == '' and _is_punctuation_only(hyp):
+            cat = 'punctuation'
+        elif any(c in ref + hyp for c in ['-', '\u00AD', '\u2010', '\u2011']):
+            # Bindestrich/Trennstrich involviert
+            if len(ref) < 5 and len(hyp) < 5:
+                cat = 'hyphenation'
+            else:
+                cat = 'other'
+        elif diff_type == 'insert' and len(hyp) > 50 and _has_repeated_ngrams(hyp):
+            cat = 'ocr_artifact'
+        elif diff_type == 'insert' and len(hyp) > 80:
+            cat = 'layout'
+        elif diff_type == 'delete' and len(ref) > 80:
+            cat = 'layout'
+        elif diff_type in ('insert', 'delete') and len(ref) + len(hyp) > 40:
+            # Groessere Inserts/Deletes: eher Layout/Struktur
+            cat = 'layout'
+        else:
+            cat = 'other'
+
+        categories[cat]['count'] += 1
+        categories[cat]['char_distance'] += edit_dist
+
+        if len(categories[cat]['examples']) < 3:
+            categories[cat]['examples'].append({
+                'ref': ref[:80],
+                'hyp': hyp[:80],
+                'type': diff_type,
+            })
+
+    # CER-Beitrag pro Kategorie berechnen
+    for cat_data in categories.values():
+        cat_data['cer_contribution'] = (
+            cat_data['char_distance'] / ref_length if ref_length > 0 else 0.0
+        )
+
+    return categories
 
 
 def generate_html_report(results: dict, output_path: Path):
@@ -882,6 +1053,207 @@ def evaluate_document_pagewise(doc_id: str, tei_dir: Path, ocr_dir: Path) -> dic
         f"{len(tei_pages) - matched_pages} ohne Match, "
         f"{len(ocr_by_page)} OCR-Seiten"
     )
+
+    return result
+
+
+def compute_proxy_quality(doc_id: str) -> dict:
+    """Berechnet Proxy-Qualitaetsmetriken fuer Docs ohne Ground Truth.
+
+    Basiert auf Screening-Daten (Review-JSONs) und strukturellen Signalen.
+    """
+    result = {
+        'doc_id': doc_id,
+        'proxy_score': None,
+        'confidence': 'low',
+        'signals': {},
+        'estimated_cer_bucket': 'unknown',
+    }
+
+    # Review-JSON laden
+    review_path = TEI_FINAL_DIR / f"{doc_id}_review.json"
+    if not review_path.exists():
+        return result
+
+    review = json.loads(review_path.read_text(encoding='utf-8'))
+    layers = review.get('layers', {})
+
+    # Signal-Extraktion
+    score_map = {'ok': 1.0, 'warning': 0.5, 'n/a': None}
+
+    # v2-Format (mit layers)
+    l2_score = score_map.get(layers.get('L2_ocr', {}).get('score'), None)
+    l7_score = score_map.get(layers.get('L7_coherence', {}).get('score'), None)
+    l4_score = score_map.get(layers.get('L4_tei', {}).get('score'), None)
+
+    # v1-Fallback (ohne layers): aus Findings und Validator-Status ableiten
+    if not layers:
+        status = review.get('status', '')
+        if status in ('APPROVED', 'APPROVED_WITH_NOTES'):
+            # v1 APPROVED: moderate Vertrauenswuerdigkeit
+            validator_str = review.get('validator', '')
+            if 'VALID' in validator_str and '0 errors' in validator_str:
+                l4_score = 1.0
+            elif 'VALID' in validator_str:
+                l4_score = 0.8
+            # Aus Findings OCR-Probleme erkennen
+            findings_v1 = review.get('findings', [])
+            ocr_findings = [f for f in findings_v1 if f.get('code', '').startswith(('E', 'L2'))]
+            if not ocr_findings:
+                l2_score = 0.85  # Kein OCR-Problem gemeldet
+            else:
+                l2_score = 0.5
+
+    # Validator-Warnungen zaehlen
+    raw_warnings = layers.get('L4_tei', {}).get('validator_warnings', [])
+    l4_warnings = len(raw_warnings) if isinstance(raw_warnings, list) else int(raw_warnings or 0)
+    if l4_score == 1.0 and l4_warnings > 0:
+        l4_score = 0.8
+
+    # Findings zaehlen
+    findings = review.get('findings', [])
+    warning_count = len([f for f in findings
+                         if isinstance(f, dict) and
+                         f.get('severity') in ('warning', 'error')])
+
+    # OCR-Keywords in Notes (v2: L2-Notes, v1: alle findings)
+    ocr_keywords = ['Halluzination', 'halluzin', 'repetitiv', 'OCR-Fehler',
+                    'Artefakt', 'unleserlich', 'verstummelt', 'Zeichensalat']
+    notes_text = layers.get('L2_ocr', {}).get('notes', '')
+    if not notes_text:
+        notes_text = ' '.join(f.get('msg', '') for f in findings)
+    found_keywords = [kw for kw in ocr_keywords if kw.lower() in notes_text.lower()]
+
+    result['signals'] = {
+        'l2_ocr': layers.get('L2_ocr', {}).get('score', '?'),
+        'l7_coherence': layers.get('L7_coherence', {}).get('score', '?'),
+        'l4_tei': layers.get('L4_tei', {}).get('score', '?'),
+        'l4_warning_count': l4_warnings,
+        'finding_count': warning_count,
+        'ocr_keywords_found': found_keywords,
+        'review_status': review.get('status', '?'),
+        'review_version': 'v2' if layers else 'v1',
+    }
+
+    # Proxy-Score berechnen (gewichteter Durchschnitt der verfuegbaren Signale)
+    scores = []
+    weights = []
+    if l2_score is not None:
+        scores.append(l2_score)
+        weights.append(3.0)  # OCR-Score am wichtigsten
+    if l7_score is not None:
+        scores.append(l7_score)
+        weights.append(2.0)
+    if l4_score is not None:
+        scores.append(l4_score)
+        weights.append(1.0)
+
+    # Malus fuer OCR-Keywords
+    keyword_penalty = min(len(found_keywords) * 0.15, 0.5)
+    # Malus fuer Findings
+    finding_penalty = min(warning_count * 0.05, 0.3)
+
+    if scores:
+        weighted_avg = sum(s * w for s, w in zip(scores, weights)) / sum(weights)
+        result['proxy_score'] = max(0.0, weighted_avg - keyword_penalty - finding_penalty)
+        result['confidence'] = 'high' if len(scores) >= 2 else 'medium'
+
+        # CER-Bucket schaetzen
+        ps = result['proxy_score']
+        if ps >= 0.9:
+            result['estimated_cer_bucket'] = 'excellent'
+        elif ps >= 0.7:
+            result['estimated_cer_bucket'] = 'good'
+        elif ps >= 0.4:
+            result['estimated_cer_bucket'] = 'fair'
+        else:
+            result['estimated_cer_bucket'] = 'poor'
+
+    return result
+
+
+def evaluate_tei_vs_tei(doc_id: str, ref_dir: Path, pipeline_dir: Path) -> dict:
+    """End-to-End CER/WER: Vergleicht Referenz-TEI mit Pipeline-TEI.
+
+    Extrahiert Text aus beiden TEI-XMLs mit extract_text_for_comparison(),
+    verwendet Alignment bei Laengendifferenz, und kategorisiert Fehlermuster.
+    """
+    result = {
+        'doc_id': doc_id,
+        'status': 'OK',
+        'comparison_type': 'tei_vs_tei',
+        'cer': 0.0,
+        'wer': 0.0,
+        'ref_chars': 0,
+        'hyp_chars': 0,
+        'footnote_cer': None,
+        'error_categories': {},
+        'differences': [],
+        'alignment_info': '',
+    }
+
+    # Referenz-TEI finden
+    ref_path = _find_tei_path(doc_id, ref_dir)
+    if ref_path is None:
+        result['status'] = 'SKIP'
+        result['error'] = f"Referenz-TEI nicht gefunden: {doc_id}"
+        return result
+
+    # Pipeline-TEI finden
+    pipe_path = pipeline_dir / f"{doc_id}_final.xml"
+    if not pipe_path.exists():
+        # Fallback ohne _final Suffix
+        pipe_path = pipeline_dir / f"{doc_id}.xml"
+    if not pipe_path.exists():
+        result['status'] = 'SKIP'
+        result['error'] = f"Pipeline-TEI nicht gefunden: {doc_id}"
+        return result
+
+    # Text extrahieren (ohne Fussnoten fuer Hauptvergleich)
+    ref_text = extract_text_for_comparison(ref_path, include_footnotes=False)
+    pipe_text = extract_text_for_comparison(pipe_path, include_footnotes=False)
+
+    if not ref_text:
+        result['status'] = 'SKIP'
+        result['error'] = f"Referenz-TEI leer: {ref_path.name}"
+        return result
+
+    # Alignment bei Laengendifferenz (>5%)
+    len_ratio = max(len(ref_text), len(pipe_text)) / max(min(len(ref_text), len(pipe_text)), 1)
+    if len_ratio > 1.05:
+        _, _, _, _, aligned_ref, aligned_pipe = find_best_alignment(ref_text, pipe_text)
+        result['alignment_info'] = (
+            f"Aligned: ref {len(ref_text)}->{len(aligned_ref)}, "
+            f"pipe {len(pipe_text)}->{len(aligned_pipe)} "
+            f"(ratio {len_ratio:.2f})"
+        )
+        ref_text = aligned_ref
+        pipe_text = aligned_pipe
+    else:
+        result['alignment_info'] = f"Direkt: ref={len(ref_text)}, pipe={len(pipe_text)}"
+
+    # CER / WER
+    result['cer'] = calculate_cer(ref_text, pipe_text)
+    result['wer'] = calculate_wer(ref_text, pipe_text)
+    result['ref_chars'] = len(ref_text)
+    result['hyp_chars'] = len(pipe_text)
+
+    # Alignment-Mismatch erkennen (CER > 50% = vermutlich anderer Text)
+    if result['cer'] > 0.50:
+        result['status'] = 'MISMATCH'
+        result['alignment_info'] += ' [MISMATCH: CER > 50%, vermutlich Textabweichung]'
+
+    # Fussnoten-CER separat (inkl. vs. exkl. Fussnoten)
+    ref_with_fn = extract_text_for_comparison(ref_path, include_footnotes=True)
+    pipe_with_fn = extract_text_for_comparison(pipe_path, include_footnotes=True)
+    if len(ref_with_fn) > len(ref_text) + 20:
+        result['footnote_cer'] = calculate_cer(ref_with_fn, pipe_with_fn)
+        result['cer_incl_footnotes'] = result['footnote_cer']
+
+    # Fehlerkategorien
+    diffs = find_differences(ref_text, pipe_text)
+    result['differences'] = diffs[:30]
+    result['error_categories'] = categorize_errors(diffs, len(ref_text))
 
     return result
 

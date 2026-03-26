@@ -374,6 +374,31 @@ def build_corpus_overview(documents: dict) -> dict:
     }
 
 
+def _load_benchmark_tei() -> dict | None:
+    """Laedt TEI-vs-TEI Benchmark-Ergebnisse falls vorhanden."""
+    benchmark_path = EVALUATION_DIR / "benchmark_tei_vs_tei.json"
+    data = load_json(benchmark_path)
+    if not data:
+        return None
+    summary = data.get('summary', {})
+    stratified = data.get('stratified', {})
+    return {
+        'generated': data.get('generated'),
+        'total_documents': summary.get('total_documents', 0),
+        'avg_cer': summary.get('avg_cer'),
+        'median_cer': summary.get('median_cer'),
+        'avg_wer': summary.get('avg_wer'),
+        'by_type': {
+            k: {'count': v['count'], 'avg_cer': v['avg_cer'], 'median_cer': v['median_cer']}
+            for k, v in stratified.get('by_type', {}).items()
+        },
+        'by_language': {
+            k: {'count': v['count'], 'avg_cer': v['avg_cer']}
+            for k, v in stratified.get('by_language', {}).items()
+        },
+    }
+
+
 def main():
     print("Dashboard-Daten generieren...")
     print(f"  Projekt-Root: {PROJECT_ROOT}")
@@ -408,6 +433,7 @@ def main():
             "note": "DeepSeek nur 2 Seiten pro Dokument (lokal, GPU), Mistral alle Seiten (Cloud API)",
             "documents": ["2310", "1180", "290"],
         },
+        "benchmark_tei": _load_benchmark_tei(),
     }
 
     # Schreiben

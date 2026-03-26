@@ -29,6 +29,7 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [JOURNAL](JOURNAL.md) | What was done when? | All | — |
 | [EDITION](EDITION.md) | How does the digital edition work? Architecture, Design System | Development, Edition | PIPELINE |
 | [CURATION](CURATION.md) | How does the Curation Editor work? Server, API, Editor | Development, Edition | EDITION, GND-STRATEGIE |
+| [CER-BENCHMARK](CER-BENCHMARK.md) | How good is the OCR? End-to-End CER, research context | Development, QA | TESTPLAN, ENGINES |
 | [PLAN](PLAN.md) | What are the implementation phases? | Development | PROJEKT, PIPELINE |
 
 ---
