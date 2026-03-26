@@ -1,7 +1,7 @@
 /**
- * diagnostik.js — Pipeline-Diagnostik UI (Lane 3 Ownership)
+ * diagnostik.js — Pipeline-Diagnostik UI (Lane 3)
  *
- * Laedt drei JSON-Quellen:
+ * Reads three JSON sources:
  *   - diagnostik_ocr.json  (Lane 2)
  *   - diagnostik_tei.json  (Lane 1)
  *   - diagnostik_log.json  (alle Lanes)
@@ -11,17 +11,20 @@
 ;(function () {
     'use strict';
 
-    var OCR_URL = '../data/diagnostik_ocr.json';
-    var TEI_URL = '../data/diagnostik_tei.json';
-    var LOG_URL = '../data/diagnostik_log.json';
+    const S = window.ZBZ && ZBZ.Shared ? ZBZ.Shared : {};
+    const $ = S.$ || ((sel) => document.querySelector(sel));
+    const $$ = S.$$ || ((sel) => [...document.querySelectorAll(sel)]);
+    const esc = S.esc || ((s) => { if (s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); });
+    const fmtNum = S.formatNumber || ((n) => n == null ? '\u2014' : Number(n).toLocaleString('de-CH'));
+    const fmtPct = S.formatPercent || ((v, d) => v == null ? '\u2014' : (v * 100).toFixed(d || 1) + '%');
+    const fmtDate = S.formatDate || ((s) => s ? s.replace('T', ' ').slice(0, 19) : '\u2014');
+    const fetchJSON = S.fetchJSON || ((url) => fetch(url).then(r => r.ok ? r.json() : null).catch(() => null));
 
-    // --- Helpers ---
-    function $(sel) { return document.querySelector(sel); }
-    function $$(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
-    function esc(s) { return s == null ? '' : String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-    function pct(v, d) { return v == null ? '—' : (v * 100).toFixed(d || 1) + '%'; }
-    function num(v) { return v == null ? '—' : Number(v).toLocaleString('de-CH'); }
-    function empty(msg) { return '<div class="diag-empty">' + esc(msg || 'Daten ausstehend') + '</div>'; }
+    const OCR_URL = '../data/diagnostik_ocr.json';
+    const TEI_URL = '../data/diagnostik_tei.json';
+    const LOG_URL = '../data/diagnostik_log.json';
+
+    function empty(msg) { return '<div class="ed-empty">' + esc(msg || 'Daten ausstehend') + '</div>'; }
 
     function cerClass(v) {
         if (v == null) return '';
@@ -33,29 +36,29 @@
     }
 
     function cerCell(v) {
-        if (v == null) return '<span class="diag-cer-cell">—</span>';
-        return '<span class="diag-cer-cell ' + cerClass(v) + '">' + pct(v) + '</span>';
+        if (v == null) return '<span class="diag-cer-cell">\u2014</span>';
+        return '<span class="diag-cer-cell ' + cerClass(v) + '">' + fmtPct(v) + '</span>';
     }
 
     function statusBadge(status) {
-        var map = {
+        const map = {
             'geloest': 'diag-badge-ok', 'fixed': 'diag-badge-ok',
             'blocked_on_ner': 'diag-badge-blocked', 'blocked': 'diag-badge-blocked',
             'false_positive': 'diag-badge-fp', 'false-positive': 'diag-badge-fp',
             'analyse_pending': 'diag-badge-pending', 'ner_miss': 'diag-badge-pending',
             'open': 'diag-badge-error'
         };
-        var cls = map[status] || 'diag-badge-fp';
-        var labels = {
+        const labels = {
             'blocked_on_ner': 'blocked', 'false_positive': 'false-positive',
             'analyse_pending': 'analyse', 'ner_miss': 'NER-Miss'
         };
-        return '<span class="diag-badge ' + cls + '">' + esc(labels[status] || status) + '</span>';
+        const cls = map[status] || 'diag-badge-fp';
+        return '<span class="ed-badge ' + cls + '">' + esc(labels[status] || status) + '</span>';
     }
 
     function laneBadge(lane) {
-        var cls = { 'tei': 'diag-badge-l1', 'ocr': 'diag-badge-l2', 'edition': 'diag-badge-l3' };
-        var labels = { 'tei': 'L1', 'ocr': 'L2', 'edition': 'L3' };
+        const cls = { 'tei': 'diag-badge-l1', 'ocr': 'diag-badge-l2', 'edition': 'diag-badge-l3' };
+        const labels = { 'tei': 'L1', 'ocr': 'L2', 'edition': 'L3' };
         return '<span class="diag-badge-lane ' + (cls[lane] || '') + '">' + (labels[lane] || lane || '?') + '</span>';
     }
 
@@ -68,97 +71,76 @@
         return esc(c);
     }
 
-    // --- Sortable Table ---
-    function makeSortable(tableId, rows, renderFn) {
-        var table = $('#' + tableId);
-        if (!table) return;
-        var state = { col: null, asc: true };
-        var headers = Array.prototype.slice.call(table.querySelectorAll('th.sortable'));
-
-        headers.forEach(function (th) {
-            th.addEventListener('click', function () {
-                var col = th.getAttribute('data-col');
-                if (state.col === col) { state.asc = !state.asc; }
-                else { state.col = col; state.asc = true; }
-                headers.forEach(function (h) { h.classList.remove('sort-asc', 'sort-desc'); });
-                th.classList.add(state.asc ? 'sort-asc' : 'sort-desc');
-                rows.sort(function (a, b) {
-                    var va = a[col], vb = b[col];
-                    if (va == null) return 1;
-                    if (vb == null) return -1;
-                    if (typeof va === 'number') return state.asc ? va - vb : vb - va;
-                    return state.asc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
-                });
-                renderFn(rows);
-            });
-        });
-    }
-
-    // --- Fetch helper ---
-    function fetchJson(url) {
-        return fetch(url).then(function (r) {
-            if (!r.ok) return null;
-            return r.json();
-        }).catch(function () { return null; });
+    function metricCard(val, lbl, cls) {
+        return '<div class="ed-metric"><div class="ed-metric-val ' + (cls || '') + '">'
+            + esc(val) + '</div><div class="ed-metric-lbl">' + esc(lbl) + '</div></div>';
     }
 
     // =====================================================================
     // Tab: Uebersicht
     // =====================================================================
     function renderOverview(ocr, tei, log) {
-        var el = $('#ov-metrics');
+        const el = $('#ov-metrics');
         if (!el) return;
 
-        var cards = [];
+        const cards = [];
+
         // Median CER
-        var medCer = ocr && ocr.summary && ocr.summary.post_normfix
+        const medCer = ocr && ocr.summary && ocr.summary.post_normfix
             ? ocr.summary.post_normfix.median_cer : null;
-        cards.push({ val: medCer != null ? pct(medCer) : '—', lbl: 'Median CER',
-                     cls: medCer != null ? (medCer < 0.05 ? 'good' : medCer < 0.1 ? 'warn' : 'bad') : '' });
+        cards.push(metricCard(
+            medCer != null ? fmtPct(medCer) : '\u2014', 'Median CER',
+            medCer != null ? (medCer < 0.05 ? 'good' : medCer < 0.1 ? 'warn' : 'bad') : ''));
+
         // Schema-valide
-        var teiValid = tei && tei.summary ? tei.summary.valid : null;
-        var teiTotal = tei && tei.summary ? tei.summary.total : null;
-        cards.push({ val: teiValid != null ? teiValid + '/' + teiTotal : '—', lbl: 'Schema-valide',
-                     cls: teiValid === teiTotal ? 'good' : 'warn' });
-        // Entities (from corpus_stats)
-        var ents = tei && tei.corpus_stats && tei.corpus_stats.elements
-            ? (tei.corpus_stats.elements.persName || 0) + (tei.corpus_stats.elements.orgName || 0)
-              + (tei.corpus_stats.elements.placeName || 0) : null;
-        cards.push({ val: ents != null ? num(ents) : '—', lbl: 'Entities' });
-        // Docs im Katalog
-        var totalDocs = tei && tei.corpus_stats ? tei.corpus_stats.total_docs : null;
-        cards.push({ val: totalDocs != null ? num(totalDocs) : '—', lbl: 'Docs' });
+        const teiValid = tei && tei.summary ? tei.summary.valid : null;
+        const teiTotal = tei && tei.summary ? tei.summary.total : null;
+        cards.push(metricCard(
+            teiValid != null ? teiValid + '/' + teiTotal : '\u2014', 'Schema-valide',
+            teiValid === teiTotal ? 'good' : 'warn'));
+
+        // Entities
+        const elems = tei && tei.corpus_stats && tei.corpus_stats.elements;
+        const ents = elems
+            ? (elems.persName || 0) + (elems.orgName || 0) + (elems.placeName || 0) : null;
+        cards.push(metricCard(ents != null ? fmtNum(ents) : '\u2014', 'Entities', ''));
+
+        // Wikidata-Rate (optional key)
+        const wdRate = tei && tei.corpus_stats && tei.corpus_stats.wikidata_rate;
+        cards.push(metricCard(
+            wdRate != null ? fmtPct(wdRate) : '\u2014', 'Wikidata-Rate',
+            wdRate != null ? (wdRate > 0.5 ? 'good' : 'warn') : ''));
+
+        // Docs
+        const totalDocs = tei && tei.corpus_stats ? tei.corpus_stats.total_docs : null;
+        cards.push(metricCard(totalDocs != null ? fmtNum(totalDocs) : '\u2014', 'Docs', ''));
+
         // Seiten
-        var totalPages = tei && tei.corpus_stats ? tei.corpus_stats.total_pages : null;
-        cards.push({ val: totalPages != null ? num(totalPages) : '—', lbl: 'Seiten' });
+        const totalPages = tei && tei.corpus_stats ? tei.corpus_stats.total_pages : null;
+        cards.push(metricCard(totalPages != null ? fmtNum(totalPages) : '\u2014', 'Seiten', ''));
 
-        el.innerHTML = cards.map(function (c) {
-            return '<div class="diag-metric"><div class="diag-metric-val ' + (c.cls || '') + '">'
-                + esc(c.val) + '</div><div class="diag-metric-lbl">' + esc(c.lbl) + '</div></div>';
-        }).join('');
+        el.innerHTML = cards.join('');
 
-        // Validation Timeline
         renderValTimeline(tei);
-
-        // Last Activity
+        renderCerTimeline(ocr);
         renderLastActivity(log);
     }
 
     function renderValTimeline(tei) {
-        var el = $('#ov-val-timeline');
-        if (!el) { return; }
+        const el = $('#ov-val-timeline');
+        if (!el) return;
         if (!tei || !tei.validation_timeline || !tei.validation_timeline.length) {
             el.innerHTML = empty(); return;
         }
-        var steps = tei.validation_timeline;
-        var maxVal = 0;
-        steps.forEach(function (s) { maxVal = Math.max(maxVal, s.valid || 0, s.invalid || 0, s.warnings || 0); });
+        const steps = tei.validation_timeline;
+        let maxVal = 0;
+        steps.forEach(s => { maxVal = Math.max(maxVal, s.valid || 0, s.invalid || 0, s.warnings || 0); });
         if (maxVal === 0) maxVal = 1;
 
-        el.innerHTML = '<div class="diag-timeline">' + steps.map(function (s) {
-            var vh = Math.round(((s.valid || 0) / maxVal) * 70);
-            var ih = Math.round(((s.invalid || 0) / maxVal) * 70);
-            var wh = Math.round(((s.warnings || 0) / maxVal) * 70);
+        el.innerHTML = '<div class="diag-timeline">' + steps.map(s => {
+            const vh = Math.round(((s.valid || 0) / maxVal) * 70);
+            const ih = Math.round(((s.invalid || 0) / maxVal) * 70);
+            const wh = Math.round(((s.warnings || 0) / maxVal) * 70);
             return '<div class="diag-tl-step">'
                 + '<div class="diag-tl-val">' + (s.valid || 0) + '</div>'
                 + '<div class="diag-tl-bar valid" style="height:' + vh + 'px"></div>'
@@ -169,20 +151,36 @@
         }).join('') + '</div>';
     }
 
+    function renderCerTimeline(ocr) {
+        const el = $('#ov-cer-timeline');
+        if (!el) return;
+        if (!ocr || !ocr.reduction_timeline || !ocr.reduction_timeline.length) {
+            el.innerHTML = empty(); return;
+        }
+        const steps = ocr.reduction_timeline;
+        const html = steps.map((s, i) => {
+            const arrow = i > 0 ? '<div class="diag-cer-arrow">\u2192</div>' : '';
+            return arrow + '<div class="diag-cer-step">'
+                + '<div class="diag-cer-step-label">' + esc(s.step) + '</div>'
+                + '<div class="diag-cer-step-val">' + s.mean.toFixed(2) + '%</div>'
+                + '<div class="diag-cer-step-sub">Median ' + s.median.toFixed(2) + '%</div>'
+                + (s.note ? '<div class="diag-cer-step-sub">' + esc(s.note) + '</div>' : '')
+                + '</div>';
+        }).join('');
+        el.innerHTML = '<div class="diag-cer-timeline">' + html + '</div>';
+    }
+
     function renderLastActivity(log) {
-        var el = $('#ov-last-activity');
+        const el = $('#ov-last-activity');
         if (!el) return;
         if (!log || !log.length) { el.innerHTML = empty('Kein Log vorhanden'); return; }
-        var sorted = log.slice().sort(function (a, b) {
-            return (b.timestamp || '').localeCompare(a.timestamp || '');
-        });
-        var last = sorted[0];
-        var ts = (last.timestamp || '').replace('T', ' ').slice(0, 19);
+        const sorted = log.slice().sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+        const last = sorted[0];
         el.innerHTML = '<div class="diag-last-activity">'
-            + '<span class="ts">' + ts + '</span>'
+            + '<span class="ts">' + fmtDate(last.timestamp) + '</span>'
             + laneBadge(last.lane)
             + ' <strong>' + esc(last.action) + '</strong>'
-            + (last.result_summary ? ' — ' + esc(last.result_summary) : '')
+            + (last.result_summary ? ' \u2014 ' + esc(last.result_summary) : '')
             + '</div>';
     }
 
@@ -198,87 +196,66 @@
     }
 
     function renderOcrMetrics(ocr) {
-        var el = $('#ocr-metrics');
+        const el = $('#ocr-metrics');
         if (!el || !ocr.summary) return;
-        var s = ocr.summary.post_normfix || ocr.summary.pre_normfix || {};
-        var cards = [
-            { val: pct(s.avg_cer), lbl: 'Mean CER', cls: s.avg_cer < 0.05 ? 'good' : s.avg_cer < 0.1 ? 'warn' : 'bad' },
-            { val: pct(s.median_cer), lbl: 'Median CER', cls: s.median_cer < 0.05 ? 'good' : 'warn' },
-            { val: pct(s.std_cer), lbl: 'Std' },
-            { val: pct(s.min_cer), lbl: 'Min', cls: 'good' },
-            { val: pct(s.max_cer), lbl: 'Max', cls: s.max_cer > 0.15 ? 'bad' : 'warn' },
-            { val: num(s.evaluated || s.total_documents), lbl: 'Evaluiert' }
-        ];
-        el.innerHTML = cards.map(function (c) {
-            return '<div class="diag-metric"><div class="diag-metric-val ' + (c.cls || '') + '">'
-                + esc(c.val) + '</div><div class="diag-metric-lbl">' + esc(c.lbl) + '</div></div>';
-        }).join('');
+        const s = ocr.summary.post_normfix || ocr.summary.pre_normfix || {};
+        el.innerHTML = [
+            metricCard(fmtPct(s.avg_cer), 'Mean CER', s.avg_cer < 0.05 ? 'good' : s.avg_cer < 0.1 ? 'warn' : 'bad'),
+            metricCard(fmtPct(s.median_cer), 'Median CER', s.median_cer < 0.05 ? 'good' : 'warn'),
+            metricCard(fmtPct(s.std_cer), 'Std', ''),
+            metricCard(fmtPct(s.min_cer), 'Min', 'good'),
+            metricCard(fmtPct(s.max_cer), 'Max', s.max_cer > 0.15 ? 'bad' : 'warn'),
+            metricCard(fmtNum(s.evaluated || s.total_documents), 'Evaluiert', '')
+        ].join('');
     }
 
     function renderOcrDocTable(ocr) {
-        var tbody = $('#ocr-doc-table tbody');
+        const tbody = $('#ocr-doc-table tbody');
         if (!tbody) return;
 
-        // Merge per_doc + pipeline_effect + baseline_comparison
-        var rows = [];
-        var pe = {};
+        const pe = {};
         if (ocr.pipeline_effect) {
-            ocr.pipeline_effect.forEach(function (d) { pe[d.doc_id] = d; });
-        }
-        var bc = {};
-        if (ocr.baseline_comparison) {
-            ocr.baseline_comparison.forEach(function (d) { bc[d.doc_id] = d; });
+            ocr.pipeline_effect.forEach(d => { pe[d.doc_id] = d; });
         }
 
-        // Build rows from baseline_comparison (has all evaluated docs)
-        var source = ocr.baseline_comparison || [];
-        source.forEach(function (d) {
-            var p = pe[d.doc_id] || {};
-            rows.push({
-                doc_id: d.doc_id,
-                cer: d.cer_after != null ? d.cer_after : d.cer_before,
-                wer: d.wer_after != null ? d.wer_after : d.wer_before,
-                language: d.language || '?',
-                type: d.type || '-',
-                scope: d.scope_status || 'full',
-                delta: p.delta != null ? p.delta : null
-            });
-        });
+        const source = ocr.baseline_comparison || [];
+        if (!source.length) { tbody.innerHTML = '<tr><td colspan="7">' + empty() + '</td></tr>'; return; }
 
-        function render(data) {
-            tbody.innerHTML = data.map(function (r) {
-                var deltaStr = r.delta != null
-                    ? '<span style="color:' + (r.delta < 0 ? 'var(--ed-success)' : 'var(--ed-error)') + '">'
-                      + (r.delta < 0 ? '' : '+') + pct(r.delta) + '</span>' : '—';
-                return '<tr>'
-                    + '<td>' + esc(r.doc_id) + '</td>'
-                    + '<td>' + cerCell(r.cer) + '</td>'
-                    + '<td class="num">' + pct(r.wer) + '</td>'
-                    + '<td>' + esc(r.language) + '</td>'
-                    + '<td>' + esc(r.type) + '</td>'
-                    + '<td>' + esc(r.scope) + '</td>'
-                    + '<td class="num">' + deltaStr + '</td>'
-                    + '</tr>';
-            }).join('');
-        }
+        tbody.innerHTML = source.map(d => {
+            const cer = d.cer_after != null ? d.cer_after : d.cer_before;
+            const wer = d.wer_after != null ? d.wer_after : d.wer_before;
+            const p = pe[d.doc_id] || {};
+            const delta = p.delta != null ? p.delta : null;
+            const deltaStr = delta != null
+                ? '<span style="color:' + (delta < 0 ? 'var(--h-success)' : 'var(--h-error)') + '">'
+                  + (delta < 0 ? '' : '+') + fmtPct(delta) + '</span>' : '\u2014';
+            const scope = d.scope_status || 'full';
+            return '<tr>'
+                + '<td data-sort="' + esc(d.doc_id) + '">' + esc(d.doc_id) + '</td>'
+                + '<td data-sort="' + (cer != null ? cer : 999) + '">' + cerCell(cer) + '</td>'
+                + '<td class="num" data-sort="' + (wer != null ? wer : 999) + '">' + fmtPct(wer) + '</td>'
+                + '<td>' + esc(d.language || '?') + '</td>'
+                + '<td>' + esc(d.type || '-') + '</td>'
+                + '<td>' + esc(scope) + '</td>'
+                + '<td class="num" data-sort="' + (delta != null ? delta : 999) + '">' + deltaStr + '</td>'
+                + '</tr>';
+        }).join('');
 
-        render(rows);
-        makeSortable('ocr-doc-table', rows, render);
+        if (S.makeSortable) S.makeSortable($('#ocr-doc-table'));
     }
 
     function renderOcrStrat(ocr) {
-        var el = $('#ocr-strat');
+        const el = $('#ocr-strat');
         if (!el) return;
-
-        // Build stratification from baseline_comparison
-        var bc = ocr.baseline_comparison || [];
+        const bc = ocr.baseline_comparison || [];
         if (!bc.length) { el.innerHTML = empty(); return; }
 
-        var byLang = {}, byType = {};
-        bc.forEach(function (d) {
-            var cer = d.cer_after != null ? d.cer_after : d.cer_before;
-            var lang = d.language || '?';
-            var type = d.type || '-';
+        const byLang = {};
+        const byType = {};
+        bc.forEach(d => {
+            const cer = d.cer_after != null ? d.cer_after : d.cer_before;
+            const lang = d.language || '?';
+            const type = d.type || '-';
             if (!byLang[lang]) byLang[lang] = { n: 0, sum: 0 };
             byLang[lang].n++; byLang[lang].sum += cer;
             if (!byType[type]) byType[type] = { n: 0, sum: 0 };
@@ -286,10 +263,10 @@
         });
 
         function miniTable(title, data) {
-            var html = '<div class="diag-stat-panel"><div class="diag-stat-title">' + esc(title) + '</div>'
-                + '<table class="diag-table"><thead><tr><th>Gruppe</th><th class="num">n</th><th class="num">Mean CER</th></tr></thead><tbody>';
-            Object.keys(data).sort().forEach(function (k) {
-                var avg = data[k].sum / data[k].n;
+            let html = '<div class="ed-stat-panel"><div class="ed-stat-title">' + esc(title) + '</div>'
+                + '<table class="ed-table"><thead><tr><th>Gruppe</th><th class="num">n</th><th class="num">Mean CER</th></tr></thead><tbody>';
+            Object.keys(data).sort().forEach(k => {
+                const avg = data[k].sum / data[k].n;
                 html += '<tr><td>' + esc(k) + '</td><td class="num">' + data[k].n + '</td><td class="num">' + cerCell(avg) + '</td></tr>';
             });
             return html + '</tbody></table></div>';
@@ -299,17 +276,17 @@
     }
 
     function renderOcrConfusion(ocr) {
-        var tbody = $('#ocr-conf-table tbody');
+        const tbody = $('#ocr-conf-table tbody');
         if (!tbody) return;
         if (!ocr.confusion_matrix || !ocr.confusion_matrix.substitutions) {
             tbody.innerHTML = '<tr><td colspan="3">' + empty() + '</td></tr>'; return;
         }
-        var top10 = ocr.confusion_matrix.substitutions.slice(0, 10);
-        tbody.innerHTML = top10.map(function (s) {
-            return '<tr><td class="num">' + escChar(s.ref_char) + '</td>'
-                + '<td class="num">' + escChar(s.hyp_char) + '</td>'
-                + '<td class="num">' + num(s.count) + '</td></tr>';
-        }).join('');
+        const top10 = ocr.confusion_matrix.substitutions.slice(0, 10);
+        tbody.innerHTML = top10.map(s =>
+            '<tr><td class="num">' + escChar(s.ref_char) + '</td>'
+            + '<td class="num">' + escChar(s.hyp_char) + '</td>'
+            + '<td class="num">' + fmtNum(s.count) + '</td></tr>'
+        ).join('');
     }
 
     // =====================================================================
@@ -324,31 +301,27 @@
     }
 
     function renderTeiMetrics(tei) {
-        var el = $('#tei-metrics');
+        const el = $('#tei-metrics');
         if (!el || !tei.summary) return;
-        var s = tei.summary;
-        var cards = [
-            { val: num(s.total), lbl: 'Dokumente' },
-            { val: num(s.valid), lbl: 'Valid', cls: s.valid === s.total ? 'good' : 'warn' },
-            { val: num(s.invalid), lbl: 'Invalid', cls: s.invalid === 0 ? 'good' : 'bad' },
-            { val: num(s.with_warnings), lbl: 'Mit Warnings', cls: s.with_warnings === 0 ? 'good' : 'warn' }
-        ];
-        el.innerHTML = cards.map(function (c) {
-            return '<div class="diag-metric"><div class="diag-metric-val ' + (c.cls || '') + '">'
-                + esc(c.val) + '</div><div class="diag-metric-lbl">' + esc(c.lbl) + '</div></div>';
-        }).join('');
+        const s = tei.summary;
+        el.innerHTML = [
+            metricCard(fmtNum(s.total), 'Dokumente', ''),
+            metricCard(fmtNum(s.valid), 'Valid', s.valid === s.total ? 'good' : 'warn'),
+            metricCard(fmtNum(s.invalid), 'Invalid', s.invalid === 0 ? 'good' : 'bad'),
+            metricCard(fmtNum(s.with_warnings), 'Mit Warnings', s.with_warnings === 0 ? 'good' : 'warn')
+        ].join('');
     }
 
     function renderTeiWarnings(tei) {
-        var tbody = $('#tei-warn-table tbody');
+        const tbody = $('#tei-warn-table tbody');
         if (!tbody) return;
         if (!tei.warnings_current || !tei.warnings_current.length) {
             tbody.innerHTML = '<tr><td colspan="5">' + empty('Keine Warnings') + '</td></tr>'; return;
         }
-        tbody.innerHTML = tei.warnings_current.map(function (w) {
-            var docs = w.docs ? w.docs.slice(0, 5).join(', ') + (w.docs.length > 5 ? ' ...' : '') : '—';
+        tbody.innerHTML = tei.warnings_current.map(w => {
+            const docs = w.docs ? w.docs.slice(0, 5).join(', ') + (w.docs.length > 5 ? ' ...' : '') : '\u2014';
             return '<tr><td><strong>' + esc(w.code) + '</strong></td>'
-                + '<td class="num">' + num(w.count) + '</td>'
+                + '<td class="num">' + fmtNum(w.count) + '</td>'
                 + '<td>' + statusBadge(w.status) + '</td>'
                 + '<td>' + esc(docs) + '</td>'
                 + '<td>' + esc(w.description) + '</td></tr>';
@@ -356,38 +329,38 @@
     }
 
     function renderTeiElements(tei) {
-        var tbody = $('#tei-elem-table tbody');
+        const tbody = $('#tei-elem-table tbody');
         if (!tbody) return;
         if (!tei.corpus_stats || !tei.corpus_stats.elements) {
             tbody.innerHTML = '<tr><td colspan="2">' + empty() + '</td></tr>'; return;
         }
-        var elems = tei.corpus_stats.elements;
-        var sorted = Object.keys(elems).sort(function (a, b) { return elems[b] - elems[a]; });
-        tbody.innerHTML = sorted.map(function (k) {
-            return '<tr><td>&lt;' + esc(k) + '&gt;</td><td class="num">' + num(elems[k]) + '</td></tr>';
-        }).join('');
+        const elems = tei.corpus_stats.elements;
+        const sorted = Object.keys(elems).sort((a, b) => elems[b] - elems[a]);
+        tbody.innerHTML = sorted.map(k =>
+            '<tr><td>&lt;' + esc(k) + '&gt;</td><td class="num">' + fmtNum(elems[k]) + '</td></tr>'
+        ).join('');
     }
 
     function renderTeiW10(tei) {
-        var tbody = $('#tei-w10-table tbody');
+        const tbody = $('#tei-w10-table tbody');
         if (!tbody) return;
         if (!tei.w10_analysis || !tei.w10_analysis.length) {
             tbody.innerHTML = '<tr><td colspan="6">' + empty() + '</td></tr>'; return;
         }
-        tbody.innerHTML = tei.w10_analysis.map(function (w) {
-            return '<tr><td>' + esc(w.doc_id) + '</td>'
-                + '<td class="num">' + num(w.text_length) + '</td>'
-                + '<td class="num">' + num(w.persName_count) + '</td>'
-                + '<td class="num">' + num(w.orgName_count) + '</td>'
-                + '<td class="num">' + num(w.placeName_count) + '</td>'
-                + '<td>' + statusBadge(w.assessment) + '</td></tr>';
-        }).join('');
+        tbody.innerHTML = tei.w10_analysis.map(w =>
+            '<tr><td>' + esc(w.doc_id) + '</td>'
+            + '<td class="num">' + fmtNum(w.text_length) + '</td>'
+            + '<td class="num">' + fmtNum(w.persName_count) + '</td>'
+            + '<td class="num">' + fmtNum(w.orgName_count) + '</td>'
+            + '<td class="num">' + fmtNum(w.placeName_count) + '</td>'
+            + '<td>' + statusBadge(w.assessment) + '</td></tr>'
+        ).join('');
     }
 
     // =====================================================================
     // Tab: Aktivitaet (Log)
     // =====================================================================
-    var _logEntries = [];
+    let _logEntries = [];
 
     function renderLog(log) {
         _logEntries = log || [];
@@ -396,10 +369,9 @@
     }
 
     function initLogFilters() {
-        var filters = $$('.diag-log-filter');
-        filters.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                filters.forEach(function (b) { b.classList.remove('active'); });
+        $$('.diag-log-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                $$('.diag-log-filter').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 renderLogEntries(btn.getAttribute('data-lane'));
             });
@@ -407,52 +379,57 @@
     }
 
     function renderLogEntries(lane) {
-        var el = $('#log-content');
+        const el = $('#log-content');
         if (!el) return;
         if (!_logEntries.length) { el.innerHTML = empty('Noch keine Log-Eintraege'); return; }
 
-        var filtered = lane === 'all' ? _logEntries : _logEntries.filter(function (e) {
-            return e.lane === lane;
-        });
-
-        var sorted = filtered.slice().sort(function (a, b) {
-            return (b.timestamp || '').localeCompare(a.timestamp || '');
-        });
+        const filtered = lane === 'all' ? _logEntries : _logEntries.filter(e => e.lane === lane);
+        const sorted = filtered.slice().sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
 
         if (!sorted.length) { el.innerHTML = empty('Keine Eintraege fuer diesen Filter'); return; }
 
-        el.innerHTML = sorted.map(function (e) {
-            var ts = (e.timestamp || '').replace('T', ' ').slice(0, 19);
-            return '<div class="diag-log-entry">'
-                + '<span class="diag-log-ts">' + ts + '</span>'
-                + laneBadge(e.lane)
-                + '<span class="diag-log-action">' + esc(e.action) + '</span>'
-                + '<span class="diag-log-result">' + esc(e.result_summary || e.details || '') + '</span>'
-                + '</div>';
-        }).join('');
+        el.innerHTML = sorted.map(e =>
+            '<div class="diag-log-entry">'
+            + '<span class="diag-log-ts">' + fmtDate(e.timestamp) + '</span>'
+            + laneBadge(e.lane)
+            + '<span class="diag-log-action">' + esc(e.action) + '</span>'
+            + '<span class="diag-log-result">' + esc(e.result_summary || e.details || '') + '</span>'
+            + '</div>'
+        ).join('');
     }
 
     // =====================================================================
     // Tabs + Init
     // =====================================================================
     function initTabs() {
-        $$('.diag-tab').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                $$('.diag-tab').forEach(function (b) { b.classList.remove('active'); });
-                $$('.diag-panel').forEach(function (p) { p.classList.remove('active'); });
+        $$('.ed-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                $$('.ed-tab').forEach(b => b.classList.remove('active'));
+                $$('.ed-tab-panel').forEach(p => p.classList.remove('active'));
                 btn.classList.add('active');
-                var panel = $('#panel-' + btn.getAttribute('data-tab'));
+                const panel = $('#panel-' + btn.getAttribute('data-tab'));
                 if (panel) panel.classList.add('active');
             });
         });
     }
 
     async function init() {
+        const loading = $('#loading');
+        // file:// protocol: fetch() is blocked by CORS
+        if (window.location.protocol === 'file:') {
+            if (loading) loading.innerHTML =
+                '<strong>Lokaler Betrieb</strong><br>' +
+                'Die Diagnostik-Seite benoetigt einen lokalen Server.<br>' +
+                '<code style="font-size:var(--h-sm);color:var(--h-text-muted)">' +
+                'python -m http.server 8000 --directory docs</code>';
+            return;
+        }
         try {
-            var results = await Promise.all([fetchJson(OCR_URL), fetchJson(TEI_URL), fetchJson(LOG_URL)]);
-            var ocr = results[0], tei = results[1], log = results[2];
+            const [ocr, tei, log] = await Promise.all([
+                fetchJSON(OCR_URL), fetchJSON(TEI_URL), fetchJSON(LOG_URL)
+            ]);
 
-            $('#loading').classList.add('hidden');
+            if (loading) loading.classList.add('hidden');
             $('#app').classList.remove('hidden');
 
             initTabs();
@@ -461,14 +438,13 @@
             renderTei(tei);
             renderLog(log);
         } catch (err) {
-            $('#loading').textContent = 'Fehler beim Laden: ' + err.message;
+            if (loading) loading.textContent = 'Fehler beim Laden: ' + err.message;
             console.error(err);
         }
     }
 
-    // Public namespace
     window.ZBZ = window.ZBZ || {};
-    window.ZBZ.Diagnostik = { init: init };
+    ZBZ.Diagnostik = { init };
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
