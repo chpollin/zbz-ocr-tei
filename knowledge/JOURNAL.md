@@ -14,6 +14,85 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 34 (2026-03-26): TEI-Qualitaet Diagnostik (Lane 1)
+
+### Kontext
+Schema-Validierung aller 285 Docs gegen zbz_hersch.rng. Identifikation und Fix der Fehlerursachen.
+
+### Ergebnisse
+
+**1. Initiale Validierung**
+- 50 valid, 235 invalid, 82 mit Warnings
+- Root Cause: Schema erzwang `ref="GND:*"`, Pipeline injiziert `ref="#zbz-*"` (projektinterne IDs)
+- RelaxNG-Kaskade: 1 ref-Pattern-Fehler loest 6+ Kaskaden-Fehler pro Doc aus
+- Scheinbare Nebenfehler (idno, langUsage, biblStruct) waren ausschliesslich Kaskaden-Artefakte
+
+**2. Fix: ref-Pattern in zbz_hersch.rng erweitert**
+- Pattern: `(GND:[0-9A-Za-z\-]+|#zbz-[a-z]+\.[0-9]+)` an 3 Stellen (bibl/@corresp, orgName/@ref, persName/@ref)
+- Ergebnis: **285/285 valid** (100%), 0 Regressionen
+- Ein einziger deterministischer Fix heilt alle 235 invaliden Docs
+
+**3. Referenz-TEI Validierung**
+- 17/25 Referenz-TEIs valid (68%), wie in Session 31
+- 8 invalide: Schema strenger als ZBZ-Praxis (space ohne desc, back-Struktur, foreign)
+
+**4. Artefakte**
+- `docs/data/diagnostik_tei.json` — maschinenlesbare Fehlerfrequenz
+- `docs/data/diagnostik_log.json` — Aktion-Log
+- `docs/infrastruktur/diagnostik.html` Tab "TEI-Qualitaet" — UI mit Fehler/Fix/Warning-Tabellen
+- `knowledge/TEI-QUALITY.md` — Dokumentation
+
+### Naechste Schritte
+- W6 (46 Docs ohne lb): tei_step1 lb-Injection pruefen
+- W9 (17 Docs ohne Entity-Refs): NER-Re-Injection nach Unified-Pipeline
+- Referenz-TEI Schema-Abweichungen als "known differences" dokumentieren
+
+---
+
+## Session 33 (2026-03-26): OCR-Diagnostik Phase 0 (Lane 2)
+
+### Kontext
+Systematische Verbesserung der OCR-Qualitaet. Aufbauend auf dem CER-Benchmark (E51, Session 32).
+
+### Ergebnisse
+
+**1. Baseline-Korrektur (normalize_for_comparison)**
+- Asymmetrie in evaluate_ocr.py gefunden: `normalize_for_tei()` wurde bei Pipeline-TEI-Erzeugung angewendet, aber nicht auf Referenz-TEI
+- `normalize_for_comparison()` implementiert: Guillemets, Anfuehrungszeichen, Gedankenstriche, frz. Interpunktion symmetrisch auf beiden Seiten
+- **Mean CER: 9.33% -> 8.11% (-1.22pp), Median: 5.52% -> 5.36%, WER: 19.46% -> 12.89% (-6.57pp)**
+- Kein Doc verschlechtert. 12/24 Docs jetzt unter 3% CER (vorher 4/24)
+
+**2. Konfusionsmatrix**
+- 1433 Substitutionen, 28243 Insertions, 19082 Deletions (nach Normfix)
+- Top-Substitution: Hyphen U+2010 -> Hyphen-minus U+002D (38x)
+- "other"-Kategorie jetzt aufgeschluesselt bis auf Zeichenebene
+
+**3. Outlier-Diagnose (Docs 1910, 290, 30, 90)**
+- Doc 1910: Pipeline VERBESSERT (OCR 26.4% -> E2E 16.1%, -10.3pp) -- frueherer Befund war falsch
+- Doc 90: Pipeline VERBESSERT (OCR 22.9% -> E2E 6.7%, -16.2pp)
+- Doc 290: Echter Ausreisser (OCR 15.8% -> E2E 33.5%, +17.7pp Alignment-Problem)
+- Doc 30: Marginal (OCR 18.0% -> E2E 18.8%, +0.8pp)
+- Pipeline-Effekt nach Normfix: 18 verbessert, 6 verschlechtert (vorher: 11/4)
+
+**4. Diagnostik-UI**
+- `docs/infrastruktur/diagnostik.html` + `docs/diagnostik.js`
+- 5 Tabs: CER-Heatmap, Konfusionsmatrix, Baseline-Vergleich, Pipeline-Effekt (Dot-Plot), Outlier-Diagnose
+- Datenquelle: `docs/data/diagnostik_ocr.json`
+
+### Neue Dateien
+- `scripts/generate_diagnostik.py` -- Generiert diagnostik_ocr.json
+- `scripts/evaluate_ocr.py`: `normalize_for_comparison()`, `build_confusion_matrix()`
+- `docs/infrastruktur/diagnostik.html` -- Diagnostik-Dashboard
+- `docs/diagnostik.js` -- Dashboard-Logik
+- `docs/data/diagnostik_ocr.json` -- Diagnosedaten
+- `docs/data/diagnostik_log.json` -- Aktionslog
+
+### Entscheidungen
+- Symmetrische Normalisierung als Standard fuer alle CER-Vergleiche
+- Fruehere "4 verschlechterte Docs" auf 1 echten Ausreisser korrigiert (Doc 290)
+
+---
+
 ## Session 32 (2026-03-26): End-to-End CER Benchmark (E51)
 
 ### Kontext

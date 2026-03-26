@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR-Diagnostik – Epistemische Infrastruktur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/edition.css">
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        /* Diagnostik-spezifische Styles */
+        .diag-tabs { display: flex; gap: 0; border-bottom: 2px solid var(--seuil-sand, #c2b280); margin: 1.5rem 0 0; }
+        .diag-tab { padding: .6rem 1.2rem; cursor: pointer; font-family: 'Jost', sans-serif;
+                     font-size: .95rem; font-weight: 500; color: var(--seuil-gray, #666);
+                     border: none; background: none; border-bottom: 3px solid transparent; }
+        .diag-tab:hover { color: var(--seuil-dark, #2a2a2a); }
+        .diag-tab.active { color: var(--seuil-dark, #2a2a2a); border-bottom-color: var(--seuil-copper, #b87333); }
+        .diag-panel { display: none; padding: 1.5rem 0; }
+        .diag-panel.active { display: block; }
+
+        /* Heatmap-Grid */
+        .heatmap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+        .heatmap-cell { padding: 10px; border-radius: 6px; text-align: center; cursor: default;
+                        font-family: 'JetBrains Mono', monospace; font-size: .85rem; transition: transform .15s; }
+        .heatmap-cell:hover { transform: scale(1.05); }
+        .heatmap-cell .doc-id { font-weight: 600; font-size: 1rem; }
+        .heatmap-cell .cer-val { margin-top: 2px; }
+        .heatmap-cell .meta { font-size: .75rem; opacity: .8; margin-top: 2px; }
+        .cer-green { background: #c8e6c9; color: #1b5e20; }
+        .cer-yellow { background: #fff9c4; color: #f57f17; }
+        .cer-orange { background: #ffe0b2; color: #e65100; }
+        .cer-red { background: #ffcdd2; color: #b71c1c; }
+
+        /* Konfusionsmatrix */
+        .conf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 4px; }
+        .conf-cell { padding: 6px; border-radius: 4px; text-align: center;
+                     font-family: 'JetBrains Mono', monospace; font-size: .8rem; }
+        .conf-cell .pair { font-size: .95rem; font-weight: 600; }
+        .conf-cell .count { font-size: .75rem; margin-top: 2px; }
+
+        /* Bar-Chart */
+        .bar-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: .85rem;
+                   font-family: 'JetBrains Mono', monospace; }
+        .bar-label { width: 50px; text-align: right; flex-shrink: 0; }
+        .bar-track { flex: 1; height: 22px; background: #f0f0f0; border-radius: 3px; position: relative; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 3px; transition: width .4s ease; position: absolute; top: 0; }
+        .bar-fill.before { background: #ef9a9a; opacity: .6; }
+        .bar-fill.after { background: #66bb6a; }
+        .bar-value { width: 80px; font-size: .8rem; flex-shrink: 0; }
+
+        /* Dot-Plot */
+        .dot-plot { position: relative; width: 100%; height: 400px; border: 1px solid #ddd;
+                    border-radius: 6px; background: #fafafa; margin: 1rem 0; }
+        .dot-plot-canvas { width: 100%; height: 100%; }
+        .dot-legend { display: flex; gap: 1.5rem; font-size: .85rem; margin-top: .5rem; }
+        .dot-legend-item { display: flex; align-items: center; gap: 4px; }
+        .dot-legend-color { width: 12px; height: 12px; border-radius: 50%; }
+
+        /* Outlier Cards */
+        .outlier-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px;
+                        padding: 1.2rem; margin: 1rem 0; }
+        .outlier-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .8rem; }
+        .outlier-title { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.1rem; }
+        .outlier-badge { padding: 2px 10px; border-radius: 12px; font-size: .8rem; font-weight: 500; }
+        .badge-source { background: #ffcdd2; color: #b71c1c; }
+        .badge-layout { background: #ffe0b2; color: #e65100; }
+        .badge-mixed { background: #fff9c4; color: #f57f17; }
+        .outlier-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; }
+        .outlier-metric { text-align: center; }
+        .outlier-metric .val { font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; font-weight: 600; }
+        .outlier-metric .lbl { font-size: .8rem; color: #666; }
+
+        .sort-controls { display: flex; gap: .5rem; margin-bottom: .8rem; }
+        .sort-btn { padding: .3rem .8rem; border: 1px solid #ccc; border-radius: 4px; background: white;
+                    cursor: pointer; font-size: .8rem; }
+        .sort-btn.active { background: var(--seuil-copper, #b87333); color: white; border-color: var(--seuil-copper, #b87333); }
+
+        /* TEI-Diagnostik Tabelle */
+        .diag-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+        .diag-table th, .diag-table td { padding: 7px 10px; border: 1px solid var(--border-light, #e0e0e0); text-align: left; }
+        .diag-table th { background: var(--bg-subtle, #f0f0f0); font-weight: 600; font-family: 'Jost', sans-serif; }
+        .diag-table th.sortable { cursor: pointer; }
+        .diag-table th.sortable:hover { background: var(--bg-muted, #ddd); }
+        .diag-table td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: 'JetBrains Mono', monospace; }
+        .diag-table .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .8rem; font-weight: 600; }
+        .diag-table .badge-valid { background: #c8e6c9; color: #1b5e20; }
+        .diag-table .badge-invalid { background: #ffcdd2; color: #b71c1c; }
+        .diag-table .badge-gefixt { background: #c8e6c9; color: #1b5e20; }
+        .diag-table .badge-offen { background: #fff9c4; color: #f57f17; }
+        .diag-table .badge-ignoriert { background: #e0e0e0; color: #666; }
+        .diag-table .badge-warn { background: #fff3e0; color: #e65100; }
+        .fix-bar { display: flex; align-items: center; gap: 8px; margin: 6px 0; font-family: 'JetBrains Mono', monospace; font-size: .85rem; }
+        .fix-bar-label { width: 80px; text-align: right; flex-shrink: 0; }
+        .fix-bar-track { flex: 1; height: 24px; background: var(--bg-subtle, #f0f0f0); border-radius: 4px; position: relative; overflow: hidden; }
+        .fix-bar-fill { height: 100%; border-radius: 4px; position: absolute; top: 0; transition: width .4s; }
+        .fix-bar-fill.before { background: #ef9a9a; }
+        .fix-bar-fill.after { background: #66bb6a; }
+        .fix-bar-value { width: 100px; font-size: .8rem; flex-shrink: 0; }
+    </style>
+</head>
+<body class="edition-page infrastruktur-page">
+
+    <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
+
+    <div class="infra-subnav">
+        <span class="infra-subnav-title">Pipeline</span>
+        <a href="index.html">Dashboard</a>
+        <a href="viewer.html">Viewer</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="diagnostik.html" class="active">Diagnostik</a>
+    </div>
+
+    <div class="disclaimer-bar">
+        <strong>OCR-Diagnostik (Lane 2)</strong> &mdash; Systematische Analyse der OCR-Qualitaet.
+        Datenquelle: CER-Benchmark mit symmetrischer Normalisierung.
+    </div>
+
+    <div class="container">
+        <div id="loading">Lade Diagnostik-Daten...</div>
+        <div id="app" class="hidden">
+
+            <div class="metric-grid" id="metrics"></div>
+
+            <div class="diag-tabs" id="tabs">
+                <button class="diag-tab active" data-tab="heatmap">CER-Heatmap</button>
+                <button class="diag-tab" data-tab="confusion">Konfusionsmatrix</button>
+                <button class="diag-tab" data-tab="baseline">Baseline-Vergleich</button>
+                <button class="diag-tab" data-tab="pipeline">Pipeline-Effekt</button>
+                <button class="diag-tab" data-tab="outliers">Outlier-Diagnose</button>
+                <button class="diag-tab" data-tab="tei-quality">TEI-Qualitaet</button>
+            </div>
+
+            <div class="diag-panel active" id="panel-heatmap">
+                <div class="section-title">CER-Heatmap (24 evaluierte Dokumente)</div>
+                <div class="sort-controls" id="heatmap-sort"></div>
+                <div class="heatmap-grid" id="heatmap"></div>
+            </div>
+
+            <div class="diag-panel" id="panel-confusion">
+                <div class="section-title">Konfusionsmatrix: Top-30 Substitutionspaare</div>
+                <div class="section-subtitle" id="conf-summary"></div>
+                <div class="conf-grid" id="confusion-grid"></div>
+                <div class="section-title" style="margin-top:1.5rem">Top-20 Insertions / Deletions</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+                    <div><h4 style="margin:.5rem 0">Insertions</h4><div id="insertions-list"></div></div>
+                    <div><h4 style="margin:.5rem 0">Deletions</h4><div id="deletions-list"></div></div>
+                </div>
+            </div>
+
+            <div class="diag-panel" id="panel-baseline">
+                <div class="section-title">Baseline-Vergleich: CER vor/nach Normalisierungskorrektur</div>
+                <div class="section-subtitle" id="baseline-summary"></div>
+                <div id="baseline-chart"></div>
+            </div>
+
+            <div class="diag-panel" id="panel-pipeline">
+                <div class="section-title">Pipeline-Effekt: OCR-Baseline vs. End-to-End CER</div>
+                <div class="section-subtitle" id="pipeline-summary"></div>
+                <div class="dot-plot"><canvas class="dot-plot-canvas" id="dot-canvas"></canvas></div>
+                <div class="dot-legend" id="dot-legend"></div>
+            </div>
+
+            <div class="diag-panel" id="panel-outliers">
+                <div class="section-title">Outlier-Diagnose: Verschlechterte Dokumente</div>
+                <div id="outlier-cards"></div>
+            </div>
+
+            <div class="diag-panel" id="panel-tei-quality">
+                <div class="metric-grid" id="tei-metrics"></div>
+
+                <div class="section-title" style="margin-top:1.5rem">Fehlerfrequenz (Schema-Validierung)</div>
+                <div class="section-subtitle">Fehlertyp | Haeufigkeit | Fix-Status | Beispiel-Doc</div>
+                <table class="diag-table" id="tei-error-table">
+                    <thead><tr><th>Fehlertyp</th><th>Docs</th><th>Fix-Status</th><th>Beschreibung</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+
+                <div class="section-title" style="margin-top:1.5rem">Fix-Verlauf (Vorher/Nachher)</div>
+                <div id="tei-fix-history"></div>
+
+                <div class="section-title" style="margin-top:1.5rem">Warnings (informativ)</div>
+                <table class="diag-table" id="tei-warning-table">
+                    <thead><tr><th>Regel</th><th>Docs</th><th>Beschreibung</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+
+                <div class="section-title" style="margin-top:1.5rem">Referenz-TEI Validierung (25 ZBZ-Docs)</div>
+                <div id="tei-ref-metrics" class="metric-grid" style="margin-bottom:1rem"></div>
+                <table class="diag-table" id="tei-ref-table">
+                    <thead><tr><th>Doc-ID</th><th>Status</th><th>Fehler</th><th>Details</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+
+                <div class="section-title" style="margin-top:1.5rem">Pro-Dokument Validierung</div>
+                <div style="display:flex;gap:.5rem;margin-bottom:.8rem">
+                    <input type="text" class="filter-input" id="tei-filter-search" placeholder="Doc-ID suchen..." style="max-width:200px">
+                    <select class="filter-select" id="tei-filter-status">
+                        <option value="">Alle</option>
+                        <option value="valid">Valid</option>
+                        <option value="invalid">Invalid</option>
+                        <option value="warnings">Mit Warnings</option>
+                    </select>
+                </div>
+                <table class="diag-table" id="tei-doc-table">
+                    <thead><tr><th class="sortable" data-sort="id">Doc</th><th class="sortable" data-sort="status">Status</th><th class="sortable" data-sort="errors">Fehler</th><th class="sortable" data-sort="warnings">Warnings</th><th>Warning-Regeln</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/edition-shared.js"></script>
+    <script src="../shared.js"></script>
+    <script src="../diagnostik.js"></script>
+</body>
+</html>

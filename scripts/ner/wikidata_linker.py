@@ -354,6 +354,8 @@ def main():
                         help="Alle Dokumente mit Entities")
     parser.add_argument("--force", action="store_true",
                         help="Cache ignorieren, neu abfragen")
+    parser.add_argument("--resume", action="store_true",
+                        help="Nur Docs mit unresolved Entities verarbeiten")
     parser.add_argument("--stats", action="store_true",
                         help="Statistiken anzeigen")
     args = parser.parse_args()
@@ -394,6 +396,25 @@ def main():
 
     if args.force:
         _cache.clear()
+
+    # --resume: Skip docs where all reconcilable entities already have QIDs
+    if args.resume:
+        original_count = len(doc_ids)
+        filtered = []
+        for did in doc_ids:
+            store = EntityStore.load(did)
+            has_unresolved = False
+            for rec in store.entities.values():
+                if rec.entity_type in ("event", "date"):
+                    continue
+                if not rec.wikidata_qid:
+                    has_unresolved = True
+                    break
+            if has_unresolved:
+                filtered.append(did)
+        skipped = original_count - len(filtered)
+        doc_ids = filtered
+        print(f"Resume: {skipped} Dokumente uebersprungen (bereits resolved)")
 
     print(f"Wikidata Reconciliation: {len(doc_ids)} Dokumente")
     start = time.time()

@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2026-03-26T10:00:00",
+    "lane": "tei",
+    "action": "initial_validation",
+    "docs_affected": 285,
+    "result_summary": "50 valid, 235 invalid, 82 warnings",
+    "details": "Validierung aller 285 Docs gegen zbz_hersch.rng. Root Cause: ref-Pattern GND-only."
+  },
+  {
+    "timestamp": "2026-03-26T20:51:18.288368",
+    "lane": "tei",
+    "action": "schema_fix_ref_pattern",
+    "docs_affected": 285,
+    "result_summary": "285 valid, 0 invalid, 82 warnings",
+    "details": "ref-Pattern in zbz_hersch.rng erweitert: GND:* + #zbz-*. Alle 235 invaliden Docs geheilt. Non-Regression: 50 zuvor valide Docs bleiben valid."
+  },
+  {
+    "timestamp": "2026-03-26T20:51:18.288368",
+    "lane": "tei",
+    "action": "reference_tei_validation",
+    "docs_affected": 25,
+    "result_summary": "17/25 Referenz-TEIs valid",
+    "details": "8 Referenz-TEIs schema-invalide: space ohne desc (4), back-Struktur (4), foreign (1), body-Struktur (2). Schema strenger als ZBZ-Praxis."
+  }
+]

@@ -25,81 +25,66 @@ End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus 
 
 ---
 
-## Ergebnisse (Maerz 2026)
+## Ergebnisse (Maerz 2026, nach Normalisierungskorrektur)
 
 **24 von 25 Docs evaluiert** (1 Mismatch: Doc 570)
 
-| Metrik | Wert |
-|--------|------|
-| Mittlere CER | 9.3% |
-| **Median CER** | **5.5%** |
-| Std | 8.8% |
-| Min / Max | 1.0% / 34.5% |
-| Mittlere WER | 19.5% |
+| Metrik | Vor Normfix | Nach Normfix | Delta |
+|--------|-------------|-------------|-------|
+| Mittlere CER | 9.3% | **8.1%** | -1.2pp |
+| **Median CER** | 5.5% | **5.4%** | -0.2pp |
+| Std | 8.8% | 8.9% | +0.1pp |
+| Min / Max | 1.0% / 34.5% | **0.8% / 33.5%** | |
+| Mittlere WER | 19.5% | **12.9%** | **-6.6pp** |
+
+**Normalisierungskorrektur (2026-03-26):** `normalize_for_comparison()` wendet Guillemet-, Anführungszeichen-, Gedankenstrich- und frz. Interpunktionsnormalisierung **symmetrisch** auf beide Seiten an. Kein Doc verschlechtert. 12/24 Docs jetzt unter 3% CER (vorher 4/24).
 
 ### Nach Layout-Typ
 
 | Typ | n | Mittl. CER | Median CER |
 |-----|---|-----------|------------|
-| A (einspaltig) | 11 | 10.3% | 4.9% |
-| B (zweispaltig) | 7 | 9.6% | 5.8% |
-| C (Monografie) | 2 | 5.7% | 5.7% |
-| D (Spezial) | 4 | 7.9% | 6.0% |
+| A (einspaltig) | 11 | 9.0% | 2.9% |
+| B (zweispaltig) | 7 | 8.9% | 5.6% |
+| C (Monografie) | 2 | 4.1% | 4.1% |
+| D (Spezial) | 4 | 6.3% | 4.4% |
 
 ### Nach Sprache
 
 | Sprache | n | Mittl. CER |
 |---------|---|-----------|
-| fra | 14 | 9.1% |
-| deu | 7 | 11.4% |
-| fra/deu | 3 | 5.7% |
+| fra | 14 | 7.4% |
+| deu | 7 | 11.1% |
+| fra/deu | 3 | 4.3% |
 
-### Fehlermuster (gesamt)
+### Konfusionsmatrix: Top-10 Substitutionen (nach Normalisierung)
 
-| Kategorie | Anzahl | Mittl. CER-Beitrag |
-|-----------|--------|-------------------|
-| other (Zeichentausch) | 2545 | 39.24% |
-| ocr_artifact (Halluzination) | 48 | 2.55% |
-| layout (Struktur) | 45 | 2.35% |
-| punctuation (Interpunktion) | 5816 | 0.74% |
-| whitespace | 1612 | 0.25% |
-| diacritics (Akzente) | 47 | 0.01% |
-| hyphenation (Trennung) | 21 | 0.01% |
+| # | Erwartet | Erkannt | Codepoints | Anzahl |
+|---|----------|---------|-----------|--------|
+| 1 | (Hyphen) | - | U+2010 -> U+002D | 38 |
+| 2 | e | (Space) | U+0065 -> U+0020 | 30 |
+| 3 | (Space) | e | U+0020 -> U+0065 | 24 |
+| 4 | (En-dash) | - | U+2013 -> U+002D | 23 |
+| 5 | e | s | U+0065 -> U+0073 | 17 |
+
+Vollstaendige Matrix (50 Paare): `docs/data/diagnostik_ocr.json`
 
 ### Problemdokumente
 
-| Doc | CER | Problem |
-|-----|-----|---------|
-| 290 | 34.5% | Schlechte Scan-Qualitaet + Alignment-Mismatch |
-| 1440 | 26.0% | Alignment-Mismatch (Ref/Pipeline decken unterschiedliche Textbereiche ab) |
-| 1060 | 21.4% | Alignment-Problem |
-| 30 | 20.3% | Neu evaluiert, Ursache offen |
-| 300 | 17.4% | Neu evaluiert, Ursache offen |
-| 1910 | 16.5% | Alignment-Mismatch (OCR-CER bereits 27%) |
+| Doc | CER | OCR-Baseline | Pipeline-Delta | Ursache |
+|-----|-----|-------------|---------------|---------|
+| 290 | 33.5% | 15.8% | +17.7pp | Alignment-Mismatch (Pipeline-TEI deutlich laenger) |
+| 1440 | 25.7% | n/a | n/a | Alignment-Problem |
+| 1060 | 21.4% | n/a | n/a | Alignment-Problem |
+| 30 | 18.8% | 18.0% | +0.8pp | Marginal, OCR-Qualitaet bereits schlecht |
+| 1910 | 16.1% | 26.4% | **-10.3pp** | Pipeline verbessert! |
+| 300 | 15.4% | n/a | n/a | Ursache offen |
 
-**Hinweis:** Die hohen CER-Werte der Problemdokumente sind ueberwiegend Alignment-Probleme (Referenz-TEI und Pipeline-TEI decken unterschiedliche Textbereiche ab), nicht Pipeline-Degradation.
+### Pipeline-Effekt (OCR vs. TEI) -- Aktualisiert nach Normfix
 
-### Pipeline-Effekt (OCR vs. TEI) -- Korrigiert
+- **18 Docs verbessert** durch Pipeline
+- **6 Docs verschlechtert** (290 massiv, Rest marginal)
 
-Vollstaendiger Stufen-Vergleich aller 25 Ground-Truth-Docs (OCR-Markdown-CER vs. End-to-End-TEI-CER):
-
-- **11 Docs besser** durch Pipeline (teilweise massiv: Doc 40 von 74.5% auf 3.2%, Doc 130 von 78.5% auf 4.5%)
-- **10 Docs stabil** (Delta < +/-1pp)
-- **4 Docs schlechter** (1910: +12.5pp, 290: +8.8pp, 30: +7.4pp, 90: +6.0pp)
-
-**Kernbefund:** Die Pipeline hilft in der Mehrheit der Faelle. Die 4 Verschlechterungen betreffen Docs, die bereits hohe OCR-CER (17-27%) hatten. Das Hauptproblem ist die Quell-OCR-Qualitaet, nicht die TEI-Generierung.
-
-**Fruehere Fehleinschaetzung (korrigiert):** Der Pilot-TESTPLAN verglich nur 2 Seiten pro Doc; die daraus abgeleiteten OCR-CER-Werte (z.B. 1440: 3.7%) waren nicht repraesentativ fuer das Gesamtdokument. Der vollstaendige Vergleich zeigt, dass Doc 1440 bereits auf OCR-Stufe 17.5% CER hat.
-
-### Moegliche Baseline-Korrektur
-
-Ein Teil der gemessenen CER stammt aus **Konventionsdifferenzen** (nicht OCR-Fehlern):
-- Typografische vs. gerade Anfuehrungszeichen
-- Halbgeviertstrich vs. Bindestrich
-- Apostroph U+2019 vs. U+0027
-- Leerzeichen vor Interpunktion (franzoesische Konvention)
-
-Die 5816 Interpunktionsfehler (0.74% CER-Beitrag) koennten teilweise durch schaerfere Zeichennormalisierung in `extract_text_for_comparison()` verschwinden. Das waere eine Baseline-Korrektur, keine OCR-Verbesserung.
+**Kernbefund nach Normfix:** Pipeline hilft bei 75% der Docs. Doc 1910 und 90 (vorher als "verschlechtert" gemeldet) sind nach korrekter Normalisierung tatsaechlich Pipeline-Erfolge. Nur Doc 290 ist echter Ausreisser (Alignment).
 
 ---
 
@@ -120,10 +105,11 @@ Die 5816 Interpunktionsfehler (0.74% CER-Beitrag) koennten teilweise durch schae
 | arxiv 2510.06743 | Traditionelles OCR | rus | 21-45% |
 | Transkribus Doku | Richtwert gedruckter Text | allg. | 0.5-2% |
 
-### Unsere Position
+### Unsere Position (aktualisiert nach Normfix)
 
-- **Beste Docs (1.0-2.2%):** State of the Art fuer historischen Druck
-- **Median (5.5%):** Vergleichbar mit GPT-4o-Klasse (6.3%)
+- **Beste Docs (0.8-1.5%):** State of the Art fuer historischen Druck
+- **Median (5.4%):** Vergleichbar mit GPT-4o-Klasse (6.3%)
+- **12/24 Docs unter 3%:** Grossteil des Korpus in guter Qualitaet
 - **Verbesserungspotenzial:** Gemini 2.5 Pro erreicht 3.4% zero-shot; multimodale Post-Korrektur bis 0.84%
 
 ### Kernerkenntnisse aus der Literatur

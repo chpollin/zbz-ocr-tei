@@ -1,0 +1,2535 @@
+{
+  "timestamp": "2026-03-26T20:51:18.285365",
+  "schema": "zbz_hersch.rng (TEI P5 v4.10.2, ref-Pattern erweitert: GND + #zbz-)",
+  "summary": {
+    "total": 285,
+    "valid": 285,
+    "invalid": 0,
+    "valid_pct": 100.0,
+    "with_warnings": 82
+  },
+  "fix_history": [
+    {
+      "id": "fix-001",
+      "timestamp": "2026-03-26T20:51:18.285365",
+      "type": "schema",
+      "description": "ref-Pattern in zbz_hersch.rng erweitert: (GND:[0-9A-Za-z\\-]+|#zbz-[a-z]+\\.[0-9]+)",
+      "locations": [
+        "data/schema/zbz_hersch.rng L3756 (bibl/@corresp)",
+        "L5724 (orgName/@ref)",
+        "L5749 (persName/@ref)"
+      ],
+      "docs_fixed": 235,
+      "docs_before": 50,
+      "docs_after": 285
+    }
+  ],
+  "error_frequency_before_fix": [
+    {
+      "type": "zbz_ref_pattern",
+      "count": 235,
+      "description": "ref=#zbz-* statt GND:* Pattern",
+      "fix_status": "gefixt"
+    },
+    {
+      "type": "idno_in_publicationStmt",
+      "count": 5,
+      "description": "RelaxNG-Kaskade (nicht eigenstaendig)",
+      "fix_status": "gefixt (Kaskade)"
+    },
+    {
+      "type": "langUsage_not_allowed",
+      "count": 5,
+      "description": "RelaxNG-Kaskade (nicht eigenstaendig)",
+      "fix_status": "gefixt (Kaskade)"
+    },
+    {
+      "type": "biblStruct_incomplete",
+      "count": 3,
+      "description": "RelaxNG-Kaskade (nicht eigenstaendig)",
+      "fix_status": "gefixt (Kaskade)"
+    }
+  ],
+  "warning_frequency": [
+    {
+      "rule": "W6",
+      "count": 46,
+      "description": "Keine lb-Elemente"
+    },
+    {
+      "rule": "W9",
+      "count": 17,
+      "description": "Entity-Tags ohne ref"
+    },
+    {
+      "rule": "W10",
+      "count": 10,
+      "description": "Nur persName"
+    },
+    {
+      "rule": "W3",
+      "count": 5,
+      "description": "facsimile/pb Mismatch"
+    },
+    {
+      "rule": "W11",
+      "count": 2,
+      "description": "Zu viele top-level divs"
+    },
+    {
+      "rule": "W7",
+      "count": 2,
+      "description": "graphic ohne url"
+    },
+    {
+      "rule": "W4",
+      "count": 1,
+      "description": "Leere div-Elemente"
+    }
+  ],
+  "reference_tei_validation": {
+    "total": 25,
+    "valid": 17,
+    "invalid": 8,
+    "note": "17/25 valide gegen zbz_hersch.rng; 8 invalid wegen: space ohne desc, back-Struktur, foreign, body-Struktur",
+    "docs": {
+      "100": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "1060": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "1180": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "130": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "1330": {
+        "valid": false,
+        "error_count": 6,
+        "errors": [
+          {
+            "line": 124,
+            "message": "Expecting an element desc, got nothing"
+          },
+          {
+            "line": 124,
+            "message": "Expecting element figure, got space"
+          },
+          {
+            "line": 124,
+            "message": "Did not expect element space there"
+          },
+          {
+            "line": 124,
+            "message": "Expecting element rs, got space"
+          },
+          {
+            "line": 36,
+            "message": "Did not expect element div there"
+          },
+          {
+            "line": 23,
+            "message": "Element body failed to validate content"
+          }
+        ]
+      },
+      "1410": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "1440": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "1520": {
+        "valid": false,
+        "parse_error": "Opening and ending tag mismatch: p line 6912 and item, line 6936, column 62 (data/referenz-tei/1520.xml, line 6936)"
+      },
+      "1910": {
+        "valid": false,
+        "error_count": 6,
+        "errors": [
+          {
+            "line": 21,
+            "message": "Did not expect element body there"
+          },
+          {
+            "line": 22,
+            "message": "Did not expect element div there"
+          },
+          {
+            "line": 66,
+            "message": "Did not expect element lb there"
+          },
+          {
+            "line": 47,
+            "message": "Expecting element lg, got p"
+          },
+          {
+            "line": 47,
+            "message": "Did not expect element p there"
+          },
+          {
+            "line": 22,
+            "message": "Element body failed to validate content"
+          }
+        ]
+      },
+      "2310": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "2530": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "2635": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "290": {
+        "valid": false,
+        "error_count": 6,
+        "errors": [
+          {
+            "line": 107,
+            "message": "Expecting an element desc, got nothing"
+          },
+          {
+            "line": 107,
+            "message": "Expecting element figure, got space"
+          },
+          {
+            "line": 110,
+            "message": "Did not expect element p there"
+          },
+          {
+            "line": 60,
+            "message": "Expecting element lg, got p"
+          },
+          {
+            "line": 60,
+            "message": "Element div has extra content: p"
+          },
+          {
+            "line": 22,
+            "message": "Element body failed to validate content"
+          }
+        ]
+      },
+      "30": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "300": {
+        "valid": false,
+        "error_count": 4,
+        "errors": [
+          {
+            "line": 145,
+            "message": "Did not expect element foreign there"
+          },
+          {
+            "line": 196,
+            "message": "Did not expect element back there"
+          },
+          {
+            "line": 196,
+            "message": "Did not expect element div there"
+          },
+          {
+            "line": 196,
+            "message": "Element text has extra content: back"
+          }
+        ]
+      },
+      "3020": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "3040": {
+        "valid": false,
+        "error_count": 6,
+        "errors": [
+          {
+            "line": 17,
+            "message": "Did not expect element body there"
+          },
+          {
+            "line": 18,
+            "message": "Did not expect element div there"
+          },
+          {
+            "line": 18,
+            "message": "Expecting element figure, got div"
+          },
+          {
+            "line": 30,
+            "message": "Did not expect element lb there"
+          },
+          {
+            "line": 23,
+            "message": "Did not expect element p there"
+          },
+          {
+            "line": 18,
+            "message": "Element body failed to validate content"
+          }
+        ]
+      },
+      "40": {
+        "valid": false,
+        "error_count": 4,
+        "errors": [
+          {
+            "line": 5407,
+            "message": "Expecting an element desc, got nothing"
+          },
+          {
+            "line": 5429,
+            "message": "Did not expect element back there"
+          },
+          {
+            "line": 5429,
+            "message": "Did not expect element div there"
+          },
+          {
+            "line": 5429,
+            "message": "Element text has extra content: back"
+          }
+        ]
+      },
+      "560": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "570": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "580": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "760": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "830": {
+        "valid": false,
+        "error_count": 4,
+        "errors": [
+          {
+            "line": 214,
+            "message": "Expecting an element desc, got nothing"
+          },
+          {
+            "line": 297,
+            "message": "Did not expect element back there"
+          },
+          {
+            "line": 297,
+            "message": "Did not expect element div there"
+          },
+          {
+            "line": 297,
+            "message": "Element text has extra content: back"
+          }
+        ]
+      },
+      "890": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "90": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      }
+    }
+  },
+  "per_doc": {
+    "100": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "1000": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1010": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1020": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1040": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1060": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1080": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1090": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "110": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W4"
+      ]
+    },
+    "1100": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1120": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1140": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1170": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1180": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1190": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "120": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W3"
+      ]
+    },
+    "1200": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1210": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1220": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W3"
+      ]
+    },
+    "1230": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1240": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W11"
+      ]
+    },
+    "1250": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1260": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1270": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "1280": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1290": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "130": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W7"
+      ]
+    },
+    "1300": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1330": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W3"
+      ]
+    },
+    "1340": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1350": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W3"
+      ]
+    },
+    "1360": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "1370": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "1380": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "1390": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "140": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W11"
+      ]
+    },
+    "1400": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1410": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1420": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1430": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1440": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W3"
+      ]
+    },
+    "1460": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W7"
+      ]
+    },
+    "1475": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1480": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1490": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "150": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1500": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1510": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1520": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1530": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "1540": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1560": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1570": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1580": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1590": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "160": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1600": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1610": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1620": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1630": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1640": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1650": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1680": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "1690": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "170": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "1700": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1710": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1720": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1730": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1740": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "1755": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1760": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1770": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1780": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "180": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1810": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1820": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1830": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1840": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1850": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1860": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1870": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "1880": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "190": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "1900": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "1910": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1920": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1930": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1940": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1950": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "1960": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1980": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "1990": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "20": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "200": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2000": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2010": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2020": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2030": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2040": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2050": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2060": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2070": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2090": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "210": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2110": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2120": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2130": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2140": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2150": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2160": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2170": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2180": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "2190": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "220": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2200": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2210": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2220": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2230": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2240": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2260": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2270": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2280": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2290": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "230": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2300": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2310": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "2320": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2330": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2340": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2350": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2360": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2370": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2380": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "240": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2400": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2410": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2420": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2430": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2440": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2450": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2460": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2470": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2480": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2490": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "250": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2500": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2510": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2520": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2530": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2540": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2550": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2560": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2570": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2580": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2590": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2600": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2610": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2620": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2630": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2635": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2640": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2650": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2660": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "2670": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2680": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2690": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "270": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2710": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2720": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2730": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2740": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2750": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2760": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2780": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2790": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2800": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2805": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2810": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2820": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2830": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2840": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2850": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2870": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2880": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2890": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "290": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2900": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "2910": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2920": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2930": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2940": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2950": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2960": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2980": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "2990": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "30": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "300": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3000": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3010": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3020": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 2,
+      "warnings": [
+        "W9",
+        "W6"
+      ]
+    },
+    "3040": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3060": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3070": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3090": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "310": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "3100": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3120": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3130": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3140": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "3150": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "3160": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3180": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "3190": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "3200": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "3210": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3220": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "3230": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "330": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "340": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "350": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "380": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "390": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "40": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "400": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "410": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "430": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "440": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "450": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "460": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "470": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "480": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "490": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "50": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "500": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "510": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "520": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "530": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "540": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "550": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "560": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "570": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "580": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "590": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "60": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "600": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "610": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "630": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "640": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "650": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "660": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "670": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "680": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "690": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "70": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "700": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "720": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "730": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "740": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "750": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "760": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "770": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "780": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "790": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W9"
+      ]
+    },
+    "80": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "800": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "810": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "830": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "840": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "850": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "860": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "870": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "880": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "890": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "90": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "900": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "910": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W10"
+      ]
+    },
+    "920": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "930": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "940": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "950": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "960": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "970": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 1,
+      "warnings": [
+        "W6"
+      ]
+    },
+    "980": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "990": {
+      "valid": true,
+      "schema_errors": 0,
+      "project_errors": 0,
+      "warning_count": 0,
+      "warnings": []
+    }
+  }
+}

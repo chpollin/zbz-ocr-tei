@@ -1,0 +1,2800 @@
+{
+  "generated": "2026-03-26 20:45:18",
+  "generator": "scripts/generate_diagnostik.py",
+  "summary": {
+    "pre_normfix": {
+      "total_documents": 24,
+      "evaluated": 24,
+      "skipped": 1,
+      "avg_cer": 0.09328142363687875,
+      "median_cer": 0.05518735512665663,
+      "std_cer": 0.0877339543726284,
+      "min_cer": 0.009700387059779233,
+      "max_cer": 0.3451111787998782,
+      "avg_wer": 0.19464158053561276
+    },
+    "post_normfix": {
+      "total_documents": 24,
+      "evaluated": 24,
+      "skipped": 1,
+      "avg_cer": 0.08110991874625878,
+      "median_cer": 0.0536117079564651,
+      "std_cer": 0.08936173417410344,
+      "min_cer": 0.007980121374301142,
+      "max_cer": 0.3350087579011499,
+      "avg_wer": 0.12891447743646936
+    },
+    "normalization_effect": {
+      "mean_cer_delta": -0.012171504890619966,
+      "median_cer_delta": -0.001575647170191527
+    }
+  },
+  "baseline_comparison": [
+    {
+      "doc_id": "580",
+      "cer_before": 0.09561247780877505,
+      "cer_after": 0.06771493786457013,
+      "cer_delta": -0.02789753994420492,
+      "wer_before": 0.2226027397260274,
+      "wer_after": 0.09931506849315068,
+      "language": "fra/deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "3040",
+      "cer_before": 0.08702712831296454,
+      "cer_after": 0.06566592409069143,
+      "cer_delta": -0.02136120422227311,
+      "wer_before": 0.2227945060750132,
+      "wer_after": 0.11608557844690967,
+      "language": "fra",
+      "type": "B"
+    },
+    {
+      "doc_id": "560",
+      "cer_before": 0.04920946767705117,
+      "cer_after": 0.028534006923004958,
+      "cer_delta": -0.020675460754046214,
+      "wer_before": 0.23159144893111638,
+      "wer_after": 0.1514251781472684,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "300",
+      "cer_before": 0.17356099278296075,
+      "cer_after": 0.1540221791938039,
+      "cer_delta": -0.01953881358915685,
+      "wer_before": 0.3415948275862069,
+      "wer_after": 0.23275862068965517,
+      "language": "fra",
+      "type": "D"
+    },
+    {
+      "doc_id": "2310",
+      "cer_before": 0.03670634920634921,
+      "cer_after": 0.018105158730158732,
+      "cer_delta": -0.018601190476190476,
+      "wer_before": 0.1757188498402556,
+      "wer_after": 0.0670926517571885,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "830",
+      "cer_before": 0.032792665726375174,
+      "cer_after": 0.015044663845792195,
+      "cer_delta": -0.01774800188058298,
+      "wer_before": 0.17194875252865813,
+      "wer_after": 0.06540795684423466,
+      "language": "fra",
+      "type": "D"
+    },
+    {
+      "doc_id": "1520",
+      "cer_before": 0.08125313051725915,
+      "cer_after": 0.06399380453008213,
+      "cer_delta": -0.017259325987177013,
+      "wer_before": 0.2186099152279082,
+      "wer_after": 0.12271667961380535,
+      "language": "fra",
+      "type": "C"
+    },
+    {
+      "doc_id": "100",
+      "cer_before": 0.025549719576248554,
+      "cer_after": 0.008547008547008548,
+      "cer_delta": -0.017002711029240006,
+      "wer_before": 0.1427771556550952,
+      "wer_after": 0.035854341736694675,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "2530",
+      "cer_before": 0.03606296074915322,
+      "cer_after": 0.019127316198445904,
+      "cer_delta": -0.016935644550707313,
+      "wer_before": 0.1607361963190184,
+      "wer_after": 0.06134969325153374,
+      "language": "fra",
+      "type": "B"
+    },
+    {
+      "doc_id": "130",
+      "cer_before": 0.044869165778032974,
+      "cer_after": 0.0294069395455664,
+      "cer_delta": -0.015462226232466573,
+      "wer_before": 0.1633626097867001,
+      "wer_after": 0.07051442910915935,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "30",
+      "cer_before": 0.20307326598183206,
+      "cer_after": 0.18804652347397913,
+      "cer_delta": -0.015026742507852936,
+      "wer_before": 0.3077324973876698,
+      "wer_after": 0.2199582027168234,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "760",
+      "cer_before": 0.08768801587529838,
+      "cer_after": 0.07281930344252394,
+      "cer_delta": -0.014868712432774447,
+      "wer_before": 0.21398340951413578,
+      "wer_after": 0.14068054850177755,
+      "language": "fra",
+      "type": "D"
+    },
+    {
+      "doc_id": "40",
+      "cer_before": 0.03223957442957272,
+      "cer_after": 0.01821646571402713,
+      "cer_delta": -0.014023108715545587,
+      "wer_before": 0.11361718227059749,
+      "wer_after": 0.031780215942492945,
+      "language": "fra",
+      "type": "C"
+    },
+    {
+      "doc_id": "1330",
+      "cer_before": 0.022425731516640606,
+      "cer_after": 0.008487826669644852,
+      "cer_delta": -0.013937904846995754,
+      "wer_before": 0.10931174089068826,
+      "wer_after": 0.03319838056680162,
+      "language": "fra/deu",
+      "type": "D"
+    },
+    {
+      "doc_id": "1180",
+      "cer_before": 0.03611349957007739,
+      "cer_after": 0.024176824642152647,
+      "cer_delta": -0.011936674927924742,
+      "wer_before": 0.10747217806041336,
+      "wer_after": 0.03434022257551669,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "290",
+      "cer_before": 0.3451111787998782,
+      "cer_after": 0.3350087579011499,
+      "cer_delta": -0.01010242089872826,
+      "wer_before": 0.4258373205741627,
+      "wer_after": 0.36668262326471995,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "90",
+      "cer_before": 0.07341229324075965,
+      "cer_after": 0.06687768021237492,
+      "cer_delta": -0.006534613028384734,
+      "wer_before": 0.14956982131039048,
+      "wer_after": 0.10919920582395765,
+      "language": "deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "1910",
+      "cer_before": 0.1654538490999617,
+      "cer_after": 0.1612409038682497,
+      "cer_delta": -0.004212945231711979,
+      "wer_before": 0.2260362694300518,
+      "wer_after": 0.20919689119170984,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "1440",
+      "cer_before": 0.2599645362732249,
+      "cer_after": 0.25688073394495414,
+      "cer_delta": -0.0030838023282707683,
+      "wer_before": 0.33419689119170987,
+      "wer_after": 0.3238341968911917,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "890",
+      "cer_before": 0.057590206621352,
+      "cer_after": 0.055730276284197355,
+      "cer_delta": -0.0018599303371546472,
+      "wer_before": 0.12365359758724688,
+      "wer_after": 0.11439034898750539,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "2635",
+      "cer_before": 0.009700387059779233,
+      "cer_after": 0.007980121374301142,
+      "cer_delta": -0.0017202656854780913,
+      "wer_before": 0.049550854824688496,
+      "wer_after": 0.03969863807592002,
+      "language": "deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "1410",
+      "cer_before": 0.05278450363196126,
+      "cer_after": 0.05149313962873285,
+      "cer_delta": -0.0012913640032284068,
+      "wer_before": 0.1326478149100257,
+      "wer_after": 0.12802056555269922,
+      "language": "fra/deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "3020",
+      "cer_before": 0.016224288914533976,
+      "cer_after": 0.01559070441020071,
+      "cer_delta": -0.0006335845043332657,
+      "wer_before": 0.05818181818181818,
+      "wer_after": 0.055353535353535356,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "1060",
+      "cer_before": 0.21432877813504822,
+      "cer_after": 0.21392684887459806,
+      "cer_delta": -0.00040192926045015676,
+      "wer_before": 0.2678695350451076,
+      "wer_after": 0.2650936849410132,
+      "language": "deu",
+      "type": "A"
+    }
+  ],
+  "confusion_matrix": {
+    "substitutions": [
+      {
+        "ref_char": "‐",
+        "hyp_char": "-",
+        "ref_codepoint": "U+2010",
+        "hyp_codepoint": "U+002D",
+        "ref_name": "HYPHEN",
+        "hyp_name": "HYPHEN-MINUS",
+        "count": 38
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "SPACE",
+        "count": 30
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 24
+      },
+      {
+        "ref_char": "–",
+        "hyp_char": "-",
+        "ref_codepoint": "U+2013",
+        "hyp_codepoint": "U+002D",
+        "ref_name": "EN DASH",
+        "hyp_name": "HYPHEN-MINUS",
+        "count": 23
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "s",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0073",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER S",
+        "count": 17
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "E",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0045",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN CAPITAL LETTER E",
+        "count": 16
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "s",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0073",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER S",
+        "count": 16
+      },
+      {
+        "ref_char": "t",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0074",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER T",
+        "hyp_name": "SPACE",
+        "count": 13
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "t",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0074",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER T",
+        "count": 13
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "r",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0072",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER R",
+        "count": 13
+      },
+      {
+        "ref_char": "s",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0073",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER S",
+        "hyp_name": "SPACE",
+        "count": 13
+      },
+      {
+        "ref_char": "a",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0061",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER A",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 13
+      },
+      {
+        "ref_char": "r",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0072",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER R",
+        "hyp_name": "SPACE",
+        "count": 12
+      },
+      {
+        "ref_char": "m",
+        "hyp_char": " ",
+        "ref_codepoint": "U+006D",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER M",
+        "hyp_name": "SPACE",
+        "count": 12
+      },
+      {
+        "ref_char": "n",
+        "hyp_char": "e",
+        "ref_codepoint": "U+006E",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER N",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 12
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "n",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+006E",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER N",
+        "count": 12
+      },
+      {
+        "ref_char": "a",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0061",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER A",
+        "hyp_name": "SPACE",
+        "count": 12
+      },
+      {
+        "ref_char": "s",
+        "hyp_char": "S",
+        "ref_codepoint": "U+0073",
+        "hyp_codepoint": "U+0053",
+        "ref_name": "LATIN SMALL LETTER S",
+        "hyp_name": "LATIN CAPITAL LETTER S",
+        "count": 11
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "-",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+002D",
+        "ref_name": "SPACE",
+        "hyp_name": "HYPHEN-MINUS",
+        "count": 11
+      },
+      {
+        "ref_char": "n",
+        "hyp_char": " ",
+        "ref_codepoint": "U+006E",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER N",
+        "hyp_name": "SPACE",
+        "count": 11
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "l",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+006C",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER L",
+        "count": 11
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "t",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0074",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER T",
+        "count": 11
+      },
+      {
+        "ref_char": "l",
+        "hyp_char": " ",
+        "ref_codepoint": "U+006C",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER L",
+        "hyp_name": "SPACE",
+        "count": 10
+      },
+      {
+        "ref_char": "t",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0074",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER T",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 10
+      },
+      {
+        "ref_char": "r",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0072",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER R",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 10
+      },
+      {
+        "ref_char": "i",
+        "hyp_char": "a",
+        "ref_codepoint": "U+0069",
+        "hyp_codepoint": "U+0061",
+        "ref_name": "LATIN SMALL LETTER I",
+        "hyp_name": "LATIN SMALL LETTER A",
+        "count": 10
+      },
+      {
+        "ref_char": "i",
+        "hyp_char": "I",
+        "ref_codepoint": "U+0069",
+        "hyp_codepoint": "U+0049",
+        "ref_name": "LATIN SMALL LETTER I",
+        "hyp_name": "LATIN CAPITAL LETTER I",
+        "count": 9
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "c",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0063",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER C",
+        "count": 9
+      },
+      {
+        "ref_char": "s",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0073",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER S",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 9
+      },
+      {
+        "ref_char": "o",
+        "hyp_char": "i",
+        "ref_codepoint": "U+006F",
+        "hyp_codepoint": "U+0069",
+        "ref_name": "LATIN SMALL LETTER O",
+        "hyp_name": "LATIN SMALL LETTER I",
+        "count": 9
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "é",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+00E9",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER E WITH ACUTE",
+        "count": 8
+      },
+      {
+        "ref_char": "t",
+        "hyp_char": "n",
+        "ref_codepoint": "U+0074",
+        "hyp_codepoint": "U+006E",
+        "ref_name": "LATIN SMALL LETTER T",
+        "hyp_name": "LATIN SMALL LETTER N",
+        "count": 8
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "l",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+006C",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER L",
+        "count": 8
+      },
+      {
+        "ref_char": "l",
+        "hyp_char": "i",
+        "ref_codepoint": "U+006C",
+        "hyp_codepoint": "U+0069",
+        "ref_name": "LATIN SMALL LETTER L",
+        "hyp_name": "LATIN SMALL LETTER I",
+        "count": 8
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "a",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0061",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER A",
+        "count": 8
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "a",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0061",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER A",
+        "count": 8
+      },
+      {
+        "ref_char": "s",
+        "hyp_char": "l",
+        "ref_codepoint": "U+0073",
+        "hyp_codepoint": "U+006C",
+        "ref_name": "LATIN SMALL LETTER S",
+        "hyp_name": "LATIN SMALL LETTER L",
+        "count": 8
+      },
+      {
+        "ref_char": "a",
+        "hyp_char": "A",
+        "ref_codepoint": "U+0061",
+        "hyp_codepoint": "U+0041",
+        "ref_name": "LATIN SMALL LETTER A",
+        "hyp_name": "LATIN CAPITAL LETTER A",
+        "count": 7
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "i",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0069",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER I",
+        "count": 7
+      },
+      {
+        "ref_char": "s",
+        "hyp_char": "t",
+        "ref_codepoint": "U+0073",
+        "hyp_codepoint": "U+0074",
+        "ref_name": "LATIN SMALL LETTER S",
+        "hyp_name": "LATIN SMALL LETTER T",
+        "count": 7
+      },
+      {
+        "ref_char": "l",
+        "hyp_char": "e",
+        "ref_codepoint": "U+006C",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER L",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 7
+      },
+      {
+        "ref_char": "i",
+        "hyp_char": "n",
+        "ref_codepoint": "U+0069",
+        "hyp_codepoint": "U+006E",
+        "ref_name": "LATIN SMALL LETTER I",
+        "hyp_name": "LATIN SMALL LETTER N",
+        "count": 7
+      },
+      {
+        "ref_char": "r",
+        "hyp_char": "i",
+        "ref_codepoint": "U+0072",
+        "hyp_codepoint": "U+0069",
+        "ref_name": "LATIN SMALL LETTER R",
+        "hyp_name": "LATIN SMALL LETTER I",
+        "count": 7
+      },
+      {
+        "ref_char": "c",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0063",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER C",
+        "hyp_name": "SPACE",
+        "count": 7
+      },
+      {
+        "ref_char": "p",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0070",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER P",
+        "hyp_name": "SPACE",
+        "count": 7
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "u",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0075",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER U",
+        "count": 7
+      },
+      {
+        "ref_char": "i",
+        "hyp_char": "r",
+        "ref_codepoint": "U+0069",
+        "hyp_codepoint": "U+0072",
+        "ref_name": "LATIN SMALL LETTER I",
+        "hyp_name": "LATIN SMALL LETTER R",
+        "count": 7
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "u",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0075",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER U",
+        "count": 7
+      },
+      {
+        "ref_char": "n",
+        "hyp_char": "t",
+        "ref_codepoint": "U+006E",
+        "hyp_codepoint": "U+0074",
+        "ref_name": "LATIN SMALL LETTER N",
+        "hyp_name": "LATIN SMALL LETTER T",
+        "count": 6
+      },
+      {
+        "ref_char": "a",
+        "hyp_char": "t",
+        "ref_codepoint": "U+0061",
+        "hyp_codepoint": "U+0074",
+        "ref_name": "LATIN SMALL LETTER A",
+        "hyp_name": "LATIN SMALL LETTER T",
+        "count": 6
+      }
+    ],
+    "insertions": [
+      {
+        "char": " ",
+        "codepoint": "U+0020",
+        "name": "SPACE",
+        "count": 4416
+      },
+      {
+        "char": "e",
+        "codepoint": "U+0065",
+        "name": "LATIN SMALL LETTER E",
+        "count": 3345
+      },
+      {
+        "char": "n",
+        "codepoint": "U+006E",
+        "name": "LATIN SMALL LETTER N",
+        "count": 1772
+      },
+      {
+        "char": "i",
+        "codepoint": "U+0069",
+        "name": "LATIN SMALL LETTER I",
+        "count": 1750
+      },
+      {
+        "char": "s",
+        "codepoint": "U+0073",
+        "name": "LATIN SMALL LETTER S",
+        "count": 1609
+      },
+      {
+        "char": "r",
+        "codepoint": "U+0072",
+        "name": "LATIN SMALL LETTER R",
+        "count": 1382
+      },
+      {
+        "char": "t",
+        "codepoint": "U+0074",
+        "name": "LATIN SMALL LETTER T",
+        "count": 1346
+      },
+      {
+        "char": "a",
+        "codepoint": "U+0061",
+        "name": "LATIN SMALL LETTER A",
+        "count": 1269
+      },
+      {
+        "char": "l",
+        "codepoint": "U+006C",
+        "name": "LATIN SMALL LETTER L",
+        "count": 1051
+      },
+      {
+        "char": "u",
+        "codepoint": "U+0075",
+        "name": "LATIN SMALL LETTER U",
+        "count": 946
+      },
+      {
+        "char": "o",
+        "codepoint": "U+006F",
+        "name": "LATIN SMALL LETTER O",
+        "count": 846
+      },
+      {
+        "char": "d",
+        "codepoint": "U+0064",
+        "name": "LATIN SMALL LETTER D",
+        "count": 737
+      },
+      {
+        "char": "c",
+        "codepoint": "U+0063",
+        "name": "LATIN SMALL LETTER C",
+        "count": 705
+      },
+      {
+        "char": "h",
+        "codepoint": "U+0068",
+        "name": "LATIN SMALL LETTER H",
+        "count": 582
+      },
+      {
+        "char": "m",
+        "codepoint": "U+006D",
+        "name": "LATIN SMALL LETTER M",
+        "count": 536
+      },
+      {
+        "char": ",",
+        "codepoint": "U+002C",
+        "name": "COMMA",
+        "count": 436
+      },
+      {
+        "char": "p",
+        "codepoint": "U+0070",
+        "name": "LATIN SMALL LETTER P",
+        "count": 429
+      },
+      {
+        "char": "g",
+        "codepoint": "U+0067",
+        "name": "LATIN SMALL LETTER G",
+        "count": 361
+      },
+      {
+        "char": ".",
+        "codepoint": "U+002E",
+        "name": "FULL STOP",
+        "count": 265
+      },
+      {
+        "char": "f",
+        "codepoint": "U+0066",
+        "name": "LATIN SMALL LETTER F",
+        "count": 263
+      },
+      {
+        "char": "b",
+        "codepoint": "U+0062",
+        "name": "LATIN SMALL LETTER B",
+        "count": 222
+      },
+      {
+        "char": "é",
+        "codepoint": "U+00E9",
+        "name": "LATIN SMALL LETTER E WITH ACUTE",
+        "count": 220
+      },
+      {
+        "char": "E",
+        "codepoint": "U+0045",
+        "name": "LATIN CAPITAL LETTER E",
+        "count": 204
+      },
+      {
+        "char": "v",
+        "codepoint": "U+0076",
+        "name": "LATIN SMALL LETTER V",
+        "count": 203
+      },
+      {
+        "char": "'",
+        "codepoint": "U+0027",
+        "name": "APOSTROPHE",
+        "count": 198
+      },
+      {
+        "char": "A",
+        "codepoint": "U+0041",
+        "name": "LATIN CAPITAL LETTER A",
+        "count": 136
+      },
+      {
+        "char": "S",
+        "codepoint": "U+0053",
+        "name": "LATIN CAPITAL LETTER S",
+        "count": 133
+      },
+      {
+        "char": "q",
+        "codepoint": "U+0071",
+        "name": "LATIN SMALL LETTER Q",
+        "count": 133
+      },
+      {
+        "char": "L",
+        "codepoint": "U+004C",
+        "name": "LATIN CAPITAL LETTER L",
+        "count": 128
+      },
+      {
+        "char": "I",
+        "codepoint": "U+0049",
+        "name": "LATIN CAPITAL LETTER I",
+        "count": 116
+      }
+    ],
+    "deletions": [
+      {
+        "char": " ",
+        "codepoint": "U+0020",
+        "name": "SPACE",
+        "count": 3247
+      },
+      {
+        "char": "e",
+        "codepoint": "U+0065",
+        "name": "LATIN SMALL LETTER E",
+        "count": 2466
+      },
+      {
+        "char": "n",
+        "codepoint": "U+006E",
+        "name": "LATIN SMALL LETTER N",
+        "count": 1267
+      },
+      {
+        "char": "i",
+        "codepoint": "U+0069",
+        "name": "LATIN SMALL LETTER I",
+        "count": 1242
+      },
+      {
+        "char": "s",
+        "codepoint": "U+0073",
+        "name": "LATIN SMALL LETTER S",
+        "count": 1075
+      },
+      {
+        "char": "t",
+        "codepoint": "U+0074",
+        "name": "LATIN SMALL LETTER T",
+        "count": 981
+      },
+      {
+        "char": "r",
+        "codepoint": "U+0072",
+        "name": "LATIN SMALL LETTER R",
+        "count": 968
+      },
+      {
+        "char": "a",
+        "codepoint": "U+0061",
+        "name": "LATIN SMALL LETTER A",
+        "count": 873
+      },
+      {
+        "char": "l",
+        "codepoint": "U+006C",
+        "name": "LATIN SMALL LETTER L",
+        "count": 778
+      },
+      {
+        "char": "u",
+        "codepoint": "U+0075",
+        "name": "LATIN SMALL LETTER U",
+        "count": 722
+      },
+      {
+        "char": "d",
+        "codepoint": "U+0064",
+        "name": "LATIN SMALL LETTER D",
+        "count": 588
+      },
+      {
+        "char": "o",
+        "codepoint": "U+006F",
+        "name": "LATIN SMALL LETTER O",
+        "count": 543
+      },
+      {
+        "char": "h",
+        "codepoint": "U+0068",
+        "name": "LATIN SMALL LETTER H",
+        "count": 471
+      },
+      {
+        "char": "c",
+        "codepoint": "U+0063",
+        "name": "LATIN SMALL LETTER C",
+        "count": 457
+      },
+      {
+        "char": "m",
+        "codepoint": "U+006D",
+        "name": "LATIN SMALL LETTER M",
+        "count": 345
+      },
+      {
+        "char": ",",
+        "codepoint": "U+002C",
+        "name": "COMMA",
+        "count": 305
+      },
+      {
+        "char": "g",
+        "codepoint": "U+0067",
+        "name": "LATIN SMALL LETTER G",
+        "count": 300
+      },
+      {
+        "char": "p",
+        "codepoint": "U+0070",
+        "name": "LATIN SMALL LETTER P",
+        "count": 243
+      },
+      {
+        "char": "b",
+        "codepoint": "U+0062",
+        "name": "LATIN SMALL LETTER B",
+        "count": 189
+      },
+      {
+        "char": "f",
+        "codepoint": "U+0066",
+        "name": "LATIN SMALL LETTER F",
+        "count": 184
+      },
+      {
+        "char": "v",
+        "codepoint": "U+0076",
+        "name": "LATIN SMALL LETTER V",
+        "count": 145
+      },
+      {
+        "char": ".",
+        "codepoint": "U+002E",
+        "name": "FULL STOP",
+        "count": 136
+      },
+      {
+        "char": "é",
+        "codepoint": "U+00E9",
+        "name": "LATIN SMALL LETTER E WITH ACUTE",
+        "count": 119
+      },
+      {
+        "char": "w",
+        "codepoint": "U+0077",
+        "name": "LATIN SMALL LETTER W",
+        "count": 116
+      },
+      {
+        "char": "'",
+        "codepoint": "U+0027",
+        "name": "APOSTROPHE",
+        "count": 98
+      },
+      {
+        "char": "k",
+        "codepoint": "U+006B",
+        "name": "LATIN SMALL LETTER K",
+        "count": 97
+      },
+      {
+        "char": "z",
+        "codepoint": "U+007A",
+        "name": "LATIN SMALL LETTER Z",
+        "count": 78
+      },
+      {
+        "char": "q",
+        "codepoint": "U+0071",
+        "name": "LATIN SMALL LETTER Q",
+        "count": 70
+      },
+      {
+        "char": "\"",
+        "codepoint": "U+0022",
+        "name": "QUOTATION MARK",
+        "count": 61
+      },
+      {
+        "char": "ü",
+        "codepoint": "U+00FC",
+        "name": "LATIN SMALL LETTER U WITH DIAERESIS",
+        "count": 47
+      }
+    ],
+    "totals": {
+      "substitutions": 1433,
+      "insertions": 28243,
+      "deletions": 19082
+    }
+  },
+  "outlier_diagnosis": {
+    "1910": {
+      "doc_id": "1910",
+      "cer_end_to_end": 0.1612409038682497,
+      "ocr_baseline_cer": 0.2643623132899272,
+      "pipeline_delta": -0.1031214094216775,
+      "primary_cause": "source_ocr_quality",
+      "explanation": "OCR-Baseline bereits bei 26.4% CER. Schlechte Scanqualitaet oder komplexes Layout.",
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 7,
+          "char_distance": 7,
+          "examples": [
+            {
+              "ref": ",",
+              "hyp": ".",
+              "type": "replace"
+            },
+            {
+              "ref": "–",
+              "hyp": "-",
+              "type": "replace"
+            },
+            {
+              "ref": "‐",
+              "hyp": "-",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 0.0006702412868632708
+        },
+        "hyphenation": {
+          "count": 1,
+          "char_distance": 4,
+          "examples": [
+            {
+              "ref": "‐",
+              "hyp": " 252",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 0.00038299502106472615
+        },
+        "whitespace": {
+          "count": 34,
+          "char_distance": 34,
+          "examples": [
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            },
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            },
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            }
+          ],
+          "cer_contribution": 0.0032554576790501722
+        },
+        "ocr_artifact": {
+          "count": 1,
+          "char_distance": 121,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": "Jenseits aller Introspektion besteht der Auftrag zu sein: zu akzeptieren, zu ent",
+              "type": "insert"
+            }
+          ],
+          "cer_contribution": 0.011585599387207966
+        },
+        "layout": {
+          "count": 2,
+          "char_distance": 2170,
+          "examples": [
+            {
+              "ref": "wissenschaftlich objektiv, obwohl sie nur durch werthaltige Bedeutsamkeiten und ",
+              "hyp": "",
+              "type": "delete"
+            },
+            {
+              "ref": "eine \"Krankheit der Seele\" ist. Die Freiheit bewährt sich in der Suche der Wahrh",
+              "hyp": "",
+              "type": "delete"
+            }
+          ],
+          "cer_contribution": 0.20777479892761394
+        },
+        "other": {
+          "count": 20,
+          "char_distance": 1846,
+          "examples": [
+            {
+              "ref": "u",
+              "hyp": "a",
+              "type": "replace"
+            },
+            {
+              "ref": " los weniger entsetzlich",
+              "hyp": "los weniger ",
+              "type": "replace"
+            },
+            {
+              "ref": " mung",
+              "hyp": "mung,",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 0.1767522022213711
+        }
+      },
+      "alignment_info": "Aligned: ref 10444->10444, pipe 11187->8793 (ratio 1.07)",
+      "metadata": {
+        "type": "B",
+        "language": "deu",
+        "pub_form": "bookSection",
+        "page_count": 5
+      }
+    },
+    "290": {
+      "doc_id": "290",
+      "cer_end_to_end": 0.3350087579011499,
+      "ocr_baseline_cer": 0.157642220699109,
+      "pipeline_delta": 0.17736653720204093,
+      "primary_cause": "source_ocr_quality",
+      "explanation": "OCR-Baseline bereits bei 15.8% CER. Schlechte Scanqualitaet oder komplexes Layout.",
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "char_distance": 1,
+          "examples": [
+            {
+              "ref": "E",
+              "hyp": "É",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 7.61556621734826e-05
+        },
+        "punctuation": {
+          "count": 1,
+          "char_distance": 2,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": "* ",
+              "type": "insert"
+            }
+          ],
+          "cer_contribution": 0.0001523113243469652
+        },
+        "hyphenation": {
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 30,
+          "char_distance": 44,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": " ",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": " ",
+              "type": "insert"
+            },
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            }
+          ],
+          "cer_contribution": 0.003350849135633234
+        },
+        "ocr_artifact": {
+          "count": 5,
+          "char_distance": 1824,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": "dernières années, ce n'est pas à cause d'une nécessité de la seule méditation, m",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": "1. Der philosophische Glaube, Piper Verlag, Munich, 1948. La Foi philosophique, ",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": "* Le philosophe, désormais, doit intervenir dans les débats de ses contemporains",
+              "type": "insert"
+            }
+          ],
+          "cer_contribution": 0.13890792780443226
+        },
+        "layout": {
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 30,
+          "char_distance": 7947,
+          "examples": [
+            {
+              "ref": "omptes rendus",
+              "hyp": "hassé de la généralité anonyme d'une science apodictique, il se voit comme accul",
+              "type": "replace"
+            },
+            {
+              "ref": "Œuvre de Karl Jaspers Au cours des dernières années On ne trouve pas dans la pen",
+              "hyp": "",
+              "type": "delete"
+            },
+            {
+              "ref": "et la ma",
+              "hyp": "de cette foi reste, sur le mode théorique, indéfinissable. La philosophie se ser",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 0.6052090472926662
+        }
+      },
+      "alignment_info": "Aligned: ref 13131->13131, pipe 12234->11038 (ratio 1.07)",
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 5
+      }
+    },
+    "30": {
+      "doc_id": "30",
+      "cer_end_to_end": 0.18804652347397913,
+      "ocr_baseline_cer": 0.17999694142835296,
+      "pipeline_delta": 0.008049582045626169,
+      "primary_cause": "source_ocr_quality",
+      "explanation": "OCR-Baseline bereits bei 18.0% CER. Schlechte Scanqualitaet oder komplexes Layout.",
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "char_distance": 1,
+          "examples": [
+            {
+              "ref": "a",
+              "hyp": "à",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 8.489685032685287e-05
+        },
+        "punctuation": {
+          "count": 3,
+          "char_distance": 3,
+          "examples": [
+            {
+              "ref": "‐",
+              "hyp": "-",
+              "type": "replace"
+            },
+            {
+              "ref": "",
+              "hyp": ",",
+              "type": "insert"
+            },
+            {
+              "ref": "‐",
+              "hyp": "-",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 0.0002546905509805586
+        },
+        "hyphenation": {
+          "count": 2,
+          "char_distance": 6,
+          "examples": [
+            {
+              "ref": "‐t‐",
+              "hyp": "-t-",
+              "type": "replace"
+            },
+            {
+              "ref": "‐t‐",
+              "hyp": "-t-",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 0.0005093811019611172
+        },
+        "whitespace": {
+          "count": 7,
+          "char_distance": 7,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": " ",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": " ",
+              "type": "insert"
+            },
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            }
+          ],
+          "cer_contribution": 0.0005942779522879701
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 2,
+          "char_distance": 108,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": "me conçu, mais qui n'existe pas comme tel. Concrè",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": "éré replonge le sujet dans sa durée, et s'y perd. Ainsi, tr",
+              "type": "insert"
+            }
+          ],
+          "cer_contribution": 0.00916885983530011
+        },
+        "other": {
+          "count": 28,
+          "char_distance": 14841,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": "L'OBSTA",
+              "type": "insert"
+            },
+            {
+              "ref": "oncr",
+              "hyp": "LE DU LANGAGE 223 Enfin, le langage est un syst",
+              "type": "replace"
+            },
+            {
+              "ref": "ils tr",
+              "hyp": "L'OBSTACLE DU LANGAGE Enfin, le langage est un système conçu, mais qui n'existe ",
+              "type": "replace"
+            }
+          ],
+          "cer_contribution": 1.2599541557008236
+        }
+      },
+      "alignment_info": "Aligned: ref 13078->11779, pipe 11915->11915 (ratio 1.10)",
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "bookSection",
+        "page_count": 4
+      }
+    },
+    "90": {
+      "doc_id": "90",
+      "cer_end_to_end": 0.06687768021237492,
+      "ocr_baseline_cer": 0.22860935266489688,
+      "pipeline_delta": -0.16173167245252196,
+      "primary_cause": "source_ocr_quality",
+      "explanation": "OCR-Baseline bereits bei 22.9% CER. Schlechte Scanqualitaet oder komplexes Layout.",
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 7,
+          "char_distance": 7,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": "\"",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": "\"",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": "\"",
+              "type": "insert"
+            }
+          ],
+          "cer_contribution": 0.0007147232999795794
+        },
+        "hyphenation": {
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 23,
+          "char_distance": 23,
+          "examples": [
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            },
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            },
+            {
+              "ref": " ",
+              "hyp": "",
+              "type": "delete"
+            }
+          ],
+          "cer_contribution": 0.0023483765570757606
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 1,
+          "char_distance": 610,
+          "examples": [
+            {
+              "ref": "In dem was wirklich ist, existiert unter dem hiesigen Licht die Spitze des Wesen",
+              "hyp": "",
+              "type": "delete"
+            }
+          ],
+          "cer_contribution": 0.06228303042679191
+        },
+        "other": {
+          "count": 5,
+          "char_distance": 59,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": " 658",
+              "type": "insert"
+            },
+            {
+              "ref": " thier dans les bouilloires et les louches, es",
+              "hyp": "thier dans les bouilloires et les louches, et",
+              "type": "replace"
+            },
+            {
+              "ref": "",
+              "hyp": "659 ",
+              "type": "insert"
+            }
+          ],
+          "cer_contribution": 0.006024096385542169
+        }
+      },
+      "alignment_info": "Aligned: ref 9794->9794, pipe 11351->9179 (ratio 1.16)",
+      "metadata": {
+        "type": "A",
+        "language": "deu",
+        "pub_form": "journalArticle",
+        "page_count": 6
+      }
+    }
+  },
+  "pipeline_effect": [
+    {
+      "doc_id": "2310",
+      "ocr_baseline_cer": 0.9871031746031746,
+      "end_to_end_cer": 0.018105158730158732,
+      "delta": -0.9689980158730159,
+      "improved": true,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "580",
+      "ocr_baseline_cer": 0.9190971341618057,
+      "end_to_end_cer": 0.06771493786457013,
+      "delta": -0.8513821962972355,
+      "improved": true,
+      "language": "fra/deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "130",
+      "ocr_baseline_cer": 0.7823394307275859,
+      "end_to_end_cer": 0.0294069395455664,
+      "delta": -0.7529324911820195,
+      "improved": true,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "40",
+      "ocr_baseline_cer": 0.7371157346419557,
+      "end_to_end_cer": 0.01821646571402713,
+      "delta": -0.7188992689279285,
+      "improved": true,
+      "language": "fra",
+      "type": "C"
+    },
+    {
+      "doc_id": "760",
+      "ocr_baseline_cer": 0.7890771044836214,
+      "end_to_end_cer": 0.07281930344252394,
+      "delta": -0.7162578010410975,
+      "improved": true,
+      "language": "fra",
+      "type": "D"
+    },
+    {
+      "doc_id": "1520",
+      "ocr_baseline_cer": 0.5186503538238554,
+      "end_to_end_cer": 0.06399380453008213,
+      "delta": -0.45465654929377325,
+      "improved": true,
+      "language": "fra",
+      "type": "C"
+    },
+    {
+      "doc_id": "3040",
+      "ocr_baseline_cer": 0.2671607919885074,
+      "end_to_end_cer": 0.06566592409069143,
+      "delta": -0.20149486789781595,
+      "improved": true,
+      "language": "fra",
+      "type": "B"
+    },
+    {
+      "doc_id": "300",
+      "ocr_baseline_cer": 0.33127970427741593,
+      "end_to_end_cer": 0.1540221791938039,
+      "delta": -0.17725752508361203,
+      "improved": true,
+      "language": "fra",
+      "type": "D"
+    },
+    {
+      "doc_id": "1410",
+      "ocr_baseline_cer": 0.22776432606941083,
+      "end_to_end_cer": 0.05149313962873285,
+      "delta": -0.17627118644067796,
+      "improved": true,
+      "language": "fra/deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "90",
+      "ocr_baseline_cer": 0.22860935266489688,
+      "end_to_end_cer": 0.06687768021237492,
+      "delta": -0.16173167245252196,
+      "improved": true,
+      "language": "deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "1330",
+      "ocr_baseline_cer": 0.13509046236318964,
+      "end_to_end_cer": 0.008487826669644852,
+      "delta": -0.1266026356935448,
+      "improved": true,
+      "language": "fra/deu",
+      "type": "D"
+    },
+    {
+      "doc_id": "890",
+      "ocr_baseline_cer": 0.17293970444016096,
+      "end_to_end_cer": 0.055730276284197355,
+      "delta": -0.11720942815596361,
+      "improved": true,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "1910",
+      "ocr_baseline_cer": 0.2643623132899272,
+      "end_to_end_cer": 0.1612409038682497,
+      "delta": -0.1031214094216775,
+      "improved": true,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "560",
+      "ocr_baseline_cer": 0.07755636635793807,
+      "end_to_end_cer": 0.028534006923004958,
+      "delta": -0.04902235943493311,
+      "improved": true,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "830",
+      "ocr_baseline_cer": 0.02221438645980254,
+      "end_to_end_cer": 0.015044663845792195,
+      "delta": -0.007169722614010344,
+      "improved": true,
+      "language": "fra",
+      "type": "D"
+    },
+    {
+      "doc_id": "2530",
+      "ocr_baseline_cer": 0.022713687985654513,
+      "end_to_end_cer": 0.019127316198445904,
+      "delta": -0.0035863717872086087,
+      "improved": true,
+      "language": "fra",
+      "type": "B"
+    },
+    {
+      "doc_id": "100",
+      "ocr_baseline_cer": 0.010505698005698005,
+      "end_to_end_cer": 0.008547008547008548,
+      "delta": -0.0019586894586894575,
+      "improved": true,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "2635",
+      "ocr_baseline_cer": 0.00927032063840971,
+      "end_to_end_cer": 0.007980121374301142,
+      "delta": -0.001290199264108569,
+      "improved": true,
+      "language": "deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "3020",
+      "ocr_baseline_cer": 0.015183400085986468,
+      "end_to_end_cer": 0.01559070441020071,
+      "delta": 0.00040730432421424295,
+      "improved": false,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "1180",
+      "ocr_baseline_cer": 0.017298062819280764,
+      "end_to_end_cer": 0.024176824642152647,
+      "delta": 0.006878761822871882,
+      "improved": false,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "30",
+      "ocr_baseline_cer": 0.17999694142835296,
+      "end_to_end_cer": 0.18804652347397913,
+      "delta": 0.008049582045626169,
+      "improved": false,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "1060",
+      "ocr_baseline_cer": 0.12942122186495178,
+      "end_to_end_cer": 0.21392684887459806,
+      "delta": 0.08450562700964628,
+      "improved": false,
+      "language": "deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "1440",
+      "ocr_baseline_cer": 0.17169069462647443,
+      "end_to_end_cer": 0.25688073394495414,
+      "delta": 0.08519003931847971,
+      "improved": false,
+      "language": "deu",
+      "type": "B"
+    },
+    {
+      "doc_id": "290",
+      "ocr_baseline_cer": 0.157642220699109,
+      "end_to_end_cer": 0.3350087579011499,
+      "delta": 0.17736653720204093,
+      "improved": false,
+      "language": "fra",
+      "type": "A"
+    }
+  ],
+  "per_doc": {
+    "100": {
+      "cer": 0.008547008547008548,
+      "wer": 0.035854341736694675,
+      "ref_chars": 11232,
+      "error_categories": {
+        "diacritics": {
+          "count": 2,
+          "cer_contribution": 0.00017806267806267807
+        },
+        "punctuation": {
+          "count": 12,
+          "cer_contribution": 0.0016915954415954416
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 18,
+          "cer_contribution": 0.0016025641025641025
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 7,
+          "cer_contribution": 0.005430911680911681
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "other",
+        "page_count": 7
+      }
+    },
+    "1060": {
+      "cer": 0.21392684887459806,
+      "wer": 0.2650936849410132,
+      "ref_chars": 9952,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 5,
+          "cer_contribution": 0.0008038585209003215
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 31,
+          "cer_contribution": 0.003114951768488746
+        },
+        "ocr_artifact": {
+          "count": 1,
+          "cer_contribution": 0.027833601286173633
+        },
+        "layout": {
+          "count": 1,
+          "cer_contribution": 0.09334807073954984
+        },
+        "other": {
+          "count": 5,
+          "cer_contribution": 0.09013263665594855
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "deu",
+        "pub_form": "other",
+        "page_count": 8
+      }
+    },
+    "1180": {
+      "cer": 0.024176824642152647,
+      "wer": 0.03434022257551669,
+      "ref_chars": 19771,
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "cer_contribution": 5.0579131050528554e-05
+        },
+        "punctuation": {
+          "count": 7,
+          "cer_contribution": 0.00040463304840422843
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 15,
+          "cer_contribution": 0.0007586869657579282
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 1,
+          "cer_contribution": 0.007940923574932982
+        },
+        "other": {
+          "count": 13,
+          "cer_contribution": 0.017652116736634464
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 8
+      }
+    },
+    "130": {
+      "cer": 0.0294069395455664,
+      "wer": 0.07051442910915935,
+      "ref_chars": 24382,
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "cer_contribution": 4.101386268558773e-05
+        },
+        "punctuation": {
+          "count": 5,
+          "cer_contribution": 0.00041013862685587726
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 76,
+          "cer_contribution": 0.00705438438192109
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 2,
+          "cer_contribution": 0.006521204167008449
+        },
+        "other": {
+          "count": 40,
+          "cer_contribution": 0.10770240341235338
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 18
+      }
+    },
+    "1330": {
+      "cer": 0.008487826669644852,
+      "wer": 0.03319838056680162,
+      "ref_chars": 22385,
+      "error_categories": {
+        "diacritics": {
+          "count": 2,
+          "cer_contribution": 0.00013401831583649765
+        },
+        "punctuation": {
+          "count": 12,
+          "cer_contribution": 0.000625418807236989
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 42,
+          "cer_contribution": 0.004467277194549922
+        },
+        "ocr_artifact": {
+          "count": 2,
+          "cer_contribution": 0.007549698458789368
+        },
+        "layout": {
+          "count": 1,
+          "cer_contribution": 0.0037971856153674335
+        },
+        "other": {
+          "count": 7,
+          "cer_contribution": 0.0018762564217109671
+        }
+      },
+      "metadata": {
+        "type": "D",
+        "language": "fra/deu",
+        "pub_form": "book",
+        "page_count": 6
+      }
+    },
+    "1410": {
+      "cer": 0.05149313962873285,
+      "wer": 0.12802056555269922,
+      "ref_chars": 12390,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 86,
+          "cer_contribution": 0.006941081517352704
+        },
+        "ocr_artifact": {
+          "count": 1,
+          "cer_contribution": 0.043099273607748186
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 8,
+          "cer_contribution": 0.003470540758676352
+        }
+      },
+      "metadata": {
+        "type": "B",
+        "language": "fra/deu",
+        "pub_form": "journalArticle",
+        "page_count": 6
+      }
+    },
+    "1440": {
+      "cer": 0.25688073394495414,
+      "wer": 0.3238341968911917,
+      "ref_chars": 12971,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 13,
+          "cer_contribution": 0.0010022357566879963
+        },
+        "ocr_artifact": {
+          "count": 2,
+          "cer_contribution": 0.13252640505743582
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 17,
+          "cer_contribution": 1.3162439287641663
+        }
+      },
+      "metadata": {
+        "type": "B",
+        "language": "deu",
+        "pub_form": "book",
+        "page_count": 5
+      }
+    },
+    "1520": {
+      "cer": 0.06399380453008213,
+      "wer": 0.12271667961380535,
+      "ref_chars": 281496,
+      "error_categories": {
+        "diacritics": {
+          "count": 47,
+          "cer_contribution": 0.00016696507232784837
+        },
+        "punctuation": {
+          "count": 418,
+          "cer_contribution": 0.0016803080683206867
+        },
+        "hyphenation": {
+          "count": 18,
+          "cer_contribution": 0.0001740699690226504
+        },
+        "whitespace": {
+          "count": 972,
+          "cer_contribution": 0.0061102111575297696
+        },
+        "ocr_artifact": {
+          "count": 8,
+          "cer_contribution": 0.004746070992127775
+        },
+        "layout": {
+          "count": 11,
+          "cer_contribution": 0.004824224855770597
+        },
+        "other": {
+          "count": 373,
+          "cer_contribution": 0.2913966805922642
+        }
+      },
+      "metadata": {
+        "type": "C",
+        "language": "fra",
+        "pub_form": "book",
+        "page_count": 142
+      }
+    },
+    "1910": {
+      "cer": 0.1612409038682497,
+      "wer": 0.20919689119170984,
+      "ref_chars": 10444,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 7,
+          "cer_contribution": 0.0006702412868632708
+        },
+        "hyphenation": {
+          "count": 1,
+          "cer_contribution": 0.00038299502106472615
+        },
+        "whitespace": {
+          "count": 34,
+          "cer_contribution": 0.0032554576790501722
+        },
+        "ocr_artifact": {
+          "count": 1,
+          "cer_contribution": 0.011585599387207966
+        },
+        "layout": {
+          "count": 2,
+          "cer_contribution": 0.20777479892761394
+        },
+        "other": {
+          "count": 20,
+          "cer_contribution": 0.1767522022213711
+        }
+      },
+      "metadata": {
+        "type": "B",
+        "language": "deu",
+        "pub_form": "bookSection",
+        "page_count": 5
+      }
+    },
+    "2310": {
+      "cer": 0.018105158730158732,
+      "wer": 0.0670926517571885,
+      "ref_chars": 4032,
+      "error_categories": {
+        "diacritics": {
+          "count": 2,
+          "cer_contribution": 0.000496031746031746
+        },
+        "punctuation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 16,
+          "cer_contribution": 0.006696428571428571
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 2,
+          "cer_contribution": 0.01711309523809524
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 3
+      }
+    },
+    "2530": {
+      "cer": 0.019127316198445904,
+      "wer": 0.06134969325153374,
+      "ref_chars": 5019,
+      "error_categories": {
+        "diacritics": {
+          "count": 2,
+          "cer_contribution": 0.0003984857541342897
+        },
+        "punctuation": {
+          "count": 5,
+          "cer_contribution": 0.0009962143853357243
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 16,
+          "cer_contribution": 0.004582586172544332
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 5,
+          "cer_contribution": 0.01434548714883443
+        }
+      },
+      "metadata": {
+        "type": "B",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 2
+      }
+    },
+    "2635": {
+      "cer": 0.007980121374301142,
+      "wer": 0.03969863807592002,
+      "ref_chars": 20927,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 9,
+          "cer_contribution": 0.00047785157929946956
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 53,
+          "cer_contribution": 0.002532613370287189
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 2,
+          "cer_contribution": 0.0043006642136952265
+        },
+        "other": {
+          "count": 11,
+          "cer_contribution": 0.007406699479141778
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "deu",
+        "pub_form": "bookSection",
+        "page_count": 5
+      }
+    },
+    "290": {
+      "cer": 0.3350087579011499,
+      "wer": 0.36668262326471995,
+      "ref_chars": 13131,
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "cer_contribution": 7.61556621734826e-05
+        },
+        "punctuation": {
+          "count": 1,
+          "cer_contribution": 0.0001523113243469652
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 30,
+          "cer_contribution": 0.003350849135633234
+        },
+        "ocr_artifact": {
+          "count": 5,
+          "cer_contribution": 0.13890792780443226
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 30,
+          "cer_contribution": 0.6052090472926662
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 5
+      }
+    },
+    "30": {
+      "cer": 0.18804652347397913,
+      "wer": 0.2199582027168234,
+      "ref_chars": 11779,
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "cer_contribution": 8.489685032685287e-05
+        },
+        "punctuation": {
+          "count": 3,
+          "cer_contribution": 0.0002546905509805586
+        },
+        "hyphenation": {
+          "count": 2,
+          "cer_contribution": 0.0005093811019611172
+        },
+        "whitespace": {
+          "count": 7,
+          "cer_contribution": 0.0005942779522879701
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 2,
+          "cer_contribution": 0.00916885983530011
+        },
+        "other": {
+          "count": 28,
+          "cer_contribution": 1.2599541557008236
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "bookSection",
+        "page_count": 4
+      }
+    },
+    "300": {
+      "cer": 0.1540221791938039,
+      "wer": 0.23275862068965517,
+      "ref_chars": 5681,
+      "error_categories": {
+        "diacritics": {
+          "count": 3,
+          "cer_contribution": 0.0005280760429501848
+        },
+        "punctuation": {
+          "count": 11,
+          "cer_contribution": 0.0019362788241506777
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 36,
+          "cer_contribution": 0.007217039253652526
+        },
+        "ocr_artifact": {
+          "count": 1,
+          "cer_contribution": 0.02165111776095758
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 11,
+          "cer_contribution": 0.20242914979757085
+        }
+      },
+      "metadata": {
+        "type": "D",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 4
+      }
+    },
+    "3020": {
+      "cer": 0.01559070441020071,
+      "wer": 0.055353535353535356,
+      "ref_chars": 44193,
+      "error_categories": {
+        "diacritics": {
+          "count": 2,
+          "cer_contribution": 4.5256036023804675e-05
+        },
+        "punctuation": {
+          "count": 9,
+          "cer_contribution": 0.00020365216210712104
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 110,
+          "cer_contribution": 0.002489081981309257
+        },
+        "ocr_artifact": {
+          "count": 4,
+          "cer_contribution": 0.026882085398139976
+        },
+        "layout": {
+          "count": 3,
+          "cer_contribution": 0.09399678682144232
+        },
+        "other": {
+          "count": 90,
+          "cer_contribution": 0.11397732672595208
+        }
+      },
+      "metadata": {
+        "type": "B",
+        "language": "deu",
+        "pub_form": "other",
+        "page_count": 6
+      }
+    },
+    "3040": {
+      "cer": 0.06566592409069143,
+      "wer": 0.11608557844690967,
+      "ref_chars": 48031,
+      "error_categories": {
+        "diacritics": {
+          "count": 7,
+          "cer_contribution": 0.0001457392100934813
+        },
+        "punctuation": {
+          "count": 16,
+          "cer_contribution": 0.0003955778559680207
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 186,
+          "cer_contribution": 0.009910266286356727
+        },
+        "ocr_artifact": {
+          "count": 1,
+          "cer_contribution": 0.013324727779975433
+        },
+        "layout": {
+          "count": 3,
+          "cer_contribution": 0.03329099956278237
+        },
+        "other": {
+          "count": 51,
+          "cer_contribution": 0.05100872353271845
+        }
+      },
+      "metadata": {
+        "type": "B",
+        "language": "fra",
+        "pub_form": "encyclopedia",
+        "page_count": 9
+      }
+    },
+    "40": {
+      "cer": 0.01821646571402713,
+      "wer": 0.031780215942492945,
+      "ref_chars": 198886,
+      "error_categories": {
+        "diacritics": {
+          "count": 18,
+          "cer_contribution": 9.05041078808966e-05
+        },
+        "punctuation": {
+          "count": 25,
+          "cer_contribution": 0.00014078416781472804
+        },
+        "hyphenation": {
+          "count": 1,
+          "cer_contribution": 1.5084017980149433e-05
+        },
+        "whitespace": {
+          "count": 239,
+          "cer_contribution": 0.001287169534306085
+        },
+        "ocr_artifact": {
+          "count": 4,
+          "cer_contribution": 0.015466146435646552
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 181,
+          "cer_contribution": 0.057656144726124514
+        }
+      },
+      "metadata": {
+        "type": "C",
+        "language": "fra",
+        "pub_form": "book",
+        "page_count": 156
+      }
+    },
+    "560": {
+      "cer": 0.028534006923004958,
+      "wer": 0.1514251781472684,
+      "ref_chars": 10689,
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "cer_contribution": 9.355412105903265e-05
+        },
+        "punctuation": {
+          "count": 24,
+          "cer_contribution": 0.0023388530264758164
+        },
+        "hyphenation": {
+          "count": 3,
+          "cer_contribution": 0.0008419870895312938
+        },
+        "whitespace": {
+          "count": 106,
+          "cer_contribution": 0.014875105248386191
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 6,
+          "cer_contribution": 0.01590420058003555
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 4
+      }
+    },
+    "580": {
+      "cer": 0.06771493786457013,
+      "wer": 0.09931506849315068,
+      "ref_chars": 3943,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 7,
+          "cer_contribution": 0.001775297996449404
+        },
+        "hyphenation": {
+          "count": 1,
+          "cer_contribution": 0.000760841998478316
+        },
+        "whitespace": {
+          "count": 8,
+          "cer_contribution": 0.002028911995942176
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 3,
+          "cer_contribution": 0.063403499873193
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra/deu",
+        "pub_form": "journalArticle",
+        "page_count": 3
+      }
+    },
+    "760": {
+      "cer": 0.07281930344252394,
+      "wer": 0.14068054850177755,
+      "ref_chars": 34771,
+      "error_categories": {
+        "diacritics": {
+          "count": 2,
+          "cer_contribution": 5.751919703200943e-05
+        },
+        "punctuation": {
+          "count": 51,
+          "cer_contribution": 0.0016680567139282735
+        },
+        "hyphenation": {
+          "count": 3,
+          "cer_contribution": 0.00028759598516004715
+        },
+        "whitespace": {
+          "count": 47,
+          "cer_contribution": 0.0018693739035403065
+        },
+        "ocr_artifact": {
+          "count": 3,
+          "cer_contribution": 0.013862126484714273
+        },
+        "layout": {
+          "count": 13,
+          "cer_contribution": 0.03784763164706221
+        },
+        "other": {
+          "count": 104,
+          "cer_contribution": 1.3193178223232003
+        }
+      },
+      "metadata": {
+        "type": "D",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 20
+      }
+    },
+    "830": {
+      "cer": 0.015044663845792195,
+      "wer": 0.06540795684423466,
+      "ref_chars": 8508,
+      "error_categories": {
+        "diacritics": {
+          "count": 6,
+          "cer_contribution": 0.0007052186177715092
+        },
+        "punctuation": {
+          "count": 4,
+          "cer_contribution": 0.0004701457451810061
+        },
+        "hyphenation": {
+          "count": 1,
+          "cer_contribution": 0.0004701457451810061
+        },
+        "whitespace": {
+          "count": 25,
+          "cer_contribution": 0.004348848142924307
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 3,
+          "cer_contribution": 0.018100611189468735
+        },
+        "other": {
+          "count": 19,
+          "cer_contribution": 0.192054536906441
+        }
+      },
+      "metadata": {
+        "type": "D",
+        "language": "fra",
+        "pub_form": "book",
+        "page_count": 2
+      }
+    },
+    "890": {
+      "cer": 0.055730276284197355,
+      "wer": 0.11439034898750539,
+      "ref_chars": 29571,
+      "error_categories": {
+        "diacritics": {
+          "count": 1,
+          "cer_contribution": 3.381691522099354e-05
+        },
+        "punctuation": {
+          "count": 8,
+          "cer_contribution": 0.0002705353217679483
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 149,
+          "cer_contribution": 0.005038720367928038
+        },
+        "ocr_artifact": {
+          "count": 4,
+          "cer_contribution": 0.0560008116059653
+        },
+        "layout": {
+          "count": 1,
+          "cer_contribution": 0.009739271583646139
+        },
+        "other": {
+          "count": 23,
+          "cer_contribution": 0.018193500388894526
+        }
+      },
+      "metadata": {
+        "type": "B",
+        "language": "deu",
+        "pub_form": "journalArticle",
+        "page_count": 7
+      }
+    },
+    "90": {
+      "cer": 0.06687768021237492,
+      "wer": 0.10919920582395765,
+      "ref_chars": 9794,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 7,
+          "cer_contribution": 0.0007147232999795794
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 23,
+          "cer_contribution": 0.0023483765570757606
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 1,
+          "cer_contribution": 0.06228303042679191
+        },
+        "other": {
+          "count": 5,
+          "cer_contribution": 0.006024096385542169
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "deu",
+        "pub_form": "journalArticle",
+        "page_count": 6
+      }
+    }
+  }
+}

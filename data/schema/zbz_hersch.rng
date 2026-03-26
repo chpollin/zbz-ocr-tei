@@ -3753,7 +3753,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             <attribute name="corresp">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(korrespondiert) zeigt auf Elemente, die dem aktuellen Element in gewisser Weise entsprechen.</a:documentation>
                <data type="string">
-                  <param name="pattern">GND:[0-9A-Za-z\-]+</param>
+                  <param name="pattern">(GND:[0-9A-Za-z\-]+|#zbz-[a-z]+\.[0-9]+)</param>
                </data>
             </attribute>
          </optional>
@@ -5721,7 +5721,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
             <attribute name="ref">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.</a:documentation>
                <data type="string">
-                  <param name="pattern">GND:[0-9A-Za-z\-]+</param>
+                  <param name="pattern">(GND:[0-9A-Za-z\-]+|#zbz-[a-z]+\.[0-9]+)</param>
                </data>
             </attribute>
          </optional>
@@ -5746,7 +5746,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
             <attribute name="ref">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) </a:documentation>
                <data type="string">
-                  <param name="pattern">GND:[0-9A-Za-z\-]+</param>
+                  <param name="pattern">(GND:[0-9A-Za-z\-]+|#zbz-[a-z]+\.[0-9]+)</param>
                </data>
             </attribute>
          </optional>

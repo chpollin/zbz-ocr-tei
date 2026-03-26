@@ -52,6 +52,7 @@
             if (state.page > state.totalPages) state.page = 1;
 
             renderHeader();
+            loadRevisionDesc();
             renderPageThumbs();
             bindControls();
             initDivider();
@@ -60,6 +61,35 @@
             showPage(state.page);
 
             ZBZ.log('Reader', 'Doc ' + state.docId + ' | S.' + state.page + '/' + state.totalPages);
+        });
+    }
+
+    // --- Revision History ---
+    function loadRevisionDesc() {
+        E.fetchFullTei(state.docId).then(function (xml) {
+            var changes = E.extractRevisionDesc(xml);
+            if (!changes || !changes.length) return;
+            var panel = E.$('#revision-panel');
+            var timeline = E.$('#revision-timeline');
+            var toggle = E.$('#revision-toggle');
+            if (!panel || !timeline) return;
+            panel.style.display = '';
+            var html = changes.map(function (ch) {
+                var statusAttr = ch.status ? ' data-status="' + E.esc(ch.status) + '"' : '';
+                return '<div class="ed-revision-entry">'
+                    + '<span class="ed-revision-date">' + E.esc(ch.when) + '</span>'
+                    + '<span class="ed-revision-who">' + E.esc(ch.who) + '</span>'
+                    + (ch.status ? '<span class="ed-revision-status"' + statusAttr + '>' + E.esc(ch.status) + '</span>' : '')
+                    + '<span class="ed-revision-text">' + E.esc(ch.text) + '</span>'
+                    + '</div>';
+            }).join('');
+            timeline.innerHTML = html;
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    var expanded = panel.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', expanded);
+                });
+            }
         });
     }
 

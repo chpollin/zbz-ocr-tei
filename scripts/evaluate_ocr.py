@@ -144,11 +144,42 @@ def normalize_text(text: str) -> str:
     # Mehrfache Leerzeichen/Zeilenumbrueche reduzieren
     text = re.sub(r'\s+', ' ', text)
     # Anfuehrungszeichen normalisieren
-    text = text.replace('"', '"').replace('"', '"')
-    text = text.replace("'", "'").replace("'", "'")
+    text = text.replace('\u201c', '"').replace('\u201d', '"')
+    text = text.replace('\u2018', "'").replace('\u2019', "'")
     # Guillemets beibehalten (sind korrekt)
     # Whitespace am Anfang/Ende entfernen
     text = text.strip()
+    return text
+
+
+def normalize_for_comparison(text: str) -> str:
+    """Symmetrische Normalisierung fuer CER-Vergleich.
+
+    Wendet alle konventionsbedingten Zeichenersetzungen an, damit
+    Unterschiede zwischen Pipeline-TEI (durchlief normalize_for_tei)
+    und Referenz-TEI (Transkribus) nicht als CER gezaehlt werden.
+
+    Angewendet auf BEIDE Seiten des Vergleichs.
+    """
+    # 1. Guillemets + deutsche Anfuehrungszeichen -> ASCII
+    text = text.replace('\u00AB', '"').replace('\u00BB', '"')   # « »
+    text = text.replace('\u201E', '"')                          # „
+    text = text.replace('\u2039', "'").replace('\u203A', "'")   # ‹ ›
+    # 2. Apostrophe -> ASCII
+    text = text.replace('\u0060', "'").replace('\u00B4', "'")   # ` ´
+    # 3. Alle Strichvarianten -> ASCII Hyphen-minus (U+002D)
+    text = text.replace('\u2010', '-')   # Hyphen
+    text = text.replace('\u2011', '-')   # Non-breaking hyphen
+    text = text.replace('\u2013', '-')   # En-dash
+    text = text.replace('\u2014', '-')   # Em-dash
+    text = text.replace('\u2012', '-')   # Figure dash
+    text = text.replace('\u00AD', '')    # Soft hyphen entfernen
+    # 4. Leerzeichen vor franzoesischer Interpunktion entfernen
+    text = re.sub(r' +([;:?!])', r'\1', text)
+    # 5. Basis-Normalisierung (Whitespace, Smart Quotes, Strip)
+    text = normalize_text(text)
+    # 6. Unicode NFC
+    text = unicodedata.normalize('NFC', text)
     return text
 
 
@@ -167,7 +198,7 @@ def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False)
         root = ET.fromstring(content)
     except ET.ParseError:
         text = re.sub(r'<[^>]+>', '', content)
-        return unicodedata.normalize('NFC', normalize_text(text))
+        return normalize_for_comparison(text)
 
     # Namespace entfernen
     for elem in root.iter():
@@ -215,8 +246,7 @@ def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False)
         return ''.join(parts)
 
     text = get_text(body)
-    text = normalize_text(text)
-    return unicodedata.normalize('NFC', text)
+    return normalize_for_comparison(text)
 
 
 def load_ocr_result(ocr_path: Path) -> str:
@@ -224,7 +254,7 @@ def load_ocr_result(ocr_path: Path) -> str:
     if not ocr_path.exists():
         return ""
     text = ocr_path.read_text(encoding='utf-8')
-    return normalize_text(text)
+    return normalize_for_comparison(text)
 
 
 def _levenshtein_distance(s1: str, s2: str) -> int:
@@ -398,6 +428,77 @@ def categorize_errors(differences: list, ref_length: int) -> dict:
         )
 
     return categories
+
+
+def build_confusion_matrix(differences: list) -> dict:
+    """Baut zeichenweise Konfusionsmatrix aus find_differences()-Output.
+
+    Gibt dict mit:
+      - substitutions: Liste von {ref_char, hyp_char, ref_cp, hyp_cp, count}
+      - insertions: Liste von {char, codepoint, count}
+      - deletions: Liste von {char, codepoint, count}
+    Alle sortiert nach Haeufigkeit (absteigend).
+    """
+    from collections import Counter
+
+    sub_counter = Counter()   # (ref_char, hyp_char) -> count
+    ins_counter = Counter()   # char -> count
+    del_counter = Counter()   # char -> count
+
+    for diff in differences:
+        ref = diff.get('reference', '')
+        hyp = diff.get('hypothesis', '')
+        diff_type = diff.get('type', '')
+
+        if diff_type == 'replace':
+            # Zeichenweises Alignment innerhalb des Blocks
+            for i in range(max(len(ref), len(hyp))):
+                r = ref[i] if i < len(ref) else ''
+                h = hyp[i] if i < len(hyp) else ''
+                if r and h and r != h:
+                    sub_counter[(r, h)] += 1
+                elif r and not h:
+                    del_counter[r] += 1
+                elif h and not r:
+                    ins_counter[h] += 1
+        elif diff_type == 'insert':
+            for c in hyp:
+                ins_counter[c] += 1
+        elif diff_type == 'delete':
+            for c in ref:
+                del_counter[c] += 1
+
+    def _cp(c):
+        return f"U+{ord(c):04X}" if c else ""
+
+    substitutions = [
+        {
+            'ref_char': r, 'hyp_char': h,
+            'ref_codepoint': _cp(r), 'hyp_codepoint': _cp(h),
+            'ref_name': unicodedata.name(r, '?'), 'hyp_name': unicodedata.name(h, '?'),
+            'count': cnt,
+        }
+        for (r, h), cnt in sub_counter.most_common()
+    ]
+
+    insertions = [
+        {'char': c, 'codepoint': _cp(c), 'name': unicodedata.name(c, '?'), 'count': cnt}
+        for c, cnt in ins_counter.most_common()
+    ]
+
+    deletions = [
+        {'char': c, 'codepoint': _cp(c), 'name': unicodedata.name(c, '?'), 'count': cnt}
+        for c, cnt in del_counter.most_common()
+    ]
+
+    return {
+        'substitutions': substitutions,
+        'insertions': insertions,
+        'deletions': deletions,
+        'total_substitutions': sum(sub_counter.values()),
+        'total_insertions': sum(ins_counter.values()),
+        'total_deletions': sum(del_counter.values()),
+    }
 
 
 def generate_html_report(results: dict, output_path: Path):
