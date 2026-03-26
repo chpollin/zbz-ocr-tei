@@ -42,9 +42,15 @@ Schema-Validierung aller 285 Docs gegen zbz_hersch.rng. Identifikation und Fix d
 - `docs/infrastruktur/diagnostik.html` Tab "TEI-Qualitaet" — UI mit Fehler/Fix/Warning-Tabellen
 - `knowledge/TEI-QUALITY.md` — Dokumentation
 
+**5. Fix-002: Heuristische lb-Injection**
+- Root Cause: Mistral OCR liefert keine Zeilen-Umbrueche; nur 51/285 Docs hatten Step 2 (Gemini) durchlaufen
+- Fix: `_inject_heuristic_lb()` in tei_step3.py — alle ~60 Zeichen an Wortgrenzen
+- Non-Regression: Absaetze mit bestehenden lb unberuehrt
+- **46 Docs gefixt, 10.635 lb injiziert, W6 eliminiert (82 -> 37 Warnings)**
+
 ### Naechste Schritte
-- W6 (46 Docs ohne lb): tei_step1 lb-Injection pruefen
 - W9 (17 Docs ohne Entity-Refs): NER-Re-Injection nach Unified-Pipeline
+- W10 (10 Docs): Entity-Typ-Differenzierung pruefen
 - Referenz-TEI Schema-Abweichungen als "known differences" dokumentieren
 
 ---

@@ -159,6 +159,9 @@ def assemble_document(
     # Post-Assembly Fix: Schema-Verletzungen nach Assembly korrigieren
     result = _fix_post_assembly_schema(result)
 
+    # Post-Assembly Fix: Heuristische <lb/> fuer Absaetze ohne Zeilenumbrueche
+    result = _inject_heuristic_lb(result)
+
     return result
 
 
@@ -368,6 +371,110 @@ def _fix_post_assembly_schema(xml_text: str) -> str:
         return ET.tostring(tree, encoding="unicode", xml_declaration=True)
     except Exception:
         return xml_text
+
+
+# ---------------------------------------------------------------------------
+# Post-Assembly: Heuristische <lb/> Injection
+# ---------------------------------------------------------------------------
+
+_AVG_LINE_CHARS = 60  # Durchschnittliche Zeilenlaenge historischer Druck
+
+
+def _inject_heuristic_lb(xml_text: str) -> str:
+    """Fuegt heuristische <lb/> in lange Absaetze ein, die keine haben.
+
+    Greift NUR wenn ein <p> keinen einzigen <lb/> enthaelt und der
+    Textinhalt laenger als _AVG_LINE_CHARS ist. Bestehende lb bleiben
+    vollstaendig erhalten (Non-Regression).
+    """
+    try:
+        ET.register_namespace("", TEI_NS)
+        tree = ET.fromstring(xml_text)
+
+        lb_tag = f"{{{TEI_NS}}}lb"
+        p_tag = f"{{{TEI_NS}}}p"
+
+        for p_elem in list(tree.iter(p_tag)):
+            # Skip wenn bereits lb vorhanden
+            if p_elem.find(lb_tag) is not None:
+                continue
+
+            # Gesamttext des Absatzes
+            full_text = "".join(p_elem.itertext())
+            if len(full_text) < _AVG_LINE_CHARS * 1.5:
+                continue
+
+            # lb-Positionen berechnen (alle ~60 Zeichen, an Wortgrenzen)
+            _insert_lb_into_element(p_elem, lb_tag)
+
+        return ET.tostring(tree, encoding="unicode", xml_declaration=True)
+    except Exception:
+        return xml_text
+
+
+def _insert_lb_into_element(elem, lb_tag: str) -> None:
+    """Fuegt <lb/> in ein Element ein, indem Textknoten an Wortgrenzen
+    aufgespalten werden (~60 Zeichen pro Zeile)."""
+    # Sammle alle Textknoten: elem.text + (child.tail fuer jedes Kind)
+    # Wir muessen lb in die Textknoten einfuegen.
+
+    # Strategie: elem.text aufteilen, dann jedes child.tail aufteilen
+    lb_counter = [0]
+
+    def _split_text(text):
+        """Teilt Text an Wortgrenzen in Zeilen auf."""
+        if not text or len(text) < _AVG_LINE_CHARS:
+            return [text] if text else []
+        parts = []
+        pos = 0
+        while pos < len(text):
+            end = min(pos + _AVG_LINE_CHARS, len(text))
+            if end < len(text):
+                # Suche letztes Leerzeichen vor end
+                space = text.rfind(" ", pos, end)
+                if space > pos:
+                    end = space + 1
+            parts.append(text[pos:end])
+            pos = end
+        return parts
+
+    def _make_lb():
+        lb_counter[0] += 1
+        lb = ET.Element(lb_tag)
+        lb.set("n", f"N{lb_counter[0]:03d}")
+        lb.tail = ""
+        return lb
+
+    # 1. elem.text aufteilen
+    if elem.text and len(elem.text) >= _AVG_LINE_CHARS:
+        parts = _split_text(elem.text)
+        if len(parts) > 1:
+            elem.text = parts[0]
+            # Vor dem ersten Kind (oder am Ende) lb + Rest einfuegen
+            insert_pos = 0
+            for part in parts[1:]:
+                lb = _make_lb()
+                lb.tail = part
+                elem.insert(insert_pos, lb)
+                insert_pos += 1
+
+    # 2. child.tail aufteilen
+    children = list(elem)
+    for i, child in enumerate(children):
+        if child.tag == lb_tag:
+            continue
+        if child.tail and len(child.tail) >= _AVG_LINE_CHARS:
+            parts = _split_text(child.tail)
+            if len(parts) > 1:
+                child.tail = parts[0]
+                parent_children = list(elem)
+                child_idx = parent_children.index(child)
+                insert_pos = child_idx + 1
+                for part in parts[1:]:
+                    lb = _make_lb()
+                    lb.tail = part
+                    elem.insert(insert_pos, lb)
+                    insert_pos += 1
 
 
 def _fix_orphaned_body_children(xml_text: str) -> str:

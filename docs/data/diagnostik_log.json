@@ -22,5 +22,13 @@
     "docs_affected": 25,
     "result_summary": "17/25 Referenz-TEIs valid",
     "details": "8 Referenz-TEIs schema-invalide: space ohne desc (4), back-Struktur (4), foreign (1), body-Struktur (2). Schema strenger als ZBZ-Praxis."
+  },
+  {
+    "timestamp": "2026-03-26T21:07:34.891462",
+    "lane": "tei",
+    "action": "heuristic_lb_injection",
+    "docs_affected": 46,
+    "result_summary": "285 valid, 0 invalid, 37 warnings (W6 eliminated)",
+    "details": "Heuristische lb-Injection in tei_step3 fuer 46 Docs ohne lb. 10635 lb-Elemente eingefuegt. W6-Warning von 46 auf 0 reduziert."
   }
 ]

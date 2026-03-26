@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-03-26T20:51:18.285365",
+  "timestamp": "2026-03-26T21:07:34.889461",
   "schema": "zbz_hersch.rng (TEI P5 v4.10.2, ref-Pattern erweitert: GND + #zbz-)",
   "summary": {
     "total": 285,
     "valid": 285,
     "invalid": 0,
     "valid_pct": 100.0,
-    "with_warnings": 82
+    "with_warnings": 37
   },
   "fix_history": [
     {
@@ -22,6 +22,18 @@
       "docs_fixed": 235,
       "docs_before": 50,
       "docs_after": 285
+    },
+    {
+      "id": "fix-002",
+      "timestamp": "2026-03-26T21:07:34.889461",
+      "type": "tei_step3",
+      "description": "Heuristische <lb/> Injection: ~60 Zeichen/Zeile fuer Absaetze ohne bestehende lb",
+      "locations": [
+        "scripts/tei/tei_step3.py: _inject_heuristic_lb()"
+      ],
+      "docs_fixed": 46,
+      "metric": "W6 eliminated: 46 -> 0 docs",
+      "lb_added": 10635
     }
   ],
   "error_frequency_before_fix": [
@@ -51,11 +63,6 @@
     }
   ],
   "warning_frequency": [
-    {
-      "rule": "W6",
-      "count": 46,
-      "description": "Keine lb-Elemente"
-    },
     {
       "rule": "W9",
       "count": 17,
@@ -841,10 +848,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1690": {
       "valid": true,
@@ -857,10 +862,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1700": {
       "valid": true,
@@ -894,10 +897,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1755": {
       "valid": true,
@@ -924,10 +925,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "180": {
       "valid": true,
@@ -998,19 +997,15 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1900": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1910": {
       "valid": true,
@@ -1044,10 +1039,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1960": {
       "valid": true,
@@ -1102,10 +1095,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2030": {
       "valid": true,
@@ -1190,10 +1181,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2160": {
       "valid": true,
@@ -1206,10 +1195,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2180": {
       "valid": true,
@@ -1280,10 +1267,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2280": {
       "valid": true,
@@ -1296,10 +1281,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "230": {
       "valid": true,
@@ -1312,10 +1295,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2310": {
       "valid": true,
@@ -1330,10 +1311,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2330": {
       "valid": true,
@@ -1450,10 +1429,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2490": {
       "valid": true,
@@ -1473,10 +1450,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2510": {
       "valid": true,
@@ -1579,10 +1554,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2640": {
       "valid": true,
@@ -1660,28 +1633,22 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2750": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2760": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2780": {
       "valid": true,
@@ -1694,73 +1661,57 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2800": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2805": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2810": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2820": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2830": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2840": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2850": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2870": {
       "valid": true,
@@ -1780,10 +1731,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "290": {
       "valid": true,
@@ -1796,10 +1745,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "2910": {
       "valid": true,
@@ -1891,10 +1838,9 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 2,
+      "warning_count": 1,
       "warnings": [
-        "W9",
-        "W6"
+        "W9"
       ]
     },
     "3040": {
@@ -1929,10 +1875,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "3100": {
       "valid": true,
@@ -1959,19 +1903,15 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "3150": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "3160": {
       "valid": true,
@@ -2053,19 +1993,15 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "390": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "40": {
       "valid": true,
@@ -2094,10 +2030,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "440": {
       "valid": true,
@@ -2110,10 +2044,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "460": {
       "valid": true,
@@ -2198,28 +2130,22 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "570": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "580": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "590": {
       "valid": true,
@@ -2383,10 +2309,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "810": {
       "valid": true,
@@ -2399,10 +2323,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "840": {
       "valid": true,
@@ -2422,10 +2344,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "870": {
       "valid": true,
@@ -2438,10 +2358,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "890": {
       "valid": true,
@@ -2512,10 +2430,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W6"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "980": {
       "valid": true,

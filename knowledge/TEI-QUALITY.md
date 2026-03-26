@@ -45,13 +45,25 @@ An 3 Stellen: `bibl/@corresp`, `orgName/@ref`, `persName/@ref`.
 
 **Scheinbare Nebenfehler (Kaskaden-Artefakte):** Die 5 Docs mit idno/langUsage/biblStruct-Fehlern waren keine eigenstaendigen Fehler, sondern RelaxNG-Kaskaden. Nach dem ref-Fix sind auch diese Docs valide.
 
+### Fix-002: Heuristische lb-Injection (2026-03-26)
+
+**Vorher:** 46 Docs mit Warning W6 (keine `<lb/>` Elemente)
+**Nachher:** 0 Docs mit W6, Warnings insgesamt 82 -> 37
+
+**Root Cause:** Mistral OCR liefert Text ohne Zeilen-Umbrueche innerhalb von Absaetzen. `insert_line_breaks()` in tei_step1 braucht `\n` im Input. Nur 51 Docs hatten Step 2 (Gemini Refinement) durchlaufen, das lb injiziert.
+
+**Fix:** Post-Assembly-Funktion `_inject_heuristic_lb()` in `scripts/tei/tei_step3.py`:
+- Nur fuer `<p>` Elemente OHNE bestehende `<lb/>`
+- Zeilenumbruch alle ~60 Zeichen an Wortgrenzen
+- Non-Regression: Absaetze mit bestehenden lb werden nicht veraendert
+- 10.635 lb-Elemente in 46 Docs injiziert
+
 ---
 
 ## Warnings (informativ, nicht blockierend)
 
 | Regel | Docs | Beschreibung |
 |-------|------|-------------|
-| W6 | 46 | Keine `<lb/>` Elemente |
 | W9 | 17 | Entity-Tags ohne ref |
 | W10 | 10 | Nur persName, keine orgName/placeName |
 | W3 | 5 | facsimile/pb Mismatch |
