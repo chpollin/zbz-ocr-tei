@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-26 20:45:18",
+  "generated": "2026-03-26 21:14:06",
   "generator": "scripts/generate_diagnostik.py",
   "summary": {
     "pre_normfix": {
@@ -14,61 +14,101 @@
       "avg_wer": 0.19464158053561276
     },
     "post_normfix": {
-      "total_documents": 24,
-      "evaluated": 24,
-      "skipped": 1,
-      "avg_cer": 0.08110991874625878,
-      "median_cer": 0.0536117079564651,
-      "std_cer": 0.08936173417410344,
-      "min_cer": 0.007980121374301142,
-      "max_cer": 0.3350087579011499,
-      "avg_wer": 0.12891447743646936
+      "total_documents": 25,
+      "evaluated": 25,
+      "skipped": 0,
+      "avg_cer": 0.05966323021900004,
+      "median_cer": 0.024176824642152647,
+      "std_cer": 0.0732320514992058,
+      "min_cer": 0.003043367993913264,
+      "max_cer": 0.25680363888674734,
+      "avg_wer": 0.10585001463405776
     },
     "normalization_effect": {
-      "mean_cer_delta": -0.012171504890619966,
-      "median_cer_delta": -0.001575647170191527
+      "mean_cer_delta": -0.03361819341787871,
+      "median_cer_delta": -0.031010530484503984
     }
   },
   "baseline_comparison": [
     {
+      "doc_id": "570",
+      "cer_before": 0.8099801718440185,
+      "cer_after": 0.009253139458030404,
+      "cer_delta": -0.8007270323859881,
+      "wer_before": 1.0084745762711864,
+      "wer_after": 0.07415254237288135,
+      "language": "fra",
+      "type": "A"
+    },
+    {
+      "doc_id": "1060",
+      "cer_before": 0.21432877813504822,
+      "cer_after": 0.005526527331189711,
+      "cer_delta": -0.2088022508038585,
+      "wer_before": 0.2678695350451076,
+      "wer_after": 0.049271339347675226,
+      "language": "deu",
+      "type": "A"
+    },
+    {
+      "doc_id": "290",
+      "cer_before": 0.3451111787998782,
+      "cer_after": 0.21171274084228162,
+      "cer_delta": -0.13339843795759657,
+      "wer_before": 0.4258373205741627,
+      "wer_after": 0.24652943992340834,
+      "language": "fra",
+      "type": "A"
+    },
+    {
       "doc_id": "580",
       "cer_before": 0.09561247780877505,
-      "cer_after": 0.06771493786457013,
-      "cer_delta": -0.02789753994420492,
+      "cer_after": 0.003043367993913264,
+      "cer_delta": -0.09256910981486179,
       "wer_before": 0.2226027397260274,
-      "wer_after": 0.09931506849315068,
+      "wer_after": 0.0273972602739726,
       "language": "fra/deu",
       "type": "A"
     },
     {
       "doc_id": "3040",
       "cer_before": 0.08702712831296454,
-      "cer_after": 0.06566592409069143,
-      "cer_delta": -0.02136120422227311,
+      "cer_after": 0.009577148091857342,
+      "cer_delta": -0.07744998022110719,
       "wer_before": 0.2227945060750132,
-      "wer_after": 0.11608557844690967,
+      "wer_after": 0.060221870047543584,
       "language": "fra",
       "type": "B"
     },
     {
       "doc_id": "560",
       "cer_before": 0.04920946767705117,
-      "cer_after": 0.028534006923004958,
-      "cer_delta": -0.020675460754046214,
+      "cer_after": 0.026101599775470108,
+      "cer_delta": -0.023107867901581064,
       "wer_before": 0.23159144893111638,
-      "wer_after": 0.1514251781472684,
+      "wer_after": 0.14192399049881235,
       "language": "fra",
       "type": "A"
     },
     {
       "doc_id": "300",
       "cer_before": 0.17356099278296075,
-      "cer_after": 0.1540221791938039,
-      "cer_delta": -0.01953881358915685,
+      "cer_after": 0.15155782432670303,
+      "cer_delta": -0.022003168456257716,
       "wer_before": 0.3415948275862069,
-      "wer_after": 0.23275862068965517,
+      "wer_after": 0.21875,
       "language": "fra",
       "type": "D"
+    },
+    {
+      "doc_id": "1520",
+      "cer_before": 0.08125313051725915,
+      "cer_after": 0.06221758035638162,
+      "cer_delta": -0.019035550160877525,
+      "wer_before": 0.2186099152279082,
+      "wer_after": 0.11268449672622351,
+      "language": "fra",
+      "type": "C"
     },
     {
       "doc_id": "2310",
@@ -83,22 +123,32 @@
     {
       "doc_id": "830",
       "cer_before": 0.032792665726375174,
-      "cer_after": 0.015044663845792195,
-      "cer_delta": -0.01774800188058298,
+      "cer_after": 0.014927127409496943,
+      "cer_delta": -0.017865538316878232,
       "wer_before": 0.17194875252865813,
-      "wer_after": 0.06540795684423466,
+      "wer_after": 0.06473364801078894,
       "language": "fra",
       "type": "D"
     },
     {
-      "doc_id": "1520",
-      "cer_before": 0.08125313051725915,
-      "cer_after": 0.06399380453008213,
-      "cer_delta": -0.017259325987177013,
-      "wer_before": 0.2186099152279082,
-      "wer_after": 0.12271667961380535,
+      "doc_id": "2530",
+      "cer_before": 0.03606296074915322,
+      "cer_after": 0.018330344690177327,
+      "cer_delta": -0.01773261605897589,
+      "wer_before": 0.1607361963190184,
+      "wer_after": 0.05644171779141104,
       "language": "fra",
-      "type": "C"
+      "type": "B"
+    },
+    {
+      "doc_id": "760",
+      "cer_before": 0.08768801587529838,
+      "cer_after": 0.07046101636421155,
+      "cer_delta": -0.017226999511086832,
+      "wer_before": 0.21398340951413578,
+      "wer_after": 0.12984594548840359,
+      "language": "fra",
+      "type": "D"
     },
     {
       "doc_id": "100",
@@ -111,14 +161,14 @@
       "type": "A"
     },
     {
-      "doc_id": "2530",
-      "cer_before": 0.03606296074915322,
-      "cer_after": 0.019127316198445904,
-      "cer_delta": -0.016935644550707313,
-      "wer_before": 0.1607361963190184,
-      "wer_after": 0.06134969325153374,
+      "doc_id": "30",
+      "cer_before": 0.20307326598183206,
+      "cer_after": 0.18728245182103745,
+      "cer_delta": -0.015790814160794614,
+      "wer_before": 0.3077324973876698,
+      "wer_after": 0.2173458725182863,
       "language": "fra",
-      "type": "B"
+      "type": "A"
     },
     {
       "doc_id": "130",
@@ -129,26 +179,6 @@
       "wer_after": 0.07051442910915935,
       "language": "fra",
       "type": "A"
-    },
-    {
-      "doc_id": "30",
-      "cer_before": 0.20307326598183206,
-      "cer_after": 0.18804652347397913,
-      "cer_delta": -0.015026742507852936,
-      "wer_before": 0.3077324973876698,
-      "wer_after": 0.2199582027168234,
-      "language": "fra",
-      "type": "A"
-    },
-    {
-      "doc_id": "760",
-      "cer_before": 0.08768801587529838,
-      "cer_after": 0.07281930344252394,
-      "cer_delta": -0.014868712432774447,
-      "wer_before": 0.21398340951413578,
-      "wer_after": 0.14068054850177755,
-      "language": "fra",
-      "type": "D"
     },
     {
       "doc_id": "40",
@@ -163,10 +193,10 @@
     {
       "doc_id": "1330",
       "cer_before": 0.022425731516640606,
-      "cer_after": 0.008487826669644852,
-      "cer_delta": -0.013937904846995754,
+      "cer_after": 0.008443153897699352,
+      "cer_delta": -0.013982577618941254,
       "wer_before": 0.10931174089068826,
-      "wer_after": 0.03319838056680162,
+      "wer_after": 0.03292847503373819,
       "language": "fra/deu",
       "type": "D"
     },
@@ -177,16 +207,6 @@
       "cer_delta": -0.011936674927924742,
       "wer_before": 0.10747217806041336,
       "wer_after": 0.03434022257551669,
-      "language": "fra",
-      "type": "A"
-    },
-    {
-      "doc_id": "290",
-      "cer_before": 0.3451111787998782,
-      "cer_after": 0.3350087579011499,
-      "cer_delta": -0.01010242089872826,
-      "wer_before": 0.4258373205741627,
-      "wer_after": 0.36668262326471995,
       "language": "fra",
       "type": "A"
     },
@@ -203,22 +223,32 @@
     {
       "doc_id": "1910",
       "cer_before": 0.1654538490999617,
-      "cer_after": 0.1612409038682497,
-      "cer_delta": -0.004212945231711979,
+      "cer_after": 0.16066641133665263,
+      "cer_delta": -0.00478743776330906,
       "wer_before": 0.2260362694300518,
-      "wer_after": 0.20919689119170984,
+      "wer_after": 0.20660621761658032,
       "language": "deu",
       "type": "B"
     },
     {
       "doc_id": "1440",
       "cer_before": 0.2599645362732249,
-      "cer_after": 0.25688073394495414,
-      "cer_delta": -0.0030838023282707683,
+      "cer_after": 0.25680363888674734,
+      "cer_delta": -0.003160897386477568,
       "wer_before": 0.33419689119170987,
-      "wer_after": 0.3238341968911917,
+      "wer_after": 0.3233160621761658,
       "language": "deu",
       "type": "B"
+    },
+    {
+      "doc_id": "2635",
+      "cer_before": 0.009700387059779233,
+      "cer_after": 0.007645625268791513,
+      "cer_delta": -0.00205476179098772,
+      "wer_before": 0.049550854824688496,
+      "wer_after": 0.03796001159084324,
+      "language": "deu",
+      "type": "A"
     },
     {
       "doc_id": "890",
@@ -229,16 +259,6 @@
       "wer_after": 0.11439034898750539,
       "language": "deu",
       "type": "B"
-    },
-    {
-      "doc_id": "2635",
-      "cer_before": 0.009700387059779233,
-      "cer_after": 0.007980121374301142,
-      "cer_delta": -0.0017202656854780913,
-      "wer_before": 0.049550854824688496,
-      "wer_after": 0.03969863807592002,
-      "language": "deu",
-      "type": "A"
     },
     {
       "doc_id": "1410",
@@ -253,35 +273,16 @@
     {
       "doc_id": "3020",
       "cer_before": 0.016224288914533976,
-      "cer_after": 0.01559070441020071,
-      "cer_delta": -0.0006335845043332657,
+      "cer_after": 0.0154775643201412,
+      "cer_delta": -0.000746724594392777,
       "wer_before": 0.05818181818181818,
-      "wer_after": 0.055353535353535356,
+      "wer_after": 0.05494949494949495,
       "language": "deu",
       "type": "B"
-    },
-    {
-      "doc_id": "1060",
-      "cer_before": 0.21432877813504822,
-      "cer_after": 0.21392684887459806,
-      "cer_delta": -0.00040192926045015676,
-      "wer_before": 0.2678695350451076,
-      "wer_after": 0.2650936849410132,
-      "language": "deu",
-      "type": "A"
     }
   ],
   "confusion_matrix": {
     "substitutions": [
-      {
-        "ref_char": "‐",
-        "hyp_char": "-",
-        "ref_codepoint": "U+2010",
-        "hyp_codepoint": "U+002D",
-        "ref_name": "HYPHEN",
-        "hyp_name": "HYPHEN-MINUS",
-        "count": 38
-      },
       {
         "ref_char": "e",
         "hyp_char": " ",
@@ -289,7 +290,16 @@
         "hyp_codepoint": "U+0020",
         "ref_name": "LATIN SMALL LETTER E",
         "hyp_name": "SPACE",
-        "count": 30
+        "count": 31
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "E",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0045",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN CAPITAL LETTER E",
+        "count": 28
       },
       {
         "ref_char": " ",
@@ -298,16 +308,16 @@
         "hyp_codepoint": "U+0065",
         "ref_name": "SPACE",
         "hyp_name": "LATIN SMALL LETTER E",
-        "count": 24
+        "count": 25
       },
       {
-        "ref_char": "–",
-        "hyp_char": "-",
-        "ref_codepoint": "U+2013",
-        "hyp_codepoint": "U+002D",
-        "ref_name": "EN DASH",
-        "hyp_name": "HYPHEN-MINUS",
-        "count": 23
+        "ref_char": "s",
+        "hyp_char": "S",
+        "ref_codepoint": "U+0073",
+        "hyp_codepoint": "U+0053",
+        "ref_name": "LATIN SMALL LETTER S",
+        "hyp_name": "LATIN CAPITAL LETTER S",
+        "count": 18
       },
       {
         "ref_char": "e",
@@ -319,13 +329,13 @@
         "count": 17
       },
       {
-        "ref_char": "e",
-        "hyp_char": "E",
-        "ref_codepoint": "U+0065",
-        "hyp_codepoint": "U+0045",
-        "ref_name": "LATIN SMALL LETTER E",
-        "hyp_name": "LATIN CAPITAL LETTER E",
-        "count": 16
+        "ref_char": "s",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0073",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER S",
+        "hyp_name": "SPACE",
+        "count": 15
       },
       {
         "ref_char": " ",
@@ -334,52 +344,7 @@
         "hyp_codepoint": "U+0073",
         "ref_name": "SPACE",
         "hyp_name": "LATIN SMALL LETTER S",
-        "count": 16
-      },
-      {
-        "ref_char": "t",
-        "hyp_char": " ",
-        "ref_codepoint": "U+0074",
-        "hyp_codepoint": "U+0020",
-        "ref_name": "LATIN SMALL LETTER T",
-        "hyp_name": "SPACE",
-        "count": 13
-      },
-      {
-        "ref_char": " ",
-        "hyp_char": "t",
-        "ref_codepoint": "U+0020",
-        "hyp_codepoint": "U+0074",
-        "ref_name": "SPACE",
-        "hyp_name": "LATIN SMALL LETTER T",
-        "count": 13
-      },
-      {
-        "ref_char": "e",
-        "hyp_char": "r",
-        "ref_codepoint": "U+0065",
-        "hyp_codepoint": "U+0072",
-        "ref_name": "LATIN SMALL LETTER E",
-        "hyp_name": "LATIN SMALL LETTER R",
-        "count": 13
-      },
-      {
-        "ref_char": "s",
-        "hyp_char": " ",
-        "ref_codepoint": "U+0073",
-        "hyp_codepoint": "U+0020",
-        "ref_name": "LATIN SMALL LETTER S",
-        "hyp_name": "SPACE",
-        "count": 13
-      },
-      {
-        "ref_char": "a",
-        "hyp_char": "e",
-        "ref_codepoint": "U+0061",
-        "hyp_codepoint": "U+0065",
-        "ref_name": "LATIN SMALL LETTER A",
-        "hyp_name": "LATIN SMALL LETTER E",
-        "count": 13
+        "count": 14
       },
       {
         "ref_char": "r",
@@ -388,15 +353,24 @@
         "hyp_codepoint": "U+0020",
         "ref_name": "LATIN SMALL LETTER R",
         "hyp_name": "SPACE",
+        "count": 13
+      },
+      {
+        "ref_char": "n",
+        "hyp_char": " ",
+        "ref_codepoint": "U+006E",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER N",
+        "hyp_name": "SPACE",
         "count": 12
       },
       {
-        "ref_char": "m",
-        "hyp_char": " ",
-        "ref_codepoint": "U+006D",
-        "hyp_codepoint": "U+0020",
-        "ref_name": "LATIN SMALL LETTER M",
-        "hyp_name": "SPACE",
+        "ref_char": "e",
+        "hyp_char": "r",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0072",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER R",
         "count": 12
       },
       {
@@ -407,33 +381,6 @@
         "ref_name": "LATIN SMALL LETTER N",
         "hyp_name": "LATIN SMALL LETTER E",
         "count": 12
-      },
-      {
-        "ref_char": " ",
-        "hyp_char": "n",
-        "ref_codepoint": "U+0020",
-        "hyp_codepoint": "U+006E",
-        "ref_name": "SPACE",
-        "hyp_name": "LATIN SMALL LETTER N",
-        "count": 12
-      },
-      {
-        "ref_char": "a",
-        "hyp_char": " ",
-        "ref_codepoint": "U+0061",
-        "hyp_codepoint": "U+0020",
-        "ref_name": "LATIN SMALL LETTER A",
-        "hyp_name": "SPACE",
-        "count": 12
-      },
-      {
-        "ref_char": "s",
-        "hyp_char": "S",
-        "ref_codepoint": "U+0073",
-        "hyp_codepoint": "U+0053",
-        "ref_name": "LATIN SMALL LETTER S",
-        "hyp_name": "LATIN CAPITAL LETTER S",
-        "count": 11
       },
       {
         "ref_char": " ",
@@ -445,15 +392,6 @@
         "count": 11
       },
       {
-        "ref_char": "n",
-        "hyp_char": " ",
-        "ref_codepoint": "U+006E",
-        "hyp_codepoint": "U+0020",
-        "ref_name": "LATIN SMALL LETTER N",
-        "hyp_name": "SPACE",
-        "count": 11
-      },
-      {
         "ref_char": " ",
         "hyp_char": "l",
         "ref_codepoint": "U+0020",
@@ -463,49 +401,31 @@
         "count": 11
       },
       {
-        "ref_char": "e",
-        "hyp_char": "t",
-        "ref_codepoint": "U+0065",
-        "hyp_codepoint": "U+0074",
-        "ref_name": "LATIN SMALL LETTER E",
-        "hyp_name": "LATIN SMALL LETTER T",
+        "ref_char": "r",
+        "hyp_char": "i",
+        "ref_codepoint": "U+0072",
+        "hyp_codepoint": "U+0069",
+        "ref_name": "LATIN SMALL LETTER R",
+        "hyp_name": "LATIN SMALL LETTER I",
         "count": 11
       },
       {
-        "ref_char": "l",
+        "ref_char": "a",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0061",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER A",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 11
+      },
+      {
+        "ref_char": "a",
         "hyp_char": " ",
-        "ref_codepoint": "U+006C",
+        "ref_codepoint": "U+0061",
         "hyp_codepoint": "U+0020",
-        "ref_name": "LATIN SMALL LETTER L",
+        "ref_name": "LATIN SMALL LETTER A",
         "hyp_name": "SPACE",
-        "count": 10
-      },
-      {
-        "ref_char": "t",
-        "hyp_char": "e",
-        "ref_codepoint": "U+0074",
-        "hyp_codepoint": "U+0065",
-        "ref_name": "LATIN SMALL LETTER T",
-        "hyp_name": "LATIN SMALL LETTER E",
-        "count": 10
-      },
-      {
-        "ref_char": "r",
-        "hyp_char": "e",
-        "ref_codepoint": "U+0072",
-        "hyp_codepoint": "U+0065",
-        "ref_name": "LATIN SMALL LETTER R",
-        "hyp_name": "LATIN SMALL LETTER E",
-        "count": 10
-      },
-      {
-        "ref_char": "i",
-        "hyp_char": "a",
-        "ref_codepoint": "U+0069",
-        "hyp_codepoint": "U+0061",
-        "ref_name": "LATIN SMALL LETTER I",
-        "hyp_name": "LATIN SMALL LETTER A",
-        "count": 10
+        "count": 11
       },
       {
         "ref_char": "i",
@@ -514,7 +434,16 @@
         "hyp_codepoint": "U+0049",
         "ref_name": "LATIN SMALL LETTER I",
         "hyp_name": "LATIN CAPITAL LETTER I",
-        "count": 9
+        "count": 10
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "t",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0074",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER T",
+        "count": 10
       },
       {
         "ref_char": " ",
@@ -523,34 +452,16 @@
         "hyp_codepoint": "U+0063",
         "ref_name": "SPACE",
         "hyp_name": "LATIN SMALL LETTER C",
-        "count": 9
+        "count": 10
       },
       {
-        "ref_char": "s",
+        "ref_char": "r",
         "hyp_char": "e",
-        "ref_codepoint": "U+0073",
+        "ref_codepoint": "U+0072",
         "hyp_codepoint": "U+0065",
-        "ref_name": "LATIN SMALL LETTER S",
+        "ref_name": "LATIN SMALL LETTER R",
         "hyp_name": "LATIN SMALL LETTER E",
-        "count": 9
-      },
-      {
-        "ref_char": "o",
-        "hyp_char": "i",
-        "ref_codepoint": "U+006F",
-        "hyp_codepoint": "U+0069",
-        "ref_name": "LATIN SMALL LETTER O",
-        "hyp_name": "LATIN SMALL LETTER I",
-        "count": 9
-      },
-      {
-        "ref_char": "e",
-        "hyp_char": "é",
-        "ref_codepoint": "U+0065",
-        "hyp_codepoint": "U+00E9",
-        "ref_name": "LATIN SMALL LETTER E",
-        "hyp_name": "LATIN SMALL LETTER E WITH ACUTE",
-        "count": 8
+        "count": 10
       },
       {
         "ref_char": "t",
@@ -559,52 +470,52 @@
         "hyp_codepoint": "U+006E",
         "ref_name": "LATIN SMALL LETTER T",
         "hyp_name": "LATIN SMALL LETTER N",
-        "count": 8
+        "count": 10
+      },
+      {
+        "ref_char": "t",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0074",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER T",
+        "hyp_name": "SPACE",
+        "count": 10
       },
       {
         "ref_char": "e",
-        "hyp_char": "l",
-        "ref_codepoint": "U+0065",
-        "hyp_codepoint": "U+006C",
-        "ref_name": "LATIN SMALL LETTER E",
-        "hyp_name": "LATIN SMALL LETTER L",
-        "count": 8
-      },
-      {
-        "ref_char": "l",
         "hyp_char": "i",
-        "ref_codepoint": "U+006C",
-        "hyp_codepoint": "U+0069",
-        "ref_name": "LATIN SMALL LETTER L",
-        "hyp_name": "LATIN SMALL LETTER I",
-        "count": 8
-      },
-      {
-        "ref_char": "e",
-        "hyp_char": "a",
         "ref_codepoint": "U+0065",
-        "hyp_codepoint": "U+0061",
+        "hyp_codepoint": "U+0069",
         "ref_name": "LATIN SMALL LETTER E",
-        "hyp_name": "LATIN SMALL LETTER A",
-        "count": 8
-      },
-      {
-        "ref_char": " ",
-        "hyp_char": "a",
-        "ref_codepoint": "U+0020",
-        "hyp_codepoint": "U+0061",
-        "ref_name": "SPACE",
-        "hyp_name": "LATIN SMALL LETTER A",
-        "count": 8
+        "hyp_name": "LATIN SMALL LETTER I",
+        "count": 10
       },
       {
         "ref_char": "s",
-        "hyp_char": "l",
+        "hyp_char": "e",
         "ref_codepoint": "U+0073",
-        "hyp_codepoint": "U+006C",
+        "hyp_codepoint": "U+0065",
         "ref_name": "LATIN SMALL LETTER S",
-        "hyp_name": "LATIN SMALL LETTER L",
-        "count": 8
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 10
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "n",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+006E",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER N",
+        "count": 10
+      },
+      {
+        "ref_char": "n",
+        "hyp_char": "N",
+        "ref_codepoint": "U+006E",
+        "hyp_codepoint": "U+004E",
+        "ref_name": "LATIN SMALL LETTER N",
+        "hyp_name": "LATIN CAPITAL LETTER N",
+        "count": 9
       },
       {
         "ref_char": "a",
@@ -613,25 +524,88 @@
         "hyp_codepoint": "U+0041",
         "ref_name": "LATIN SMALL LETTER A",
         "hyp_name": "LATIN CAPITAL LETTER A",
-        "count": 7
+        "count": 9
       },
       {
-        "ref_char": "e",
-        "hyp_char": "i",
-        "ref_codepoint": "U+0065",
-        "hyp_codepoint": "U+0069",
-        "ref_name": "LATIN SMALL LETTER E",
-        "hyp_name": "LATIN SMALL LETTER I",
-        "count": 7
+        "ref_char": "r",
+        "hyp_char": "R",
+        "ref_codepoint": "U+0072",
+        "hyp_codepoint": "U+0052",
+        "ref_name": "LATIN SMALL LETTER R",
+        "hyp_name": "LATIN CAPITAL LETTER R",
+        "count": 9
+      },
+      {
+        "ref_char": "l",
+        "hyp_char": " ",
+        "ref_codepoint": "U+006C",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER L",
+        "hyp_name": "SPACE",
+        "count": 9
+      },
+      {
+        "ref_char": "t",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0074",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER T",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 9
+      },
+      {
+        "ref_char": "i",
+        "hyp_char": "a",
+        "ref_codepoint": "U+0069",
+        "hyp_codepoint": "U+0061",
+        "ref_name": "LATIN SMALL LETTER I",
+        "hyp_name": "LATIN SMALL LETTER A",
+        "count": 9
+      },
+      {
+        "ref_char": " ",
+        "hyp_char": "r",
+        "ref_codepoint": "U+0020",
+        "hyp_codepoint": "U+0072",
+        "ref_name": "SPACE",
+        "hyp_name": "LATIN SMALL LETTER R",
+        "count": 9
+      },
+      {
+        "ref_char": "m",
+        "hyp_char": " ",
+        "ref_codepoint": "U+006D",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER M",
+        "hyp_name": "SPACE",
+        "count": 8
+      },
+      {
+        "ref_char": "n",
+        "hyp_char": "s",
+        "ref_codepoint": "U+006E",
+        "hyp_codepoint": "U+0073",
+        "ref_name": "LATIN SMALL LETTER N",
+        "hyp_name": "LATIN SMALL LETTER S",
+        "count": 8
+      },
+      {
+        "ref_char": "i",
+        "hyp_char": " ",
+        "ref_codepoint": "U+0069",
+        "hyp_codepoint": "U+0020",
+        "ref_name": "LATIN SMALL LETTER I",
+        "hyp_name": "SPACE",
+        "count": 8
       },
       {
         "ref_char": "s",
-        "hyp_char": "t",
+        "hyp_char": "l",
         "ref_codepoint": "U+0073",
-        "hyp_codepoint": "U+0074",
+        "hyp_codepoint": "U+006C",
         "ref_name": "LATIN SMALL LETTER S",
-        "hyp_name": "LATIN SMALL LETTER T",
-        "count": 7
+        "hyp_name": "LATIN SMALL LETTER L",
+        "count": 8
       },
       {
         "ref_char": "l",
@@ -652,11 +626,29 @@
         "count": 7
       },
       {
-        "ref_char": "r",
+        "ref_char": "e",
+        "hyp_char": "t",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+0074",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER T",
+        "count": 7
+      },
+      {
+        "ref_char": "e",
+        "hyp_char": "l",
+        "ref_codepoint": "U+0065",
+        "hyp_codepoint": "U+006C",
+        "ref_name": "LATIN SMALL LETTER E",
+        "hyp_name": "LATIN SMALL LETTER L",
+        "count": 7
+      },
+      {
+        "ref_char": "l",
         "hyp_char": "i",
-        "ref_codepoint": "U+0072",
+        "ref_codepoint": "U+006C",
         "hyp_codepoint": "U+0069",
-        "ref_name": "LATIN SMALL LETTER R",
+        "ref_name": "LATIN SMALL LETTER L",
         "hyp_name": "LATIN SMALL LETTER I",
         "count": 7
       },
@@ -670,30 +662,30 @@
         "count": 7
       },
       {
-        "ref_char": "p",
-        "hyp_char": " ",
-        "ref_codepoint": "U+0070",
-        "hyp_codepoint": "U+0020",
-        "ref_name": "LATIN SMALL LETTER P",
-        "hyp_name": "SPACE",
+        "ref_char": "i",
+        "hyp_char": "e",
+        "ref_codepoint": "U+0069",
+        "hyp_codepoint": "U+0065",
+        "ref_name": "LATIN SMALL LETTER I",
+        "hyp_name": "LATIN SMALL LETTER E",
+        "count": 7
+      },
+      {
+        "ref_char": "o",
+        "hyp_char": "i",
+        "ref_codepoint": "U+006F",
+        "hyp_codepoint": "U+0069",
+        "ref_name": "LATIN SMALL LETTER O",
+        "hyp_name": "LATIN SMALL LETTER I",
         "count": 7
       },
       {
         "ref_char": " ",
-        "hyp_char": "u",
+        "hyp_char": "a",
         "ref_codepoint": "U+0020",
-        "hyp_codepoint": "U+0075",
+        "hyp_codepoint": "U+0061",
         "ref_name": "SPACE",
-        "hyp_name": "LATIN SMALL LETTER U",
-        "count": 7
-      },
-      {
-        "ref_char": "i",
-        "hyp_char": "r",
-        "ref_codepoint": "U+0069",
-        "hyp_codepoint": "U+0072",
-        "ref_name": "LATIN SMALL LETTER I",
-        "hyp_name": "LATIN SMALL LETTER R",
+        "hyp_name": "LATIN SMALL LETTER A",
         "count": 7
       },
       {
@@ -706,21 +698,39 @@
         "count": 7
       },
       {
-        "ref_char": "n",
-        "hyp_char": "t",
-        "ref_codepoint": "U+006E",
-        "hyp_codepoint": "U+0074",
-        "ref_name": "LATIN SMALL LETTER N",
-        "hyp_name": "LATIN SMALL LETTER T",
+        "ref_char": "p",
+        "hyp_char": "P",
+        "ref_codepoint": "U+0070",
+        "hyp_codepoint": "U+0050",
+        "ref_name": "LATIN SMALL LETTER P",
+        "hyp_name": "LATIN CAPITAL LETTER P",
         "count": 6
       },
       {
-        "ref_char": "a",
-        "hyp_char": "t",
-        "ref_codepoint": "U+0061",
-        "hyp_codepoint": "U+0074",
-        "ref_name": "LATIN SMALL LETTER A",
-        "hyp_name": "LATIN SMALL LETTER T",
+        "ref_char": "h",
+        "hyp_char": "H",
+        "ref_codepoint": "U+0068",
+        "hyp_codepoint": "U+0048",
+        "ref_name": "LATIN SMALL LETTER H",
+        "hyp_name": "LATIN CAPITAL LETTER H",
+        "count": 6
+      },
+      {
+        "ref_char": "l",
+        "hyp_char": "L",
+        "ref_codepoint": "U+006C",
+        "hyp_codepoint": "U+004C",
+        "ref_name": "LATIN SMALL LETTER L",
+        "hyp_name": "LATIN CAPITAL LETTER L",
+        "count": 6
+      },
+      {
+        "ref_char": "d",
+        "hyp_char": "D",
+        "ref_codepoint": "U+0064",
+        "hyp_codepoint": "U+0044",
+        "ref_name": "LATIN SMALL LETTER D",
+        "hyp_name": "LATIN CAPITAL LETTER D",
         "count": 6
       }
     ],
@@ -729,181 +739,181 @@
         "char": " ",
         "codepoint": "U+0020",
         "name": "SPACE",
-        "count": 4416
+        "count": 4087
       },
       {
         "char": "e",
         "codepoint": "U+0065",
         "name": "LATIN SMALL LETTER E",
-        "count": 3345
+        "count": 3098
       },
       {
         "char": "n",
         "codepoint": "U+006E",
         "name": "LATIN SMALL LETTER N",
-        "count": 1772
+        "count": 1590
       },
       {
         "char": "i",
         "codepoint": "U+0069",
         "name": "LATIN SMALL LETTER I",
-        "count": 1750
+        "count": 1562
       },
       {
         "char": "s",
         "codepoint": "U+0073",
         "name": "LATIN SMALL LETTER S",
-        "count": 1609
+        "count": 1488
       },
       {
         "char": "r",
         "codepoint": "U+0072",
         "name": "LATIN SMALL LETTER R",
-        "count": 1382
+        "count": 1251
       },
       {
         "char": "t",
         "codepoint": "U+0074",
         "name": "LATIN SMALL LETTER T",
-        "count": 1346
+        "count": 1243
       },
       {
         "char": "a",
         "codepoint": "U+0061",
         "name": "LATIN SMALL LETTER A",
-        "count": 1269
+        "count": 1184
       },
       {
         "char": "l",
         "codepoint": "U+006C",
         "name": "LATIN SMALL LETTER L",
-        "count": 1051
+        "count": 1012
       },
       {
         "char": "u",
         "codepoint": "U+0075",
         "name": "LATIN SMALL LETTER U",
-        "count": 946
+        "count": 942
       },
       {
         "char": "o",
         "codepoint": "U+006F",
         "name": "LATIN SMALL LETTER O",
-        "count": 846
+        "count": 772
       },
       {
         "char": "d",
         "codepoint": "U+0064",
         "name": "LATIN SMALL LETTER D",
-        "count": 737
+        "count": 708
       },
       {
         "char": "c",
         "codepoint": "U+0063",
         "name": "LATIN SMALL LETTER C",
-        "count": 705
+        "count": 631
       },
       {
         "char": "h",
         "codepoint": "U+0068",
         "name": "LATIN SMALL LETTER H",
-        "count": 582
+        "count": 509
       },
       {
         "char": "m",
         "codepoint": "U+006D",
         "name": "LATIN SMALL LETTER M",
-        "count": 536
-      },
-      {
-        "char": ",",
-        "codepoint": "U+002C",
-        "name": "COMMA",
-        "count": 436
+        "count": 499
       },
       {
         "char": "p",
         "codepoint": "U+0070",
         "name": "LATIN SMALL LETTER P",
-        "count": 429
+        "count": 399
+      },
+      {
+        "char": ",",
+        "codepoint": "U+002C",
+        "name": "COMMA",
+        "count": 372
       },
       {
         "char": "g",
         "codepoint": "U+0067",
         "name": "LATIN SMALL LETTER G",
-        "count": 361
-      },
-      {
-        "char": ".",
-        "codepoint": "U+002E",
-        "name": "FULL STOP",
-        "count": 265
+        "count": 346
       },
       {
         "char": "f",
         "codepoint": "U+0066",
         "name": "LATIN SMALL LETTER F",
-        "count": 263
-      },
-      {
-        "char": "b",
-        "codepoint": "U+0062",
-        "name": "LATIN SMALL LETTER B",
-        "count": 222
+        "count": 240
       },
       {
         "char": "é",
         "codepoint": "U+00E9",
         "name": "LATIN SMALL LETTER E WITH ACUTE",
-        "count": 220
+        "count": 209
       },
       {
-        "char": "E",
-        "codepoint": "U+0045",
-        "name": "LATIN CAPITAL LETTER E",
-        "count": 204
+        "char": ".",
+        "codepoint": "U+002E",
+        "name": "FULL STOP",
+        "count": 208
       },
       {
-        "char": "v",
-        "codepoint": "U+0076",
-        "name": "LATIN SMALL LETTER V",
-        "count": 203
+        "char": "b",
+        "codepoint": "U+0062",
+        "name": "LATIN SMALL LETTER B",
+        "count": 202
       },
       {
         "char": "'",
         "codepoint": "U+0027",
         "name": "APOSTROPHE",
-        "count": 198
+        "count": 199
       },
       {
-        "char": "A",
-        "codepoint": "U+0041",
-        "name": "LATIN CAPITAL LETTER A",
-        "count": 136
+        "char": "v",
+        "codepoint": "U+0076",
+        "name": "LATIN SMALL LETTER V",
+        "count": 193
       },
       {
-        "char": "S",
-        "codepoint": "U+0053",
-        "name": "LATIN CAPITAL LETTER S",
-        "count": 133
+        "char": "E",
+        "codepoint": "U+0045",
+        "name": "LATIN CAPITAL LETTER E",
+        "count": 179
       },
       {
         "char": "q",
         "codepoint": "U+0071",
         "name": "LATIN SMALL LETTER Q",
-        "count": 133
+        "count": 132
       },
       {
         "char": "L",
         "codepoint": "U+004C",
         "name": "LATIN CAPITAL LETTER L",
-        "count": 128
+        "count": 115
       },
       {
-        "char": "I",
-        "codepoint": "U+0049",
-        "name": "LATIN CAPITAL LETTER I",
-        "count": 116
+        "char": "S",
+        "codepoint": "U+0053",
+        "name": "LATIN CAPITAL LETTER S",
+        "count": 114
+      },
+      {
+        "char": "A",
+        "codepoint": "U+0041",
+        "name": "LATIN CAPITAL LETTER A",
+        "count": 113
+      },
+      {
+        "char": "w",
+        "codepoint": "U+0077",
+        "name": "LATIN SMALL LETTER W",
+        "count": 99
       }
     ],
     "deletions": [
@@ -911,139 +921,133 @@
         "char": " ",
         "codepoint": "U+0020",
         "name": "SPACE",
-        "count": 3247
+        "count": 2851
       },
       {
         "char": "e",
         "codepoint": "U+0065",
         "name": "LATIN SMALL LETTER E",
-        "count": 2466
+        "count": 2151
       },
       {
         "char": "n",
         "codepoint": "U+006E",
         "name": "LATIN SMALL LETTER N",
-        "count": 1267
+        "count": 1109
       },
       {
         "char": "i",
         "codepoint": "U+0069",
         "name": "LATIN SMALL LETTER I",
-        "count": 1242
+        "count": 1086
       },
       {
         "char": "s",
         "codepoint": "U+0073",
         "name": "LATIN SMALL LETTER S",
-        "count": 1075
-      },
-      {
-        "char": "t",
-        "codepoint": "U+0074",
-        "name": "LATIN SMALL LETTER T",
-        "count": 981
+        "count": 885
       },
       {
         "char": "r",
         "codepoint": "U+0072",
         "name": "LATIN SMALL LETTER R",
-        "count": 968
+        "count": 852
+      },
+      {
+        "char": "t",
+        "codepoint": "U+0074",
+        "name": "LATIN SMALL LETTER T",
+        "count": 818
       },
       {
         "char": "a",
         "codepoint": "U+0061",
         "name": "LATIN SMALL LETTER A",
-        "count": 873
+        "count": 728
       },
       {
         "char": "l",
         "codepoint": "U+006C",
         "name": "LATIN SMALL LETTER L",
-        "count": 778
+        "count": 656
       },
       {
         "char": "u",
         "codepoint": "U+0075",
         "name": "LATIN SMALL LETTER U",
-        "count": 722
+        "count": 610
       },
       {
         "char": "d",
         "codepoint": "U+0064",
         "name": "LATIN SMALL LETTER D",
-        "count": 588
-      },
-      {
-        "char": "o",
-        "codepoint": "U+006F",
-        "name": "LATIN SMALL LETTER O",
-        "count": 543
+        "count": 517
       },
       {
         "char": "h",
         "codepoint": "U+0068",
         "name": "LATIN SMALL LETTER H",
-        "count": 471
+        "count": 441
+      },
+      {
+        "char": "o",
+        "codepoint": "U+006F",
+        "name": "LATIN SMALL LETTER O",
+        "count": 435
       },
       {
         "char": "c",
         "codepoint": "U+0063",
         "name": "LATIN SMALL LETTER C",
-        "count": 457
+        "count": 394
       },
       {
         "char": "m",
         "codepoint": "U+006D",
         "name": "LATIN SMALL LETTER M",
-        "count": 345
-      },
-      {
-        "char": ",",
-        "codepoint": "U+002C",
-        "name": "COMMA",
-        "count": 305
+        "count": 301
       },
       {
         "char": "g",
         "codepoint": "U+0067",
         "name": "LATIN SMALL LETTER G",
-        "count": 300
+        "count": 281
+      },
+      {
+        "char": ",",
+        "codepoint": "U+002C",
+        "name": "COMMA",
+        "count": 253
       },
       {
         "char": "p",
         "codepoint": "U+0070",
         "name": "LATIN SMALL LETTER P",
-        "count": 243
+        "count": 181
       },
       {
         "char": "b",
         "codepoint": "U+0062",
         "name": "LATIN SMALL LETTER B",
-        "count": 189
+        "count": 174
       },
       {
         "char": "f",
         "codepoint": "U+0066",
         "name": "LATIN SMALL LETTER F",
-        "count": 184
+        "count": 164
       },
       {
         "char": "v",
         "codepoint": "U+0076",
         "name": "LATIN SMALL LETTER V",
-        "count": 145
+        "count": 129
       },
       {
         "char": ".",
         "codepoint": "U+002E",
         "name": "FULL STOP",
-        "count": 136
-      },
-      {
-        "char": "é",
-        "codepoint": "U+00E9",
-        "name": "LATIN SMALL LETTER E WITH ACUTE",
-        "count": 119
+        "count": 123
       },
       {
         "char": "w",
@@ -1052,34 +1056,40 @@
         "count": 116
       },
       {
-        "char": "'",
-        "codepoint": "U+0027",
-        "name": "APOSTROPHE",
-        "count": 98
-      },
-      {
         "char": "k",
         "codepoint": "U+006B",
         "name": "LATIN SMALL LETTER K",
         "count": 97
       },
       {
+        "char": "é",
+        "codepoint": "U+00E9",
+        "name": "LATIN SMALL LETTER E WITH ACUTE",
+        "count": 82
+      },
+      {
         "char": "z",
         "codepoint": "U+007A",
         "name": "LATIN SMALL LETTER Z",
-        "count": 78
+        "count": 77
       },
       {
-        "char": "q",
-        "codepoint": "U+0071",
-        "name": "LATIN SMALL LETTER Q",
-        "count": 70
+        "char": "'",
+        "codepoint": "U+0027",
+        "name": "APOSTROPHE",
+        "count": 68
       },
       {
         "char": "\"",
         "codepoint": "U+0022",
         "name": "QUOTATION MARK",
-        "count": 61
+        "count": 62
+      },
+      {
+        "char": "q",
+        "codepoint": "U+0071",
+        "name": "LATIN SMALL LETTER Q",
+        "count": 49
       },
       {
         "char": "ü",
@@ -1089,16 +1099,16 @@
       }
     ],
     "totals": {
-      "substitutions": 1433,
-      "insertions": 28243,
-      "deletions": 19082
+      "substitutions": 1389,
+      "insertions": 25784,
+      "deletions": 16514
     }
   },
   "outlier_diagnosis": {
     "1910": {
       "doc_id": "1910",
-      "cer_end_to_end": 0.1612409038682497,
-      "ocr_baseline_cer": 0.2643623132899272,
+      "cer_end_to_end": 0.16066641133665263,
+      "ocr_baseline_cer": 0.2637878207583301,
       "pipeline_delta": -0.1031214094216775,
       "primary_cause": "source_ocr_quality",
       "explanation": "OCR-Baseline bereits bei 26.4% CER. Schlechte Scanqualitaet oder komplexes Layout.",
@@ -1110,33 +1120,23 @@
           "cer_contribution": 0.0
         },
         "punctuation": {
-          "count": 7,
-          "char_distance": 7,
+          "count": 1,
+          "char_distance": 1,
           "examples": [
             {
               "ref": ",",
               "hyp": ".",
               "type": "replace"
-            },
-            {
-              "ref": "–",
-              "hyp": "-",
-              "type": "replace"
-            },
-            {
-              "ref": "‐",
-              "hyp": "-",
-              "type": "replace"
             }
           ],
-          "cer_contribution": 0.0006702412868632708
+          "cer_contribution": 9.574875526618154e-05
         },
         "hyphenation": {
           "count": 1,
           "char_distance": 4,
           "examples": [
             {
-              "ref": "‐",
+              "ref": "-",
               "hyp": " 252",
               "type": "replace"
             }
@@ -1227,9 +1227,9 @@
     },
     "290": {
       "doc_id": "290",
-      "cer_end_to_end": 0.3350087579011499,
+      "cer_end_to_end": 0.21171274084228162,
       "ocr_baseline_cer": 0.157642220699109,
-      "pipeline_delta": 0.17736653720204093,
+      "pipeline_delta": 0.05407052014317262,
       "primary_cause": "source_ocr_quality",
       "explanation": "OCR-Baseline bereits bei 15.8% CER. Schlechte Scanqualitaet oder komplexes Layout.",
       "error_categories": {
@@ -1246,16 +1246,21 @@
           "cer_contribution": 7.61556621734826e-05
         },
         "punctuation": {
-          "count": 1,
-          "char_distance": 2,
+          "count": 2,
+          "char_distance": 3,
           "examples": [
+            {
+              "ref": "\"",
+              "hyp": "",
+              "type": "delete"
+            },
             {
               "ref": "",
               "hyp": "* ",
               "type": "insert"
             }
           ],
-          "cer_contribution": 0.0001523113243469652
+          "cer_contribution": 0.0002284669865204478
         },
         "hyphenation": {
           "count": 0,
@@ -1264,79 +1269,80 @@
           "cer_contribution": 0.0
         },
         "whitespace": {
-          "count": 30,
-          "char_distance": 44,
+          "count": 31,
+          "char_distance": 45,
           "examples": [
-            {
-              "ref": "",
-              "hyp": " ",
-              "type": "insert"
-            },
-            {
-              "ref": "",
-              "hyp": " ",
-              "type": "insert"
-            },
             {
               "ref": " ",
               "hyp": "",
               "type": "delete"
+            },
+            {
+              "ref": "",
+              "hyp": " ",
+              "type": "insert"
+            },
+            {
+              "ref": "",
+              "hyp": " ",
+              "type": "insert"
             }
           ],
-          "cer_contribution": 0.003350849135633234
+          "cer_contribution": 0.003427004797806717
         },
         "ocr_artifact": {
-          "count": 5,
-          "char_distance": 1824,
+          "count": 2,
+          "char_distance": 596,
           "examples": [
             {
               "ref": "",
-              "hyp": "dernières années, ce n'est pas à cause d'une nécessité de la seule méditation, m",
+              "hyp": " 1. Der philosophische Glaube, Piper Verlag, Munich, 1948. La Foi philosophique,",
               "type": "insert"
             },
             {
               "ref": "",
-              "hyp": "1. Der philosophische Glaube, Piper Verlag, Munich, 1948. La Foi philosophique, ",
-              "type": "insert"
-            },
-            {
-              "ref": "",
-              "hyp": "* Le philosophe, désormais, doit intervenir dans les débats de ses contemporains",
+              "hyp": "le Jaspers s'est attaché à approfondir la pensée de la Chine et celle de l'Inde.",
               "type": "insert"
             }
           ],
-          "cer_contribution": 0.13890792780443226
+          "cer_contribution": 0.045388774655395626
         },
         "layout": {
-          "count": 0,
-          "char_distance": 0,
-          "examples": [],
-          "cer_contribution": 0.0
+          "count": 1,
+          "char_distance": 61,
+          "examples": [
+            {
+              "ref": "",
+              "hyp": "Copyright © Presses Universitaires de France. COMPTES RENDUS ",
+              "type": "insert"
+            }
+          ],
+          "cer_contribution": 0.004645495392582438
         },
         "other": {
-          "count": 30,
-          "char_distance": 7947,
+          "count": 34,
+          "char_distance": 4857,
           "examples": [
             {
               "ref": "omptes rendus",
-              "hyp": "hassé de la généralité anonyme d'une science apodictique, il se voit comme accul",
+              "hyp": "OMPTES RENDUS",
               "type": "replace"
             },
             {
-              "ref": "Œuvre de Karl Jaspers Au cours des dernières années On ne trouve pas dans la pen",
-              "hyp": "",
-              "type": "delete"
+              "ref": "uvre de",
+              "hyp": "UVRE DE",
+              "type": "replace"
             },
             {
-              "ref": "et la ma",
-              "hyp": "de cette foi reste, sur le mode théorique, indéfinissable. La philosophie se ser",
+              "ref": "arl",
+              "hyp": "ARL",
               "type": "replace"
             }
           ],
-          "cer_contribution": 0.6052090472926662
+          "cer_contribution": 0.369888051176605
         }
       },
-      "alignment_info": "Aligned: ref 13131->13131, pipe 12234->11038 (ratio 1.07)",
+      "alignment_info": "Aligned: ref 13131->13131, pipe 12234->11760 (ratio 1.07)",
       "metadata": {
         "type": "A",
         "language": "fra",
@@ -1346,11 +1352,11 @@
     },
     "30": {
       "doc_id": "30",
-      "cer_end_to_end": 0.18804652347397913,
-      "ocr_baseline_cer": 0.17999694142835296,
-      "pipeline_delta": 0.008049582045626169,
+      "cer_end_to_end": 0.18728245182103745,
+      "ocr_baseline_cer": 0.17930876280776878,
+      "pipeline_delta": 0.00797368901326867,
       "primary_cause": "source_ocr_quality",
-      "explanation": "OCR-Baseline bereits bei 18.0% CER. Schlechte Scanqualitaet oder komplexes Layout.",
+      "explanation": "OCR-Baseline bereits bei 17.9% CER. Schlechte Scanqualitaet oder komplexes Layout.",
       "error_categories": {
         "diacritics": {
           "count": 1,
@@ -1365,43 +1371,22 @@
           "cer_contribution": 8.489685032685287e-05
         },
         "punctuation": {
-          "count": 3,
-          "char_distance": 3,
+          "count": 1,
+          "char_distance": 1,
           "examples": [
-            {
-              "ref": "‐",
-              "hyp": "-",
-              "type": "replace"
-            },
             {
               "ref": "",
               "hyp": ",",
               "type": "insert"
-            },
-            {
-              "ref": "‐",
-              "hyp": "-",
-              "type": "replace"
             }
           ],
-          "cer_contribution": 0.0002546905509805586
+          "cer_contribution": 8.489685032685287e-05
         },
         "hyphenation": {
-          "count": 2,
-          "char_distance": 6,
-          "examples": [
-            {
-              "ref": "‐t‐",
-              "hyp": "-t-",
-              "type": "replace"
-            },
-            {
-              "ref": "‐t‐",
-              "hyp": "-t-",
-              "type": "replace"
-            }
-          ],
-          "cer_contribution": 0.0005093811019611172
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
         },
         "whitespace": {
           "count": 7,
@@ -1550,20 +1535,14 @@
           "cer_contribution": 0.0
         },
         "layout": {
-          "count": 1,
-          "char_distance": 610,
-          "examples": [
-            {
-              "ref": "In dem was wirklich ist, existiert unter dem hiesigen Licht die Spitze des Wesen",
-              "hyp": "",
-              "type": "delete"
-            }
-          ],
-          "cer_contribution": 0.06228303042679191
+          "count": 0,
+          "char_distance": 0,
+          "examples": [],
+          "cer_contribution": 0.0
         },
         "other": {
-          "count": 5,
-          "char_distance": 59,
+          "count": 6,
+          "char_distance": 669,
           "examples": [
             {
               "ref": "",
@@ -1581,7 +1560,7 @@
               "type": "insert"
             }
           ],
-          "cer_contribution": 0.006024096385542169
+          "cer_contribution": 0.06830712681233408
         }
       },
       "alignment_info": "Aligned: ref 9794->9794, pipe 11351->9179 (ratio 1.16)",
@@ -1595,6 +1574,15 @@
   },
   "pipeline_effect": [
     {
+      "doc_id": "570",
+      "ocr_baseline_cer": 1.4530733641771316,
+      "end_to_end_cer": 0.009253139458030404,
+      "delta": -1.4438202247191012,
+      "improved": true,
+      "language": "fra",
+      "type": "A"
+    },
+    {
       "doc_id": "2310",
       "ocr_baseline_cer": 0.9871031746031746,
       "end_to_end_cer": 0.018105158730158732,
@@ -1605,9 +1593,9 @@
     },
     {
       "doc_id": "580",
-      "ocr_baseline_cer": 0.9190971341618057,
-      "end_to_end_cer": 0.06771493786457013,
-      "delta": -0.8513821962972355,
+      "ocr_baseline_cer": 0.916560994166878,
+      "end_to_end_cer": 0.003043367993913264,
+      "delta": -0.9135176261729647,
       "improved": true,
       "language": "fra/deu",
       "type": "A"
@@ -1623,45 +1611,45 @@
     },
     {
       "doc_id": "40",
-      "ocr_baseline_cer": 0.7371157346419557,
+      "ocr_baseline_cer": 0.7371006506239756,
       "end_to_end_cer": 0.01821646571402713,
-      "delta": -0.7188992689279285,
+      "delta": -0.7188841849099484,
       "improved": true,
       "language": "fra",
       "type": "C"
     },
     {
       "doc_id": "760",
-      "ocr_baseline_cer": 0.7890771044836214,
-      "end_to_end_cer": 0.07281930344252394,
-      "delta": -0.7162578010410975,
+      "ocr_baseline_cer": 0.7889620660895574,
+      "end_to_end_cer": 0.07046101636421155,
+      "delta": -0.7185010497253459,
       "improved": true,
       "language": "fra",
       "type": "D"
     },
     {
       "doc_id": "1520",
-      "ocr_baseline_cer": 0.5186503538238554,
-      "end_to_end_cer": 0.06399380453008213,
-      "delta": -0.45465654929377325,
+      "ocr_baseline_cer": 0.5171902975530736,
+      "end_to_end_cer": 0.06221758035638162,
+      "delta": -0.4549727171966919,
       "improved": true,
       "language": "fra",
       "type": "C"
     },
     {
       "doc_id": "3040",
-      "ocr_baseline_cer": 0.2671607919885074,
-      "end_to_end_cer": 0.06566592409069143,
-      "delta": -0.20149486789781595,
+      "ocr_baseline_cer": 0.2671399721013512,
+      "end_to_end_cer": 0.009577148091857342,
+      "delta": -0.2575628240094939,
       "improved": true,
       "language": "fra",
       "type": "B"
     },
     {
       "doc_id": "300",
-      "ocr_baseline_cer": 0.33127970427741593,
-      "end_to_end_cer": 0.1540221791938039,
-      "delta": -0.17725752508361203,
+      "ocr_baseline_cer": 0.3288153494103151,
+      "end_to_end_cer": 0.15155782432670303,
+      "delta": -0.17725752508361206,
       "improved": true,
       "language": "fra",
       "type": "D"
@@ -1686,12 +1674,21 @@
     },
     {
       "doc_id": "1330",
-      "ocr_baseline_cer": 0.13509046236318964,
-      "end_to_end_cer": 0.008487826669644852,
+      "ocr_baseline_cer": 0.13504578959124414,
+      "end_to_end_cer": 0.008443153897699352,
       "delta": -0.1266026356935448,
       "improved": true,
       "language": "fra/deu",
       "type": "D"
+    },
+    {
+      "doc_id": "1060",
+      "ocr_baseline_cer": 0.12881832797427653,
+      "end_to_end_cer": 0.005526527331189711,
+      "delta": -0.12329180064308681,
+      "improved": true,
+      "language": "deu",
+      "type": "A"
     },
     {
       "doc_id": "890",
@@ -1704,8 +1701,8 @@
     },
     {
       "doc_id": "1910",
-      "ocr_baseline_cer": 0.2643623132899272,
-      "end_to_end_cer": 0.1612409038682497,
+      "ocr_baseline_cer": 0.2637878207583301,
+      "end_to_end_cer": 0.16066641133665263,
       "delta": -0.1031214094216775,
       "improved": true,
       "language": "deu",
@@ -1713,17 +1710,17 @@
     },
     {
       "doc_id": "560",
-      "ocr_baseline_cer": 0.07755636635793807,
-      "end_to_end_cer": 0.028534006923004958,
-      "delta": -0.04902235943493311,
+      "ocr_baseline_cer": 0.07512395921040321,
+      "end_to_end_cer": 0.026101599775470108,
+      "delta": -0.049022359434933105,
       "improved": true,
       "language": "fra",
       "type": "A"
     },
     {
       "doc_id": "830",
-      "ocr_baseline_cer": 0.02221438645980254,
-      "end_to_end_cer": 0.015044663845792195,
+      "ocr_baseline_cer": 0.022096850023507288,
+      "end_to_end_cer": 0.014927127409496943,
       "delta": -0.007169722614010344,
       "improved": true,
       "language": "fra",
@@ -1731,26 +1728,26 @@
     },
     {
       "doc_id": "2530",
-      "ocr_baseline_cer": 0.022713687985654513,
-      "end_to_end_cer": 0.019127316198445904,
-      "delta": -0.0035863717872086087,
+      "ocr_baseline_cer": 0.021916716477385932,
+      "end_to_end_cer": 0.018330344690177327,
+      "delta": -0.0035863717872086052,
       "improved": true,
       "language": "fra",
       "type": "B"
     },
     {
       "doc_id": "100",
-      "ocr_baseline_cer": 0.010505698005698005,
+      "ocr_baseline_cer": 0.010416666666666666,
       "end_to_end_cer": 0.008547008547008548,
-      "delta": -0.0019586894586894575,
+      "delta": -0.0018696581196581182,
       "improved": true,
       "language": "fra",
       "type": "A"
     },
     {
       "doc_id": "2635",
-      "ocr_baseline_cer": 0.00927032063840971,
-      "end_to_end_cer": 0.007980121374301142,
+      "ocr_baseline_cer": 0.008935824532900082,
+      "end_to_end_cer": 0.007645625268791513,
       "delta": -0.001290199264108569,
       "improved": true,
       "language": "deu",
@@ -1758,8 +1755,8 @@
     },
     {
       "doc_id": "3020",
-      "ocr_baseline_cer": 0.015183400085986468,
-      "end_to_end_cer": 0.01559070441020071,
+      "ocr_baseline_cer": 0.015070259995926956,
+      "end_to_end_cer": 0.0154775643201412,
       "delta": 0.00040730432421424295,
       "improved": false,
       "language": "deu",
@@ -1776,39 +1773,30 @@
     },
     {
       "doc_id": "30",
-      "ocr_baseline_cer": 0.17999694142835296,
-      "end_to_end_cer": 0.18804652347397913,
-      "delta": 0.008049582045626169,
+      "ocr_baseline_cer": 0.17930876280776878,
+      "end_to_end_cer": 0.18728245182103745,
+      "delta": 0.00797368901326867,
       "improved": false,
       "language": "fra",
       "type": "A"
-    },
-    {
-      "doc_id": "1060",
-      "ocr_baseline_cer": 0.12942122186495178,
-      "end_to_end_cer": 0.21392684887459806,
-      "delta": 0.08450562700964628,
-      "improved": false,
-      "language": "deu",
-      "type": "A"
-    },
-    {
-      "doc_id": "1440",
-      "ocr_baseline_cer": 0.17169069462647443,
-      "end_to_end_cer": 0.25688073394495414,
-      "delta": 0.08519003931847971,
-      "improved": false,
-      "language": "deu",
-      "type": "B"
     },
     {
       "doc_id": "290",
       "ocr_baseline_cer": 0.157642220699109,
-      "end_to_end_cer": 0.3350087579011499,
-      "delta": 0.17736653720204093,
+      "end_to_end_cer": 0.21171274084228162,
+      "delta": 0.05407052014317262,
       "improved": false,
       "language": "fra",
       "type": "A"
+    },
+    {
+      "doc_id": "1440",
+      "ocr_baseline_cer": 0.17161359956826766,
+      "end_to_end_cer": 0.25680363888674734,
+      "delta": 0.08519003931847968,
+      "improved": false,
+      "language": "deu",
+      "type": "B"
     }
   ],
   "per_doc": {
@@ -1854,8 +1842,8 @@
       }
     },
     "1060": {
-      "cer": 0.21392684887459806,
-      "wer": 0.2650936849410132,
+      "cer": 0.005526527331189711,
+      "wer": 0.049271339347675226,
       "ref_chars": 9952,
       "error_categories": {
         "diacritics": {
@@ -1863,28 +1851,28 @@
           "cer_contribution": 0.0
         },
         "punctuation": {
-          "count": 5,
-          "cer_contribution": 0.0008038585209003215
+          "count": 2,
+          "cer_contribution": 0.00040192926045016077
         },
         "hyphenation": {
           "count": 0,
           "cer_contribution": 0.0
         },
         "whitespace": {
-          "count": 31,
-          "cer_contribution": 0.003114951768488746
+          "count": 32,
+          "cer_contribution": 0.003215434083601286
         },
         "ocr_artifact": {
-          "count": 1,
-          "cer_contribution": 0.027833601286173633
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "layout": {
-          "count": 1,
-          "cer_contribution": 0.09334807073954984
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "other": {
           "count": 5,
-          "cer_contribution": 0.09013263665594855
+          "cer_contribution": 0.0019091639871382637
         }
       },
       "metadata": {
@@ -1977,8 +1965,8 @@
       }
     },
     "1330": {
-      "cer": 0.008487826669644852,
-      "wer": 0.03319838056680162,
+      "cer": 0.008443153897699352,
+      "wer": 0.03292847503373819,
       "ref_chars": 22385,
       "error_categories": {
         "diacritics": {
@@ -1986,8 +1974,8 @@
           "cer_contribution": 0.00013401831583649765
         },
         "punctuation": {
-          "count": 12,
-          "cer_contribution": 0.000625418807236989
+          "count": 11,
+          "cer_contribution": 0.0005807460352914898
         },
         "hyphenation": {
           "count": 0,
@@ -1998,16 +1986,16 @@
           "cer_contribution": 0.004467277194549922
         },
         "ocr_artifact": {
-          "count": 2,
-          "cer_contribution": 0.007549698458789368
+          "count": 1,
+          "cer_contribution": 0.0037525128434219342
         },
         "layout": {
-          "count": 1,
-          "cer_contribution": 0.0037971856153674335
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "other": {
-          "count": 7,
-          "cer_contribution": 0.0018762564217109671
+          "count": 9,
+          "cer_contribution": 0.009470627652445834
         }
       },
       "metadata": {
@@ -2059,8 +2047,8 @@
       }
     },
     "1440": {
-      "cer": 0.25688073394495414,
-      "wer": 0.3238341968911917,
+      "cer": 0.25680363888674734,
+      "wer": 0.3233160621761658,
       "ref_chars": 12971,
       "error_categories": {
         "diacritics": {
@@ -2080,16 +2068,16 @@
           "cer_contribution": 0.0010022357566879963
         },
         "ocr_artifact": {
-          "count": 2,
-          "cer_contribution": 0.13252640505743582
+          "count": 1,
+          "cer_contribution": 0.02181790147251561
         },
         "layout": {
           "count": 0,
           "cer_contribution": 0.0
         },
         "other": {
-          "count": 17,
-          "cer_contribution": 1.3162439287641663
+          "count": 18,
+          "cer_contribution": 1.4269524323490865
         }
       },
       "metadata": {
@@ -2100,37 +2088,37 @@
       }
     },
     "1520": {
-      "cer": 0.06399380453008213,
-      "wer": 0.12271667961380535,
+      "cer": 0.06221758035638162,
+      "wer": 0.11268449672622351,
       "ref_chars": 281496,
       "error_categories": {
         "diacritics": {
-          "count": 47,
-          "cer_contribution": 0.00016696507232784837
+          "count": 31,
+          "cer_contribution": 0.00011012589876943189
         },
         "punctuation": {
-          "count": 418,
-          "cer_contribution": 0.0016803080683206867
+          "count": 40,
+          "cer_contribution": 0.0003055105578764885
         },
         "hyphenation": {
-          "count": 18,
-          "cer_contribution": 0.0001740699690226504
+          "count": 3,
+          "cer_contribution": 2.48671384318072e-05
         },
         "whitespace": {
-          "count": 972,
-          "cer_contribution": 0.0061102111575297696
+          "count": 872,
+          "cer_contribution": 0.005509847386818995
         },
         "ocr_artifact": {
-          "count": 8,
-          "cer_contribution": 0.004746070992127775
+          "count": 10,
+          "cer_contribution": 0.0076057919117856025
         },
         "layout": {
-          "count": 11,
-          "cer_contribution": 0.004824224855770597
+          "count": 5,
+          "cer_contribution": 0.0013001960951487764
         },
         "other": {
-          "count": 373,
-          "cer_contribution": 0.2913966805922642
+          "count": 319,
+          "cer_contribution": 0.7098075993975047
         }
       },
       "metadata": {
@@ -2141,8 +2129,8 @@
       }
     },
     "1910": {
-      "cer": 0.1612409038682497,
-      "wer": 0.20919689119170984,
+      "cer": 0.16066641133665263,
+      "wer": 0.20660621761658032,
       "ref_chars": 10444,
       "error_categories": {
         "diacritics": {
@@ -2150,8 +2138,8 @@
           "cer_contribution": 0.0
         },
         "punctuation": {
-          "count": 7,
-          "cer_contribution": 0.0006702412868632708
+          "count": 1,
+          "cer_contribution": 9.574875526618154e-05
         },
         "hyphenation": {
           "count": 1,
@@ -2223,8 +2211,8 @@
       }
     },
     "2530": {
-      "cer": 0.019127316198445904,
-      "wer": 0.06134969325153374,
+      "cer": 0.018330344690177327,
+      "wer": 0.05644171779141104,
       "ref_chars": 5019,
       "error_categories": {
         "diacritics": {
@@ -2232,8 +2220,8 @@
           "cer_contribution": 0.0003984857541342897
         },
         "punctuation": {
-          "count": 5,
-          "cer_contribution": 0.0009962143853357243
+          "count": 1,
+          "cer_contribution": 0.00019924287706714485
         },
         "hyphenation": {
           "count": 0,
@@ -2264,8 +2252,8 @@
       }
     },
     "2635": {
-      "cer": 0.007980121374301142,
-      "wer": 0.03969863807592002,
+      "cer": 0.007645625268791513,
+      "wer": 0.03796001159084324,
       "ref_chars": 20927,
       "error_categories": {
         "diacritics": {
@@ -2273,16 +2261,16 @@
           "cer_contribution": 0.0
         },
         "punctuation": {
-          "count": 9,
-          "cer_contribution": 0.00047785157929946956
+          "count": 2,
+          "cer_contribution": 9.557031585989391e-05
         },
         "hyphenation": {
           "count": 0,
           "cer_contribution": 0.0
         },
         "whitespace": {
-          "count": 53,
-          "cer_contribution": 0.002532613370287189
+          "count": 54,
+          "cer_contribution": 0.0025803985282171356
         },
         "ocr_artifact": {
           "count": 0,
@@ -2305,8 +2293,8 @@
       }
     },
     "290": {
-      "cer": 0.3350087579011499,
-      "wer": 0.36668262326471995,
+      "cer": 0.21171274084228162,
+      "wer": 0.24652943992340834,
       "ref_chars": 13131,
       "error_categories": {
         "diacritics": {
@@ -2314,28 +2302,28 @@
           "cer_contribution": 7.61556621734826e-05
         },
         "punctuation": {
-          "count": 1,
-          "cer_contribution": 0.0001523113243469652
+          "count": 2,
+          "cer_contribution": 0.0002284669865204478
         },
         "hyphenation": {
           "count": 0,
           "cer_contribution": 0.0
         },
         "whitespace": {
-          "count": 30,
-          "cer_contribution": 0.003350849135633234
+          "count": 31,
+          "cer_contribution": 0.003427004797806717
         },
         "ocr_artifact": {
-          "count": 5,
-          "cer_contribution": 0.13890792780443226
+          "count": 2,
+          "cer_contribution": 0.045388774655395626
         },
         "layout": {
-          "count": 0,
-          "cer_contribution": 0.0
+          "count": 1,
+          "cer_contribution": 0.004645495392582438
         },
         "other": {
-          "count": 30,
-          "cer_contribution": 0.6052090472926662
+          "count": 34,
+          "cer_contribution": 0.369888051176605
         }
       },
       "metadata": {
@@ -2346,8 +2334,8 @@
       }
     },
     "30": {
-      "cer": 0.18804652347397913,
-      "wer": 0.2199582027168234,
+      "cer": 0.18728245182103745,
+      "wer": 0.2173458725182863,
       "ref_chars": 11779,
       "error_categories": {
         "diacritics": {
@@ -2355,12 +2343,12 @@
           "cer_contribution": 8.489685032685287e-05
         },
         "punctuation": {
-          "count": 3,
-          "cer_contribution": 0.0002546905509805586
+          "count": 1,
+          "cer_contribution": 8.489685032685287e-05
         },
         "hyphenation": {
-          "count": 2,
-          "cer_contribution": 0.0005093811019611172
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "whitespace": {
           "count": 7,
@@ -2387,8 +2375,8 @@
       }
     },
     "300": {
-      "cer": 0.1540221791938039,
-      "wer": 0.23275862068965517,
+      "cer": 0.15155782432670303,
+      "wer": 0.21875,
       "ref_chars": 5681,
       "error_categories": {
         "diacritics": {
@@ -2396,8 +2384,8 @@
           "cer_contribution": 0.0005280760429501848
         },
         "punctuation": {
-          "count": 11,
-          "cer_contribution": 0.0019362788241506777
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "hyphenation": {
           "count": 0,
@@ -2416,8 +2404,8 @@
           "cer_contribution": 0.0
         },
         "other": {
-          "count": 11,
-          "cer_contribution": 0.20242914979757085
+          "count": 10,
+          "cer_contribution": 0.20154902305932054
         }
       },
       "metadata": {
@@ -2428,8 +2416,8 @@
       }
     },
     "3020": {
-      "cer": 0.01559070441020071,
-      "wer": 0.055353535353535356,
+      "cer": 0.0154775643201412,
+      "wer": 0.05494949494949495,
       "ref_chars": 44193,
       "error_categories": {
         "diacritics": {
@@ -2437,8 +2425,8 @@
           "cer_contribution": 4.5256036023804675e-05
         },
         "punctuation": {
-          "count": 9,
-          "cer_contribution": 0.00020365216210712104
+          "count": 8,
+          "cer_contribution": 0.0001810241440952187
         },
         "hyphenation": {
           "count": 0,
@@ -2453,12 +2441,12 @@
           "cer_contribution": 0.026882085398139976
         },
         "layout": {
-          "count": 3,
-          "cer_contribution": 0.09399678682144232
+          "count": 2,
+          "cer_contribution": 0.08587332835516936
         },
         "other": {
-          "count": 90,
-          "cer_contribution": 0.11397732672595208
+          "count": 89,
+          "cer_contribution": 0.12182924897608219
         }
       },
       "metadata": {
@@ -2469,37 +2457,37 @@
       }
     },
     "3040": {
-      "cer": 0.06566592409069143,
-      "wer": 0.11608557844690967,
+      "cer": 0.009577148091857342,
+      "wer": 0.060221870047543584,
       "ref_chars": 48031,
       "error_categories": {
         "diacritics": {
-          "count": 7,
-          "cer_contribution": 0.0001457392100934813
+          "count": 8,
+          "cer_contribution": 0.0001665590972496929
         },
         "punctuation": {
-          "count": 16,
-          "cer_contribution": 0.0003955778559680207
+          "count": 14,
+          "cer_contribution": 0.0003539380816555974
         },
         "hyphenation": {
           "count": 0,
           "cer_contribution": 0.0
         },
         "whitespace": {
-          "count": 186,
-          "cer_contribution": 0.009910266286356727
+          "count": 188,
+          "cer_contribution": 0.009951906060669152
         },
         "ocr_artifact": {
           "count": 1,
           "cer_contribution": 0.013324727779975433
         },
         "layout": {
-          "count": 3,
-          "cer_contribution": 0.03329099956278237
+          "count": 2,
+          "cer_contribution": 0.0038933188982115717
         },
         "other": {
-          "count": 51,
-          "cer_contribution": 0.05100872353271845
+          "count": 63,
+          "cer_contribution": 0.023672211696612603
         }
       },
       "metadata": {
@@ -2523,16 +2511,16 @@
           "cer_contribution": 0.00014078416781472804
         },
         "hyphenation": {
-          "count": 1,
-          "cer_contribution": 1.5084017980149433e-05
+          "count": 2,
+          "cer_contribution": 2.0112023973532577e-05
         },
         "whitespace": {
           "count": 239,
           "cer_contribution": 0.001287169534306085
         },
         "ocr_artifact": {
-          "count": 4,
-          "cer_contribution": 0.015466146435646552
+          "count": 3,
+          "cer_contribution": 0.010966081071568637
         },
         "layout": {
           "count": 0,
@@ -2540,7 +2528,7 @@
         },
         "other": {
           "count": 181,
-          "cer_contribution": 0.057656144726124514
+          "cer_contribution": 0.06215118208420904
         }
       },
       "metadata": {
@@ -2551,8 +2539,8 @@
       }
     },
     "560": {
-      "cer": 0.028534006923004958,
-      "wer": 0.1514251781472684,
+      "cer": 0.026101599775470108,
+      "wer": 0.14192399049881235,
       "ref_chars": 10689,
       "error_categories": {
         "diacritics": {
@@ -2560,12 +2548,12 @@
           "cer_contribution": 9.355412105903265e-05
         },
         "punctuation": {
-          "count": 24,
-          "cer_contribution": 0.0023388530264758164
+          "count": 2,
+          "cer_contribution": 0.0001871082421180653
         },
         "hyphenation": {
-          "count": 3,
-          "cer_contribution": 0.0008419870895312938
+          "count": 1,
+          "cer_contribution": 0.0001871082421180653
         },
         "whitespace": {
           "count": 106,
@@ -2580,8 +2568,8 @@
           "cer_contribution": 0.0
         },
         "other": {
-          "count": 6,
-          "cer_contribution": 0.01590420058003555
+          "count": 9,
+          "cer_contribution": 0.018897932453924595
         }
       },
       "metadata": {
@@ -2591,9 +2579,50 @@
         "page_count": 4
       }
     },
+    "570": {
+      "cer": 0.009253139458030404,
+      "wer": 0.07415254237288135,
+      "ref_chars": 3026,
+      "error_categories": {
+        "diacritics": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "punctuation": {
+          "count": 2,
+          "cer_contribution": 0.002313284864507601
+        },
+        "hyphenation": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "whitespace": {
+          "count": 16,
+          "cer_contribution": 0.00760079312623926
+        },
+        "ocr_artifact": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "layout": {
+          "count": 0,
+          "cer_contribution": 0.0
+        },
+        "other": {
+          "count": 2,
+          "cer_contribution": 0.0016523463317911435
+        }
+      },
+      "metadata": {
+        "type": "A",
+        "language": "fra",
+        "pub_form": "journalArticle",
+        "page_count": 3
+      }
+    },
     "580": {
-      "cer": 0.06771493786457013,
-      "wer": 0.09931506849315068,
+      "cer": 0.003043367993913264,
+      "wer": 0.0273972602739726,
       "ref_chars": 3943,
       "error_categories": {
         "diacritics": {
@@ -2601,12 +2630,12 @@
           "cer_contribution": 0.0
         },
         "punctuation": {
-          "count": 7,
-          "cer_contribution": 0.001775297996449404
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "hyphenation": {
-          "count": 1,
-          "cer_contribution": 0.000760841998478316
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "whitespace": {
           "count": 8,
@@ -2621,8 +2650,8 @@
           "cer_contribution": 0.0
         },
         "other": {
-          "count": 3,
-          "cer_contribution": 0.063403499873193
+          "count": 1,
+          "cer_contribution": 0.001014455997971088
         }
       },
       "metadata": {
@@ -2633,8 +2662,8 @@
       }
     },
     "760": {
-      "cer": 0.07281930344252394,
-      "wer": 0.14068054850177755,
+      "cer": 0.07046101636421155,
+      "wer": 0.12984594548840359,
       "ref_chars": 34771,
       "error_categories": {
         "diacritics": {
@@ -2642,28 +2671,28 @@
           "cer_contribution": 5.751919703200943e-05
         },
         "punctuation": {
-          "count": 51,
-          "cer_contribution": 0.0016680567139282735
+          "count": 23,
+          "cer_contribution": 0.0007477495614161226
         },
         "hyphenation": {
-          "count": 3,
-          "cer_contribution": 0.00028759598516004715
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "whitespace": {
-          "count": 47,
-          "cer_contribution": 0.0018693739035403065
+          "count": 54,
+          "cer_contribution": 0.0020706910931523395
         },
         "ocr_artifact": {
           "count": 3,
           "cer_contribution": 0.013862126484714273
         },
         "layout": {
-          "count": 13,
-          "cer_contribution": 0.03784763164706221
+          "count": 12,
+          "cer_contribution": 0.03666848810790602
         },
         "other": {
-          "count": 104,
-          "cer_contribution": 1.3193178223232003
+          "count": 98,
+          "cer_contribution": 1.28023352793995
         }
       },
       "metadata": {
@@ -2674,8 +2703,8 @@
       }
     },
     "830": {
-      "cer": 0.015044663845792195,
-      "wer": 0.06540795684423466,
+      "cer": 0.014927127409496943,
+      "wer": 0.06473364801078894,
       "ref_chars": 8508,
       "error_categories": {
         "diacritics": {
@@ -2683,8 +2712,8 @@
           "cer_contribution": 0.0007052186177715092
         },
         "punctuation": {
-          "count": 4,
-          "cer_contribution": 0.0004701457451810061
+          "count": 3,
+          "cer_contribution": 0.0003526093088857546
         },
         "hyphenation": {
           "count": 1,
@@ -2724,28 +2753,28 @@
           "cer_contribution": 3.381691522099354e-05
         },
         "punctuation": {
-          "count": 8,
-          "cer_contribution": 0.0002705353217679483
+          "count": 7,
+          "cer_contribution": 0.00023671840654695478
         },
         "hyphenation": {
           "count": 0,
           "cer_contribution": 0.0
         },
         "whitespace": {
-          "count": 149,
-          "cer_contribution": 0.005038720367928038
+          "count": 148,
+          "cer_contribution": 0.005004903452707044
         },
         "ocr_artifact": {
-          "count": 4,
-          "cer_contribution": 0.0560008116059653
+          "count": 5,
+          "cer_contribution": 0.059010517060633726
         },
         "layout": {
           "count": 1,
           "cer_contribution": 0.009739271583646139
         },
         "other": {
-          "count": 23,
-          "cer_contribution": 0.018193500388894526
+          "count": 26,
+          "cer_contribution": 0.02360420682425349
         }
       },
       "metadata": {
@@ -2781,12 +2810,12 @@
           "cer_contribution": 0.0
         },
         "layout": {
-          "count": 1,
-          "cer_contribution": 0.06228303042679191
+          "count": 0,
+          "cer_contribution": 0.0
         },
         "other": {
-          "count": 5,
-          "cer_contribution": 0.006024096385542169
+          "count": 6,
+          "cer_contribution": 0.06830712681233408
         }
       },
       "metadata": {

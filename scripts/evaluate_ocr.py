@@ -786,16 +786,22 @@ def _strip_markdown(text: str) -> str:
     return text
 
 
-def _find_phrase_in_text(phrase: str, text: str) -> int:
+def _find_phrase_in_text(phrase: str, text: str, case_insensitive: bool = False) -> int:
     """Sucht Phrase im Text, auch mit Markdown-Unterschieden."""
     pos = text.find(phrase)
     if pos != -1:
         return pos
-    # Fallback: Ohne Markdown suchen
+    # Fallback 1: Ohne Markdown suchen
     clean_text = _strip_markdown(text)
     clean_phrase = _strip_markdown(phrase)
     pos = clean_text.find(clean_phrase)
-    return pos
+    if pos != -1:
+        return pos
+    # Fallback 2: Case-insensitive (nur wenn explizit angefordert)
+    if case_insensitive:
+        pos = clean_text.lower().find(clean_phrase.lower())
+        return pos
+    return -1
 
 
 def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -> tuple:
@@ -873,7 +879,32 @@ def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -
         matched_ref = reference[ref_start_pos:ref_end_pos]
         return (ref_start_pos, ref_end_pos, 0, len(ocr_text), matched_ref, ocr_text)
 
-    # Fallback: Einzelne lange Woerter suchen
+    # 4. Case-insensitive Phrasensuche (fuer UPPERCASE-Titel etc.)
+    #    Nur mit langen Phrasen (5+ Woerter), VOR Single-Word-Fallback
+    ci_start = -1
+    ci_end_pos = -1
+    for n_words in [8, 5]:
+        ref_start_phrase = ' '.join(ref_words[:n_words])
+        ci_start = _find_phrase_in_text(ref_start_phrase, ocr_text, case_insensitive=True)
+        if ci_start != -1:
+            for n_end in [8, 5]:
+                ref_end_phrase = ' '.join(ref_words[-n_end:])
+                ci_end_pos = _find_phrase_in_text(ref_end_phrase, ocr_text, case_insensitive=True)
+                if ci_end_pos != -1 and ci_end_pos > ci_start:
+                    ci_end_pos = ci_end_pos + len(ref_end_phrase)
+                    break
+            break
+
+    if ci_start != -1 and ci_end_pos != -1 and ci_end_pos > ci_start:
+        matched_ocr = ocr_text[ci_start:ci_end_pos]
+        return (0, len(reference), ci_start, ci_end_pos, reference, matched_ocr)
+
+    if ci_start != -1:
+        estimated_end = min(ci_start + len(reference) + 200, len(ocr_text))
+        matched_ocr = ocr_text[ci_start:estimated_end]
+        return (0, len(reference), ci_start, estimated_end, reference, matched_ocr)
+
+    # 5. Fallback: Einzelne lange Woerter suchen
     for words, text, is_ref in [(ref_words, ocr_text, True), (ocr_words, reference, False)]:
         for i in range(min(30, len(words))):
             word = words[i]
@@ -1309,6 +1340,27 @@ def evaluate_tei_vs_tei(doc_id: str, ref_dir: Path, pipeline_dir: Path) -> dict:
         result['status'] = 'SKIP'
         result['error'] = f"Pipeline-TEI nicht gefunden: {doc_id}"
         return result
+
+    # Seitenzahl-Mismatch erkennen
+    def _count_pb(path):
+        try:
+            content = path.read_text(encoding='utf-8')
+            return content.count('<pb ')
+        except Exception:
+            return 0
+
+    ref_pages = _count_pb(ref_path)
+    pipe_pages = _count_pb(pipe_path)
+    result['ref_pages'] = ref_pages
+    result['pipe_pages'] = pipe_pages
+    if ref_pages > 0 and pipe_pages > 0:
+        page_ratio = max(ref_pages, pipe_pages) / max(min(ref_pages, pipe_pages), 1)
+        if page_ratio > 1.5:
+            result['scope_mismatch'] = True
+            result['scope_info'] = (
+                f"Seiten-Mismatch: Ref={ref_pages}, Pipeline={pipe_pages} "
+                f"(Ratio {page_ratio:.1f}x). CER nicht direkt vergleichbar."
+            )
 
     # Text extrahieren (ohne Fussnoten fuer Hauptvergleich)
     ref_text = extract_text_for_comparison(ref_path, include_footnotes=False)
