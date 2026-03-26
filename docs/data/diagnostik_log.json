@@ -153,5 +153,21 @@
     ],
     "result_summary": "diagnostik_ocr.json mit 25 Docs, 50 Substitutionspaare, 4 Outlier-Diagnosen",
     "details": ""
+  },
+  {
+    "timestamp": "2026-03-26T21:20:54.401994",
+    "lane": "tei",
+    "action": "post_assembly_fixes_w3_w4_w7",
+    "docs_affected": 8,
+    "result_summary": "285 valid, 0 invalid, 29 warnings (W3/W4/W7 eliminated)",
+    "details": "Fix E: doppelte pb (5 W3-Docs). Fix F: leere div (1 W4-Doc). Fix G: leere figure (2 W7-Docs). W11 als false positive dokumentiert."
+  },
+  {
+    "timestamp": "2026-03-26T21:20:54.401994",
+    "lane": "tei",
+    "action": "ner_reinjection_prep",
+    "docs_affected": 27,
+    "result_summary": "Vorbereitung: 17 W9-Docs + 10 W10-Docs identifiziert",
+    "details": "Dual-Attribut-Strategie (ref=GND + corresp=#zbz) schema-validiert. W10 vermutlich NER-Extraktionsproblem. W11 false positive."
   }
 ]

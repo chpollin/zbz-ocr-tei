@@ -274,9 +274,14 @@ def _merge_page_divs(xml_text: str, genre: str = None) -> str:
 def _fix_post_assembly_schema(xml_text: str) -> str:
     """Post-Assembly-Fixes fuer RelaxNG-Schema-Verletzungen.
 
-    Fix A: <graphic> ohne url-Attribut -> url="unknown" hinzufuegen
-    Fix B: <p> innerhalb <head> -> Inhalt entpacken (Text beibehalten)
-    Fix C: <epigraph> nach Content in <div> -> Inhalt entpacken (divTop-Regel)
+    Fix A:  <graphic> ohne url-Attribut -> url="unknown" hinzufuegen
+    Fix B:  <p> innerhalb <head> -> Inhalt entpacken (Text beibehalten)
+    Fix C:  <head> nach Content in <div> -> zu <p> konvertieren
+    Fix D2: <figure> innerhalb <p> -> herausloesen
+    Fix D:  <epigraph> nach Content in <div> -> entpacken
+    Fix E:  Doppelte <pb> mit identischem facs -> Duplikat entfernen (W3)
+    Fix F:  Leere <div> ohne Textinhalt -> entfernen (W4)
+    Fix G:  <figure><graphic url='unknown'> ohne Content -> entfernen (W7)
     """
     try:
         ET.register_namespace("", TEI_NS)
@@ -367,6 +372,59 @@ def _fix_post_assembly_schema(xml_text: str) -> str:
                         div.insert(idx + j, ic)
                 elif tag not in ("pb", "head"):
                     any_content = True
+
+        # Fix E: Doppelte <pb> mit identischem facs entfernen (W3)
+        # Nur wenn es mehr pbs als surfaces gibt (Ueberschuss).
+        body = tree.find(f".//{{{TEI_NS}}}body")
+        if body is not None:
+            pb_tag = f"{{{TEI_NS}}}pb"
+            surface_tag = f"{{{TEI_NS}}}surface"
+            n_surfaces = len(list(tree.iter(surface_tag)))
+            all_pbs = list(body.iter(pb_tag))
+            if len(all_pbs) > n_surfaces:
+                seen_facs = set()
+                for pb in all_pbs:
+                    facs = pb.get("facs", "")
+                    if facs in seen_facs:
+                        parent = None
+                        for candidate in tree.iter():
+                            if pb in list(candidate):
+                                parent = candidate
+                                break
+                        if parent is not None:
+                            parent.remove(pb)
+                    else:
+                        seen_facs.add(facs)
+
+        # Fix F: Leere <div> ohne Textinhalt entfernen (W4)
+        for div in list(tree.iter(f"{{{TEI_NS}}}div")):
+            text_content = "".join(div.itertext()).strip()
+            if not text_content:
+                parent = None
+                for candidate in tree.iter():
+                    if div in list(candidate):
+                        parent = candidate
+                        break
+                if parent is not None:
+                    parent.remove(div)
+
+        # Fix G: <figure> mit nur <graphic url="unknown"> und ohne
+        # sinnvollen Inhalt -> entfernen (W7)
+        for figure in list(tree.iter(f"{{{TEI_NS}}}figure")):
+            graphics = figure.findall(f"{{{TEI_NS}}}graphic")
+            all_unknown = all(
+                g.get("url", "") == "unknown" for g in graphics
+            )
+            # figure hat nur graphics mit unknown url und keinen Text
+            fig_text = "".join(figure.itertext()).strip()
+            if graphics and all_unknown and not fig_text:
+                parent = None
+                for candidate in tree.iter():
+                    if figure in list(candidate):
+                        parent = candidate
+                        break
+                if parent is not None:
+                    parent.remove(figure)
 
         return ET.tostring(tree, encoding="unicode", xml_declaration=True)
     except Exception:

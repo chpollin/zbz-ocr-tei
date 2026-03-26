@@ -89,10 +89,22 @@ Schema-Validierung aller 285 Docs gegen zbz_hersch.rng. Identifikation und Fix d
 - Non-Regression: Absaetze mit bestehenden lb unberuehrt
 - **46 Docs gefixt, 10.635 lb injiziert, W6 eliminiert (82 -> 37 Warnings)**
 
+**6. Fix-003: Post-Assembly Fixes W3/W4/W7**
+- Fix E: Doppelte pb mit identischem facs (5 W3-Docs) — Guard: nur wenn pbs > surfaces
+- Fix F: Leere div ohne Textinhalt (1 W4-Doc: 110)
+- Fix G: Leere figure mit graphic url="unknown" (2 W7-Docs: 130, 1460)
+- W11 (2 Docs: 140, 1240) als false positive dokumentiert (echte Anthologie-Struktur)
+- **Warnings: 37 -> 29**
+
+**7. NER-Re-Injection Vorbereitung**
+- Dual-Attribut-Strategie (E50) gegen zbz_hersch.rng validiert
+- W9 (17 Docs): Entity-Tags ohne ref — Re-Injection loesbar
+- W10 (10 Docs): 0 orgName/placeName — vermutlich NER-Extraktionsproblem
+- Re-Injection-Befehl: `python -m scripts.ner.ner_inject_tei --all --validate`
+
 ### Naechste Schritte
-- W9 (17 Docs ohne Entity-Refs): NER-Re-Injection nach Unified-Pipeline
-- W10 (10 Docs): Entity-Typ-Differenzierung pruefen
-- Referenz-TEI Schema-Abweichungen als "known differences" dokumentieren
+- NER-Re-Injection ausfuehren (nach Entity-Index-Update, Lane 3)
+- W10: NER-Extraktion fuer orgName/placeName pruefen
 
 ---
 

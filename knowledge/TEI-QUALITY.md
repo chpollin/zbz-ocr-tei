@@ -64,12 +64,30 @@ An 3 Stellen: `bibl/@corresp`, `orgName/@ref`, `persName/@ref`.
 
 | Regel | Docs | Beschreibung |
 |-------|------|-------------|
-| W9 | 17 | Entity-Tags ohne ref |
-| W10 | 10 | Nur persName, keine orgName/placeName |
-| W3 | 5 | facsimile/pb Mismatch |
-| W11 | 2 | Zu viele top-level divs |
-| W7 | 2 | graphic ohne url |
-| W4 | 1 | Leere div-Elemente |
+| W9 | 17 | Entity-Tags ohne ref (NER-Re-Injection noetig) |
+| W10 | 10 | Nur persName, 0 orgName/placeName (NER-Extraktionsproblem) |
+| W11 | 2 | Zu viele top-level divs (**false positive**: echte Anthologie-Struktur) |
+
+### Fix-003: Post-Assembly Fixes W3/W4/W7 (2026-03-26)
+
+**Vorher:** 37 Warnings (W3:5, W4:1, W7:2, W9:17, W10:10, W11:2)
+**Nachher:** 29 Warnings (W9:17, W10:10, W11:2)
+
+| Fix | Warning | Docs | Beschreibung |
+|-----|---------|------|-------------|
+| E | W3 | 5 | Doppelte `<pb>` mit identischem facs entfernt (nur wenn pbs > surfaces) |
+| F | W4 | 1 | Leere `<div>` ohne Textinhalt entfernt (nur Whitespace + lb) |
+| G | W7 | 2 | `<figure>` mit nur `<graphic url="unknown">` und ohne Text entfernt |
+
+**W11 (2 Docs: 140, 1240):** Kein Fix — echte Struktur. Doc 140 hat alternierend conversation/text-Abschnitte, Doc 1240 hat 7 eigenstaendige Gespraechsteile.
+
+### NER-Re-Injection Vorbereitung
+
+- Dual-Attribut-Strategie (E50) verifiziert: `ref="GND:*"` + `corresp="#zbz-*"` schema-valide
+- **W9 (17 Docs):** `410 780 790 1530 1870 2140 2330 2400 2440 2510 2540 2550 2660 3020 3180 3190 3200`
+- **W10 (10 Docs):** `30 50 100 910 1270 1360 1370 1380 2180 2310`
+- W10-Diagnose: Alle 10 Docs haben persName aber 0 orgName/placeName. Vermutlich NER-Extraktionsproblem, nicht Injection-Problem
+- Re-Injection-Befehl: `python -m scripts.ner.ner_inject_tei --all --validate`
 
 ---
 

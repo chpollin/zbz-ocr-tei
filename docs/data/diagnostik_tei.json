@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-03-26T21:07:34.889461",
+  "timestamp": "2026-03-26T21:20:54.393859",
   "schema": "zbz_hersch.rng (TEI P5 v4.10.2, ref-Pattern erweitert: GND + #zbz-)",
   "summary": {
     "total": 285,
     "valid": 285,
     "invalid": 0,
     "valid_pct": 100.0,
-    "with_warnings": 37
+    "with_warnings": 29
   },
   "fix_history": [
     {
@@ -34,6 +34,26 @@
       "docs_fixed": 46,
       "metric": "W6 eliminated: 46 -> 0 docs",
       "lb_added": 10635
+    },
+    {
+      "id": "fix-003",
+      "timestamp": "2026-03-26T21:20:54.393859",
+      "type": "tei_step3",
+      "description": "Post-Assembly Fixes: W3 (doppelte pb), W4 (leere div), W7 (leere figure/graphic)",
+      "locations": [
+        "scripts/tei/tei_step3.py: Fix E (pb-Duplikate), Fix F (leere div), Fix G (leere figure)"
+      ],
+      "warnings_fixed": {
+        "W3": 5,
+        "W4": 1,
+        "W7": 2
+      },
+      "warnings_remaining": {
+        "W9": 17,
+        "W10": 10,
+        "W11": 2
+      },
+      "note": "W11 (2 Docs: 140, 1240) als false positive dokumentiert: echte Anthologie-/Gespraechs-Struktur mit alternierenden div-Typen."
     }
   ],
   "error_frequency_before_fix": [
@@ -66,32 +86,17 @@
     {
       "rule": "W9",
       "count": 17,
-      "description": "Entity-Tags ohne ref"
+      "description": "Entity-Tags ohne ref (NER-Re-Injection noetig)"
     },
     {
       "rule": "W10",
       "count": 10,
-      "description": "Nur persName"
-    },
-    {
-      "rule": "W3",
-      "count": 5,
-      "description": "facsimile/pb Mismatch"
+      "description": "Nur persName, keine orgName/placeName (NER-Extraktionsproblem)"
     },
     {
       "rule": "W11",
       "count": 2,
-      "description": "Zu viele top-level divs"
-    },
-    {
-      "rule": "W7",
-      "count": 2,
-      "description": "graphic ohne url"
-    },
-    {
-      "rule": "W4",
-      "count": 1,
-      "description": "Leere div-Elemente"
+      "description": "Zu viele top-level divs (false positive: echte Anthologie-Struktur)"
     }
   ],
   "reference_tei_validation": {
@@ -440,10 +445,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W4"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1100": {
       "valid": true,
@@ -491,10 +494,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W3"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1200": {
       "valid": true,
@@ -514,10 +515,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W3"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1230": {
       "valid": true,
@@ -576,10 +575,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W7"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1300": {
       "valid": true,
@@ -592,10 +589,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W3"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1340": {
       "valid": true,
@@ -608,10 +603,8 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W3"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1360": {
       "valid": true,
@@ -688,19 +681,15 @@
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W3"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1460": {
       "valid": true,
       "schema_errors": 0,
       "project_errors": 0,
-      "warning_count": 1,
-      "warnings": [
-        "W7"
-      ]
+      "warning_count": 0,
+      "warnings": []
     },
     "1475": {
       "valid": true,
@@ -2447,5 +2436,43 @@
       "warning_count": 0,
       "warnings": []
     }
+  },
+  "ner_reinjection_prep": {
+    "dual_attribute_schema_valid": true,
+    "strategy": "ref=GND:* + corresp=#zbz-* (E50)",
+    "command": "python -m scripts.ner.ner_inject_tei --all --validate",
+    "w9_docs": [
+      "410",
+      "780",
+      "790",
+      "1530",
+      "1870",
+      "2140",
+      "2330",
+      "2400",
+      "2440",
+      "2510",
+      "2540",
+      "2550",
+      "2660",
+      "3020",
+      "3180",
+      "3190",
+      "3200"
+    ],
+    "w10_docs": [
+      "30",
+      "50",
+      "100",
+      "910",
+      "1270",
+      "1360",
+      "1370",
+      "1380",
+      "2180",
+      "2310"
+    ],
+    "w10_diagnosis": "Alle 10 Docs haben persName aber 0 orgName/0 placeName. Wahrscheinlich NER-Extraktionsproblem, nicht NER-Injection-Problem. Re-Injection allein wird W10 vermutlich nicht loesen.",
+    "w11_diagnosis": "Docs 140/1240: echte Anthologie-Struktur mit alternierenden conversation/text divs. False positive, kein Fix noetig."
   }
 }
