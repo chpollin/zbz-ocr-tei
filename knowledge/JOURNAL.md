@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-03-15
+updated: 2026-03-26
 tags: [zbz-ocr-tei, journal, log]
 status: active
 ---
@@ -11,6 +11,75 @@ status: active
 Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md), project status in [PROJEKT](PROJEKT.md).
 
 **Dependencies:** None (standalone log)
+
+---
+
+## Session 31 (2026-03-26): Neues Schema + Editionsrichtlinien einarbeiten
+
+### Kontext
+Projektpartnerinnen (ZBZ) liefern projektspezifisches RelaxNG-Schema (`zbz_hersch.rng`, aus ODD generiert, TEI P5 v4.10.2) und vollstaendige Editionsrichtlinien. Ersetzen bisheriges generisches Schema und konkretisieren TEI-Mapping-Regeln.
+
+### Aenderungen (18 Dateien)
+
+**Phase 1 -- Schema + Config + Validator:**
+- `data/schema/zbz_hersch.rng` eingespielt (551 Definitionen, aus ODD generiert, TEI P5 v4.10.2)
+- `data/schema/tei_all.rng` → `tei_all.rng.bak` (Backup)
+- `scripts/config.py`: Schema-Pfad auf `zbz_hersch.rng`, VALID_DIV_TYPES erweitert (dedication, otherEdition, foreign), TEI_ALL_URL/SCHEMA_DOWNLOAD_TIMEOUT entfernt
+- `scripts/tei/tei_validator.py`: Download-Logik entfernt, neue Regeln R7 (figure nicht in p), W12 (Fussnoten-n), W13 (Fussnoten xml:id Pattern), W14 (back/div types)
+
+**Phase 2 -- Knowledge-Dokumente:**
+- `knowledge/TEI-MAPPING.md`: Grosses Update -- Zeichennormalisierung verbindlich, Kapitaelchen (#k), unclear, Marginalien, leere Seiten, front/back-Matter, Genre-Strukturen, Dual-Attribut-Entitaeten, Open Questions geloest
+- `knowledge/DECISIONS.md`: E48 (Schema), E49 (Richtlinien), E50 (Dual-Attribut-Strategie). O6, O9 geschlossen. R2 mitigiert
+- `knowledge/GND-STRATEGIE.md`: GND als primaere Referenz (ref), interne IDs in corresp, Ausschlussregeln
+
+**Phase 3 -- Pipeline-Code:**
+- `scripts/tei/tei_mapping_prompt.py`: Rendition #k, unclear, entity-Ausschlussregeln (figure, listBibl, adjektivierte Formen), front/back-Matter, marginalia, leere Seiten, sp type, 12+ neue Stopwords (kantien, hegelsche, cartesien...)
+- `scripts/tei/tei_step1.py`: Ruft `normalize_for_tei()` auf OCR-Text auf
+- `scripts/tei/tei_step2.py`: Entity-Ausschluss fuer figure/listBibl in reannotate_entities()
+- `scripts/tei/tei_step3.py`: Header-Fix (kein idno, langUsage, monogr -- nicht im ODD-Schema), encyclopedia→entry in GENRE_TO_DIV_TYPE, Fix D2 (figure aus p herausloesen), toter Code _parse_languages entfernt
+- `scripts/tei/tei_xml_utils.py`: `normalize_for_tei()` -- TEI-spezifische Zeichennormalisierung (Halbgeviertstrich, typographische Anfuehrungszeichen, Apostroph U+2019, Leerzeichen vor Interpunktion)
+- `scripts/tei/tei_generator.py`: langUsage/profileDesc aus Header entfernt (Schema-Konformitaet)
+
+**Phase 5 -- NER:**
+- `scripts/ner/ner_inject_tei.py`: Dual-Attribut-Strategie (ref="GND:..." + corresp="#zbz-p.N"), Entity-Ausschluss fuer figure/listBibl via Masking-Technik
+
+**Phase 6 -- Richtlinien:**
+- `data/richtlinien/Editionsrichtlinien_ZBZ.md` eingespielt (verbindliche Referenz)
+
+### Entscheidungen
+- E48: Projektspezifisches Schema zbz_hersch.rng ersetzt generisches tei_all.rng
+- E49: Editionsrichtlinien ZBZ als verbindliche Referenz fuer TEI-Mapping
+- E50: Dual-Attribut-Strategie (ref=GND + corresp=intern)
+
+### Validierungsergebnisse
+
+```
+Baseline (alte TEIs, gegen zbz_hersch.rng):
+  4/285 VALID, 3210 Schema-Fehler (idno, langUsage, monogr dominierend)
+
+Nach Re-Assembly (207/285 Docs reassembliert):
+  50/207 VALID (24.2%), 0 Header-Fehler
+  157 Body-Content-Issues (vorbestehend, Schema strenger als tei_all.rng)
+
+Referenz-TEIs (von ZBZ): 17/25 VALID
+
+Stichprobe (10 Docs, manuell reassembliert): 7/10 VALID
+```
+
+Header-Fehler (idno, langUsage, monogr) vollstaendig eliminiert. Verbleibende Body-Issues erfordern vollstaendigen Pipeline-Re-Run (--all --force) mit aktualisierten Prompts und Schema-konformer Generierung.
+
+### Tests durchgefuehrt
+- Syntax-Check: Alle 18 Python-Dateien parsen korrekt
+- Unit-Test: normalize_for_tei() -- 4 Assertions (Em-Dash, Guillemets, Interpunktion, Apostroph)
+- NER Dual-Attribut: ref="GND:118557106" corresp="#zbz-p.1" (mit GND), corresp="#zbz-p.100" (ohne GND)
+- Entity-Ausschluss: figure/listBibl Masking funktioniert
+- Schema-Validierung: 5 Docs einzeln, 207 Docs batch, Referenz-TEIs komplett
+
+### Naechste Schritte
+- Vollstaendiger Pipeline-Re-Run (--all --force) fuer Body-Konformitaet
+- NER-Re-Injection mit Dual-Attribut auf allen Docs
+- Frontend: Rendition #k, unclear, sic/corr anzeigen
+- Verbleibende 78 Docs reassemblieren (Background-Task abgebrochen)
 
 ---
 

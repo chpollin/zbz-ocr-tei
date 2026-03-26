@@ -1,14 +1,14 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-03-07
+updated: 2026-03-26
 tags: [zbz-ocr-tei, gnd, ner, entity-linking, wikidata]
 status: active
 ---
 
-# Entity Linking Strategy (NER + Wikidata)
+# Entity Linking Strategy (NER + GND)
 
-Strategy for Named Entity Recognition and entity linking in the Hersch edition project. Since E34: **Wikidata as primary ID system** (replaces GND). Internal TEI-XML indices as Single Source of Truth.
+Strategy for Named Entity Recognition and entity linking in the Hersch edition project. Since E50: **Dual-Attribut-Strategie** -- GND als primaere Referenz im TEI-Output (wie Editionsrichtlinien), interne IDs (zbz-p.N) als Arbeits-Referenz in `corresp`. Entity Index bleibt Single Source of Truth.
 
 > **Scope:** zbz-ocr-tei performs NER + entity linking (Phase 3 in [PLAN.md](PLAN.md)). Implementation: `scripts/ner/ner_extract.py` (Gemini NER) + `entity_index.py` (TEI indices) + `wikidata_linker.py` (Wikidata API). Entity Index (`data/entities/`) as foundation.
 
@@ -20,24 +20,24 @@ Strategy for Named Entity Recognition and entity linking in the Hersch edition p
 
 ## Overview
 
-Index compilation is a central editorial goal. All persons, organizations, places, and works shall be identified and linked with Wikidata-QIDs where possible, otherwise with internal IDs (zbz-p.N, zbz-o.N, etc.).
+Index compilation is a central editorial goal. All persons, organizations, places, and works shall be identified and linked. Dual-Attribut-Strategie (E50): GND in `ref`, interne ID in `corresp`.
 
 ### Entity Types (6)
 
-| Type | TEI Element | Attribute | ID-Schema | Example |
-|------|-------------|-----------|-----------|---------|
-| Person | `<persName>` | `ref="#zbz-p.1"` | zbz-p.N | `<persName ref="#zbz-p.1">Karl Jaspers</persName>` |
-| Organization | `<orgName>` | `ref="#zbz-o.1"` | zbz-o.N | `<orgName ref="#zbz-o.1">UNESCO</orgName>` |
-| Place | `<placeName>` | `ref="#zbz-l.1"` | zbz-l.N | `<placeName ref="#zbz-l.1">Paris</placeName>` |
-| Work | `<bibl>` | `corresp="#zbz-w.1"` | zbz-w.N | `<bibl corresp="#zbz-w.1">Philosophie</bibl>` |
-| Event | `<name type="event">` | `ref="#zbz-e.1"` | zbz-e.N | `<name type="event" ref="#zbz-e.1">Mai 68</name>` |
-| Date | `<date>` | `when="..."` | (kein ID) | `<date when="1947">1947</date>` |
+| Type | TEI Element | ref (GND) | corresp (intern) | Example |
+|------|-------------|-----------|-------------------|---------|
+| Person | `<persName>` | `ref="GND:118557106"` | `corresp="#zbz-p.1"` | `<persName ref="GND:118557106" corresp="#zbz-p.1">Karl Jaspers</persName>` |
+| Organization | `<orgName>` | `ref="GND:1010450-1"` | `corresp="#zbz-o.5"` | `<orgName ref="GND:1010450-1" corresp="#zbz-o.5">UNESCO</orgName>` |
+| Place | `<placeName>` | `ref="GND:..."` | `corresp="#zbz-l.1"` | `<placeName corresp="#zbz-l.1">Paris</placeName>` |
+| Work | `<bibl>` | `ref="GND:..."` | `corresp="#zbz-w.3"` | `<bibl ref="GND:1088036961" corresp="#zbz-w.3">Philosophie</bibl>` |
+| Event | `<name type="event">` | `ref="GND:..."` | `corresp="#zbz-e.1"` | `<name type="event" corresp="#zbz-e.1">Mai 68</name>` |
+| Date | `<date>` | — | — | `<date when="1947">1947</date>` |
 
-### ID Hierarchy
+### ID Hierarchy (E50)
 
-1. **Internal ID** (zbz-p.N): Immer vorhanden, Single Source of Truth
-2. **Wikidata QID**: Nur wenn per API verifiziert (100%-Match + Typ-Check)
-3. **GND-ID**: Legacy, wird ueber Wikidata P227 Property nachgeschlagen
+1. **GND-ID** (ref): Primaere Referenz im TEI-Output, nur wenn im Entity Index vorhanden
+2. **Internal ID** (corresp): Immer vorhanden, verweist auf Entity Index
+3. **Wikidata QID**: Im Entity Index gespeichert (corresp-Attribut im Index), nicht im TEI-Attribut
 
 ### Entity Index (TEI-XML)
 
@@ -55,7 +55,10 @@ Jeder Eintrag hat: `xml:id` (interne ID), optionales `corresp` (Wikidata-URL), `
 
 **Every mention is linked**, even when repeated within the same document.
 
-**Exception:** No markup in image captions.
+**Exceptions (Editionsrichtlinien):**
+- No markup in image captions (`<figure>/<p>`)
+- No markup in `<div type="bibliography">/<listBibl>` (Lexikonartikel)
+- Adjektivierte Personennamen (z.B. "kantien") werden nicht ausgezeichnet
 
 ---
 

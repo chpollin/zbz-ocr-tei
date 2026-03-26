@@ -47,7 +47,9 @@ ENTITY_TAG_PATTERN = re.compile(
 
 
 # ---------------------------------------------------------------------------
-# Ref-Update (GND -> WD)
+# Ref-Update: Dual-Attribut-Strategie (E50)
+#   ref="GND:{id}"       -- primaere Referenz (nur wenn GND vorhanden)
+#   corresp="#zbz-p.N"   -- interne ID (immer vorhanden)
 # ---------------------------------------------------------------------------
 
 def update_existing_refs(
@@ -55,13 +57,15 @@ def update_existing_refs(
     store: EntityStore,
     index: "EntityIndex | None" = None,
 ) -> str:
-    """Aktualisiert bestehende Entity-Tags mit Index-Refs.
+    """Aktualisiert bestehende Entity-Tags mit Dual-Attributen (E50).
 
     Zwei-Pass-Strategie:
     1. Leaf-Pass: Innere Tags (persName/orgName/placeName ohne Sub-Tags)
     2. Nested-Pass: Aeussere Tags (bibl etc. die Sub-Tags enthalten)
 
-    Lookup-Reihenfolge: Store -> Entity Index (Fallback).
+    Dual-Attribut-Strategie:
+    - ref="GND:{id}" wenn GND-ID im Entity Index vorhanden
+    - corresp="#zbz-p.N" als interne Referenz (immer)
     """
     # Build lookup: surface text -> EntityRecord (resolved only)
     surface_to_rec: dict[str, EntityRecord] = {}
@@ -69,25 +73,36 @@ def update_existing_refs(
         for surface in rec.surfaces:
             surface_to_rec[surface.lower()] = rec
 
-    def _resolve_ref(text_only: str, tag_name: str) -> str | None:
-        """Loest einen Entity-Text in einen Index-Ref auf."""
-        # 1. Store-Lookup (hat _index_id)
+    def _resolve_dual_ref(text_only: str, tag_name: str) -> tuple[str | None, str | None]:
+        """Loest einen Entity-Text in GND-Ref + interne ID auf.
+
+        Returns:
+            (gnd_ref, internal_id) z.B. ("GND:118557106", "#zbz-p.1")
+        """
+        gnd_ref = None
+        internal_id = None
+
+        # 1. Store-Lookup
         rec = surface_to_rec.get(text_only)
         if rec:
             index_id = getattr(rec, '_index_id', None)
-            ref = f"#{index_id}" if index_id else rec.ref_value()
-            if ref != "WD:unknown":
-                return ref
+            if index_id:
+                internal_id = f"#{index_id}"
+            if rec.gnd_id:
+                gnd_ref = rec.gnd_id  # already "GND:..."
 
-        # 2. Index-Fallback (fuer Entities die im Index aber nicht im Store sind)
+        # 2. Index-Fallback
         if index:
             entity_type = {"persName": "person", "orgName": "organization",
                            "placeName": "place", "bibl": "work"}.get(tag_name)
             entry = index.match(text_only, entity_type)
             if entry:
-                return f"#{entry.xml_id}"
+                if not internal_id:
+                    internal_id = f"#{entry.xml_id}"
+                if not gnd_ref and entry.gnd_id:
+                    gnd_ref = entry.gnd_id  # already "GND:..."
 
-        return None
+        return gnd_ref, internal_id
 
     def _replace_ref(match):
         full_tag = match.group(0)
@@ -98,31 +113,25 @@ def update_existing_refs(
         # Entity-Text extrahieren (ohne Sub-Tags)
         text_only = re.sub(r'<[^>]+>', '', content).strip().lower()
 
-        new_ref = _resolve_ref(text_only, tag_name)
-        if not new_ref:
+        gnd_ref, internal_id = _resolve_dual_ref(text_only, tag_name)
+        if not gnd_ref and not internal_id:
             return full_tag
 
-        # Ref-Attribut bestimmen
-        ref_attr = "corresp" if tag_name == "bibl" else "ref"
+        # Bestehende ref/corresp entfernen fuer sauberen Neuaufbau
+        attrs = re.sub(r'\s*ref="[^"]*"', '', attrs)
+        attrs = re.sub(r'\s*corresp="[^"]*"', '', attrs)
 
-        # Fall 1: Tag hat kein ref/corresp -> hinzufuegen
-        if f'{ref_attr}="' not in attrs and 'ref="' not in attrs and 'corresp="' not in attrs:
-            attrs = f'{attrs} {ref_attr}="{new_ref}"' if attrs else f' {ref_attr}="{new_ref}"'
-        # Fall 2: GND:unknown ersetzen
-        elif 'ref="GND:unknown"' in attrs:
-            attrs = attrs.replace('ref="GND:unknown"', f'ref="{new_ref}"')
-        elif 'corresp="GND:unknown"' in attrs:
-            attrs = attrs.replace('corresp="GND:unknown"', f'corresp="{new_ref}"')
-        # Fall 3: Bestehende GND-ID ersetzen
-        elif re.search(r'ref="GND:[^"]*"', attrs):
-            attrs = re.sub(r'ref="GND:[^"]*"', f'ref="{new_ref}"', attrs)
-        elif re.search(r'corresp="GND:[^"]*"', attrs):
-            attrs = re.sub(r'corresp="GND:[^"]*"', f'corresp="{new_ref}"', attrs)
+        # GND-Ref setzen (wenn vorhanden)
+        if gnd_ref:
+            attrs = f'{attrs} ref="{gnd_ref}"'
+
+        # Interne ID immer als corresp setzen
+        if internal_id:
+            attrs = f'{attrs} corresp="{internal_id}"'
 
         return f"<{tag_name}{attrs}>{content}</{tag_name}>"
 
     # Pass 1: Leaf-Level Entity-Tags (kein Nesting im Content)
-    # Matcht <persName>Karl Jaspers</persName> auch innerhalb von <bibl>
     leaf_pattern = re.compile(
         r'<(persName|orgName|placeName|name)(\s[^>]*)?>([^<]*)</\1>',
     )
@@ -142,12 +151,43 @@ def update_existing_refs(
 # Neue Entity-Tags einfuegen
 # ---------------------------------------------------------------------------
 
+def _mask_excluded_zones(xml_text: str) -> tuple[str, list[tuple[str, str]]]:
+    """Maskiert Bereiche, in denen keine Entities annotiert werden duerfen.
+
+    Editionsrichtlinien (E49):
+    - Keine Entities in <figure>...</figure> (Bildunterschriften)
+    - Keine Entities in <listBibl>...</listBibl> (Lexikonartikel-Bibliografie)
+    """
+    masks = []
+    counter = 0
+    for pattern in [
+        re.compile(r'<figure\b[^>]*>.*?</figure>', re.DOTALL),
+        re.compile(r'<listBibl\b[^>]*>.*?</listBibl>', re.DOTALL),
+    ]:
+        for match in pattern.finditer(xml_text):
+            placeholder = f"\x01EXCL{counter}\x01"
+            masks.append((placeholder, match.group(0)))
+            counter += 1
+        for placeholder, original in masks[-counter:] if counter else []:
+            xml_text = xml_text.replace(original, placeholder, 1)
+    return xml_text, masks
+
+
+def _unmask_excluded_zones(xml_text: str, masks: list[tuple[str, str]]) -> str:
+    """Stellt maskierte Bereiche wieder her."""
+    for placeholder, original in masks:
+        xml_text = xml_text.replace(placeholder, original)
+    return xml_text
+
+
 def inject_new_entities(xml_text: str, store: EntityStore) -> str:
     """Fuegt Entity-Tags fuer ungetaggte Mentions ein.
 
-    Verwendet die bewaehrte Tag-aware Split + Placeholder Technik
-    aus reannotate_entities() in tei_unified.py.
+    Verwendet die bewaehrte Tag-aware Split + Placeholder Technik.
+    Schliesst <figure> und <listBibl> Bereiche aus (E49).
     """
+    # Ausschluss-Zonen maskieren
+    xml_text, masks = _mask_excluded_zones(xml_text)
     # Nur resolved Entities mit hoeherem Count injizieren
     entities_to_inject = []
     for rec in store.entities.values():
@@ -185,7 +225,12 @@ def inject_new_entities(xml_text: str, store: EntityStore) -> str:
             annotated = _annotate_text_segments(part, entities_to_inject)
             new_parts.append(annotated)
 
-    return "".join(new_parts)
+    xml_text = "".join(new_parts)
+
+    # Ausschluss-Zonen wiederherstellen
+    xml_text = _unmask_excluded_zones(xml_text, masks)
+
+    return xml_text
 
 
 def _annotate_text_segments(

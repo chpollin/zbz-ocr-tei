@@ -53,6 +53,57 @@ def wrap_orphan_groups(container, is_orphan, make_wrapper) -> None:
         container.insert(start_idx, wrapper)
 
 
+# ---------------------------------------------------------------------------
+# TEI-Zeichennormalisierung (Editionsrichtlinien ZBZ, E49)
+# ---------------------------------------------------------------------------
+
+# Normalisierungsregeln fuer den TEI-Output (NICHT fuer OCR-Evaluation!).
+# Zielzeichen sind spezifische Unicode-Zeichen gemaess Richtlinien.
+_TEI_NORMALIZE_MAP = {
+    # Gedankenstriche -> Halbgeviertstrich (U+2013)
+    '\u2014': '\u2013',  # Em-dash -> En-dash
+    # Trennstriche -> Viertelgeviertstrich (U+2010)
+    # (Hyphen-minus bleibt Hyphen-minus in normalem Text,
+    #  wird nur bei expliziten Trennstellen zu U+2010)
+
+    # Anfuehrungszeichen normalisieren
+    '\u201E': '\u201C',  # „ -> " (untere dt. -> obere engl.)
+    '\u00AB': '\u201C',  # « -> "
+    '\u00BB': '\u201D',  # » -> "
+    '\u2039': '\u2018',  # ‹ -> '
+    '\u203A': '\u2019',  # › -> '
+
+    # Apostrophe -> Right single quotation mark (U+2019)
+    '\u0060': '\u2019',  # ` -> '
+    '\u00B4': '\u2019',  # ´ -> '
+    '\u2018': '\u2019',  # ' -> ' (left single -> right single for apostrophe)
+
+    # Leerzeichen normalisieren
+    '\u00A0': ' ',       # Non-breaking space
+    '\u2009': ' ',       # Thin space
+    '\u200A': ' ',       # Hair space
+    '\u202F': ' ',       # Narrow no-break space
+}
+
+
+def normalize_for_tei(text: str) -> str:
+    """Normalisiert Text gemaess Editionsrichtlinien ZBZ fuer TEI-Output.
+
+    Wendet die verbindlichen Zeichennormalisierungen an:
+    - Gedankenstriche -> Halbgeviertstrich (U+2013)
+    - Anfuehrungszeichen -> typografische Form
+    - Apostrophe -> U+2019
+    - Leerzeichen vor Interpunktion loeschen
+    """
+    for old, new in _TEI_NORMALIZE_MAP.items():
+        text = text.replace(old, new)
+
+    # Leerzeichen vor : ; ? ! loeschen (franzoesische Typografie)
+    text = re.sub(r' +([;:?!])', r'\1', text)
+
+    return text
+
+
 def parse_tei_fragment(xml: str):
     """Parst ein TEI-Fragment in einen ET-Root mit Namespace-Wrapper.
 

@@ -23,8 +23,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     REFERENZ_TEI_DIR,
-    SCHEMA_DOWNLOAD_TIMEOUT,
-    TEI_ALL_URL,
     TEI_NS,
     TEI_SCHEMA_DIR,
     TEI_SCHEMA_PATH,
@@ -41,28 +39,18 @@ except ImportError:
 
 
 # ---------------------------------------------------------------------------
-# Schema Download
+# Schema-Pfad (lokal, projektspezifisch: zbz_hersch.rng)
 # ---------------------------------------------------------------------------
 
 def ensure_schema() -> Path:
-    """Stellt sicher, dass das RelaxNG-Schema vorhanden ist."""
+    """Prueft, ob das projektspezifische RelaxNG-Schema vorhanden ist."""
     if TEI_SCHEMA_PATH.exists():
         return TEI_SCHEMA_PATH
 
-    TEI_SCHEMA_DIR.mkdir(parents=True, exist_ok=True)
-
-    print(f"Lade TEI-All RelaxNG Schema von {TEI_ALL_URL} ...")
-    import urllib.request
-    try:
-        with urllib.request.urlopen(TEI_ALL_URL, timeout=SCHEMA_DOWNLOAD_TIMEOUT) as resp:
-            TEI_SCHEMA_PATH.write_bytes(resp.read())
-        print(f"  Schema gespeichert: {TEI_SCHEMA_PATH}")
-    except Exception as e:
-        print(f"  WARNUNG: Download fehlgeschlagen: {e}")
-        print("  Validierung nur mit Projekt-Regeln moeglich.")
-        return None
-
-    return TEI_SCHEMA_PATH
+    print(f"WARNUNG: Schema nicht gefunden: {TEI_SCHEMA_PATH}")
+    print("  Erwartet: data/schema/zbz_hersch.rng (projektspezifisch, aus ODD generiert)")
+    print("  Validierung nur mit Projekt-Regeln moeglich.")
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -166,6 +154,15 @@ def _check_project_rules(root) -> tuple[list[dict], list[dict]]:
                 "rule": "R6",
             })
 
+    # R7: figure darf nicht in p stehen (Richtlinie: eigenstaendige Bloecke)
+    for p in root.findall(f".//{{{TEI_NS}}}p"):
+        for fig in p.findall(f"{{{TEI_NS}}}figure"):
+            errors.append({
+                "line": fig.sourceline or 0,
+                "message": "<figure> innerhalb von <p> -- muss eigenstaendiger Block sein",
+                "rule": "R7",
+            })
+
     # -----------------------------------------------------------------------
     # WARNINGS -- informativ fuer Editoren
     # -----------------------------------------------------------------------
@@ -185,7 +182,8 @@ def _check_project_rules(root) -> tuple[list[dict], list[dict]]:
             "rule": "W9",
         })
 
-    # W1: Sprach-Code "und" (undetermined)
+    # W1: Sprach-Code "und" (undetermined) -- nur wenn langUsage vorhanden
+    # (zbz_hersch.rng Schema hat kein langUsage, daher optional)
     for lang in root.findall(f".//{{{TEI_NS}}}language"):
         if lang.get("ident", "") == "und":
             warnings.append({
@@ -294,6 +292,40 @@ def _check_project_rules(root) -> tuple[list[dict], list[dict]]:
                     "line": 0,
                     "message": f'{count} top-level divs mit n="{most_common_n}" -- div-Merge nicht gegriffen?',
                     "rule": "W11",
+                })
+
+    # W12: note place="foot" sollte n-Attribut haben (Richtlinie: Fussnotennummer)
+    for note in root.findall(f".//{{{TEI_NS}}}note"):
+        if note.get("place") == "foot" and not note.get("n"):
+            warnings.append({
+                "line": note.sourceline or 0,
+                "message": '<note place="foot"> ohne n-Attribut (Fussnotennummer fehlt)',
+                "rule": "W12",
+            })
+
+    # W13: note place="foot" sollte xml:id mit Pattern fn{Seite}-{Nr} haben
+    fn_id_pattern = re.compile(r"^fn\d+[a-z]?-\d+$")
+    for note in root.findall(f".//{{{TEI_NS}}}note"):
+        if note.get("place") == "foot":
+            xml_id = note.get("{http://www.w3.org/XML/1998/namespace}id", "")
+            if xml_id and not fn_id_pattern.match(xml_id):
+                warnings.append({
+                    "line": note.sourceline or 0,
+                    "message": f'Fussnoten xml:id="{xml_id}" entspricht nicht Pattern fn{{Seite}}-{{Nr}}',
+                    "rule": "W13",
+                })
+
+    # W14: back/div sollte type in {translation, reprint, otherEdition} haben
+    _BACK_DIV_TYPES = {"translation", "reprint", "otherEdition"}
+    back = root.find(f".//{{{TEI_NS}}}back")
+    if back is not None:
+        for div in back.findall(f"{{{TEI_NS}}}div"):
+            div_type = div.get("type", "")
+            if div_type and div_type not in _BACK_DIV_TYPES:
+                warnings.append({
+                    "line": div.sourceline or 0,
+                    "message": f'<back>/<div type="{div_type}"> -- erwartet: {_BACK_DIV_TYPES}',
+                    "rule": "W14",
                 })
 
     return errors, warnings

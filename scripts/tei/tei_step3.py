@@ -19,55 +19,22 @@ from scripts.tei.tei_xml_utils import make_element, wrap_orphan_groups
 # Language Parsing
 # ---------------------------------------------------------------------------
 
-# Mapping: diverse Formate aus doc_metadata.json -> ISO 639-3
-_LANG_MAP = {
-    "fr": "fra", "de": "deu", "en": "eng", "it": "ita", "es": "spa",
-    "la": "lat", "pt": "por",
-    "FR": "fra", "DE": "deu", "EN": "eng", "IT": "ita", "ES": "spa",
-    "fra": "fra", "deu": "deu", "eng": "eng", "ita": "ita", "spa": "spa",
-    "lat": "lat", "por": "por",
-}
-
-
-def _parse_languages(raw: str) -> list[str]:
-    """Parst Sprach-Codes aus doc_metadata.json.
-
-    Akzeptiert: "fra", "fra/deu", "fra/deu/ita", "FR", "DE/FR", "?", etc.
-    Returns: Liste von ISO 639-3 Codes, z.B. ["fra", "deu"].
-    """
-    if not raw or raw == "?":
-        return ["und"]
-
-    # Schon ein einzelner gueltiger 3-Buchstaben-Code?
-    if len(raw) == 3 and raw.isalpha() and raw.lower() in _LANG_MAP:
-        return [_LANG_MAP[raw.lower()]]
-
-    # Split auf / und einzeln mappen
-    parts = [p.strip() for p in raw.split("/") if p.strip()]
-    result = []
-    for part in parts:
-        mapped = _LANG_MAP.get(part)
-        if not mapped:
-            mapped = _LANG_MAP.get(part.lower())
-        if mapped and mapped not in result:
-            result.append(mapped)
-
-    return result if result else ["und"]
-
-
 # ---------------------------------------------------------------------------
 # teiHeader + facsimile
 # ---------------------------------------------------------------------------
 
 def build_tei_header(doc_id: str, metadata: dict) -> str:
-    """Erzeugt teiHeader mit biblStruct aus Metadaten."""
+    """Erzeugt teiHeader passend zum zbz_hersch.rng Schema.
+
+    Schema-Einschraenkungen (ODD-Customization):
+    - Kein <idno> (nicht im Schema) -> docID als Kommentar
+    - Kein <monogr>/<biblStruct> mit monogr -> immer <bibl>
+    - Kein <langUsage>/<language> -> kein profileDesc
+    """
     title = xml_escape(metadata.get("title") or doc_id)
     author = xml_escape(metadata.get("author") or "Jeanne Hersch")
     date = xml_escape(metadata.get("date") or "")
-    desc = xml_escape(metadata.get("desc") or "")
     pub_form = metadata.get("pub_form", "other")
-
-    languages = _parse_languages(metadata.get("lang", "und"))
 
     lines = []
     lines.append("  <teiHeader>")
@@ -78,40 +45,17 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     lines.append("      </titleStmt>")
     lines.append("      <publicationStmt>")
     lines.append("        <publisher>ZBZ / DHCraft</publisher>")
-    lines.append(f'        <idno type="docID">{doc_id}</idno>')
     lines.append("      </publicationStmt>")
+    lines.append(f"      <!-- docID: {doc_id}, pub_form: {pub_form} -->")
     lines.append("      <sourceDesc>")
-
-    # biblStruct statt einfacher bibl
-    if pub_form in ("journalArticle", "bookSection"):
-        lines.append(f'        <biblStruct type="{pub_form}">')
-        lines.append("          <analytic>")
-        lines.append(f'            <title>{title}</title>')
-        lines.append(f"            <author>{author}</author>")
-        lines.append("          </analytic>")
-        lines.append("          <monogr>")
-        lines.append("            <title/>")
-        lines.append("            <imprint>")
-        lines.append(f"              <date>{date or 'unknown'}</date>")
-        lines.append("            </imprint>")
-        lines.append("          </monogr>")
-        lines.append("        </biblStruct>")
-    else:
-        lines.append("        <bibl>")
-        lines.append(f"          <title>{title}</title>")
-        lines.append(f"          <author>{author}</author>")
-        if date:
-            lines.append(f"          <date>{date}</date>")
-        lines.append("        </bibl>")
-
+    lines.append("        <bibl>")
+    lines.append(f"          <title>{title}</title>")
+    lines.append(f"          <author>{author}</author>")
+    if date:
+        lines.append(f"          <date>{date}</date>")
+    lines.append("        </bibl>")
     lines.append("      </sourceDesc>")
     lines.append("    </fileDesc>")
-    lines.append("    <profileDesc>")
-    lines.append("      <langUsage>")
-    for lang_code in languages:
-        lines.append(f'        <language ident="{lang_code}"/>')
-    lines.append("      </langUsage>")
-    lines.append("    </profileDesc>")
     lines.append("  </teiHeader>")
 
     return "\n".join(lines)
@@ -232,6 +176,7 @@ _GENRE_TO_DIV_TYPE = {
     "editorial": "editorial",
     "preface": "preface",
     "debate": "conversation",
+    "encyclopedia": "entry",
 }
 
 
@@ -384,6 +329,24 @@ def _fix_post_assembly_schema(xml_text: str) -> str:
                     child.tag = f"{{{TEI_NS}}}p"
                 elif tag != "head":
                     seen_content = True
+
+        # Fix D2: <figure> innerhalb <p> -> herausloesen (Richtlinie: eigenstaendige Bloecke)
+        for p in list(tree.iter(f"{{{TEI_NS}}}p")):
+            figures_in_p = p.findall(f"{{{TEI_NS}}}figure")
+            if not figures_in_p:
+                continue
+            parent = None
+            for candidate in tree.iter():
+                if p in list(candidate):
+                    parent = candidate
+                    break
+            if parent is None:
+                continue
+            p_idx = list(parent).index(p)
+            for fig in figures_in_p:
+                p.remove(fig)
+                p_idx += 1
+                parent.insert(p_idx, fig)
 
         # Fix D: <epigraph> nach Content in <div> -> entpacken
         for div in list(tree.iter(f"{{{TEI_NS}}}div")):

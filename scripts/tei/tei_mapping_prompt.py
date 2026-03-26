@@ -39,10 +39,17 @@ _ENTITY_STOPWORDS = {
     "Philosophen", "Marxisten",
     # Franzoesische Gattungsbegriffe (P9: Est-ce que)
     "Est", "Homme",
-    # Adjektiv-/Demonym-Formen (keine Entities)
+    # Adjektiv-/Demonym-Formen (keine Entities, Richtlinie E49)
     "suisse", "Suisses", "Suisses-romands", "Suisses-allemands",
     "femmes suisses", "citoyens suisses", "allemand",
     "Schweizer", "Zuercher", "Zahler",
+    # Adjektivierte Personennamen (Richtlinie: nicht auszeichnen)
+    "kantien", "kantienne", "kantiens", "kantiennes",
+    "hegelsche", "hegelschen", "hegelscher",
+    "cartesien", "cartesienne", "cartesiens", "cartesiennes",
+    "marxiste", "marxistes", "marxistisch", "marxistische",
+    "platonicien", "platonicienne", "nietzscheen",
+    "jaspersschen", "jasperssche",
     # Generische Begriffe
     "Etat", "Staat", "State",
     # Abstrakte Werktitel die zu generisch sind
@@ -139,8 +146,15 @@ maps to a TEI element with specific attributes.
 | List item | <item> | (none) | Inside <list>. Numbering in text, not attribute. |
 | Table | <table> | (none) | Contains <row>/<cell>. |
 | Vertical space | <space/> | dim="vertical" | Larger gap between paragraphs. |
-| Front matter | <front> | (none) | Editorial notes, context. Inside <text>, before <body>. |
+| Front matter | <front> | (none) | Editorial notes, dedications, context. Inside <text>, before <body>. |
+| Front dedication | <div> | type="dedication" | Inside <front>. Dedication text in <p>. |
 | Back matter | <back> | (none) | Translations, reprints. Inside <text>, after <body>. |
+| Translation notice | <div> | type="translation" | Inside <back>. MLA citation + Swisscovery link as <ref target="...">. |
+| Reprint notice | <div> | type="reprint" | Inside <back>. MLA citation + Swisscovery link. |
+| Other edition notice | <div> | type="otherEdition" | Inside <back>. MLA citation + Swisscovery link. |
+| Empty page | <p> | (none) | Content is literally "[Leer]". After <pb/> of the empty page. |
+| Marginalia right | <note> | place="right" | Right margin note. After the line it appears next to. |
+| Marginalia left | <note> | place="left" | Left margin note. Before the line it appears next to. |
 
 --- SECTION 2: LINE-LEVEL MARKUP ---
 
@@ -162,11 +176,12 @@ see in the image.
 | Italic text | <hi> | rendition="#i" | Verify from image. Often = emphasis, foreign title, or work title. |
 | Underlined text | <hi> | rendition="#u" | Rare. Verify from image. |
 | Letter-spaced text | <hi> | rendition="#g" | German emphasis convention (gesperrt). |
+| Small caps | <hi> | rendition="#k" | Kapitaelchen. |
 | Superscript | <hi> | rendition="#sup" | Footnote markers, ordinals. |
 | Subscript | <hi> | rendition="#sub" | Chemical formulas. Rare. |
 
 IMPORTANT: Only encode SEMANTICALLY RELEVANT highlighting, not purely
-typographic features (e.g. small caps in headings are NOT encoded).
+typographic features used solely for heading decoration.
 
 --- SECTION 4: ENTITIES ---
 
@@ -187,7 +202,9 @@ Authority IDs (GND, Wikidata) are added later by the NER pipeline from the Entit
 Do NOT add ref or corresp attributes to entity tags.
 
 EXCEPTIONS:
-- Do NOT annotate entities inside image captions (<figure>/<head>).
+- Do NOT annotate entities inside image captions (<figure>/<head> or <figure>/<p>).
+- Do NOT annotate entities inside <div type="bibliography">/<listBibl> (encyclopedia entries).
+- Do NOT tag adjectival person names (e.g. "kantien", "hegelsche", "cartesien").
 - Avoid nested tagging (person inside work title).
 
 --- SECTION 5: LANGUAGE SWITCHES ---
@@ -201,17 +218,19 @@ Language codes (ISO 639-3): fra=French, deu=German, eng=English, ita=Italian, la
 Only tag SUBSTANTIAL language switches (phrases, sentences), not individual
 foreign words that are commonly used (e.g. "a priori" in French text).
 
---- SECTION 6: CORRECTIONS ---
+--- SECTION 6: CORRECTIONS & UNCLEAR ---
 
 | Phenomenon | TEI Element | Attributes | Rules |
 |---|---|---|---|
 | Non-obvious print error | <choice> | (none) | Contains <sic> + <corr>. |
 | Error in original | <sic> | (none) | Inside <choice>. The incorrect text. |
 | Corrected form | <corr> | (none) | Inside <choice>. The correct text. |
+| Unclear reading | <unclear> | cert="high" or "low" | Text hard to read due to physical damage or faint print. |
 
 NOTE: Obvious errors are silently corrected in the OCR text.
 Use <choice>/<sic>/<corr> ONLY for non-obvious errors where both readings
 should be preserved (e.g. missing accent: Eclairement vs Eclairement).
+Use <unclear> when characters are hard to read (damaged, faint). Optional @cert for confidence.
 
 --- SECTION 7: SPEECH ACTS (interviews, debates) ---
 
@@ -247,7 +266,7 @@ GENRE_RULES = {
     "review": """
 GENRE-SPECIFIC RULES (Review):
 - Outer div: type="review" (NOT n="1")
-- <head> contains <bibl corresp="GND:..."> with full bibliographic entry
+- <head> contains <bibl ref="GND:..."> with full bibliographic entry
   (author, title in <hi rendition="#i">, publisher, date, pages)
 - Review body follows as <p> elements
 - Tag the reviewed work's author with <persName>
@@ -257,9 +276,9 @@ GENRE-SPECIFIC RULES (Review):
 GENRE-SPECIFIC RULES (Interview):
 - Outer div wraps content: type="interview"
 - Introductory text or epigraph before Q&A may use <epigraph> or <p>
-- Each speaker turn: <sp><speaker><persName ref="GND:..."/></speaker><p>...</p></sp>
+- Each speaker turn: <sp><speaker><persName ref="GND:...">Name</persName>:</speaker><p>...</p></sp>
+- <sp> can be further specified: type="question" or type="answer"
 - Speaker identification: bold/CAPS name before colon, or clear Q&A pattern
-- <persName> inside <speaker> may be self-closing with just the ref attribute
 - A single <sp> can span a page break (<pb/> inside the <p> of an <sp>)
 """,
 

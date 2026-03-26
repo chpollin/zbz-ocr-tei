@@ -61,6 +61,9 @@ Consolidated register of all decisions and open questions in the project.
 | E45 | Entity-Stopwort-Erweiterung durchgefuehrt | 20 neue Eintraege in _ENTITY_STOPWORDS: Mensch, Der Mensch, Wahl, Rolle, Angst, Geist, Ursprung, Gott, Christ, Philosophie, Demokratie, Philosophen, Marxisten, Est, Homme, Schweizer, Zuercher, Zahler, Zeit, Gesamtschule. Reassembly 32 Docs, alle VALID, $0 Kosten | 2026-03-15 | [PIPELINE](PIPELINE.md) |
 | E46 | OCR-Deduplizierung als deterministische Nachbearbeitung | Neues Script `scripts/ocr_dedup.py`: Token-Repetitions-Loops, Einzel-Buchstaben-Loops, Barcode-Artefakte, Jahrzahl-Wiederholungen entfernen. Kein LLM noetig. 3 Docs bereinigt (900, 1100, 2630). Einschraenkung: Fehlender Originaltext nicht rekonstruierbar | 2026-03-15 | [PIPELINE](PIPELINE.md) |
 | E47 | div type="essay" kein valider DTA-Typ | type="text" als generischer Ersatz fuer philosophische Essays. VALID_DIV_TYPES in config.py unveraendert (text war bereits enthalten). 2 Docs gefixt (2140, 2660) | 2026-03-15 | [PIPELINE](PIPELINE.md) |
+| E48 | Projektspezifisches Schema zbz_hersch.rng | Generisches tei_all.rng ersetzt durch projektspezifisches Schema (aus ODD generiert, TEI P5 v4.10.2, 551 Definitionen). Validierung gegen zbz_hersch.rng statt Download von tei-c.org. Altes Schema als tei_all.rng.bak archiviert | 2026-03-26 | [TEI-MAPPING](TEI-MAPPING.md) |
+| E49 | Editionsrichtlinien ZBZ als verbindliche Referenz | Vollstaendige Editionsrichtlinien von ZBZ (README.md) als `data/richtlinien/Editionsrichtlinien_ZBZ.md` integriert. Betrifft: Zeichennormalisierung, Fussnoten (fn{Seite}-{Nr}), front/back-Matter (editorial, dedication, translation, reprint, otherEdition), Genre-Strukturen (interview/conversation/review/entry), Marginalien, Figures, Unclear, Entity-Ref-Format (GND + corresp). TEI-MAPPING.md aktualisiert | 2026-03-26 | [TEI-MAPPING](TEI-MAPPING.md) |
+| E50 | Dual-Attribut-Strategie fuer Entity-Referenzen | ref="GND:{id}" als primaere Referenz (wie Richtlinien), corresp="#zbz-p.N" als interne Referenz (immer vorhanden). GND nur wenn im Entity Index vorhanden. Entity Index bleibt Single Source of Truth. VALID_DIV_TYPES erweitert um dedication, otherEdition, foreign | 2026-03-26 | [GND-STRATEGIE](GND-STRATEGIE.md) |
 | E35 | NER Production-Ready (Phase 3 Scale-Up) | 7 Qualitaetsverbesserungen vor Production Run: Known-Entity-Hint 150/Typ (QID-first), Diakritik-Matching (_stripped_lookup), sicheres Surname-Fallback (nur bei 1 Kandidat), Wikidata +9 QIDs, 4-Stufen-Konfidenz (1.0/0.9/0.8/0.6), OCR-Chunking (>8000 chars), Entity-Index statt KNOWN_ENTITY_NAMES (11->393 Namen). Pipeline-Integration: tei_unified.py --ner (Step 5), Dashboard NER-Stats, Edition entity_index.json Export, Katalog Entity-Count Badge, Sidebar Resolution-Status. Evaluation: --lenient (Diakritik-normalisiert), --report (HTML) | 2026-03-08 | [PIPELINE](PIPELINE.md) |
 
 ---
@@ -69,11 +72,11 @@ Consolidated register of all decisions and open questions in the project.
 
 | # | Question | Context | Blocks | Clarification by |
 |---|----------|---------|--------|------------------|
-| O6 | Normalization vs. source fidelity (incl. heading typography) | Clarification with expert Baehler pending | Phase 3 TEI | ZBZ |
+| ~~O6~~ | ~~Normalization vs. source fidelity~~ | Resolved by E49: vorlagengetreu mit definierten Normalisierungen (Halbgeviertstrich, Viertelgeviertstrich, typografische Anfuehrungszeichen, Apostroph U+2019) | — | Closed |
 | O8 | Metadata from ALMA/MMSID | MMSIDs needed for teiHeader | Phase 3 TEI | ZBZ |
-| O9 | div-type values front/back matter | editorial, context, translation etc. | Phase 3 TEI | Own decision |
+| ~~O9~~ | ~~div-type values front/back matter~~ | Resolved by E49: front: editorial, dedication. back: translation, reprint, otherEdition | — | Closed |
 | ~~O11~~ | ~~Entities without GND entry~~ | Resolved by E38: Interne IDs (zbz-p/o/l/w.N) als primaere Referenz, Wikidata/GND-Verlinkung ueber Entity Index. Kein Entity bleibt ohne ID | — | Closed |
-| O13 | TEI editorial details (subject headings, GND work records in back matter) | Who creates subject headings? Do they go in teiHeader? | Phase 3 TEI | ZBZ |
+| O13 | TEI editorial details (subject headings) | Schlagworte: wer erstellt diese? Kommen sie in den Header? Richtlinien: "in Abklaerung" | Phase 3 TEI | ZBZ |
 | O18 | Test multimodal LLM correction (scan image + OCR text) | Research shows <1% CER (arXiv:2504.00414); currently text only | Quality | Own test |
 | ~~O21~~ | ~~Layout region post-processing~~ | Resolved by E25/E26: Gemini QA corrects labels, Detect re-detects bad pages. No manual heuristics needed | — | Closed |
 | O22 | 289 vs. 286 PDF discrepancy | Masterfile counts 289 texts, E23 delivery contains 286. 3 missing unidentified | Clarification | ZBZ |
@@ -84,7 +87,7 @@ Consolidated register of all decisions and open questions in the project.
 
 | # | Risk | Impact | Mitigation | Status |
 |---|------|--------|------------|--------|
-| R2 | TEI complexity + schema incompatibility | High | Reference TEI as ground truth, incremental implementation, schema validation | Open |
+| R2 | TEI complexity + schema incompatibility | High | Mitigiert durch E48: projektspezifisches Schema zbz_hersch.rng + E49: verbindliche Richtlinien | Mitigated |
 | R3 | GND hallucinations | Medium | Seed dictionary + confidence threshold | Open |
 | R5 | Fork divergence between DHCraft and ZBZ | Medium | Define merge strategy, CI-based tests | Open |
 | R7 | Transkribus incompatibility PAGE-XML | High | Schema 2013-07-15, ID scheme `{NNNN}_p{NNN}`, JPG format. @type/@custom not verifiable (no TextRegions in export) | Partially clarified (E23) |
@@ -103,4 +106,4 @@ Consolidated register of all decisions and open questions in the project.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-08*
+*Created: 2026-02-18 | Updated: 2026-03-26*

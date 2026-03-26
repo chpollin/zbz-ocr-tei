@@ -35,19 +35,24 @@ TEI_FINAL_DIR = OUTPUT_DIR / "tei_final"
 
 # TEI-Konstanten
 TEI_NS = "http://www.tei-c.org/ns/1.0"
-TEI_ALL_URL = "https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
-SCHEMA_DOWNLOAD_TIMEOUT = 30  # Sekunden
 
-VALID_DIV_TYPES = {
+# Div-Typen aus Editionsrichtlinien ZBZ (verbindlich)
+_RICHTLINIEN_DIV_TYPES = {
     "review", "interview", "conversation", "entry",
-    "bibliography", "editorial", "text", "translation",
-    "reprint", "redactional", "speech", "conference",
+    "bibliography", "editorial", "translation",
+    "reprint", "otherEdition", "dedication", "foreign",
+}
+# Erweiterte Div-Typen aus Pipeline-Genre-Inferenz (nicht in Richtlinien,
+# aber real im Korpus und in 285 generierten TEIs vorhanden)
+_PIPELINE_DIV_TYPES = {
+    "text", "redactional", "speech", "conference",
     "letter", "preface", "sub-section",
 }
+VALID_DIV_TYPES = _RICHTLINIEN_DIV_TYPES | _PIPELINE_DIV_TYPES
 
-# Schema-Validierung
+# Schema-Validierung (zbz_hersch.rng: projektspezifisch, aus ODD generiert)
 TEI_SCHEMA_DIR = DATA_DIR / "schema"
-TEI_SCHEMA_PATH = TEI_SCHEMA_DIR / "tei_all.rng"
+TEI_SCHEMA_PATH = TEI_SCHEMA_DIR / "zbz_hersch.rng"
 LLM_CORRECTED_C_DIR = OUTPUT_DIR / "llm_corrected_c"
 GEMINI_CORRECTED_A_DIR = OUTPUT_DIR / "gemini_corrected_a"
 GEMINI_CORRECTED_B_DIR = OUTPUT_DIR / "gemini_corrected_b"

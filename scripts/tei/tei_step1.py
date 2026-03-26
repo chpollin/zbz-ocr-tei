@@ -17,6 +17,7 @@ from scripts.tei.tei_generator import (
     md_to_tei_inline,
     split_paragraphs,
 )
+from scripts.tei.tei_xml_utils import normalize_for_tei
 
 # Speaker-Erkennung: "Name:" am Zeilenanfang (Interview/Debate)
 SPEAKER_PATTERN = re.compile(r'^([A-Z][a-zA-Z\u00e9\u00e8\u00ea\u00e0\u00e2\u00fc\u00f6\u00e4\s.\-]+?):\s*')
@@ -277,6 +278,9 @@ def process_page_step1(
     ocr_text = load_ocr_text(doc_id, page)
     if not ocr_text:
         return "", {}
+
+    # TEI-Zeichennormalisierung (Editionsrichtlinien ZBZ, E49)
+    ocr_text = normalize_for_tei(ocr_text)
 
     layout = load_layout_gemini(doc_id, page)
     paragraphs = split_paragraphs(ocr_text)

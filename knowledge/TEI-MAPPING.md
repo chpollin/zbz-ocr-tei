@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-27
+updated: 2026-03-26
 tags: [zbz-ocr-tei, tei, dta, mapping, transformation]
 status: active
 ---
@@ -15,9 +15,9 @@ Transformation rules from source text to TEI-XML following the DTA-Basisformat w
 **Dependencies:** [QUELLENANALYSE](QUELLENANALYSE.md)
 
 **Sources:**
-- `data/richtlinien/README.md` -- Project guidelines ZBZ
+- `data/richtlinien/Editionsrichtlinien_ZBZ.md` -- **Verbindliche Editionsrichtlinien** (von ZBZ, Stand 2026-03)
 - `data/richtlinien/dta_basisformat_komplett.md` -- DTA reference
-- `data/richtlinien/Auszeichnungsrichtlinien Hersch INTERN.docx` -- Internal guidelines
+- `data/schema/zbz_hersch.rng` -- Projektspezifisches RelaxNG-Schema (aus ODD generiert, TEI P5 v4.10.2)
 
 **Open Questions:** See [DECISIONS](DECISIONS.md).
 
@@ -99,49 +99,34 @@ Transformation rules from source text to TEI-XML following the DTA-Basisformat w
 
 ## Character Normalization
 
-> **Warning -- Open Question:** Should characters be normalized or preserved as in the source? Especially regarding French typographic conventions. Expert opinion (Baehler) pending.
+> **Entschieden (E49, 2026-03-26):** Verbindliche Regeln aus Editionsrichtlinien ZBZ. Grundsatz: vorlagengetreue Transkription mit definierten Normalisierungen.
 
-### General Principle
+### Normalisierungsregeln (verbindlich)
 
-According to internal guidelines (DOCX), **source fidelity** applies -- characters are rendered as they appear in the original:
+| Quellzeichen | Zielzeichen | Unicode | Regel |
+|--------------|-------------|---------|-------|
+| Gedankenstriche, Spiegelstriche, von-bis-Striche | Halbgeviertstrich (--) | U+2013 | Alle horizontalen Striche ausser Trenn-/Bindestriche |
+| Trennstriche, Bindestriche | Viertelgeviertstrich (‐) | U+2010 | Worttrennungen und Komposita |
+| Anführungszeichen (alle Varianten) | "Doppelt" | U+201C / U+201D | Normalisiert zu typografischen Zeichen |
+| Einfache Anführungszeichen | 'Einfach' | U+2018 / U+2019 | Normalisiert zu typografischen Zeichen |
+| Apostrophe (alle Varianten) | ' | U+2019 | l'homme → l'homme |
+| Nicht darstellbare Zeichen | ~ (Tilde) | U+007E | Platzhalter |
 
-| Element | Treatment |
+### Whitespace-Regeln
+
+| Kontext | Regel |
+|---------|-------|
+| Vor `:` `;` `?` `!` und Anführungszeichen | Leerzeichen loeschen |
+| Aufzaehlungen mit Trennstrichen | Normalisieren zu `/` (Zuerich/Bern/Basel) |
+
+### Beibehaltene Zeichen
+
+| Zeichen | Behandlung |
 |---------|-----------|
-| ss (sharp S) | Transcribe as-is (U+00DF) |
-| Horizontal dashes | As in source (em dashes, bullet dashes, range dashes, hyphens) |
-| Brackets | As in source |
-| Quotation marks | As in source |
-| Heading typography | As in source |
-
-### Normalization for LLM Pipeline
-
-The README.md additionally defines normalization rules that may be relevant for **automated processing**:
-
-| Source Character | Target Character | Unicode | Rule |
-|------------------|------------------|---------|------|
-| Hyphen-minus (-) | En dash (--) | U+2013 | Em dashes, bullet dashes, range dashes |
-| Hyphen-minus (-) | Quarter-em dash (‐) | U+2010 | Hyphens and compound words |
-| Straight double quotes (") | Typographic ("") | U+201C/U+201D | Double: "Double quotation marks" |
-| Straight single quotes (') | Typographic ('') | U+2018/U+2019 | Single: 'Single quotation marks' |
-| Apostrophe (') | Right single quotation mark (') | U+2019 | l'homme → l'homme |
-
-**Clarification needed:** These rules must be coordinated with the team, as they may conflict with source fidelity.
-
-### Whitespace
-
-| Context | Rule |
-|---------|------|
-| Before `:` `;` `?` `!` | Delete |
-| Enumerations with dashes | Normalize to `/` (Zuerich/Bern/Basel) |
-
-### Special Characters
-
-| Character | Treatment |
-|-----------|-----------|
-| ss | Preserve (U+00DF) |
-| Ligatures (oe, ae) | Preserve |
-| Accents (e, e, e, e, a, a, u, u, c, i, i, o) | Preserve |
-| Brackets | As in source |
+| ss (scharfes S) | Beibehalten (U+00DF) |
+| Klammern | Wie in Vorlage |
+| Akzente | Beibehalten |
+| Ligaturen | Beibehalten |
 
 ---
 
@@ -199,6 +184,22 @@ philo<lb break="no"/>sophie
 - The hyphenation character (NOT SIGN) is **deleted**
 - `<lb break="no"/>` is placed **without a preceding space**
 - For hyphenation across a **page break**: No `<lb break="no"/>`, replace NOT SIGN with hyphen (‐)
+
+### Empty Pages
+
+```xml
+<pb facs="#facs_9" n="12"/>
+<p>[Leer]</p>
+```
+
+### Marginalia
+
+```xml
+<note place="right">[rechts vom Text stehende Marginalie]</note>
+<note place="left">[links vom Text stehende Marginalie]</note>
+```
+
+Rechts stehende Marginalien werden unmittelbar **nach** der Zeile transkribiert, links stehende unmittelbar **vor** der Zeile. Falls Marginalien die Funktion von Ueberschriften uebernehmen, werden sie vor dem ersten Paragrafen des entsprechenden Kapitels platziert.
 
 ---
 
@@ -273,10 +274,11 @@ For larger gaps between paragraphs.
 | Italic | `<hi rendition="#i">` | `<hi rendition="#i">Philosophie</hi>` |
 | Underlined | `<hi rendition="#u">` | `<hi rendition="#u">beachte</hi>` |
 | Letter-spaced | `<hi rendition="#g">` | `<hi rendition="#g">Hervorhebung</hi>` |
+| Small caps | `<hi rendition="#k">` | `<hi rendition="#k">Kapitaelchen</hi>` |
 | Superscript | `<hi rendition="#sup">` | `<hi rendition="#sup">1</hi>` |
 | Subscript | `<hi rendition="#sub">` | `<hi rendition="#sub">2</hi>` |
 
-**Important:** Only **semantically relevant** highlighting is encoded, not purely typographic features (e.g. small caps in headings).
+**Important:** Only **semantically relevant** highlighting is encoded, not purely typographic features (e.g. formatting used solely for headings).
 
 ---
 
@@ -360,9 +362,19 @@ Language codes follow **ISO 639-3**:
 </choice>
 ```
 
-**Internal guideline (DOCX):** Obvious print errors are **silently corrected**.
+**Regel (Editionsrichtlinien):** Fehlerhafte Schreibweisen und offensichtliche Druckfehler werden mit `<choice>/<sic>/<corr>` korrigiert.
 
-> **Note:** This means that `<choice>/<sic>/<corr>` may only be used for non-obvious errors. Clarification required.
+---
+
+## Unleserliche Buchstaben und Passagen
+
+```xml
+<unclear>unleserliches Wort</unclear>
+<unclear cert="high">wahrscheinlich richtig</unclear>
+<unclear cert="low">sehr unsicher</unclear>
+```
+
+Schwer leserliche Zeichen oder Zeichenketten (z.B. durch physische Maengel der Vorlage, schwachen Druck) werden mit `<unclear>` umschlossen. Optional: `@cert` fuer Sicherheit der Lesung.
 
 ---
 
@@ -370,33 +382,36 @@ Language codes follow **ISO 639-3**:
 
 ### General Rule
 
-**Every mention is referenced**, even on repetition. All `ref` attributes refer to the GND.
+**Every mention is referenced**, even on repetition. Referenzierung folgt der Dual-Attribut-Strategie (E49):
+
+- `ref="GND:{id}"` -- GND-ID als primaere Referenz (wie Editionsrichtlinien), nur wenn GND vorhanden
+- `corresp="#zbz-p.N"` -- Interne ID als Platzhalter (immer vorhanden, verweist auf Entity Index)
 
 **Exceptions:**
-- Entities in image captions are **not** annotated
-- Avoid "nested" tagging where possible (e.g. person inside a work title)
+- Entities in image captions (`<figure>/<p>`) are **not** annotated
+- Entities in `<div type="bibliography">/<listBibl>` (Lexikonartikel) are **not** annotated
+- Adjektivierte Personennamen (z.B. "kantien", "hegelsche") are **not** annotated
+- Avoid "nested" tagging where possible
 
 ### Persons
 
 ```xml
-<persName ref="GND:118815679">Hersch</persName>
+<persName ref="GND:118815679" corresp="#zbz-p.1">Hersch</persName>
 ```
 
-**Note (DOCX):** Family name and given names are **not** distinguished -- only `<persName>` without subdivision.
+Family name and given names are **not** distinguished -- only `<persName>` without subdivision.
 
 ### Organizations
 
 ```xml
-<orgName ref="GND:1010450-1">Universität Genf</orgName>
+<orgName ref="GND:1010450-1" corresp="#zbz-o.5">Universität Genf</orgName>
 ```
 
 ### Works
 
 ```xml
-<bibl corresp="GND:1088036961">L'être et la forme</bibl>
+<bibl corresp="#zbz-w.3" ref="GND:1088036961">L'être et la forme</bibl>
 ```
-
-**Note (DOCX):** `<bibl/>` for bibliographic references.
 
 ---
 
@@ -531,48 +546,87 @@ Info boxes, fact boxes, or other marginalia **not authored by Jeanne Hersch** (e
 </text>
 ```
 
-**Usage:** Forewords, editorial notes, introductory comments, context of origin.
+**Usage:** Vorworte, redaktionelle Hinweise, einleitende Kommentare, Entstehungskontext. Unabhaengig von Platzierung im Originaltext.
+
+### Widmungen
+
+Widmungen stehen in `<front>`:
+
+```xml
+<front>
+  <div type="dedication">
+    <p>[Widmungstext]</p>
+  </div>
+</front>
+```
 
 ### Back Matter
 
-```xml
-<body>
-  ...
-</body>
+Angaben zu Uebersetzungen, Nachdrucken und weiteren Erscheinungsformen. Zulaessige `@type`-Werte: `translation`, `reprint`, `otherEdition`.
 
+```xml
 <back>
   <div type="translation">
-    <head>Übersetzungen</head>
-    <p>Eine französische Übersetzung des Textes findet sich auf S. 52–55.</p>
+    <head>Uebersetzung(en)</head>
+    <p>MLA 9: Nachname, Vorname, translator. "Titel." Publikation, vol. X, no. Y, 1934, pp. 52-55.
+       <ref target="https://swisscovery.slsp.ch/permalink/...">Link auf Swisscovery.</ref>
+    </p>
   </div>
+
   <div type="reprint">
-    <p>Nachdruck erschienen in: [bibliografische Angaben]</p>
+    <head>Nachdruck(e)</head>
+    <p>MLA 9: Nachname, Vorname. "Titel." Sammelband, edited by Vorname Nachname, Verlag, 1978, pp. 101-118.
+       <ref target="https://swisscovery.slsp.ch/permalink/...">Link auf Swisscovery.</ref>
+    </p>
+  </div>
+
+  <div type="otherEdition">
+    <p>MLA 9: Nachname, Vorname. "Titel." Zeitschrift, vol. X, no. Y, 1952, pp. 9-12.
+       <ref target="https://swisscovery.slsp.ch/permalink/...">Link auf Swisscovery.</ref>
+    </p>
   </div>
 </back>
 ```
 
-**Possible phrasings:**
-- "French translation published in: [...]"
-- "Reprint published in: [...]"
-- "Also published in: [...]"
+**Regeln:**
+- Zitierung nach MLA, 9. Ausgabe
+- Verlinkung ueber Swisscovery-Permalink als `<ref target="...">`
+- Chronologisch nach Erscheinungsjahr aufsteigend
+- Bei Uebersetzungen nur die erste Auflage
+- Einfacher Fall (nur ein Hinweis): direkt als `<p>` in `<back>` ohne `<div>`
 
 ---
 
 ## Figures
 
 ```xml
-<figure>
-  <graphic xml:id="fig1" url="..\..\images\fig1.tif"/>
-  <head>[optional: figure title]</head>
-  <p>[optional: explanation of figure in text]</p>
+<figure xml:id="fig1">
+  <graphic url="..\..\images\fig1.tif"/>
+  <head>[optional: Titel der Abbildung]</head>
+  <p>[optional: Erlaeuterung zur Abbildung]</p>
 </figure>
 ```
 
 **Rules:**
-- IDs are sequential: fig1, fig2, fig3...
-- `<figure>` is tagged **as a standalone block**, not inside `<p>`
-- Images are only included if **essential** for understanding the text
-- Storage location: `images/` directory
+- `xml:id` auf `<figure>` (nicht auf `<graphic>`), fortlaufend: fig1, fig2, fig3...
+- `<figure>` ist **immer ein eigenstaendiger Block**, nicht innerhalb von `<p>`
+- Bilder werden nur aufgenommen wenn fuer Textverstaendnis erforderlich
+- Entitaeten in Bildunterschriften werden **nicht** ausgezeichnet
+
+### Doppelseitige Abbildungen
+
+Abbildungen ueber zwei Seiten werden mit `<anchor>` markiert:
+
+```xml
+<pb facs="#facs_6" n="7.22"/>
+<anchor xml:id="fig8-start"/>
+<figure xml:id="fig8">
+  <graphic url="..\..\images\fig8.tif"/>
+  <p>Bildunterschrift...</p>
+</figure>
+<pb facs="#facs_7" n="7.23"/>
+<anchor xml:id="fig8-end"/>
+```
 
 ---
 
@@ -612,9 +666,10 @@ The following elements are **not** transcribed:
 | `<title>` | type (main/sub) | Title |
 | `<p>` | facs | Paragraph |
 | `<hi>` | rendition | Highlighting |
-| `<persName>` | ref | Person with GND |
-| `<orgName>` | ref | Organization with GND |
-| `<bibl>` | corresp | Work with GND |
+| `<persName>` | ref, corresp | Person (ref=GND, corresp=interne ID) |
+| `<orgName>` | ref, corresp | Organisation (ref=GND, corresp=interne ID) |
+| `<placeName>` | ref, corresp | Ort (ref=GND, corresp=interne ID) |
+| `<bibl>` | ref, corresp | Werk (ref=GND, corresp=interne ID) |
 | `<note>` | place, n, xml:id, next, prev | Footnote |
 | `<foreign>` | xml:lang | Language switch |
 | `<space>` | dim | Spacing |
@@ -632,6 +687,9 @@ The following elements are **not** transcribed:
 | `<speaker>` | - | Speaker name |
 | `<listBibl>` | - | Bibliographic list |
 | `<ab>` | type, hand | Anonymous block (editorial texts) |
+| `<unclear>` | cert | Unleserliche Passage (cert=high/low) |
+| `<anchor>` | xml:id | Markierung fuer Doppelseiten-Bilder |
+| `<ref>` | target | Verweis (z.B. Swisscovery-Permalink) |
 
 ---
 
@@ -734,23 +792,19 @@ lry = y + height
 
 ## Open Questions
 
-### From Internal Guidelines (DOCX Comments)
+### Geloest (durch Editionsrichtlinien 2026-03)
 
-These questions were flagged in the internal document and require clarification with expert Baehler:
+- [x] ~~Normalization vs. source fidelity~~ → Beantwortet: vorlagengetreu mit definierten Normalisierungen (siehe §Character Normalization)
+- [x] ~~div-type values for front matter~~ → Beantwortet: editorial, dedication
+- [x] ~~div-type values for back matter~~ → Beantwortet: translation, reprint, otherEdition
+- [x] ~~Heading typography~~ → Beantwortet: typografische Besonderheiten werden nicht abgebildet
+- [x] ~~Entity-Ref-Format~~ → Beantwortet: GND direkt + interne IDs in corresp
 
-1. **Normalization vs. source fidelity:** Should textual features be standardized or preserved from the source? Especially regarding French typographic conventions.
+### Noch offen
 
-2. **Heading typography:** Same question as for normalizations.
-
-3. **Metadata integration:** Is it possible to pull metadata from Alma and the ID from the spreadsheet? (MMSIDs in Excel spreadsheet)
-
-### Further Open Items
-
-- [ ] Keywords: Who creates them? Do they go in the header? *(DOCX: section empty)*
-- [ ] div-type values for front matter: editorial, context, preface, introduction, sourceNote?
-- [ ] div-type values for back matter: translation, reprint, publication, bibliography, commentary?
-- [ ] GND work records in back matter?
-- [ ] Systematic use of textual tags in Transkribus?
+- [ ] Keywords/Schlagworte: Wer erstellt diese? Kommen sie in den Header? *(Richtlinien: "in Abklaerung")*
+- [ ] Metadata from ALMA/MMSID: MMSIDs fuer teiHeader (O8)
+- [ ] Systematischer Einsatz von textual tags in Transkribus
 
 ---
 
@@ -801,4 +855,4 @@ Script: `python -m scripts.tei.tei_add_revision --all`
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-15*
+*Created: 2026-01-29 | Updated: 2026-03-26*

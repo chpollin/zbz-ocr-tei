@@ -274,11 +274,6 @@ def generate_tei_page(
     lines.append("        </bibl>")
     lines.append("      </sourceDesc>")
     lines.append("    </fileDesc>")
-    lines.append("    <profileDesc>")
-    lines.append("      <langUsage>")
-    lines.append(f'        <language ident="{lang}"/>')
-    lines.append("      </langUsage>")
-    lines.append("    </profileDesc>")
     lines.append("  </teiHeader>")
 
     # Facsimile (BBox-Koordinaten, falls Layout vorhanden)

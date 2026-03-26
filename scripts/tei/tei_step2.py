@@ -60,10 +60,25 @@ def reannotate_entities(xml_text: str) -> str:
     Findet Entitaetsnamen im Text die NICHT bereits innerhalb eines
     Entity-Tags stehen und fuegt typkorrekte Tags mit interner ID hinzu.
     Laengere Namen zuerst (wie annotate_entities).
+
+    Ausschluss (E49): Keine Entities in <figure> oder <listBibl>.
     """
     from scripts.tei.tei_mapping_prompt import _load_entity_entries
     entries = _load_entity_entries()
     sorted_names = sorted(entries.keys(), key=len, reverse=True)
+
+    # Ausschluss-Zonen maskieren (<figure>, <listBibl>)
+    masks = []
+    counter = 0
+    for pat in [
+        re.compile(r'<figure\b[^>]*>.*?</figure>', re.DOTALL),
+        re.compile(r'<listBibl\b[^>]*>.*?</listBibl>', re.DOTALL),
+    ]:
+        for m in pat.finditer(xml_text):
+            ph = f"\x01REXCL{counter}\x01"
+            masks.append((ph, m.group(0)))
+            xml_text = xml_text.replace(m.group(0), ph, 1)
+            counter += 1
 
     # Regex fuer bestehende Entity-Tags (persName, orgName, placeName, bibl)
     entity_tag_re = re.compile(
@@ -84,6 +99,10 @@ def reannotate_entities(xml_text: str) -> str:
                 part = re.sub(pattern, tag, part)
             new_parts.append(part)
         xml_text = "".join(new_parts)
+
+    # Ausschluss-Zonen wiederherstellen
+    for ph, original in masks:
+        xml_text = xml_text.replace(ph, original)
 
     return xml_text
 
