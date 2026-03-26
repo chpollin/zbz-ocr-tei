@@ -33,7 +33,7 @@ Der Edit-Button erscheint automatisch wenn der Curation Server laeuft (Health-Ch
 |-------|-------|
 | `docs/index.html` | Discovery Hub: Suchleiste, Korpus-Chips, Screening-Fortschritt, Projekt-Teaser |
 | `docs/catalog.html` | Katalog: Tabellen-/Karten-/Galerie-Ansicht, Volltext-Suche, Screening-Filter, URL-Deep-Linking |
-| `docs/register.html` | Entity-Register: Typ-Tabs (4408 Entitaeten), Kontext-Preview, Doc-Titel-Links |
+| `docs/register.html` | Entity-Register: Typ-Tabs (4504 Entitaeten), Kontext-Preview, Doc-Titel-Links |
 | `docs/reader.html` | Reader: Faksimile-Viewer (Pan/Zoom/Rotate) + TEI-Text, Text/XML-Toggle, Metadaten-Header |
 | `docs/about.html` | Projektinformation, Pipeline-Visualisierung, Divider-Seuils |
 
@@ -54,9 +54,9 @@ Der Edit-Button erscheint automatisch wenn der Curation Server laeuft (Health-Ch
 
 | Datei | Inhalt |
 |-------|--------|
-| `docs/data/catalog.json` | 286 Docs mit Screening- + Curation-Status, Corpus-Statistiken |
-| `docs/data/search_index.json` | Volltext-Index: 277 Docs, 688 KB (Body-Text + Entity-Namen) |
-| `docs/data/entity_index.json` | 4408 Entitaeten (schneller Lookup) |
+| `docs/data/catalog.json` | 285 Docs mit Screening- + Curation-Status, Corpus-Statistiken |
+| `docs/data/search_index.json` | Volltext-Index: 285 Docs (Body-Text + Entity-Namen) |
+| `docs/data/entity_index.json` | 4504 Entitaeten (schneller Lookup) |
 | `docs/data/entity_register.json` | Cross-Doc-Register mit Varianten, Doc-IDs, Kontexten |
 | `docs/data/tei/*.xml` | 285 finale TEI-Dokumente (fuer GitHub Pages) |
 | `docs/data/tei/*.json` | 285 Review-JSONs (Screening-Befunde) |
@@ -122,7 +122,7 @@ Pfad-Prioritaet:
 python -m scripts.generate_edition_data
 ```
 
-Erzeugt: `catalog.json` (286 Docs, Screening + Curation), `search_index.json` (277 Docs Volltext), `entity_index.json`, `entity_register.json`. Kopiert Demo-TEIs nach `docs/data/examples/`.
+Erzeugt: `catalog.json` (285 Docs, Screening + Curation), `search_index.json` (285 Docs Volltext), `entity_index.json`, `entity_register.json`. Kopiert Demo-TEIs nach `docs/data/examples/`.
 
 ---
 
