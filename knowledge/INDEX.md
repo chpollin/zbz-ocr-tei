@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-03-15
+updated: 2026-03-26
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -30,6 +30,7 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [EDITION](EDITION.md) | How does the digital edition work? Architecture, Design System | Development, Edition | PIPELINE |
 | [CURATION](CURATION.md) | How does the Curation Editor work? Server, API, Editor | Development, Edition | EDITION, GND-STRATEGIE |
 | [CER-BENCHMARK](CER-BENCHMARK.md) | How good is the OCR? End-to-End CER, research context | Development, QA | TESTPLAN, ENGINES |
+| [TEI-QUALITY](TEI-QUALITY.md) | Are TEIs schema-valid? Warnings, fix history, diagnostics | Development, QA | PIPELINE, TEI-MAPPING |
 | [PLAN](PLAN.md) | What are the implementation phases? | Development | PROJEKT, PIPELINE |
 
 ---
@@ -80,13 +81,13 @@ JOURNAL   <-- chronological, references all docs
 | docling-serve (E24) | Layout analysis via REST API (Docker), no local GPU needed | [PIPELINE](PIPELINE.md) |
 | Gemini Layout QA (E25) | Vision-based correction of Docling layout results, both versions preserved | [PIPELINE](PIPELINE.md) |
 | Gemini Layout Detect (E26) | Full re-detection for bad pages via Gemini Vision, 3 modes (qa/detect/auto) | [PIPELINE](PIPELINE.md) |
-| Gemini Classify (Stage 1a) | Visual classification of all 286 docs (type, language, pub_form, title, author) | [PIPELINE](PIPELINE.md) |
+| Gemini Classify (Stage 1a) | Visual classification of all 285 docs (type, language, pub_form, title, author) | [PIPELINE](PIPELINE.md) |
 | doc_metadata.json | Central metadata file from Gemini classification, TEI-mappable | [PIPELINE](PIPELINE.md) |
 | Online-Demo (E28) | 4 DEMO docs on GitHub Pages with fallback paths in shared.js | [PIPELINE](PIPELINE.md) |
 | Gemini Vision TEI (E30) | 3-Pass TEI pipeline with overlay PNGs: Structure -> Enrichment -> Validation | [PIPELINE](PIPELINE.md) |
 | Document-type-specific Prompts (E30) | 4-level hint system (layout type, pub_form, genre, language) for layout + TEI prompts | [PIPELINE](PIPELINE.md) |
 | Genre Inference | Automatic classification into 14 genres via keyword matching on description text | [PIPELINE](PIPELINE.md) |
-| Layout Full Run (E31) | Complete Gemini QA/Detect on 286 docs (3,992 pages, 14,708 corrections, avg score 72.7) | [PIPELINE](PIPELINE.md) |
+| Layout Full Run (E31) | Complete Gemini QA/Detect on 285 docs (3,992 pages, 14,708 corrections, avg score 72.7) | [PIPELINE](PIPELINE.md) |
 | Layout Overlay Generator (E31) | Batch PNG generation with changed-highlighting + Docling-vs-Gemini side-by-side compare | [PIPELINE](PIPELINE.md) |
 | changes_summary (E31) | Per-page label transition logging in layout_gemini.json, aggregated in summary_gemini.json | [PIPELINE](PIPELINE.md) |
 | Digitale Edition (E33) | Lese-Edition + Kurations-Editor in einem System. `docs/`, `ZBZ.Edition` Namespace | [EDITION](EDITION.md), [CURATION](CURATION.md) |
@@ -95,6 +96,10 @@ JOURNAL   <-- chronological, references all docs
 | Agent-Based Quality Screening (E41) | Agentengestuetztes Pre-Curation: 7-Schichten-Review (Scan, OCR, Layout, Struktur, Referenz, Entities, Kohaerenz). Output: Review-JSON + Sweep-Summary | [PLAN](PLAN.md) |
 | Entity-Stopwort-Erweiterung (E45) | 20 neue Stopwoerter gegen systematische False Positives (Mensch, Est, Homme, Zeit etc.) | [PIPELINE](PIPELINE.md) |
 | OCR-Deduplizierung (E46) | `scripts/ocr_dedup.py`: Deterministische Entfernung von Token-Loops, Barcode-Artefakten, Jahrzahl-Wiederholungen | [PIPELINE](PIPELINE.md) |
+| zbz_hersch.rng (E48/E49) | Projektspezifisches RelaxNG-Schema (TEI P5 v4.10.2), ref-Pattern erweitert fuer GND + #zbz-IDs | [TEI-QUALITY](TEI-QUALITY.md) |
+| Dual-Attribut-Strategie (E50) | Entity-Refs: `ref="GND:{id}"` (primaer) + `corresp="#zbz-{typ}.{N}"` (intern) | [TEI-MAPPING](TEI-MAPPING.md) |
+| CER-Benchmark (E51) | End-to-End TEI-vs-TEI Evaluation: 24 Docs, Median CER 5.5% (nach Normalisierung 2.4%) | [CER-BENCHMARK](CER-BENCHMARK.md) |
+| TEI-Diagnostik | Schema-Validierung, Warning-Tracking, Diagnostik-UI (`docs/infrastruktur/diagnostik.html`) | [TEI-QUALITY](TEI-QUALITY.md) |
 
 ---
 
@@ -102,7 +107,7 @@ JOURNAL   <-- chronological, references all docs
 
 1. **Understand the project:** [PROJEKT](PROJEKT.md) -- Scope, milestones, team
 2. **Understand the pipeline:** [PIPELINE](PIPELINE.md) -- the 7-stage pipeline (PDF -> TEI-XML)
-3. **Know the material:** [QUELLENANALYSE](QUELLENANALYSE.md) -- 286 documents, 4 document types
+3. **Know the material:** [QUELLENANALYSE](QUELLENANALYSE.md) -- 285 documents, 4 document types
 4. **View the dashboard:** `docs/index.html` -- Metrics, engine comparison, pipeline status
 5. **Check status:** [DECISIONS](DECISIONS.md) -- what is decided, what is blocking?
 6. **Last session:** [JOURNAL](JOURNAL.md) -- chronological work log

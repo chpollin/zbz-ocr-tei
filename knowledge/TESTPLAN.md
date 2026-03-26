@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-02-27
+updated: 2026-03-26
 tags: [zbz-ocr-tei, testplan, evaluation, metrics]
 status: active
 ---
@@ -81,7 +81,30 @@ Pilot files and document types: See [QUELLENANALYSE](QUELLENANALYSE.md) §Pilot 
 
 ## Results
 
-> **Hinweis:** Die folgenden Tabellen sind die **Pilot-Baseline** (15 Docs, Feb 2026). Aktuelle Metriken ueber alle 286 Docs: siehe Dashboard (`docs/index.html`) und Evaluation-Output (`output/evaluation/`).
+> **Hinweis:** Die folgenden Tabellen sind die **Pilot-Baseline** (15 Docs, Feb 2026). Aktuelle End-to-End-Metriken (24 Docs mit Ground Truth, Maerz 2026): siehe [CER-BENCHMARK](CER-BENCHMARK.md). Schema-Validierung: [TEI-QUALITY](TEI-QUALITY.md).
+
+### End-to-End CER Benchmark (E51, Maerz 2026)
+
+24 von 25 Referenz-Docs evaluiert (TEI vs. TEI, Textextraktion mit Unicode-NFC, Fussnoten exkludiert):
+
+| Metrik | Roh | Nach Normalisierung |
+|--------|-----|---------------------|
+| **Median CER** | **5.5%** | **2.4%** |
+| Mean CER | 9.3% | 6.0% |
+| WER | 19.5% | 12.9% |
+| Min / Max | 1.0% / 34.5% | — |
+
+**Einordnung:** Median 5.5% vergleichbar mit GPT-4o-Klasse (6.3%). Beste Docs (1.0-2.2%) auf State-of-the-Art-Niveau fuer historischen Druck. Details: [CER-BENCHMARK](CER-BENCHMARK.md).
+
+### Schema-Validierung (Maerz 2026)
+
+| Metrik | Wert |
+|--------|------|
+| Schema | zbz_hersch.rng (TEI P5 v4.10.2) |
+| **Valid** | **285/285** (100%) |
+| Warnings | 29 (W9: 17 NER-Refs, W10: 10 Entity-Typen, W11: 2 false positive) |
+
+Details: [TEI-QUALITY](TEI-QUALITY.md).
 
 ### Evaluation Matrix: Mistral Document AI 2512 (Pilot-Baseline, 18.02.2026)
 
@@ -186,9 +209,11 @@ See [PIPELINE](PIPELINE.md) §CLI Commands for the complete command reference.
 
 ## Open Items
 
-- Investigate Doc 290: CER 18% — scan quality? (low priority)
-- Investigate Doc 1060: CER 22.6% — alignment issue (low priority)
-- Check footnote detection (Doc 3040 = lexicon with footnotes)
+- Doc 290: CER 34.5% — schlechte Scan-Qualitaet (bestaetigt in E51)
+- Doc 1440: CER 26.0% — Pipeline-Degradation (OCR: 3.7%, TEI: 26.0%)
+- Doc 1060: CER 21.4% — Alignment-Problem
+- W10: 10 Docs ohne orgName/placeName — NER-Extraktionsproblem (Session 37)
+- W9: 17 Docs mit Entity-Tags ohne ref — NER-Re-Injection ausstehend
 
 ---
 
@@ -200,4 +225,4 @@ See [PIPELINE](PIPELINE.md) §CLI Commands for the complete command reference.
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-05*
+*Created: 2026-01-29 | Updated: 2026-03-26*
