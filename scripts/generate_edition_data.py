@@ -207,7 +207,7 @@ def build_catalog():
             "institution": "Zentralbibliothek Zuerich",
             "project": "DHCraft",
             "total_docs": len(entries),
-            "total_pages": overview.get("total_pages", 0),
+            "total_pages": sum(e.get("page_count", 0) for e in entries),
             "languages": len(lang_counts),
             "date_range": "1926-2000",
         },
@@ -359,7 +359,15 @@ def build_search_index():
     for tei_file in sorted(TEI_FINAL_DIR.glob("*_final.xml")):
         doc_id = tei_file.stem.replace("_final", "")
         try:
-            tree = ET.parse(tei_file)
+            # Robustes Parsing: revisionDesc kann unescaptes XML enthalten
+            raw = tei_file.read_text(encoding="utf-8")
+            try:
+                tree = ET.ElementTree(ET.fromstring(raw))
+            except ET.ParseError:
+                # Fallback: revisionDesc entfernen und erneut parsen
+                import re
+                cleaned = re.sub(r"<revisionDesc.*?</revisionDesc>", "", raw, flags=re.DOTALL)
+                tree = ET.ElementTree(ET.fromstring(cleaned))
             root = tree.getroot()
 
             # Titel

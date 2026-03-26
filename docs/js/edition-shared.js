@@ -102,6 +102,7 @@
             { href: 'register-werke.html', label: 'Werke' }
         ]},
         { href: 'about.html', label: 'Projekt' },
+        { href: 'infrastruktur/diagnostik.html', label: 'Diagnostik' },
         { href: 'infrastruktur/index.html', label: 'Promptotyping-Artefakte' }
     ];
     const ICON_HAMBURGER = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';

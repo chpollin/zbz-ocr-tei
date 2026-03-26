@@ -320,6 +320,41 @@
     }
 
     // ===================================================================
+    // Log Tab (Lane 3)
+    // ===================================================================
+    const LOG_DATA_URL = 'data/diagnostik_log.json';
+
+    async function initLogs() {
+        const container = $('#log-content');
+        if (!container) return;
+        try {
+            const resp = await fetch(LOG_DATA_URL);
+            if (!resp.ok) { container.innerHTML = '<div class="log-empty">Noch keine Daten</div>'; return; }
+            const entries = await resp.json();
+            if (!entries || !entries.length) { container.innerHTML = '<div class="log-empty">Noch keine Daten</div>'; return; }
+            // Neueste oben
+            const sorted = entries.slice().sort(function (a, b) {
+                return (b.timestamp || '').localeCompare(a.timestamp || '');
+            });
+            var html = '<div class="log-header"><span>Zeitpunkt</span><span>Level</span><span>Modul</span><span>Nachricht</span></div>';
+            html += sorted.map(function (e) {
+                var lvl = (e.level || 'info').toLowerCase();
+                var ts = (e.timestamp || '').replace('T', ' ').slice(0, 19);
+                return '<div class="log-entry">'
+                    + '<span class="log-ts">' + ts + '</span>'
+                    + '<span class="log-level ' + lvl + '">' + (e.level || '-') + '</span>'
+                    + '<span class="log-module">' + (e.lane || e.module || '-') + '</span>'
+                    + '<span class="log-msg">' + (e.action || e.message || '-')
+                    + (e.result_summary ? ' — ' + e.result_summary : '')
+                    + '</span></div>';
+            }).join('');
+            container.innerHTML = html;
+        } catch (err) {
+            container.innerHTML = '<div class="log-empty">Fehler beim Laden: ' + err.message + '</div>';
+        }
+    }
+
+    // ===================================================================
     // TEI-Qualitaet Tab (Lane 1)
     // ===================================================================
     const TEI_DATA_URL = 'data/diagnostik_tei.json';
@@ -533,6 +568,9 @@
 
             // TEI Quality (independent data source)
             initTeiQuality();
+
+            // Log (independent data source)
+            initLogs();
         } catch (err) {
             $('#loading').textContent = 'Fehler beim Laden: ' + err.message;
             console.error(err);

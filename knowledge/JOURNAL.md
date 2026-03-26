@@ -14,6 +14,73 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 37 (2026-03-26): Diagnostik-Datenproduktion (Lane 1)
+
+### Kontext
+Daten fuer Diagnostik-UI produzieren. W10-Tiefenanalyse, Corpus-Statistik, Timeline, Warning-Uebersicht.
+
+### Ergebnisse
+
+**1. W10-Tiefenanalyse (10 Docs)**
+- 10/10 Docs = `ner_miss`: alle haben ungetaggte Orgs/Places im Fliesstext
+- Beispiele: Doc 1370 (Schweiz, Zurich, societe, ecole), Doc 1380 (conseil, faculte, societe)
+- Kein Fall von "content_explains" — NER-Extraktion hat orgName/placeName systematisch uebergangen
+- Loesungsweg: NER-Re-Extraktion mit explizitem Org/Place-Fokus noetig (nicht nur Re-Injection)
+
+**2. Corpus-Statistik (285 Docs, 4.108 Seiten)**
+- 29.637 lb | 27.615 p | 12.983 persName | 6.314 placeName | 4.860 bibl | 3.814 orgName
+- 1.373 div | 1.318 hi | 947 head | 266 note | 250 foreign | 142 figure
+- Layout-Typ-Verteilung und avg_entities/avg_pages pro Typ berechnet
+
+**3. Validierungs-Timeline**
+- 4 Meilensteine: Initial (50/285) -> Fix-001 (285/285) -> Fix-002 (W6 weg) -> Fix-003 (W3/W4/W7 weg)
+
+**4. warnings_current**
+- W9: 17 Docs, blocked_on_ner | W10: 10 Docs, ner_miss | W11: 2 Docs, false_positive
+
+### Artefakte
+- `scripts/diagnostik_data_producer.py` — wiederverwendbares Script
+- `docs/data/diagnostik_tei.json` — 4 neue Keys (w10_analysis, corpus_stats, validation_timeline, warnings_current)
+
+---
+
+## Session 36 (2026-03-26): Edition-Sync Fortsetzung (Lane 3)
+
+### Kontext
+Lane 3 uebernimmt Diagnostik-UI-Ownership. Drei offene Punkte aus Session 35 loesen.
+
+### Durchgefuehrt
+
+**1. Diagnostik-UI konsolidiert:**
+- Log-Tab hinzugefuegt (HTML + CSS + JS in diagnostik.html/diagnostik.js)
+- Liest diagnostik_log.json, zeigt chronologisch (neueste oben)
+- Graceful Handling: "Noch keine Daten" bei leeren/fehlenden JSONs
+- Lane-Zuordnung: L1 schreibt diagnostik_tei.json, L2 schreibt diagnostik_ocr.json, alle schreiben diagnostik_log.json
+
+**2. Search-Index-Luecke gefixt:**
+- 6 fehlende Docs (1390, 1510, 2590, 2980, 790, 840) identifiziert
+- Ursache: unescaptes XML in revisionDesc (& und < in Beschreibungstexten)
+- Fix: Fallback-Parser in build_search_index() entfernt revisionDesc bei ParseError
+- Search Index: 279 -> 285 Docs
+
+**3. Seitenzaehlung korrigiert:**
+- total_pages kam aus dashboard.json (nur 15 Docs = 383 Seiten)
+- Fix: Summe aus page_count aller Katalog-Eintraege
+- Seitenzaehlung: 383 -> 4.117 Seiten
+
+**4. Wikidata Retry:**
+- API-Test: Status 429 (noch rate-limited)
+- Batch nicht moeglich, spaeter wiederholen
+
+### Geaenderte Dateien
+- `scripts/generate_edition_data.py` — robustes XML-Parsing + total_pages Fix
+- `docs/infrastruktur/diagnostik.html` — Log-Tab + Panel + CSS
+- `docs/diagnostik.js` — initLogs() Funktion + Aufruf in init()
+- `docs/data/catalog.json` — 4.117 Seiten, 285 Docs
+- `docs/data/search_index.json` — 285 Docs (vorher 279)
+
+---
+
 ## Session 35 (2026-03-26): Edition-Synchronisation (Lane 3)
 
 ### Kontext
