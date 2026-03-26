@@ -1,13 +1,13 @@
 {
-  "generated": "2026-03-15T20:49:02",
+  "generated": "2026-03-26T21:10:55",
   "generator": "scripts/generate_edition_data.py",
   "edition": {
     "title": "Nachlass Jeanne Hersch",
     "subtitle": "Digitale Edition",
     "institution": "Zentralbibliothek Zuerich",
     "project": "DHCraft",
-    "total_docs": 286,
-    "total_pages": 4152,
+    "total_docs": 285,
+    "total_pages": 383,
     "languages": 12,
     "date_range": "1926-2000"
   },
@@ -19,7 +19,7 @@
   ],
   "corpus": {
     "languages": {
-      "FR": 162,
+      "FR": 161,
       "DE": 65,
       "DE/FR": 39,
       "EN": 6,
@@ -33,15 +33,15 @@
       "FRA/ITA": 1
     },
     "types": {
-      "A": 160,
       "C": 15,
+      "A": 159,
       "B": 78,
       "D": 33
     },
     "forms": {
-      "journalArticle": 149,
       "book": 51,
       "bookSection": 48,
+      "journalArticle": 148,
       "other": 18,
       "anthology": 5,
       "brochure": 8,
@@ -49,12 +49,11 @@
       "encyclopedia": 2
     },
     "screening": {
-      "NOT_SCREENED": 1,
       "APPROVED": 242,
       "APPROVED_WITH_NOTES": 43
     },
     "curation": {
-      "uncurated": 286
+      "uncurated": 285
     }
   },
   "labels": {
@@ -84,24 +83,6 @@
     }
   },
   "documents": [
-    {
-      "id": "10",
-      "title": "Les images dans l'œuvre de M. Bergson",
-      "author": "Jeanne Hersch",
-      "date": "1931",
-      "lang": "FR",
-      "type": "A",
-      "pub_form": "journalArticle",
-      "desc": "A scholarly article discussing the use of imagery in the philosophical works of Henri Bergson.",
-      "page_count": 35,
-      "has_tei": false,
-      "entity_count": 0,
-      "screening": null,
-      "screening_reviewer": null,
-      "screening_date": null,
-      "curation": "uncurated",
-      "demo": false
-    },
     {
       "id": "20",
       "title": "L'ILLUSION PHILOSOPHIQUE",

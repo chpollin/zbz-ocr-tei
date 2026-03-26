@@ -87,8 +87,36 @@ def build_catalog():
     doc_metadata = load_json(DOC_METADATA_PATH) or {}
     gemini_docs = doc_metadata.get("documents", {})
 
-    docs = dashboard.get("documents", {})
+    docs = dict(dashboard.get("documents", {}))
     overview = dashboard.get("pipeline_summary", {})
+
+    # Discover docs from tei_final/ that are not in dashboard
+    if TEI_FINAL_DIR.exists():
+        for tei_file in TEI_FINAL_DIR.glob("*_final.xml"):
+            doc_id = tei_file.stem.replace("_final", "")
+            if doc_id not in docs:
+                # Build minimal entry from Gemini metadata + TEI
+                gm = gemini_docs.get(doc_id, {})
+                lang_map = {"fra": "FR", "deu": "DE", "fra/deu": "DE/FR",
+                            "deu/fra": "DE/FR", "eng": "EN", "ita": "IT", "und": "?"}
+                lang_raw = gm.get("language", "und")
+                page_count = gm.get("page_count", 0)
+                if not page_count:
+                    # Count pages from images directory
+                    img_dir = DOCS_DIR / "images" / doc_id
+                    if img_dir.exists():
+                        page_count = len(list(img_dir.glob("*.jpg"))) + len(list(img_dir.glob("*.png")))
+                docs[doc_id] = {
+                    "title": gm.get("title") or "Dokument " + doc_id,
+                    "author": gm.get("author"),
+                    "date": gm.get("date"),
+                    "lang": lang_map.get(lang_raw, lang_raw.upper() if lang_raw else "?"),
+                    "type": gm.get("layout_type", "-"),
+                    "pub_form": gm.get("pub_form"),
+                    "desc": gm.get("description", ""),
+                    "page_count": page_count,
+                    "pipeline_status": {"tei": True},
+                }
 
     # Screening-Status vorladen (aus Review-JSONs)
     screening_status = {}

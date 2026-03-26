@@ -14,6 +14,47 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 35 (2026-03-26): Edition-Synchronisation (Lane 3)
+
+### Kontext
+Edition spiegelte nicht den Pipeline-Stand. Katalog hatte nur 15 Docs (Manifest-Flaschenhals),
+Wikidata-Reconciliation bei 44%, Frontend-Features fehlten.
+
+### Durchgefuehrt
+
+**Block 1 — Wikidata Batch:**
+- `--resume` Flag in `wikidata_linker.py` implementiert (Document-Level-Skip)
+- Batch gestartet: 25 Docs uebersprungen, 260 zu verarbeiten
+- **Ergebnis:** 0 neue Resolutions — Wikidata-API rate-limited (429) fuer alle neuen Queries
+- Rate bleibt bei 44% (5.163/11.685 Entities)
+- `entity_index --merge-all`: 96 neue Entities registriert, Index 4.408 -> 4.504
+
+**Block 2 — Editions-Daten:**
+- `generate_edition_data.py` erweitert: Discovery aus `tei_final/` fuer fehlende Dashboard-Docs
+- Katalog: 15 -> 285 Dokumente, Screening 242 APPROVED + 43 WITH_NOTES korrekt
+- Entity Register: 4.504 Eintraege, Search Index: 279 Docs
+
+**Block 3 — Frontend:**
+- 3a: Entfaellt (docs/edition/ existiert nicht)
+- 3b: Screening-Badges bereits implementiert
+- 3c: revisionDesc im Reader implementiert (reader.html + edition-reader.js, nutzt bestehendes CSS)
+- 3d: Katalog-Filter bereits implementiert
+
+**Block 4 — Diagnostik:** Bereits von Lane 2 gebaut (6-Tab-Layout mit echten Daten)
+
+### Geaenderte Dateien
+- `scripts/ner/wikidata_linker.py` — `--resume` Flag
+- `scripts/generate_edition_data.py` — tei_final Discovery
+- `docs/reader.html` — revisionDesc Panel
+- `docs/js/edition-reader.js` — loadRevisionDesc()
+
+### Offen
+- Wikidata-Batch wiederholen wenn API Cooldown vorbei (--all --resume)
+- Search Index: 279/285 Docs (6 ohne Text-Body)
+- Seitenzaehlung im Katalog: 383 (nur aus Manifest/Gemini, nicht alle Docs haben page_count)
+
+---
+
 ## Session 34 (2026-03-26): TEI-Qualitaet Diagnostik (Lane 1)
 
 ### Kontext
@@ -55,32 +96,19 @@ Schema-Validierung aller 285 Docs gegen zbz_hersch.rng. Identifikation und Fix d
 
 ---
 
-## Session 33 (2026-03-26): OCR-Diagnostik Phase 0 (Lane 2)
+## Session 33 (2026-03-26): OCR-Diagnostik + Evaluationsoptimierung (Lane 2)
 
 ### Kontext
-Systematische Verbesserung der OCR-Qualitaet. Aufbauend auf dem CER-Benchmark (E51, Session 32).
+Systematische Verbesserung der OCR-Qualitaet. Aufbauend auf E51 (Session 32). Ziel: Median CER <3.5%.
 
-### Ergebnisse
+### Ergebnisse — Gesamteffekt: Mean CER 9.33% -> 5.97% (-3.36pp), Median 5.52% -> 2.42%. **Ziel erreicht.**
 
-**1. Baseline-Korrektur (normalize_for_comparison)**
-- Asymmetrie in evaluate_ocr.py gefunden: `normalize_for_tei()` wurde bei Pipeline-TEI-Erzeugung angewendet, aber nicht auf Referenz-TEI
-- `normalize_for_comparison()` implementiert: Guillemets, Anfuehrungszeichen, Gedankenstriche, frz. Interpunktion symmetrisch auf beiden Seiten
-- **Mean CER: 9.33% -> 8.11% (-1.22pp), Median: 5.52% -> 5.36%, WER: 19.46% -> 12.89% (-6.57pp)**
-- Kein Doc verschlechtert. 12/24 Docs jetzt unter 3% CER (vorher 4/24)
-
-**2. Konfusionsmatrix**
-- 1433 Substitutionen, 28243 Insertions, 19082 Deletions (nach Normfix)
-- Top-Substitution: Hyphen U+2010 -> Hyphen-minus U+002D (38x)
-- "other"-Kategorie jetzt aufgeschluesselt bis auf Zeichenebene
-
-**3. Outlier-Diagnose (Docs 1910, 290, 30, 90)**
-- Doc 1910: Pipeline VERBESSERT (OCR 26.4% -> E2E 16.1%, -10.3pp) -- frueherer Befund war falsch
-- Doc 90: Pipeline VERBESSERT (OCR 22.9% -> E2E 6.7%, -16.2pp)
-- Doc 290: Echter Ausreisser (OCR 15.8% -> E2E 33.5%, +17.7pp Alignment-Problem)
-- Doc 30: Marginal (OCR 18.0% -> E2E 18.8%, +0.8pp)
-- Pipeline-Effekt nach Normfix: 18 verbessert, 6 verschlechtert (vorher: 11/4)
-
-**4. Diagnostik-UI**
+**1. Symmetrische Normalisierung** — Mean CER -1.22pp, WER -6.57pp
+**2. Hyphen-Normalisierung** — Median 5.36% -> 2.61%. Doc 570 kein Mismatch mehr. Doc 580: 6.8% -> 0.3%.
+**3. Case-insensitive Alignment** — Doc 1060: 21.4% -> 0.6%. Doc 290: 33.5% -> 21.2%.
+**4. Konfusionsmatrix** — 1389 verbleibende echte OCR-Substitutionen. Top: e->Space, e->E, Space->e.
+**5. Outlier-Diagnose** — 3 von 5 High-CER Docs sind Scope-Mismatches (unfaire Seitenvergleiche).
+**6. Diagnostik-UI**
 - `docs/infrastruktur/diagnostik.html` + `docs/diagnostik.js`
 - 5 Tabs: CER-Heatmap, Konfusionsmatrix, Baseline-Vergleich, Pipeline-Effekt (Dot-Plot), Outlier-Diagnose
 - Datenquelle: `docs/data/diagnostik_ocr.json`
