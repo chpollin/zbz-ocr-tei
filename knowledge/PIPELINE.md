@@ -57,7 +57,7 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 
 **Note on Stage 5 (E34/E35):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). 7 Module: `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker`, `ner_inject_tei`, `ner_evaluate`. Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). Production Run (285 Docs): 11,685 Entities, 26,197 Mentions, 4,504 Index-Eintraege, 341 mit Wikidata-QIDs. Typ-Verteilung: person 36.7%, place 22.3%, date 15.0%, org 13.6%, work 10.8%, event 1.6%. Dual-Attribut-Strategie (E50): `ref="GND:{id}"` + `corresp="#zbz-{typ}.{N}"`. CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
-**Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4, default active). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--skip-validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
+**Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4, default active). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. **Post-Assembly Fixes (Session 34):** `tei_step3.py` mit Fix E (pb-Duplikate), F (leere div), G (leere figure), heuristische lb-Injection (~60 Zeichen/Zeile). Schema `zbz_hersch.rng` (E48/E49) mit erweitertem ref-Pattern fuer GND + #zbz-IDs. **285/285 schema-valide**, 29 Warnings (W9/W10 NER-abhaengig, W11 false positive). Details: [TEI-QUALITY](TEI-QUALITY.md). CLI: `--doc`, `--sample`, `--all`, `--step`, `--skip-validate`, `--force`, `--dry-run`, `--reassemble`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 
 **Stage 6c Validation Rules:** Zwei Ebenen: Errors (blockierend, valid=false) und Warnings (informativ fuer Editoren). **Errors:** RelaxNG-Schema (TEI-All) + R1 (type="naegeli"), R2 (teiHeader), R3 (body), R4 (min 1 div), R5 (gueltige div-types), R6 (note place). **Warnings:** W1 (Sprach-Code "und"), W2 (teiHeader title/author leer), W3 (facsimile/pb Mismatch), W4 (leere div), W5 (Text-Volumen <50 chars/Seite), W6 (keine lb-Elemente), W7 (graphic ohne url), W8 (keine Entity-Tags bei >500 Zeichen), W9 (Entity-Tags ohne ref), W10 (nur persName, keine orgName/placeName). HTML-Report: `--html-report` erzeugt `validation_report.html`.
 
@@ -111,7 +111,7 @@ Lessons from E16-E18: TEI page numbers != PDF page numbers (cover pages, blanks 
 
 **Script:** `scripts/classify_docs.py`
 
-Sends the first 5 page images per document to Gemini 3.1 Flash Lite Preview. Extracts metadata via Structured Output (response_schema): language, pub_form, layout_type, title, author, date, description, has_jstor_cover, num_columns. Cost: ~$1-2 for 286 docs. Output: `data/doc_metadata.json` (aggregate, TEI-mappable) + `output/classification/{doc_id}_classification.json` (raw per-doc). Resume-capable (skip-existing). Used by tei_generator (teiHeader), generate_dashboard_data (dashboard/viewer), and pipeline routing (engine selection).
+Sends the first 5 page images per document to Gemini 3.1 Flash Lite Preview. Extracts metadata via Structured Output (response_schema): language, pub_form, layout_type, title, author, date, description, has_jstor_cover, num_columns. Cost: ~$1-2 for 285 docs. Output: `data/doc_metadata.json` (aggregate, TEI-mappable) + `output/classification/{doc_id}_classification.json` (raw per-doc). Resume-capable (skip-existing). Used by tei_generator (teiHeader), generate_dashboard_data (dashboard/viewer), and pipeline routing (engine selection).
 
 ---
 
@@ -268,7 +268,7 @@ PAGE-XML is the intermediate format for layout regions + OCR text. It serves as 
 | Namespace | `http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15` |
 | Layout source | Gemini-corrected preferred, Docling fallback |
 | OCR source | Gemini B > Gemini A > Mistral |
-| Status | Production: 286 docs, 4,091 pages |
+| Status | Production: 285 docs, 4,108 pages |
 | Granularity | Region-level (1 TextLine per TextRegion, no line-level coordinates) |
 
 ### Export Structure per Document
@@ -288,7 +288,7 @@ PAGE-XML and METS can be viewed in `docs/viewer.html` via the PAGE toggle button
 - **XML:** Syntax-highlighted PAGE-XML source
 - **METS:** Document-level METS manifest (syntax-highlighted)
 
-TEI and PAGE panels share the 3rd panel slot (mutual exclusion). Dashboard pipeline status tracks `page_xml` (286/286 docs).
+TEI and PAGE panels share the 3rd panel slot (mutual exclusion). Dashboard pipeline status tracks `page_xml` (285/285 docs).
 
 ---
 
@@ -302,7 +302,7 @@ python scripts/extract_pages.py                              # all PDFs, 150 DPI
 python scripts/extract_pages.py --pdf 2310.pdf --dpi 300     # single PDF
 
 # Document classification (stage 1a, requires GEMINI_API_KEY)
-python -m scripts.classify_docs                              # all 286 docs
+python -m scripts.classify_docs                              # all 285 docs
 python -m scripts.classify_docs --doc 2310                   # single document
 python -m scripts.classify_docs --force                      # overwrite existing
 
@@ -364,7 +364,7 @@ python -m scripts.tei.tei_generator --doc 2310 --page 2  # single page
 python -m scripts.tei.tei_gemini --doc 2310              # single document (1 call/page)
 python -m scripts.tei.tei_gemini --doc 2310 --evaluate   # with reference comparison
 python -m scripts.tei.tei_gemini --sample                # 3 pilot docs (2310, 2530, 1440)
-python -m scripts.tei.tei_gemini --all                   # all 286 docs
+python -m scripts.tei.tei_gemini --all                   # all 285 docs
 python -m scripts.tei.tei_gemini --doc 2310 --refine     # + 2nd call/page for quality
 python -m scripts.tei.tei_gemini --doc 2310 --consolidate # + API doc consolidation
 python -m scripts.tei.tei_gemini --force                 # overwrite existing
@@ -373,7 +373,7 @@ python -m scripts.tei.tei_gemini --dry-run               # show prompts, no API 
 # Unified TEI Pipeline (stage 6b, PRODUCTION, requires GEMINI_API_KEY)
 python -m scripts.tei.tei_unified --doc 2310             # single document (4 steps)
 python -m scripts.tei.tei_unified --sample               # 3 pilot docs (2310, 2530, 1440)
-python -m scripts.tei.tei_unified --all                  # all 286 docs
+python -m scripts.tei.tei_unified --all                  # all 285 docs
 python -m scripts.tei.tei_unified --doc 2310 --step 1    # rule-based scaffold only (free)
 python -m scripts.tei.tei_unified --skip-validate         # skip validation (default: active)
 python -m scripts.tei.tei_unified --force                # overwrite cached results
