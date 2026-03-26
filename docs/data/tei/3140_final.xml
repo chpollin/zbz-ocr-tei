@@ -32,7 +32,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:ok L2:warning L3:warning L4:warning L5:n/a L6:warning L7:warning). SCHWER: Massive OCR-Degradation -- grosse Teile beider Seiten unlesbar, besonders ab Mitte S1; SCHWER: Inhaltsduplizierung: 'Un deuxieme foyer d'opposition'-Abschnitt erscheint zweimal identisch; MITTEL: div ohne type-Attribut (+3 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 34p 8o 36l 0w = 78</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

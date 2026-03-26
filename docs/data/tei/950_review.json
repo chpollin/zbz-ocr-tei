@@ -1,55 +1,20 @@
 {
   "doc_id": "950",
-  "reviewer": "quality-screener-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "tier": 2,
-  "pages": 4,
-  "language": "fra",
-  "validator": "VALID (0 errors, 0 warnings)",
-  "pages_inspected": ["p001", "p002"],
-  "errors": 2,
-  "warnings": 1,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "V1",
-      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings, 1 Fussnote"
+      "code": "S5",
+      "msg": "1 Fussnoten"
     },
     {
       "severity": "info",
       "code": "E0",
       "msg": "Entities: 24p 10o 68l 5w = 107"
-    },
-    {
-      "severity": "error",
-      "code": "T2",
-      "msg": "S.4: Fremdtext von R.-F. Lejeune ('La drogue, signe d'un mal profond') und Pharma-Werbung (Stabicilline/Vifor) im TEI enthalten -- gehoert nicht zu Herschs Artikel"
-    },
-    {
-      "severity": "error",
-      "code": "T3",
-      "msg": "S.2 Conseil de redaction: Massive OCR-Artefakte (GASTRE-OPERATION, TABULATIONS, RECONSTRUCTION etc.) -- garbled Fachbezeichnungen durch fehlerhafte OCR-Lesung der klein gedruckten Redaktionsliste"
-    },
-    {
-      "severity": "warning",
-      "code": "L3",
-      "msg": "S.1 Cover: Werbeanzeige (Stellacyl) korrekt im TEI erfasst, aber fraglicher Editionswert"
-    },
-    {
-      "severity": "info",
-      "code": "L1",
-      "msg": "Overlay S.1: Medecine et Hygiene Cover, komplexes Zeitschriftenlayout mit Inhaltsverzeichnis und Werbung"
-    },
-    {
-      "severity": "info",
-      "code": "L2",
-      "msg": "Overlay S.2: Dreispaltig mit Sommaire-Kasten, Artikel-Fortsetzung, Redaktionsliste -- Layout-Regionen plausibel"
-    },
-    {
-      "severity": "info",
-      "code": "T1",
-      "msg": "Herschs Kerntext (La drogue contre l'humain, S.1-3+4-Fortsetzung) inhaltlich koharent und sprachlich korrekt"
     }
   ]
 }

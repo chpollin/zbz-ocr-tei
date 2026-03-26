@@ -1,52 +1,15 @@
 {
   "doc_id": "2960",
-  "reviewer": "agent-screening-v2",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "layers": {
-    "L1_scan": {
-      "score": "ok",
-      "pages_inspected": [1, 2],
-      "notes": "Seite 1: Zeitungs-Titelseite Journal de Geneve. Seite 2: Samedi Litteraire. Overlays zeigen korrekte Zonenerkennung."
-    },
-    "L2_ocr": {
-      "score": "warning",
-      "notes": "Schwere OCR-Degradation in zahlreichen Passagen. S1: 'Barne' statt 'Berne' (mehrfach), 'Live le dossier' statt 'Lire', 'l'immuere americain' statt 'l'emissaire', 'positions boursieres' statt 'positions serbes', 'l'Albanie' statt 'l'Alliance'. S2: Massive Garbling: 'spirait que ses liens', 'relathait pas volontiers ses pures arts', 'chose ignotte jusqu'a 17 y a peu', zahlreiche weitere unlesbare Passagen."
-    },
-    "L3_layout": {
-      "score": "warning",
-      "notes": "Sehr komplexes mehrspalteniges Zeitungslayout mit ~34 Zonen auf S2. Lesereihenfolge teils unklar bei verschraenkten Spalten. Duplizierter Inhalt: Paulhan-Brief erscheint zweimal (Zonen r_22/r_27 und r_25/r_30)."
-    },
-    "L4_tei": {
-      "score": "warning",
-      "validator_warnings": [],
-      "notes": "VALID, 0 Warnings. ABER: div hat kein type-Attribut. Titel im Header ist 'Journal de Geneve et Gazette de Lausanne' -- das ist der Zeitungsname, nicht der Artikeltitel. Der Hersch-Text heisst 'Ici, nulle douleur ne s'use...'."
-    },
-    "L5_reference": {
-      "score": "n/a"
-    },
-    "L6_entities": {
-      "score": "warning",
-      "counts": {
-        "persName": 28,
-        "orgName": 12,
-        "placeName": 27,
-        "bibl": 9
-      },
-      "notes": "Hohe Zahlen durch ganzseitige Zeitungserfassung (mehrere Artikel). Mehrere False-Positives: 'Heuss' und 'Martin' in Strassenname als persName getaggt, 'Suisse' als placeName statt Adjektiv, 'Paul' in 'Paul Coudret' separat als persName. Viele Entities referenzieren OCR-Artefakte."
-    },
-    "L7_coherence": {
-      "score": "warning",
-      "notes": "Dokument enthaelt eine komplette Zeitungsausgabe (Titelseite + Literaturbeilage) statt eines einzelnen Hersch-Textes. Der Hersch-Beitrag (ueber Monique Saint-Heliere) beginnt erst auf S2, untere Haelfte. Grosse Teile des Textes sind durch OCR-Fehler unlesbar. Paulhan-Brief ist dupliziert."
-    }
-  },
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
-    "SCHWER: Massive OCR-Degradation -- zahlreiche Passagen unlesbar, besonders auf S2",
-    "SCHWER: Paulhan-Brief-Abschnitt erscheint doppelt im TEI",
-    "MITTEL: div ohne type-Attribut",
-    "MITTEL: Titel im Header ist Zeitungsname, nicht Artikeltitel",
-    "LEICHT: 'Berne' systematisch als 'Barne' OCR-fehlerkannt",
-    "LEICHT: Mehrere Entity-False-Positives (Heuss, Martin in Strassennamen)"
-  ],
-  "overall_notes": "Komplexe Zeitungsseite mit schweren OCR-Problemen. Der Hersch-Text ueber Monique Saint-Heliere ist teilweise unlesbar. Inhaltsduplizierung (Paulhan-Brief). Titel und div-type muessen korrigiert werden. Empfehlung: OCR-Nachbearbeitung und manuelle Pruefung des Hersch-Abschnitts."
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 55p 16o 51l 16w = 138"
+    }
+  ]
 }

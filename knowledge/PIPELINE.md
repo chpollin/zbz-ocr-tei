@@ -33,7 +33,7 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | Stage | Task | Script | Output | Status |
 |-------|------|--------|--------|--------|
 | 1 | PDF → Page images | `scripts/extract_pages.py` | PNG (`docs/images/`) | Production |
-| 1a | Document classification (Gemini) | `scripts/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (286 docs) |
+| 1a | Document classification (Gemini) | `scripts/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (285 docs) |
 | 2 | OCR | `scripts/ocr_pipeline.py` | Page-level Markdown (Mistral: `output/mistral_results/`, DeepSeek: `output/ocr_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/llm_postprocess.py` | Corrected Markdown (`output/llm_corrected_c/`) | Production, E17: optional |
 | 2b | Gemini OCR correction (optional) | `scripts/gemini_ocr_correct.py` | Corrected Markdown (`output/gemini_corrected_a/` or `_b/`) | Sample (5 docs), E29 |
@@ -41,20 +41,21 @@ PDF ──→ Page images ──→ OCR ──→ Layout ──→ PAGE-XML ─�
 | 3a | Layout QA/Detect (Gemini) | `scripts/layout_qa_gemini.py` (3 modes: qa/detect/auto) | Corrected/detected regions (`_layout_gemini.json`) | Production (E25/E26/E31) |
 | 3b | Layout Overlay Generator | `scripts/generate_layout_overlays.py` | Overlay PNGs + side-by-side compare | Production (E31) |
 | 4 | Layout + OCR → PAGE-XML | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | PAGE-XML + METS (`output/page_xml/`) | Production |
-| 5 | **NER + Wikidata** | `scripts/ner/` (7 Module) | Entity JSON + TEI Indices (`data/entities/`) | **Production (285/286, E34/E35)** |
-| 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | 285/286 Docs, 11,685 Entities, 26,197 Mentions |
-| 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | 4,100 Eintraege, 341 mit Wikidata |
+| 5 | **NER + Wikidata** | `scripts/ner/` (7 Module) | Entity JSON + TEI Indices (`data/entities/`) | **Production (285/285, E34/E35)** |
+| 5a | NER Entity Extraction (Gemini) | `scripts/ner/ner_extract.py` | Per-page JSON (`output/entities/{doc_id}/`) | 285/285 Docs, 11,685 Entities, 26,197 Mentions |
+| 5b | Entity Index (TEI-XML) | `scripts/ner/entity_index.py` | TEI Indices (`data/entities/*.xml`) | 4,504 Eintraege, 341 mit Wikidata |
 | 5c | Wikidata Reconciliation | `scripts/ner/wikidata_linker.py` | Wikidata cache (`output/entities/_wikidata_cache.json`) | 67/285 Docs (15%), restliche pending |
-| 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | 49/286 Docs (alle 10 geprueft VALID) |
+| 5d | TEI Entity Injection | `scripts/ner/ner_inject_tei.py` | Enriched TEI (`output/tei_ner/`) | 285/285 Docs (Dual-Attribut E50: ref=GND + corresp=#zbz) |
 | 5e | NER Evaluation | `scripts/ner/ner_evaluate.py` | Metrics (density, P/R/F1 vs GT) + HTML-Report | Done (output/ner_report.html) |
 | 6 | Layout + OCR → TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | TEI-XML (`output/tei/`) | Production |
-| 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **51/286, E32** |
-| 6c | TEI Validation (RelaxNG + R1-R14) | `scripts/tei/tei_validator.py` | JSON + HTML Report | Production, E32 |
+| 6b | **Unified TEI Pipeline** (rule-based + Gemini) | `scripts/tei/tei_unified.py` | TEI-XML (`output/tei_unified/`) | **285/285, E32** |
+| 6b+ | Post-Assembly Fixes | `scripts/tei/tei_step3.py` | Fix E/F/G + heuristische lb-Injection | Production (Session 34) |
+| 6c | TEI Validation (RelaxNG + R1-R7 + W1-W14) | `scripts/tei/tei_validator.py` | JSON + HTML Report | **285/285 valid**, 29 Warnings |
 | 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | Reports + `docs/data/dashboard.json` | Production (extension in Phase 4) |
 
 **Curation Layer (E36, post-pipeline):** Manuelle Kuration ueber Browser-Editor (`scripts/server/curation_server.py`, localhost:8000). Nicht Teil der automatischen Pipeline, sondern editoriale Schicht darueber. Kuratiertes TEI in `data/tei_curated/` (git-tracked, Gold-Standard). TEI-Prioritaet: kuratiert > NER > unified > examples. Features: WYSIWYG Text-Editing, Block-Toolbar, Entity-Tagging mit Autocomplete, RelaxNG-Validierung, Review-Workflow (draft > in_review > approved). Publish: freigegebene Docs werden nach `docs/data/examples/` kopiert. Details: [CURATION](CURATION.md).
 
-**Note on Stage 5 (E34/E35):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). 7 Module: `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker`, `ner_inject_tei`, `ner_evaluate`. Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). Production Run (285 Docs): 11,685 Entities, 26,197 Mentions, 4,100 Index-Eintraege, 341 mit Wikidata-QIDs. Typ-Verteilung: person 36.7%, place 22.3%, date 15.0%, org 13.6%, work 10.8%, event 1.6%. CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
+**Note on Stage 5 (E34/E35):** Post-hoc NER Pipeline via Gemini Flash Lite (6 Entity-Typen). 7 Module: `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker`, `ner_inject_tei`, `ner_evaluate`. Architektur, ID-Schema und Wikidata-Strategie: siehe [GND-STRATEGIE](GND-STRATEGIE.md). Production Run (285 Docs): 11,685 Entities, 26,197 Mentions, 4,504 Index-Eintraege, 341 mit Wikidata-QIDs. Typ-Verteilung: person 36.7%, place 22.3%, date 15.0%, org 13.6%, work 10.8%, event 1.6%. Dual-Attribut-Strategie (E50): `ref="GND:{id}"` + `corresp="#zbz-{typ}.{N}"`. CLI: `--doc`, `--sample`, `--all`, `--force`, `--dry-run`.
 
 **Note on Stage 6:** Stage 6 (rule-based) produces flat TEI structure. **Stage 6a (E30)** was Gemini Vision standalone (Pilot, deleted). **Stage 6b (E32)** is the production pipeline: enhanced rule-based scaffold (Step 1) + Gemini refinement (Step 2, mapping-table prompt) + document assembly (Step 3) + RelaxNG validation (Step 4, default active). Post-processing: `fix_gemini_tei()` (6 fix types), `reannotate_entities()`, interview speaker detection. CLI: `--doc`, `--sample`, `--all`, `--step`, `--skip-validate`, `--force`, `--dry-run`. OCR source priority: Gemini B > Gemini A > LLM C > Mistral.
 

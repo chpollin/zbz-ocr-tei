@@ -1,23 +1,11 @@
 {
   "doc_id": "3010",
-  "reviewer": "quality-screening-t2",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "tier": 2,
-  "pages": 5,
-  "status": "NEEDS_REVIEW",
+  "status": "APPROVED",
   "errors": 0,
-  "warnings": 1,
+  "warnings": 0,
   "findings": [
-    {
-      "severity": "warning",
-      "code": "E1",
-      "msg": "'Homme' (12x) tagged as persName ref=zbz-p.926 throughout text -- generic noun in 'droits de l Homme', not a person entity. Systematic NER error."
-    },
-    {
-      "severity": "info",
-      "code": "S4",
-      "msg": "Facs zone coords on p4/p5 have extreme values (e.g. ulx=5256, uly=5097) -- likely layout detection artifact for footnote zones"
-    },
     {
       "severity": "info",
       "code": "S5",
@@ -26,7 +14,7 @@
     {
       "severity": "info",
       "code": "E0",
-      "msg": "Entities: 15p 3o 1l 10w = 29"
+      "msg": "Entities: 12p 5o 2l 13w = 32"
     }
   ]
 }

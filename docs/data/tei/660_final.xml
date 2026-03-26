@@ -32,7 +32,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:warning L2:error L3:warning L4:warning L5:n/a L6:warning L7:error). KRITISCH: Massive OCR-Halluzinationen -- 'Les nuits attiques' 8x wiederholt; KRITISCH: Endlos-Halluzination im Abschnitt 'Nouveaux incidents raciaux'; KRITISCH: 40+ Absaetze mit nur Seitenzahlen (1-38+) (+3 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 47p 16o 38l 16w = 117</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

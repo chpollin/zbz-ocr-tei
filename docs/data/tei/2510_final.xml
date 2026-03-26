@@ -32,7 +32,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="quality-screener-manual" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 1 Warning (W9: 1 Entity ohne ref); facs_4_r_8: Zone-Koordinaten ulx=4743 lrx=9039 fehlerhaft (Seite nur 1093 breit) -- Layout-Defekt S.4; facs_6_r_5: Zone ulx=lrx=4732 (Null-Breite, ausserhalb Seitenbereich) -- Layout-Defekt S.6 (+4 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). 2 Fussnoten; Entities: 114p 7o 24l 17w = 162</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -276,22 +276,22 @@
         <sp>
           <speaker />
           <p facs="#facs_5_r_6">
-            1) <placeName ref="#zbz-l.13">Est</placeName>-il vrai qu'une authentique quête de l'être soit nécessairement globale et directe ? <placeName ref="#zbz-l.13">Est</placeName>-il vrai que toute visée indirecte ou partielle, spécifiée, comme elle l'est dans les sciences, par les méthodes qui les constituent, perde son authenticité ou se détourne de « la vraie question » pour tomber dans la platitude de l'anonymat et du rationnel ?
+            1) Est-il vrai qu'une authentique quête de l'être soit nécessairement globale et directe ? Est-il vrai que toute visée indirecte ou partielle, spécifiée, comme elle l'est dans les sciences, par les méthodes qui les constituent, perde son authenticité ou se détourne de « la vraie question » pour tomber dans la platitude de l'anonymat et du rationnel ?
           </p>
         </sp>
         <sp>
           <speaker />
           <p facs="#facs_5_r_7">
-            2) <placeName ref="#zbz-l.13">Est</placeName>-il vrai qu'une authentique quête de l'être exige du philosophe qu'il se dépouille de toute la tradition européenne telle qu'elle s'est déployée entre les présocratiques et <persName ref="#zbz-p.5">Heidegger</persName>, parce que celle-ci, dite « métaphysique », est par vocation « anti-ontologique » et destructrice du souci de l'être ? <placeName ref="#zbz-l.13">Est</placeName>-il vrai, par exemple, que <persName ref="#zbz-p.6">Kant</persName>, en affirmant la phénoménalité de tout ce qui constitue notre connaissance empirique, ait supprimé « la question de l'être » ? <placeName ref="#zbz-l.13">Est</placeName>-il vrai que <persName ref="#zbz-p.5">Heidegger</persName> ait, en philosophie, le monopole du mystère ontologique ? N'y a-t-il eu, avant lui, personne dans « la clairière de l'être » ?
+            2) Est-il vrai qu'une authentique quête de l'être exige du philosophe qu'il se dépouille de toute la tradition européenne telle qu'elle s'est déployée entre les présocratiques et <persName ref="#zbz-p.5">Heidegger</persName>, parce que celle-ci, dite « métaphysique », est par vocation « anti-ontologique » et destructrice du souci de l'être ? Est-il vrai, par exemple, que <persName ref="#zbz-p.6">Kant</persName>, en affirmant la phénoménalité de tout ce qui constitue notre connaissance empirique, ait supprimé « la question de l'être » ? Est-il vrai que <persName ref="#zbz-p.5">Heidegger</persName> ait, en philosophie, le monopole du mystère ontologique ? N'y a-t-il eu, avant lui, personne dans « la clairière de l'être » ?
           </p>
         </sp>
         <p facs="#facs_5_r_8">
-          3) <placeName ref="#zbz-l.13">Est</placeName>-il vrai qu'il ne soit possible de s'interroger sur l'être qu'en grec ou en allemand — ce qui signifierait que toute pensée dans l'une de ces deux langues doit être intraduisible dans une autre ? <placeName ref="#zbz-l.13">Est</placeName>-il vrai qu'il faut « se laisser parler » par la langue allemande (« être parlé » par elle), — qu'un texte de <persName ref="#zbz-p.179">Descartes</persName>, en gardant son sens dans une traduction, avoue de ce fait sa platitude rationnelle, — et « qu'un <persName ref="#zbz-p.630">Français</persName>, s'il pense, pense nécessairement en allemand » ?
+          3) Est-il vrai qu'il ne soit possible de s'interroger sur l'être qu'en grec ou en allemand — ce qui signifierait que toute pensée dans l'une de ces deux langues doit être intraduisible dans une autre ? Est-il vrai qu'il faut « se laisser parler » par la langue allemande (« être parlé » par elle), — qu'un texte de <persName ref="#zbz-p.179">Descartes</persName>, en gardant son sens dans une traduction, avoue de ce fait sa platitude rationnelle, — et « qu'un <persName ref="#zbz-p.630">Français</persName>, s'il pense, pense nécessairement en allemand » ?
         </p>
         <sp>
           <speaker />
           <p facs="#facs_5_r_9">
-            4) <placeName ref="#zbz-l.13">Est</placeName>-il vrai que c'est seulement à travers un rejet méprisant de la raison, en tant qu'elle cherche l'universel et permet le développement de la technique, qu'il est possible d'éviter la réduction à l'anonymat du on et de retrouver l'existential concret ?
+            4) Est-il vrai que c'est seulement à travers un rejet méprisant de la raison, en tant qu'elle cherche l'universel et permet le développement de la technique, qu'il est possible d'éviter la réduction à l'anonymat du on et de retrouver l'existential concret ?
           </p>
         </sp>
         <sp>
@@ -332,7 +332,7 @@
           <persName ref="#zbz-p.5">Heidegger</persName> et <persName ref="#zbz-p.1">Jaspers</persName>
         </p>
         <p facs="#facs_6_r_4">
-          Les prises de position au sujet de <persName ref="#zbz-p.5">Heidegger</persName>, à la suite de la publication du livre de <persName ref="#zbz-p.1104">Farias</persName>, ont été si nombreuses que je n'ai pas pu les connaître toutes. Pourtant, j'ai été surprise de n'avoir trouvé, dans aucun des articles parus, dans aucun des débats télévisés, la moindre référence au témoignage essentiel fourni par la publication posthume, en allemand, des <hi rendition="#i"><bibl ref="#zbz-w.468">Notizen zu Martin Heidegger</bibl></hi> de <persName ref="#zbz-p.1">Karl Jaspers</persName>. <persName ref="#zbz-p.1">Jaspers</persName> a été lié d'amitié avec <persName ref="#zbz-p.5">Heidegger</persName> dès les années 20. Il a publié sa grande <hi rendition="#i"><bibl ref="#zbz-w.1">Philosophie</bibl></hi> (1) cinq ans après <hi rendition="#i"><bibl ref="#zbz-w.330">Sein und Zeit</bibl></hi>. Il a dit, écrit, répété, que <persName ref="#zbz-p.5">Heidegger</persName> était le seul philosophe contemporain qui l'eût vraiment intéressé, le seul avec lequel il eût souhaité avoir l'échange d'une « communication » véritable, c'est-à-dire ce débat philosophique radical, sans réserve ni égards, où il
+          Les prises de position au sujet de <persName ref="#zbz-p.5">Heidegger</persName>, à la suite de la publication du livre de <persName ref="#zbz-p.1104">Farias</persName>, ont été si nombreuses que je n'ai pas pu les connaître toutes. Pourtant, j'ai été surprise de n'avoir trouvé, dans aucun des articles parus, dans aucun des débats télévisés, la moindre référence au témoignage essentiel fourni par la publication posthume, en allemand, des <hi rendition="#i"><bibl ref="#zbz-w.468">Notizen zu Martin Heidegger</bibl></hi> de <persName ref="#zbz-p.1">Karl Jaspers</persName>. <persName ref="#zbz-p.1">Jaspers</persName> a été lié d'amitié avec <persName ref="#zbz-p.5">Heidegger</persName> dès les années 20. Il a publié sa grande <hi rendition="#i">Philosophie</hi> (1) cinq ans après <hi rendition="#i"><bibl ref="#zbz-w.330">Sein und Zeit</bibl></hi>. Il a dit, écrit, répété, que <persName ref="#zbz-p.5">Heidegger</persName> était le seul philosophe contemporain qui l'eût vraiment intéressé, le seul avec lequel il eût souhaité avoir l'échange d'une « communication » véritable, c'est-à-dire ce débat philosophique radical, sans réserve ni égards, où il
         </p>
         <p facs="#facs_6_r_5">
           ne s'agit, pour soi et pour l'autre, que de chercher la vérité. Avant 1933, quand <persName ref="#zbz-p.5">Heidegger</persName> venait à <placeName ref="#zbz-l.21">Heidelberg</placeName>, il logeait chez <persName ref="#zbz-p.1">Jaspers</persName>. Leurs noms ont été très souvent associés, au nom de « la philosophie de l'existence ». Pour l'un comme pour l'autre, les penseurs que <persName ref="#zbz-p.1">Jaspers</persName> appelle « les deux exceptions », <bibl ref="#zbz-w.530">Nietzsche</bibl> et <bibl ref="#zbz-w.529">Kierkegaard</bibl>, ont eu une importance décisive.
@@ -353,7 +353,7 @@
           </p>
         </sp>
         <note place="foot" n="1" xml:id="fn6-1" facs="#facs_6_r_10">
-          (1) En français : <hi rendition="#i"><bibl ref="#zbz-w.1">Philosophie</bibl></hi>, trad. <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <orgName ref="#zbz-o.3">Springer</orgName>, 1986.
+          (1) En français : <hi rendition="#i">Philosophie</hi>, trad. <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <orgName ref="#zbz-o.3">Springer</orgName>, 1986.
         </note>
         <p>
           479

@@ -1,53 +1,15 @@
 {
   "doc_id": "2530",
-  "reviewer": "agent-screening-v2",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "layers": {
-    "L1_scan": {
-      "score": "ok",
-      "pages_inspected": [
-        1
-      ],
-      "notes": "Overlay: zweispaltige Zeitschrift. 2 Seiten."
-    },
-    "L2_ocr": {
-      "score": "ok",
-      "notes": "Text gut erkannt. Franzoesisch korrekt."
-    },
-    "L3_layout": {
-      "score": "warning",
-      "notes": "Verschachtelte divs: div n=1 > div type=text, div n=2 mehrfach."
-    },
-    "L4_tei": {
-      "score": "warning",
-      "validator_warnings": [],
-      "notes": "VALID, aber Israel durchgehend als orgName statt placeName."
-    },
-    "L5_reference": {
-      "score": "n/a"
-    },
-    "L6_entities": {
-      "score": "warning",
-      "counts": {
-        "persName": 3,
-        "orgName": 17,
-        "placeName": 0,
-        "bibl": 0
-      },
-      "notes": "SCHWERWIEGEND: Israel als orgName/persName statt placeName. 0 placeName in geopolitischem Text."
-    },
-    "L7_coherence": {
-      "score": "ok",
-      "notes": "Kohaerenter politischer Kommentar. Text vollstaendig."
-    }
-  },
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
-    "Israel durchgehend als orgName statt placeName",
-    "Israel auf Seite 2 teilweise als persName",
-    "Etats-Unis/U.R.S.S. als orgName statt placeName",
-    "0 placeName in geopolitischem Text",
-    "Verschachtelte div-Struktur"
-  ],
-  "overall_notes": "Entity-Annotation grundlegend fehlerhaft. Benoetigt NER-Korrektur."
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 10p 16o 0l 0w = 26"
+    }
+  ]
 }

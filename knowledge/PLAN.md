@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-25
-updated: 2026-03-15
+updated: 2026-03-26
 tags: [zbz-ocr-tei, plan, implementation, phases]
 status: active
 ---
@@ -19,16 +19,16 @@ Component status: [PROJEKT](PROJEKT.md). Pipeline stages and CLI: [PIPELINE](PIP
 Phase 0 (Pilot: Layout-Eval + OCR + TEI) --- DONE
     |
     v
-Phase 1 (Scale: Layout 286 docs + Gemini QA) --- DONE
+Phase 1 (Scale: Layout 285 docs + Gemini QA) --- DONE
     |
     v
-Phase 2 (PAGE-XML generator) --- DONE (286 docs, 4,091 pages)
+Phase 2 (PAGE-XML generator) --- DONE (285 docs, 4,108 pages)
     |
     v
 Phase 3 (NER + GND)  <-- can run parallel with Phase 2
     |
     v
-Phase 4 (TEI-XML extend with PAGE-XML + NER) --- DONE (285/285, 284 schema-valide)
+Phase 4 (TEI-XML extend with PAGE-XML + NER) --- DONE (285/285, 285/285 schema-valide)
     |
     v
 Phase 5 (Evaluation + Dashboard extension)
@@ -43,7 +43,7 @@ Phase 6 (Production + Quality Screening)
 
 Phase 0 -- Pilot (15 docs): Layout evaluation (E19/E20), image extraction, OCR (Mistral, E6), LLM correction tested and made optional (E17), TEI-XML (E22), evaluation + dashboard, data delivery (E23).
 
-Phase 1 -- Scale Layout (286 docs): Docling layout (E24 docling-serve, E20 local GPU). Gemini QA (E25) + Detect (E26) with auto-routing (E31: full run completed). Viewer integration with Docling/Gemini toggle. Overlay generator.
+Phase 1 -- Scale Layout (285 docs): Docling layout (E24 docling-serve, E20 local GPU). Gemini QA (E25) + Detect (E26) with auto-routing (E31: full run completed). Viewer integration with Docling/Gemini toggle. Overlay generator.
 
 Open from Phase 1:
 - [ ] Prompt tuning: rightmost column missed on wide landscapes, picture detection weak
@@ -73,9 +73,9 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 - [x] Entity types: person, organization, place, work, event, date
 - [x] ID-Schema: zbz-p.N, zbz-o.N, zbz-l.N, zbz-w.N, zbz-e.N, zbz-d.N
 - [x] Pilot Doc 2310 erfolgreich
-- [x] NER Production Run: 285/286 Docs, 11,685 Entities, 26,197 Mentions (E35)
-- [x] Entity Index Merge: 4,100 Eintraege (person 1,979, org 698, place 661, work 762)
-- [x] TEI Injection Production: 49/286 Docs mit Entity-Markup (alle 10 geprueft VALID)
+- [x] NER Production Run: 285/285 Docs, 11,685 Entities, 26,197 Mentions (E35)
+- [x] Entity Index Merge: 4,504 Eintraege (person 1,979, org 698, place 661, work 762)
+- [x] TEI Injection Production: 285/285 Docs mit Entity-Markup (Dual-Attribut E50: ref=GND + corresp=#zbz)
 - [x] NER Evaluation: HTML-Report (output/ner_report.html)
 - [ ] Wikidata Reconciliation: 67/285 Docs fertig (15%), restliche 218 pending
 - [x] Viewer: WD/zbz-ID Support in tei-viewer.js + edition-tei.js (Session 23)
@@ -99,8 +99,10 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [x] LINE breaks (`<lb/>`) from OCR line structure (in unified Step 1)
 - [x] Special document types via genre-conditional mapping table (10 genres)
 - [x] **Qualitaetsfixes** (E32): Entity Re-Annotation, Prompt-Tuning, Interview-Speaker-Erkennung
-- [x] Unified TEI production run -- **285/285 done** (284/285 schema-valide nach Reassembly 2026-03-15)
-- [x] NER Entity Integration: 49/286 Docs mit Entity-Markup (`output/tei_ner/`)
+- [x] Unified TEI production run -- **285/285 done** (**285/285 schema-valide** gegen zbz_hersch.rng, 29 Warnings)
+- [x] Post-Assembly Fixes (tei_step3.py): pb-Duplikate (E), leere div (F), leere figure (G), heuristische lb-Injection
+- [x] Schema ref-Pattern erweitert: `(GND:[0-9A-Za-z\-]+|#zbz-[a-z]+\.[0-9]+)` (Session 34)
+- [x] NER Entity Integration: 285/285 Docs mit Entity-Markup (Dual-Attribut E50)
 - [x] Re-Injection nach Unified-TEI-Completion: 285/285 Docs mit Entity-Markup in Unified Step 1
 
 ## Phase 5 -- Extended Evaluation
@@ -115,9 +117,9 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [ ] Schema-Validierung x CER Kreuzanalyse
 - [ ] Zielwerte: Text CER <3.5% (Median), Structural accuracy >80%, Entity P/R >80%/>70%
 
-## Phase 6 -- Production Run (286 docs)
+## Phase 6 -- Production Run (285 docs)
 
-- [ ] Process all 286 PDFs through full pipeline
+- [x] Process all 285 PDFs through full pipeline
 - [ ] Spot-check QA: manually review 10 random documents
 - [ ] Final acceptance: Doc 2310 in oXygen -> no schema errors, entities linked
 - [x] Agent-Based Quality Screening Pilot: 5 Docs (290, 2310, 100, 1440, 1330), alle APPROVED_WITH_NOTES
@@ -212,7 +214,7 @@ Systematische Verbesserung der OCR-Qualitaet durch iteratives Experimentieren un
 ## Data Flow
 
 ```
-PDF-Scans (286 PDFs)
+PDF-Scans (285 PDFs)
   |
   +---> extract_pages.py ----------> PNGs (300 DPI)
   |

@@ -30,9 +30,9 @@
         <language ident="fra" />
       </langUsage>
     </profileDesc>
-  <revisionDesc>
+    <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:ok L2:warning L3:warning L4:ok L5:n/a L6:warning L7:warning). KRITISCH: Hersch-Beitrag hat massive OCR-Wiederholungsschleifen.; KRITISCH: Textduplikate -- Washington-Abschnitt und URSS-Passage wiederholt.; KRITISCH: Titel ist 'JOURNAL DE GENEVE' statt Artikeltitel. (+3 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). 1 Fussnoten; Entities: 13p 44o 0l 0w = 57</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

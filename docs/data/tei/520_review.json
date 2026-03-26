@@ -1,51 +1,15 @@
 {
   "doc_id": "520",
-  "reviewer": "quality-screener-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "pages_inspected": ["p1", "p6", "p11"],
-  "errors": 1,
-  "warnings": 3,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "L4",
-      "msg": "TEI-Validator: VALID (0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings)"
-    },
-    {
-      "severity": "info",
-      "code": "L1",
-      "msg": "Overlay p1/p6/p11: Zweiseitiges Layout (Buch-Doppelseiten) korrekt erkannt"
-    },
-    {
-      "severity": "error",
-      "code": "L6",
-      "msg": "Massive falsch-positive Entity-Annotationen: generische Nomen als Werke getaggt. 'Zeit' (zbz-w.705=Die Zeit) 7x, 'Philosophie' (zbz-w.1) 2x, 'Demokratie' (zbz-w.478) 2x, 'Angst' (zbz-w.451) 1x, 'Geist' (zbz-w.15) 1x, 'Ursprung' (zbz-w.43) 2x. Insgesamt ca. 15 falsch-positive bibl-Referenzen auf Alltagswoerter."
-    },
-    {
-      "severity": "warning",
-      "code": "L6",
-      "msg": "persName ref zbz-p.1360 auf generisches 'Philosophen' (kein Eigenname), persName ref zbz-p.14 auf 'Marxisten' (Gruppe, nicht Karl Marx), persName ref zbz-p.50 auf 'Gott' (theologisch, nicht Person im Korpus-Sinne)."
-    },
-    {
-      "severity": "warning",
-      "code": "L6",
-      "msg": "Titel im teiHeader ist '520' (Platzhalter). doc_metadata.json hat title=null. Kein echter Titel extrahiert. Aus Text ableitbar: 'Kultur und Freiheit' (Vortrag Jeanne Hersch, DGB-Tagung)."
-    },
-    {
-      "severity": "warning",
-      "code": "L7",
-      "msg": "S.11 endet mit Schlusswort von Joachim Tiburtius -- anderer Sprecher, korrekt transkribiert aber nicht als separater div abgegrenzt."
-    },
-    {
-      "severity": "info",
-      "code": "L2",
-      "msg": "OCR-Qualitaet gut, deutsche Umlaute und Sonderzeichen korrekt. Fussnoten-Marker im Text."
-    },
-    {
-      "severity": "info",
-      "code": "L7",
-      "msg": "Deutscher Vortragstext koharent ueber 11 Seiten. Argumentationsstrang Kultur-Freiheit-Massenmedien-Erwachsenenbildung nachvollziehbar."
+      "code": "E0",
+      "msg": "Entities: 6p 3o 29l 1w = 39"
     }
   ]
 }

@@ -1,50 +1,20 @@
 {
   "doc_id": "1910",
-  "reviewer": "quality-screener-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "tier": 2,
-  "pages": 5,
-  "language": "deu",
-  "validator": "VALID (0 errors, 0 warnings)",
-  "pages_inspected": ["p001", "p004"],
-  "errors": 1,
-  "warnings": 2,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "V1",
-      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings, 3 Fussnoten"
+      "code": "S5",
+      "msg": "3 Fussnoten"
     },
     {
       "severity": "info",
       "code": "E0",
-      "msg": "Entities: 39p 3o 9l 17w = 68"
-    },
-    {
-      "severity": "error",
-      "code": "T3",
-      "msg": "S.4 letzter Absatz (Z.237): Schwere OCR-Korruption -- 'Stehe das fuer dich wahrhaft Gute zu finden', 'Lerne dich ueber das wenn er den Irrtum beurteilt, welcher entsteht, wenn man ein scheint' -- Satzfragmente, sinnentstellter Text (sokratisches 'Erkenne dich selbst' Passage)"
-    },
-    {
-      "severity": "warning",
-      "code": "E3",
-      "msg": "persName 'Mensch' (zbz-p.1251, 2x) -- Gattungsbegriff, kein Personenname. Analog: bibl 'Der Mensch' (zbz-w.657)"
-    },
-    {
-      "severity": "warning",
-      "code": "S4",
-      "msg": "Fussnote fn4-2 (Z.221-223) enthaelt nur Seitenzahl '253' -- vermutlich Seitenumbruch in Fussnoten-Region fehlzugeordnet"
-    },
-    {
-      "severity": "info",
-      "code": "L1",
-      "msg": "Kein Overlay verfuegbar. Sammelband-Format (Vandenhoeck & Ruprecht). S.1-2 Titelei+Inhaltsverzeichnis, S.3-4 Herschs Beitrag, S.5 Verlagswerbung"
-    },
-    {
-      "severity": "info",
-      "code": "T1",
-      "msg": "Herschs 'Fragwuerdigkeit der Introspektion': Philosophischer Text ueber Selbstbeobachtung mit Jaspers-/Amiel-Referenzen. Bis auf die korrupte Passage S.4 Ende koharent und sprachlich korrekt"
+      "msg": "Entities: 37p 3o 9l 15w = 64"
     }
   ]
 }

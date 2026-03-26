@@ -32,7 +32,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="quality-screening-t2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). 'Mensch' (5x) tagged as persName ref=zbz-p.1251 -- generic noun 'der Mensch', not a person entity; 'Wahl' (1x) tagged as persName ref=zbz-p.89 -- 'freie Wahl' (free choice), not a person; Validator: Keine lb-Elemente im body (4 Seiten) (+1 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 4p 2o 0l 1w = 7</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -98,10 +98,10 @@
           Vortrag (1)
         </p>
         <p facs="#facs_2_r_4">
-          Diesen Titel formuliere ich, um ein wesentliches Staunen auszudrücken: einmal das Staunen darüber, daß wir in dieser Welt, in der wir leben, ein Wesen finden, das so ist wie der <persName ref="#zbz-p.1251">Mensch</persName>, das heißt frei und verantwortlich für das, was er darin tut; – und dann zweitens das Staunen darüber, daß, obgleich der <persName ref="#zbz-p.1251">Mensch</persName> die Welt nie als Ganzes vor sich haben kann, er sie doch nur als Gesamtgegenstand auffassen und sich vorstellen kann.
+          Diesen Titel formuliere ich, um ein wesentliches Staunen auszudrücken: einmal das Staunen darüber, daß wir in dieser Welt, in der wir leben, ein Wesen finden, das so ist wie der Mensch, das heißt frei und verantwortlich für das, was er darin tut; – und dann zweitens das Staunen darüber, daß, obgleich der Mensch die Welt nie als Ganzes vor sich haben kann, er sie doch nur als Gesamtgegenstand auffassen und sich vorstellen kann.
         </p>
         <p facs="#facs_2_r_5">
-          Nun mein erster Titel: Warum sieht es so aus, als wäre es unwahrscheinlich, ein freies und verantwortliches Wesen in unserer Welt zu finden, das eben ein <persName ref="#zbz-p.1251">Mensch</persName> wäre?
+          Nun mein erster Titel: Warum sieht es so aus, als wäre es unwahrscheinlich, ein freies und verantwortliches Wesen in unserer Welt zu finden, das eben ein Mensch wäre?
         </p>
         <p facs="#facs_2_r_6">
           Ziehen wir die verschiedenen „Gegenden“ des Wesens in Betracht, aus dem die Wirklichkeit für uns besteht: Da finden wir einerseits die Ebene des Leblosen, der rein physikalischen und chemischen leblosen Materie, und andererseits der biologischen, organischen Wirklichkeit des Lebendigen. In dem Bereich der leblosen Physico-Chemie stellt sich keine Frage nach Freiheit oder ethischer Beurteilung. Aber im rein biologischen Bereich herrscht auch ein Gesetz: das Gesetz der Herrschaft des Stärkeren. Die Zuschauer, die beobachten, wie Tiger etwa große Büffel in der Wüste lebendig mit ihren Zähnen zerreißen und fressen, staunen über deren Grausamkeit. Aber zu Unrecht. Sie verstehen nicht, was vor sich geht: es ist keine Grausamkeit, sondern ganz schlicht ein Ernährungsvorgang. Ein Tiergesetz herrscht über das Lebendige: die Tiere sind dem Gesetz des Stärkeren unterworfen, das heißt, sie müssen sich den Stärkeren unterwerfen, um sich und ihre Kleinen mit deren Fleisch zu ernähren. Von Grausamkeit kann keine Rede sein.
@@ -111,16 +111,16 @@
         </p>
       <pb facs="#facs_3" n="3" />
         <p facs="#facs_3_r_1">
-          Die Welt, in der wir leben, läßt uns also nirgends eine freie <persName ref="#zbz-p.89">Wahl</persName> oder Entscheidung beobachten. Wir sehen entweder einen physikalischen, deterministischen Prozeß sich in einer Kette von Ursachen und Folgen entwickeln – etwa wenn Wasser auf Feuer gewärmt wird und nach einer Weile kocht. Das ist kausale Notwendigkeit – oder ein biologischer Zwangsprozeß, unter den das Recht des Stärkeren die Ernährung dieser Stärkeren und ihrer Kleinen sichert.
+          Die Welt, in der wir leben, läßt uns also nirgends eine freie Wahl oder Entscheidung beobachten. Wir sehen entweder einen physikalischen, deterministischen Prozeß sich in einer Kette von Ursachen und Folgen entwickeln – etwa wenn Wasser auf Feuer gewärmt wird und nach einer Weile kocht. Das ist kausale Notwendigkeit – oder ein biologischer Zwangsprozeß, unter den das Recht des Stärkeren die Ernährung dieser Stärkeren und ihrer Kleinen sichert.
         </p>
         <p facs="#facs_3_r_2">
           Die Gegenwart des Menschen scheint also in seiner Welt eine Ausnahme zu sein, denn er ist der einzige, der tun kann, was er entscheidet, und was er meiden will, auch meiden kann. Er allein wird nicht von einem allgemeinen Gesetz gezwungen. Er allein ist also frei und für seine Entscheidung verantwortlich.
         </p>
         <p facs="#facs_3_r_3">
-          Man spricht sehr viel von Menschenrechten. Ich glaube, daß, wenn der <persName ref="#zbz-p.1251">Mensch</persName> unter allen Geschöpfen besondere Rechte hat, dies nur deswegen so ist: weil er allein für das, was er entscheidet, verantwortlich ist. Und dadurch bekommt diese Erde einen ganz neuen, einzigartigen Sinn. <bibl ref="#zbz-w.657">Der Mensch</bibl> nimmt es ernst, er denkt frei. Was auch kommt, ob es ihm gefällt oder nicht. Er denkt frei. Und er entscheidet frei.
+          Man spricht sehr viel von Menschenrechten. Ich glaube, daß, wenn der Mensch unter allen Geschöpfen besondere Rechte hat, dies nur deswegen so ist: weil er allein für das, was er entscheidet, verantwortlich ist. Und dadurch bekommt diese Erde einen ganz neuen, einzigartigen Sinn. Der Mensch nimmt es ernst, er denkt frei. Was auch kommt, ob es ihm gefällt oder nicht. Er denkt frei. Und er entscheidet frei.
         </p>
         <p facs="#facs_3_r_4">
-          Dank diesem freien Denken, dank dieser freien Entscheidung, öffnen sich ihm die Möglichkeiten der technischen Entwicklung, und mir scheint, daß der <persName ref="#zbz-p.1251">Mensch</persName> die Möglichkeiten der Technik viel schneller entwickelt, als er deren Wesen vertieft und versteht. Die Frage der Klarheit und der Spezifität des Verstehens der Technik scheint mir besonders wichtig zu sein. Für den Menschen hängt besonders viel davon ab.
+          Dank diesem freien Denken, dank dieser freien Entscheidung, öffnen sich ihm die Möglichkeiten der technischen Entwicklung, und mir scheint, daß der Mensch die Möglichkeiten der Technik viel schneller entwickelt, als er deren Wesen vertieft und versteht. Die Frage der Klarheit und der Spezifität des Verstehens der Technik scheint mir besonders wichtig zu sein. Für den Menschen hängt besonders viel davon ab.
         </p>
         <p facs="#facs_3_r_5">
           Betrachten wir zum Beispiel die Wissenschaft. Wenn man sie versteht, versteht man ihren Zwang: und dieser Zwang wird genossen. Man ist froh, daß Wissenschaft zwingt. Es ist auch in der Technik möglich, ein echtes Zwangswissen zu erleben, dem man nicht ausweichen kann. Wenn man dieses Zwangswissen erwirbt, gewinnt man eine Herrschaft über die Kausalität der Natur, die im Laufe der Geschichte die Macht der Menschen über die Natur immer mehr wachsen läßt.
@@ -133,10 +133,10 @@
           Nun ist die Entwicklung der Wissenschaft und der Technik zugunsten der Entwicklung der Macht auf Seite des Menschen keineswegs evident. Es ist im Gegenteil, als sei die Verflechtung der Natur – als Unfreiheit der physischen und biologischen Natur – noch enger als vorher. Im durchdringenden Bereich der kausalen Zusammenhänge durch die Vermittlung der Wissenschaften und der von ihnen bedingten technischen, phantastischen Möglichkeiten. Dadurch verfügen dann die Menschen über ein echtes Wissen, ein Zwangswissen, etwas, dem man nicht ausweichen kann.
         </p>
         <p facs="#facs_4_r_2">
-          <bibl ref="#zbz-w.657">Der Mensch</bibl>, der wirklich im Königreich der technischen Möglichkeiten zu Hause ist, wird etwas Neues erwirken, dem er sich unterwerfen kann. Indem er etwas Neues in einem bestimmten Bereich gewinnt, erwirbt er eine Überlegenheit, ein <orgName ref="#zbz-o.33">Reich</orgName> der Möglichkeiten, in dem er herrscht und woraus er etwas machen kann.
+          Der Mensch, der wirklich im Königreich der technischen Möglichkeiten zu Hause ist, wird etwas Neues erwirken, dem er sich unterwerfen kann. Indem er etwas Neues in einem bestimmten Bereich gewinnt, erwirbt er eine Überlegenheit, ein <orgName ref="#zbz-o.33">Reich</orgName> der Möglichkeiten, in dem er herrscht und woraus er etwas machen kann.
         </p>
         <p facs="#facs_4_r_3">
-          Wie fühlt sich der <persName ref="#zbz-p.1251">Mensch</persName> in dieser Welt? Einerseits fühlt er sich geknechtet, abhängig. Oder er kann selbst entscheiden, frei zu sein. Aber um frei zu sein, muß er beobachten und verstehen können, was das heißt, geschichtlich als einziges freies Wesen in der veränderten Natur zu leben, – dieser Natur, die er mit seiner Technik immer weiter verändert, ohne sie je als Ganzes sich vorstellen zu können.
+          Wie fühlt sich der Mensch in dieser Welt? Einerseits fühlt er sich geknechtet, abhängig. Oder er kann selbst entscheiden, frei zu sein. Aber um frei zu sein, muß er beobachten und verstehen können, was das heißt, geschichtlich als einziges freies Wesen in der veränderten Natur zu leben, – dieser Natur, die er mit seiner Technik immer weiter verändert, ohne sie je als Ganzes sich vorstellen zu können.
         </p>
         <p>
           18

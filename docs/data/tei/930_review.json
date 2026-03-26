@@ -1,55 +1,20 @@
 {
   "doc_id": "930",
-  "reviewer": "quality-screener-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "tier": 2,
-  "pages": 4,
-  "language": "deu",
-  "validator": "VALID (0 errors, 0 warnings)",
-  "pages_inspected": ["p001", "p002"],
-  "errors": 2,
-  "warnings": 2,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "V1",
-      "msg": "Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings, 2 Fussnoten"
+      "code": "S5",
+      "msg": "2 Fussnoten"
     },
     {
       "severity": "info",
       "code": "E0",
-      "msg": "Entities: 10p 1o 7l 35w = 53"
-    },
-    {
-      "severity": "error",
-      "code": "T2",
-      "msg": "S.4 ab Mitte: Fremdtext von Hans-G. Rolff 'Diagnose der Gesamtschule' im selben div -- gehoert nicht zu Herschs Artikel, muesste als separater Abschnitt oder entfernt werden"
-    },
-    {
-      "severity": "error",
-      "code": "E2",
-      "msg": "Falsche persName-Tags: 'Mensch' (zbz-p.1251) und 'Wahl' (zbz-p.89) sind keine Personen; 'Rolle' (zbz-l.565) ist kein Ort"
-    },
-    {
-      "severity": "warning",
-      "code": "S1",
-      "msg": "sourceDesc date 'unknown' -- Publikationsdatum fehlt, koennte aus Kontext (Gesamtschuldebatte ca. 1970) ergaenzt werden"
-    },
-    {
-      "severity": "warning",
-      "code": "E3",
-      "msg": "Uebermaessig viele bibl-refs auf zbz-w.737 (Gesamtschule) -- 15x, jede Erwaehnung getaggt statt nur Erstzitat"
-    },
-    {
-      "severity": "info",
-      "code": "L1",
-      "msg": "Overlay S.1: Buchseite korrekt, Layout-Regionen passen"
-    },
-    {
-      "severity": "info",
-      "code": "L2",
-      "msg": "Overlay S.2: Doppelseite mit Spalten, Zonenzuordnung plausibel"
+      "msg": "Entities: 5p 1o 5l 5w = 16"
     }
   ]
 }

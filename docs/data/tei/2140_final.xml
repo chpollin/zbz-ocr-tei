@@ -23,9 +23,9 @@
         <language ident="fra" />
       </langUsage>
     </profileDesc>
-    <revisionDesc>
+  <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:warning L5:n/a L6:fail L7:warning). KRITISCH: 5x sp/speaker mit persName fuer Nicht-Personen; div type=interview falsch -- sind philosophische Thesen; Doppel-Escape &amp;amp; auf S.1 (+1 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 7p 4o 1l 5w = 17</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -83,7 +83,7 @@
   </facsimile>
   <text>
     <body>
-<div type="interview">
+<div type="text">
         <pb facs="#facs_1" n="1" />
         <head facs="#facs_1_r_1">
           DA 19876
@@ -127,24 +127,20 @@
         <p facs="#facs_4_r_2">
           <persName ref="#zbz-p.2">JEANNE HERSCH</persName>:
         </p>
-        <sp>
-          <speaker><persName>Thèse I</persName></speaker>
-          <p facs="#facs_4_r_3">
+        <p rendition="#b">Thèse I</p>
+        <p facs="#facs_4_r_3">
             Thèse I:
           </p>
-        </sp>
         <p facs="#facs_4_r_4">
           Les succès de la technologie ont occulté le SENS de la technique. La technique consiste à plier les déterminismes physiques à des finalités humaines.
         </p>
         <p facs="#facs_4_r_5">
           Elle n'est donc pas "matérialiste" par nature. Elle est au service de la liberté humaine, et tout dépend des fins auxquelles celle-ci la fait servir. Elle accroît le nombre, l'impact et la portée des choix possibles, et augmente ainsi la responsabilité des hommes. En diminuant la peine physique, en mettant à distance, jusqu'à un certain point, la pression des besoins naturels immédiats et celle des menaces extérieures, en réduisant le temps de travail nécessaire à la survie, elle permet à plus d'hommes l'accès à cette responsabilité et à leur véritable "condition humaine".
         </p>
-        <sp>
-          <speaker><persName>Inversement</persName></speaker>
-          <p facs="#facs_4_r_6">
+        <p rendition="#b">Inversement</p>
+        <p facs="#facs_4_r_6">
             Inversement:
           </p>
-        </sp>
         <p facs="#facs_4_r_7">
           Le développement de la technique a engendré au sein de la réalité sociale une sorte de "seconde nature" économique, comportant ses déterminismes propres, apparemment plus difficiles à plier à des finalités humaines que ceux de la "première".
         </p>
@@ -164,12 +160,10 @@
         <p facs="#facs_5_r_1">
           14
         </p>
-        <sp>
-          <speaker><persName>Thèse II</persName></speaker>
-          <p facs="#facs_5_r_2">
+        <p rendition="#b">Thèse II</p>
+        <p facs="#facs_5_r_2">
             Thèse II:
           </p>
-        </sp>
         <p facs="#facs_5_r_3">
           La technologie, comme d'ailleurs, dans une moindre mesure la science elle-même, n'a pas été assimilée CULTURELLEMENT par l'ensemble des gens dont elle façonne les conditions de vie, faute d'être saisie dans son DEVENIR HISTORIQUE.
         </p>
@@ -179,12 +173,10 @@
         <p facs="#facs_5_r_5">
           Il appartiendrait aux philosophes de replacer le développement technique dans le processus incarnatif et historique des êtres humains, dans le contexte de ce qu'on peut changer et de ce qu'il faut subir, - et de ce qu'on ne peut changer qu'en acceptant ce qu'il faut subir.
         </p>
-        <sp>
-          <speaker><persName>En particulier</persName></speaker>
-          <p>
+        <p rendition="#b">En particulier</p>
+        <p>
             En particulier: on considère presque toujours la science comme ayant eu le mérite, ou la culpabilité, d'avoir engendré le développement technique. Tout au plus admet-on que développement scientifique et développement technique sont interdépendants, dans la mesure où certaines conquêtes technologiques conditionnent souvent des progrès scientifiques décisifs. Mais on méconnaît une finalité inverse: grâce à la libération que permet la technique, des sujets de plus en plus nombreux peuvent s'adonner à l'une des activités fondamentales de l'être humain, qui n'a besoin d'aucune autre légitimation: celle de chercher à comprendre l'univers.
           </p>
-        </sp>
       <pb facs="#facs_6" n="6" />
         <p facs="#facs_6_r_1">
           15
@@ -195,12 +187,10 @@
         <p facs="#facs_6_r_3">
           - o -
         </p>
-        <sp>
-          <speaker><persName>Thèse III</persName></speaker>
-          <p facs="#facs_6_r_4">
+        <p rendition="#b">Thèse III</p>
+        <p facs="#facs_6_r_4">
             Thèse III:
           </p>
-        </sp>
         <p facs="#facs_6_r_5">
           L'informatique, comme la biologie moléculaire - ces deux domaines où la technique connaît aujourd'hui un développement fabuleux - utilisent conjointement un vocabulaire anthropomorphique dont les effets sur le public me paraissent redoutables.
         </p>

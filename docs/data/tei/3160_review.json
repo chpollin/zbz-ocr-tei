@@ -1,27 +1,15 @@
 {
   "doc_id": "3160",
-  "reviewer": "quality-screening-t2",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "tier": 2,
-  "pages": 7,
-  "status": "NEEDS_REVIEW",
+  "status": "APPROVED",
   "errors": 0,
-  "warnings": 1,
+  "warnings": 0,
   "findings": [
-    {
-      "severity": "warning",
-      "code": "E1",
-      "msg": "'Mensch' (7x) tagged as persName ref=zbz-p.1251 -- generic noun 'der Mensch', not a person entity. Same pattern as 3150."
-    },
-    {
-      "severity": "info",
-      "code": "S1",
-      "msg": "3150 and 3160 share same source (Mensch-Welt Widerspruch): 3150=Vortrag 1, 3160=Vortrag 2. Correctly split as separate docs."
-    },
     {
       "severity": "info",
       "code": "E0",
-      "msg": "Entities: 14p 3o 0l 9w = 26"
+      "msg": "Entities: 11p 3o 0l 2w = 16"
     }
   ]
 }

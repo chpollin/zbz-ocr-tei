@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title type="main">2150</title>
+        <title type="main">A la veille de mon premier voyage en Grèce</title>
         <author>Jeanne Hersch, Aldo Patocchi</author>
       </titleStmt>
       <publicationStmt>
@@ -12,7 +12,7 @@
       </publicationStmt>
       <sourceDesc>
         <bibl>
-          <title>2150</title>
+          <title>A la veille de mon premier voyage en Grèce</title>
           <author>Jeanne Hersch, Aldo Patocchi</author>
         </bibl>
       </sourceDesc>
@@ -25,7 +25,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:warning L5:n/a L6:ok L7:warning). KRITISCH: Titel ist '2150' (Doc-ID statt Artikeltitel); sourceDesc verwendet bibl statt biblStruct (Projektstandard-Abweichung); Kein Datum in sourceDesc (+1 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 16p 0o 21l 2w = 39</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

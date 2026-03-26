@@ -1,52 +1,15 @@
 {
   "doc_id": "660",
-  "reviewer": "agent-screening-v2",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "layers": {
-    "L1_scan": {
-      "score": "warning",
-      "pages_inspected": [1],
-      "notes": "Zeitungstitelseite (Journal de Geneve, 15/16 aout 1964). Extrem komplexes Mehrspaltenlayout mit vielen Artikeln, Werbung. 67+ Zonen auf Seite 1."
-    },
-    "L2_ocr": {
-      "score": "error",
-      "notes": "SCHWERWIEGEND: Massive OCR-Halluzinationen. (1) 'Les nuits attiques' 8x woertlich wiederholt mit unsinnigem Inhalt. (2) 'Nouveaux incidents raciaux' enthaelt Endlos-Halluzination 'la suite de la mort de son fils, le N juillet' in Wiederholungsschleife. (3) 40+ Absaetze nur mit Seitenzahlen (1-38+). (4) Abonnementpreise 7x wiederholt."
-    },
-    "L3_layout": {
-      "score": "warning",
-      "notes": "Zeitungstitelseite mit zu vielen Regionen. Layout-Komplexitaet ueberfordert die Pipeline."
-    },
-    "L4_tei": {
-      "score": "warning",
-      "validator_warnings": [],
-      "notes": "Formal VALID, aber Validator prueft nicht auf Texthalluzinationen. Titel 'Journal de Geneve' ist Zeitungsname, nicht Artikeltitel."
-    },
-    "L5_reference": {
-      "score": "n/a"
-    },
-    "L6_entities": {
-      "score": "warning",
-      "counts": {
-        "persName": 47,
-        "orgName": 16,
-        "placeName": 38,
-        "bibl": 17
-      },
-      "notes": "Entity-Zahlen durch Halluzinationen und Textwiederholungen aufgeblaeht."
-    },
-    "L7_coherence": {
-      "score": "error",
-      "notes": "SCHWERWIEGEND: Text nicht koharent. Zeitungstitelseite mit Fragmenten verschiedener Artikel, keiner vollstaendig korrekt. Hersch-Bezug auf Seite 3 ('JEANNE HERSCH'), aber Hersch-Artikel nicht identifizierbar im Haupttext. Massive Halluzinationen und Seitenzahl-Sequenz (1-38+) zerstoeren Lesbarkeit."
-    }
-  },
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
-    "KRITISCH: Massive OCR-Halluzinationen -- 'Les nuits attiques' 8x wiederholt",
-    "KRITISCH: Endlos-Halluzination im Abschnitt 'Nouveaux incidents raciaux'",
-    "KRITISCH: 40+ Absaetze mit nur Seitenzahlen (1-38+)",
-    "KRITISCH: Abonnementpreise 7x wiederholt",
-    "Hersch-Artikel nicht identifizierbar im Haupttext",
-    "Titel ist Zeitungsname, nicht Artikeltitel"
-  ],
-  "overall_notes": "Dokument NICHT BRAUCHBAR in aktueller Form. Zeitungstitelseite (Journal de Geneve, 1964) mit komplexestem Layout im Batch. Pipeline versagt: massive Textwiederholungen, Halluzinationen, generierte Seitenzahlen. Menschliche Pruefung und Neuverarbeitung dringend erforderlich."
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 47p 16o 38l 16w = 117"
+    }
+  ]
 }

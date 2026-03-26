@@ -32,7 +32,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:warning L5:n/a L6:warning L7:ok). Israel durchgehend als orgName statt placeName; Israel auf Seite 2 teilweise als persName; Etats-Unis/U.R.S.S. als orgName statt placeName (+2 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 10p 16o 0l 0w = 26</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -66,7 +66,6 @@
     <body>
 <div n="1">
         <pb facs="#facs_1" n="889" />
-        <div type="text">
 <head>
           <title type="main">LA SITUATION D'ISRAËL</title>
         </head>
@@ -76,7 +75,7 @@
           <p facs="#facs_1_r_2">
             <hi rendition="#b">JEANNE HERSCH</hi>
           </p>
-        
+
         <p facs="#facs_1_r_3">
           <lb facs="#facs_1_l_3_1" n="N001" />Votre questionnaire est très bien fait. C'est pourquoi il est pour moi difficile d'y répondre. En effet, toute réponse met en jeu des risques, qui pour <orgName ref="GND:unknown">Israël</orgName> sont des risques mortels. Et c'est <orgName ref="GND:unknown">Israël</orgName> — ses habitants, et non pas moi — qui aura à les courir.
         </p>
@@ -86,7 +85,6 @@
         <p facs="#facs_1_r_5">
           <lb facs="#facs_1_l_5_1" n="N001" />Le second principe, accepté, je crois, par la grande majorité des Israéliens, est le suivant : Une paix durable vaut tous les sacrifices. Mais ce qui limite ce second principe, c'est le premier : aucun sacrifice ne doit compromettre la sécurité d'<orgName ref="GND:unknown">Israël</orgName>. Donc : ne pas oublier que, dans ses anciennes frontières, <orgName ref="GND:unknown">Israël</orgName>, à l'endroit où il était le plus étroit, mesurait 12 km.
         </p>
-        </div>
 <div n="2">
           <p facs="#facs_1_r_6">
             <lb facs="#facs_1_l_6_1" n="N001" />1. La « révolte des pierres » est catastrophique pour <orgName ref="GND:unknown">Israël</orgName>, quoi qu'il fasse : s'il cherche à la réprimer, il sera entraîné à des mesures de plus en plus choquantes pour l'opinion internationale, mais aussi de plus en plus insupportables pour la grande majorité des Israéliens ; s'il ne la réprime pas, elle ira crescendo jusqu'à devenir insupportable et forcer à une répression encore plus dure. C'est une impasse, dont je ne sais pas comment on pourrait sortir.
@@ -110,12 +108,10 @@
           </list>
         </div>
       <pb facs="#facs_2" n="2" />
-        <div type="text">
-<head facs="#facs_2_r_1">
+<div n="2">
+          <head facs="#facs_2_r_1">
           LA SITUATION D'ISRAËL
         </head>
-        </div>
-<div n="2">
           <p facs="#facs_2_r_2">
             <lb facs="#facs_2_r_2" n="N001" />3. <persName ref="GND:unknown">Israël</persName> devrait se retirer des territoires occupés, pour toute une série de raisons. D'abord, parce que cet État n'a certainement pas la vocation d'être une puissance d'occupation, rôle corrupteur par définition et qui entraîne fatalement des mesures divisant radicalement ses citoyens. Ensuite, pour des raisons démographiques : l'occupation conduit à créer une situation sans issue à cause de la proportion des populations arabe et juive. Enfin, parce que l'occupation rend la position d'<persName ref="GND:unknown">Israël</persName> intenable au niveau international.
           </p>

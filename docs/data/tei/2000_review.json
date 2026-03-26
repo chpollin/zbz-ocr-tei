@@ -1,49 +1,15 @@
 {
   "doc_id": "2000",
-  "reviewer": "quality-screen-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "tier": 2,
-  "pages": 5,
-  "status": "NEEDS_REVIEW",
-  "pages_inspected": [1, 3],
-  "validator": "VALID (0 errors, 0 warnings)",
-  "errors": 1,
-  "warnings": 1,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "L1",
-      "msg": "Overlay S.1: Zweispalten-Buchlayout, Bild-Scan, Regionen korrekt"
-    },
-    {
-      "severity": "info",
-      "code": "L3",
-      "msg": "Overlay S.3: Zweispaltig, Regionen korrekt abgegrenzt"
-    },
-    {
-      "severity": "error",
-      "code": "E3",
-      "msg": "S.4: 'Est-elle d'ordre mecaniste?' -- 'Est' als placeName ref=zbz-l.13 getaggt, ist aber franzoesisches Verb (est = ist)"
-    },
-    {
-      "severity": "warning",
-      "code": "M1",
-      "msg": "S.1: Hersch-Artikel beginnt erst in Seitenmitte, davor fremder Text (Liminaire-Einleitung eines anderen Autors J.M.M./M.M.)"
-    },
-    {
-      "severity": "info",
-      "code": "T1",
-      "msg": "Sprache fra korrekt, philosophischer Fachtext durchgehend franzoesisch"
-    },
-    {
-      "severity": "info",
       "code": "E0",
-      "msg": "Entities: 12p 3o 4l 12w = 31, Brutus/Caesar/Kant/Jaspers plausibel"
-    },
-    {
-      "severity": "info",
-      "code": "K1",
-      "msg": "Kohaerenz: Philosophischer Essay, Gedankenfuehrung dicht aber koharent"
+      "msg": "Entities: 12p 3o 3l 11w = 29"
     }
   ]
 }

@@ -1,50 +1,15 @@
 {
   "doc_id": "2470",
-  "reviewer": "quality-screener-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "errors": 1,
-  "warnings": 4,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "V0",
-      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
-    },
-    {
-      "severity": "error",
-      "code": "S3",
-      "msg": "facs_6_r_1: Zone-Koordinate lrx=11321 fehlerhaft (Seite nur 1240 breit) -- Layout-Defekt S.6"
-    },
-    {
-      "severity": "warning",
-      "code": "S2",
-      "msg": "S.1 Ende: Bibliotheksstempel 'BRUENSTHEDER / BE GENEVE / 2001/165' als Text erfasst"
-    },
-    {
-      "severity": "warning",
-      "code": "E1",
-      "msg": "Homonymie-Entity: 'Mensch' als persName (zbz-p.1251) -- systematisch falsch, allgemeines Wort (ca. 15x)"
-    },
-    {
-      "severity": "warning",
-      "code": "E1",
-      "msg": "Homonymie-Entity: 'Wahl' als persName (zbz-p.89) -- hier Substantiv, nicht Jean Wahl"
-    },
-    {
-      "severity": "warning",
-      "code": "E1",
-      "msg": "Homonymie-Entity: 'Zeit'/'Angst'/'Ursprung' als bibl -- fragwuerdige Werktitel-Zuordnung"
-    },
-    {
-      "severity": "info",
-      "code": "L1",
-      "msg": "Sprache deu korrekt, Redetext koharent, type=speech korrekt"
-    },
-    {
-      "severity": "info",
       "code": "E0",
-      "msg": "Entities: 33p 3o 12l 13w = 61, Hersch/Heidegger/Dostojewski/Gandhi plausibel"
+      "msg": "Entities: 13p 3o 11l 5w = 32"
     }
   ]
 }

@@ -44,9 +44,11 @@
     }
   },
   "findings": [
-    "OCR-Halluzinationen: Repetitive Phrasen a la vie de la femme (Z.169)",
-    "Titel korrekt: Les conferences du congres",
-    "Zweiter Abschnitt (Bindschedler-Robert) ohne head-Element"
+    "FIXED: OCR-Halluzinationen durch gap[@reason='ocr-hallucination'] markiert (facs_2_r_12, facs_2_r_44)",
+    "FIXED: Bindschedler-Robert-Abschnitt hat jetzt head-Element",
+    "FIXED: e-periodica-Metadatenseite als div[@type='source-metadata'] typisiert",
+    "FIXED: monogr/title mit Zeitschriftenname 'Femmes suisses et le Mouvement feministe' ergaenzt",
+    "OFFEN: Originaltext der halluzierten Passagen nicht rekonstruierbar ohne Scan-Vergleich"
   ],
-  "overall_notes": "Franzoesischer Konferenztext von Jeanne Hersch (1975). OCR bei zwei Passagen schlecht, aber Gesamtstruktur lesbar."
+  "overall_notes": "Franzoesischer Konferenztext von Jeanne Hersch (1975). Manuell optimiert am 2026-03-26: OCR-Halluzinationen markiert, Struktur verbessert."
 }

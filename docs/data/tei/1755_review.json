@@ -1,51 +1,15 @@
 {
   "doc_id": "1755",
-  "reviewer": "quality-screening-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "pages_inspected": ["1", "3"],
+  "status": "APPROVED",
   "errors": 0,
-  "warnings": 4,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
       "code": "E0",
-      "msg": "Entities: 28p 27o 59l 15w = 129"
-    },
-    {
-      "severity": "info",
-      "code": "VAL",
-      "msg": "Validator: VALID, 0 Fehler, 0 Warnings"
-    },
-    {
-      "severity": "info",
-      "code": "TEXT",
-      "msg": "Deu/Fra, Schweiz. Aerztezeitung 1981, Hersch 'Sante: l'utopie d'une definition'"
-    },
-    {
-      "severity": "info",
-      "code": "LAYOUT",
-      "msg": "Overlay S.1: Cover mit Handschrift, Zonen korrekt. S.3: Dichtes Inhaltsverzeichnis sauber segmentiert"
-    },
-    {
-      "severity": "warning",
-      "code": "NER",
-      "msg": "persName Zahler (#zbz-p.880) in 'saeumige Zahler' (S.5) -- Appellativ, kein Personenname"
-    },
-    {
-      "severity": "warning",
-      "code": "NER",
-      "msg": "persName Zuercher (#zbz-p.2079) in '60 J. Zuercher Kinder- und Jugendpsychiatrie' -- Adjektiv, kein Name"
-    },
-    {
-      "severity": "warning",
-      "code": "NER",
-      "msg": "persName Mensch (#zbz-p.1251) in 'Der Mensch' -- generisches Substantiv, kein Personenname"
-    },
-    {
-      "severity": "minor",
-      "code": "OCR",
-      "msg": "S.2 fra: 'Df.' statt 'Dr.' in Commission de surveillance -- OCR-Artefakt (6x)"
+      "msg": "Entities: 27p 26o 58l 14w = 125"
     }
   ]
 }

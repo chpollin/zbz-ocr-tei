@@ -17,7 +17,7 @@
             <author>Hersch, Jeanne</author>
           </analytic>
           <monogr>
-            <title />
+            <title>Femmes suisses et le Mouvement féministe</title>
             <imprint>
               <date>1975</date>
             </imprint>
@@ -33,6 +33,7 @@
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
     <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:ok L5:n/a L6:ok L7:warning). OCR-Halluzinationen: Repetitive Phrasen a la vie de la femme (Z.169); Titel korrekt: Les conferences du congres; Zweiter Abschnitt (Bindschedler-Robert) ohne head-Element</change>
+    <change when="2026-03-26" who="manual-review" status="REVIEWED">Manuelle Optimierung: (1) OCR-Halluzinationen durch gap[@reason='ocr-hallucination'] ersetzt (2x), (2) head-Element fuer Bindschedler-Robert-Abschnitt ergaenzt, (3) e-periodica-Metadatenseite als div[@type='source-metadata'] typisiert, (4) monogr/title mit Zeitschriftenname ergaenzt</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -111,7 +112,7 @@
     <body>
 <div n="1" type="conference">
   <pb facs="#facs_1" n="1" />
-  <div type="text">
+  <div type="source-metadata">
 <p facs="#facs_1_r_1">
     <lb facs="#facs_1_r_1" n="N001" />Zeitschrift: Femmes suisses et le Mouvement féministe : organe officiel des <lb facs="#facs_1_r_1" n="N002" />informations de l'<orgName ref="GND:unknown">Alliance de Sociétés Féminines Suisses</orgName>
   </p>
@@ -170,13 +171,11 @@
             Reste la différence naturelle fondamentale de la maternité, liée à des traditions profondément intériorisées dans la manière de sentir, et de se sentir, aussi bien des femmes que des hommes, des autres, l'élément, ou ces traditions ne peuvent être effacées ou ignorées, ou niées, sous peine de propager, malgré le slogan d'une « égalité » générale, moderne, maladie et désespoir.
           </p>
           <p facs="#facs_2_r_12">
-            Ces traditions confient dans la vie familiale des tâches distinctes — de inégalés — aux femmes et aux hommes, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à la vie de la femme, à
+            Ces traditions confient dans la vie familiale des tâches distinctes — <sic>de inégalés</sic> — aux femmes et aux hommes, <gap reason="ocr-hallucination" resp="pipeline" quantity="13" unit="repetition"><desc>Repetitive OCR-Artefakte: "à la vie de la femme" ca. 13x wiederholt. Originaltext nicht rekonstruierbar.</desc></gap>
           </p>
         </div>
         <div n="2">
-          <p facs="#facs_2_r_13">
-              La collaboration dans l'égalité fondement de la paix
-            </p>
+          <head facs="#facs_2_r_13">La collaboration dans l'égalité fondement de la paix</head>
             <p facs="#facs_2_r_14">
               Résumé de la conférence de <persName ref="GND:unknown">Denise Bindschedler-Robert</persName>
             </p>
@@ -218,7 +217,7 @@
             </item>
             <item>
               <p facs="#facs_2_r_44">
-                Mais il ne faut pas oublier que « l'égalité » est une abstraction qui ne nourrit pas le sens de la vie. Elle est parfois condition de sens, elle n'en est jamais la source, même au niveau du travail, elle ne peut pas en faire un sens. Elle ne se renonce pas à l'oubli, à la vie quotidienne, à la vie de la femme, à la vie de la femme, à la vie de la femme, et non en tant qu'oubli.
+                Mais il ne faut pas oublier que « l'égalité » est une abstraction qui ne nourrit pas le sens de la vie. Elle est parfois condition de sens, elle n'en est jamais la source, même au niveau du travail, elle ne peut pas en faire un sens. <gap reason="ocr-hallucination" resp="pipeline" quantity="3" unit="repetition"><desc>Repetitive OCR-Artefakte: "à la vie de la femme" ca. 3x wiederholt. Satzende nicht rekonstruierbar.</desc></gap>
               </p>
             </item>
           </list>

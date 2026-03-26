@@ -33,7 +33,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="quality-screening-manual" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 28p 27o 59l 15w = 129; Validator: VALID, 0 Fehler, 0 Warnings; Deu/Fra, Schweiz. Aerztezeitung 1981, Hersch 'Sante: l'utopie d'une definition' (+5 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 27p 26o 58l 14w = 125</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -209,7 +209,7 @@
           Verlag und Anzeigenverwaltung:
         </p>
         <p facs="#facs_2_r_11">
-          <orgName ref="#zbz-o.236">Hans Huber AG</orgName>, Zeughausgasse 22, Postfach, 3000 <placeName ref="#zbz-l.6">Bern</placeName> 7, Telefon 031 229331. – Erscheint wöchentlich. – Jahresabonnement: <placeName ref="#zbz-l.10">Schweiz</placeName> Fr.70.–; Ausland sFr.78.– (inkl. Porto und Versandgebühren). Postscheckkonto 30-6675. (Mitglieder der Verbindung der <orgName ref="#zbz-o.760">Schweizer</orgName> Ärzte erhalten die »Ärztezeitung« gratis.) – Inseratenschluss: Geschäftssinnsrate 3 Wochen vor Erscheinen, Stelleninserate am Dienstag der vorangehenden Woche, 16 Uhr.
+          <orgName ref="#zbz-o.236">Hans Huber AG</orgName>, Zeughausgasse 22, Postfach, 3000 <placeName ref="#zbz-l.6">Bern</placeName> 7, Telefon 031 229331. – Erscheint wöchentlich. – Jahresabonnement: <placeName ref="#zbz-l.10">Schweiz</placeName> Fr.70.–; Ausland sFr.78.– (inkl. Porto und Versandgebühren). Postscheckkonto 30-6675. (Mitglieder der Verbindung der Schweizer Ärzte erhalten die »Ärztezeitung« gratis.) – Inseratenschluss: Geschäftssinnsrate 3 Wochen vor Erscheinen, Stelleninserate am Dienstag der vorangehenden Woche, 16 Uhr.
         </p>
         <p facs="#facs_2_r_12">
           In <placeName ref="#zbz-l.240">Belgien</placeName>, <placeName ref="#zbz-l.160">Dänemark</placeName>, <placeName ref="#zbz-l.241">Deutschland</placeName>, <placeName ref="#zbz-l.242">Finnland</placeName>, <placeName ref="#zbz-l.243">Italien</placeName>, <placeName ref="#zbz-l.244">Luxemburg</placeName>, <placeName ref="#zbz-l.245">Norwegen</placeName>, <placeName ref="#zbz-l.96">Portugal</placeName> und <placeName ref="#zbz-l.246">Schweden</placeName> kann die »Ärztezeitung« durch die Postämter bestellt werden.
@@ -488,7 +488,7 @@
           Les exigences quant au bien-être individuel vont donc de pair avec cette diminution de la tolérance. L'énorme augmentation des soins médicaux et l'explosion du coût de la santé en sont la conséquence. Cette façon de voir ne tient pas compte des éléments spécifiques de l'être humain. Il ne se contente pas de vivre (biologiquement), il a besoin que la vie ait un sens. Si notre seule ambition est d'éviter la maladie et la mort, cela mène à une maladie bien plus grave, la perte de sens de notre vie et l'ennui.
         </p>
         <p facs="#facs_5_r_6">
-          Vivre, c'est savoir être malade, c'est même être un peu malade la plupart du temps. <placeName ref="#zbz-l.13">Est</placeName> donc en bonne santé celui qui sait supporter la perspective de sa mort et la probabilité d'être malade. Il n'y parviendra cependant que s'il donne un sens à sa vie.
+          Vivre, c'est savoir être malade, c'est même être un peu malade la plupart du temps. Est donc en bonne santé celui qui sait supporter la perspective de sa mort et la probabilité d'être malade. Il n'y parviendra cependant que s'il donne un sens à sa vie.
         </p>
         <p facs="#facs_5_r_7">
           Si l'on considère maintenant les définitions de la santé données par l'<orgName ref="#zbz-o.164">OMS</orgName>, force est d'admettre qu'il s'agit là d'énoncés absurdes. On fait miroiter un <placeName ref="#zbz-l.173">jardin d'Eden</placeName> pour ne pas se poser les questions véritables.
@@ -518,10 +518,10 @@
           <hi rendition="#i">Eine Dienstleistung des Ärztesyndikates:</hi>
         </p>
         <p>
-          Inkassoprobleme – ausstehende Honorare – säumige <persName ref="#zbz-p.880">Zahler</persName> ?
+          Inkassoprobleme – ausstehende Honorare – säumige Zahler ?
         </p>
         <p>
-          Sie bringen Verluste, Umtriebe und Ärger, kosten die <bibl ref="#zbz-w.705">Zeit</bibl> von Arzt, Gehilfin, Patienten.
+          Sie bringen Verluste, Umtriebe und Ärger, kosten die Zeit von Arzt, Gehilfin, Patienten.
         </p>
         <p>
           <hi rendition="#b">3000 <placeName ref="#zbz-l.6">Bern</placeName> 16, Elfenstrasse 18, Telefon 031 43 55 43, erledigt das für Sie.</hi>

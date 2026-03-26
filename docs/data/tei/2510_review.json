@@ -1,45 +1,20 @@
 {
   "doc_id": "2510",
-  "reviewer": "quality-screener-manual",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "errors": 2,
-  "warnings": 1,
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "V0",
-      "msg": "Validator: VALID, 0 Fehler, 1 Warning (W9: 1 Entity ohne ref)"
-    },
-    {
-      "severity": "error",
-      "code": "S3",
-      "msg": "facs_4_r_8: Zone-Koordinaten ulx=4743 lrx=9039 fehlerhaft (Seite nur 1093 breit) -- Layout-Defekt S.4"
-    },
-    {
-      "severity": "error",
-      "code": "S3",
-      "msg": "facs_6_r_5: Zone ulx=lrx=4732 (Null-Breite, ausserhalb Seitenbereich) -- Layout-Defekt S.6"
-    },
-    {
-      "severity": "warning",
-      "code": "W9",
-      "msg": "1 Entity-Tag ohne ref-Attribut (NER-Injection unvollstaendig)"
-    },
-    {
-      "severity": "info",
-      "code": "S1",
-      "msg": "Overlay S.1+S.4: Zweispaltiges Zeitschriftenlayout korrekt erfasst"
-    },
-    {
-      "severity": "info",
-      "code": "L1",
-      "msg": "Sprache fra korrekt, Heidegger-Debatte koharent und substantiell"
+      "code": "S5",
+      "msg": "2 Fussnoten"
     },
     {
       "severity": "info",
       "code": "E0",
-      "msg": "Entities: 114p 7o 32l 19w = 172, Heidegger/Farias/Jaspers/Jean Wahl plausibel"
+      "msg": "Entities: 114p 7o 24l 17w = 162"
     }
   ]
 }

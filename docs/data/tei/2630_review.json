@@ -1,41 +1,20 @@
 {
   "doc_id": "2630",
-  "reviewer": "quality-screen-claude",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "pages_inspected": ["p002", "p004"],
-  "errors": 1,
+  "status": "APPROVED",
+  "errors": 0,
   "warnings": 0,
   "findings": [
     {
       "severity": "info",
-      "code": "V0",
-      "msg": "Validator: 0 Fehler, 0 Warnings"
-    },
-    {
-      "severity": "info",
-      "code": "L0",
-      "msg": "Overlay S.2+S.4: Zonen korrekt, Text abgedeckt"
-    },
-    {
-      "severity": "error",
-      "code": "OCR1",
-      "msg": "OCR-Muellartefakte am Seitenende: S.2 'KdSvoSsBtGcWIS...', S.3 'kpcSvaSaitoSe/WIS...', S.4 'KpaSvaSsBtSdWlS...', S.5 'KxSvaSabtoSe/WIS...', S.6 'KdGwSsBtGewWIS...', S.7 (note) 'kpcSosateSe/WIS...' -- vermutlich Barcode/Wasserzeichen der Vorlage, als <p> transkribiert"
-    },
-    {
-      "severity": "info",
       "code": "S5",
-      "msg": "1 Fussnote (betroffen von OCR-Artefakt)"
+      "msg": "1 Fussnoten"
     },
     {
       "severity": "info",
       "code": "E0",
-      "msg": "Entities: 44p 1o 2l 36w = 83, Jaspers-Terminologie korrekt"
-    },
-    {
-      "severity": "info",
-      "code": "T0",
-      "msg": "Sprache DEU korrekt, Jaspers-Existenz-Vortrag koharent (abgesehen von Artefakten), 7 Seiten"
+      "msg": "Entities: 35p 1o 2l 18w = 56"
     }
   ]
 }

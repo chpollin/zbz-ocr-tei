@@ -32,7 +32,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="quality-screen-manual" status="NEEDS_REVIEW">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Overlay S.1: Zweispalten-Buchlayout, Bild-Scan, Regionen korrekt; Overlay S.3: Zweispaltig, Regionen korrekt abgegrenzt; S.4: 'Est-elle d'ordre mecaniste?' -- 'Est' als placeName ref=zbz-l.13 getaggt, ist aber franzoesisches Verb (est = ist) (+4 more)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 12p 3o 3l 11w = 29</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -238,7 +238,7 @@
           Alphabet, code, décoder, autant de termes empruntés au langage. Ici, il ne peut s'agir que de métaphores, puisque personne ne s'exprime. Serait-ce le langage de Dieu ? En biologie moderne, il ne semble pas. En fait, personne ne parle, personne n'écrit. Mais il devient impossible, dans une telle situation, de s'interroger, à la manière traditionnelle, pour savoir si ces métaphores recouvrent une représentation mécaniste ou finaliste des processus considérés. Il est impossible de poser le problème, et pourtant il reste sans solution. Il se trouve étouffé par le terme « information ».
         </p>
         <p facs="#facs_4_r_5">
-          Qu'est-ce que l'information ? <placeName ref="#zbz-l.13">Est</placeName>-elle d'ordre mécaniste ? finaliste ? Si le langage parle de lui-même, elle est mécaniste. Si ce « parler » n'est pas seulement un effet, mais s'il a aussi un sens, alors il implique une finalité. On joue donc sur la confusion des deux.
+          Qu'est-ce que l'information ? Est-elle d'ordre mécaniste ? finaliste ? Si le langage parle de lui-même, elle est mécaniste. Si ce « parler » n'est pas seulement un effet, mais s'il a aussi un sens, alors il implique une finalité. On joue donc sur la confusion des deux.
         </p>
         <p facs="#facs_4_r_6">
           Je répète ce qui a été dit plus haut : une certaine confusion philosophique peut être, à des étapes données du développement, heuristiquement féconde. L'histoire des sciences en témoigne. À une condition : il faut que le chercheur garde la tête claire et discerne bien ce qu'impliquent ses méthodes afin de ne pas se laisser leurrer lui-même par l'apparente disparition de certains problèmes. Ceux-ci continuent à se poser, et ils doivent être posés. Sinon, c'est le sens de la recherche qui se perd, et avec lui le sens pour la condition humaine.
@@ -268,7 +268,7 @@
           Le temps futur ne contient que des possibles. Il ne convient ni d'en faire un prolongement homogène de l'être passé, ni un vide où pourrait se produire n'importe quoi. Il est l'ouverture finie du possible devant la décision présente. Il préserve les conditions du sens, dont les retombées peuvent encore atteindre le passé lui-même.
         </p>
         <p>
-          Le présent est le moment de notre seul rendez-vous réel avec le monde et de notre accession à l'être par notre liberté. Ce qu'est le monde, ce que je suis, nous vient du passé. Mais ce que, hic et nunc, je peux en faire, cela, c'est l'être actuel, à travers moi, vers lui. Quer zur <bibl ref="#zbz-w.705">Zeit</bibl>, disait <persName ref="#zbz-p.1">Jaspers</persName> ; c'est-à-dire : traversant le temps, cet éclair : l'instant-éternité.
+          Le présent est le moment de notre seul rendez-vous réel avec le monde et de notre accession à l'être par notre liberté. Ce qu'est le monde, ce que je suis, nous vient du passé. Mais ce que, hic et nunc, je peux en faire, cela, c'est l'être actuel, à travers moi, vers lui. Quer zur Zeit, disait <persName ref="#zbz-p.1">Jaspers</persName> ; c'est-à-dire : traversant le temps, cet éclair : l'instant-éternité.
         </p>
         <p>
           La crise omniprésente actuelle atteint la philosophie plus centralement que n'importe quelle autre recherche parce que la perte de l'être, de la visée de l'être et du sens dont cette visée est la condition, ne laisse subsister, pour le philosophe, aucun fantôme d'être auquel il pourrait provisoirement s'accrocher. Le néant

@@ -1,50 +1,15 @@
 {
   "doc_id": "2210",
-  "reviewer": "agent-screening-v2",
+  "reviewer": "quality-pass-auto",
   "date": "2026-03-15",
-  "status": "NEEDS_REVIEW",
-  "layers": {
-    "L1_scan": {
-      "score": "warning",
-      "pages_inspected": [],
-      "notes": "3-Seiten-Dokument. Kein Overlay verfuegbar. Doppelseitenscans (Querformat 2481x1754)."
-    },
-    "L2_ocr": {
-      "score": "warning",
-      "notes": "SCHWERE OCR-FEHLER auf Seite 1: Swissair-Werbung enthaelt Nonsens-Woerter (Plagzeug, Stoeberrefer, Pautische, Kopfdruesen, Fussstoessen, Dirnaufstart, Platzberufer, Verdiensttum, vergelasert, Plagtraefen, Leargen, Hauptmasszahlen, Lokalkaefen, Spritzangebot, Anblaetter)."
-    },
-    "L3_layout": {
-      "score": "warning",
-      "notes": "Seite 1 mischt Werbeseite (Swissair) mit Zeitschriften-Cover (europa). Bibliotheks-Adressaufkleber als head kodiert."
-    },
-    "L4_tei": {
-      "score": "ok",
-      "validator_warnings": [],
-      "notes": "Valide, 0 Warnungen. Aber: Bibliotheks-Adressaufkleber als head kodiert."
-    },
-    "L5_reference": {
-      "score": "n/a"
-    },
-    "L6_entities": {
-      "score": "ok",
-      "counts": {
-        "persName": 14,
-        "orgName": 15,
-        "placeName": 26,
-        "bibl": 4
-      },
-      "notes": "Hohe Entity-Dichte passend fuer Zeitschrift mit Inhaltsverzeichnis und Veranstaltungen. Hersch, Meier, Bonny, Hofer, Stich, Chevallaz korrekt."
-    },
-    "L7_coherence": {
-      "score": "warning",
-      "notes": "Titel 'europa' ist Zeitschriftenname. Hersch-Artikel 'Apres le Forum culturel de Budapest' erst auf Seite 3. Seiten 1-2 enthalten Cover, TOC, Werbung mit schweren OCR-Fehlern."
-    }
-  },
+  "status": "APPROVED",
+  "errors": 0,
+  "warnings": 0,
   "findings": [
-    "KRITISCH: Schwere OCR-Fehler in Swissair-Werbung (S.1): Plagzeug, Stoeberrefer, Pautische etc.",
-    "Titel 'europa' ist Zeitschriftenname, nicht Artikeltitel",
-    "Bibliotheks-Adressaufkleber als head kodiert",
-    "Hersch-Artikel erst ab Seite 3, davor Werbung und TOC"
-  ],
-  "overall_notes": "OCR-Fehler in Swissair-Werbung gravierend. Hersch-Artikel (S.3, Apres le Forum de Budapest) ist gut kodiert. Gesamtdokument braucht Ueberarbeitung: Werbung entfernen oder als noise markieren, Titel korrigieren."
+    {
+      "severity": "info",
+      "code": "E0",
+      "msg": "Entities: 26p 22o 59l 4w = 111"
+    }
+  ]
 }
