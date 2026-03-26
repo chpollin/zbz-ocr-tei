@@ -169,5 +169,13 @@
     "docs_affected": 27,
     "result_summary": "Vorbereitung: 17 W9-Docs + 10 W10-Docs identifiziert",
     "details": "Dual-Attribut-Strategie (ref=GND + corresp=#zbz) schema-validiert. W10 vermutlich NER-Extraktionsproblem. W11 false positive."
+  },
+  {
+    "timestamp": "2026-03-26T21:29:35.627055",
+    "lane": "tei",
+    "action": "diagnostik_data_production",
+    "docs_affected": 285,
+    "result_summary": "Corpus: 285 docs, 4108 pages. W10: 10/10 ner_miss.",
+    "details": "W10-Tiefenanalyse, Corpus-Statistik, Validierungs-Timeline, Warning-Uebersicht in diagnostik_tei.json geschrieben."
   }
 ]

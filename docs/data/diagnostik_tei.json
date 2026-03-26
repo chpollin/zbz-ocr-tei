@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-26T21:20:54.393859",
+  "timestamp": "2026-03-26T21:29:35.619545",
   "schema": "zbz_hersch.rng (TEI P5 v4.10.2, ref-Pattern erweitert: GND + #zbz-)",
   "summary": {
     "total": 285,
@@ -2474,5 +2474,257 @@
     ],
     "w10_diagnosis": "Alle 10 Docs haben persName aber 0 orgName/0 placeName. Wahrscheinlich NER-Extraktionsproblem, nicht NER-Injection-Problem. Re-Injection allein wird W10 vermutlich nicht loesen.",
     "w11_diagnosis": "Docs 140/1240: echte Anthologie-Struktur mit alternierenden conversation/text divs. False positive, kein Fix noetig."
-  }
+  },
+  "w10_analysis": [
+    {
+      "doc_id": "30",
+      "text_length": 13786,
+      "persName_count": 13,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 5,
+      "has_untagged_orgs_places": false,
+      "untagged_orgs": [],
+      "untagged_places": [],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "50",
+      "text_length": 35533,
+      "persName_count": 28,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 15,
+      "has_untagged_orgs_places": true,
+      "untagged_orgs": [
+        "parti",
+        "école"
+      ],
+      "untagged_places": [],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "100",
+      "text_length": 12250,
+      "persName_count": 16,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 1,
+      "has_untagged_orgs_places": false,
+      "untagged_orgs": [],
+      "untagged_places": [],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "910",
+      "text_length": 24393,
+      "persName_count": 19,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 4,
+      "has_untagged_orgs_places": false,
+      "untagged_orgs": [],
+      "untagged_places": [],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "1270",
+      "text_length": 11741,
+      "persName_count": 14,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 4,
+      "has_untagged_orgs_places": false,
+      "untagged_orgs": [],
+      "untagged_places": [],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "1360",
+      "text_length": 19181,
+      "persName_count": 17,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 4,
+      "has_untagged_orgs_places": true,
+      "untagged_orgs": [],
+      "untagged_places": [
+        "Berne"
+      ],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "1370",
+      "text_length": 18426,
+      "persName_count": 12,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 1,
+      "has_untagged_orgs_places": true,
+      "untagged_orgs": [
+        "société",
+        "école"
+      ],
+      "untagged_places": [
+        "Schweiz",
+        "Zurich"
+      ],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "1380",
+      "text_length": 59492,
+      "persName_count": 58,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 34,
+      "has_untagged_orgs_places": true,
+      "untagged_orgs": [
+        "conseil",
+        "faculté",
+        "société"
+      ],
+      "untagged_places": [],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "2180",
+      "text_length": 14454,
+      "persName_count": 12,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 7,
+      "has_untagged_orgs_places": true,
+      "untagged_orgs": [
+        "société"
+      ],
+      "untagged_places": [],
+      "assessment": "ner_miss"
+    },
+    {
+      "doc_id": "2310",
+      "text_length": 7205,
+      "persName_count": 18,
+      "orgName_count": 0,
+      "placeName_count": 0,
+      "bibl_count": 3,
+      "has_untagged_orgs_places": true,
+      "untagged_orgs": [],
+      "untagged_places": [
+        "France"
+      ],
+      "assessment": "ner_miss"
+    }
+  ],
+  "corpus_stats": {
+    "total_docs": 285,
+    "total_pages": 4108,
+    "elements": {
+      "p": 27615,
+      "div": 1373,
+      "head": 947,
+      "note": 266,
+      "lb": 29637,
+      "persName": 12983,
+      "orgName": 3814,
+      "placeName": 6314,
+      "bibl": 4860,
+      "figure": 142,
+      "foreign": 250,
+      "hi": 1318
+    },
+    "by_layout_type": {
+      "-": {
+        "n": 285,
+        "avg_entities": 98.1,
+        "avg_pages": 14.4,
+        "max_div_depth": 5
+      }
+    }
+  },
+  "validation_timeline": [
+    {
+      "timestamp": "2026-03-26T16:00:00",
+      "label": "Initial",
+      "valid": 50,
+      "invalid": 235,
+      "warnings": 82
+    },
+    {
+      "timestamp": "2026-03-26T17:00:00",
+      "label": "Fix-001 Schema ref-Pattern",
+      "valid": 285,
+      "invalid": 0,
+      "warnings": 82
+    },
+    {
+      "timestamp": "2026-03-26T18:00:00",
+      "label": "Fix-002 Heuristic lb",
+      "valid": 285,
+      "invalid": 0,
+      "warnings": 37
+    },
+    {
+      "timestamp": "2026-03-26T19:00:00",
+      "label": "Fix-003 pb/div/figure",
+      "valid": 285,
+      "invalid": 0,
+      "warnings": 29
+    }
+  ],
+  "warnings_current": [
+    {
+      "code": "W9",
+      "count": 17,
+      "status": "blocked_on_ner",
+      "docs": [
+        410,
+        780,
+        790,
+        1530,
+        1870,
+        2140,
+        2330,
+        2400,
+        2440,
+        2510,
+        2540,
+        2550,
+        2660,
+        3020,
+        3180,
+        3190,
+        3200
+      ],
+      "description": "Entity-Tags ohne ref (NER-Re-Injection noetig)"
+    },
+    {
+      "code": "W10",
+      "count": 10,
+      "status": "ner_miss",
+      "docs": [
+        30,
+        50,
+        100,
+        910,
+        1270,
+        1360,
+        1370,
+        1380,
+        2180,
+        2310
+      ],
+      "description": "Nur persName, 0 orgName/placeName (NER-Extraktionsproblem)"
+    },
+    {
+      "code": "W11",
+      "count": 2,
+      "status": "false_positive",
+      "docs": [
+        140,
+        1240
+      ],
+      "description": "Zu viele top-level divs (echte Anthologie-Struktur)"
+    }
+  ]
 }
