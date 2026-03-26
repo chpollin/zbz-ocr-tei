@@ -14,6 +14,39 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 39 (2026-03-26): OCR-Diagnostik Abschluss — Scope-Bereinigung (Lane 2)
+
+### Kontext
+Abschlussrunde Lane 2: Scope-Mismatches bereinigen, finale Statistiken produzieren.
+
+### Ergebnisse
+- **6 Scope-Mismatches identifiziert** (3 manuell: Docs 30, 300, 1440; 3 auto-detektiert: 3020, 760, 830)
+- Jedes Doc hat `scope_status` (full/partial) und `scope_detail` in diagnostik_ocr.json
+- **Bereinigte Statistik (19 Docs):** Mean 4.18%, Median 1.83%, 13 Docs <3%
+- Stratifizierte Statistik nach Sprache und Layout-Typ
+- Reduktions-Timeline (5 Schritte: 9.33% -> 4.18% Mean)
+- CER-BENCHMARK.md mit allen finalen Zahlen aktualisiert
+
+### Lane 2: DONE
+
+---
+
+## Session 38 (2026-03-26): Diagnostik-UI Rewrite + Navigation (Lane 3)
+
+### Durchgefuehrt
+- **Navigation:** "Diagnostik" in NAV_ITEMS (edition-shared.js), erscheint auf allen Editions-Seiten
+- **Diagnostik-UI:** Komplett neu geschrieben. 4 Tabs (Uebersicht, OCR, TEI, Aktivitaet)
+- **Design:** --h-* Tokens, ZBZ.Diagnostik Namespace, graceful empty states
+- **Search-Index-Fix:** 279->285 Docs (robustes XML-Parsing bei revisionDesc-Fehlern)
+- **Seitenzaehlung:** 383->4.117 (Summe statt Dashboard-Stub)
+- **Wikidata:** API wieder erreichbar (200), Batch gestartet
+
+### Geaenderte Dateien
+- docs/js/edition-shared.js, docs/infrastruktur/diagnostik.html, docs/js/diagnostik.js (NEU)
+- scripts/generate_edition_data.py, docs/data/catalog.json, docs/data/search_index.json
+
+---
+
 ## Session 37 (2026-03-26): Diagnostik-Datenproduktion (Lane 1)
 
 ### Kontext

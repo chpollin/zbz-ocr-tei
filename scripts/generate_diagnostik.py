@@ -13,6 +13,8 @@ Usage:
 """
 
 import json
+import re
+import statistics
 from pathlib import Path
 from datetime import datetime
 
@@ -34,6 +36,31 @@ DIAGNOSTIK_JSON = DOCS_DATA_DIR / "diagnostik_ocr.json"
 DIAGNOSTIK_LOG = DOCS_DATA_DIR / "diagnostik_log.json"
 
 OUTLIER_DOC_IDS = ["1910", "290", "30", "90"]
+
+# Scope-Mismatch-Definitionen (manuell verifiziert, Session 33)
+SCOPE_MISMATCHES = {
+    "30": {
+        "ref_pages": "[222]-229 (8 Seiten)",
+        "pipe_pages": "1-4 (4 Seiten)",
+        "ocr_pages": 4,
+        "detail": "Referenz 8 Seiten, Pipeline nur 4. OCR deckt ~50% ab.",
+        "status": "partial",
+    },
+    "300": {
+        "ref_pages": "87-88 (2 Seiten)",
+        "pipe_pages": "1-4 (4 Seiten, inkl. Deckblatt)",
+        "ocr_pages": 4,
+        "detail": "Referenz nur 2 Seiten, Pipeline hat 4 (inkl. Bibliotheks-Metadaten).",
+        "status": "partial",
+    },
+    "1440": {
+        "ref_pages": "263-270 (8 Seiten)",
+        "pipe_pages": "263-266, 268-269, 5 (7 Seiten, S.267 fehlt)",
+        "ocr_pages": 5,
+        "detail": "Seite 267 fehlt in Pipeline, letzte Seite falsch nummeriert. 2 OCR-Seiten fehlen.",
+        "status": "partial",
+    },
+}
 
 
 def log_action(action: str, docs_affected: list, result_summary: str, details: str = ""):
@@ -294,15 +321,32 @@ def main():
         f"{improved} verbessert, {worsened} verschlechtert",
     )
 
-    # 5. Per-Doc Daten
+    # 5. Per-Doc Daten mit Scope-Annotation
     per_doc = {}
     for doc_id, doc_data in post.get('documents', {}).items():
         if doc_data.get('status') != 'OK':
             continue
+
+        scope = SCOPE_MISMATCHES.get(doc_id)
+        if scope:
+            scope_status = scope['status']
+            scope_detail = scope['detail']
+        elif doc_data.get('scope_mismatch'):
+            scope_status = 'partial'
+            scope_detail = doc_data.get('scope_info', '')
+        else:
+            scope_status = 'full'
+            scope_detail = (
+                f"Ref {doc_data.get('ref_pages', '?')} Seiten, "
+                f"Pipeline {doc_data.get('pipe_pages', '?')} Seiten"
+            )
+
         per_doc[doc_id] = {
             'cer': doc_data['cer'],
             'wer': doc_data['wer'],
             'ref_chars': doc_data['ref_chars'],
+            'scope_status': scope_status,
+            'scope_detail': scope_detail,
             'error_categories': {
                 cat: {
                     'count': data['count'],
@@ -313,11 +357,101 @@ def main():
             'metadata': doc_data.get('metadata', {}),
         }
 
+    # 6. Finale CER-Statistik (nur scope=full Docs)
+    print("\n5. Finale Statistik...")
+    all_cers = [d['cer'] for d in per_doc.values()]
+    full_docs = {did: d for did, d in per_doc.items() if d['scope_status'] == 'full'}
+    partial_docs = {did: d for did, d in per_doc.items() if d['scope_status'] == 'partial'}
+    full_cers = sorted([d['cer'] for d in full_docs.values()])
+
+    def _stats(cers):
+        if not cers:
+            return {}
+        s = sorted(cers)
+        n = len(s)
+        q1 = s[n // 4] if n >= 4 else s[0]
+        q3 = s[3 * n // 4] if n >= 4 else s[-1]
+        return {
+            'n_evaluated': n,
+            'mean_cer': statistics.mean(s),
+            'median_cer': statistics.median(s),
+            'std_cer': statistics.stdev(s) if n > 1 else 0.0,
+            'min_cer': min(s),
+            'max_cer': max(s),
+            'q1_cer': q1,
+            'q3_cer': q3,
+            'docs_under_3pct': sum(1 for c in s if c < 0.03),
+            'docs_over_15pct': sum(1 for c in s if c > 0.15),
+        }
+
+    final_summary = _stats(full_cers)
+    final_summary['n_excluded'] = len(partial_docs)
+    final_summary['excluded_doc_ids'] = sorted(partial_docs.keys())
+
+    all_summary = _stats(all_cers)
+    all_summary['n_excluded'] = 0
+    all_summary['note'] = 'Alle Docs inkl. Scope-Mismatches'
+
+    print(f"   Bereinigte Statistik ({final_summary['n_evaluated']} Docs, "
+          f"{final_summary['n_excluded']} excluded):")
+    print(f"   Mean CER: {final_summary['mean_cer']*100:.2f}%, "
+          f"Median: {final_summary['median_cer']*100:.2f}%")
+    print(f"   Docs <3%: {final_summary['docs_under_3pct']}, "
+          f"Docs >15%: {final_summary['docs_over_15pct']}")
+
+    # 7. Stratifizierte Statistik
+    print("\n6. Stratifizierte Statistik...")
+    by_language = {}
+    by_layout = {}
+    for did, d in full_docs.items():
+        lang = d['metadata'].get('language', '?')
+        ltype = d['metadata'].get('type', '?')
+        by_language.setdefault(lang, []).append(d['cer'])
+        by_layout.setdefault(ltype, []).append(d['cer'])
+
+    strat_lang = [
+        {'lang': lang, 'n': len(cers),
+         'mean': statistics.mean(cers), 'median': statistics.median(cers)}
+        for lang, cers in sorted(by_language.items())
+    ]
+    strat_layout = [
+        {'type': lt, 'n': len(cers),
+         'mean': statistics.mean(cers), 'median': statistics.median(cers)}
+        for lt, cers in sorted(by_layout.items())
+    ]
+
+    for s in strat_lang:
+        print(f"   {s['lang']}: n={s['n']}, mean={s['mean']*100:.1f}%, median={s['median']*100:.1f}%")
+    for s in strat_layout:
+        print(f"   Typ {s['type']}: n={s['n']}, mean={s['mean']*100:.1f}%, median={s['median']*100:.1f}%")
+
+    # 8. Reduktions-Timeline
+    reduction_timeline = [
+        {"step": "Ausgangslage E51", "mean": 9.33, "median": 5.52},
+        {"step": "Sym. Normalisierung", "mean": 8.11, "median": 5.36},
+        {"step": "Hyphen-Norm.", "mean": 7.29, "median": 2.61},
+        {"step": "CI-Alignment", "mean": 5.97, "median": 2.42},
+        {"step": "Scope-bereinigt",
+         "mean": round(final_summary['mean_cer'] * 100, 2),
+         "median": round(final_summary['median_cer'] * 100, 2),
+         "note": f"Nur {final_summary['n_evaluated']} Docs mit scope=full"},
+    ]
+
+    log_action(
+        "scope_bereinigung",
+        sorted(partial_docs.keys()),
+        f"{len(partial_docs)} Docs als partial markiert: {sorted(partial_docs.keys())}. "
+        f"Bereinigte Statistik: Mean {final_summary['mean_cer']*100:.2f}%, "
+        f"Median {final_summary['median_cer']*100:.2f}%",
+    )
+
     # Zusammenstellen
     output = {
         'generated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'generator': 'scripts/generate_diagnostik.py',
         'summary': {
+            'all_docs': all_summary,
+            'scope_clean': final_summary,
             'pre_normfix': pre.get('summary', {}),
             'post_normfix': post.get('summary', {}),
             'normalization_effect': {
@@ -329,6 +463,9 @@ def main():
                 ) if pre.get('summary') else None,
             },
         },
+        'by_language': strat_lang,
+        'by_layout': strat_layout,
+        'reduction_timeline': reduction_timeline,
         'baseline_comparison': baseline,
         'confusion_matrix': {
             'substitutions': confusion['substitutions'][:50],
@@ -352,11 +489,13 @@ def main():
     print(f"\nJSON: {DIAGNOSTIK_JSON}")
 
     log_action(
-        "diagnostik_json_generated",
+        "diagnostik_json_final",
         list(per_doc.keys()),
-        f"diagnostik_ocr.json mit {len(per_doc)} Docs, "
-        f"{len(confusion['substitutions'][:50])} Substitutionspaare, "
-        f"{len(outliers)} Outlier-Diagnosen",
+        f"Finale diagnostik_ocr.json: {len(per_doc)} Docs, "
+        f"{final_summary['n_evaluated']} scope=full, "
+        f"{final_summary['n_excluded']} scope=partial, "
+        f"Mean {final_summary['mean_cer']*100:.2f}%, "
+        f"Median {final_summary['median_cer']*100:.2f}%",
     )
 
     return 0
