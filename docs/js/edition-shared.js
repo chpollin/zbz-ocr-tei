@@ -301,7 +301,6 @@
         { label: 'Epistemische Infrastruktur', children: [
             { href: 'infrastruktur/index.html', label: 'Dashboard' },
             { href: 'infrastruktur/viewer.html', label: 'Viewer' },
-            { href: 'infrastruktur/benchmark.html', label: 'Benchmark' },
             { href: 'infrastruktur/diagnostik.html', label: 'Diagnostik' }
         ]},
         { href: 'about.html', label: 'Projekt' }
