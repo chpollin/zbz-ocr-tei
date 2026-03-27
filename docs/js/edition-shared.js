@@ -298,7 +298,7 @@
             { href: 'catalog.html', label: 'Katalog' },
             { href: 'register.html', label: 'Register' }
         ]},
-        { label: 'Infrastruktur', children: [
+        { label: 'Epistemische Infrastruktur', children: [
             { href: 'infrastruktur/index.html', label: 'Dashboard' },
             { href: 'infrastruktur/viewer.html', label: 'Viewer' },
             { href: 'infrastruktur/benchmark.html', label: 'Benchmark' },
