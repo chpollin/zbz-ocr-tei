@@ -1,6 +1,6 @@
 /**
- * ZBZ Edition – Reader Module
- * Integrated faksimile viewer with pan/zoom/rotate + TEI text panel.
+ * ZBZ Edition – Reader Module (Rewrite)
+ * Faksimile viewer (pan/zoom/rotate) + TEI text panel.
  * Namespace: ZBZ.EditionReader (ES6+, IIFE)
  */
 (function () {
@@ -18,7 +18,6 @@
         xmlMode: false,
         editMode: false,
         docMeta: null,
-        splitRatio: 50,
         panX: 0, panY: 0,
         isPanning: false,
         panStartX: 0, panStartY: 0,
@@ -76,12 +75,12 @@
             panel.style.display = '';
             var html = changes.map(function (ch) {
                 var statusAttr = ch.status ? ' data-status="' + E.esc(ch.status) + '"' : '';
-                return '<div class="ed-revision-entry">'
-                    + '<span class="ed-revision-date">' + E.esc(ch.when) + '</span>'
-                    + '<span class="ed-revision-who">' + E.esc(ch.who) + '</span>'
-                    + (ch.status ? '<span class="ed-revision-status"' + statusAttr + '>' + E.esc(ch.status) + '</span>' : '')
-                    + '<span class="ed-revision-text">' + E.esc(ch.text) + '</span>'
-                    + '</div>';
+                return '<div class="ed-revision-entry">' +
+                    '<span class="ed-revision-date">' + E.esc(ch.when) + '</span>' +
+                    '<span class="ed-revision-who">' + E.esc(ch.who) + '</span>' +
+                    (ch.status ? '<span class="ed-revision-status"' + statusAttr + '>' + E.esc(ch.status) + '</span>' : '') +
+                    '<span class="ed-revision-text">' + E.esc(ch.text) + '</span>' +
+                    '</div>';
             }).join('');
             timeline.innerHTML = html;
             if (toggle) {
@@ -93,15 +92,13 @@
         });
     }
 
-    // --- Editor ---
+    // --- Editor integration ---
     function initEditor() {
         if (typeof ZBZ.EditionEditor === 'undefined') return;
         var Ed = ZBZ.EditionEditor;
         Ed.checkServer(function (available) {
             var toolbar = E.$('#edit-toolbar');
-            if (toolbar && available) {
-                toolbar.classList.remove('ed-hidden');
-            }
+            if (toolbar && available) toolbar.classList.remove('ed-hidden');
         });
     }
 
@@ -117,7 +114,7 @@
         showPage(state.page);
     }
 
-    // --- Header with metadata ---
+    // --- Header ---
     function renderHeader() {
         var m = state.docMeta;
         var title = m.title || 'Dokument ' + m.id;
@@ -140,17 +137,15 @@
         }
     }
 
-    // --- Page Thumbnails (inside viewer panel) ---
+    // --- Page Thumbnails ---
     function renderPageThumbs() {
         var container = E.$('#page-thumbs');
         if (!container || state.totalPages <= 1) return;
-
         var html = '';
         for (var i = 1; i <= state.totalPages; i++) {
             html += '<button class="' + (i === state.page ? 'active' : '') + '" data-page="' + i + '" title="Seite ' + i + '">' + i + '</button>';
         }
         container.innerHTML = html;
-
         container.addEventListener('click', function (e) {
             var btn = e.target.closest('button');
             if (!btn) return;
@@ -160,32 +155,31 @@
     }
 
     function updatePageThumbs() {
-        var buttons = E.$$('#page-thumbs button');
-        buttons.forEach(function (btn) {
+        E.$$('#page-thumbs button').forEach(function (btn) {
             btn.classList.toggle('active', parseInt(btn.getAttribute('data-page'), 10) === state.page);
         });
     }
 
     // --- Controls ---
     function bindControls() {
-        var prevBtn = E.$('#page-prev');
-        var nextBtn = E.$('#page-next');
+        var prevBtn = E.$('#page-prev'), nextBtn = E.$('#page-next');
         if (prevBtn) prevBtn.addEventListener('click', function () { changePage(-1); });
         if (nextBtn) nextBtn.addEventListener('click', function () { changePage(1); });
 
         // Text/XML toggle
-        var textTab = E.$('#view-text');
-        var xmlTab = E.$('#view-xml');
+        var textTab = E.$('#view-text'), xmlTab = E.$('#view-xml');
         if (textTab) textTab.addEventListener('click', function () {
             if (!state.xmlMode) return;
             state.xmlMode = false;
-            textTab.classList.add('active'); if (xmlTab) xmlTab.classList.remove('active');
+            textTab.classList.add('active'); textTab.setAttribute('aria-pressed', 'true');
+            if (xmlTab) { xmlTab.classList.remove('active'); xmlTab.setAttribute('aria-pressed', 'false'); }
             showPage(state.page);
         });
         if (xmlTab) xmlTab.addEventListener('click', function () {
             if (state.xmlMode) return;
             state.xmlMode = true;
-            xmlTab.classList.add('active'); if (textTab) textTab.classList.remove('active');
+            xmlTab.classList.add('active'); xmlTab.setAttribute('aria-pressed', 'true');
+            if (textTab) { textTab.classList.remove('active'); textTab.setAttribute('aria-pressed', 'false'); }
             showPage(state.page);
         });
 
@@ -220,16 +214,11 @@
                 }
                 return;
             }
-            // Inline formatting shortcuts (Ctrl+B/I/U) in edit mode
             if ((e.ctrlKey || e.metaKey) && state.editMode && e.target.contentEditable === 'true') {
                 var fmt = null;
-                if (e.key === 'b') fmt = 'b';
-                else if (e.key === 'i') fmt = 'i';
-                else if (e.key === 'u') fmt = 'u';
+                if (e.key === 'b') fmt = 'b'; else if (e.key === 'i') fmt = 'i'; else if (e.key === 'u') fmt = 'u';
                 if (fmt && typeof ZBZ.EditionEditor !== 'undefined') {
-                    e.preventDefault();
-                    ZBZ.EditionEditor.toggleInlineFormat(fmt);
-                    return;
+                    e.preventDefault(); ZBZ.EditionEditor.toggleInlineFormat(fmt); return;
                 }
             }
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.contentEditable === 'true') return;
@@ -275,17 +264,14 @@
         var vp = E.$('#faks-viewport');
         if (!vp) return;
 
-        // Wheel zoom
         vp.addEventListener('wheel', function (e) {
             e.preventDefault();
             setZoom(state.zoom + (e.deltaY > 0 ? -15 : 15));
         }, { passive: false });
 
-        // Pan
         vp.addEventListener('mousedown', function (e) {
             if (e.button !== 0) return;
-            var img = vp.querySelector('img');
-            if (!img) return;
+            if (!vp.querySelector('img')) return;
             e.preventDefault();
             state.isPanning = true;
             state.panStartX = e.clientX; state.panStartY = e.clientY;
@@ -299,7 +285,6 @@
         });
         document.addEventListener('mouseup', function () { state.isPanning = false; });
 
-        // Double-click zoom
         vp.addEventListener('dblclick', function () {
             if (state.zoom >= 200) { setZoom(100); resetPan(); } else { setZoom(200); }
         });
@@ -339,11 +324,9 @@
     function loadFaksimile() {
         var vp = E.$('#faks-viewport');
         if (!vp) return;
-
         var src = E.imagePath(state.docId, state.page);
         var alt = E.esc(state.docMeta.title || '') + ' \u2013 Seite ' + state.page;
         vp.innerHTML = '<img src="' + src + '" alt="' + alt + '" style="width:' + state.zoom + '%;opacity:0;transition:opacity 0.3s ease">';
-
         var img = vp.querySelector('img');
         if (img) {
             img.addEventListener('load', function () { img.style.opacity = '1'; applyTransform(); });
@@ -426,7 +409,11 @@
             var pct = Math.max(15, Math.min(85, ((e.clientX - rect.left) / rect.width) * 100));
             left.style.flex = '0 0 ' + pct + '%'; right.style.flex = '0 0 ' + (100 - pct) + '%';
         });
-        function stop() { if (!dragging) return; dragging = false; divider.classList.remove('dragging'); document.body.style.cursor = ''; document.body.style.userSelect = ''; }
+        function stop() {
+            if (!dragging) return; dragging = false;
+            divider.classList.remove('dragging');
+            document.body.style.cursor = ''; document.body.style.userSelect = '';
+        }
         document.addEventListener('mouseup', stop);
         window.addEventListener('blur', stop);
     }

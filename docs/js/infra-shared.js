@@ -188,46 +188,7 @@ ${result}</div></body></text>
             }
         },
 
-        // ---- XML Parsing ----
-        parseXml: function (xml) {
-            const cleaned = xml
-                .replace(/\s+xmlns(:\w+)?\s*=\s*["'][^"']*["']/g, '')
-                .replace(/\s+xsi:\w+\s*=\s*["'][^"']*["']/g, '');
-            const doc = new DOMParser().parseFromString(cleaned, 'text/xml');
-            if (doc.querySelector('parsererror')) return null;
-            return doc;
-        },
-
-        // ---- XML Syntax Highlighting ----
-        highlightXml: function (xml) {
-            let s = xml
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
-            s = s.replace(
-                /(&lt;\?xml[^?]*\?&gt;)/g,
-                '<span class="xml-decl">$1</span>'
-            );
-            s = s.replace(
-                /(&lt;!--[\s\S]*?--&gt;)/g,
-                '<span class="xml-comment">$1</span>'
-            );
-            s = s.replace(
-                /(&lt;\/?)(\w[\w:-]*)([\s\S]*?)(\/?)(&gt;)/g,
-                (m, open, tagName, attrs, slash, close) => {
-                    let result = '<span class="xml-tag">' + open + tagName + '</span>';
-                    if (attrs) {
-                        result += attrs.replace(
-                            /([\w:-]+)="([^"]*?)"/g,
-                            '<span class="xml-attr-name">$1</span>=<span class="xml-attr-value">"$2"</span>'
-                        );
-                    }
-                    result += '<span class="xml-tag">' + slash + close + '</span>';
-                    return result;
-                }
-            );
-            return s;
-        },
+        // ---- XML: parseXml, highlightXml delegated to zbz-core.js ----
 
         // ---- Layout Region Colors ----
         LAYOUT_COLORS: {
@@ -239,37 +200,7 @@ ${result}</div></body></text>
             _skip:        { stroke: '#a855f7', fill: 'rgba(168,85,247,0.08)', label: 'Skip' },
         },
 
-        // ---- Formatting ----
-        fmtNum: function (n) {
-            if (n == null) return '-';
-            return n.toLocaleString('de-DE');
-        },
-
-        fmtPct: function (n, decimals) {
-            if (n == null) return '-';
-            decimals = decimals != null ? decimals : 2;
-            return (n * 100).toFixed(decimals) + '%';
-        },
-
-        padPage: function (page) {
-            return String(page).padStart(3, '0');
-        },
-
-        imagePath: function (docId, page) {
-            return `${_basePath}images/${docId}/${docId}_p${ZBZ.padPage(page)}.png`;
-        },
-
-        // ---- Publication Form Labels (shared) ----
-        PUB_FORM_LABELS: {
-            journalArticle: 'Artikel',
-            book: 'Buch',
-            bookSection: 'Buchkapitel',
-            encyclopedia: 'Lexikon',
-            brochure: 'Broschure',
-            interview: 'Interview',
-            anthology: 'Sammelband',
-            other: 'Andere',
-        },
+        // ---- Formatting, imagePath, padPage, PUB_FORM_LABELS: delegated to zbz-core.js ----
 
         // ---- CER Status ----
         cerBadge: function (cer) {
@@ -280,16 +211,8 @@ ${result}</div></body></text>
             return '<span class="badge-error">' + pct.toFixed(1) + '%</span>';
         },
 
-        // ---- DOM Helpers ----
-        $: (sel) => document.querySelector(sel),
-        $$: (sel) => document.querySelectorAll(sel),
-
-        esc: function (s) {
-            if (s == null) return '';
-            const el = document.createElement('span');
-            el.textContent = String(s);
-            return el.innerHTML;
-        },
+        // ---- DOM Helpers (delegated to zbz-core.js) ----
+        // $, $$, esc are provided by ZBZ core
 
         // ---- Pipeline Status Rendering ----
         PIPELINE_STEPS: [
@@ -336,45 +259,13 @@ ${result}</div></body></text>
             return html || '<span class="tag">-</span>';
         },
 
-        // ---- Entity Index (for resolving #zbz-* refs) ----
-        _entityIndex: null,
-
-        loadEntityIndex: function () {
-            if (ZBZ._entityIndex) return Promise.resolve(ZBZ._entityIndex);
-            return fetch(_basePath + 'data/entity_index.json')
-                .then((r) => r.json())
-                .then((data) => { ZBZ._entityIndex = data; return data; })
-                .catch(() => {
-                    ZBZ._entityIndex = {};
-                    return {};
-                });
-        },
-
-        lookupEntity: function (ref) {
-            if (!ZBZ._entityIndex || !ref) return null;
-            const id = ref.charAt(0) === '#' ? ref.slice(1) : ref;
-            return ZBZ._entityIndex[id] || null;
-        },
-
-        // ---- URL State ----
-        getParam: function (key) {
-            return new URLSearchParams(window.location.search).get(key);
-        },
-
-        setParams: function (obj) {
-            const params = new URLSearchParams(window.location.search);
-            Object.keys(obj).forEach((k) => {
-                if (obj[k] == null) params.delete(k);
-                else params.set(k, obj[k]);
-            });
-            history.replaceState(null, '', '?' + params.toString());
-        },
+        // ---- Entity Index, URL State, Logging: delegated to zbz-core.js ----
     };
 
-    // ---- Console Logging ----
-    const _logStyles = 'color:#0f766e;font-weight:600';
-    ZBZ.log = (module, msg) => console.log(`%c[ZBZ:${module}]%c ${msg}`, _logStyles, '');
-
-    window.ZBZ = ZBZ;
-    ZBZ.log('Core', `basePath="${_basePath || '.'}" | shared.js ready`);
+    // Merge infra-specific properties into the existing ZBZ namespace
+    // (zbz-core.js and edition-shared.js are already loaded)
+    const _prev = window.ZBZ || {};
+    Object.keys(ZBZ).forEach((k) => { _prev[k] = ZBZ[k]; });
+    window.ZBZ = _prev;
+    _prev.log('Infra', 'infra-shared.js ready | basePath="' + (_basePath || '.') + '"');
 })();

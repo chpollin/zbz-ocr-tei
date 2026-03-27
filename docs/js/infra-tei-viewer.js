@@ -99,115 +99,12 @@
         if (teiState.entitiesVisible) renderEntitySidebar();
     }
 
+    // Render options for unified TEI renderer
+    const renderOpts = { cssPrefix: 'tei-', lookupFn: ZBZ.lookupEntity };
+
+    // Delegate to unified renderer (backward-compat wrapper)
     function renderTeiNode(node, container) {
-        if (node.nodeType === 3) {
-            const t = node.textContent;
-            if (t.trim()) container.appendChild(document.createTextNode(t));
-            return;
-        }
-        if (node.nodeType !== 1) return;
-
-        const tag = node.localName;
-
-        // Skip metadata sections
-        if (tag === 'teiHeader' || tag === 'facsimile') return;
-
-        // Transparent containers — just render children
-        if (tag === 'TEI' || tag === 'text' || tag === 'body' || tag === 'div' || tag === 'front' || tag === 'back') {
-            for (let i = 0; i < node.childNodes.length; i++) {
-                renderTeiNode(node.childNodes[i], container);
-            }
-            return;
-        }
-
-        let elem = null;
-
-        if (tag === 'pb') {
-            elem = document.createElement('div');
-            elem.className = 'tei-pb';
-            elem.textContent = `- Seite ${node.getAttribute('n') || '?'} -`;
-            container.appendChild(elem);
-            return;
-        }
-
-        if (tag === 'space') {
-            elem = document.createElement('div');
-            elem.className = 'tei-space';
-            container.appendChild(elem);
-            return;
-        }
-
-        if (tag === 'head') {
-            elem = document.createElement('div');
-            elem.className = 'tei-head';
-        } else if (tag === 'p') {
-            elem = document.createElement('div');
-            elem.className = 'tei-p';
-        } else if (tag === 'note') {
-            elem = document.createElement('div');
-            elem.className = 'tei-note';
-            const nAttr = node.getAttribute('n');
-            if (nAttr) {
-                const lbl = document.createElement('span');
-                lbl.className = 'tei-note-label';
-                lbl.textContent = `[${nAttr}]`;
-                elem.appendChild(lbl);
-            }
-        } else if (tag === 'figure') {
-            elem = document.createElement('div');
-            elem.className = 'tei-figure';
-        } else if (tag === 'hi') {
-            const rend = node.getAttribute('rendition') || '';
-            elem = document.createElement('span');
-            if (rend === '#b') {
-                elem.style.fontWeight = '600';
-            } else if (rend === '#i') {
-                elem.style.fontStyle = 'italic';
-            } else if (rend === '#u') {
-                elem.style.textDecoration = 'underline';
-            } else if (rend === '#sup') {
-                elem = document.createElement('sup');
-            } else if (rend === '#sub') {
-                elem = document.createElement('sub');
-            } else if (rend === '#g') {
-                elem.style.letterSpacing = '0.15em';
-            }
-        } else if (tag === 'persName') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'person', node.getAttribute('ref'), 'tei-entity', ZBZ.lookupEntity);
-        } else if (tag === 'orgName') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'org', node.getAttribute('ref'), 'tei-entity', ZBZ.lookupEntity);
-        } else if (tag === 'placeName') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'place', node.getAttribute('ref'), 'tei-entity', ZBZ.lookupEntity);
-        } else if (tag === 'bibl') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'work', node.getAttribute('ref') || node.getAttribute('corresp'), 'tei-entity', ZBZ.lookupEntity);
-        } else if (tag === 'lb') {
-            container.appendChild(document.createElement('br'));
-            return;
-        } else if (tag === 'foreign') {
-            elem = document.createElement('span');
-            elem.style.fontStyle = 'italic';
-            elem.title = `Sprache: ${node.getAttribute('xml:lang') || '?'}`;
-        } else if (tag === 'sp') {
-            elem = document.createElement('div');
-            elem.className = 'tei-p';
-            elem.style.marginLeft = 'var(--space-md)';
-        } else if (tag === 'speaker') {
-            elem = document.createElement('span');
-            elem.style.fontWeight = '600';
-        } else {
-            // Unknown elements: render children transparently
-            for (let i = 0; i < node.childNodes.length; i++) {
-                renderTeiNode(node.childNodes[i], container);
-            }
-            return;
-        }
-
-        if (elem) {
-            for (let i = 0; i < node.childNodes.length; i++) {
-                renderTeiNode(node.childNodes[i], elem);
-            }
-            container.appendChild(elem);
-        }
+        ZBZ.TeiRender.renderNode(node, container, renderOpts);
     }
 
     // ---- XML Syntax Highlighting ----

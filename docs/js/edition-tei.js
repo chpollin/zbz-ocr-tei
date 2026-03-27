@@ -34,13 +34,7 @@
 
         state.entities = ZBZ.EntityUtils.extractEntities(doc);
 
-        const body = doc.querySelector('body');
-        if (!body) {
-            container.innerHTML = '<div class="ed-empty-state">Kein &lt;body&gt; im TEI</div>';
-            return;
-        }
-
-        renderNode(body, container);
+        ZBZ.TeiRender.render(doc, container, renderOpts);
     }
 
     // --- Render XML view ---
@@ -53,120 +47,8 @@
         container.innerHTML = `<div class="ed-xml-view">${E.highlightXml(xml)}</div>`;
     }
 
-    // --- Recursive Node Renderer ---
-    function renderNode(node, container) {
-        if (node.nodeType === 3) {
-            const t = node.textContent;
-            if (t.trim()) container.appendChild(document.createTextNode(t));
-            return;
-        }
-        if (node.nodeType !== 1) return;
-
-        const tag = node.localName;
-
-        // Skip metadata
-        if (tag === 'teiHeader' || tag === 'facsimile') return;
-
-        // Transparent containers
-        if (tag === 'TEI' || tag === 'text' || tag === 'body' || tag === 'div' ||
-            tag === 'front' || tag === 'back') {
-            for (let i = 0; i < node.childNodes.length; i++) {
-                renderNode(node.childNodes[i], container);
-            }
-            return;
-        }
-
-        let elem = null;
-
-        if (tag === 'pb') {
-            elem = document.createElement('div');
-            elem.className = 'ed-tei-pb';
-            elem.textContent = `-- Seite ${node.getAttribute('n') || '?'} --`;
-            container.appendChild(elem);
-            return;
-        }
-
-        if (tag === 'space') {
-            elem = document.createElement('div');
-            elem.className = 'ed-tei-space';
-            container.appendChild(elem);
-            return;
-        }
-
-        if (tag === 'head') {
-            elem = document.createElement('div');
-            elem.className = 'ed-tei-head';
-        } else if (tag === 'p') {
-            elem = document.createElement('div');
-            elem.className = 'ed-tei-p';
-        } else if (tag === 'note') {
-            elem = document.createElement('div');
-            elem.className = 'ed-tei-note';
-            const nAttr = node.getAttribute('n');
-            if (nAttr) {
-                const lbl = document.createElement('span');
-                lbl.className = 'ed-tei-note-label';
-                lbl.textContent = `[${nAttr}]`;
-                elem.appendChild(lbl);
-            }
-        } else if (tag === 'figure') {
-            elem = document.createElement('div');
-            elem.className = 'ed-tei-figure';
-            elem.textContent = '[Abbildung]';
-            container.appendChild(elem);
-            return;
-        } else if (tag === 'hi') {
-            const rend = node.getAttribute('rendition') || '';
-            if (rend === '#sup') {
-                elem = document.createElement('sup');
-            } else if (rend === '#sub') {
-                elem = document.createElement('sub');
-            } else {
-                elem = document.createElement('span');
-                const hiCls = { '#b': 'ed-tei-hi-bold', '#i': 'ed-tei-hi-italic', '#u': 'ed-tei-hi-underline', '#g': 'ed-tei-hi-spaced' };
-                if (hiCls[rend]) elem.className = hiCls[rend];
-            }
-        } else if (tag === 'persName') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'person', node.getAttribute('ref'), 'ed-tei-entity', E.lookupEntity);
-        } else if (tag === 'orgName') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'org', node.getAttribute('ref'), 'ed-tei-entity', E.lookupEntity);
-        } else if (tag === 'placeName') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'place', node.getAttribute('ref'), 'ed-tei-entity', E.lookupEntity);
-        } else if (tag === 'bibl') {
-            elem = ZBZ.EntityUtils.createEntitySpan(node, 'work', node.getAttribute('ref') || node.getAttribute('corresp'), 'ed-tei-entity', E.lookupEntity);
-        } else if (tag === 'lb') {
-            container.appendChild(document.createElement('br'));
-            return;
-        } else if (tag === 'foreign') {
-            elem = document.createElement('span');
-            var lang = node.getAttribute('xml:lang') || '?';
-            elem.className = 'ed-tei-foreign';
-            elem.setAttribute('data-lang', lang);
-            elem.title = 'Sprache: ' + lang;
-            var langLbl = document.createElement('span');
-            langLbl.className = 'ed-lang-label';
-            langLbl.textContent = lang.toUpperCase();
-            elem.appendChild(langLbl);
-        } else if (tag === 'sp') {
-            elem = document.createElement('div');
-            elem.className = 'ed-tei-sp';
-        } else if (tag === 'speaker') {
-            elem = document.createElement('span');
-            elem.className = 'ed-tei-speaker';
-        } else {
-            for (let i = 0; i < node.childNodes.length; i++) {
-                renderNode(node.childNodes[i], container);
-            }
-            return;
-        }
-
-        if (elem) {
-            for (let i = 0; i < node.childNodes.length; i++) {
-                renderNode(node.childNodes[i], elem);
-            }
-            container.appendChild(elem);
-        }
-    }
+    // --- Render options for unified TEI renderer ---
+    const renderOpts = { cssPrefix: 'ed-tei-', lookupFn: E.lookupEntity };
 
     // --- Entity Sidebar (used by infrastruktur/tei-viewer.js, not by edition reader) ---
     function renderEntitySidebar(container) {
@@ -255,9 +137,10 @@
                     zbzLabel.className = 'ed-entity-item-zbzid';
                     zbzLabel.textContent = all.zbzId;
                     // Route to type-specific register page
-                    const regPages = { 'p': 'register-personen.html', 'o': 'register-organisationen.html', 'l': 'register-orte.html', 'w': 'register-werke.html' };
+                    const typeMap = { 'p': 'person', 'o': 'organization', 'l': 'place', 'w': 'work' };
                     const typeChar = (all.zbzId.match(/^zbz-([a-z])\./) || [])[1] || 'p';
-                    zbzLabel.href = `${regPages[typeChar] || 'register-personen.html'}?id=${encodeURIComponent(all.zbzId)}`;
+                    const regType = typeMap[typeChar] || 'person';
+                    zbzLabel.href = `register.html?type=${regType}&id=${encodeURIComponent(all.zbzId)}`;
                     zbzLabel.title = 'Im Register anzeigen';
                     zbzLabel.addEventListener('click', (e) => { e.stopPropagation(); });
                     item.appendChild(zbzLabel);

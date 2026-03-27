@@ -5,64 +5,66 @@
    ============================================================ */
 
 :root {
-    /* Background – aligned with Hersch Edition palette */
-    --bg: #F5F0E8;
-    --bg-card: #FAFAF7;
-    --bg-subtle: #EDE6D8;
-    --bg-muted: #E5DFD4;
+    /* Background — aliased from shared.css --h-* tokens */
+    --bg: var(--h-bg);
+    --bg-card: var(--h-surface);
+    --bg-subtle: var(--h-bg-alt);
+    --bg-muted: var(--h-bg-dark);
 
-    /* Borders – aligned with Hersch Edition */
-    --border: rgba(44, 40, 37, 0.25);
-    --border-light: rgba(44, 40, 37, 0.12);
+    /* Borders */
+    --border: var(--h-border-emphasis);
+    --border-light: var(--h-border);
 
-    /* Text – aligned with Hersch Edition */
-    --text: #2C2825;
-    --text-secondary: #5C554E;
-    --text-muted: #8A8279;
+    /* Text */
+    --text: var(--h-text);
+    --text-secondary: var(--h-text-secondary);
+    --text-muted: var(--h-text-muted);
 
     /* Accent A – teal (Mistral OCR / Pipeline primary) */
-    --accent-a: #0f766e;
-    --accent-a-light: #ccfbf1;
-    --accent-a-bg: #f0fdfa;
+    --accent-a: var(--h-accent-teal);
+    --accent-a-light: var(--h-accent-teal-light);
+    --accent-a-bg: var(--h-accent-teal-bg);
 
     /* Accent B – violet (DeepSeek) */
-    --accent-b: #7c3aed;
-    --accent-b-light: #ede9fe;
-    --accent-b-bg: #f5f3ff;
+    --accent-b: var(--h-accent-violet);
+    --accent-b-light: var(--h-accent-violet-light);
+    --accent-b-bg: var(--h-accent-violet-bg);
 
     /* Accent C – blue (LLM-korrigiert) */
-    --accent-c: #2563eb;
-    --accent-c-light: #dbeafe;
-    --accent-c-bg: #eff6ff;
+    --accent-c: var(--h-accent-blue);
+    --accent-c-light: var(--h-accent-blue-light);
+    --accent-c-bg: var(--h-accent-blue-bg);
 
     /* Accent D – amber (Gemini) */
-    --accent-d: #f59e0b;
-    --accent-d-light: #fef3c7;
-    --accent-d-bg: #fffbeb;
+    --accent-d: var(--h-accent-amber);
+    --accent-d-light: var(--h-accent-amber-light);
+    --accent-d-bg: var(--h-accent-amber-bg);
 
     /* Warm (warnings / info) */
-    --warm: #b45309;
-    --warm-light: #fef3c7;
+    --warm: var(--h-warm);
+    --warm-light: var(--h-warm-light);
 
     /* Status */
-    --status-ok: #16a34a;
-    --status-ok-bg: #dcfce7;
-    --status-pending: #ca8a04;
-    --status-pending-bg: #fef9c3;
-    --status-error: #dc2626;
-    --status-error-bg: #fee2e2;
+    --status-ok: var(--h-status-ok);
+    --status-ok-bg: var(--h-status-ok-bg);
+    --status-pending: var(--h-status-pending);
+    --status-pending-bg: var(--h-status-pending-bg);
+    --status-error: var(--h-status-error);
+    --status-error-bg: var(--h-status-error-bg);
 
     /* Spacing */
-    --space-xs: 0.25rem;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 1.5rem;
-    --space-xl: 2rem;
-    --space-2xl: 3rem;
+    --space-xs: var(--h-space-xs);
+    --space-sm: var(--h-space-sm);
+    --space-md: var(--h-space-md);
+    --space-lg: var(--h-space-lg);
+    --space-xl: var(--h-space-xl);
+    --space-2xl: var(--h-space-2xl);
 
-    /* Typography – aligned with Hersch Edition (Jost + JetBrains Mono) */
-    --font-sans: 'Jost', 'Futura', 'Gill Sans', sans-serif;
-    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    /* Typography */
+    --font-sans: var(--h-font-heading);
+    --font-mono: var(--h-font-mono);
+
+    /* Infra-specific type scale (smaller base for data-dense UI) */
     --fs-2xs: 0.6rem;
     --fs-xs: 0.7rem;
     --fs-sm: 0.8rem;
@@ -78,16 +80,7 @@
     --radius-sm: 4px;
 }
 
-/* ---- Reset ---- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-    font-family: var(--font-sans);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
+/* ---- Reset & Base: see shared.css (loaded first) ---- */
 
 /* ---- Layout ---- */
 .container {
@@ -105,7 +98,7 @@ header {
 
 .disclaimer-bar {
     background: var(--warm-light);
-    border-bottom: 1px solid #fbbf24;
+    border-bottom: 1px solid var(--h-accent-amber);
     padding: var(--space-sm) var(--space-xl);
     font-size: var(--fs-xs);
     color: var(--warm);
@@ -116,7 +109,7 @@ header {
 .demo-badge {
     display: inline-block;
     background: var(--accent-a);
-    color: #fff;
+    color: var(--h-text-inverse);
     font-size: var(--fs-2xs);
     font-weight: 700;
     padding: 1px 5px;
@@ -129,7 +122,7 @@ header {
 .demo-badge-inline {
     display: inline-block;
     background: var(--warm);
-    color: #fff;
+    color: var(--h-text-inverse);
     font-size: var(--fs-2xs);
     font-weight: 700;
     padding: 1px 4px;
@@ -243,7 +236,7 @@ header .subtitle {
 /* ---- Info Banner ---- */
 .info-banner {
     background: var(--warm-light);
-    border: 1px solid #fde68a;
+    border: 1px solid var(--h-accent-amber-light);
     border-radius: var(--radius);
     padding: 0.875rem 1.25rem;
     margin-bottom: var(--space-xl);
@@ -634,9 +627,9 @@ header .subtitle {
 
 .source-btn.active.violet { background: var(--accent-b); }
 .source-btn.active.blue { background: var(--accent-c); }
-.source-btn.active.amber { background: var(--accent-d); color: #000; }
+.source-btn.active.amber { background: var(--accent-d); color: var(--h-text); }
 
-.tag.amber { background: var(--accent-d-light); color: #92400e; }
+.tag.amber { background: var(--accent-d-light); color: var(--h-warm); }
 
 .layout-source-select {
     font-size: 0.75rem;
@@ -831,6 +824,8 @@ header .subtitle {
     align-items: center;
     gap: var(--space-md);
     height: 52px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
 }
 
 .viewer-header a {
@@ -1020,6 +1015,18 @@ header .subtitle {
     margin-right: var(--space-xs);
 }
 
+/* Unified TEI renderer classes (mirroring edition.css .ed-tei-*) */
+.tei-rendered .tei-foreign { font-style: italic; }
+.tei-rendered .tei-sp { margin-left: var(--space-md); }
+.tei-rendered .tei-speaker { font-weight: 600; }
+.tei-rendered .tei-space { height: 0.5em; }
+
+/* hi rendition classes (mirroring edition.css .ed-tei-hi-*) */
+.tei-rendered .tei-hi-bold { font-weight: 600; }
+.tei-rendered .tei-hi-italic { font-style: italic; }
+.tei-rendered .tei-hi-underline { text-decoration: underline; }
+.tei-rendered .tei-hi-spaced { letter-spacing: 0.15em; }
+
 .tei-rendered .tei-figure {
     margin: var(--space-lg) 0;
     padding: var(--space-md);
@@ -1115,13 +1122,7 @@ header .subtitle {
 
 /* Entity highlight flash */
 .tei-entity.highlight-flash {
-    animation: entityFlash 1s ease;
-}
-
-@keyframes entityFlash {
-    0%, 100% { box-shadow: none; }
-    20% { box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.4); }
-    80% { box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.4); }
+    animation: h-flash 1s ease;
 }
 
 /* ---- TEI XML Syntax Highlighting ---- */
@@ -1133,11 +1134,11 @@ header .subtitle {
     word-wrap: break-word;
 }
 
-.xml-tag { color: #059669; }
-.xml-attr-name { color: #0284c7; }
-.xml-attr-value { color: #dc2626; }
-.xml-comment { color: var(--text-muted); font-style: italic; }
-.xml-decl { color: #6b7280; }
+.xml-tag { color: var(--h-xml-tag); }
+.xml-attr-name { color: var(--h-xml-attr-name); }
+.xml-attr-value { color: var(--h-xml-attr-value); }
+.xml-comment { color: var(--h-xml-comment); font-style: italic; }
+.xml-decl { color: var(--h-xml-decl); }
 
 /* ---- TEI Diff View ---- */
 .tei-diff-panel {
@@ -1329,12 +1330,12 @@ header .subtitle {
 
 .entity-resolved {
     background: rgba(34,197,94,0.15);
-    color: #16a34a;
+    color: var(--h-status-ok);
 }
 
 .entity-unresolved {
     background: rgba(234,179,8,0.15);
-    color: #ca8a04;
+    color: var(--h-status-pending);
 }
 
 .entity-item-zbzid {
@@ -1351,6 +1352,31 @@ header .subtitle {
 /* ---- Viewer: Page Layout ---- */
 html { height: 100%; }
 body.viewer-page { height: 100%; overflow: hidden; }
+
+/* When viewer runs inside the edition shell (nav + disclaimer present) */
+body.viewer-page.edition-page {
+    display: flex;
+    flex-direction: column;
+}
+
+body.viewer-page.edition-page .ed-nav {
+    position: relative;  /* not sticky — viewer is full-viewport */
+    flex-shrink: 0;
+}
+
+body.viewer-page.edition-page .ed-disclaimer-banner {
+    flex-shrink: 0;
+}
+
+body.viewer-page.edition-page .viewer-header {
+    flex-shrink: 0;
+}
+
+body.viewer-page.edition-page .page-layout {
+    height: auto;
+    flex: 1;
+    min-height: 0;
+}
 
 .page-layout {
     display: flex;
@@ -1563,10 +1589,10 @@ body.viewer-page { height: 100%; overflow: hidden; }
     background: var(--bg-subtle);
 }
 
-.page-region-heading   { border-left-color: #dc2626; }
-.page-region-paragraph { border-left-color: #6b7280; }
-.page-region-footnote  { border-left-color: #2563eb; }
-.page-region-caption   { border-left-color: #d97706; }
+.page-region-heading   { border-left-color: var(--h-status-error); }
+.page-region-paragraph { border-left-color: var(--h-neutral); }
+.page-region-footnote  { border-left-color: var(--h-accent-blue); }
+.page-region-caption   { border-left-color: var(--h-entity-place); }
 .page-region-unknown   { border-left-color: var(--text-muted); }
 
 .page-region-header {
@@ -1626,9 +1652,7 @@ body.viewer-page { height: 100%; overflow: hidden; }
 .no-padding { padding: 0; }
 .section-gap { margin-top: 2.5rem; }
 .dist-row { display: flex; justify-content: space-between; padding: 2px 0; font-size: 0.85rem; }
-.grid-3col { grid-template-columns: repeat(3, 1fr); }
-.text-muted-sm { color: var(--text-muted); font-size: 0.75rem; }
-.text-muted-italic { color: var(--text-muted); font-style: italic; }
+/* Dead CSS removed: .grid-3col, .text-muted-sm, .text-muted-italic (unused) */
 
 @media (max-width: 900px) {
     .preview { grid-template-columns: 1fr; }
@@ -1682,8 +1706,94 @@ body.infrastruktur-page .ed-nav {
 }
 
 .infra-subnav a:hover { color: var(--text); }
-.infra-subnav a.active {
+.infra-subnav a.active,
+.infra-subnav a[aria-current="page"] {
     color: var(--accent-a);
     border-bottom-color: var(--accent-a);
     font-weight: 500;
+}
+
+/* ============================================================
+   Diagnostik Components (migrated from diagnostik.html inline styles)
+   ============================================================ */
+
+/* Layout */
+.diag-wrap { max-width: var(--h-max-width); margin: 0 auto; padding: var(--h-space-lg); }
+
+/* CER cell */
+.diag-cer-cell { padding: 2px 8px; border-radius: var(--h-radius-sm); font-weight: 500;
+                 font-family: var(--h-font-mono); display: inline-block; min-width: 4em;
+                 text-align: right; }
+
+/* Status Badges */
+.diag-badge-ok      { background: rgba(22,163,74,0.15); color: var(--h-badge-approved-light); }
+.diag-badge-blocked  { background: rgba(245,158,11,0.15); color: var(--h-badge-draft); }
+.diag-badge-fp       { background: rgba(138,138,138,0.15); color: var(--h-neutral); }
+.diag-badge-pending  { background: rgba(37,99,235,0.12); color: var(--h-badge-review); }
+.diag-badge-error    { background: rgba(220,38,38,0.12); color: var(--h-badge-error); }
+
+/* Lane badges */
+.diag-badge-lane { padding: 1px 6px; border-radius: 3px; font-size: var(--h-xs);
+                   font-weight: 600; font-family: var(--h-font-mono); }
+.diag-badge-l1 { background: rgba(37,99,235,0.12); color: var(--h-accent-blue); }
+.diag-badge-l2 { background: rgba(124,58,237,0.12); color: var(--h-accent-violet); }
+.diag-badge-l3 { background: rgba(13,148,136,0.12); color: var(--h-entity-work); }
+
+/* Timeline (CSS steps) */
+.diag-timeline { display: flex; align-items: flex-end; gap: 2px;
+                 margin: var(--h-space-md) 0; height: 80px; }
+.diag-tl-step { flex: 1; display: flex; flex-direction: column; align-items: center;
+                justify-content: flex-end; gap: 4px; }
+.diag-tl-bar { width: 100%; border-radius: var(--h-radius-sm) var(--h-radius-sm) 0 0;
+               transition: height var(--h-transition-slow); min-height: 4px; }
+.diag-tl-bar.valid   { background: var(--h-success); }
+.diag-tl-bar.invalid { background: var(--h-error); }
+.diag-tl-bar.warn    { background: var(--h-warning); }
+.diag-tl-label { font-size: var(--h-xs); color: var(--h-text-muted);
+                 text-align: center; line-height: 1.2; }
+.diag-tl-val { font-size: var(--h-xs); font-weight: 600; font-family: var(--h-font-mono); }
+
+/* CER Reduction Timeline */
+.diag-cer-timeline { display: flex; gap: var(--h-space-sm); margin: var(--h-space-md) 0;
+                     overflow-x: auto; }
+.diag-cer-step { flex: 1; min-width: 100px; background: var(--h-surface);
+                 border: 1px solid var(--h-border); border-radius: var(--h-radius-lg);
+                 padding: var(--h-space-sm); text-align: center; }
+.diag-cer-step-label { font-size: var(--h-xs); color: var(--h-text-muted);
+                       margin-bottom: var(--h-space-xs); }
+.diag-cer-step-val { font-family: var(--h-font-mono); font-weight: 600;
+                     font-size: var(--h-sm); }
+.diag-cer-step-sub { font-size: var(--h-xs); color: var(--h-text-muted); }
+.diag-cer-arrow { display: flex; align-items: center; color: var(--h-text-muted);
+                  font-size: var(--h-lg); flex-shrink: 0; }
+
+/* Log */
+.diag-log-entry { display: grid; grid-template-columns: 140px auto 120px 1fr;
+                  gap: var(--h-space-sm); padding: .5rem .75rem;
+                  border-bottom: 1px solid var(--h-border); font-size: var(--h-sm);
+                  align-items: baseline; }
+.diag-log-entry:hover { background: var(--h-bg-alt); }
+.diag-log-ts { font-family: var(--h-font-mono); font-size: var(--h-xs);
+               color: var(--h-text-muted); white-space: nowrap; }
+.diag-log-action { color: var(--h-text); }
+.diag-log-result { font-size: var(--h-xs); color: var(--h-text-secondary); }
+.diag-log-filters { display: flex; gap: var(--h-space-xs); margin-bottom: var(--h-space-sm); }
+.diag-log-filter { padding: 3px 10px; border: 1px solid var(--h-border); border-radius: 12px;
+                   background: none; font-size: var(--h-xs); cursor: pointer;
+                   font-family: var(--h-font-heading); color: var(--h-text-secondary); }
+.diag-log-filter.active { background: var(--h-ziegelrot-subtle); color: var(--h-ziegelrot);
+                          border-color: var(--h-ziegelrot); font-weight: 600; }
+
+/* Last activity */
+.diag-last-activity { background: var(--h-surface); border: 1px solid var(--h-border);
+                      border-radius: var(--h-radius-lg); padding: var(--h-space-md);
+                      margin-top: var(--h-space-md); font-size: var(--h-sm);
+                      display: flex; gap: var(--h-space-md); align-items: center; }
+.diag-last-activity .ts { font-family: var(--h-font-mono); font-size: var(--h-xs);
+                          color: var(--h-text-muted); white-space: nowrap; }
+
+@media (max-width: 768px) {
+    .diag-log-entry { grid-template-columns: 1fr; gap: 2px; }
+    .diag-cer-timeline { flex-direction: column; }
+    .diag-cer-arrow { transform: rotate(90deg); justify-content: center; }
 }

@@ -8,178 +8,114 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/shared.css">
-    <style>
-        /* ── Diagnostik-specific Layout ── */
-        .diag-wrap { max-width: var(--h-max-width); margin: 0 auto; padding: var(--h-space-lg); }
-
-        /* CER cell */
-        .diag-cer-cell { padding: 2px 8px; border-radius: var(--h-radius-sm); font-weight: 500;
-                         font-family: var(--h-font-mono); display: inline-block; min-width: 4em;
-                         text-align: right; }
-
-        /* Status Badges */
-        .diag-badge-ok      { background: rgba(22,163,74,0.15); color: #15803d; }
-        .diag-badge-blocked  { background: rgba(245,158,11,0.15); color: #b45309; }
-        .diag-badge-fp       { background: rgba(138,138,138,0.15); color: #6b7280; }
-        .diag-badge-pending  { background: rgba(37,99,235,0.12); color: #1d4ed8; }
-        .diag-badge-error    { background: rgba(220,38,38,0.12); color: #dc2626; }
-
-        /* Lane badges */
-        .diag-badge-lane { padding: 1px 6px; border-radius: 3px; font-size: var(--h-xs);
-                           font-weight: 600; font-family: var(--h-font-mono); }
-        .diag-badge-l1 { background: rgba(37,99,235,0.12); color: #2563eb; }
-        .diag-badge-l2 { background: rgba(124,58,237,0.12); color: #7c3aed; }
-        .diag-badge-l3 { background: rgba(13,148,136,0.12); color: #0d9488; }
-
-        /* Timeline (CSS steps) */
-        .diag-timeline { display: flex; align-items: flex-end; gap: 2px;
-                         margin: var(--h-space-md) 0; height: 80px; }
-        .diag-tl-step { flex: 1; display: flex; flex-direction: column; align-items: center;
-                        justify-content: flex-end; gap: 4px; }
-        .diag-tl-bar { width: 100%; border-radius: var(--h-radius-sm) var(--h-radius-sm) 0 0;
-                       transition: height var(--h-transition-slow); min-height: 4px; }
-        .diag-tl-bar.valid   { background: var(--h-success); }
-        .diag-tl-bar.invalid { background: var(--h-error); }
-        .diag-tl-bar.warn    { background: var(--h-warning); }
-        .diag-tl-label { font-size: var(--h-xs); color: var(--h-text-muted);
-                         text-align: center; line-height: 1.2; }
-        .diag-tl-val { font-size: var(--h-xs); font-weight: 600; font-family: var(--h-font-mono); }
-
-        /* CER Reduction Timeline */
-        .diag-cer-timeline { display: flex; gap: var(--h-space-sm); margin: var(--h-space-md) 0;
-                             overflow-x: auto; }
-        .diag-cer-step { flex: 1; min-width: 100px; background: var(--h-surface);
-                         border: 1px solid var(--h-border); border-radius: var(--h-radius-lg);
-                         padding: var(--h-space-sm); text-align: center; }
-        .diag-cer-step-label { font-size: var(--h-xs); color: var(--h-text-muted);
-                               margin-bottom: var(--h-space-xs); }
-        .diag-cer-step-val { font-family: var(--h-font-mono); font-weight: 600;
-                             font-size: var(--h-sm); }
-        .diag-cer-step-sub { font-size: var(--h-xs); color: var(--h-text-muted); }
-        .diag-cer-arrow { display: flex; align-items: center; color: var(--h-text-muted);
-                          font-size: var(--h-lg); flex-shrink: 0; }
-
-        /* Log */
-        .diag-log-entry { display: grid; grid-template-columns: 140px auto 120px 1fr;
-                          gap: var(--h-space-sm); padding: .5rem .75rem;
-                          border-bottom: 1px solid var(--h-border); font-size: var(--h-sm);
-                          align-items: baseline; }
-        .diag-log-entry:hover { background: var(--h-bg-alt); }
-        .diag-log-ts { font-family: var(--h-font-mono); font-size: var(--h-xs);
-                       color: var(--h-text-muted); white-space: nowrap; }
-        .diag-log-action { color: var(--h-text); }
-        .diag-log-result { font-size: var(--h-xs); color: var(--h-text-secondary); }
-        .diag-log-filters { display: flex; gap: var(--h-space-xs); margin-bottom: var(--h-space-sm); }
-        .diag-log-filter { padding: 3px 10px; border: 1px solid var(--h-border); border-radius: 12px;
-                           background: none; font-size: var(--h-xs); cursor: pointer;
-                           font-family: var(--h-font-heading); color: var(--h-text-secondary); }
-        .diag-log-filter.active { background: var(--h-ziegelrot-subtle); color: var(--h-ziegelrot);
-                                  border-color: var(--h-ziegelrot); font-weight: 600; }
-
-        /* Last activity */
-        .diag-last-activity { background: var(--h-surface); border: 1px solid var(--h-border);
-                              border-radius: var(--h-radius-lg); padding: var(--h-space-md);
-                              margin-top: var(--h-space-md); font-size: var(--h-sm);
-                              display: flex; gap: var(--h-space-md); align-items: center; }
-        .diag-last-activity .ts { font-family: var(--h-font-mono); font-size: var(--h-xs);
-                                  color: var(--h-text-muted); white-space: nowrap; }
-
-        @media (max-width: 768px) {
-            .diag-log-entry { grid-template-columns: 1fr; gap: 2px; }
-            .diag-cer-timeline { flex-direction: column; }
-            .diag-cer-arrow { transform: rotate(90deg); justify-content: center; }
-        }
-
-    </style>
+    <link rel="stylesheet" href="../css/edition.css">
+    <link rel="stylesheet" href="../css/infra.css">
 </head>
-<body class="edition-page">
+<body class="edition-page infrastruktur-page">
 
+    <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
     <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
-    <div class="ed-banner" id="ed-banner-slot"></div>
 
-    <div class="diag-wrap">
-        <div id="loading">Lade Diagnostik-Daten...</div>
-        <div id="app" class="hidden">
+    <nav class="infra-subnav" aria-label="Pipeline-Navigation">
+        <span class="infra-subnav-title">Pipeline</span>
+        <a href="index.html">Dashboard</a>
+        <a href="viewer.html">Viewer</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="diagnostik.html" aria-current="page">Diagnostik</a>
+    </nav>
 
-            <div class="ed-tabs" id="tabs">
-                <button class="ed-tab active" data-tab="overview">Uebersicht</button>
-                <button class="ed-tab" data-tab="ocr">OCR-Qualitaet</button>
-                <button class="ed-tab" data-tab="tei">TEI-Qualitaet</button>
-                <button class="ed-tab" data-tab="activity">Aktivitaet</button>
-            </div>
+    <main id="main-content">
+        <div class="diag-wrap">
+            <h1 class="ed-section-title">Diagnostik</h1>
+            <div id="loading" role="status">Lade Diagnostik-Daten...</div>
+            <div id="app" class="hidden">
 
-            <!-- Uebersicht -->
-            <div class="ed-tab-panel active" id="panel-overview">
-                <div class="ed-metric-grid" id="ov-metrics"></div>
-                <h3 class="ed-section">Validierungs-Timeline</h3>
-                <div id="ov-val-timeline"></div>
-                <h3 class="ed-section">CER-Reduktions-Timeline</h3>
-                <div id="ov-cer-timeline"></div>
-                <h3 class="ed-section">Letzte Aktivitaet</h3>
-                <div id="ov-last-activity"></div>
-            </div>
-
-            <!-- OCR-Qualitaet -->
-            <div class="ed-tab-panel" id="panel-ocr">
-                <div class="ed-metric-grid" id="ocr-metrics"></div>
-                <h3 class="ed-section">CER pro Dokument</h3>
-                <div class="ed-table-wrap"><table class="ed-table" id="ocr-doc-table">
-                    <thead><tr>
-                        <th class="sortable">Doc</th>
-                        <th class="sortable">CER</th>
-                        <th class="sortable">WER</th>
-                        <th class="sortable">Sprache</th>
-                        <th class="sortable">Typ</th>
-                        <th class="sortable">Scope</th>
-                        <th class="sortable">Pipeline-Delta</th>
-                    </tr></thead>
-                    <tbody></tbody>
-                </table></div>
-                <div class="ed-stat-grid" id="ocr-strat"></div>
-                <h3 class="ed-section">Konfusionsmatrix: Top-10 Substitutionen</h3>
-                <div class="ed-table-wrap"><table class="ed-table" id="ocr-conf-table">
-                    <thead><tr><th>Ref</th><th>Hyp</th><th class="num">Anzahl</th></tr></thead>
-                    <tbody></tbody>
-                </table></div>
-            </div>
-
-            <!-- TEI-Qualitaet -->
-            <div class="ed-tab-panel" id="panel-tei">
-                <div class="ed-metric-grid" id="tei-metrics"></div>
-                <h3 class="ed-section">Warnings</h3>
-                <div class="ed-table-wrap"><table class="ed-table" id="tei-warn-table">
-                    <thead><tr><th>Code</th><th class="num">Anzahl</th><th>Status</th><th>Docs</th><th>Beschreibung</th></tr></thead>
-                    <tbody></tbody>
-                </table></div>
-                <h3 class="ed-section">Corpus-Statistik (Elemente)</h3>
-                <div class="ed-table-wrap"><table class="ed-table" id="tei-elem-table">
-                    <thead><tr><th>Element</th><th class="num">Anzahl</th></tr></thead>
-                    <tbody></tbody>
-                </table></div>
-                <h3 class="ed-section">W10-Analyse (10 Docs)</h3>
-                <div class="ed-table-wrap"><table class="ed-table" id="tei-w10-table">
-                    <thead><tr><th>Doc</th><th class="num">Text</th><th class="num">persName</th><th class="num">orgName</th><th class="num">placeName</th><th>Bewertung</th></tr></thead>
-                    <tbody></tbody>
-                </table></div>
-            </div>
-
-            <!-- Aktivitaet -->
-            <div class="ed-tab-panel" id="panel-activity">
-                <div class="diag-log-filters" id="log-filters">
-                    <button class="diag-log-filter active" data-lane="all">Alle</button>
-                    <button class="diag-log-filter" data-lane="tei">L1 TEI</button>
-                    <button class="diag-log-filter" data-lane="ocr">L2 OCR</button>
-                    <button class="diag-log-filter" data-lane="edition">L3 Edition</button>
+                <div class="ed-tabs" id="tabs" role="tablist" aria-label="Diagnostik-Bereiche">
+                    <button class="ed-tab active" data-tab="overview" role="tab" id="tab-overview"
+                            aria-selected="true" aria-controls="panel-overview">Uebersicht</button>
+                    <button class="ed-tab" data-tab="ocr" role="tab" id="tab-ocr"
+                            aria-selected="false" aria-controls="panel-ocr">OCR-Qualitaet</button>
+                    <button class="ed-tab" data-tab="tei" role="tab" id="tab-tei"
+                            aria-selected="false" aria-controls="panel-tei">TEI-Qualitaet</button>
+                    <button class="ed-tab" data-tab="activity" role="tab" id="tab-activity"
+                            aria-selected="false" aria-controls="panel-activity">Aktivitaet</button>
                 </div>
-                <div id="log-content"></div>
-            </div>
 
+                <!-- Uebersicht -->
+                <div class="ed-tab-panel active" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+                    <div class="ed-metric-grid" id="ov-metrics"></div>
+                    <h2 class="ed-section">Validierungs-Timeline</h2>
+                    <div id="ov-val-timeline"></div>
+                    <h2 class="ed-section">CER-Reduktions-Timeline</h2>
+                    <div id="ov-cer-timeline"></div>
+                    <h2 class="ed-section">Letzte Aktivitaet</h2>
+                    <div id="ov-last-activity"></div>
+                </div>
+
+                <!-- OCR-Qualitaet -->
+                <div class="ed-tab-panel" id="panel-ocr" role="tabpanel" aria-labelledby="tab-ocr">
+                    <div class="ed-metric-grid" id="ocr-metrics"></div>
+                    <h2 class="ed-section">CER pro Dokument</h2>
+                    <div class="ed-table-wrap"><table class="ed-table" id="ocr-doc-table">
+                        <thead><tr>
+                            <th class="sortable">Doc</th>
+                            <th class="sortable">CER</th>
+                            <th class="sortable">WER</th>
+                            <th class="sortable">Sprache</th>
+                            <th class="sortable">Typ</th>
+                            <th class="sortable">Scope</th>
+                            <th class="sortable">Pipeline-Delta</th>
+                        </tr></thead>
+                        <tbody></tbody>
+                    </table></div>
+                    <div class="ed-stat-grid" id="ocr-strat"></div>
+                    <h2 class="ed-section">Konfusionsmatrix: Top-10 Substitutionen</h2>
+                    <div class="ed-table-wrap"><table class="ed-table" id="ocr-conf-table">
+                        <thead><tr><th>Ref</th><th>Hyp</th><th class="num">Anzahl</th></tr></thead>
+                        <tbody></tbody>
+                    </table></div>
+                </div>
+
+                <!-- TEI-Qualitaet -->
+                <div class="ed-tab-panel" id="panel-tei" role="tabpanel" aria-labelledby="tab-tei">
+                    <div class="ed-metric-grid" id="tei-metrics"></div>
+                    <h2 class="ed-section">Warnings</h2>
+                    <div class="ed-table-wrap"><table class="ed-table" id="tei-warn-table">
+                        <thead><tr><th>Code</th><th class="num">Anzahl</th><th>Status</th><th>Docs</th><th>Beschreibung</th></tr></thead>
+                        <tbody></tbody>
+                    </table></div>
+                    <h2 class="ed-section">Corpus-Statistik (Elemente)</h2>
+                    <div class="ed-table-wrap"><table class="ed-table" id="tei-elem-table">
+                        <thead><tr><th>Element</th><th class="num">Anzahl</th></tr></thead>
+                        <tbody></tbody>
+                    </table></div>
+                    <h2 class="ed-section">W10-Analyse (10 Docs)</h2>
+                    <div class="ed-table-wrap"><table class="ed-table" id="tei-w10-table">
+                        <thead><tr><th>Doc</th><th class="num">Text</th><th class="num">persName</th><th class="num">orgName</th><th class="num">placeName</th><th>Bewertung</th></tr></thead>
+                        <tbody></tbody>
+                    </table></div>
+                </div>
+
+                <!-- Aktivitaet -->
+                <div class="ed-tab-panel" id="panel-activity" role="tabpanel" aria-labelledby="tab-activity">
+                    <div class="diag-log-filters" id="log-filters">
+                        <button class="diag-log-filter active" data-lane="all">Alle</button>
+                        <button class="diag-log-filter" data-lane="tei">L1 TEI</button>
+                        <button class="diag-log-filter" data-lane="ocr">L2 OCR</button>
+                        <button class="diag-log-filter" data-lane="edition">L3 Edition</button>
+                    </div>
+                    <div id="log-content"></div>
+                </div>
+
+            </div>
         </div>
-    </div>
+    </main>
 
     <footer class="ed-footer" id="ed-footer-slot"></footer>
 
-    <script src="../js/shared.js"></script>
+    <script src="../js/zbz-core.js"></script>
+    <script src="../js/edition-shared.js"></script>
+    <script src="../js/infra-shared.js"></script>
     <script src="../js/diagnostik.js"></script>
 </body>
 </html>

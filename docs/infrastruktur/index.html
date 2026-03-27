@@ -7,20 +7,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css">
     <link rel="stylesheet" href="../css/edition.css">
-    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../css/infra.css">
 </head>
 <body class="edition-page infrastruktur-page">
 
+    <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
     <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
 
-    <div class="infra-subnav">
+    <nav class="infra-subnav" aria-label="Pipeline-Navigation">
         <span class="infra-subnav-title">Pipeline</span>
-        <a href="index.html" class="active">Dashboard</a>
+        <a href="index.html" aria-current="page">Dashboard</a>
         <a href="viewer.html">Viewer</a>
         <a href="benchmark.html">Benchmark</a>
         <a href="diagnostik.html">Diagnostik</a>
-    </div>
+    </nav>
 
     <div class="disclaimer-bar">
         <strong>Epistemische Infrastruktur</strong> &mdash; Validierung der OCR/Layout/TEI-Pipeline.
@@ -29,8 +31,9 @@
         (<span class="demo-badge-inline">DEMO</span>) verfuegbar.
     </div>
 
-    <div class="container">
-        <div id="loading">Lade Dashboard-Daten...</div>
+    <main id="main-content" class="container">
+        <h1 class="section-title">Epistemische Infrastruktur</h1>
+        <div id="loading" role="status">Lade Dashboard-Daten...</div>
         <div id="app" class="hidden">
 
             <!-- A) Dashboard-Metriken -->
@@ -76,10 +79,13 @@
             </div>
             <div id="doc-catalog"></div>
         </div>
-    </div>
+    </main>
 
+    <footer class="ed-footer" id="ed-footer-slot"></footer>
+
+    <script src="../js/zbz-core.js"></script>
     <script src="../js/edition-shared.js"></script>
-    <script src="../shared.js"></script>
-    <script src="../dashboard.js"></script>
+    <script src="../js/infra-shared.js"></script>
+    <script src="../js/infra-dashboard.js"></script>
 </body>
 </html>

@@ -11,14 +11,42 @@
 ;(function () {
     'use strict';
 
-    const S = window.ZBZ && ZBZ.Shared ? ZBZ.Shared : {};
-    const $ = S.$ || ((sel) => document.querySelector(sel));
-    const $$ = S.$$ || ((sel) => [...document.querySelectorAll(sel)]);
-    const esc = S.esc || ((s) => { if (s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); });
-    const fmtNum = S.formatNumber || ((n) => n == null ? '\u2014' : Number(n).toLocaleString('de-CH'));
-    const fmtPct = S.formatPercent || ((v, d) => v == null ? '\u2014' : (v * 100).toFixed(d || 1) + '%');
-    const fmtDate = S.formatDate || ((s) => s ? s.replace('T', ' ').slice(0, 19) : '\u2014');
-    const fetchJSON = S.fetchJSON || ((url) => fetch(url).then(r => r.ok ? r.json() : null).catch(() => null));
+    // Use ZBZ.Edition (edition-shared.js) or ZBZ.Shared (infra-utils.js) with local fallbacks
+    const E = (window.ZBZ && ZBZ.Edition) || (window.ZBZ && ZBZ.Shared) || {};
+    const $ = E.$ || ((sel) => document.querySelector(sel));
+    const $$ = E.$$ || ((sel) => [...document.querySelectorAll(sel)]);
+    const esc = E.esc || ((s) => { if (s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); });
+    const fmtNum = E.fmtNum || ((n) => n == null ? '\u2014' : Number(n).toLocaleString('de-CH'));
+    const fmtPct = ((v, d) => v == null ? '\u2014' : (v * 100).toFixed(d || 1) + '%');
+    const fmtDate = ((s) => s ? s.replace('T', ' ').slice(0, 19) : '\u2014');
+    const fetchJSON = ((url) => fetch(url).then(r => r.ok ? r.json() : null).catch(() => null));
+
+    // Local makeSortable (was in infra-utils.js, now standalone)
+    function makeSortable(tableEl) {
+        if (!tableEl) return;
+        const headers = $$('th.sortable', tableEl);
+        const tbody = $('tbody', tableEl);
+        if (!headers.length || !tbody) return;
+        let sortCol = null, sortAsc = true;
+        headers.forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.cellIndex;
+                if (sortCol === col) sortAsc = !sortAsc;
+                else { sortCol = col; sortAsc = true; }
+                headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+                th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+                const rows = [...tbody.rows];
+                rows.sort((a, b) => {
+                    const aK = a.cells[col]?.dataset.sort ?? a.cells[col]?.textContent.trim() ?? '';
+                    const bK = b.cells[col]?.dataset.sort ?? b.cells[col]?.textContent.trim() ?? '';
+                    const aN = parseFloat(aK), bN = parseFloat(bK);
+                    if (!isNaN(aN) && !isNaN(bN)) return sortAsc ? aN - bN : bN - aN;
+                    return sortAsc ? aK.localeCompare(bK) : bK.localeCompare(aK);
+                });
+                rows.forEach(r => tbody.appendChild(r));
+            });
+        });
+    }
 
     const OCR_URL = '../data/diagnostik_ocr.json';
     const TEI_URL = '../data/diagnostik_tei.json';
@@ -241,7 +269,7 @@
                 + '</tr>';
         }).join('');
 
-        if (S.makeSortable) S.makeSortable($('#ocr-doc-table'));
+        makeSortable($('#ocr-doc-table'));
     }
 
     function renderOcrStrat(ocr) {
@@ -404,9 +432,10 @@
     function initTabs() {
         $$('.ed-tab').forEach(btn => {
             btn.addEventListener('click', () => {
-                $$('.ed-tab').forEach(b => b.classList.remove('active'));
+                $$('.ed-tab').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
                 $$('.ed-tab-panel').forEach(p => p.classList.remove('active'));
                 btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
                 const panel = $('#panel-' + btn.getAttribute('data-tab'));
                 if (panel) panel.classList.add('active');
             });

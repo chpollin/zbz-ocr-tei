@@ -7,16 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css">
     <link rel="stylesheet" href="../css/edition.css">
-    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../css/infra.css">
 </head>
-<body class="viewer-page infrastruktur-page">
+<body class="viewer-page infrastruktur-page edition-page">
 
-    <div class="disclaimer-bar">
-        <strong>Epistemische Infrastruktur</strong> &mdash; Validierung der OCR/Layout/TEI-Pipeline.
-        Alle Ergebnisse sind KI-generiert. Online sind 4 Beispieldokumente verfuegbar, vollstaendige Daten liegen lokal vor.
-    </div>
-    <!-- Header -->
+    <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
+    <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
+
+    <!-- Viewer Header -->
+    <main id="main-content">
     <div class="viewer-header">
         <a href="index.html">&larr; Dashboard</a>
         <span class="doc-name" id="doc-title">Laden...</span>
@@ -78,7 +79,8 @@
                 </div>
             </div>
 
-            <div class="viewer-divider" id="divider"></div>
+            <div class="viewer-divider" id="divider" role="separator" aria-orientation="vertical"
+                 aria-label="Fensterteiler" tabindex="0"></div>
 
             <div class="viewer-panel" id="text-panel">
                 <div class="viewer-panel-header">
@@ -89,7 +91,8 @@
                 </div>
             </div>
 
-            <div class="viewer-divider hidden" id="divider2"></div>
+            <div class="viewer-divider hidden" id="divider2" role="separator" aria-orientation="vertical"
+                 aria-label="Fensterteiler" tabindex="0"></div>
 
             <div class="viewer-panel hidden" id="tei-panel">
                 <div class="viewer-panel-header">
@@ -170,11 +173,19 @@
             </div>
         </div>
     </div>
+    </main>
 
-    <script src="../shared.js"></script>
-    <script src="../entity-utils.js"></script>
-    <script src="../tei-viewer.js"></script>
-    <script src="../page-viewer.js"></script>
-    <script src="../viewer.js"></script>
+    <footer class="ed-footer" id="ed-footer-slot"></footer>
+
+    <script src="../js/zbz-core.js"></script>
+    <!-- Edition shared (nav/footer/disclaimer) -->
+    <script src="../js/edition-shared.js"></script>
+    <!-- Pipeline shared utilities -->
+    <script src="../js/infra-shared.js"></script>
+    <script src="../js/entity-utils.js"></script>
+    <script src="../js/zbz-tei-render.js"></script>
+    <script src="../js/infra-tei-viewer.js"></script>
+    <script src="../js/infra-page-viewer.js"></script>
+    <script src="../js/infra-viewer.js"></script>
 </body>
 </html>

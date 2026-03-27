@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/edition.css">
 </head>
 <body class="edition-page">
@@ -15,7 +16,6 @@
     <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
 
     <main id="main-content" class="ed-reader">
-        <!-- Compact Header: Title + Key Metadata -->
         <div class="ed-reader-header">
             <div class="ed-reader-header-left">
                 <a href="catalog.html" class="ed-back-link" title="Zurueck zum Katalog">&larr;</a>
@@ -24,7 +24,6 @@
             <div class="ed-reader-meta" id="reader-meta"></div>
         </div>
 
-        <!-- Revision History (collapsed by default) -->
         <div class="ed-revision-panel" id="revision-panel" style="display:none">
             <button class="ed-revision-toggle" id="revision-toggle" aria-expanded="false">
                 Bearbeitungshistorie <span class="ed-chevron">&#x25BC;</span>
@@ -32,7 +31,6 @@
             <div class="ed-revision-timeline" id="revision-timeline"></div>
         </div>
 
-        <!-- Edit toolbar (only visible when server running) -->
         <div class="ed-edit-toolbar ed-hidden" id="edit-toolbar">
             <button class="ed-toolbar-btn" id="edit-toggle" title="Bearbeitungsmodus">Bearbeiten</button>
             <button class="ed-toolbar-btn ed-btn-save ed-edit-only" id="save-btn" title="Speichern (Ctrl+S)" disabled>Speichern</button>
@@ -40,14 +38,11 @@
             <span class="ed-save-status ed-edit-only" id="save-status"></span>
         </div>
 
-        <!-- Panels -->
         <div class="ed-reader-panels">
-            <!-- Faksimile Panel with integrated controls -->
             <div class="ed-panel-faksimile" id="faks-panel">
                 <div class="ed-faks-viewport" id="faks-viewport">
                     <div class="ed-empty-state">Bild wird geladen...</div>
                 </div>
-                <!-- Viewer controls overlay (bottom of faksimile panel) -->
                 <div class="ed-faks-controls">
                     <div class="ed-faks-pages" id="page-thumbs"></div>
                     <div class="ed-faks-toolbar">
@@ -65,13 +60,14 @@
                 </div>
             </div>
 
-            <div class="ed-panel-divider" title="Ziehen zum Anpassen"></div>
+            <div class="ed-panel-divider" role="separator" aria-orientation="vertical"
+                 aria-label="Fensterteiler zwischen Faksimile und Text. Ziehen oder Pfeiltasten zum Anpassen."
+                 tabindex="0"></div>
 
-            <!-- Text Panel -->
             <div class="ed-panel-text ed-tei-serif">
-                <div class="ed-text-view-toggle">
-                    <button class="ed-view-tab active" id="view-text" title="Leseansicht">Text</button>
-                    <button class="ed-view-tab" id="view-xml" title="XML-Quellansicht">XML</button>
+                <div class="ed-text-view-toggle" role="group" aria-label="Ansicht wechseln">
+                    <button class="ed-view-tab active" id="view-text" title="Leseansicht" aria-pressed="true">Text</button>
+                    <button class="ed-view-tab" id="view-xml" title="XML-Quellansicht" aria-pressed="false">XML</button>
                 </div>
                 <div class="ed-text-content">
                     <div class="ed-skeleton ed-skeleton-block" style="height:400px"></div>
@@ -80,8 +76,12 @@
         </div>
     </main>
 
+    <footer class="ed-footer" id="ed-footer-slot"></footer>
+
+    <script src="js/zbz-core.js"></script>
     <script src="js/edition-shared.js"></script>
-    <script src="entity-utils.js"></script>
+    <script src="js/entity-utils.js"></script>
+    <script src="js/zbz-tei-render.js"></script>
     <script src="js/edition-tei.js"></script>
     <script src="js/edition-editor.js"></script>
     <script src="js/edition-reader.js"></script>

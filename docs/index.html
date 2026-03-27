@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nachlass Jeanne Hersch – Digitale Edition</title>
-    <meta name="description" content="Digitale Edition des Nachlasses von Jeanne Hersch aus der Zentralbibliothek Zuerich. 286 Dokumente, 4.152 Seiten.">
+    <meta name="description" content="Digitale Edition des Nachlasses von Jeanne Hersch, Zentralbibliothek Zuerich. 285 Dokumente, 4.117 Seiten.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/edition.css">
 </head>
 <body class="edition-page">
@@ -15,54 +16,52 @@
     <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
     <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
 
-    <!-- Hero: Titel + Suche + Metriken -->
     <header class="ed-hero">
         <div class="ed-hero-inner">
             <h1>Nachlass Jeanne Hersch</h1>
             <p class="ed-hero-subtitle">Digitale Edition der philosophischen Schriften aus der Zentralbibliothek Zuerich</p>
             <div class="ed-hero-search">
-                <input type="search" class="ed-search-input ed-search-hero" id="hero-search"
-                       placeholder="Volltextsuche in Dokumenten, Personen, Orten..." aria-label="Volltextsuche">
+                <input type="search" class="ed-search-hero" id="hero-search"
+                       placeholder="Volltextsuche in Dokumenten, Personen, Orten..." aria-label="Volltextsuche"
+                       role="combobox" aria-expanded="false" aria-autocomplete="list"
+                       aria-controls="search-suggestions" aria-activedescendant="">
                 <button class="ed-btn ed-btn-primary" id="hero-search-btn">Suchen</button>
             </div>
-            <div class="ed-search-suggestions" id="search-suggestions"></div>
+            <div class="ed-search-suggestions" id="search-suggestions" role="listbox" aria-label="Suchvorschlaege"></div>
             <div class="ed-hero-metrics">
                 <div class="ed-hero-metric">
-                    <span class="ed-hero-metric-value" id="metric-docs">286</span>
+                    <span class="ed-hero-metric-value" id="metric-docs">285</span>
                     <span class="ed-hero-metric-label">Dokumente</span>
                 </div>
                 <div class="ed-hero-metric">
-                    <span class="ed-hero-metric-value" id="metric-pages">4.152</span>
+                    <span class="ed-hero-metric-value" id="metric-pages">4.117</span>
                     <span class="ed-hero-metric-label">Seiten</span>
                 </div>
                 <div class="ed-hero-metric">
-                    <span class="ed-hero-metric-value" id="metric-langs">8+</span>
-                    <span class="ed-hero-metric-label">Sprachen</span>
+                    <span class="ed-hero-metric-value" id="metric-entities">-</span>
+                    <span class="ed-hero-metric-label">Entitaeten</span>
                 </div>
                 <div class="ed-hero-metric">
-                    <span class="ed-hero-metric-value" id="metric-period">1926-2000</span>
-                    <span class="ed-hero-metric-label">Zeitraum</span>
+                    <span class="ed-hero-metric-value" id="metric-types">4</span>
+                    <span class="ed-hero-metric-label">Dokumenttypen</span>
                 </div>
             </div>
         </div>
     </header>
 
     <main id="main-content">
-        <!-- Korpus + Fortschritt (2-Spalten) -->
         <section class="ed-section">
             <div class="ed-section-inner">
                 <div class="ed-landing-grid">
-                    <!-- Linke Spalte: Kategorien -->
-                    <div class="ed-landing-col">
+                    <div>
                         <h2 class="ed-section-title">Korpus durchsuchen</h2>
                         <div id="category-tiles"></div>
                         <p class="ed-landing-link">
                             <a href="catalog.html" class="ed-btn ed-btn-outline ed-btn-sm">Alle Dokumente im Katalog</a>
-                            <a href="register-personen.html" class="ed-btn ed-btn-outline ed-btn-sm">Register (Entitaeten)</a>
+                            <a href="register.html" class="ed-btn ed-btn-outline ed-btn-sm">Register</a>
                         </p>
                     </div>
-                    <!-- Rechte Spalte: Editorischer Fortschritt -->
-                    <div class="ed-landing-col">
+                    <div>
                         <h2 class="ed-section-title">Editorischer Fortschritt</h2>
                         <div class="ed-screening-compact" id="screening-overview"></div>
                         <div class="ed-progress-stack">
@@ -81,9 +80,6 @@
                                 <span class="ed-progress-pct" id="curation-pct"></span>
                             </div>
                         </div>
-                        <p class="ed-landing-link">
-                            <a href="infrastruktur/index.html" class="ed-btn ed-btn-outline ed-btn-sm">Promptotyping-Artefakte</a>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -91,7 +87,6 @@
 
         <hr class="divider-seuil">
 
-        <!-- Projekt + Curation-Hinweis -->
         <section class="ed-section">
             <div class="ed-section-inner ed-landing-about">
                 <h2 class="ed-section-title">Jeanne Hersch (1910–2000)</h2>
@@ -101,13 +96,18 @@
                     Vortraege und Korrespondenz in ueber acht Sprachen. Diese digitale Edition macht ihre Schriften
                     durch moderne OCR-Technologie und TEI-XML-Kodierung erstmals digital zugaenglich.
                 </p>
+                <p class="ed-about-text">
+                    Die Texte werden mit einer KI-gestuetzten Pipeline erzeugt (Promptotyping-Methodik):
+                    OCR-Erkennung, LLM-gestuetzte Textschicht-Korrektur, automatische Entitaeten-Erkennung
+                    und TEI-Kodierung. Jedes Dokument durchlaeuft ein LLM-Screening und wird anschliessend
+                    von einem Critical Expert in the Loop kuratiert.
+                </p>
                 <p class="ed-landing-link">
                     <a href="about.html" class="ed-btn ed-btn-outline ed-btn-sm">Mehr zum Projekt</a>
                 </p>
                 <div class="ed-info-box">
-                    <strong>Kuration:</strong> Diese Edition ist eine Leseansicht. Zum Bearbeiten und Kuratieren
-                    von TEI-Dokumenten starten Sie die Edition lokal mit dem
-                    <a href="about.html">Curation Server</a> (localhost:8000).
+                    <strong>Hinweis:</strong> Dies ist eine experimentelle, KI-gestuetzte Edition in laufender Kuration.
+                    Alle Texte wurden maschinell erzeugt und werden sukzessive geprueft.
                 </div>
             </div>
         </section>
@@ -115,6 +115,7 @@
 
     <footer class="ed-footer" id="ed-footer-slot"></footer>
 
+    <script src="js/zbz-core.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
     <script src="js/edition-shared.js"></script>
     <script src="js/edition-landing.js"></script>

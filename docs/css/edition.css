@@ -5,144 +5,36 @@
 
 /* --- Google Fonts (loaded in HTML <link>) --- */
 
-/* --- Custom Properties --- */
+/* --- Custom Properties (Edition-Only) --- */
+/* Note: All --h-* tokens and --ed-* aliases are in shared.css (loaded first).
+   This block only defines edition-specific tokens NOT in shared.css. */
 :root {
-  /* === Hersch Design Tokens === */
-  --h-bg: #F5F0E8;
-  --h-bg-alt: #EDE6D8;
-  --h-surface: #FAFAF7;
-  --h-bg-inverse: #2C2825;
-
-  --h-anthrazit: #2C2825;
-  --h-anthrazit-light: #3D3835;
-  --h-ziegelrot: #8B3A3A;
-  --h-ziegelrot-light: #A85454;
-  --h-ziegelrot-subtle: rgba(139, 58, 58, 0.08);
-  --h-preussischblau: #2B4C7E;
-  --h-preussischblau-light: #3D6199;
-  --h-preussischblau-subtle: rgba(43, 76, 126, 0.08);
-  --h-olivgruen: #6B7B5E;
-  --h-olivgruen-subtle: rgba(107, 123, 94, 0.08);
-
-  --h-text: #2C2825;
-  --h-text-secondary: #5C554E;
-  --h-text-muted: #8A8279;
-  --h-text-inverse: #F5F0E8;
-
-  --h-border: rgba(44, 40, 37, 0.12);
-  --h-border-emphasis: rgba(44, 40, 37, 0.25);
-  --h-border-accent: rgba(139, 58, 58, 0.3);
-  --h-shadow: rgba(44, 40, 37, 0.06);
-
-  /* === Edition Aliases (backward-compatible) === */
-  /* Colors */
+  /* Edition-specific color aliases */
   --ed-bg: var(--h-bg);
   --ed-bg-alt: var(--h-bg-alt);
   --ed-surface: var(--h-surface);
   --ed-border: var(--h-border-emphasis);
   --ed-border-light: var(--h-border);
-
   --ed-navy: var(--h-anthrazit);
   --ed-navy-light: var(--h-anthrazit-light);
   --ed-navy-dark: var(--h-anthrazit);
   --ed-gold: var(--h-ziegelrot);
   --ed-gold-light: var(--h-ziegelrot-light);
-
   --ed-text: var(--h-text);
   --ed-text-secondary: var(--h-text-secondary);
   --ed-text-muted: var(--h-text-muted);
   --ed-text-inverse: var(--h-text-inverse);
 
-  /* Entity colors */
-  --ed-entity-person: #2563eb;
-  --ed-entity-org: #7c3aed;
-  --ed-entity-place: #d97706;
-  --ed-entity-work: #0d9488;
-
-  /* XML syntax colors */
-  --ed-xml-decl: #666;
-  --ed-xml-comment: #6a737d;
-  --ed-xml-tag: #22863a;
-  --ed-xml-attr-name: #6f42c1;
-  --ed-xml-attr-value: #032f62;
-
-  /* Status */
-  --ed-success: #4A7C5A;
-  --ed-warning: #B8860B;
-  --ed-error: var(--h-ziegelrot);
-
-  /* Typography — Hersch: EB Garamond (body) + Jost (headings) */
-  --ed-font-sans: 'Jost', 'Futura', 'Gill Sans', sans-serif;
-  --ed-font-serif: 'EB Garamond', 'Garamond', 'Georgia', serif;
-  --ed-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-
-  /* Typographic Scale — Kleine Terz (1.2 ratio) */
-  --ed-text-xs: 0.694rem;
-  --ed-text-sm: 0.833rem;
-  --ed-text-base: 1rem;
-  --ed-text-lg: 1.2rem;
-  --ed-text-xl: 1.44rem;
-  --ed-text-2xl: 1.728rem;
-  --ed-text-3xl: 2.074rem;
-  --ed-text-4xl: 2.488rem;
+  /* Edition-only tokens */
   --ed-text-5xl: 2.986rem;
-  --ed-line-height: 1.65;
-  --ed-line-height-reading: 1.85;
-
-  /* Laufweite */
-  --ed-tracking-tight: -0.01em;
-  --ed-tracking-normal: 0em;
-  --ed-tracking-wide: 0.04em;
-  --ed-tracking-caps: 0.08em;
-
-  /* Spacing — extended from 7 to 11 steps */
-  --ed-space-xs: 0.25rem;
-  --ed-space-sm: 0.5rem;
-  --ed-space-md: 1rem;
-  --ed-space-lg: 1.5rem;
-  --ed-space-xl: 2rem;
-  --ed-space-2xl: 3rem;
-  --ed-space-3xl: 4rem;
   --ed-space-4xl: 6rem;
   --ed-space-5xl: 8rem;
   --ed-space-6xl: 12rem;
-
-  /* Layout */
-  --ed-max-width: 1280px;
   --ed-max-reading: 65ch;
-  --ed-nav-height: 56px;
-  --ed-radius-sm: 2px;
-  --ed-radius: 4px;
-  --ed-radius-lg: 6px;
-
-  /* Shadows — warm (Hersch) */
-  --ed-shadow-sm: 0 1px 2px var(--h-shadow);
-  --ed-shadow-md: 0 2px 8px var(--h-shadow);
-  --ed-shadow-lg: 0 4px 16px var(--h-shadow);
   --ed-shadow-card: 0 2px 8px var(--h-shadow);
-
-  /* Transitions */
-  --ed-transition: 200ms ease;
-  --ed-transition-fast: 150ms ease;
-  --ed-transition-slow: 400ms ease;
 }
 
-/* --- Reset & Base --- */
-*, *::before, *::after { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body.edition-page {
-  margin: 0;
-  padding: 0;
-  font-family: var(--ed-font-sans);
-  font-size: var(--ed-text-base);
-  line-height: var(--ed-line-height);
-  color: var(--ed-text);
-  background: var(--ed-bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* --- Reset & Base: see shared.css (loaded first) --- */
 
 a { color: var(--h-preussischblau); text-decoration: none; transition: color var(--ed-transition); }
 a:hover { text-decoration: underline; }
@@ -460,7 +352,6 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 768px) {
   .ed-landing-grid { grid-template-columns: 1fr; }
 }
-.ed-landing-col {}
 .ed-landing-link {
   margin-top: var(--ed-space-md);
   display: flex;
@@ -860,48 +751,48 @@ img { max-width: 100%; height: auto; }
 }
 .ed-badge-ner {
   background: rgba(147,51,234,0.1);
-  color: #7c3aed;
+  color: var(--h-accent-violet);
 }
 
 /* Curation Status Badges */
 .ed-badge-curation-uncurated {
   background: rgba(138, 138, 138, 0.12);
-  color: #6b7280;
+  color: var(--h-badge-none);
 }
 .ed-badge-curation-draft {
   background: rgba(245,158,11,0.15);
-  color: #b45309;
+  color: var(--h-badge-draft);
 }
 .ed-badge-curation-progress {
   background: rgba(59, 130, 246, 0.12);
-  color: #2563eb;
+  color: var(--h-badge-progress);
 }
 .ed-badge-curation-review {
   background: rgba(37,99,235,0.12);
-  color: #1d4ed8;
+  color: var(--h-badge-review);
 }
 .ed-badge-curation-approved {
   background: rgba(22,163,74,0.25);
-  color: #166534;
+  color: var(--h-badge-approved);
   font-weight: 700;
 }
 
 /* Screening Status Badges */
 .ed-badge-screening-approved {
   background: rgba(22, 163, 74, 0.15);
-  color: #15803d;
+  color: var(--h-badge-approved-light);
 }
 .ed-badge-screening-notes {
   background: rgba(245, 158, 11, 0.15);
-  color: #b45309;
+  color: var(--h-badge-draft);
 }
 .ed-badge-screening-review {
   background: rgba(220, 38, 38, 0.12);
-  color: #dc2626;
+  color: var(--h-badge-error);
 }
 .ed-badge-screening-none {
   background: rgba(138, 138, 138, 0.12);
-  color: #6b7280;
+  color: var(--h-badge-none);
 }
 
 /* Screening Filter (Katalog-Sidebar) */
@@ -999,11 +890,11 @@ img { max-width: 100%; height: auto; }
 }
 .ed-entity-resolved {
   background: rgba(34,197,94,0.15);
-  color: #16a34a;
+  color: var(--h-status-ok);
 }
 .ed-entity-unresolved {
   background: rgba(234,179,8,0.15);
-  color: #ca8a04;
+  color: var(--h-status-pending);
 }
 
 /* --- Catalog Layout --- */
@@ -1023,6 +914,7 @@ img { max-width: 100%; height: auto; }
   position: sticky;
   top: calc(var(--ed-nav-height) + var(--ed-space-md));
 }
+.ed-sidebar h2,
 .ed-sidebar h3 {
   font-size: var(--ed-text-sm);
   font-weight: 600;
@@ -1031,6 +923,7 @@ img { max-width: 100%; height: auto; }
   color: var(--ed-text-muted);
   margin: var(--ed-space-lg) 0 var(--ed-space-sm);
 }
+.ed-sidebar h2:first-child,
 .ed-sidebar h3:first-child { margin-top: 0; }
 .ed-search-input {
   width: 100%;
@@ -1280,7 +1173,7 @@ img { max-width: 100%; height: auto; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #E8E4DE;
+  background: var(--h-faks-bg);
 }
 /* Faksimile viewport (scrollable image area) */
 .ed-faks-viewport {
@@ -1563,7 +1456,7 @@ img { max-width: 100%; height: auto; }
 .ed-tei-foreign[data-lang="fr"] { border-left-color: var(--h-preussischblau); }
 .ed-tei-foreign[data-lang="en"] { border-left-color: var(--h-ziegelrot); }
 .ed-tei-foreign[data-lang="it"] { border-left-color: var(--h-olivgruen); }
-.ed-tei-foreign[data-lang="la"] { border-left-color: #9B7B4D; }
+.ed-tei-foreign[data-lang="la"] { border-left-color: var(--h-latin); }
 .ed-lang-label {
   display: inline-block;
   font-size: 0.65rem;
@@ -1618,11 +1511,7 @@ img { max-width: 100%; height: auto; }
 .ed-tei-entity:hover .ed-tei-entity-tip { display: block; }
 
 .ed-tei-entity.highlight-flash {
-  animation: ed-flash 1s ease;
-}
-@keyframes ed-flash {
-  0%, 100% { background: transparent; }
-  30% { background: rgba(184,134,11,0.2); }
+  animation: h-flash 1s ease;
 }
 
 /* Entity Sidebar */
@@ -1906,7 +1795,7 @@ img { max-width: 100%; height: auto; }
 
 /* --- Footer --- */
 .ed-footer {
-  background: #E5DFD4;
+  background: var(--h-bg-dark);
   color: var(--h-text-secondary);
   border-top: 1px solid var(--h-border-emphasis);
   padding: var(--ed-space-2xl) var(--ed-space-lg);
@@ -1938,11 +1827,7 @@ img { max-width: 100%; height: auto; }
   font-size: var(--ed-text-sm);
 }
 
-/* --- Focus Visible (Accessibility) --- */
-:focus-visible {
-  outline: 2px solid var(--h-ziegelrot);
-  outline-offset: 3px;
-}
+/* --- Focus Visible: see shared.css --- */
 
 /* --- Print --- */
 @media print {
@@ -2080,7 +1965,7 @@ img { max-width: 100%; height: auto; }
 
 .ed-btn-save.ed-dirty {
   background: var(--ed-gold);
-  color: #1a1a1a;
+  color: var(--h-text-dark);
 }
 
 .ed-btn-save:hover:not(:disabled) {
@@ -2098,7 +1983,7 @@ img { max-width: 100%; height: auto; }
 /* Edit toggle active state */
 #edit-toggle.active {
   background: var(--ed-gold);
-  color: #1a1a1a;
+  color: var(--h-text-dark);
 }
 
 /* XML Editor textarea */
@@ -2145,12 +2030,12 @@ img { max-width: 100%; height: auto; }
 }
 
 .ed-toast-success {
-  background: #059669;
+  background: var(--h-toast-success);
   color: var(--h-text-inverse);
 }
 
 .ed-toast-error {
-  background: #dc2626;
+  background: var(--h-toast-error);
   color: var(--h-text-inverse);
 }
 
@@ -2268,7 +2153,7 @@ img { max-width: 100%; height: auto; }
 }
 .ed-entity-tag-person { background: var(--ed-entity-person); }
 .ed-entity-tag-org { background: var(--ed-entity-org); }
-.ed-entity-tag-place { background: var(--ed-entity-place); color: #1a1a1a; }
+.ed-entity-tag-place { background: var(--ed-entity-place); color: var(--h-text-dark); }
 .ed-entity-tag-work { background: var(--ed-entity-work); }
 .ed-entity-tag-remove { background: var(--ed-error); }
 .ed-entity-tag-btn:hover { opacity: 0.85; }
@@ -2422,8 +2307,8 @@ img { max-width: 100%; height: auto; }
 
 /* Validation panel */
 .ed-validation-panel {
-  background: #fff3f3;
-  border: 1px solid #e74c3c;
+  background: var(--h-validation-bg);
+  border: 1px solid var(--h-validation-border);
   border-radius: var(--ed-radius);
   margin: 0 16px;
   font-size: var(--ed-text-sm);
@@ -2435,22 +2320,22 @@ img { max-width: 100%; height: auto; }
   justify-content: space-between;
   align-items: center;
   padding: 6px 12px;
-  background: #fde8e8;
-  border-bottom: 1px solid #e74c3c;
-  color: #c0392b;
+  background: var(--h-validation-header);
+  border-bottom: 1px solid var(--h-validation-border);
+  color: var(--h-validation-text);
 }
 .ed-validation-close {
   background: none;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  color: #c0392b;
+  color: var(--h-validation-text);
   padding: 0 4px;
 }
 .ed-validation-list { padding: 4px 0; }
 .ed-validation-item {
   padding: 3px 12px;
-  border-bottom: 1px solid #fde8e8;
+  border-bottom: 1px solid var(--h-validation-header);
   color: var(--ed-text);
   font-family: var(--ed-font-mono);
   font-size: 12px;
@@ -2521,6 +2406,7 @@ img { max-width: 100%; height: auto; }
 .ed-entity-dot-work { background: var(--ed-entity-work); }
 
 /* --- Register Table --- */
+.ed-register-row { cursor: pointer; }
 .ed-register-table tbody tr { transition: var(--ed-transition); }
 .ed-register-table tbody tr:hover { background: var(--ed-bg-alt, #f5f3ef); }
 .ed-register-table tbody tr.expanded { background: var(--ed-bg-alt, #f5f3ef); }
@@ -2742,8 +2628,8 @@ img { max-width: 100%; height: auto; }
 .voix[data-voix="a"] { border-top-color: var(--h-ziegelrot); }
 .voix[data-voix="b"] { border-top-color: var(--h-preussischblau); }
 .voix[data-voix="c"] { border-top-color: var(--h-olivgruen); }
-.voix[data-voix="d"] { border-top-color: #9B7B4D; }
-.voix[data-voix="e"] { border-top-color: #7B6B8A; }
+.voix[data-voix="d"] { border-top-color: var(--h-latin); }
+.voix[data-voix="e"] { border-top-color: var(--h-voix-e); }
 
 /* --- Hersch: Source Label --- */
 .source-label {
