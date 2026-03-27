@@ -294,10 +294,17 @@
     // --- Navigation ---
     var NAV_ITEMS = [
         { href: 'index.html', label: 'Start' },
-        { href: 'catalog.html', label: 'Katalog' },
-        { href: 'register.html', label: 'Register' },
-        { href: 'infrastruktur/diagnostik.html', label: 'Diagnostik' },
-        { href: 'infrastruktur/viewer.html', label: 'Viewer' }
+        { label: 'Edition', children: [
+            { href: 'catalog.html', label: 'Katalog' },
+            { href: 'register.html', label: 'Register' }
+        ]},
+        { label: 'Infrastruktur', children: [
+            { href: 'infrastruktur/index.html', label: 'Dashboard' },
+            { href: 'infrastruktur/viewer.html', label: 'Viewer' },
+            { href: 'infrastruktur/benchmark.html', label: 'Benchmark' },
+            { href: 'infrastruktur/diagnostik.html', label: 'Diagnostik' }
+        ]},
+        { href: 'about.html', label: 'Projekt' }
     ];
     var ICON_HAMBURGER = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
 
@@ -310,10 +317,19 @@
 
         var links = NAV_ITEMS.map(function (item) {
             if (item.children) {
-                var childActive = item.children.some(function (c) { return !isInfra && path.indexOf(c.href) > -1; });
+                var _isChildActive = function (c) {
+                    if (c.href.indexOf('infrastruktur/') === 0) {
+                        var sub = c.href.replace('infrastruktur/', '');
+                        return isInfra && path.indexOf(sub) > -1;
+                    }
+                    return !isInfra && path.indexOf(c.href) > -1;
+                };
+                var childActive = item.children.some(_isChildActive);
+                // reader.html gehoert zur Edition
+                if (!childActive && !isInfra && path.indexOf('reader.html') > -1 && item.label === 'Edition') childActive = true;
                 var childLinks = item.children.map(function (child) {
                     var href = hrefPrefix + child.href;
-                    var active = !isInfra && path.indexOf(child.href) > -1;
+                    var active = _isChildActive(child);
                     return '<li><a href="' + href + '"' + (active ? ' class="active"' : '') + '>' + child.label + '</a></li>';
                 }).join('');
                 return '<li class="ed-nav-dropdown">' +
@@ -348,12 +364,13 @@
         var p = isInfra ? '../' : '';
         target.innerHTML =
             '<div class="ed-footer-links">' +
-            '<a href="' + p + 'index.html">Startseite</a>' +
+            '<a href="' + p + 'index.html">Start</a>' +
             '<a href="' + p + 'catalog.html">Katalog</a>' +
             '<a href="' + p + 'register.html">Register</a>' +
-            '<a href="' + p + 'about.html">Projekt</a>' +
-            '<a href="' + p + 'infrastruktur/diagnostik.html">Diagnostik</a>' +
+            '<a href="' + p + 'infrastruktur/index.html">Dashboard</a>' +
             '<a href="' + p + 'infrastruktur/viewer.html">Viewer</a>' +
+            '<a href="' + p + 'infrastruktur/diagnostik.html">Diagnostik</a>' +
+            '<a href="' + p + 'about.html">Projekt</a>' +
             '</div>' +
             '<p class="ed-footer-disclaimer">Experimentelle Promptotyping-Edition &mdash; KI-gestuetzte Texterzeugung in laufender Kuration. ' +
             '<a href="' + p + 'about.html#promptotyping">Methodik</a></p>' +
