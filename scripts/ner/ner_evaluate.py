@@ -19,7 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from scripts.config import ENTITIES_DIR, PROJECT_ROOT
+from scripts.config import ENTITIES_DIR, PROJECT_ROOT, DOC_METADATA_PATH
 from scripts.ner.entity_index import EntityIndex
 from scripts.ner.entity_store import EntityStore
 
@@ -28,6 +28,19 @@ def _strip_diacritics(text: str) -> str:
     """Strip diacritics for lenient matching."""
     nfkd = unicodedata.normalize('NFKD', text)
     return ''.join(c for c in nfkd if not unicodedata.combining(c)).lower()
+
+
+def _load_language_map() -> dict:
+    """Laedt {doc_id: language_code} aus doc_metadata.json."""
+    if not DOC_METADATA_PATH.exists():
+        return {}
+    data = json.loads(DOC_METADATA_PATH.read_text(encoding='utf-8'))
+    docs = data.get('documents', data)
+    return {
+        did: meta.get('language', 'unknown')
+        for did, meta in docs.items()
+        if isinstance(meta, dict)
+    }
 
 
 def doc_report(doc_id: str) -> dict:
@@ -123,6 +136,71 @@ def corpus_summary() -> dict:
     }
 
 
+def corpus_summary_by_language() -> dict:
+    """NER-Metriken gruppiert nach Dokumentsprache."""
+    if not ENTITIES_DIR.exists():
+        return {"error": "no_entity_data"}
+
+    lang_map = _load_language_map()
+
+    doc_ids = sorted(
+        d.name for d in ENTITIES_DIR.iterdir()
+        if d.is_dir() and not d.name.startswith("_")
+    )
+
+    # Gruppiere Reports nach Sprache
+    by_lang = {}  # lang -> list of doc_reports
+    for doc_id in doc_ids:
+        report = doc_report(doc_id)
+        if "error" in report:
+            continue
+        lang = lang_map.get(doc_id, "unknown")
+        # Normalisiere mehrsprachige Codes (z.B. "fra/deu" -> "multilingual")
+        if "/" in lang:
+            lang = "multilingual"
+        by_lang.setdefault(lang, []).append(report)
+
+    # Aggregiere pro Sprache
+    result = {}
+    for lang, reports in sorted(by_lang.items()):
+        total_ents = sum(r["total_entities"] for r in reports)
+        total_mentions = sum(r["total_mentions"] for r in reports)
+        total_resolved = sum(r["resolved"] for r in reports)
+        total_pages = sum(r["pages"] for r in reports)
+
+        type_totals = {}
+        for r in reports:
+            for t, ts in r.get("by_type", {}).items():
+                type_totals[t] = type_totals.get(t, 0) + ts.get("total", 0)
+
+        type_pct = {
+            t: round(count / (total_ents or 1) * 100, 1)
+            for t, count in type_totals.items()
+        }
+
+        result[lang] = {
+            "documents": len(reports),
+            "total_pages": total_pages,
+            "total_entities": total_ents,
+            "total_mentions": total_mentions,
+            "avg_entities_per_doc": round(total_ents / (len(reports) or 1), 1),
+            "avg_density_per_page": round(total_ents / (total_pages or 1), 1),
+            "avg_mentions_per_entity": round(
+                total_mentions / (total_ents or 1), 1
+            ),
+            "resolved": total_resolved,
+            "resolution_rate": round(
+                total_resolved / (total_ents or 1), 3
+            ),
+            "type_distribution": type_pct,
+        }
+
+    return {
+        "by_language": result,
+        "languages": sorted(result.keys()),
+    }
+
+
 def evaluate_ground_truth(doc_id: str, gt_path: str,
                           lenient: bool = False) -> dict:
     """Precision/Recall gegen manuell annotiertes Ground Truth.
@@ -196,6 +274,26 @@ def evaluate_ground_truth(doc_id: str, gt_path: str,
 
 def _generate_html_report(corpus: dict, output_path: str) -> None:
     """Erzeugt einen HTML-Report mit NER-Korpus-Metriken."""
+    # Sprach-Daten sammeln
+    lang_data = corpus_summary_by_language()
+    lang_table_rows = ""
+    if "by_language" in lang_data:
+        for lang, stats in sorted(
+            lang_data["by_language"].items(),
+            key=lambda x: -x[1]["total_entities"],
+        ):
+            pct_of_corpus = round(
+                stats["documents"] / (corpus.get("documents", 1) or 1) * 100
+            )
+            lang_table_rows += (
+                f'<tr><td>{lang}</td>'
+                f'<td>{stats["documents"]} ({pct_of_corpus}%)</td>'
+                f'<td>{stats["total_entities"]}</td>'
+                f'<td>{stats["total_mentions"]}</td>'
+                f'<td>{stats["avg_density_per_page"]}</td>'
+                f'<td>{stats["resolution_rate"]:.0%}</td></tr>\n'
+            )
+
     # Per-Doc Daten sammeln
     doc_rows = []
     top_entities = []
@@ -278,6 +376,12 @@ th {{ background: #f0f4f8; }}
 <h2>Typ-Verteilung</h2>
 {type_bars}
 
+<h2>Per Sprache</h2>
+<table>
+<tr><th>Sprache</th><th>Docs</th><th>Entities</th><th>Mentions</th><th>Ent/Seite</th><th>Resolved</th></tr>
+{lang_table_rows}
+</table>
+
 <h2>Top-20 Entities (Cross-Doc-Frequenz)</h2>
 <table>
 <tr><th>Entity</th><th>Typ</th><th>Docs</th></tr>
@@ -317,6 +421,8 @@ def main():
                         help="Diakritik-normalisierter Vergleich")
     parser.add_argument("--json", action="store_true",
                         help="Ausgabe als JSON")
+    parser.add_argument("--by-language", action="store_true",
+                        help="Sprach-stratifizierte Korpus-Zusammenfassung")
     parser.add_argument("--report", help="HTML-Report Ausgabepfad")
     args = parser.parse_args()
 
@@ -326,6 +432,29 @@ def main():
             print("Keine Entity-Daten vorhanden.")
             return
         _generate_html_report(result, args.report)
+        return
+
+    if args.by_language:
+        result = corpus_summary_by_language()
+        if "error" in result:
+            print("Keine Entity-Daten vorhanden.")
+            return
+        if args.json:
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+        else:
+            for lang, stats in sorted(result['by_language'].items()):
+                print(f"\n{lang} ({stats['documents']} Docs):")
+                print(f"  Entities:    {stats['total_entities']}")
+                print(f"  Mentions:    {stats['total_mentions']}")
+                print(f"  Avg/Doc:     {stats['avg_entities_per_doc']}")
+                print(f"  Avg/Seite:   {stats['avg_density_per_page']}")
+                print(f"  Resolved:    {stats['resolution_rate']:.0%}")
+                types_str = ", ".join(
+                    f"{t} {p}%" for t, p in sorted(
+                        stats['type_distribution'].items(), key=lambda x: -x[1]
+                    )
+                )
+                print(f"  Typen:       {types_str}")
         return
 
     if args.summary:

@@ -58,9 +58,9 @@ if DOC_METADATA_PATH.exists():
 # Ebene 1: Layout-Typ
 LAYOUT_TYPE_HINTS = {
     "A": "LAYOUT: Single-column flowing text. Focus: distinguish headings from body text, detect footnotes at bottom of page.",
-    "B": "LAYOUT: TWO-COLUMN layout. CRITICAL: detect each column separately as independent text regions. Process left column first (top-to-bottom), then right column. Do NOT merge text across columns into one region. Column gutter is typically at ~50% page width.",
+    "B": "LAYOUT: TWO-COLUMN layout. CRITICAL: detect each column separately as independent text regions. Process left column first (top-to-bottom), then right column. Do NOT merge text across columns into one region. Column gutter is typically at ~50% page width. LANDSCAPE WARNING: If the page is wider than tall, there may be THREE or more columns -- scan the ENTIRE width and do NOT stop after two columns. The RIGHTMOST column is frequently missed.",
     "C": "LAYOUT: Monograph/book chapter (long document, many pages). Expect: running headers at top (-> page_header/_filter), chapter headings, continuous body paragraphs. Page numbers at bottom (-> page_footer/_filter).",
-    "D": "LAYOUT: Special/complex format. Examine carefully: may contain interviews (speaker names in bold/caps), illustrations, historical print, newspaper-style multi-article pages, mixed column layouts, or unusual formatting.",
+    "D": "LAYOUT: Special/complex format. Examine carefully: may contain interviews (speaker names in bold/caps), illustrations, historical print, newspaper-style multi-article pages, mixed column layouts, or unusual formatting. LANDSCAPE/WIDE PAGES: If the scan appears wider than tall, it may be a double-page spread -- detect regions on BOTH halves independently. Check the right half for missed text columns.",
 }
 
 # Ebene 2: Publikationsform
@@ -70,7 +70,7 @@ PUB_FORM_HINTS = {
     "bookSection": "FORMAT: Contribution in edited volume -- typically starts with title + author name, then body text. May have section numbering.",
     "brochure": "FORMAT: Brochure/pamphlet -- shorter text, may have different formatting, possibly with organizational logos.",
     "interview": "FORMAT: INTERVIEW -- expect speaker names (often in bold, CAPS, or followed by colon/dash) alternating with response text. Detect speaker labels as section_header, NOT as regular text.",
-    "encyclopedia": "FORMAT: ENCYCLOPEDIA entry -- expect lemma heading in bold/caps, structured sub-sections (definition, biography, works, bibliography). Dense, reference-style text.",
+    "encyclopedia": "FORMAT: ENCYCLOPEDIA entry -- expect lemma heading in bold/caps, structured sub-sections (definition, biography, works, bibliography). Dense, reference-style text. Often TWO or THREE narrow columns per page -- detect EACH column as separate text regions. Do not merge adjacent columns.",
     "anthology": "FORMAT: Anthology contribution -- title + author header, then essay body text.",
     "other": "FORMAT: Non-standard format -- examine layout carefully for structural patterns.",
 }
@@ -196,6 +196,15 @@ Look at the image for visible text NOT covered by any existing box. Add with:
 - text: first few visible words (max 50 chars)
 - changed: true, change_reason: "ADDED: ..."
 Check especially: top/bottom of page, gaps between boxes, column tops.
+CRITICAL for multi-column layouts: Verify the RIGHTMOST column has been detected. \
+Scan from the right edge of the page leftward -- if there is text in the rightmost \
+30% of the page without a bounding box, ADD it as a new region.
+
+PICTURE/FIGURE DETECTION:
+- Photographs, illustrations, portraits, logos, decorative elements -> "picture"
+- Graphs, charts, diagrams with data -> "picture"
+- Blank areas with only a frame/border are NOT pictures -> _filter
+- Text inside a framed box is still "text", not "picture"
 
 OUTPUT:
 - Return ALL regions (existing unchanged + corrected + new)
@@ -266,7 +275,10 @@ RULES:
 - Detect EVERY visible text region, even small ones (page numbers, headers)
 - Each bounding box should tightly enclose its text content
 - For MULTI-COLUMN layouts: detect each column's text blocks SEPARATELY
-- For LANDSCAPE or DOUBLE-PAGE scans: treat each page/column independently
+- For LANDSCAPE or DOUBLE-PAGE scans: treat each page/column independently. \
+CRITICAL: scan the FULL WIDTH of the image. The rightmost column or right-side \
+page is frequently missed -- explicitly check x > 60% of image width for \
+uncovered text regions.
 - Order regions in reading order: top-to-bottom, left-to-right
 - Do NOT merge separate paragraphs into one region
 - Do NOT miss paragraphs between other detected regions

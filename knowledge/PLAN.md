@@ -158,13 +158,13 @@ Agentengestuetztes Pre-Curation-Verfahren: Claude Code prueft jedes Dokument dur
 
 ### Frontend-TODOs (separate Session)
 
-- [ ] Datenquelle auf tei_final/ umstellen (Reader)
-- [ ] Screening-Badge im Katalog (APPROVED/WITH_NOTES/NEEDS_REVIEW/grau)
-- [ ] revisionDesc im Reader anzeigen (Bearbeitungshistorie)
-- [ ] Curation Editor: revisionDesc beim Speichern automatisch schreiben
-- [ ] docs/edition/ Duplikat klaeren (mergen oder loeschen)
-- [ ] Katalog-Filter nach Screening-Status
-- [ ] Publish-Workflow mit ZBZ testen
+- [x] Datenquelle auf tei_final/ umstellen (Reader) -- fetchFullTei() mit 3-Tier-Fallback (S38)
+- [x] Screening-Badge im Katalog (APPROVED/WITH_NOTES/NEEDS_REVIEW/grau) -- screeningBadgeHtml() in alle Views (S38)
+- [x] revisionDesc im Reader anzeigen (Bearbeitungshistorie) -- extractRevisionDesc() + Timeline-Panel (S38)
+- [x] Curation Editor: revisionDesc beim Speichern automatisch schreiben -- _inject_revision_change() serverseitig (S38)
+- [x] docs/edition/ Duplikat klaeren -- Verzeichnis existiert nicht, kein Duplikat
+- [x] Katalog-Filter nach Screening-Status -- Checkbox-Filter + Sorting + URL-Sync (S38)
+- [ ] Publish-Workflow mit ZBZ testen (ZBZ-Abnahme, nicht in Projekt-Scope)
 
 ---
 

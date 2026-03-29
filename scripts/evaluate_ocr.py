@@ -176,9 +176,13 @@ def normalize_for_comparison(text: str) -> str:
     text = text.replace('\u00AD', '')    # Soft hyphen entfernen
     # 4. Leerzeichen vor franzoesischer Interpunktion entfernen
     text = re.sub(r' +([;:?!])', r'\1', text)
-    # 5. Basis-Normalisierung (Whitespace, Smart Quotes, Strip)
+    # 5. Case-Normalisierung: Entfernt kuenstliche Case-Unterschiede
+    #    zwischen Pipeline (z.B. GROSSBUCHSTABEN-Ueberschriften) und
+    #    Referenz (Normalschreibung). Betrifft v.a. Docs 290, 100.
+    text = text.lower()
+    # 6. Basis-Normalisierung (Whitespace, Smart Quotes, Strip)
     text = normalize_text(text)
-    # 6. Unicode NFC
+    # 7. Unicode NFC
     text = unicodedata.normalize('NFC', text)
     return text
 
@@ -247,6 +251,85 @@ def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False)
 
     text = get_text(body)
     return normalize_for_comparison(text)
+
+
+def extract_pages_for_comparison(tei_path: Path,
+                                 include_footnotes: bool = False,
+                                 ) -> dict[int, str]:
+    """Extrahiert Text pro Seite aus TEI-XML fuer CER-Benchmarking.
+
+    Kombiniert die Seitenaufteilung von extract_pages_from_tei()
+    mit der Qualitaets-Normalisierung von extract_text_for_comparison().
+    """
+    with open(tei_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    try:
+        root = ET.fromstring(content)
+    except ET.ParseError:
+        return {}
+
+    for elem in root.iter():
+        if '}' in elem.tag:
+            elem.tag = elem.tag.split('}')[1]
+        for attr_key in list(elem.attrib.keys()):
+            if '}' in attr_key:
+                elem.attrib[attr_key.split('}')[1]] = elem.attrib.pop(attr_key)
+
+    body = root.find('.//body')
+    if body is None:
+        return {}
+
+    pages = {}
+    current_page = None
+    current_parts = []
+
+    def _flush():
+        nonlocal current_page, current_parts
+        if current_page is not None and current_parts:
+            raw = ''.join(current_parts)
+            text = normalize_for_comparison(raw)
+            if text.strip():
+                pages[current_page] = text
+        current_parts = []
+
+    def _extract_page_num(elem):
+        facs = elem.get('facs', '')
+        m = re.match(r'#facs_(\d+)', facs)
+        return int(m.group(1)) if m else None
+
+    def collect(elem):
+        nonlocal current_page, current_parts
+        if elem.tag == 'pb':
+            page_num = _extract_page_num(elem)
+            if page_num is not None:
+                _flush()
+                current_page = page_num
+        elif elem.tag == 'choice':
+            corr = elem.find('corr')
+            target = corr if corr is not None else elem.find('sic')
+            if target is not None:
+                collect(target)
+        elif elem.tag == 'note' and elem.get('place') == 'foot' and not include_footnotes:
+            pass
+        elif elem.tag == 'lb':
+            if elem.get('break') != 'no':
+                current_parts.append(' ')
+        else:
+            if elem.text:
+                current_parts.append(elem.text)
+            for child in elem:
+                collect(child)
+        if elem.tail and elem.tag not in ('body',):
+            current_parts.append(elem.tail)
+
+    if body.text:
+        current_parts.append(body.text)
+    for child in body:
+        collect(child)
+    _flush()
+
+    return pages
 
 
 def load_ocr_result(ocr_path: Path) -> str:
@@ -1407,6 +1490,114 @@ def evaluate_tei_vs_tei(doc_id: str, ref_dir: Path, pipeline_dir: Path) -> dict:
     diffs = find_differences(ref_text, pipe_text)
     result['differences'] = diffs[:30]
     result['error_categories'] = categorize_errors(diffs, len(ref_text))
+
+    return result
+
+
+def evaluate_tei_vs_tei_pagewise(doc_id: str, ref_dir: Path,
+                                  pipeline_dir: Path) -> dict:
+    """Seitenweiser CER-Vergleich: Referenz-TEI vs. Pipeline-TEI.
+
+    Extrahiert Text pro Seite aus beiden TEIs, berechnet CER/WER pro Seite,
+    und identifiziert Outlier-Seiten (CER > threshold).
+    """
+    result = {
+        'doc_id': doc_id,
+        'status': 'OK',
+        'cer': 0.0,
+        'wer': 0.0,
+        'page_count': 0,
+        'page_results': [],
+        'outlier_pages': [],
+    }
+
+    ref_path = _find_tei_path(doc_id, ref_dir)
+    if ref_path is None:
+        result['status'] = 'SKIP'
+        result['error'] = f"Referenz-TEI nicht gefunden: {doc_id}"
+        return result
+
+    pipe_path = pipeline_dir / f"{doc_id}_final.xml"
+    if not pipe_path.exists():
+        pipe_path = pipeline_dir / f"{doc_id}.xml"
+    if not pipe_path.exists():
+        result['status'] = 'SKIP'
+        result['error'] = f"Pipeline-TEI nicht gefunden: {doc_id}"
+        return result
+
+    ref_pages = extract_pages_for_comparison(ref_path)
+    pipe_pages = extract_pages_for_comparison(pipe_path)
+
+    if not ref_pages:
+        result['status'] = 'SKIP'
+        result['error'] = "Keine Seiten in Referenz-TEI"
+        return result
+
+    # Seiten matchen (gleiche Seitennummern)
+    matched_pages = sorted(set(ref_pages.keys()) & set(pipe_pages.keys()))
+    if not matched_pages:
+        # Fallback: Sequentielles Matching (1:1)
+        ref_sorted = sorted(ref_pages.keys())
+        pipe_sorted = sorted(pipe_pages.keys())
+        n = min(len(ref_sorted), len(pipe_sorted))
+        matched_pairs = list(zip(ref_sorted[:n], pipe_sorted[:n]))
+    else:
+        matched_pairs = [(p, p) for p in matched_pages]
+
+    total_ref_chars = 0
+    total_distance = 0
+    total_ref_words = 0
+    total_word_distance = 0
+
+    for ref_page, pipe_page in matched_pairs:
+        ref_text = ref_pages[ref_page]
+        pipe_text = pipe_pages.get(pipe_page, "")
+
+        page_cer = calculate_cer(ref_text, pipe_text)
+        page_wer = calculate_wer(ref_text, pipe_text)
+
+        page_result = {
+            'page': ref_page,
+            'ref_page': ref_page,
+            'pipe_page': pipe_page,
+            'cer': round(page_cer, 4),
+            'wer': round(page_wer, 4),
+            'ref_chars': len(ref_text),
+            'hyp_chars': len(pipe_text),
+        }
+        result['page_results'].append(page_result)
+
+        # Gewichtete Aggregation
+        try:
+            from rapidfuzz.distance import Levenshtein
+            dist = Levenshtein.distance(ref_text, pipe_text)
+        except ImportError:
+            dist = _levenshtein_distance(ref_text, pipe_text)
+        total_ref_chars += len(ref_text)
+        total_distance += dist
+
+        ref_words = ref_text.split()
+        pipe_words = pipe_text.split()
+        try:
+            from rapidfuzz.distance import Levenshtein as Lev
+            wdist = Lev.distance(ref_words, pipe_words)
+        except ImportError:
+            wdist = _levenshtein_distance(ref_words, pipe_words)
+        total_ref_words += len(ref_words)
+        total_word_distance += wdist
+
+    # Gewichtete Gesamt-CER
+    result['cer'] = round(total_distance / max(total_ref_chars, 1), 4)
+    result['wer'] = round(total_word_distance / max(total_ref_words, 1), 4)
+    result['page_count'] = len(result['page_results'])
+    result['ref_pages_total'] = len(ref_pages)
+    result['pipe_pages_total'] = len(pipe_pages)
+    result['matched_pages'] = len(matched_pairs)
+
+    # Outlier-Seiten (CER > 10%)
+    result['outlier_pages'] = [
+        pr for pr in result['page_results'] if pr['cer'] > 0.10
+    ]
 
     return result
 

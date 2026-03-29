@@ -17,7 +17,9 @@ from datetime import datetime
 from scripts.config import (
     REFERENZ_TEI_DIR, TEI_FINAL_DIR, EVALUATION_DIR, DOC_METADATA_PATH,
 )
-from scripts.evaluate_ocr import evaluate_tei_vs_tei, categorize_errors
+from scripts.evaluate_ocr import (
+    evaluate_tei_vs_tei, categorize_errors, evaluate_tei_vs_tei_pagewise,
+)
 
 
 def load_metadata() -> dict:
@@ -145,6 +147,36 @@ def aggregate_error_patterns(results: list[dict], metadata: dict) -> dict:
     return patterns
 
 
+def build_outlier_report(pagewise_results: dict, threshold: float = 0.10) -> dict:
+    """Identifiziert Outlier-Seiten (CER > threshold) ueber alle Dokumente."""
+    outliers = []
+    total_pages = 0
+
+    for doc_id, pw in pagewise_results.items():
+        if pw.get('status') != 'OK':
+            continue
+        for pr in pw.get('page_results', []):
+            total_pages += 1
+            if pr['cer'] > threshold:
+                outliers.append({
+                    'doc_id': doc_id,
+                    'page': pr['page'],
+                    'cer': pr['cer'],
+                    'wer': pr.get('wer', 0),
+                    'ref_chars': pr.get('ref_chars', 0),
+                })
+
+    outliers.sort(key=lambda x: -x['cer'])
+
+    return {
+        'threshold': threshold,
+        'total_pages_evaluated': total_pages,
+        'total_outlier_pages': len(outliers),
+        'outlier_rate': round(len(outliers) / max(total_pages, 1), 3),
+        'outliers': outliers,
+    }
+
+
 def generate_benchmark_html(data: dict, output_path: Path):
     """Generiert HTML-Benchmark-Report."""
     summary = data['summary']
@@ -266,6 +298,54 @@ Fussnoten exkludiert. Alignment bei Laengendifferenz.</p>
             )
         html_parts.append("</table>")
 
+    # Pagewise Outlier-Report
+    outlier_report = data.get('outlier_report', {})
+    if outlier_report and outlier_report.get('outliers'):
+        html_parts.append(
+            f"<h2>Outlier-Seiten (CER &gt; {outlier_report['threshold']*100:.0f}%)</h2>"
+            f"<p class='note'>{outlier_report['total_outlier_pages']} von "
+            f"{outlier_report['total_pages_evaluated']} Seiten "
+            f"({outlier_report['outlier_rate']*100:.1f}%)</p>"
+            "<table><tr><th>Doc</th><th>Seite</th><th>CER</th><th>WER</th>"
+            "<th>Ref-Zeichen</th><th></th></tr>"
+        )
+        for o in outlier_report['outliers'][:50]:  # Top 50
+            cer = o['cer']
+            html_parts.append(
+                f"<tr><td><b>{o['doc_id']}</b></td><td>S.{o['page']}</td>"
+                f"<td>{cer*100:.1f}%</td><td>{o['wer']*100:.1f}%</td>"
+                f"<td>{o['ref_chars']}</td>"
+                f"<td class='bar-cell'><div class='bar {cer_class(cer)}' "
+                f"style='width:{bar_width(cer):.0f}%'></div></td></tr>"
+            )
+        html_parts.append("</table>")
+
+    # Per-Doc Pagewise Details (nur fuer Docs mit Outliers)
+    pagewise_data = data.get('pagewise', {})
+    focus_docs = {o['doc_id'] for o in outlier_report.get('outliers', [])}
+    if pagewise_data and focus_docs:
+        html_parts.append("<h2>Seitendetails (Fokus-Dokumente)</h2>")
+        for doc_id in sorted(focus_docs):
+            pw = pagewise_data.get(doc_id)
+            if not pw:
+                continue
+            html_parts.append(
+                f"<h3>Doc {doc_id} (CER {pw['cer']*100:.1f}%, "
+                f"{pw['page_count']} Seiten)</h3>"
+                "<table><tr><th>Seite</th><th>CER</th><th>Ref-Zeichen</th>"
+                "<th></th></tr>"
+            )
+            for pr in pw.get('page_results', []):
+                cer = pr['cer']
+                html_parts.append(
+                    f"<tr><td>S.{pr['page']}</td>"
+                    f"<td>{cer*100:.1f}%</td>"
+                    f"<td>{pr['ref_chars']}</td>"
+                    f"<td class='bar-cell'><div class='bar {cer_class(cer)}' "
+                    f"style='width:{bar_width(cer):.0f}%'></div></td></tr>"
+                )
+            html_parts.append("</table>")
+
     html_parts.append(f"""
 <div class="timestamp">Generiert: {data['generated']}</div>
 </div></body></html>""")
@@ -290,6 +370,8 @@ def main():
                         help="Referenz-TEI-Verzeichnis (Default: data/referenz-tei)")
     parser.add_argument("--pipe-dir", type=Path, default=None,
                         help="Pipeline-TEI-Verzeichnis (Default: output/tei_final)")
+    parser.add_argument("--pagewise", action="store_true",
+                        help="Seitenweise CER berechnen und Outlier-Report generieren")
     args = parser.parse_args()
 
     ref_dir = args.ref_dir or REFERENZ_TEI_DIR
@@ -344,6 +426,22 @@ def main():
 
     print()
 
+    # Pagewise Analyse (optional)
+    pagewise_results = {}
+    if args.pagewise:
+        print("Seitenweise Analyse...")
+        for doc_id in doc_ids:
+            pw = evaluate_tei_vs_tei_pagewise(doc_id, ref_dir, pipe_dir)
+            if pw['status'] == 'OK':
+                pagewise_results[doc_id] = pw
+                n_outliers = len(pw.get('outlier_pages', []))
+                marker = f" [{n_outliers} Outlier]" if n_outliers else ""
+                print(f"  {doc_id:>5}: {pw['page_count']} Seiten, "
+                      f"CER={pw['cer']*100:.1f}%{marker}")
+            else:
+                print(f"  {doc_id:>5}: [SKIP] {pw.get('error', '')}")
+        print()
+
     # Zusammenfassung
     if not results:
         print("Keine Dokumente evaluiert.")
@@ -381,6 +479,21 @@ def main():
         'stratified': stratified,
         'error_patterns': error_patterns,
     }
+
+    # Pagewise-Daten hinzufuegen
+    if pagewise_results:
+        outlier_report = build_outlier_report(pagewise_results)
+        output['pagewise'] = {
+            doc_id: {
+                'cer': pw['cer'],
+                'wer': pw['wer'],
+                'page_count': pw['page_count'],
+                'page_results': pw['page_results'],
+                'outlier_pages': pw['outlier_pages'],
+            }
+            for doc_id, pw in pagewise_results.items()
+        }
+        output['outlier_report'] = outlier_report
 
     # Proxy-Metriken
     if args.proxy:
@@ -446,6 +559,18 @@ def main():
     print(f"\nNach Sprache:")
     for l, s in sorted(stratified['by_language'].items()):
         print(f"  {l}: n={s['count']}, CER={s['avg_cer']*100:.1f}%")
+
+    if pagewise_results:
+        outlier_report = output.get('outlier_report', {})
+        print(f"\nSeitenweise Analyse:")
+        print(f"  Seiten evaluiert: {outlier_report.get('total_pages_evaluated', 0)}")
+        print(f"  Outlier (>10%):   {outlier_report.get('total_outlier_pages', 0)} "
+              f"({outlier_report.get('outlier_rate', 0)*100:.1f}%)")
+        if outlier_report.get('outliers'):
+            print(f"  Top-5 Outlier:")
+            for o in outlier_report['outliers'][:5]:
+                print(f"    Doc {o['doc_id']} S.{o['page']}: "
+                      f"CER={o['cer']*100:.1f}%")
 
     return 0
 

@@ -463,6 +463,113 @@ class EntityIndex:
         }
 
 
+    def diagnostics(self) -> dict:
+        """Detaillierter Linking-Report mit Mention-Frequenzen.
+
+        Laedt alle EntityStores, zaehlt Mentions pro Index-Eintrag,
+        sortiert unverlinkte Entities nach Frequenz.
+        """
+        from scripts.ner.entity_store import EntityStore as _ES
+
+        # Mention-Daten sammeln: xml_id -> {mention_count, doc_ids}
+        mention_data = {xml_id: {"mention_count": 0, "doc_ids": set()}
+                        for xml_id in self.entries}
+
+        if ENTITIES_DIR.exists():
+            for doc_dir in sorted(ENTITIES_DIR.iterdir()):
+                if not doc_dir.is_dir() or doc_dir.name.startswith("_"):
+                    continue
+                try:
+                    store = _ES.load(doc_dir.name)
+                except Exception:
+                    continue
+                for rec in store.entities.values():
+                    if rec.entity_type in ("event", "date"):
+                        continue
+                    entry = self.match_normalized(rec.normalized, rec.entity_type)
+                    if entry and entry.xml_id in mention_data:
+                        mention_data[entry.xml_id]["mention_count"] += rec.count
+                        mention_data[entry.xml_id]["doc_ids"].add(doc_dir.name)
+
+        # Ergebnis aufbauen
+        by_type = {}
+        for entity_type in INDEX_FILES:
+            entries_of_type = [e for e in self.entries.values()
+                               if e.entity_type == entity_type]
+            linked = [e for e in entries_of_type if e.wikidata_qid]
+            unlinked = [e for e in entries_of_type if not e.wikidata_qid]
+
+            # Unlinked nach Mention-Count sortieren (haeufigste zuerst)
+            unlinked_entries = []
+            for e in unlinked:
+                md = mention_data.get(e.xml_id, {})
+                unlinked_entries.append({
+                    "xml_id": e.xml_id,
+                    "main_name": e.main_name,
+                    "variants": e.variants[:5],
+                    "mention_count": md.get("mention_count", 0),
+                    "docs_count": len(md.get("doc_ids", set())),
+                })
+            unlinked_entries.sort(key=lambda x: -x["mention_count"])
+
+            by_type[entity_type] = {
+                "total": len(entries_of_type),
+                "linked": len(linked),
+                "unlinked": len(unlinked),
+                "unlinked_entries": unlinked_entries,
+            }
+
+        total = len(self.entries)
+        total_linked = sum(t["linked"] for t in by_type.values())
+
+        return {
+            "total": total,
+            "linked": total_linked,
+            "unlinked": total - total_linked,
+            "by_type": by_type,
+            "_mention_data": {
+                xml_id: {
+                    "mention_count": md["mention_count"],
+                    "docs_count": len(md["doc_ids"]),
+                }
+                for xml_id, md in mention_data.items()
+            },
+        }
+
+    def export_review_csv(self, output_path: Path, mention_data: dict) -> None:
+        """Exportiert alle Entities als CSV fuer manuelles Review.
+
+        Spalten: xml_id, type, main_name, variants, mention_count,
+                 docs_count, wikidata_status, wikidata_qid, gnd_id
+        """
+        import csv
+
+        rows = []
+        for entry in self.entries.values():
+            md = mention_data.get(entry.xml_id, {})
+            rows.append({
+                "xml_id": entry.xml_id,
+                "type": entry.entity_type,
+                "main_name": entry.main_name,
+                "variants": "; ".join(entry.variants[:10]),
+                "mention_count": md.get("mention_count", 0),
+                "docs_count": md.get("docs_count", 0),
+                "wikidata_status": "linked" if entry.wikidata_qid else "unlinked",
+                "wikidata_qid": entry.wikidata_qid or "",
+                "gnd_id": entry.gnd_id or "",
+            })
+
+        # Sortieren: Typ ASC, dann Mention-Count DESC
+        rows.sort(key=lambda r: (r["type"], -r["mention_count"]))
+
+        output_path = Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_path, "w", encoding="utf-8-sig", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+            writer.writeheader()
+            writer.writerows(rows)
+
+
 def _xml_escape(text: str) -> str:
     """Escaped XML-Sonderzeichen."""
     return (text
@@ -562,6 +669,10 @@ def main():
                         help="Alle Stores in Index mergen")
     parser.add_argument("--auto-register", action="store_true", default=True,
                         help="Neue Entities automatisch registrieren")
+    parser.add_argument("--diagnostics", action="store_true",
+                        help="Detaillierter Linking-Report mit Mention-Frequenzen")
+    parser.add_argument("--export-csv", metavar="PATH",
+                        help="Review-Export als CSV (fuer manuelles Review)")
     parser.add_argument("--export-json", metavar="PATH",
                         help="Index als JSON exportieren (fuer Edition-Viewer)")
     args = parser.parse_args()
@@ -579,6 +690,29 @@ def main():
         )
         s = index.summary()
         print(f"Exportiert: {s['total_entries']} Eintraege nach {out_path}")
+        return
+
+    if args.diagnostics:
+        diag = index.diagnostics()
+        print(f"Entity Linking Diagnostics")
+        print(f"  Total: {diag['total']} | "
+              f"Linked: {diag['linked']} ({diag['linked']}/{diag['total']}) | "
+              f"Unlinked: {diag['unlinked']}")
+        for t, td in sorted(diag['by_type'].items()):
+            pct = round(td['linked'] / (td['total'] or 1) * 100)
+            print(f"\n  {t}: {td['total']} total, "
+                  f"{td['linked']} linked ({pct}%), "
+                  f"{td['unlinked']} unlinked")
+            if td['unlinked_entries']:
+                print(f"  Top unlinked (by mentions):")
+                for entry in td['unlinked_entries'][:10]:
+                    print(f"    {entry['xml_id']:15} "
+                          f"{entry['main_name']:30} "
+                          f"mentions={entry['mention_count']} "
+                          f"docs={entry['docs_count']}")
+        if args.export_csv:
+            index.export_review_csv(Path(args.export_csv), diag['_mention_data'])
+            print(f"\nCSV exportiert: {args.export_csv}")
         return
 
     if args.report:
