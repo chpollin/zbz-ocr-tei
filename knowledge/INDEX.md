@@ -30,8 +30,13 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [EDITION](EDITION.md) | How does the digital edition work? Architecture, Design System | Development, Edition | PIPELINE |
 | [CURATION](CURATION.md) | How does the Curation Editor work? Server, API, Editor | Development, Edition | EDITION, GND-STRATEGIE |
 | [CER-BENCHMARK](CER-BENCHMARK.md) | How good is the OCR? End-to-End CER, research context | Development, QA | TESTPLAN, ENGINES |
+| [QUALITY-PROXY](QUALITY-PROXY.md) | Corpus-wide OCR quality without ground truth, language audit | Development, QA | CER-BENCHMARK, PIPELINE |
 | [TEI-QUALITY](TEI-QUALITY.md) | Are TEIs schema-valid? Warnings, fix history, diagnostics | Development, QA | PIPELINE, TEI-MAPPING |
+| [JOURNAL-ARCHIVE](JOURNAL-ARCHIVE.md) | Arbeitsjournal Sessions 1–26 (Archiv) | Alle | JOURNAL |
+| [PROMPTOTYPING](PROMPTOTYPING.md) | Operative Werkzeuge der epistemischen Infrastruktur, CLI-Referenz | Development | PIPELINE |
+| [METHODIK](METHODIK.md) | Epistemische Infrastruktur, Verifikationskaskade, Dreischichtung | All | PROMPTOTYPING, PIPELINE |
 | [PLAN](PLAN.md) | What are the implementation phases? | Development | PROJEKT, PIPELINE |
+| [WIKIDATA-WORKFLOW](WIKIDATA-WORKFLOW.md) | Konkreter Linking-Workflow: Priorisierung, Matching, Review | Development, Edition | GND-STRATEGIE, PLAN |
 
 ---
 
@@ -55,9 +60,11 @@ PROJEKT (Vision, Ecosystem)
 EDITION   <-- digital edition (read + curate), depends on PIPELINE
     +-->  CURATION (edit mode, server, API)
 
-PLAN      <-- implementation phases, depends on PROJEKT + PIPELINE
-DECISIONS <-- cross-cutting, collects from all docs
-JOURNAL   <-- chronological, references all docs
+PLAN          <-- implementation phases, depends on PROJEKT + PIPELINE
+PROMPTOTYPING <-- operative Werkzeuge + CLI-Referenz
+METHODIK      <-- epistemische Infrastruktur (destilliert aus Paper)
+DECISIONS     <-- cross-cutting, collects from all docs
+JOURNAL       <-- chronological, references all docs
 ```
 
 ---
@@ -98,7 +105,8 @@ JOURNAL   <-- chronological, references all docs
 | OCR-Deduplizierung (E46) | `scripts/ocr_dedup.py`: Deterministische Entfernung von Token-Loops, Barcode-Artefakten, Jahrzahl-Wiederholungen | [PIPELINE](PIPELINE.md) |
 | zbz_hersch.rng (E48/E49) | Projektspezifisches RelaxNG-Schema (TEI P5 v4.10.2), ref-Pattern erweitert fuer GND + #zbz-IDs | [TEI-QUALITY](TEI-QUALITY.md) |
 | Dual-Attribut-Strategie (E50) | Entity-Refs: `ref="GND:{id}"` (primaer) + `corresp="#zbz-{typ}.{N}"` (intern) | [TEI-MAPPING](TEI-MAPPING.md) |
-| CER-Benchmark (E51) | End-to-End TEI-vs-TEI Evaluation: 24 Docs, Median CER 5.5% (nach Normalisierung 2.4%) | [CER-BENCHMARK](CER-BENCHMARK.md) |
+| CER-Benchmark (E51) | End-to-End TEI-vs-TEI Evaluation: Mean 4.18%, Median 1.83% (scope-bereinigt, 19 Docs) | [CER-BENCHMARK](CER-BENCHMARK.md) |
+| Quality Proxy (E53) | Corpus-wide OCR quality: Median Hit Rate 97.7%, 92% >=90%, Sprach-Audit 99.6% korrekt | [QUALITY-PROXY](QUALITY-PROXY.md) |
 | TEI-Diagnostik | Schema-Validierung, Warning-Tracking, Diagnostik-UI (`docs/infrastruktur/diagnostik.html`) | [TEI-QUALITY](TEI-QUALITY.md) |
 
 ---
@@ -133,7 +141,11 @@ knowledge/
 +-- DECISIONS.md          # Decided + Open items (prioritized)
 +-- ZBZ-WORKFLOW.md       # ZBZ editorial workflow + integration points
 +-- JOURNAL.md            # Chronological work journal
-+-- PLAN.md               # Implementation plan (phases 0-6 + cross-cutting)
++-- JOURNAL-ARCHIVE.md    # Arbeitsjournal Sessions 1-26 (Archiv)
++-- PROMPTOTYPING.md       # Operative Werkzeuge, CLI-Referenz, Arbeitszyklus
++-- METHODIK.md            # Epistemische Infrastruktur, Verifikationskaskade
++-- QUALITY-PROXY.md        # OCR quality proxy (dictionary hit rate, language audit)
++-- PLAN.md                # Implementation plan (phases 0-6 + cross-cutting)
 ```
 
 ---
@@ -147,4 +159,4 @@ knowledge/
 
 ---
 
-*Created: 2026-01-29 | Updated: 2026-03-15*
+*Created: 2026-01-29 | Updated: 2026-03-26*

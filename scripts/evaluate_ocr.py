@@ -258,8 +258,11 @@ def extract_pages_for_comparison(tei_path: Path,
                                  ) -> dict[int, str]:
     """Extrahiert Text pro Seite aus TEI-XML fuer CER-Benchmarking.
 
-    Kombiniert die Seitenaufteilung von extract_pages_from_tei()
-    mit der Qualitaets-Normalisierung von extract_text_for_comparison().
+    Aehnlich wie extract_pages_from_tei(), aber mit CER-spezifischer
+    Normalisierung (normalize_for_comparison) und <choice>/<note>-Behandlung
+    analog zu extract_text_for_comparison(). Die Duplizierung ist bewusst:
+    extract_pages_from_tei() liefert Rohtext, diese Funktion liefert
+    benchmark-normalisierten Text pro Seite.
     """
     with open(tei_path, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -1567,24 +1570,12 @@ def evaluate_tei_vs_tei_pagewise(doc_id: str, ref_dir: Path,
         }
         result['page_results'].append(page_result)
 
-        # Gewichtete Aggregation
-        try:
-            from rapidfuzz.distance import Levenshtein
-            dist = Levenshtein.distance(ref_text, pipe_text)
-        except ImportError:
-            dist = _levenshtein_distance(ref_text, pipe_text)
+        # Gewichtete Aggregation (CER * ref_chars fuer gewichteten Durchschnitt)
         total_ref_chars += len(ref_text)
-        total_distance += dist
+        total_distance += round(page_cer * len(ref_text))
 
-        ref_words = ref_text.split()
-        pipe_words = pipe_text.split()
-        try:
-            from rapidfuzz.distance import Levenshtein as Lev
-            wdist = Lev.distance(ref_words, pipe_words)
-        except ImportError:
-            wdist = _levenshtein_distance(ref_words, pipe_words)
-        total_ref_words += len(ref_words)
-        total_word_distance += wdist
+        total_ref_words += len(ref_text.split())
+        total_word_distance += round(page_wer * len(ref_text.split()))
 
     # Gewichtete Gesamt-CER
     result['cer'] = round(total_distance / max(total_ref_chars, 1), 4)

@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-03-26
+updated: 2026-03-29
 tags: [zbz-ocr-tei, project, ecosystem, vision]
 status: active
 ---
@@ -60,7 +60,7 @@ Since the alignment meeting (25.02.2026), zbz-ocr-tei covers the **entire pipeli
 | M0 | Image extraction + QA viewer | Images + viewer available | Done |
 | M1 | OCR validated | >=93% accuracy all types | Done (see [TESTPLAN](TESTPLAN.md) + Dashboard) |
 | M2 | Layout + PAGE-XML | Regions + BBox + PAGE-XML for all docs | Done |
-| M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Done** (285 Docs, 11,685 Entities, Wikidata ~15% ongoing) |
+| M3 | NER + Wikidata | Entity recall >70%, linking >50% | **Done** (285 Docs, 11,685 Entities, 2,101/4,504 Entities Linked = 47%. Workflow: [WIKIDATA-WORKFLOW](WIKIDATA-WORKFLOW.md)) |
 | M4 | TEI-XML | DTA-compliant TEI, schema-valid | **Done** (285/285 unified, **285/285 schema-valide** gegen zbz_hersch.rng, 29 Warnings. Details: [TEI-QUALITY](TEI-QUALITY.md)) |
 | M5 | Production run | 285 docs processed, spot-check QA passed | **In Progress** (285/285 erzeugt + gescreent: 242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW. Kurationspilot ausstehend) |
 
@@ -88,12 +88,12 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 | PAGE-XML generator | Done | `scripts/layout/page_xml_generator.py` + `mets_generator.py` |
 | Document classification | Done | `scripts/classify_docs.py` (E27) |
 | NER Extraction | **Done** | `scripts/ner/` (7 Module, E34/E35). 285/286 Docs, 11,685 Entities, 26,197 Mentions |
-| Entity Index | **Done** | 4,504 Eintraege in `data/entities/`, 341 mit Wikidata. Linking laeuft |
+| Entity Index | **Done** | 4,504 Eintraege in `data/entities/`, 2,101 mit Wikidata/GND (47%). Diagnostik: `--diagnostics --export-csv` |
 | TEI NER Injection | **285/285** | Entity-Tags mit internen IDs (zbz-p/o/l/w.N) direkt in Step 1 |
 | **Unified TEI Pipeline** | **285/285** | `scripts/tei/tei_unified.py` (E32/E37-E40). **285/285 schema-valide** gegen zbz_hersch.rng (E48/E49). 29 Warnings (W9/W10/W11) |
 | TEI Validator | Done | `scripts/tei/tei_validator.py`: RelaxNG + 8 Projekt-Regeln + 14 Warnings |
 | TEI Post-Assembly Fixes | Done | `tei_step3.py`: Fix E (pb-Duplikate), F (leere div), G (leere figure), lb-Injection |
-| Evaluation + Dashboard | Done | `scripts/evaluate_ocr.py` + `docs/index.html` |
+| Evaluation + Dashboard | Done | `scripts/evaluate_ocr.py` + `benchmark_cer.py --pagewise` + `docs/index.html` |
 | Digitale Edition + Curation | Done | `docs/` (E33) + Curation Server (E36). Details: [EDITION](EDITION.md), [CURATION](CURATION.md) |
 | **Agent-Based Quality Screening** | **Done** | 285/285 Docs gescreent + nachbearbeitet. 242 APPROVED (85%), 43 WITH_NOTES (15%), 0 NEEDS_REVIEW (0%) |
 | OCR Deduplizierung | Done | `scripts/ocr_dedup.py` (E46). 3 Docs bereinigt (900, 1100, 2630) |
@@ -135,4 +135,4 @@ Aktuelle Metriken (CER, Dateizahlen, Validierung): siehe Dashboard (`docs/index.
 
 ---
 
-*Created: 2026-02-18 | Updated: 2026-03-26*
+*Created: 2026-02-18 | Updated: 2026-03-29*

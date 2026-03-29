@@ -47,7 +47,13 @@ Der Edit-Button erscheint automatisch wenn der Curation Server laeuft (Health-Ch
 | `edition-register.js` | Register: Typ-Tabs, Suche, Resolution-Filter, Detail-Expansion mit Doc-Titeln |
 | `edition-reader.js` | Reader: Integrierter Viewer (Pan/Zoom/Rotate/Fit), Text/XML-Toggle, Edit-Modus |
 | `edition-tei.js` | TEI Renderer: rekursives Node-Rendering, Entity-Extraktion, XML-Ansicht |
-| `edition-editor.js` | Curation: WYSIWYG, DOM-zu-XML Serializer, Save/Validate (nur mit Server) |
+| `edition-editor.js` | Curation Orchestrator (laedt 6 Sub-Module aus `js/editor/`) |
+| `editor/editor-api.js` | Server-Erkennung, API-Helpers, Editor-State |
+| `editor/editor-save.js` | Save, Dirty State, Toast Notifications |
+| `editor/editor-serialize.js` | DOM-zu-XML Serialisierung |
+| `editor/editor-block-toolbar.js` | Block-Editing: Typ-Wechsel, Split, Merge, Delete, B/I/U |
+| `editor/editor-entity.js` | Entity-Tagging, Popover, Autocomplete |
+| `editor/editor-render.js` | TEI-XML zu editierbarem DOM Rendering |
 | `entity-utils.js` | Entity-Resolution: ZBZ-ID/Wikidata/GND Lookup, Entity-Spans, Extraktion |
 
 ### Daten (generiert via `scripts/generate_edition_data.py`)
@@ -81,11 +87,11 @@ Badge-Konstanten zentral in `edition-shared.js`: `SCREENING_LABELS`, `SCREENING_
 
 ## Design System
 
-- **Farben:** Parchment `#faf8f5` (Hintergrund), Scholarly Navy `#1e3a5f` (Primaer), Warm Gold `#b8860b` (Akzent)
-- **Typographie:** Inter (UI), Source Serif 4 (Lesen), JetBrains Mono (Code/XML)
-- **Responsive:** 1200px (voll), 768px (kompakt), 480px (mobil)
-- **Namespace:** `ZBZ.Edition` (ES6+/IIFE, kein Build-Tool)
-- **CSS:** `--ed-*` Variablen, `.ed-*` Klassenpraefix
+Siehe [DESIGN](DESIGN.md) fuer das vollstaendige Hersch Design System:
+EB Garamond (Brotschrift), Jost (Ueberschriften), Ziegelrot-Akzent,
+zweistufige Token-Architektur (`--h-*` Hersch-Tokens / `--ed-*` Edition-Aliases).
+
+Implementierung: `docs/css/shared.css` (970 Zeilen, vollstaendiges Token-System).
 
 ---
 
@@ -146,4 +152,4 @@ Erzeugt: `catalog.json` (285 Docs, Screening + Curation), `search_index.json` (2
 
 ---
 
-*Created: 2026-03-09 | Updated: 2026-03-15*
+*Created: 2026-03-09 | Updated: 2026-03-26*

@@ -486,6 +486,8 @@ class EntityIndex:
                 for rec in store.entities.values():
                     if rec.entity_type in ("event", "date"):
                         continue
+                    if not rec.normalized:
+                        continue
                     entry = self.match_normalized(rec.normalized, rec.entity_type)
                     if entry and entry.xml_id in mention_data:
                         mention_data[entry.xml_id]["mention_count"] += rec.count
@@ -562,10 +564,17 @@ class EntityIndex:
         # Sortieren: Typ ASC, dann Mention-Count DESC
         rows.sort(key=lambda r: (r["type"], -r["mention_count"]))
 
+        if not rows:
+            print("Keine Entities im Index -- CSV nicht erstellt.")
+            return
+
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
+        fieldnames = ["xml_id", "type", "main_name", "variants",
+                      "mention_count", "docs_count", "wikidata_status",
+                      "wikidata_qid", "gnd_id"]
         with open(output_path, "w", encoding="utf-8-sig", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(rows)
 

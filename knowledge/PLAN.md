@@ -77,9 +77,11 @@ Prerequisite: OCR text exists (independent of PAGE-XML).
 - [x] Entity Index Merge: 4,504 Eintraege (person 1,979, org 698, place 661, work 762)
 - [x] TEI Injection Production: 285/285 Docs mit Entity-Markup (Dual-Attribut E50: ref=GND + corresp=#zbz)
 - [x] NER Evaluation: HTML-Report (output/ner_report.html)
-- [ ] Wikidata Reconciliation: 67/285 Docs fertig (15%), restliche 218 pending
+- [x] Wikidata Reconciliation: 2,101/4,504 Entities verlinkt (47%). Diagnostik + CSV-Export: `--diagnostics --export-csv`
 - [x] Viewer: WD/zbz-ID Support in tei-viewer.js + edition-tei.js (Session 23)
-- [ ] Targets: Recall >70%, Precision >80%, Wikidata linking >50%
+- [x] NER-Eval Sprachstratifizierung: `--by-language` (fra 45%, deu 38%, eng 32%)
+- [ ] Wikidata-Workflow ausfuehren: Batch-Run + manueller Review ([WIKIDATA-WORKFLOW](WIKIDATA-WORKFLOW.md))
+- [ ] Targets: Recall >70%, Precision >80%, Wikidata linking >60%
 
 ## Phase 4 -- TEI-XML Extension
 
@@ -113,7 +115,7 @@ Current: Rule-based generator (flat structure). Gemini Vision TEI (E30): Pilot D
 - [x] Proxy-Metriken fuer 260 Docs ohne Ground Truth
 - [x] Dashboard-Integration (`benchmark_tei` Key in dashboard.json)
 - [x] Forschungsvergleich dokumentiert: [CER-BENCHMARK](CER-BENCHMARK.md)
-- [ ] Seitenweises CER-Benchmarking (pro Seite statt pro Dokument)
+- [x] Seitenweises CER-Benchmarking: `benchmark_cer.py --pagewise` + `evaluate_tei_vs_tei_pagewise()` (51 Outlier-Seiten >10% in 25 GT-Docs)
 - [ ] Schema-Validierung x CER Kreuzanalyse
 - [ ] Zielwerte: Text CER <3.5% (Median), Structural accuracy >80%, Entity P/R >80%/>70%
 
@@ -192,7 +194,7 @@ Systematische Verbesserung der OCR-Qualitaet durch iteratives Experimentieren un
 - [ ] Sprachspezifische Korrektur-Prompts
 
 ### Phase 3: Strukturelle Verbesserungen
-- [ ] Seitenweises CER-Benchmarking (pro-Seite statt pro-Dokument)
+- [x] Seitenweises CER-Benchmarking: `--pagewise` Flag, Outlier-Report (51/270 Seiten >10%)
 - [ ] Quality-Gate zwischen Pipeline-Stufen
 - [ ] Schema-Validierung x CER Kreuzanalyse als Diagnostik
 
