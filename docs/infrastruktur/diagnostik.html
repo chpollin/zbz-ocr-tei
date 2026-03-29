@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnostik – Digitale Edition Jeanne Hersch</title>
+    <title>Diagnostik-Werkbank – Digitale Edition Jeanne Hersch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,80 +16,181 @@
     <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
     <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
 
-
     <main id="main-content">
         <div class="diag-wrap">
-            <h1 class="ed-section-title">Diagnostik</h1>
+            <h1 class="ed-section-title">Diagnostik-Werkbank</h1>
             <div id="loading" role="status">Lade Diagnostik-Daten...</div>
             <div id="app" class="hidden">
 
                 <div class="ed-tabs" id="tabs" role="tablist" aria-label="Diagnostik-Bereiche">
-                    <button class="ed-tab active" data-tab="overview" role="tab" id="tab-overview"
-                            aria-selected="true" aria-controls="panel-overview">Uebersicht</button>
-                    <button class="ed-tab" data-tab="ocr" role="tab" id="tab-ocr"
-                            aria-selected="false" aria-controls="panel-ocr">OCR-Qualitaet</button>
+                    <button class="ed-tab active" data-tab="landscape" role="tab" id="tab-landscape"
+                            aria-selected="true" aria-controls="panel-landscape">Qualitaetslandschaft</button>
+                    <button class="ed-tab" data-tab="cer" role="tab" id="tab-cer"
+                            aria-selected="false" aria-controls="panel-cer">CER-Werkbank</button>
                     <button class="ed-tab" data-tab="tei" role="tab" id="tab-tei"
-                            aria-selected="false" aria-controls="panel-tei">TEI-Qualitaet</button>
+                            aria-selected="false" aria-controls="panel-tei">TEI &amp; Vollstaendigkeit</button>
+                    <button class="ed-tab" data-tab="entity" role="tab" id="tab-entity"
+                            aria-selected="false" aria-controls="panel-entity">Entities</button>
                     <button class="ed-tab" data-tab="activity" role="tab" id="tab-activity"
                             aria-selected="false" aria-controls="panel-activity">Aktivitaet</button>
                 </div>
 
-                <!-- Uebersicht -->
-                <div class="ed-tab-panel active" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
-                    <div class="ed-metric-grid" id="ov-metrics"></div>
-                    <h2 class="ed-section">Validierungs-Timeline</h2>
-                    <div id="ov-val-timeline"></div>
+                <!-- Tab 1: Qualitaetslandschaft -->
+                <div class="ed-tab-panel active" id="panel-landscape" role="tabpanel" aria-labelledby="tab-landscape">
+                    <div class="ed-metric-grid" id="ls-metrics"></div>
+
+                    <h2 class="ed-section">Corpus-Uebersicht <span class="ed-section-sub" id="ls-corpus-sub"></span></h2>
+                    <div id="ls-corpus-legend" class="diag-legend"></div>
+                    <div id="ls-corpus-map" class="diag-corpus-map"></div>
+
                     <h2 class="ed-section">CER-Reduktions-Timeline</h2>
-                    <div id="ov-cer-timeline"></div>
+                    <div id="ls-cer-timeline"></div>
+
                     <h2 class="ed-section">Letzte Aktivitaet</h2>
-                    <div id="ov-last-activity"></div>
+                    <div id="ls-last-activity"></div>
                 </div>
 
-                <!-- OCR-Qualitaet -->
-                <div class="ed-tab-panel" id="panel-ocr" role="tabpanel" aria-labelledby="tab-ocr">
-                    <div class="ed-metric-grid" id="ocr-metrics"></div>
-                    <h2 class="ed-section">CER pro Dokument</h2>
-                    <div class="ed-table-wrap"><table class="ed-table" id="ocr-doc-table">
+                <!-- Tab 2: CER-Werkbank -->
+                <div class="ed-tab-panel" id="panel-cer" role="tabpanel" aria-labelledby="tab-cer">
+
+                    <h2 class="ed-section">Ground Truth (25 Docs)</h2>
+                    <div class="ed-metric-grid" id="cer-gt-metrics"></div>
+                    <h3 class="ed-section">CER-Verteilung</h3>
+                    <div id="cer-histogram" class="diag-histogram"></div>
+                    <h3 class="ed-section">CER pro Dokument</h3>
+                    <div class="ed-table-wrap"><table class="ed-table" id="cer-doc-table">
                         <thead><tr>
                             <th class="sortable">Doc</th>
                             <th class="sortable">CER</th>
                             <th class="sortable">WER</th>
+                            <th class="sortable">Hit Rate</th>
                             <th class="sortable">Sprache</th>
                             <th class="sortable">Typ</th>
                             <th class="sortable">Scope</th>
                             <th class="sortable">Pipeline-Delta</th>
+                            <th>Aktion</th>
                         </tr></thead>
                         <tbody></tbody>
                     </table></div>
-                    <div class="ed-stat-grid" id="ocr-strat"></div>
+                    <div class="ed-stat-grid" id="cer-strat"></div>
+
+                    <h2 class="ed-section">Corpus-Proxy (285 Docs)</h2>
+                    <div class="ed-metric-grid" id="cer-proxy-metrics"></div>
+                    <h3 class="ed-section">Hit-Rate-Verteilung</h3>
+                    <div id="proxy-histogram" class="diag-histogram"></div>
+                    <h3 class="ed-section">Problem-Dokumente</h3>
+                    <p class="ed-hint">Docs mit Hit Rate &lt; 90% oder Vollstaendigkeit != OK</p>
+                    <div class="ed-table-wrap"><table class="ed-table" id="proxy-problem-table">
+                        <thead><tr>
+                            <th class="sortable">Doc</th>
+                            <th class="sortable">Hit Rate</th>
+                            <th class="sortable">Vollst.</th>
+                            <th class="sortable">Sprache</th>
+                            <th class="sortable">Typ</th>
+                            <th>Aktion</th>
+                        </tr></thead>
+                        <tbody></tbody>
+                    </table></div>
+
                     <h2 class="ed-section">Konfusionsmatrix: Top-10 Substitutionen</h2>
-                    <div class="ed-table-wrap"><table class="ed-table" id="ocr-conf-table">
+                    <div class="ed-table-wrap"><table class="ed-table" id="cer-conf-table">
                         <thead><tr><th>Ref</th><th>Hyp</th><th class="num">Anzahl</th></tr></thead>
                         <tbody></tbody>
                     </table></div>
+
+                    <h2 class="ed-section diag-collapsible" data-target="cer-pipeline-section">Pipeline-Effekt <span class="diag-toggle">&#9654;</span></h2>
+                    <div id="cer-pipeline-section" class="diag-collapsed">
+                        <div class="ed-table-wrap"><table class="ed-table" id="cer-pipeline-table">
+                            <thead><tr>
+                                <th class="sortable">Doc</th>
+                                <th class="sortable">OCR-Baseline</th>
+                                <th class="sortable">End-to-End</th>
+                                <th class="sortable">Delta</th>
+                                <th class="sortable">Sprache</th>
+                                <th class="sortable">Typ</th>
+                            </tr></thead>
+                            <tbody></tbody>
+                        </table></div>
+                    </div>
+
+                    <h2 class="ed-section diag-collapsible" data-target="cer-pagewise-section">Seiten-Analyse (Pagewise CER) <span class="diag-toggle">&#9654;</span></h2>
+                    <div id="cer-pagewise-section" class="diag-collapsed">
+                        <div class="ed-metric-grid" id="cer-pw-metrics"></div>
+                        <h3 class="ed-section">Outlier-Seiten (CER &gt; 10%)</h3>
+                        <div class="ed-table-wrap"><table class="ed-table" id="cer-pw-outlier-table">
+                            <thead><tr>
+                                <th class="sortable">Doc</th>
+                                <th class="sortable">Seite</th>
+                                <th class="sortable">CER</th>
+                                <th class="sortable">Ref-Zeichen</th>
+                            </tr></thead>
+                            <tbody></tbody>
+                        </table></div>
+                    </div>
                 </div>
 
-                <!-- TEI-Qualitaet -->
+                <!-- Tab 3: TEI & Vollstaendigkeit -->
                 <div class="ed-tab-panel" id="panel-tei" role="tabpanel" aria-labelledby="tab-tei">
                     <div class="ed-metric-grid" id="tei-metrics"></div>
-                    <h2 class="ed-section">Warnings</h2>
+
+                    <h2 class="ed-section">Vollstaendigkeit</h2>
+                    <div class="ed-metric-grid" id="tei-compl-metrics"></div>
+                    <h3 class="ed-section">Problematische Dokumente</h3>
+                    <p class="ed-hint">Docs mit fehlenden, leeren oder duennen Seiten</p>
+                    <div class="ed-table-wrap"><table class="ed-table" id="tei-compl-table">
+                        <thead><tr>
+                            <th class="sortable">Doc</th>
+                            <th class="sortable num">Erwartet</th>
+                            <th class="sortable num">TEI</th>
+                            <th class="sortable num">Leer</th>
+                            <th class="sortable num">Duenn</th>
+                            <th class="sortable">Status</th>
+                            <th>Aktion</th>
+                        </tr></thead>
+                        <tbody></tbody>
+                    </table></div>
+
+                    <h2 class="ed-section">TEI-Validierung</h2>
+                    <h3 class="ed-section">Warnings</h3>
                     <div class="ed-table-wrap"><table class="ed-table" id="tei-warn-table">
                         <thead><tr><th>Code</th><th class="num">Anzahl</th><th>Status</th><th>Docs</th><th>Beschreibung</th></tr></thead>
                         <tbody></tbody>
                     </table></div>
-                    <h2 class="ed-section">Corpus-Statistik (Elemente)</h2>
-                    <div class="ed-table-wrap"><table class="ed-table" id="tei-elem-table">
-                        <thead><tr><th>Element</th><th class="num">Anzahl</th></tr></thead>
-                        <tbody></tbody>
-                    </table></div>
-                    <h2 class="ed-section">W10-Analyse (10 Docs)</h2>
-                    <div class="ed-table-wrap"><table class="ed-table" id="tei-w10-table">
-                        <thead><tr><th>Doc</th><th class="num">Text</th><th class="num">persName</th><th class="num">orgName</th><th class="num">placeName</th><th>Bewertung</th></tr></thead>
-                        <tbody></tbody>
-                    </table></div>
+
+                    <h2 class="ed-section diag-collapsible" data-target="tei-elem-section">Corpus-Statistik (Elemente) <span class="diag-toggle">&#9654;</span></h2>
+                    <div id="tei-elem-section" class="diag-collapsed">
+                        <div class="ed-table-wrap"><table class="ed-table" id="tei-elem-table">
+                            <thead><tr><th>Element</th><th class="num">Anzahl</th></tr></thead>
+                            <tbody></tbody>
+                        </table></div>
+                    </div>
+
+                    <h2 class="ed-section diag-collapsible" data-target="tei-w10-section">W10-Analyse (10 Docs) <span class="diag-toggle">&#9654;</span></h2>
+                    <div id="tei-w10-section" class="diag-collapsed">
+                        <div class="ed-table-wrap"><table class="ed-table" id="tei-w10-table">
+                            <thead><tr><th>Doc</th><th class="num">Text</th><th class="num">persName</th><th class="num">orgName</th><th class="num">placeName</th><th>Bewertung</th></tr></thead>
+                            <tbody></tbody>
+                        </table></div>
+                    </div>
                 </div>
 
-                <!-- Aktivitaet -->
+                <!-- Tab 4: Entities -->
+                <div class="ed-tab-panel" id="panel-entity" role="tabpanel" aria-labelledby="tab-entity">
+                    <div class="ed-metric-grid" id="ent-metrics"></div>
+
+                    <h2 class="ed-section">Linking nach Typ</h2>
+                    <div id="ent-by-type"></div>
+
+                    <h2 class="ed-section">NER nach Sprache</h2>
+                    <div class="ed-table-wrap" id="ent-by-language"></div>
+
+                    <h3 class="diag-collapsible">Top unverlinkte Entities</h3>
+                    <div class="diag-collapsed">
+                        <div class="ed-table-wrap" id="ent-unlinked-table"></div>
+                    </div>
+                </div>
+
+                <!-- Tab 5: Aktivitaet -->
                 <div class="ed-tab-panel" id="panel-activity" role="tabpanel" aria-labelledby="tab-activity">
                     <div class="diag-log-filters" id="log-filters">
                         <button class="diag-log-filter active" data-lane="all">Alle</button>

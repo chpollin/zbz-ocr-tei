@@ -1,17 +1,19 @@
 """
-Generiert docs/data/diagnostik_ocr.json fuer das OCR-Diagnostik-Dashboard.
+Generiert Diagnostik-Daten fuer das Frontend-Dashboard.
 
-Inhalt:
-  - baseline_comparison: CER vor/nach Normalisierungskorrektur (24 Docs)
-  - confusion_matrix: Zeichenweise Substitutionen, Insertions, Deletions
-  - outlier_diagnosis: Einzelanalyse der 4 verschlechterten Docs
-  - per_doc: CER, WER, Fehlerkategorien, Metadata pro Doc
-  - pipeline_effect: OCR-Baseline-CER vs. End-to-End-CER
+Outputs:
+  - docs/data/diagnostik_ocr.json      (CER/WER, Konfusion, Pipeline-Effekt, Pagewise)
+  - docs/data/diagnostik_corpus.json   (konsolidiertes Qualitaetsprofil aller 285 Docs)
+  - docs/data/diagnostik_entities.json (Entity-Linking, Sprach-Stratifizierung, Top-Unverlinkte)
 
 Usage:
-    python -m scripts.generate_diagnostik
+    python -m scripts.generate_diagnostik              # nur OCR-Diagnostik
+    python -m scripts.generate_diagnostik --corpus      # + Corpus-JSON
+    python -m scripts.generate_diagnostik --entities    # + Entity-JSON
+    python -m scripts.generate_diagnostik --all         # alles
 """
 
+import argparse
 import json
 import re
 import statistics
@@ -33,7 +35,15 @@ from scripts.benchmark_cer import (
 
 DOCS_DATA_DIR = PROJECT_ROOT / "docs" / "data"
 DIAGNOSTIK_JSON = DOCS_DATA_DIR / "diagnostik_ocr.json"
+DIAGNOSTIK_CORPUS_JSON = DOCS_DATA_DIR / "diagnostik_corpus.json"
+DIAGNOSTIK_ENTITIES_JSON = DOCS_DATA_DIR / "diagnostik_entities.json"
 DIAGNOSTIK_LOG = DOCS_DATA_DIR / "diagnostik_log.json"
+
+QUALITY_PROXY_JSON = EVALUATION_DIR / "quality_proxy.json"
+COMPLETENESS_JSON = EVALUATION_DIR / "completeness_check.json"
+DIAGNOSTIK_TEI_JSON = DOCS_DATA_DIR / "diagnostik_tei.json"
+BENCHMARK_PAGEWISE_JSON = EVALUATION_DIR / "benchmark_pagewise.json"
+REFERENCE_COMPARISON_JSON = EVALUATION_DIR / "benchmark_tei_vs_tei.json"
 
 OUTLIER_DOC_IDS = ["1910", "290", "30", "90"]
 
@@ -501,5 +511,306 @@ def main():
     return 0
 
 
+def _quality_bucket(hit_rate):
+    """Quality-Bucket basierend auf Proxy Hit Rate."""
+    if hit_rate is None:
+        return "unknown"
+    if hit_rate >= 0.95:
+        return "excellent"
+    if hit_rate >= 0.90:
+        return "good"
+    if hit_rate >= 0.85:
+        return "acceptable"
+    if hit_rate >= 0.75:
+        return "check"
+    return "outlier"
+
+
+def generate_corpus_json():
+    """Konsolidiert alle Qualitaetssignale in diagnostik_corpus.json."""
+    print("\n=== Generiere diagnostik_corpus.json ===\n")
+
+    # --- Quellen laden ---
+    proxy_data = {}
+    if QUALITY_PROXY_JSON.exists():
+        raw = json.loads(QUALITY_PROXY_JSON.read_text(encoding='utf-8'))
+        proxy_data = raw.get('documents', {})
+        proxy_summary = raw.get('summary', {})
+        print(f"  Quality Proxy: {len(proxy_data)} Docs geladen")
+    else:
+        proxy_summary = {}
+        print("  WARNUNG: quality_proxy.json nicht gefunden")
+
+    completeness_data = {}
+    completeness_summary = {}
+    if COMPLETENESS_JSON.exists():
+        raw = json.loads(COMPLETENESS_JSON.read_text(encoding='utf-8'))
+        completeness_data = raw.get('documents', {})
+        completeness_summary = raw.get('summary', {})
+        print(f"  Completeness: {len(completeness_data)} Docs geladen")
+    else:
+        print("  WARNUNG: completeness_check.json nicht gefunden")
+
+    ocr_per_doc = {}
+    if DIAGNOSTIK_JSON.exists():
+        raw = json.loads(DIAGNOSTIK_JSON.read_text(encoding='utf-8'))
+        ocr_per_doc = raw.get('per_doc', {})
+        print(f"  OCR-Diagnostik: {len(ocr_per_doc)} Docs geladen")
+
+    tei_per_doc = {}
+    if DIAGNOSTIK_TEI_JSON.exists():
+        raw = json.loads(DIAGNOSTIK_TEI_JSON.read_text(encoding='utf-8'))
+        tei_per_doc = raw.get('per_doc', {})
+        print(f"  TEI-Diagnostik: {len(tei_per_doc)} Docs geladen")
+
+    # Metadaten fuer Sprache/Typ
+    metadata = {}
+    if DOC_METADATA_PATH.exists():
+        raw = json.loads(DOC_METADATA_PATH.read_text(encoding='utf-8'))
+        metadata = raw.get('documents', raw)
+
+    # --- Alle Doc-IDs sammeln ---
+    all_ids = sorted(
+        set(proxy_data.keys())
+        | set(completeness_data.keys())
+        | set(tei_per_doc.keys()),
+        key=lambda x: int(x) if x.isdigit() else x,
+    )
+    print(f"\n  Gesamtkorpus: {len(all_ids)} Docs")
+
+    # --- Pro-Doc-Profil erstellen ---
+    docs = {}
+    buckets = {"excellent": 0, "good": 0, "acceptable": 0, "check": 0, "outlier": 0, "unknown": 0}
+
+    for doc_id in all_ids:
+        proxy = proxy_data.get(doc_id, {})
+        compl = completeness_data.get(doc_id, {})
+        ocr = ocr_per_doc.get(doc_id, {})
+        tei = tei_per_doc.get(doc_id, {})
+        meta = metadata.get(doc_id, {})
+
+        hit_rate = proxy.get('hit_rate')
+        bucket = _quality_bucket(hit_rate)
+        buckets[bucket] += 1
+
+        docs[doc_id] = {
+            'cer': ocr.get('cer'),
+            'wer': ocr.get('wer'),
+            'has_ground_truth': doc_id in ocr_per_doc,
+            'proxy_hit_rate': hit_rate,
+            'pages_expected': compl.get('expected_pages'),
+            'pages_actual': compl.get('actual_pb'),
+            'pages_empty': compl.get('empty_pages', 0),
+            'pages_thin': compl.get('thin_pages', 0),
+            'completeness': compl.get('status', 'unknown'),
+            'language': compl.get('language') or meta.get('language', ''),
+            'layout_type': compl.get('layout_type') or meta.get('type', ''),
+            'tei_valid': tei.get('valid', True),
+            'tei_warnings': tei.get('warnings', []),
+            'quality_bucket': bucket,
+        }
+
+    # --- Summary ---
+    hit_rates = [d['proxy_hit_rate'] for d in docs.values() if d['proxy_hit_rate'] is not None]
+    compl_counts = {}
+    for d in docs.values():
+        c = d['completeness']
+        compl_counts[c] = compl_counts.get(c, 0) + 1
+
+    summary = {
+        'total': len(docs),
+        'with_ground_truth': sum(1 for d in docs.values() if d['has_ground_truth']),
+        'completeness': compl_counts,
+        'proxy_median': statistics.median(hit_rates) if hit_rates else None,
+        'proxy_mean': statistics.mean(hit_rates) if hit_rates else None,
+        'quality_buckets': {k: v for k, v in buckets.items() if v > 0},
+    }
+
+    output = {
+        'generated': datetime.now().isoformat(),
+        'generator': 'scripts/generate_diagnostik.py --corpus',
+        'summary': summary,
+        'docs': docs,
+    }
+
+    DOCS_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    json_text = json.dumps(output, indent=2, ensure_ascii=False, default=str)
+    DIAGNOSTIK_CORPUS_JSON.write_text(json_text, encoding='utf-8')
+    print(f"\n  Output: {DIAGNOSTIK_CORPUS_JSON}")
+    print(f"  Summary: {summary}")
+
+    return 0
+
+
+def add_pagewise_to_ocr():
+    """Erweitert diagnostik_ocr.json um Pagewise-CER und Referenz-Vergleich."""
+    if not DIAGNOSTIK_JSON.exists():
+        print("  WARNUNG: diagnostik_ocr.json nicht gefunden -- ueberspringe Pagewise")
+        return
+
+    ocr_data = json.loads(DIAGNOSTIK_JSON.read_text(encoding='utf-8'))
+
+    # Pagewise-Daten einlesen
+    if BENCHMARK_PAGEWISE_JSON.exists():
+        pw_raw = json.loads(BENCHMARK_PAGEWISE_JSON.read_text(encoding='utf-8'))
+        pw_report = pw_raw.get('outlier_report', {})
+        pw_docs = pw_raw.get('pagewise', {})
+
+        # Nur Fokus-Docs (mit Outlier-Seiten) detailliert aufnehmen
+        focus_docs = {}
+        for doc_id, pw in pw_docs.items():
+            outlier_count = len([p for p in pw.get('page_results', []) if p.get('cer', 0) > 0.10])
+            if outlier_count > 0:
+                focus_docs[doc_id] = {
+                    'page_count': pw.get('page_count', 0),
+                    'cer': pw.get('cer', 0),
+                    'outlier_count': outlier_count,
+                    'pages': pw.get('page_results', []),
+                }
+
+        ocr_data['pagewise'] = {
+            'outlier_summary': {
+                'total_pages': pw_report.get('total_pages_evaluated', 0),
+                'outlier_pages': pw_report.get('total_outlier_pages', 0),
+                'outlier_rate': pw_report.get('outlier_rate', 0),
+                'threshold': pw_report.get('threshold', 0.10),
+            },
+            'top_outliers': pw_report.get('outliers', [])[:20],
+            'focus_docs': focus_docs,
+        }
+        print(f"  Pagewise: {pw_report.get('total_outlier_pages', 0)} Outlier-Seiten, "
+              f"{len(focus_docs)} Fokus-Docs")
+    else:
+        print("  WARNUNG: benchmark_pagewise.json nicht gefunden")
+
+    # Referenz-Vergleich einlesen
+    if REFERENCE_COMPARISON_JSON.exists():
+        ref_raw = json.loads(REFERENCE_COMPARISON_JSON.read_text(encoding='utf-8'))
+        ref_docs = ref_raw.get('documents', {})
+        comparison = []
+        for doc_id, d in sorted(ref_docs.items()):
+            if d.get('status') != 'OK':
+                continue
+            comparison.append({
+                'doc_id': doc_id,
+                'cer': d.get('cer', 0),
+                'wer': d.get('wer', 0),
+                'ref_chars': d.get('ref_chars', 0),
+                'scope_mismatch': d.get('scope_mismatch', False),
+                'language': d.get('metadata', {}).get('language', '?'),
+                'type': d.get('metadata', {}).get('type', '?'),
+            })
+        ocr_data['reference_comparison'] = comparison
+        print(f"  Referenz-Vergleich: {len(comparison)} Docs")
+    else:
+        print("  WARNUNG: benchmark_tei_vs_tei.json nicht gefunden")
+
+    # Zurueckschreiben
+    ocr_data['generated'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    json_text = json.dumps(ocr_data, indent=2, ensure_ascii=False, default=str)
+    DIAGNOSTIK_JSON.write_text(json_text, encoding='utf-8')
+    print(f"  Aktualisiert: {DIAGNOSTIK_JSON}")
+
+
+def generate_entities_json():
+    """Generiert diagnostik_entities.json mit Entity-Linking-Diagnostik."""
+    print("\n=== Generiere diagnostik_entities.json ===\n")
+
+    from scripts.ner.entity_index import EntityIndex
+    from scripts.ner.ner_evaluate import corpus_summary_by_language, corpus_summary
+
+    # Entity-Index laden + Diagnostik
+    index = EntityIndex()
+    index.load_all()
+    diag = index.diagnostics()
+
+    # Sprach-Stratifizierung
+    lang_data = corpus_summary_by_language()
+    corpus = corpus_summary()
+
+    # Typ-Verteilung mit Linking-Status
+    by_type = {}
+    for entity_type, td in diag.get('by_type', {}).items():
+        total = td['total']
+        linked = td['linked']
+        by_type[entity_type] = {
+            'total': total,
+            'linked': linked,
+            'unlinked': td['unlinked'],
+            'linked_pct': round(linked / max(total, 1) * 100, 1),
+            'top_unlinked': td['unlinked_entries'][:10],
+        }
+
+    # Sprach-Metriken
+    by_language = {}
+    for lang, stats in lang_data.get('by_language', {}).items():
+        by_language[lang] = {
+            'documents': stats['documents'],
+            'total_entities': stats['total_entities'],
+            'total_mentions': stats['total_mentions'],
+            'avg_density': stats['avg_density_per_page'],
+            'resolution_rate': stats['resolution_rate'],
+            'type_distribution': stats['type_distribution'],
+        }
+
+    # Top-20 unverlinkte Entities (alle Typen gemischt, nach Mentions)
+    all_unlinked = []
+    for entity_type, td in diag.get('by_type', {}).items():
+        for entry in td.get('unlinked_entries', []):
+            all_unlinked.append({**entry, 'type': entity_type})
+    all_unlinked.sort(key=lambda x: -x.get('mention_count', 0))
+
+    output = {
+        'generated': datetime.now().isoformat(),
+        'generator': 'scripts/generate_diagnostik.py --entities',
+        'summary': {
+            'total': diag['total'],
+            'linked': diag['linked'],
+            'unlinked': diag['unlinked'],
+            'linked_pct': round(diag['linked'] / max(diag['total'], 1) * 100, 1),
+            'corpus_entities': corpus.get('total_entities', 0),
+            'corpus_mentions': corpus.get('total_mentions', 0),
+            'corpus_documents': corpus.get('documents', 0),
+            'resolution_rate': corpus.get('resolution_rate', 0),
+        },
+        'by_type': by_type,
+        'by_language': by_language,
+        'top_unlinked': all_unlinked[:20],
+    }
+
+    DOCS_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    json_text = json.dumps(output, indent=2, ensure_ascii=False, default=str)
+    DIAGNOSTIK_ENTITIES_JSON.write_text(json_text, encoding='utf-8')
+    print(f"  Output: {DIAGNOSTIK_ENTITIES_JSON}")
+    print(f"  Total: {diag['total']}, Linked: {diag['linked']} ({output['summary']['linked_pct']}%)")
+    for t, td in by_type.items():
+        print(f"    {t}: {td['total']} ({td['linked_pct']}% linked)")
+
+    return 0
+
+
 if __name__ == "__main__":
-    exit(main() or 0)
+    parser = argparse.ArgumentParser(description="Diagnostik-Daten generieren")
+    parser.add_argument('--corpus', action='store_true',
+                        help='Corpus-JSON generieren (konsolidierte Qualitaetsprofile)')
+    parser.add_argument('--entities', action='store_true',
+                        help='Entity-JSON generieren (Linking-Diagnostik, Sprach-Eval)')
+    parser.add_argument('--pagewise', action='store_true',
+                        help='Pagewise-CER + Referenz-Vergleich in OCR-JSON einfuegen')
+    parser.add_argument('--all', action='store_true',
+                        help='Alles generieren (OCR + Corpus + Entities + Pagewise)')
+    parser.add_argument('--corpus-only', action='store_true',
+                        help='Nur Corpus-JSON generieren (kein OCR-Benchmark)')
+    args = parser.parse_args()
+
+    rc = 0
+    if not args.corpus_only:
+        rc = main() or 0
+    if args.pagewise or args.all:
+        add_pagewise_to_ocr()
+    if args.corpus or args.all or args.corpus_only:
+        rc = generate_corpus_json() or rc
+    if args.entities or args.all:
+        rc = generate_entities_json() or rc
+
+    exit(rc)
