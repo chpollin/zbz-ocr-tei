@@ -51,7 +51,7 @@ Details: [EDITION.md](knowledge/EDITION.md), [CURATION.md](knowledge/CURATION.md
 
 ```
 zbz-ocr-tei/
-  knowledge/              # 14 project documents (Single Source of Truth)
+  knowledge/              # 21 project documents (Single Source of Truth)
   scripts/                # Python pipeline
     config.py             # Central configuration
     ocr_pipeline.py       # OCR (Mistral/DeepSeek)
@@ -155,7 +155,16 @@ The QA tools are under `docs/infrastruktur/`:
 | Digital edition | [knowledge/EDITION.md](knowledge/EDITION.md) |
 | Design system (Hersch) | [knowledge/DESIGN.md](knowledge/DESIGN.md) |
 | Curation Editor | [knowledge/CURATION.md](knowledge/CURATION.md) |
+| Methodology (epistemics) | [knowledge/METHODIK.md](knowledge/METHODIK.md) |
+| CLI tools + work cycle | [knowledge/PROMPTOTYPING.md](knowledge/PROMPTOTYPING.md) |
+| Corpus + document types | [knowledge/QUELLENANALYSE.md](knowledge/QUELLENANALYSE.md) |
+| Entity linking (NER/GND) | [knowledge/GND-STRATEGIE.md](knowledge/GND-STRATEGIE.md) |
+| TEI schema validation | [knowledge/TEI-QUALITY.md](knowledge/TEI-QUALITY.md) |
+| CER benchmark | [knowledge/CER-BENCHMARK.md](knowledge/CER-BENCHMARK.md) |
+| ZBZ editorial workflow | [knowledge/ZBZ-WORKFLOW.md](knowledge/ZBZ-WORKFLOW.md) |
+| Deployment + infrastructure | [knowledge/INFRASTRUKTUR.md](knowledge/INFRASTRUKTUR.md) |
 | Work journal | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
+| Journal archive (Sessions 1-26) | [knowledge/JOURNAL-ARCHIVE.md](knowledge/JOURNAL-ARCHIVE.md) |
 
 ## Team
 
@@ -163,4 +172,4 @@ A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
 
 ---
 
-*Last updated: 2026-03-15*
+*Last updated: 2026-03-26*

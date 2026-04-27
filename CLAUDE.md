@@ -42,7 +42,7 @@ zwischen LLM und Critical Expert in the Loop orchestriert werden. Jede Operation
 erzeugt Qualitaetssignale, die den naechsten Schritt informieren.
 
 Dreischichtung: Command (Entscheidungsregel) / Artifact (Werkzeug) / Tool (Aufruf).
-Details: `CLAUDE-COMMANDS.md` §Dreischichtung.
+Details: `knowledge/METHODIK.md` §Dreischichtung.
 
-Ausfuehrliche Methodik-Beschreibung: `Promptotyping-Tools.md`
+Ausfuehrliche Methodik-Beschreibung: `knowledge/PROMPTOTYPING.md`
 Vollstaendige CLI-Referenz: `knowledge/PIPELINE.md` §CLI Commands.

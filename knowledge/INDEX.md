@@ -29,7 +29,8 @@ Documentation for the LLM-powered OCR and TEI pipeline of the Jeanne Hersch Edit
 | [JOURNAL](JOURNAL.md) | What was done when? | All | — |
 | [EDITION](EDITION.md) | How does the digital edition work? Architecture, Design System | Development, Edition | PIPELINE |
 | [CURATION](CURATION.md) | How does the Curation Editor work? Server, API, Editor | Development, Edition | EDITION, GND-STRATEGIE |
-| [CER-BENCHMARK](CER-BENCHMARK.md) | How good is the OCR? End-to-End CER, research context | Development, QA | TESTPLAN, ENGINES |
+| [CER-BENCHMARK](CER-BENCHMARK.md) | How good is the OCR? End-to-End CER, research context | Development, QA | TESTPLAN, ENGINES, CER-METHODIK |
+| [CER-METHODIK](CER-METHODIK.md) | Wie wird CER wissenschaftlich fundiert ermittelt? Bootstrap, Selektionsbias, HCPR, Limitations | Development, QA, Forschung | CER-BENCHMARK, TESTPLAN |
 | [QUALITY-PROXY](QUALITY-PROXY.md) | Corpus-wide OCR quality without ground truth, language audit | Development, QA | CER-BENCHMARK, PIPELINE |
 | [TEI-QUALITY](TEI-QUALITY.md) | Are TEIs schema-valid? Warnings, fix history, diagnostics | Development, QA | PIPELINE, TEI-MAPPING |
 | [JOURNAL-ARCHIVE](JOURNAL-ARCHIVE.md) | Arbeitsjournal Sessions 1–26 (Archiv) | Alle | JOURNAL |
@@ -106,6 +107,8 @@ JOURNAL       <-- chronological, references all docs
 | zbz_hersch.rng (E48/E49) | Projektspezifisches RelaxNG-Schema (TEI P5 v4.10.2), ref-Pattern erweitert fuer GND + #zbz-IDs | [TEI-QUALITY](TEI-QUALITY.md) |
 | Dual-Attribut-Strategie (E50) | Entity-Refs: `ref="GND:{id}"` (primaer) + `corresp="#zbz-{typ}.{N}"` (intern) | [TEI-MAPPING](TEI-MAPPING.md) |
 | CER-Benchmark (E51) | End-to-End TEI-vs-TEI Evaluation: Mean 4.18%, Median 1.83% (scope-bereinigt, 19 Docs) | [CER-BENCHMARK](CER-BENCHMARK.md) |
+| CER-Statistik (E54) | Wissenschaftliche CER-Re-Evaluation 2026-04: Mean 4.10% [2.01,6.75]%, Median 1.83% [0.84,5.14]% mit BCa-CIs, paired vs OCR-only −14.83pp p=0.0004, HCPR ~99%, Selektionsbias n_chars p=0.041 (NOT comparable) | [CER-METHODIK](CER-METHODIK.md), [CER-BENCHMARK](CER-BENCHMARK.md) |
+| CER-Dashboard (E55) | Interaktives Frontend `docs/infrastruktur/cer.html` mit 12 Sektionen, vanilla SVG, Limitations-Panel sticky, Lit-Vergleich mit comparable-Enum, Proxy-Schaetzung visuell abgegrenzt | `docs/infrastruktur/cer.html` |
 | Quality Proxy (E53) | Corpus-wide OCR quality: Median Hit Rate 97.7%, 92% >=90%, Sprach-Audit 99.6% korrekt | [QUALITY-PROXY](QUALITY-PROXY.md) |
 | TEI-Diagnostik | Schema-Validierung, Warning-Tracking, Diagnostik-UI (`docs/infrastruktur/diagnostik.html`) | [TEI-QUALITY](TEI-QUALITY.md) |
 

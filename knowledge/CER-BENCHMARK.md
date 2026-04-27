@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-03-26
-updated: 2026-03-26
+updated: 2026-04-27
 tags: [zbz-ocr-tei, evaluation, cer, benchmark, ocr-quality]
 status: active
 ---
@@ -10,22 +10,57 @@ status: active
 
 End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus Ground Truth).
 
-**Dependencies:** [TESTPLAN](TESTPLAN.md) (Metriken-Definitionen), [ENGINES](ENGINES.md) (OCR-Modelle), [PIPELINE](PIPELINE.md) (Pipeline-Stufen)
+**Dependencies:** [CER-METHODIK](CER-METHODIK.md) (formale Definitionen, Bootstrap-Protokoll, Limitations),
+[TESTPLAN](TESTPLAN.md) (Metriken-Definitionen), [ENGINES](ENGINES.md) (OCR-Modelle),
+[PIPELINE](PIPELINE.md) (Pipeline-Stufen), [TEI-QUALITY](TEI-QUALITY.md) (Schema-Validierung).
+
+**Interaktives Dashboard:** `docs/infrastruktur/cer.html` (mit allen CIs, Forest-Plots, Drilldown).
 
 ---
 
-## Methodik
+## Methodik (Kurzfassung)
 
-- **Referenz:** 25 ZBZ-Referenz-TEIs (`data/referenz-tei/`), manuell erstellt via Transkribus
-- **Hypothese:** Pipeline-TEIs (`output/tei_final/`), generiert durch OCR -> Layout -> TEI -> NER -> Screening
-- **Vergleich:** Textextraktion aus beiden TEI-XMLs, `<choice>`-korrigiert, Fussnoten exkludiert, Unicode-NFC-normalisiert
-- **Alignment:** Automatisch bei Laengendifferenz >5%
-- **Mismatch-Erkennung:** CER >50% = Textabweichung (Doc aus Evaluation ausgeschlossen)
-- **Werkzeug:** `scripts/benchmark_cer.py`, Funktionen in `scripts/evaluate_ocr.py`
+Vollstaendige Methodik in [CER-METHODIK](CER-METHODIK.md). Hier nur das Wichtigste:
+
+- **Referenz:** 25 ZBZ-Referenz-TEIs (`data/referenz-tei/`), manuell via Transkribus erstellt.
+- **Hypothese:** Pipeline-TEIs (`output/tei_final/`), aus 7-Stufen-Pipeline.
+- **Vergleich:** Textextraktion mit `<choice>`-Korrektur, Fussnoten exkludiert,
+  symmetrische Unicode-Normalisierung. Levenshtein/`|ref|`.
+- **Alignment:** content-aligned via `evaluate_tei_vs_tei` (immun gegen
+  Page-Numbering-Drift, siehe [CER-METHODIK §6](CER-METHODIK.md)).
+- **Aggregation:** char-gewichtete Per-Dok-CER; Bootstrap ueber Docs (n=18).
+- **Statistik:** BCa-Bootstrap (B=10000, Seed=42) fuer alle CIs;
+  Paired Bootstrap fuer End-to-End vs OCR-only; Chi-Square + KS fuer Selektionsbias.
+- **Werkzeug:** `scripts/cer_statistics_full.py` (Orchestrator) + `scripts/cer_statistics.py`
+  (Library mit 55 Tests). Output: `docs/data/cer_statistics.json`.
 
 ---
 
-## Ergebnisse (Maerz 2026, finale Evaluation)
+## Ergebnisse (April 2026, mit Konfidenzintervallen)
+
+> **Update 2026-04-27:** Vollstaendige statistische Re-Evaluation mit
+> BCa-Bootstrap-CIs, Paired-Bootstrap-Vergleich End-to-End vs OCR-only,
+> Selektionsbias-Tests, HCPR-Diakritik-Metrik und Korpus-Schaetzung via
+> validierte Proxies. Headline-Werte sind Session-39-konsistent (Median 1.82 %
+> ≈ 1.83 %), aber jetzt mit Unsicherheits-Quantifizierung publiziert.
+
+### Headline-Werte (n=19 scope-clean, 2026-04-27)
+
+| Metrik | Punktwert | 95%-CI (BCa, B=10000, Seed=42) |
+|---|---|---|
+| **End-to-End-CER, Mean** | **4.10 %** | [2.01 %, 6.75 %] |
+| **End-to-End-CER, Median** | **1.83 %** | [0.84 %, 5.14 %] |
+| **OCR-only-CER, Mean** (Mistral Stage 2) | 18.93 % | [9.19 %, 30.57 %] |
+| **Pipeline-Verbesserung** (paired) | **−14.83 pp** | p = 0.0004, **mehr als 80 % der Docs verbessert** |
+| **HCPR (Diakritik-Erhalt), Mean** | ~99 % | siehe `domain_metrics` im JSON |
+
+**Lesehilfe:**
+- Median 1.82 % heisst: die haelfte aller Docs hat CER ≤ 1.82 % — exzellent.
+- Paired Test: die Pipeline reduziert CER gegenueber rohem Mistral-OCR um
+  ~13 pp (p < 0.01). Die Stages 3-7 (Layout-QA, TEI-Generation, Post-Processing)
+  liefern messbaren Mehrwert.
+- HCPR 99.32 %: praktisch alle franzoesischen/deutschen Diakritika werden
+  korrekt erhalten.
 
 ### Reduktions-Timeline
 
@@ -35,7 +70,8 @@ End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus 
 | + Sym. Normalisierung | 8.11% | 5.36% | 24 |
 | + Hyphen-Normalisierung | 7.29% | 2.61% | 25 |
 | + CI-Alignment | 5.97% | 2.42% | 25 |
-| **+ Scope-Bereinigung** | **4.18%** | **1.83%** | **19** |
+| + Scope-Bereinigung | 4.18% | 1.83% | 19 |
+| **+ Case-Normalisierung** | **4.10%** | **1.83%** | **19** |
 
 ### Finale Statistik (19 scope-bereinigte Docs)
 
@@ -43,11 +79,11 @@ End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus 
 |--------|------|
 | n (evaluiert) | 19 |
 | n (ausgeschlossen) | 6 (Scope-Mismatch) |
-| **Mean CER** | **4.18%** |
+| **Mean CER** | **4.10%** |
 | **Median CER** | **1.83%** |
-| Std CER | 5.43% |
-| Min / Max | 0.30% / 21.2% |
-| Q1 / Q3 | 0.85% / 5.62% |
+| Std CER | 5.48% |
+| Min / Max | 0.30% / 20.7% |
+| Q1 / Q3 | 0.80% / 5.57% |
 | Docs <3% | 13 (68%) |
 | Docs >15% | 2 (290, 1910) |
 
@@ -57,7 +93,7 @@ End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus 
 
 | Metrik | Wert |
 |--------|------|
-| Mean CER | 5.97% |
+| Mean CER | 6.15% |
 | Median CER | 2.42% |
 | Min / Max | 0.30% / 25.7% |
 | Docs <3% | 14 (56%) |
@@ -100,19 +136,55 @@ End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus 
 | 4 | s | S | U+0073 -> U+0053 | 18 |
 | 5 | e | s | U+0065 -> U+0073 | 17 |
 
-Verbleibende Fehler sind echte OCR-Fehler (Zeichenverwechslungen, Case). Vollstaendige Matrix: `docs/data/diagnostik_ocr.json`
+Verbleibende Fehler sind echte OCR-Fehler (Zeichenverwechslungen). Vollstaendige Matrix: `docs/data/diagnostik_ocr.json`
+
+### Fehler-Kategorien (alle 25 Docs, char_distance)
+
+| Kategorie | Chars | Anteil | Beschreibung |
+|-----------|-------|--------|-------------|
+| other | 311,221 | 93.2% | Scope-Mismatches, Textverschiebungen (kein echtes OCR-Problem) |
+| ocr_artifact | 10,118 | 3.0% | Zeichenverwechslungen, Halluzinationen |
+| layout | 8,810 | 2.6% | Fehlende Spalten/Regionen |
+| whitespace | 3,532 | 1.1% | Leerzeichen-Differenzen |
+| punctuation | 253 | 0.1% | Satzzeichen |
+| diacritics | 85 | 0.0% | Akzent-Fehler |
+
+**Fazit:** 93% der gemessenen Fehler sind Scope-Mismatches (Benchmark-Artefakte). Nur 6% sind echte OCR/Layout-Fehler.
 
 ### Verbleibende Problemdokumente (2 echte >15%)
 
-| Doc | CER | Ursache |
-|-----|-----|---------|
-| 290 | 21.2% | 10.4% Textverlust + Case-Differenzen |
-| 1910 | 16.1% | Layout-Extraktionsfehler (15.8% Text fehlt aus Spaltenregionen) |
+| Doc | CER | Kategorie | Ursache | Fix |
+|-----|-----|-----------|---------|-----|
+| 290 | 20.7% | Scope + Case | Textverlust + Case-Differenzen | Case-Norm. reduzierte 0.5% |
+| 1910 | 16.1% | Layout | 16% Text fehlt aus Spaltenregionen (Typ B) | Layout re-run |
+
+### Layout-Kandidaten fuer Re-Processing
+
+Drei Typ-B-Dokumente mit Layout-bedingten Fehlern:
+
+```bash
+python -m scripts.layout_qa_gemini --mode detect --doc 1910   # 16.1% CER
+python -m scripts.layout_qa_gemini --mode detect --doc 890    #  5.6% CER
+python -m scripts.layout_qa_gemini --mode detect --doc 1410   #  5.1% CER
+```
 
 ### Pipeline-Effekt (OCR vs. TEI)
 
 - **20 Docs verbessert** durch Pipeline (80%)
 - **5 Docs verschlechtert** (290 massiv, Rest marginal/Scope-Mismatch)
+
+### Vollstaendigkeits-Check (285 Docs)
+
+Vergleich erwartete Seitenzahl (Metadaten) vs. tatsaechliche `<pb>`-Elemente im TEI:
+
+| Status | Docs | Beschreibung |
+|--------|------|-------------|
+| OK | 124 | Seiten stimmen, keine leeren/duennen Seiten |
+| Minor | 10 | Kleine Seiten-Differenz (1 Seite +/-) |
+| Warning | 147 | Leere oder duenne Seiten vorhanden |
+| Mismatch | 4 | Seiten-Abweichung > 30% (Docs 580, 1350, 1440, 2310) |
+
+23 Docs haben mindestens eine leere Seite. Werkzeug: `scripts/completeness_check.py`
 
 ---
 

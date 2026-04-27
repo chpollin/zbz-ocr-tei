@@ -14,6 +14,67 @@ Chronological work log. Decisions are consolidated in [DECISIONS](DECISIONS.md),
 
 ---
 
+## Session 41 (2026-04-27): CER wissenschaftlich fundiert + Multi-Claude-Koordination
+
+### Kontext
+User hat drei Claude-Code-Instanzen parallel koordinieren lassen, um die Character Error Rate des Hersch-Korpus wissenschaftlich fundiert zu ermitteln, im Wissensordner zu verankern und auf einer interaktiven Unterseite zu visualisieren. Kommunikationskanal: `CLAUDES-WORKING-SESSION.md` (das selbst ein methodisches Experiment darstellt). Ehrliche Selbstkritik am ersten Plan-Entwurf, dann Web-Recherche (Singh 2025, Nosova 2025, Crosilla 2025, Kanerva 2025) hat zu Forschungsplan v2 mit 9 explizit benannten methodischen Luecken gefuehrt. User-Constraint: **nur 2025+-Quellen** zitieren.
+
+### Was entstanden ist
+
+**Statistik (Track B):**
+- `scripts/cer_statistics.py` (~580 Z., Library): BCa-Bootstrap, paired bootstrap, Chi-Square + KS Selektionsbias, Levenshtein via rapidfuzz, Multi-Norm-Regimes, Diakritik-HCPR
+- `scripts/cer_statistics_runner.py` (~150 Z.): TEI-Reader, content-aligned via `evaluate_tei_vs_tei`
+- `scripts/cer_statistics_full.py` (~720 Z., Orchestrator): Schema v0.3, OCR-only-Berechnung, Paired-Test, Korpus-Schaetzung
+- `tests/test_cer_statistics.py` (~390 Z.): **55 Tests gruen in 0.81 s** — inkl. Beweis dass Block-Bootstrap-CI breiter als naiv bei korrelierten Daten
+
+**Output:**
+- `docs/data/cer_statistics.json` (99 KB, Schema v0.3, deterministisch Seed=42)
+- 14 Top-Level-Keys, 25 per_doc Records, 5 Lit-Vergleiche
+
+**Headline-Werte (n=19, BCa-Bootstrap B=10000):**
+- E2E Mean **4.10 %** [2.01, 6.75]%
+- E2E Median **1.83 %** [0.84, 5.14]%
+- OCR-only Mean **18.93 %** [9.19, 30.57]%
+- Paired diff E2E vs OCR: **−14.83 pp, p = 0.0004** (Pipeline reduziert CER hochsignifikant)
+- HCPR (Diakritik-Erhaltung): ~99 % fra/deu
+- Selektionsbias: alle Dimensionen comparable
+
+**Frontend (Track C):**
+- `docs/infrastruktur/cer.html` (15 KB, 12 Sektionen)
+- `docs/js/cer-dashboard.js` (49 KB, vanilla SVG, `ZBZ.CerDashboard`)
+- `docs/css/infra.css` (additive cer-Klassen)
+- Adapter `CD.normalize(raw)` erkennt Mock und v0.3 idempotent
+- Subnav-Link "CER" in `docs/js/edition-shared.js`
+
+**Wissen (Track A):**
+- NEU: `knowledge/CER-METHODIK.md` (13 Sektionen): formale CER-Definition, Bootstrap-Protokoll, Selektionsbias-Tests, Multi-Norm-Diskussion, Lessons Learned (Pagewise-vs-Global), HCPR-Adaption, Korpus-Schaetzung, Limitations, alle 6 Quellen 2025+
+- REFAKTORIERT: `knowledge/CER-BENCHMARK.md` mit neuen Headline-Werten + CIs, Verweis auf METHODIK
+- AKTUALISIERT: `knowledge/INDEX.md`, `knowledge/DECISIONS.md` (E54, E55)
+
+### Methodisch instruktiver Vorfall
+
+Pagewise-CER zeigte mean=36 %, max=167 % — sah aus wie Pipeline-Drift. Diagnostischer Spike: `<pb>`-Numbering hat sich zwischen Maerz und April geaendert, Pagewise matched falsche Seiten. Loesung: content-aligned `evaluate_tei_vs_tei` als Default. Resultat: Pipeline ist tatsaechlich stabil, Median 1.83 % identisch zu Session 39. Ausfuehrlich dokumentiert in `CER-METHODIK.md` §6.
+
+### Ergebnis
+
+Pipeline-Verbesserung gegenueber rohem Mistral-OCR: **−14.83 Prozentpunkte CER** (von 18.93 % auf 4.10 %), p < 0.001. Die Stages 3-7 (Layout-QA, TEI-Generation, Post-Processing) liefern messbaren, hochsignifikanten Mehrwert.
+
+### Geaenderte Dateien
+
+- knowledge/CER-METHODIK.md (NEU), CER-BENCHMARK.md, INDEX.md, DECISIONS.md, JOURNAL.md
+- scripts/cer_statistics.py (NEU), cer_statistics_runner.py (NEU), cer_statistics_full.py (NEU)
+- tests/__init__.py, tests/test_cer_statistics.py (NEU)
+- docs/data/cer_statistics.json, cer_statistics.mock.json (beide NEU)
+- docs/infrastruktur/cer.html (NEU), docs/js/cer-dashboard.js (NEU), docs/js/edition-shared.js (Subnav), docs/css/infra.css (additiv)
+- CLAUDES-WORKING-SESSION.md (NEU, Multi-Claude-Koordinations-Artefakt)
+
+### Offen (User-Entscheidungen)
+
+- (b) Stabilitaets-Pilot 5 Docs × 3 Re-Runs (~$1-2 API)
+- (c) Inter-Engine-CER (zweiter OCR-Engine als Cross-Validation)
+
+---
+
 ## Session 40 (2026-03-27): Frontend Refactoring Phase 1+2 — CSS & HTML Konsolidierung
 
 ### Kontext

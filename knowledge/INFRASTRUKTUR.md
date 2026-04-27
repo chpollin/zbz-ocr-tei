@@ -178,6 +178,10 @@ The QA dashboard (`docs/`) is a purely static web application and does not requi
 - [ENGINES](ENGINES.md) for engine details
 - [DECISIONS](DECISIONS.md) for open questions
 
+## Siehe auch
+
+- [ZBZ-WORKFLOW](ZBZ-WORKFLOW.md) — Bestehender redaktioneller Workflow der ZBZ
+
 ---
 
 *Created: 2026-02-18 | Updated: 2026-02-27*

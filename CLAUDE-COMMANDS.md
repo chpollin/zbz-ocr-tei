@@ -4,7 +4,7 @@ Operative Werkzeuge fuer den Promptotyping-Zyklus. Jede Operation erzeugt
 Qualitaetssignale, die den naechsten Schritt informieren. Der Critical Expert
 in the Loop entscheidet.
 
-Ausfuehrliche Beschreibung der Methodik: `Promptotyping-Tools.md`
+Ausfuehrliche Beschreibung der Methodik: `knowledge/PROMPTOTYPING.md`
 
 ---
 
@@ -16,7 +16,14 @@ python -m scripts.tei.tei_validator --all --html-report       # Korpus-Report
 python -m scripts.tei.tei_validator --compare-ref             # Referenz-Vergleich (11 Docs)
 python -m scripts.ner.ner_evaluate --doc {DOC_ID}             # NER-Abdeckung
 python scripts/evaluate_ocr.py --all                          # OCR-Metriken
+python -m scripts.quality_proxy --all --html                   # Quality Proxy (Dictionary Hit Rate)
+python -m scripts.completeness_check --html                    # Vollstaendigkeits-Check (Seiten)
+python -m scripts.benchmark_cer --all --html                   # CER-Benchmark (25 GT-Docs)
+python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000  # Wissenschaftl. CER-Statistik (BCa-CIs, Paired, HCPR)
+python -m pytest tests/test_cer_statistics.py -q               # 55 Tests fuer Statistik-Library
 ```
+
+Output `docs/data/cer_statistics.json` -> Dashboard `docs/infrastruktur/cer.html`. Methodik: `knowledge/CER-METHODIK.md`.
 
 ## Textschicht
 
@@ -116,26 +123,12 @@ python -m scripts.generate_dashboard_data                                # Dashb
 
 ## Arbeitszyklus
 
-1. **Diagnose** -- Validierung laufen lassen, Qualitaetssignale lesen
-2. **Exploration** -- Entscheiden: Textschicht, Struktur oder Annotation?
-3. **Ausfuehrung** -- Tool aufrufen (bei API-Kosten: --dry-run zuerst)
-4. **Re-Validierung** -- Erneut validieren, Verbesserung bestaetigen
-5. **Eskalation** -- Bei neuem Fehlertyp: Skript vorschlagen, Expert entscheidet
+Siehe `knowledge/PROMPTOTYPING.md` §Arbeitszyklus (Diagnose → Exploration → Ausfuehrung → Re-Validierung → Eskalation).
 
-## Dreischichtung: Command / Artifact / Tool
+## Dreischichtung
 
-- **Command**: Die Entscheidungsregel ("nach jeder Korrektur validieren")
-- **Artifact**: Das materielle Werkzeug im Repo (`tei_validator.py`)
-- **Tool**: Der konkrete Aufruf (`python -m scripts.tei.tei_validator --doc 290`)
-
-Commands stehen in diesem Dokument (Arbeitszyklus oben).
-Artifacts stehen im Repo (Scripts, Indizes, Reports).
-Tools sind die CLI-Befehle in den Abschnitten oben.
+Siehe `knowledge/METHODIK.md` §Dreischichtung und `CLAUDE.md` §Commands.
 
 ## Konventionen
 
-- Dokument-IDs: `{DOC_ID}` (z.B. 2310, 1440, 100)
-- Outputs: `output/`-Unterverzeichnisse
-- `--dry-run`: Vorschau ohne API-Kosten
-- `--force`: Alles neu (inkl. Gemini-Calls)
-- `--reassemble`: Nur Step 1+3 neu, Step 2 aus Cache (kostenlos)
+Siehe `knowledge/PROMPTOTYPING.md` §Konventionen (Doc-IDs, Output-Verzeichnisse, Flags).

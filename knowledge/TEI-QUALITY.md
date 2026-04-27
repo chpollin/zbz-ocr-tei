@@ -10,7 +10,7 @@ status: active
 
 Schema-Validierung der Pipeline-TEIs gegen `zbz_hersch.rng` (TEI P5 v4.10.2, projektspezifisch).
 
-**Dependencies:** [PIPELINE](PIPELINE.md) (TEI-Stufen), [CER-BENCHMARK](CER-BENCHMARK.md) (OCR-Metriken)
+**Dependencies:** [PIPELINE](PIPELINE.md) (TEI-Stufen), [CER-BENCHMARK](CER-BENCHMARK.md) (OCR-Metriken), [CER-METHODIK](CER-METHODIK.md) (statistische Methodik mit BCa-CIs)
 
 ---
 

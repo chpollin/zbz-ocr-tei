@@ -301,7 +301,8 @@
         { label: 'Epistemische Infrastruktur', children: [
             { href: 'infrastruktur/index.html', label: 'Dashboard' },
             { href: 'infrastruktur/viewer.html', label: 'Viewer' },
-            { href: 'infrastruktur/diagnostik.html', label: 'Diagnostik' }
+            { href: 'infrastruktur/diagnostik.html', label: 'Diagnostik' },
+            { href: 'infrastruktur/cer.html', label: 'CER' }
         ]},
         { href: 'about.html', label: 'Projekt' }
     ];

@@ -1,4 +1,4 @@
-# Promptotyping-Tools.md
+# PROMPTOTYPING
 
 ## Operative Werkzeuge der epistemischen Infrastruktur
 
@@ -155,7 +155,7 @@ python -m scripts.tei.tei_quality_pass --all
 **Output:** `output/tei_final/{DOC_ID}_review.json` (Befund pro Dokument),
 `output/tei_final/{DOC_ID}_final.xml` (TEI mit revisionDesc im Header).
 
-**Ergebnis (285/285 Docs):** 210 APPROVED (74%), 43 WITH_NOTES (15%), 32 NEEDS_REVIEW (11%).
+**Ergebnis:** Siehe `CLAUDE-COMMANDS.md` §Quality Screening fuer aktuelle Screening-Zahlen.
 
 **Positionierung:** Pre-Curation Triage — sortiert, wo menschliche Aufmerksamkeit noetig ist. Kein Ersatz fuer fachliche Kuration.
 

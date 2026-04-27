@@ -151,6 +151,10 @@ The dashboard replaces `docs/benchmark.html` and serves as the central QA tool.
 - [PIPELINE](PIPELINE.md) for technical pipeline details
 - [DECISIONS](DECISIONS.md) O8 (Alma metadata)
 
+## Siehe auch
+
+- [INFRASTRUKTUR](INFRASTRUKTUR.md) — Deployment, API-Zugang, Containerisierung
+
 ---
 
 *Source: WorkflowDiagramm_Hersch.pdf -- fully transferred, PDF deleted*

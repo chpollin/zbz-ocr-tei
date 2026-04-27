@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CER-Werkbank – Digitale Edition Jeanne Hersch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/edition.css">
+    <link rel="stylesheet" href="../css/infra.css">
+</head>
+<body class="edition-page infrastruktur-page">
+
+    <a href="#main-content" class="ed-skip-nav">Zum Inhalt springen</a>
+    <nav class="ed-nav" id="ed-nav-slot" role="navigation" aria-label="Hauptnavigation"></nav>
+
+    <main id="main-content">
+        <div class="cer-wrap">
+
+            <header class="cer-header">
+                <h1 class="ed-section-title">CER-Werkbank</h1>
+                <p class="cer-lead">Character Error Rate der OCR-TEI-Pipeline mit Konfidenzintervallen, Stratifizierung und like-for-like Forschungsvergleich. Methodik: <a href="#cer-methodik-link" id="cer-methodik-anchor">CER-METHODIK.md</a>.</p>
+                <div class="cer-meta-bar" id="cer-meta-bar" aria-label="Metadaten der Auswertung"></div>
+                <div class="cer-mock-banner" id="cer-mock-banner" hidden>
+                    <strong>MOCK-DATEN</strong> — Diese Werte sind Platzhalter (C3 Phase C2). Sie werden durch das Output von <code>scripts/cer_statistics.py</code> ersetzt, sobald die Schema-Akkord steht.
+                </div>
+            </header>
+
+            <div id="cer-loading" role="status">Lade CER-Statistik...</div>
+            <div id="cer-error" class="cer-error" hidden role="alert"></div>
+
+            <div id="cer-app" hidden>
+
+                <!-- §1 Limitations-Panel (oben sichtbar, Honest-Default) -->
+                <section id="cer-sec-limitations" class="cer-section cer-section-limitations" aria-labelledby="cer-h-limitations">
+                    <h2 id="cer-h-limitations" class="ed-section">Limitierungen <span class="ed-section-sub">was diese Zahlen nicht sagen</span></h2>
+                    <div class="cer-limitations-grid">
+                        <div class="cer-limit-card">
+                            <h3 class="cer-limit-h">Stichprobe</h3>
+                            <p id="cer-lim-sample"></p>
+                        </div>
+                        <div class="cer-limit-card">
+                            <h3 class="cer-limit-h">Selektionsbias</h3>
+                            <p id="cer-lim-bias"></p>
+                        </div>
+                        <div class="cer-limit-card">
+                            <h3 class="cer-limit-h">Stabilitaet</h3>
+                            <p id="cer-lim-stability"></p>
+                        </div>
+                        <div class="cer-limit-card">
+                            <h3 class="cer-limit-h">Like-for-like</h3>
+                            <p id="cer-lim-likeforlike"></p>
+                        </div>
+                    </div>
+                    <details class="cer-excluded-details">
+                        <summary>6 ausgeschlossene Dokumente (Scope-Mismatch)</summary>
+                        <ul id="cer-excluded-list" class="cer-excluded-list"></ul>
+                    </details>
+                </section>
+
+                <!-- §2 Overall (End-to-End + OCR-only) -->
+                <section id="cer-sec-overall" class="cer-section" aria-labelledby="cer-h-overall">
+                    <h2 id="cer-h-overall" class="ed-section">Gesamt-CER <span class="ed-section-sub">mit 95% Konfidenzintervall</span></h2>
+                    <div class="cer-overall-tabs" role="tablist" aria-label="Pipeline-Stufen">
+                        <button class="cer-overall-tab active" data-tab="end_to_end" role="tab" aria-selected="true" aria-controls="cer-overall-end-to-end">End-to-End (TEI vs Referenz)</button>
+                        <button class="cer-overall-tab"        data-tab="ocr_only"   role="tab" aria-selected="false" aria-controls="cer-overall-ocr-only">OCR-only (Stage 2 Mistral)</button>
+                    </div>
+                    <div class="cer-overall-panel active" id="cer-overall-end-to-end" role="tabpanel"></div>
+                    <div class="cer-overall-panel"        id="cer-overall-ocr-only"   role="tabpanel" hidden></div>
+                    <p class="cer-method-tag" id="cer-overall-method"></p>
+                </section>
+
+                <!-- §3 Verteilung n=19 -->
+                <section id="cer-sec-distribution" class="cer-section" aria-labelledby="cer-h-distribution">
+                    <h2 id="cer-h-distribution" class="ed-section">Verteilung n=19 <span class="ed-section-sub">Histogramm + Boxplot der Per-Doc-CER</span></h2>
+                    <div class="cer-plot-wrap" id="cer-plot-histogram" aria-label="Histogramm der CER-Werte"></div>
+                    <div class="cer-plot-wrap cer-plot-wrap-short" id="cer-plot-boxplot" aria-label="Boxplot der CER-Werte"></div>
+                </section>
+
+                <!-- §4 Stratifiziert -->
+                <section id="cer-sec-strata" class="cer-section" aria-labelledby="cer-h-strata">
+                    <h2 id="cer-h-strata" class="ed-section">Stratifizierte CER <span class="ed-section-sub">Forest-Plot mit CIs</span></h2>
+                    <div class="cer-strata-grid">
+                        <div>
+                            <h3 class="cer-strata-h">Sprache</h3>
+                            <div class="cer-plot-wrap" id="cer-forest-language" aria-label="Forest-Plot Sprache"></div>
+                        </div>
+                        <div>
+                            <h3 class="cer-strata-h">Layout-Typ</h3>
+                            <div class="cer-plot-wrap" id="cer-forest-layout" aria-label="Forest-Plot Layout-Typ"></div>
+                        </div>
+                        <div>
+                            <h3 class="cer-strata-h">Publikationsform</h3>
+                            <div class="cer-plot-wrap" id="cer-forest-pubform" aria-label="Forest-Plot Publikationsform"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- §5 Multi-Norm-Regimes -->
+                <section id="cer-sec-multinorm" class="cer-section" aria-labelledby="cer-h-multinorm">
+                    <h2 id="cer-h-multinorm" class="ed-section">Multi-Norm-Regimes <span class="ed-section-sub">Wirkung der Normalisierungsstufen</span></h2>
+                    <div class="ed-table-wrap">
+                        <table class="ed-table cer-multinorm-table" id="cer-multinorm-table">
+                            <thead><tr><th>Regime</th><th class="num">Mean (95% CI)</th><th class="num">Median (95% CI)</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="cer-plot-wrap cer-plot-wrap-short" id="cer-plot-multinorm" aria-label="Slope-Chart der Normalisierungsregimes"></div>
+                </section>
+
+                <!-- §6 Paired Test -->
+                <section id="cer-sec-paired" class="cer-section" aria-labelledby="cer-h-paired">
+                    <h2 id="cer-h-paired" class="ed-section">Paired Test <span class="ed-section-sub">Pipeline vs. Pre-Pipeline-OCR</span></h2>
+                    <div class="cer-paired-grid">
+                        <div class="cer-paired-bar" id="cer-paired-bar" aria-label="Verteilung Verbesserung/Verschlechterung"></div>
+                        <div class="cer-paired-stats" id="cer-paired-stats"></div>
+                    </div>
+                    <p class="cer-paired-interp" id="cer-paired-interp"></p>
+                </section>
+
+                <!-- §7 Domain-Metriken -->
+                <section id="cer-sec-domain" class="cer-section" aria-labelledby="cer-h-domain">
+                    <h2 id="cer-h-domain" class="ed-section">Diakritik-Erhaltungsrate <span class="ed-section-sub">domain-spezifische Metrik</span></h2>
+                    <div class="ed-table-wrap">
+                        <table class="ed-table cer-domain-table" id="cer-domain-table">
+                            <thead><tr><th>Sprache</th><th class="num">Erwartet</th><th class="num">Beobachtet</th><th class="num">Erhaltungsrate (95% CI)</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <p class="cer-method-tag" id="cer-domain-method"></p>
+                </section>
+
+                <!-- §8 Fehlerkategorien -->
+                <section id="cer-sec-errcat" class="cer-section" aria-labelledby="cer-h-errcat">
+                    <h2 id="cer-h-errcat" class="ed-section">Fehlerkategorien <span class="ed-section-sub">aggregiert ueber alle Docs</span></h2>
+                    <div class="cer-errcat-grid">
+                        <div class="cer-plot-wrap cer-plot-wrap-square" id="cer-errcat-donut" aria-label="Donut-Chart Fehlerkategorien"></div>
+                        <div class="ed-table-wrap">
+                            <table class="ed-table cer-errcat-table" id="cer-errcat-table">
+                                <thead><tr><th>Kategorie</th><th class="num">Anzahl</th><th class="num">Anteil</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- §9 Per-Doc-Tabelle mit Drilldown -->
+                <section id="cer-sec-perdoc" class="cer-section" aria-labelledby="cer-h-perdoc">
+                    <h2 id="cer-h-perdoc" class="ed-section">Pro Dokument <span class="ed-section-sub">sortierbar, klick fuer Details</span></h2>
+                    <div class="ed-table-wrap">
+                        <table class="ed-table cer-perdoc-table" id="cer-perdoc-table">
+                            <thead><tr>
+                                <th class="sortable">Doc</th>
+                                <th class="sortable num">CER E2E</th>
+                                <th class="sortable num">CER OCR</th>
+                                <th class="sortable num">Δ</th>
+                                <th class="sortable num">Ref-Zeichen</th>
+                                <th class="sortable">Sprache</th>
+                                <th class="sortable">Typ</th>
+                                <th class="sortable">Form</th>
+                                <th class="sortable">Scope</th>
+                                <th>Top-3-Fehler</th>
+                            </tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Drilldown-Sheet (rechts auf Desktop, bottom auf Mobile) -->
+                <aside id="cer-drilldown" class="cer-drilldown" hidden aria-label="Dokument-Drilldown">
+                    <div class="cer-drilldown-head">
+                        <h3 id="cer-drilldown-title"></h3>
+                        <button id="cer-drilldown-close" class="cer-drilldown-close" aria-label="Drilldown schliessen">×</button>
+                    </div>
+                    <div id="cer-drilldown-body"></div>
+                </aside>
+
+                <!-- §10 Lit-Vergleich -->
+                <section id="cer-sec-lit" class="cer-section" aria-labelledby="cer-h-lit">
+                    <h2 id="cer-h-lit" class="ed-section">Forschungsvergleich <span class="ed-section-sub">like-for-like Bewertung</span></h2>
+                    <p class="ed-hint">Senkrechte Linie: ZBZ-Pipeline-Mean (mit CI als Band). Balken sind nach Vergleichbarkeit visuell differenziert.</p>
+                    <div class="cer-plot-wrap" id="cer-lit-bars" aria-label="Lit-Vergleich"></div>
+                    <div class="cer-lit-legend" id="cer-lit-legend"></div>
+                </section>
+
+                <!-- §11 Stabilitaet -->
+                <section id="cer-sec-stability" class="cer-section" aria-labelledby="cer-h-stability">
+                    <h2 id="cer-h-stability" class="ed-section">Stabilitaet <span class="ed-section-sub">Reproduzierbarkeit ueber Re-Runs</span></h2>
+                    <div id="cer-stability-content"></div>
+                </section>
+
+                <!-- §12 Proxies (Korpus n=285) -->
+                <section id="cer-sec-proxies" class="cer-section cer-section-proxies" aria-labelledby="cer-h-proxies">
+                    <div class="cer-proxies-banner">
+                        <strong>SCHAETZUNG</strong> n=285 — kein direkter CER, sondern aus validierten Proxies hochgerechnet (R² siehe unten).
+                    </div>
+                    <h2 id="cer-h-proxies" class="ed-section">Korpus-weite Proxy-Schaetzung <span class="ed-section-sub">n=285</span></h2>
+
+                    <h3 class="cer-strata-h">Validierung der Proxies an n=19</h3>
+                    <div class="ed-table-wrap">
+                        <table class="ed-table cer-proxy-validation-table" id="cer-proxy-validation-table">
+                            <thead><tr><th>Proxy</th><th class="num">Pearson</th><th class="num">Spearman</th><th class="num">p</th><th>Composite-Gewicht</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <p class="cer-proxy-r2" id="cer-proxy-r2"></p>
+
+                    <h3 class="cer-strata-h">Geschaetzte CER-Verteilung n=285</h3>
+                    <div class="cer-plot-wrap" id="cer-proxy-distribution" aria-label="Geschaetzte CER-Verteilung Korpus"></div>
+                    <p class="cer-proxy-caveat" id="cer-proxy-caveat"></p>
+
+                    <details class="cer-proxy-defs">
+                        <summary>Proxy-Definitionen</summary>
+                        <dl id="cer-proxy-defs-list"></dl>
+                    </details>
+                </section>
+
+                <!-- §13 Methoden-Footer -->
+                <section id="cer-sec-footer" class="cer-section cer-section-meta" aria-labelledby="cer-h-footer">
+                    <h2 id="cer-h-footer" class="ed-section">Reproduzierbarkeit</h2>
+                    <p class="ed-hint">Volle Methodik: <a href="../../knowledge/CER-METHODIK.md">knowledge/CER-METHODIK.md</a> · Primaere Ergebnisse: <a href="../../knowledge/CER-BENCHMARK.md">knowledge/CER-BENCHMARK.md</a></p>
+                    <div class="cer-meta-grid" id="cer-meta-grid"></div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="ed-footer" id="ed-footer-slot"></footer>
+
+    <script src="../js/zbz-core.js"></script>
+    <script src="../js/edition-shared.js"></script>
+    <script src="../js/infra-shared.js"></script>
+    <script src="../js/cer-dashboard.js"></script>
+</body>
+</html>
