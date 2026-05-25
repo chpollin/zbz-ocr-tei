@@ -32,7 +32,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="quality-screener-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). S.1 Z.139: '&amp;amp;' doppeltes XML-Escaping (sollte '&amp;' sein); S.1-2 Bestellformular ZBZ, S.3-5 'Notes marginales' (fra), Layout-Overlay S.1+S.3 korrekt; Validator: 0 Fehler, 0 Warnings (+2 more)</change>
+    <change when="2026-03-15" who="quality-screener-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). S.1 Z.139: '&amp;' doppeltes XML-Escaping (sollte '&amp;' sein); S.1-2 Bestellformular ZBZ, S.3-5 'Notes marginales' (fra), Layout-Overlay S.1+S.3 korrekt; Validator: 0 Fehler, 0 Warnings (+2 more)</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
@@ -140,7 +140,7 @@
           Freundliche Grüsse<lb facs="#facs_1_l_14_1" n="N001" />Fernleihe / Dokumentlieferdienst
         </p>
         <p facs="#facs_1_r_15">
-          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName> &amp;amp; <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_15_1" n="N001" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_15_2" n="N002" />www.ub.uzh.ch<lb facs="#facs_1_l_15_3" n="N003" />www.zb.uzh.ch
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName> &amp; <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_15_1" n="N001" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_15_2" n="N002" />www.ub.uzh.ch<lb facs="#facs_1_l_15_3" n="N003" />www.zb.uzh.ch
         </p>
       <pb facs="#facs_2" n="2" />
         <p facs="#facs_2_r_1">

@@ -7,6 +7,7 @@ Ergebnis: TEI-Fragment + Facsimile-Zonen pro Seite.
 Wird aufgerufen von: tei_unified.py (Orchestrierung).
 """
 
+import html
 import re
 
 from xml.sax.saxutils import escape as xml_escape
@@ -203,6 +204,11 @@ def _build_tei_body(matched: list[dict], page: int, genre: str | None, is_interv
         raw_text = item["text"]
         raw_text = re.sub(r'^#{1,6}\s+', '', raw_text, flags=re.MULTILINE)
         raw_text = re.sub(r'!\[.*?\]\(.*?\)', '', raw_text)
+
+        # OCR-Markdown enthaelt Sonderzeichen teils bereits als HTML-Entity
+        # (z.B. "&amp;"). Erst auf Literale kollabieren, dann genau einmal
+        # XML-escapen -- sonst entsteht Doppelkodierung ("&amp;amp;").
+        raw_text = html.unescape(raw_text)
 
         safe_text = xml_escape(raw_text)
         safe_text = md_to_tei_inline(safe_text)
