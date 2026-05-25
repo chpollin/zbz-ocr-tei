@@ -11,10 +11,10 @@ status: active
 Konsolidiertes Qualitaetswissen: Character Error Rate (Benchmark + Methodik), TEI-Validierung,
 Quality-Proxy, Agent-Based Quality Screening, Testplan-Baseline.
 
-**Datenquelle:** `docs/data/cer_statistics.json` (generiert via `cer_statistics_full.py`,
-deterministisch bei `seed=42`). Das fruehere interaktive CER-Dashboard und die Diagnostik-Seite
-wurden mit E56 abgeschafft (siehe [decisions.md](decisions.md)). Visualisierung kann bei Bedarf
-neu aufgebaut werden — die JSON-Daten sind reproduzierbar.
+**Datenquelle:** `docs/data/cer_statistics.json` (regenerierbar via `cer_statistics_full.py`,
+deterministisch bei `seed=42`; derzeit nicht eingecheckt). Das fruehere interaktive CER-Dashboard
+und die Diagnostik-Seite wurden mit E56 abgeschafft (siehe [decisions.md](decisions.md)).
+Visualisierung kann bei Bedarf neu aufgebaut werden — die JSON-Daten sind reproduzierbar.
 
 ---
 

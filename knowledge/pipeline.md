@@ -23,7 +23,7 @@ PDF ──→ Bilder ──→ OCR ──→ Layout ──→ PAGE-XML ──→
                    mistral  docling     output/      entities/   tei_unified/
                                               │
                                               ▼
-                                  Evaluation + Dashboard + Curation
+                                  Evaluation + Viewer/Curation
 ```
 
 | Stufe | Aufgabe | Skript | Output | Status |
@@ -47,7 +47,7 @@ PDF ──→ Bilder ──→ OCR ──→ Layout ──→ PAGE-XML ──→
 | 6b | **Unified TEI Pipeline** (E32) | `scripts/tei/tei_unified.py` | `output/tei_unified/` | **285/285** |
 | 6b+ | Post-Assembly Fixes | `tei_step3.py` | Fixes E/F/G + heuristische lb-Injection | Production (Session 34) |
 | 6c | TEI Validation | `scripts/tei/tei_validator.py` | JSON + HTML-Report | **285/285 valide**, 29 Warnings |
-| 7 | Evaluation + Dashboard | `scripts/evaluate_ocr.py` + `generate_dashboard_data.py` | `docs/data/dashboard.json` | Production |
+| 7 | Evaluation | `scripts/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
 
 **Manuelle Kuration (E56, Stand 2026-04-27):** Erfolgt im Pipeline-Viewer
 (`docs/viewer.html`) mit Layout- und Transkriptions-Editor. Aenderungen werden als JSON/MD/XML
@@ -377,8 +377,8 @@ Volle Pipeline-Output (`output/`) ist gitignored, nur lokal verfuegbar. Fuer die
 | 1540 | C | DE | 8 | deutsche Monografie |
 
 Daten: Scan-Bilder in `docs/images/{doc_id}/`, OCR/Layout/TEI in `docs/data/examples/{doc_id}/`.
-`shared.js`-Fallback-Pfade: primaer `../output/...`, Fallback `data/examples/{doc_id}/...`.
-Disclaimer-Banner + DEMO-Badges im Katalog.
+`core.js`-Pfadresolver mit dreistufiger Fallback-Kette: `data/pages/` → `data/examples/{doc_id}/`
+→ `../output/...` (E57).
 
 ---
 

@@ -17,9 +17,11 @@ QA der OCR-/Layout-/TEI-Ergebnisse, manuelle Korrektur durch Human-in-the-Loop,
 Engine-Vergleich (Mistral/Gemini/DeepSeek), Demonstration gegenueber ZBZ. Nicht
 gedacht als oeffentliche Edition oder Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
 
-**Eine Seite, sechs Module:** Faksimile + Layout-Overlay (links) und Transkription/TEI (rechts),
-plus Sidebar mit Doc-Liste. Drei Modi: *Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*.
-Persistenz erfolgt ausschliesslich via Datei-Download (kein Server).
+**Drei Seiten:** Korpus-Uebersicht (`index.html`: filter- und sortierbare Doc-Liste mit
+Screening-Status), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Overlay links,
+Transkription/TEI rechts) und eine About-Seite (`about.html`). Der Viewer kennt drei Modi:
+*Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*. Persistenz erfolgt ausschliesslich
+via Datei-Download (kein Server).
 
 ---
 
@@ -27,14 +29,18 @@ Persistenz erfolgt ausschliesslich via Datei-Download (kein Server).
 
 ```
 docs/
-├── viewer.html                  # 1 Seite, single-page App
+├── index.html                   # Korpus-Uebersicht: filter-/sortierbare Doc-Liste, Screening-Status
+├── viewer.html                  # Doc-Detail: Faksimile + Layout-Overlay + OCR/TEI-Panel, 3 Modi
+├── about.html                   # Projekt-/Methodik-Seite
 ├── css/
 │   ├── tokens.css               # Hersch Design Tokens (--h-*)
 │   ├── base.css                 # Reset, Typography, Buttons, Badges, Tabs
-│   └── viewer.css               # App-Shell, Sidebar, Faksimile-Overlay, TEI-Render, Editor-UI
+│   ├── viewer.css               # Viewer-Shell, Faksimile-Overlay, TEI-Render, Editor-UI
+│   └── catalog.css              # Korpus-Uebersicht: Status-Leiste, Filter, Doc-Tabelle
 ├── js/
-│   ├── core.js                  # DOM, URL, Fetch, Format, Cache, Toast, EventBus
-│   ├── viewer.js                # Orchestrator: Sidebar + Doc-Selektion + Mode-Switching
+│   ├── core.js                  # DOM, URL, Fetch, Format, Cache, Toast, EventBus, Markdown-Renderer
+│   ├── viewer.js                # Viewer-Orchestrator: Doc-Selektion + Mode-Switching
+│   ├── catalog.js               # Korpus-Uebersicht: Laden, Filter, Sortierung, Screening-Legende
 │   ├── tei-render.js            # TEI-XML → DOM (mit Entity-Highlighting)
 │   ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
 │   ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
@@ -49,8 +55,9 @@ docs/
     └── examples/                # Legacy: 4 DEMO-Docs (Backward-Kompatibilitaet)
 ```
 
-**Volumen:** 1 HTML (148 Z.), 3 CSS (806 Z.), 6 JS (1.420 Z.). Reduktion gegenueber Vorversion:
-−89% HTML, −84% CSS, −81% JS.
+**Volumen:** 3 HTML (385 Z.), 4 CSS (1.369 Z.), 7 JS (1.832 Z.). Die Korpus-Uebersicht
+(`index.html` + `catalog.js` + `catalog.css`) und die About-Seite kamen nach der E56-Radikalkur
+hinzu (Commit „Korpus-Uebersicht + Top-Nav").
 
 ---
 

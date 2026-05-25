@@ -17,6 +17,7 @@ Details und Entscheidungen in [decisions.md](decisions.md). Code-Aenderungen im 
 
 | # | Datum | Thema |
 |---|---|---|
+| 44 | 2026-05-25 | Befund-Fixes + Konsistenz-Refactoring. Fixes: Frontend-Screening-Zaehler `WITH_NOTES`→`APPROVED_WITH_NOTES` (catalog.js/index.html); TEI-Doppelkodierung `&amp;amp;` behoben (tei_step1.py `html.unescape` + Bestandsdaten 26 Docs). Refactoring: Knowledge-Drift nach E56/E57 bereinigt (viewer.md auf reale 3-Seiten-App, CLAUDE.md cer.html-Verweis entfernt, `data/tei_curated/` angelegt, E56-curation_server-Widerspruch, shared.js→core.js, edition→viewer-Knoten); tote CSS-Tokens entfernt; `.btn--ghost`-Dopplung auf `#filter-reset` gescoped; Orphans geloescht (`scripts/postprocess/`, `generate_dashboard_data.py` + `dashboard.json`). Befund 3 (unescapte `<`/`>` in revisionDesc bei 6 Finals) offen. |
 | 43 | 2026-05-25 | Viewer auf vollen Korpus erweitert: `scripts/generate_edition_data.py` mit `mirror_per_page_data()` (alle 285 Docs → `docs/data/pages/`, 8083 Layout + 4117 OCR + 4115 TEI-Seiten extrahiert via `<pb>`-Splitting, sequentielle Pagination 1..N statt n-Attribut). `core.js`-Resolver mit dreistufigem Fallback (`pages/` → `examples/` → `../output/`). `docs/.nojekyll` fuer GitHub Pages. Deployment-Section in `viewer.md`. Smoke-Test via HTTP-Probes (5 Docs ueber Typen A-D) erfolgreich. Bildlieferung bleibt lokal-only (4 GB). E57. |
 
 ---

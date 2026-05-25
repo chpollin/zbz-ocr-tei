@@ -44,7 +44,7 @@ projekt (Vision, Korpus, ZBZ-Kontext)
    │
    ├── quality (CER + TEI-Validierung + Screening)
    │
-   ├── edition (Lese-Edition + Curation + Design)
+   ├── viewer (Pipeline-Viewer + Layout-/Transkriptions-Editor)
    │
    └── methodik (Promptotyping + Verifikationskaskade)
 

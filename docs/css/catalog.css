@@ -325,19 +325,18 @@
 /* (Site-Footer-Styles liegen in base.css.) */
 
 /* ============================================================
-   Buttons (Ghost-Variante fuer Reset)
+   Reset-Button: gerahmte Ghost-Variante. Auf #filter-reset gescoped,
+   um die Basis-Komponente .btn--ghost (base.css) nicht global zu ueberschreiben.
    ============================================================ */
-.btn--ghost {
-  background: transparent;
+#filter-reset.btn--ghost {
   border: 1px solid var(--h-border-emphasis);
   color: var(--h-text-secondary);
   padding: 6px 12px;
   font-size: var(--h-sm);
-  cursor: pointer;
   border-radius: var(--h-radius);
   font-family: var(--h-font-heading);
 }
-.btn--ghost:hover { color: var(--h-text); border-color: var(--h-text-muted); }
+#filter-reset.btn--ghost:hover { color: var(--h-text); border-color: var(--h-text-muted); }
 
 /* ============================================================
    Responsive (Tabelle wird auf Mobile zur Card-Liste)

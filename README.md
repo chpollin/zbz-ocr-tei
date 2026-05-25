@@ -60,7 +60,6 @@ zbz-ocr-tei/
     evaluate_ocr.py       # CER/WER evaluation
     benchmark_cer.py      # End-to-end CER benchmark
     cer_statistics_full.py   # BCa-Bootstrap + Paired + HCPR
-    generate_dashboard_data.py   # Pipeline metrics (dashboard.json)
     generate_edition_data.py     # Catalog, thumbnails, per-page mirror for viewer
     layout/               # PAGE-XML + METS generators
     tei/                  # TEI-XML pipeline (scaffold, Gemini, assembly, validator)

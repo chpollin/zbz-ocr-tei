@@ -95,7 +95,7 @@ python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER
 python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer Statistik-Library
 ```
 
-Output `docs/data/cer_statistics.json` → Dashboard `docs/infrastruktur/cer.html`. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
+Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
 
 ## Textschicht
 
@@ -166,8 +166,7 @@ Ergebnis (285/285 Docs): 242 APPROVED (85%), 43 WITH_NOTES (15%), 0 NEEDS_REVIEW
 ## Viewer-Daten
 
 ```bash
-python -m scripts.generate_edition_data                                  # Katalog (data/catalog.json) + Entity-Index
-python -m scripts.generate_dashboard_data                                # Pipeline-KPIs (data/dashboard.json, optional)
+python -m scripts.generate_edition_data                                  # Katalog (data/catalog.json) + Entity-Index + Per-Seiten-Mirror
 ```
 
 Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne Backend. Editier-Aenderungen

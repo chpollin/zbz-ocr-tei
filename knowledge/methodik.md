@@ -192,7 +192,6 @@ Output: `output/tei_final/{DOC_ID}_final.xml` + `{DOC_ID}_review.json` + `screen
 ```bash
 python scripts/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300            # Seitenbilder
 python -m scripts.generate_layout_overlays --doc {DOC_ID} --compare     # Layout-Overlay
-python -m scripts.generate_dashboard_data                                # Dashboard
 ```
 
 ---
