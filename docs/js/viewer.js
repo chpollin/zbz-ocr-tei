@@ -20,16 +20,18 @@
     const $$ = ZBZ.$$;
 
     // ---- State ----
+    // E60 (2026-05-25): mode -> imageEdit + textEdit (zwei unabhaengige Edit-States).
     const state = {
         catalog: null,
         doc: null,
         page: 1,
-        mode: 'view',         // view | layout | text
         textSource: 'ocr',    // ocr | tei | xml
         ocrSource: 'mistral',
         layout: null,
         teiXml: null,
-        osdViewer: null,      // OpenSeadragon-Instanz (nur im View-Mode aktiv)
+        osdViewer: null,      // OpenSeadragon-Instanz (nur wenn !imageEdit aktiv)
+        imageEdit: false,     // Faksimile-Edit-Toggle: aktiviert Layout-Editor (img + Eigenbau-Overlay)
+        textEdit: false,      // Text-Edit-Toggle: aktiviert Transcription-Editor fuer aktive Quelle
         _currentText: null,
         _currentEditedText: null
     };
@@ -45,7 +47,8 @@
         pageInfo:       $('#page-info'),
         btnPrev:        $('#btn-prev'),
         btnNext:        $('#btn-next'),
-        modeBtns:       $$('.mode-btn[data-mode]'),
+        btnImageEdit:   $('#btn-image-edit'),
+        btnTextEdit:    $('#btn-text-edit'),
         textSourceBtns: $$('.mode-btn[data-text-source]'),
         ocrSourceSel:   $('#ocr-source'),
         imageBody:      $('#image-body'),
@@ -143,7 +146,7 @@
         destroyOsd();
         refs.imageBody.innerHTML = '';
 
-        if (state.mode === 'layout') {
+        if (state.imageEdit) {
             await renderFacsimileImg();
         } else {
             await renderFacsimileOsd();
@@ -252,7 +255,7 @@
             refs.regionCount.textContent = 'keine Layout-Daten';
         }
 
-        if (state.mode === 'layout' && ZBZ.LayoutEditor) {
+        if (state.imageEdit && ZBZ.LayoutEditor) {
             ZBZ.LayoutEditor.attach(overlay, layout, onLayoutChanged);
         }
     }
@@ -334,9 +337,9 @@
 
     function renderOcrText(text) {
         refs.textBody.innerHTML = '';
-        // Im Transkriptions-Modus erwartet der Editor den Markdown-Rohtext im DOM.
-        // In den Lese-Modi (view/layout) rendern wir Markdown -> HTML fuer Lesbarkeit.
-        if (state.mode === 'text') {
+        // Im Text-Edit-Modus erwartet der Editor den Markdown-Rohtext im DOM.
+        // Sonst wird Markdown -> HTML gerendert fuer Lesbarkeit.
+        if (state.textEdit) {
             const div = ZBZ.el('div', { cls: 'text text--raw', text });
             refs.textBody.appendChild(div);
         } else {
@@ -373,7 +376,7 @@
     }
 
     function ensureTextEditableState() {
-        if (state.mode === 'text' && ZBZ.TranscriptionEditor) {
+        if (state.textEdit && ZBZ.TranscriptionEditor) {
             ZBZ.TranscriptionEditor.attach(refs.textBody, state.textSource, (newContent) => {
                 state._currentEditedText = newContent;
             });
@@ -398,36 +401,38 @@
         return xml;
     }
 
-    // ============================================================ Modes ============================================================
+    // ============================================================ Edit-Toggles (E60) ============================================================
 
-    function setMode(mode) {
-        const prevMode = state.mode;
-        state.mode = mode;
-        refs.modeBtns.forEach(b => b.setAttribute('aria-pressed', b.getAttribute('data-mode') === mode ? 'true' : 'false'));
+    function setImageEdit(on) {
+        const prev = state.imageEdit;
+        state.imageEdit = !!on;
+        refs.btnImageEdit.setAttribute('aria-pressed', state.imageEdit ? 'true' : 'false');
 
-        // Editoren immer detachen vor Re-Render
-        if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
-        if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
+        // Layout-Toolbar toggle (zeigt + Region, Loeschen, Typ-Selector)
+        refs.layoutToolbar.classList.toggle('hidden', !state.imageEdit);
 
-        // Faksimile-Variante wechselt zwischen Layout-Mode (img + Editor) und Rest (OSD)
-        const facsimileVariantChanged = (prevMode === 'layout') !== (mode === 'layout');
-        if (facsimileVariantChanged) {
+        if (prev !== state.imageEdit) {
+            // Editor immer detachen vor Re-Render (greift auf altes DOM zu)
+            if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
+            // Faksimile-Variante wechselt: OSD (view) <-> img (edit). renderFacsimileImg() attached Editor.
             renderFacsimile();
         }
+    }
 
-        if (mode === 'layout') {
-            refs.layoutToolbar.classList.remove('hidden');
-            // Editor wird von renderFacsimileImg() automatisch attached
-        } else {
-            refs.layoutToolbar.classList.add('hidden');
-        }
+    function setTextEdit(on) {
+        const prev = state.textEdit;
+        state.textEdit = !!on;
+        refs.btnTextEdit.setAttribute('aria-pressed', state.textEdit ? 'true' : 'false');
 
-        // OCR-Panel re-rendern, wenn die Grenze view/layout <-> text gekreuzt wird,
-        // weil renderOcrText() im Edit-Modus den Markdown-Rohtext zeigt, sonst gerendert.
-        const crossesEditBoundary = (prevMode === 'text') !== (mode === 'text');
-        if (crossesEditBoundary && state.textSource === 'ocr' && state._currentText != null) {
+        if (prev === state.textEdit) return;
+
+        // Editor immer detachen bevor Mode-Wechsel; ensureTextEditableState() re-attached wenn noetig
+        if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
+
+        // OCR-Panel rendering wechselt: gerenderter Markdown <-> Rohtext
+        if (state.textSource === 'ocr' && state._currentText != null) {
             renderOcrText(state._currentText);
-        } else if (mode === 'text') {
+        } else {
             ensureTextEditableState();
         }
     }
@@ -479,7 +484,8 @@
             else if (e.key === 'ArrowRight') refs.btnNext.click();
         });
 
-        refs.modeBtns.forEach(b => b.addEventListener('click', () => setMode(b.getAttribute('data-mode'))));
+        refs.btnImageEdit.addEventListener('click', () => setImageEdit(!state.imageEdit));
+        refs.btnTextEdit.addEventListener('click', () => setTextEdit(!state.textEdit));
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
 
         refs.ocrSourceSel.addEventListener('change', () => {

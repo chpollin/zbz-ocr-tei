@@ -83,14 +83,34 @@
     function updateToolbarForSelection() {
         const sel = document.getElementById('region-type');
         const del = document.getElementById('btn-region-delete');
+        const coordIds = ['rc-x', 'rc-y', 'rc-w', 'rc-h'];
+        const coordInputs = coordIds.map(id => document.getElementById(id));
         if (state.selectedIdx == null) {
             sel.disabled = true;
             del.disabled = true;
+            coordInputs.forEach(inp => { if (inp) { inp.disabled = true; inp.value = ''; } });
             return;
         }
         sel.disabled = false;
         del.disabled = false;
         sel.value = state.regions[state.selectedIdx].zbz_tag || 'zb_paragraph';
+        coordInputs.forEach(inp => { if (inp) inp.disabled = false; });
+        updateCoordInputs(state.selectedIdx);
+    }
+
+    function updateCoordInputs(idx) {
+        const r = state.regions[idx];
+        if (!r || !r.bbox) return;
+        const fmt = (v) => (Math.round(v * 100) / 100).toString();
+        const rcx = document.getElementById('rc-x');
+        const rcy = document.getElementById('rc-y');
+        const rcw = document.getElementById('rc-w');
+        const rch = document.getElementById('rc-h');
+        // Nur ueberschreiben wenn nicht gerade im Input-Fokus (vermeidet Cursor-Reset waehrend des Tippens)
+        if (rcx && document.activeElement !== rcx) rcx.value = fmt(r.bbox.x_pct);
+        if (rcy && document.activeElement !== rcy) rcy.value = fmt(r.bbox.y_pct);
+        if (rcw && document.activeElement !== rcw) rcw.value = fmt(r.bbox.w_pct);
+        if (rch && document.activeElement !== rch) rch.value = fmt(r.bbox.h_pct);
     }
 
     // ============================================================ Overlay-Events ============================================================
@@ -127,6 +147,7 @@
             if (state.mode === 'dragging' || state.mode === 'resizing' || state.mode === 'creating') {
                 state.mode = 'idle';
                 state.dragData = null;
+                if (state.overlay) state.overlay.classList.remove('creating');
                 state.onChange(state.regions);
                 renderRegionList();
                 redrawOverlay();
@@ -137,6 +158,24 @@
             if ((e.key === 'Delete' || e.key === 'Backspace') && state.selectedIdx != null) {
                 e.preventDefault();
                 deleteSelected();
+            } else if (e.key === 'Escape') {
+                if (state.mode === 'create-pending' || state.mode === 'creating') {
+                    e.preventDefault();
+                    // Falls schon angefangen zu zeichnen: die neu erzeugte Region wieder entfernen
+                    if (state.mode === 'creating' && state.dragData) {
+                        state.regions.splice(state.dragData.idx, 1);
+                        state.selectedIdx = null;
+                    }
+                    state.mode = 'idle';
+                    state.dragData = null;
+                    if (state.overlay) state.overlay.classList.remove('creating');
+                    redrawOverlay();
+                    renderRegionList();
+                    updateToolbarForSelection();
+                    ZBZ.toast('Region-Erstellung abgebrochen', 'info');
+                } else if (state.selectedIdx != null) {
+                    selectRegion(null);
+                }
             }
         };
         state.overlay.addEventListener('mousedown', _onMouseDown);
@@ -296,11 +335,38 @@
         // Region hinzufuegen (Mode "create-pending")
         btnAdd.onclick = () => {
             state.mode = 'create-pending';
-            ZBZ.toast('Auf Faksimile ziehen, um Region zu erzeugen', 'info');
+            if (state.overlay) state.overlay.classList.add('creating');
+            ZBZ.toast('Auf Faksimile ziehen, um Region zu erzeugen (ESC bricht ab)', 'info');
         };
 
         // Loeschen
         btnDel.onclick = () => deleteSelected();
+
+        // Coord-Inputs (Live-Edit der selektierten Region)
+        ['x', 'y', 'w', 'h'].forEach(key => {
+            const inp = document.getElementById('rc-' + key);
+            if (!inp) return;
+            inp.oninput = () => {
+                if (state.selectedIdx == null) return;
+                const r = state.regions[state.selectedIdx];
+                if (!r || !r.bbox) return;
+                const val = parseFloat(inp.value);
+                if (isNaN(val)) return;
+                const clamped = clamp(val, 0, 100);
+                const k = key + '_pct';
+                r.bbox[k] = clamped;
+                // Konsistenz erzwingen (x + w <= 100, y + h <= 100)
+                if (key === 'x' || key === 'w') {
+                    r.bbox.w_pct = clamp(r.bbox.w_pct, 0.5, 100 - r.bbox.x_pct);
+                }
+                if (key === 'y' || key === 'h') {
+                    r.bbox.h_pct = clamp(r.bbox.h_pct, 0.5, 100 - r.bbox.y_pct);
+                }
+                applyRegionStyle(state.selectedIdx);
+                renderRegionList();
+                state.onChange(state.regions);
+            };
+        });
     }
 
     // ============================================================ Render ============================================================
@@ -341,6 +407,7 @@
         el.style.top    = r.bbox.y_pct + '%';
         el.style.width  = r.bbox.w_pct + '%';
         el.style.height = r.bbox.h_pct + '%';
+        if (idx === state.selectedIdx) updateCoordInputs(idx);
     }
 
     // ============================================================ Region-Liste (Reading-Order) ============================================================
@@ -349,8 +416,8 @@
         // Liste in den Image-Body unter dem Faksimile haengen
         let container = document.querySelector('.region-list-container');
         if (!container) {
-            container = ZBZ.el('div', { cls: 'region-list-container', style: { marginTop: 'var(--h-space-md)' } });
-            container.appendChild(ZBZ.el('h3', { text: 'Reading-Order (Drag zum Verschieben)', style: { fontSize: 'var(--h-sm)', margin: '0 0 var(--h-space-sm)', color: 'var(--h-text-muted)' } }));
+            container = ZBZ.el('div', { cls: 'region-list-container' });
+            container.appendChild(ZBZ.el('h3', { cls: 'region-list-container__title', text: 'Reading-Order (Drag zum Verschieben, Klick selektiert)' }));
             const ul = ZBZ.el('ul', { cls: 'region-list' });
             container.appendChild(ul);
             const body = state.overlay && state.overlay.closest('.panel__body');
@@ -358,6 +425,7 @@
         }
         const ul = container.querySelector('.region-list');
         ul.innerHTML = '';
+        const fmt = (v) => (Math.round(v * 10) / 10).toString();
         state.regions.forEach((r, idx) => {
             const li = ZBZ.el('li', {
                 cls: 'region-list__item' + (idx === state.selectedIdx ? ' region-list__item--selected' : ''),
@@ -366,6 +434,12 @@
             li.appendChild(ZBZ.el('span', { cls: 'region-list__index', text: '#' + (idx + 1) }));
             li.appendChild(ZBZ.el('span', { cls: 'region-list__label', text: (r.text || '').slice(0, 60) || '(kein Text)' }));
             li.appendChild(ZBZ.el('span', { cls: 'region-list__type', text: ZBZ.regionTypeLabel(r.zbz_tag) }));
+            if (r.bbox) {
+                li.appendChild(ZBZ.el('span', {
+                    cls: 'region-list__bbox',
+                    text: fmt(r.bbox.x_pct) + ' · ' + fmt(r.bbox.y_pct) + ' · ' + fmt(r.bbox.w_pct) + ' × ' + fmt(r.bbox.h_pct)
+                }));
+            }
             li.addEventListener('click', () => selectRegion(idx));
             li.addEventListener('dragstart', (e) => { li.classList.add('region-list__item--dragging'); e.dataTransfer.setData('text/plain', String(idx)); });
             li.addEventListener('dragend', () => li.classList.remove('region-list__item--dragging'));

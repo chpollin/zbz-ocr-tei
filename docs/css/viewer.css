@@ -137,8 +137,9 @@
   text-align: center;
   color: var(--h-text-secondary);
 }
+.toolbar__group--right { margin-left: auto; }
+
 .toolbar__mode {
-  margin-left: auto;
   display: inline-flex;
   gap: 2px;
   background: var(--h-bg-alt);
@@ -146,7 +147,7 @@
   border-radius: var(--h-radius);
   border: 1px solid var(--h-border);
 }
-.toolbar__mode--inline { margin-left: 0; padding: 2px; }
+.toolbar__mode--inline { padding: 2px; }
 .mode-btn {
   padding: 5px 14px;
   border: none;
@@ -221,7 +222,6 @@
 .panel__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--h-space-sm);
   padding: var(--h-space-sm) var(--h-space-md);
   border-bottom: 1px solid var(--h-border);
@@ -239,6 +239,42 @@
   font-size: var(--h-xs);
   color: var(--h-text-muted);
   font-family: var(--h-font-mono);
+}
+
+/* Header-Actions Container: rechts ausgerichtet, gruppiert Source-Switch + Edit-Toggle */
+.panel__header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--h-space-sm);
+}
+
+/* Edit-Toggle pro Panel (E60): klein, anthrazit-aktiv */
+.panel__edit-toggle {
+  padding: 4px 12px;
+  border: 1px solid var(--h-border);
+  background: transparent;
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-secondary);
+  cursor: pointer;
+  border-radius: var(--h-radius-sm);
+  transition: background var(--h-transition-fast), color var(--h-transition-fast), border-color var(--h-transition-fast);
+}
+.panel__edit-toggle:hover {
+  background: rgba(44,40,37,0.04);
+  color: var(--h-text);
+}
+.panel__edit-toggle[aria-pressed="true"] {
+  background: var(--h-anthrazit);
+  color: var(--h-text-inverse);
+  border-color: var(--h-anthrazit);
+}
+.panel__edit-toggle[aria-pressed="true"]:hover {
+  background: var(--h-anthrazit-light);
+  color: var(--h-text-inverse);
 }
 .panel__body {
   flex: 1;
@@ -280,7 +316,9 @@
   inset: 0;
   pointer-events: none;
 }
-.facsimile__overlay.editing { pointer-events: auto; cursor: crosshair; }
+.facsimile__overlay.editing { pointer-events: auto; cursor: default; }
+.facsimile__overlay.creating { cursor: crosshair; }
+.facsimile__overlay.creating .region { pointer-events: none; }
 
 /* ---- Body-Variante fuer OSD (kein Padding, fixed Height) ---- */
 .panel__body--canvas {
@@ -479,15 +517,25 @@
 .xml-comment    { color: var(--h-text-muted); font-style: italic; }
 
 /* ============================================================
-   Region-Liste (Reading-Order, optional)
+   Region-Liste (Reading-Order, im Edit-Mode unter dem Faksimile)
    ============================================================ */
+.region-list-container { margin-top: var(--h-space-md); }
+.region-list-container__title {
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+  margin: 0 0 var(--h-space-sm);
+}
 .region-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 .region-list__item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2.2em 1fr auto auto;
   align-items: center;
   gap: var(--h-space-sm);
   padding: 6px var(--h-space-sm);
@@ -497,17 +545,21 @@
   background: var(--h-surface);
   cursor: grab;
   font-size: var(--h-sm);
+  transition: border-color var(--h-transition-fast), background var(--h-transition-fast);
+}
+.region-list__item:hover { border-color: var(--h-border-emphasis); }
+.region-list__item--selected {
+  border-color: var(--h-ziegelrot);
+  background: var(--h-ziegelrot-subtle);
 }
 .region-list__item--dragging { opacity: 0.4; }
-.region-list__item--over     { border-color: var(--h-ziegelrot); }
+.region-list__item--over     { border-color: var(--h-ziegelrot); border-style: dashed; }
 .region-list__index {
   font-family: var(--h-font-mono);
   font-size: var(--h-xs);
   color: var(--h-text-muted);
-  min-width: 18px;
 }
 .region-list__label {
-  flex: 1;
   font-size: var(--h-xs);
   color: var(--h-text-secondary);
   white-space: nowrap;
@@ -517,6 +569,46 @@
 .region-list__type {
   font-family: var(--h-font-heading);
   font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+}
+.region-list__bbox {
+  font-family: var(--h-font-mono);
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Live-Koordinaten-Editor (in der Layout-Toolbar, fuer selektierte Region)
+   ============================================================ */
+.region-coords {
+  gap: var(--h-space-xs);
+}
+.region-coords__field {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
+}
+.region-coords__field > span {
+  font-family: var(--h-font-heading);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+}
+.region-coords__input {
+  width: 4.5em;
+  padding: 2px 4px;
+  font-family: var(--h-font-mono);
+  font-size: var(--h-xs);
+  text-align: right;
+}
+.region-coords__input:disabled {
+  background: var(--h-bg-alt);
+  color: var(--h-text-muted);
+  cursor: not-allowed;
 }
 
 /* ============================================================
