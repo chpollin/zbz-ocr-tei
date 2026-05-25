@@ -70,6 +70,30 @@ PUB_FORM_LABELS = {
 _PB_RE = re.compile(r'<pb\s[^>]*/?>')
 _NS_RE = re.compile(r'\s+xmlns\s*=\s*"[^"]*"')
 _REVISION_RE = re.compile(r"<revisionDesc.*?</revisionDesc>", re.DOTALL)
+# <div>-Tags (offen, nicht self-closing) bzw. schliessend, fuer das Balancieren
+# von Seiten-Chunks, die zwischen zwei <pb> aus dem Dokument geschnitten werden.
+_DIV_TAG_RE = re.compile(r'<div\b[^>]*?(?<!/)>|</div\s*>')
+
+
+def _balance_divs(chunk: str) -> str:
+    """Balanciert <div>-Tags eines zwischen zwei <pb> geschnittenen Chunks.
+
+    Ein Seiten-Chunk kann ein </div> tragen, dessen <div> auf einer frueheren
+    Seite geoeffnet wurde (oder umgekehrt). Fuehrende ueberzaehlige </div>
+    bekommen ein <div> davor, am Ende offene <div> ein </div> dahinter -- damit
+    ist das Fragment standalone wohlgeformt (core.js parst strikt als text/xml).
+    """
+    stack = 0
+    leading_closes = 0
+    for m in _DIV_TAG_RE.finditer(chunk):
+        if m.group().startswith("</"):
+            if stack > 0:
+                stack -= 1
+            else:
+                leading_closes += 1
+        else:
+            stack += 1
+    return ("<div>" * leading_closes) + chunk + ("</div>" * stack)
 
 
 def _extract_pages_from_final(final_path: Path) -> dict:
@@ -104,7 +128,7 @@ def _extract_pages_from_final(final_path: Path) -> dict:
         page_num = i + 1
         start = m.start()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(body_inner)
-        chunk = body_inner[start:end]
+        chunk = _balance_divs(body_inner[start:end])
         pages[page_num] = _wrap_page(f"<body>{chunk}</body>")
     return pages
 

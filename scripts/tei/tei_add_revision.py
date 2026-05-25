@@ -20,6 +20,18 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 TEI_FINAL_DIR = Path(__file__).parent.parent.parent / "output" / "tei_final"
 
+# Screening-Notizen sind freier Agent-Text und enthalten teils Tag-Erwaehnungen
+# (z.B. "korrekt als <note>") oder "&" -- diese muessen XML-escaped werden, sonst
+# wird das revisionDesc nicht wohlgeformt. Guarded, um bestehende Entities
+# (&amp; &lt; ...) nicht zu doppeln.
+_ENTITY_RE = re.compile(r"&(?!(?:amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)")
+
+
+def _esc_text(s: str) -> str:
+    """Escapt Text fuer XML-Content ohne bestehende Entities zu doppeln."""
+    s = _ENTITY_RE.sub("&amp;", s)
+    return s.replace("<", "&lt;").replace(">", "&gt;")
+
 
 def build_revision_desc(doc_id, review_data):
     """Baut <revisionDesc> XML-Block aus Review-Daten."""
@@ -61,9 +73,9 @@ def build_revision_desc(doc_id, review_data):
         layer_str = " ".join(layer_summary)
 
         lines.append(
-            f'    <change when="{date}" who="{reviewer}" '
-            f'status="{status}">'
-            f'Agent-Based Quality Screening ({layer_str}). {notes}'
+            f'    <change when="{_esc_text(date)}" who="{_esc_text(reviewer)}" '
+            f'status="{_esc_text(status)}">'
+            f'Agent-Based Quality Screening ({_esc_text(layer_str)}). {_esc_text(notes)}'
             f'</change>'
         )
     else:

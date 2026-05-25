@@ -24,7 +24,7 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:warning L5:n/a L6:warning L7:ok). 12 <speaker><persName>-Tags enthalten Satzfragmente statt Personennamen -- W9-Warning, aber keine strukturelle Fehlcodierung; Bekannte Entity-False-Positives (Mensch, Philosophen) -- projektweites Muster</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:warning L5:n/a L6:warning L7:ok). 12 &lt;speaker&gt;&lt;persName&gt;-Tags enthalten Satzfragmente statt Personennamen -- W9-Warning, aber keine strukturelle Fehlcodierung; Bekannte Entity-False-Positives (Mensch, Philosophen) -- projektweites Muster</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

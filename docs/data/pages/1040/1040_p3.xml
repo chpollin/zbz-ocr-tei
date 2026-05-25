@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <text>
-    <body><pb facs="#facs_3" n="3" />
+    <body><div><pb facs="#facs_3" n="3" />
         <head>
           INTERVIEW DE <persName ref="GND:118815679">JEANNE HERSCH</persName><lb facs="#facs_3_l_1_1" n="N001" />Professeur de philosophie à l'<orgName ref="GND:unknown">Université de Genève</orgName>
         </head>
@@ -25,6 +25,6 @@
         </p>
       </div>
 <div n="1" type="interview">
-        </body>
+        </div></body>
   </text>
 </TEI>
