@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hersch Pipeline — Korpus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body class="catalog-body">
+
+  <!-- ============================================================ Header ============================================================ -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <strong>Hersch</strong>
+        <span>Pipeline</span>
+      </a>
+      <p class="site-header__sub">Nachlass Jeanne Hersch, ZBZ &middot; OCR / Layout / TEI</p>
+      <nav class="site-header__nav" aria-label="Hauptnavigation">
+        <a href="index.html" aria-current="page">Korpus</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/DHCraft/zbz-ocr-tei" target="_blank" rel="noopener">Repo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="catalog">
+
+    <!-- ============================================================ Status-Leiste ============================================================ -->
+    <section class="status-bar" aria-label="Status">
+      <div class="status-bar__inner">
+        <div class="progress-block">
+          <h2 class="progress-block__label">Screening-Status</h2>
+          <div class="progress-bar" id="progress-bar" role="img" aria-label="Screening-Verteilung"></div>
+          <ul class="progress-legend" id="progress-legend"></ul>
+        </div>
+        <div class="counts-block" id="counts-block">
+          <div class="counts-block__main"><span id="count-total">—</span><span class="counts-block__label">Objekte</span></div>
+          <div class="counts-block__split" id="counts-split"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Filter ============================================================ -->
+    <section class="filter-bar" aria-label="Filter">
+      <div class="filter-bar__inner">
+        <div class="filter-bar__search">
+          <input class="input" id="search" type="search" placeholder="Suchen nach Titel, Autor, ID, Beschreibung…" aria-label="Suchen">
+        </div>
+        <div class="filter-bar__group">
+          <select class="input" id="filter-lang" aria-label="Sprache">
+            <option value="">Alle Sprachen</option>
+          </select>
+          <select class="input" id="filter-type" aria-label="Layout-Typ">
+            <option value="">Alle Typen</option>
+            <option value="A">A &middot; Einspaltig</option>
+            <option value="B">B &middot; Zweispaltig</option>
+            <option value="C">C &middot; Monografie</option>
+            <option value="D">D &middot; Spezial</option>
+          </select>
+          <select class="input" id="filter-form" aria-label="Publikationsform">
+            <option value="">Alle Formen</option>
+          </select>
+          <select class="input" id="filter-screening" aria-label="Screening-Status">
+            <option value="">Alle Status</option>
+            <option value="APPROVED">Approved</option>
+            <option value="WITH_NOTES">With Notes</option>
+            <option value="NEEDS_REVIEW">Needs Review</option>
+            <option value="NOT_SCREENED">Nicht gescreent</option>
+          </select>
+          <button class="btn btn--ghost" id="filter-reset" title="Filter zuruecksetzen">Zuruecksetzen</button>
+        </div>
+        <div class="filter-bar__sort">
+          <span class="filter-bar__label">Sortieren:</span>
+          <select class="input" id="sort">
+            <option value="id-asc">ID aufsteigend</option>
+            <option value="id-desc">ID absteigend</option>
+            <option value="title-asc">Titel A–Z</option>
+            <option value="title-desc">Titel Z–A</option>
+            <option value="pages-desc">Seiten (viele zuerst)</option>
+            <option value="pages-asc">Seiten (wenige zuerst)</option>
+            <option value="date-desc">Datum neu zuerst</option>
+            <option value="date-asc">Datum alt zuerst</option>
+          </select>
+          <span class="filter-bar__hits" id="hits-count">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Tabelle ============================================================ -->
+    <section class="doc-table" aria-label="Dokumentenliste">
+      <header class="doc-table__head">
+        <div class="col-thumb"></div>
+        <div class="col-title">Titel</div>
+        <div class="col-meta">Autor &middot; Datum</div>
+        <div class="col-lang">Sprache</div>
+        <div class="col-type">Typ</div>
+        <div class="col-form">Form</div>
+        <div class="col-pages">Seiten</div>
+        <div class="col-screening">Screening</div>
+      </header>
+      <div class="doc-table__body" id="doc-rows">
+        <div class="doc-table__empty">Lade Korpus…</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>DHCraft / Zentralbibliothek Zuerich</span>
+      <span id="generated-info">—</span>
+    </div>
+  </footer>
+
+  <script src="js/core.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

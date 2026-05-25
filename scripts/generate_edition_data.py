@@ -1,17 +1,17 @@
 """
-Generiert Edition-Daten: catalog.json, entity_index.json, entity_register.json.
+Generiert Edition-Daten fuer den statischen Viewer (docs/):
 
-Liest docs/data/dashboard.json + data/doc_metadata.json und erzeugt
-einen kompakten Katalog mit allen Dokumenten + Edition-Metadaten.
+- catalog.json          : Korpus-Uebersicht mit Metadaten und Screening-Status
+- entity_index.json     : Entity-Index fuer NER-Highlighting im TEI-Render
+- pages/{doc}/...       : Per-Seiten-Mirror (Layout, Mistral-OCR, TEI extrahiert aus _final.xml)
+- thumbs/{doc}.jpg      : Thumbnail der ersten Seite (140x200 JPEG)
 
-Kopiert per-Seiten-Daten (Layout, OCR, TEI) nach docs/data/pages/{doc}/,
-damit der Viewer fuer alle 285 Docs ohne lokalen Server funktioniert
-(GitHub Pages tauglich).
+Damit funktioniert der Viewer ohne lokalen Server fuer alle 285 Docs (GitHub Pages tauglich).
 
 Usage:
-    python scripts/generate_edition_data.py                  # voller Lauf inkl. Mirror
-    python scripts/generate_edition_data.py --no-mirror      # ohne per-Seiten-Mirror
-    python scripts/generate_edition_data.py --mirror-only    # nur Mirror, kein Katalog
+    python -m scripts.generate_edition_data                  # voller Lauf inkl. Mirror + Thumbs
+    python -m scripts.generate_edition_data --no-mirror      # nur Katalog + Entity-Index
+    python -m scripts.generate_edition_data --mirror-only    # nur Mirror + Thumbs
 """
 
 import argparse
@@ -21,12 +21,16 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 
-from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, TEI_FINAL_DIR, TEI_CURATED_DIR, DOC_METADATA_PATH, ENTITIES_DIR
+from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_FINAL_DIR, TEI_CURATED_DIR, DOC_METADATA_PATH, ENTITIES_DIR
 from scripts.utils import load_json
 
 LAYOUT_DIR = PROJECT_ROOT / "output" / "layout"
 MISTRAL_DIR = PROJECT_ROOT / "output" / "mistral_results"
 PAGES_DIR = DOCS_DIR / "data" / "pages"
+THUMBS_DIR = DOCS_DIR / "data" / "thumbs"
+IMAGES_DIR = DOCS_DIR / "images"
+THUMB_SIZE = (140, 200)
+THUMB_QUALITY = 70
 
 
 FEATURED_DOCS = ["2310", "1000", "1330", "1540"]
@@ -57,35 +61,6 @@ PUB_FORM_LABELS = {
     "anthology": "Anthologie",
     "other": "Sonstige",
 }
-
-
-def copy_demo_tei_files():
-    """Kopiert finale TEI-XMLs fuer Demo-Docs nach docs/data/examples/.
-
-    Bevorzugt tei_final/ (gescreente Dokumente mit revisionDesc).
-    Fallback auf TEI_DIR (alte rule-based TEIs) wenn tei_final nicht vorhanden.
-    """
-    copied = 0
-    for doc_id in FEATURED_DOCS:
-        examples_dir = DOCS_DIR / "data" / "examples" / doc_id
-        examples_dir.mkdir(parents=True, exist_ok=True)
-
-        # Bevorzugt: Finale TEI aus Quality Screening
-        final_tei = TEI_FINAL_DIR / f"{doc_id}_final.xml"
-        if final_tei.exists():
-            target = examples_dir / f"{doc_id}_final.xml"
-            if not target.exists() or final_tei.stat().st_mtime > target.stat().st_mtime:
-                shutil.copy2(final_tei, target)
-                copied += 1
-        else:
-            # Fallback: Alte page-level TEIs
-            for tei_file in sorted(TEI_DIR.glob(f"{doc_id}_p*.xml")):
-                target = examples_dir / tei_file.name
-                if not target.exists():
-                    shutil.copy2(tei_file, target)
-                    copied += 1
-
-    return copied
 
 
 # ---------------------------------------------------------------------------
@@ -144,6 +119,58 @@ def _wrap_page(body_xml: str) -> str:
         '  </text>\n'
         '</TEI>\n'
     )
+
+
+def generate_thumbnails(verbose: bool = False) -> int:
+    """Erzeugt JPEG-Thumbnails (140x200, q=70) der ersten Seite jedes Dokuments
+    fuer die Korpus-Uebersicht. Lokal verfuegbare Bilder aus docs/images/{doc}/
+    werden gelesen; Docs ohne lokales Bild bekommen kein Thumb (Placeholder im UI).
+
+    Output: docs/data/thumbs/{doc}.jpg, ~3-5 KB pro Datei.
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        print("  Thumbs: Pillow nicht verfuegbar, ueberspringe")
+        return 0
+
+    if not IMAGES_DIR.exists():
+        print("  Thumbs: docs/images/ nicht gefunden, ueberspringe")
+        return 0
+
+    THUMBS_DIR.mkdir(parents=True, exist_ok=True)
+    created = 0
+
+    for doc_dir in sorted(IMAGES_DIR.iterdir(), key=lambda p: p.name):
+        if not doc_dir.is_dir():
+            continue
+        doc_id = doc_dir.name
+
+        # Erste Seite finden (sortiert nach Name → p001 zuerst)
+        first_pages = sorted(doc_dir.glob(f"{doc_id}_p*.png")) + \
+                      sorted(doc_dir.glob(f"{doc_id}_p*.jpg"))
+        if not first_pages:
+            continue
+        src = first_pages[0]
+
+        dst = THUMBS_DIR / f"{doc_id}.jpg"
+        if dst.exists() and src.stat().st_mtime <= dst.stat().st_mtime:
+            continue
+
+        try:
+            with Image.open(src) as img:
+                if img.mode != "RGB":
+                    img = img.convert("RGB")
+                img.thumbnail(THUMB_SIZE, Image.LANCZOS)
+                img.save(dst, "JPEG", quality=THUMB_QUALITY, optimize=True)
+            created += 1
+            if verbose:
+                print(f"  thumb {doc_id}: {dst.stat().st_size // 1024} KB")
+        except Exception as e:
+            if verbose:
+                print(f"  thumb {doc_id} FEHLER: {e}")
+
+    return created
 
 
 def mirror_per_page_data(verbose: bool = False) -> dict:
@@ -389,166 +416,6 @@ def export_entity_index():
         return 0
 
 
-def export_entity_register():
-    """Exportiert entity_register.json mit Cross-Doc-Referenzen fuer das Register."""
-    try:
-        from scripts.ner.entity_index import EntityIndex
-        from scripts.ner.entity_store import EntityStore
-        from scripts.core.loaders import discover_entity_docs
-
-        index = EntityIndex()
-        index.load_all()
-        if not index.entries:
-            print("  Entity Register: keine Index-Eintraege")
-            return 0
-
-        # Cross-Doc-Aggregation: iteriere alle Entity-Stores
-        entity_docs = {}      # xml_id -> set of doc_ids
-        entity_mentions = {}  # xml_id -> total mention count
-        entity_contexts = {}  # xml_id -> list of context strings (max 3)
-
-        doc_ids = discover_entity_docs()
-        for doc_id in doc_ids:
-            store = EntityStore.load(doc_id)
-            for rec in store.entities.values():
-                if rec.entity_type in ("event", "date"):
-                    continue
-                entry = index.match_normalized(rec.normalized, rec.entity_type)
-                if not entry:
-                    continue
-                xid = entry.xml_id
-                entity_docs.setdefault(xid, set()).add(doc_id)
-                entity_mentions[xid] = entity_mentions.get(xid, 0) + rec.count
-                if xid not in entity_contexts:
-                    entity_contexts[xid] = []
-                for ctx in (rec.contexts or []):
-                    if ctx and len(entity_contexts[xid]) < 3 and ctx not in entity_contexts[xid]:
-                        entity_contexts[xid].append(ctx)
-
-        # Entity-Array bauen
-        entities = []
-        by_type = {}
-        for entry in index.entries.values():
-            xid = entry.xml_id
-            doc_set = entity_docs.get(xid, set())
-            entities.append({
-                "id": xid,
-                "type": entry.entity_type,
-                "name": entry.main_name,
-                "variants": entry.variants,
-                "wikidata_qid": entry.wikidata_qid,
-                "wikidata_url": entry.wikidata_url,
-                "gnd_id": entry.gnd_id,
-                "doc_ids": sorted(doc_set),
-                "doc_count": len(doc_set),
-                "mention_count": entity_mentions.get(xid, 0),
-                "contexts": entity_contexts.get(xid, []),
-            })
-            t = entry.entity_type
-            if t not in by_type:
-                by_type[t] = {"total": 0, "with_wikidata": 0, "with_gnd": 0, "with_docs": 0}
-            by_type[t]["total"] += 1
-            if entry.wikidata_qid:
-                by_type[t]["with_wikidata"] += 1
-            if entry.gnd_id:
-                by_type[t]["with_gnd"] += 1
-            if doc_set:
-                by_type[t]["with_docs"] += 1
-
-        data = {
-            "generated": datetime.now().isoformat(timespec="seconds"),
-            "summary": {
-                "total_entities": len(entities),
-                "total_with_docs": sum(1 for e in entities if e["doc_count"] > 0),
-                "by_type": by_type,
-            },
-            "entities": entities,
-        }
-
-        output_path = DOCS_DIR / "data" / "entity_register.json"
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(
-            json.dumps(data, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-        with_docs = data["summary"]["total_with_docs"]
-        print(f"  Entity Register: {len(entities)} Eintraege ({with_docs} mit Docs) -> {output_path}")
-        return len(entities)
-    except Exception as e:
-        print(f"  Entity Register WARNUNG: {e}")
-        import traceback
-        traceback.print_exc()
-        return 0
-
-
-def build_search_index():
-    """Extrahiert Klartext aus allen TEI-Bodies fuer Volltext-Suche."""
-    from xml.etree import ElementTree as ET
-
-    if not TEI_FINAL_DIR.exists():
-        print("  Search Index: tei_final/ nicht gefunden")
-        return 0
-
-    ns = {"tei": "http://www.tei-c.org/ns/1.0"}
-    entries = []
-
-    for tei_file in sorted(TEI_FINAL_DIR.glob("*_final.xml")):
-        doc_id = tei_file.stem.replace("_final", "")
-        try:
-            # Robustes Parsing: revisionDesc kann unescaptes XML enthalten
-            raw = tei_file.read_text(encoding="utf-8")
-            try:
-                tree = ET.ElementTree(ET.fromstring(raw))
-            except ET.ParseError:
-                # Fallback: revisionDesc entfernen und erneut parsen
-                import re
-                cleaned = re.sub(r"<revisionDesc.*?</revisionDesc>", "", raw, flags=re.DOTALL)
-                tree = ET.ElementTree(ET.fromstring(cleaned))
-            root = tree.getroot()
-
-            # Titel
-            title_el = root.find(".//tei:titleStmt/tei:title", ns)
-            title = title_el.text.strip() if title_el is not None and title_el.text else ""
-
-            # Body-Text
-            body = root.find(".//tei:body", ns)
-            if body is None:
-                continue
-            text_parts = []
-            for t in body.itertext():
-                t = t.strip()
-                if t:
-                    text_parts.append(t)
-            full_text = " ".join(text_parts)[:2000]
-
-            # Entity-Namen
-            entity_names = set()
-            for tag in ("tei:persName", "tei:orgName", "tei:placeName"):
-                for el in body.iter(tag.replace("tei:", f"{{{ns['tei']}}}")):
-                    name = "".join(el.itertext()).strip()
-                    if name and len(name) > 1:
-                        entity_names.add(name)
-
-            entries.append({
-                "id": doc_id,
-                "title": title,
-                "text": full_text,
-                "entities": sorted(entity_names)[:50],
-            })
-        except Exception:
-            continue
-
-    output_path = DOCS_DIR / "data" / "search_index.json"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(
-        json.dumps(entries, ensure_ascii=False),
-        encoding="utf-8",
-    )
-    size_kb = output_path.stat().st_size // 1024
-    print(f"  Search Index: {len(entries)} Docs ({size_kb} KB) -> {output_path}")
-    return len(entries)
-
-
 def main():
     parser = argparse.ArgumentParser(description="Edition-Daten fuer den Viewer generieren")
     parser.add_argument("--no-mirror", action="store_true",
@@ -564,15 +431,14 @@ def main():
     if args.mirror_only:
         print("Per-Seiten-Mirror nach docs/data/pages/...")
         stats = mirror_per_page_data(verbose=args.verbose)
-        print(f"\n  Mirror fertig: {stats['docs']} Docs, "
+        print(f"  Mirror fertig: {stats['docs']} Docs, "
               f"{stats['layout']} Layout, {stats['ocr']} OCR, {stats['tei']} TEI-Seiten")
+        print("Thumbnails nach docs/data/thumbs/...")
+        n_thumbs = generate_thumbnails(verbose=args.verbose)
+        print(f"  Thumbs erzeugt: {n_thumbs}")
         return
 
-    # 1. TEI-XMLs fuer Demo-Docs kopieren
-    copied = copy_demo_tei_files()
-    print(f"  TEI-XMLs (Demo) kopiert: {copied}")
-
-    # 2. Katalog bauen
+    # 1. Katalog bauen
     catalog = build_catalog()
     if not catalog:
         return
@@ -580,13 +446,7 @@ def main():
     # 3. Entity Index exportieren
     entity_count = export_entity_index()
 
-    # 4. Entity Register exportieren (mit Cross-Doc-Referenzen)
-    register_count = export_entity_register()
-
-    # 5. Volltext-Suchindex bauen
-    search_count = build_search_index()
-
-    # 6. Katalog schreiben
+    # 4. Katalog schreiben
     output_path = DOCS_DIR / "data" / "catalog.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
@@ -600,6 +460,9 @@ def main():
         stats = mirror_per_page_data(verbose=args.verbose)
         print(f"  Mirror fertig: {stats['docs']} Docs, "
               f"{stats['layout']} Layout, {stats['ocr']} OCR, {stats['tei']} TEI-Seiten")
+        print("Thumbnails nach docs/data/thumbs/...")
+        n_thumbs = generate_thumbnails(verbose=args.verbose)
+        print(f"  Thumbs erzeugt/aktualisiert: {n_thumbs}")
 
     print(f"\nEdition-Katalog geschrieben: {output_path}")
     print(f"  Dokumente: {catalog['edition']['total_docs']}")
@@ -608,8 +471,6 @@ def main():
     print(f"  Sprachen: {catalog['edition']['languages']}")
     if entity_count:
         print(f"  Entity Index: {entity_count} Eintraege")
-    if register_count:
-        print(f"  Entity Register: {register_count} Eintraege")
 
     # Verifikation
     doc_count = len(catalog["documents"])

@@ -4,88 +4,83 @@ LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbib
 
 ## What does this repo do?
 
-Fully automated end-to-end pipeline for 286 documents (4,152 pages) from the estate of Jeanne Hersch:
+Fully automated end-to-end pipeline for 286 documents (~4,100 pages) from the estate of Jeanne Hersch:
 
 ```
-PDF-Scans --> Images --> OCR --> Layout --> PAGE-XML --> NER/Wikidata --> TEI-XML --> Quality Screening --> Curation --> Publication
-              (PNG)     (Mistral)  (Docling)              (Gemini)       (DTA-Basis)  (Agent-Based)    (Editor)    (GitHub Pages)
+PDF-Scans -> Images -> OCR -> Layout -> PAGE-XML -> NER/Wikidata -> TEI-XML -> Quality Screening
+             (PNG)    (Mistral) (Docling)            (Gemini)       (DTA-Basis) (Agent-Based)
 ```
 
 ## Pipeline Components
 
 | Component | Engine | Status |
-|-----------|--------|--------|
+|---|---|---|
 | Image extraction | Python (PDF to PNG) | Done |
 | Document classification | Gemini Flash Lite | Done |
 | OCR | Mistral Document AI (Azure) | Done |
 | OCR correction | Gemini Flash Lite | Pilot |
-| Layout analysis | Docling RT-DETR V2 (local GPU) | Done |
+| Layout analysis | Docling RT-DETR V2 / docling-serve | Done |
 | Layout QA/Detect | Gemini Flash Lite | Done |
 | PAGE-XML + METS | Rule-based generator | Done |
 | NER extraction | Gemini Flash Lite (6 entity types) | Done |
-| Entity Index + Wikidata/GND linking | Wikidata API + TEI-XML indices | Done (24% linked) |
+| Entity Index + Wikidata/GND linking | Wikidata API + TEI indices | Done (47 % linked) |
 | TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
-| TEI NER injection | Rule-based annotation + Entity Index | Done (285/285) |
-| **Agent-Based Quality Screening** | **Claude Code (7-layer review)** | **Done (285/285)** |
-| **Curation (Human-in-the-Loop)** | **Browser WYSIWYG + FastAPI server** | **Done** |
-| Review + Publication | Status workflow + publish to GitHub Pages | Done |
-| Evaluation + Dashboard | CER/WER + interactive QA UI | Done |
+| Agent-Based Quality Screening | Claude Code (7-layer review) | Done (242 Approved, 43 With Notes) |
 
-Current metrics and progress: see [Dashboard](https://dhcraft.github.io/zbz-ocr-tei/) or run locally (`docs/infrastruktur/index.html`). Detailed status: [PROJEKT.md](knowledge/PROJEKT.md).
+Current metrics: see [Korpus-Uebersicht](https://dhcraft.github.io/zbz-ocr-tei/) (GitHub Pages) or `docs/index.html` locally. Detailed status: [knowledge/projekt.md](knowledge/projekt.md).
 
-### Online Demo
+## Frontend
 
-4 representative documents are available on [GitHub Pages](https://dhcraft.github.io/zbz-ocr-tei/) with full viewer functionality (facsimile, OCR text, layout overlay, entities). All results are AI-generated. Full data is only available locally.
+Three static HTML pages under `docs/`, deployed via GitHub Pages:
 
-### Digital Edition + Curation (Human-in-the-Loop)
+- `docs/index.html` &mdash; corpus overview with thumbnails, search, filters, screening progress
+- `docs/viewer.html` &mdash; per-document inspector (facsimile + layout overlay + OCR/TEI panel + editor modes)
+- `docs/about.html` &mdash; project info
 
-The final pipeline step: editors verify and correct AI-generated TEI in the browser. The curation editor supports text correction, structure editing, and entity curation (WYSIWYG + XML mode). A review workflow (draft > in_review > approved) ensures quality before publication. The edition (`docs/index.html`) provides the public reading interface with catalog, reader, and entity sidebar.
+All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes (layout corrections, transcription edits) are exported as file downloads.
 
 ```bash
-python -m scripts.server.curation_server    # http://localhost:8000
+python -m http.server 8000 -d docs    # http://localhost:8000/
 ```
-
-Details: [EDITION.md](knowledge/EDITION.md), [CURATION.md](knowledge/CURATION.md).
 
 ## Directory Structure
 
 ```
 zbz-ocr-tei/
-  knowledge/              # 21 project documents (Single Source of Truth)
+  knowledge/              # 10 project documents (Single Source of Truth, all lowercase)
   scripts/                # Python pipeline
     config.py             # Central configuration
-    ocr_pipeline.py       # OCR (Mistral/DeepSeek)
-    classify_docs.py      # Document classification (Gemini, Stage 1a)
-    gemini_ocr_correct.py # Gemini OCR correction (Stage 2b)
+    ocr_pipeline.py       # OCR (Mistral / DeepSeek)
+    classify_docs.py      # Document classification (Gemini)
+    gemini_ocr_correct.py # Gemini OCR correction
     llm_postprocess.py    # LLM post-correction (Haiku 4.5)
-    run_layout_analysis.py  # Layout analysis (Docling, local GPU)
-    run_layout_cloud.py     # Layout analysis (docling-serve API, E24)
-    layout_qa_gemini.py     # Layout QA + Detect (Gemini 3.1 Flash Lite, E25/E26)
+    run_layout_analysis.py   # Layout analysis (Docling local)
+    run_layout_cloud.py      # Layout analysis (docling-serve API)
+    layout_qa_gemini.py      # Layout QA + Detect (Gemini)
     evaluate_ocr.py       # CER/WER evaluation
-    generate_dashboard_data.py  # Dashboard data
+    benchmark_cer.py      # End-to-end CER benchmark
+    cer_statistics_full.py   # BCa-Bootstrap + Paired + HCPR
+    generate_dashboard_data.py   # Pipeline metrics (dashboard.json)
+    generate_edition_data.py     # Catalog, thumbnails, per-page mirror for viewer
     layout/               # PAGE-XML + METS generators
-    tei/                  # TEI-XML generator
-    ner/                  # NER + Wikidata linking (6 modules, E34)
-    server/               # Curation Server (FastAPI, E36)
+    tei/                  # TEI-XML pipeline (scaffold, Gemini, assembly, validator)
+    ner/                  # NER + Wikidata/GND linking
     core/                 # Shared data loaders
     postprocess/          # Deterministic post-processing
-  docs/                   # Digital Edition + Pipeline Infrastructure (GitHub Pages)
-    index.html            # Edition landing page
-    catalog.html          # Document catalog
-    reader.html           # TEI reader (faksimile + text, pan/zoom/rotate)
-    about.html            # Project information
-    infrastruktur/        # Pipeline QA tools (dashboard, viewer, benchmark)
-    js/                   # ES6+ modules (edition, TEI, entities, shared)
-    css/                  # Stylesheets
-    data/                 # Dashboard data + 4 DEMO docs
-    images/               # Page scans (4 DEMO docs committed, rest local)
-  data/                   # Source data (not versioned)
+  docs/                   # Static frontend (GitHub Pages source)
+    index.html            # Corpus overview
+    viewer.html           # Per-document viewer
+    about.html            # Project info
+    css/                  # tokens.css, base.css, viewer.css, catalog.css
+    js/                   # core.js, viewer.js, catalog.js, tei-render.js, ...
+    data/                 # catalog.json, entity_index.json, pages/, thumbs/, tei/
+    images/               # Page scans (4 DEMO docs committed, rest local-only)
+  data/                   # Source data (mostly not versioned)
     scans/                # 286 PDF digitizations
-    doc_metadata.json     # Gemini classification (286 docs, versioned)
-    referenz-tei/         # 25 reference TEI (ZBZ-annotated)
-    page-xml-transkribus/ # 24 Transkribus exports (PAGE-XML)
-    tei_curated/          # Curated TEI gold-standard (versioned, E36)
-  output/                 # Generated data (not versioned)
+    doc_metadata.json     # Gemini classification (versioned)
+    referenz-tei/         # 25 reference TEIs (ZBZ-annotated)
+    tei_curated/          # Curated gold-standard TEI (versioned)
+  output/                 # Generated pipeline data (not versioned)
   .env.example            # Template for API keys
 ```
 
@@ -99,12 +94,12 @@ pip install -r requirements.txt
 
 # Configure API keys
 cp .env.example .env
-# Enter values in .env (Mistral, Anthropic, Gemini)
+# Enter Mistral, Anthropic, Gemini keys in .env
 
 # OCR with Mistral (no GPU)
 python -m scripts.ocr_pipeline -i data/scans/2310.pdf -e mistral
 
-# Layout analysis (GPU for Docling)
+# Layout analysis (GPU for local Docling, or docling-serve API)
 python -m scripts.run_layout_analysis --doc 2310
 
 # Generate TEI-XML (no GPU, uses Gemini API)
@@ -113,63 +108,41 @@ python -m scripts.tei.tei_unified --doc 2310
 # Validate all TEI (RelaxNG + project rules + quality warnings)
 python -m scripts.tei.tei_validator --all --html-report
 
-# Evaluation (no GPU)
-python scripts/evaluate_ocr.py --all
+# CER evaluation (no GPU)
+python -m scripts.evaluate_ocr --all
+python -m scripts.benchmark_cer --all --html
 
-# Generate dashboard data
-python -m scripts.generate_dashboard_data
+# Frontend data: catalog, thumbnails, per-page mirror for viewer
+python -m scripts.generate_edition_data
 ```
 
-Complete CLI reference: [knowledge/PIPELINE.md](knowledge/PIPELINE.md) §CLI Commands.
+Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 
 ## OCR Engines
 
 | Engine | Access | Usage |
-|--------|--------|-------|
+|---|---|---|
 | Mistral Document AI 2512 | Azure AI Foundry | Production OCR |
-| DeepSeek-OCR-2 | Local (GPU) | Development |
+| DeepSeek-OCR-2 | Local (GPU) | Development / comparison |
 | Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
-| Docling 2.75 | Local / docling-serve API (E24) | Layout analysis (BBox + regions) |
-| Gemini 3.1 Flash Lite | Google AI API (E25/E26/E27/E29/E34) | Layout QA/Detect, classification, OCR correction, NER |
-
-## Pipeline Infrastructure
-
-The QA tools are under `docs/infrastruktur/`:
-
-- **Dashboard:** Pipeline status, CER comparison, filterable document catalog
-- **Viewer:** 3-panel layout (facsimile + OCR + TEI/PAGE-XML), entity sidebar, layout overlay
-- **Benchmark:** OCR engine comparison (Mistral vs DeepSeek)
+| Docling 2.75 | Local / docling-serve API | Layout analysis (BBox + regions) |
+| Gemini 3.1 Flash Lite | Google AI API | Layout QA/Detect, classification, OCR correction, NER, TEI refinement |
 
 ## Documentation
 
 | Topic | File |
-|-------|------|
-| **Navigation (start here)** | [knowledge/INDEX.md](knowledge/INDEX.md) |
-| Project + milestones | [knowledge/PROJEKT.md](knowledge/PROJEKT.md) |
-| Pipeline (7 stages) | [knowledge/PIPELINE.md](knowledge/PIPELINE.md) |
-| Implementation plan | [knowledge/PLAN.md](knowledge/PLAN.md) |
-| Decisions + open items | [knowledge/DECISIONS.md](knowledge/DECISIONS.md) |
-| Test plan + results | [knowledge/TESTPLAN.md](knowledge/TESTPLAN.md) |
-| TEI rules | [knowledge/TEI-MAPPING.md](knowledge/TEI-MAPPING.md) |
-| OCR + Layout engines | [knowledge/ENGINES.md](knowledge/ENGINES.md) |
-| Digital edition | [knowledge/EDITION.md](knowledge/EDITION.md) |
-| Design system (Hersch) | [knowledge/DESIGN.md](knowledge/DESIGN.md) |
-| Curation Editor | [knowledge/CURATION.md](knowledge/CURATION.md) |
-| Methodology (epistemics) | [knowledge/METHODIK.md](knowledge/METHODIK.md) |
-| CLI tools + work cycle | [knowledge/PROMPTOTYPING.md](knowledge/PROMPTOTYPING.md) |
-| Corpus + document types | [knowledge/QUELLENANALYSE.md](knowledge/QUELLENANALYSE.md) |
-| Entity linking (NER/GND) | [knowledge/GND-STRATEGIE.md](knowledge/GND-STRATEGIE.md) |
-| TEI schema validation | [knowledge/TEI-QUALITY.md](knowledge/TEI-QUALITY.md) |
-| CER benchmark | [knowledge/CER-BENCHMARK.md](knowledge/CER-BENCHMARK.md) |
-| ZBZ editorial workflow | [knowledge/ZBZ-WORKFLOW.md](knowledge/ZBZ-WORKFLOW.md) |
-| Deployment + infrastructure | [knowledge/INFRASTRUKTUR.md](knowledge/INFRASTRUKTUR.md) |
-| Work journal | [knowledge/JOURNAL.md](knowledge/JOURNAL.md) |
-| Journal archive (Sessions 1-26) | [knowledge/JOURNAL-ARCHIVE.md](knowledge/JOURNAL-ARCHIVE.md) |
+|---|---|
+| Navigation (start here) | [knowledge/index.md](knowledge/index.md) |
+| Project + milestones + corpus | [knowledge/projekt.md](knowledge/projekt.md) |
+| Pipeline + engines + TEI mapping | [knowledge/pipeline.md](knowledge/pipeline.md) |
+| Entities (NER + GND + Wikidata) | [knowledge/entities.md](knowledge/entities.md) |
+| Quality (CER, validation, screening) | [knowledge/quality.md](knowledge/quality.md) |
+| Viewer (frontend architecture) | [knowledge/viewer.md](knowledge/viewer.md) |
+| Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
+| Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
+| Decisions + open items | [knowledge/decisions.md](knowledge/decisions.md) |
+| Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team
 
 A project of the Zentralbibliothek Zurich (ZBZ) in collaboration with DHCraft.
-
----
-
-*Last updated: 2026-03-26*

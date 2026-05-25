@@ -82,19 +82,8 @@
   --v-sidebar-width:    280px;
   --v-header-height:    56px;
   --v-toolbar-height:   44px;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --h-bg:               #1F1B18;
-    --h-bg-alt:           #2A2522;
-    --h-surface:          #25201C;
-    --h-text:             #E8DFD2;
-    --h-text-secondary:   #B5A99A;
-    --h-text-muted:       #7A7268;
-    --h-text-inverse:     #2C2825;
-    --h-border:           rgba(232, 223, 210, 0.12);
-    --h-border-emphasis:  rgba(232, 223, 210, 0.25);
-    --h-shadow:           rgba(0, 0, 0, 0.3);
-  }
+  /* Erzwingt Light-Theme — auch wenn das System auf Dark-Mode steht.
+     Hersch-Edition lebt von Cream/Anthrazit/Ziegelrot, kein Dark-Mode. */
+  color-scheme: light;
 }

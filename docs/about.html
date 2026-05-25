@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Hersch Pipeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <strong>Hersch</strong>
+        <span>Pipeline</span>
+      </a>
+      <p class="site-header__sub">Nachlass Jeanne Hersch, ZBZ &middot; OCR / Layout / TEI</p>
+      <nav class="site-header__nav" aria-label="Hauptnavigation">
+        <a href="index.html">Korpus</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="https://github.com/DHCraft/zbz-ocr-tei" target="_blank" rel="noopener">Repo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose">
+
+    <header class="intro">
+      <h1>Pipeline-Viewer fuer den Nachlass Jeanne Hersch</h1>
+      <p class="lede">
+        Ein internes Inspektions- und Korrekturwerkzeug fuer die OCR-, Layout- und TEI-Ergebnisse,
+        die im Rahmen der digitalen Erschliessung des Hersch-Nachlasses an der Zentralbibliothek
+        Zuerich entstehen. Kein oeffentlicher Leser, kein Editionsfrontend &mdash; das macht ZBZ
+        ueber Oxygen, Alma und Swisscovery.
+      </p>
+    </header>
+
+    <section>
+      <h2>Was dieses Tool leistet</h2>
+      <ul class="feature-list">
+        <li><strong>Inspektion</strong> &mdash; Faksimile, Layout-Regionen und Transkription nebeneinander, fuer jede Seite jedes Dokuments.</li>
+        <li><strong>Manuelle Korrektur</strong> &mdash; Layout-Editor (Regionen verschieben, typisieren, Reihenfolge), Text-Editor (OCR oder TEI), Persistenz via Datei-Download.</li>
+        <li><strong>Engine-Vergleich</strong> &mdash; Umschalten zwischen Mistral, Gemini A/B, LLM (Haiku) und DeepSeek pro Seite.</li>
+        <li><strong>Demonstration</strong> &mdash; klare Sicht fuer ZBZ und akademische Stakeholder auf den aktuellen Pipeline-Stand.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projekt</h2>
+      <dl class="meta-list">
+        <dt>Auftraggeber</dt><dd>Zentralbibliothek Zuerich (ZBZ)</dd>
+        <dt>Auftragnehmer</dt><dd>DHCraft &mdash; Christopher Pollin</dd>
+        <dt>Gegenstand</dt><dd>Automatisierte OCR + TEI-Annotation fuer den Hersch-Nachlass</dd>
+        <dt>Korpus</dt><dd>286 PDF-Texte, ~7.200 Seiten, 1931&ndash;2010, Fokus 1970er/1980er</dd>
+        <dt>Sprachen</dt><dd>Franzoesisch (66 %), Deutsch (30 %), Englisch, Italienisch</dd>
+        <dt>Status</dt><dd>285/285 Dokumente schema-valide, 242 Approved, 43 With Notes, 0 Needs Review</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Pipeline</h2>
+      <ol class="steps">
+        <li><strong>Bilder</strong> &mdash; <code>scripts/extract_pages.py</code> erzeugt PNGs aus den PDF-Scans (300 dpi).</li>
+        <li><strong>OCR</strong> &mdash; Mistral Document AI 2512 (Azure), parallel DeepSeek-OCR-2 als Vergleichsspur.</li>
+        <li><strong>Layout</strong> &mdash; Docling 2.75 fuer Region-Erkennung, Gemini 3.1 Flash Lite als QA-/Detect-Validator.</li>
+        <li><strong>NER</strong> &mdash; Gemini Flash Lite extrahiert Personen, Orte, Organisationen, Werke; Linking ueber Wikidata und lobid.org/GND.</li>
+        <li><strong>TEI</strong> &mdash; Unified Pipeline aus Scaffold, Gemini-Refinement und Assembly; valide gegen <code>zbz_hersch.rng</code>.</li>
+        <li><strong>Screening</strong> &mdash; agentenbasiertes 7-Schichten-Review mit Statuseintrag in <code>&lt;revisionDesc&gt;</code>.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Qualitaet</h2>
+      <p>
+        Character Error Rate (CER) im end-to-end-Vergleich gegen 19 ZBZ-Referenz-TEIs:
+        <strong>Mean 4.10&nbsp;%</strong> [2.01, 6.75]&nbsp;%, <strong>Median 1.83&nbsp;%</strong> [0.84, 5.14]&nbsp;%
+        (BCa-Bootstrap, B=10.000, Seed=42). Methodische Details und Statistik-Library
+        liegen im Repo unter <code>knowledge/quality.md</code>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Architektur</h2>
+      <p>
+        Statische Single-Page-Apps: <a href="index.html">Korpus-Uebersicht</a> als Einstieg,
+        <a href="viewer.html">Viewer</a> fuer die Detailansicht eines Dokuments. Daten werden
+        ausschliesslich aus statischen JSON-/XML-/MD-Dateien geladen, kein Backend. Persistenz
+        von Editor-Aenderungen erfolgt als Datei-Download.
+      </p>
+      <p>
+        Volumen: 3 HTML-Seiten, 7 JS-Module (~1.700 Z.), 3 CSS-Dateien (~1.100 Z.). Daten:
+        catalog.json, entity_index.json, plus per-Seiten-Mirror unter
+        <code>data/pages/</code> (alle 285 Docs) und Thumbnails unter <code>data/thumbs/</code>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Kontakt</h2>
+      <dl class="meta-list">
+        <dt>Projektleitung</dt><dd>Christopher Pollin, DHCraft &mdash; <a href="mailto:office@dhcraft.org">office@dhcraft.org</a></dd>
+        <dt>ZBZ</dt><dd>Elias Kreyenbuehl, Anouschka</dd>
+        <dt>Quellcode</dt><dd><a href="https://github.com/DHCraft/zbz-ocr-tei" target="_blank" rel="noopener">github.com/DHCraft/zbz-ocr-tei</a></dd>
+      </dl>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>DHCraft / Zentralbibliothek Zuerich</span>
+      <span>Hersch Pipeline-Viewer</span>
+    </div>
+  </footer>
+
+</body>
+</html>

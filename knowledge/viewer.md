@@ -114,15 +114,16 @@ loest den Download aus.
 
 ## Persistenz
 
-Kein FastAPI-Server. Alle Aenderungen muessen explizit als Datei heruntergeladen werden.
+Kein Server. Alle Aenderungen muessen explizit als Datei heruntergeladen werden.
 Der Nutzer legt die Dateien dann manuell im Repo ab — z.B.:
 
 - Layout: `output/layout/{doc}/{doc}_p{N}_layout_curated.json` (manuell anlegen)
 - OCR: `output/{source}_curated/{doc}_p{N}.md`
 - TEI: `data/tei_curated/{doc}/{doc}_curated.xml`
 
-Hintergrund-Verzeichnisse `data/tei_curated/` und der Curation-Server (`scripts/server/curation_server.py`)
-bleiben im Repo, werden aktuell aber nicht vom Frontend angesteuert.
+`data/tei_curated/` bleibt der Gold-Standard-Speicher fuer kuratierte TEIs (git-tracked).
+Der frueher vorhandene FastAPI-Curation-Server (`scripts/server/curation_server.py`) wurde mit E57
+geloescht, weil das Frontend ihn seit E56 nicht mehr ansteuert.
 
 ---
 
@@ -133,17 +134,19 @@ bleiben im Repo, werden aktuell aber nicht vom Frontend angesteuert.
 | Daten | Pfad (primaer) | Fallback | Quelle |
 |---|---|---|---|
 | Korpus-Liste | `data/catalog.json` | — | `scripts/generate_edition_data.py` |
+| Thumbnail | `data/thumbs/{doc}.jpg` | — | `scripts/generate_edition_data.py` (PIL, 140x200, JPEG q=70) |
 | Faksimile | `images/{doc}/{doc}_pNNN.png` | — | Pipeline (`scripts/extract_pages.py`) |
-| Layout (Gemini) | `data/pages/{doc}/{doc}_pNNN_layout_gemini.json` | `examples/`, `../output/layout/` | `scripts/layout_qa_gemini.py` |
-| Layout (Docling) | `data/pages/{doc}/{doc}_pNNN_layout.json` | `examples/`, `../output/layout/` | Pipeline |
-| OCR Mistral | `data/pages/{doc}/{doc}_pN.md` | `examples/`, `../output/mistral_results/` | Pipeline |
+| Layout (Gemini) | `data/pages/{doc}/{doc}_pNNN_layout_gemini.json` | `../output/layout/` | `scripts/layout_qa_gemini.py` |
+| Layout (Docling) | `data/pages/{doc}/{doc}_pNNN_layout.json` | `../output/layout/` | Pipeline |
+| OCR Mistral | `data/pages/{doc}/{doc}_pN.md` | `../output/mistral_results/` | Pipeline |
 | OCR (andere) | — | `../output/{source}/...` | nur lokal: Gemini A/B, LLM, DeepSeek |
-| TEI pro Seite | `data/pages/{doc}/{doc}_pN.xml` | `examples/`, `../output/tei_unified/` | aus `_final.xml` extrahiert |
-| TEI final | `data/tei/{doc}_final.xml` | `pages/`, `examples/`, `../output/tei_final/` | `output/tei_final/` |
+| TEI pro Seite | `data/pages/{doc}/{doc}_pN.xml` | `../output/tei_unified/` | aus `_final.xml` extrahiert |
+| TEI final | `data/tei/{doc}_final.xml` | `pages/`, `../output/tei_final/` | `output/tei_final/` |
 
-Alle 285 Docs haben jetzt vollstaendige Per-Seiten-Daten in `docs/data/pages/` (Layout, Mistral-OCR,
-TEI). Damit funktioniert der Viewer ohne lokalen Server fuer das gesamte Korpus. Die alternativen
-OCR-Engines (Gemini A/B, LLM, DeepSeek) bleiben unter `output/` und sind nur lokal abrufbar.
+Alle 285 Docs haben vollstaendige Per-Seiten-Daten in `docs/data/pages/` (Layout, Mistral-OCR, TEI)
+und ein Thumbnail in `docs/data/thumbs/`. Damit funktioniert der Viewer ohne lokalen Server fuer
+das gesamte Korpus. Die alternativen OCR-Engines (Gemini A/B, LLM, DeepSeek) bleiben unter
+`output/` und sind nur lokal abrufbar.
 
 ---
 

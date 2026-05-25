@@ -110,7 +110,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 | 4 | s | S | U+0073 → U+0053 | 18 |
 | 5 | e | s | U+0065 → U+0073 | 17 |
 
-Vollstaendige Matrix: `docs/data/diagnostik_ocr.json`.
+Vollstaendige Matrix: in den Rohdaten unter `output/evaluation/` (frueher als `docs/data/diagnostik_ocr.json` verfuegbar, mit E56 entfernt).
 
 ### Fehlerkategorien (alle 25 Docs)
 
@@ -464,9 +464,6 @@ projektspezifischen Schema absichtlich ausgeschlossen sind.
 |---|---|
 | Schema | `data/schema/zbz_hersch.rng` |
 | Validator | `scripts/tei/tei_validator.py` |
-| Diagnostik-JSON | `docs/data/diagnostik_tei.json` |
-| Diagnostik-Log | `docs/data/diagnostik_log.json` |
-| Diagnostik-JSON | `docs/data/diagnostik_tei.json` (UI abgeschafft mit E56) |
 | Validation Report | `output/tei_unified/validation_report.{json,html}` |
 
 ---
@@ -569,9 +566,8 @@ ein Mess-Artefakt.
 **Konsequenzen:**
 
 1. **Aggregations-Einheit = Doc-Ebene.** Pages innerhalb eines Docs sind nicht nur korreliert (was naive iid-Bootstrap schon falsch macht), sondern bei Schema-Aenderungen auch falsch identifiziert.
-2. **Content-aligned Eval ist Default.** Pagewise nur fuer Per-Page-Outlier-Visualisierung im Dashboard.
-3. **Drift-Check eingebaut.** `cer_statistics_full.py` vergleicht jeden Run gegen `docs/data/diagnostik_ocr.json`. Status `in_sync` / `minor` / `stale` im JSON.
-4. **Lehre fuer kuenftige Pipeline-Aenderungen:** Jede Stage, die `<pb>`-IDs neu vergibt oder Seiten umsortiert, muss vorher in einem Test-Run gegen Referenz-TEIs laufen.
+2. **Content-aligned Eval ist Default.** Pagewise nur fuer Per-Page-Outlier-Visualisierung in den Rohdaten.
+3. **Lehre fuer kuenftige Pipeline-Aenderungen:** Jede Stage, die `<pb>`-IDs neu vergibt oder Seiten umsortiert, muss vorher in einem Test-Run gegen Referenz-TEIs laufen.
 
 ---
 

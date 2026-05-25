@@ -94,21 +94,19 @@
     };
 
     // ---- Data-Paths ----
-    // Primaer: data/pages/{doc}/  (gemirrort durch generate_edition_data.py fuer alle 285 Docs)
-    // Fallback: data/examples/{doc}/  (Legacy: 4 DEMO-Docs)
-    // Letzte Option: ../output/  (nur bei lokalem Server mit Projekt-Root als DocRoot)
+    // Primaer: data/pages/{doc}/  (gemirrort durch generate_edition_data.py, alle 285 Docs)
+    // Fallback: ../output/...     (nur bei lokalem Server mit Projekt-Root als DocRoot,
+    //                              fuer alternative OCR-Engines die nicht versioniert sind)
     const padded = (page) => ZBZ.padPage(page);
     ZBZ.path = {
         image: (doc, page) => `images/${doc}/${doc}_p${padded(page)}.png`,
 
         layoutGemini: (doc, page) => [
             `data/pages/${doc}/${doc}_p${padded(page)}_layout_gemini.json`,
-            `data/examples/${doc}/${doc}_p${padded(page)}_layout_gemini.json`,
             `../output/layout/${doc}/${doc}_p${padded(page)}_layout_gemini.json`
         ],
         layoutDocling: (doc, page) => [
             `data/pages/${doc}/${doc}_p${padded(page)}_layout.json`,
-            `data/examples/${doc}/${doc}_p${padded(page)}_layout.json`,
             `../output/layout/${doc}/${doc}_p${padded(page)}_layout.json`
         ],
 
@@ -116,7 +114,6 @@
             if (source === 'mistral') {
                 return [
                     `data/pages/${doc}/${doc}_p${page}.md`,
-                    `data/examples/${doc}/${doc}_p${page}.md`,
                     `../output/mistral_results/${doc}_p${page}.md`
                 ];
             }
@@ -135,13 +132,11 @@
 
         teiPage: (doc, page) => [
             `data/pages/${doc}/${doc}_p${page}.xml`,
-            `data/examples/${doc}/${doc}_p${page}.xml`,
             `../output/tei_unified/${doc}/${doc}_p${page}.xml`
         ],
         teiFinal: (doc) => [
             `data/tei/${doc}_final.xml`,
             `data/pages/${doc}/${doc}_final.xml`,
-            `data/examples/${doc}/${doc}_final.xml`,
             `../output/tei_final/${doc}_final.xml`
         ]
     };
