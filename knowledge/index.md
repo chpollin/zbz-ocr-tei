@@ -20,14 +20,15 @@ SSoT pro Domaene, eine Datei pro Thema.
 | Dokument | Beantwortet |
 |---|---|
 | [projekt.md](projekt.md) | Was ist das Projekt? Auftrag, Korpus (286 Texte, 7.200 Seiten), ZBZ-Workflow, Status, Kosten |
-| [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? 7 Stufen PDF → TEI, Engines (Mistral, DeepSeek, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Implementierungsphasen |
+| [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? Stufen PDF → TEI, Engines (Mistral, DeepSeek, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Round-Trip-Sektion |
+| [workflow.md](workflow.md) | Wie laeuft der End-to-End-Datenfluss? Datenfluss-Diagramm, Datenformate pro Stufe, Save-Mechanismus im Viewer, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante, Roadmap |
 | [entities.md](entities.md) | Wie funktioniert Entity Linking? NER + GND + Wikidata, Dual-Attribut-Strategie (E50), 4.504 Entitaeten / 47% verlinkt, Wikidata-Workflow |
 | [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Agent-Based Quality Screening |
-| [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay, OCR/TEI-Editor, Datei-Download |
+| [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), Export-Modul (E61), Datei-Download |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
 | [decisions.md](decisions.md) | Was ist entschieden? E1-E61, offene Punkte (O8, O13, O18, O22), Risiken |
-| [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Apr 2026), wiederkehrende Muster |
+| [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Mai 2026), wiederkehrende Muster |
 
 Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).
 
@@ -38,9 +39,11 @@ Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Reg
 ```
 projekt (Vision, Korpus, ZBZ-Kontext)
    │
-   ├── pipeline (7-Stufen: PDF → TEI)
+   ├── pipeline (Stufen: PDF → TEI)
    │      ├── entities (NER + Wikidata + GND)
    │      └── infrastruktur (Azure, Podman, CI/CD)
+   │
+   ├── workflow (End-to-End-Datenfluss + Save + Round-Trip + Provenance)
    │
    ├── quality (CER + TEI-Validierung + Screening)
    │
@@ -78,6 +81,10 @@ journal         — chronologisch, kompakter Ueberblick
 | OpenSeadragon-Faksimile (E58) | Faksimile-Renderer im View-Modus mit Pan/Zoom/Rotate, CDN-Bezug | [viewer.md](viewer.md) |
 | Mode-Edit-Toggle pro Panel (E60) | Faksimile- und Text-Panel haben je einen Bearbeiten-Toggle, keine globale Mode-Leiste | [viewer.md](viewer.md) |
 | Export-Modul (E61) | JSZip-basierter Per-Doc-Drawer + Bulk-Export aus Korpus-Uebersicht | [viewer.md](viewer.md) |
+| End-to-End-Workflow | Datenfluss + Save-Mechanismus + Round-Trip + Provenance-Konzept + geplante `_complete.xml`-Variante | [workflow.md](workflow.md) |
+| Manueller Round-Trip | User-Edit -> Download -> manuelles Ablegen -> `tei_unified --reassemble` -> regenerierte TEI | [workflow.md §3.3](workflow.md), [pipeline.md §Round-Trip](pipeline.md) |
+| Provenance pro Objekt (geplant) | `{doc}_provenance.json` mit voller Edit-History (AI + human), Anzeige im Viewer als Drawer | [workflow.md §4.2](workflow.md) |
+| `_complete.xml` (geplant) | Selbst-enthaltenes TEI mit `<facsimile>` + `<zone>` + `@facs` + erweitertes `<revisionDesc>` | [workflow.md §5](workflow.md) |
 
 ---
 

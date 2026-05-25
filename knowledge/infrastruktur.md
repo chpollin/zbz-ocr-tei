@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, infrastruktur, azure, podman, cicd]
 status: active
 ---

@@ -2,8 +2,8 @@
 title: "Methodik: Epistemische Infrastruktur und Promptotyping"
 type: knowledge
 created: 2026-03-15
-updated: 2026-04-27
-dependencies: [pipeline, edition]
+updated: 2026-05-25
+dependencies: [pipeline, viewer]
 source: "papers/Paper.md (Workshop-Beitrag DHd/DH, Pollin & Kreyenbuehl)"
 ---
 

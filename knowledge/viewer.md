@@ -284,5 +284,6 @@ Aenderung am `output/tei_final/` sollte er neu erzeugt werden.
 - [pipeline.md](pipeline.md) — Pipeline-Output, der vom Viewer angezeigt wird
 - [entities.md](entities.md) — Entity-Highlighting im TEI-Renderer
 - [quality.md](quality.md) — Diagnostik-Daten in `docs/data/` (CER, TEI-Quality)
+- [workflow.md](workflow.md) — End-to-End-Datenfluss, Save-Mechanismus, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante
 - [decisions.md](decisions.md) — E56 (Frontend-Reduktion auf Viewer-only), E57 (Per-Seiten-Mirror + Pages-Deploy), E58 (OpenSeadragon), E59 (Polygone verworfen), E60 (Mode-Button-Redesign Option C), E61 (Export-Modul JSZip)
 - Plan-Dokument: `C:\Users\Chrisi\.claude\plans\edition-uplift-three-pages.md`

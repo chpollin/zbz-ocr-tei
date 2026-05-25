@@ -1,6 +1,6 @@
 # CURRENT_WORKING.md
 
-Stand: 2026-05-25 (Session 45). Destillat der laufenden Edition-Uplift-Welle. Nicht commiten ohne Pruefung.
+Stand: 2026-05-25 (Session 45 + Knowledge-Refactoring-Welle). Destillat der laufenden Edition-Uplift-Welle. Nicht commiten ohne Pruefung.
 
 ---
 
@@ -128,9 +128,55 @@ python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000
 
 ## Naechste Schritte
 
-1. Visual-Test der OSD-Integration durch User
-2. Politur + Befund 1 + OSD als getrennte Mini-Commits (oder einer)
-3. Schritt 2: Mode-Button-Redesign Option C
-4. Schritt 3: Layout-Editor in OSD integrieren
-5. Schritt 4: Layout-Editor-Reichtum (Region-Liste, Live-Koords, Add-Flow)
-6. Dann Etappe 1 (index), 3 (about), 4 (Quer-Politur)
+1. Knowledge-Refactoring-Welle abschliessen (workflow.md neu, pipeline/projekt/index/viewer/decisions + README + alle 4 Sanity-Updates) — **diese Session, fast fertig**
+2. Code-Drift fixen: `scripts/generate_edition_data.py:268-271` referenziert geloeschte `dashboard.json` (Catalog-Rebuild vermutlich kaputt)
+3. Pipeline-Welle planen: `_complete.xml` mit eingebettetem `<facsimile>` + `<zone>` + `@facs`; `provenance.json`-Generator. Voraussetzung fuer Etappe 2.11 (Provenance-Drawer) und vollwertiges Export-Modul (E61).
+4. UI-Welle fortsetzen: Region-Liste als Sub-Spalte (Etappe 2.10-A), UI-Verdichtung (Toolbar-Fusion, Layout-Tools in Panel-Header, Downloads als Dropdown, Hints als Tooltips, Edit-Toggles als Icons), Per-Doc-Export-Drawer (Etappe 2.9)
+5. Dann Etappe 1 (index), 3 (about), 4 (Quer-Politur)
+
+---
+
+## Knowledge-Refactoring-Welle (diese Session)
+
+Anlass: viele Knowledge-Dokumente waren seit Session 41 (April) nicht aktualisiert, obwohl Session 42-45 viel passiert ist (Frontend-Reduktion E56, Per-Seiten-Mirror E57, Knowledge-Drift bereinigt Session 44, OSD + Mode-Edit-Toggle + Layout-Reichtum + Export-Konzept E58-E61 Session 45).
+
+Plus zwei konzeptionelle User-Fragen, die in die Doku einflossen:
+- Wie funktioniert der Round-Trip Layout → PAGE-XML → TEI?
+- Macht ein `_complete.xml` mit eingebetteten Layout-Informationen Sinn?
+
+Umgesetzt:
+
+| Datei | Aenderung |
+|---|---|
+| `knowledge/workflow.md` | **neu** — End-to-End-Datenfluss, Datenformate pro Stufe, Save-Mechanismus, Round-Trip-Erklaerung, Provenance-Konzept (`{doc}_provenance.json`), `_complete.xml`-Konzept (TEI mit eingebettetem `<facsimile>` + `<zone>` + `@facs`), Roadmap, Drift-Befunde |
+| `knowledge/pipeline.md` | Datenfluss-Diagramm korrigiert (PAGE-XML parallel, nicht in TEI-Kette), neue Sektion "Manuelle Edits zurueck in die Pipeline (Round-Trip)", Verweis auf workflow.md, E22-Wichtigpunkt klarer formuliert |
+| `knowledge/projekt.md` | `scripts/postprocess/` Verweis entfernt (Orphan), Edition-Uplift-Welle + Workflow-Doku als Status-Eintrage |
+| `knowledge/index.md` | workflow.md als drittes Top-Dokument eingefuegt, Abhaengigkeits-Diagramm erweitert, neue Schluesselkonzepte (End-to-End-Workflow, Manueller Round-Trip, Provenance, `_complete.xml`) |
+| `knowledge/viewer.md` | workflow-Verweis im Verweise-Block |
+| `knowledge/decisions.md` | workflow-Verweis im Verweise-Block |
+| `knowledge/quality/entities/infrastruktur/methodik.md` | nur Datum-Updates auf 2026-05-25 (keine Drift in den Inhalten gefunden) |
+| `README.md` | Pipeline-Diagramm korrigiert (PAGE-XML parallel, nicht in der TEI-Kette), `scripts/postprocess/` aus Struktur-Listing entfernt, DEMO-Docs als konkrete Liste, `tei_curated/` ehrlich kommentiert (nur `.gitkeep`), CDN-Dependencies-Tabelle, workflow.md im Doku-Block prominent verlinkt |
+| `CURRENT_WORKING.md` | dieses File, Knowledge-Welle dokumentiert |
+
+## Code-Drift-Befund (offen, nicht in dieser Session gefixt)
+
+`scripts/generate_edition_data.py:268-271`:
+```python
+def build_catalog():
+    """Baut catalog.json aus dashboard.json + doc_metadata.json."""
+    dashboard = load_json(DOCS_DIR / "data" / "dashboard.json")
+    if dashboard is None:
+        print("FEHLER: dashboard.json nicht gefunden!")
+```
+
+`docs/data/dashboard.json` wurde in Session 44 als Orphan geloescht (kein
+Konsument). `build_catalog()` ist seitdem vermutlich kaputt — ein Re-Run von
+`python -m scripts.generate_edition_data` ohne `--mirror-only` koennte den
+Catalog nicht mehr aufbauen.
+
+Fix-Optionen:
+- `build_catalog()` umstellen auf direkte Quellen (`output/tei_final/*_review.json` + `data/doc_metadata.json`)
+- ODER `dashboard.json`-Generator neu aufbauen (vorher: `scripts/generate_dashboard_data.py` — ebenfalls in Session 44 geloescht)
+- ODER `build_catalog()` als deprecated markieren und stattdessen eine neue Funktion `build_catalog_from_sources()` anlegen
+
+**Action-Item:** in der naechsten Session vor weiteren Daten-Regenerierungen pruefen.

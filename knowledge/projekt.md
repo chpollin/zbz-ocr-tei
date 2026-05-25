@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, projekt, korpus, zbz, workflow]
 status: active
 ---
@@ -126,8 +126,7 @@ und [quality.md](quality.md).
 |---|---|---|
 | Bildextraktion | Done | `scripts/extract_pages.py` |
 | OCR (Mistral + DeepSeek) | Done | `scripts/ocr_pipeline.py` |
-| Post-Processing | Done | `scripts/postprocess/` |
-| LLM-Postkorrektur (Haiku) | Done, optional (E17) | bei CER <5% schaedlich |
+| LLM-Postkorrektur (Haiku) | Done, optional (E17) | `scripts/llm_postprocess.py`, bei CER <5% schaedlich |
 | Gemini OCR-Korrektur | Sample | `scripts/gemini_ocr_correct.py` (E29) |
 | Layout (Docling) | Done | `scripts/run_layout_analysis.py` |
 | Layout-QA (Gemini) | Done | `--mode auto` (E25/E26/E31) |
@@ -139,6 +138,8 @@ und [quality.md](quality.md).
 | TEI Validator | Done | RelaxNG + 8 Projektregeln + 14 Warnings |
 | Quality Screening | Done | 242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW |
 | Pipeline-Viewer (E56) | Done | `docs/viewer.html` Single-Page mit Layout- + Transkriptions-Editor, Persistenz via Download |
+| Viewer Edition-Uplift (Mai 2026) | In Arbeit | OSD-Integration (E58), Mode-Edit-Toggle pro Panel (E60), Layout-Editor-Reichtum, geplant: UI-Verdichtung + Quality/Provenance-Drawer + complete-TEI + Export-Modul (E61). Plan: `~/.claude/plans/edition-uplift-three-pages.md` |
+| Workflow + Provenance | Konzept dokumentiert | [workflow.md](workflow.md) beschreibt Datenfluss, Save-Mechanismus, Round-Trip, `_complete.xml`- und `provenance.json`-Konzept |
 | Containerisierung | Pending | Dockerfile/Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
 

@@ -7,9 +7,21 @@ LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbib
 Fully automated end-to-end pipeline for 286 documents (~4,100 pages) from the estate of Jeanne Hersch:
 
 ```
-PDF-Scans -> Images -> OCR -> Layout -> PAGE-XML -> NER/Wikidata -> TEI-XML -> Quality Screening
-             (PNG)    (Mistral) (Docling)            (Gemini)       (DTA-Basis) (Agent-Based)
+PDF-Scans -> Images -> OCR (Mistral) ──┐
+                                       ├──► TEI-XML ──► Quality Screening
+             (PNG)  -> Layout (Docling)─┘    (Unified:    (Agent-Based,
+                       + Gemini-QA           Scaffold +    7 layers)
+                       │                     Gemini +
+                       │                     Assembly)
+                       ▼
+                       PAGE-XML (parallel export for coOCR / Transkribus, NOT the TEI input)
 ```
+
+Note: PAGE-XML is generated in parallel as an export format (for coOCR / Transkribus
+compatibility, E13). TEI is produced **directly** from layout JSON + OCR markdown
+via `scripts/tei/tei_unified.py` (E22). See [knowledge/workflow.md](knowledge/workflow.md)
+for the full end-to-end data flow, the manual round-trip for curated edits, and
+the planned `_complete.xml` variant with embedded `<facsimile>` / `<zone>`.
 
 ## Pipeline Components
 
@@ -34,10 +46,17 @@ Current metrics: see [Korpus-Uebersicht](https://dhcraft.github.io/zbz-ocr-tei/)
 Three static HTML pages under `docs/`, deployed via GitHub Pages:
 
 - `docs/index.html` &mdash; corpus overview with thumbnails, search, filters, screening progress
-- `docs/viewer.html` &mdash; per-document inspector (facsimile + layout overlay + OCR/TEI panel + editor modes)
+- `docs/viewer.html` &mdash; per-document inspector: OpenSeadragon facsimile (pan/zoom, E58) + layout overlay + OCR/TEI panel + per-panel edit toggle (E60)
 - `docs/about.html` &mdash; project info
 
-All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes (layout corrections, transcription edits) are exported as file downloads.
+All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes (layout corrections, transcription edits) are exported as file downloads; full round-trip to the pipeline is manual (see [knowledge/workflow.md](knowledge/workflow.md)).
+
+Frontend dependencies are loaded from CDN at runtime — no build pipeline:
+
+| Library | Version | CDN | Used for |
+|---|---|---|---|
+| OpenSeadragon | 5.0.1 | jsDelivr | facsimile viewer in view mode (E58) |
+| JSZip | 3.10.1 | cdnjs | ZIP bundles for per-doc and bulk export (E61, planned) |
 
 ```bash
 python -m http.server 8000 -d docs    # http://localhost:8000/
@@ -65,7 +84,6 @@ zbz-ocr-tei/
     tei/                  # TEI-XML pipeline (scaffold, Gemini, assembly, validator)
     ner/                  # NER + Wikidata/GND linking
     core/                 # Shared data loaders
-    postprocess/          # Deterministic post-processing
   docs/                   # Static frontend (GitHub Pages source)
     index.html            # Corpus overview
     viewer.html           # Per-document viewer
@@ -73,12 +91,12 @@ zbz-ocr-tei/
     css/                  # tokens.css, base.css, viewer.css, catalog.css
     js/                   # core.js, viewer.js, catalog.js, tei-render.js, ...
     data/                 # catalog.json, entity_index.json, pages/, thumbs/, tei/
-    images/               # Page scans (4 DEMO docs committed, rest local-only)
+    images/               # Page scans (4 DEMO docs committed: 1000, 1330, 1540, 2310; rest local-only, ~4 GB)
   data/                   # Source data (mostly not versioned)
     scans/                # 286 PDF digitizations
     doc_metadata.json     # Gemini classification (versioned)
     referenz-tei/         # 25 reference TEIs (ZBZ-annotated)
-    tei_curated/          # Curated gold-standard TEI (versioned)
+    tei_curated/          # Curated gold-standard TEI (versioned; currently only .gitkeep, populated as curation runs)
   output/                 # Generated pipeline data (not versioned)
   .env.example            # Template for API keys
 ```
@@ -134,12 +152,13 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Navigation (start here) | [knowledge/index.md](knowledge/index.md) |
 | Project + milestones + corpus | [knowledge/projekt.md](knowledge/projekt.md) |
 | Pipeline + engines + TEI mapping | [knowledge/pipeline.md](knowledge/pipeline.md) |
+| **End-to-end workflow + save mechanism + round-trip + provenance concept** | **[knowledge/workflow.md](knowledge/workflow.md)** |
 | Entities (NER + GND + Wikidata) | [knowledge/entities.md](knowledge/entities.md) |
 | Quality (CER, validation, screening) | [knowledge/quality.md](knowledge/quality.md) |
-| Viewer (frontend architecture) | [knowledge/viewer.md](knowledge/viewer.md) |
+| Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items (E1–E61) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team

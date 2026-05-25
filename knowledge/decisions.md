@@ -114,6 +114,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 - [projekt.md](projekt.md) — Meilensteine + Status
 - [pipeline.md](pipeline.md) — Pipeline-Entscheidungen
+- [workflow.md](workflow.md) — End-to-End-Workflow, Round-Trip, Save-Mechanismus, Provenance-Konzept
 - [viewer.md](viewer.md) — Edition + Curation (E33, E36, E42, E56, E57, E58, E59, E60, E61)
 - [entities.md](entities.md) — Entity Linking (E34/E35/E38/E50)
 - [quality.md](quality.md) — CER + Screening (E41-E47, E51, E54/E55)

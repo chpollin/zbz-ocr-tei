@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, pipeline, ocr, layout, tei, engines]
 status: active
 ---
@@ -11,20 +11,46 @@ status: active
 Datenfluss von PDF zu TEI-XML: Stufen, Skripte, Engines, TEI-Mapping. Seit der Scope-Expansion
 (25.02.2026, E21) umfasst zbz-ocr-tei den gesamten Weg.
 
-CLI-Referenz und operative Werkzeuge: [methodik.md §Commands](methodik.md). Status pro Stufe: [projekt.md](projekt.md).
+CLI-Referenz und operative Werkzeuge: [methodik.md §Commands](methodik.md).
+Status pro Stufe: [projekt.md](projekt.md).
+Vollstaendiger End-to-End-Workflow mit Round-Trip-Logik, Save-Mechanismus und
+Provenance-Konzept: [workflow.md](workflow.md).
 
 ---
 
-## Uebersicht (7 Stufen)
+## Uebersicht
 
 ```
-PDF ──→ Bilder ──→ OCR ──→ Layout ──→ PAGE-XML ──→ NER/GND ──→ TEI-XML
-        extract    ocr     layout/     page_xml      ner/        tei/
-                   mistral  docling     output/      entities/   tei_unified/
-                                              │
-                                              ▼
-                                  Evaluation + Viewer/Curation
+PDF
+ │
+ ▼
+Bilder (extract_pages.py)
+ │
+ ├──────────────────────────────┐
+ ▼                              ▼
+OCR (Mistral)                  Layout (Docling + Gemini-QA)
+ │                              │
+ │                              ├──► PAGE-XML (page_xml_generator.py)
+ │                              │    = paralleler Export fuer coOCR
+ │                              │    NICHT TEI-Input (E22)
+ │                              │
+ │                              ▼
+ │                              NER + Wikidata/GND
+ │                              │
+ └──────────────────────────────┴──► TEI-XML (tei_unified.py)
+                                     │
+                                     ▼
+                                     Quality Screening (Agent, 7 Schichten)
+                                     │
+                                     ▼
+                                     Evaluation + Viewer
 ```
+
+**Wichtig (E22, oft missverstanden):** PAGE-XML ist KEIN Zwischenschritt fuer
+TEI. TEI wird DIREKT aus Layout-JSON + OCR-Markdown via
+`scripts/tei/tei_unified.py` generiert. PAGE-XML wird parallel als Export fuer
+coOCR / Transkribus erzeugt (E13). Beide leiten sich unabhaengig voneinander
+aus Layout-JSON + OCR ab.
 
 | Stufe | Aufgabe | Skript | Output | Status |
 |---|---|---|---|---|
@@ -375,6 +401,37 @@ Volle Pipeline-Output (`output/`) ist gitignored, nur lokal verfuegbar. Fuer die
 | 1000 | B | FR | 4 | zweispaltig |
 | 1330 | D | DE/FR | 6 | bilingualer Sammelband |
 | 1540 | C | DE | 8 | deutsche Monografie |
+
+Mit E57 (Per-Seiten-Mirror) liegen zusaetzlich fuer ALLE 285 Docs Layout-,
+OCR- und TEI-Daten in `docs/data/pages/` — damit funktioniert der Viewer auf
+GitHub Pages fuer das gesamte Korpus, nur Faksimile-Bilder fehlen ausserhalb
+der 4 DEMO-Docs (Bildlieferung lokal-only, 4 GB).
+
+---
+
+## Manuelle Edits zurueck in die Pipeline (Round-Trip)
+
+Der Viewer (E56) erlaubt manuelle Layout- und Transkriptions-Korrekturen.
+Persistenz erfolgt ausschliesslich als Browser-Download. Der vollstaendige
+Round-Trip in die Pipeline ist NICHT automatisiert — Konvention statt
+Mechanismus.
+
+Konkrete Schritte fuer einen Layout-Edit:
+
+1. User editiert im Viewer, klickt "Layout ↓" → `{doc}_p{N}_layout_curated.json` landet im Browser-Download-Ordner.
+2. User legt die Datei manuell unter `output/layout/{doc}_curated/` ab (oder ueberschreibt direkt das `_layout_gemini.json`).
+3. Pipeline-Re-Run: `python -m scripts.tei.tei_unified --doc {ID} --reassemble` regeneriert TEI mit dem kuratierten Layout als Input. `--reassemble` benutzt den Gemini-Step-2-Cache (kostenlos).
+4. `python -m scripts.tei.tei_add_revision --doc {ID}` schreibt `<revisionDesc>` neu.
+5. `python -m scripts.tei.tei_validator --doc {ID}` validiert.
+6. `python -m scripts.generate_edition_data --doc {ID}` regeneriert die Frontend-Mirrors.
+
+Aktuelle Manken: Schritte 3-6 sind nicht in einem Wrapper-Script automatisiert.
+Keine Konvention-Erzwingung fuer den Ablage-Pfad. Kein Auto-Save im Browser
+(Tab schliessen ohne Download = Edit weg).
+
+Vollstaendige Beschreibung inkl. Save-Mechanismus, Provenance-Konzept und
+geplanter `_complete.xml`-Variante mit eingebettetem `<facsimile>` / `<zone>`:
+[workflow.md](workflow.md).
 
 Daten: Scan-Bilder in `docs/images/{doc_id}/`, OCR/Layout/TEI in `docs/data/examples/{doc_id}/`.
 `core.js`-Pfadresolver mit dreistufiger Fallback-Kette: `data/pages/` → `data/examples/{doc_id}/`

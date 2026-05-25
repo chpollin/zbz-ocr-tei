@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-01-29
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, entities, ner, gnd, wikidata, entity-linking]
 status: active
 ---

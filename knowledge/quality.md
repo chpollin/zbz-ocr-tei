@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-03-26
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, qualitaet, cer, tei-validation, screening, evaluation]
 status: active
 ---
