@@ -36,6 +36,57 @@
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     };
 
+    // ---- Markdown ----
+    // Minimal-Renderer fuer OCR-Output (Mistral & Co. liefern Markdown).
+    // Unterstuetzt: # / ## Headings, **bold**, *italic*, Absatz-Bloecke via Leerzeilen,
+    // strippt Bild-Refs (das Faksimile zeigt das Original), decodet HTML-Entities.
+    // Eingabe wird zuerst HTML-escapet, dann auf der escapten Repraesentation transformiert.
+    ZBZ.decodeEntities = (s) => {
+        if (s == null) return '';
+        return String(s)
+            .replace(/&amp;/g, '&')
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"')
+            .replace(/&apos;/g, "'")
+            .replace(/&#39;/g, "'")
+            .replace(/&nbsp;/g, ' ');
+    };
+    ZBZ.renderMarkdown = (text) => {
+        if (text == null || text === '') return '';
+        // 1) Entities aus dem Quelltext decoden (z.B. '&amp;' -> '&'), damit der spaetere
+        //    Escape-Pass eine konsistente Repraesentation produziert.
+        let src = ZBZ.decodeEntities(String(text));
+        // 2) Bild-Markdown entfernen (vor Escape, weil ![..](..) sonst sichtbar bleibt).
+        src = src.replace(/!\[[^\]]*\]\([^)]*\)/g, '');
+        // 3) HTML-escapen.
+        let s = ZBZ.esc(src);
+        // 4) Inline-Markdown auf den escapten String anwenden.
+        s = s.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+        s = s.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, '$1<em>$2</em>');
+        // 5) Zeilenweise zu Bloecken (## / # / Absatz) zusammenstellen.
+        const lines = s.split(/\r?\n/);
+        const out = [];
+        let para = [];
+        const flushPara = () => {
+            if (!para.length) return;
+            const joined = para.join(' ').trim();
+            if (joined) out.push('<p>' + joined + '</p>');
+            para = [];
+        };
+        for (const raw of lines) {
+            const line = raw.trim();
+            if (!line) { flushPara(); continue; }
+            const h2 = line.match(/^##\s+(.+)$/);
+            if (h2) { flushPara(); out.push('<h4>' + h2[1] + '</h4>'); continue; }
+            const h1 = line.match(/^#\s+(.+)$/);
+            if (h1) { flushPara(); out.push('<h3>' + h1[1] + '</h3>'); continue; }
+            para.push(line);
+        }
+        flushPara();
+        return out.join('\n');
+    };
+
     // ---- URL State ----
     ZBZ.getParam = (k) => new URLSearchParams(window.location.search).get(k);
     ZBZ.setParams = (obj) => {

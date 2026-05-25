@@ -2,7 +2,7 @@
 type: knowledge
 created: 2026-03-09
 updated: 2026-05-25
-tags: [zbz-ocr-tei, viewer, frontend, editor]
+tags: [zbz-ocr-tei, viewer, frontend, editor, osd]
 status: active
 ---
 
@@ -22,6 +22,12 @@ Screening-Status), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Ove
 Transkription/TEI rechts) und eine About-Seite (`about.html`). Der Viewer kennt drei Modi:
 *Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*. Persistenz erfolgt ausschliesslich
 via Datei-Download (kein Server).
+
+**In Umbau (Mai 2026 Edition-Uplift-Welle):** Mode-Buttons werden zu Edit-Toggle pro Panel
+(E60), Faksimile-Renderer ist im View-Modus auf OpenSeadragon umgestellt (E58, Pan + Zoom +
+Rotate), Layout-Editor wird mit OSD-Koordinaten-Conversion neu verdrahtet. Polygon-Support
+bewusst ausgeschlossen (E59) — Hersch-Druck reicht mit Rechtecken. Plan-Dokument:
+`C:\Users\Chrisi\.claude\plans\edition-uplift-three-pages.md`.
 
 ---
 
@@ -59,6 +65,15 @@ docs/
 (`index.html` + `catalog.js` + `catalog.css`) und die About-Seite kamen nach der E56-Radikalkur
 hinzu (Commit „Korpus-Uebersicht + Top-Nav").
 
+**CDN-Dependencies:**
+
+| Library | Version | CDN | Zweck |
+|---|---|---|---|
+| OpenSeadragon | 5.0.1 | jsDelivr | Faksimile-Renderer (Pan/Zoom/Rotate) im View-Modus (E58) |
+| JSZip | 3.10.1 | cdnjs | ZIP-Bundle fuer Multi-Datei-Export (siehe `Persistenz / Export`) |
+
+Beide Libraries werden zur Laufzeit aus dem CDN nachgeladen. Keine npm/Build-Pipeline.
+
 ---
 
 ## Drei Modi
@@ -71,6 +86,11 @@ hinzu (Commit „Korpus-Uebersicht + Top-Nav").
 
 Edit-Toggle in der Toolbar oben rechts. Im Layout-Modus erscheint eine zweite Toolbar mit
 Regions-Tools (`+ Region`, `Loeschen`, Typ-Dropdown).
+
+**In Umbau (E60, Mai 2026):** Globale Mode-Leiste wird abgeloest durch je einen Edit-Toggle
+pro Panel — Faksimile-Panel-Toggle aktiviert den Layout-Editor, Text-Panel-Toggle aktiviert
+den Transkriptions-Editor fuer die aktive Text-Quelle (OCR/TEI/XML). Begruendung:
+Wortdoppelung "Transkription"-Mode mit "OCR"-Source.
 
 ---
 
@@ -131,6 +151,31 @@ Der Nutzer legt die Dateien dann manuell im Repo ab — z.B.:
 `data/tei_curated/` bleibt der Gold-Standard-Speicher fuer kuratierte TEIs (git-tracked).
 Der frueher vorhandene FastAPI-Curation-Server (`scripts/server/curation_server.py`) wurde mit E57
 geloescht, weil das Frontend ihn seit E56 nicht mehr ansteuert.
+
+### Export-Modul (in Umbau, geplant Etappe 2.9 + 1.6)
+
+Der Per-Seite-Einzel-Download (Layout/Text/TEI in der Doc-Subbar) bleibt erhalten.
+Zusaetzlich kommt ein Komplett-Export:
+
+| Ort | Funktion | Granularitaet |
+|---|---|---|
+| Doc-Subbar im Viewer | "Alles ↓" oeffnet Export-Drawer mit Checkboxen pro Datentyp | ein Dokument, alle Seiten, alle Engines |
+| Aktionsleiste in `index.html` | Multi-Select-Checkboxen + Sticky-Bar "N ausgewaehlt · Export ▾" | mehrere Dokumente aus aktuellem Filter |
+
+Exportierbare Datentypen pro Dokument:
+
+- Faksimile-PNGs (alle Seiten, `images/{doc}/{doc}_pNNN.png`)
+- OCR-Rohtext pro Engine (Mistral / Gemini A / Gemini B / LLM / DeepSeek)
+- Layout-JSON (Docling + Gemini-Varianten)
+- TEI per-Seite (`*_p001.xml` ... `*_pNNN.xml`)
+- TEI final (`*_final.xml`)
+- Review-JSON (`*_review.json`, 7-Schichten-Quality-Befund)
+- PAGE-XML pro Seite, falls vorhanden
+
+Bei einer Datei: direkter Download. Bei mehreren: ZIP-Bundle mit Verzeichnis-Struktur
+`{doc_id}/{kategorie}/{datei}` plus Top-Level `manifest.json` (Zeitstempel, Auswahl,
+Datei-Liste). Library: **JSZip 3.10.1** via cdnjs, ZIP-Erzeugung im Browser. Bei
+Multi-Doc-Export ueber 50 Docs: Warnhinweis wegen Browser-Memory.
 
 ---
 
@@ -239,4 +284,5 @@ Aenderung am `output/tei_final/` sollte er neu erzeugt werden.
 - [pipeline.md](pipeline.md) — Pipeline-Output, der vom Viewer angezeigt wird
 - [entities.md](entities.md) — Entity-Highlighting im TEI-Renderer
 - [quality.md](quality.md) — Diagnostik-Daten in `docs/data/` (CER, TEI-Quality)
-- [decisions.md](decisions.md) — E56 (Frontend-Reduktion auf Viewer-only), E57 (Per-Seiten-Mirror + Pages-Deploy)
+- [decisions.md](decisions.md) — E56 (Frontend-Reduktion auf Viewer-only), E57 (Per-Seiten-Mirror + Pages-Deploy), E58 (OpenSeadragon), E59 (Polygone verworfen), E60 (Mode-Button-Redesign Option C), E61 (Export-Modul JSZip)
+- Plan-Dokument: `C:\Users\Chrisi\.claude\plans\edition-uplift-three-pages.md`

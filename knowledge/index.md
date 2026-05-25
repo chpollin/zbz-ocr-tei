@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -26,7 +26,7 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay, OCR/TEI-Editor, Datei-Download |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
-| [decisions.md](decisions.md) | Was ist entschieden? E1-E55, offene Punkte (O8, O13, O18, O22), Risiken |
+| [decisions.md](decisions.md) | Was ist entschieden? E1-E61, offene Punkte (O8, O13, O18, O22), Risiken |
 | [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Apr 2026), wiederkehrende Muster |
 
 Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).
@@ -75,6 +75,9 @@ journal         — chronologisch, kompakter Ueberblick
 | Dreischichtung | Command (Regel) / Artifact (Werkzeug) / Tool (Aufruf) | [methodik.md](methodik.md) |
 | Pipeline-Viewer (E56) | Single-Page-App mit Faksimile + OCR + TEI + Layout-/Transkriptions-Editor, Datei-Download | [viewer.md](viewer.md) |
 | Hersch Design-System | Anthrazit + Ziegelrot + EB Garamond + Jost, `--h-*` Tokens | [viewer.md](viewer.md) |
+| OpenSeadragon-Faksimile (E58) | Faksimile-Renderer im View-Modus mit Pan/Zoom/Rotate, CDN-Bezug | [viewer.md](viewer.md) |
+| Mode-Edit-Toggle pro Panel (E60) | Faksimile- und Text-Panel haben je einen Bearbeiten-Toggle, keine globale Mode-Leiste | [viewer.md](viewer.md) |
+| Export-Modul (E61) | JSZip-basierter Per-Doc-Drawer + Bulk-Export aus Korpus-Uebersicht | [viewer.md](viewer.md) |
 
 ---
 

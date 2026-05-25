@@ -7,9 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/viewer.css">
+  <link rel="stylesheet" href="css/tokens.css?v=3">
+  <link rel="stylesheet" href="css/base.css?v=3">
+  <link rel="stylesheet" href="css/viewer.css?v=3">
+  <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
 
@@ -48,29 +49,31 @@
 
       <!-- Toolbar: Seitennav + Modus -->
       <div class="toolbar">
-        <div class="toolbar__group" role="group" aria-label="Seitennavigation">
-          <button class="btn btn--sm btn--icon" id="btn-prev" title="Vorherige Seite (Pfeil links)" disabled>&blacktriangleleft;</button>
-          <span class="page-info" id="page-info">— / —</span>
-          <button class="btn btn--sm btn--icon" id="btn-next" title="Naechste Seite (Pfeil rechts)" disabled>&blacktriangleright;</button>
-        </div>
+        <div class="toolbar__inner">
+          <div class="toolbar__group" role="group" aria-label="Seitennavigation">
+            <button class="btn btn--sm btn--icon" id="btn-prev" title="Vorherige Seite (Pfeil links)" disabled>&blacktriangleleft;</button>
+            <span class="page-info" id="page-info">— / —</span>
+            <button class="btn btn--sm btn--icon" id="btn-next" title="Naechste Seite (Pfeil rechts)" disabled>&blacktriangleright;</button>
+          </div>
 
-        <div class="toolbar__divider"></div>
+          <div class="toolbar__divider"></div>
 
-        <div class="toolbar__group" role="group" aria-label="OCR-Quelle">
-          <label class="toolbar__label" for="ocr-source">OCR</label>
-          <select class="input toolbar__select" id="ocr-source">
-            <option value="mistral">Mistral</option>
-            <option value="gemini_corrected_a">Gemini A</option>
-            <option value="gemini_corrected_b">Gemini B</option>
-            <option value="llm_corrected">LLM (Haiku)</option>
-            <option value="deepseek">DeepSeek</option>
-          </select>
-        </div>
+          <div class="toolbar__group" role="group" aria-label="OCR-Quelle">
+            <label class="toolbar__label" for="ocr-source">OCR</label>
+            <select class="input toolbar__select" id="ocr-source">
+              <option value="mistral">Mistral</option>
+              <option value="gemini_corrected_a">Gemini A</option>
+              <option value="gemini_corrected_b">Gemini B</option>
+              <option value="llm_corrected">LLM (Haiku)</option>
+              <option value="deepseek">DeepSeek</option>
+            </select>
+          </div>
 
-        <div class="toolbar__mode" role="group" aria-label="Ansichts-Modus">
-          <button class="mode-btn" data-mode="view"   aria-pressed="true"  title="Nur ansehen">Anzeigen</button>
-          <button class="mode-btn" data-mode="layout" aria-pressed="false" title="Layout-Regionen bearbeiten">Layout</button>
-          <button class="mode-btn" data-mode="text"   aria-pressed="false" title="Transkription bearbeiten">Transkription</button>
+          <div class="toolbar__mode" role="group" aria-label="Ansichts-Modus">
+            <button class="mode-btn" data-mode="view"   aria-pressed="true"  title="Nur ansehen">Anzeigen</button>
+            <button class="mode-btn" data-mode="layout" aria-pressed="false" title="Layout-Regionen bearbeiten">Layout</button>
+            <button class="mode-btn" data-mode="text"   aria-pressed="false" title="Transkription bearbeiten">Transkription</button>
+          </div>
         </div>
       </div>
 

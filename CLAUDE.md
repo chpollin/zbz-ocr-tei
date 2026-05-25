@@ -38,6 +38,9 @@ Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaeng
 - **Pfade:** absolute Pfade oder `pathlib`
 - **Output:** JSON fuer Daten, HTML fuer Reports
 - **Frontend:** ES6+ JavaScript (`const`/`let`, Arrow-Functions, Template-Literals, IIFE-Wrappers), `ZBZ.*` / `TeiViewer.*` Namespaces
+- **Frontend-Dependencies:** zur Laufzeit via CDN nachgeladen, keine npm/Build-Pipeline:
+  - OpenSeadragon 5.0.1 (jsDelivr) — Faksimile-Renderer im View-Modus (E58)
+  - JSZip 3.10.1 (cdnjs) — ZIP-Bundle fuer Export-Modul (E61)
 
 ## Design
 

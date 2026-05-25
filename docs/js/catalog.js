@@ -14,18 +14,18 @@
     const $ = ZBZ.$;
 
     // ---- Konfiguration ----
-    const SCREENING_ORDER  = ['APPROVED', 'WITH_NOTES', 'NEEDS_REVIEW', 'NOT_SCREENED'];
+    const SCREENING_ORDER  = ['APPROVED', 'APPROVED_WITH_NOTES', 'NEEDS_REVIEW', 'NOT_SCREENED'];
     const SCREENING_LABEL  = {
-        APPROVED:     'Approved',
-        WITH_NOTES:   'With Notes',
-        NEEDS_REVIEW: 'Needs Review',
-        NOT_SCREENED: 'Nicht gescreent'
+        APPROVED:           'Approved',
+        APPROVED_WITH_NOTES:'With Notes',
+        NEEDS_REVIEW:       'Needs Review',
+        NOT_SCREENED:       'Nicht gescreent'
     };
     const SCREENING_CLASS  = {
-        APPROVED:     'approved',
-        WITH_NOTES:   'with_notes',
-        NEEDS_REVIEW: 'needs_review',
-        NOT_SCREENED: 'not_screened'
+        APPROVED:           'approved',
+        APPROVED_WITH_NOTES:'with_notes',
+        NEEDS_REVIEW:       'needs_review',
+        NOT_SCREENED:       'not_screened'
     };
     const FORM_LABEL = {
         journalArticle: 'Zeitschriftenartikel',
@@ -146,10 +146,10 @@
     function segColor(k) {
         // Werte aus tokens.css, hier nur fuer Legende-Dots inline
         const map = {
-            APPROVED:     'var(--h-olivgruen)',
-            WITH_NOTES:   'var(--h-ziegelrot-light)',
-            NEEDS_REVIEW: 'var(--h-ziegelrot)',
-            NOT_SCREENED: 'var(--h-border-emphasis)'
+            APPROVED:           'var(--h-olivgruen)',
+            APPROVED_WITH_NOTES:'var(--h-ziegelrot-light)',
+            NEEDS_REVIEW:       'var(--h-ziegelrot)',
+            NOT_SCREENED:       'var(--h-border-emphasis)'
         };
         return map[k] || 'var(--h-text-muted)';
     }

@@ -29,9 +29,12 @@
         ocrSource: 'mistral',
         layout: null,
         teiXml: null,
+        osdViewer: null,      // OpenSeadragon-Instanz (nur im View-Mode aktiv)
         _currentText: null,
         _currentEditedText: null
     };
+
+    const OSD_PREFIX = 'https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/images/';
 
     const cache = new ZBZ.Cache(40);
 
@@ -109,19 +112,7 @@
 
         // Sub-Bar zeigen + befuellen
         refs.subbar.hidden = false;
-        const metaParts = [
-            `<strong>${ZBZ.esc(doc.id)}</strong>`,
-            ZBZ.esc(doc.title || ''),
-            ZBZ.esc(doc.author || ''),
-            ZBZ.esc(doc.lang || ''),
-            'Typ ' + ZBZ.esc(doc.type || '—'),
-            (doc.page_count || '?') + ' S.'
-        ].filter(Boolean);
-        let metaHtml = metaParts.map(p => `<span>${p}</span>`).join('<span class="sep">&middot;</span>');
-        if (doc.screening) {
-            metaHtml += `<span class="sep">&middot;</span><span class="badge badge--info">${ZBZ.esc(doc.screening)}</span>`;
-        }
-        refs.docMeta.innerHTML = metaHtml;
+        renderDocMeta(doc);
 
         // Buttons enablen
         refs.btnPrev.disabled = state.page <= 1;
@@ -148,8 +139,93 @@
     }
 
     async function renderFacsimile() {
-        const doc = state.doc, page = state.page;
+        // Alten OSD-Viewer immer destroyen vor Re-Render
+        destroyOsd();
         refs.imageBody.innerHTML = '';
+
+        if (state.mode === 'layout') {
+            await renderFacsimileImg();
+        } else {
+            await renderFacsimileOsd();
+        }
+    }
+
+    function destroyOsd() {
+        if (state.osdViewer) {
+            try { state.osdViewer.destroy(); } catch (e) { /* ignore */ }
+            state.osdViewer = null;
+        }
+    }
+
+    // ---- OSD-Variante (View-Modus, pan + zoom) ----
+    async function renderFacsimileOsd() {
+        const doc = state.doc, page = state.page;
+        refs.imageBody.classList.add('panel__body--canvas');
+
+        const container = ZBZ.el('div', { cls: 'facsimile-osd', attrs: { id: 'osd-container' } });
+        refs.imageBody.appendChild(container);
+
+        // Layout vorab laden, Overlays werden nach OSD-'open' angehaengt
+        const layout = await fetchLayout(doc.id, page);
+        state.layout = layout;
+        refs.regionCount.textContent = (layout && layout.regions)
+            ? layout.regions.length + ' Regionen'
+            : 'keine Layout-Daten';
+
+        const imgUrl = ZBZ.path.image(doc.id, page);
+        state.osdViewer = OpenSeadragon({
+            element: container,
+            tileSources: { type: 'image', url: imgUrl },
+            prefixUrl: OSD_PREFIX,
+            showNavigator: false,
+            showRotationControl: true,
+            showFullPageControl: false,
+            showHomeControl: true,
+            showZoomControl: true,
+            gestureSettingsMouse: { clickToZoom: false, scrollToZoom: true },
+            minZoomLevel: 0.5,
+            maxZoomPixelRatio: 6,
+            visibilityRatio: 0.8,
+            constrainDuringPan: true,
+            animationTime: 0.5,
+            navigationControlAnchor: OpenSeadragon.ControlAnchor ? OpenSeadragon.ControlAnchor.TOP_LEFT : undefined
+        });
+
+        state.osdViewer.addHandler('open', () => {
+            if (layout && layout.regions) addOsdOverlays(state.osdViewer, layout.regions);
+        });
+
+        state.osdViewer.addHandler('open-failed', () => {
+            refs.imageBody.innerHTML =
+                '<div class="empty">Faksimile nicht verfuegbar fuer Seite ' + page +
+                '<br><code style="font-size:0.85em">' + ZBZ.esc(imgUrl) + '</code></div>';
+        });
+    }
+
+    function addOsdOverlays(viewer, regions) {
+        const tiledImage = viewer.world.getItemAt(0);
+        if (!tiledImage) return;
+        const cs = tiledImage.getContentSize();
+        regions.forEach((r, idx) => {
+            if (!r.bbox) return;
+            const div = ZBZ.el('div', {
+                cls: 'region ' + ZBZ.regionTypeCls(r.zbz_tag),
+                attrs: { 'data-region-idx': idx, title: r.text || ZBZ.regionTypeLabel(r.zbz_tag) }
+            });
+            const loc = viewer.viewport.imageToViewportRectangle(
+                r.bbox.x_pct / 100 * cs.x,
+                r.bbox.y_pct / 100 * cs.y,
+                r.bbox.w_pct / 100 * cs.x,
+                r.bbox.h_pct / 100 * cs.y
+            );
+            viewer.addOverlay({ element: div, location: loc });
+        });
+    }
+
+    // ---- Img-Variante (Layout-Edit-Modus, statisch, mit altem Editor) ----
+    async function renderFacsimileImg() {
+        const doc = state.doc, page = state.page;
+        refs.imageBody.classList.remove('panel__body--canvas');
 
         const facs = ZBZ.el('div', { cls: 'facsimile' });
         const img = ZBZ.el('img', {
@@ -258,9 +334,42 @@
 
     function renderOcrText(text) {
         refs.textBody.innerHTML = '';
-        const div = ZBZ.el('div', { cls: 'text', text });
-        refs.textBody.appendChild(div);
+        // Im Transkriptions-Modus erwartet der Editor den Markdown-Rohtext im DOM.
+        // In den Lese-Modi (view/layout) rendern wir Markdown -> HTML fuer Lesbarkeit.
+        if (state.mode === 'text') {
+            const div = ZBZ.el('div', { cls: 'text text--raw', text });
+            refs.textBody.appendChild(div);
+        } else {
+            const html = ZBZ.renderMarkdown(text || '');
+            const div = ZBZ.el('div', { cls: 'text', html });
+            refs.textBody.appendChild(div);
+        }
         ensureTextEditableState();
+    }
+
+    function renderDocMeta(doc) {
+        const meta = refs.docMeta;
+        meta.innerHTML = '';
+        const parts = [];
+        const idSpan = ZBZ.el('span', { cls: 'meta-item meta-item--id' });
+        idSpan.appendChild(ZBZ.el('strong', { text: String(doc.id) }));
+        parts.push(idSpan);
+        if (doc.title)  parts.push(ZBZ.el('span', { cls: 'meta-item meta-item--title', text: doc.title }));
+        if (doc.author) parts.push(ZBZ.el('span', { cls: 'meta-item', text: doc.author }));
+        if (doc.lang)   parts.push(ZBZ.el('span', { cls: 'meta-item', text: doc.lang }));
+        parts.push(ZBZ.el('span', { cls: 'meta-item', text: 'Typ ' + (doc.type || '—') }));
+        parts.push(ZBZ.el('span', { cls: 'meta-item', text: (doc.page_count || '?') + ' S.' }));
+        parts.forEach((node, i) => {
+            if (i > 0) meta.appendChild(ZBZ.el('span', { cls: 'sep', text: '·' }));
+            meta.appendChild(node);
+        });
+        if (doc.screening) {
+            const badge = ZBZ.el('span', {
+                cls: 'badge badge--screening badge--' + String(doc.screening).toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+                text: doc.screening
+            });
+            meta.appendChild(badge);
+        }
     }
 
     function ensureTextEditableState() {
@@ -292,25 +401,34 @@
     // ============================================================ Modes ============================================================
 
     function setMode(mode) {
+        const prevMode = state.mode;
         state.mode = mode;
         refs.modeBtns.forEach(b => b.setAttribute('aria-pressed', b.getAttribute('data-mode') === mode ? 'true' : 'false'));
 
-        const overlay = $('#layout-overlay');
+        // Editoren immer detachen vor Re-Render
+        if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
+        if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
+
+        // Faksimile-Variante wechselt zwischen Layout-Mode (img + Editor) und Rest (OSD)
+        const facsimileVariantChanged = (prevMode === 'layout') !== (mode === 'layout');
+        if (facsimileVariantChanged) {
+            renderFacsimile();
+        }
+
         if (mode === 'layout') {
             refs.layoutToolbar.classList.remove('hidden');
-            if (overlay) overlay.classList.add('editing');
-            if (ZBZ.LayoutEditor && state.layout) ZBZ.LayoutEditor.attach(overlay, state.layout, onLayoutChanged);
-            if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
-        } else if (mode === 'text') {
-            refs.layoutToolbar.classList.add('hidden');
-            if (overlay) overlay.classList.remove('editing');
-            if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
-            ensureTextEditableState();
+            // Editor wird von renderFacsimileImg() automatisch attached
         } else {
             refs.layoutToolbar.classList.add('hidden');
-            if (overlay) overlay.classList.remove('editing');
-            if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
-            if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
+        }
+
+        // OCR-Panel re-rendern, wenn die Grenze view/layout <-> text gekreuzt wird,
+        // weil renderOcrText() im Edit-Modus den Markdown-Rohtext zeigt, sonst gerendert.
+        const crossesEditBoundary = (prevMode === 'text') !== (mode === 'text');
+        if (crossesEditBoundary && state.textSource === 'ocr' && state._currentText != null) {
+            renderOcrText(state._currentText);
+        } else if (mode === 'text') {
+            ensureTextEditableState();
         }
     }
 

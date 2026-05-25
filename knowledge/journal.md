@@ -1,7 +1,7 @@
 ---
 type: journal
 created: 2026-01-29
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, journal]
 status: active
 ---
@@ -13,10 +13,11 @@ Details und Entscheidungen in [decisions.md](decisions.md). Code-Aenderungen im 
 
 ---
 
-## Mai 2026 — Viewer-Datenversorgung + Deploy-Vorbereitung
+## Mai 2026 — Viewer-Datenversorgung + Deploy-Vorbereitung + Edition-Uplift
 
 | # | Datum | Thema |
 |---|---|---|
+| 45 | 2026-05-25 | Edition-Uplift-Welle gestartet (Plan: `~/.claude/plans/edition-uplift-three-pages.md`). Vier Etappen ueber alle drei Frontend-Seiten (index, viewer, about) + Quer-Politur, ~25 h. Architektur-Entscheidungen: E58 OpenSeadragon 5.0.1 als Faksimile-Renderer (Pan/Zoom, View-Modus), E59 Polygone explizit ausgeschlossen (Druck-Korpus, Rechtecke reichen), E60 Mode-Button-Redesign Option C (Edit-Toggle pro Panel statt globaler Mode-Leiste — loest Wort-Redundanz Transkription↔OCR), E61 Export-Modul mit JSZip 3.10.1 (Per-Doc-Drawer "Alles ↓" + Multi-Select-Bulk-Export aus Korpus-Uebersicht). Code: Schritt 1 OSD-Integration umgesetzt (`viewer.html` CDN-Script, `viewer.css` `.panel__body--canvas`+`.facsimile-osd`, `viewer.js` Renderer zweigeteilt `renderFacsimileOsd()`/`renderFacsimileImg()`, `setMode()` re-rendert bei Variant-Wechsel). Layout-Mode behaelt vorerst Eigenbau-Editor + img. Visual-Test offen. Plan-Erweiterungen on-the-fly: Smart-Filter mit kreuzkonditionalen Live-Counts (1.3), klickbare Spalten-Header (1.4b), Per-Doc-Export-Drawer (2.9), Bulk-Export aus index (1.6). Politur aus Session 44 + Visual-Test-Politur + Befund 1 weiterhin uncommitted (User-Entscheidung). |
 | 44 | 2026-05-25 | Befund-Fixes + Konsistenz-Refactoring. Fixes: Frontend-Screening-Zaehler `WITH_NOTES`→`APPROVED_WITH_NOTES` (catalog.js/index.html); TEI-Doppelkodierung `&amp;amp;` behoben (tei_step1.py `html.unescape` + Bestandsdaten 26 Docs). Refactoring: Knowledge-Drift nach E56/E57 bereinigt (viewer.md auf reale 3-Seiten-App, CLAUDE.md cer.html-Verweis entfernt, `data/tei_curated/` angelegt, E56-curation_server-Widerspruch, shared.js→core.js, edition→viewer-Knoten); tote CSS-Tokens entfernt; `.btn--ghost`-Dopplung auf `#filter-reset` gescoped; Orphans geloescht (`scripts/postprocess/`, `generate_dashboard_data.py` + `dashboard.json`). Befund 3 geschlossen: 6 Finals (revisionDesc-Escaping -- Writer `tei_add_revision.py` + Bestand) und 309 Per-Seiten-Fragmente (`<pb>`-Splitter balancierte `<div>` nicht -> `_balance_divs` in `generate_edition_data.py` + Bestand). Alle 4970 served XML strikt wohlgeformt (vorher 327 nicht). |
 | 43 | 2026-05-25 | Viewer auf vollen Korpus erweitert: `scripts/generate_edition_data.py` mit `mirror_per_page_data()` (alle 285 Docs → `docs/data/pages/`, 8083 Layout + 4117 OCR + 4115 TEI-Seiten extrahiert via `<pb>`-Splitting, sequentielle Pagination 1..N statt n-Attribut). `core.js`-Resolver mit dreistufigem Fallback (`pages/` → `examples/` → `../output/`). `docs/.nojekyll` fuer GitHub Pages. Deployment-Section in `viewer.md`. Smoke-Test via HTTP-Probes (5 Docs ueber Typen A-D) erfolgreich. Bildlieferung bleibt lokal-only (4 GB). E57. |
 

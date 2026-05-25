@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-02-18
-updated: 2026-04-27
+updated: 2026-05-25
 tags: [zbz-ocr-tei, decisions, open, decided]
 status: active
 ---
@@ -12,7 +12,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 ---
 
-## Entschieden (E1-E56)
+## Entschieden (E1-E61)
 
 | # | Entscheidung | Begruendung | Datum | Dokument |
 |---|---|---|---|---|
@@ -68,6 +68,10 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 | E55 | interaktives CER-Dashboard | `docs/infrastruktur/cer.html` (12 Sektionen) + `docs/js/cer-dashboard.js` (vanilla SVG) + `infra.css` additiv. CIs visuell, Limitations sticky, Lit-Vergleich mit comparable-Enum. **Mit E56 abgeschafft** (CER-Dashboard und Diagnostik wurden ersatzlos entfernt — Daten weiterhin als JSON unter `docs/data/cer_statistics.json` verfuegbar) | 2026-04-27 | [quality.md](quality.md) |
 | E56 | Frontend-Reduktion auf Pipeline-Viewer | Edition (Landing, Katalog, Reader, Register, About), Curation Editor (FastAPI), Diagnostik und CER-Dashboard ersatzlos abgeschafft. Neue Single-Page-App `docs/viewer.html` mit Sidebar (Doc-Liste), Faksimile + Layout-Overlay + OCR/TEI-Panel, drei Modi: Anzeigen / Layout bearbeiten / Transkription bearbeiten. Layout-Editor unterstuetzt BBox-Drag, Resize, Add, Delete und Reading-Order-Drag. Persistenz nur via Datei-Download (kein Backend). Volumen: 9→1 HTML, 23→6 JS (7.509→1.420 Z., −81%), 5.023→806 Z. CSS (−84%). E33/E36 ueberholt. `scripts/server/curation_server.py` wird vom Frontend nicht mehr angesteuert (mit E57 aus dem Repo entfernt) | 2026-04-27 | [viewer.md](viewer.md) |
 | E57 | Per-Seiten-Mirror + GitHub-Pages-Deploy | `scripts/generate_edition_data.py` mit `mirror_per_page_data()` erweitert: spiegelt Layout-JSONs, Mistral-OCR und per-Seiten-TEI (extrahiert aus `_final.xml` via `<pb>`-Splitting, sequentielle Position 1..N statt n-Attribut wegen Pagination-Drift) fuer alle 285 Docs nach `docs/data/pages/` (8083 Layout + 4117 OCR + 4115 TEI-Seiten, ~99 MB / 16.564 Dateien). Damit funktioniert der Viewer ohne lokalen Server fuer das gesamte Korpus. `core.js`-Pfadresolver mit dreistufiger Fallback-Kette (`pages/` → `examples/` → `../output/`). `docs/.nojekyll` fuer Pages. Bildlieferung weiterhin lokal-only (4 GB PNG via `.gitignore` ausgenommen, nur DEMO-Bilder versioniert). CLI-Flags `--no-mirror`, `--mirror-only`, `--verbose` | 2026-05-25 | [viewer.md](viewer.md) |
+| E58 | OpenSeadragon 5.0.1 als Faksimile-Renderer (View-Modus) | Pan + Zoom + Rotate fuer komfortable Faksimile-Arbeit; einfaches Image-Loading (kein Deep-Zoom-Tiling — Pipeline unveraendert); CDN-Bezug via jsDelivr, keine npm/Build-Pipeline. Im Layout-Edit-Modus weiterhin statisches `<img>` mit Eigenbau-Editor — Editor-Integration in OSD per `viewport.viewerElementToImageCoordinates()` ist Folge-Schritt. Renderer in `viewer.js` zweigeteilt: `renderFacsimileOsd()` / `renderFacsimileImg()`, `setMode()` re-rendert bei Variant-Wechsel | 2026-05-25 | [viewer.md](viewer.md) |
+| E59 | Polygon-Support nicht eingefuehrt | Hersch-Faksimiles sind sauber gesetzter Druck (1926-2000, Verlagsdruck), Rechtecke decken alle benoetigten Region-Typen (Heading, Paragraph, Footnote, Caption, Filter, Skip). Bedarf an Polygonen entstuende erst bei schraegen Spalten, runden Initialen oder mehrteiligen Regionen — irrelevant fuer dieses Korpus. Damit Annotorious und vergleichbare DH-Libraries explizit nicht noetig; TEI-Datenmodell bleibt `bbox.x_pct/y_pct/w_pct/h_pct` | 2026-05-25 | [viewer.md](viewer.md), [pipeline.md](pipeline.md) |
+| E60 | Mode-Button-Redesign Option C: Edit-Toggle pro Panel | Aufloesung der Wort-Redundanz zwischen globalem Mode-Button "Transkription" und Text-Source-Switch "OCR". Globale Mode-Leiste (Anzeigen / Layout / Transkription) entfaellt. Jedes Panel bekommt einen kleinen Bearbeiten-Toggle im Panel-Header. Faksimile-Toggle aktiviert Layout-Editor; Text-Toggle aktiviert Transkriptions-Editor fuer aktive Text-Quelle. `setMode()` in `setImageEdit()` + `setTextEdit()` zerlegt | 2026-05-25 | [viewer.md](viewer.md) |
+| E61 | Export-Modul mit JSZip 3.10.1 | Per-Doc-Export-Drawer (Doc-Subbar "Alles ↓") + Multi-Select-Bulk-Export aus Korpus-Uebersicht. Auswahlbare Datentypen: Faksimile-PNGs, OCR pro Engine, Layout-JSON, TEI per-Seite, TEI final, Review-JSON, PAGE-XML. Eine Datei: direkter Download. Mehrere: ZIP mit Verzeichnis-Struktur `{doc_id}/{kategorie}/...` + `manifest.json`. ZIP-Erzeugung im Browser, keine Server-Komponente. Limit bei Multi-Doc-Export ueber 50 Docs (Browser-Memory) | 2026-05-25 | [viewer.md](viewer.md) |
 
 ---
 
@@ -110,7 +114,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 - [projekt.md](projekt.md) — Meilensteine + Status
 - [pipeline.md](pipeline.md) — Pipeline-Entscheidungen
-- [viewer.md](viewer.md) — Edition + Curation (E33, E36, E42)
+- [viewer.md](viewer.md) — Edition + Curation (E33, E36, E42, E56, E57, E58, E59, E60, E61)
 - [entities.md](entities.md) — Entity Linking (E34/E35/E38/E50)
 - [quality.md](quality.md) — CER + Screening (E41-E47, E51, E54/E55)
 - [journal.md](journal.md) — chronologische Sitzungs-Historie
